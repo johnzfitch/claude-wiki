@@ -1,41 +1,84 @@
 # Account Support
 
-*36 documents*
+*79 documents*
 
 
+- [Account management FAQs | Claude Help Center](account-management-faqs-c6267449e9.md) - March 16, 2026
 - [Account management FAQs | Claude Help Center](account-management-faqs.md) - Owners can update the team name on their plan by navigating to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization
 - [Add or update your Claude Console organization&#x27;s tax or VAT ID | Claude Help Center](add-or-update-your-claude-console-organization-s-tax-or-vat-id.md) - 4.  Add or update your Claude Console organization's tax or VAT ID
+- [Add or update your paid Claude account’s tax or VAT ID | Claude Help Center](add-or-update-your-paid-claude-account-s-tax-or-vat-id-f252f64856.md) - March 16, 2026
 - [Add or update your paid Claude account’s tax or VAT ID | Claude Help Center](add-or-update-your-paid-claude-account-s-tax-or-vat-id.md) - 4.  Add or update your paid Claude account’s tax or VAT ID
+- [Assign tasks from anywhere in Claude Cowork | Claude Help Center](assign-tasks-from-anywhere-in-claude-cowork-7d0db733ce.md) - Claude Cowork gives you one continuous conversation with Claude that you can reach from your phone or your desktop. With Dispatch, you can message Cla
+- [Assign tasks from anywhere in Claude Cowork | Claude Help Center](assign-tasks-to-claude-from-anywhere-in-cowork-c5119e93fb.md) - Claude Cowork gives you one continuous conversation with Claude that you can reach from your phone or your desktop. With Dispatch, you can message Cla
 - [Assign tasks to Claude from anywhere in Cowork | Claude Help Center](assign-tasks-to-claude-from-anywhere-in-cowork.md) - 4.  Assign tasks to Claude from anywhere in Cowork
+- [Can I have a Claude account and a Console account? | Claude Help Center](can-i-have-a-claude-account-and-a-console-account-6868f2c91e.md) - March 16, 2026
 - [Can I have a Claude account and a Console account? | Claude Help Center](can-i-have-a-claude-account-and-a-console-account.md) - 4.  Can I have a Claude account and a Console account?
 - [Can individuals with Pro or Max plan accounts migrate them to Team or Enterprise plan organizations? | Claude Help Center](can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise.md) - 4.  Can individuals with Pro or Max plan accounts migrate them to Team or Enterprise plan organizations?
+- [Claim and migrate accounts on your domain | Claude Help Center](claim-and-migrate-accounts-on-your-domain-1a80070ccf.md) - Domain claiming lets Enterprise admins discover, claim, and migrate existing personal Claude accounts (Free, Pro, and Max) on a verified company domai
+- [Claude Design admin guide for Team and Enterprise plans | Claude Help Center](claude-design-admin-guide-for-team-and-enterprise-plans-35227de5bf.md) - Claude Design lets your team create on-brand designs, prototypes, presentations, and interactive microsites through conversation with Claude.
+- [Creating a new account after deletion | Claude Help Center](creating-a-new-account-after-deletion-17141e2820.md) - March 16, 2026
 - [Creating a new account after deletion | Claude Help Center](creating-a-new-account-after-deletion.md) - 3.  Creating a new account after deletion
 - [Creating and managing Workspaces in the Claude Console | Claude Help Center](creating-and-managing-workspaces.md) - 4.  Creating and managing Workspaces in the Claude Console
+- [Designate support contacts for human support | Claude Help Center](designate-support-contacts-for-human-support-b3b303b2e2.md) - June 1, 2026
+- [Designated point of contact for users in the EU | Claude Help Center](designated-point-of-contact-for-users-in-the-eu-629e9847a6.md) - May 26, 2026
 - [Designated Point of Contact for Users in the EU | Claude Help Center](designated-point-of-contact-for-users-in-the-eu.md) - 3.  Designated Point of Contact for Users in the EU
+- [Use Claude for Education at your university | Claude Help Center](faqs-on-using-claude-for-education-at-your-university-69cf1138d4.md) - This guide helps you use Claude for Education through your university-sponsored account. Find resources and answers to frequently asked questions abou
+- [Get started with Claude Design | Claude Help Center](get-started-with-claude-design-c1ae6368f5.md) - June 30, 2026
+- [How can I access the personal information that Anthropic has on my account? | Claude Help Center](how-can-i-access-the-personal-information-that-anthropic-has-on-my-account-73c2e23c20.md) - March 16, 2026
 - [How can I access the personal information that Anthropic has on my account? | Claude Help Center](how-can-i-access-the-personal-information-that-anthropic-has-on-my-account.md) - 4.  How can I access the personal information that Anthropic has on my account?
 - [How to get support | Claude Help Center](how-can-i-contact-support.md) - This guide explains how to get support for your Claude or Console account. Different support options are available depending on your plan.
+- [How can I delete my Claude account? | Claude Help Center](how-can-i-delete-my-claude-account-71ba175b00.md) - April 14, 2026
 - [How can I delete my Claude account? | Claude Help Center](how-can-i-delete-my-claude-account.md) - Once you are logged in, click your initials or name in the lower left corner and select "Settings." Navigate to [Settings \> Account](https://claude.a
+- [How can I delete my Claude Console account? | Claude Help Center](how-can-i-delete-my-claude-console-account-fa188d88f6.md) - March 16, 2026
 - [How can I delete my Claude Console account? | Claude Help Center](how-can-i-delete-my-claude-console-account.md) - 4.  How can I delete my Claude Console account?
 - [How can I export my Claude data? | Claude Help Center](how-can-i-export-my-claude-ai-data.md) - Data exports are available to individual Claude users (free, Pro, and Max) with active accounts. Data exports include conversation data and the user d
+- [How do I change the email address associated with my account? | Claude Help Center](how-do-i-change-the-email-address-associated-with-my-account-410aeb888a.md) - March 16, 2026
 - [How do I change the email address associated with my account? | Claude Help Center](how-do-i-change-the-email-address-associated-with-my-account.md) - 4.  How do I change the email address associated with my account?
+- [How do I sign up for Claude Pro on Claude for Android? | Claude Help Center](how-do-i-sign-up-for-claude-pro-on-claude-for-android-b2d9c46ee9.md) - March 16, 2026
 - [How do I sign up for Claude Pro on Claude for Android? | Claude Help Center](how-do-i-sign-up-for-claude-pro-on-claude-for-android.md) - 4.  How do I sign up for Claude Pro on Claude for Android?
+- [How do I sign up for Claude Pro on the Claude app for iOS? | Claude Help Center](how-do-i-sign-up-for-claude-pro-on-the-claude-app-for-ios-22fcc2091f.md) - March 16, 2026
 - [How do I sign up for Claude Pro on the Claude app for iOS? | Claude Help Center](how-do-i-sign-up-for-claude-pro-on-the-claude-app-for-ios.md) - 4.  How do I sign up for Claude Pro on the Claude app for iOS?
+- [How do I sign up for the Max plan? | Claude Help Center](how-do-i-sign-up-for-the-max-plan-522e7bd583.md) - This article applies to individual consumers signing up for paid Max plans. If you're part of an organization looking to use Claude with your team, re
 - [How do I sign up for the Max plan? | Claude Help Center](how-do-i-sign-up-for-the-max-plan.md) - This article applies to individual consumers signing up for paid Max plans. If you're part of an organization looking to use Claude with your team, re
+- [How do I sign up for the Pro plan? | Claude Help Center](how-do-i-sign-up-for-the-pro-plan-d331ddbfbf.md) - March 16, 2026
 - [How do I sign up for the Pro plan? | Claude Help Center](how-do-i-sign-up-for-the-pro-plan.md) - This article applies to individual consumers signing up for paid Pro plans. If you're part of an organization looking to use Claude with your team, re
+- [How do I view and sign your Data Processing Addendum (DPA)? | Claude Help Center](how-do-i-view-and-sign-your-data-processing-addendum-dpa-58e61fcc5d.md) - March 16, 2026
 - [How do I view and sign your Data Processing Addendum (DPA)? | Claude Help Center](how-do-i-view-and-sign-your-data-processing-addendum-dpa.md) - 3.  How do I view and sign your Data Processing Addendum (DPA)?
+- [How to get support | Claude Help Center](how-to-get-support-57c428239c.md) - June 1, 2026
+- [How to get support for Claude for Government | Claude Help Center](how-to-get-support-for-claude-for-government-cb7c5e780a.md) - March 16, 2026
 - [How to get support for Claude for Government | Claude Help Center](how-to-get-support-for-claude-for-government.md) - 4.  How to get support for Claude for Government
+- [Add or update your paid Claude account’s tax or VAT ID | Claude Help Center](i-need-to-add-or-update-my-paid-claude-account-s-tax-or-vat-id-1ff42cd114.md) - March 16, 2026
 - [Add or update your paid Claude account’s tax or VAT ID | Claude Help Center](i-need-to-add-or-update-my-paid-claude-account-s-tax-or-vat-id.md) - 4.  Add or update your paid Claude account’s tax or VAT ID
+- [Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning | Claude Help Center](important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisi-0545ce214a.md) - June 25, 2026
 - [Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning | Claude Help Center](important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisi.md) - 3.  Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
+- [Introduction to prompt design | Claude Help Center](introduction-to-prompt-design-8eae4e058d.md) - March 16, 2026
 - [Introduction to prompt design | Claude Help Center](introduction-to-prompt-design.md) - Claude is trained to be a helpful, honest, and harmless assistant. It is used to “speaking” conversationally and you can instruct it in English. Think
+- [Log in to your Claude account | Claude Help Center](log-in-to-your-claude-account-42e921f4bc.md) - May 19, 2026
+- [Log in to your Claude account | Claude Help Center](logging-in-to-your-claude-account-2c1d42f1ab.md) - May 19, 2026
 - [Logging in to your Claude account | Claude Help Center](logging-in-to-your-claude-account.md) - When you open Claude on a web browser ([claude.ai](http://claude.ai)), the desktop app, or a mobile app, you will see two different options for loggin
+- [Logging in to your Console account | Claude Help Center](logging-in-to-your-console-account-23a06981d3.md) - March 18, 2026
 - [Logging in to your Console account | Claude Help Center](logging-in-to-your-console-account.md) - When you navigate to the [Claude Console](../04-API-Reference/Other/platform-claude-com.md), you will see two different options for logging in to your
+- [Move your personal Claude account to a Team or Enterprise organization | Claude Help Center](move-your-personal-claude-account-to-a-team-or-enterprise-organization-1d5cca0150.md) - If you're using Claude with a personal account (Free, Pro, or Max) tied to your work email, you may be able to move that account into your organizatio
+- [My prompt isn’t giving me a helpful answer. | Claude Help Center](my-prompt-isn-t-giving-me-a-helpful-answer-be93be72e8.md) - March 16, 2026
+- [OneLogin SSO/SCIM email mismatch | Claude Help Center](onelogin-sso-scim-email-mismatch-369f184454.md) - March 24, 2026
+- [OneLogin SSO setup | Claude Help Center](onelogin-sso-setup-e5d2f18a94.md) - March 24, 2026
+- [Public Sector FAQs | Claude Help Center](public-sector-faqs-5b0a044ad5.md) - March 25, 2026
 - [Public Sector FAQs | Claude Help Center](public-sector-faqs.md) - Select your product based on both your technical/functional requirements, and also your compliance/security/deployment environment requirements. Here 
+- [Respond to an Enterprise domain claim on your Claude account | Claude Help Center](respond-to-an-enterprise-domain-claim-on-your-claude-account-8ab08c5da5.md) - If your organization has set up Claude Enterprise, they may claim your existing personal Claude account (Free, Pro, or Max) and move it into their wor
+- [Set up single sign-on (SSO) | Claude Help Center](set-up-single-sign-on-sso-890b8ba246.md) - June 24, 2026
 - [Set up single sign-on (SSO) | Claude Help Center](set-up-single-sign-on-sso.md) - Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
+- [Set up your design system in Claude Design | Claude Help Center](set-up-your-design-system-in-claude-design-3ce3683e53.md) - June 17, 2026
+- [Set up JIT or SCIM provisioning | Claude Help Center](setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterp-f973043c5a.md) - June 30, 2026
 - [Set up JIT or SCIM provisioning | Claude Help Center](setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterp.md) - JIT provisioning is available for Team plans, Enterprise plans, and Console organizations. SCIM provisioning is available for Enterprise and Console o
 - [Claude Help Center](setting-up-single-sign-on-on-the-claude-console.md) - Search for articles...
+- [Set up single sign-on (SSO) | Claude Help Center](setting-up-single-sign-on-sso-3b8067927a.md) - June 24, 2026
+- [Set up single sign-on (SSO) | Claude Help Center](setting-up-single-sign-on-sso-for-claude-and-claude-console-d68cfba8d5.md) - June 24, 2026
 - [Set up single sign-on (SSO) | Claude Help Center](setting-up-single-sign-on-sso-for-claude-and-claude-console.md) - Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
 - [Set up single sign-on (SSO) | Claude Help Center](setting-up-single-sign-on-sso.md) - Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
+- [SSO login | Claude Help Center](sso-login-15e9ee63fa.md) - April 10, 2026
 - [Troubleshooting - Claude Code Docs](troubleshooting-claude-code-docs-3f3657ed0f.md) - Fix high CPU or memory usage, hangs, auto-compact thrashing, and search problems in Claude Code, and find the right page for other issues.
 - [Where can I access Claude? | Claude Help Center](where-can-i-access-claude-ai.md) - You can access Claude in the following locations:
+- [Who owns and manages the data of my Claude for Education account? | Claude Help Center](who-owns-and-manages-the-data-of-my-claude-for-education-account-8e2602e714.md) - March 16, 2026
 - [Who owns and manages the data of my Claude for Education account? | Claude Help Center](who-owns-and-manages-the-data-of-my-claude-for-education-account.md) - 3.  Who owns and manages the data of my Claude for Education account?
+- [Why is a coupon or promotion not available for my account? | Claude Help Center](why-is-a-coupon-or-promotion-not-available-for-my-account-7b91fff5cb.md) - March 16, 2026
 - [Why is a coupon or promotion not available for my account? | Claude Help Center](why-is-a-coupon-or-promotion-not-available-for-my-account.md) - 4.  Why is a coupon or promotion not available for my account?

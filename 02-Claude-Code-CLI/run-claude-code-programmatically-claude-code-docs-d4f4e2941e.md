@@ -2,23 +2,40 @@
 title: "Run Claude Code programmatically - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/headless"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-05-19T21:22:41Z"
+fetched_at: "2026-08-02T05:37:55Z"
 tags: ["claude-code"]
 ---
 
+## On this page
+
+- [Basic usage](#basic-usage)
+  - [Start faster with bare mode](#start-faster-with-bare-mode)
+  - [Background tasks at exit](#background-tasks-at-exit)
+- [Examples](#examples)
+  - [Pipe data through Claude](#pipe-data-through-claude)
+  - [Add Claude to a build script](#add-claude-to-a-build-script)
+  - [Get structured output](#get-structured-output)
+  - [Stream responses](#stream-responses)
+  - [Follow subagent messages](#follow-subagent-messages)
+  - [Handle API retries](#handle-api-retries)
+  - [Read session metadata](#read-session-metadata)
+  - [Fail CI when a plugin or MCP server doesn’t load](#fail-ci-when-a-plugin-or-mcp-server-doesn%E2%80%99t-load)
+  - [Track plugin installs](#track-plugin-installs)
+  - [Auto-approve tools](#auto-approve-tools)
+  - [Create a commit](#create-a-commit)
+  - [Customize the system prompt](#customize-the-system-prompt)
+  - [Continue conversations](#continue-conversations)
+- [Next steps](#next-steps)
+
+Automation
+
 # Run Claude Code programmatically
 
+Copy pageCopy page
 
 Use the Agent SDK to run Claude Code programmatically from the CLI, Python, or TypeScript.
 
-
-> ## Documentation Index
->
-> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
->
-> Use this file to discover all available pages before exploring further.
-
-Starting June 15, 2026, Agent SDK and `claude -p` usage on subscription plans will draw from a new monthly Agent SDK credit, separate from your interactive usage limits. See [Use the Claude Agent SDK with your Claude plan](https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan) for details.
+Copy pageCopy page
 
 The [Agent SDK](/docs/en/agent-sdk/overview) gives you the same tools, agent loop, and context management that power Claude Code. It’s available as a CLI for scripts and CI/CD, or as [Python](/docs/en/agent-sdk/python) and [TypeScript](/docs/en/agent-sdk/typescript) packages for full programmatic control. To run Claude Code in non-interactive mode, pass `-p` with your prompt and any [CLI options](/docs/en/cli-reference):
 
@@ -28,6 +45,8 @@ claude -p "Find and fix the bug in auth.py" --allowedTools "Read,Edit,Bash"
 
 This page covers using the Agent SDK via the CLI (`claude -p`). For the Python and TypeScript SDK packages with structured outputs, tool approval callbacks, and native message objects, see the [full Agent SDK documentation](/docs/en/agent-sdk/overview).
 
+
+[​](#basic-usage)
 
 Basic usage
 
@@ -43,6 +62,8 @@ This example asks Claude a question about your codebase and prints the response:
 claude -p "What does the auth module do?"
 ```
 
+
+[​](#start-faster-with-bare-mode)
 
 Start faster with bare mode
 
@@ -62,15 +83,26 @@ In bare mode Claude has access to the Bash, file read, and file edit tools. Pass
 | Custom agents           | `--agents <json>`                                       |
 | A plugin                | `--plugin-dir <path>`, `--plugin-url <url>`             |
 
-Bare mode skips OAuth and keychain reads. Anthropic authentication must come from `ANTHROPIC_API_KEY` or an `apiKeyHelper` in the JSON passed to `--settings`. Bedrock, Vertex, and Foundry use their usual provider credentials.
+Bare mode skips OAuth and keychain reads. For Anthropic authentication, set `ANTHROPIC_API_KEY` or configure an `apiKeyHelper` in the JSON you pass to `--settings`. Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry use their usual provider credentials.
 
 `--bare` is the recommended mode for scripted and SDK calls, and will become the default for `-p` in a future release.
 
+
+[​](#background-tasks-at-exit)
+
+Background tasks at exit
+
+If Claude starts a [background Bash task](/docs/en/tools-reference#bash-tool-behavior) during a `claude -p` run, for example a dev server or a watch build, that shell is terminated about five seconds after Claude has returned its final result and stdin has closed. The grace period lets a task that finishes right after the result still deliver its output. Before v2.1.163, a never-exiting background process would hold the `claude -p` invocation open indefinitely. Background [subagents](/docs/en/sub-agents) and workflows are exempt from the five-second grace because their result is part of the final output, so `claude -p` waits for them to complete. From v2.1.182, that wait is capped at ten minutes by default so a stuck background agent cannot hold the process open indefinitely. Adjust the cap with [`CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS`](/docs/en/env-vars), or set it to `0` to wait without a limit. If you stop a `claude -p` run with SIGTERM, for example from `kill`, a process supervisor, or an SDK host closing the session, Claude Code aborts the in-progress turn, terminates the process tree of any running Bash command, runs [`SessionEnd` hooks](/docs/en/hooks#sessionend), and exits with code 143.
+
+
+[​](#examples)
 
 Examples
 
 These examples highlight common CLI patterns. For CI and other scripted calls, add [`--bare`](#start-faster-with-bare-mode) so they don’t pick up whatever happens to be configured locally.
 
+
+[​](#pipe-data-through-claude)
 
 Pipe data through Claude
 
@@ -84,6 +116,10 @@ With `--output-format json`, the response payload includes `total_cost_usd` and 
 
 As of Claude Code v2.1.128, piped stdin is capped at 10MB. If you exceed the cap, Claude Code exits with a clear error and a non-zero status. To work with larger inputs, write the content to a file and reference the file path in your prompt instead of piping it.
 
+If Claude Code can’t read stdin, for example because the process that started it disconnected its end, Claude Code prints a warning to stderr and continues with the prompt from the command line. Before v2.1.211, an unreadable stdin on Windows crashed the session or made it exit silently with no output.
+
+
+[​](#add-claude-to-a-build-script)
 
 Add Claude to a build script
 
@@ -97,6 +133,8 @@ You can wrap a non-interactive call in a script to use Claude as a project-speci
 }
 ```
 
+
+[​](#get-structured-output)
 
 Get structured output
 
@@ -120,7 +158,9 @@ claude -p "Extract the main function names from auth.py" \
   --json-schema '{"type":"object","properties":{"functions":{"type":"array","items":{"type":"string"}}},"required":["functions"]}'
 ```
 
-Use a tool like [jq](https://jqlang.github.io/jq/) to parse the response and extract specific fields:
+If the value isn’t a valid JSON Schema, `claude` exits with `Error: --json-schema is not a valid JSON Schema` followed by the validator’s diagnostic. Claude Code accepts schemas that use the `format` keyword, such as `"format": "email"`, but treats `format` as an annotation and doesn’t enforce it. Before v2.1.205, Claude Code silently ignored an invalid schema and returned unstructured text, and treated any schema containing `format` as invalid.
+
+Use a tool like [jq](https://jqlang.org/) to parse the response and extract specific fields:
 
 ```python
 # Extract the text result
@@ -134,6 +174,8 @@ claude -p "Extract function names from auth.py" \
 ```
 
 
+[​](#stream-responses)
+
 Stream responses
 
 Use `--output-format stream-json` with `--verbose` and `--include-partial-messages` to receive tokens as they’re generated. Each line is a JSON object representing an event:
@@ -142,33 +184,78 @@ Use `--output-format stream-json` with `--verbose` and `--include-partial-messag
 claude -p "Explain recursion" --output-format stream-json --verbose --include-partial-messages
 ```
 
-The following example uses [jq](https://jqlang.github.io/jq/) to filter for text deltas and display just the streaming text. The `-r` flag outputs raw strings (no quotes) and `-j` joins without newlines so tokens stream continuously:
+The last line of the stream is a `result` message with the final response text, cost, and session metadata. If your consumer reads the stream slowly, Claude Code waits for the queued output to drain before exiting, scaling the wait with how much is still queued, capped at 30 seconds. Before v2.1.214 the exit wait was capped at about two seconds, which could cut off the end of a large response. The following example uses [jq](https://jqlang.org/) to filter for text deltas and display just the streaming text. The `-r` flag outputs raw strings (no quotes) and `-j` joins without newlines so tokens stream continuously:
 
 ```python
 claude -p "Write a poem" --output-format stream-json --verbose --include-partial-messages | \
   jq -rj 'select(.type == "stream_event" and .event.delta.type? == "text_delta") | .event.delta.text'
 ```
 
+For programmatic streaming with callbacks and message objects, see [Stream responses in real-time](/docs/en/agent-sdk/streaming-output) in the Agent SDK documentation.
+
+
+[​](#follow-subagent-messages)
+
+Follow subagent messages
+
+Messages from [subagents](/docs/en/sub-agents) appear in the stream as `assistant` and `user` messages whose `parent_tool_use_id` field is the ID of the tool call that spawned the subagent. Messages from the main conversation carry `null` in that field. By default, Claude Code emits only subagent `tool_use` and `tool_result` blocks. Pass [`--forward-subagent-text`](/docs/en/cli-reference#cli-flags) or set [`CLAUDE_CODE_FORWARD_SUBAGENT_TEXT`](/docs/en/env-vars) to also emit subagent text and thinking blocks, so you can reconstruct each subagent’s transcript. This requires Claude Code v2.1.211 or later. When you enable either option, Claude Code forwards messages from [subagents at every nesting depth](/docs/en/sub-agents#let-subagents-spawn-their-own-subagents): when a subagent spawns its own subagent, the nested subagent’s messages carry the ID of the Agent tool call that spawned it in `parent_tool_use_id`, so you can rebuild the full nesting tree by following those IDs. Before v2.1.219, messages from nested subagents didn’t appear in the stream.
+
+
+[​](#handle-api-retries)
+
+Handle API retries
+
 When an API request fails with a retryable error, Claude Code emits a `system/api_retry` event before retrying. You can use this to surface retry progress or implement custom backoff logic.
 
-| Field            | Type            | Description                                                                                                                                                                              |
-|------------------|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`           | `"system"`      | message type                                                                                                                                                                             |
-| `subtype`        | `"api_retry"`   | identifies this as a retry event                                                                                                                                                         |
-| `attempt`        | integer         | current attempt number, starting at 1                                                                                                                                                    |
-| `max_retries`    | integer         | total retries permitted                                                                                                                                                                  |
-| `retry_delay_ms` | integer         | milliseconds until the next attempt                                                                                                                                                      |
-| `error_status`   | integer or null | HTTP status code, or `null` for connection errors with no HTTP response                                                                                                                  |
-| `error`          | string          | error category: `authentication_failed`, `oauth_org_not_allowed`, `billing_error`, `rate_limit`, `invalid_request`, `model_not_found`, `server_error`, `max_output_tokens`, or `unknown` |
-| `uuid`           | string          | unique event identifier                                                                                                                                                                  |
-| `session_id`     | string          | session the event belongs to                                                                                                                                                             |
+| Field            | Type            | Description                                                                                                                                                                                            |
+|------------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `type`           | `"system"`      | message type                                                                                                                                                                                           |
+| `subtype`        | `"api_retry"`   | identifies this as a retry event                                                                                                                                                                       |
+| `attempt`        | integer         | current attempt number, starting at 1                                                                                                                                                                  |
+| `max_retries`    | integer         | total retries permitted                                                                                                                                                                                |
+| `retry_delay_ms` | integer         | milliseconds until the next attempt                                                                                                                                                                    |
+| `error_status`   | integer or null | HTTP status code, or `null` for connection errors with no HTTP response                                                                                                                                |
+| `error`          | string          | error category: `authentication_failed`, `oauth_org_not_allowed`, `billing_error`, `rate_limit`, `overloaded`, `invalid_request`, `model_not_found`, `server_error`, `max_output_tokens`, or `unknown` |
+| `uuid`           | string          | unique event identifier                                                                                                                                                                                |
+| `session_id`     | string          | session the event belongs to                                                                                                                                                                           |
 
-The `system/init` event reports session metadata including the model, tools, MCP servers, and loaded plugins. It is the first event in the stream unless [`CLAUDE_CODE_SYNC_PLUGIN_INSTALL`](/docs/en/env-vars) is set, in which case `plugin_install` events precede it. Use the plugin fields to fail CI when a plugin did not load:
+
+[​](#read-session-metadata)
+
+Read session metadata
+
+The `system/init` event reports session metadata including the model, tools, MCP servers, and loaded plugins. It is the first event in the stream unless startup events precede it:
+
+- `plugin_install` events, when [`CLAUDE_CODE_SYNC_PLUGIN_INSTALL`](/docs/en/env-vars) is set.
+- [`hook_started`, `hook_progress`, and `hook_response` events](/docs/en/agent-sdk/typescript#sdkhookstartedmessage), while a configured [`SessionStart`](/docs/en/hooks#sessionstart) or [`Setup`](/docs/en/hooks#setup) hook runs. These stream as the hook produces them. Claude Code v2.1.169 through v2.1.203 delivered them in one batch after the hook completed, still ahead of `system/init`; v2.1.204 restored live delivery.
+
+The event also carries an optional `capabilities` array of strings naming the protocol behaviors this Claude Code version implements, such as `interrupt_receipt_v1` or `interrupt_cancel_queued_v1`. Check it to feature-detect instead of comparing version strings, and ignore values you don’t recognize. The field requires Claude Code v2.1.205 or later and is absent from earlier versions. See [`SDKSystemMessage`](/docs/en/agent-sdk/typescript#sdksystemmessage) for the capability list.
+
+
+[​](#fail-ci-when-a-plugin-or-mcp-server-doesn’t-load)
+
+Fail CI when a plugin or MCP server doesn’t load
+
+Use the plugin fields in the `system/init` event to catch a plugin that didn’t load:
 
 | Field           | Type  | Description                                                                                                                                                                                                                                                                                  |
 |-----------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `plugins`       | array | plugins that loaded successfully, each with `name` and `path`                                                                                                                                                                                                                                |
 | `plugin_errors` | array | plugin load-time errors, each with `plugin`, `type`, and `message`. Includes unsatisfied dependency versions and `--plugin-dir` load failures such as a missing path or invalid archive. Affected plugins are demoted and absent from `plugins`. The key is omitted when there are no errors |
+
+Use the MCP server fields the same way. Claude Code validates each [`--mcp-config`](/docs/en/cli-reference#cli-flags) entry at startup and skips entries that fail validation, for example a `url` entry with no `type`; the run continues and exits cleanly, so check these fields to catch a server that never loaded:
+
+| Field               | Type  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|---------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `mcp_servers`       | array | MCP servers in the session, each with `name` and `status`                                                                                                                                                                                                                                                                                                                                                                                     |
+| `mcp_server_errors` | array | `--mcp-config` entries skipped by config validation, each with `name`, `type`, and `message`. `type` is a skip category such as `unknown_type`, `url_missing_type`, `invalid_config`, or `reserved_name`; treat values you don’t recognize as a generic skip. Affected servers are absent from `mcp_servers`. The key is omitted when there are no errors, so a CI gate can fail on a non-empty array. Requires Claude Code v2.1.219 or later |
+
+When you run the command by hand in a terminal, Claude Code also prints a startup warning to stderr, such as `Warning: 1 MCP server skipped due to invalid config:`, followed by the reason for each skipped entry. When you redirect stderr, or when a program such as a CI runner or an SDK host captures it, Claude Code prints no warning and reports the skipped entries only in the `mcp_server_errors` field. The warning requires Claude Code v2.1.219 or later.
+
+
+[​](#track-plugin-installs)
+
+Track plugin installs
 
 When [`CLAUDE_CODE_SYNC_PLUGIN_INSTALL`](/docs/en/env-vars) is set, Claude Code emits `system/plugin_install` events while marketplace plugins install before the first turn. Use these to surface install progress in your own UI.
 
@@ -182,8 +269,8 @@ When [`CLAUDE_CODE_SYNC_PLUGIN_INSTALL`](/docs/en/env-vars) is set, Claude Code 
 | `uuid`       | string                                                   | unique event identifier                                                                                        |
 | `session_id` | string                                                   | session the event belongs to                                                                                   |
 
-For programmatic streaming with callbacks and message objects, see [Stream responses in real-time](/docs/en/agent-sdk/streaming-output) in the Agent SDK documentation.
 
+[​](#auto-approve-tools)
 
 Auto-approve tools
 
@@ -194,12 +281,14 @@ claude -p "Run the test suite and fix any failures" \
   --allowedTools "Bash,Read,Edit"
 ```
 
-To set a baseline for the whole session instead of listing individual tools, pass a [permission mode](/docs/en/permission-modes). `dontAsk` denies anything not in your `permissions.allow` rules or the [read-only command set](/docs/en/permissions#read-only-commands), which is useful for locked-down CI runs. `acceptEdits` lets Claude write files without prompting and also auto-approves common filesystem commands such as `mkdir`, `touch`, `mv`, and `cp`. Other shell commands and network requests still need an `--allowedTools` entry or a `permissions.allow` rule, otherwise the run aborts when one is attempted:
+To set a baseline for the whole session instead of listing individual tools, pass a [permission mode](/docs/en/permission-modes). `dontAsk` denies anything not in your `permissions.allow` rules or the [read-only command set](/docs/en/permissions#read-only-commands), which is useful for locked-down CI runs. `AskUserQuestion`, connector tools [your organization set to `ask`](/docs/en/mcp#organization-controls-on-connector-tools), and MCP tools marked [`requiresUserInteraction`](/docs/en/mcp#require-approval-for-a-specific-tool) are denied even when an allow rule matches. `acceptEdits` lets Claude write files without prompting and also auto-approves common filesystem commands such as `mkdir`, `touch`, `mv`, and `cp`. Other shell commands and network requests still need an `--allowedTools` entry or a `permissions.allow` rule, otherwise the run aborts when one is attempted:
 
 ```python
 claude -p "Apply the lint fixes" --permission-mode acceptEdits
 ```
 
+
+[​](#create-a-commit)
 
 Create a commit
 
@@ -212,8 +301,10 @@ claude -p "Look at my staged changes and create an appropriate commit" \
 
 The `--allowedTools` flag uses [permission rule syntax](/docs/en/settings#permission-rule-syntax). The trailing ` *` enables prefix matching, so `Bash(git diff *)` allows any command starting with `git diff`. The space before `*` is important: without it, `Bash(git diff*)` would also match `git diff-index`.
 
-User-invoked [skills](/docs/en/skills) like `/commit` and [built-in commands](/docs/en/commands) are only available in interactive mode. In `-p` mode, describe the task you want to accomplish instead.
+User-invoked [skills](/docs/en/skills) and custom commands work in `-p` mode: include `/skill-name` in the prompt string and Claude Code expands it before running. Built-in commands that only run in the terminal interface, such as `/login`, aren’t available in `-p` mode. `/model`, `/effort`, `/fast`, `/color`, and `/rename` accept the value as an argument, for example `/model sonnet`, and `/mcp` with no argument prints a text summary of server status; these forms require Claude Code v2.1.205 or later and follow each command’s [availability notes](/docs/en/commands#all-commands). To change a setting from a `-p` invocation, pass `key=value` to `/config`, for example `/config thinking=false`.
 
+
+[​](#customize-the-system-prompt)
 
 Customize the system prompt
 
@@ -227,6 +318,8 @@ gh pr diff "$1" | claude -p \
 
 See [system prompt flags](/docs/en/cli-reference#system-prompt-flags) for more options including `--system-prompt` to fully replace the default prompt.
 
+
+[​](#continue-conversations)
 
 Continue conversations
 
@@ -248,6 +341,10 @@ session_id=$(claude -p "Start a review" --output-format json | jq -r '.session_i
 claude -p "Continue that review" --resume "$session_id"
 ```
 
+Run both commands from the same directory: session ID lookup is scoped to the current project directory and its git worktrees. See [Resume a session](/docs/en/sessions#resume-a-session) for the full scope rules.
+
+
+[​](#next-steps)
 
 Next steps
 

@@ -2,24 +2,34 @@
 title: "Platforms and integrations - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/platforms"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-05-19T21:22:59Z"
+fetched_at: "2026-08-02T05:38:22Z"
 tags: ["claude-code"]
 ---
 
+## On this page
+
+- [Where to run Claude Code](#where-to-run-claude-code)
+- [Connect your tools](#connect-your-tools)
+- [Work when you are away from your terminal](#work-when-you-are-away-from-your-terminal)
+- [Related resources](#related-resources)
+  - [Platforms](#platforms)
+  - [Integrations](#integrations)
+  - [Remote access](#remote-access)
+
+Platforms and integrations
+
 # Platforms and integrations
 
+Copy pageCopy page
 
 Choose where to run Claude Code and what to connect it to. Compare the CLI, Desktop, VS Code, JetBrains, web, mobile, and integrations like Chrome, Slack, and CI/CD.
 
-
-> ## Documentation Index
->
-> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
->
-> Use this file to discover all available pages before exploring further.
+Copy pageCopy page
 
 Claude Code runs the same underlying engine everywhere, but each surface is tuned for a different way of working. This page helps you pick the right platform for your workflow and connect the tools you already use.
 
+
+[​](#where-to-run-claude-code)
 
 Where to run Claude Code
 
@@ -32,10 +42,12 @@ Choose a platform based on how you like to work and where your project lives.
 | [VS Code](/docs/en/vs-code)            | Working inside VS Code without switching to a terminal                                             | Inline diffs, integrated terminal, file context                                                                                                                                                     |
 | [JetBrains](/docs/en/jetbrains)        | Working inside IntelliJ, PyCharm, WebStorm, or other JetBrains IDEs                                | Diff viewer, selection sharing, terminal session                                                                                                                                                    |
 | [Web](/docs/en/claude-code-on-the-web) | Long-running tasks that don’t need much steering, or work that should continue when you’re offline | Anthropic-managed cloud, continues after you disconnect                                                                                                                                             |
-| Mobile                                 | Starting and monitoring tasks while away from your computer                                        | Cloud sessions from the Claude app for iOS and Android, [Remote Control](/docs/en/remote-control) for local sessions, [Dispatch](/docs/en/desktop#sessions-from-dispatch) to Desktop on Pro and Max |
+| [Mobile](/docs/en/mobile)              | Starting and monitoring tasks while away from your computer                                        | Cloud sessions from the Claude app for iOS and Android, [Remote Control](/docs/en/remote-control) for local sessions, [Dispatch](/docs/en/desktop#sessions-from-dispatch) to Desktop on Pro and Max |
 
-The CLI is the most complete surface for terminal-native work: scripting and the Agent SDK are CLI-only. Third-party providers also work in [VS Code](/docs/en/vs-code#use-third-party-providers). Enterprise [Desktop](/docs/en/desktop) deployments support Vertex AI and gateway providers; for Bedrock or Foundry, use the CLI or VS Code instead of Desktop. Desktop and the IDE extensions trade some CLI-only features for visual review and tighter editor integration. The web runs in Anthropic’s cloud, so tasks keep going after you disconnect. Mobile is a thin client into those same cloud sessions or into a local session via Remote Control, and can send tasks to Desktop with Dispatch. You can mix surfaces on the same project. Configuration, project memory, and MCP servers are shared across the local surfaces.
+The CLI is the most complete surface for terminal-native work: scripting and the Agent SDK are CLI-only. Third-party providers also work in [VS Code](/docs/en/vs-code#use-third-party-providers). Enterprise [Desktop](/docs/en/desktop) deployments support Google Cloud’s Agent Platform, and Desktop supports [gateway providers](/docs/en/llm-gateway-connect#desktop-app); for Amazon Bedrock or Microsoft Foundry, use the CLI or VS Code, or [Claude Desktop on 3P](https://claude.com/docs/third-party/claude-desktop/overview), which runs the Code tab on those providers. Desktop and the IDE extensions trade some CLI-only features for visual review and tighter editor integration. The web runs in Anthropic’s cloud, so tasks keep going after you disconnect. Mobile is a thin client into those same cloud sessions or into a local session via Remote Control, and can send tasks to Desktop with Dispatch. You can mix surfaces on the same project. Configuration, project memory, and MCP servers are shared across the local surfaces.
 
+
+[​](#connect-your-tools)
 
 Connect your tools
 
@@ -52,6 +64,8 @@ Integrations let Claude work with services outside your codebase.
 For integrations not listed here, [MCP servers](/docs/en/mcp) and [connectors](/docs/en/desktop#connect-external-tools) let you connect almost anything: Linear, Notion, Google Drive, or your own internal APIs.
 
 
+[​](#work-when-you-are-away-from-your-terminal)
+
 Work when you are away from your terminal
 
 Claude Code offers several ways to work when you’re not at your terminal. They differ in what triggers the work, where Claude runs, and how much you need to set up.
@@ -67,8 +81,12 @@ Claude Code offers several ways to work when you’re not at your terminal. They
 If you’re not sure where to start, [install the CLI](/docs/en/quickstart) and run it in a project directory. If you’d rather not use a terminal, [Desktop](/docs/en/desktop-quickstart) gives you the same engine with a graphical interface.
 
 
+[​](#related-resources)
+
 Related resources
 
+
+[​](#platforms)
 
 Platforms
 
@@ -77,8 +95,10 @@ Platforms
 - [VS Code](/docs/en/vs-code): the Claude Code extension inside your editor
 - [JetBrains](/docs/en/jetbrains): the extension for IntelliJ, PyCharm, and other JetBrains IDEs
 - [Claude Code on the web](/docs/en/claude-code-on-the-web): cloud sessions that keep running when you disconnect
-- Mobile: the Claude app for [iOS](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684) and [Android](https://play.google.com/store/apps/details?id=com.anthropic.claude) for starting and monitoring tasks while away from your computer
+- [Mobile](/docs/en/mobile): the Claude app for [iOS](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684) and [Android](https://play.google.com/store/apps/details?id=com.anthropic.claude) for starting and monitoring tasks while away from your computer
 
+
+[​](#integrations)
 
 Integrations
 
@@ -89,6 +109,8 @@ Integrations
 - [Code Review](/docs/en/code-review): automatic review on every pull request
 - [Slack](/docs/en/slack): send tasks from team chat, get PRs back
 
+
+[​](#remote-access)
 
 Remote access
 

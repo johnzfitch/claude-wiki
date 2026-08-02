@@ -1,6 +1,6 @@
 # Agent SDK
 
-*44 documents*
+*51 documents*
 
 
 - [How the agent loop works - Claude API Docs](agent-sdk-agent-loop.md) - Understand the message lifecycle, tool execution, context window, and architecture that power your SDK agents.
@@ -46,4 +46,11 @@
 - [Ruby SDK - Claude API Docs](api-sdks-ruby.md) - Install and configure the Anthropic Ruby SDK with Sorbet types, streaming helpers, and connection pooling
 - [TypeScript SDK](api-sdks-typescript-1f3f5e1a7a.md) - Install and configure the Anthropic TypeScript SDK for Node.js, Deno, Bun, and browser environments
 - [TypeScript SDK - Claude API Docs](api-sdks-typescript.md) - Install and configure the Anthropic TypeScript SDK for Node.js, Deno, Bun, and browser environments
+- [C# SDK - Claude Platform Docs](cli-sdks-libraries-sdks-csharp-36116fed35.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Go SDK - Claude Platform Docs](cli-sdks-libraries-sdks-go-da6aac81d3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Java SDK - Claude Platform Docs](cli-sdks-libraries-sdks-java-7a179eb409.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [PHP SDK - Claude Platform Docs](cli-sdks-libraries-sdks-php-bf1820dae3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Python SDK - Claude Platform Docs](cli-sdks-libraries-sdks-python-c049b5bcea.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Ruby SDK - Claude Platform Docs](cli-sdks-libraries-sdks-ruby-bad489a6fa.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [TypeScript SDK - Claude Platform Docs](cli-sdks-libraries-sdks-typescript-98e3a9f720.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Track cost and usage](cost-tracking.md) - Learn how to track token usage, deduplicate parallel tool calls, and calculate costs with the Claude Agent SDK.

@@ -4,6 +4,245 @@ All documentation for Getting Started.
 
 
 ---
+## about-claude-models-introducing-claude-fable-5-and-claude-mythos-5-52f633c9de.md
+
+- [Managed Agents](/docs/en/managed-agents/overview)
+
+- [Admin](/docs/en/manage-claude/admin-api)
+
+- Resources
+  - [Best practices](/docs/en/about-claude/use-case-guides/overview)
+  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
+  - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
+  - [Release notes](/docs/en/release-notes/overview)
+
+API reference
+
+
+
+
+Console
+
+
+
+
+
+
+
+
+Search
+
+
+Models
+
+[Models overview](/docs/en/about-claude/models/overview)[Model IDs and versioning](/docs/en/about-claude/models/model-ids-and-versions)[Choosing a model](/docs/en/about-claude/models/choosing-a-model)[Introducing Claude Fable 5 and Claude Mythos 5](/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5)[What's new in Claude Sonnet 5](/docs/en/about-claude/models/whats-new-sonnet-5)[What's new in Claude Opus 5](/docs/en/about-claude/models/whats-new-opus-5)[Upgrade between model versions](/docs/en/about-claude/models/migration-guide)[Model deprecations](/docs/en/about-claude/model-deprecations)[Model cards](/docs/en/resources/overview)[System prompts](/docs/en/release-notes/system-prompts)[Pricing](/docs/en/about-claude/pricing)
+
+[](/login)
+
+
+
+
+Models & pricing
+
+Introducing Claude Fable 5 and Claude Mythos 5
+
+Models & pricing/Models
+
+# Introducing Claude Fable 5 and Claude Mythos 5
+
+
+
+
+Claude Fable 5 and Claude Mythos 5 capabilities, API changes, and availability.
+
+
+
+
+
+
+Access to Claude Fable 5 and Claude Mythos 5 has been restored. See [our statement](https://www.anthropic.com/news/redeploying-fable-5) for more information.
+
+Claude Fable 5 is Anthropic's most capable widely released model, built for the most demanding reasoning and long-horizon agentic work. Claude Mythos 5 shares the same capabilities and is available only in limited release through [Project Glasswing](https://anthropic.com/glasswing).
+
+The headline change for integrations: Claude Fable 5 includes safety classifiers that can decline requests. Claude Mythos 5 does not include these classifiers. If your integration calls Claude Fable 5, plan for three changes: new response handling for refusals, fallback options for retrying on another Claude model, and new billing rules. [Refusals, fallback, and billing on Claude Fable 5](#refusals-fallback-and-billing-on-claude-fable-5) summarizes all three.
+
+
+
+
+Models
+
+| Model           | API model ID      | Description                                                                                                                                   |
+|-----------------|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| Claude Fable 5  | `claude-fable-5`  | Anthropic's most capable widely released model, for the most demanding reasoning and long-horizon agentic work                                |
+| Claude Mythos 5 | `claude-mythos-5` | Shares Claude Fable 5's capabilities without the safety classifiers. Available through Project Glasswing. Successor to Claude Mythos Preview. |
+
+Claude Fable 5 and Claude Mythos 5 share the same specs and pricing:
+
+- **Context window and output:** a [1M token context window](/docs/en/build-with-claude/context-windows) by default, and up to 128k output tokens per request.
+- **Pricing:** \$10 USD per million input tokens and \$50 USD per million output tokens.
+
+For specs across all current models, see the [models overview](/docs/en/about-claude/models/overview).
+
+
+
+
+Refusals, fallback, and billing on Claude Fable 5
+
+Claude Fable 5 includes safety classifiers that can decline certain requests. Claude Mythos 5 does not include these classifiers, so this section applies to Claude Fable 5 only. The following sections summarize what refusals mean for your integration; each links to the full guide.
+
+
+
+
+Refusals
+
+When Claude Fable 5 declines a request, the Messages API returns `stop_reason: "refusal"` as a successful HTTP 200 response, not an error. The response also reports which classifier declined the request. See [Refusals and fallback](/docs/en/build-with-claude/refusals-and-fallback) for response shapes and handling guidance.
+
+
+
+
+Fallback
+
+A request that Claude Fable 5 refuses can usually be served by another Claude model. There are three ways to retry:
+
+- **Server-side:** Pass the `fallbacks` parameter to have the API retry for you, using its `"default"` mode for Anthropic's recommended models or naming your own (in beta on the Claude API). See [Server-side fallback](/docs/en/build-with-claude/refusals-and-fallback#server-side-fallback).
+- **Client-side:** Use the [SDK middleware](/docs/en/cli-sdks-libraries/middleware) to retry from the client on any platform. See [Client-side fallback](/docs/en/build-with-claude/refusals-and-fallback#client-side-fallback).
+- **Manual:** Build the retry yourself, on any platform and in any language. See [Fallback credit](/docs/en/build-with-claude/fallback-credit).
+
+
+
+
+Billing
+
+You are not billed for a request that is refused before any output is generated. When you retry on another model, [fallback credit](/docs/en/build-with-claude/fallback-credit) refunds the prompt-cache cost of switching, so you avoid paying that cost twice.
+
+
+
+
+Availability
+
+Claude Fable 5 and Claude Mythos 5 both become available on June 9, 2026:
+
+- **Claude Fable 5** is generally available on the Claude API, [Amazon Bedrock](/docs/en/build-with-claude/claude-in-amazon-bedrock), [Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws), [Google Cloud](/docs/en/build-with-claude/claude-on-vertex-ai), and [Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry).
+- **Claude Mythos 5** is not generally available: it is offered in limited availability to approved customers in [Project Glasswing](https://anthropic.com/glasswing). For access, contact your Anthropic, AWS, or Google Cloud account team. Customers without access to Claude Mythos 5 can use Claude Fable 5, which is generally available and offers the same capabilities.
+
+Claude Fable 5 and Claude Mythos 5 carry 30-day data retention and are not available under zero data retention: both are designated [Covered Models](https://support.claude.com/en/articles/15425695). See [Model-specific data retention requirements](/docs/en/manage-claude/api-and-data-retention#model-specific-data-retention-requirements).
+
+
+
+
+Working with Claude Fable 5 and Claude Mythos 5
+
+
+
+
+Prompting
+
+Claude Fable 5 responds to the same prompting techniques as other Claude models, with a few differences in how to structure long-context prompts and reasoning instructions. See [Prompting Claude Fable 5](/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5).
+
+
+
+
+Messages API on Claude Fable 5 and Claude Mythos 5
+
+
+
+
+Adaptive thinking is always on
+
+Claude Fable 5 and Claude Mythos 5 always have thinking enabled; passing `thinking: {"type": "disabled"}` is not supported. To reduce or otherwise control thinking depth, use the [effort](/docs/en/build-with-claude/effort) parameter.
+
+
+
+
+Raw thinking content is never returned
+
+The raw chain of thought is never returned on Claude Fable 5 and Claude Mythos 5. The `thinking.display` setting controls what thinking blocks contain instead:
+
+- `"summarized"` returns thinking blocks with a readable summary of the reasoning.
+- `"omitted"` (the default) returns thinking blocks with an empty `thinking` field.
+
+Pass thinking blocks back unchanged in multi-turn conversations on the same model. See [thinking output on Claude Fable 5 and Claude Mythos 5](/docs/en/build-with-claude/thinking#thinking-output-on-claude-fable-5-and-claude-mythos-5) for cross-model handling.
+
+
+
+
+Supported features
+
+At launch, Claude Fable 5 and Claude Mythos 5 support:
+
+- [Effort](/docs/en/build-with-claude/effort)
+- [Task budgets](/docs/en/build-with-claude/task-budgets) (beta: set the `task-budgets-2026-03-13` header)
+- The [memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)
+- [Code execution](/docs/en/agents-and-tools/tool-use/code-execution-tool)
+- [Programmatic tool calling](/docs/en/agents-and-tools/tool-use/programmatic-tool-calling)
+- Tool result clearing through [context editing](/docs/en/build-with-claude/context-editing) (beta: set the `context-management-2025-06-27` header)
+- [Compaction](/docs/en/build-with-claude/compaction)
+- [Vision](/docs/en/build-with-claude/vision)
+
+
+
+
+Migrating from earlier models
+
+Step-by-step instructions live in the migration guide:
+
+- From Claude Mythos Preview: see [Migrating from Claude Mythos Preview to Claude Mythos 5](/docs/en/about-claude/models/migration-guide#migrating-from-claude-mythos-preview).
+- From Claude Opus 4.8: see [Migrating from Claude Opus 4.8 to Claude Fable 5](/docs/en/about-claude/models/migration-guide#migrating-from-claude-opus-48).
+
+
+
+
+Next steps
+
+
+
+
+Migration guide
+
+Step-by-step upgrade instructions from Claude Opus 4.8 and Claude Mythos Preview.
+
+
+
+
+Models overview
+
+Specs and comparison for all current Claude models.
+
+
+Adaptive thinking
+
+The only thinking mode on Claude Fable 5 and Claude Mythos 5.
+
+
+Refusals and fallback
+
+How Claude Fable 5 declines requests, and how to retry on another model.
+
+
+Fallback credit
+
+Avoid paying the prompt-cache cost twice on a retry.
+
+
+Fallback and billing cookbook
+
+
+
+A worked end-to-end example of refusal handling, fallback, and billing.
+
+
+Effort
+
+Control thinking depth and cost on Claude Fable 5 and Claude Mythos 5.
+
+
+Prompting Claude Fable 5
+
+Fable-specific prompting techniques.
+
+
+---
 ## advanced-setup-claude-code-docs-0526bc1300.md
 
 # Advanced setup
@@ -1594,6 +1833,670 @@ Changes require Claude Code restart - hooks can't be hot-swapped.
 
 
 ---
+## financial-analysis-workflows-with-claude-ac8664c260.md
+
+# Financial analysis workflows with Claude
+
+Learn complete financial analysis workflows using a three-phase approach: retrieving data, analyzing information, and creating professional deliverables.
+
+- 
+
+
+  Finance
+
+- 
+
+
+  Claude.ai
+
+- 
+
+
+  Watch time
+
+  5
+
+  min
+
+  min
+
+- 
+
+
+  [Copy link](#)
+  https://claude.com/resources/tutorials/financial-analysis-workflows-with-claude
+
+This article demonstrates how to use Claude for complete financial analysis workflows, from data retrieval through final deliverables. Each workflow follows a three-phase approach: retrieving data from integrated sources, analyzing the information to generate insights, and creating professional outputs for decision-making.
+
+## Understanding the Workflow Approach
+
+### The Three-Phase Process
+
+Effective financial analysis with Claude follows a structured approach that mirrors traditional analytical workflows. The process begins with data retrieval from integrated sources, moves through systematic analysis of that data, and concludes with creation of professional deliverables. This structure ensures completeness while maintaining flexibility for different analytical objectives.
+
+1.  **Retrieve:** Pull data from integrated sources including Daloopa for SEC filings and fundamentals, and S&P Global for comprehensive market data.. The retrieval phase establishes the factual foundation for your analysis.**‍**
+2.  **Analyze:** Process and interpret the retrieved data to identify trends, calculate metrics, and generate insights. This phase transforms raw data into actionable intelligence through calculations, comparisons, and pattern recognition.**‍**
+3.  **Create:** Generate professional deliverables including investment memos, presentations, financial models, and interactive dashboards. The creation phase packages your analysis into formats suitable for decision-making and communication.
+
+### Setting Up Your Workspace
+
+Before beginning your workflow, establish a proper workspace to maintain context and organization:
+
+- Create a project for your analysis
+- Upload any reference documents such as previous analyses or style guides
+
+For detailed project setup instructions, see What are projects? The examples that follow assume you have the necessary integrations enabled and have created a project workspace.
+
+## Workflow 1: Single Company Investment Memo
+
+### Scenario Overview
+
+This workflow demonstrates creating an investment memo for a potential equity investment using publicly available data. The example uses Microsoft as the target company, but the approach applies to any public company with sufficient data coverage. The final output is a concise investment memo suitable for investment committee review or initial screening documentation.
+
+### Phase 1: Retrieve
+
+Begin by gathering comprehensive financial data from multiple sources. Start with fundamental data:
+
+Using Daloopa, retrieve Microsoft's revenue, operating margins, and free cash flow for the last 12 quarters. Also pull segment revenue breakdowns for the same period.
+
+This retrieval provides the core financial metrics needed to assess operational performance and cash generation. The segment data reveals which business units drive growth and profitability. After retrieving fundamental data, gather valuation perspectives:
+
+Using Kensho to access S&P Global data, identify Microsoft's main competitors from SEC filings and retrieve their revenue growth and operating margins for comparison. Also pull Microsoft's key business relationships including major customers and strategic partners.
+
+Combining data from multiple sources provides both quantitative metrics and competitive context. Daloopa supplies the raw financial data while Kensho adds competitive positioning through peer comparisons and business relationship mapping.
+
+### Phase 2: Analyze
+
+With data retrieved, move to analysis that transforms raw numbers into insights:
+
+Analyze the trends in Microsoft's cloud segment growth versus overall company growth. Calculate the free cash flow conversion rate and compare margins to the prior year. Also compare Microsoft's revenue growth and margins against the competitors we identified to assess relative performance. Identify any notable changes in segment mix and flag any customer concentration risks from the business relationships data.
+
+Claude processes the retrieved data to identify patterns and calculate key ratios. The analysis reveals whether cloud services are becoming a larger portion of the business, how efficiently the company converts earnings to cash, and whether profitability is improving or declining.
+
+Consider requesting additional analytical perspectives based on initial findings. If the cloud segment shows accelerating growth, you might ask Claude to analyze whether competitors are experiencing similar trends. If margins are expanding, request a comparison to peer margins to determine if this is company-specific or industry-wide.
+
+### Phase 3: Create
+
+Transform your analysis into a professional investment memo:
+
+Create a 2-page investment memo for Microsoft including: executive summary with investment recommendation, business overview with segment analysis, financial performance highlighting the trends we identified, valuation using fair value compared to current price, and key risks. Format as a Word document.
+
+The resulting memo synthesizes all previous analysis into a structured document.
+
+This workflow produces a professional investment memo suitable for initial screening or committee review, created entirely from publicly available data through Claude's integrations.
+
+## Workflow 2: Competitive Analysis Presentation
+
+### Scenario Overview
+
+This workflow creates a presentation comparing companies within a sector to identify the most attractive investment opportunity. The example analyzes SaaS companies, but the methodology applies to any sector where comparable metrics exist. The output is a presentation suitable for investment committee discussions or client meetings.
+
+### Phase 1: Retrieve
+
+Start by gathering comparable metrics across your peer group:
+
+Using Kensho, retrieve market cap, P/E ratios, revenue growth, and EBITDA margins from S&P Global datasets for these 3 SaaS companies: CRM, NOW, and DOCU for the last fiscal year.
+
+This establishes the baseline comparison metrics. Market cap provides size context, P/E ratios show relative valuation, revenue growth indicates momentum, and EBITDA margins reveal operational efficiency. After establishing the snapshot view, gather trend data:
+
+Also get their quarterly revenue for the last 8 quarters to analyze growth consistency.
+
+The quarterly data reveals whether growth is accelerating, decelerating, or remaining steady. This helps distinguish between companies with sustainable growth versus those experiencing temporary momentum.
+
+### Phase 2: Analyze
+
+Process the data to identify relative attractiveness:
+
+Rank these companies by revenue growth and margin expansion. Calculate the PEG ratio for each. Identify which companies are gaining market share based on relative growth rates. Flag any companies with declining margins.
+
+### Phase 3: Create
+
+Transform the comparative analysis into a presentation:
+
+Create a PowerPoint presentation with 6 slides: title slide, market overview with sector growth, comparative metrics table ranking all the companies, growth trajectory charts showing quarterly revenue trends, valuation comparison with P/E and PEG ratios, and investment recommendation slide highlighting the most attractive opportunity.
+
+**Note:** PowerPoint creation currently has limitations with complex formatting and firm-specific templates. You may need to apply final formatting manually.
+
+## Workflow 3: Portfolio Performance Review
+
+### Scenario Overview
+
+This workflow analyzes an existing portfolio to create performance reporting for quarterly reviews. The example uses a concentrated technology portfolio, but the approach scales to any holdings where data is available. The output is an interactive dashboard suitable for internal review or client reporting.
+
+### Phase 1: Retrieve
+
+Gather performance and fundamental data for all holdings:
+
+Using FactSet, retrieve the following for my technology holdings (MSFT, AAPL): total returns for 1-month, 3-month, YTD and 1-year periods, current price and 52-week high/low, latest quarterly revenue and earnings with year-over-year growth rates, forward P/E ratios and consensus analyst ratings, and any recent earnings surprises. These holdings represent 60% of my portfolio with initial investments made in Q1 2024.
+
+This provides data spanning performance metrics, valuation multiples, fundamental growth indicators, and forward-looking analyst sentiment.
+
+### Phase 2: Analyze
+
+Perform portfolio-level and position-level analysis:
+
+Calculate the weighted average portfolio return based on position sizes for each time period. Compare each holding's total return against the NASDAQ-100 index returns. Rank holdings by YTD performance and identify any laggards. Calculate which positions have beaten or missed earnings expectations in the last quarter. Assess relative valuation by comparing each stock's forward P/E to its 5-year average.
+
+This analysis provides multiple perspectives: weighted returns show overall portfolio performance across different time horizons, benchmark comparison reveals alpha generation, earnings surprise analysis indicates execution quality, and valuation assessment identifies potential rebalancing candidates.
+
+### Phase 3: Create
+
+Generate an interactive dashboard for the portfolio review:
+
+Create an interactive artifact showing: portfolio summary with weighted returns for each period and performance versus benchmark, individual position cards showing total return, consensus rating, forward P/E, and recent earnings surprise, a waterfall chart showing each position's contribution to total portfolio return, and a scatter plot comparing YTD returns against forward P/E ratios to identify value opportunities. Include drill-down capability for each holding to see detailed performance metrics.
+
+[Artifacts can be shared](https://support.claude.com/en/articles/9547008-discovering-publishing-customizing-and-sharing-artifacts#h_264285dcf3) with other members of your organization. The interactive nature allows stakeholders to explore the data without requiring multiple static reports.
+
+## Next Steps
+
+- Review integration guides to understand data availability for your specific use cases.
+- See [Prompting Strategies for Financial Analysis](https://support.claude.com/en/articles/12220277-prompting-strategies-for-financial-analysis) for techniques to optimize your workflows.
+- Test workflows with smaller datasets before scaling to full analyses.
+- Save successful prompt sequences as templates for recurring analyses.
+
+## Related tutorials
+
+[Install financial services plugins for Claude Cowork](/resources/tutorials/install-financial-services-plugins-for-cowork)
+
+Install financial services plugins for Claude Cowork
+
+Install financial services plugins for Claude Cowork
+
+Tutorial
+
+[Tutorial](/resources/tutorials/install-financial-services-plugins-for-cowork)
+
+Tutorial
+
+[How to build a plugin from scratch in Claude Cowork](/resources/tutorials/how-to-build-a-plugin-from-scratch-in-cowork)
+
+How to build a plugin from scratch in Claude Cowork
+
+How to build a plugin from scratch in Claude Cowork
+
+Tutorial
+
+[Tutorial](/resources/tutorials/how-to-build-a-plugin-from-scratch-in-cowork)
+
+Tutorial
+
+[Getting started with Claude in Excel](/resources/tutorials/getting-started-with-claude-in-excel)
+
+Getting started with Claude in Excel
+
+Getting started with Claude in Excel
+
+Tutorial
+
+[Tutorial](/resources/tutorials/getting-started-with-claude-in-excel)
+
+Tutorial
+
+[How to use Claude in Excel for accounting: Revenue model validation](/resources/tutorials/how-to-use-claude-in-excel-for-accounting-revenue-model-validation)
+
+How to use Claude in Excel for accounting: Revenue model validation
+
+How to use Claude in Excel for accounting: Revenue model validation
+
+Tutorial
+
+[Tutorial](/resources/tutorials/how-to-use-claude-in-excel-for-accounting-revenue-model-validation)
+
+Tutorial
+
+[Homepage](https://claude.com)
+
+Homepage
+
+
+Thank you! Your submission has been received!
+
+Oops! Something went wrong while submitting the form.
+
+Write
+
+[Button Text](#)
+
+Button Text
+
+Learn
+
+[Button Text](#)
+
+Button Text
+
+Code
+
+[Button Text](#)
+
+Button Text
+
+Write
+
+- Help me develop a unique voice for an audience
+
+
+  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+- Improve my writing style
+
+
+  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+- Brainstorm creative ideas
+
+
+  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+Learn
+
+- Explain a complex topic simply
+
+
+  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+- Help me make sense of these ideas
+
+
+  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+- Prepare for an exam or interview
+
+
+  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+Code
+
+- Explain a programming concept
+
+
+  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+- Look over my code and give me tips
+
+
+  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+- Vibe code with me
+
+
+  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+More
+
+- Write case studies
+
+
+  This is another test
+
+- Write grant proposals
+
+
+  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+- Write video scripts
+
+
+  this is a test
+
+[Anthropic](https://www.anthropic.com/)
+
+Anthropic
+
+© \[year\] Anthropic PBC
+
+Products
+
+- Claude
+
+  [Claude](/product/overview)
+  Claude
+
+- Claude Code
+
+  [Claude Code](/product/claude-code)
+  Claude Code
+
+- Claude Code for Enterprise
+
+  [Claude Code for Enterprise](/product/claude-code/enterprise)
+  Claude Code for Enterprise
+
+- Claude Cowork
+
+  [Claude Cowork](/product/cowork)
+  Claude Cowork
+
+- @Claude
+
+  [@Claude](/product/tag)
+  @Claude
+
+- Claude Design
+
+  [Claude Design](/product/design)
+  Claude Design
+
+- Claude Science
+
+  [Claude Science](/product/claude-science)
+  Claude Science
+
+- Claude Security
+
+  [Claude Security](/product/claude-security)
+  Claude Security
+
+- Download app
+
+  [Download app](/download)
+  Download app
+
+- Pricing
+
+  [Pricing](/pricing)
+  Pricing
+
+- Log in
+
+  [Log in](https://claude.ai/login)
+
+Features
+
+- Claude for Chrome
+
+  [Claude for Chrome](/claude-for-chrome)
+  Claude for Chrome
+
+- Claude for Microsoft 365
+
+  [Claude for Microsoft 365](/claude-for-microsoft-365)
+  Claude for Microsoft 365
+
+- Skills
+
+  [Skills](/skills)
+  Skills
+
+Models
+
+- Mythos
+
+  [Mythos](https://www.anthropic.com/claude/mythos)
+  Mythos
+
+- Fable
+
+  [Fable](https://www.anthropic.com/claude/fable)
+  Fable
+
+- Opus
+
+  [Opus](https://www.anthropic.com/claude/opus)
+  Opus
+
+- Sonnet
+
+  [Sonnet](https://www.anthropic.com/claude/sonnet)
+  Sonnet
+
+- Haiku
+
+  [Haiku](https://www.anthropic.com/claude/haiku)
+  Haiku
+
+Solutions
+
+- AI agents
+
+  [AI agents](/solutions/agents)
+  AI agents
+
+- Code modernization
+
+  [Code modernization](/solutions/code-modernization)
+  Code modernization
+
+- Coding
+
+  [Coding](/solutions/coding)
+  Coding
+
+- Customer support
+
+  [Customer support](/solutions/customer-support)
+  Customer support
+
+- Cybersecurity
+
+  [Cybersecurity](/solutions/cybersecurity)
+  Cybersecurity
+
+- Enterprise
+
+  [Enterprise](/solutions/enterprise)
+  Enterprise
+
+- Financial services
+
+  [Financial services](/solutions/financial-services)
+  Financial services
+
+- Government
+
+  [Government](/solutions/government)
+  Government
+
+- Healthcare
+
+  [Healthcare](/solutions/healthcare)
+  Healthcare
+
+- Higher education
+
+  [Higher education](/solutions/education)
+  Higher education
+
+- K-12 teachers
+
+  [K-12 teachers](/solutions/teachers)
+  K-12 teachers
+
+- Legal
+
+  [Legal](/solutions/legal)
+  Legal
+
+- Life sciences
+
+  [Life sciences](/solutions/life-sciences)
+  Life sciences
+
+- Nonprofits
+
+  [Nonprofits](/solutions/nonprofits)
+  Nonprofits
+
+- Small business
+
+  [Small business](/solutions/small-business)
+  Small business
+
+Claude Platform
+
+- Overview
+
+  [Overview](/platform/api)
+  Overview
+
+- Developer docs
+
+  [Developer docs](https://platform.claude.com/docs)
+  Developer docs
+
+- Pricing
+
+  [Pricing](https://claude.com/pricing#api)
+  Pricing
+
+- Ecosystem
+
+  [Ecosystem](/ecosystem)
+  Ecosystem
+
+- Marketplace
+
+  [Marketplace](/platform/marketplace)
+  Marketplace
+
+- Claude on AWS
+
+  [Claude on AWS](/partners/claude-on-aws)
+  Claude on AWS
+
+- Google Cloud
+
+  [Google Cloud](/partners/google-cloud)
+  Google Cloud
+
+- Microsoft Foundry
+
+  [Microsoft Foundry](/partners/microsoft-foundry)
+  Microsoft Foundry
+
+- Regional compliance
+
+  [Regional compliance](/regional-compliance)
+  Regional compliance
+
+- Console login
+
+  [Console login](https://platform.claude.com/)
+  Console login
+
+Resources
+
+- Blog
+
+  [Blog](/blog)
+  Blog
+
+- Claude partner network
+
+  [Claude partner network](/partners)
+  Claude partner network
+
+- Community
+
+  [Community](/community)
+  Community
+
+- Connectors
+
+  [Connectors](/connectors)
+  Connectors
+
+- Courses
+
+  [Courses](https://www.anthropic.com/learn)
+  Courses
+
+- Customer stories
+
+  [Customer stories](/customers)
+  Customer stories
+
+- Engineering at Anthropic
+
+  [Engineering at Anthropic](https://www.anthropic.com/engineering)
+  Engineering at Anthropic
+
+- Events
+
+  [Events](https://www.anthropic.com/events)
+  Events
+
+- Plugins
+
+  [Plugins](/plugins)
+  Plugins
+
+- Powered by Claude
+
+  [Powered by Claude](/partners/powered-by-claude)
+  Powered by Claude
+
+- Service partners
+
+  [Service partners](/partners/services)
+  Service partners
+
+- Tutorials
+
+  [Tutorials](/resources/tutorials)
+  Tutorials
+
+- Use cases
+
+  [Use cases](/resources/use-cases)
+  Use cases
+
+Company
+
+- Anthropic
+
+  [Anthropic](https://www.anthropic.com/)
+  Anthropic
+
+- Careers
+
+  [Careers](https://www.anthropic.com/careers)
+  Careers
+
+- Policy
+
+  [Policy](https://www.anthropic.com/policy)
+  Policy
+
+- Economic Futures
+
+  [Economic Futures](https://www.anthropic.com/economic-futures)
+  Economic Futures
+
+- Research
+
+  [Research](https://www.anthropic.com/research)
+  Research
+
+- News
+
+  [News](https://www.anthropic.com/news)
+  News
+
+- Policy on the AI Exponential
+
+
+---
 ## financial-analysis-workflows-with-claude.md
 
 - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
@@ -2707,6 +3610,262 @@ English (US)
 
 
 ---
+## get-started-558c50b1ab.md
+
+- [Managed Agents](/docs/en/managed-agents/overview)
+
+- [Admin](/docs/en/manage-claude/admin-api)
+
+- Resources
+  - [Best practices](/docs/en/about-claude/use-case-guides/overview)
+  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
+  - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
+  - [Release notes](/docs/en/release-notes/overview)
+
+API reference
+
+
+
+
+Console
+
+
+
+
+
+
+
+
+Search
+
+
+First steps
+
+[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)
+
+Building with Claude
+
+[Features overview](/docs/en/build-with-claude/overview)[Using the Messages API](/docs/en/build-with-claude/working-with-messages)[Stop reasons and fallback](/docs/en/build-with-claude/handling-stop-reasons)[Refusals and fallback](/docs/en/build-with-claude/refusals-and-fallback)[Fallback credit](/docs/en/build-with-claude/fallback-credit)
+
+Model capabilities
+
+[Effort](/docs/en/build-with-claude/effort)[Task budgets (beta)](/docs/en/build-with-claude/task-budgets)[Fast mode (research preview)](/docs/en/build-with-claude/fast-mode)[Structured outputs](/docs/en/build-with-claude/structured-outputs)[Citations](/docs/en/build-with-claude/citations)[Streaming Messages](/docs/en/build-with-claude/streaming)[Batch processing](/docs/en/build-with-claude/batch-processing)[Search results](/docs/en/build-with-claude/search-results)[Streaming refusals](/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals)[Multilingual support](/docs/en/build-with-claude/multilingual-support)[Embeddings](/docs/en/build-with-claude/embeddings)
+
+Thinking
+
+Tools
+
+[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
+
+Tool infrastructure
+
+[Tool reference](/docs/en/agents-and-tools/tool-use/tool-reference)[Manage tool context](/docs/en/agents-and-tools/tool-use/manage-tool-context)[Tool combinations](/docs/en/agents-and-tools/tool-use/tool-combinations)[Tool use with prompt caching](/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching)[Programmatic tool calling](/docs/en/agents-and-tools/tool-use/programmatic-tool-calling)[Fine-grained tool streaming](/docs/en/agents-and-tools/tool-use/fine-grained-tool-streaming)
+
+Context management
+
+[Context windows](/docs/en/build-with-claude/context-windows)[Compaction](/docs/en/build-with-claude/compaction)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics (beta)](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+
+Working with files
+
+[Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
+
+Images and vision
+
+Skills
+
+[Overview](/docs/en/agents-and-tools/agent-skills/overview)[Quickstart](/docs/en/agents-and-tools/agent-skills/quickstart)[Best practices](/docs/en/agents-and-tools/agent-skills/best-practices)[Skills for enterprise](/docs/en/agents-and-tools/agent-skills/enterprise)[Skills in the API](/docs/en/build-with-claude/skills-guide)
+
+MCP
+
+[Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)[MCP connector](/docs/en/agents-and-tools/mcp-connector)
+
+MCP tunnels
+
+Claude on cloud platforms
+
+[Amazon Bedrock (Opus 4.7 and later)](/docs/en/build-with-claude/claude-in-amazon-bedrock)[Amazon Bedrock (Opus 4.6 and earlier)](/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy)[Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)[Google Cloud](/docs/en/build-with-claude/claude-on-vertex-ai)[Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry)
+
+[](/login)
+
+
+
+
+Messages
+
+Quickstart
+
+Messages/First steps
+
+# Get started with Claude
+
+
+
+
+Make your first API call to Claude and build a simple web search assistant.
+
+
+
+
+
+
+
+Prerequisites
+
+- A [Claude Console account](https://platform.claude.com)
+- An [API key](/settings/keys)
+
+
+
+
+Call the API
+
+cURL
+
+cURL
+
+CLI
+
+CLI
+
+Python
+
+Python
+
+TypeScript
+
+TypeScript
+
+C#
+
+C#
+
+Go
+
+Go
+
+Java
+
+Java
+
+PHP
+
+PHP
+
+Ruby
+
+Ruby
+
+1.  1
+
+    Set your API key
+
+    Export your API key as an environment variable. The SDK reads `ANTHROPIC_API_KEY` automatically.
+
+    ``` shiki
+    export ANTHROPIC_API_KEY="your-api-key-here"
+    ```
+
+    
+
+2.  2
+
+    Create a project and install the SDK
+
+    ``` shiki
+    mkdir claude-quickstart && cd claude-quickstart
+    python3 -m venv .venv && source .venv/bin/activate
+    pip install anthropic
+    ```
+
+    
+
+3.  3
+
+    Create your code
+
+    Create a file called `quickstart.py`:
+
+    Python
+
+    
+
+    ``` shiki
+    import anthropic
+
+    client = anthropic.Anthropic()
+
+    message = client.messages.create(
+        model="claude-opus-5",
+        max_tokens=1000,
+        messages=[
+            {
+                "role": "user",
+                "content": "What should I search for to find the latest developments in renewable energy?",
+            }
+        ],
+    )
+
+    for block in message.content:
+        if block.type == "text":
+            print(block.text)
+    ```
+
+4.  4
+
+    Run your code
+
+    ``` shiki
+    python quickstart.py
+    ```
+
+    
+
+    Output
+
+    
+
+    ``` block
+    Here are some effective search strategies to find the latest developments in renewable energy:
+
+    ## General Search Terms
+    - "Renewable energy news 2025"
+    - ...
+    ```
+
+
+
+
+Next steps
+
+You made your first API call. Next, learn the Messages API patterns you'll use in every Claude integration.
+
+
+Working with the Messages API
+
+Learn multi-turn conversations, system prompts, stop reasons, and other core patterns.
+
+Once you're comfortable with the basics, explore further:
+
+
+Models overview
+
+Compare Claude models by capability and cost.
+
+
+Features overview
+
+Browse all Claude capabilities: tools, context management, structured outputs, and more.
+
+
+
+
+Client SDKs
+
+Reference documentation for Python, TypeScript, C#, and other client libraries.
+
+
+---
 ## get-started-8965568146.md
 
 # Get started with Claude
@@ -3222,6 +4381,108 @@ Browse all Claude capabilities: tools, context management, structured outputs, a
 Client SDKs
 
 Reference documentation for Python, TypeScript, Java, and other client libraries.
+
+
+---
+## getting-started-with-claude-c859bfcfe6.md
+
+# Get started with Claude
+
+June 2, 2026
+
+
+## What is Claude?
+
+Claude is a large language model (LLM) built by Anthropic. It's trained to be a helpful, honest, and harmless assistant with a conversational tone.
+
+## How to access Claude
+
+You can access Claude through several platforms:
+
+- **Web**: Visit **[claude.ai](https://claude.ai/)** to chat with Claude in a web browser.
+
+- **Desktop**: **[Download Claude Desktop](https://claude.ai/download)** for Mac or Windows.
+
+- **Mobile**: Download Claude for iOS or Android to chat on your mobile device.
+
+## Supported locations
+
+You must be in one of our **[supported locations](https://support.claude.com/en/articles/8461763-where-can-i-access-claude)** to access Claude.
+
+## Is there an age requirement to use Claude?
+
+You must be at least 18 years old to use our services.
+
+## How to talk to Claude
+
+### What is a prompt?
+
+You use **prompts** to communicate with Claude. The best approach is to speak to Claude like you would a coworker or friend - naturally and conversationally. Your prompts can range from simple questions to complex requests:
+
+- **Simple questions**: "How do I hang a picture frame in my room?"
+
+- **Complex requests**: Multi-step projects, analysis, creative writing, coding, or technical tasks.
+
+### Use the Claude chat interface
+
+Type your prompt into the chat interface and click the submit button to start a conversation with Claude. You can click the "+" button in the lower left or type "/" to view additional options and commands:
+
+
+------------------------------------------------------------------------
+
+## Understanding Claude's capabilities
+
+### Which model am I talking to?
+
+The model you're currently chatting with is displayed either below your text input (on web and desktop) or at the top of your screen (on mobile). You can click on the model you're using to open the model selector and switch to another available model.
+
+You can also choose how much effort Claude puts into each response and whether it uses extended thinking. Learn more about **[changing the model, effort, and thinking settings](https://support.claude.com/en/articles/8664678)**.
+
+### Can I chat with Claude in different languages?
+
+Claude has extensive training in English and performs well in many other common languages. It also has some ability to communicate in less common languages and has extensive knowledge of programming languages.
+
+For instructions to select a language in your settings, see **[How to use Claude in your preferred language](https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language).**
+
+### Are there any usage limits or limits on chat length?
+
+While using the free Claude plan, there is a session-based usage limit that will reset every five hours. Also, the number of messages you can send will vary based on demand, and we may impose other types of usage limits to ensure fair access to all users. Claude will notify you when you’ve reached your limit, or if your prompt exceeds the available context window.
+
+For more information about usage and length limits, refer to **[How do usage and length limits work?](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work)**
+
+### How do I increase my usage limits?
+
+We also have several paid subscriptions that offer additional usage. For more information, view our guide on **[Choosing a Claude plan](https://support.claude.com/en/articles/11049762-choosing-a-claude-plan)**.
+
+### Can I import my conversation history from another AI provider?
+
+No, it's not possible to import conversation history from another AI provider into Claude at this time. However, Free, Pro, and Max users can use the memory import feature to transfer memory from other AI providers into Claude. For more information, see **[Import and export your memory from Claude](https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude)**.
+
+------------------------------------------------------------------------
+
+## Tips for getting started
+
+1.  **Start simple**: Begin with straightforward questions to get familiar with how Claude responds.
+
+2.  **Be specific**: The more specific your request, the better Claude can assist you.
+
+3.  **Iterate**: Don't hesitate to refine your prompts or ask follow-up questions.
+
+4.  **Explore**: Try different types of tasks - from having Claude answer basic questions to using it as a collaboration partner for more involved projects.
+
+------------------------------------------------------------------------
+
+## Next steps
+
+Once you've started using Claude, you can:
+
+- **[Customize your appearance settings](https://support.claude.com/en/articles/8887527-customizing-your-appearance-settings)**
+
+- **[Explore Claude’s personalization features](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features)**
+
+- Learn more about designing effective prompts in our **[prompt engineering documentation](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)**.
+
+- For additional features and more usage, consider **[upgrading to a paid plan](https://support.claude.com/en/articles/11049762-choosing-a-claude-plan)**.
 
 
 ---
@@ -4254,6 +5515,624 @@ English (US)
 
 
 ---
+## getting-started-with-claude-for-nonprofits-3b7f808ae2.md
+
+# Getting started with Claude for nonprofits
+
+Learn how to access Claude's nonprofit pricing, connect to fundraising and donor management tools, and get your team started.
+
+- 
+
+
+  Nonprofits
+
+- 
+
+
+  Claude.ai
+
+- 
+
+
+  Watch time
+
+  5
+
+  min
+
+  min
+
+- 
+
+
+  [Copy link](#)
+  https://claude.com/resources/tutorials/getting-started-with-claude-for-nonprofits
+
+Claude for nonprofits enhances mission-driven organizations with specialized capabilities, connecting to donor management platforms, foundation research databases, and collaboration tools while maintaining transparency and accountability. Learn more on the [nonprofit solutions page](https://claude.com/solutions/nonprofits).
+
+## How to access nonprofit tools and features
+
+Claude for nonprofits is available on two plans:
+
+- **Team plan:** \$8/user/month
+- **Enterprise plan:** \$10/user/month
+
+Both plans include access to the same models as our Team and Enterprise offerings, with a minimum of 2 seats for teams under 150.
+
+To get started, verify your nonprofit status through our partner Goodstack by completing [this short form](https://validate.poweredbypercent.com/anthropic). The verification process takes 2–3 minutes for Team plans. For Enterprise pricing, [contact our sales team](https://claude.com/contact-sales/nonprofits).
+
+## Nonprofit operations and fundraising connectors
+
+Claude connects to three nonprofit-specific connectors through the Model Context Protocol (MCP):
+
+- [**Benevity**](https://benevity.com/)**:** Access a database of 2.4M+ validated nonprofits for cause discovery and research
+- [**Blackbaud**](https://www.blackbaud.com/)**:** Connect to Raiser's Edge NXT for donor records, gift history, events, and personalized communications
+- [**Candid**](https://candid.org/)**:** Search 1.9M+ nonprofits and foundations with detailed profiles, financials, and grant data
+
+Additional connectors include Microsoft 365, Gmail, Google Drive, Asana, Slack, and HubSpot. Browse all available connectors in the [connector directory](https://claude.com/connectors).
+
+## AI fluency for nonprofits
+
+The [AI fluency for nonprofits course](https://anthropic.skilljar.com/ai-fluency-for-nonprofits) covers responsible AI adoption, practical use examples, and organizational implementation guidance. Includes a shareable certificate of completion.
+
+## Common nonprofit use cases
+
+Explore the full [nonprofit use case library](https://claude.com/resources/use-cases/category/nonprofits) for inspiration, including:
+
+- Program design and evaluation
+- AI policy templates for your organization
+- Data visualization and reporting
+- Grant writing and donor communications
+- Research and landscape analysis
+
+## Frequently asked questions
+
+#### Who is eligible?
+
+501(c)(3) organizations, K–12 schools, and qualifying healthcare organizations.
+
+#### Who is not eligible?
+
+Government agencies, political campaigns, higher education institutions, and healthcare systems.
+
+#### How does validation work?
+
+We partner with [Goodstack](https://validate.poweredbypercent.com/anthropic) for nonprofit verification. Team plan validation takes 2–3 minutes. If you have issues with verification, [contact Goodstack](https://help.goodstack.org/hc/en-us).
+
+#### How long does the discount last?
+
+The nonprofit discount remains active as long as your organization maintains its nonprofit status.
+
+#### What if I already have a full-priced account?
+
+Go to [Admin settings \> Billing](https://claude.ai/admin-settings/billing) to update your plan, or [reach out to our support team](https://support.claude.com/en/articles/9015913-how-to-get-support).
+
+#### Is my data used for training?
+
+*Note: By default, Anthropic does not use data from Team or Enterprise accounts to train models.* Learn more at our [Privacy Center](https://privacy.claude.com/en/collections/10672411-data-handling-retention) and [Trust Center](https://trust.anthropic.com/).
+
+#### Can I get a tax exemption?
+
+Submit your tax exemption certificate through [support](https://support.claude.com/en/articles/9015913-how-to-get-support) to receive a refund and apply the exemption to future invoices.
+
+#### What about organizations with fewer than five employees?
+
+Individual users can access Claude Pro at \$20/month. Explore the [AI fluency for nonprofits course](https://anthropic.skilljar.com/ai-fluency-for-nonprofits) and [nonprofit use cases](https://claude.com/resources/use-cases/category/nonprofits) to get started.
+
+#### What support and training is available?
+
+Visit the [use case library](https://claude.com/resources/use-cases/category/nonprofits) and [help center](https://support.claude.com/en/) for resources and guidance.
+
+## Troubleshooting
+
+- **Discount link not working:** Clear your browser cache and try again in an incognito window. If the issue persists, [contact support](https://support.claude.com/en/articles/9015913-how-to-get-support).
+- **Team plan option greyed out:** Make sure you're signed in to the correct account and have admin permissions
+- **Email domain questions:** All team members don't need the same domain. Learn about [allowed email domains](https://support.claude.com/en/articles/13325567-account-management-faqs#h_b54c41c86c).
+- **Connecting tools:** Learn how to [browse and connect tools from the directory](https://support.claude.com/en/articles/11724452-using-the-connectors-directory-to-extend-claude-s-capabilities).
+
+## Related tutorials
+
+[Using the Candid connector in Claude](/resources/tutorials/using-the-candid-connector-in-claude)
+
+Using the Candid connector in Claude
+
+Using the Candid connector in Claude
+
+Tutorial
+
+[Tutorial](/resources/tutorials/using-the-candid-connector-in-claude)
+
+Tutorial
+
+[Using the Blackbaud connector in Claude](/resources/tutorials/using-the-blackbaud-connector-in-claude)
+
+Using the Blackbaud connector in Claude
+
+Using the Blackbaud connector in Claude
+
+Tutorial
+
+[Tutorial](/resources/tutorials/using-the-blackbaud-connector-in-claude)
+
+Tutorial
+
+[Using the Benevity connector in Claude](/resources/tutorials/using-the-benevity-connector-in-claude)
+
+Using the Benevity connector in Claude
+
+Using the Benevity connector in Claude
+
+Tutorial
+
+[Tutorial](/resources/tutorials/using-the-benevity-connector-in-claude)
+
+Tutorial
+
+[Claude for nonprofits partnership guide for all users](/resources/tutorials/claude-for-nonprofits-partnership-guide-for-all-users)
+
+Claude for nonprofits partnership guide for all users
+
+Claude for nonprofits partnership guide for all users
+
+Tutorial
+
+[Tutorial](/resources/tutorials/claude-for-nonprofits-partnership-guide-for-all-users)
+
+Tutorial
+
+[Homepage](https://claude.com)
+
+Homepage
+
+
+Thank you! Your submission has been received!
+
+Oops! Something went wrong while submitting the form.
+
+Write
+
+[Button Text](#)
+
+Button Text
+
+Learn
+
+[Button Text](#)
+
+Button Text
+
+Code
+
+[Button Text](#)
+
+Button Text
+
+Write
+
+- Help me develop a unique voice for an audience
+
+
+  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+- Improve my writing style
+
+
+  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+- Brainstorm creative ideas
+
+
+  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+Learn
+
+- Explain a complex topic simply
+
+
+  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+- Help me make sense of these ideas
+
+
+  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+- Prepare for an exam or interview
+
+
+  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+Code
+
+- Explain a programming concept
+
+
+  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+- Look over my code and give me tips
+
+
+  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+- Vibe code with me
+
+
+  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+More
+
+- Write case studies
+
+
+  This is another test
+
+- Write grant proposals
+
+
+  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
+    
+  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
+
+- Write video scripts
+
+
+  this is a test
+
+[Anthropic](https://www.anthropic.com/)
+
+Anthropic
+
+© \[year\] Anthropic PBC
+
+Products
+
+- Claude
+
+  [Claude](/product/overview)
+  Claude
+
+- Claude Code
+
+  [Claude Code](/product/claude-code)
+  Claude Code
+
+- Claude Code for Enterprise
+
+  [Claude Code for Enterprise](/product/claude-code/enterprise)
+  Claude Code for Enterprise
+
+- Claude Cowork
+
+  [Claude Cowork](/product/cowork)
+  Claude Cowork
+
+- @Claude
+
+  [@Claude](/product/tag)
+  @Claude
+
+- Claude Design
+
+  [Claude Design](/product/design)
+  Claude Design
+
+- Claude Science
+
+  [Claude Science](/product/claude-science)
+  Claude Science
+
+- Claude Security
+
+  [Claude Security](/product/claude-security)
+  Claude Security
+
+- Download app
+
+  [Download app](/download)
+  Download app
+
+- Pricing
+
+  [Pricing](/pricing)
+  Pricing
+
+- Log in
+
+  [Log in](https://claude.ai/login)
+
+Features
+
+- Claude for Chrome
+
+  [Claude for Chrome](/claude-for-chrome)
+  Claude for Chrome
+
+- Claude for Microsoft 365
+
+  [Claude for Microsoft 365](/claude-for-microsoft-365)
+  Claude for Microsoft 365
+
+- Skills
+
+  [Skills](/skills)
+  Skills
+
+Models
+
+- Mythos
+
+  [Mythos](https://www.anthropic.com/claude/mythos)
+  Mythos
+
+- Fable
+
+  [Fable](https://www.anthropic.com/claude/fable)
+  Fable
+
+- Opus
+
+  [Opus](https://www.anthropic.com/claude/opus)
+  Opus
+
+- Sonnet
+
+  [Sonnet](https://www.anthropic.com/claude/sonnet)
+  Sonnet
+
+- Haiku
+
+  [Haiku](https://www.anthropic.com/claude/haiku)
+  Haiku
+
+Solutions
+
+- AI agents
+
+  [AI agents](/solutions/agents)
+  AI agents
+
+- Code modernization
+
+  [Code modernization](/solutions/code-modernization)
+  Code modernization
+
+- Coding
+
+  [Coding](/solutions/coding)
+  Coding
+
+- Customer support
+
+  [Customer support](/solutions/customer-support)
+  Customer support
+
+- Cybersecurity
+
+  [Cybersecurity](/solutions/cybersecurity)
+  Cybersecurity
+
+- Enterprise
+
+  [Enterprise](/solutions/enterprise)
+  Enterprise
+
+- Financial services
+
+  [Financial services](/solutions/financial-services)
+  Financial services
+
+- Government
+
+  [Government](/solutions/government)
+  Government
+
+- Healthcare
+
+  [Healthcare](/solutions/healthcare)
+  Healthcare
+
+- Higher education
+
+  [Higher education](/solutions/education)
+  Higher education
+
+- K-12 teachers
+
+  [K-12 teachers](/solutions/teachers)
+  K-12 teachers
+
+- Legal
+
+  [Legal](/solutions/legal)
+  Legal
+
+- Life sciences
+
+  [Life sciences](/solutions/life-sciences)
+  Life sciences
+
+- Nonprofits
+
+  [Nonprofits](/solutions/nonprofits)
+  Nonprofits
+
+- Small business
+
+  [Small business](/solutions/small-business)
+  Small business
+
+Claude Platform
+
+- Overview
+
+  [Overview](/platform/api)
+  Overview
+
+- Developer docs
+
+  [Developer docs](https://platform.claude.com/docs)
+  Developer docs
+
+- Pricing
+
+  [Pricing](https://claude.com/pricing#api)
+  Pricing
+
+- Ecosystem
+
+  [Ecosystem](/ecosystem)
+  Ecosystem
+
+- Marketplace
+
+  [Marketplace](/platform/marketplace)
+  Marketplace
+
+- Claude on AWS
+
+  [Claude on AWS](/partners/claude-on-aws)
+  Claude on AWS
+
+- Google Cloud
+
+  [Google Cloud](/partners/google-cloud)
+  Google Cloud
+
+- Microsoft Foundry
+
+  [Microsoft Foundry](/partners/microsoft-foundry)
+  Microsoft Foundry
+
+- Regional compliance
+
+  [Regional compliance](/regional-compliance)
+  Regional compliance
+
+- Console login
+
+  [Console login](https://platform.claude.com/)
+  Console login
+
+Resources
+
+- Blog
+
+  [Blog](/blog)
+  Blog
+
+- Claude partner network
+
+  [Claude partner network](/partners)
+  Claude partner network
+
+- Community
+
+  [Community](/community)
+  Community
+
+- Connectors
+
+  [Connectors](/connectors)
+  Connectors
+
+- Courses
+
+  [Courses](https://www.anthropic.com/learn)
+  Courses
+
+- Customer stories
+
+  [Customer stories](/customers)
+  Customer stories
+
+- Engineering at Anthropic
+
+  [Engineering at Anthropic](https://www.anthropic.com/engineering)
+  Engineering at Anthropic
+
+- Events
+
+  [Events](https://www.anthropic.com/events)
+  Events
+
+- Plugins
+
+  [Plugins](/plugins)
+  Plugins
+
+- Powered by Claude
+
+  [Powered by Claude](/partners/powered-by-claude)
+  Powered by Claude
+
+- Service partners
+
+  [Service partners](/partners/services)
+  Service partners
+
+- Tutorials
+
+  [Tutorials](/resources/tutorials)
+  Tutorials
+
+- Use cases
+
+  [Use cases](/resources/use-cases)
+  Use cases
+
+Company
+
+- Anthropic
+
+  [Anthropic](https://www.anthropic.com/)
+  Anthropic
+
+- Careers
+
+  [Careers](https://www.anthropic.com/careers)
+  Careers
+
+- Policy
+
+  [Policy](https://www.anthropic.com/policy)
+  Policy
+
+- Economic Futures
+
+  [Economic Futures](https://www.anthropic.com/economic-futures)
+  Economic Futures
+
+- Research
+
+  [Research](https://www.anthropic.com/research)
+  Research
+
+- News
+
+  [News](https://www.anthropic.com/news)
+  News
+
+- Policy on the AI Exponential
+
+
+---
 ## getting-started-with-claude.md
 
 # Getting started with Claude
@@ -4453,6 +6332,249 @@ Claude can assist with many tasks that involve text, code, and images.
     Check the status of Anthropic services.
   </Card>
 </CardGroup>
+
+---
+## intro-5b59d89469.md
+
+- [Managed Agents](/docs/en/managed-agents/overview)
+
+- [Admin](/docs/en/manage-claude/admin-api)
+
+- Resources
+  - [Best practices](/docs/en/about-claude/use-case-guides/overview)
+  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
+  - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
+  - [Release notes](/docs/en/release-notes/overview)
+
+API reference
+
+
+
+
+Console
+
+
+
+
+
+
+
+
+Search
+
+
+First steps
+
+[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)
+
+Building with Claude
+
+[Features overview](/docs/en/build-with-claude/overview)[Using the Messages API](/docs/en/build-with-claude/working-with-messages)[Stop reasons and fallback](/docs/en/build-with-claude/handling-stop-reasons)[Refusals and fallback](/docs/en/build-with-claude/refusals-and-fallback)[Fallback credit](/docs/en/build-with-claude/fallback-credit)
+
+Model capabilities
+
+[Effort](/docs/en/build-with-claude/effort)[Task budgets (beta)](/docs/en/build-with-claude/task-budgets)[Fast mode (research preview)](/docs/en/build-with-claude/fast-mode)[Structured outputs](/docs/en/build-with-claude/structured-outputs)[Citations](/docs/en/build-with-claude/citations)[Streaming Messages](/docs/en/build-with-claude/streaming)[Batch processing](/docs/en/build-with-claude/batch-processing)[Search results](/docs/en/build-with-claude/search-results)[Streaming refusals](/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals)[Multilingual support](/docs/en/build-with-claude/multilingual-support)[Embeddings](/docs/en/build-with-claude/embeddings)
+
+Thinking
+
+Tools
+
+[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
+
+Tool infrastructure
+
+[Tool reference](/docs/en/agents-and-tools/tool-use/tool-reference)[Manage tool context](/docs/en/agents-and-tools/tool-use/manage-tool-context)[Tool combinations](/docs/en/agents-and-tools/tool-use/tool-combinations)[Tool use with prompt caching](/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching)[Programmatic tool calling](/docs/en/agents-and-tools/tool-use/programmatic-tool-calling)[Fine-grained tool streaming](/docs/en/agents-and-tools/tool-use/fine-grained-tool-streaming)
+
+Context management
+
+[Context windows](/docs/en/build-with-claude/context-windows)[Compaction](/docs/en/build-with-claude/compaction)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics (beta)](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+
+Working with files
+
+[Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
+
+Images and vision
+
+Skills
+
+[Overview](/docs/en/agents-and-tools/agent-skills/overview)[Quickstart](/docs/en/agents-and-tools/agent-skills/quickstart)[Best practices](/docs/en/agents-and-tools/agent-skills/best-practices)[Skills for enterprise](/docs/en/agents-and-tools/agent-skills/enterprise)[Skills in the API](/docs/en/build-with-claude/skills-guide)
+
+MCP
+
+[Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)[MCP connector](/docs/en/agents-and-tools/mcp-connector)
+
+MCP tunnels
+
+Claude on cloud platforms
+
+[Amazon Bedrock (Opus 4.7 and later)](/docs/en/build-with-claude/claude-in-amazon-bedrock)[Amazon Bedrock (Opus 4.6 and earlier)](/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy)[Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)[Google Cloud](/docs/en/build-with-claude/claude-on-vertex-ai)[Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry)
+
+[](/login)
+
+
+
+
+Messages
+
+Intro to Claude
+
+Messages/First steps
+
+# Intro to Claude
+
+
+
+
+Claude is a highly performant, trustworthy, and intelligent AI platform built by Anthropic. Claude excels at tasks involving language, reasoning, analysis, coding, and more.
+
+
+
+
+
+
+The latest generation of Claude models:
+
+**Claude Fable 5** - Next-generation intelligence for long-running agents. Read the [Claude Fable 5 and Claude Mythos 5 announcement](https://www.anthropic.com/news/claude-fable-5-mythos-5).
+
+**Claude Mythos 5** - Shares Claude Fable 5's capabilities without the safety classifiers. Available in limited release through [Project Glasswing](https://anthropic.com/glasswing).
+
+**Claude Opus 5** - For complex agentic coding and enterprise work. Read the [Claude Opus 5 announcement](https://www.anthropic.com/news/claude-opus-5).
+
+**Claude Sonnet 5** - Frontier intelligence at scale, built for coding, agents, and enterprise workflows. Read the [Claude Sonnet 5 announcement](https://www.anthropic.com/news/claude-sonnet-5).
+
+**Claude Haiku 4.5** - Fastest model with near-frontier intelligence. Read the [Claude Haiku 4.5 announcement](https://www.anthropic.com/news/claude-haiku-4-5).
+
+
+
+Looking to chat with Claude? Visit [claude.ai](https://claude.ai).
+
+Anthropic offers two ways to build with Claude, each suited to different use cases:
+
+|                | Messages API                                                          | Claude Managed Agents                                                     |
+|----------------|-----------------------------------------------------------------------|---------------------------------------------------------------------------|
+| **What it is** | Direct model prompting access                                         | Pre-built, configurable agent harness that runs in managed infrastructure |
+| **Best for**   | Custom agent loops and fine-grained control                           | Long-running tasks and asynchronous work                                  |
+| **Learn more** | [Messages API docs](/docs/en/build-with-claude/working-with-messages) | [Claude Managed Agents docs](/docs/en/managed-agents/overview)            |
+
+
+
+
+Recommended path for new developers
+
+Follow these steps to go from zero to a working Claude integration.
+
+1.  1
+
+    Make your first API call
+
+    Set up your environment, install an SDK, and send your first message to Claude.
+
+    [Go to the quickstart](/docs/en/get-started)
+
+2.  2
+
+    Understand the Messages API
+
+    Learn the core request and response structure, including multi-turn conversations, system prompts, and stop reasons.
+
+    [Read the Messages API guide](/docs/en/build-with-claude/working-with-messages)
+
+3.  3
+
+    Choose the right model
+
+    Compare Claude models by capability and cost to pick the best fit for your use case.
+
+    [See the models overview](/docs/en/about-claude/models/overview)
+
+4.  4
+
+    Explore features and tools
+
+    Discover what Claude can do: extended thinking, web search, file handling, structured outputs, and more.
+
+    [Browse the features overview](/docs/en/build-with-claude/overview)
+
+------------------------------------------------------------------------
+
+
+
+
+Develop with Claude
+
+Anthropic provides developer tools to help you build and scale applications with Claude.
+
+[](/)
+
+
+
+Developer Console
+
+Prototype and test prompts in your browser with the Workbench.
+
+
+
+
+API Reference
+
+Explore the full Claude API and client SDK documentation.
+
+
+Claude Cookbook
+
+
+
+Learn with interactive Jupyter notebooks covering PDFs, embeddings, and more.
+
+------------------------------------------------------------------------
+
+
+
+
+Key capabilities
+
+Claude can assist with many tasks that involve text, code, and images.
+
+
+
+
+Text and code generation
+
+Summarize text, answer questions, extract data, translate text, and explain and generate code.
+
+
+
+
+Vision
+
+Process and analyze visual input and generate text and code from images.
+
+------------------------------------------------------------------------
+
+
+
+
+Support
+
+
+
+
+Help Center
+
+
+
+Find answers to frequently asked account and billing questions.
+
+
+
+
+Service Status
+
+
+
+Check the status of Anthropic services.
+
 
 ---
 ## intro.md
@@ -5468,20 +7590,36 @@ Claude Code works across your development environment: in your terminal, in your
 ---
 ## quickstart-claude-code-docs-a21b84bdea.md
 
+## On this page
+
+- [Before you begin](#before-you-begin)
+- [Step 1: Install Claude Code](#step-1-install-claude-code)
+- [Step 2: Log in to your account](#step-2-log-in-to-your-account)
+- [Step 3: Start your first session](#step-3-start-your-first-session)
+- [Step 4: Ask your first question](#step-4-ask-your-first-question)
+- [Step 5: Make your first code change](#step-5-make-your-first-code-change)
+- [Step 6: Use Git with Claude Code](#step-6-use-git-with-claude-code)
+- [Step 7: Fix a bug or add a feature](#step-7-fix-a-bug-or-add-a-feature)
+- [Step 8: Test out other common workflows](#step-8-test-out-other-common-workflows)
+- [Essential commands](#essential-commands)
+- [Pro tips for beginners](#pro-tips-for-beginners)
+- [What’s next?](#what%E2%80%99s-next)
+- [Getting help](#getting-help)
+
+Getting started
+
 # Quickstart
 
+Copy pageCopy page
 
 Welcome to Claude Code!
 
-
-> ## Documentation Index
->
-> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
->
-> Use this file to discover all available pages before exploring further.
+Copy pageCopy page
 
 This quickstart guide will have you using AI-powered coding assistance in a few minutes. By the end, you’ll understand how to use Claude Code for common development tasks.
 
+
+[​](#before-you-begin)
 
 Before you begin
 
@@ -5494,6 +7632,8 @@ Make sure you have:
 
 This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](/docs/en/desktop), in [VS Code](/docs/en/vs-code) and [JetBrains IDEs](/docs/en/jetbrains), in [Slack](/docs/en/slack), and in CI/CD with [GitHub Actions](/docs/en/github-actions) and [GitLab](/docs/en/gitlab-ci-cd). See [all interfaces](/docs/en/overview#use-claude-code-everywhere).
 
+
+[​](#step-1-install-claude-code)
 
 Step 1: Install Claude Code
 
@@ -5523,7 +7663,7 @@ irm https://claude.ai/install.ps1 | iex
 curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
-If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.[Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead. WSL setups do not need Git for Windows.
+If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.If the install command fails with `syntax error near unexpected token '<'`, a `403`, or another curl error, see [Troubleshoot installation](/docs/en/troubleshoot-install#find-your-error) to match the error to a fix and for alternative install methods.[Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead. WSL setups do not need Git for Windows.
 
 Native installations automatically update in the background to keep you on the latest version.
 
@@ -5541,31 +7681,42 @@ winget install Anthropic.ClaudeCode
 
 WinGet installations do not auto-update. Run `winget upgrade Anthropic.ClaudeCode` periodically to get the latest features and security fixes.
 
-You can also install with [apt, dnf, or apk](/docs/en/setup#install-with-linux-package-managers) on Debian, Fedora, RHEL, and Alpine.
+You can also install with [apt, dnf, or apk](/docs/en/setup#install-with-linux-package-managers) on Debian, Fedora, RHEL, and Alpine. To confirm the installation worked, run:
 
+```python
+claude --version
+```
+
+The command prints a version number followed by `(Claude Code)`.
+
+
+[​](#step-2-log-in-to-your-account)
 
 Step 2: Log in to your account
 
-Claude Code requires an account to use. When you start an interactive session with the `claude` command, you’ll need to log in:
+Claude Code requires an account to use. Start an interactive session with the `claude` command and you’ll be prompted to log in on first use:
 
 ```python
 claude
-# You'll be prompted to log in on first use
 ```
+
+For Claude subscription or Console accounts, follow the prompts to complete authentication in your browser. If you’ve set the `ANTHROPIC_API_KEY` environment variable, Claude Code skips the login prompt and asks you to approve the key instead. To switch accounts later or re-authenticate, type `/login` inside the running session:
 
 ```python
 /login
-# Follow the prompts to log in with your account
 ```
 
 You can log in using any of these account types:
 
 - [Claude Pro, Max, Team, or Enterprise](https://claude.com/pricing?utm_source=claude_code&utm_medium=docs&utm_content=quickstart_login) (recommended)
 - [Claude Console](https://console.anthropic.com/) (API access with pre-paid credits). On first login, a “Claude Code” workspace is automatically created in the Console for centralized cost tracking.
-- [Amazon Bedrock, Google Vertex AI, or Microsoft Foundry](/docs/en/third-party-integrations) (enterprise cloud providers)
+- [Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry](/docs/en/third-party-integrations) (enterprise cloud providers)
+- A self-hosted [Claude apps gateway](/docs/en/claude-apps-gateway), if your organization runs one: your admin pre-configures the gateway URL, and `/login` opens directly on the **Cloud gateway** screen for you to sign in with corporate SSO
 
-Once logged in, your credentials are stored and you won’t need to log in again. To switch accounts later, use the `/login` command.
+Once logged in, your credentials are stored and you won’t need to log in again.
 
+
+[​](#step-3-start-your-first-session)
 
 Step 3: Start your first session
 
@@ -5576,10 +7727,12 @@ cd /path/to/your/project
 claude
 ```
 
-You’ll see the Claude Code welcome screen with your session information, recent conversations, and latest updates. Type `/help` for available commands or `/resume` to continue a previous conversation.
+Replace `/path/to/your/project` with the path to the project you want to work on. You’ll see the Claude Code prompt with the version, current model, and working directory shown above it. Type `/help` for available commands or `/resume` to continue a previous conversation.
 
 After logging in (Step 2), your credentials are stored on your system. Learn more in [Credential Management](/docs/en/authentication#credential-management).
 
+
+[​](#step-4-ask-your-first-question)
 
 Step 4: Ask your first question
 
@@ -5620,6 +7773,8 @@ can Claude Code work with Docker?
 Claude Code reads your project files as needed. You don’t have to manually add context.
 
 
+[​](#step-5-make-your-first-code-change)
+
 Step 5: Make your first code change
 
 Now let’s make Claude Code do some actual coding. Try a simple task:
@@ -5632,11 +7787,13 @@ Claude Code will:
 
 1.  Find the appropriate file
 2.  Show you the proposed changes
-3.  Ask for your approval
+3.  Ask for your approval before changing files, depending on your permission mode
 4.  Make the edit
 
-Claude Code always asks for permission before modifying files. You can approve individual changes or enable “Accept all” mode for a session.
+Whether Claude Code asks before changing files depends on your [permission mode](/docs/en/permission-modes). In default mode, Claude asks for approval before each change. Press `Shift+Tab` to cycle through modes: `acceptEdits` auto-approves file edits, and `plan` lets Claude propose changes without editing. Some accounts also have an `auto` mode that runs a background safety check and blocks risky actions, returning to prompts only after repeated blocks.
 
+
+[​](#step-6-use-git-with-claude-code)
 
 Step 6: Use Git with Claude Code
 
@@ -5665,6 +7822,8 @@ help me resolve merge conflicts
 ```
 
 
+[​](#step-7-fix-a-bug-or-add-a-feature)
+
 Step 7: Fix a bug or add a feature
 
 Claude is proficient at debugging and feature implementation. Describe what you want in natural language:
@@ -5686,6 +7845,8 @@ Claude Code will:
 - Implement a solution
 - Run tests if available
 
+
+[​](#step-8-test-out-other-common-workflows)
 
 Step 8: Test out other common workflows
 
@@ -5716,9 +7877,11 @@ review my changes and suggest improvements
 Talk to Claude like you would a helpful colleague. Describe what you want to achieve, and it will help you get there.
 
 
+[​](#essential-commands)
+
 Essential commands
 
-Here are the most important commands for daily use:
+Here are the most important commands for daily use. Shell commands run from your terminal to start or resume Claude Code. Session commands run inside Claude Code after it starts. **Shell commands**
 
 | Command             | What it does                                           | Example                             |
 |---------------------|--------------------------------------------------------|-------------------------------------|
@@ -5727,12 +7890,19 @@ Here are the most important commands for daily use:
 | `claude -p "query"` | Run one-off query, then exit                           | `claude -p "explain this function"` |
 | `claude -c`         | Continue most recent conversation in current directory | `claude -c`                         |
 | `claude -r`         | Resume a previous conversation                         | `claude -r`                         |
-| `/clear`            | Clear conversation history                             | `/clear`                            |
-| `/help`             | Show available commands                                | `/help`                             |
-| `exit` or Ctrl+D    | Exit Claude Code                                       | `exit`                              |
 
-See the [CLI reference](/docs/en/cli-reference) for a complete list of commands.
+**Session commands**
 
+| Command                 | What it does               | Example  |
+|-------------------------|----------------------------|----------|
+| `/clear`                | Clear conversation history | `/clear` |
+| `/help`                 | Show available commands    | `/help`  |
+| `/exit` or Ctrl+D twice | Exit Claude Code           | `/exit`  |
+
+See the [CLI reference](/docs/en/cli-reference) for the complete list of shell commands and the [commands reference](/docs/en/commands) for the complete list of session commands.
+
+
+[​](#pro-tips-for-beginners)
 
 Pro tips for beginners
 
@@ -5772,6 +7942,8 @@ Save time with shortcuts
 - Press `Shift+Tab` to cycle permission modes
 
 
+[​](#what’s-next)
+
 What’s next?
 
 Now that you’ve learned the basics, explore more advanced features:
@@ -5792,6 +7964,8 @@ Step-by-step guides for common tasks
 
 Customize with CLAUDE.md, skills, hooks, MCP, and more
 
+
+[​](#getting-help)
 
 Getting help
 

@@ -1,0 +1,169 @@
+---
+title: "Introducing Claude Tag \\ Anthropic"
+source_url: "https://www.anthropic.com/news/introducing-claude-tag"
+category: "19-Reference"
+fetched_at: "2026-08-02T05:41:35Z"
+---
+
+# Introducing Claude Tag
+
+Jun 23, 2026
+
+Claude Tag is a new way for teams to work with Claude.
+
+We’re starting on Slack, which Claude can join as a team member. Grant Claude access to selected channels, and connect it to whichever tools, data—and even codebases—you choose. Then, anyone in the channel can tag **@Claude** in, and delegate tasks to it while they focus on other work. Claude builds context by remembering relevant information from the channels it’s in, and can plan out tasks to complete in the future.
+
+We see Claude Tag as the beginning of an evolution of Claude Code: it makes the model even more proactive, and it works better with a full team. Tagging **@Claude** is now one of the main ways we get things done at Anthropic. Today, 65% of our product team’s code is created by our internal version of Claude Tag. The same pattern is now spreading well beyond engineering—we’re tagging Claude to chase down product metrics and data, work through support tickets, or even help find the root cause of tricky bugs.
+
+We’re launching [Claude Tag on Slack](https://www.claude.com/product/tag), since it’s a natural home for collaborative work between teams and AI, and where much of Anthropic’s day-to-day work already happens. It’s available today in beta for Claude Enterprise and Team customers. Our goal is to expand where it’s available more widely, so that teams can tag @Claude in the many other places they work.
+
+## Working with @Claude
+
+If you’ve worked with Claude Code or Cowork before, Claude Tag will feel familiar. Tag @Claude with a request in simple terms and it’ll break its task down into stages and then work through them in turn, using the tools it has access to. Once it’s done, it’ll respond in a Slack thread with what it’s created.
+
+But tagging Claude comes with a few new advantages:
+
+**@Claude is multiplayer.** Within a given Slack channel, there’s one Claude that interacts with everyone. This means that anyone can see what it’s working on, and can pick up the conversation from where the last person left off. This makes tagging Claude very different from working within a single chat or for a single task—it’s much more like interacting collaboratively with a teammate.
+
+**@Claude learns over time.** As Claude follows along with its channel, it builds more context about the work. This means that users don’t need to explain things to it from scratch over and over again. And Claude can even automatically learn from *other* Slack channels and data sources, if it’s granted permission. (It doesn’t report from private channels.) This gives it the tacit knowledge necessary for it to provide the best possible work.
+
+**@Claude takes initiative.** If “ambient” behavior is enabled, Claude will proactively keep you updated about whatever it thinks you might need to know. It’ll flag relevant information from across the channels it’s in and the tools it’s connected to, and follow up on threads or tasks that have gone quiet without being resolved.
+
+**@Claude works asynchronously.** Set Claude a task, and you can focus on your other priorities while it works. It can also schedule tasks for itself, pursuing a project autonomously over hours or days. We’ve found this particularly helpful at Anthropic: we now spend much more of our time delegating tasks to many Claudes in parallel.
+
+You can also send Claude direct messages: it’ll respond privately, using the personal tools and connectors you’ve set up.
+
+## Getting started
+
+We’ve designed Claude Tag with teams and organizations in mind: @Claude’s access to sensitive data and task-specific tools can be very tightly controlled.
+
+To get up and running, system administrators specify which tools and information the model should have access to, in which channels. Think of it as creating separate Claude identities for different uses: everything, including its memories, will stay scoped to the channels defined by the administrators. For example, a model set up for sales work won’t pass on memories to one set up for engineering; nor will it give engineers access to any sales data or tools. More information about provisioning access is [available here](https://claude.com/blog/agent-identity-access-model).
+
+Once permissions are set, everyone can begin tagging right away. Administrators can set limits for token spend (both for the organization and for individual channels), and can view a log of everything that @Claude has done, along with who requested each task.
+
+If you’re a Claude Enterprise or Team customer, you have access to Claude Tag in beta starting today. To get started, [visit here](http://claude.ai/redirect/website.v1.d49719c7-4833-4b64-a449-b5c02ac4e9f1/admin-settings/claude-in-slack) and follow these four steps:
+
+1.  Pair Claude Tag with your Slack workspace
+2.  Give Claude access to your tools
+3.  Set a limit on your organization’s monthly spend
+4.  Test Claude in a private channel to confirm it works.
+
+Claude Tag replaces the existing [Claude in Slack](https://support.claude.com/en/articles/11506255-get-started-with-claude-in-slack) app. To migrate, administrators can opt in within 30 days. We’re issuing an introductory [launch credit](https://support.claude.com/en/articles/15575654) to eligible Enterprise and Team organizations so that the whole company can try it out.
+
+Claude Tag works with Opus 4.8. You can [read our docs](https://www.claude.com/docs/claude-tag/overview) and [product page](https://www.claude.com/product/tag).
+
+
+## Related content
+
+### Investigating three real-world incidents in our cybersecurity evaluations
+
+[Read more](/news/investigating-incidents-cybersecurity-evals)
+
+### Our position on open-weights models
+
+[Read more](/news/position-open-weights-models)
+
+### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+
+[Read more](/news/cognizant-anthropic)
+
+[](/)
+
+### Products
+
+- [Claude](https://claude.com/product/overview)
+- [Claude Code](https://claude.com/product/claude-code)
+- [Claude Code Enterprise](https://claude.com/product/claude-code/enterprise)
+- [Claude Cowork](https://claude.com/product/cowork)
+- [@Claude](https://claude.com/product/tag)
+- [Claude Design](https://claude.com/product/design)
+- [Claude Science](https://claude.com/product/claude-science)
+- [Claude Security](https://claude.com/product/claude-security)
+- [Claude for Chrome](https://claude.com/chrome)
+- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
+- [Skills](https://www.claude.com/skills)
+- [Download app](https://claude.ai/download)
+- [Pricing](https://claude.com/pricing)
+- [Log in to Claude](https://claude.ai/)
+
+### Models
+
+- [Mythos](https://www.anthropic.com/claude/mythos)
+- [Fable](https://www.anthropic.com/claude/fable)
+- [Opus](https://www.anthropic.com/claude/opus)
+- [Sonnet](https://www.anthropic.com/claude/sonnet)
+- [Haiku](https://www.anthropic.com/claude/haiku)
+
+### Solutions
+
+- [AI agents](https://claude.com/solutions/agents)
+- [Code modernization](https://claude.com/solutions/code-modernization)
+- [Coding](https://claude.com/solutions/coding)
+- [Customer support](https://claude.com/solutions/customer-support)
+- [Cybersecurity](https://claude.com/solutions/cybersecurity)
+- [Enterprise](https://claude.com/solutions/enterprise)
+- [Financial services](https://claude.com/solutions/financial-services)
+- [Government](https://claude.com/solutions/government)
+- [Healthcare](https://claude.com/solutions/healthcare)
+- [Higher education](https://claude.com/solutions/education)
+- [K-12 teachers](https://claude.com/solutions/teachers)
+- [Legal](https://claude.com/solutions/legal)
+- [Life sciences](https://claude.com/solutions/life-sciences)
+- [Nonprofits](https://claude.com/solutions/nonprofits)
+- [Small business](https://claude.com/solutions/small-business)
+
+### Claude Platform
+
+- [Overview](https://claude.com/platform/api)
+- [Developer docs](https://platform.claude.com/docs)
+- [Pricing](https://claude.com/pricing#api)
+- [Ecosystem](https://claude.com/ecosystem)
+- [Marketplace](https://claude.com/platform/marketplace)
+- [Regional compliance](https://claude.com/regional-compliance)
+- [Claude on AWS](https://claude.com/partners/claude-on-aws)
+- [Google Cloud](https://claude.com/partners/google-cloud-vertex-ai)
+- [Microsoft Foundry](https://claude.com/partners/microsoft-foundry)
+- [Console login](https://platform.claude.com/)
+
+### Resources
+
+- [Blog](https://claude.com/blog)
+- [Claude partner network](https://claude.com/partners)
+- [Community](https://claude.com/community)
+- [Connectors](https://claude.com/connectors)
+- [Courses](/learn)
+- [Customer stories](https://claude.com/customers)
+- [Engineering at Anthropic](/engineering)
+- [Events](/events)
+- [Plugins](https://claude.com/plugins)
+- [Powered by Claude](https://claude.com/partners/powered-by-claude)
+- [Service partners](https://claude.com/partners/services)
+- [Tutorials](https://claude.com/resources/tutorials)
+- [Use cases](https://claude.com/resources/use-cases)
+
+### Programs
+
+- [Startups](https://claude.com/programs/startups)
+- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+
+### Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Status](https://status.anthropic.com/)
+- [Support center](https://support.claude.com/en/)
+
+### Company
+
+- [Anthropic](/company)
+- [Careers](/careers)
+- [Policy](/policy)
+- [Economic Futures](/economic-futures)
+- [Research](/research)
+- [News](/news)
+- [Claude’s Constitution](/constitution)
+- [Claude Corps](/claude-corps)
+- [Keep thinking](https://www.anthropic.com/path-to-hope)
+- [Policy on the AI Exponential](/policy-on-the-ai-exponential)
+- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
+- [Security and compliance](https://trust.anthropic.com/)
+- [Transparency](/transparency)

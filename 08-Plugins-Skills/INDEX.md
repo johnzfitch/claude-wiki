@@ -1,6 +1,6 @@
 # Plugins Skills
 
-*98 documents*
+*102 documents*
 
 
 - [Claude Skills for Financial Applications](02-skills-financial-applications.md) - Build real-world financial dashboards, portfolio analytics, and
@@ -10,7 +10,8 @@
 - [Agent SDK Development Plugin](agent-sdk-development-plugin.md) - A comprehensive plugin for creating and verifying Claude Agent SDK applications in Python and TypeScript.
 - [Plugins in the SDK](agent-sdk-plugins-8416c8e5b2.md) - ## Documentation Index
 - [Agent Skills in the SDK](agent-sdk-skills-2d478078db.md) - ## Documentation Index
-- [Best practices for skill creators - Agent Skills](best-practices-for-skill-creators-agent-skills-a7c579abbd.md) - How to write skills that are well-scoped and calibrated to the task.
+- [Agent Skills in the SDK - Claude Code Docs](agent-skills-in-the-sdk-claude-code-docs-4c508540b7.md) - - [Overview](#overview)
+- [Best practices for skill creators - Agent Skills](best-practices-for-skill-creators-agent-skills-a7c579abbd.md) - - [Start from real expertise](#start-from-real-expertise)
 - [SQL Analysis Skill](building-skills-for-claude-code-claude.md) - Your team has built up hard-won knowledge about your data—you know which tables are the source of truth, why certain filters must always apply, and ho
 - [Burn Knowledgebase Architecture — Verified Against Claude Code Source](burn-kb-architecture-verified.md) - **Date**: 2026-03-15
 - [Burn Knowledgebase Architecture Strategy](burn-knowledgebase-architecture.md) - **Date**: 2026-03-15
@@ -19,6 +20,7 @@
 - [Claude Code Plugins](claude-code-plugins.md) - This directory contains some official Claude Code plugins that extend functionality through custom commands, agents, and workflows. These are examples
 - [Claude Opus 4.5 Migration Plugin](claude-opus-4.5-migration-plugin.md) - Migrate your code and prompts from Sonnet 4.x and Opus 4.1 to Opus 4.5.
 - [Skills Cookbook - Claude Code Guide](claude.md) - This is a comprehensive Jupyter notebook cookbook demonstrating Claude's Skills feature for document generation (Excel, PowerPoint, PDF). It's designe
+- [Client Showcase - Agent Skills](client-showcase-agent-skills-13a0a6247f.md) - Copy pageCopy page
 - [Code Architect](code-architect.md) - You are a senior software architect who delivers comprehensive, actionable architecture blueprints by deeply understanding codebases and making confid
 - [Code Explorer](code-explorer.md) - You are an expert code analyst specializing in tracing and understanding feature implementations across codebases.
 - [Code Review Plugin](code-review-plugin.md) - Automated code review for pull requests using multiple specialized agents with confidence-based scoring to filter false positives.
@@ -35,15 +37,15 @@
 - [Conversation Analyzer](conversation-analyzer.md) - You are a conversation analysis specialist that identifies problematic behaviors in Claude Code sessions that could be prevented with hooks.
 - [Create and distribute a plugin marketplace - Claude Code Docs](create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md) - Build and host plugin marketplaces to distribute Claude Code extensions across teams and communities.
 - [Plugin Creation Workflow](create-plugin.md) - Guide the user through creating a complete, high-quality Claude Code plugin from initial concept to tested implementation. Follow a systematic approac
-- [Create plugins - Claude Code Docs](create-plugins-claude-code-docs-fc9dd52a14.md) - Create custom plugins to extend Claude Code with skills, agents, hooks, and MCP servers.
+- [Create plugins - Claude Code Docs](create-plugins-claude-code-docs-fc9dd52a14.md) - - [When to use plugins vs standalone configuration](#when-to-use-plugins-vs-standalone-configuration)
 - [Create plugins - Claude Code Docs](create-plugins-claude-code-docs.md) - Create custom plugins to extend Claude Code with skills, agents, hooks, and MCP servers.
 - [Create Plugin Settings](create-settings-command.md) - This command helps users create a `.claude/my-plugin.local.md` settings file.
 - [Discover and install prebuilt plugins through marketplaces - Claude Code Docs](discover-and-install-prebuilt-plugins-through-marketplaces-claude-code-docs-fe3568ee5c.md) - Find and install plugins from marketplaces to extend Claude Code with new skills, agents, and capabilities.
 - [Equipping Agents For The Real World With Agent Skills Anthropic Claude](equipping-agents-for-the-real-world-with-agent-skills-anthropic-claude.md) - _Update: We've published_ [_Agent Skills_](https://agentskills.io/) _as an open standard for cross-platform portability. (December 18, 2025)_
-- [Evaluating skill output quality - Agent Skills](evaluating-skill-output-quality-agent-skills-4f9e42d107.md) - How to test whether your skill produces good outputs using eval-driven iteration.
+- [Evaluating skill output quality - Agent Skills](evaluating-skill-output-quality-agent-skills-4f9e42d107.md) - - [Designing test cases](#designing-test-cases)
 - [Example Servers](examples.md) - A list of example servers and implementations
 - [Explanatory Output Style Plugin](explanatory-output-style-plugin.md) - This plugin recreates the deprecated Explanatory output style as a SessionStart
-- [Extend Claude with skills - Claude Code Docs](extend-claude-with-skills-claude-code-docs-542f21c108.md) - Create, manage, and share skills to extend Claude’s capabilities in Claude Code. Includes custom commands and bundled skills.
+- [Extend Claude with skills - Claude Code Docs](extend-claude-with-skills-claude-code-docs-542f21c108.md) - - [Bundled skills](#bundled-skills)
 - [Extend Claude with skills - Claude Code Docs](extend-claude-with-skills-claude-code-docs.md) - Create, manage, and share skills to extend Claude’s capabilities in Claude Code. Includes custom commands and bundled skills.
 - [Extensions](extensions.md) - Optional extensions to the Model Context Protocol
 - [Feature Development](feature-dev.md) - You are helping a developer implement a new feature. Follow a systematic approach: understand the codebase deeply, identify and ask about all underspe
@@ -51,7 +53,7 @@
 - [Frontend Design Plugin](frontend-design-plugin.md) - Generates distinctive, production-grade frontend interfaces that avoid generic AI aesthetics.
 - [Command Frontmatter Reference](frontmatter-reference.md) - Complete reference for YAML frontmatter fields in slash commands.
 - [Ralph Wiggum Plugin Help](help2.md) - Please explain the following to the user:
-- [How to add skills support to your agent - Agent Skills](how-to-add-skills-support-to-your-agent-agent-skills-3ed1034f30.md) - A guide for adding Agent Skills support to an AI agent or development tool.
+- [How to add skills support to your agent - Agent Skills](how-to-add-skills-support-to-your-agent-agent-skills-3ed1034f30.md) - - [The core principle: progressive disclosure](#the-core-principle-progressive-disclosure)
 - [How To Create A Skill With Claude Through Conversation Claude Help Center](how-to-create-a-skill-with-claude-through-conversation-claude-help-center.md) - With Skills, you are able to teach Claude specific workflows, tools, and processes. By creating a skill, you're giving Claude a playbook it can refere
 - [How To Create Custom Skills Claude Help Center](how-to-create-custom-skills-claude-help-center.md) - Custom Skills let you enhance Claude with specialized knowledge and workflows specific to your organization or personal work style. This article expla
 - [DOCX creation, editing, and analysis](how-to-create-skills-for-claude-steps-and-examples-claude.md) - When you create a skill via a [SKILL.md](http://skill.md/) file, you're teaching Claude how to handle specific scenarios more effectively. The power o
@@ -63,7 +65,7 @@
 - [Marketplace Considerations for Commands](marketplace-considerations.md) - Guidelines for creating commands designed for distribution and marketplace success.
 - [Minimal Plugin Example](minimal-plugin.md) - A bare-bones plugin with a single command.
 - [New Sdk App](new-sdk-app.md) - You are tasked with helping the user create a new Claude Agent SDK application. Follow these steps carefully:
-- [Optimizing skill descriptions - Agent Skills](optimizing-skill-descriptions-agent-skills-5a76c2d184.md) - How to improve your skill’s description so it triggers reliably on relevant prompts.
+- [Optimizing skill descriptions - Agent Skills](optimizing-skill-descriptions-agent-skills-5a76c2d184.md) - - [How skill triggering works](#how-skill-triggering-works)
 - [Plugin Command Examples](plugin-commands.md) - Practical examples of commands designed for Claude Code plugins, demonstrating plugin-specific patterns and features.
 - [Plugin Development Toolkit](plugin-development-toolkit.md) - A comprehensive toolkit for developing Claude Code plugins with expert guidance on hooks, MCP integration, plugin structure, and marketplace publishin
 - [Plugin-Specific Command Features Reference](plugin-features-reference.md) - This reference covers features and patterns specific to commands bundled in Claude Code plugins.
@@ -74,13 +76,14 @@
 - [Plugin System + Teammate Architecture Integration](plugin-teammate-integration.md) - **Version**: 2.1.76
 - [Plugin Validator](plugin-validator.md) - You are an expert plugin validator specializing in comprehensive validation of Claude Code plugin structure, configuration, and components.
 - [Create plugins](plugins-47f40108cc.md) - ## Documentation Index
+- [Plugins in the SDK - Claude Code Docs](plugins-in-the-sdk-claude-code-docs-560e507922.md) - - [What are plugins?](#what-are-plugins)
 - [Plugins reference](plugins-reference-44aeea7968.md) - ## Documentation Index
-- [Plugins reference - Claude Code Docs](plugins-reference-claude-code-docs-e80a6d455d.md) - Complete technical reference for Claude Code plugin system, including schemas, CLI commands, and component specifications.
+- [Plugins reference - Claude Code Docs](plugins-reference-claude-code-docs-e80a6d455d.md) - - [Plugin components reference](#plugin-components-reference)
 - [Plugins reference - Claude Code Docs](plugins-reference-claude-code-docs.md) - Complete technical reference for Claude Code plugin system, including schemas, CLI commands, and component specifications.
 - [Plugins reference](plugins-reference.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 - [Create plugins](plugins.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 - [Pr Test Analyzer](pr-test-analyzer.md) - You are an expert test coverage analyst specializing in pull request review. Your primary responsibility is to ensure that PRs have adequate test cove
-- [Quickstart - Agent Skills](quickstart-agent-skills-c65b6c1280.md) - Create your first Agent Skill and see it work in VS Code.
+- [Quickstart - Agent Skills](quickstart-agent-skills-c65b6c1280.md) - - [Prerequisites](#prerequisites)
 - [Ralph Loop Command](ralph-loop.md) - Execute the setup script to initialize the Ralph loop:
 - [Ralph Wiggum Plugin](ralph-wiggum-plugin.md) - Implementation of the Ralph Wiggum technique for iterative, self-referential AI development loops in Claude Code.
 - [Real-World Plugin Settings Examples](real-world-examples.md) - Detailed analysis of how production plugins use the `.claude/plugin-name.local.md` pattern.
@@ -95,9 +98,10 @@
 - [Agent Skills in the SDK](skills-sdk.md) - Extend Claude with specialized capabilities using Agent Skills in the Claude Agent SDK
 - [Extend Claude with skills](skills.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 - [Slash Commands in the SDK](slash-commands.md) - Learn how to use slash commands to control Claude Code sessions through the SDK
+- [Specification - Agent Skills](specification-agent-skills-f36ae4007e.md) - - [Directory structure](#directory-structure)
 - [Standard Plugin Example](standard-plugin.md) - A well-structured plugin with commands, agents, and skills.
 - [Teach Claude Your Way Of Working Using Skills Claude Help Center](teach-claude-your-way-of-working-using-skills-claude-help-center.md) - Think about the last time you created something with Claude that turned out really well. Maybe it was a presentation, an analysis, or a report. What m
 - [Claude Code Teammate/Team System Architecture](teammate-architecture.md) - **Version**: 2.1.76
 - [Type Design Analyzer](type-design-analyzer.md) - You are a type design expert with extensive experience in large-scale software architecture. Your specialty is analyzing and improving type designs to
-- [Using scripts in skills - Agent Skills](using-scripts-in-skills-agent-skills-072dae8aa5.md) - How to run commands and bundle executable scripts in your skills.
+- [Using scripts in skills - Agent Skills](using-scripts-in-skills-agent-skills-072dae8aa5.md) - - [One-off commands](#one-off-commands)
 - [Using Skills In Claude Claude Help Center](using-skills-in-claude-claude-help-center.md) - Skills extend Claude's capabilities by giving it access to specialized knowledge and workflows. This guide shows you how to enable, discover, and use 

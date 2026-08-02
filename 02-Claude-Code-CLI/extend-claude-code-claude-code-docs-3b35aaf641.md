@@ -2,21 +2,32 @@
 title: "Extend Claude Code - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/features-overview"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-05-19T21:22:39Z"
+fetched_at: "2026-08-02T05:38:19Z"
 tags: ["agents", "claude-code", "hooks", "mcp", "plugins", "skills", "subagents"]
 ---
 
+## On this page
+
+- [Overview](#overview)
+- [Match features to your goal](#match-features-to-your-goal)
+  - [Build your setup over time](#build-your-setup-over-time)
+  - [Compare similar features](#compare-similar-features)
+  - [Understand how features layer](#understand-how-features-layer)
+  - [Combine features](#combine-features)
+- [Understand context costs](#understand-context-costs)
+  - [Context cost by feature](#context-cost-by-feature)
+  - [Understand how features load](#understand-how-features-load)
+- [Learn more](#learn-more)
+
+Core concepts
+
 # Extend Claude Code
 
+Copy pageCopy page
 
 Understand when to use CLAUDE.md, Skills, subagents, hooks, MCP, and plugins.
 
-
-> ## Documentation Index
->
-> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
->
-> Use this file to discover all available pages before exploring further.
+Copy pageCopy page
 
 Claude Code combines a model that reasons about your code with [built-in tools](/docs/en/how-claude-code-works#tools) for file operations, search, execution, and web access. The built-in tools cover most coding tasks. This guide covers the extension layer: features you add to customize what Claude knows, connect it to external services, and automate workflows.
 
@@ -24,6 +35,8 @@ For how the core agentic loop works, see [How Claude Code works](/docs/en/how-cl
 
 **New to Claude Code?** Start with [CLAUDE.md](/docs/en/memory) for project conventions, then add other extensions [as specific triggers come up](#build-your-setup-over-time).
 
+
+[​](#overview)
 
 Overview
 
@@ -35,11 +48,13 @@ Extensions plug into different parts of the agentic loop:
 - **[MCP](/docs/en/mcp)** connects Claude to external services and tools
 - **[Subagents](/docs/en/sub-agents)** run their own loops in isolated context, returning summaries
 - **[Agent teams](/docs/en/agent-teams)** coordinate multiple independent sessions with shared tasks and peer-to-peer messaging
-- **[Hooks](/docs/en/hooks-guide)** fire on lifecycle events and can run a script, HTTP request, prompt, or subagent
+- **[Hooks](/docs/en/hooks-guide)** run your script, HTTP request, prompt, or subagent when Claude Code reaches a lifecycle event
 - **[Plugins](/docs/en/plugins)** and **[marketplaces](/docs/en/plugin-marketplaces)** package and distribute these features
 
 [Skills](/docs/en/skills) are the most flexible extension. A skill is a markdown file containing knowledge, workflows, or instructions. You can invoke skills with a command like `/deploy`, or Claude can load them automatically when relevant. Skills can run in your current conversation or in an isolated context via subagents.
 
+
+[​](#match-features-to-your-goal)
 
 Match features to your goal
 
@@ -54,9 +69,12 @@ Features range from always-on context that Claude sees every session, to on-dema
 | **[Code intelligence](/docs/en/tools-reference#lsp-tool-behavior)** | Language-server navigation and diagnostics                    | Typed languages, large codebases where grep is slow or imprecise                | Jump to a symbol’s definition instead of reading the whole file                 |
 | **MCP**                                                             | Connect to external services                                  | External data or actions                                                        | Query your database, post to Slack, control a browser                           |
 | **Hook**                                                            | Script, HTTP request, prompt, or subagent triggered by events | Automation that must run on every matching event                                | Run ESLint after every file edit                                                |
+| **[Artifact](/docs/en/artifacts)**                                  | Publish session output as a private, interactive web page     | Output you want to see or share visually rather than as terminal text           | An incident timeline that updates as Claude investigates                        |
 
 **[Plugins](/docs/en/plugins)** are the packaging layer. A plugin bundles skills, hooks, subagents, and MCP servers into a single installable unit. Plugin skills are namespaced (like `/my-plugin:review`) so multiple plugins can coexist. Use plugins when you want to reuse the same setup across multiple repositories or distribute to others via a **[marketplace](/docs/en/plugin-marketplaces)**.
 
+
+[​](#build-your-setup-over-time)
 
 Build your setup over time
 
@@ -76,9 +94,11 @@ You don’t need to configure everything up front. Each feature has a recognizab
 The same triggers tell you when to update what you already have. A repeated mistake or a recurring review comment is a CLAUDE.md edit, not a one-off correction in chat. A workflow you keep tweaking by hand is a skill that needs another revision.
 
 
+[​](#compare-similar-features)
+
 Compare similar features
 
-Some features can seem similar. Here’s how to tell them apart.
+Some features can seem similar. For a deeper walkthrough of choosing between them, see [Steering Claude Code: when to use CLAUDE.md, skills, hooks, and subagents](https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more) on the blog. Here’s how to tell them apart.
 
 - Skill vs Subagent
 
@@ -152,9 +172,9 @@ MCP connects Claude to external services. Skills extend what Claude knows, inclu
 | **Provides**   | Tools and data access                                | Knowledge, workflows, reference material                |
 | **Examples**   | Slack integration, database queries, browser control | Code review checklist, deploy workflow, API style guide |
 
-These solve different problems and work well together:**MCP** gives Claude the ability to interact with external systems. Without MCP, Claude can’t query your database or post to Slack.**Skills** give Claude knowledge about how to use those tools effectively, plus workflows you can trigger with `/<name>`. A skill might include your team’s database schema and query patterns, or a `/post-to-slack` workflow with your team’s message formatting rules.Example: An MCP server connects Claude to your database. A skill teaches Claude your data model, common query patterns, and which tables to use for different tasks.
+These solve different problems and work well together:**MCP** gives Claude purpose-built tools for an external system, with the connection and authentication handled by the server.**Skills** give Claude knowledge about how to use those tools effectively, plus workflows you can trigger with `/<name>`. A skill might include your team’s database schema and query patterns, or a `/post-to-slack` workflow with your team’s message formatting rules.Example: An MCP server connects Claude to your database. A skill teaches Claude your data model, common query patterns, and which tables to use for different tasks.
 
-A hook fires on a lifecycle event; a skill is loaded into context for Claude to apply.
+Claude Code runs a hook at a lifecycle event; it loads a skill into context for Claude to apply.
 
 | Aspect           | Hook                                                                                   | Skill                                                                 |
 |------------------|----------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
@@ -167,6 +187,8 @@ A hook fires on a lifecycle event; a skill is loaded into context for Claude to 
 **Use a hook** when the action must happen the same way every time and doesn’t need Claude to think. For example: format on save, reject `rm -rf /`, post a Slack message when a session ends.**Use a skill** when Claude should decide how to apply the steps, or when the content is knowledge rather than a script. For example: a `/release` checklist, your API style guide, a debugging playbook.**Put guardrails in hooks.** An instruction like “never edit `.env`” in CLAUDE.md or a skill is a request, not a guarantee. A `PreToolUse` hook that blocks the edit is enforcement. If a rule must hold every time, make it a hook rather than a prompt instruction.**Hook output lands in context.** A `PostToolUse` hook that runs your linter feeds results back as text Claude reads; a `/fix-lint` skill tells Claude how to resolve them.
 
 
+[​](#understand-how-features-layer)
+
 Understand how features layer
 
 Features can be defined at multiple levels: user-wide, per-project, via plugins, or through managed policies. You can also nest CLAUDE.md files in subdirectories or place skills in specific packages of a monorepo. When the same feature exists at multiple levels, here’s how they layer:
@@ -176,6 +198,8 @@ Features can be defined at multiple levels: user-wide, per-project, via plugins,
 - **MCP servers** override by name: local \> project \> user. See [MCP scope](/docs/en/mcp#scope-hierarchy-and-precedence).
 - **Hooks** merge: all registered hooks fire for their matching events regardless of source. See [hooks](/docs/en/hooks).
 
+
+[​](#combine-features)
 
 Combine features
 
@@ -189,10 +213,14 @@ Each extension solves a different problem: CLAUDE.md handles always-on context, 
 | **Hook + MCP**         | A hook triggers external actions through MCP                                     | Post-edit hook sends a Slack notification when Claude modifies critical files                     |
 
 
+[​](#understand-context-costs)
+
 Understand context costs
 
 Every feature you add consumes some of Claude’s context. Too much can fill up your context window, but it can also add noise that makes Claude less effective; skills may not trigger correctly, or Claude may lose track of your conventions. Understanding these trade-offs helps you build an effective setup. For an interactive view of how these features combine in a running session, see [Explore the context window](/docs/en/context-window).
 
+
+[​](#context-cost-by-feature)
 
 Context cost by feature
 
@@ -209,6 +237,8 @@ Each feature has a different loading strategy and context cost:
 
 \*By default, skill descriptions load at session start so Claude can decide when to use them. Set `disable-model-invocation: true` in a skill’s frontmatter to hide it from Claude entirely until you invoke it manually. This reduces context cost to zero for skills you only trigger yourself. For a skill you didn’t write, set [`skillOverrides`](/docs/en/skills#override-skill-visibility-from-settings) in settings to do the same without editing its file.
 
+
+[​](#understand-how-features-load)
 
 Understand how features load
 
@@ -230,13 +260,13 @@ Each feature loads at different points in your session. The tabs below explain w
 
 Keep CLAUDE.md under 200 lines. Move reference material to skills, which load on-demand.
 
-Skills are extra capabilities in Claude’s toolkit. They can be reference material (like an API style guide) or invocable workflows you trigger with `/<name>` (like `/deploy`). Claude Code includes [bundled skills](/docs/en/commands) like `/simplify`, `/batch`, and `/debug` that work out of the box. You can also create your own. Claude uses skills when appropriate, or you can invoke one directly.**When:** Depends on the skill’s configuration. By default, descriptions load at session start and full content loads when used. For user-only skills (`disable-model-invocation: true`), nothing loads until you invoke them.**What loads:** For model-invocable skills, Claude sees names and descriptions in every request. When you invoke a skill with `/<name>` or Claude loads it automatically, the full content loads into your conversation.**How Claude chooses skills:** Claude matches your task against skill descriptions to decide which are relevant. If descriptions are vague or overlap, Claude may load the wrong skill or miss one that would help. To tell Claude to use a specific skill, invoke it with `/<name>`. Skills with `disable-model-invocation: true` are invisible to Claude until you invoke them.**Context cost:** Low until used. User-only skills have zero cost until invoked.**In subagents:** Skills work differently in subagents. Instead of on-demand loading, skills listed in the subagent’s `skills` field are fully preloaded into its context at launch. Subagents can still discover and invoke unlisted project, user, and plugin skills through the Skill tool.
+Skills are extra capabilities in Claude’s toolkit. They can be reference material (like an API style guide) or invocable workflows you trigger with `/<name>` (like `/deploy`). Claude Code includes [bundled skills](/docs/en/commands) like `/code-review`, `/batch`, and `/debug` that work out of the box. You can also create your own. Claude uses skills when appropriate, or you can invoke one directly.**When:** Depends on the skill’s configuration. By default, descriptions load at session start and full content loads when used. For user-only skills (`disable-model-invocation: true`), nothing loads until you invoke them.**What loads:** For model-invocable skills, Claude sees names and descriptions in every request. When you invoke a skill with `/<name>` or Claude loads it automatically, the full content loads into your conversation.**How Claude chooses skills:** Claude matches your task against skill descriptions to decide which are relevant. If descriptions are vague or overlap, Claude may load the wrong skill or miss one that would help. To tell Claude to use a specific skill, invoke it with `/<name>`. Skills with `disable-model-invocation: true` are invisible to Claude until you invoke them.**Context cost:** Low until used. User-only skills have zero cost until invoked.**In subagents:** Skills work differently in subagents. Instead of on-demand loading, skills listed in the subagent’s `skills` field are fully preloaded into its context at launch. Subagents can still discover and invoke unlisted project, user, and plugin skills through the Skill tool.
 
 Use `disable-model-invocation: true` for skills with side effects. This saves context and ensures only you trigger them.
 
-**When:** Session start.**What loads:** Tool names from connected servers. Full JSON schemas stay deferred until Claude needs a specific tool.**Context cost:** [Tool search](/docs/en/mcp#scale-with-mcp-tool-search) is on by default, so idle MCP tools consume minimal context.**Reliability note:** MCP connections can fail silently mid-session. If a server disconnects, its tools disappear without warning. Claude may try to use a tool that no longer exists. If you notice Claude failing to use an MCP tool it previously could access, check the connection with `/mcp`.
+**When:** Session start.**What loads:** Tool names from connected servers. Full JSON schemas stay deferred until Claude needs a specific tool.**Context cost:** [Tool search](/docs/en/mcp#scale-with-mcp-tool-search) is on by default, so idle MCP tools consume minimal context.
 
-Run `/mcp` to see token costs per server. Disconnect servers you’re not actively using.
+Run `/mcp` to see connection status and token costs per server. Claude Code [reconnects to remote servers automatically](/docs/en/mcp#automatic-reconnection) if they drop, and you can disconnect servers you’re not actively using.
 
 **When:** After file edits, and on demand when Claude navigates code.**What loads:** Type errors and warnings after each file edit. Definition, reference, and type information when Claude looks up a symbol.**Context cost:** Low. Symbol lookups often replace broad file reads, so net context use can go down.
 
@@ -253,10 +283,12 @@ The LSP tool is inactive until you install a [code intelligence plugin](/docs/en
 
 Use subagents for work that doesn’t need your full conversation context. Their isolation prevents bloating your main session.
 
-**When:** On trigger. Hooks fire at specific lifecycle events like tool execution, session boundaries, prompt submission, permission requests, and compaction. See [Hooks](/docs/en/hooks) for the full list.**What loads:** Nothing by default. Hooks execute outside the main conversation.**Context cost:** Zero, unless the hook returns output that gets added as messages to your conversation.
+**When:** On trigger. Claude Code runs hooks at specific lifecycle events like tool execution, session boundaries, prompt submission, permission requests, and compaction. See [Hooks](/docs/en/hooks) for the full list.**What loads:** Nothing by default. Hooks execute outside the main conversation.**Context cost:** Zero, unless the hook returns output that gets added as messages to your conversation.
 
 Hooks are ideal for side effects (linting, logging) that don’t need to affect Claude’s context.
 
+
+[​](#learn-more)
 
 Learn more
 
@@ -284,7 +316,7 @@ Connect Claude to external services
 
 ## Hooks
 
-Automate workflows with hooks
+Automate actions with hooks
 
 ## Plugins
 

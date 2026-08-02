@@ -1,70 +1,139 @@
 # Billing Plans
 
-*65 documents*
+*134 documents*
 
 
+- [Pricing - Claude Platform Docs](about-claude-pricing-50846cd1ff.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Pricing](about-claude-pricing-820bbf24dd.md) - Learn about Anthropic's pricing structure for models and features
 - [Pricing - Claude API Docs](about-claude-pricing.md) - Learn about Anthropic's pricing structure for models and features
 - [Claude Help Center](about-claude-s-max-plan-usage.md) - Search for articles...
+- [Add or update your Team plan&#x27;s tax or VAT ID | Claude Help Center](add-or-update-your-team-plan-s-tax-or-vat-id-ffe5797dde.md) - March 16, 2026
 - [Add or update your Team plan&#x27;s tax or VAT ID | Claude Help Center](add-or-update-your-team-plan-s-tax-or-vat-id.md) - 4.  Add or update your Team plan's tax or VAT ID
+- [Can you delete data that I sent via Team and Enterprise plans? | Claude Help Center](can-you-delete-data-that-i-sent-via-team-and-enterprise-plans-41e570413f.md) - March 16, 2026
 - [Can you delete data that I sent via Team and Enterprise plans? | Claude Help Center](can-you-delete-data-that-i-sent-via-team-and-enterprise-plans.md) - 4.  Can you delete data that I sent via Team and Enterprise plans?
+- [Cancel your organization&#x27;s Team plan subscription | Claude Help Center](cancel-your-organization-s-team-plan-subscription-2f37ffeadd.md) - An Owner or Primary Owner can cancel Team plan access by navigating to **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)*
 - [Cancel your organization&#x27;s Team plan subscription | Claude Help Center](cancel-your-organization-s-team-plan-subscription.md) - 4.  Cancel your organization's Team plan subscription
+- [Cancel your Pro or Max subscription | Claude Help Center](cancel-your-pro-or-max-subscription-e51c9edc35.md) - You may cancel your Pro or Max plan subscription at any time by following the cancellation instructions for the platform you signed up on. Your cancel
+- [Change your Team plan from monthly to annual billing | Claude Help Center](change-your-team-plan-from-monthly-to-annual-billing-596eff439e.md) - March 16, 2026
 - [Change your Team plan from monthly to annual billing | Claude Help Center](change-your-team-plan-from-monthly-to-annual-billing.md) - 4.  Change your Team plan from monthly to annual billing
+- [Choose a Claude plan | Claude Help Center](choose-a-claude-plan-34cc52ef4e.md) - May 19, 2026
+- [Choose a Claude plan | Claude Help Center](choosing-a-claude-plan-f9c577e51e.md) - May 19, 2026
 - [Choosing a Claude plan | Claude Help Center](choosing-a-claude-plan.md) - Use the following guide to determine which plan is right for you.
+- [Claude Enterprise Plan | Claude by Anthropic](claude-enterprise-plan-claude-by-anthropic-b0def816fc.md) - The frontier, on every desk
+- [Claude Fable 5 on your plan | Claude Help Center](claude-fable-5-on-your-plan-9438480215.md) - We previously ran a promotion that allowed you to use up to 50% of your weekly subscription limit on Claude Fable 5 at no extra cost. After that promo
+- [Configure custom data retention controls for Enterprise plans | Claude Help Center](configure-custom-data-retention-controls-for-enterprise-plans-277abfb672.md) - March 16, 2026
 - [Configure custom data retention controls for Enterprise plans | Claude Help Center](configure-custom-data-retention-controls-for-enterprise-plans.md) - 4.  Configure custom data retention controls for Enterprise plans
 - [Manage costs effectively](costs.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Use Claude Cowork on Team and Enterprise plans | Claude Help Center](cowork-for-team-and-enterprise-plans-aac1cf8e4c.md) - This article explains important limitations and considerations for Team and Enterprise organizations using Claude Cowork.
 - [Use Cowork on Team and Enterprise plans | Claude Help Center](cowork-for-team-and-enterprise-plans.md) - 4.  Use Cowork on Team and Enterprise plans
+- [Configure custom data retention controls for Enterprise plans | Claude Help Center](custom-data-retention-controls-for-enterprise-plans-375766dd05.md) - March 16, 2026
 - [Configure custom data retention controls for Enterprise plans | Claude Help Center](custom-data-retention-controls-for-enterprise-plans.md) - 4.  Configure custom data retention controls for Enterprise plans
 - [Data usage](data-usage.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 - [Enterprise plan | Claude](enterprise-plan-claude.md) - Securely connect Claude to your company knowledge and give every team access to trusted AI. Designed for large organizations and enterprise-scale chal
 - [Extra usage for paid Claude plans | Claude Help Center](extra-usage-for-max-20x-plans.md) - This article explains how to enable and use extra usage on your paid Claude plan (Pro, Max 5x, or Max 20x), allowing you to continue working with Clau
+- [Manage usage credits for paid Claude plans | Claude Help Center](extra-usage-for-paid-claude-plans-32418755be.md) - May 18, 2026
 - [Extra usage for paid Claude plans | Claude Help Center](extra-usage-for-paid-claude-plans.md) - This article explains how to enable and use extra usage on your paid Claude plan (Pro, Max 5x, or Max 20x), allowing you to continue working with Clau
+- [Manage usage credits for Team and seat-based Enterprise plans | Claude Help Center](extra-usage-for-team-and-enterprise-plans-a7d190dd65.md) - May 18, 2026
 - [Manage extra usage for Team and seat-based Enterprise plans | Claude Help Center](extra-usage-for-team-and-enterprise-plans.md) - 4.  Manage extra usage for Team and seat-based Enterprise plans
+- [Manage usage credits for Team and seat-based Enterprise plans | Claude Help Center](extra-usage-for-team-and-seat-based-enterprise-plans-9f8655d599.md) - May 18, 2026
 - [Manage extra usage for Team and seat-based Enterprise plans | Claude Help Center](extra-usage-for-team-and-seat-based-enterprise-plans.md) - 4.  Manage extra usage for Team and seat-based Enterprise plans
+- [Get started with the Team plan | Claude Help Center](get-started-with-the-team-plan-e4a445d9ae.md) - - The account creator must use a business email address. Public domains like @gmail.com, @yahoo.com, and @hotmail.com aren't allowed—but you can **[ad
 - [Get started with the Team plan | Claude Help Center](get-started-with-the-team-plan.md) - - The account creator must use a business email address. Public domains like @gmail.com, @yahoo.com, and @hotmail.com aren't allowed—but you can **[ad
+- [HIPAA-ready Enterprise plans | Claude Help Center](hipaa-ready-enterprise-plans-3abc9d3ee3.md) - This feature is available for Enterprise plans only (both self-serve and sales-assisted).
 - [HIPAA-ready Enterprise plans | Claude Help Center](hipaa-ready-enterprise-plans.md) - This feature is available for Enterprise plans only.
+- [How am I billed for my Enterprise plan? | Claude Help Center](how-am-i-billed-for-my-enterprise-plan-0f7f190634.md) - Enterprise plan billing has two parts: a fixed seat fee and separate usage charges. The seat fee covers platform access. Usage is billed on top of tha
 - [How am I billed for my Enterprise plan? | Claude Help Center](how-am-i-billed-for-my-enterprise-plan.md) - 4.  How am I billed for my Enterprise plan?
 - [How can I cancel my Claude Pro subscription on the Claude app for iOS? | Claude Help Center](how-can-i-cancel-my-claude-pro-subscription-on-the-claude-app-for-ios.md) - 4.  How can I cancel my Claude Pro subscription on the Claude app for iOS?
+- [How can I learn more about Claude API pricing? | Claude Help Center](how-can-i-learn-more-about-claude-api-pricing-55059e836c.md) - March 16, 2026
 - [How can I learn more about Claude API pricing? | Claude Help Center](how-can-i-learn-more-about-claude-api-pricing.md) - 4.  How can I learn more about Claude API pricing?
+- [Cancel your organization&#x27;s Team plan subscription | Claude Help Center](how-do-i-cancel-my-organization-s-team-plan-subscription-239ac7a68f.md) - An Owner or Primary Owner can cancel Team plan access by navigating to **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)*
 - [Cancel your organization&#x27;s Team plan subscription | Claude Help Center](how-do-i-cancel-my-organization-s-team-plan-subscription.md) - 4.  Cancel your organization's Team plan subscription
+- [Cancel your Pro or Max subscription | Claude Help Center](how-do-i-cancel-my-paid-claude-subscription-2a2e02e930.md) - You may cancel your Pro or Max plan subscription at any time by following the cancellation instructions for the platform you signed up on. Your cancel
+- [Get started with the Team plan | Claude Help Center](how-do-i-get-started-with-the-team-plan-5bc832ab3b.md) - - The account creator must use a business email address. Public domains like @gmail.com, @yahoo.com, and @hotmail.com aren't allowed—but you can **[ad
 - [Get started with the Team plan | Claude Help Center](how-do-i-get-started-with-the-team-plan.md) - - The account creator must use a business email address. Public domains like @gmail.com, @yahoo.com, and @hotmail.com aren't allowed—but you can **[ad
+- [How is my Team plan bill calculated? | Claude Help Center](how-is-my-team-plan-bill-calculated-7772627a23.md) - May 18, 2026
 - [How is my Team plan bill calculated? | Claude Help Center](how-is-my-team-plan-bill-calculated.md) - Prices shown are for US customers and exclude applicable taxes. Pricing, currency, and tax handling vary by region. Visit **[claude.ai/upgrade](http:/
+- [How large is the context window on paid Claude plans? | Claude Help Center](how-large-is-the-context-window-on-paid-claude-plans-24df102877.md) - Claude Opus 5 and Sonnet 5 support a 1M token context window on all paid plans when chatting with Claude. Claude Opus 4.8, Opus 4.7, Opus 4.6, and Son
 - [How large is the context window on paid Claude plans? | Claude Help Center](how-large-is-the-context-window-on-paid-claude-plans.md) - 4.  How large is the context window on paid Claude plans?
 - [How long do you store my organization’s data? | Claude Help Center](how-long-do-you-store-personal-data.md) - *This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max 
+- [How to change your Pro plan from monthly to annual billing | Claude Help Center](how-to-change-your-pro-plan-from-monthly-to-annual-billing-7bd9204afe.md) - March 16, 2026
 - [How to change your Pro plan from monthly to annual billing | Claude Help Center](how-to-change-your-pro-plan-from-monthly-to-annual-billing.md) - 4.  How to change your Pro plan from monthly to annual billing
+- [Change your Team plan from monthly to annual billing | Claude Help Center](how-to-change-your-team-plan-from-monthly-to-annual-billing-bcf1288298.md) - March 16, 2026
 - [Change your Team plan from monthly to annual billing | Claude Help Center](how-to-change-your-team-plan-from-monthly-to-annual-billing.md) - 4.  Change your Team plan from monthly to annual billing
+- [How to gift a Claude subscription | Claude Help Center](how-to-gift-a-claude-subscription-1b2526ec96.md) - April 29, 2026
 - [How to gift a Claude subscription | Claude Help Center](how-to-gift-a-claude-subscription.md) - Give the gift of Claude to friends, family, or colleagues. Gift subscriptions are available for Pro, Max 5x, and Max 20x plans, and can be purchased f
+- [How to redeem a Claude gift subscription | Claude Help Center](how-to-redeem-a-claude-gift-subscription-97f49e6fcf.md) - March 16, 2026
 - [How to redeem a Claude gift subscription | Claude Help Center](how-to-redeem-a-claude-gift-subscription.md) - 4.  How to redeem a Claude gift subscription
+- [I have a paid Claude subscription (Pro, Max, Team, or Enterprise plans). Why do I have to pay separately to use the Claude API and Console? | Claude Help Center](i-have-a-paid-claude-subscription-pro-max-team-or-enterprise-plans-why-do-i-have-5b192918a7.md) - March 16, 2026
 - [I have a paid Claude subscription (Pro, Max, Team, or Enterprise plans). Why do I have to pay separately to use the Claude API and Console? | Claude Help Center](i-have-a-paid-claude-subscription-pro-max-team-or-enterprise-plans-why-do-i-have.md) - 4.  I have a paid Claude subscription (Pro, Max, Team, or Enterprise plans). Why do I have to pay separately to use the Claude API and Console?
+- [I’m planning to launch a product using the Claude API. What steps should I take to ensure I’m not violating Anthropic’s Usage Policy? | Claude Help Center](i-m-planning-to-launch-a-product-using-the-claude-api-what-steps-should-i-take-t-d354484757.md) - March 16, 2026
 - [I’m planning to launch a product using the Claude API. What steps should I take to ensure I’m not violating Anthropic’s Usage Policy? | Claude Help Center](i-m-planning-to-launch-a-product-using-the-claude-api-what-steps-should-i-take-t.md) - 4.  I’m planning to launch a product using the Claude API. What steps should I take to ensure I’m not violating Anthropic’s Usage Policy?
+- [Add or update your Team plan&#x27;s tax or VAT ID | Claude Help Center](i-need-to-add-or-update-my-team-plan-s-tax-or-vat-id-db9d66de41.md) - March 16, 2026
 - [Add or update your Team plan&#x27;s tax or VAT ID | Claude Help Center](i-need-to-add-or-update-my-team-plan-s-tax-or-vat-id.md) - 4.  Add or update your Team plan's tax or VAT ID
 - [Manage costs effectively - Claude Code Docs](manage-costs-effectively-claude-code-docs-7c26178a4f.md) - Track token usage, set team spend limits, and reduce Claude Code costs with context management, model selection, extended thinking settings, and prepr
+- [Manage custom roles on Enterprise plans | Claude Help Center](manage-custom-roles-on-enterprise-plans-f8a1b3dabf.md) - Custom roles are available for Enterprise plan organizations. Owners, Primary Owners, and custom roles with the **Identity & Access** permission set t
+- [Manage usage credits for paid Claude plans | Claude Help Center](manage-extra-usage-for-paid-claude-plans-f6c37e2de4.md) - May 18, 2026
+- [Manage usage credits for Team and seat-based Enterprise plans | Claude Help Center](manage-extra-usage-for-team-and-seat-based-enterprise-plans-dff5902d37.md) - May 18, 2026
 - [Manage extra usage for Team and seat-based Enterprise plans | Claude Help Center](manage-extra-usage-for-team-and-seat-based-enterprise-plans.md) - 4.  Manage extra usage for Team and seat-based Enterprise plans
+- [Manage groups and group spend limits on Enterprise plans | Claude Help Center](manage-groups-and-group-spend-limits-on-enterprise-plans-fd3f391cc6.md) - Groups and group spend limits are available for Enterprise plan organizations. Owners, Primary Owners, and custom roles with the **Identity & Access**
+- [Manage members on Team and Enterprise plans | Claude Help Center](manage-members-on-team-and-enterprise-plans-ae927760ef.md) - This guide covers how to add, remove, and manage the people on your Team or Enterprise plan.
 - [Manage members on Team and Enterprise plans | Claude Help Center](manage-members-on-team-and-enterprise-plans.md) - 4.  Manage members on Team and Enterprise plans
+- [Manage usage credits for paid Claude plans | Claude Help Center](manage-usage-credits-for-paid-claude-plans-3682360a70.md) - May 18, 2026
+- [Manage usage credits for Team and seat-based Enterprise plans | Claude Help Center](manage-usage-credits-for-team-and-seat-based-enterprise-plans-c4a8f47459.md) - May 18, 2026
+- [Manage user feedback settings on Team and Enterprise plans | Claude Help Center](manage-user-feedback-settings-on-team-and-enterprise-plans-19d51c778b.md) - March 16, 2026
 - [Manage user feedback settings on Team and Enterprise plans | Claude Help Center](manage-user-feedback-settings-on-team-and-enterprise-plans.md) - 4.  Manage user feedback settings on Team and Enterprise plans
+- [Manage members on Team and Enterprise plans | Claude Help Center](managing-members-on-team-and-enterprise-plans-08b3821afb.md) - This guide covers how to add, remove, and manage the people on your Team or Enterprise plan.
 - [Manage members on Team and Enterprise plans | Claude Help Center](managing-members-on-team-and-enterprise-plans.md) - 4.  Manage members on Team and Enterprise plans
+- [Manage user feedback settings on Team and Enterprise plans | Claude Help Center](managing-user-feedback-settings-on-team-and-enterprise-plans-61d37da327.md) - March 16, 2026
 - [Manage user feedback settings on Team and Enterprise plans | Claude Help Center](managing-user-feedback-settings-on-team-and-enterprise-plans.md) - 4.  Manage user feedback settings on Team and Enterprise plans
 - [Max plan | Claude](max-plan-claude.md) - The Max plan combines Claude desktop and mobile apps and Claude Code in one subscription, with up to 20x more usage per session than Pro. That’s a lot
 - [Monitoring](monitoring-usage.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Paid plan billing FAQs | Claude Help Center](paid-plan-billing-faqs-0d4b98bda9.md) - This article covers Pro and Max subscriptions purchased on the web. If you subscribed through Claude for iOS or Claude for Android, your payment is ha
 - [Paid Plan Billing FAQs | Claude Help Center](paid-plan-billing-faqs.md) - If you are subscribed to a paid plan (Pro or Max), follow these steps to access your invoices:
+- [Plans &amp; Pricing | Claude by Anthropic](plans-amp-pricing-claude-by-anthropic-af3a9291ae.md) - Individual
+- [Plans &amp; Pricing | Claude by Anthropic](plans-amp-pricing-claude-by-anthropic-de38b04b74.md) - Individual
 - [Plans &amp; Pricing | Claude by Anthropic](plans-amp-pricing-claude-by-anthropic.md) - Per month with annual subscription discount (\$200 billed up front). \$20 if billed monthly.
+- [Purchase and manage seats on Enterprise plans | Claude Help Center](purchase-and-manage-seats-on-enterprise-plans-7f70cfcac6.md) - This article covers how to add seats, manage your seat allocation, and handle member access on Enterprise plans. For pricing and billing details, see 
 - [Purchase and manage seats on Enterprise plans | Claude Help Center](purchase-and-manage-seats-on-enterprise-plans.md) - 4.  Purchase and manage seats on Enterprise plans
+- [Purchase and manage seats on Team plans | Claude Help Center](purchase-and-manage-seats-on-team-plans-a3fca40028.md) - Seat management allows Team plan owners to control their organization's seat allocation, assign users to different seat types, and manage billing. For
 - [Purchase and manage seats on Team plans | Claude Help Center](purchase-and-manage-seats-on-team-plans.md) - 4.  Purchase and manage seats on Team plans
+- [Purchase and manage seats on Enterprise plans | Claude Help Center](purchasing-and-managing-seats-on-enterprise-plans-4d55fc910a.md) - This article covers how to add seats, manage your seat allocation, and handle member access on Enterprise plans. For pricing and billing details, see 
 - [Purchase and manage seats on Enterprise plans | Claude Help Center](purchasing-and-managing-seats-on-enterprise-plans.md) - 4.  Purchase and manage seats on Enterprise plans
+- [Purchase and manage seats on Team plans | Claude Help Center](purchasing-and-managing-seats-on-team-plans-067eda0415.md) - Seat management allows Team plan owners to control their organization's seat allocation, assign users to different seat types, and manage billing. For
 - [Purchase and manage seats on Team plans | Claude Help Center](purchasing-and-managing-seats-on-team-plans.md) - 4.  Purchase and manage seats on Team plans
+- [Requesting a refund for a paid Claude plan | Claude Help Center](requesting-a-refund-for-a-paid-claude-plan-662fc76dd3.md) - June 19, 2026
 - [Requesting a refund for a paid Claude plan | Claude Help Center](requesting-a-refund-for-a-paid-claude-plan.md) - 4.  Requesting a refund for a paid Claude plan
+- [Set up role-based permissions on Enterprise plans | Claude Help Center](set-up-role-based-entitlements-on-enterprise-plans-67c1b70136.md) - This guide walks you through setting up role-based permissions for your Enterprise organization. This lets you control which features and connectors s
+- [Set up role-based permissions on Enterprise plans | Claude Help Center](set-up-role-based-permissions-on-enterprise-plans-99a481d71b.md) - This guide walks you through setting up role-based permissions for your Enterprise organization. This lets you control which features and connectors s
+- [Team plan billing FAQs | Claude Help Center](team-plan-billing-faqs-654966f6a4.md) - March 16, 2026
 - [Team plan billing FAQs | Claude Help Center](team-plan-billing-faqs.md) - Accepted payment methods are credit, debit, or prepaid cards. Other forms of payment, including ACH bank transfers, are not accepted at this time.
+- [Understanding your billing address and tax calculation | Claude Help Center](understanding-your-billing-address-and-tax-calculation-e307ee6cb1.md) - June 26, 2026
 - [Understanding your billing address and tax calculation | Claude Help Center](understanding-your-billing-address-and-tax-calculation.md) - 4.  Understanding your billing address and tax calculation
+- [View usage analytics for Team and Enterprise plans | Claude Help Center](usage-analytics-for-team-and-enterprise-plans-3420010136.md) - This article explains how to view and export usage analytics for your organization.
 - [View usage analytics for Team and Enterprise plans | Claude Help Center](usage-analytics-for-team-and-enterprise-plans.md) - 4.  View usage analytics for Team and Enterprise plans
+- [How am I billed for my Enterprise plan? | Claude Help Center](usage-based-enterprise-plans-784bd2a9f3.md) - Enterprise plan billing has two parts: a fixed seat fee and separate usage charges. The seat fee covers platform access. Usage is billed on top of tha
 - [How am I billed for my Enterprise plan? | Claude Help Center](usage-based-enterprise-plans.md) - 4.  How am I billed for my Enterprise plan?
+- [Use Claude Code with your Pro or Max plan | Claude Help Center](use-claude-code-with-your-pro-or-max-plan-f61234c4ee.md) - June 11, 2026
+- [Use Claude Code with your Team or Enterprise plan | Claude Help Center](use-claude-code-with-your-team-or-enterprise-plan-bc8c68b9d9.md) - June 11, 2026
 - [Use Claude Code with your Team or Enterprise plan | Claude Help Center](use-claude-code-with-your-team-or-enterprise-plan.md) - 3.  Use Claude Code with your Team or Enterprise plan
+- [Use Claude Cowork on Team and Enterprise plans | Claude Help Center](use-claude-cowork-on-team-and-enterprise-plans-ce0320e417.md) - This article explains important limitations and considerations for Team and Enterprise organizations using Claude Cowork.
+- [Use Claude Cowork on Team and Enterprise plans | Claude Help Center](use-cowork-on-team-and-enterprise-plans-8af7c2e309.md) - This article explains important limitations and considerations for Team and Enterprise organizations using Claude Cowork.
 - [Use Cowork on Team and Enterprise plans | Claude Help Center](use-cowork-on-team-and-enterprise-plans-claude-help-center.md) - 4.  Use Cowork on Team and Enterprise plans
 - [Use Cowork on Team and Enterprise plans | Claude Help Center](use-cowork-on-team-and-enterprise-plans.md) - 4.  Use Cowork on Team and Enterprise plans
+- [Use the Claude Agent SDK with your Claude plan | Claude Help Center](use-the-claude-agent-sdk-with-your-claude-plan-73326e0f96.md) - June 16, 2026
+- [Use visual and interactive content on Team and Enterprise plans | Claude Help Center](use-visual-and-interactive-content-on-team-and-enterprise-plans-5e47d1e9bc.md) - March 16, 2026
 - [Use visual and interactive content on Team and Enterprise plans | Claude Help Center](use-visual-and-interactive-content-on-team-and-enterprise-plans.md) - 4.  Use visual and interactive content on Team and Enterprise plans
+- [Use Claude Code with your Pro or Max plan | Claude Help Center](using-claude-code-with-your-pro-or-max-plan-089a9ce37e.md) - June 11, 2026
 - [Using Claude Code with your Pro or Max plan | Claude Help Center](using-claude-code-with-your-pro-or-max-plan.md) - 3.  Using Claude Code with your Pro or Max plan
+- [Use Claude Code with your Team or Enterprise plan | Claude Help Center](using-claude-code-with-your-team-or-enterprise-plan-9476e42d48.md) - June 11, 2026
+- [View usage analytics for Team and Enterprise plans | Claude Help Center](view-usage-analytics-for-team-and-enterprise-plans-eed972446d.md) - This article explains how to view and export usage analytics for your organization.
 - [View usage analytics for Team and Enterprise plans | Claude Help Center](view-usage-analytics-for-team-and-enterprise-plans.md) - 4.  View usage analytics for Team and Enterprise plans
 - [Use visual and interactive content on Team and Enterprise plans | Claude Help Center](visual-and-interactive-content-for-team-and-enterprise-plans.md) - 4.  Use visual and interactive content on Team and Enterprise plans
+- [What is the Enterprise plan? | Claude Help Center](what-is-the-enterprise-plan-c2edf9eedf.md) - The **[Enterprise plan](https://claude.com/solutions/enterprise)** is designed for organizations that need advanced security, compliance controls, and
 - [What is the Enterprise plan? | Claude Help Center](what-is-the-enterprise-plan.md) - The Enterprise plan is designed for organizations that need advanced security, compliance controls, and scalable AI across their teams. It includes ev
+- [What is the Max plan? | Claude Help Center](what-is-the-max-plan-8210caea06.md) - This article is about paid Max plans for individual consumers. If you're part of an organization looking to use Claude with your team, refer to **[Tea
 - [What is the Max plan? | Claude Help Center](what-is-the-max-plan.md) - This article is about paid Max plans for individual consumers. If you're part of an organization looking to use Claude with your team, refer to **[Tea
+- [What is the Pro plan? | Claude Help Center](what-is-the-pro-plan-237e9bb3c1.md) - June 10, 2026
 - [What is the Pro plan? | Claude Help Center](what-is-the-pro-plan.md) - This article is about paid Pro plans for individual consumers. If you're part of an organization looking to use Claude with your team, refer to **[Tea
+- [What is the Team plan? | Claude Help Center](what-is-the-team-plan-853ebc6dad.md) - The Team plan is a paid plan for our Claude chat experience built for ambitious teams. It is currently available in certain **[supported locations](ht
 - [What is the Team plan? | Claude Help Center](what-is-the-team-plan.md) - The Team plan is a paid plan for our Claude chat experience built for ambitious teams. It is currently available in certain **[supported locations](ht

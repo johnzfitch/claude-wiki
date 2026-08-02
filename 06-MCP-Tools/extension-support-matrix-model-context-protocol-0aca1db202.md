@@ -1,0 +1,71 @@
+---
+title: "Extension Support Matrix - Model Context Protocol"
+source_url: "https://modelcontextprotocol.io/extensions/client-matrix"
+category: "06-MCP-Tools"
+fetched_at: "2026-08-02T05:38:41Z"
+tags: ["mcp"]
+---
+
+## On this page
+
+- [Extension overview](#extension-overview)
+- [Support matrix](#support-matrix)
+- [Adding extension support to your client](#adding-extension-support-to-your-client)
+
+# Extension Support Matrix
+
+Copy pageCopy page
+
+Which MCP clients implement which official extensions
+
+Copy pageCopy page
+
+This matrix shows which MCP clients support each [official extension](/extensions/overview). Extensions are always opt-in: a client only uses an extension if both client and server declare support in the `extensions` field of their [capabilities](/extensions/overview#negotiation).
+
+This list is maintained by the community. If you notice any inaccuracies or would like to add or update information, please [submit a pull request](https://github.com/modelcontextprotocol/modelcontextprotocol/pulls).
+
+
+[​](#extension-overview)
+
+Extension overview
+
+| Extension                                                                             | Identifier                                                 | Description                                                     |
+|---------------------------------------------------------------------------------------|------------------------------------------------------------|-----------------------------------------------------------------|
+| [MCP Apps](/extensions/apps/overview)                                                 | `io.modelcontextprotocol/ui`                               | Interactive HTML interfaces rendered inline in the conversation |
+| [OAuth Client Credentials](/extensions/auth/oauth-client-credentials)                 | `io.modelcontextprotocol/oauth-client-credentials`         | Machine-to-machine auth without interactive user login          |
+| [Enterprise-Managed Authorization](/extensions/auth/enterprise-managed-authorization) | `io.modelcontextprotocol/enterprise-managed-authorization` | Centralized access control via enterprise IdP                   |
+
+
+[​](#support-matrix)
+
+Support matrix
+
+| Client                                                                   | [MCP Apps](/extensions/apps/overview) | [OAuth Client Credentials](/extensions/auth/oauth-client-credentials) | [Enterprise Auth](/extensions/auth/enterprise-managed-authorization) |
+|--------------------------------------------------------------------------|:-------------------------------------:|:---------------------------------------------------------------------:|:--------------------------------------------------------------------:|
+| [Claude (web)](https://claude.ai)                                        |                                       |                                                                       |                                                                      |
+| [Claude Desktop](https://claude.ai/download)                             |                                       |                                                                       |                                                                      |
+| [VS Code GitHub Copilot](https://code.visualstudio.com/)                 |                                       |                                                                       |                                                                      |
+| [Microsoft 365 Copilot](https://www.microsoft.com/microsoft-365-copilot) |                                       |                                                                       |                                                                      |
+| [Goose](https://block.github.io/goose/)                                  |                                       |                                                                       |                                                                      |
+| [Postman](https://postman.com)                                           |                                       |                                                                       |                                                                      |
+| [MCPJam](https://www.mcpjam.com/)                                        |                                       |                                                                       |                                                                      |
+| [ChatGPT](https://chatgpt.com/)                                          |                                       |                                                                       |                                                                      |
+| [Cursor](https://cursor.com/)                                            |                                       |                                                                       |                                                                      |
+| [Archestra.AI](https://www.archestra.ai/)                                |                                       |                                                                       |                                                                      |
+| [PostHog Code](https://posthog.com/code/)                                |                                       |                                                                       |                                                                      |
+
+Auth extension support (OAuth Client Credentials and Enterprise-Managed Authorization) is tracked separately from the core MCP authorization features (DCR, CIMD). Check each extension’s specification and the [ext-auth repository](https://github.com/modelcontextprotocol/ext-auth) for the latest implementation status.
+
+
+[​](#adding-extension-support-to-your-client)
+
+Adding extension support to your client
+
+If you’re building an MCP client and want to implement extension support:
+
+1.  Review the extension specification (e.g., in the [ext-auth](https://github.com/modelcontextprotocol/ext-auth) or [ext-apps](https://github.com/modelcontextprotocol/ext-apps) repository)
+2.  Declare support in the `extensions` field of the `io.modelcontextprotocol/clientCapabilities` your client sends in each request’s `_meta`, and read the server’s `extensions` from its [`server/discover`](/specification/draft/server/discover) response
+3.  Implement the extension’s protocol requirements
+4.  Submit a pull request to update this matrix
+
+See [Extensions Overview](/extensions/overview#negotiation) for details on the capability negotiation mechanism.

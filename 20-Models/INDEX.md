@@ -1,30 +1,46 @@
 # Models
 
-*176 documents*
+*219 documents*
 
 
+- [Choosing the right model - Claude Platform Docs](about-claude-models-choosing-a-model-38ebff0fff.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Choosing the right model](about-claude-models-choosing-a-model-84da495643.md) - Selecting the optimal Claude model for your application involves balancing three key considerations: capabilities, speed, and cost. This guide helps y
 - [Choosing the right model - Claude API Docs](about-claude-models-choosing-a-model.md) - Selecting the optimal Claude model for your application involves balancing three key considerations: capabilities, speed, and cost. This guide helps y
 - [Before (Claude Sonnet 3.7)](about-claude-models-migrating-to-claude-4.md) - This guide covers two key migration paths to Claude 4.5 models:
+- [Migration guide - Claude Platform Docs](about-claude-models-migration-guide-4311c39782.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Migration guide](about-claude-models-migration-guide-6c790f7501.md) - Guide for migrating to Claude Opus 4.7 and Claude 4.6 models from previous Claude versions
 - [Migration guide - Claude API Docs](about-claude-models-migration-guide.md) - Guide for migrating to Claude 4.6 models from previous Claude versions
+- [Model IDs and versioning - Claude Platform Docs](about-claude-models-model-ids-and-versions-9332683246.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Models overview - Claude Platform Docs](about-claude-models-overview-2536dd9f05.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Models overview](about-claude-models-overview-2bbf09ff82.md) - Claude is a family of state-of-the-art large language models developed by Anthropic. This guide introduces the available models and compares their per
+- [Models overview - Claude Platform Docs](about-claude-models-overview-a06a84876f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Models overview - Claude API Docs](about-claude-models-overview.md) - Claude is a family of state-of-the-art large language models developed by Anthropic. This guide introduces the available models and compares their per
 - [Claude Sonnet 3.7](about-claude-models-whats-new-claude-4-5.md) - Claude 4.5 introduces three models designed for different use cases:
 - [What's new in Claude 4.6 - Claude API Docs](about-claude-models-whats-new-claude-4-6.md) - Overview of new features and capabilities in Claude Opus 4.6 and Sonnet 4.6.
 - [What's new in Claude Opus 4.7](about-claude-models-whats-new-claude-4-7-3e4989177d.md) - Overview of new features, breaking changes, and behavior changes in Claude Opus 4.7.
+- [What's new in Claude Opus 5 - Claude Platform Docs](about-claude-models-whats-new-opus-5-855446aa29.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [What's new in Claude Sonnet 5 - Claude Platform Docs](about-claude-models-whats-new-sonnet-5-d31213b17d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Adapt to new model personas after deprecations | Claude Help Center](adapt-to-new-model-personas-after-deprecations-e76aacc6b0.md) - **[Model deprecations and retirements](https://docs.claude.com/en/docs/about-claude/model-deprecations#model-status)** are routine parts of the model 
+- [Adapt to new model personas after deprecations | Claude Help Center](adapting-to-new-model-personas-after-deprecations-24851bca6e.md) - **[Model deprecations and retirements](https://docs.claude.com/en/docs/about-claude/model-deprecations#model-status)** are routine parts of the model 
 - [Adapting to new model personas after deprecations | Claude Help Center](adapting-to-new-model-personas-after-deprecations.md) - 4.  Adapting to new model personas after deprecations
 - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill-195bd9fb41.md) - An open-source Agent Skill that provides Claude with up-to-date API reference material, SDK documentation, and best practices for building application
+- [Claude API skill - Claude Platform Docs](agents-and-tools-agent-skills-claude-api-skill-a5f702dd17.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Claude Code on Amazon Bedrock](amazon-bedrock.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Models - Claude API Reference](api-beta-models-5b6f2e637e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Models](api-beta-models-a2ec582f9d.md) - **get** `/v1/models`
+- [List Models - Claude API Reference](api-beta-models-list-46fe2c6773.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Models List Ae1Bbbc10A](api-beta-models-list-ae1bbbc10a.md) - **get** `/v1/models`
 - [List Models - Claude API Reference](api-beta-models-list.md) - GET/v1/models
 - [Api Beta Models Retrieve 14Ec84A11D](api-beta-models-retrieve-14ec84a11d.md) - **get** `/v1/models/{model_id}`
+- [Get a Model - Claude API Reference](api-beta-models-retrieve-672ee26e06.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Get a Model - Claude API Reference](api-beta-models-retrieve.md) - GET/v1/models/{model_id}
 - [Models - Claude API Reference](api-beta-models.md) - GET/v1/models
+- [Trigger a routine through the API - Claude Platform Docs](api-claude-code-routines-fire-d96a9582fb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Trigger a routine via API](api-claude-code-routines-fire-df6c51ff06.md) - Start a Claude Code routine session on demand by sending an authenticated POST request.
 - [Claude on Amazon Bedrock - Claude API Docs](api-claude-on-amazon-bedrock.md) - Anthropic's Claude models are now generally available through Amazon Bedrock.
+- [Claude on Google Cloud - Claude Platform Docs](api-claude-on-vertex-ai-7ed9b92e0b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Claude on Vertex AI - Claude API Docs](api-claude-on-vertex-ai.md) - Anthropic's Claude models are now generally available through [Vertex AI](https://cloud.google.com/vertex-ai).
+- [IAM actions for Claude Platform on AWS - Claude Platform Docs](api-claude-platform-on-aws-iam-actions-46a81874e2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Models](api-cli-beta-models-385ff34a98.md) - `$ ant beta:models list`
 - [Api Cli Beta Models List 5Ec77A878A](api-cli-beta-models-list-5ec77a878a.md) - `$ ant beta:models list`
 - [API Reference - Claude API Docs](api-cli-beta-models-list.md)
@@ -79,8 +95,11 @@
 - [API Reference - Claude API Docs](api-kotlin-models-retrieve.md)
 - [API Reference - Claude API Docs](api-kotlin-models.md)
 - [Models](api-models-4198291c1d.md) - **get** `/v1/models`
+- [Models - Claude API Reference](api-models-4808ef942f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Models - Claude API Reference](api-models-list-77e92174d5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Models List B413Cb243D](api-models-list-b413cb243d.md) - **get** `/v1/models`
 - [List Models - Claude API Reference](api-models-list.md) - GET/v1/models
+- [Get a Model - Claude API Reference](api-models-retrieve-340bf38c10.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Models Retrieve 3Fb773E9F6](api-models-retrieve-3fb773e9f6.md) - **get** `/v1/models/{model_id}`
 - [Get a Model - Claude API Reference](api-models-retrieve.md) - GET/v1/models/{model_id}
 - [Models - Claude API Reference](api-models.md) - GET/v1/models
@@ -144,18 +163,27 @@
 - [Api Typescript Models Retrieve A0206D3Dca](api-typescript-models-retrieve-a0206d3dca.md) - `client.models.retrieve(stringmodelID, ModelRetrieveParamsparams?, RequestOptionsoptions?): ModelInfo`
 - [Get a Model - Claude API Reference](api-typescript-models-retrieve.md) - client.models.retrieve(stringmodelID, ModelRetrieveParams { betas } params?, RequestOptionsoptions?): [ModelInfo](/docs/en/api/models#model_info) { id
 - [Models - Claude API Reference](api-typescript-models.md) - client.models.list(ModelListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[ModelInfo](/docs/en/api/models#model
+- [Applying Claude Opus 4.5&#x27;s strengths to your everyday work | Claude by Anthropic](applying-claude-opus-4-5-s-strengths-to-your-everyday-work-2a9028ba10.md) - Learn how Claude Opus 4.5 excels at complex multi-step work including long conversations, polished document creation, and sophisticated coding.
 - [Applying Claude Opus 4.5&#x27;s strengths to your everyday work | Claude](applying-claude-opus-4-5-s-strengths-to-your-everyday-work.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Bd2A28D2535Bfb0494Cc8E2A3Bf135D2E7523226 Model Card Claude 2 Pdf 48080Cce0D](bd2a28d2535bfb0494cc8e2a3bf135d2e7523226-model-card-claude-2-pdf-48080cce0d.md) - Model Card and Evaluations for Claude Models
 - [Claude Code Analytics API](build-with-claude-claude-code-analytics-api-f78828c053.md) - Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
 - [Claude Code Analytics API - Claude API Docs](build-with-claude-claude-code-analytics-api.md) - Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
+- [Claude in Amazon Bedrock (Opus 4.7 and later) - Claude Platform Docs](build-with-claude-claude-in-amazon-bedrock-f34fd90d33.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock-fe322d327e.md) - Access Claude models through Amazon Bedrock with AWS-native authentication, billing, and security boundaries.
 - [Claude in Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry-cac680095c.md) - Access Claude models through Microsoft Foundry with Azure-native endpoints and authentication.
+- [Claude in Microsoft Foundry - Claude Platform Docs](build-with-claude-claude-in-microsoft-foundry-dc337252fd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Claude in Microsoft Foundry - Claude API Docs](build-with-claude-claude-in-microsoft-foundry.md) - Access Claude models through Microsoft Foundry with Azure-native endpoints and authentication.
+- [Claude on Amazon Bedrock (Opus 4.6 and earlier) - Claude Platform Docs](build-with-claude-claude-on-amazon-bedrock-legacy-cbb175336d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Claude on Amazon Bedrock (legacy)](build-with-claude-claude-on-amazon-bedrock-legacy-d59184ae62.md) - The legacy Amazon Bedrock integration for Claude models, using InvokeModel and Converse APIs with ARN-versioned model identifiers.
 - [Claude on Amazon Bedrock - Claude API Docs](build-with-claude-claude-on-amazon-bedrock.md) - Anthropic's Claude models are now generally available through Amazon Bedrock.
 - [Claude on Vertex AI](build-with-claude-claude-on-vertex-ai-8049f13ebc.md) - Anthropic's Claude models are now generally available through [Vertex AI](https://cloud.google.com/vertex-ai).
+- [Claude on Google Cloud - Claude Platform Docs](build-with-claude-claude-on-vertex-ai-8cb4ce8e8a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Claude on Vertex AI - Claude API Docs](build-with-claude-claude-on-vertex-ai.md) - Anthropic's Claude models are now generally available through [Vertex AI](https://cloud.google.com/vertex-ai).
+- [Claude Platform on AWS - Claude Platform Docs](build-with-claude-claude-platform-on-aws-3044b3f1e2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Can I use my Outputs to train an AI model? | Claude Help Center](can-i-use-my-outputs-to-train-an-ai-model-4a7108e3bc.md) - March 16, 2026
 - [Can I use my Outputs to train an AI model? | Claude Help Center](can-i-use-my-outputs-to-train-an-ai-model.md) - 3.  Can I use my Outputs to train an AI model?
 - [Change Breakdown: 2.1.42 vs 2.1.41](change-breakdown-2.1.42-vs-2.1.41.md) - - Most differences are minifier/symbol churn.
+- [Claude Code model configuration | Claude Help Center](claude-code-model-configuration-2eca096d89.md) - This guide shows you three ways to change which Claude model you're using with Claude Code: the quick `/model` command for instant changes, the `--mod
 - [Claude Code model configuration | Claude Help Center](claude-code-model-configuration.md) - This guide shows you three ways to change which Claude model you're using with Claude Code: the quick `/model` command for instant changes, the `--mod
 - [Claude Code on Amazon Bedrock - Claude Code Docs](claude-code-on-amazon-bedrock-claude-code-docs-435e92efd0.md) - Learn about configuring Claude Code through Amazon Bedrock, including setup, IAM configuration, and troubleshooting.
 - [Claude Code on Google Vertex AI - Claude Code Docs](claude-code-on-google-vertex-ai-claude-code-docs-2acd050a7a.md) - Learn about configuring Claude Code through Google Vertex AI, including setup, IAM configuration, and troubleshooting.
@@ -163,19 +191,34 @@
 - [Claude Code Binary Diff: 2.1.42 → 2.1.50](claude-diff-2142-vs-2150.md) - **Method:** ELF section analysis + Bun SFE bundle string extraction
 - [Claude Mythos Preview](claude-mythos-preview.md) - Claude Mythos Preview is a new general-purpose language model announced April 7, 2026, that is strikingly capable at computer security tasks. It is no
 - [Claude Binary Reverse Engineering Diff Report](claude-pyghidra-diff-2.1.50-2.1.55-2.1.59.md) - Scope: `/home/zack/.local/share/claude/versions/2.1.50` -> `/home/zack/.local/share/claude/versions/2.1.55` -> `/home/zack/.local/share/claude/version
+- [Covered Models | Claude Help Center](covered-models-9b5d036943.md) - July 1, 2026
+- [Create professional results across tools with Claude Sonnet 4.5 | Claude by Anthropic](create-professional-results-across-tools-with-claude-sonnet-4-5-5a84b3acfa.md) - Use Claude Sonnet 4.5's code execution and file creation to build professional presentations, spreadsheets, and documents efficiently.
 - [Create professional results across tools with Claude Sonnet 4.5 | Claude](create-professional-results-across-tools-with-claude-sonnet-4-5.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Data retention practices for Covered Models | Claude Help Center](data-retention-practices-for-covered-models-98f93eb2a2.md) - To ensure we’re responsibly deploying covered models, **we are requiring limited data retention and review as part of our safety work. Prompts submitt
+- [Data retention practices for Covered Models | Claude Help Center](data-retention-practices-for-mythos-class-models-1ff23ce16e.md) - To ensure we’re responsibly deploying covered models, **we are requiring limited data retention and review as part of our safety work. Prompts submitt
+- [De8Ba9B01C9Ab7Cbabf5C33B80B7Bbc618857627 Model Card Claude 3 Pdf 1B2Bfa31A5](de8ba9b01c9ab7cbabf5c33b80b7bbc618857627-model-card-claude-3-pdf-1b2bfa31a5.md) - The Claude 3 Model Family: Opus, Sonnet, Haiku
 - [DELTA: Claude Code 2.1.59 → 2.1.70](delta.md) - **Analysis date:** 2026-03-06
 - [Finetuning Claude 3 Haiku on Bedrock](finetuning-on-bedrock.md) - In this notebook, we\'ll walk you through the process of finetuning
+- [Getting the most out of Sonnet 4.5 in Claude.ai | Claude by Anthropic](getting-the-most-out-of-sonnet-4-5-in-claude-ai-fc1a455125.md) - Maximize Claude Sonnet 4.5's capabilities for creating professional documents, writing code, conducting research, and completing complex tasks.
 - [Getting the most out of Sonnet 4.5 in Claude.ai | Claude](getting-the-most-out-of-sonnet-4-5-in-claude-ai.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
 - [Claude Code on Google Vertex AI](google-vertex-ai.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Change the model, effort, and thinking settings | Claude Help Center](how-can-i-change-the-model-version-that-i-m-chatting-with-41d8bba7a6.md) - The model menu next to the send button controls three settings: which Claude model you're chatting with, how much effort it puts into each response, a
 - [LLM gateway configuration](llm-gateway.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Claude Code Analytics API - Claude Platform Docs](manage-claude-claude-code-analytics-api-f4b723bc91.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Claude Code on Microsoft Foundry](microsoft-foundry.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Model availability in Claude for Government | Claude Help Center](model-availability-in-claude-for-government-c3cffdee09.md) - April 10, 2026
 - [Model configuration](model-config.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 - [Model deprecations](model-deprecations.md)
 - [Opus 1M Context Migration — Implementation Details](opus-1m-migration.md) - **Feature Flag**: `tengu_cobalt_compass`
 - [Parallel tool calls on Claude 3.7 Sonnet {#parallel-tool-calls-on-claude-37-sonnet}](parallel-tools.md) - :::
 - [Prompt / Env / Model Change Report](prompt-env-model-changes-2.1.50-2.1.55-2.1.59.md) - Scope: `2.1.50 -> 2.1.55 -> 2.1.59`
 - [Summarizing Web Page Content with Claude 3 Haiku](read-web-pages-with-haiku.md) - In this recipe, we\'ll learn how to fetch the content of a web page
+- [Real-time cyber safeguards on Claude Opus and Sonnet | Claude Help Center](real-time-cyber-safeguards-on-claude-opus-and-sonnet-3e3f54fb4c.md) - **Note**: This article applies only to Opus and Sonnet class models.
+- [Responsible Use of Anthropic&#x27;s Models: Guidelines for Organizations Serving Minors | Claude Help Center](responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minor-758a9593b9.md) - March 16, 2026
+- [Set a default model for your organization | Claude Help Center](set-a-default-model-for-your-organization-98e8ab7944.md) - This guide explains how to choose the Claude model that new conversations start on across your organization. You can set one default for your whole or
 - [Keep Claude in character with role prompting and prefilling - Claude API Docs](test-and-evaluate-strengthen-guardrails-keep-claude-in-character.md) - This guide provides actionable tips to keep Claude in character, even during long, complex interactions.
 - [Claude Help Center](using-claude-for-financial-services-for-analysis-and-modeling.md) - Search for articles...
+- [What AWS Regions are Claude models available in Amazon Bedrock? | Claude Help Center](what-aws-regions-are-claude-models-available-in-amazon-bedrock-ff32dc1fab.md) - March 16, 2026
 - [What AWS Regions are Claude models available in Amazon Bedrock? | Claude Help Center](what-aws-regions-are-claude-models-available-in-amazon-bedrock.md) - 3.  What AWS Regions are Claude models available in Amazon Bedrock?
+- [Why Claude switched models in your conversation with Fable 5 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-fable-5-2d51d90ee2.md) - July 1, 2026
+- [Why Claude switched models in your conversation with Opus 5 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-opus-5-f79cee93bc.md) - This article explains why a request might fallback on Claude Opus 5, what happens when your conversation switches to another model, and how to manage 

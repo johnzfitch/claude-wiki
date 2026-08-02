@@ -1,0 +1,173 @@
+---
+title: "An off switch for dual use knowledge in AI models \\ Anthropic"
+source_url: "https://www.anthropic.com/research/off-switch-dual-use"
+category: "19-Reference"
+fetched_at: "2026-08-02T07:11:00Z"
+tags: ["testing"]
+---
+
+# An off switch for dual-use knowledge in AI models
+
+Jul 8, 2026
+
+*This post describes research conducted by [AE Studio](https://ae.studio/alignment) in collaboration with Anthropic.*
+
+A frontier AI model is, among other things, a large store of knowledge. Some of that knowledge is *dual use*, meaning it can be used for good or for bad. For example, knowledge of cybersecurity can help patch critical security vulnerabilities, or it can be used to exploit them. Knowledge of virology can help a researcher create a vaccine, but it can also help a malicious actor design a deadly pathogen. Ideally, we would be able to balance three separate goals: first, limiting access to dual-use capabilities in as surgical a way as possible; second, allowing trusted users to access those same capabilities for beneficial purposes; and third, doing all this without affecting the model’s performance on any other task.
+
+Current safeguards are imperfect. We train models to refuse harmful requests and use classifiers to screen inputs and outputs for dangerous content. These layers of protection guard against dangerous outputs—but they don’t change the knowledge stored in the underlying model. Despite our safeguards, a sufficiently determined attacker may still try to [jailbreak](https://www.anthropic.com/news/fable-safeguards-jailbreak-framework) the model, working past its defenses to access the dual-use knowledge.
+
+A more robust protection against misuse would be to control what the model knows. We’ve explored this before: in earlier work, we [filtered information about chemical, biological, radiological, and nuclear weapons out of pretraining data](https://alignment.anthropic.com/2025/pretraining-data-filtering/), and later showed that [dual-use knowledge can be confined to a removable slice of a model’s weights](https://alignment.anthropic.com/2025/selective-gradient-masking/). But filtering is a blunt instrument. It produces one model with one fixed set of capabilities. Using filtering, if you want a model version that *can* discuss advanced virology—for deployment in a vetted biosecurity lab, say—and another version that can’t, you have to train two separate models. Especially in the case of frontier models (which are large and very expensive to train), the cost to the developer would be prohibitive.
+
+In [new research](https://alignment.anthropic.com/2026/modular-pretraining/) carried out with collaborators at AE Studio, we explore a new method that could enable the benefits of training many separately filtered models, but at the cost of training only one model. We call it GRAM, for Gradient-Routed Auxiliary Modules. Note that the results of the experiments presented here are preliminary—GRAM has not been applied to any of the production models at Anthropic, and we’re not sure it ever will be.
+
+## How GRAM works
+
+The idea behind GRAM is to give a model dedicated, removable compartments for each category of dual-use knowledge, and to update only those compartments when learning from dual-use data.
+
+Concretely, GRAM adds extra neurons to every layer of a standard Transformer (the neural network architecture on which large language models are based). These neurons are divided into groups (or “modules”), one per dual-use category. During training, when the model encounters general-purpose text, it learns in the usual way. But when it encounters text from a dual-use category—virology, for instance—the rules change: the model can *use* its general knowledge to make predictions, but only the virology module is allowed to *learn* from that text. The general-purpose weights are temporarily frozen.¹
+
+The consequence is that virology knowledge accumulates in the virology module rather than diffusing across the whole network. After training, the module can simply be deleted, and the capability goes with it. Or it can be left in place for trusted deployments, when virology knowledge is needed. The knowledge can be tailored very specifically to the type of deployment needed: in our experiments, we defined four dual-use categories, so that one training run with GRAM yielded a model that can be configured 16 different ways (“on” or “off” for each of the four categories).
+
+## Testing GRAM
+
+We tested GRAM in three settings of increasing realism.
+
+First, on a synthetic dataset of children’s stories tagged by topic, a small GRAM model could be reconfigured to “forget” any chosen topic, and each configuration performed almost identically to a separate model trained from scratch with that topic filtered out. That is, for the cost of training a single model, we achieved results that would normally require multiple training runs on different datasets.
+
+Second, we trained a larger model on a realistic mix of web text, code, and scientific papers, with four dual-use domains: virology, cybersecurity, nuclear physics, and a niche programming language (to serve as a proxy for specialized dual-use code). The capability associated with each dual-use domain is routed to its own module. Deleting a module removed the corresponding capability about as effectively as never having trained on that data at all. Remarkably, we find that this removal did not degrade general performance.
+
+We also tested whether an attacker could recover the removed knowledge by training on a small amount of malicious data; GRAM resisted this about as well as data filtering did. By contrast, an “unlearning” technique applied after training only *suppressed* the knowledge—it was easy to restore with a small amount of fine-tuning.
+
+Third, we ran the experiment at seven model sizes from 50 million to 5 billion parameters. GRAM matched the performance of data filtering at every size, and the gap between “module on” and “module off” grew wider as models got larger. In terms of compute costs, attempting to bypass our protections became relatively more difficult and expensive as we scaled.
+
+## Conclusions
+
+As AI companies train more capable models, the need to limit access to dual-use capabilities will increase. Today, companies limit access through classifiers and refusal training. However, these safeguards are difficult to make robust without degrading performance on harmless requests. Methods like GRAM offer a potential path toward access control that is more robust.
+
+This is early research, and there are clear limitations. We haven’t tested GRAM at frontier scale or in a production training pipeline. (As noted above, it hasn’t been applied to any of our Claude models.) Our evaluations quantify performance in terms of next-token prediction ability, rather than performance on real downstream tasks. And there’s a deeper open problem that applies to data filtering and methods like GRAM: some dual-use capabilities might be so entangled with general knowledge that no method can separate them cleanly.
+
+*For further details on our experiments, read the [post](https://alignment.anthropic.com/2026/modular-pretraining/) on our Alignment Science blog.*
+
+#### Footnotes
+
+1\. One technical detail is that the virology module is also sometimes turned on when learning from general-purpose text. We find this helps the modules “work together” more effectively.
+
+
+## Related content
+
+### Discovering cryptographic weaknesses with Claude
+
+cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
+
+[Read more](/research/discovering-cryptographic-weaknesses)
+
+### Project Pilot: Can AI control a drone?
+
+Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
+
+[Read more](/research/project-pilot)
+
+### How Canada uses Claude: Findings from the Anthropic Economic Index
+
+[Read more](/research/how-canada-uses-claude)
+
+[](/)
+
+### Products
+
+- [Claude](https://claude.com/product/overview)
+- [Claude Code](https://claude.com/product/claude-code)
+- [Claude Code Enterprise](https://claude.com/product/claude-code/enterprise)
+- [Claude Cowork](https://claude.com/product/cowork)
+- [@Claude](https://claude.com/product/tag)
+- [Claude Design](https://claude.com/product/design)
+- [Claude Science](https://claude.com/product/claude-science)
+- [Claude Security](https://claude.com/product/claude-security)
+- [Claude for Chrome](https://claude.com/chrome)
+- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
+- [Skills](https://www.claude.com/skills)
+- [Download app](https://claude.ai/download)
+- [Pricing](https://claude.com/pricing)
+- [Log in to Claude](https://claude.ai/)
+
+### Models
+
+- [Mythos](https://www.anthropic.com/claude/mythos)
+- [Fable](https://www.anthropic.com/claude/fable)
+- [Opus](https://www.anthropic.com/claude/opus)
+- [Sonnet](https://www.anthropic.com/claude/sonnet)
+- [Haiku](https://www.anthropic.com/claude/haiku)
+
+### Solutions
+
+- [AI agents](https://claude.com/solutions/agents)
+- [Code modernization](https://claude.com/solutions/code-modernization)
+- [Coding](https://claude.com/solutions/coding)
+- [Customer support](https://claude.com/solutions/customer-support)
+- [Cybersecurity](https://claude.com/solutions/cybersecurity)
+- [Enterprise](https://claude.com/solutions/enterprise)
+- [Financial services](https://claude.com/solutions/financial-services)
+- [Government](https://claude.com/solutions/government)
+- [Healthcare](https://claude.com/solutions/healthcare)
+- [Higher education](https://claude.com/solutions/education)
+- [K-12 teachers](https://claude.com/solutions/teachers)
+- [Legal](https://claude.com/solutions/legal)
+- [Life sciences](https://claude.com/solutions/life-sciences)
+- [Nonprofits](https://claude.com/solutions/nonprofits)
+- [Small business](https://claude.com/solutions/small-business)
+
+### Claude Platform
+
+- [Overview](https://claude.com/platform/api)
+- [Developer docs](https://platform.claude.com/docs)
+- [Pricing](https://claude.com/pricing#api)
+- [Ecosystem](https://claude.com/ecosystem)
+- [Marketplace](https://claude.com/platform/marketplace)
+- [Regional compliance](https://claude.com/regional-compliance)
+- [Claude on AWS](https://claude.com/partners/claude-on-aws)
+- [Google Cloud](https://claude.com/partners/google-cloud-vertex-ai)
+- [Microsoft Foundry](https://claude.com/partners/microsoft-foundry)
+- [Console login](https://platform.claude.com/)
+
+### Resources
+
+- [Blog](https://claude.com/blog)
+- [Claude partner network](https://claude.com/partners)
+- [Community](https://claude.com/community)
+- [Connectors](https://claude.com/connectors)
+- [Courses](/learn)
+- [Customer stories](https://claude.com/customers)
+- [Engineering at Anthropic](/engineering)
+- [Events](/events)
+- [Plugins](https://claude.com/plugins)
+- [Powered by Claude](https://claude.com/partners/powered-by-claude)
+- [Service partners](https://claude.com/partners/services)
+- [Tutorials](https://claude.com/resources/tutorials)
+- [Use cases](https://claude.com/resources/use-cases)
+
+### Programs
+
+- [Startups](https://claude.com/programs/startups)
+- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+
+### Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Status](https://status.anthropic.com/)
+- [Support center](https://support.claude.com/en/)
+
+### Company
+
+- [Anthropic](/company)
+- [Careers](/careers)
+- [Policy](/policy)
+- [Economic Futures](/economic-futures)
+- [Research](/research)
+- [News](/news)
+- [Claude’s Constitution](/constitution)
+- [Claude Corps](/claude-corps)
+- [Keep thinking](https://www.anthropic.com/path-to-hope)
+- [Policy on the AI Exponential](/policy-on-the-ai-exponential)
+- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
+- [Security and compliance](https://trust.anthropic.com/)
+- [Transparency](/transparency)

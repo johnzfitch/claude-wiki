@@ -1,0 +1,394 @@
+---
+title: "List organizations - Claude API Reference"
+source_url: "https://platform.claude.com/docs/en/api/compliance/organizations/list"
+category: "04-API-Reference/Other"
+fetched_at: "2026-08-02T05:39:49Z"
+tags: ["api"]
+---
+
+- [Managed Agents](/docs/en/managed-agents/overview)
+
+- [Admin](/docs/en/manage-claude/admin-api)
+
+- Resources
+  - [Best practices](/docs/en/about-claude/use-case-guides/overview)
+  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
+  - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
+  - [Release notes](/docs/en/release-notes/overview)
+
+API reference
+
+
+
+
+Console
+
+
+
+
+
+
+
+
+Search
+
+
+Include beta APIs
+
+Using the API
+
+[Features overview](/docs/en/api/overview)[Beta headers](/docs/en/api/beta-headers)[Errors](/docs/en/api/errors)
+
+
+Messages
+
+
+Create a Message
+
+
+Count tokens in a Message
+
+Batches
+
+Managed Agents
+
+Agents
+
+Environments
+
+Sessions
+
+Deployments
+
+Deployment Runs
+
+Vaults
+
+Memory Stores
+
+
+Models
+
+
+List Models
+
+
+Get a Model
+
+
+Dreams
+
+
+Create a Dream
+
+
+List Dreams
+
+
+Get a Dream
+
+
+Cancel a Dream
+
+
+Archive a Dream
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
+
+
+Tunnels
+
+
+Create Tunnel
+
+
+Get Tunnel
+
+
+List Tunnels
+
+
+Archive Tunnel
+
+
+Reveal Tunnel Token
+
+
+Rotate Tunnel Token
+
+Certificates
+
+
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Create Enrollment URL
+
+
+Webhooks
+
+
+Admin
+
+Organizations
+
+Invites
+
+Users
+
+RBAC Groups
+
+RBAC Roles
+
+Workspaces
+
+API Keys
+
+External Keys
+
+Usage Report
+
+Cost Report
+
+Analytics
+
+Spend Limits
+
+Rate Limits
+
+Service Accounts
+
+Federation Issuers
+
+Federation Rules
+
+MCP Tunnels
+
+
+Compliance API
+
+Activities
+
+Organizations
+
+
+List organizations
+
+Users
+
+Roles
+
+Settings
+
+Groups
+
+Apps
+
+Code
+
+
+Completions
+
+
+Create a Text Completion
+
+Claude Code
+
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+
+Support & configuration
+
+[Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
+
+[](/login)
+
+
+
+
+API reference
+
+List
+
+
+
+
+
+
+To enable the Compliance API, see [Set up the Compliance API](/docs/en/manage-claude/compliance-api-access).
+
+# List organizations
+
+GET/v1/compliance/organizations
+
+List organizations under the parent organization.
+
+Returns organizations sorted by creation date in ascending order. Use `limit` and `page` to paginate: each response includes `has_more` and a `next_page` token to pass on the next request.
+
+##### Query ParametersExpand Collapse 
+
+limit: optional number
+
+
+
+Maximum results (default: 1000, max: 1000)
+
+[](#list.limit)
+
+page: optional string
+
+
+
+Opaque pagination token from a previous response's `next_page` field. Pass this to retrieve the next page of results. Clients should treat this value as an opaque string and not attempt to parse or interpret its contents, as the format may change without notice.
+
+[](#list.page)
+
+##### Header ParametersExpand Collapse 
+
+"x-api-key": optional string
+
+
+
+[](#list.x-api-key)
+
+##### ReturnsExpand Collapse 
+
+
+
+data: array of object { created_at, name, uuid }
+
+
+
+List of organizations sorted by creation date, ascending
+
+created_at: string
+
+
+
+Organization creation time (RFC 3339 format)
+
+[](#organization_list_response.created_at)
+
+name: string
+
+
+
+Organization name
+
+[](#organization_list_response.name)
+
+uuid: string
+
+
+
+Unique identifier for the organization (UUID format)
+
+[](#organization_list_response.uuid)
+
+[](#list)
+
+has_more: boolean
+
+
+
+Whether more records exist beyond the current result set
+
+[](#list)
+
+next_page: optional string
+
+
+
+Token to retrieve the next page. Use this as the 'page' parameter in your next request
+
+[](#list)
+
+List organizations
+
+
+
+```python
+curl https://api.anthropic.com/v1/compliance/organizations \
+    -H "Authorization: Bearer $ANTHROPIC_COMPLIANCE_API_KEY"
+```
+
+Response 200
+
+
+
+```python
+{
+  "data": [
+    {
+      "created_at": "2025-03-12T18:22:41.123456+00:00",
+      "name": "Acme Corp",
+      "uuid": "a1b2c3d4-e5f6-4789-a012-3456789abcde"
+    }
+  ],
+  "has_more": true,
+  "next_page": "cGFnZV90b2tlbl9leGFtcGxlXzE3MzQ1Njc4OTA="
+}
+```
+
+##### Returns Examples
+
+Response 200
+
+
+
+```python
+{
+  "data": [
+    {
+      "created_at": "2025-03-12T18:22:41.123456+00:00",
+      "name": "Acme Corp",
+      "uuid": "a1b2c3d4-e5f6-4789-a012-3456789abcde"
+    }
+  ],
+  "has_more": true,
+  "next_page": "cGFnZV90b2tlbl9leGFtcGxlXzE3MzQ1Njc4OTA="

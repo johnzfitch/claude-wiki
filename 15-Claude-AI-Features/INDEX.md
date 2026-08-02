@@ -1,35 +1,87 @@
 # Claude AI Features
 
-*281 documents*
+*414 documents*
 
 
 - [20% time savings with Claude AI | NBIM | Claude](20-time-savings-with-claude-ai-nbim-claude.md) - [Try Claude](https://claude.ai)
 - [AI agents | Claude](ai-agents-claude.md) - With Claude, you can build AI agents that plan, act, and collaborate more effectively.
+- [Anthropic education report: How educators use Claude \\ Anthropic](anthropic-education-report-how-educators-use-claude-anthropic-20098dd31a.md) - Aug 27, 2025
+- [Anthropic Education Report: How University Students Use Claude \\ Anthropic](anthropic-education-report-how-university-students-use-claude-anthropic-bfcd15c9f4.md) - Apr 8, 2025
+- [Available beta and research preview features | Claude Help Center](available-beta-and-research-preview-features-073fc3b977.md) - Claude offers some features in beta or research preview before they become generally available. This article explains what those labels mean, which fe
+- [Bringing memory to teams | Claude by Anthropic](bringing-memory-to-teams-claude-by-anthropic-1d2b1de9ca.md) - -
 - [Claude Help Center](browsing-and-connecting-to-tools-from-the-directory.md) - Search for articles...
+- [Canva Claude Enterprise case study | Claude by Anthropic](canva-claude-enterprise-case-study-claude-by-anthropic-78815a5d32.md) - [Try Claude](https://claude.ai)
+- [Change the model, effort, and thinking settings | Claude Help Center](change-the-model-effort-and-thinking-settings-7573bc3122.md) - The model menu next to the send button controls three settings: which Claude model you're chatting with, how much effort it puts into each response, a
+- [Claude 4 System Card 5B6A9C3085](claude-4-system-card-5b6a9c3085.md) - ●​ Fixed some minor formatting errors, e.g. changed a semicolon to a comma
 - [Claude 4 System Card](claude-4-system-card.md) - ● Fixed some minor formatting errors, e.g. changed a semicolon to a comma
+- [Claude Campus Program | Claude by Anthropic](claude-campus-program-claude-by-anthropic-475d876ccc.md) - The Spring 2026 Claude Campus program is in session and applications have closed. Stay tuned for news about future updates.
 - [Claude Campus Program | Claude by Anthropic](claude-campus-program-claude-by-anthropic.md) - Lead student-driven AI initiatives with support from Anthropic.
+- [Claude Code by Anthropic | AI Coding Agent, Terminal, IDE](claude-code-by-anthropic-ai-coding-agent-terminal-ide-e7fbcf3520.md) - Work with Claude directly in your codebase. Build, debug, and ship from your terminal, IDE, Slack, web, and more.
+- [Claude Code by Anthropic | AI Coding Agent, Terminal, IDE](claude-code-by-anthropic-ai-coding-agent-terminal-ide-fad1ab4bf9.md) - Work with Claude directly in your codebase. Build, debug, and ship from your terminal, IDE, Slack, web, and more.
+- [Claude Code for Enterprise | Claude by Anthropic](claude-code-for-enterprise-claude-by-anthropic-9f2d72f378.md) - Claude Code for enterprise autonomously writes, debugs, and refactors code with support for terminal and any IDE to help teams ship faster.
 - [Claude Code for Enterprise | Claude by Anthropic](claude-code-for-enterprise-claude-by-anthropic.md) - Claude Code for enterprise autonomously writes, debugs, and refactors code with support for terminal and any IDE to help teams ship faster.
 - [Claude Code Security | Anthropic by Claude](claude-code-security-anthropic-by-claude.md) - Claude scans your entire codebase for vulnerabilities, validates each finding to minimize false positives, and suggests patches you can review and app
+- [Claude Corps \\ Anthropic](claude-corps-anthropic-745c3bbf7c.md) - Program overview[For fellows](#how-it-works)[For hosts](#host-info)[FAQ](#faq)
+- [Claude Corps fellows FAQ \\ Anthropic](claude-corps-fellows-faq-anthropic-f5a59b3bdd.md) - Claude Corps is a fully funded, 12-month paid fellowship that places early-career talent inside mission-driven nonprofits. Fellow applications are ope
+- [Claude Corps hosts FAQ \\ Anthropic](claude-corps-hosts-faq-anthropic-7d9ae72a9d.md) - Claude Corps is a fully funded, 12-month paid fellowship that places early-career talent inside mission-driven nonprofits. Fellows tackle your organiz
+- [Claude Cowork architecture overview | Claude Help Center](claude-cowork-architecture-overview-ac8c554063.md) - This article explains where Claude Cowork runs, how each execution mode is isolated, and the admin controls available for restricting its scope.
+- [Claude Cowork | Claude by Anthropic](claude-cowork-claude-by-anthropic-3c35e37ea1.md) - Claude Cowork completes tasks you can steer from anywhere. Give it a goal, and it works across your files and tools. You come back to polished work fo
+- [Claude Cowork | Claude by Anthropic](claude-cowork-claude-by-anthropic-612e89f46a.md) - Claude Cowork completes tasks you can steer from anywhere. Give it a goal, and it works across your files and tools. You come back to polished work fo
 - [Claude | Customer Story | cubic](claude-customer-story-cubic.md) - [Try Claude](https://claude.ai)
+- [Claude Design | Turn Ideas into Design | Claude by Anthropic](claude-design-turn-ideas-into-design-claude-by-anthropic-5a689ba13b.md) - Your idea, designed with Claude
+- [Claude Enterprise Plan | Claude by Anthropic](claude-enterprise-plan-claude-by-anthropic-76944e54a9.md) - The frontier, on every desk
+- [Claude Fable 5 Mythos 5 System Card 62E81Ca8E8](claude-fable-5-mythos-5-system-card-62e81ca8e8.md) - ●​ Noted CAIS’s contribution to the VCT CB-1 evaluation in Section 2.2.4.1.
+- [Claude Fable \\ Anthropic](claude-fable-anthropic-e0f1ebb59a.md) - Next generation of intelligence for the hardest knowledge work and coding problems.
+- [Claude in Chrome permissions guide | Claude Help Center](claude-for-chrome-permissions-guide-8d135e50db.md) - Claude in Chrome is available for all paid plans (Pro, Max, Team, and Enterprise). It's generally available in Claude Cowork and Claude Code, and in b
 - [Claude in Chrome Permissions Guide | Claude Help Center](claude-for-chrome-permissions-guide.md) - Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
 - [Claude Help Center](claude-for-chrome-release-notes.md) - Search for articles...
 - [Claude in Chrome Troubleshooting | Claude Help Center](claude-for-chrome-troubleshooting.md) - Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
+- [Claude for nonprofits partnership guide for all users | Claude by Anthropic](claude-for-nonprofits-partnership-guide-for-all-users-6b8d60667e.md) - A self-paced guide to help nonprofit staff build confidence with Claude and discover practical applications for their role.
+- [Claude for startups | Claude by Anthropic](claude-for-startups-claude-by-anthropic-d3f5c2dbf8.md) - Build and break through
 - [Claude Haiku 4.5 \\ Anthropic](claude-haiku-4-5-anthropic.md) - Our fastest model, a lightweight version of our most powerful AI, at a more affordable price
+- [Claude Haiku 4 5 System Card 6B5Ec21D68](claude-haiku-4-5-system-card-6b5ec21d68.md) - This system card introduces Claude Haiku 4.5, a new hybrid reasoning large language
 - [Claude Haiku 4 5 System Card](claude-haiku-4-5-system-card.md) - This system card introduces Claude Haiku 4.5, a new hybrid reasoning large language
+- [Claude Haiku \\ Anthropic](claude-haiku-anthropic-3778716478.md) - Our fastest model, a lightweight version of our most powerful AI, at a more affordable price
 - [Claude Help Center](claude-help-center.md) - Search for articles...
+- [Claude in Chrome permissions guide | Claude Help Center](claude-in-chrome-permissions-guide-f7ce21b210.md) - Claude in Chrome is available for all paid plans (Pro, Max, Team, and Enterprise). It's generally available in Claude Cowork and Claude Code, and in b
 - [Claude in Chrome Permissions Guide | Claude Help Center](claude-in-chrome-permissions-guide.md) - Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
+- [Claude in Chrome troubleshooting | Claude Help Center](claude-in-chrome-troubleshooting-217ae75c2f.md) - Claude in Chrome is available for all paid plans (Pro, Max, Team, and Enterprise). It's generally available in Claude Cowork and Claude Code, and in b
 - [Claude in Chrome Troubleshooting | Claude Help Center](claude-in-chrome-troubleshooting.md) - Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
+- [Claude in Slack: Tag @Claude in any thread | Claude by Anthropic](claude-in-slack-tag-claude-in-any-thread-claude-by-anthropic-3af1b8d6af.md) - [@Claude](https://anthropic.enterprise.slack.com/team/U08SSLN6TTL) reads threads, understands full context, and reacts in real time so your team moves
+- [Claude Mythos 5 System Card 04612A88A0](claude-mythos-5-system-card-04612a88a0.md) - ●​ Noted CAIS’s contribution to the VCT CB-1 evaluation in Section 2.2.4.1.
+- [Claude Mythos \\ Anthropic](claude-mythos-anthropic-46dc397f07.md) - Our most capable model for cybersecurity and biology research.
+- [Claude Opus 4 1 System Card 702Ace3Ba0](claude-opus-4-1-system-card-702ace3ba0.md) - ●​ Updated Section 6.3 to acknowledge partners that we worked with to develop our
 - [Claude Opus 4 1 System Card](claude-opus-4-1-system-card.md) - ● Updated Section 6.3 to acknowledge partners that we worked with to develop our
+- [Claude Opus 4 5 System Card Fba7840F30](claude-opus-4-5-system-card-fba7840f30.md) - ●​ Replaced Figure 2.10.A (ARC-AGI-1 performance) which previously showed public
 - [Claude Opus 4 5 System Card](claude-opus-4-5-system-card.md) - ● Replaced Figure 2.10.A (ARC-AGI-1 performance) which previously showed public
 - [Claude Opus 4.6 \\ Anthropic](claude-opus-4-6-anthropic.md) - Hybrid reasoning model that pushes the frontier for coding and AI agents, featuring a 1M context window
+- [Claude Opus 4 6 System Card 9Eff230A85](claude-opus-4-6-system-card-9eff230a85.md) - ​●​ ​Updated all instances of “OSWorld” to specify “OSWorld-Verified”.​
+- [Claude Opus 4 7 System Card Bac05932B0](claude-opus-4-7-system-card-bac05932b0.md) - ​ his system card describes Claude Opus 4.7, a large language model from Anthropic.​
+- [Claude Opus 4 8 System Card E3783Fada3](claude-opus-4-8-system-card-e3783fada3.md) - ●​ Correction to Opus 4.8’s reported performance on Long-form virology task 2 in
+- [Claude Opus 5 System Card E961E54083](claude-opus-5-system-card-e961e54083.md) - This system card describes Claude Opus 5, the latest large language model from Anthropic.
+- [Claude Opus \\ Anthropic](claude-opus-anthropic-2f9466008c.md) - Hybrid reasoning model built for serious coding and AI agents, featuring a 1M context window
+- [Claude Science beta | Claude by Anthropic](claude-science-beta-claude-by-anthropic-26e0e43172.md) - The Claude Science app runs analyses, searches databases, and traces every step from data wrangling to publication, so you can spend time on science.
+- [Claude Security | Claude by Anthropic](claude-security-claude-by-anthropic-022d29e5bb.md) - Watch on-demand
+- [Claude Security | Claude by Anthropic](claude-security-claude-by-anthropic-e8793d0230.md) - Watch on-demand
+- [Claude Sonnet 4 5 System Card 77D24E8D14](claude-sonnet-4-5-system-card-77d24e8d14.md) - ●​ Updated footnote 24 (“Stress testing deliberative alignment…”) to correct the first
 - [Claude Sonnet 4 5 System Card](claude-sonnet-4-5-system-card.md) - ● Updated footnote 24 (“Stress testing deliberative alignment…”) to correct the first
 - [Claude Sonnet 4.6 \\ Anthropic](claude-sonnet-4-6-anthropic.md) - Hybrid reasoning model with superior intelligence for agents, featuring a 1M context window
+- [Claude Sonnet 4 6 System Card 8E91D5E0C0](claude-sonnet-4-6-system-card-8e91d5e0c0.md) - ​●​ S ​ onnet 4.6’s BrowseComp scores updated due to running an improved cheating​
+- [Claude Sonnet 5 System Card 9E7091939D](claude-sonnet-5-system-card-9e7091939d.md) - ​●​ ​Added a footnote in 8.9.2 BrowseComp with a reproduction recipe via public​
+- [Claude Sonnet \\ Anthropic](claude-sonnet-anthropic-37d6c50bc5.md) - Hybrid reasoning model with fast, capable intelligence for real-time agents and high-volume work, featuring a 1M context window
+- [Claude Team plan for research labs | Claude by Anthropic](claude-team-plan-for-research-labs-claude-by-anthropic-8e7566a84d.md) - A thinking partner for academic and nonprofit labs to advance scientific discovery and innovation.
+- [Claude web search now available globally on all plans | Claude by Anthropic](claude-web-search-now-available-globally-on-all-plans-claude-by-anthropic-6e15bd50b7.md) - Claude can now search the web to deliver up-to-date, cited information in conversational responses across all plans.
 - [Code modernization | Claude](code-modernization-claude.md) - Claude Code helps leading enterprises modernize legacy codebases, assisting with scalable migration while maintaining business logic integrity.[\
 - [Coding | Claude](coding-claude.md) - Claude is the not-so-secret advantage for world class engineering teams and software companies.
 - [Cowork: Claude Code power for knowledge work | Claude by Anthropic](cowork-claude-code-power-for-knowledge-work-claude-by-anthropic.md) - Cowork brings Claude Code's agentic capabilities to your desktop. Give Claude access to your local files, set a task, and step away. Come back to comp
+- [Create and edit files with Claude | Claude Help Center](create-and-edit-files-with-claude-545f93840f.md) - April 29, 2026
+- [Create and edit files with Claude to eliminate hours of busy work | Claude by Anthropic](create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work-c51488653e.md) - Learn how Claude creates and edits files directly including spreadsheets, documents, presentations, and PDFs to eliminate manual work.
 - [Create with Claude today. Lead your market tomorrow | Claude](create-with-claude-today-lead-your-market-tomorrow-claude.md) - Claude brings your startup’s boldest ideas to life. We support your journey with dedicated credits, resources, and a community.
 - [Claude Help Center](creating-and-editing-documents-spreadsheets-and-presentations.md) - Search for articles...
+- [Custom visuals in chat and Cowork | Claude Help Center](custom-visuals-in-chat-and-cowork-b4e1a8f917.md) - April 22, 2026
+- [Custom visuals in chat and Cowork | Claude Help Center](custom-visuals-in-chat-e23096e8f7.md) - April 22, 2026
 - [Custom visuals in chat | Claude Help Center](custom-visuals-in-chat.md) - Claude can generate custom diagrams, charts, and interactive visuals directly in your conversation. When a visual would explain something better than 
+- [Customer Stories | Claude by Anthropic](customer-stories-claude-by-anthropic-c64c772de2.md) - Businesses build with Claude for the problems that matter most. Our customers include enterprises and startups across financial services, healthcare, 
 - [Customer Stories | Claude by Anthropic](customer-stories-claude-by-anthropic.md) - Binti helps social workers spend half the time on reports with Claude
 - [Customer story | Adalat AI | Claude](customer-story-adalat-ai-claude.md) - [Try Claude](https://claude.ai)
 - [Customer story | Advolve | Claude](customer-story-advolve-claude.md) - [Try Claude](https://claude.ai)
@@ -222,65 +274,146 @@
 - [Customer story | Zoom | Claude](customer-story-zoom-claude.md) - [Try Claude](https://claude.ai)
 - [Customer support | Claude](customer-support-claude.md) - With enhanced reasoning and a human-like tone, Claude uses your internal knowledge to take relevant action across systems and tools.
 - [Customize Keyboard Shortcuts](customize-keyboard-shortcuts.md) - Claude Code supports customizable keyboard shortcuts. Run `/keybindings` to create or open your configuration file at `~/.claude/keybindings.json`.
+- [Customizing your appearance settings | Claude Help Center](customizing-your-appearance-settings-4cb613689c.md) - March 16, 2026
 - [Customizing your appearance settings | Claude Help Center](customizing-your-appearance-settings.md) - 1.  Log in to your account and click your initials or name in the lower left corner.
+- [Customizing your Console appearance settings | Claude Help Center](customizing-your-console-appearance-settings-463cb824fc.md) - March 16, 2026
+- [Descript Claude Platform (API) case study | Claude by Anthropic](descript-claude-platform-api-case-study-claude-by-anthropic-d1a4bfd26b.md) - [Try Claude](https://claude.ai)
+- [Disable public projects for your organization | Claude Help Center](disable-public-projects-for-your-organization-24caa91074.md) - March 16, 2026
 - [Disable public projects for your organization | Claude Help Center](disable-public-projects-for-your-organization.md) - 4.  Disable public projects for your organization
 - [Publishing and sharing artifacts | Claude Help Center](discovering-publishing-customizing-and-sharing-artifacts.md) - Artifacts are a powerful way to create content within Claude. You can take your creations further by sharing them so others can engage with and custom
 - [Education | Claude](education-claude.md) - Claude helps universities maintain academic integrity while incorporating AI tools in education, with Anthropic’s commitment to safety.
+- [Enable and use web search | Claude Help Center](enable-and-use-web-search-8d6f49bb71.md) - You can have Claude search the internet to provide you with up-to-date information and insights when using the following models:
+- [Enable and use web search | Claude Help Center](enabling-and-using-web-search-80b5badc28.md) - You can have Claude search the internet to provide you with up-to-date information and insights when using the following models:
+- [Financial services | Claude by Anthropic](financial-services-claude-by-anthropic-7d7c180b64.md) - Your financial competitive edge, from signal to decision
 - [Financial services | Claude](financial-services-claude.md) - Claude helps leading financial institutions across banking, insurance, asset management, and fintech transform how they serve markets and manage risk.
+- [Get started with Claude Cowork | Claude Help Center](get-started-with-claude-cowork-794f4f1d07.md) - This article explains how to use **[Claude Cowork](https://claude.com/product/cowork)**, which brings Claude Code's agentic capabilities to knowledge 
 - [Claude Help Center](get-started-with-claude-for-financial-services.md) - Search for articles...
+- [Get started with Claude in Chrome | Claude Help Center](get-started-with-claude-in-chrome-eb318c7097.md) - Claude in Chrome is available for all paid plans (Pro, Max, Team, and Enterprise). It's generally available in Claude Cowork and Claude Code, and in b
 - [Get started with Claude in Chrome | Claude Help Center](get-started-with-claude-in-chrome.md) - Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
+- [Get started with Claude Cowork | Claude Help Center](get-started-with-cowork-666d2979b6.md) - This article explains how to use **[Claude Cowork](https://claude.com/product/cowork)**, which brings Claude Code's agentic capabilities to knowledge 
 - [Get started with Cowork | Claude Help Center](get-started-with-cowork.md) - This article explains how to use **[Cowork](https://claude.com/product/cowork)**, a research preview that brings Claude Code's agentic capabilities to
+- [Get started with Claude in Chrome | Claude Help Center](getting-started-with-claude-for-chrome-034c5a61ec.md) - Claude in Chrome is available for all paid plans (Pro, Max, Team, and Enterprise). It's generally available in Claude Cowork and Claude Code, and in b
 - [Get started with Claude in Chrome | Claude Help Center](getting-started-with-claude-for-chrome.md) - Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
+- [Get started with Claude in Chrome | Claude Help Center](getting-started-with-claude-in-chrome-628c4b8d8f.md) - Claude in Chrome is available for all paid plans (Pro, Max, Team, and Enterprise). It's generally available in Claude Cowork and Claude Code, and in b
 - [Get started with Claude in Chrome | Claude Help Center](getting-started-with-claude-in-chrome.md) - Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
+- [Get started with Claude Cowork | Claude Help Center](getting-started-with-cowork-c31b8b2b19.md) - This article explains how to use **[Claude Cowork](https://claude.com/product/cowork)**, which brings Claude Code's agentic capabilities to knowledge 
+- [GitLab Claude Platform (API) case study | Claude by Anthropic](gitlab-claude-platform-api-case-study-claude-by-anthropic-8209e168a1.md) - [Try Claude](https://claude.ai)
 - [Government | Claude](government-claude.md) - Claude helps government organizations deploy advanced AI capabilities with rigorous security controls. Available with authorizations up to FedRAMP Hig
 - [Healthcare | Claude](healthcare-claude.md) - Claude helps healthcare organizations move faster without sacrificing accuracy, safety, or compliance. Less administrative work, more time with the pe
 - [How can I change the model version that I’m chatting with? | Claude Help Center](how-can-i-change-the-model-version-that-i-m-chatting-with.md) - 4.  How can I change the model version that I’m chatting with?
+- [Disable public projects for your organization | Claude Help Center](how-can-i-disable-public-projects-4ed2c21741.md) - March 16, 2026
+- [How Claude suggests connected apps | Claude Help Center](how-claude-suggests-connected-apps-f1817060dc.md) - April 23, 2026
+- [Use Claude’s chat search and memory to build on previous context | Claude Help Center](how-does-claude-s-memory-work-0e1345f394.md) - You can now prompt Claude to search through your previous conversations to find and reference relevant information in new chats. Additionally, Claude 
+- [How people use Claude for support, advice, and companionship \\ Anthropic](how-people-use-claude-for-support-advice-and-companionship-anthropic-cd349dc891.md) - Jun 27, 2025
+- [I would like to input sensitive data into my chats with Claude. Who can view my conversations? | Claude Help Center](i-would-like-to-input-sensitive-data-into-my-chats-with-claude-who-can-view-my-c-6ad4d1afd8.md) - May 22, 2026
 - [I would like to input sensitive data into my chats with Claude. Who can view my conversations? | Claude Help Center](i-would-like-to-input-sensitive-data-into-my-chats-with-claude-who-can-view-my-c.md) - 4.  I would like to input sensitive data into my chats with Claude. Who can view my conversations?
+- [Import and export your memory from Claude | Claude Help Center](import-and-export-your-memory-from-claude-80131ebb61.md) - Memory imports are available for Free, Pro, Max, and Team plans on the web and Claude Desktop.
 - [Import and export your memory from Claude | Claude Help Center](import-and-export-your-memory-from-claude.md) - 4.  Import and export your memory from Claude
+- [Import and export your memory from Claude | Claude Help Center](importing-and-exporting-your-memory-from-claude-feb5b830a1.md) - Memory imports are available for Free, Pro, Max, and Team plans on the web and Claude Desktop.
 - [Install financial services plugins for Cowork | Claude Help Center](install-financial-services-plugins-for-cowork.md) - We offer a set of open-source plugins that extend Cowork with specialized capabilities for financial services workflows, including financial modeling,
+- [Intercom Claude Platform (API) case study | Claude by Anthropic](intercom-claude-platform-api-case-study-claude-by-anthropic-a49131453d.md) - [Try Claude](https://claude.ai)
+- [Intro to Artifacts | Claude by Anthropic](intro-to-artifacts-0aac31857e.md) - Learn how Artifacts can enrich your interactions with Claude for more dynamic and interactive conversations.
 - [Intro to Artifacts | Claude](intro-to-artifacts.md) - - [](claude-opus-4-6-anthropic.md)
+- [Introducing the analysis tool in Claude.ai | Claude by Anthropic](introducing-the-analysis-tool-in-claude-ai-claude-by-anthropic-1fd2234b43.md) - Claude can now write and run JavaScript code directly in Claude.ai through the analysis tool, enabling precise data analysis and real-time insights wi
+- [Let Claude use your computer in Cowork | Claude Help Center](let-claude-use-your-computer-in-cowork-a66e911bb8.md) - April 24, 2026
 - [Life sciences | Claude](life-sciences-claude.md) - Claude helps pharma companies, biotech startups, and research institutions move faster, while maintaining the accuracy your work demands.
+- [MCP: Web Search | Claude Help Center](mcp-web-search-79f9a8a590.md) - April 9, 2026
 - [Manage Claude's memory](memory.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Monitor Claude Cowork activity with OpenTelemetry | Claude Help Center](monitor-claude-cowork-activity-with-opentelemetry-1ea54e4367.md) - This article explains how to use OpenTelemetry (OTel) to monitor Claude Cowork activity across your organization. With OTel, your security and operati
+- [Monitor Claude Cowork activity with OpenTelemetry | Claude Help Center](monitor-cowork-activity-with-opentelemetry-10fba9cc04.md) - This article explains how to use OpenTelemetry (OTel) to monitor Claude Cowork activity across your organization. With OTel, your security and operati
 - [Multi-Modal](multi-modal.md) - ::: {#6d20a415-d81e-4ec7-9394-990594f041dc .cell .markdown}
 - [Nonprofits | Claude](nonprofits-claude.md) - Claude helps nonprofits turn limited resources into lasting impact. Generate grant proposals in hours, track program outcomes across hundreds of parti
+- [Notion Claude Managed Agents case study | Claude by Anthropic](notion-claude-managed-agents-case-study-claude-by-anthropic-91ac31dce9.md) - [Try Claude](https://claude.ai)
+- [Official Anthropic marketing email addresses | Claude Help Center](official-anthropic-marketing-email-addresses-26355f603d.md) - March 16, 2026
 - [Official Anthropic marketing email addresses | Claude Help Center](official-anthropic-marketing-email-addresses.md) - 3.  Official Anthropic marketing email addresses
+- [Organize your tasks with projects in Claude Cowork | Claude Help Center](organize-your-tasks-with-projects-in-claude-cowork-bee6c80414.md) - April 9, 2026
+- [Organize your tasks with projects in Claude Cowork | Claude Help Center](organize-your-tasks-with-projects-in-cowork-7e5c372051.md) - April 9, 2026
+- [Our approach to rate limits for the Claude API | Claude Help Center](our-approach-to-rate-limits-for-the-claude-api-be08ecef9f.md) - June 26, 2026
 - [Settings File Parsing Techniques](parsing-techniques.md) - Complete guide to parsing `.claude/plugin-name.local.md` files in bash scripts.
+- [Manage project visibility and sharing | Claude Help Center](project-visibility-and-sharing-81e696b926.md) - Project visibility and sharing features are available to users on Team or Enterprise plans. This article assumes that public projects are enabled for 
 - [Prompting strategies for financial analysis | Claude](prompting-strategies-for-financial-analysis.md) - - [](claude-opus-4-6-anthropic.md)
+- [Prototype AI-Powered Apps with Claude artifacts | Claude by Anthropic](prototype-ai-powered-apps-with-claude-artifacts-32b8d633fe.md) - Learn how to rapidly build, test, and share AI-powered applications using Claude artifacts without API key management.
 - [Prototype AI-Powered Apps with Claude artifacts | Claude](prototype-ai-powered-apps-with-claude-artifacts.md) - - [](claude-opus-4-6-anthropic.md)
+- [Provision and manage skills for your organization | Claude Help Center](provisioning-and-managing-skills-for-your-organization-9528b67bb8.md) - May 29, 2026
+- [Publish and share artifacts | Claude Help Center](publish-and-share-artifacts-7b87e0f003.md) - Artifacts are a powerful way to create content within Claude. You can take your creations further by sharing them so others can view and interact with
+- [Publish and share artifacts | Claude Help Center](publishing-and-sharing-artifacts-73894dca7e.md) - Artifacts are a powerful way to create content within Claude. You can take your creations further by sharing them so others can view and interact with
 - [Publishing and sharing artifacts | Claude Help Center](publishing-and-sharing-artifacts.md) - Artifacts are a powerful way to create content within Claude. You can take your creations further by sharing them so others can engage with and custom
 - [Q2 2024 Financial Forecast Report](q2-2024-financial-forecast.md) - **TechStart Inc - Chief of Staff Analysis**
+- [Retrieval augmented generation (RAG) for projects | Claude Help Center](retrieval-augmented-generation-rag-for-projects-2721983699.md) - March 16, 2026
+- [Safeguards warnings and appeals | Claude Help Center](safeguards-warnings-and-appeals-a1e2a408d8.md) - **Note:** Our response times are currently longer than normal due to our recent launch and an increase in email volume. We will reply to your appeal/e
+- [Schedule recurring tasks in Claude Cowork | Claude Help Center](schedule-recurring-tasks-in-claude-cowork-90ff3c5f3b.md) - Scheduled tasks allow you to delegate work to Claude Cowork by creating tasks that run automatically on a recurring basis, or on demand. Instead of st
+- [Schedule recurring tasks in Claude Cowork | Claude Help Center](schedule-recurring-tasks-in-cowork-dfb4752426.md) - Scheduled tasks allow you to delegate work to Claude Cowork by creating tasks that run automatically on a recurring basis, or on demand. Instead of st
 - [Schedule recurring tasks in Cowork | Claude Help Center](schedule-recurring-tasks-in-cowork.md) - Scheduled tasks allow you to delegate work to Cowork by creating tasks that run automatically on a recurring basis, or on demand. Instead of starting 
 - [Sensitive Files Warning.Local](sensitive-files-warning.local.md) - You're editing a file that may contain sensitive data:
+- [Set up the Claude LTI in Canvas by Instructure | Claude Help Center](set-up-the-claude-lti-in-canvas-by-instructure-cb25632e0b.md) - March 16, 2026
+- [Share and unshare chats | Claude Help Center](share-and-unshare-chats-b5b1ca26c0.md) - June 15, 2026
 - [Sharing and Unsharing Chats | Claude Help Center](sharing-and-unsharing-chats.md) - Learn how to create shareable links to your chats with Claude. While chats are always private by default, you can easily create snapshots of your conv
+- [Sharing Prompts in the Claude Console | Claude Help Center](sharing-prompts-in-the-claude-console-643a6bd9a6.md) - March 16, 2026
+- [Sourcegraph Claude Platform (API) case study | Claude by Anthropic](sourcegraph-claude-platform-api-case-study-claude-by-anthropic-df28c92cdc.md) - [Try Claude](https://claude.ai)
+- [The AI for Problem Solvers | Claude by Anthropic](the-ai-for-problem-solvers-claude-by-anthropic-6e50f884cf.md) - Tackle any big, bold, bewildering challenge with Claude.
+- [The AI for Problem Solvers | Claude by Anthropic](the-ai-for-problem-solvers-claude-by-anthropic-d9117e91a2.md) - Tackle any big, bold, bewildering challenge with Claude.
+- [The AI for Problem Solvers | Claude by Anthropic](the-ai-for-problem-solvers-claude-by-anthropic-e17242083a.md) - Tackle any big, bold, bewildering challenge with Claude.
 - [The AI for Problem Solvers | Claude by Anthropic](the-ai-for-problem-solvers-claude-by-anthropic.md) - Tackle any big, bold, bewildering challenge with Claude.
 - [Troubleshoot Claude error messages | Claude Help Center](troubleshoot-claude-error-messages.md) - Updated yesterday
+- [Unauthorized Anthropic stock sales and investment scams | Claude Help Center](unauthorized-anthropic-stock-sales-and-investment-scams-25d1b118ae.md) - June 29, 2026
 - [Unauthorized Anthropic stock sales and investment scams | Claude Help Center](unauthorized-anthropic-stock-sales-and-investment-scams.md) - 3.  Unauthorized Anthropic stock sales and investment scams
 - [Understanding usage and length limits | Claude Help Center](understanding-usage-and-length-limits.md) - Updated yesterday
+- [Upload files to Claude | Claude Help Center](upload-files-to-claude-965208b484.md) - This article explains how to upload documents and images to Claude, including supported file types, size limits, and how to get started.
+- [Upload files to Claude | Claude Help Center](uploading-files-to-claude-fda72eac8e.md) - This article explains how to upload documents and images to Claude, including supported file types, size limits, and how to get started.
 - [Uploading files to Claude | Claude Help Center](uploading-files-to-claude.md) - This article explains how to upload documents and images to Claude, including supported file types, size limits, and how to get started.
+- [Use artifacts to visualize and create AI apps without ever writing a line of code | Claude by Anthropic](use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-cod-3b507a1800.md) - Artifacts are like mini-apps you can build with Claude. Learn how to use them to illustrate ideas. Then customize, and share them right from your Clau
 - [Use artifacts to visualize and create AI apps, without ever writing a line of code | Claude Help Center](use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-cod.md) - 3.  Use artifacts to visualize and create AI apps, without ever writing a line of code
+- [Use Claude Cowork safely | Claude Help Center](use-claude-cowork-safely-5399f0c3ad.md) - Cowork sessions run remotely on Anthropic's servers (in beta), and Claude reaches your files, browser, and apps through the Claude Desktop app. These 
+- [Use Claude for Education at your university | Claude Help Center](use-claude-for-education-at-your-university-651b7a9bbf.md) - This guide helps you use Claude for Education through your university-sponsored account. Find resources and answers to frequently asked questions abou
+- [Use Claude in Chrome safely | Claude Help Center](use-claude-in-chrome-safely-8989b6e4a9.md) - This article explains the risks of using Claude in Chrome and provides best practices for protecting yourself and your data.
+- [Use Claude’s chat search and memory to build on previous context | Claude Help Center](use-claude-s-chat-search-and-memory-to-build-on-previous-context-51665b652e.md) - You can now prompt Claude to search through your previous conversations to find and reference relevant information in new chats. Additionally, Claude 
 - [Use Claude’s chat search and memory to build on previous context | Claude Help Center](use-claude-s-chat-search-and-memory-to-build-on-previous-context.md) - 4.  Use Claude’s chat search and memory to build on previous context
+- [Use Claude Cowork safely | Claude Help Center](use-cowork-safely-1b4f97aed9.md) - Cowork sessions run remotely on Anthropic's servers (in beta), and Claude reaches your files, browser, and apps through the Claude Desktop app. These 
 - [Use Cowork safely | Claude Help Center](use-cowork-safely.md) - Cowork is available as a research preview for paid plans (Pro, Max, Team, Enterprise) on:
+- [Use incognito chats | Claude Help Center](use-incognito-chats-d8e68d0625.md) - Incognito chats are available to all Claude users (Free, Pro, Max, Team, and Enterprise plans).
+- [Use live artifacts in Claude Cowork | Claude Help Center](use-live-artifacts-in-claude-cowork-aa7df4c313.md) - This article explains how to use live artifacts in **[Claude Cowork](https://claude.com/product/cowork)**. Live artifacts are persistent, interactive 
+- [Use plugins in Claude | Claude Help Center](use-plugins-in-claude-cowork-2f6512df28.md) - May 29, 2026
+- [Use plugins in Claude | Claude Help Center](use-plugins-in-cowork-f87e35e89d.md) - May 29, 2026
 - [Use plugins in Cowork | Claude Help Center](use-plugins-in-cowork.md) - Plugins are available to all Cowork users on paid plans (Pro, Max, Team, Enterprise).
+- [Use research on Claude | Claude Help Center](use-research-on-claude-5efd9759fb.md) - June 2, 2026
+- [Use Claude in Chrome safely | Claude Help Center](using-claude-for-chrome-safely-2009e3ddfb.md) - This article explains the risks of using Claude in Chrome and provides best practices for protecting yourself and your data.
 - [Using Claude in Chrome Safely | Claude Help Center](using-claude-for-chrome-safely.md) - Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
 - [Claude Help Center](using-claude-for-financial-services-for-investment-research.md) - Search for articles...
+- [Using Claude for Legal Work: Privilege, Confidentiality, and How to Think About Configuration | Claude Help Center](using-claude-for-legal-work-privilege-confidentiality-and-how-to-think-about-con-fb0390778d.md) - June 30, 2026
+- [Use Claude in Chrome safely | Claude Help Center](using-claude-in-chrome-safely-d03373b61b.md) - This article explains the risks of using Claude in Chrome and provides best practices for protecting yourself and your data.
 - [Using Claude in Chrome Safely | Claude Help Center](using-claude-in-chrome-safely.md) - Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
+- [Use Claude’s chat search and memory to build on previous context | Claude Help Center](using-claude-s-chat-search-and-memory-to-build-on-previous-context-785278a819.md) - You can now prompt Claude to search through your previous conversations to find and reference relevant information in new chats. Additionally, Claude 
+- [Use Claude Cowork safely | Claude Help Center](using-cowork-safely-5242646d14.md) - Cowork sessions run remotely on Anthropic's servers (in beta), and Claude reaches your files, browser, and apps through the Claude Desktop app. These 
 - [Using Daloopa for Financial Analysis | Claude Help Center](using-daloopa-for-financial-analysis.md) - The Daloopa integration provides Claude with access to a financial data extraction service that covers public company filings and metrics. This articl
 - [Using extended thinking | Claude Help Center](using-extended-thinking-on-claude-3-7-sonnet.md) - Extended thinking mode allows Claude (Claude 4 models and Claude 3.7 Sonnet) to spend more time breaking down problems, planning solutions, and explor
 - [Using extended thinking | Claude Help Center](using-extended-thinking.md) - Extended thinking mode allows Claude (Claude 4 models and Claude 3.7 Sonnet) to spend more time breaking down problems, planning solutions, and explor
+- [Using FactSet for comprehensive financial research | Claude by Anthropic](using-factset-for-comprehensive-financial-research-e0183036d6.md) - Set up and use Claude's FactSet integration for institutional-grade financial analysis including pricing, fundamentals, estimates, M&A data, and owner
 - [Using FactSet for Comprehensive Financial Research | Claude Help Center](using-factset-for-comprehensive-financial-research.md) - 4.  Using FactSet for Comprehensive Financial Research
+- [Use incognito chats | Claude Help Center](using-incognito-chats-345cb92450.md) - Incognito chats are available to all Claude users (Free, Pro, Max, Team, and Enterprise plans).
 - [301 Moved Permanently](using-lseg-for-financial-market-data-analysis.md) - ------------------------------------------------------------------------
 - [Using Moody&#x27;s for financial analysis | Claude](using-moody-s-for-financial-analysis.md) - - [](claude-opus-4-6-anthropic.md)
+- [Using Morningstar for investment research | Claude by Anthropic](using-morningstar-for-investment-research-8238339969.md) - Integrate Morningstar's investment research capabilities into Claude for financial metrics, analyst research, and thematic investment analysis.
 - [Using Morningstar for investment research | Claude](using-morningstar-for-investment-research.md) - - [](claude-opus-4-6-anthropic.md)
 - [Using MT Newswires for real-Time financial news | Claude](using-mt-newswires-for-real-time-financial-news.md) - - [](claude-opus-4-6-anthropic.md)
+- [Using PitchBook for investment research | Claude by Anthropic](using-pitchbook-for-investment-research-04ce3880af.md) - Set up and use PitchBook Premium's integration with Claude for accessing private capital market data, company profiles, investor information, and deal
 - [Using PitchBook for investment research | Claude](using-pitchbook-for-investment-research.md) - - [](claude-opus-4-6-anthropic.md)
+- [Using Research | Claude by Anthropic](using-research-d181c7c045.md) - Learn how to use Claude's Research feature for practical planning tasks. Available to users with paid Claude plans (Pro, Max, Team, or Enterprise).
+- [Use research on Claude | Claude Help Center](using-research-on-claude-453bd937a1.md) - June 2, 2026
 - [Using Research on Claude | Claude Help Center](using-research-on-claude-ai.md) - Research is available for users with paid Claude plans (Pro, Max, Team, or Enterprise) using Claude on the web, Claude Desktop, or Claude Mobile.
 - [Using Research on Claude | Claude Help Center](using-research-on-claude.md) - Research is available for users with paid Claude plans (Pro, Max, Team, or Enterprise) using Claude on the web, Claude Desktop, or Claude Mobile.
 - [Using Research | Claude](using-research.md) - - [](claude-opus-4-6-anthropic.md)
 - [Using S&amp;P global data for financial analysis | Claude](using-s-p-global-data-for-financial-analysis.md) - - [](claude-opus-4-6-anthropic.md)
 - [Using the 10x Genomics Extension in Claude | Claude Help Center](using-the-10x-genomics-extension-in-claude.md) - 3.  Using the 10x Genomics Extension in Claude
 - [301 Moved Permanently](using-the-benchling-extension-in-claude.md) - ------------------------------------------------------------------------
+- [What are artifacts and how do I use them? | Claude Help Center](what-are-artifacts-and-how-do-i-use-them-ba5a82f574.md) - Accessing artifacts in the sidebar and Claude-powered artifacts are supported on Free, Pro, Max, Team, and Enterprise plans. Artifacts are available i
+- [What are projects? | Claude Help Center](what-are-projects-91a78d2090.md) - Projects are available to all users, including those with free Claude accounts. Free users can create a maximum of five projects.
 - [Claude Help Center](what-is-extended-thinking-and-how-do-i-use-it.md) - Search for articles...
+- [What is the External Researcher Access Program? | Claude Help Center](what-is-the-external-researcher-access-program-0123a712ef.md) - March 16, 2026
 - [What is the External Researcher Access Program? | Claude Help Center](what-is-the-external-researcher-access-program.md) - 4.  What is the External Researcher Access Program?
 - [Uploading files to Claude | Claude Help Center](what-kinds-of-documents-can-i-upload-to-claude.md) - This article explains how to upload documents and images to Claude, including supported file types, size limits, and how to get started.
+- [When should I use web search, extended thinking, and research? | Claude Help Center](when-should-i-use-web-search-extended-thinking-and-research-256bdfb733.md) - June 2, 2026
 - [When should I use web search, extended thinking, and Research? | Claude Help Center](when-should-i-use-web-search-extended-thinking-and-research-claude-help-center.md) - 4.  When should I use web search, extended thinking, and Research?
+- [Work across Microsoft 365 apps | Claude Help Center](work-across-apps-with-cowork-fa1a91d2c3.md) - May 7, 2026
 - [Work across Excel and PowerPoint | Claude Help Center](work-across-apps-with-cowork.md) - Claude can now work across apps to coordinate between the Excel and PowerPoint add-ins. Instead of switching between apps and providing context each t
+- [Work across Microsoft 365 apps | Claude Help Center](work-across-microsoft-365-apps-dbbc479278.md) - May 7, 2026
+- [Zoom Claude Platform (API) case study | Claude by Anthropic](zoom-claude-platform-api-case-study-claude-by-anthropic-38c0a852ec.md) - [Try Claude](https://claude.ai)

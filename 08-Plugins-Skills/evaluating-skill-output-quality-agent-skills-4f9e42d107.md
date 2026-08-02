@@ -2,18 +2,40 @@
 title: "Evaluating skill output quality - Agent Skills"
 source_url: "https://agentskills.io/skill-creation/evaluating-skills"
 category: "08-Plugins-Skills"
-fetched_at: "2026-03-20T10:34:08Z"
+fetched_at: "2026-08-02T05:37:38Z"
 tags: ["agents", "plugins", "skills"]
 ---
 
+## On this page
+
+- [Designing test cases](#designing-test-cases)
+- [Running evals](#running-evals)
+  - [Workspace structure](#workspace-structure)
+  - [Spawning runs](#spawning-runs)
+  - [Capturing timing data](#capturing-timing-data)
+- [Writing assertions](#writing-assertions)
+- [Grading outputs](#grading-outputs)
+  - [Grading principles](#grading-principles)
+- [Aggregating results](#aggregating-results)
+- [Analyzing patterns](#analyzing-patterns)
+- [Reviewing results with a human](#reviewing-results-with-a-human)
+- [Iterating on the skill](#iterating-on-the-skill)
+  - [The loop](#the-loop)
+
+For skill creators
+
 # Evaluating skill output quality
 
+Copy pageCopy page
 
 How to test whether your skill produces good outputs using eval-driven iteration.
 
+Copy pageCopy page
 
 You wrote a skill, tried it on a prompt, and it seemed to work. But does it work reliably — across varied prompts, in edge cases, better than no skill at all? Running structured evaluations (evals) answers these questions and gives you a feedback loop for improving the skill systematically.
 
+
+[​](#designing-test-cases)
 
 Designing test cases
 
@@ -26,11 +48,6 @@ A test case has three parts:
 Store test cases in `evals/evals.json` inside your skill directory:
 
 evals/evals.json
-
-Report incorrect code
-
-Copy
-
 
 ```python
 {
@@ -62,19 +79,18 @@ Copy
 Don’t worry about defining specific pass/fail checks yet — just the prompts and expected outputs. You’ll add detailed checks (called assertions) after you see what the first run produces.
 
 
+[​](#running-evals)
+
 Running evals
 
 The core pattern is to run each test case twice: once **with the skill** and once **without it** (or with a previous version). This gives you a baseline to compare against.
 
 
+[​](#workspace-structure)
+
 Workspace structure
 
 Organize eval results in a workspace directory alongside your skill directory. Each pass through the full eval loop gets its own `iteration-N/` directory. Within that, each test case gets an eval directory with `with_skill/` and `without_skill/` subdirectories:
-
-Report incorrect code
-
-Copy
-
 
 ```python
 csv-analyzer/
@@ -107,6 +123,8 @@ csv-analyzer-workspace/
 The main file you author by hand is `evals/evals.json`. The other JSON files (`grading.json`, `timing.json`, `benchmark.json`) are produced during the eval process — by the agent, by scripts, or by you.
 
 
+[​](#spawning-runs)
+
 Spawning runs
 
 Each eval run should start with a clean context — no leftover state from previous runs or from the skill development process. This ensures the agent follows only what the `SKILL.md` tells it. In environments that support subagents (Claude Code, for example), this isolation comes naturally: each child task starts fresh. Without subagents, use a separate session for each run. For each run, provide:
@@ -117,11 +135,6 @@ Each eval run should start with a clean context — no leftover state from previ
 - The output directory
 
 Here’s an example of the instructions you’d give the agent for a single with-skill run:
-
-Report incorrect code
-
-Copy
-
 
 ```python
 Execute this task:
@@ -135,16 +148,13 @@ Execute this task:
 For the baseline, use the same prompt but without the skill path, saving to `without_skill/outputs/`. When improving an existing skill, use the previous version as your baseline. Snapshot it before editing (`cp -r <skill-path> <workspace>/skill-snapshot/`), point the baseline run at the snapshot, and save to `old_skill/outputs/` instead of `without_skill/`.
 
 
+[​](#capturing-timing-data)
+
 Capturing timing data
 
 Timing data lets you compare how much time and tokens the skill costs relative to the baseline — a skill that dramatically improves output quality but triples token usage is a different trade-off than one that’s both better and cheaper. When each run completes, record the token count and duration:
 
 timing.json
-
-Report incorrect code
-
-Copy
-
 
 ```python
 {
@@ -153,8 +163,10 @@ Copy
 }
 ```
 
-In Claude Code, when a subagent task finishes, the [task completion notification](../05-Agent-SDK/agent-sdk-typescript.md#sdk-task-notification-message) includes `total_tokens` and `duration_ms`. Save these values immediately — they aren’t persisted anywhere else.
+In Claude Code, when a subagent task finishes, the [task completion notification](https://platform.claude.com/docs/en/agent-sdk/typescript#sdk-task-notification-message) includes `total_tokens` and `duration_ms`. Save these values immediately — they aren’t persisted anywhere else.
 
+
+[​](#writing-assertions)
 
 Writing assertions
 
@@ -172,11 +184,6 @@ Weak assertions:
 Not everything needs an assertion. Some qualities — writing style, visual design, whether the output “feels right” — are hard to decompose into pass/fail checks. These are better caught during [human review](#reviewing-results-with-a-human). Reserve assertions for things that can be checked objectively. Add assertions to each test case in `evals/evals.json`:
 
 evals/evals.json
-
-Report incorrect code
-
-Copy
-
 
 ```python
 {
@@ -199,16 +206,13 @@ Copy
 ```
 
 
+[​](#grading-outputs)
+
 Grading outputs
 
 Grading means evaluating each assertion against the actual outputs and recording **PASS** or **FAIL** with specific evidence. The evidence should quote or reference the output, not just state an opinion. The simplest approach is to give the outputs and assertions to an LLM and ask it to evaluate each one. For assertions that can be checked by code (valid JSON, correct row count, file exists with expected dimensions), use a verification script — scripts are more reliable than LLM judgment for mechanical checks and reusable across iterations.
 
 grading.json
-
-Report incorrect code
-
-Copy
-
 
 ```python
 {
@@ -244,6 +248,8 @@ Copy
 ```
 
 
+[​](#grading-principles)
+
 Grading principles
 
 - **Require concrete evidence for a PASS.** Don’t give the benefit of the doubt. If an assertion says “includes a summary” and the output has a section titled “Summary” with one vague sentence, that’s a FAIL — the label is there but the substance isn’t.
@@ -252,16 +258,13 @@ Grading principles
 For comparing two skill versions, try **blind comparison**: present both outputs to an LLM judge without revealing which came from which version. The judge scores holistic qualities — organization, formatting, usability, polish — on its own rubric, free from bias about which version “should” be better. This complements assertion grading: two outputs might both pass all assertions but differ significantly in overall quality.
 
 
+[​](#aggregating-results)
+
 Aggregating results
 
 Once every run in the iteration is graded, compute summary statistics per configuration and save them to `benchmark.json` alongside the eval directories (e.g., `csv-analyzer-workspace/iteration-1/benchmark.json`):
 
 benchmark.json
-
-Report incorrect code
-
-Copy
-
 
 ```python
 {
@@ -290,6 +293,8 @@ The `delta` tells you what the skill costs (more time, more tokens) and what it 
 Standard deviation (`stddev`) is only meaningful with multiple runs per eval. In early iterations with just 2-3 test cases and single runs, focus on the raw pass counts and the delta — the statistical measures become useful as you expand the test set and run each eval multiple times.
 
 
+[​](#analyzing-patterns)
+
 Analyzing patterns
 
 Aggregate statistics can hide important patterns. After computing the benchmarks:
@@ -301,16 +306,13 @@ Aggregate statistics can hide important patterns. After computing the benchmarks
 - **Check time and token outliers.** If one eval takes 3x longer than the others, read its execution transcript (the full log of what the model did during the run) to find the bottleneck.
 
 
+[​](#reviewing-results-with-a-human)
+
 Reviewing results with a human
 
 Assertion grading and pattern analysis catch a lot, but they only check what you thought to write assertions for. A human reviewer brings a fresh perspective — catching issues you didn’t anticipate, noticing when the output is technically correct but misses the point, or spotting problems that are hard to express as pass/fail checks. For each test case, review the actual outputs alongside the grades. Record specific feedback for each test case and save it in the workspace (e.g., as a `feedback.json` alongside the eval directories):
 
 feedback.json
-
-Report incorrect code
-
-Copy
-
 
 ```python
 {
@@ -321,6 +323,8 @@ Copy
 
 “The chart is missing axis labels” is actionable; “looks bad” is not. Empty feedback means the output looked fine — that test case passed your review. During the [iteration step](#iterating-on-the-skill), focus your improvements on the test cases where you had specific complaints.
 
+
+[​](#iterating-on-the-skill)
 
 Iterating on the skill
 
@@ -337,6 +341,8 @@ The most effective way to turn these signals into skill improvements is to give 
 - **Explain the why.** Reasoning-based instructions (“Do X because Y tends to cause Z”) work better than rigid directives (“ALWAYS do X, NEVER do Y”). Models follow instructions more reliably when they understand the purpose.
 - **Bundle repeated work.** If every test run independently wrote a similar helper script (a chart builder, a data parser), that’s a signal to bundle the script into the skill’s `scripts/` directory. See [Using scripts](/skill-creation/using-scripts) for how to do this.
 
+
+[​](#the-loop)
 
 The loop
 

@@ -2,21 +2,43 @@
 title: "Common workflows - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/common-workflows"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-05-19T21:22:30Z"
+fetched_at: "2026-08-02T05:36:19Z"
 tags: ["claude-code", "git"]
 ---
 
+## On this page
+
+- [Prompt recipes](#prompt-recipes)
+  - [Understand new codebases](#understand-new-codebases)
+  - [Get a quick codebase overview](#get-a-quick-codebase-overview)
+  - [Find relevant code](#find-relevant-code)
+  - [Fix bugs efficiently](#fix-bugs-efficiently)
+  - [Refactor code](#refactor-code)
+  - [Work with tests](#work-with-tests)
+  - [Create pull requests](#create-pull-requests)
+  - [Handle documentation](#handle-documentation)
+  - [Work in notes and non-code folders](#work-in-notes-and-non-code-folders)
+  - [Work with images](#work-with-images)
+  - [Reference files and directories](#reference-files-and-directories)
+  - [Run Claude on a schedule](#run-claude-on-a-schedule)
+  - [Ask Claude about its capabilities](#ask-claude-about-its-capabilities)
+  - [Example questions](#example-questions)
+- [Resume previous conversations](#resume-previous-conversations)
+- [Run parallel sessions with worktrees](#run-parallel-sessions-with-worktrees)
+- [Plan before editing](#plan-before-editing)
+- [Delegate research to subagents](#delegate-research-to-subagents)
+- [Pipe Claude into scripts](#pipe-claude-into-scripts)
+- [Next steps](#next-steps)
+
+Use Claude Code
+
 # Common workflows
 
+Copy pageCopy page
 
 Step-by-step guides for exploring codebases, fixing bugs, refactoring, testing, and other everyday tasks with Claude Code.
 
-
-> ## Documentation Index
->
-> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
->
-> Use this file to discover all available pages before exploring further.
+Copy pageCopy page
 
 This page collects short recipes for everyday development. For higher-level guidance on prompting and context management, see [Best practices](/docs/en/best-practices). This page covers:
 
@@ -28,13 +50,21 @@ This page collects short recipes for everyday development. For higher-level guid
 - [Pipe Claude into scripts](#pipe-claude-into-scripts) for CI and batch processing
 
 
+[​](#prompt-recipes)
+
 Prompt recipes
 
 These are prompt patterns for everyday tasks like exploring unfamiliar code, debugging, refactoring, writing tests, and creating PRs. Each works in any Claude Code surface; adapt the wording to your project.
 
 
+[​](#understand-new-codebases)
+
 Understand new codebases
 
+For configuring Claude Code in a monorepo or large codebase, see [Monorepos and large repos](/docs/en/large-codebases).
+
+
+[​](#get-a-quick-codebase-overview)
 
 Get a quick codebase overview
 
@@ -42,15 +72,15 @@ Suppose you’ve just joined a new project and need to understand its structure 
 
 1
 
-
 Navigate to the project root directory
 
 ```python
 cd /path/to/project 
 ```
 
-2
+Replace `/path/to/project` with the path to your project.
 
+2
 
 Start Claude Code
 
@@ -60,7 +90,6 @@ claude
 
 3
 
-
 Ask for a high-level overview
 
 ```python
@@ -68,7 +97,6 @@ give me an overview of this codebase
 ```
 
 4
-
 
 Dive deeper into specific components
 
@@ -91,12 +119,13 @@ Tips:
 - Request a glossary of project-specific terms
 
 
+[​](#find-relevant-code)
+
 Find relevant code
 
 Suppose you need to locate code related to a specific feature or functionality.
 
 1
-
 
 Ask Claude to find relevant files
 
@@ -106,7 +135,6 @@ find the files that handle user authentication
 
 2
 
-
 Get context on how components interact
 
 ```python
@@ -114,7 +142,6 @@ how do these authentication files work together?
 ```
 
 3
-
 
 Understand the execution flow
 
@@ -131,12 +158,13 @@ Tips:
 ------------------------------------------------------------------------
 
 
+[​](#fix-bugs-efficiently)
+
 Fix bugs efficiently
 
 Suppose you’ve encountered an error message and need to find and fix its source.
 
 1
-
 
 Share the error with Claude
 
@@ -146,7 +174,6 @@ I'm seeing an error when I run npm test
 
 2
 
-
 Ask for fix recommendations
 
 ```python
@@ -154,7 +181,6 @@ suggest a few ways to fix the @ts-ignore in user.ts
 ```
 
 3
-
 
 Apply the fix
 
@@ -171,12 +197,13 @@ Tips:
 ------------------------------------------------------------------------
 
 
+[​](#refactor-code)
+
 Refactor code
 
 Suppose you need to update old code to use modern patterns and practices.
 
 1
-
 
 Identify legacy code for refactoring
 
@@ -186,7 +213,6 @@ find deprecated API usage in our codebase
 
 2
 
-
 Get refactoring recommendations
 
 ```python
@@ -195,7 +221,6 @@ suggest how to refactor utils.js to use modern JavaScript features
 
 3
 
-
 Apply the changes safely
 
 ```python
@@ -203,7 +228,6 @@ refactor utils.js to use ES2024 features while maintaining the same behavior
 ```
 
 4
-
 
 Verify the refactoring
 
@@ -220,12 +244,13 @@ Tips:
 ------------------------------------------------------------------------
 
 
+[​](#work-with-tests)
+
 Work with tests
 
 Suppose you need to add tests for uncovered code.
 
 1
-
 
 Identify untested code
 
@@ -235,7 +260,6 @@ find functions in NotificationsService.swift that are not covered by tests
 
 2
 
-
 Generate test scaffolding
 
 ```python
@@ -244,7 +268,6 @@ add tests for the notification service
 
 3
 
-
 Add meaningful test cases
 
 ```python
@@ -252,7 +275,6 @@ add test cases for edge conditions in the notification service
 ```
 
 4
-
 
 Run and verify tests
 
@@ -265,12 +287,13 @@ Claude can generate tests that follow your project’s existing patterns and con
 ------------------------------------------------------------------------
 
 
+[​](#create-pull-requests)
+
 Create pull requests
 
 You can create pull requests by asking Claude directly (“create a pr for my changes”), or guide Claude through it step-by-step:
 
 1
-
 
 Summarize your changes
 
@@ -280,7 +303,6 @@ summarize the changes I've made to the authentication module
 
 2
 
-
 Generate a pull request
 
 ```python
@@ -289,24 +311,24 @@ create a pr
 
 3
 
-
 Review and refine
 
 ```python
 enhance the PR description with more context about the security improvements
 ```
 
-When you create a PR using `gh pr create`, the session is automatically linked to that PR. To return to it later, run `claude --from-pr <number>` or paste the PR URL into the [`/resume` picker](/docs/en/sessions#use-the-session-picker) search.
+When you create a PR using `gh pr create`, the session is automatically linked to that PR. To find it later, run `claude --from-pr 1234` with your own PR number, which opens the session picker filtered to sessions linked to that PR, or paste the PR URL into the [`/resume` picker](/docs/en/sessions#use-the-session-picker) search.
 
 Review Claude’s generated PR before submitting and ask Claude to highlight potential risks or considerations.
 
+
+[​](#handle-documentation)
 
 Handle documentation
 
 Suppose you need to add or update documentation for your code.
 
 1
-
 
 Identify undocumented code
 
@@ -316,7 +338,6 @@ find functions without proper JSDoc comments in the auth module
 
 2
 
-
 Generate documentation
 
 ```python
@@ -325,7 +346,6 @@ add JSDoc comments to the undocumented functions in auth.js
 
 3
 
-
 Review and enhance
 
 ```python
@@ -333,7 +353,6 @@ improve the generated documentation with more context and examples
 ```
 
 4
-
 
 Verify documentation
 
@@ -350,6 +369,8 @@ Tips:
 ------------------------------------------------------------------------
 
 
+[​](#work-in-notes-and-non-code-folders)
+
 Work in notes and non-code folders
 
 Claude Code works in any directory. Run it inside a notes vault, a documentation folder, or any collection of markdown files to search, edit, and reorganize content the same way you would code. The `.claude/` directory and `CLAUDE.md` sit alongside other tools’ config directories without conflict. Claude reads files fresh on each tool call, so it sees edits you make in another application the next time it reads that file.
@@ -357,23 +378,23 @@ Claude Code works in any directory. Run it inside a notes vault, a documentation
 ------------------------------------------------------------------------
 
 
+[​](#work-with-images)
+
 Work with images
 
 Suppose you need to work with images in your codebase, and you want Claude’s help analyzing image content.
 
 1
 
-
 Add an image to the conversation
 
 You can use any of these methods:
 
 1.  Drag and drop an image into the Claude Code window
-2.  Copy an image and paste it into the CLI with ctrl+v (Do not use cmd+v)
+2.  Copy an image and paste it into the CLI with Ctrl+V. On macOS, Cmd+V also works in iTerm2.
 3.  Provide an image path to Claude. E.g., “Analyze this image: /path/to/your/image.png”
 
 2
-
 
 Ask Claude to analyze the image
 
@@ -391,7 +412,6 @@ Are there any problematic elements in this diagram?
 
 3
 
-
 Use images for context
 
 ```python
@@ -403,7 +423,6 @@ This is our current database schema. How should we modify it for the new feature
 ```
 
 4
-
 
 Get code suggestions from visual content
 
@@ -426,12 +445,13 @@ Tips:
 ------------------------------------------------------------------------
 
 
+[​](#reference-files-and-directories)
+
 Reference files and directories
 
 Use @ to quickly include files or directories without waiting for Claude to read them.
 
 1
-
 
 Reference a single file
 
@@ -443,7 +463,6 @@ This includes the full content of the file in the conversation.
 
 2
 
-
 Reference a directory
 
 ```python
@@ -453,7 +472,6 @@ What's the structure of @src/components?
 This provides a directory listing with file information.
 
 3
-
 
 Reference MCP resources
 
@@ -466,12 +484,15 @@ This fetches data from connected MCP servers using the format @server:resource. 
 Tips:
 
 - File paths can be relative or absolute
+- Type `@` to open a path suggestion menu, then press Enter or Tab to accept the highlighted path and Enter again to send the message
 - @ file references add `CLAUDE.md` in the file’s directory and parent directories to context
 - Directory references show file listings, not contents
 - You can reference multiple files in a single message (for example, “@file1.js and @file2.js”)
 
 ------------------------------------------------------------------------
 
+
+[​](#run-claude-on-a-schedule)
 
 Run Claude on a schedule
 
@@ -489,10 +510,14 @@ When writing prompts for scheduled tasks, be explicit about what success looks l
 ------------------------------------------------------------------------
 
 
+[​](#ask-claude-about-its-capabilities)
+
 Ask Claude about its capabilities
 
 Claude has built-in access to its documentation and can answer questions about its own features and limitations.
 
+
+[​](#example-questions)
 
 Example questions
 
@@ -531,6 +556,8 @@ Tips:
 ------------------------------------------------------------------------
 
 
+[​](#resume-previous-conversations)
+
 Resume previous conversations
 
 When a task spans multiple sittings, pick up where you left off instead of re-explaining context. Claude Code saves every conversation locally.
@@ -542,27 +569,33 @@ claude --continue
 This resumes the most recent session in the current directory; if there isn’t one yet, it prints `No conversation found to continue` and exits. Use `claude --resume` to choose from a list, or `/resume` from inside a running session. See [Manage sessions](/docs/en/sessions) for naming, branching, and the full picker reference.
 
 
+[​](#run-parallel-sessions-with-worktrees)
+
 Run parallel sessions with worktrees
 
-Work on a feature in one terminal while Claude fixes a bug in another, without the edits colliding. Each worktree is a separate checkout on its own branch.
+Work on a feature in one terminal while Claude fixes a bug in another, without the edits colliding. Each [git worktree](https://git-scm.com/docs/git-worktree) is a separate checkout on its own branch, created from an existing commit, so the repository needs at least one commit first.
 
 ```python
 claude --worktree feature-auth
 ```
 
-Run the same command with a different name in a second terminal to start an isolated parallel session. See [Worktrees](/docs/en/worktrees) for cleanup, `.worktreeinclude`, and non-git VCS support. To monitor parallel sessions from one screen instead of separate terminals, see [background agents](/docs/en/agent-view).
+Run the same command with a different name in a second terminal to start an isolated parallel session. In a repository with no commits, the command fails with `Failed to resolve base branch "HEAD": git rev-parse failed`. See [Worktrees](/docs/en/worktrees) for cleanup, `.worktreeinclude`, and non-git VCS support. To monitor parallel sessions from one screen instead of separate terminals, see [background agents](/docs/en/agent-view).
 
+
+[​](#plan-before-editing)
 
 Plan before editing
 
-For changes you want to review before they touch disk, switch to plan mode. Claude reads files and proposes a plan but makes no edits until you approve.
+For changes you want to review before they touch disk, switch to plan mode. Claude reads files and proposes a plan but makes no edits until you approve. The status bar shows `⏸ plan mode on` while plan mode is active.
 
 ```python
 claude --permission-mode plan
 ```
 
-You can also press `Shift+Tab` mid-session to toggle into plan mode. See [Plan mode](/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode) for the approval flow and editing the plan in your text editor.
+You can also press `Shift+Tab` mid-session to cycle to plan mode. The cycle runs `default` → `acceptEdits` → `plan`. See [Plan mode](/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode) for the approval flow and editing the plan in your text editor.
 
+
+[​](#delegate-research-to-subagents)
 
 Delegate research to subagents
 
@@ -575,6 +608,8 @@ use a subagent to investigate how our auth system handles token refresh
 The subagent reads files in its own context window and reports a summary. See [Subagents](/docs/en/sub-agents) for defining custom agents with their own tools and prompts.
 
 
+[​](#pipe-claude-into-scripts)
+
 Pipe Claude into scripts
 
 Run Claude non-interactively for CI, pre-commit hooks, or batch processing. Stdin and stdout work like any Unix tool.
@@ -585,6 +620,8 @@ git log --oneline -20 | claude -p "summarize these recent commits"
 
 See [Non-interactive mode](/docs/en/headless) for output formats, permission flags, and fan-out patterns.
 
+
+[​](#next-steps)
 
 Next steps
 

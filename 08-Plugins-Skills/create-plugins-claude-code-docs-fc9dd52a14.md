@@ -2,33 +2,58 @@
 title: "Create plugins - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins"
 category: "08-Plugins-Skills"
-fetched_at: "2026-05-19T21:23:01Z"
+fetched_at: "2026-08-02T05:37:59Z"
 tags: ["claude-code", "plugins"]
 ---
 
+## On this page
+
+- [When to use plugins vs standalone configuration](#when-to-use-plugins-vs-standalone-configuration)
+- [Quickstart](#quickstart)
+  - [Prerequisites](#prerequisites)
+  - [Create your first plugin](#create-your-first-plugin)
+- [Develop a plugin in your skills directory](#develop-a-plugin-in-your-skills-directory)
+- [Plugin structure overview](#plugin-structure-overview)
+- [Develop more complex plugins](#develop-more-complex-plugins)
+  - [Add Skills to your plugin](#add-skills-to-your-plugin)
+  - [Add LSP servers to your plugin](#add-lsp-servers-to-your-plugin)
+  - [Add background monitors to your plugin](#add-background-monitors-to-your-plugin)
+  - [Ship default settings with your plugin](#ship-default-settings-with-your-plugin)
+  - [Organize complex plugins](#organize-complex-plugins)
+  - [Test your plugins locally](#test-your-plugins-locally)
+  - [Debug plugin issues](#debug-plugin-issues)
+  - [Share your plugins](#share-your-plugins)
+  - [Submit your plugin to the community marketplace](#submit-your-plugin-to-the-community-marketplace)
+- [Convert existing configurations to plugins](#convert-existing-configurations-to-plugins)
+  - [Migration steps](#migration-steps)
+  - [What changes when migrating](#what-changes-when-migrating)
+- [Next steps](#next-steps)
+  - [For plugin users](#for-plugin-users)
+  - [For plugin developers](#for-plugin-developers)
+
+Plugins
+
 # Create plugins
 
+Copy pageCopy page
 
 Create custom plugins to extend Claude Code with skills, agents, hooks, and MCP servers.
 
-
-> ## Documentation Index
->
-> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
->
-> Use this file to discover all available pages before exploring further.
+Copy pageCopy page
 
 Plugins let you extend Claude Code with custom functionality that can be shared across projects and teams. This guide covers creating your own plugins with skills, agents, hooks, and MCP servers. Looking to install existing plugins? See [Discover and install plugins](/docs/en/discover-plugins). For complete technical specifications, see [Plugins reference](/docs/en/plugins-reference).
 
+
+[​](#when-to-use-plugins-vs-standalone-configuration)
 
 When to use plugins vs standalone configuration
 
 Claude Code supports two ways to add custom skills, agents, and hooks:
 
-| Approach                                                    | Skill names          | Best for                                                                                        |
-|:------------------------------------------------------------|:---------------------|:------------------------------------------------------------------------------------------------|
-| **Standalone** (`.claude/` directory)                       | `/hello`             | Personal workflows, project-specific customizations, quick experiments                          |
-| **Plugins** (directories with `.claude-plugin/plugin.json`) | `/plugin-name:hello` | Sharing with teammates, distributing to community, versioned releases, reusable across projects |
+| Approach                                                                                                        | Skill names          | Best for                                                                                        |
+|:----------------------------------------------------------------------------------------------------------------|:---------------------|:------------------------------------------------------------------------------------------------|
+| **Standalone** (`.claude/` directory)                                                                           | `/hello`             | Personal workflows, project-specific customizations, quick experiments                          |
+| **Plugins** (self-contained directories with skills, agents, hooks, or a `.claude-plugin/plugin.json` manifest) | `/plugin-name:hello` | Sharing with teammates, distributing to community, versioned releases, reusable across projects |
 
 **Use standalone configuration when**:
 
@@ -48,10 +73,14 @@ Claude Code supports two ways to add custom skills, agents, and hooks:
 Start with standalone configuration in `.claude/` for quick iteration, then [convert to a plugin](#convert-existing-configurations-to-plugins) when you’re ready to share.
 
 
+[​](#quickstart)
+
 Quickstart
 
 This quickstart walks you through creating a plugin with a custom skill. You’ll create a manifest (the configuration file that defines your plugin), add a skill, and test it locally using the `--plugin-dir` flag.
 
+
+[​](#prerequisites)
 
 Prerequisites
 
@@ -60,21 +89,23 @@ Prerequisites
 If you don’t see the `/plugin` command, update Claude Code to the latest version. See [Troubleshooting](/docs/en/troubleshooting) for upgrade instructions.
 
 
+[​](#create-your-first-plugin)
+
 Create your first plugin
 
 1
 
-
 Create the plugin directory
 
-Every plugin lives in its own directory containing a manifest and your skills, agents, or hooks. Create one now:
+Every plugin lives in its own directory containing your skills, agents, or hooks, optionally alongside a `.claude-plugin/plugin.json` manifest. The location doesn’t matter for this quickstart because you’ll point Claude Code at the directory with `--plugin-dir` in the test step. Create it anywhere convenient, such as a scratch folder or a projects directory:
 
 ```python
 mkdir my-first-plugin
 ```
 
-2
+The remaining steps run from the parent directory and reference paths like `my-first-plugin/...` relative to it.
 
+2
 
 Create the plugin manifest
 
@@ -110,7 +141,6 @@ For additional fields like `homepage`, `repository`, and `license`, see the [ful
 
 3
 
-
 Add a skill
 
 Skills live in the `skills/` directory. Each skill is a folder containing a `SKILL.md` file. The folder name becomes the skill name, prefixed with the plugin’s namespace (`hello/` in a plugin named `my-first-plugin` creates `/my-first-plugin:hello`).Create a skill directory in your plugin folder:
@@ -134,7 +164,6 @@ Greet the user warmly and ask how you can help them today.
 
 4
 
-
 Test your plugin
 
 Run Claude Code with the `--plugin-dir` flag to load your plugin:
@@ -149,12 +178,11 @@ Once Claude Code starts, try your new skill:
 /my-first-plugin:hello
 ```
 
-You’ll see Claude respond with a greeting. Run `/help` to see your skill listed under the plugin namespace.
+You’ll see Claude respond with a greeting. Run `/help` and open the **Custom commands** tab to see your skill listed under the plugin namespace.
 
 **Why namespacing?** Plugin skills are always namespaced (like `/my-first-plugin:hello`) to prevent conflicts when multiple plugins have skills with the same name.To change the namespace prefix, update the `name` field in `plugin.json`.
 
 5
-
 
 Add skill arguments
 
@@ -172,7 +200,7 @@ description: Greet the user with a personalized message
 Greet the user named "$ARGUMENTS" warmly and ask how you can help them today. Make the greeting personal and encouraging.
 ```
 
-Run `/reload-plugins` to pick up the changes, then try the skill with your name:
+Run `/reload-plugins` to pick up the changes. The skills count in the summary covers only `commands/` directories, so it can report `0 skills` even though the skill you just edited reloaded. Then try the skill with your name:
 
 ```python
 /my-first-plugin:hello Alex
@@ -189,11 +217,26 @@ You’ve successfully created and tested a plugin with these key components:
 The `--plugin-dir` flag is useful for development and testing. When you’re ready to share your plugin with others, see [Create and distribute a plugin marketplace](/docs/en/plugin-marketplaces).
 
 
+[​](#develop-a-plugin-in-your-skills-directory)
+
+Develop a plugin in your skills directory
+
+Instead of passing `--plugin-dir` on every launch, you can keep a plugin in your skills directory and have Claude Code load it automatically. `claude plugin init` scaffolds one:
+
+```python
+claude plugin init my-tool
+```
+
+This creates `~/.claude/skills/my-tool/` with a `.claude-plugin/plugin.json` manifest and a starter `SKILL.md`. On the next session it loads as `my-tool@skills-dir` with no marketplace or install step. For the auto-load rules, personal vs. project scope, the workspace-trust requirement, and how to update or remove one, see [Skills-directory plugins](/docs/en/plugins-reference#skills-directory-plugins).
+
+
+[​](#plugin-structure-overview)
+
 Plugin structure overview
 
 You’ve created a plugin with a skill, but plugins can include much more: custom agents, hooks, MCP servers, LSP servers, and background monitors.
 
-**Common mistake**: Don’t put `commands/`, `agents/`, `skills/`, or `hooks/` inside the `.claude-plugin/` directory. Only `plugin.json` goes inside `.claude-plugin/`. All other directories must be at the plugin root level.
+**Common mistake**: Don’t put `commands/`, `agents/`, `skills/`, or `hooks/` inside the `.claude-plugin/` directory. Only `plugin.json` goes inside `.claude-plugin/`. All other directories must be at the plugin root level.The plugin root is the individual plugin’s own directory: the one you pass to `--plugin-dir` or that contains `.claude-plugin/plugin.json`. It is never `~/.claude/`. For example, Claude Code doesn’t read a `.mcp.json` placed at `~/.claude/.mcp.json`.
 
 | Directory         | Location    | Purpose                                                                        |
 |:------------------|:------------|:-------------------------------------------------------------------------------|
@@ -208,13 +251,19 @@ You’ve created a plugin with a skill, but plugins can include much more: custo
 | `bin/`            | Plugin root | Executables added to the Bash tool’s `PATH` while the plugin is enabled        |
 | `settings.json`   | Plugin root | Default [settings](/docs/en/settings) applied when the plugin is enabled       |
 
+A plugin that ships exactly one skill can place `SKILL.md` directly at the plugin root instead of creating a `skills/` directory. Claude Code loads it as a single skill and uses the frontmatter `name` field for the invocation name. Use the `skills/` layout for plugins that may grow to more than one skill.
+
 **Next steps**: Ready to add more features? Jump to [Develop more complex plugins](#develop-more-complex-plugins) to add agents, hooks, MCP servers, and LSP servers. For complete technical specifications of all plugin components, see [Plugins reference](/docs/en/plugins-reference).
 
+
+[​](#develop-more-complex-plugins)
 
 Develop more complex plugins
 
 Once you’re comfortable with basic plugins, you can create more sophisticated extensions.
 
+
+[​](#add-skills-to-your-plugin)
 
 Add Skills to your plugin
 
@@ -246,6 +295,8 @@ When reviewing code, check for:
 After installing the plugin, run `/reload-plugins` to load the Skills. For complete Skill authoring guidance including progressive disclosure and tool restrictions, see [Agent Skills](/docs/en/skills).
 
 
+[​](#add-lsp-servers-to-your-plugin)
+
 Add LSP servers to your plugin
 
 For common languages like TypeScript, Python, and Rust, install the pre-built LSP plugins from the official marketplace. Create custom LSP plugins only when you need support for languages not already covered.
@@ -266,8 +317,10 @@ LSP (Language Server Protocol) plugins give Claude real-time code intelligence. 
 }
 ```
 
-Users installing your plugin must have the language server binary installed on their machine. For complete LSP configuration options, see [LSP servers](/docs/en/plugins-reference#lsp-servers).
+Users installing your plugin must have the language server binary installed on their machine. To confirm the server starts, launch Claude Code with the plugin enabled and check the `/plugin` Errors tab: a language server that fails to start appears there, for example with `Executable not found in $PATH` when the binary isn’t installed. An entry with an invalid configuration is skipped instead; run `claude --debug` to see why. For complete LSP configuration options, see [LSP servers](/docs/en/plugins-reference#lsp-servers).
 
+
+[​](#add-background-monitors-to-your-plugin)
 
 Add background monitors to your plugin
 
@@ -288,6 +341,8 @@ monitors/monitors.json
 Each stdout line from `command` is delivered to Claude as a notification during the session. For the full schema, including the `when` trigger and variable substitution, see [Monitors](/docs/en/plugins-reference#monitors).
 
 
+[​](#ship-default-settings-with-your-plugin)
+
 Ship default settings with your plugin
 
 Plugins can include a `settings.json` file at the plugin root to apply default configuration when the plugin is enabled. Currently, only the `agent` and `subagentStatusLine` keys are supported. Setting `agent` activates one of the plugin’s [custom agents](/docs/en/sub-agents) as the main thread, applying its system prompt, tool restrictions, and model. This lets a plugin change how Claude Code behaves by default when enabled.
@@ -303,10 +358,14 @@ settings.json
 This example activates the `security-reviewer` agent defined in the plugin’s `agents/` directory. Settings from `settings.json` take priority over `settings` declared in `plugin.json`. Unknown keys are silently ignored.
 
 
+[​](#organize-complex-plugins)
+
 Organize complex plugins
 
 For plugins with many components, organize your directory structure by functionality. For complete directory layouts and organization patterns, see [Plugin directory structure](/docs/en/plugins-reference#plugin-directory-structure).
 
+
+[​](#test-your-plugins-locally)
 
 Test your plugins locally
 
@@ -325,8 +384,8 @@ claude --plugin-dir ./my-plugin.zip
 When a `--plugin-dir` plugin has the same name as an installed marketplace plugin, the local copy takes precedence for that session. This lets you test changes to a plugin you already have installed without uninstalling it first. The exception is plugins that managed settings force-enable or force-disable: `--plugin-dir` cannot override those. As you make changes to your plugin, run `/reload-plugins` to pick up the updates without restarting. This reloads plugins, skills, agents, hooks, plugin MCP servers, and plugin LSP servers. Test your plugin components:
 
 - Try your skills with `/plugin-name:skill-name`
-- Check that agents appear in `/agents`
-- Verify hooks work as expected
+- Check that agents appear in `/context` under Custom Agents, or @-mention one by its scoped name
+- Trigger the event each hook matches, such as asking Claude to edit a file for a `PostToolUse` hook, and confirm its effect. Claude Code records which hooks matched, their exit codes, and their output in the [debug log](/docs/en/hooks#debug-hooks)
 
 You can load multiple plugins at once by specifying the flag multiple times:
 
@@ -334,7 +393,7 @@ You can load multiple plugins at once by specifying the flag multiple times:
 claude --plugin-dir ./plugin-one --plugin-dir ./plugin-two
 ```
 
-To test a plugin that is already packaged as a `.zip` archive and hosted at a URL, such as a CI build artifact, use `--plugin-url` instead. Claude Code fetches the archive at startup and loads it for that session only. If the fetch fails or the archive is invalid, Claude Code reports a plugin load error and starts without it. The same [trust considerations](/docs/en/discover-plugins#security) apply as for any plugin source: only point this flag at archives you control or trust. To load multiple plugins, repeat the flag for each URL:
+To test a plugin that is already packaged as a `.zip` archive and hosted at a URL, such as a CI build artifact, use `--plugin-url` instead. Claude Code fetches the archive at startup and loads it for that session only. If Claude Code can’t fetch the archive, or the archive is invalid, it starts without the plugin and records a plugin load error that you can review in the `/plugin` manager’s **Errors** tab. The same [trust considerations](/docs/en/discover-plugins#security) apply as for any plugin source: only point this flag at archives you control or trust. To load multiple plugins, repeat the flag for each URL:
 
 ```python
 claude --plugin-url https://example.com/my-plugin.zip --plugin-url https://example.com/other.zip
@@ -347,6 +406,8 @@ claude --plugin-url "https://example.com/my-plugin.zip https://example.com/other
 ```
 
 
+[​](#debug-plugin-issues)
+
 Debug plugin issues
 
 If your plugin isn’t working as expected:
@@ -355,6 +416,8 @@ If your plugin isn’t working as expected:
 2.  **Test components individually**: Check each skill, agent, and hook separately
 3.  **Use validation and debugging tools**: See [Debugging and development tools](/docs/en/plugins-reference#debugging-and-development-tools) for CLI commands and troubleshooting techniques
 
+
+[​](#share-your-plugins)
 
 Share your plugins
 
@@ -368,36 +431,41 @@ When your plugin is ready to share:
 Once your plugin is in a marketplace, others can install it using the instructions in [Discover and install plugins](/docs/en/discover-plugins). To keep a plugin internal to your team, host the marketplace in a [private repository](/docs/en/plugin-marketplaces#private-repositories).
 
 
+[​](#submit-your-plugin-to-the-community-marketplace)
+
 Submit your plugin to the community marketplace
 
 Anthropic maintains two public marketplaces for Claude Code plugins:
 
-- **`claude-plugins-official`**: a curated set of plugins maintained by Anthropic. Available automatically in every Claude Code installation.
+- **`claude-plugins-official`**: a curated set of plugins maintained by Anthropic. Registered automatically the first time you start Claude Code interactively. A non-interactive script that runs before that first launch must add it explicitly with `claude plugin marketplace add anthropics/claude-plugins-official`.
 - **`claude-community`**: the public community marketplace where third-party submissions land after review. Users add it with `/plugin marketplace add anthropics/claude-plugins-community` and install from it as `@claude-community`.
 
 To submit your plugin for community-marketplace review, use one of the in-app forms:
 
-- **Claude.ai**: [claude.ai/settings/plugins/submit](https://claude.ai/settings/plugins/submit)
+- **claude.ai**: [claude.ai/admin-settings/directory/submissions/plugins/new](https://claude.ai/admin-settings/directory/submissions/plugins/new)
 - **Console**: [platform.claude.com/plugins/submit](https://platform.claude.com/plugins/submit)
 
-Run `claude plugin validate` locally before you submit. The review pipeline runs the same check on every submission, along with automated safety screening. Approved plugins are pinned to a specific commit SHA in the [`anthropics/claude-plugins-community`](https://github.com/anthropics/claude-plugins-community) catalog, and CI bumps the pin automatically as you push new commits to your repository. The public catalog syncs nightly from the review pipeline, so there can be a delay between approval and your plugin appearing in `marketplace.json`. To check whether your plugin is installable yet, search for its name in the [community catalog](https://github.com/anthropics/claude-plugins-community/blob/main/.claude-plugin/marketplace.json). The official marketplace, `claude-plugins-official`, is curated separately. Anthropic decides which plugins to include at its discretion. There is no application process, and the submission form does not add plugins to the official marketplace. If Anthropic lists your plugin in the official marketplace, your CLI can prompt Claude Code users to install it. See [Recommend your plugin from your CLI](/docs/en/plugin-hints).
+The claude.ai form requires a Team or Enterprise organization and directory management access; organization Owners have this access by default. Individual authors who aren’t part of a Team or Enterprise organization can use the Console form instead. Run `claude plugin validate ./your-plugin` locally before you submit, replacing `./your-plugin` with the path to your plugin directory. The review pipeline runs the same check on every submission, along with automated safety screening. When validation passes, Claude Code prints `✔ Validation passed`, or `✔ Validation passed with warnings` if there are warnings. Warnings don’t fail validation; add `--strict` to treat them as errors. Approved plugins are pinned to a specific commit SHA in the [`anthropics/claude-plugins-community`](https://github.com/anthropics/claude-plugins-community) catalog, and CI bumps the pin automatically as you push new commits to your repository. The public catalog syncs nightly from the review pipeline, so there can be a delay between approval and your plugin appearing in `marketplace.json`. To check whether your plugin is installable yet, search for its name in the [community catalog](https://github.com/anthropics/claude-plugins-community/blob/main/.claude-plugin/marketplace.json). The official marketplace, `claude-plugins-official`, is curated separately. Anthropic decides which plugins to include at its discretion. There is no application process, and the submission form does not add plugins to the official marketplace. If Anthropic lists your plugin in the official marketplace, your CLI can prompt Claude Code users to install it. See [Recommend your plugin from your CLI](/docs/en/plugin-hints).
 
 For complete technical specifications, debugging techniques, and distribution strategies, see [Plugins reference](/docs/en/plugins-reference).
 
+
+[​](#convert-existing-configurations-to-plugins)
 
 Convert existing configurations to plugins
 
 If you already have skills or hooks in your `.claude/` directory, you can convert them into a plugin for easier sharing and distribution.
 
 
+[​](#migration-steps)
+
 Migration steps
 
 1
 
-
 Create the plugin structure
 
-Create a new plugin directory:
+Create a new plugin directory in your project root, alongside the existing `.claude/` folder, so the relative `cp` paths in the next step resolve:
 
 ```python
 mkdir -p my-plugin/.claude-plugin
@@ -417,24 +485,21 @@ my-plugin/.claude-plugin/plugin.json
 
 2
 
-
 Copy your existing files
 
-Copy your existing configurations to the plugin directory:
+Copy each configuration directory you have to the plugin root. You might not have all three: if a directory doesn’t exist, `cp` prints `No such file or directory` and copies nothing, so skip that command or ignore the error.
 
 ```python
-# Copy commands
 cp -r .claude/commands my-plugin/
 
-# Copy agents (if any)
 cp -r .claude/agents my-plugin/
 
-# Copy skills (if any)
 cp -r .claude/skills my-plugin/
 ```
 
-3
+Your plugin now contains copies of the directories you had under `.claude/`. Run `ls my-plugin` to confirm: you should see each directory you copied.
 
+3
 
 Migrate hooks
 
@@ -463,7 +528,6 @@ my-plugin/hooks/hooks.json
 
 4
 
-
 Test your migrated plugin
 
 Load your plugin to verify everything works:
@@ -472,8 +536,10 @@ Load your plugin to verify everything works:
 claude --plugin-dir ./my-plugin
 ```
 
-Test each component: run your commands, check agents appear in `/agents`, and verify hooks trigger correctly.
+Test each component: run your commands, check that agents appear in `/context`, and trigger the event each hook matches to confirm its effect. Claude Code records which hooks matched and how they exited in the [debug log](/docs/en/hooks#debug-hooks).
 
+
+[​](#what-changes-when-migrating)
 
 What changes when migrating
 
@@ -484,19 +550,25 @@ What changes when migrating
 | Hooks in `settings.json`      | Hooks in `hooks/hooks.json`      |
 | Must manually copy to share   | Install with `/plugin install`   |
 
-After migrating, you can remove the original files from `.claude/` to avoid duplicates. The plugin version will take precedence when loaded.
+After migrating, remove the original files from `.claude/` to avoid duplicates. Project and user `.claude/agents/` definitions override same-named plugin agents, so the plugin version only takes effect once the originals are removed. Plugin skills are namespaced as `/plugin-name:skill-name`, so the original `/skill-name` and the plugin copy both remain available rather than one overriding the other.
 
+
+[​](#next-steps)
 
 Next steps
 
 Now that you understand Claude Code’s plugin system, here are suggested paths for different goals:
 
 
+[​](#for-plugin-users)
+
 For plugin users
 
 - [Discover and install plugins](/docs/en/discover-plugins): browse marketplaces and install plugins
 - [Configure team marketplaces](/docs/en/discover-plugins#configure-team-marketplaces): set up repository-level plugins for your team
 
+
+[​](#for-plugin-developers)
 
 For plugin developers
 

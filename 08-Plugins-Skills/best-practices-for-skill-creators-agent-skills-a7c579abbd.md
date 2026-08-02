@@ -2,20 +2,53 @@
 title: "Best practices for skill creators - Agent Skills"
 source_url: "https://agentskills.io/skill-creation/best-practices"
 category: "08-Plugins-Skills"
-fetched_at: "2026-03-20T10:34:08Z"
+fetched_at: "2026-08-02T05:38:00Z"
 tags: ["agents", "plugins", "skills"]
 ---
 
+## On this page
+
+- [Start from real expertise](#start-from-real-expertise)
+  - [Extract from a hands-on task](#extract-from-a-hands-on-task)
+  - [Synthesize from existing project artifacts](#synthesize-from-existing-project-artifacts)
+- [Refine with real execution](#refine-with-real-execution)
+- [Spending context wisely](#spending-context-wisely)
+  - [Add what the agent lacks, omit what it knows](#add-what-the-agent-lacks-omit-what-it-knows)
+  - [Design coherent units](#design-coherent-units)
+  - [Aim for moderate detail](#aim-for-moderate-detail)
+  - [Structure large skills with progressive disclosure](#structure-large-skills-with-progressive-disclosure)
+- [Calibrating control](#calibrating-control)
+  - [Match specificity to fragility](#match-specificity-to-fragility)
+  - [Provide defaults, not menus](#provide-defaults-not-menus)
+  - [Favor procedures over declarations](#favor-procedures-over-declarations)
+- [Patterns for effective instructions](#patterns-for-effective-instructions)
+  - [Gotchas sections](#gotchas-sections)
+  - [Templates for output format](#templates-for-output-format)
+  - [Checklists for multi-step workflows](#checklists-for-multi-step-workflows)
+  - [Validation loops](#validation-loops)
+  - [Plan-validate-execute](#plan-validate-execute)
+  - [Bundling reusable scripts](#bundling-reusable-scripts)
+- [Next steps](#next-steps)
+
+For skill creators
+
 # Best practices for skill creators
 
+Copy pageCopy page
 
 How to write skills that are well-scoped and calibrated to the task.
 
+Copy pageCopy page
+
+
+[​](#start-from-real-expertise)
 
 Start from real expertise
 
 A common pitfall in skill creation is asking an LLM to generate a skill without providing domain-specific context — relying solely on the LLM’s general training knowledge. The result is vague, generic procedures (“handle errors appropriately,” “follow best practices for authentication”) rather than the specific API patterns, edge cases, and project conventions that make a skill valuable. Effective skills are grounded in real expertise. The key is feeding domain-specific context into the creation process.
 
+
+[​](#extract-from-a-hands-on-task)
 
 Extract from a hands-on task
 
@@ -26,6 +59,8 @@ Complete a real task in conversation with an agent, providing context, correctio
 - **Input/output formats** — what the data looked like going in and coming out
 - **Context you provided** — project-specific facts, conventions, or constraints the agent didn’t already know
 
+
+[​](#synthesize-from-existing-project-artifacts)
 
 Synthesize from existing project artifacts
 
@@ -38,6 +73,8 @@ When you have a body of existing knowledge, you can feed it into an LLM and ask 
 - Real-world failure cases and their resolutions
 
 
+[​](#refine-with-real-execution)
+
 Refine with real execution
 
 The first draft of a skill usually needs refinement. Run the skill against real tasks, then feed the results — all of them, not just failures — back into the creation process. Ask: what triggered false positives? What was missed? What could be cut? Even a single pass of execute-then-revise noticeably improves quality, and complex domains often benefit from several.
@@ -47,19 +84,18 @@ Read agent execution traces, not just final outputs. If the agent wastes time on
 For a more structured approach to iteration, including test cases, assertions, and grading, see [Evaluating skill output quality](/skill-creation/evaluating-skills).
 
 
+[​](#spending-context-wisely)
+
 Spending context wisely
 
 Once a skill activates, its full `SKILL.md` body loads into the agent’s context window alongside conversation history, system context, and other active skills. Every token in your skill competes for the agent’s attention with everything else in that window.
 
 
+[​](#add-what-the-agent-lacks-omit-what-it-knows)
+
 Add what the agent lacks, omit what it knows
 
 Focus on what the agent *wouldn’t* know without your skill: project-specific conventions, domain-specific procedures, non-obvious edge cases, and the particular tools or APIs to use. You don’t need to explain what a PDF is, how HTTP works, or what a database migration does.
-
-Report incorrect code
-
-Copy
-
 
 ```` shiki
 <!-- Too verbose — the agent already knows what PDFs are -->
@@ -86,34 +122,39 @@ with pdfplumber.open("file.pdf") as pdf:
 Ask yourself about each piece of content: “Would the agent get this wrong without this instruction?” If the answer is no, cut it. If you’re unsure, test it. And if the agent already handles the entire task well without the skill, the skill may not be adding value. See [Evaluating skill output quality](/skill-creation/evaluating-skills) for how to test this systematically.
 
 
+[​](#design-coherent-units)
+
 Design coherent units
 
 Deciding what a skill should cover is like deciding what a function should do: you want it to encapsulate a coherent unit of work that composes well with other skills. Skills scoped too narrowly force multiple skills to load for a single task, risking overhead and conflicting instructions. Skills scoped too broadly become hard to activate precisely. A skill for querying a database and formatting the results may be one coherent unit, while a skill that also covers database administration is probably trying to do too much.
 
+
+[​](#aim-for-moderate-detail)
 
 Aim for moderate detail
 
 Overly comprehensive skills can hurt more than they help — the agent struggles to extract what’s relevant and may pursue unproductive paths triggered by instructions that don’t apply to the current task. Concise, stepwise guidance with a working example tends to outperform exhaustive documentation. When you find yourself covering every edge case, consider whether most are better handled by the agent’s own judgment.
 
 
+[​](#structure-large-skills-with-progressive-disclosure)
+
 Structure large skills with progressive disclosure
 
-The [specification](/specification#progressive-disclosure) recommends keeping `SKILL.md` under 500 lines and 5,000 tokens — just the core instructions the agent needs on every run. When a skill legitimately needs more content, move detailed reference material to separate files in `references/` or similar directories. The key is telling the agent *when* to load each file. “Read `references/api-errors.md` if the API returns a non-200 status code” is more useful than a generic “see references/ for details.” This lets the agent load context on demand rather than up front, which is how [progressive disclosure](/what-are-skills#how-skills-work) is designed to work.
+The [specification](/specification#progressive-disclosure) recommends keeping `SKILL.md` under 500 lines and 5,000 tokens — just the core instructions the agent needs on every run. When a skill legitimately needs more content, move detailed reference material to separate files in `references/` or similar directories. The key is telling the agent *when* to load each file. “Read `references/api-errors.md` if the API returns a non-200 status code” is more useful than a generic “see references/ for details.” This lets the agent load context on demand rather than up front, which is how [progressive disclosure](/specification#progressive-disclosure) is designed to work.
 
+
+[​](#calibrating-control)
 
 Calibrating control
 
 Not every part of a skill needs the same level of prescriptiveness. Match the specificity of your instructions to the fragility of the task.
 
 
+[​](#match-specificity-to-fragility)
+
 Match specificity to fragility
 
 **Give the agent freedom** when multiple approaches are valid and the task tolerates variation. For flexible instructions, explaining *why* can be more effective than rigid directives — an agent that understands the purpose behind an instruction makes better context-dependent decisions. A code review skill can describe what to look for without prescribing exact steps:
-
-Report incorrect code
-
-Copy
-
 
 ```python
 ## Code review process
@@ -125,11 +166,6 @@ Copy
 ```
 
 **Be prescriptive** when operations are fragile, consistency matters, or a specific sequence must be followed:
-
-Report incorrect code
-
-Copy
-
 
 ```` shiki
 ## Database migration
@@ -146,14 +182,11 @@ Do not modify the command or add additional flags.
 Most skills have a mix. Calibrate each part independently.
 
 
+[​](#provide-defaults-not-menus)
+
 Provide defaults, not menus
 
 When multiple tools or approaches could work, pick a default and mention alternatives briefly rather than presenting them as equal options.
-
-Report incorrect code
-
-Copy
-
 
 ```` shiki
 <!-- Too many options -->
@@ -170,14 +203,11 @@ For scanned PDFs requiring OCR, use pdf2image with pytesseract instead.
 ````
 
 
+[​](#favor-procedures-over-declarations)
+
 Favor procedures over declarations
 
 A skill should teach the agent *how to approach* a class of problems, not *what to produce* for a specific instance. Compare:
-
-Report incorrect code
-
-Copy
-
 
 ```python
 <!-- Specific answer — only useful for this exact task -->
@@ -194,19 +224,18 @@ Join the `orders` table to `customers` on `customer_id`, filter where
 This doesn’t mean skills can’t include specific details — output format templates (see [Templates for output format](#templates-for-output-format)), constraints like “never output PII,” and tool-specific instructions are all valuable. The point is that the *approach* should generalize even when individual details are specific.
 
 
+[​](#patterns-for-effective-instructions)
+
 Patterns for effective instructions
 
 These are reusable techniques for structuring skill content. Not every skill needs all of them — use the ones that fit your task.
 
 
+[​](#gotchas-sections)
+
 Gotchas sections
 
 The highest-value content in many skills is a list of gotchas — environment-specific facts that defy reasonable assumptions. These aren’t general advice (“handle errors appropriately”) but concrete corrections to mistakes the agent will make without being told otherwise:
-
-Report incorrect code
-
-Copy
-
 
 ```python
 ## Gotchas
@@ -225,14 +254,11 @@ Keep gotchas in `SKILL.md` where the agent reads them before encountering the si
 When an agent makes a mistake you have to correct, add the correction to the gotchas section. This is one of the most direct ways to improve a skill iteratively (see [Refine with real execution](#refine-with-real-execution)).
 
 
+[​](#templates-for-output-format)
+
 Templates for output format
 
 When you need the agent to produce output in a specific format, provide a template. This is more reliable than describing the format in prose, because agents pattern-match well against concrete structures. Short templates can live inline in `SKILL.md`; for longer templates, or templates only needed in certain cases, store them in `assets/` and reference them from `SKILL.md` so they only load when needed.
-
-Report incorrect code
-
-Copy
-
 
 ```` shiki
 ## Report structure
@@ -256,14 +282,11 @@ Use this template, adapting sections as needed for the specific analysis:
 ````
 
 
+[​](#checklists-for-multi-step-workflows)
+
 Checklists for multi-step workflows
 
 An explicit checklist helps the agent track progress and avoid skipping steps, especially when steps have dependencies or validation gates.
-
-Report incorrect code
-
-Copy
-
 
 ```python
 ## Form processing workflow
@@ -277,14 +300,11 @@ Progress:
 ```
 
 
+[​](#validation-loops)
+
 Validation loops
 
 Instruct the agent to validate its own work before moving on. The pattern is: do the work, run a validator (a script, a reference checklist, or a self-check), fix any issues, and repeat until validation passes.
-
-Report incorrect code
-
-Copy
-
 
 ```python
 ## Editing workflow
@@ -301,14 +321,11 @@ Copy
 A reference document can also serve as the “validator” — instruct the agent to check its work against the reference before finalizing.
 
 
+[​](#plan-validate-execute)
+
 Plan-validate-execute
 
 For batch or destructive operations, have the agent create an intermediate plan in a structured format, validate it against a source of truth, and only then execute.
-
-Report incorrect code
-
-Copy
-
 
 ```python
 ## PDF form filling
@@ -326,10 +343,14 @@ Copy
 The key ingredient is step 3: a validation script that checks the plan (`field_values.json`) against the source of truth (`form_fields.json`). Errors like “Field ‘signature_date’ not found — available fields: customer_name, order_total, signature_date_signed” give the agent enough information to self-correct.
 
 
+[​](#bundling-reusable-scripts)
+
 Bundling reusable scripts
 
 When [iterating on a skill](/skill-creation/evaluating-skills), compare the agent’s execution traces across test cases. If you notice the agent independently reinventing the same logic each run — building charts, parsing a specific format, validating output — that’s a signal to write a tested script once and bundle it in `scripts/`. For more on designing and bundling scripts, see [Using scripts in skills](/skill-creation/using-scripts).
 
+
+[​](#next-steps)
 
 Next steps
 

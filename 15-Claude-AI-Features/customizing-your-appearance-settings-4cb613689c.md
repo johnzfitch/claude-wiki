@@ -1,0 +1,31 @@
+---
+title: "Customizing your appearance settings | Claude Help Center"
+source_url: "https://support.claude.com/en/articles/8887527-customizing-your-appearance-settings"
+category: "15-Claude-AI-Features"
+fetched_at: "2026-08-02T05:42:53Z"
+---
+
+# Customizing your appearance settings
+
+March 16, 2026
+
+
+## How to switch between light and dark mode
+
+1.  Log in to your account and click your initials or name in the lower left corner.
+
+2.  Navigate to [Settings \> Appearance](https://claude.ai/settings/appearance).
+
+3.  Select from Light, Match System, and Dark under **Color mode**.
+
+
+## How to change your font
+
+1.  In [Settings \> Appearance](https://claude.ai/settings/appearance), find **Chat font**.
+
+2.  Select from Default, Match System, and Dyslexic Friendly.
+
+
+## Can I disable the sidebar?
+
+It's not currently possible to completely disable the sidebar. You can click the button on the top right of the sidebar to open or close it.

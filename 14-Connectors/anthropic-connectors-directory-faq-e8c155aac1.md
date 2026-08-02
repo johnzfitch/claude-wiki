@@ -1,0 +1,19 @@
+---
+title: "Anthropic Connectors Directory FAQ | Claude Help Center"
+source_url: "https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq"
+category: "14-Connectors"
+fetched_at: "2026-08-02T05:41:00Z"
+tags: ["connectors"]
+---
+
+# Anthropic Connectors Directory FAQ
+
+May 7, 2026
+
+The Connectors Directory FAQ has moved to the Claude developer docs.
+
+[Connectors overview →](https://claude.com/docs/connectors/overview)
+
+[Building custom connectors →](https://claude.com/docs/connectors/building)
+
+[Submitting to the Connectors Directory →](https://claude.com/docs/connectors/building/submission)

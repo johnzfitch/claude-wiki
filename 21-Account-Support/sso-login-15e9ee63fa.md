@@ -1,0 +1,107 @@
+---
+title: "SSO login | Claude Help Center"
+source_url: "https://support.claude.com/en/articles/14503613-sso-login"
+category: "21-Account-Support"
+fetched_at: "2026-08-02T05:42:47Z"
+---
+
+# SSO login
+
+April 10, 2026
+
+
+Claude for Government requires Single Sign-on (SSO) for user authentication. Unlike the commercial Claude Enterprise plan, email based (magic link) login is only available to the Primary Owner during account setup. All other users must authenticate through your organization's identity provider (IdP).
+
+Once SSO is configured, the Primary Owner can disable magic link login entirely so that all authentication flows through your IdP.
+
+For SSO setup on Claude Enterprise, see **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**.
+
+## How SSO differs for Claude for Government
+
+[TABLE]
+
+## Steps for setting up SSO
+
+### Prerequisites
+
+Before you begin, confirm that you have:
+
+- **Primary Owner access** — The email address registered as Primary Owner when the license was purchased.
+
+- **DNS access** — Ability to create TXT records for your organization's login domain(s).
+
+- **IdP admin access** — Permission to create a SAML application in your identity provider (e.g., Entra ID, Okta).
+
+### Step 1: Sign in as Primary Owner
+
+1.  Navigate to **[claude.fedstart.com](http://claude.fedstart.com)**
+
+2.  Enter the email address registered as Primary Owner.
+
+3.  Complete the email-based login using the magic link sent to the Primary Owner’s inbox.
+
+4.  After signing in, the Primary Owner will be redirected to the identity settings page at **[claude.fedstart.com/admin-settings/identity](https://claude.fedstart.com/admin-settings/identity)**
+
+**Tip**: It often makes sense to appoint someone from your IT team as the Primary Owner, since they will need DNS and IdP access for the remaining steps.
+
+### Step 2: Verify your domain
+
+Before configuring your Identity Provider (IdP), you must verify ownership of your login domain.
+
+1.  On the identity settings page, locate your domain and select the **"View instructions"** tab. There you’ll be able to see the required DNS challenge record that must be set.
+
+2.  Create the displayed TXT record in your domain’s DNS settings.
+
+3.  Wait for the DNS propagation. Once the platform detects the record, the domain status will update to “**Verified**.”
+
+
+**Important:** Each domain can only have one identity provider. If multiple organizations share a single login domain, IT administrators from both organizations will be able to modify login settings. Contact **[Anthropic Support](https://claude.fedstart.com/support)** for assistance with multi-organization setups. For more details about multi-organization setups, see our **[SCIM provisioning guide](https://support.claude.com/en/articles/14503643-set-up-scim-in-claude-for-government)**.
+
+### Step 3: Configure your Identity Provider
+
+Anthropic acts as the **Service Provider (SP)** in the SAML SSO flow. Your organization’s IdP (e.g., Entra or Okta) acts as the **Identity Provider.**
+
+1.  On the identity settings page, locate the **SP Metadata** section. This contains the values your IdP needs:
+
+    1.  Entity ID (Audience URI)
+
+    2.  ACS URL (Reply URL)
+
+2.  In your IdP, create a new SAML application using these SP metadata values
+
+### Step 4: Configure Anthropic with your IdP details
+
+Once your SAML application is set up in your IdP, provide Anthropic with the details it needs to verify SAML assertions. On the identity settings page, enter:
+
+- Signing Certificate — The X.509 certificate from your IdP.
+
+- IdP Entity ID — Your IdP's entity identifier.
+
+- SSO URL — The IdP's SAML sign-on endpoint.
+
+- Claims Information — Attribute mappings for user name and email.
+
+
+**Tip:** Using a metadata XML file: Most IdPs let you download a metadata.xml file. Upload it on the identity settings page to auto-fill the Signing Certificate, IdP Entity ID, and SSO URL. Some IdPs (like Entra ID) also include claims information in the metadata file; if present, the system will suggest field mappings automatically.
+
+**Troubleshooting attribute mappings**
+
+Attribute mapping is where most configuration issues occur. If login fails after setup:
+
+1.  Install a SAML debugging extension such as SAML-tracer.
+
+2.  Attempt an SSO login and inspect the SAML response.
+
+3.  Confirm that the email claim returns an address under your verified domain. Email claims for unverified domains will be rejected.
+
+### Step 5: Test and finalize
+
+1.  Log out of Claude for Government.
+
+2.  Log back in using your SSO configuration to confirm it works.
+
+3.  (Optional) Once SSO login is verified, return to the identity settings page and disable magic link login.
+
+**Warning**: Only disable magic link login after you have confirmed that SSO login works. If SSO is misconfigured and the magic link is disabled, the Primary Owner will be unable to access the admin console. Contact Anthropic support if you are locked out.
+
+After SSO is configured, any user assigned to the SAML application in your IdP can log in and will be provisioned a seat automatically, provided your organization has available licenses. If no seats are available, users will see an error at login. Contact your Anthropic account representative to add licenses. For more controlled provisioning—including role assignment and multi-organization support—see **[SCIM provisioning](https://support.claude.com/en/articles/14503643-set-up-scim-in-claude-for-government)**.

@@ -2,18 +2,36 @@
 title: "Using scripts in skills - Agent Skills"
 source_url: "https://agentskills.io/skill-creation/using-scripts"
 category: "08-Plugins-Skills"
-fetched_at: "2026-03-20T10:34:08Z"
+fetched_at: "2026-08-02T05:38:01Z"
 tags: ["agents", "plugins", "skills"]
 ---
 
+## On this page
+
+- [One-off commands](#one-off-commands)
+- [Referencing scripts from SKILL.md](#referencing-scripts-from-skill-md)
+- [Self-contained scripts](#self-contained-scripts)
+- [Designing scripts for agentic use](#designing-scripts-for-agentic-use)
+  - [Avoid interactive prompts](#avoid-interactive-prompts)
+  - [Document usage with --help](#document-usage-with-help)
+  - [Write helpful error messages](#write-helpful-error-messages)
+  - [Use structured output](#use-structured-output)
+  - [Further considerations](#further-considerations)
+
+For skill creators
+
 # Using scripts in skills
 
+Copy pageCopy page
 
 How to run commands and bundle executable scripts in your skills.
 
+Copy pageCopy page
 
 Skills can instruct agents to run shell commands and bundle reusable scripts in a `scripts/` directory. This guide covers one-off commands, self-contained scripts with their own dependencies, and how to design script interfaces for agentic use.
 
+
+[​](#one-off-commands)
 
 One-off commands
 
@@ -33,11 +51,6 @@ When an existing package already does what you need, you can reference it direct
 
 [uvx](https://docs.astral.sh/uv/guides/tools/) runs Python packages in isolated environments with aggressive caching. It ships with [uv](https://docs.astral.sh/uv/).
 
-Report incorrect code
-
-Copy
-
-
 ```python
 uvx ruff@0.8.0 check .
 uvx black@24.10.0 .
@@ -48,11 +61,6 @@ uvx black@24.10.0 .
 
 [pipx](https://pipx.pypa.io/) runs Python packages in isolated environments. Available via OS package managers (`apt install pipx`, `brew install pipx`).
 
-Report incorrect code
-
-Copy
-
-
 ```python
 pipx run 'black==24.10.0' .
 pipx run 'ruff==0.8.0' check .
@@ -62,11 +70,6 @@ pipx run 'ruff==0.8.0' check .
 - A mature alternative to `uvx`. While `uvx` has become the standard recommendation, `pipx` remains a reliable option with broader OS package manager availability.
 
 [npx](https://docs.npmjs.com/cli/commands/npx) runs npm packages, downloading them on demand. It ships with npm (which ships with Node.js).
-
-Report incorrect code
-
-Copy
-
 
 ```python
 npx eslint@9 --fix .
@@ -79,11 +82,6 @@ npx create-vite@6 my-app
 
 [bunx](https://bun.sh/docs/cli/bunx) is Bun’s equivalent of `npx`. It ships with [Bun](https://bun.sh/).
 
-Report incorrect code
-
-Copy
-
-
 ```python
 bunx eslint@9 --fix .
 bunx create-vite@6 my-app
@@ -94,11 +92,6 @@ bunx create-vite@6 my-app
 
 [deno run](https://docs.deno.com/runtime/reference/cli/run/) runs scripts directly from URLs or specifiers. It ships with [Deno](https://deno.com/).
 
-Report incorrect code
-
-Copy
-
-
 ```python
 deno run npm:create-vite@6 my-app
 deno run --allow-read npm:eslint@9 -- --fix .
@@ -108,11 +101,6 @@ deno run --allow-read npm:eslint@9 -- --fix .
 - Use `--` to separate Deno flags from the tool’s own flags.
 
 [go run](https://pkg.go.dev/cmd/go#hdr-Compile_and_run_Go_program) compiles and runs Go packages directly. It is built into the `go` command.
-
-Report incorrect code
-
-Copy
-
 
 ```python
 go run golang.org/x/tools/cmd/goimports@v0.28.0 .
@@ -129,16 +117,13 @@ go run github.com/golangci/golangci-lint/cmd/golangci-lint@v1.62.0 run
 - **Move complex commands into scripts.** A one-off command works well when you’re invoking a tool with a few flags. When a command grows complex enough that it’s hard to get right on the first try, a tested script in `scripts/` is more reliable.
 
 
+[​](#referencing-scripts-from-skill-md)
+
 Referencing scripts from `SKILL.md`
 
 Use **relative paths from the skill directory root** to reference bundled files. The agent resolves these paths automatically — no absolute paths needed. List available scripts in your `SKILL.md` so the agent knows they exist:
 
 SKILL.md
-
-Report incorrect code
-
-Copy
-
 
 ```python
 ## Available scripts
@@ -150,11 +135,6 @@ Copy
 Then instruct the agent to run them:
 
 SKILL.md
-
-Report incorrect code
-
-Copy
-
 
 ```` shiki
 ## Workflow
@@ -173,6 +153,8 @@ Copy
 The same relative-path convention works in support files like `references/*.md` — script execution paths (in code blocks) are relative to the **skill directory root**, because the agent runs commands from there.
 
 
+[​](#self-contained-scripts)
+
 Self-contained scripts
 
 When you need reusable logic, bundle a script in `scripts/` that declares its own dependencies inline. The agent can run the script with a single command — no separate manifest file or install step required. Several languages support inline dependency declarations:
@@ -189,11 +171,6 @@ When you need reusable logic, bundle a script in `scripts/` that declares its ow
 
 scripts/extract.py
 
-Report incorrect code
-
-Copy
-
-
 ```python
 # /// script
 # dependencies = [
@@ -209,11 +186,6 @@ print(BeautifulSoup(html, "html.parser").select_one("p.info").get_text())
 
 Run with [uv](https://docs.astral.sh/uv/) (recommended):
 
-Report incorrect code
-
-Copy
-
-
 ```python
 uv run scripts/extract.py
 ```
@@ -228,11 +200,6 @@ Deno’s `npm:` and `jsr:` import specifiers make every script self-contained by
 
 scripts/extract.ts
 
-Report incorrect code
-
-Copy
-
-
 ```python
 #!/usr/bin/env -S deno run
 
@@ -242,11 +209,6 @@ const html = `<html><body><h1>Welcome</h1><p class="info">This is a test.</p></b
 const $ = cheerio.load(html);
 console.log($("p.info").text());
 ```
-
-Report incorrect code
-
-Copy
-
 
 ```python
 deno run scripts/extract.ts
@@ -261,11 +223,6 @@ Bun auto-installs missing packages at runtime when no `node_modules` directory i
 
 scripts/extract.ts
 
-Report incorrect code
-
-Copy
-
-
 ```python
 #!/usr/bin/env bun
 
@@ -275,11 +232,6 @@ const html = `<html><body><h1>Welcome</h1><p class="info">This is a test.</p></b
 const $ = cheerio.load(html);
 console.log($("p.info").text());
 ```
-
-Report incorrect code
-
-Copy
-
 
 ```python
 bun run scripts/extract.ts
@@ -292,11 +244,6 @@ bun run scripts/extract.ts
 Bundler ships with Ruby since 2.6. Use `bundler/inline` to declare gems directly in the script:
 
 scripts/extract.rb
-
-Report incorrect code
-
-Copy
-
 
 ```python
 require 'bundler/inline'
@@ -311,11 +258,6 @@ doc = Nokogiri::HTML(html)
 puts doc.at_css('p.info').text
 ```
 
-Report incorrect code
-
-Copy
-
-
 ```python
 ruby scripts/extract.rb
 ```
@@ -324,19 +266,18 @@ ruby scripts/extract.rb
 - An existing `Gemfile` or `BUNDLE_GEMFILE` env var in the working directory can interfere.
 
 
+[​](#designing-scripts-for-agentic-use)
+
 Designing scripts for agentic use
 
 When an agent runs your script, it reads stdout and stderr to decide what to do next. A few design choices make scripts dramatically easier for agents to use.
 
 
+[​](#avoid-interactive-prompts)
+
 Avoid interactive prompts
 
 This is a hard requirement of the agent execution environment. Agents operate in non-interactive shells — they cannot respond to TTY prompts, password dialogs, or confirmation menus. A script that blocks on interactive input will hang indefinitely. Accept all input via command-line flags, environment variables, or stdin:
-
-Report incorrect code
-
-Copy
-
 
 ```python
 # Bad: hangs waiting for input
@@ -350,14 +291,11 @@ Usage: python scripts/deploy.py --env staging --tag v1.2.3
 ```
 
 
+[​](#document-usage-with-help)
+
 Document usage with `--help`
 
 `--help` output is the primary way an agent learns your script’s interface. Include a brief description, available flags, and usage examples:
-
-Report incorrect code
-
-Copy
-
 
 ```python
 Usage: scripts/process.py [OPTIONS] INPUT_FILE
@@ -377,14 +315,11 @@ Examples:
 Keep it concise — the output enters the agent’s context window alongside everything else it’s working with.
 
 
+[​](#write-helpful-error-messages)
+
 Write helpful error messages
 
 When an agent gets an error, the message directly shapes its next attempt. An opaque “Error: invalid input” wastes a turn. Instead, say what went wrong, what was expected, and what to try:
-
-Report incorrect code
-
-Copy
-
 
 ```python
 Error: --format must be one of: json, csv, table.
@@ -392,14 +327,11 @@ Error: --format must be one of: json, csv, table.
 ```
 
 
+[​](#use-structured-output)
+
 Use structured output
 
 Prefer structured formats — JSON, CSV, TSV — over free-form text. Structured formats can be consumed by both the agent and standard tools (`jq`, `cut`, `awk`), making your script composable in pipelines.
-
-Report incorrect code
-
-Copy
-
 
 ```python
 # Whitespace-aligned — hard to parse programmatically
@@ -412,6 +344,8 @@ my-service    running   2025-01-15
 
 **Separate data from diagnostics:** send structured data to stdout and progress messages, warnings, and other diagnostics to stderr. This lets the agent capture clean, parseable output while still having access to diagnostic information when needed.
 
+
+[​](#further-considerations)
 
 Further considerations
 

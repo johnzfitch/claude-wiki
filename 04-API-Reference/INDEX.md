@@ -1,222 +1,586 @@
 # API Reference
 
-*1198 documents*
+*1713 documents*
 
 
-## About (7)
+## About (15)
 
 - [Glossary](About/about-claude-glossary-1405208f57.md) - These concepts are not unique to Anthropic’s language models, but we present a brief summary of key terms below.
+- [Glossary - Claude Platform Docs](About/about-claude-glossary-4ac776ecda.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Model deprecations](About/about-claude-model-deprecations-51979b6538.md)
+- [Model deprecations - Claude Platform Docs](About/about-claude-model-deprecations-c2c3b48be6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Classification - Claude Platform Docs](About/about-claude-use-case-guides-classification-aea9a302ed.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Content moderation - Claude Platform Docs](About/about-claude-use-case-guides-content-moderation-68f00a371a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Content moderation](About/about-claude-use-case-guides-content-moderation-9aa9674309.md) - Content moderation is a critical aspect of maintaining a safe, respectful, and productive environment in digital applications. This guide discusses ho
+- [Customer support agent - Claude Platform Docs](About/about-claude-use-case-guides-customer-support-chat-2a1e16a165.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Customer support agent](About/about-claude-use-case-guides-customer-support-chat-5b82b8509b.md) - This guide walks through how to leverage Claude's advanced conversational capabilities to handle customer inquiries in real time, providing 24/7 suppo
 - [Legal summarization](About/about-claude-use-case-guides-legal-summarization-0b045c60ad.md) - This guide walks through how to leverage Claude's advanced natural language processing capabilities to efficiently summarize legal documents, extracti
+- [Legal summarization - Claude Platform Docs](About/about-claude-use-case-guides-legal-summarization-1b978423c3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Guides to common use cases](About/about-claude-use-case-guides-overview-43239e353a.md)
+- [Guides to common use cases - Claude Platform Docs](About/about-claude-use-case-guides-overview-971d8d1b66.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Ticket routing - Claude Platform Docs](About/about-claude-use-case-guides-ticket-routing-6f7b0bee2e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Ticket routing](About/about-claude-use-case-guides-ticket-routing-95526bdf0d.md) - This guide walks through how to harness Claude's advanced natural language understanding capabilities to classify customer support tickets at scale ba
 
-## Admin (37)
+## Admin (169)
 
+- [Artifacts - Claude API Reference](Admin/api-admin-analytics-artifacts-c2ace4e523.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Artifact Activity - Claude API Reference](Admin/api-admin-analytics-artifacts-list-593f739ad4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Analytics - Claude API Reference](Admin/api-admin-analytics-ca7855dc8a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Chat Projects - Claude API Reference](Admin/api-admin-analytics-chat-projects-22f6e2335a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Chat Project Usage - Claude API Reference](Admin/api-admin-analytics-chat-projects-list-08cba7faad.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Connectors - Claude API Reference](Admin/api-admin-analytics-connectors-27c86a7473.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Connector Usage - Claude API Reference](Admin/api-admin-analytics-connectors-list-7520ecef1a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Cost - Claude API Reference](Admin/api-admin-analytics-cost-f840ed94c9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Cost Over Time - Claude API Reference](Admin/api-admin-analytics-cost-list-7120d75eb0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Per-User Cost - Claude API Reference](Admin/api-admin-analytics-cost-list-by-user-3cb2ef4296.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Plugins - Claude API Reference](Admin/api-admin-analytics-plugins-65d6604148.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Plugin Usage - Claude API Reference](Admin/api-admin-analytics-plugins-list-9d1e98e8dd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Activity Summaries - Claude API Reference](Admin/api-admin-analytics-retrieve-summaries-003c474985.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Skills - Claude API Reference](Admin/api-admin-analytics-skills-60ec939467.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Skill Usage - Claude API Reference](Admin/api-admin-analytics-skills-list-18521474ae.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Usage - Claude API Reference](Admin/api-admin-analytics-usage-35dfc78cdc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Token Usage Over Time - Claude API Reference](Admin/api-admin-analytics-usage-list-a18d3dd5d2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Per-User Token Usage - Claude API Reference](Admin/api-admin-analytics-usage-list-by-user-fc5ac93d35.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Users - Claude API Reference](Admin/api-admin-analytics-users-95f1a89853.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List User Activity - Claude API Reference](Admin/api-admin-analytics-users-list-e87db2f77e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [API Keys](Admin/api-admin-api-keys-5e6e893cb4.md) - **get** `/v1/organizations/api_keys/{api_key_id}`
+- [API Keys - Claude API Reference](Admin/api-admin-api-keys-8eedabf18b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Api Keys List 46C6242Fe5](Admin/api-admin-api-keys-list-46c6242fe5.md) - **get** `/v1/organizations/api_keys`
+- [List API Keys - Claude API Reference](Admin/api-admin-api-keys-list-8ec91325a8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Api Keys Retrieve 1Be8681752](Admin/api-admin-api-keys-retrieve-1be8681752.md) - **get** `/v1/organizations/api_keys/{api_key_id}`
+- [Retrieve API Key (Admin API) - Claude API Reference](Admin/api-admin-api-keys-retrieve-a53c55f75c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Update API Key - Claude API Reference](Admin/api-admin-api-keys-update-2d5070e66f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Api Keys Update F2523628A4](Admin/api-admin-api-keys-update-f2523628a4.md) - **post** `/v1/organizations/api_keys/{api_key_id}`
+- [Cost Report - Claude API Reference](Admin/api-admin-cost-report-775f37e73b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Cost Report](Admin/api-admin-cost-report-ec1d585117.md) - **get** `/v1/organizations/cost_report`
+- [Get Cost Report - Claude API Reference](Admin/api-admin-cost-report-retrieve-45422adc34.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Cost Report Retrieve 86A0323049](Admin/api-admin-cost-report-retrieve-86a0323049.md) - **get** `/v1/organizations/cost_report`
+- [Create External Key - Claude API Reference](Admin/api-admin-external-keys-create-9746b93b8f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Delete External Key - Claude API Reference](Admin/api-admin-external-keys-delete-ceda5828fe.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [External Keys - Claude API Reference](Admin/api-admin-external-keys-f7a4752b81.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List External Keys - Claude API Reference](Admin/api-admin-external-keys-list-9f1dc75db6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get External Key - Claude API Reference](Admin/api-admin-external-keys-retrieve-c8e2f4efcc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Update External Key - Claude API Reference](Admin/api-admin-external-keys-update-adad1d6546.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Validate External Key - Claude API Reference](Admin/api-admin-external-keys-validate-8c81626c8c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Federation Issuers - Claude API Reference](Admin/api-admin-federation-issuers-0a30d0bcd6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Archive Federation Issuer - Claude API Reference](Admin/api-admin-federation-issuers-archive-158ebf63de.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create Federation Issuer - Claude API Reference](Admin/api-admin-federation-issuers-create-d54472467a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Federation Issuers - Claude API Reference](Admin/api-admin-federation-issuers-list-c2842d69f9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Federation Issuer - Claude API Reference](Admin/api-admin-federation-issuers-retrieve-dc1ff0e58a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Update Federation Issuer - Claude API Reference](Admin/api-admin-federation-issuers-update-59b1f7bf0f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Archive Federation Rule - Claude API Reference](Admin/api-admin-federation-rules-archive-346209d84b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create Federation Rule - Claude API Reference](Admin/api-admin-federation-rules-create-0500c5ec91.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Federation Rules - Claude API Reference](Admin/api-admin-federation-rules-dbd00402df.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Federation Rules - Claude API Reference](Admin/api-admin-federation-rules-list-95f4176558.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Federation Rule - Claude API Reference](Admin/api-admin-federation-rules-retrieve-46fc0a0dc7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Update Federation Rule - Claude API Reference](Admin/api-admin-federation-rules-update-2413653e5a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Workspaces - Claude API Reference](Admin/api-admin-federation-rules-workspaces-9e2a1c5268.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Add Federation Rule Workspace - Claude API Reference](Admin/api-admin-federation-rules-workspaces-create-42e176bc37.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Remove Federation Rule Workspace - Claude API Reference](Admin/api-admin-federation-rules-workspaces-delete-59582bb311.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Federation Rule Workspaces - Claude API Reference](Admin/api-admin-federation-rules-workspaces-list-f756b6bc09.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Invites](Admin/api-admin-invites-c6a7bd3b33.md) - **post** `/v1/organizations/invites`
 - [Api Admin Invites Create 4E7F9221Ab](Admin/api-admin-invites-create-4e7f9221ab.md) - **post** `/v1/organizations/invites`
+- [Create Invite - Claude API Reference](Admin/api-admin-invites-create-ddbb63dd41.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Invites Delete 4D77B687Fd](Admin/api-admin-invites-delete-4d77b687fd.md) - **delete** `/v1/organizations/invites/{invite_id}`
+- [Delete Invite - Claude API Reference](Admin/api-admin-invites-delete-8b66256d2e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Invites - Claude API Reference](Admin/api-admin-invites-ee5daa080d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Invites List D4F19C73C1](Admin/api-admin-invites-list-d4f19c73c1.md) - **get** `/v1/organizations/invites`
+- [List Invites - Claude API Reference](Admin/api-admin-invites-list-e1104b560e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Invites Retrieve 07968Dba44](Admin/api-admin-invites-retrieve-07968dba44.md) - **get** `/v1/organizations/invites/{invite_id}`
+- [Get Invite - Claude API Reference](Admin/api-admin-invites-retrieve-0be0a2e6ea.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Archive Tunnel - Claude API Reference](Admin/api-admin-mcp-tunnels-archive-127a2366d0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [MCP Tunnels - Claude API Reference](Admin/api-admin-mcp-tunnels-f9e9a2a9d4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Tunnels - Claude API Reference](Admin/api-admin-mcp-tunnels-list-f1751a97b3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Tunnel - Claude API Reference](Admin/api-admin-mcp-tunnels-retrieve-c85b2f950e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Reveal Tunnel Token - Claude API Reference](Admin/api-admin-mcp-tunnels-reveal-token-35f21ba902.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Rotate Tunnel Token - Claude API Reference](Admin/api-admin-mcp-tunnels-rotate-token-d0e3cad1c8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Tunnel Certificates - Claude API Reference](Admin/api-admin-mcp-tunnels-tunnel-certificates-59dafa8cbd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Archive Tunnel Certificate - Claude API Reference](Admin/api-admin-mcp-tunnels-tunnel-certificates-archive-3672e7c198.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create Tunnel Certificate - Claude API Reference](Admin/api-admin-mcp-tunnels-tunnel-certificates-create-a681df2265.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Tunnel Certificates - Claude API Reference](Admin/api-admin-mcp-tunnels-tunnel-certificates-list-1fafa324ee.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Tunnel Certificate - Claude API Reference](Admin/api-admin-mcp-tunnels-tunnel-certificates-retrieve-f439f3bcc8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Organizations](Admin/api-admin-organizations-2429119ffe.md) - **get** `/v1/organizations/me`
+- [Organizations - Claude API Reference](Admin/api-admin-organizations-c021cbef11.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Organizations Me 85Ca0A0Bba](Admin/api-admin-organizations-me-85ca0a0bba.md) - **get** `/v1/organizations/me`
+- [Get Current Organization - Claude API Reference](Admin/api-admin-organizations-me-d9e732cac8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Rate Limits](Admin/api-admin-rate-limits-1ff96f3780.md) - **get** `/v1/organizations/rate_limits`
+- [Rate Limits - Claude API Reference](Admin/api-admin-rate-limits-614f446d84.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Organization Rate Limits - Claude API Reference](Admin/api-admin-rate-limits-list-79cd935c72.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Rate Limits List 83D9E8Ee16](Admin/api-admin-rate-limits-list-83d9e8ee16.md) - **get** `/v1/organizations/rate_limits`
+- [RBAC Groups - Claude API Reference](Admin/api-admin-rbac-groups-c37482379b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create RBAC Group - Claude API Reference](Admin/api-admin-rbac-groups-create-ccdb836389.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Delete RBAC Group - Claude API Reference](Admin/api-admin-rbac-groups-delete-0a178f72c6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List RBAC Groups - Claude API Reference](Admin/api-admin-rbac-groups-list-92526d58d5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Members - Claude API Reference](Admin/api-admin-rbac-groups-members-88f6f9853e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Add RBAC Group Member - Claude API Reference](Admin/api-admin-rbac-groups-members-create-e748e0f1db.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Remove RBAC Group Member - Claude API Reference](Admin/api-admin-rbac-groups-members-delete-5eb91f3908.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List RBAC Group Members - Claude API Reference](Admin/api-admin-rbac-groups-members-list-5863ba67ba.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get RBAC Group - Claude API Reference](Admin/api-admin-rbac-groups-retrieve-b1d2e8a041.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Update RBAC Group - Claude API Reference](Admin/api-admin-rbac-groups-update-dfda34d490.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [RBAC Roles - Claude API Reference](Admin/api-admin-rbac-roles-fc6b4779e9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List RBAC Roles - Claude API Reference](Admin/api-admin-rbac-roles-list-51ed0cec46.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Permissions - Claude API Reference](Admin/api-admin-rbac-roles-permissions-cfe1ce1dee.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List RBAC Role Permissions - Claude API Reference](Admin/api-admin-rbac-roles-permissions-list-380c9bac50.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get RBAC Role - Claude API Reference](Admin/api-admin-rbac-roles-retrieve-4fc2094763.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Service Accounts - Claude API Reference](Admin/api-admin-service-accounts-a7221288ed.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Archive Service Account - Claude API Reference](Admin/api-admin-service-accounts-archive-9e6baf58e9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create Service Account - Claude API Reference](Admin/api-admin-service-accounts-create-3048bc47a1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Service Accounts - Claude API Reference](Admin/api-admin-service-accounts-list-75718033c1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Service Account - Claude API Reference](Admin/api-admin-service-accounts-retrieve-6eaade2a66.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Update Service Account - Claude API Reference](Admin/api-admin-service-accounts-update-eea73dae86.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Add Workspace To Service Account - Claude API Reference](Admin/api-admin-service-accounts-workspaces-create-44d1cc3747.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Remove Workspace From Service Account - Claude API Reference](Admin/api-admin-service-accounts-workspaces-delete-7f7758bd00.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Workspaces - Claude API Reference](Admin/api-admin-service-accounts-workspaces-e62871b9be.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Workspaces For Service Account - Claude API Reference](Admin/api-admin-service-accounts-workspaces-list-80f1df435c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Spend Limits - Claude API Reference](Admin/api-admin-spend-limits-95db77e800.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Set Spend Limit - Claude API Reference](Admin/api-admin-spend-limits-create-abf50c58a6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Delete Spend Limit - Claude API Reference](Admin/api-admin-spend-limits-delete-427c3b0186.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Increase Requests - Claude API Reference](Admin/api-admin-spend-limits-increase-requests-3a1990d08a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Approve Spend Limit Increase Request - Claude API Reference](Admin/api-admin-spend-limits-increase-requests-approve-0bf6343e8d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Deny Spend Limit Increase Request - Claude API Reference](Admin/api-admin-spend-limits-increase-requests-deny-176d56e0d9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Spend Limit Increase Requests - Claude API Reference](Admin/api-admin-spend-limits-increase-requests-list-0415944636.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Spend Limit Increase Request - Claude API Reference](Admin/api-admin-spend-limits-increase-requests-retrieve-597b0bf669.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Effective Spend Limits - Claude API Reference](Admin/api-admin-spend-limits-list-effective-22e3bdbcfd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Spend Limit - Claude API Reference](Admin/api-admin-spend-limits-retrieve-ff62e5b39b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Usage Report](Admin/api-admin-usage-report-b05de342cf.md) - **get** `/v1/organizations/usage_report/messages`
+- [Usage Report - Claude API Reference](Admin/api-admin-usage-report-f1f271ff94.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Usage Report Retrieve Claude Code 610A5Cf4A0](Admin/api-admin-usage-report-retrieve-claude-code-610a5cf4a0.md) - **get** `/v1/organizations/usage_report/claude_code`
+- [Get Claude Code Usage Report - Claude API Reference](Admin/api-admin-usage-report-retrieve-claude-code-fefdc219f3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Messages Usage Report - Claude API Reference](Admin/api-admin-usage-report-retrieve-messages-108f06193f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Usage Report Retrieve Messages A10B0B7A1A](Admin/api-admin-usage-report-retrieve-messages-a10b0b7a1a.md) - **get** `/v1/organizations/usage_report/messages`
 - [Users](Admin/api-admin-users-3705274a52.md) - **get** `/v1/organizations/users/{user_id}`
+- [Remove User - Claude API Reference](Admin/api-admin-users-delete-8ce5cd3878.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Users Delete Fbc1A9C080](Admin/api-admin-users-delete-fbc1a9c080.md) - **delete** `/v1/organizations/users/{user_id}`
+- [Users - Claude API Reference](Admin/api-admin-users-f91f4f89c5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Users List 2E0E8109F3](Admin/api-admin-users-list-2e0e8109f3.md) - **get** `/v1/organizations/users`
+- [List Users - Claude API Reference](Admin/api-admin-users-list-ea56cc7fed.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get User - Claude API Reference](Admin/api-admin-users-retrieve-7965222a69.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Users Retrieve Ae028818D3](Admin/api-admin-users-retrieve-ae028818d3.md) - **get** `/v1/organizations/users/{user_id}`
 - [Api Admin Users Update 56Bd0224C1](Admin/api-admin-users-update-56bd0224c1.md) - **post** `/v1/organizations/users/{user_id}`
+- [Update User - Claude API Reference](Admin/api-admin-users-update-f0e5dfd352.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Workspaces - Claude API Reference](Admin/api-admin-workspaces-85c02ab620.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Workspaces Archive 08Df2Be86D](Admin/api-admin-workspaces-archive-08df2be86d.md) - **post** `/v1/organizations/workspaces/{workspace_id}/archive`
+- [Archive Workspace - Claude API Reference](Admin/api-admin-workspaces-archive-f0357c972c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Workspaces](Admin/api-admin-workspaces-bbad0119fd.md) - **post** `/v1/organizations/workspaces`
 - [Api Admin Workspaces Create 6061341E22](Admin/api-admin-workspaces-create-6061341e22.md) - **post** `/v1/organizations/workspaces`
+- [Create Workspace - Claude API Reference](Admin/api-admin-workspaces-create-d7ce468e9b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Workspaces - Claude API Reference](Admin/api-admin-workspaces-list-9a1a726498.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Workspaces List Db96Be5B4C](Admin/api-admin-workspaces-list-db96be5b4c.md) - **get** `/v1/organizations/workspaces`
+- [Members - Claude API Reference](Admin/api-admin-workspaces-members-22e2753d2e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Members](Admin/api-admin-workspaces-members-baf3d594cd.md) - **post** `/v1/organizations/workspaces/{workspace_id}/members`
+- [Create Workspace Member - Claude API Reference](Admin/api-admin-workspaces-members-create-90588f8cea.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Workspaces Members Create F4Ff1D3A79](Admin/api-admin-workspaces-members-create-f4ff1d3a79.md) - **post** `/v1/organizations/workspaces/{workspace_id}/members`
+- [Delete Workspace Member - Claude API Reference](Admin/api-admin-workspaces-members-delete-7ecee4fe03.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Workspaces Members Delete D0Ab41C43A](Admin/api-admin-workspaces-members-delete-d0ab41c43a.md) - **delete** `/v1/organizations/workspaces/{workspace_id}/members/{user_id}`
+- [List Workspace Members - Claude API Reference](Admin/api-admin-workspaces-members-list-4cc8bd7839.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Workspaces Members List 725De557D8](Admin/api-admin-workspaces-members-list-725de557d8.md) - **get** `/v1/organizations/workspaces/{workspace_id}/members`
+- [Get Workspace Member - Claude API Reference](Admin/api-admin-workspaces-members-retrieve-866558bf94.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Workspaces Members Retrieve A68B4Bcb12](Admin/api-admin-workspaces-members-retrieve-a68b4bcb12.md) - **get** `/v1/organizations/workspaces/{workspace_id}/members/{user_id}`
 - [Api Admin Workspaces Members Update A03E7Cf161](Admin/api-admin-workspaces-members-update-a03e7cf161.md) - **post** `/v1/organizations/workspaces/{workspace_id}/members/{user_id}`
+- [Update Workspace Member - Claude API Reference](Admin/api-admin-workspaces-members-update-deb290fa99.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Rate Limits - Claude API Reference](Admin/api-admin-workspaces-rate-limits-1299da20e6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Rate Limits](Admin/api-admin-workspaces-rate-limits-7fd15c7aae.md) - **get** `/v1/organizations/workspaces/{workspace_id}/rate_limits`
+- [List Workspace Rate Limits - Claude API Reference](Admin/api-admin-workspaces-rate-limits-list-17a31beac0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Workspaces Rate Limits List 89661B6Ee2](Admin/api-admin-workspaces-rate-limits-list-89661b6ee2.md) - **get** `/v1/organizations/workspaces/{workspace_id}/rate_limits`
+- [Get Workspace - Claude API Reference](Admin/api-admin-workspaces-retrieve-3dd11b3337.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Workspaces Retrieve E4E9C89D38](Admin/api-admin-workspaces-retrieve-e4e9c89d38.md) - **get** `/v1/organizations/workspaces/{workspace_id}`
+- [Service Accounts - Claude API Reference](Admin/api-admin-workspaces-service-accounts-75c057cb47.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create Service Account Workspace Member - Claude API Reference](Admin/api-admin-workspaces-service-accounts-create-27ba3b8a60.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Delete Service Account Workspace Member - Claude API Reference](Admin/api-admin-workspaces-service-accounts-delete-a469b2ac8c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Service Account Workspace Members - Claude API Reference](Admin/api-admin-workspaces-service-accounts-list-09ca8a7d8c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Service Account Workspace Member - Claude API Reference](Admin/api-admin-workspaces-service-accounts-retrieve-0c088a31a7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Update Service Account Workspace Member - Claude API Reference](Admin/api-admin-workspaces-service-accounts-update-bf46e42df2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Admin Workspaces Update 44659E11A9](Admin/api-admin-workspaces-update-44659e11a9.md) - **post** `/v1/organizations/workspaces/{workspace_id}`
+- [Update Workspace - Claude API Reference](Admin/api-admin-workspaces-update-6062dd08a6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 
-## Agents-Tools (32)
+## Agents-Tools (74)
 
 - [Skill authoring best practices](Agents-Tools/agents-and-tools-agent-skills-best-practices-d1da876439.md) - Learn how to write effective Skills that Claude can discover and use successfully.
+- [Skill authoring best practices - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-best-practices-ee885bfc4c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Skills for enterprise - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-enterprise-552d8d9221.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Skills for enterprise](Agents-Tools/agents-and-tools-agent-skills-enterprise-6168dda2cc.md) - Governance, security review, evaluation, and organizational guidance for deploying Agent Skills at enterprise scale.
+- [Agent Skills - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-overview-5388df5d34.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Agent Skills](Agents-Tools/agents-and-tools-agent-skills-overview-a6ba167cbe.md) - Agent Skills are modular capabilities that extend Claude's functionality. Each Skill packages instructions, metadata, and optional resources (scripts,
 - [Get started with Agent Skills in the API](Agents-Tools/agents-and-tools-agent-skills-quickstart-4b66ca78ee.md) - Learn how to use Agent Skills to create documents with the Claude API in under 10 minutes.
+- [Get started with Agent Skills in the API - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-quickstart-9d70739541.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [MCP connector](Agents-Tools/agents-and-tools-mcp-connector-2b3ff19436.md)
+- [MCP connector - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-connector-83e0e00209.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Architecture and components - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-concepts-4259d94b65.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Manage tunnels in the Console - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-console-61ec0ab65a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Deploy MCP tunnels with Docker Compose - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-deploy-compose-12c9959bf8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Deploy MCP tunnels with Helm - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-deploy-helm-1a36bcc7af.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [MCP tunnels - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-overview-4bc641a728.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [MCP tunnels quickstart - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-quickstart-d84e85df16.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [MCP tunnels reference - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-reference-8fe3088fe2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [MCP tunnels security - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-security-bc2f275195.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Troubleshoot MCP tunnels - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-troubleshooting-f51de6da4b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Remote MCP servers](Agents-Tools/agents-and-tools-remote-mcp-servers-42aeab377e.md)
+- [Remote MCP servers - Claude Platform Docs](Agents-Tools/agents-and-tools-remote-mcp-servers-46c1f8e80f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Advisor tool](Agents-Tools/agents-and-tools-tool-use-advisor-tool-0a75684a7b.md) - Pair a faster executor model with a higher-intelligence advisor model that provides strategic guidance mid-generation.
+- [Advisor tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-advisor-tool-4e22ba57ce.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Bash tool](Agents-Tools/agents-and-tools-tool-use-bash-tool-17760ed12d.md)
+- [Bash tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-bash-tool-e6357c4a47.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Tutorial: Build a tool-using agent](Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent-72a5cd5184.md) - A guided walkthrough from a single tool call to a production-ready agentic loop.
+- [Tutorial: Build a tool-using agent - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent-9fad00092e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Code execution tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-code-execution-tool-193ff6471b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Code execution tool](Agents-Tools/agents-and-tools-tool-use-code-execution-tool-4d0dc9adf8.md) - Run Python and bash code in a sandboxed container to analyze data, generate files, and iterate on solutions.
+- [Code execution tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-code-execution-tool-c20aeb8222.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Code execution tool - Claude API Docs](Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md) - Claude can analyze data, create visualizations, perform complex calculations, run system commands, create and edit files, and process uploaded files d
 - [Computer use tool](Agents-Tools/agents-and-tools-tool-use-computer-use-tool-92d412df82.md) - <Steps>
+- [Computer use tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-computer-use-tool-acf1524a1d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Define tools - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-define-tools-4901dce6b1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Define tools](Agents-Tools/agents-and-tools-tool-use-define-tools-79983959fd.md) - Specify tool schemas, write effective descriptions, and control when Claude calls your tools.
+- [Fine-grained tool streaming - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming-1ab66a0fac.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Fine-grained tool streaming](Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming-3f41c8f967.md) - Stream tool inputs character-by-character for latency-sensitive applications.
+- [Handle tool calls - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-handle-tool-calls-42e907e295.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Handle tool calls](Agents-Tools/agents-and-tools-tool-use-handle-tool-calls-4a48c94000.md) - Parse tool_use blocks, format tool_result responses, and handle errors with is_error.
+- [How tool use works - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-how-tool-use-works-a2c7cb24dc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [How tool use works](Agents-Tools/agents-and-tools-tool-use-how-tool-use-works-fdcca0c844.md) - Understand the tool use loop, where tools execute, and when to use tools instead of prose.
+- [Define tools - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-implement-tool-use-de5021719c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Manage tool context - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-manage-tool-context-950120d599.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Manage tool context](Agents-Tools/agents-and-tools-tool-use-manage-tool-context-ffb2d4526a.md) - Choose between tool search, programmatic tool calling, prompt caching, and context editing to manage context bloat.
 - [Memory tool](Agents-Tools/agents-and-tools-tool-use-memory-tool-6d9391f81f.md)
+- [Memory tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-memory-tool-6f537de146.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Tool use with Claude](Agents-Tools/agents-and-tools-tool-use-overview-631f8e3a7e.md) - Connect Claude to external tools and APIs. Learn where tools execute and how the agentic loop works.
+- [Tool use with Claude - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-overview-82747c62f3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Parallel tool use](Agents-Tools/agents-and-tools-tool-use-parallel-tool-use-93edcb192b.md) - Enable and format parallel tool calls, with message-history guidance and troubleshooting.
+- [Parallel tool use - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-parallel-tool-use-da79ee38f7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Programmatic tool calling - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling-514c8ec7e7.md) - 
 - [Programmatic tool calling](Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling-95ea7cf823.md)
+- [Server tools - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-server-tools-380d2b0919.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Server tools](Agents-Tools/agents-and-tools-tool-use-server-tools-c13eb821bf.md) - Work with Anthropic-executed tools: server_tool_use blocks, pause_turn continuation, and domain filtering.
 - [Strict tool use](Agents-Tools/agents-and-tools-tool-use-strict-tool-use-6896c973b6.md) - Enforce JSON Schema compliance on Claude's tool inputs with grammar-constrained sampling.
+- [Strict tool use - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-strict-tool-use-71fbe07d3f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Text editor tool](Agents-Tools/agents-and-tools-tool-use-text-editor-tool-252bfe1f5b.md) - The text editor tool uses the same pricing structure as other tools used with Claude. It follows the standard input and output token pricing based on 
+- [Text editor tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-text-editor-tool-a7496e8073.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Tool combinations - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-combinations-850984ebe7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Tool combinations](Agents-Tools/agents-and-tools-tool-use-tool-combinations-9ef3cff9d6.md) - Common Anthropic tool pairings for research agents, coding agents, and long-running agents.
 - [Tool reference](Agents-Tools/agents-and-tools-tool-use-tool-reference-73b4586472.md) - Directory of Anthropic-provided tools and reference for optional tool definition properties.
+- [Tool reference - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-reference-fbf88f036d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Tool Runner (SDK)](Agents-Tools/agents-and-tools-tool-use-tool-runner-8ab76faf78.md) - Use the SDK's Tool Runner abstraction to handle the agentic loop, error wrapping, and type safety automatically.
+- [Tool runner (SDK) - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-runner-a1c690959a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Tool search tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-search-tool-1bf8a15bc1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Tool search tool](Agents-Tools/agents-and-tools-tool-use-tool-search-tool-5499cf85ce.md)
 - [Tool use with prompt caching](Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching-a19f41d804.md) - Cache tool definitions across turns and understand what invalidates your cache.
+- [Tool use with prompt caching - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching-e7ac6ba769.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Troubleshooting tool use - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use-9874199c7b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Troubleshooting tool use](Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use-e25c7591a5.md) - Fix the most common tool-use errors with symptom-to-fix diagnostic tables.
+- [Web fetch tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-web-fetch-tool-0bf3ad17f4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Web fetch tool](Agents-Tools/agents-and-tools-tool-use-web-fetch-tool-d9b8c0ffca.md) - Fetch and read content from specific URLs to augment Claude's context with live web content.
+- [Web search tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-web-search-tool-21cf532558.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Web search tool](Agents-Tools/agents-and-tools-tool-use-web-search-tool-874fc28332.md)
 
-## Guides (30)
+## Guides (66)
 
 - [Adaptive thinking](Guides/build-with-claude-adaptive-thinking-2b96627d8d.md) - Let Claude dynamically determine when and how much to use extended thinking with adaptive thinking mode.
+- [Steering thinking - Claude Platform Docs](Guides/build-with-claude-adaptive-thinking-5b1e2979e6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Admin API overview](Guides/build-with-claude-administration-api-eb3a280106.md)
 - [API and data retention](Guides/build-with-claude-api-and-data-retention-11a5180442.md) - Learn about how Anthropic's APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access
+- [API and data retention - Claude Platform Docs](Guides/build-with-claude-api-and-data-retention-5a49106226.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Batch processing](Guides/build-with-claude-batch-processing-58f98b4064.md) - The Message Batches API is a powerful, cost-effective way to asynchronously process large volumes of [Messages](/docs/en/api/messages/create) requests
+- [Batch processing - Claude Platform Docs](Guides/build-with-claude-batch-processing-dbcb362197.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Cache diagnostics - Claude Platform Docs](Guides/build-with-claude-cache-diagnostics-b6d54db8b2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Citations - Claude Platform Docs](Guides/build-with-claude-citations-4cc5ec4116.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Citations](Guides/build-with-claude-citations-a7ca911a58.md) - Integrate citations with Claude in these steps:
 - [Compaction](Guides/build-with-claude-compaction-47672e5bbf.md) - Server-side context compaction for managing long conversations that approach context window limits.
+- [Compaction - Claude Platform Docs](Guides/build-with-claude-compaction-54d4071243.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Context editing](Guides/build-with-claude-context-editing-16aa20ebd8.md) - Automatically manage conversation context as it grows with context editing.
+- [Context editing - Claude Platform Docs](Guides/build-with-claude-context-editing-5ab7f1535f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Context windows](Guides/build-with-claude-context-windows-13ca780d1d.md)
+- [Context windows - Claude Platform Docs](Guides/build-with-claude-context-windows-49d2cb1948.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Context windows - Claude Platform Docs](Guides/build-with-claude-context-windows-9b5191cd34.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Context windows - Claude API Docs](Guides/build-with-claude-context-windows.md) - As conversations grow, you'll eventually approach context window limits. This guide explains how context windows work and introduces strategies for ma
 - [Data residency](Guides/build-with-claude-data-residency-6c8e324ea6.md) - Manage where model inference runs and where data is stored with geographic controls.
+- [Data residency - Claude Platform Docs](Guides/build-with-claude-data-residency-7726f6ba25.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Effort](Guides/build-with-claude-effort-20d7f07a6f.md) - Control how many tokens Claude uses when responding with the effort parameter, trading off between response thoroughness and token efficiency.
+- [Effort - Claude Platform Docs](Guides/build-with-claude-effort-7804d5c825.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Embeddings - Claude Platform Docs](Guides/build-with-claude-embeddings-b7330ee1ef.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Embeddings](Guides/build-with-claude-embeddings-bf8288b900.md) - Text embeddings are numerical representations of text that enable measuring semantic similarity. This guide introduces embeddings, their applications,
+- [Extended thinking - Claude Platform Docs](Guides/build-with-claude-extended-thinking-5ee636ca2d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Building with extended thinking](Guides/build-with-claude-extended-thinking-dd12780e6a.md)
+- [Fallback credit - Claude Platform Docs](Guides/build-with-claude-fallback-credit-1bbb5f39a6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Fast mode (beta: research preview)](Guides/build-with-claude-fast-mode-7af2fa7ffd.md) - Higher output speed for Claude Opus 4.6, delivering significantly faster token generation for latency-sensitive and agentic workflows.
+- [Fast mode (research preview) - Claude Platform Docs](Guides/build-with-claude-fast-mode-d0875172c0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Files API - Claude Platform Docs](Guides/build-with-claude-files-0f030b5355.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Files API](Guides/build-with-claude-files-dacd285bb2.md) - - **Maximum file size:** 500 MB per file
 - [Handling stop reasons](Guides/build-with-claude-handling-stop-reasons-767bec5b32.md)
+- [Stop reasons and fallback - Claude Platform Docs](Guides/build-with-claude-handling-stop-reasons-849de77ad4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Build an orchestration mode - Claude Platform Docs](Guides/build-with-claude-mid-conversation-effort-example-f59bd2aa64.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Mid-conversation system messages and tool changes - Claude Platform Docs](Guides/build-with-claude-mid-conversation-system-messages-d90fd5feae.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Multilingual support - Claude Platform Docs](Guides/build-with-claude-multilingual-support-07c29d6102.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Multilingual support](Guides/build-with-claude-multilingual-support-2d75e26f84.md) - Claude excels at tasks across multiple languages, maintaining strong cross-lingual performance relative to English.
+- [Features overview - Claude Platform Docs](Guides/build-with-claude-overview-00017bc274.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Features overview](Guides/build-with-claude-overview-236d3362b2.md) - Explore Claude's advanced features and capabilities.
 - [PDF support](Guides/build-with-claude-pdf-support-01e729abfc.md) - Process PDFs with Claude. Extract text, analyze charts, and understand visual content from your documents.
+- [PDF support - Claude Platform Docs](Guides/build-with-claude-pdf-support-e65a646dc7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Rate Limits API](Guides/build-with-claude-rate-limits-api-f95b04961e.md) - Programmatically query your organization's API rate limits with the Rate Limits API.
+- [Refusals and fallback - Claude Platform Docs](Guides/build-with-claude-refusals-and-fallback-990d87c7cf.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Search results - Claude Platform Docs](Guides/build-with-claude-search-results-e0b9e7777f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Search results](Guides/build-with-claude-search-results-e16f90758e.md) - Enable natural citations for RAG applications by providing search results with source attribution
+- [Using Agent Skills with the API - Claude Platform Docs](Guides/build-with-claude-skills-guide-832e2fe21e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Using Agent Skills with the API](Guides/build-with-claude-skills-guide-8feadbbf7d.md) - Learn how to use Agent Skills to extend Claude's capabilities through the API.
+- [Streaming messages - Claude Platform Docs](Guides/build-with-claude-streaming-0712ffc466.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Streaming Messages](Guides/build-with-claude-streaming-74f4dddaf7.md)
+- [Structured outputs - Claude Platform Docs](Guides/build-with-claude-structured-outputs-1ba2260198.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Structured outputs](Guides/build-with-claude-structured-outputs-2638e81449.md) - Get validated JSON results from agent workflows
 - [Task budgets](Guides/build-with-claude-task-budgets-7152010a55.md) - Give Claude an advisory token budget for the full agentic loop to help the model self-regulate on long agentic tasks with task budgets.
+- [Task budgets - Claude Platform Docs](Guides/build-with-claude-task-budgets-e82e7818b8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Thinking - Claude Platform Docs](Guides/build-with-claude-thinking-03550646e4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Steering thinking - Claude Platform Docs](Guides/build-with-claude-thinking-steering-and-cost-d22e3e33d3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Thinking in tool and multi-turn workflows - Claude Platform Docs](Guides/build-with-claude-thinking-tool-workflows-6c124c5d5f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Troubleshooting thinking - Claude Platform Docs](Guides/build-with-claude-thinking-troubleshooting-b0c866cce8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Token counting - Claude Platform Docs](Guides/build-with-claude-token-counting-29ea82f0e3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Token counting](Guides/build-with-claude-token-counting-acaef15da2.md) - The [token counting](/docs/en/api/messages-count-tokens) endpoint accepts the same structured list of inputs for creating a message, including support
 - [Usage and Cost API](Guides/build-with-claude-usage-cost-api-ea9ab3260c.md) - Programmatically access your organization's API usage and cost data with the Usage & Cost Admin API.
 - [Vision](Guides/build-with-claude-vision-789a5b8cc6.md) - Claude's vision capabilities allow it to understand and analyze images, opening up exciting possibilities for multimodal interaction.
+- [Vision - Claude Platform Docs](Guides/build-with-claude-vision-bf29971bcf.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Coordinates and bounding boxes - Claude Platform Docs](Guides/build-with-claude-vision-coordinates-e24da6ad12.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Using the Messages API - Claude Platform Docs](Guides/build-with-claude-working-with-messages-620b08ba3a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Using the Messages API](Guides/build-with-claude-working-with-messages-c26ad950fc.md) - Practical patterns and examples for using the Messages API effectively
 - [Workspaces](Guides/build-with-claude-workspaces-12135e8f23.md) - Organize API keys, manage team access, and control costs with workspaces.
 
-## Other (1083)
+## Other (1373)
 
 - [Agent Skills](Other/agent-skills.md) - Agent Skills are modular capabilities that extend Claude's functionality. Each Skill packages instructions, metadata, and optional resources (scripts,
 - [Amazon Bedrock | Claude](Other/amazon-bedrock-claude.md) - Build innovative AI applications with safer systems from Anthropic, supported by secure infrastructure from AWS.
+- [Admin - Claude API Reference](Other/api-admin-51a2ab146d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Admin](Other/api-admin-8fbba842b3.md) - **get** `/v1/organizations/me`
 - [Beta](Other/api-beta-1abaedf17c.md) - - `AnthropicBeta = string or "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 19 more`
+- [Beta - Claude API Reference](Other/api-beta-4e4a851846.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Agents](Other/api-beta-agents-054f11e5a5.md) - **post** `/v1/agents`
+- [Archive Agent - Claude API Reference](Other/api-beta-agents-archive-4218107b42.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Agents Archive Bb89Ea4C30](Other/api-beta-agents-archive-bb89ea4c30.md) - **post** `/v1/agents/{agent_id}/archive`
+- [Create Agent - Claude API Reference](Other/api-beta-agents-create-282dabd865.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Agents Create 840B7Ddb29](Other/api-beta-agents-create-840b7ddb29.md) - **post** `/v1/agents`
 - [Api Beta Agents Delete B1F73666B6](Other/api-beta-agents-delete-b1f73666b6.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Agents - Claude API Reference](Other/api-beta-agents-fd98652b90.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Agents List 02C6A68585](Other/api-beta-agents-list-02c6a68585.md) - **get** `/v1/agents`
+- [List Agents - Claude API Reference](Other/api-beta-agents-list-6c025a0a37.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Agents Retrieve 303D032960](Other/api-beta-agents-retrieve-303d032960.md) - **get** `/v1/agents/{agent_id}`
+- [Get Agent - Claude API Reference](Other/api-beta-agents-retrieve-ce69f389d7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Update Agent - Claude API Reference](Other/api-beta-agents-update-acb91da1b7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Agents Update Afff94C113](Other/api-beta-agents-update-afff94c113.md) - **post** `/v1/agents/{agent_id}`
 - [Versions](Other/api-beta-agents-versions-24ed271fc9.md) - **get** `/v1/agents/{agent_id}/versions`
+- [Versions - Claude API Reference](Other/api-beta-agents-versions-86ccf846b5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Agent Versions - Claude API Reference](Other/api-beta-agents-versions-list-42bbec27b0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Agents Versions List Be98A6737B](Other/api-beta-agents-versions-list-be98a6737b.md) - **get** `/v1/agents/{agent_id}/versions`
+- [Deployment Runs - Claude API Reference](Other/api-beta-deployment-runs-006e751376.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Deployment Runs - Claude API Reference](Other/api-beta-deployment-runs-list-c5b17dedb2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Deployment Run - Claude API Reference](Other/api-beta-deployment-runs-retrieve-f576390e2d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Deployments - Claude API Reference](Other/api-beta-deployments-0088acb9c5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Archive Deployment - Claude API Reference](Other/api-beta-deployments-archive-01418fb29e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create Deployment - Claude API Reference](Other/api-beta-deployments-create-ad7ee90336.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Deployments - Claude API Reference](Other/api-beta-deployments-list-050c8680e8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Pause Deployment - Claude API Reference](Other/api-beta-deployments-pause-5086079faa.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Deployment - Claude API Reference](Other/api-beta-deployments-retrieve-112e4239fd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Run Deployment Now - Claude API Reference](Other/api-beta-deployments-run-5442783dff.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Unpause Deployment - Claude API Reference](Other/api-beta-deployments-unpause-aeda66fe77.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Update Deployment - Claude API Reference](Other/api-beta-deployments-update-f366855dc3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Dreams - Claude API Reference](Other/api-beta-dreams-6203459350.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Archive a Dream - Claude API Reference](Other/api-beta-dreams-archive-69f5040421.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Cancel a Dream - Claude API Reference](Other/api-beta-dreams-cancel-ca49563820.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create a Dream - Claude API Reference](Other/api-beta-dreams-create-63c9e5a792.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Dreams - Claude API Reference](Other/api-beta-dreams-list-a809244645.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get a Dream - Claude API Reference](Other/api-beta-dreams-retrieve-7c40051762.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Environments](Other/api-beta-environments-9586b7a5ec.md) - **post** `/v1/environments`
+- [Archive Environment - Claude API Reference](Other/api-beta-environments-archive-235699f19b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Environments Archive 521F24Dc36](Other/api-beta-environments-archive-521f24dc36.md) - **post** `/v1/environments/{environment_id}/archive`
+- [Environments - Claude API Reference](Other/api-beta-environments-cfa7777aa7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Environments Create 3801Bc5B1E](Other/api-beta-environments-create-3801bc5b1e.md) - **post** `/v1/environments`
+- [Create Environment - Claude API Reference](Other/api-beta-environments-create-d4d5ff264d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Delete Environment - Claude API Reference](Other/api-beta-environments-delete-6ee6a89fd5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Environments Delete E2059Cced9](Other/api-beta-environments-delete-e2059cced9.md) - **delete** `/v1/environments/{environment_id}`
+- [List Environments - Claude API Reference](Other/api-beta-environments-list-159a900cf2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Environments List 488B2Aed5D](Other/api-beta-environments-list-488b2aed5d.md) - **get** `/v1/environments`
 - [Api Beta Environments Retrieve 7C7F000Ede](Other/api-beta-environments-retrieve-7c7f000ede.md) - **get** `/v1/environments/{environment_id}`
+- [Get Environment - Claude API Reference](Other/api-beta-environments-retrieve-936ee9ec49.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Environments Update 1Ce25Fe54E](Other/api-beta-environments-update-1ce25fe54e.md) - **post** `/v1/environments/{environment_id}`
+- [Update Environment - Claude API Reference](Other/api-beta-environments-update-80474e39a3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Acknowledge Work - Claude API Reference](Other/api-beta-environments-work-ack-a956deba5a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Work - Claude API Reference](Other/api-beta-environments-work-f2e6989d6d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Record Heartbeat - Claude API Reference](Other/api-beta-environments-work-heartbeat-bfa213641e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Work Items - Claude API Reference](Other/api-beta-environments-work-list-1aa3ac77bd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Poll for Work - Claude API Reference](Other/api-beta-environments-work-poll-4f15c9b8f8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Work Item - Claude API Reference](Other/api-beta-environments-work-retrieve-c35ff56bce.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Queue Statistics - Claude API Reference](Other/api-beta-environments-work-stats-2f7a2fcf84.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Stop Work - Claude API Reference](Other/api-beta-environments-work-stop-37a6ce8412.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Update Work Item - Claude API Reference](Other/api-beta-environments-work-update-6926cd3aa1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Files](Other/api-beta-files-4ca47bac33.md) - **post** `/v1/files`
+- [Delete File - Claude API Reference](Other/api-beta-files-delete-2becc516bb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Files Delete 9Dc5Be1D20](Other/api-beta-files-delete-9dc5be1d20.md) - **delete** `/v1/files/{file_id}`
+- [Files - Claude API Reference](Other/api-beta-files-df2d296387.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Download File - Claude API Reference](Other/api-beta-files-download-6c85aba640.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Files Download Eb9C73B460](Other/api-beta-files-download-eb9c73b460.md) - **get** `/v1/files/{file_id}/content`
 - [Api Beta Files List 1Cfa0Ac955](Other/api-beta-files-list-1cfa0ac955.md) - **get** `/v1/files`
+- [List Files - Claude API Reference](Other/api-beta-files-list-36aaca94fc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get File Metadata - Claude API Reference](Other/api-beta-files-retrieve-metadata-8e9216151a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Files Retrieve Metadata A8Dcdde9F1](Other/api-beta-files-retrieve-metadata-a8dcdde9f1.md) - **get** `/v1/files/{file_id}`
 - [Api Beta Files Upload 33844460F0](Other/api-beta-files-upload-33844460f0.md) - **post** `/v1/files`
+- [Upload File - Claude API Reference](Other/api-beta-files-upload-e040ed4760.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Beta headers - Claude Platform Docs](Other/api-beta-headers-01851843c8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Memory Stores](Other/api-beta-memory-stores-22b2aa2db9.md) - **post** `/v1/memory_stores`
 - [Api Beta Memory Stores Archive 3E02Cd1Bde](Other/api-beta-memory-stores-archive-3e02cd1bde.md) - **post** `/v1/memory_stores/{memory_store_id}/archive`
+- [Archive a memory store - Claude API Reference](Other/api-beta-memory-stores-archive-48c744376b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create a memory store - Claude API Reference](Other/api-beta-memory-stores-create-9e99fe10c6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Memory Stores Create E283E33F45](Other/api-beta-memory-stores-create-e283e33f45.md) - **post** `/v1/memory_stores`
+- [Delete a memory store - Claude API Reference](Other/api-beta-memory-stores-delete-27361e42f8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Memory Stores Delete A1Eb77Bf61](Other/api-beta-memory-stores-delete-a1eb77bf61.md) - **delete** `/v1/memory_stores/{memory_store_id}`
+- [Memory Stores - Claude API Reference](Other/api-beta-memory-stores-e72bb8f60f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List memory stores - Claude API Reference](Other/api-beta-memory-stores-list-083b5306e6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Memory Stores List 1Af788E2B4](Other/api-beta-memory-stores-list-1af788e2b4.md) - **get** `/v1/memory_stores`
+- [Memories - Claude API Reference](Other/api-beta-memory-stores-memories-1c728e04d4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Memories](Other/api-beta-memory-stores-memories-2c0cff2ab9.md) - **post** `/v1/memory_stores/{memory_store_id}/memories`
+- [Create a memory - Claude API Reference](Other/api-beta-memory-stores-memories-create-d191328d31.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Memory Stores Memories Create E5261290F2](Other/api-beta-memory-stores-memories-create-e5261290f2.md) - **post** `/v1/memory_stores/{memory_store_id}/memories`
 - [Api Beta Memory Stores Memories Delete 305D3A3E23](Other/api-beta-memory-stores-memories-delete-305d3a3e23.md) - **delete** `/v1/memory_stores/{memory_store_id}/memories/{memory_id}`
+- [Delete a memory - Claude API Reference](Other/api-beta-memory-stores-memories-delete-ae3b47e2d4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List memories - Claude API Reference](Other/api-beta-memory-stores-memories-list-1fed76165f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Memory Stores Memories List C9548E5C6B](Other/api-beta-memory-stores-memories-list-c9548e5c6b.md) - **get** `/v1/memory_stores/{memory_store_id}/memories`
+- [Retrieve a memory - Claude API Reference](Other/api-beta-memory-stores-memories-retrieve-52a4c10006.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Memory Stores Memories Retrieve B54A279Eee](Other/api-beta-memory-stores-memories-retrieve-b54a279eee.md) - **get** `/v1/memory_stores/{memory_store_id}/memories/{memory_id}`
 - [Api Beta Memory Stores Memories Update 07Aaa4Fcfb](Other/api-beta-memory-stores-memories-update-07aaa4fcfb.md) - **post** `/v1/memory_stores/{memory_store_id}/memories/{memory_id}`
+- [Update a memory - Claude API Reference](Other/api-beta-memory-stores-memories-update-c727db2318.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Memory Versions - Claude API Reference](Other/api-beta-memory-stores-memory-versions-c81f1d9d2d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Memory Versions](Other/api-beta-memory-stores-memory-versions-d3c59bdd52.md) - **get** `/v1/memory_stores/{memory_store_id}/memory_versions`
 - [Api Beta Memory Stores Memory Versions List 5E4A76B6A7](Other/api-beta-memory-stores-memory-versions-list-5e4a76b6a7.md) - **get** `/v1/memory_stores/{memory_store_id}/memory_versions`
+- [List memory versions - Claude API Reference](Other/api-beta-memory-stores-memory-versions-list-647208fce0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Memory Stores Memory Versions Redact 77E154C5Fb](Other/api-beta-memory-stores-memory-versions-redact-77e154c5fb.md) - **post** `/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}/redact`
+- [Redact a memory version - Claude API Reference](Other/api-beta-memory-stores-memory-versions-redact-8213651d28.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Memory Stores Memory Versions Retrieve Bcfcda7Ef8](Other/api-beta-memory-stores-memory-versions-retrieve-bcfcda7ef8.md) - **get** `/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}`
+- [Retrieve a memory version - Claude API Reference](Other/api-beta-memory-stores-memory-versions-retrieve-f72592beaf.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Retrieve a memory store - Claude API Reference](Other/api-beta-memory-stores-retrieve-113ae8a71d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Memory Stores Retrieve E1B6C4B9A9](Other/api-beta-memory-stores-retrieve-e1b6c4b9a9.md) - **get** `/v1/memory_stores/{memory_store_id}`
 - [Api Beta Memory Stores Update 61A62D903E](Other/api-beta-memory-stores-update-61a62d903e.md) - **post** `/v1/memory_stores/{memory_store_id}`
+- [Update a memory store - Claude API Reference](Other/api-beta-memory-stores-update-9b931c793b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Messages](Other/api-beta-messages-629bde7c38.md) - **post** `/v1/messages`
+- [Batches - Claude API Reference](Other/api-beta-messages-batches-2aa1f23df3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Batches](Other/api-beta-messages-batches-9362c4622e.md) - **post** `/v1/messages/batches`
 - [Api Beta Messages Batches Cancel Bf8A823D0D](Other/api-beta-messages-batches-cancel-bf8a823d0d.md) - **post** `/v1/messages/batches/{message_batch_id}/cancel`
+- [Cancel a Message Batch - Claude API Reference](Other/api-beta-messages-batches-cancel-f3ab2dc8b9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create a Message Batch - Claude API Reference](Other/api-beta-messages-batches-create-3c402005da.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Messages Batches Create C199B3A9B4](Other/api-beta-messages-batches-create-c199b3a9b4.md) - **post** `/v1/messages/batches`
+- [Delete a Message Batch - Claude API Reference](Other/api-beta-messages-batches-delete-475fc8697d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Messages Batches Delete C4202372A5](Other/api-beta-messages-batches-delete-c4202372a5.md) - **delete** `/v1/messages/batches/{message_batch_id}`
+- [List Message Batches - Claude API Reference](Other/api-beta-messages-batches-list-1e005ad901.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Messages Batches List E0Df3Efce5](Other/api-beta-messages-batches-list-e0df3efce5.md) - **get** `/v1/messages/batches`
+- [Retrieve Message Batch results - Claude API Reference](Other/api-beta-messages-batches-results-07f5c3e6bb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Messages Batches Results 539Ec9C8Eb](Other/api-beta-messages-batches-results-539ec9c8eb.md) - **get** `/v1/messages/batches/{message_batch_id}/results`
 - [Api Beta Messages Batches Retrieve 605552B630](Other/api-beta-messages-batches-retrieve-605552b630.md) - **get** `/v1/messages/batches/{message_batch_id}`
+- [Retrieve a Message Batch - Claude API Reference](Other/api-beta-messages-batches-retrieve-d6931eccf4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Messages Count Tokens Da904Efd4D](Other/api-beta-messages-count-tokens-da904efd4d.md) - **post** `/v1/messages/count_tokens`
+- [Count tokens in a Message - Claude API Reference](Other/api-beta-messages-count-tokens-df3ddc2251.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create a Message - Claude API Reference](Other/api-beta-messages-create-11937789a9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Messages Create F6Cca594F3](Other/api-beta-messages-create-f6cca594f3.md) - **post** `/v1/messages`
+- [Sessions - Claude API Reference](Other/api-beta-sessions-8a01470785.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Sessions](Other/api-beta-sessions-8b0f41e303.md) - **post** `/v1/sessions`
 - [Api Beta Sessions Archive 8770425919](Other/api-beta-sessions-archive-8770425919.md) - **post** `/v1/sessions/{session_id}/archive`
+- [Archive Session - Claude API Reference](Other/api-beta-sessions-archive-bfeb4446b6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Sessions Create 19B33Fd2C9](Other/api-beta-sessions-create-19b33fd2c9.md) - **post** `/v1/sessions`
+- [Create Session - Claude API Reference](Other/api-beta-sessions-create-aa557389d7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Sessions Delete 37B4690E54](Other/api-beta-sessions-delete-37b4690e54.md) - **delete** `/v1/sessions/{session_id}`
+- [Delete Session - Claude API Reference](Other/api-beta-sessions-delete-de468a721a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Events - Claude API Reference](Other/api-beta-sessions-events-8c89df2fa8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Events](Other/api-beta-sessions-events-b91e946879.md) - **get** `/v1/sessions/{session_id}/events`
+- [List Events - Claude API Reference](Other/api-beta-sessions-events-list-127b84edac.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Sessions Events List 90A51551Ca](Other/api-beta-sessions-events-list-90a51551ca.md) - **get** `/v1/sessions/{session_id}/events`
 - [Api Beta Sessions Events Send 0Bc6B19D12](Other/api-beta-sessions-events-send-0bc6b19d12.md) - **post** `/v1/sessions/{session_id}/events`
+- [Send Events - Claude API Reference](Other/api-beta-sessions-events-send-a48e435a1d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Stream Events - Claude API Reference](Other/api-beta-sessions-events-stream-51de01f63d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Sessions Events Stream F42870Faea](Other/api-beta-sessions-events-stream-f42870faea.md) - **get** `/v1/sessions/{session_id}/events/stream`
+- [List Sessions - Claude API Reference](Other/api-beta-sessions-list-3c8cf89125.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Sessions List C0B76985D3](Other/api-beta-sessions-list-c0b76985d3.md) - **get** `/v1/sessions`
+- [Resources - Claude API Reference](Other/api-beta-sessions-resources-1a0cdb87e1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Add Session Resource - Claude API Reference](Other/api-beta-sessions-resources-add-76a5c15bb2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Sessions Resources Add E906Aec3Ad](Other/api-beta-sessions-resources-add-e906aec3ad.md) - **post** `/v1/sessions/{session_id}/resources`
 - [Resources](Other/api-beta-sessions-resources-cdaf231a72.md) - **post** `/v1/sessions/{session_id}/resources`
 - [Api Beta Sessions Resources Delete 2F08F335Fb](Other/api-beta-sessions-resources-delete-2f08f335fb.md) - **delete** `/v1/sessions/{session_id}/resources/{resource_id}`
+- [Delete Session Resource - Claude API Reference](Other/api-beta-sessions-resources-delete-d511d8bee0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Session Resources - Claude API Reference](Other/api-beta-sessions-resources-list-22ad995377.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Sessions Resources List 9Baa97431B](Other/api-beta-sessions-resources-list-9baa97431b.md) - **get** `/v1/sessions/{session_id}/resources`
+- [Get Session Resource - Claude API Reference](Other/api-beta-sessions-resources-retrieve-3441642717.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Sessions Resources Retrieve A1C6E95Df4](Other/api-beta-sessions-resources-retrieve-a1c6e95df4.md) - **get** `/v1/sessions/{session_id}/resources/{resource_id}`
 - [Api Beta Sessions Resources Update 88C5296A05](Other/api-beta-sessions-resources-update-88c5296a05.md) - **post** `/v1/sessions/{session_id}/resources/{resource_id}`
+- [Update Session Resource - Claude API Reference](Other/api-beta-sessions-resources-update-938ed1b76d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Sessions Retrieve F096D967B7](Other/api-beta-sessions-retrieve-f096d967b7.md) - **get** `/v1/sessions/{session_id}`
+- [Get Session - Claude API Reference](Other/api-beta-sessions-retrieve-f6e82b48f2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Threads - Claude API Reference](Other/api-beta-sessions-threads-00e83861b5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Archive Session Thread - Claude API Reference](Other/api-beta-sessions-threads-archive-5f41147f57.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Events - Claude API Reference](Other/api-beta-sessions-threads-events-22954be6e1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Session Thread Events - Claude API Reference](Other/api-beta-sessions-threads-events-list-fa52ee9668.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Stream Session Thread Events - Claude API Reference](Other/api-beta-sessions-threads-events-stream-1df1342f3a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Session Threads - Claude API Reference](Other/api-beta-sessions-threads-list-5f344ea69b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Session Thread - Claude API Reference](Other/api-beta-sessions-threads-retrieve-85ad43cb80.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Update Session - Claude API Reference](Other/api-beta-sessions-update-6d1f0b889f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Sessions Update F228A44Faa](Other/api-beta-sessions-update-f228a44faa.md) - **post** `/v1/sessions/{session_id}`
+- [Skills - Claude API Reference](Other/api-beta-skills-a9beaa1302.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Skills Create 06386Aa4D7](Other/api-beta-skills-create-06386aa4d7.md) - **post** `/v1/skills`
+- [Create Skill - Claude API Reference](Other/api-beta-skills-create-d6f20615fa.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Delete Skill - Claude API Reference](Other/api-beta-skills-delete-61afed88ac.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Skills Delete 749A6Dfadb](Other/api-beta-skills-delete-749a6dfadb.md) - **delete** `/v1/skills/{skill_id}`
 - [Skills](Other/api-beta-skills-f30b69c01d.md) - **post** `/v1/skills`
 - [Api Beta Skills List 134402061E](Other/api-beta-skills-list-134402061e.md) - **get** `/v1/skills`
+- [List Skills - Claude API Reference](Other/api-beta-skills-list-9cf7dc2cc1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Skill - Claude API Reference](Other/api-beta-skills-retrieve-05179a28ff.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Skills Retrieve C64858A4Ce](Other/api-beta-skills-retrieve-c64858a4ce.md) - **get** `/v1/skills/{skill_id}`
+- [Versions - Claude API Reference](Other/api-beta-skills-versions-0ac54f36c2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Versions](Other/api-beta-skills-versions-9a050a7643.md) - **post** `/v1/skills/{skill_id}/versions`
+- [Create Skill Version - Claude API Reference](Other/api-beta-skills-versions-create-4ac85729e0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Skills Versions Create F9B5120935](Other/api-beta-skills-versions-create-f9b5120935.md) - **post** `/v1/skills/{skill_id}/versions`
 - [Api Beta Skills Versions Delete 004A3E88C8](Other/api-beta-skills-versions-delete-004a3e88c8.md) - **delete** `/v1/skills/{skill_id}/versions/{version}`
+- [Delete Skill Version - Claude API Reference](Other/api-beta-skills-versions-delete-7fff4a3392.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Download Skill Version Content - Claude API Reference](Other/api-beta-skills-versions-download-7ffd2368a2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Skill Versions - Claude API Reference](Other/api-beta-skills-versions-list-090a7a3431.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Skills Versions List Ac76F57C6E](Other/api-beta-skills-versions-list-ac76f57c6e.md) - **get** `/v1/skills/{skill_id}/versions`
 - [Api Beta Skills Versions Retrieve 14Ac4Dc8B8](Other/api-beta-skills-versions-retrieve-14ac4dc8b8.md) - **get** `/v1/skills/{skill_id}/versions/{version}`
+- [Get Skill Version - Claude API Reference](Other/api-beta-skills-versions-retrieve-8544f206da.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Tunnels - Claude API Reference](Other/api-beta-tunnels-20585ff10f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Archive Tunnel - Claude API Reference](Other/api-beta-tunnels-archive-e7f0acd25b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Certificates - Claude API Reference](Other/api-beta-tunnels-certificates-16bd4ddf77.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Archive Tunnel Certificate - Claude API Reference](Other/api-beta-tunnels-certificates-archive-406d8e1c18.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create Tunnel Certificate - Claude API Reference](Other/api-beta-tunnels-certificates-create-ad91de7a2d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Tunnel Certificates - Claude API Reference](Other/api-beta-tunnels-certificates-list-e7d21046e8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Tunnel Certificate - Claude API Reference](Other/api-beta-tunnels-certificates-retrieve-0966088ef9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create Tunnel - Claude API Reference](Other/api-beta-tunnels-create-7960fdda29.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Tunnels - Claude API Reference](Other/api-beta-tunnels-list-35949a5c31.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Tunnel - Claude API Reference](Other/api-beta-tunnels-retrieve-85fd0ae16f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Reveal Tunnel Token - Claude API Reference](Other/api-beta-tunnels-reveal-token-3a160599b1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Rotate Tunnel Token - Claude API Reference](Other/api-beta-tunnels-rotate-token-eef5e6f37d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [User Profiles - Claude API Reference](Other/api-beta-user-profiles-b744dbea7e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create User Profile - Claude API Reference](Other/api-beta-user-profiles-create-4ddfd8d758.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create Enrollment URL - Claude API Reference](Other/api-beta-user-profiles-create-enrollment-url-e54e1f677a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List User Profiles - Claude API Reference](Other/api-beta-user-profiles-list-8b233de8fd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get User Profile - Claude API Reference](Other/api-beta-user-profiles-retrieve-46f88829bb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Update User Profile - Claude API Reference](Other/api-beta-user-profiles-update-4784295734.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Vaults - Claude API Reference](Other/api-beta-vaults-9926f7946d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Archive Vault - Claude API Reference](Other/api-beta-vaults-archive-5f2550c215.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Vaults Archive 7Bdb8253Dd](Other/api-beta-vaults-archive-7bdb8253dd.md) - **post** `/v1/vaults/{vault_id}/archive`
+- [Create Vault - Claude API Reference](Other/api-beta-vaults-create-90da2e1201.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Vaults Create Cb92A8A125](Other/api-beta-vaults-create-cb92a8a125.md) - **post** `/v1/vaults`
 - [Credentials](Other/api-beta-vaults-credentials-19c32c92b0.md) - **post** `/v1/vaults/{vault_id}/credentials`
+- [Credentials - Claude API Reference](Other/api-beta-vaults-credentials-932dea78d9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Vaults Credentials Archive 11Cdff89B1](Other/api-beta-vaults-credentials-archive-11cdff89b1.md) - **post** `/v1/vaults/{vault_id}/credentials/{credential_id}/archive`
+- [Archive Credential - Claude API Reference](Other/api-beta-vaults-credentials-archive-c0da49d0d2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create Credential - Claude API Reference](Other/api-beta-vaults-credentials-create-5ca69c68c7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Vaults Credentials Create 84910084D0](Other/api-beta-vaults-credentials-create-84910084d0.md) - **post** `/v1/vaults/{vault_id}/credentials`
+- [Delete Credential - Claude API Reference](Other/api-beta-vaults-credentials-delete-7ad75bbbe7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Vaults Credentials Delete 8C397B2175](Other/api-beta-vaults-credentials-delete-8c397b2175.md) - **delete** `/v1/vaults/{vault_id}/credentials/{credential_id}`
 - [Api Beta Vaults Credentials List 1E5669Ce2C](Other/api-beta-vaults-credentials-list-1e5669ce2c.md) - **get** `/v1/vaults/{vault_id}/credentials`
+- [List Credentials - Claude API Reference](Other/api-beta-vaults-credentials-list-5036da61ac.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Validate Credential - Claude API Reference](Other/api-beta-vaults-credentials-mcp-oauth-validate-b8a2efa274.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Vaults Credentials Retrieve 869A32A2D0](Other/api-beta-vaults-credentials-retrieve-869a32a2d0.md) - **get** `/v1/vaults/{vault_id}/credentials/{credential_id}`
+- [Get Credential - Claude API Reference](Other/api-beta-vaults-credentials-retrieve-f96d7a6a05.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Update Credential - Claude API Reference](Other/api-beta-vaults-credentials-update-a1091bfce5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Vaults Credentials Update E8A45A516C](Other/api-beta-vaults-credentials-update-e8a45a516c.md) - **post** `/v1/vaults/{vault_id}/credentials/{credential_id}`
 - [Vaults](Other/api-beta-vaults-d9adf85bef.md) - **post** `/v1/vaults`
+- [Delete Vault - Claude API Reference](Other/api-beta-vaults-delete-ac3949cc8b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Vaults Delete F9Bd99C708](Other/api-beta-vaults-delete-f9bd99c708.md) - **delete** `/v1/vaults/{vault_id}`
+- [List Vaults - Claude API Reference](Other/api-beta-vaults-list-21ddcaae16.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Vaults List 4C1D43D233](Other/api-beta-vaults-list-4c1d43d233.md) - **get** `/v1/vaults`
+- [Get Vault - Claude API Reference](Other/api-beta-vaults-retrieve-2872cd56c6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Vaults Retrieve C9731Ac28F](Other/api-beta-vaults-retrieve-c9731ac28f.md) - **get** `/v1/vaults/{vault_id}`
+- [Update Vault - Claude API Reference](Other/api-beta-vaults-update-42978a7e67.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Beta Vaults Update 91688B1A4F](Other/api-beta-vaults-update-91688b1a4f.md) - **post** `/v1/vaults/{vault_id}`
+- [Webhooks - Claude API Reference](Other/api-beta-webhooks-cd9d2c16a4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Cli Beta Agents Archive F66Ba0A22F](Other/api-cli-beta-agents-archive-f66ba0a22f.md) - `$ ant beta:agents archive`
 - [Api Cli Beta Agents Create Cca558Fd89](Other/api-cli-beta-agents-create-cca558fd89.md) - `$ ant beta:agents create`
 - [Api Cli Beta Agents Delete 5Bfe9116Cb](Other/api-cli-beta-agents-delete-5bfe9116cb.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
@@ -322,7 +686,59 @@
 - [Api Cli Messages Create 0A922Ab2C1](Other/api-cli-messages-create-0a922ab2c1.md) - `$ ant messages create`
 - [Client SDKs](Other/api-client-sdks-ab34496e4f.md) - Official SDKs for building with the Claude API in Python, TypeScript, Java, Go, Ruby, C#, PHP, and the command line.
 - [Api Completions Create 2Fba139F24](Other/api-completions-create-2fba139f24.md) - **post** `/v1/complete`
+- [Create a Text Completion - Claude API Reference](Other/api-completions-create-d4197f248b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Completions](Other/api-completions-e6fced0efa.md) - **post** `/v1/complete`
+- [Completions - Claude API Reference](Other/api-completions-eea01eb6c9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Compliance API - Claude API Reference](Other/api-compliance-99526132b4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Artifacts - Claude API Reference](Other/api-compliance-apps-artifacts-7f806e87b4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Download artifact content - Claude API Reference](Other/api-compliance-apps-artifacts-download-4b1d73e531.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get artifact metadata - Claude API Reference](Other/api-compliance-apps-artifacts-retrieve-1380eddd8c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Apps - Claude API Reference](Other/api-compliance-apps-c0d96a3ba8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Chats - Claude API Reference](Other/api-compliance-apps-chats-20f574f745.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Delete chat - Claude API Reference](Other/api-compliance-apps-chats-delete-2598c63764.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Delete file - Claude API Reference](Other/api-compliance-apps-chats-files-delete-93e3f176c7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Download file content - Claude API Reference](Other/api-compliance-apps-chats-files-download-4e3e9f4673.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Files - Claude API Reference](Other/api-compliance-apps-chats-files-ef6579c813.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get file metadata - Claude API Reference](Other/api-compliance-apps-chats-files-retrieve-a7ee3ca22a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Generated Files - Claude API Reference](Other/api-compliance-apps-chats-generated-files-026307900e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Download a Claude-generated file - Claude API Reference](Other/api-compliance-apps-chats-generated-files-download-cfee2d189f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Claude-generated file metadata - Claude API Reference](Other/api-compliance-apps-chats-generated-files-retrieve-da162aa39b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List chats - Claude API Reference](Other/api-compliance-apps-chats-list-33efa7ad1a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Messages - Claude API Reference](Other/api-compliance-apps-chats-messages-40b77c0fd4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get chat messages - Claude API Reference](Other/api-compliance-apps-chats-messages-list-ac07acbc5b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Attachments - Claude API Reference](Other/api-compliance-apps-projects-attachments-f8416ecc84.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List project attachments - Claude API Reference](Other/api-compliance-apps-projects-attachments-list-d945a21be7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Collaborators - Claude API Reference](Other/api-compliance-apps-projects-collaborators-0be2014ac1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List project collaborators - Claude API Reference](Other/api-compliance-apps-projects-collaborators-list-109b0c2cf7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Delete project - Claude API Reference](Other/api-compliance-apps-projects-delete-c7a0b68298.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Documents - Claude API Reference](Other/api-compliance-apps-projects-documents-1281f9fc6a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Delete project document - Claude API Reference](Other/api-compliance-apps-projects-documents-delete-0cae89cd4b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get project document metadata - Claude API Reference](Other/api-compliance-apps-projects-documents-metadata-e42facfe93.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get project document content - Claude API Reference](Other/api-compliance-apps-projects-documents-retrieve-a37d433157.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Projects - Claude API Reference](Other/api-compliance-apps-projects-fe6492f5e5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List projects - Claude API Reference](Other/api-compliance-apps-projects-list-0c003847a8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get project details - Claude API Reference](Other/api-compliance-apps-projects-retrieve-296c320e37.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Artifacts - Claude API Reference](Other/api-compliance-code-artifacts-4a5df4ce87.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Delete Code Artifact - Claude API Reference](Other/api-compliance-code-artifacts-delete-4e6f24d485.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Code Artifacts - Claude API Reference](Other/api-compliance-code-artifacts-list-da65e93fec.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Download Code Artifact Version Content - Claude API Reference](Other/api-compliance-code-artifacts-retrieve-version-447dda8a8d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Code - Claude API Reference](Other/api-compliance-code-c79254061d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Groups - Claude API Reference](Other/api-compliance-groups-4f4664bfb3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Compliance Groups - Claude API Reference](Other/api-compliance-groups-list-d7bd4e4976.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Members - Claude API Reference](Other/api-compliance-groups-members-035070f623.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Compliance Group Members - Claude API Reference](Other/api-compliance-groups-members-list-43c6dc6223.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Compliance Group - Claude API Reference](Other/api-compliance-groups-retrieve-ce1171ba7b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Organizations - Claude API Reference](Other/api-compliance-organizations-f6be733317.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List organizations - Claude API Reference](Other/api-compliance-organizations-list-4ccad4d475.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Roles - Claude API Reference](Other/api-compliance-organizations-roles-724bbd550b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Compliance Roles - Claude API Reference](Other/api-compliance-organizations-roles-list-da9233ce3b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Permissions - Claude API Reference](Other/api-compliance-organizations-roles-permissions-e0153edf76.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Compliance Role Permissions - Claude API Reference](Other/api-compliance-organizations-roles-permissions-list-419636b106.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get Compliance Role - Claude API Reference](Other/api-compliance-organizations-roles-retrieve-a072358b68.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Settings - Claude API Reference](Other/api-compliance-organizations-settings-b4db23c2cc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get effective organization settings - Claude API Reference](Other/api-compliance-organizations-settings-retrieve-a34a00700d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Users - Claude API Reference](Other/api-compliance-organizations-users-0a58fddc28.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List organization users - Claude API Reference](Other/api-compliance-organizations-users-list-bbc00d83e1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Beta](Other/api-csharp-beta-65d62c7c4f.md) - - `class BetaApiError:`
 - [Agents](Other/api-csharp-beta-agents-0b1932777f.md) - `BetaManagedAgentsAgent Beta.Agents.Create(AgentCreateParamsparameters, CancellationTokencancellationToken = default)`
 - [Api Csharp Beta Agents Archive 381F76D3Eb](Other/api-csharp-beta-agents-archive-381f76d3eb.md) - `BetaManagedAgentsAgent Beta.Agents.Archive(AgentArchiveParamsparameters, CancellationTokencancellationToken = default)`
@@ -426,6 +842,7 @@
 - [Api Csharp Messages Count Tokens A7596F297A](Other/api-csharp-messages-count-tokens-a7596f297a.md) - `MessageTokensCount Messages.CountTokens(MessageCountTokensParamsparameters, CancellationTokencancellationToken = default)`
 - [Api Csharp Messages Create Eaf90Cec85](Other/api-csharp-messages-create-eaf90cec85.md) - `Message Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)`
 - [Messages](Other/api-csharp-messages-decc83c8c4.md) - `Message Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Claude API errors - Claude Platform Docs](Other/api-errors-854b88aad1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Errors](Other/api-errors-90b9605eae.md)
 - [Beta](Other/api-go-beta-471060c5d8.md) - - `type AnthropicBeta interface{…}`
 - [Api Go Beta Agents Archive 02E29E82A4](Other/api-go-beta-agents-archive-02e29e82a4.md) - `client.Beta.Agents.Archive(ctx, agentID, body) (*BetaManagedAgentsAgent, error)`
@@ -530,6 +947,7 @@
 - [Api Go Messages Count Tokens 4B76269Bb3](Other/api-go-messages-count-tokens-4b76269bb3.md) - `client.Messages.CountTokens(ctx, body) (*MessageTokensCount, error)`
 - [Api Go Messages Create 1Cafdbce61](Other/api-go-messages-create-1cafdbce61.md) - `client.Messages.New(ctx, body) (*Message, error)`
 - [Messages](Other/api-go-messages-e9487bb0eb.md) - `client.Messages.New(ctx, body) (*Message, error)`
+- [IP addresses - Claude Platform Docs](Other/api-ip-addresses-6b10f23b50.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [IP addresses](Other/api-ip-addresses-cc3c763ed7.md) - Anthropic services use fixed IP addresses for both inbound and outbound connections. You can use these addresses to configure your firewall rules for 
 - [Beta](Other/api-java-beta-7db3559367.md) - - `enum AnthropicBeta:`
 - [Agents](Other/api-java-beta-agents-8ed4c2e1a3.md) - `BetaManagedAgentsAgent beta().agents().create(AgentCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
@@ -637,14 +1055,24 @@
 - [Messages](Other/api-messages-2dd213ca95.md) - **post** `/v1/messages`
 - [Batches](Other/api-messages-batches-bd6675d656.md) - **post** `/v1/messages/batches`
 - [Api Messages Batches Cancel 2140B04Da1](Other/api-messages-batches-cancel-2140b04da1.md) - **post** `/v1/messages/batches/{message_batch_id}/cancel`
+- [Cancel a Message Batch - Claude API Reference](Other/api-messages-batches-cancel-2594ac756e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create a Message Batch - Claude API Reference](Other/api-messages-batches-create-10a480d56c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Messages Batches Create Cf002296B8](Other/api-messages-batches-create-cf002296b8.md) - **post** `/v1/messages/batches`
+- [Delete a Message Batch - Claude API Reference](Other/api-messages-batches-delete-d7205ccba1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Messages Batches Delete Fe9C8A3D0B](Other/api-messages-batches-delete-fe9c8a3d0b.md) - **delete** `/v1/messages/batches/{message_batch_id}`
+- [Batches - Claude API Reference](Other/api-messages-batches-e095247d02.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Message Batches - Claude API Reference](Other/api-messages-batches-list-eb567e9766.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Messages Batches List F5De1Aac62](Other/api-messages-batches-list-f5de1aac62.md) - **get** `/v1/messages/batches`
 - [Api Messages Batches Results A94Edbe8F8](Other/api-messages-batches-results-a94edbe8f8.md) - **get** `/v1/messages/batches/{message_batch_id}/results`
+- [Retrieve Message Batch results - Claude API Reference](Other/api-messages-batches-results-b3eb00bad6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Retrieve a Message Batch - Claude API Reference](Other/api-messages-batches-retrieve-3af3b6571d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Messages Batches Retrieve 8B77133253](Other/api-messages-batches-retrieve-8b77133253.md) - **get** `/v1/messages/batches/{message_batch_id}`
 - [Api Messages Count Tokens 7849A1414A](Other/api-messages-count-tokens-7849a1414a.md) - **post** `/v1/messages/count_tokens`
+- [Count tokens in a Message - Claude API Reference](Other/api-messages-count-tokens-e6e3983a80.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Api Messages Create 07971E1Cdf](Other/api-messages-create-07971e1cdf.md) - **post** `/v1/messages`
+- [Create a Message - Claude API Reference](Other/api-messages-create-e77afe85aa.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [OpenAI SDK compatibility](Other/api-openai-sdk-9632fe784c.md) - Anthropic provides a compatibility layer that enables you to use the OpenAI SDK to test the Claude API. With a few code changes, you can quickly evalu
+- [API overview - Claude Platform Docs](Other/api-overview-0882f00e62.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [API Overview](Other/api-overview-606ecbff81.md)
 - [Api Php Beta Agents Archive C8F4Ff6Fe2](Other/api-php-beta-agents-archive-c8f4ff6fe2.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
 - [Api Php Beta Agents C52F409D40](Other/api-php-beta-agents-c52f409d40.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
@@ -853,6 +1281,7 @@
 - [Api Python Messages Create 235F2C8804](Other/api-python-messages-create-235f2c8804.md) - `messages.create(MessageCreateParams**kwargs)  -> Message`
 - [Messages](Other/api-python-messages-fd35ed7675.md) - `messages.create(MessageCreateParams**kwargs)  -> Message`
 - [Rate limits](Other/api-rate-limits-28d3302987.md) - To mitigate misuse and manage capacity on the API, limits are in place on how much an organization can use the Claude API.
+- [Rate limits - Claude Platform Docs](Other/api-rate-limits-ed2ea3ed3d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Beta](Other/api-ruby-beta-2b0c869591.md) - - `AnthropicBeta = String | :"message-batches-2024-09-24" | :"prompt-caching-2024-07-31" | :"computer-use-2024-10-22" | 19 more`
 - [Api Ruby Beta Agents Archive C8Be28333D](Other/api-ruby-beta-agents-archive-c8be28333d.md) - `beta.agents.archive(agent_id, **kwargs) -> BetaManagedAgentsAgent`
 - [Api Ruby Beta Agents Create 7783Bd2477](Other/api-ruby-beta-agents-create-7783bd2477.md) - `beta.agents.create(**kwargs) -> BetaManagedAgentsAgent`
@@ -957,6 +1386,8 @@
 - [Api Ruby Messages Count Tokens 75D73E5448](Other/api-ruby-messages-count-tokens-75d73e5448.md) - `messages.count_tokens(**kwargs) -> MessageTokensCount`
 - [Api Ruby Messages Create 2754917F1D](Other/api-ruby-messages-create-2754917f1d.md) - `messages.create(**kwargs) -> Message`
 - [Service tiers](Other/api-service-tiers-165fc24251.md) - Different tiers of service allow you to balance availability, performance, and predictable costs based on your application's needs.
+- [Service tiers - Claude Platform Docs](Other/api-service-tiers-df1a1bb212.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Supported regions - Claude Platform Docs](Other/api-supported-regions-977a706d0c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Supported regions](Other/api-supported-regions-efff04f8b8.md) - Here are the countries, regions, and territories we can currently support access from:
 - [Api Terraform Beta 41E833C2F7](Other/api-terraform-beta-41e833c2f7.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
 - [Api Terraform Beta Agents 742E6327Aa](Other/api-terraform-beta-agents-742e6327aa.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
@@ -1164,57 +1595,141 @@
 - [Api Typescript Messages Batches Retrieve A46E305636](Other/api-typescript-messages-batches-retrieve-a46e305636.md) - `client.messages.batches.retrieve(stringmessageBatchID, RequestOptionsoptions?): MessageBatch`
 - [Api Typescript Messages Count Tokens Cbf98247De](Other/api-typescript-messages-count-tokens-cbf98247de.md) - `client.messages.countTokens(MessageCountTokensParamsbody, RequestOptionsoptions?): MessageTokensCount`
 - [Api Typescript Messages Create D3193B53Fa](Other/api-typescript-messages-create-d3193b53fa.md) - `client.messages.create(MessageCreateParamsbody, RequestOptionsoptions?): Message | Stream<RawMessageStreamEvent>`
+- [Versions - Claude Platform Docs](Other/api-versioning-27f1ef6fa2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Versions](Other/api-versioning-f7848bbf23.md) - When making API requests, you must send an `anthropic-version` request header. For example, `anthropic-version: 2023-06-01`. If you are using our [cli
 - [Api](Other/api.md) - Updates to the Claude Developer Platform, including the Claude API, client SDKs, and the Claude Console.
 - [Batch Processing with Message Batches API](Other/batch-processing.md) - Message Batches allow you to process large volumes of Messages requests
 - [Claude API Monitoring Setup Guide](Other/claude-api-monitoring-setup.md) - This guide will help you set up monitoring for Claude Opus API calls using MITMproxy and view them in your terminal viewer at localhost:3001.
+- [API usage primer for Claude - Claude Platform Docs](Other/claude-api-primer-84652a8c9f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Claude in Microsoft Foundry | Claude by Anthropic](Other/claude-in-microsoft-foundry-claude-by-anthropic.md) - Deploy frontier AI solutions safely and simply, using your existing Azure ecosystem.
+- [CLI authentication options - Claude Platform Docs](Other/cli-sdks-libraries-cli-authentication-faf5ddb9fb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [CLI quickstart - Claude Platform Docs](Other/cli-sdks-libraries-cli-quickstart-8285596437.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [CLI scripting and automation - Claude Platform Docs](Other/cli-sdks-libraries-cli-scripting-f05d9ea3d8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Using the CLI - Claude Platform Docs](Other/cli-sdks-libraries-cli-using-3cef4a9e38.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Apple Foundation Models - Claude Platform Docs](Other/cli-sdks-libraries-libraries-apple-foundation-models-8edad02aa4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [OpenAI SDK compatibility - Claude Platform Docs](Other/cli-sdks-libraries-libraries-openai-sdk-807d713e7b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [SDK middleware - Claude Platform Docs](Other/cli-sdks-libraries-middleware-6738007e59.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [CLI, SDKs, and libraries - Claude Platform Docs](Other/cli-sdks-libraries-overview-91dfb49fd7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Connectors | Claude](Other/connectors-claude.md) - Claude can work with your tools, databases, and applications to give you more relevant responses. Choose from a variety of connectors, powered by the 
+- [Get your Claude API key - Claude Platform Docs](Other/get-api-key-6b5482cd80.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Google Cloud Vertex AI | Claude](Other/google-cloud-vertex-ai-claude.md) - Get access to advanced AI and agent-building capabilities with built-in safeguards and efficient scaling.
+- [Documentation - Claude Platform Docs](Other/home-e41ade5b86.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Documentation - Claude API Docs](Other/home.md) - Everything you need to integrate Claude into your applications. From first API call to production.
 - [How can I access the Claude API? | Claude Help Center](Other/how-can-i-access-the-anthropic-api.md) - Organizations interested in building with the Claude API can create a [Claude Console account](platform-claude-com.md). The Claude Console is where yo
+- [Access Transparency - Claude Platform Docs](Other/manage-claude-access-transparency-5a9d460dea.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Admin API - Claude Platform Docs](Other/manage-claude-admin-api-b68cbf8cc4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Create an Admin API key - Claude Platform Docs](Other/manage-claude-admin-api-keys-864b183d97.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Analytics APIs - Claude Platform Docs](Other/manage-claude-analytics-api-f8c0b3123f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [API and data retention - Claude Platform Docs](Other/manage-claude-api-and-data-retention-6bc4022c86.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Authentication - Claude Platform Docs](Other/manage-claude-authentication-c9def02fc9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Configure AWS KMS for CMEK - Claude Platform Docs](Other/manage-claude-cmek-aws-kms-b904d89f08.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Configure Azure Key Vault for CMEK - Claude Platform Docs](Other/manage-claude-cmek-azure-key-vault-bee2bb5de9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Customer-managed encryption keys - Claude Platform Docs](Other/manage-claude-cmek-efcdb6010f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Configure Google Cloud KMS for CMEK - Claude Platform Docs](Other/manage-claude-cmek-google-cloud-kms-3b643d3a9e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Query the Activity Feed - Claude Platform Docs](Other/manage-claude-compliance-activity-feed-3a78dd7a53.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Compliance API - Claude Platform Docs](Other/manage-claude-compliance-api-a26043848a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Set up the Compliance API - Claude Platform Docs](Other/manage-claude-compliance-api-access-2aaa0e2386.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Retrieve and delete chats, files, and projects - Claude Platform Docs](Other/manage-claude-compliance-content-data-313b7c7642.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Handle Compliance API errors - Claude Platform Docs](Other/manage-claude-compliance-errors-0d138151dc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Compliance API FAQ - Claude Platform Docs](Other/manage-claude-compliance-faq-8a88303cbf.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Design your compliance integration - Claude Platform Docs](Other/manage-claude-compliance-integration-patterns-3b580eebdf.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List organizations, users, roles, groups, and settings - Claude Platform Docs](Other/manage-claude-compliance-org-data-196102dc29.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Data residency - Claude Platform Docs](Other/manage-claude-data-residency-86972328a9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Rate Limits API - Claude Platform Docs](Other/manage-claude-rate-limits-api-63efdf3221.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Spend Limits API - Claude Platform Docs](Other/manage-claude-spend-limits-api-4e546fc4d5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Usage and Cost API - Claude Platform Docs](Other/manage-claude-usage-cost-api-37b5ac0645.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [User management - Claude Platform Docs](Other/manage-claude-user-management-4a1afd8146.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Manage WIF with the Admin API - Claude Platform Docs](Other/manage-claude-wif-admin-api-f83f09f4be.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Use WIF with AWS - Claude Platform Docs](Other/manage-claude-wif-providers-aws-5cfedc3b43.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Use WIF with Microsoft Entra ID - Claude Platform Docs](Other/manage-claude-wif-providers-azure-cbf09571f3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Use WIF with Google Cloud - Claude Platform Docs](Other/manage-claude-wif-providers-gcp-4eb84cdb92.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Use WIF with GitHub Actions - Claude Platform Docs](Other/manage-claude-wif-providers-github-actions-35c3690d41.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Use WIF with Kubernetes - Claude Platform Docs](Other/manage-claude-wif-providers-kubernetes-621ae82bcb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Use WIF with Okta - Claude Platform Docs](Other/manage-claude-wif-providers-okta-72a503c68e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Use WIF with SPIFFE - Claude Platform Docs](Other/manage-claude-wif-providers-spiffe-e3ae6540f7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [WIF reference - Claude Platform Docs](Other/manage-claude-wif-reference-34cbff4f04.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Workload Identity Federation - Claude Platform Docs](Other/manage-claude-workload-identity-federation-42a19360e3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Workspaces - Claude Platform Docs](Other/manage-claude-workspaces-863f778f98.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Define your agent](Other/managed-agents-agent-setup-82ca4932fa.md) - Create a reusable, versioned agent configuration.
+- [Define your agent - Claude Platform Docs](Other/managed-agents-agent-setup-bbee5602d1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Container reference](Other/managed-agents-cloud-containers-18695a12bf.md) - Pre-installed packages, databases, and utilities available in cloud containers.
+- [Cloud sandbox reference - Claude Platform Docs](Other/managed-agents-cloud-sandboxes-reference-b054ece020.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Define outcomes](Other/managed-agents-define-outcomes-03fe519bce.md) - Tell the agent what 'done' looks like, and let it iterate until it gets there.
+- [Define outcomes - Claude Platform Docs](Other/managed-agents-define-outcomes-4fbd5b54eb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Dreams - Claude Platform Docs](Other/managed-agents-dreams-6cbb9e07e2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Cloud environment setup - Claude Platform Docs](Other/managed-agents-environments-68386e9e32.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Cloud environment setup](Other/managed-agents-environments-8a675d3732.md) - Customize cloud containers for your sessions.
 - [Session event stream](Other/managed-agents-events-and-streaming-8c00282409.md) - Send events, stream responses, and interrupt or redirect your session mid-execution.
+- [Session event stream - Claude Platform Docs](Other/managed-agents-events-and-streaming-d1d36b6e01.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Adding files](Other/managed-agents-files-5f1ffdd866.md) - Upload files and mount them in your container for reading and processing.
+- [Adding files - Claude Platform Docs](Other/managed-agents-files-99a555626a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Accessing GitHub - Claude Platform Docs](Other/managed-agents-github-81825b0a15.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Accessing GitHub](Other/managed-agents-github-c3d0fb911e.md) - Connect your agent to GitHub repositories for cloning, reading, and creating pull requests.
 - [MCP connector](Other/managed-agents-mcp-connector-212f0c2926.md) - Connect MCP servers to your agents for access to external tools and data sources.
+- [MCP connector - Claude Platform Docs](Other/managed-agents-mcp-connector-dac2f16e09.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Using agent memory - Claude Platform Docs](Other/managed-agents-memory-755b02d24c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Using agent memory](Other/managed-agents-memory-e08b227fea.md) - Give your agents persistent memory that survives across sessions using memory stores.
 - [Migration](Other/managed-agents-migration-07487dca6e.md) - Move an existing agent built on the Messages API or the Claude Agent SDK to Claude Managed Agents.
+- [Migration - Claude Platform Docs](Other/managed-agents-migration-69eca80ff3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Multiagent sessions](Other/managed-agents-multi-agent-c4b5f85b6c.md) - Coordinate multiple agents within a single session.
+- [Multiagent orchestration - Claude Platform Docs](Other/managed-agents-multiagent-orchestration-babbaaa764.md) - 
 - [Session tracing](Other/managed-agents-observability-ba24eca2e9.md) - Monitor and debug your sessions using the Console timeline and raw event views.
+- [Prototype in Console - Claude Platform Docs](Other/managed-agents-onboarding-ef3d4575a1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Prototype in Console](Other/managed-agents-onboarding-f5f453a1ca.md) - Create and test agents visually in Console without writing API calls.
 - [Claude Managed Agents overview](Other/managed-agents-overview-b12cd03916.md) - Pre-built, configurable agent harness that runs in managed infrastructure. Best for long-running tasks and asynchronous work.
+- [Claude Managed Agents overview - Claude Platform Docs](Other/managed-agents-overview-e98c272292.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Permission policies](Other/managed-agents-permission-policies-778df12305.md) - Control when agent and MCP tools execute.
+- [Permission policies - Claude Platform Docs](Other/managed-agents-permission-policies-cac6fb3d4c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Get started with Claude Managed Agents](Other/managed-agents-quickstart-841ac0c596.md) - Create your first autonomous agent.
+- [Get started with Claude Managed Agents - Claude Platform Docs](Other/managed-agents-quickstart-fc5a48f298.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Reference - Claude Platform Docs](Other/managed-agents-reference-926d82f274.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Scheduled deployments - Claude Platform Docs](Other/managed-agents-scheduled-deployments-43eca459a6.md) - 
+- [Self-hosted sandboxes - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-db41d6bba0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Security model - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-security-0b0439fc93.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Session operations - Claude Platform Docs](Other/managed-agents-session-operations-bb92c49437.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Start a session](Other/managed-agents-sessions-ae84d9adc1.md) - Create a session to run your agent and begin executing tasks.
+- [Start a session - Claude Platform Docs](Other/managed-agents-sessions-e1a2f0aa5f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Skills](Other/managed-agents-skills-63d5f0ec63.md) - Attach reusable, filesystem-based expertise to your agent for domain-specific workflows.
+- [Skills - Claude Platform Docs](Other/managed-agents-skills-dac7b36a85.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Tools - Claude Platform Docs](Other/managed-agents-tools-b215a6818a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Tools](Other/managed-agents-tools-ed0f3609b3.md) - Configure tools available to your agent.
+- [Authenticate with vaults - Claude Platform Docs](Other/managed-agents-vaults-4097739f94.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Authenticate with vaults](Other/managed-agents-vaults-47da9057c3.md) - Register per-user credentials when creating sessions.
+- [Subscribe to webhooks - Claude Platform Docs](Other/managed-agents-webhooks-e10d5a5180.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Partners | Claude by Anthropic](Other/partners-claude-by-anthropic.md) - Build the enterprise AI practice your customers are asking for — with the training, technical support, and co-investment to back it up.
 - [\](Other/pdf-upload-summarization.md) - :::
+- [Sign In | Claude Platform](Other/platform-claude-com-0140f2ae7b.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
+- [Documentation - Claude Platform Docs](Other/platform-claude-com-343c4bc078.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Sign In | Claude Platform](Other/platform-claude-com.md) - Continue with Google
 - [Powered by Claude | Claude](Other/powered-by-claude-claude.md) - A curated list of businesses that use Claude to build better, faster, and safer.
 - [Programatic Tool Calling (PTC) with the Claude API](Other/programmatic-tool-calling-ptc.md) - Programmatic Tool Calling (PTC) allows Claude to write code that calls
 - [Prompt caching through the Claude API](Other/prompt-caching.md) - Prompt caching allows you to store and reuse context within your prompt.
 - [Claude Platform](Other/release-notes-overview-0570f9f216.md) - Updates to the Claude Platform, including the Claude API, client SDKs, and the Claude Console.
+- [Claude Platform release notes - Claude Platform Docs](Other/release-notes-overview-4182359e79.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [System Prompts](Other/release-notes-system-prompts-92664eecb0.md) - See updates to the core system prompts on [claude.ai](https://www.claude.ai) and the Claude [iOS](http://anthropic.com/ios) and [Android](http://anthr
+- [System Prompts - Claude Platform Docs](Other/release-notes-system-prompts-eb4edca3b5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Resources Overview 965F97A2Ea](Other/resources-overview-965f97a2ea.md) - <h2}>
+- [Resources - Claude Platform Docs](Other/resources-overview-c3ec667cbb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Service partners | Claude](Other/service-partners-claude.md) - Find a consulting partner or system integrator to help you build your AI strategy and successfully implement Claude.
 - [Skill Authoring Best Practices](Other/skill-authoring-best-practices.md) - Learn how to write effective Skills that Claude can discover and use successfully.
 - [Usage & Cost Admin API Cookbook {#usage--cost-admin-api-cookbook}](Other/usage-cost-api.md) - ::: {#9610be80 .cell .markdown id="9610be80"}
 - [Using the Wolfram Alpha LLM API as a Tool with Claude](Other/using-llm-api.md) - In this recipe, we\'ll show you how to integrate the Wolfram Alpha LLM
 
-## Test-Evaluate (9)
+## Test-Evaluate (16)
 
 - [Define your success criteria - Claude API Docs](Test-Evaluate/test-and-evaluate-define-success.md) - Building a successful LLM-based application starts with clearly defining your success criteria. How will you know when your application is good enough
+- [Define success criteria and build evaluations - Claude Platform Docs](Test-Evaluate/test-and-evaluate-develop-tests-6727386d51.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Define success criteria and build evaluations](Test-Evaluate/test-and-evaluate-develop-tests-c4d321a9da.md)
 - [Using the Evaluation Tool](Test-Evaluate/test-and-evaluate-eval-tool-c4e35d37b9.md) - The [Claude Console](/dashboard) features an **Evaluation tool** that allows you to test your prompts under various scenarios.
 - [Streaming refusals](Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals-4bf5b1e3e7.md)
+- [Handle streaming refusals - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals-b7adb739a7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Increase output consistency - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency-44ba86b36c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Increase output consistency](Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency-8ccae35b1c.md)
 - [Mitigate jailbreaks and prompt injections](Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks-19976860e0.md)
+- [Mitigate jailbreaks and prompt injections - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks-3dd36a9677.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Reduce hallucinations - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations-2baa756322.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Reduce hallucinations](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations-32760d4211.md)
 - [Reducing latency](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency-322e8242bc.md) - When discussing latency, you may come across several terms and measurements:
+- [Reducing latency - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency-40e6755235.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Reduce prompt leak](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak-3eb5ab36bc.md)
+- [Reduce prompt leak - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak-bfdd29c552.md) - - [Managed Agents](/docs/en/managed-agents/overview)

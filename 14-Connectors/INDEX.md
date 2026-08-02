@@ -1,35 +1,75 @@
 # Connectors
 
-*30 documents*
+*70 documents*
 
 
+- [Get started with custom connectors using remote MCP | Claude Help Center](about-integrations-using-remote-mcp-2493848bcf.md) - Custom connectors using remote MCP are available on Claude, Cowork, and Claude Desktop for users on Free, Pro, Max, Team, and Enterprise plans. Free u
 - [Get started with custom connectors using remote MCP | Claude Help Center](about-integrations-using-remote-mcp.md) - Custom connectors using remote MCP are available on Claude and Claude Desktop for users on free, Pro, Max, Team, and Enterprise plans. Free users are 
+- [Anthropic Connectors Directory FAQ | Claude Help Center](anthropic-connectors-directory-faq-e8c155aac1.md) - May 7, 2026
 - [Anthropic Connectors Directory FAQ | Claude Help Center](anthropic-connectors-directory-faq.md) - MCP stands for Model Context Protocol, an open standard created by Anthropic that allows AI applications to connect to tools and data sources. For com
+- [Authorize MCP connectors for your entire organization | Claude Help Center](authorize-mcp-connectors-for-your-entire-organization-43f920f25a.md) - June 18, 2026
+- [Browse skills, connectors, and plugins in one directory | Claude Help Center](browse-skills-connectors-and-plugins-in-one-directory-6ee3c0df4b.md) - May 29, 2026
+- [Build custom connectors via remote MCP servers | Claude Help Center](build-custom-connectors-via-remote-mcp-servers-a233674fe1.md) - April 15, 2026
+- [Build custom connectors via remote MCP servers | Claude Help Center](building-custom-connectors-via-remote-mcp-servers-813ea92951.md) - April 15, 2026
 - [Building custom connectors via remote MCP servers | Claude Help Center](building-custom-connectors-via-remote-mcp-servers.md) - 3.  Building custom connectors via remote MCP servers
 - [Claude Code in Slack - Claude Code Docs](claude-code-in-slack-claude-code-docs-c62a093e92.md) - Delegate coding tasks directly from your Slack workspace
+- [Claude for Microsoft 365 | Claude by Anthropic](claude-for-microsoft-365-claude-by-anthropic-06f94a660e.md) - Work without the window shuffle
+- [Claude for Microsoft 365 | Claude by Anthropic](claude-for-microsoft-365-claude-by-anthropic-99f4da04a3.md) - Work without the window shuffle
+- [Claude in Slack: Tag @Claude in any thread | Claude by Anthropic](claude-in-slack-tag-claude-in-any-thread-claude-by-anthropic-b8a28cc83f.md) - [@Claude](https://anthropic.enterprise.slack.com/team/U08SSLN6TTL) reads threads, understands full context, and reacts in real time so your team moves
+- [Set up the Microsoft 365 connector | Claude Help Center](enabling-and-using-the-microsoft-365-connector-f39b429330.md) - This article walks admins through enabling the Microsoft 365 connector for their organization in Claude—including granting Microsoft Entra consent, re
 - [Enabling and using the Microsoft 365 connector | Claude Help Center](enabling-and-using-the-microsoft-365-connector.md) - 4.  Enabling and using the Microsoft 365 connector
+- [Get started with Claude Compliance API integrations | Claude Help Center](get-started-with-claude-compliance-api-integrations-6e6376c9e5.md) - Security and compliance platforms have built integrations on top of the Claude Compliance API, so your team can monitor Claude activity within the too
+- [Get started with Claude in Slack | Claude Help Center](get-started-with-claude-in-slack-ad4d7e43e7.md) - Claude in Slack will be switched over to the new Claude Tag experience on August 3, 2026. To integrate Claude and Slack, use Claude Tag instead. Learn
+- [Get started with custom connectors using remote MCP | Claude Help Center](get-started-with-custom-connectors-using-remote-mcp-dcba133490.md) - Custom connectors using remote MCP are available on Claude, Cowork, and Claude Desktop for users on Free, Pro, Max, Team, and Enterprise plans. Free u
 - [Get started with custom connectors using remote MCP | Claude Help Center](get-started-with-custom-connectors-using-remote-mcp.md) - Updated today
+- [Get started with Claude in Slack | Claude Help Center](getting-started-with-claude-in-slack-6e40ff610f.md) - Claude in Slack will be switched over to the new Claude Tag experience on August 3, 2026. To integrate Claude and Slack, use Claude Tag instead. Learn
 - [Getting started with Claude in Slack | Claude Help Center](getting-started-with-claude-in-slack.md) - You can now integrate Claude and Slack, giving you two ways to use them together: add Claude directly to your Slack workspace, or enable the Slack con
+- [Get started with custom connectors using remote MCP | Claude Help Center](getting-started-with-custom-connectors-using-remote-mcp-74392cf540.md) - Custom connectors using remote MCP are available on Claude, Cowork, and Claude Desktop for users on Free, Pro, Max, Team, and Enterprise plans. Free u
 - [Get started with custom connectors using remote MCP | Claude Help Center](getting-started-with-custom-connectors-using-remote-mcp.md) - Custom connectors using remote MCP are available on Claude and Claude Desktop for users on free, Pro, Max, Team, and Enterprise plans. Free users are 
 - [Get started with custom connectors using remote MCP | Claude Help Center](getting-started-with-custom-integrations-using-remote-mcp.md) - Custom connectors using remote MCP are available on Claude, Cowork, and Claude Desktop for users on free, Pro, Max, Team, and Enterprise plans. Free u
 - [Google Sheets add-on | Claude Help Center](google-sheets-add-on.md) - The [Claude for Sheets extension](https://workspace.google.com/marketplace/app/claude%5Ffor%5Fsheets/909417792257) integrates Claude into Google Sheet
+- [Getting started with connectors | Claude by Anthropic](intro-to-connectors-c3f720c004.md) - Learn how to supercharge Claude by connecting the tools you already use. This tutorial shows you how to set up connectors that give Claude access to y
 - [Getting started with connectors | Claude](intro-to-connectors.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [MCP connectors | Claude Help Center](mcp-connectors-4ffa3fcb5b.md) - April 10, 2026
+- [MCP: Individual connectors | Claude Help Center](mcp-individual-connectors-c17c49a15d.md) - April 9, 2026
+- [Microsoft 365 connector security guide | Claude Help Center](microsoft-365-connector-security-guide-bd172675ff.md) - The Microsoft 365 connector is an **Anthropic-hosted integration** that enables Claude to securely access Microsoft 365 services (Outlook, SharePoint,
 - [Microsoft 365 Connector: Security Guide | Claude Help Center](microsoft-365-connector-security-guide.md) - 4.  Microsoft 365 Connector: Security Guide
+- [Use connectors to extend Claude&#x27;s capabilities | Claude Help Center](pre-built-web-connectors-using-remote-mcp-baa2f1264a.md) - This guide explains how to enable and use connectors with Claude to enhance its capabilities.
 - [Resources Tutorials How To Use Claude In Excel For Accounting Revenue Model Vali](resources-tutorials-how-to-use-claude-in-excel-for-accounting-revenue-model-vali.md) - <!-- Source: https://claude.com/resources/tutorials/how-to-use-claude-in-excel-for-accounting-revenue-model-validation -->
 - [Resources Tutorials How To Use Claude In Excel For Hr Headcount Planning](resources-tutorials-how-to-use-claude-in-excel-for-hr-headcount-planning.md) - <!-- Source: https://claude.com/resources/tutorials/how-to-use-claude-in-excel-for-hr-headcount-planning -->
+- [Set up the Microsoft 365 connector | Claude Help Center](set-up-the-microsoft-365-connector-6661efa2fc.md) - This article walks admins through enabling the Microsoft 365 connector for their organization in Claude—including granting Microsoft Entra consent, re
 - [Claude Code in Slack](slack.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Use Claude in Slack | Claude Help Center](use-claude-in-slack-ebf082028e.md) - June 23, 2026
+- [Use connectors to extend Claude&#x27;s capabilities | Claude Help Center](use-connectors-to-extend-claude-s-capabilities-d041e8447b.md) - This guide explains how to enable and use connectors with Claude to enhance its capabilities.
 - [Use connectors to extend Claude&#x27;s capabilities | Claude Help Center](use-connectors-to-extend-claude-s-capabilities.md) - 4.  Use connectors to extend Claude's capabilities
+- [Use Google Workspace connectors | Claude Help Center](use-google-workspace-connectors-1c8d78b196.md) - May 22, 2026
 - [Use Google Workspace connectors | Claude Help Center](use-google-workspace-connectors.md) - Connect your Gmail, Google Calendar, and Google Drive to Claude so you can search emails, manage your calendar, work with documents, and save files—al
+- [Use interactive connectors in Claude | Claude Help Center](use-interactive-connectors-in-claude-1cc7ae923b.md) - March 25, 2026
+- [Use the GitHub integration | Claude Help Center](use-the-github-integration-68cb6f6de2.md) - For more information on enabling GitHub within your account, see **[Use connectors to extend Claude's capabilities](https://support.claude.com/en/arti
+- [Use Claude in Slack | Claude Help Center](using-claude-in-slack-5b163a17d3.md) - June 23, 2026
 - [Using Claude in Slack | Claude Help Center](using-claude-in-slack.md) - Claude in Slack gives you AI assistance right where your team collaborates. This article covers how to interact with Claude in Slack, which features a
+- [Use interactive connectors in Claude | Claude Help Center](using-interactive-connectors-in-claude-690a0289fd.md) - March 25, 2026
 - [Using interactive connectors in Claude | Claude Help Center](using-interactive-connectors-in-claude.md) - 4.  Using interactive connectors in Claude
+- [Using Research and Google Workspace | Claude by Anthropic](using-research-and-google-workspace-e49053bebb.md) - Learn how to leverage Claude's Research capabilities alongside Google Workspace integrations to access emails, calendar data, documents, and web infor
 - [Using Research and Google Workspace | Claude](using-research-and-google-workspace.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
 - [Claude Help Center](using-the-benchling-connector-in-claude.md) - Search for articles...
+- [Using the Benevity connector in Claude | Claude by Anthropic](using-the-benevity-connector-in-claude-57ee4b3512.md) - Connect Claude to Benevity's database of 2.5M+ nonprofits to discover and research charitable organizations.
 - [Using the Benevity Connector in Claude | Claude Help Center](using-the-benevity-connector-in-claude.md) - 3.  Using the Benevity Connector in Claude
+- [Using the BioRender Connector in Claude | Claude by Anthropic](using-the-biorender-connector-in-claude-96fdfe406c.md) - Set up and use the BioRender integration with Claude to search scientific figure templates and icon collections.
 - [Using the BioRender Connector in Claude | Claude Help Center](using-the-biorender-connector-in-claude.md) - 3.  Using the BioRender Connector in Claude
+- [Using the Blackbaud connector in Claude | Claude by Anthropic](using-the-blackbaud-connector-in-claude-dcd50c569e.md) - Connect Claude to Raiser's Edge NXT to access donor records, gift history, events, and draft personalized communications.
 - [Using the Blackbaud Connector in Claude | Claude Help Center](using-the-blackbaud-connector-in-claude.md) - 3.  Using the Blackbaud Connector in Claude
+- [Using the Candid connector in Claude | Claude by Anthropic](using-the-candid-connector-in-claude-ae661fc324.md) - Connect Claude to Candid's database of 1.9M+ nonprofits and foundations for organizational research, grant discovery, and sector analysis.
 - [Using the Candid Connector in Claude | Claude Help Center](using-the-candid-connector-in-claude.md) - The Candid integration brings the power of Candid’s comprehensive nonprofit and funder data directly into Claude. This article explains how to set up 
+- [Use the GitHub integration | Claude Help Center](using-the-github-integration-4ef821c64e.md) - For more information on enabling GitHub within your account, see **[Use connectors to extend Claude's capabilities](https://support.claude.com/en/arti
+- [Using the GitHub integration | Claude by Anthropic](using-the-github-integration-ce746a5ccd.md) - Explore how the GitHub integration can enhance your development process with Claude.
 - [Using the GitHub integration | Claude](using-the-github-integration.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Using the Google Docs integration | Claude by Anthropic](using-the-google-docs-integration-7434397b00.md) - Learn how to connect and use the Google Docs integration to seamlessly incorporate your documents into conversations with Claude.
 - [Using the Google Docs integration | Claude](using-the-google-docs-integration.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Use Google Workspace connectors | Claude Help Center](using-the-google-drive-integration-f1fb0a4c70.md) - May 22, 2026
 - [Use Google Workspace connectors | Claude Help Center](using-the-google-drive-integrationhttps-support-claude-com-en-articles-10166901.md) - Connect your Gmail, Google Calendar, and Google Drive to Claude so you can search emails, manage your calendar, work with documents, and save files—al
+- [Using the PubMed Connector in Claude | Claude by Anthropic](using-the-pubmed-connector-in-claude-625ec3b255.md) - Set up and use Claude's PubMed integration for access to millions of biomedical research articles and clinical studies.
+- [Using the Scholar Gateway Connector in Claude | Claude by Anthropic](using-the-scholar-gateway-connector-in-claude-1ac1cd95f9.md) - Set up and use the Scholar Gateway integration by Wiley with Claude for access to over 3 million peer-reviewed scientific articles.
 - [Using the Scholar Gateway Connector in Claude | Claude](using-the-scholar-gateway-connector-in-claude.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Using the Synapse.org Connector in Claude | Claude by Anthropic](using-the-synapse-org-connector-in-claude-026bb4a2c5.md) - Set up and use the Synapse.org integration with Claude to discover biomedical data and explore project structures across the Synapse platform.
 - [Using the Synapse.org Connector in Claude | Claude](using-the-synapse-org-connector-in-claude.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)

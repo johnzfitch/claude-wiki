@@ -2,26 +2,49 @@
 title: "Let Claude use your computer from the CLI - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/computer-use"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-05-19T21:22:32Z"
+fetched_at: "2026-08-02T05:37:51Z"
 tags: ["claude-code", "cli"]
 ---
 
+## On this page
+
+- [What you can do with computer use](#what-you-can-do-with-computer-use)
+- [When computer use applies](#when-computer-use-applies)
+- [Enable computer use](#enable-computer-use)
+- [Approve apps per session](#approve-apps-per-session)
+- [How Claude works on your screen](#how-claude-works-on-your-screen)
+  - [One session at a time](#one-session-at-a-time)
+  - [Apps are hidden while Claude works](#apps-are-hidden-while-claude-works)
+  - [Screenshots are downscaled automatically](#screenshots-are-downscaled-automatically)
+  - [Stop at any time](#stop-at-any-time)
+- [Safety and the trust boundary](#safety-and-the-trust-boundary)
+- [Example workflows](#example-workflows)
+  - [Validate a native build](#validate-a-native-build)
+  - [Reproduce a layout bug](#reproduce-a-layout-bug)
+  - [Test a simulator flow](#test-a-simulator-flow)
+- [Differences from the Desktop app](#differences-from-the-desktop-app)
+- [Troubleshooting](#troubleshooting)
+  - [”Computer use is in use by another Claude session”](#%E2%80%9Dcomputer-use-is-in-use-by-another-claude-session%E2%80%9D)
+  - [macOS permissions prompt keeps reappearing](#macos-permissions-prompt-keeps-reappearing)
+  - [computer-use doesn’t appear in /mcp](#computer-use-doesn%E2%80%99t-appear-in-%2Fmcp)
+- [See also](#see-also)
+
+Platforms and integrations
+
 # Let Claude use your computer from the CLI
 
+Copy pageCopy page
 
 Enable computer use in the Claude Code CLI so Claude can open apps, click, type, and see your screen on macOS. Test native apps, debug visual issues, and automate GUI-only tools without leaving your terminal.
 
+Copy pageCopy page
 
-> ## Documentation Index
->
-> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
->
-> Use this file to discover all available pages before exploring further.
-
-Computer use is a research preview on macOS that requires a Pro or Max plan. It is not available on Team or Enterprise plans. It requires Claude Code v2.1.85 or later and an interactive session, so it is not available in non-interactive mode with the `-p` flag.
+Computer use is a research preview on macOS that requires a Pro or Max plan. It is not available on Team or Enterprise plans. It requires an interactive session, so it is not available in non-interactive mode with the `-p` flag.
 
 Computer use lets Claude open apps, control your screen, and work on your machine the way you would. From the CLI, Claude can compile a Swift app, launch it, click through every button, and screenshot the result, all in the same conversation where it wrote the code. This page covers how computer use works in the CLI. For the Desktop app on macOS or Windows, see [computer use in Desktop](/docs/en/desktop#let-claude-use-your-computer).
 
+
+[​](#what-you-can-do-with-computer-use)
 
 What you can do with computer use
 
@@ -33,6 +56,8 @@ Computer use handles tasks that require a GUI: anything you’d normally have to
 - **Drive GUI-only tools**: interact with design tools, hardware control panels, the iOS Simulator, or proprietary apps that have no CLI or API.
 
 
+[​](#when-computer-use-applies)
+
 When computer use applies
 
 Claude has several ways to interact with an app or service. Computer use is the broadest and slowest, so Claude tries the most precise tool first:
@@ -42,15 +67,16 @@ Claude has several ways to interact with an app or service. Computer use is the 
 - If the task is browser work and you have [Claude in Chrome](/docs/en/chrome) set up, Claude uses that.
 - If none of those apply, Claude uses computer use.
 
-Screen control is reserved for things nothing else can reach: native apps, simulators, and tools without an API.
+Screen control is reserved for things nothing else can reach: native apps, simulators, and tools without an API. In the Desktop app, running or testing an iOS app opens the dedicated [iOS Simulator pane](/docs/en/desktop-ios-simulator) rather than screen control; from the CLI, computer use is how Claude reaches the iOS Simulator.
 
+
+[​](#enable-computer-use)
 
 Enable computer use
 
 Computer use is available as a built-in MCP server called `computer-use`. It’s off by default until you enable it.
 
 1
-
 
 Open the MCP menu
 
@@ -64,13 +90,11 @@ Find `computer-use` in the server list. It shows as disabled.
 
 2
 
-
 Enable the server
 
 Select `computer-use` and choose **Enable**. The setting persists per project, so you only do this once for each project where you want computer use.
 
 3
-
 
 Grant macOS permissions
 
@@ -88,6 +112,8 @@ Build the app target, launch it, and click through each tab to make
 sure nothing crashes. Screenshot any error states you find.
 ```
 
+
+[​](#approve-apps-per-session)
 
 Approve apps per session
 
@@ -108,30 +134,42 @@ Choose **Allow for this session** or **Deny**. Approvals last for the current se
 These apps aren’t blocked. The warning lets you decide whether the task warrants that level of access. Claude’s level of control also varies by app category: browsers and trading platforms are view-only, terminals and IDEs are click-only, and everything else gets full control. See [app permissions in Desktop](/docs/en/desktop#app-permissions) for the complete tier breakdown.
 
 
+[​](#how-claude-works-on-your-screen)
+
 How Claude works on your screen
 
 Understanding the flow helps you anticipate what Claude will do and how to intervene.
 
 
+[​](#one-session-at-a-time)
+
 One session at a time
 
-Computer use holds a machine-wide lock while active. If another Claude Code session is already using your computer, new attempts fail with a message telling you which session holds the lock. Finish or exit that session first.
+Computer use holds a machine-wide lock from the first computer use action until the session that took it exits. As of v2.1.195, finishing the task doesn’t release the lock; only exiting the session does. If another Claude Code session is already using your computer, new attempts fail with a message telling you which session holds the lock. Exit that session first.
 
+
+[​](#apps-are-hidden-while-claude-works)
 
 Apps are hidden while Claude works
 
 When Claude starts controlling your screen, other visible apps are hidden so Claude interacts with only the approved apps. Your terminal window stays visible and is excluded from screenshots, so you can watch the session and Claude never sees its own output. When Claude finishes the turn, hidden apps are restored automatically.
 
 
+[​](#screenshots-are-downscaled-automatically)
+
 Screenshots are downscaled automatically
 
 Claude Code downscales every screenshot before sending it to the model. You don’t need to lower your display resolution or resize windows on Retina or other high-resolution displays. A 16-inch MacBook Pro at native Retina resolution captures at 3456×2234 and downscales to roughly 1372×887, preserving aspect ratio. There is no setting to change the target size. If on-screen text or controls are too small for Claude to read after downscaling, increase their size in the app rather than changing your display resolution.
 
 
+[​](#stop-at-any-time)
+
 Stop at any time
 
-When Claude acquires the lock, a macOS notification appears: “Claude is using your computer · press Esc to stop.” Press `Esc` anywhere to abort the current action immediately, or press `Ctrl+C` in the terminal. Either way, Claude releases the lock, unhides your apps, and returns control to you. A second notification appears when Claude is done.
+When Claude acquires the lock, a macOS notification appears: “Claude is using your computer · press Esc to stop.” Press `Esc` anywhere to abort the current action immediately, or press `Ctrl+C` in the terminal. Either way, Claude stops, unhides your apps, and returns control to you. The session keeps the [computer use lock](#one-session-at-a-time) until it exits. A second notification appears when Claude is done.
 
+
+[​](#safety-and-the-trust-boundary)
 
 Safety and the trust boundary
 
@@ -146,10 +184,14 @@ The built-in guardrails reduce risk without requiring configuration:
 - **Lock file**: only one session can control your machine at a time.
 
 
+[​](#example-workflows)
+
 Example workflows
 
 These examples show common ways to combine computer use with coding tasks.
 
+
+[​](#validate-a-native-build)
 
 Validate a native build
 
@@ -164,6 +206,8 @@ preferences window when you're done.
 Claude runs `xcodebuild`, launches the app, interacts with the UI, and reports what it finds.
 
 
+[​](#reproduce-a-layout-bug)
+
 Reproduce a layout bug
 
 When a visual bug only appears at certain window sizes, let Claude find it:
@@ -177,6 +221,8 @@ then check the CSS for the modal container.
 Claude resizes the window, captures the broken state, and reads the relevant stylesheets.
 
 
+[​](#test-a-simulator-flow)
+
 Test a simulator flow
 
 Drive the iOS Simulator without writing XCTest:
@@ -186,8 +232,10 @@ Open the iOS Simulator, launch the app, tap through the onboarding
 screens, and tell me if any screen takes more than a second to load.
 ```
 
-Claude controls the simulator the same way you would with a mouse.
+Claude controls the simulator the same way you would with a mouse. This flow applies to the CLI; in the Desktop app, the same request opens the [iOS Simulator pane](/docs/en/desktop-ios-simulator) instead of screen control.
 
+
+[​](#differences-from-the-desktop-app)
 
 Differences from the Desktop app
 
@@ -202,29 +250,38 @@ The CLI and Desktop surfaces share the same computer use engine, with a few diff
 | Dispatch integration | Dispatch-spawned sessions can use computer use            | Not applicable                  |
 
 
+[​](#troubleshooting)
+
 Troubleshooting
 
 
+[​](#”computer-use-is-in-use-by-another-claude-session”)
+
 ”Computer use is in use by another Claude session”
 
-Another Claude Code session holds the lock. Finish the task in that session or exit it. If the other session crashed, the lock is released automatically when Claude detects the process is no longer running.
+Another Claude Code session holds the lock, which it keeps until it exits. Exit that session. If the other session crashed, the lock is released automatically when Claude detects the process is no longer running.
 
+
+[​](#macos-permissions-prompt-keeps-reappearing)
 
 macOS permissions prompt keeps reappearing
 
 macOS sometimes requires a restart of the requesting process after you grant Screen Recording. Quit Claude Code completely and start a new session. If the prompt persists, open **System Settings \> Privacy & Security \> Screen Recording** and confirm your terminal app is listed and enabled.
 
 
+[​](#computer-use-doesn’t-appear-in-/mcp)
+
 `computer-use` doesn’t appear in `/mcp`
 
 The server only appears on eligible setups. Check that:
 
 - You’re on macOS. Computer use in the CLI is not available on Linux or Windows. On Windows, use [computer use in Desktop](/docs/en/desktop#let-claude-use-your-computer) instead.
-- You’re running Claude Code v2.1.85 or later. Run `claude --version` to check.
 - You’re on a Pro or Max plan. Run `/status` to confirm your subscription.
-- You’re authenticated through claude.ai. Computer use is not available with third-party providers like Amazon Bedrock, Google Cloud Vertex AI, or Microsoft Foundry. If you access Claude exclusively through a third-party provider, you need a separate claude.ai account to use this feature.
+- You’re authenticated through claude.ai. Computer use is not available with third-party providers like Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry. If you access Claude exclusively through a third-party provider, you need a separate claude.ai account to use this feature.
 - You’re in an interactive session. Computer use is not available in non-interactive mode with the `-p` flag.
 
+
+[​](#see-also)
 
 See also
 
