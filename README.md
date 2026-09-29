@@ -8,37 +8,6 @@ Not affiliated with Anthropic.
 
 ---
 
-## For LLMs
-
-Grab [`llms.txt`](./llms.txt) for a structured outline of every document in this repo, or download the full [LLMX search bundle](https://github.com/johnzfitch/claude-wiki/releases/latest) from releases.
-
-```
-# Fetch the outline
-curl -sL https://raw.githubusercontent.com/johnzfitch/claude-wiki/master/llms.txt
-
-# Download the latest LLMX bundle
-gh release download --repo johnzfitch/claude-wiki -p 'claude-wiki-llmx.zip'
-```
-
-## For Humans
-
-Every doc is plain Markdown with YAML frontmatter. Browse the folders below or search locally:
-
-<kbd>Ctrl</kbd>+<kbd>F</kbd> in any folder, or clone and grep:
-
-```bash
-# Search everything
-grep -ri "tool use" */
-
-# Search one category
-grep -ri "streaming" 04-API-Reference/
-
-# Find docs by title
-find . -name '*.md' | grep -i "prompt"
-```
-
----
-
 ## Categories
 
 <!-- CATEGORY_TABLE_START -->
