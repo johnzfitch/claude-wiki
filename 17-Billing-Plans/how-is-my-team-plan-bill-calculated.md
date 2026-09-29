@@ -2,18 +2,20 @@
 title: "How is my Team plan bill calculated? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated"
 category: "17-Billing-Plans"
-fetched_at: "2026-03-22T09:01:48Z"
+fetched_at: "2026-09-29T06:32:11Z"
 tags: ["billing"]
 ---
 
 # How is my Team plan bill calculated?
 
+August 6, 2026
 
-Prices shown are for US customers and exclude applicable taxes. Pricing, currency, and tax handling vary by region. Visit **[claude.ai/upgrade](http://claude.ai/upgrade)** to see current pricing for your location.
+
+Prices shown are for US customers and exclude applicable taxes. Pricing, currency, and tax handling vary by region. Visit **[claude.ai/upgrade](https://claude.ai/upgrade)** to see current pricing for your location.
 
 For current pricing by seat type and billing interval, see **[What is the Team plan?](what-is-the-team-plan.md)**
 
-For information on seat types and what's included, see **[Purchasing and managing seats on Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)**.
+For information on seat types and what's included, see **[Purchasing and managing seats on Team plans](purchasing-and-managing-seats-on-team-plans.md)**.
 
 ------------------------------------------------------------------------
 
@@ -23,13 +25,13 @@ For information on seat types and what's included, see **[Purchasing and managin
 
 **Removing members:** You will not receive an immediate credit or refund. The seat becomes available to assign to another member.
 
-For instructions to add and remove members, see **[Managing members on Team and Enterprise plans](managing-members-on-team-and-enterprise-plans.md)**.
+For instructions to add and remove members, see **[Manage members on Team and Enterprise plans](managing-members-on-team-and-enterprise-plans.md)**.
 
 ------------------------------------------------------------------------
 
-## Extra usage
+## Usage credits
 
-If extra usage is enabled, your bill may include charges for usage beyond seat limits. See this article for more information: **[Extra usage for Team and seat-based Enterprise plans](extra-usage-for-team-and-seat-based-enterprise-plans.md)**.
+If usage credits are enabled, your bill may include charges for usage beyond seat limits. For details on how usage credits work and how they're billed on your plan, see **[Manage usage credits for Team and seat-based Enterprise plans](manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**.
 
 ------------------------------------------------------------------------
 
@@ -56,3 +58,5 @@ You will be charged for the number of members on your team at the beginning of e
 Taxes are not included in this example.
 
 **Note:** The "Projected total" displayed on **[your organization’s Billing page](https://claude.ai/admin-settings/billing)** is not inclusive of taxes.
+
+Price and plans are subject to change at Anthropic's discretion.

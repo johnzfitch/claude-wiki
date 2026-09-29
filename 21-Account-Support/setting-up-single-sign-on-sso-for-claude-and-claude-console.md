@@ -2,10 +2,12 @@
 title: "Set up single sign-on (SSO) | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso-for-claude-and-claude-console"
 category: "21-Account-Support"
-fetched_at: "2026-03-22T09:01:43Z"
+fetched_at: "2026-09-29T06:31:59Z"
+tags: ["account"]
 ---
 
 # Set up single sign-on (SSO)
+
 
 
 Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
@@ -16,7 +18,7 @@ This guide covers the steps to configure SSO for Team and Enterprise plans, and 
 
 Before proceeding with SSO setup, complete the following:
 
-**Review the considerations guide:** Read **[Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning](important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisi.md)** to understand parent organizations, determine your setup path, and complete any prerequisite steps such as merging organizations.
+**Review the considerations guide:** Read **[Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning](important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning.md)** to understand parent organizations, determine your setup path, and complete any prerequisite steps such as merging organizations.
 
 **Confirm you have the required role:**
 
@@ -32,7 +34,7 @@ Before proceeding with SSO setup, complete the following:
 
 Please contact your organization's IT Administrator if you do not have permissions to manage Claude or company DNS settings.
 
-**Note:** WorkOS is Anthropic's provider for domain verification and SSO setup. More details can be found in **[Anthropic's Subprocessor List](https://trust.anthropic.com/subprocessors)**. You will be taken through a WorkOS setup flow when configuring SSO and provisioning features – find your Identity Provider in their **[Integration documentation](https://workos.com/docs/integrations)**.
+**Note:** WorkOS is Anthropic's provider for domain verification and SSO setup. More details can be found in **[Anthropic's Subprocessor List](https://trust.anthropic.com/subprocessors)**. You will be taken through a WorkOS setup flow when configuring SSO and provisioning features—find your Identity Provider in their **[Integration documentation](https://workos.com/docs/integrations)**.
 
 ------------------------------------------------------------------------
 
@@ -44,11 +46,11 @@ You can verify multiple domains for a single organization, but all domains must 
 
 **Note:** Verifying your domain by itself will not impact existing users' ability to access our products. End users’ access is only affected once SSO is set up and explicitly enforced.
 
-1.  Navigate to your “Identity and access” settings in Claude (**[claude.ai/admin-settings/identity](http://claude.ai/admin-settings/identity)**) or Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**) – note this page will only appear on Console if you've worked with Sales to enable SSO or completed a merge proposal.
+1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](https://platform.claude.com/settings/identity)**) – note this page will only appear on Console if you've worked with Sales to enable SSO or completed a merge proposal.
 
 2.  In the **Domains** section, click “Add or edit domains.”
 
-3.  Enter the domain(s) you want to verify in the **Update organization email domains modal** and click the “+” button:
+3.  Enter the domain(s) you want to verify in the **Update organization email domains** modal and click the “+” button:
 
 
 4.  Click “Save” when you’re finished adding domains.
@@ -58,36 +60,48 @@ You can verify multiple domains for a single organization, but all domains must 
 6.  Enter your domain in the text box and click “Continue”:
 
 
-7.  This will generate a TXT record. Follow the instructions to add this TXT record to your domain provider.
+7.  The setup screen displays a TXT record. **Copy the full Value using the copy button**—it begins with `anthropic-domain-verification-` and is longer than what's visible in the box. In your DNS provider, add a TXT record to your domain and **Value** set to the copied string. The domain must match exactly what you entered in the previous step, including any subdomains. Add it alongside any existing TXT records; don't replace them. The value is case-sensitive, so paste it exactly. Please refer to your DNS provider's documentation on this topic.
 
-    - If using a subdomain (e.g., subdomain.yourcompany.com), set your TXT record on that subdomain (e.g., \_acme-challenge.subdomain.yourco. mpany.com).
+    1.  **Important:** Save the TXT value before leaving the setup screen. Once the domain shows as Pending, the admin console doesn't display the value again. If you lose it, you'll need to remove and re-add the domain, which generates a new value.
 
 8.  Wait 10 minutes for your DNS change to propagate.
 
-    - *Note: DNS changes can take 24-48 hours to propagate globally.*
+    - **Note:** *DNS changes can take 24-48 hours to propagate globally.*
 
 9.  When you see the green "Verified" badge, you can close the instructions page.
 
 10. If your domain shows as "Pending," use the "Refresh" button.
 
+### If your domain stays Pending
 
-**Note:** Once your domain is verified, you'll see a **Restrict organization creation** toggle under **Security** on the Identity and access organization settings page. Enable this if you want to prevent users from creating new Claude or Console organizations—including personal accounts—using your verified domains.
+Clicking "Refresh" re-checks your DNS; it won't show Verified until the published TXT record exactly matches the expected value. If it stays Pending after DNS has propagated, check the following:
+
+- **The record exists at the root.** Look up your domain's TXT records with a tool such as **[DNSChecker](https://dnschecker.org/#TXT)** and confirm a record beginning with `anthropic-domain-verification-` appears for `yourdomain.com` (not `www.yourdomain.com` or another subdomain). If it doesn't appear, the record may have been added at the wrong host or hasn't propagated yet.
+
+- **The value matches exactly.** The check is case-sensitive and requires the full string including the `anthropic-domain-verification-…=` prefix. A single character difference will keep it Pending.
+
+- **You haven't removed and re-added the domain.** Each re-add generates a new verification value. If you re-added the domain after publishing the TXT record, the published value no longer matches—you'll need to update the DNS record with the new value.
+
+If the record is correct and propagated but the status still shows Pending, contact Support.
+
+
+**Note:** Once your domain is verified, you'll see a **Restrict organization creation** toggle under **Security** on the Organization and access organization settings page. Enable this if you want to prevent users from creating new Claude or Console organizations—including personal accounts—using your verified domains.
 
 ------------------------------------------------------------------------
 
 ## Step 3: Set up SSO with your Identity Provider
 
-1.  Navigate to your Identity and access settings in Claude (**[claude.ai/admin-settings/identity](http://claude.ai/admin-settings/identity)**) or Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identit)**)
+1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](https://platform.claude.com/settings/identity)**).
 
-2.  In the **Global access settings** section, click “Setup SSO” (or “Manage”).
+2.  In the **Authentication** section, click “Setup SSO” (or “Manage SSO”).
 
 3.  Follow the setup guide provided for your Identity Provider (see below for additional guides).
 
 4.  At the end of these steps, you’ll be prompted to Test Single Sign-on to confirm there are no errors and the configuration is successful.
 
-5.  Once complete, navigate back to the Identity and access settings page for further configuration options.
+5.  Once complete, navigate back to the **Organization and access** settings page for further configuration options.
 
-**Important:** SSO enforcement might result in users being unable to log in if they are not correctly assigned to the Anthropic app in the IdP. If you have more than one Claude/Console org connected to your “parent org,” you will want to consider creating a unique IdP Group for each. For more information, see **[enable group mappings](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning.md#h_adee31eeba)**.
+**Important:** SSO enforcement might result in users being unable to log in if they are not correctly assigned to the Anthropic app in the IdP. If you have more than one Claude/Console org connected to your “parent org,” you will want to consider creating a unique IdP Group for each. For more information, see **[enable group mappings](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md#h_adee31eeba)**.
 
 For IdP-specific setup instructions, see:
 
@@ -107,26 +121,26 @@ For IdP-specific setup instructions, see:
 
 ## Step 4: Choose to require SSO
 
-You can now choose to toggle on **Require SSO for Console** and/or **Require SSO for Claude,** on the Identity and access page, under the **Global access settings** section:
+You can now choose to toggle on **Require SSO for Console** and/or **Require SSO for Claude,** on the **Organization and access** page, under the **Authentication** section:
 
 
-When SSO is required, users must use the “Continue with SSO” option to access Claude/Console. When SSO is not required, they will have the option to choose “Continue with SSO” or “Continue with email.”
+When SSO is required, users must use the “Continue with SSO” option to log in to their Claude/Console accounts. When SSO is not required, they will have the option to choose “Continue with SSO” or “Continue with email.”
 
-Before you decide, review **[What happens to existing users when SSO is enabled](important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisi.md#h_644f467167)**.
+Before you decide, review **[What happens to existing users when SSO is enabled](important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning.md#h_644f467167)**.
 
 ------------------------------------------------------------------------
 
 ## Step 5: Choose your provisioning approach
 
-Once SSO is enabled, you need to decide how users will be added to your organization. This is controlled by the **Provisioning mode** setting in the **Global access settings** section of your Identity and access settings.
+Once SSO is enabled, you need to decide how users will be added to your organization by choosing an option within the **User provisioning** section of your **Organization and access** settings.
 
 **Invite only** is the default. Users are added and removed directly in your Claude or Console settings. Please see **[Manage members on Team and Enterprise plans](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**.
 
-**JIT (Just-in-Time) provisioning** can be enabled to automatically provision users when they first log in. By default, users assigned to your Anthropic IdP app first login, they will receive the User role. This is the simplest automated option and requires no additional configuration beyond selecting "Approve automatically (JIT)" as your provisioning mode.
+**Just-in-Time (JIT) provisioning** can be enabled to automatically provision users when they first log in. By default, users assigned to your Anthropic IdP app first login, they will receive the User role. This is the simplest automated option and requires no additional configuration beyond selecting "Just-in-Time (JIT)" as your provisioning mode.
 
 ### Enable group mappings - when to configure additional provisioning features
 
-For more control over provisioning, see **[Set up JIT or SCIM provisioning](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning.md)**. You'll want to review this guide if you need to:
+For more control over provisioning, see **[Set up JIT or SCIM provisioning](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)**. You'll want to review this guide if you need to:
 
 - Automatically assign roles or seat tiers based on IdP group membership.
 
@@ -142,21 +156,21 @@ For more control over provisioning, see **[Set up JIT or SCIM provisioning](../1
 
 When your Identity Provider's X.509 signing certificate expires or is rotated, you'll need to update it in Claude or Console to maintain SSO functionality.
 
-1.  Navigate to your Identity and access settings:
+1.  Navigate to your settings:
 
-    - For Team and Enterprise plans: **[claude.ai/admin-settings/identity](http://claude.ai/admin-settings/identity)**
+    - For Team and Enterprise plans: **[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**
 
-    - For Claude Console: **[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**
+    - For Claude Console: **[platform.claude.com/settings/identity](../04-API-Reference/Other/usage-limits.md)**
 
-2.  In the **Global access settings** section, click “Manage SSO.”
+2.  In the **Authentication** section, click “Manage SSO.”
 
-3.  Select “Metadata Config.”
+3.  Find the **Metadata configuration** section and click “Edit.”
 
-4.  Click “Edit.”
+4.  Update your certificate information and save your changes.
 
-5.  Update your certificate information and save your changes.
+5.  Click "Test sign-in" on the same page to confirm everything is working.
 
-6.  Click "Test sign-in" on the same page to confirm everything is working.
+**Important:** If **Require SSO** is turned on and your certificate has already expired, no one in your organization can sign in to update it, because every sign-in option routes through SSO. **[Contact Support](how-can-i-contact-support.md)** from an Owner’s or Primary Owner’s email address and we’ll help you regain access so an Owner can update the certificate. To avoid this, note your certificate’s expiry date in your Identity Provider and rotate it ahead of time.
 
 ------------------------------------------------------------------------
 
@@ -164,4 +178,8 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 
 You can toggle **Require SSO for Claude** or **Require SSO for Console** off at any time. This will make SSO optional for all users.
 
-To fully disconnect SSO, click “Manage SSO” then “Reset.” This will end all users’ sessions and require them to sign back in via email login link.
+To fully disconnect SSO, click “Manage SSO” then “Reset connection.” This will end all users’ sessions and require them to sign back in via email login link.
+
+## Locked out of admin access?
+
+If none of your Owners or Admins can sign in (for example, after a certificate expiry, an Identity Provider change, or a group mapping that removed your administrators), contact Support from an Owner’s or Primary Owner’s email address. We’ll verify your ownership of the organization and help you regain access so you can correct the configuration.

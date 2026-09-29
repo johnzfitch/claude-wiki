@@ -2,11 +2,13 @@
 title: "Claude Code usage analytics | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12157520-claude-code-usage-analytics"
 category: "22-Safety-Policy"
-fetched_at: "2026-03-22T09:01:40Z"
-tags: ["claude-code"]
+fetched_at: "2026-09-29T06:30:25Z"
+tags: ["claude-code", "safety"]
 ---
 
 # Claude Code usage analytics
+
+July 1, 2026
 
 
 This feature allows Console users and owners of Team and Enterprise plans to monitor how their organization uses Claude Code, tracking productivity metrics and adoption patterns across teams.
@@ -19,7 +21,7 @@ Claude Code usage analytics are available to:
 
 - **API Console:** Admin, Billing, and Developer roles
 
-## Accessing Claude Code analytics
+## Access Claude Code analytics
 
 ### Team and Enterprise plans
 
@@ -27,23 +29,25 @@ Claude Code usage analytics are available to:
 
 2.  Click your initials or name in the lower left corner.
 
-3.  Navigate to **[Analytics \> Claude Code](https://claude.ai/analytics/claude-code)** to view **Usage**.
+3.  Navigate to **[Analytics \> Claude Code](https://claude.ai/analytics/claude-code)**.
+
+4.  Select the “Usage” or “Value” tab.
 
 ### API Console users
 
-1.  Log in to your **[Claude Console account](../04-API-Reference/Other/platform-claude-com.md)**.
+1.  Log in to your **[Claude Console account](../04-API-Reference/Other/usage-limits.md)**.
 
 2.  Expand the left side panel.
 
 3.  Click “Claude Code” under **Analytics**.
 
-4.  View Claude Code usage analytics on **[Settings \> Claude Code](https://platform.claude.com/claude-code)**.
+4.  View Claude Code usage analytics on **[Settings \> Claude Code](../04-API-Reference/Other/usage-limits.md)**.
 
 ------------------------------------------------------------------------
 
-## Available metrics
+## Usage tab
 
-The Claude Code Usage page displays the following metrics for your organization:
+The **Usage** tab displays the following metrics for your organization. Data on this tab refreshes daily.
 
 ### Organization-level metrics
 
@@ -55,18 +59,26 @@ The Claude Code Usage page displays the following metrics for your organization:
 
 - **Lines accepted over time**: Daily breakdown of accepted code lines.
 
+- **Top commands**: The Claude Code commands used most often across your organization.
+
 
 ### User-level metrics
 
 **Individual usage**: View each team member's email address and their total lines of code accepted for the current month. You can search for specific users or click the “Export” button to generate a CSV of members’ email addresses and total lines of code.
 
-## Understanding the metrics
+------------------------------------------------------------------------
 
-**Lines of code accepted** measures the actual code your team incorporates into their work from Claude Code suggestions, helping you understand the tool's practical impact on development productivity.
+## Value tab
 
-**Suggestion accept rate** indicates how relevant and useful Claude Code's suggestions are for your team's specific coding needs and practices.
+The **Value** tab summarizes usage and cost data to help you understand what Claude Code is returning to your organization at a glance.
 
-**Activity trends** show adoption patterns and help identify peak usage periods, allowing you to understand how Claude Code fits into your team's workflow.
+- **Estimated productivity lift**
+
+- **Cost per commit**
+
+- **Estimated annual value**
+
+Every formula used on this tab is shown inline. Click any input to adjust it to match your organization's assumptions, and the estimates recalculate.
 
 ------------------------------------------------------------------------
 
@@ -76,9 +88,9 @@ Contribution metrics are a new feature in public beta that helps Team and Enterp
 
 Contribution metrics require GitHub Cloud and are not available to Console users at this time.
 
-For a more in-depth look at contribution metrics, see **[our Claude Code docs](../13-Enterprise-Admin/track-team-usage-with-analytics-claude-code-docs-35e754aabf.md#enable-contribution-metrics)**.
+For a more in-depth look at contribution metrics, see **[our Claude Code docs](../13-Enterprise-Admin/analytics.md#enable-contribution-metrics)**.
 
-### Setting up contribution metrics
+### Set up contribution metrics
 
 Contribution metrics require a few steps beyond the base analytics setup:
 
@@ -86,7 +98,7 @@ Contribution metrics require a few steps beyond the base analytics setup:
 
 2.  Log in with an Owner or Primary Owner account.
 
-3.  Navigate to **[Admin settings \> Claude Code](https://claude.ai/admin-settings/claude-code)**.
+3.  Navigate to **[Organization settings \> Claude Code](https://claude.ai/admin-settings/claude-code)**.
 
 4.  Enable the Claude Code analytics feature if you haven't already.
 
@@ -116,7 +128,7 @@ Data is collected by correlating Claude Code session activity with GitHub commit
 
 Usage metrics display data for the current calendar month and reset at the beginning of each month. Historical data visualization shows daily granularity for tracking trends over time.
 
-## Using analytics to optimize Claude Code adoption
+## Use analytics to optimize Claude Code adoption
 
 Review your organization's code acceptance rate to understand if teams are finding Claude Code's suggestions valuable. If rates are lower than expected, consider providing additional training on effective prompting techniques.
 
@@ -132,10 +144,10 @@ Track activity trends to understand when your team uses Claude Code most effecti
 
 Claude Code usage analytics are not available to individual Pro or Max plans at this time.
 
-### I'm looking for specific user but they're missing from the reports.
+### I'm looking for a specific user but they're missing from the reports.
 
 If you notice that a specific user isn't showing up in your analytics, you should have them update Claude Code to the most recent version. The first Claude Code version to support this feature is **version 2.0.28**, so users should run `claude update` to manually update Claude Code if needed.
 
 ### Where can I find more information?
 
-See **[Analytics](../13-Enterprise-Admin/track-team-usage-with-analytics-claude-code-docs-35e754aabf.md)** in our Claude Code docs for more information.
+See **[Analytics](../13-Enterprise-Admin/analytics.md)** in our Claude Code docs for more information.

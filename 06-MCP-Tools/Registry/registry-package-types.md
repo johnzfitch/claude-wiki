@@ -1,31 +1,55 @@
 ---
-title: "MCP Registry Supported Package Types"
-source_url: "https://modelcontextprotocol.io/registry/package-types.md"
-category: "06-MCP-Tools"
-fetched_at: "2026-04-26T00:00:00Z"
-tags: ["docker", "mcp", "mcp-registry"]
+title: "MCP Registry Supported Package Types - Model Context Protocol"
+source_url: "https://modelcontextprotocol.io/registry/package-types"
+category: "06-MCP-Tools/Registry"
+fetched_at: "2026-09-29T06:30:37Z"
+tags: ["mcp", "mcp-registry"]
 ---
 
-> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-> Use this file to discover all available pages before exploring further.
+## On this page
+
+- [Package Types](#package-types)
+- [npm Packages](#npm-packages)
+  - [Ownership Verification](#ownership-verification)
+- [PyPI Packages](#pypi-packages)
+  - [Ownership Verification](#ownership-verification-2)
+- [NuGet Packages](#nuget-packages)
+  - [Ownership Verification](#ownership-verification-3)
+- [Cargo (Rust) Packages](#cargo-rust-packages)
+  - [Runtime Model](#runtime-model)
+  - [Ownership Verification](#ownership-verification-4)
+- [Docker/OCI Images](#docker%2Foci-images)
+  - [Ownership Verification](#ownership-verification-5)
+- [MCPB Packages](#mcpb-packages)
+  - [Verification](#verification)
+
+Publishing
 
 # MCP Registry Supported Package Types
 
-<Note>
-  The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report them on [GitHub](https://github.com/modelcontextprotocol/registry/issues).
-</Note>
+Copy pageCopy page
 
-# Package Types
+Copy pageCopy page
+
+The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report them on [GitHub](https://github.com/modelcontextprotocol/registry/issues).
+
+
+[​](#package-types)
+
+Package Types
 
 The MCP Registry supports several different package types, and each package type has its own verification method.
 
-## npm Packages
 
-For npm packages, the MCP Registry currently supports the npm public registry (`https://registry.npmjs.org`) only.
+[​](#npm-packages)
 
-npm packages use `"registryType": "npm"` in `server.json`. For example:
+npm Packages
 
-```json server.json highlight={9} theme={null}
+For npm packages, the MCP Registry currently supports the npm public registry (`https://registry.npmjs.org`) only. npm packages use `"registryType": "npm"` in `server.json`. For example:
+
+server.json
+
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.username/email-integration-mcp",
@@ -45,11 +69,16 @@ npm packages use `"registryType": "npm"` in `server.json`. For example:
 }
 ```
 
-### Ownership Verification
+
+[​](#ownership-verification)
+
+Ownership Verification
 
 The MCP Registry verifies ownership of npm packages by checking `mcpName` in `package.json`. The `mcpName` property **MUST** match the server name from `server.json`. For example:
 
-```json package.json theme={null}
+package.json
+
+```python
 {
   "name": "@username/email-integration-mcp",
   "version": "1.0.0",
@@ -57,13 +86,16 @@ The MCP Registry verifies ownership of npm packages by checking `mcpName` in `pa
 }
 ```
 
-## PyPI Packages
 
-For PyPI packages, the MCP Registry currently supports the official PyPI registry (`https://pypi.org`) only.
+[​](#pypi-packages)
 
-PyPI packages use `"registryType": "pypi"` in `server.json`. For example:
+PyPI Packages
 
-```json server.json highlight={9} theme={null}
+For PyPI packages, the MCP Registry currently supports the official PyPI registry (`https://pypi.org`) only. PyPI packages use `"registryType": "pypi"` in `server.json`. For example:
+
+server.json
+
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.username/database-query-mcp",
@@ -83,11 +115,16 @@ PyPI packages use `"registryType": "pypi"` in `server.json`. For example:
 }
 ```
 
-### Ownership Verification
+
+[​](#ownership-verification-2)
+
+Ownership Verification
 
 The MCP Registry verifies ownership of PyPI packages by checking for the existence of an `mcp-name: $SERVER_NAME` string in the package README (which becomes the package description on PyPI). The string may be hidden in a comment, but the `$SERVER_NAME` portion **MUST** match the server name from `server.json`. For example:
 
-```markdown README.md highlight={5} theme={null}
+README.md
+
+```python
 # Database Query MCP Server
 
 This MCP server executes SQL queries and manages database connections.
@@ -95,13 +132,16 @@ This MCP server executes SQL queries and manages database connections.
 <!-- mcp-name: io.github.username/database-query-mcp -->
 ```
 
-## NuGet Packages
 
-For NuGet packages, the MCP Registry currently supports the official NuGet registry (`https://api.nuget.org/v3/index.json`) only.
+[​](#nuget-packages)
 
-NuGet packages use `"registryType": "nuget"` in `server.json`. For example:
+NuGet Packages
 
-```json server.json highlight={9} theme={null}
+For NuGet packages, the MCP Registry currently supports the official NuGet registry (`https://api.nuget.org/v3/index.json`) only. NuGet packages use `"registryType": "nuget"` in `server.json`. For example:
+
+server.json
+
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.username/azure-devops-mcp",
@@ -121,11 +161,16 @@ NuGet packages use `"registryType": "nuget"` in `server.json`. For example:
 }
 ```
 
-### Ownership Verification
+
+[​](#ownership-verification-3)
+
+Ownership Verification
 
 The MCP Registry verifies ownership of NuGet packages by checking for the existence of an `mcp-name: $SERVER_NAME` string in the package README. The string may be hidden in a comment, but the `$SERVER_NAME` portion **MUST** match the server name from `server.json`. For example:
 
-```markdown README.md highlight={5} theme={null}
+README.md
+
+```python
 # Azure DevOps MCP Server
 
 This MCP server manages Azure DevOps work items and pipelines.
@@ -133,19 +178,84 @@ This MCP server manages Azure DevOps work items and pipelines.
 <!-- mcp-name: io.github.username/azure-devops-mcp -->
 ```
 
-## Docker/OCI Images
+
+[​](#cargo-rust-packages)
+
+Cargo (Rust) Packages
+
+For Cargo packages, the MCP Registry currently supports the official crates.io registry (`https://crates.io`) only. Cargo packages use `"registryType": "cargo"` in `server.json`. For example:
+
+server.json
+
+```python
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.username/widget-mcp",
+  "title": "Widget",
+  "description": "Rust-native MCP server",
+  "version": "0.3.0",
+  "packages": [
+    {
+      "registryType": "cargo",
+      "identifier": "widget-mcp",
+      "version": "0.3.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
+```
+
+
+[​](#runtime-model)
+
+Runtime Model
+
+Cargo’s runtime model differs from npm/PyPI/NuGet. `cargo install <crate>` places the compiled binary on PATH at `~/.cargo/bin`, after which MCP clients invoke it directly by name. There is no per-invocation runner equivalent to `npx` (npm), `uvx` (PyPI), or `dnx` (NuGet, .NET 10 SDK Preview 6+) — install is one-time, execution is by binary name. The Cargo example above intentionally omits `runtimeHint` for this reason. Rust MCP authors have two first-class distribution paths:
+
+- **Cargo (`registryType: cargo`)** — source-distributed via crates.io. End users need the Rust toolchain (`rustup`) to run `cargo install`. Idiomatic for the Rust ecosystem and consistent with how Rust CLIs are typically published.
+- **MCPB (`registryType: mcpb`)** — prebuilt binary distributed via GitHub or GitLab Releases. End users need no toolchain. Right choice if the priority is “no Rust toolchain required.”
+
+Both paths are supported; the choice is the author’s. Cargo native support exists so Rust authors who prefer source distribution are not forced into the MCPB binary-packaging workaround.
+
+
+[​](#ownership-verification-4)
+
+Ownership Verification
+
+The MCP Registry verifies ownership of Cargo packages by checking for the existence of an `mcp-name: $SERVER_NAME` string in the package README (which is rendered to HTML and served by crates.io’s static CDN). The `$SERVER_NAME` portion **MUST** match the server name from `server.json`. For example:
+
+README.md
+
+```python
+# Widget MCP Server
+
+A Rust-native MCP server for widget operations.
+
+- MCP Registry name: `mcp-name: io.github.username/widget-mcp`
+```
+
+**Cargo-specific gotcha:** Unlike PyPI and NuGet (which preserve HTML comments in their README rendering), **crates.io strips HTML comments during markdown→HTML conversion**. The `<!-- mcp-name: ... -->` hidden-comment form that works for PyPI/NuGet **does not work for cargo** — the token will not appear in the rendered HTML the validator inspects. Cargo authors must include the `mcp-name:` token as visible markdown text. A simple bullet in the Links section is the recommended pattern.
+
+
+[​](#docker/oci-images)
+
+Docker/OCI Images
 
 For Docker/OCI images, the MCP Registry currently supports:
 
-* Docker Hub (`docker.io`)
-* GitHub Container Registry (`ghcr.io`)
-* Google Artifact Registry (any `*.pkg.dev` domain)
-* Azure Container Registry (`*.azurecr.io`)
-* Microsoft Container Registry (`mcr.microsoft.com`)
+- Docker Hub (`docker.io`)
+- GitHub Container Registry (`ghcr.io`)
+- Google Artifact Registry (any `*.pkg.dev` domain)
+- Azure Container Registry (`*.azurecr.io`)
+- Microsoft Container Registry (`mcr.microsoft.com`)
 
 Docker/OCI images use `"registryType": "oci"` in `server.json`. For example:
 
-```json server.json highlight={9} theme={null}
+server.json
+
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.username/kubernetes-manager-mcp",
@@ -166,21 +276,29 @@ Docker/OCI images use `"registryType": "oci"` in `server.json`. For example:
 
 The format of `identifier` is `registry/namespace/repository:tag`. For example, `docker.io/user/app:1.0.0` or `ghcr.io/user/app:1.0.0`. The tag can also be specified as a digest.
 
-### Ownership Verification
+
+[​](#ownership-verification-5)
+
+Ownership Verification
 
 The MCP Registry verifies ownership of Docker/OCI images by checking for an `io.modelcontextprotocol.server.name` annotation. The value of the `io.modelcontextprotocol.server.name` annotation **MUST** match the server name from `server.json`. For example:
 
-```dockerfile Dockerfile theme={null}
+Dockerfile
+
+```python
 LABEL io.modelcontextprotocol.server.name="io.github.username/kubernetes-manager-mcp"
 ```
 
-## MCPB Packages
 
-For MCPB packages, the MCP Registry currently supports MCPB artifacts hosted via GitHub or GitLab releases.
+[​](#mcpb-packages)
 
-MCPB packages use `"registryType": "mcpb"` in `server.json`. For example:
+MCPB Packages
 
-```json server.json highlight={9} theme={null}
+For MCPB packages, the MCP Registry currently supports MCPB artifacts hosted via GitHub or GitLab releases. MCPB packages use `"registryType": "mcpb"` in `server.json`. For example:
+
+server.json
+
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.username/image-processor-mcp",
@@ -200,13 +318,14 @@ MCPB packages use `"registryType": "mcpb"` in `server.json`. For example:
 }
 ```
 
-### Verification
 
-The MCPB package URL (`identifier` in `server.json`) **MUST** contain the string "mcp". That can be as part of the `.mcpb` file extension or in the name of the repository.
+[​](#verification)
 
-The package metadata in `server.json` **MUST** include a `fileSha256` property with a SHA-256 hash of the MCPB artifact, which can be computed using the `openssl` command:
+Verification
 
-```bash  theme={null}
+The MCPB package URL (`identifier` in `server.json`) **MUST** contain the string “mcp”. That can be as part of the `.mcpb` file extension or in the name of the repository. The package metadata in `server.json` **MUST** include a `fileSha256` property with a SHA-256 hash of the MCPB artifact, which can be computed using the `openssl` command:
+
+```python
 openssl dgst -sha256 image-processor.mcpb
 ```
 

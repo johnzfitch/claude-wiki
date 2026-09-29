@@ -1,312 +1,312 @@
-# Industry UseCases
+# Industry Use Cases
 
-*307 documents*
+308 pages. The full text of every page is in [llms.txt](llms.txt).
 
-
-- [A conversation with IRC on frontline health data | Claude by Anthropic](a-conversation-with-irc-on-frontline-health-data-claude-by-anthropic-90369edbfa.md) - [Try Claude](https://claude.ai)
-- [Adalat AI Claude Platform (API) case study | Claude by Anthropic](adalat-ai-claude-platform-api-case-study-claude-by-anthropic-5bd336b85c.md) - [Try Claude](https://claude.ai)
-- [Advantage Solutions Claude case study | Claude by Anthropic](advantage-solutions-claude-case-study-claude-by-anthropic-c04297b749.md) - [Contact sales](/contact-sales)
-- [Advolve Claude Platform (API) case study | Claude by Anthropic](advolve-claude-platform-api-case-study-claude-by-anthropic-a07d4ce1f5.md) - [Try Claude](https://claude.ai)
-- [AES Claude Platform (API) case study | Claude by Anthropic](aes-claude-platform-api-case-study-claude-by-anthropic-e66f1b5877.md) - [Try Claude](https://claude.ai)
-- [AI agents | Claude by Anthropic](ai-agents-claude-by-anthropic-da9e5e7770.md) - With Claude, you can build AI agents that plan, act, and collaborate more effectively.
-- [AirOps Claude Platform (API) case study | Claude by Anthropic](airops-claude-platform-api-case-study-claude-by-anthropic-07fd35592b.md) - [Try Claude](https://claude.ai)
-- [Airtree Claude Cowork case study | Claude by Anthropic](airtree-claude-cowork-case-study-claude-by-anthropic-b93531d220.md) - [Try Claude](https://claude.ai)
-- [Alexa+ Claude Platform (API) case study | Claude by Anthropic](alexa-claude-platform-api-case-study-claude-by-anthropic-204b6d91c1.md) - [Try Claude](https://claude.ai)
-- [Amazon Connect Claude Platform (API) case study | Claude by Anthropic](amazon-connect-claude-platform-api-case-study-claude-by-anthropic-fe5b67ca8b.md) - [Try Claude](https://claude.ai)
-- [Amira Claude Platform (API) case study | Claude by Anthropic](amira-claude-platform-api-case-study-claude-by-anthropic-7e1571248f.md) - [Try Claude](https://claude.ai)
-- [Anything Claude Platform (API) case study | Claude by Anthropic](anything-claude-platform-api-case-study-claude-by-anthropic-066bc5ee6f.md) - [Try Claude](https://claude.ai)
-- [Apollo Claude Platform (API) case study | Claude by Anthropic](apollo-claude-platform-api-case-study-claude-by-anthropic-cc4d7aeaa4.md) - [Try Claude](https://claude.ai)
-- [AppFolio Claude Platform (API) case study | Claude by Anthropic](appfolio-claude-platform-api-case-study-claude-by-anthropic-080d98b92c.md) - [Try Claude](https://claude.ai)
-- [Armanino Claude Platform (API) case study | Claude by Anthropic](armanino-claude-platform-api-case-study-claude-by-anthropic-f9e7c01a81.md) - [Try Claude](https://claude.ai)
-- [Artemis Claude Platform (API) case study | Claude by Anthropic](artemis-claude-platform-api-case-study-claude-by-anthropic-abe6a03d48.md) - [Try Claude](https://claude.ai)
-- [Asana Claude Managed Agents case study | Claude by Anthropic](asana-claude-managed-agents-case-study-claude-by-anthropic-4884713c96.md) - [Try Claude](https://claude.ai)
-- [Asana Claude Platform (API) case study | Claude by Anthropic](asana-claude-platform-api-case-study-claude-by-anthropic-536f6b6746.md) - [Try Claude](https://claude.ai)
-- [ASAPP Claude Platform (API) case study | Claude by Anthropic](asapp-claude-platform-api-case-study-claude-by-anthropic-44ec429492.md) - [Try Claude](https://claude.ai)
-- [Assembled Claude Platform (API) case study | Claude by Anthropic](assembled-claude-platform-api-case-study-claude-by-anthropic-f3b33b96e1.md) - [Try Claude](https://claude.ai)
-- [Athena Claude Platform (API) case study | Claude by Anthropic](athena-claude-platform-api-case-study-claude-by-anthropic-4bb6611bbc.md) - [Try Claude](https://claude.ai)
-- [Atlassian Claude and Google Cloud case study | Claude by Anthropic](atlassian-claude-and-google-cloud-case-study-claude-by-anthropic-ba3df36fab.md) - [Try Claude](https://claude.ai)
-- [Attention Claude Platform (API) case study | Claude by Anthropic](attention-claude-platform-api-case-study-claude-by-anthropic-84121a3c27.md) - [Try Claude](https://claude.ai)
-- [Audience Strategies Claude Enterprise case study | Claude by Anthropic](audience-strategies-claude-enterprise-case-study-claude-by-anthropic-06792613e2.md) - [Try Claude](https://claude.ai)
-- [Augment Code Claude Platform (API) case study | Claude by Anthropic](augment-code-claude-platform-api-case-study-claude-by-anthropic-f12638197c.md) - [Try Claude](https://claude.ai)
-- [Aura Claude Platform (API) case study | Claude by Anthropic](aura-claude-platform-api-case-study-claude-by-anthropic-4b59c18c5c.md) - [Try Claude](https://claude.ai)
-- [Banner Health Claude Platform (API) case study | Claude by Anthropic](banner-health-claude-platform-api-case-study-claude-by-anthropic-3cb102a604.md) - [Get started](https://claude.com/solutions/healthcare#pricing-section)
-- [Base44 Claude Platform (API) case study | Claude by Anthropic](base44-claude-platform-api-case-study-claude-by-anthropic-0d66d6c453.md) - [Try Claude](https://claude.ai)
-- [Benchling Claude Platform (API) case study | Claude by Anthropic](benchling-claude-platform-api-case-study-claude-by-anthropic-c7c159d390.md) - [Try Claude](https://claude.ai)
-- [Binti Claude Platform (API) case study | Claude by Anthropic](binti-claude-platform-api-case-study-claude-by-anthropic-54b5b4116d.md) - [Try Claude](https://claude.ai)
-- [Biomni Claude Platform (API) case study | Claude by Anthropic](biomni-claude-platform-api-case-study-claude-by-anthropic-776fb37606.md) - [Try Claude](https://claude.ai)
-- [Bito Claude Platform (API) case study | Claude by Anthropic](bito-claude-platform-api-case-study-claude-by-anthropic-ce48eea40a.md) - [Try Claude](https://claude.ai)
-- [Blank Metal Claude Cowork case study | Claude by Anthropic](blank-metal-claude-cowork-case-study-claude-by-anthropic-05d6bfa267.md) - [Try Claude](https://claude.ai)
-- [Block Claude Platform (API) case study | Claude by Anthropic](block-claude-platform-api-case-study-claude-by-anthropic-9cf0b0590c.md) - [Try Claude](https://claude.ai)
-- [BlueFlame Claude Platform (API) case study | Claude by Anthropic](blueflame-claude-platform-api-case-study-claude-by-anthropic-a04ed8bdc0.md) - [Try Claude](https://claude.ai)
-- [Bluenote Claude Platform (API) case study | Claude by Anthropic](bluenote-claude-platform-api-case-study-claude-by-anthropic-4011d63664.md) - [Try Claude](https://claude.ai)
-- [Bolt Claude Agent SDK case study | Claude by Anthropic](bolt-claude-agent-sdk-case-study-claude-by-anthropic-56b5236955.md) - [Try Claude](https://claude.ai)
-- [Box Claude Platform (API) case study | Claude by Anthropic](box-claude-platform-api-case-study-claude-by-anthropic-abb856245e.md) - [Try Claude](https://claude.ai)
-- [Brainlabs Claude Cowork case study | Claude by Anthropic](brainlabs-claude-cowork-case-study-claude-by-anthropic-2cd1363c7c.md) - [Try Claude](https://claude.ai)
-- [Braintrust Claude Platform (API) case study | Claude by Anthropic](braintrust-claude-platform-api-case-study-claude-by-anthropic-3d9a869947.md) - [Try Claude](https://claude.ai)
-- [Brand.ai Claude Platform (API) case study | Claude by Anthropic](brand-ai-claude-platform-api-case-study-claude-by-anthropic-430cde0822.md) - [Try Claude](https://claude.ai)
-- [Brex Claude Platform (API) case study | Claude by Anthropic](brex-claude-platform-api-case-study-claude-by-anthropic-8f10d9c93b.md) - [Try Claude](https://claude.ai)
-- [Brian Impact Foundation Claude Platform (API) case study | Claude by Anthropic](brian-impact-foundation-claude-platform-api-case-study-claude-by-anthropic-f1f08af9b9.md) - [Try Claude](https://claude.ai)
-- [Bubble Claude Platform (API) case study | Claude by Anthropic](bubble-claude-platform-api-case-study-claude-by-anthropic-973adad903.md) - [Try Claude](https://claude.ai)
-- [Build commerce agents with Claude | Claude by Anthropic](build-commerce-agents-with-claude-claude-by-anthropic-bd74f1d7ad.md) - Claude helps retail, travel, telecom, and entertainment companies build and deploy consumer and merchant AI agents in your app, connected to your syst
-- [bunq Claude Code case study | Claude by Anthropic](bunq-claude-code-case-study-claude-by-anthropic-0829a1062a.md) - [Try Claude](https://claude.ai)
-- [Campfire Claude Platform (API) case study | Claude by Anthropic](campfire-claude-platform-api-case-study-claude-by-anthropic-760a052282.md) - [Try Claude](https://claude.ai)
-- [Canva Claude Enterprise case study | Claude by Anthropic](canva-claude-enterprise-case-study-claude-by-anthropic-2cc02cb9b4.md) - [Try Claude](https://claude.ai)
-- [Carta Healthcare Claude Platform (API) case study | Claude by Anthropic](carta-healthcare-claude-platform-api-case-study-claude-by-anthropic-2f6642f332.md) - [Get started](https://claude.com/solutions/healthcare#pricing-section)
-- [Carvana Claude Tag case study | Claude by Anthropic](carvana-claude-tag-case-study-claude-by-anthropic-88dabd2972.md) - [Try Claude](https://claude.ai)
-- [Caylent Claude Agent SDK case study | Claude by Anthropic](caylent-claude-agent-sdk-case-study-claude-by-anthropic-55c9ff3295.md) - [Try Claude](https://claude.ai)
-- [Charm Industrial Claude Platform (API) case study | Claude by Anthropic](charm-industrial-claude-platform-api-case-study-claude-by-anthropic-e30da54f79.md) - [Try Claude](https://claude.ai)
-- [ChatAndBuild Claude Platform (API) case study | Claude by Anthropic](chatandbuild-claude-platform-api-case-study-claude-by-anthropic-e8c3f095ca.md) - [Try Claude](https://claude.ai)
-- [Chatbase Claude Platform (API) case study | Claude by Anthropic](chatbase-claude-platform-api-case-study-claude-by-anthropic-6888d8095e.md) - [Try Claude](https://claude.ai)
-- [ChatPlace Claude Platform (API) case study | Claude by Anthropic](chatplace-claude-platform-api-case-study-claude-by-anthropic-0f1e305c3e.md) - [Try Claude](https://claude.ai)
-- [Chronograph Claude Enterprise case study | Claude by Anthropic](chronograph-claude-enterprise-case-study-claude-by-anthropic-aef9199966.md) - [Contact sales](/contact-sales)
-- [Circleback Claude Platform (API) case study | Claude by Anthropic](circleback-claude-platform-api-case-study-claude-by-anthropic-fad6a02ff6.md) - [Try Claude](https://claude.ai)
-- [CircleCI Claude Platform (API) case study | Claude by Anthropic](circleci-claude-platform-api-case-study-claude-by-anthropic-559139fb65.md) - [Try Claude](https://claude.ai)
-- [ClassDojo Claude Platform (API) case study | Claude by Anthropic](classdojo-claude-platform-api-case-study-claude-by-anthropic-dd11dde529.md) - [Try Claude](https://claude.ai)
-- [Classmethod Claude Code case study | Claude by Anthropic](classmethod-claude-code-case-study-claude-by-anthropic-66612a7f2b.md) - [Try Claude](https://claude.ai)
-- [Claude Enterprise Plan | Claude by Anthropic](claude-enterprise-plan-claude-by-anthropic-c911ff49df.md) - The frontier, on every desk
-- [Claude for Cybersecurity | Claude by Anthropic](claude-for-cybersecurity-claude-by-anthropic-5c787c173b.md) - Frontier AI models have surpassed all but the most skilled humans at finding and exploiting software vulnerabilities. Within months, we expect these c
-- [Claude for higher education | Claude by Anthropic](claude-for-higher-education-claude-by-anthropic-a132da49ac.md) - Claude helps universities and colleges advance research, support teaching and learning, and run operations and student support systems more effectivel
-- [Claude for K-12 Teachers | Claude by Anthropic](claude-for-k-12-teachers-claude-by-anthropic-37056c5221.md) - US K-12 educators and districts get free access to premium Claude features, like teaching skills and a connection to evidence-based curricula, aligned
-- [Claude for Life Science Teams | Claude by Anthropic](claude-for-life-science-teams-claude-by-anthropic-325931e73f.md) - Claude works through problems alongside your team with full citations and audit trails, from your first hypothesis to the final submission.
-- [Claude for Sales | Claude by Anthropic](claude-for-sales-claude-by-anthropic-9c96d1d3d8.md) - Claude handles the tedious work behind every deal, so sales teams spend more time with customers.
-- [Claude for Small Business | Claude by Anthropic](claude-for-small-business-claude-by-anthropic-9fdc931704.md) - Run and grow your business
-- [Claude Legal Solutions | Claude by Anthropic](claude-legal-solutions-claude-by-anthropic-d070272f43.md) - Claude handles research, drafting, and the assembly of legal work, so your team can focus on the calls only they can make.
-- [Clay Claude Platform (API) case study | Claude by Anthropic](clay-claude-platform-api-case-study-claude-by-anthropic-4f93e37996.md) - [Try Claude](https://claude.ai)
-- [Code modernization | Claude by Anthropic](code-modernization-claude-by-anthropic-f113cd3bb2.md) - Claude Code helps leading enterprises modernize legacy codebases, assisting with scalable migration while maintaining business logic integrity.[
-- [CodeRabbit Claude Platform (API) case study | Claude by Anthropic](coderabbit-claude-platform-api-case-study-claude-by-anthropic-b910df955b.md) - [Try Claude](https://claude.ai)
-- [CodeWords Claude Platform (API) case study | Claude by Anthropic](codewords-claude-platform-api-case-study-claude-by-anthropic-a88a747d99.md) - [Try Claude](https://claude.ai)
-- [Coding | Claude by Anthropic](coding-claude-by-anthropic-d1a5cc6d45.md) - Claude is the not-so-secret advantage for world class engineering teams and software companies.
-- [Cogent Claude Platform (API) case study | Claude by Anthropic](cogent-claude-platform-api-case-study-claude-by-anthropic-c62c6aac7a.md) - [Try Claude](https://claude.ai)
-- [Cognition Claude Platform (API) case study | Claude by Anthropic](cognition-claude-platform-api-case-study-claude-by-anthropic-29aceac4c1.md) - [Try Claude](https://claude.ai)
-- [Coinbase Claude Platform (API) case study | Claude by Anthropic](coinbase-claude-platform-api-case-study-claude-by-anthropic-40155bfbcb.md) - [Try Claude](https://claude.ai)
-- [Copy.ai Claude Platform (API) case study | Claude by Anthropic](copy-ai-claude-platform-api-case-study-claude-by-anthropic-28fd244d07.md) - [Try Claude](https://claude.ai)
-- [Cove Claude Platform (API) case study | Claude by Anthropic](cove-claude-platform-api-case-study-claude-by-anthropic-bc6d29f755.md) - [Try Claude](https://claude.ai)
-- [Cox Automotive Claude Platform (API) case study | Claude by Anthropic](cox-automotive-claude-platform-api-case-study-claude-by-anthropic-c958b1b829.md) - [Try Claude](https://claude.ai)
-- [Cox Communications &amp; Accenture Claude case study | Claude by Anthropic](cox-communications-amp-accenture-claude-case-study-claude-by-anthropic-0daf6ab40d.md) - [Contact sales](/contact-sales)
-- [Cox Communications Claude Code case study | Claude by Anthropic](cox-communications-claude-code-case-study-claude-by-anthropic-22b910c908.md) - [Try Claude](https://claude.ai)
-- [CRED Claude Platform (API) case study | Claude by Anthropic](cred-claude-platform-api-case-study-claude-by-anthropic-73a0a2fe7d.md) - [Try Claude](https://claude.ai)
-- [Crunched Claude Platform (API) case study | Claude by Anthropic](crunched-claude-platform-api-case-study-claude-by-anthropic-43d505992b.md) - [Try Claude](https://claude.ai)
-- [Cubic Claude Platform (API) case study | Claude by Anthropic](cubic-claude-platform-api-case-study-claude-by-anthropic-f3f99c13f4.md) - [Try Claude](https://claude.ai)
-- [Cursor Claude case study | Claude by Anthropic](cursor-claude-case-study-claude-by-anthropic-a5e35bff06.md) - [Try Claude](https://claude.ai)
-- [Customer Stories | Claude by Anthropic](customer-stories-claude-by-anthropic-3fd0b2c918.md) - Businesses build with Claude for the problems that matter most. Our customers include enterprises and startups across financial services, healthcare, 
-- [Customer Stories | Claude by Anthropic](customer-stories-claude-by-anthropic-44e2709619.md) - Businesses build with Claude for the problems that matter most. Our customers include enterprises and startups across financial services, healthcare, 
-- [Customer Stories | Claude by Anthropic](customer-stories-claude-by-anthropic-a67851c410.md) - Businesses build with Claude for the problems that matter most. Our customers include enterprises and startups across financial services, healthcare, 
-- [Customer Stories | Claude by Anthropic](customer-stories-claude-by-anthropic-fe394c4a80.md) - Businesses build with Claude for the problems that matter most. Our customers include enterprises and startups across financial services, healthcare, 
-- [Customer support | Claude by Anthropic](customer-support-claude-by-anthropic-df28b64d8d.md) - With enhanced reasoning and a human-like tone, Claude uses your internal knowledge to take relevant action across systems and tools.
-- [Cyera Claude Cowork case study | Claude by Anthropic](cyera-claude-cowork-case-study-claude-by-anthropic-d2bb3121bb.md) - [Try Claude](https://claude.ai)
-- [Cyera Claude Enterprise case study | Claude by Anthropic](cyera-claude-enterprise-case-study-claude-by-anthropic-7edd2fb177.md) - [Contact sales](/contact-sales)
-- [Decagon Claude Platform (API) case study | Claude by Anthropic](decagon-claude-platform-api-case-study-claude-by-anthropic-300898a888.md) - [Try Claude](https://claude.ai)
-- [Deepgram Claude case study | Claude by Anthropic](deepgram-claude-case-study-claude-by-anthropic-c80300ccfd.md) - [Try Claude](https://claude.ai)
-- [Delight.ai Claude Code case study | Claude by Anthropic](delight-ai-claude-code-case-study-claude-by-anthropic-36c0e4aa96.md) - [Try Claude](https://claude.ai)
-- [Delivery Hero Claude Platform (API) case study | Claude by Anthropic](delivery-hero-claude-platform-api-case-study-claude-by-anthropic-5e6bf228df.md) - [Try Claude](https://claude.ai)
-- [Descript Claude Platform (API) case study | Claude by Anthropic](descript-claude-platform-api-case-study-claude-by-anthropic-98fe8dd2d5.md) - [Try Claude](https://claude.ai)
-- [Doctolib Claude Code case study | Claude by Anthropic](doctolib-claude-code-case-study-claude-by-anthropic-1b07fa7b81.md) - [Try Claude](https://claude.ai)
-- [Dolly Claude Platform (API) case study | Claude by Anthropic](dolly-claude-platform-api-case-study-claude-by-anthropic-8b61d15986.md) - [Try Claude](https://claude.ai)
-- [DoorDash | Office Hours with Boris Cherny | Claude by Anthropic](doordash-office-hours-with-boris-cherny-claude-by-anthropic-4917a20ca6.md) - [Office Hours with Boris Cherny](https://claude.com/office-hours)
-- [Dust Claude Platform (API) case study | Claude by Anthropic](dust-claude-platform-api-case-study-claude-by-anthropic-60bf56cf3f.md) - [Try Claude](https://claude.ai)
-- [Duvo Claude Agent SDK case study | Claude by Anthropic](duvo-claude-agent-sdk-case-study-claude-by-anthropic-5041da6c6d.md) - [Try Claude](https://claude.ai)
-- [DXC Claude Platform (API) case study | Claude by Anthropic](dxc-claude-platform-api-case-study-claude-by-anthropic-4c1dba7846.md) - [Try Claude](https://claude.ai)
-- [Elation Health Claude Platform (API) case study | Claude by Anthropic](elation-health-claude-platform-api-case-study-claude-by-anthropic-f49762f5ba.md) - [Get started](https://claude.com/solutions/healthcare#pricing-section)
-- [Emergent Claude Platform (API) case study | Claude by Anthropic](emergent-claude-platform-api-case-study-claude-by-anthropic-ab93b276fc.md) - [Try Claude](https://claude.ai)
-- [Epic Systems Claude Code case study | Claude by Anthropic](epic-systems-claude-code-case-study-claude-by-anthropic-4689c9b916.md) - [Contact sales](/contact-sales)
-- [Epilepsy Foundation Claude Platform (API) case study | Claude by Anthropic](epilepsy-foundation-claude-platform-api-case-study-claude-by-anthropic-7466d844bc.md) - [Try Claude](https://claude.ai)
-- [Epilepsy Foundation Q&amp;A | Claude by Anthropic](epilepsy-foundation-q-amp-a-claude-by-anthropic-bd3617f240.md) - [Try Claude](https://claude.ai)
-- [eSentire Claude Platform (API) case study | Claude by Anthropic](esentire-claude-platform-api-case-study-claude-by-anthropic-cd9363a32a.md) - [Try Claude](https://claude.ai)
-- [Eve Legal Claude Platform (API) case study | Claude by Anthropic](eve-legal-claude-platform-api-case-study-claude-by-anthropic-d54bf7706c.md) - [Try Claude](https://claude.ai)
-- [EvenUp Claude case study | Claude by Anthropic](evenup-claude-case-study-claude-by-anthropic-721afea050.md) - [Try Claude](https://claude.ai)
-- [Factory Claude Platform (API) case study | Claude by Anthropic](factory-claude-platform-api-case-study-claude-by-anthropic-e2fea2428a.md) - [Try Claude](https://claude.ai)
-- [Figma Claude Platform (API) case study | Claude by Anthropic](figma-claude-platform-api-case-study-claude-by-anthropic-b930d2bce3.md) - [Try Claude](https://claude.ai)
-- [Financial services | Claude by Anthropic](financial-services-claude-by-anthropic-6305790fc0.md) - Claude helps leading financial institutions across banking, insurance, asset and wealth management, and fintech improve how they serve clients and mar
-- [Fountain Claude Platform (API) case study | Claude by Anthropic](fountain-claude-platform-api-case-study-claude-by-anthropic-99b8bbfdd2.md) - [Try Claude](https://claude.ai)
-- [Freedom Forever Claude Platform (API) case study | Claude by Anthropic](freedom-forever-claude-platform-api-case-study-claude-by-anthropic-56a8bb3da7.md) - [Try Claude](https://claude.ai)
-- [FutureHouse Claude Platform (API) case study | Claude by Anthropic](futurehouse-claude-platform-api-case-study-claude-by-anthropic-189379663d.md) - [Try Claude](https://claude.ai)
-- [Gambit Claude Platform (API) case study | Claude by Anthropic](gambit-claude-platform-api-case-study-claude-by-anthropic-d18aa44e41.md) - [Try Claude](https://claude.ai)
-- [Gamma Claude Platform (API) case study | Claude by Anthropic](gamma-claude-platform-api-case-study-claude-by-anthropic-c9a7ef34e9.md) - [Try Claude](https://claude.ai)
-- [Garvan Institute Claude case study | Claude by Anthropic](garvan-institute-claude-case-study-claude-by-anthropic-97cb0a645e.md) - [Try Claude](https://claude.ai)
-- [GC AI Claude Platform (API) case study | Claude by Anthropic](gc-ai-claude-platform-api-case-study-claude-by-anthropic-b51ad72174.md) - [Try Claude](https://claude.ai)
-- [Genspark.ai Claude Platform (API) case study | Claude by Anthropic](genspark-ai-claude-platform-api-case-study-claude-by-anthropic-cb155ed91e.md) - [Try Claude](https://claude.ai)
-- [GitLab Claude Enterprise case study | Claude by Anthropic](gitlab-claude-enterprise-case-study-claude-by-anthropic-3ce8fdd436.md) - [Try Claude](https://claude.ai)
-- [GitLab Claude Platform (API) case study | Claude by Anthropic](gitlab-claude-platform-api-case-study-claude-by-anthropic-869156697e.md) - [Try Claude](https://claude.ai)
-- [Government | Claude by Anthropic](government-claude-by-anthropic-260d7ce4be.md) - Claude helps government organizations deploy advanced AI capabilities with rigorous security controls. Available with authorizations up to FedRAMP Hig
-- [Grab Claude Platform (API) case study | Claude by Anthropic](grab-claude-platform-api-case-study-claude-by-anthropic-bfc868e530.md) - [Try Claude](https://claude.ai)
-- [Gradial Claude Platform (API) case study | Claude by Anthropic](gradial-claude-platform-api-case-study-claude-by-anthropic-cc9930d84d.md) - [Try Claude](https://claude.ai)
-- [Gradient Labs Claude Platform (API) case study | Claude by Anthropic](gradient-labs-claude-platform-api-case-study-claude-by-anthropic-0be098a5c4.md) - [Try Claude](https://claude.ai)
-- [Grafana Claude Platform (API) case study | Claude by Anthropic](grafana-claude-platform-api-case-study-claude-by-anthropic-bc4886963a.md) - [Try Claude](https://claude.ai)
-- [Graphite Claude Platform (API) case study | Claude by Anthropic](graphite-claude-platform-api-case-study-claude-by-anthropic-b3b9d97e85.md) - [Try Claude](https://claude.ai)
-- [Greptile Claude Platform (API) case study | Claude by Anthropic](greptile-claude-platform-api-case-study-claude-by-anthropic-19c3353965.md) - [Get started](https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk)
-- [Gumroad Claude Platform (API) case study | Claude by Anthropic](gumroad-claude-platform-api-case-study-claude-by-anthropic-3d663603d0.md) - [Try Claude](https://claude.ai)
-- [Harvey Claude Platform (API) case study | Claude by Anthropic](harvey-claude-platform-api-case-study-claude-by-anthropic-915bdd112a.md) - [Try Claude](https://claude.ai)
-- [Headstart Claude Platform (API) case study | Claude by Anthropic](headstart-claude-platform-api-case-study-claude-by-anthropic-775df85d4c.md) - [Try Claude](https://claude.ai)
-- [Healthcare | Claude by Anthropic](healthcare-claude-by-anthropic-4f8eefd4f6.md) - Claude helps healthcare organizations move faster without sacrificing accuracy, safety, or compliance. Less administrative work, more time with the pe
-- [Hebbia Claude Platform (API) case study | Claude by Anthropic](hebbia-claude-platform-api-case-study-claude-by-anthropic-8a3505a968.md) - [Try Claude](https://claude.ai)
-- [Hostinger Claude Platform (API) case study | Claude by Anthropic](hostinger-claude-platform-api-case-study-claude-by-anthropic-e9847326ec.md) - [Try Claude](https://claude.ai)
-- [HubSpot Claude Cowork case study | Claude by Anthropic](hubspot-claude-cowork-case-study-claude-by-anthropic-6b759e7e97.md) - [Contact sales](/contact-sales)
-- [HubSpot Claude Platform (API) case study | Claude by Anthropic](hubspot-claude-platform-api-case-study-claude-by-anthropic-4b2d095f54.md) - [Try Claude](https://claude.ai)
-- [Humach Claude Platform (API) case study | Claude by Anthropic](humach-claude-platform-api-case-study-claude-by-anthropic-275f378268.md) - [Try Claude](https://claude.ai)
-- [Hume Claude Platform (API) case study | Claude by Anthropic](hume-claude-platform-api-case-study-claude-by-anthropic-68bdbf99ef.md) - [Try Claude](https://claude.ai)
-- [IFS Claude Platform (API) case study | Claude by Anthropic](ifs-claude-platform-api-case-study-claude-by-anthropic-73092b2c4d.md) - [Contact sales](/contact-sales)
-- [IG Group Claude Enterprise case study | Claude by Anthropic](ig-group-claude-enterprise-case-study-claude-by-anthropic-dd683d65ae.md) - [Try Claude](https://claude.ai)
-- [Impel Claude case study | Claude by Anthropic](impel-claude-case-study-claude-by-anthropic-0a9bfa6a08.md) - [Try Claude](https://claude.ai)
-- [Inscribe Claude Platform (API) case study | Claude by Anthropic](inscribe-claude-platform-api-case-study-claude-by-anthropic-ef38940fad.md) - [Try Claude](https://claude.ai)
-- [Intercom Claude Platform (API) case study | Claude by Anthropic](intercom-claude-platform-api-case-study-claude-by-anthropic-e2d9d51c35.md) - [Try Claude](https://claude.ai)
-- [Intuit Claude Platform (API) case study | Claude by Anthropic](intuit-claude-platform-api-case-study-claude-by-anthropic-197e42a790.md) - [Try Claude](https://claude.ai)
-- [JAKALA Claude case study | Claude by Anthropic](jakala-claude-case-study-claude-by-anthropic-9fafad4e03.md) - [Try Claude](https://claude.ai)
-- [Jamf Claude Cowork case study | Claude by Anthropic](jamf-claude-cowork-case-study-claude-by-anthropic-dd73774d7f.md) - [Try Claude](https://claude.ai)
-- [Jamf Claude Enterprise case study | Claude by Anthropic](jamf-claude-enterprise-case-study-claude-by-anthropic-02ae6f4e7b.md) - [Try Claude](https://claude.ai)
-- [Jetbrains Claude Code case study | Claude by Anthropic](jetbrains-claude-code-case-study-claude-by-anthropic-9134dd3426.md) - [Try Claude](https://claude.ai)
-- [JetBrains Claude Platform (API) case study | Claude by Anthropic](jetbrains-claude-platform-api-case-study-claude-by-anthropic-bc2bb62b86.md) - [Try Claude](https://claude.ai)
-- [Jumpcut Claude Platform (API) case study | Claude by Anthropic](jumpcut-claude-platform-api-case-study-claude-by-anthropic-9c88add77c.md) - [Try Claude](https://claude.ai)
-- [Juno Claude Platform (API) case study | Claude by Anthropic](juno-claude-platform-api-case-study-claude-by-anthropic-e4ef5ab88b.md) - [Try Claude](https://claude.ai)
-- [Kai Claude Platform (API) case study | Claude by Anthropic](kai-claude-platform-api-case-study-claude-by-anthropic-a6cfe8dc1a.md) - [Try Claude](https://claude.ai)
-- [Kindora Claude Code case study | Claude by Anthropic](kindora-claude-code-case-study-claude-by-anthropic-5824d16b41.md) - [Try Claude](https://claude.ai)
-- [Kodif Claude Platform (API) case study | Claude by Anthropic](kodif-claude-platform-api-case-study-claude-by-anthropic-9397db5854.md) - [Try Claude](https://claude.ai)
-- [L&#x27;Oréal Claude Platform (API) case study | Claude by Anthropic](l-x27-or-al-claude-platform-api-case-study-claude-by-anthropic-7057e7e24d.md) - [Contact sales](/contact-sales)
-- [LaunchNotes Claude Platform (API) case study | Claude by Anthropic](launchnotes-claude-platform-api-case-study-claude-by-anthropic-f9a9d8b267.md) - [Try Claude](https://claude.ai)
-- [Law&amp;Company Claude Platform (API) case study | Claude by Anthropic](law-amp-company-claude-platform-api-case-study-claude-by-anthropic-d2802fe3c8.md) - [Try Claude](https://claude.ai)
-- [Lazy AI Claude Platform (API) case study | Claude by Anthropic](lazy-ai-claude-platform-api-case-study-claude-by-anthropic-a7b968a158.md) - [Try Claude](https://claude.ai)
-- [League Claude case study | Claude by Anthropic](league-claude-case-study-claude-by-anthropic-e54c26bcbf.md) - [Try Claude](https://claude.ai)
-- [League Q&amp;A | Claude Enterprise | Claude by Anthropic](league-q-amp-a-claude-enterprise-claude-by-anthropic-2d9c47c9c8.md) - [Try Claude](https://claude.ai)
-- [Legora Claude Platform (API) case study | Claude by Anthropic](legora-claude-platform-api-case-study-claude-by-anthropic-3d04189eb2.md) - [Try Claude](https://claude.ai)
-- [Lex Claude Platform (API) case study | Claude by Anthropic](lex-claude-platform-api-case-study-claude-by-anthropic-585f8fa01d.md) - [Try Claude](https://claude.ai)
-- [LG CNS Claude Code case study | Claude by Anthropic](lg-cns-claude-code-case-study-claude-by-anthropic-cb715d6f0d.md) - [Try Claude](https://claude.ai)
-- [Life sciences AI adoption index | Claude](life-sciences-ai-adoption-index-claude-770d8237aa.md) - AI is moving faster than most implementation playbooks. Take our AI Adoption Assessment and download the step-by-step guide to building, piloting, and
-- [Lindy Claude Platform (API) case study | Claude by Anthropic](lindy-claude-platform-api-case-study-claude-by-anthropic-26feb05f51.md) - [Try Claude](https://claude.ai)
-- [Local Falcon Claude Platform (API) case study | Claude by Anthropic](local-falcon-claude-platform-api-case-study-claude-by-anthropic-463007e22f.md) - [Try Claude](https://claude.ai)
-- [Lokalise Claude Platform (API) case study | Claude by Anthropic](lokalise-claude-platform-api-case-study-claude-by-anthropic-b9d8260e04.md) - [Try Claude](https://claude.ai)
-- [Lotte Homeshopping Claude Platform (API) case study | Claude by Anthropic](lotte-homeshopping-claude-platform-api-case-study-claude-by-anthropic-5a3d37e755.md) - [Try Claude](https://claude.ai)
-- [Lovable Claude Platform (API) case study | Claude by Anthropic](lovable-claude-platform-api-case-study-claude-by-anthropic-12065980a1.md) - [Try Claude](https://claude.ai)
-- [Lyft Claude Platform (API) case study | Claude by Anthropic](lyft-claude-platform-api-case-study-claude-by-anthropic-363145236a.md) - [Try Claude](https://claude.ai)
-- [MagicSchool Claude Platform (API) case study | Claude by Anthropic](magicschool-claude-platform-api-case-study-claude-by-anthropic-75d782f01e.md) - [Try Claude](https://claude.ai)
-- [MagicSchool Q&amp;A | Claude Platform (API) | Claude by Anthropic](magicschool-q-amp-a-claude-platform-api-claude-by-anthropic-fc42caab78.md) - [Try Claude](https://claude.ai)
-- [Matillion Claude Code case study | Claude by Anthropic](matillion-claude-code-case-study-claude-by-anthropic-5c7f2f9cb0.md) - [Try Claude](https://claude.ai)
-- [Medgate Claude Code case study | Claude by Anthropic](medgate-claude-code-case-study-claude-by-anthropic-5ba7706aeb.md) - [Try Claude](https://claude.ai)
-- [Mercy Corps Claude for Nonprofits case study | Claude by Anthropic](mercy-corps-claude-for-nonprofits-case-study-claude-by-anthropic-091172870c.md) - [Try Claude](https://claude.ai)
-- [Mercy Corps Q&amp;A | Claude by Anthropic](mercy-corps-q-amp-a-claude-by-anthropic-25bf91a4a5.md) - [Try Claude](https://claude.ai)
-- [micro1 Claude Platform (API) case study | Claude by Anthropic](micro1-claude-platform-api-case-study-claude-by-anthropic-29d5ecc332.md) - [Try Claude](https://claude.ai)
-- [Mintlify Claude Platform (API) case study | Claude by Anthropic](mintlify-claude-platform-api-case-study-claude-by-anthropic-d89866cfff.md) - [Try Claude](https://claude.ai)
-- [Miro Claude Cowork case study | Claude by Anthropic](miro-claude-cowork-case-study-claude-by-anthropic-845ed4082c.md) - [Contact sales](/contact-sales)
-- [Money Forward Claude Code case study | Claude by Anthropic](money-forward-claude-code-case-study-claude-by-anthropic-de26f54957.md) - [Try Claude Code](https://claude.com/product/claude-code)
-- [Mutiny Claude Platform (API) case study | Claude by Anthropic](mutiny-claude-platform-api-case-study-claude-by-anthropic-3bbd09763f.md) - [Try Claude](https://claude.ai)
-- [N26 Claude Platform (API) case study | Claude by Anthropic](n26-claude-platform-api-case-study-claude-by-anthropic-87103f6c6c.md) - [Contact sales](/contact-sales)
-- [n8n Claude Platform (API) case study | Claude by Anthropic](n8n-claude-platform-api-case-study-claude-by-anthropic-7b96a19886.md) - [Try Claude](https://claude.ai)
-- [National Domestic Workers Alliance Claude case study | Claude by Anthropic](national-domestic-workers-alliance-claude-case-study-claude-by-anthropic-3b104b63bd.md) - [Try Claude](https://claude.ai)
-- [National Domestic Workers Alliance Q&amp;A | Claude | Claude by Anthropic](national-domestic-workers-alliance-q-amp-a-claude-claude-by-anthropic-99a32d126a.md) - [Try Claude](https://claude.ai)
-- [NBIM Claude Enterprise case study | Claude by Anthropic](nbim-claude-enterprise-case-study-claude-by-anthropic-657f401cf2.md) - [Try Claude](https://claude.ai)
-- [Nevis Claude Platform (API) case study | Claude by Anthropic](nevis-claude-platform-api-case-study-claude-by-anthropic-445834ea74.md) - [Try Claude](https://claude.ai)
-- [Newfront Claude Platform (API) case study | Claude by Anthropic](newfront-claude-platform-api-case-study-claude-by-anthropic-5def181d6a.md) - [Try Claude](https://claude.ai)
-- [Nonprofits | Claude by Anthropic](nonprofits-claude-by-anthropic-3a9e550662.md) - Claude helps nonprofits turn limited resources into lasting impact. Generate grant proposals in hours, track program outcomes across hundreds of parti
-- [Notability Claude Platform (API) case study | Claude by Anthropic](notability-claude-platform-api-case-study-claude-by-anthropic-f37117e029.md) - [Try Claude](https://claude.ai)
-- [Notion Claude Managed Agents case study | Claude by Anthropic](notion-claude-managed-agents-case-study-claude-by-anthropic-c1504dc75b.md) - [Try Claude](https://claude.ai)
-- [Notion Q&amp;A | Claude Managed Agents | Claude by Anthropic](notion-q-amp-a-claude-managed-agents-claude-by-anthropic-7b9f5c2b13.md) - [Try Claude](https://claude.ai)
-- [Novo Nordisk Claude Code case study | Claude by Anthropic](novo-nordisk-claude-code-case-study-claude-by-anthropic-b8e5dd0543.md) - [Contact sales](/contact-sales)
-- [NRI Claude Platform (API) case study | Claude by Anthropic](nri-claude-platform-api-case-study-claude-by-anthropic-e7f55c6065.md) - [Try Claude](https://claude.ai)
-- [OffDeal Claude Agent SDK case study | Claude by Anthropic](offdeal-claude-agent-sdk-case-study-claude-by-anthropic-e743e2044c.md) - [Try Claude](https://claude.ai)
-- [OpusClip Claude Code case study | Claude by Anthropic](opusclip-claude-code-case-study-claude-by-anthropic-de2d5a819d.md) - [Try Claude](https://claude.ai)
-- [Orange Claude Platform (API) case study | Claude by Anthropic](orange-claude-platform-api-case-study-claude-by-anthropic-fe336d58ef.md) - [Try Claude](https://claude.ai)
-- [Otter Claude Platform (API) case study | Claude by Anthropic](otter-claude-platform-api-case-study-claude-by-anthropic-80c9eb30b8.md) - [Try Claude](https://claude.ai)
-- [Pacific Community Ventures Claude case study | Claude by Anthropic](pacific-community-ventures-claude-case-study-claude-by-anthropic-9eba74aab5.md) - [Try Claude](https://claude.ai)
-- [Pacific Community Ventures Q&amp;A | Claude | Claude by Anthropic](pacific-community-ventures-q-amp-a-claude-claude-by-anthropic-86d34a11ce.md) - [Try Claude](https://claude.ai)
-- [Palo Alto Networks Claude Platform (API) case study | Claude by Anthropic](palo-alto-networks-claude-platform-api-case-study-claude-by-anthropic-f71281aea7.md) - [Try Claude](https://claude.ai)
-- [Panorama Claude Platform (API) case study | Claude by Anthropic](panorama-claude-platform-api-case-study-claude-by-anthropic-d9ff1145c7.md) - [Try Claude](https://claude.ai)
-- [Panther Claude Platform (API) case study | Claude by Anthropic](panther-claude-platform-api-case-study-claude-by-anthropic-4f152e68f6.md) - [Try Claude](https://claude.ai)
-- [Parcha Claude Platform (API) case study | Claude by Anthropic](parcha-claude-platform-api-case-study-claude-by-anthropic-9cddc040e6.md) - [Try Claude](https://claude.ai)
-- [Pelanor Claude Platform (API) case study | Claude by Anthropic](pelanor-claude-platform-api-case-study-claude-by-anthropic-e4730e5371.md) - [Try Claude](https://claude.ai)
-- [Pendo Claude Managed Agents case study | Claude by Anthropic](pendo-claude-code-case-study-claude-by-anthropic-dc6c8e7a1f.md) - [Try Claude](https://claude.ai)
-- [Pensive Claude Platform (API) case study | Claude by Anthropic](pensive-claude-platform-api-case-study-claude-by-anthropic-3feeb117e9.md) - [Try Claude](https://claude.ai)
-- [Perplexity Claude Platform (API) case study | Claude by Anthropic](perplexity-claude-platform-api-case-study-claude-by-anthropic-e47bb9e817.md) - [Try Claude](https://claude.ai)
-- [Pictet Claude Code case study | Claude by Anthropic](pictet-claude-code-case-study-claude-by-anthropic-b303d751d1.md) - [Try Claude](https://claude.ai)
-- [Postman Claude Platform (API) case study | Claude by Anthropic](postman-claude-platform-api-case-study-claude-by-anthropic-9516e55d35.md) - [Try Claude](https://claude.ai)
-- [Pratham International Claude Platform (API) case study | Claude by Anthropic](pratham-international-claude-platform-api-case-study-claude-by-anthropic-1895a53fd5.md) - [Try Claude](https://claude.ai)
-- [Praxis Claude Platform (API) case study | Claude by Anthropic](praxis-claude-platform-api-case-study-claude-by-anthropic-fc7e21d831.md) - [Try Claude](https://claude.ai)
-- [Presien Claude Platform (API) case study | Claude by Anthropic](presien-claude-platform-api-case-study-claude-by-anthropic-45dd1ead84.md) - [Try Claude](https://claude.ai)
-- [Pressmaster Claude Platform (API) case study | Claude by Anthropic](pressmaster-claude-platform-api-case-study-claude-by-anthropic-6fd3cfa8e3.md) - [Try Claude](https://claude.ai)
-- [Pulpit AI Claude Platform (API) case study | Claude by Anthropic](pulpit-ai-claude-platform-api-case-study-claude-by-anthropic-e289d290b4.md) - [Try Claude](https://claude.ai)
-- [PwC Claude Code case study | Claude by Anthropic](pwc-claude-code-case-study-claude-by-anthropic-116ad3baf4.md) - [Contact sales](/contact-sales)
-- [Qodo Claude Platform (API) case study | Claude by Anthropic](qodo-claude-platform-api-case-study-claude-by-anthropic-e8ce0547d7.md) - [Try Claude](https://claude.ai)
-- [Qonto Claude Platform (API) case study | Claude by Anthropic](qonto-claude-platform-api-case-study-claude-by-anthropic-7b215459ae.md) - Industry:
-- [Qualified Health Claude Platform (API) case study | Claude by Anthropic](qualified-health-claude-platform-api-case-study-claude-by-anthropic-caed090caf.md) - [Get started](https://claude.com/solutions/healthcare#pricing-section)
-- [Quantium Claude Enterprise case study | Claude by Anthropic](quantium-claude-enterprise-case-study-claude-by-anthropic-b1049e7e1d.md) - [Try Claude](https://claude.ai)
-- [Quantium Claude Platform (API) case study | Claude by Anthropic](quantium-claude-platform-api-case-study-claude-by-anthropic-ce369ca6a8.md) - [Try Claude](https://claude.ai)
-- [Quillit Claude Platform (API) case study | Claude by Anthropic](quillit-claude-platform-api-case-study-claude-by-anthropic-4b6f53b5d2.md) - [Try Claude](https://claude.ai)
-- [RAINN Claude case study | Claude by Anthropic](rainn-claude-case-study-claude-by-anthropic-dfeaef80b9.md) - [Try Claude](https://claude.ai)
-- [Rakuten Claude Code case study | Claude by Anthropic](rakuten-claude-code-case-study-claude-by-anthropic-7241d62752.md) - [Try Claude](https://claude.ai)
-- [Rakuten Claude Managed Agents case study | Claude by Anthropic](rakuten-claude-managed-agents-case-study-claude-by-anthropic-09d43fb77e.md) - [Try Claude](https://claude.ai)
-- [Ramp Claude Code case study | Claude by Anthropic](ramp-claude-code-case-study-claude-by-anthropic-baa0e50496.md) - [Try Claude](https://claude.ai)
-- [Ramp | Office Hours with Boris Cherny | Claude by Anthropic](ramp-office-hours-with-boris-cherny-claude-by-anthropic-d307b5d8c9.md) - [Office Hours with Boris Cherny](https://claude.com/office-hours)
-- [Replit Claude Platform (API) case study | Claude by Anthropic](replit-claude-platform-api-case-study-claude-by-anthropic-25aea28d70.md) - [Try Claude](https://claude.ai)
-- [Reversia Claude Platform (API) case study | Claude by Anthropic](reversia-claude-platform-api-case-study-claude-by-anthropic-4eaf1aaf67.md) - [Try Claude](https://claude.ai)
-- [RileyBot Claude Platform (API) case study | Claude by Anthropic](rileybot-claude-platform-api-case-study-claude-by-anthropic-f0f6808b5a.md) - [Try Claude](https://claude.ai)
-- [Rising Academies Claude Platform (API) case study | Claude by Anthropic](rising-academies-claude-platform-api-case-study-claude-by-anthropic-23b1ca0b60.md) - [Try Claude](https://claude.ai)
-- [Rocket Claude Platform (API) case study | Claude by Anthropic](rocket-claude-platform-api-case-study-claude-by-anthropic-3caaee7da8.md) - [Try Claude](https://claude.ai)
-- [Rocket Money Claude case study | Claude by Anthropic](rocket-money-claude-case-study-claude-by-anthropic-cb32f9f30b.md) - [Contact sales](/contact-sales)
-- [Rocket Money Q&amp;A | Claude Platform (API) | Claude by Anthropic](rocket-money-q-amp-a-claude-platform-api-claude-by-anthropic-0232874b6c.md) - [Try Claude](https://claude.ai)
-- [Rogo Claude Platform (API) case study | Claude by Anthropic](rogo-claude-platform-api-case-study-claude-by-anthropic-e68193630b.md) - [Try Claude](https://claude.ai)
-- [Satispay Claude Code case study | Claude by Anthropic](satispay-claude-code-case-study-claude-by-anthropic-58aa2ecd2a.md) - [Try Claude](https://claude.ai)
-- [Scribd Claude Platform (API) case study | Claude by Anthropic](scribd-claude-platform-api-case-study-claude-by-anthropic-4435ad81fd.md) - [Try Claude](https://claude.ai)
-- [Section Claude Platform (API) case study | Claude by Anthropic](section-claude-platform-api-case-study-claude-by-anthropic-edd9be69ed.md) - [Try Claude](https://claude.ai)
-- [Semgrep Claude Platform (API) case study | Claude by Anthropic](semgrep-claude-platform-api-case-study-claude-by-anthropic-5ff2e6ad3c.md) - [Try Claude](https://claude.ai)
-- [Sentry Claude Managed Agents case study | Claude by Anthropic](sentry-claude-managed-agents-case-study-claude-by-anthropic-0b7c727675.md) - [Try Claude](https://claude.ai)
-- [Sett Claude Platform (API) case study | Claude by Anthropic](sett-claude-platform-api-case-study-claude-by-anthropic-7e3ed3e66f.md) - [Try Claude](https://claude.ai)
-- [Shopify Claude Code case study | Claude by Anthropic](shopify-claude-code-case-study-claude-by-anthropic-89d5904dbe.md) - [Contact sales](/contact-sales)
-- [Shortcut Claude Platform (API) case study | Claude by Anthropic](shortcut-claude-platform-api-case-study-claude-by-anthropic-284035aa00.md) - [Try Claude](https://claude.ai)
-- [SK Telecom Claude Platform (API) case study | Claude by Anthropic](sk-telecom-claude-platform-api-case-study-claude-by-anthropic-4afe9d560b.md) - [Try Claude](https://claude.ai)
-- [Skillfully Claude Platform (API) case study | Claude by Anthropic](skillfully-claude-platform-api-case-study-claude-by-anthropic-467faed7ae.md) - [Try Claude](https://claude.ai)
-- [Slack Claude Platform (API) case study | Claude by Anthropic](slack-claude-platform-api-case-study-claude-by-anthropic-bd5acb359a.md) - [Watch the video](https://www.youtube.com/watch?v=yB7xjOA05GM)
-- [Smartsheet Claude Platform (API) case study | Claude by Anthropic](smartsheet-claude-platform-api-case-study-claude-by-anthropic-cc26671653.md) - [Try Claude](https://claude.ai)
-- [Snowflake Claude Platform (API) case study | Claude by Anthropic](snowflake-claude-platform-api-case-study-claude-by-anthropic-992cfd588c.md) - [Try Claude](https://claude.ai)
-- [Solvely.ai Claude Platform (API) case study | Claude by Anthropic](solvely-ai-claude-platform-api-case-study-claude-by-anthropic-51daa07735.md) - [Try Claude](https://claude.ai)
-- [Sourcegraph Claude Enterprise case study | Claude by Anthropic](sourcegraph-claude-enterprise-case-study-claude-by-anthropic-76a4b3b71e.md) - [Try Claude](https://claude.ai)
-- [Sourcegraph Claude Platform (API) case study | Claude by Anthropic](sourcegraph-claude-platform-api-case-study-claude-by-anthropic-2831a04f19.md) - [Try Claude](https://claude.ai)
-- [Spellbook Claude Platform (API) case study | Claude by Anthropic](spellbook-claude-platform-api-case-study-claude-by-anthropic-62b51aed60.md) - [Try Claude](https://claude.ai)
-- [Spotify Claude Agent SDK case study | Claude by Anthropic](spotify-claude-agent-sdk-case-study-claude-by-anthropic-f904dafb71.md) - [Try Claude](https://claude.ai)
-- [Spotify | Office Hours with Boris Cherny | Claude by Anthropic](spotify-office-hours-with-boris-cherny-claude-by-anthropic-b4ec78d6ba.md) - [Office Hours with Boris Cherny](https://claude.com/office-hours)
-- [Spring.new Claude Platform (API) case study | Claude by Anthropic](spring-new-claude-platform-api-case-study-claude-by-anthropic-169b0b24aa.md) - [Try Claude](https://claude.ai)
-- [Stairwell Claude Platform (API) case study | Claude by Anthropic](stairwell-claude-platform-api-case-study-claude-by-anthropic-4ba3937c40.md) - [Try Claude](https://claude.ai)
-- [Steno Claude Platform (API) case study | Claude by Anthropic](steno-claude-platform-api-case-study-claude-by-anthropic-81c3086e66.md) - [Try Claude](https://claude.ai)
-- [Stripe Claude Code case study | Claude by Anthropic](stripe-claude-code-case-study-claude-by-anthropic-01c55093c8.md) - [Contact sales](/contact-sales)
-- [StubHub Claude Platform (API) case study | Claude by Anthropic](stubhub-claude-platform-api-case-study-claude-by-anthropic-654634e5e5.md) - [Try Claude](https://claude.ai)
-- [StudyFetch Claude Platform (API) case study | Claude by Anthropic](studyfetch-claude-platform-api-case-study-claude-by-anthropic-6fa75c2b78.md) - [Try Claude](https://claude.ai)
-- [Super Teacher Claude Platform (API) case study | Claude by Anthropic](super-teacher-claude-platform-api-case-study-claude-by-anthropic-15d8e13dcc.md) - [Try Claude](https://claude.ai)
-- [Supermetrics: manage ad campaigns in a Claude conversation | Claude by Anthropic](supermetrics-lets-marketers-manage-ad-campaigns-from-a-conversation-with-claude-465d4f7466.md) - [Try Claude](https://claude.ai)
-- [Syracuse University Claude Enterprise case study | Claude by Anthropic](syracuse-university-claude-enterprise-case-study-claude-by-anthropic-989d35291b.md) - [Try Claude](https://claude.ai)
-- [Syracuse University Claude Enterprise case study | Claude by Anthropic](syracuse-university-claude-enterprise-case-study-claude-by-anthropic-bbb4240965.md) - [Try Claude](https://claude.ai)
-- [Tabnine Claude Platform (API) case study | Claude by Anthropic](tabnine-claude-platform-api-case-study-claude-by-anthropic-14dc59ef86.md) - [Try Claude](https://claude.ai)
-- [Tahoe Lead Removal Project Claude Enterprise case study | Claude by Anthropic](tahoe-lead-removal-project-claude-enterprise-case-study-claude-by-anthropic-f1435af836.md) - [Try Claude](https://claude.ai)
-- [Tasklet Claude Platform (API) case study | Claude by Anthropic](tasklet-claude-platform-api-case-study-claude-by-anthropic-b81aa3a16a.md) - [Try Claude](https://claude.ai)
-- [TELUS Claude Platform (API) case study | Claude by Anthropic](telus-claude-platform-api-case-study-claude-by-anthropic-87c77e31bb.md) - [Try Claude](https://claude.ai)
-- [The IRC turns fragmented health data into faster decisions with Claude | Claude by Anthropic](the-irc-turns-fragmented-health-data-into-faster-decisions-with-claude-claude-by-375a64587f.md) - [Try Claude](https://claude.ai)
-- [The Patrick J. McGovern Foundation Claude Enterprise case study | Claude by Anthropic](the-patrick-j-mcgovern-foundation-claude-enterprise-case-study-claude-by-anthrop-f574a12e87.md) - [Try Claude](https://claude.ai)
-- [Thomson Reuters Claude Cowork case study | Claude by Anthropic](thomson-reuters-claude-cowork-case-study-claude-by-anthropic-fdbfd7f9d0.md) - [Try Claude](https://claude.ai)
-- [Thomson Reuters Claude Platform (API) case study | Claude by Anthropic](thomson-reuters-claude-platform-api-case-study-claude-by-anthropic-b089043643.md) - [Try Claude](https://claude.ai)
-- [Tidio Claude Platform (API) case study | Claude by Anthropic](tidio-claude-platform-api-case-study-claude-by-anthropic-405560db44.md) - [Try Claude](https://claude.ai)
-- [Tines Claude Platform (API) case study | Claude by Anthropic](tines-claude-platform-api-case-study-claude-by-anthropic-906d7a1857.md) - [Try Claude](https://claude.ai)
-- [tl;dv Claude Platform (API) case study | Claude by Anthropic](tl-dv-claude-platform-api-case-study-claude-by-anthropic-613018b22e.md) - [Try Claude](https://claude.ai)
-- [Tome Claude Platform (API) case study | Claude by Anthropic](tome-claude-platform-api-case-study-claude-by-anthropic-4bc8de43ae.md) - [Try Claude](https://claude.ai)
-- [Trellix Claude Platform (API) case study | Claude by Anthropic](trellix-claude-platform-api-case-study-claude-by-anthropic-7de273792e.md) - [Try Claude](https://claude.ai)
-- [Triple Whale Claude Platform (API) case study | Claude by Anthropic](triple-whale-claude-platform-api-case-study-claude-by-anthropic-e45c0ba68e.md) - [Try Claude](https://claude.ai)
-- [TRY Claude Enterprise case study | Claude by Anthropic](try-claude-enterprise-case-study-claude-by-anthropic-b1d3bfe19e.md) - [Try Claude](https://claude.ai)
-- [Twilio Claude Code case study | Claude by Anthropic](twilio-claude-code-case-study-claude-by-anthropic-0b3ebb515e.md) - [Try Claude](https://claude.ai)
-- [Vambe Claude Platform (API) case study | Claude by Anthropic](vambe-claude-platform-api-case-study-claude-by-anthropic-42c8300733.md) - [Try Claude](https://claude.ai)
-- [Vanta Claude Platform (API) case study | Claude by Anthropic](vanta-claude-platform-api-case-study-claude-by-anthropic-53fef682f3.md) - [Try Claude](https://claude.ai)
-- [Vapi Claude Platform (API) case study | Claude by Anthropic](vapi-claude-platform-api-case-study-claude-by-anthropic-5245c3946b.md) - [Try Claude](https://claude.ai)
-- [Vega Claude Platform (API) case study | Claude by Anthropic](vega-claude-platform-api-case-study-claude-by-anthropic-448ee35d8d.md) - [Try Claude](https://claude.ai)
-- [Vega Claude Platform (API) case study | Claude by Anthropic](vega-claude-platform-api-case-study-claude-by-anthropic-fa29df0f0a.md) - [Try Claude](https://claude.ai)
-- [Vercel Claude Code case study | Claude by Anthropic](vercel-claude-code-case-study-claude-by-anthropic-3b3080eb5e.md) - [Try Claude](https://claude.ai)
-- [Vibecode Claude Platform (API) case study | Claude by Anthropic](vibecode-claude-platform-api-case-study-claude-by-anthropic-6a062f51c0.md) - [Try Claude](https://claude.ai)
-- [Warp Claude Platform (API) case study | Claude by Anthropic](warp-claude-platform-api-case-study-claude-by-anthropic-ac9c1092b0.md) - [Try Claude](https://claude.ai)
-- [Wedia Group Claude Platform (API) case study | Claude by Anthropic](wedia-group-claude-platform-api-case-study-claude-by-anthropic-e7c959c464.md) - [Try Claude](https://claude.ai)
-- [Windsurf Claude Platform (API) case study | Claude by Anthropic](windsurf-claude-platform-api-case-study-claude-by-anthropic-9890c007fc.md) - [Try Claude](https://claude.ai)
-- [Wiz Claude Code case study | Claude by Anthropic](wiz-claude-code-case-study-claude-by-anthropic-7f75dd436b.md) - [Try Claude](https://claude.ai)
-- [Wondr Health Claude Platform (API) case study | Claude by Anthropic](wondr-health-claude-platform-api-case-study-claude-by-anthropic-1f7d8e22a7.md) - [Try Claude](https://claude.ai)
-- [Wordsmith Claude Code case study | Claude by Anthropic](wordsmith-claude-code-case-study-claude-by-anthropic-e8e38019b0.md) - [Try Claude](https://claude.ai)
-- [Workato Claude Platform (API) case study | Claude by Anthropic](workato-claude-platform-api-case-study-claude-by-anthropic-79c64a6a7e.md) - [Try Claude](https://claude.ai)
-- [WRTN Claude Platform (API) case study | Claude by Anthropic](wrtn-claude-platform-api-case-study-claude-by-anthropic-0000c3cd7a.md) - [Try Claude](https://claude.ai)
-- [YMCA South Australia Claude case study | Claude by Anthropic](ymca-south-australia-claude-case-study-claude-by-anthropic-3457645374.md) - [Try Claude](https://claude.ai)
-- [Yoodli Claude Platform (API) case study | Claude by Anthropic](yoodli-claude-platform-api-case-study-claude-by-anthropic-629447be2a.md) - [Try Claude](https://claude.ai)
-- [You.com Claude Platform (API) case study | Claude by Anthropic](you-com-claude-platform-api-case-study-claude-by-anthropic-b9c2f652a3.md) - [Try Claude](https://claude.ai)
-- [Zapia Claude Platform (API) case study | Claude by Anthropic](zapia-claude-platform-api-case-study-claude-by-anthropic-d73e7f8770.md) - [Try Claude](https://claude.ai)
-- [Zapier Claude Cowork case study | Claude by Anthropic](zapier-claude-cowork-case-study-claude-by-anthropic-8dbe6653d2.md) - [Try Claude](https://claude.ai)
-- [Zapier Claude Enterprise case study | Claude by Anthropic](zapier-claude-enterprise-case-study-claude-by-anthropic-a18fdd3d4b.md) - [Try Claude](https://claude.ai)
-- [Zencoder Claude Agent SDK case study | Claude by Anthropic](zencoder-claude-agent-sdk-case-study-claude-by-anthropic-1322592a63.md) - [Try Claude](https://claude.ai)
-- [Zingage Claude Platform (API) case study | Claude by Anthropic](zingage-claude-platform-api-case-study-claude-by-anthropic-891a7bd74f.md) - [Try Claude](https://claude.ai)
-- [Zoom Claude Platform (API) case study | Claude by Anthropic](zoom-claude-platform-api-case-study-claude-by-anthropic-46278d07e2.md) - [Try Claude](https://claude.ai)
+- [A conversation with IRC on frontline health data | Claude by Anthropic](irc-qa.md) — health facilities across 40 countries
+- [Adalat AI Claude Platform (API) case study | Claude by Anthropic](adalat-ai.md) — 50–200% productivity gains
+- [Advantage Solutions Claude case study | Claude by Anthropic](advantage-solutions.md) — 70,000+ labor hours redirected per year
+- [Advolve Claude Platform (API) case study | Claude by Anthropic](advolve.md) — in customer return on ad spend
+- [AES Claude Platform (API) case study | Claude by Anthropic](aes.md) — AES, a global energy company, uses Claude on Google Cloud to automate safety audits and accelerate their mission of transforming the future of energy. By…
+- [AI agents | Claude by Anthropic](agents.md) — With Claude, you can build AI agents that plan, act, and collaborate more effectively.
+- [AirOps Claude Platform (API) case study | Claude by Anthropic](airops.md) — 2x productivity across the team
+- [Airtree Claude Cowork case study | Claude by Anthropic](airtree.md) — Give Claude access to your local files and let it complete tasks autonomously. Agentic capabilities for non-technical knowledge work.
+- [Alexa+ Claude Platform (API) case study | Claude by Anthropic](alexa-plus.md) — starting in the next few weeks, with wider availability coming
+- [Amazon Connect Claude Platform (API) case study | Claude by Anthropic](amazon-q-in-connect.md) — supported without additional training
+- [Amira Claude Platform (API) case study | Claude by Anthropic](amira.md) — read aloud and analyzed worldwide
+- [Anything Claude Platform (API) case study | Claude by Anthropic](anything.md) — 91-96% agent success rate
+- [Apollo Claude Platform (API) case study | Claude by Anthropic](apollo.md) — in meeting bookings with Claude messaging
+- [AppFolio Claude Platform (API) case study | Claude by Anthropic](appfolio.md) — rates due to Claude 3 Haiku's faster response times
+- [Armanino Claude Platform (API) case study | Claude by Anthropic](armanino.md) — in time spent on manual writing tasks
+- [Artemis Claude Platform (API) case study | Claude by Anthropic](artemis.md) — 90% increase in detection coverage
+- [Asana Claude Managed Agents case study | Claude by Anthropic](asana-qa.md) — Read more about how Asana supercharges work management with Claude.
+- [Asana Claude Platform (API) case study | Claude by Anthropic](asana.md) — engineering development cycles with Claude
+- [ASAPP Claude Platform (API) case study | Claude by Anthropic](asapp.md) — in core business metrics vs other AI models
+- [Assembled Claude Platform (API) case study | Claude by Anthropic](assembled.md) — in customer satisfaction while decreasing support spend
+- [Athena Claude Platform (API) case study | Claude by Anthropic](athena.md) — vs. 6–12 month industry standard
+- [Atlassian Claude and Google Cloud case study | Claude by Anthropic](atlassian.md) — 5 million+ agents executed
+- [Attention Claude Platform (API) case study | Claude by Anthropic](attention.md) — 1.6 million hours of admin work automated
+- [Audience Strategies Claude Enterprise case study | Claude by Anthropic](audience-strategies.md) — report creation timeline compression
+- [Augment Code Claude Platform (API) case study | Claude by Anthropic](augment-code.md) — project timeline acceleration
+- [Aura Claude Platform (API) case study | Claude by Anthropic](aura.md) — in overall classification tasks
+- [Banner Health Claude Platform (API) case study | Claude by Anthropic](banner-health.md) — report time savings with improved work accuracy
+- [Base44 Claude Platform (API) case study | Claude by Anthropic](base44.md) — Base44, with Claude as its creative center for planning and UI, grew to 2+ million users globally in under 6 months.
+- [Benchling Claude Platform (API) case study | Claude by Anthropic](benchling.md) — Life sciencesBeneficial Deployments
+- [Binti Claude Platform (API) case study | Claude by Anthropic](binti.md) — Home visit report writing time, from 3-4 hours to under 2 hours
+- [Biomni Claude Platform (API) case study | Claude by Anthropic](biomni.md) — Life sciencesBeneficial Deployments
+- [Bito Claude Platform (API) case study | Claude by Anthropic](bito.md) — for every \$1 spent on AI code review
+- [Blank Metal Claude Cowork case study | Claude by Anthropic](blank-metal-qa.md) — in Claude Code and Cowork
+- [Block Claude Platform (API) case study | Claude by Anthropic](block.md) — saving 8-10+ hours weekly
+- [BlueFlame Claude Platform (API) case study | Claude by Anthropic](blueflame.md) — document analysis time reduction
+- [Bluenote Claude Platform (API) case study | Claude by Anthropic](bluenote.md) — for scientists parsing complex protocols
+- [Bolt Claude Agent SDK case study | Claude by Anthropic](bolt.md) — ~53-minute average autonomous agent workflow
+- [Box Claude Platform (API) case study | Claude by Anthropic](box.md) — Concept to customer-facing capability in weeks using the Claude Skills API
+- [Brainlabs Claude Cowork case study | Claude by Anthropic](brainlabs.md) — authored by employees in four weeks
+- [Braintrust Claude Platform (API) case study | Claude by Anthropic](braintrust.md) — for Claude-powered job descriptions
+- [Brand.ai Claude Platform (API) case study | Claude by Anthropic](brand-ai.md) — annual brand compliance cost reduction
+- [Brex Claude Platform (API) case study | Claude by Anthropic](brex.md) — in annual salary savings across customers
+- [Brian Impact Foundation Claude Platform (API) case study | Claude by Anthropic](brian-impact-foundation.md) — Professional servicesBeneficial Deployments
+- [Bubble Claude Platform (API) case study | Claude by Anthropic](bubble.md) — ~30% increase in user satisfaction
+- [Build commerce agents with Claude | Claude by Anthropic](commerce.md) — Claude helps retail, travel, telecom, and entertainment companies build and deploy consumer and merchant AI agents in your app, connected to your systems, in…
+- [bunq Claude Code case study | Claude by Anthropic](bunq.md) — ~80% automated support resolution
+- [Campfire Claude Platform (API) case study | Claude by Anthropic](campfire.md) — in bank reconciliation time
+- [Canva Claude Enterprise case study | Claude by Anthropic](canva.md) — empowered with Claude for Work across all teams
+- [Carta Healthcare Claude Platform (API) case study | Claude by Anthropic](carta-healthcare.md) — in time required for clinical data abstraction
+- [Carvana Claude Tag case study | Claude by Anthropic](carvana.md) — after Claude Tag began resolving the root causes behind them
+- [Caylent Claude Agent SDK case study | Claude by Anthropic](caylent.md) — 90% reduction in engineering hours
+- [Charm Industrial Claude Platform (API) case study | Claude by Anthropic](charm-industrial.md) — carbon credit verification time
+- [ChatAndBuild Claude Platform (API) case study | Claude by Anthropic](chatandbuild.md) — Year 1 revenue from user-created AI agents
+- [Chatbase Claude Platform (API) case study | Claude by Anthropic](chatbase.md) — adoption since integration
+- [ChatPlace Claude Platform (API) case study | Claude by Anthropic](chatplace.md) — 15-20 hours saved per creator
+- [Chronograph Claude Enterprise case study | Claude by Anthropic](chronograph.md) — for new hires vs. 2+ months previously
+- [Circleback Claude Platform (API) case study | Claude by Anthropic](circleback.md) — daily through automated meeting insights
+- [CircleCI Claude Platform (API) case study | Claude by Anthropic](circleci.md) — 90% of the engineering team uses Claude Code
+- [ClassDojo Claude Platform (API) case study | Claude by Anthropic](classdojo.md) — kids, families, and teachers in 180 countries
+- [Classmethod Claude Code case study | Claude by Anthropic](classmethod.md) — in time spent reviewing code
+- [Claude Enterprise Plan | Claude by Anthropic](enterprise.md) — The frontier, on every desk
+- [Claude for Cybersecurity | Claude by Anthropic](cybersecurity.md) — Frontier AI models have surpassed all but the most skilled humans at finding and exploiting software vulnerabilities. Within months, we expect these…
+- [Claude for higher education | Claude by Anthropic](education.md) — Claude helps universities and colleges advance research, support teaching and learning, and run operations and student support systems more effectively.
+- [Claude for K-12 Teachers | Claude by Anthropic](teachers.md) — US K-12 educators and districts get free access to premium Claude features, like teaching skills and a connection to evidence-based curricula, aligned to state…
+- [Claude for Life Science Teams | Claude by Anthropic](life-sciences.md) — Claude works through problems alongside your team with full citations and audit trails, from your first hypothesis to the final submission.
+- [Claude for Sales | Claude by Anthropic](sales.md) — Claude handles the tedious work behind every deal, so sales teams spend more time with customers.
+- [Claude for Small Business | Claude by Anthropic](small-business.md) — Run and grow your business
+- [Claude Legal Solutions | Claude by Anthropic](legal.md) — Claude handles research, drafting, and the assembly of legal work, so your team can focus on the calls only they can make.
+- [Claude Security | Claude by Anthropic](claude-code-security.md) — From scan to fix, done seamlessly
+- [Clay Claude Platform (API) case study | Claude by Anthropic](clay.md) — saved with automated data collection
+- [Code modernization | Claude by Anthropic](code-modernization.md) — Claude Code helps leading enterprises modernize legacy codebases, assisting with scalable migration while maintaining business logic integrity.[
+- [CodeRabbit Claude Platform (API) case study | Claude by Anthropic](coderabbit.md) — code delivery from days to hours
+- [CodeWords Claude Platform (API) case study | Claude by Anthropic](codewords.md) — 92% of non-technical users
+- [Coding | Claude by Anthropic](coding.md) — Claude is the not-so-secret advantage for world class engineering teams and software companies.
+- [Cogent Claude Platform (API) case study | Claude by Anthropic](cogent.md) — 97% reduction in time critical vulnerabilities remain open
+- [Cognition Claude Platform (API) case study | Claude by Anthropic](cognition.md) — 3.5x increase in merged PRs
+- [Coinbase Claude Platform (API) case study | Claude by Anthropic](coinbase.md) — availability for customer fund access
+- [Copy.ai Claude Platform (API) case study | Claude by Anthropic](copy-ai.md) — in content creation costs
+- [Cove Claude Platform (API) case study | Claude by Anthropic](cove.md) — response times compared to previous solutions
+- [Cox Automotive Claude Platform (API) case study | Claude by Anthropic](cox-automotive.md) — in consumer lead responses and test drives
+- [Cox Communications & Accenture Claude case study | Claude by Anthropic](cox-and-accenture.md) — on Cox Communications' first year of AI investment
+- [Cox Communications Claude Code case study | Claude by Anthropic](cox-communications-qa.md) — on the first year of AI investment
+- [CRED Claude Platform (API) case study | Claude by Anthropic](cred.md) — execution speed for feature delivery and fixes
+- [Crunched Claude Platform (API) case study | Claude by Anthropic](crunched.md) — on Excel modeling for finance and consulting workflows by leveraging Claude Opus 4.5 and Sonnet 4.5
+- [Cubic Claude Platform (API) case study | Claude by Anthropic](cubic.md) — feedback cycle - 2 min vs 2 hours
+- [Cursor Claude case study | Claude by Anthropic](cursor-qa.md) — builds software with Cursor
+- [Customer Stories | Claude by Anthropic](customers.md) — Businesses build with Claude for the problems that matter most. Our customers include enterprises and startups across financial services, healthcare, legal…
+- [Customer story | Sendbird | Claude](sendbird.md) — competitive win rate increase
+- [Customer story | StackBlitz | Claude](stackblitz.md) — in application development costs
+- [Customer story | University of Sydney | Claude](university-of-sydney.md) — in detecting minke whales
+- [Customer support | Claude by Anthropic](customer-support.md) — With enhanced reasoning and a human-like tone, Claude uses your internal knowledge to take relevant action across systems and tools.
+- [Cyera Claude Cowork case study | Claude by Anthropic](cyera-qa.md) — Read how Cyera scales agentic AI across 1,500 employees with Claude Enterprise.
+- [Cyera Claude Enterprise case study | Claude by Anthropic](cyera.md) — 88% weekly active usage of Claude
+- [Decagon Claude Platform (API) case study | Claude by Anthropic](decagon.md) — in over-inferencing rates
+- [Deepgram Claude case study | Claude by Anthropic](deepgram.md) — 4–10x durable code output
+- [Delight.ai Claude Code case study | Claude by Anthropic](delightai-qa.md) — Time to fix and redeploy a production AI agent issue
+- [Delivery Hero Claude Platform (API) case study | Claude by Anthropic](delivery-hero.md) — \>100 merged pull requests per day
+- [Descript Claude Platform (API) case study | Claude by Anthropic](descript.md) — 13–23% higher intent adherence than leading competitors
+- [Doctolib Claude Code case study | Claude by Anthropic](doctolib.md) — to migrate and replace legacy testing infrastructure
+- [Dolly Claude Platform (API) case study | Claude by Anthropic](dolly.md) — in marking time for digital assessments
+- [DoorDash | Office Hours with Boris Cherny | Claude by Anthropic](doordash-boris-office-hours.md) — Office Hours with Boris Cherny
+- [Dust Claude Platform (API) case study | Claude by Anthropic](dust.md) — on model spend after optimizing prompt caching
+- [Duvo Claude Agent SDK case study | Claude by Anthropic](duvo.md) — €2.8M+ in annualized savings
+- [DXC Claude Platform (API) case study | Claude by Anthropic](dxc.md) — Days to minutes for claims document backlogs,
+- [Elation Health Claude Platform (API) case study | Claude by Anthropic](elation-health.md) — in median time to first insight for chart review
+- [Emergent Claude Platform (API) case study | Claude by Anthropic](emergent.md) — Achieved in 4.5 months of commercial launch
+- [Epic Systems Claude Code case study | Claude by Anthropic](epic-systems.md) — patients globally use MyChart
+- [Epilepsy Foundation Claude Platform (API) case study | Claude by Anthropic](epilepsy-foundation.md) — 60,000 interactions with Sage
+- [Epilepsy Foundation Q&A | Claude by Anthropic](epilepsy-foundation-qa.md) — AWS Imagine grant drafted in a day
+- [eSentire Claude Platform (API) case study | Claude by Anthropic](esentire.md) — 99.96% ransomware containment before encryption
+- [Eve Legal Claude Platform (API) case study | Claude by Anthropic](eve-legal.md) — 60 days faster settlement times
+- [EvenUp Claude case study | Claude by Anthropic](evenup.md) — Documents drafted in minutes,
+- [Factory Claude Platform (API) case study | Claude by Anthropic](factory.md) — of development time saved
+- [Figma Claude Platform (API) case study | Claude by Anthropic](figma.md) — Working prototypes in minutes
+- [Financial services | Claude by Anthropic](finance.md) — Claude helps leading financial institutions across banking, insurance, asset and wealth management, and fintech improve how they serve clients and markets and…
+- [Fountain Claude Platform (API) case study | Claude by Anthropic](fountain.md) — in manual screening effort
+- [Freedom Forever Claude Platform (API) case study | Claude by Anthropic](freedom-forever.md) — on complex web automation tests (39 of 40 runs passed), compared to 20–60% for alternative frameworks
+- [FutureHouse Claude Platform (API) case study | Claude by Anthropic](futurehouse.md) — Life sciencesBeneficial Deployments
+- [Gambit Claude Platform (API) case study | Claude by Anthropic](gambit.md) — Successful recipe parses across their pipeline
+- [Gamma Claude Platform (API) case study | Claude by Anthropic](gamma.md) — in free-to-paid conversions
+- [Garvan Institute Claude case study | Claude by Anthropic](garvan-institute-qa.md) — Beneficial DeploymentsLife sciences
+- [GC AI Claude Platform (API) case study | Claude by Anthropic](gc-ai.md) — average time saved by in-house legal teams using GC AI
+- [Genspark.ai Claude Platform (API) case study | Claude by Anthropic](genspark.md) — \$250M ARR since pivoting to the Super Agent
+- [GitLab Claude Enterprise case study | Claude by Anthropic](gitlab-enterprise.md) — reported by GitLab team members
+- [GitLab Claude Platform (API) case study | Claude by Anthropic](gitlab.md) — 25-50% productivity gains
+- [Government | Claude by Anthropic](government.md) — Claude helps government organizations deploy advanced AI capabilities with rigorous security controls. Available with authorizations up to FedRAMP High and IL5…
+- [Grab Claude Platform (API) case study | Claude by Anthropic](grab.md) — in merchant issue resolution rate
+- [Gradial Claude Platform (API) case study | Claude by Anthropic](gradial.md) — 300+ hours of bulk content operations now take less than 10 hours
+- [Gradient Labs Claude Platform (API) case study | Claude by Anthropic](gradient-labs.md) — rates for automated support
+- [Grafana Claude Platform (API) case study | Claude by Anthropic](grafana.md) — generated using natural language prompts
+- [Graphite Claude Platform (API) case study | Claude by Anthropic](graphite.md) — 35 minutes vs 3 weeks for analysis
+- [Greptile Claude Platform (API) case study | Claude by Anthropic](greptile.md) — Claude Agent SDKClaude Code
+- [Gumroad Claude Platform (API) case study | Claude by Anthropic](gumroad.md) — in new features shipped to production
+- [Harvey Claude Platform (API) case study | Claude by Anthropic](harvey.md) — deployment across enterprise platform
+- [Headstart Claude Platform (API) case study | Claude by Anthropic](headstart.md) — of client code written by Claude
+- [Healthcare | Claude by Anthropic](healthcare.md) — Claude helps healthcare organizations move faster without sacrificing accuracy, safety, or compliance. Less administrative work, more time with the people you…
+- [Hebbia Claude Platform (API) case study | Claude by Anthropic](hebbia.md) — Hebbia is the AI platform for knowledge work, servicing over 1/3 of the top 50 asset managers as well as Tier 1 Investment Banks and Law Firms. Hebbia uses…
+- [Hostinger Claude Platform (API) case study | Claude by Anthropic](hostinger.md) — Served across 150+ countries
+- [HubSpot Claude Cowork case study | Claude by Anthropic](hubspot-qa.md) — Hundreds of marketers using Claude Cowork
+- [HubSpot Claude Platform (API) case study | Claude by Anthropic](hubspot.md) — Up to 40% productivity increase
+- [Humach Claude Platform (API) case study | Claude by Anthropic](humach.md) — in operational efficiency
+- [Hume Claude Platform (API) case study | Claude by Anthropic](hume.md) — minutes of AI voice conversations completed
+- [IFS Claude Platform (API) case study | Claude by Anthropic](ifs.md) — 25% faster fault resolution
+- [IG Group Claude Enterprise case study | Claude by Anthropic](ig-group.md) — increase in certain cases
+- [Impel Claude case study | Claude by Anthropic](impel.md) — down from the 3 to 6 months reps once needed per new product
+- [Inscribe Claude Platform (API) case study | Claude by Anthropic](inscribe.md) — in output for one client example
+- [Intercom Claude Platform (API) case study | Claude by Anthropic](intercom.md) — rate with human-quality support responses
+- [Intuit Claude Platform (API) case study | Claude by Anthropic](intuit.md) — TurboTax customers during peak season
+- [JAKALA Claude case study | Claude by Anthropic](jakala.md) — ~70% reduction in time spent
+- [Jamf Claude Cowork case study | Claude by Anthropic](jamf-qa.md) — to build a conversational UI in Cowork with branching logic, role-based filtering, Jira integration, progress tracking, and structured file export
+- [Jamf Claude Enterprise case study | Claude by Anthropic](jamf.md) — 89% active usage among licensed employees
+- [Jetbrains Claude Code case study | Claude by Anthropic](jetbrains-2.md) — Millions of developers now benefit from the Claude Agent SDK, the same underlying technology that powers Claude Code, natively inside of JetBrains
+- [JetBrains Claude Platform (API) case study | Claude by Anthropic](jetbrains.md) — in documentation generation
+- [Jumpcut Claude Platform (API) case study | Claude by Anthropic](jumpcut.md) — saved in script reading time
+- [Juno Claude Platform (API) case study | Claude by Anthropic](juno.md) — 10% increase in next-day retention
+- [Kai Claude Platform (API) case study | Claude by Anthropic](kai.md) — 99.5% of 2.5 million software composition analysis findings eliminated
+- [Kindora Claude Code case study | Claude by Anthropic](kindora.md) — 328 nonprofits on the platform
+- [Kodif Claude Platform (API) case study | Claude by Anthropic](kodif.md) — for Trust Wallet crypto support
+- [L'Oréal Claude Platform (API) case study | Claude by Anthropic](loreal.md) — across L'Oréal's AI platform with 2.5 million messages per month
+- [LaunchNotes Claude Platform (API) case study | Claude by Anthropic](graph.md) — incident identification for SRE teams
+- [Law&Company Claude Platform (API) case study | Claude by Anthropic](law-and-company.md) — 20% of South Korean practicing lawyers
+- [Lazy AI Claude Platform (API) case study | Claude by Anthropic](lazy-ai.md) — in code requiring multiple fixes
+- [League Claude case study | Claude by Anthropic](league.md) — up from 80% when League's company-wide rollout began
+- [League Q&A | Claude Enterprise | Claude by Anthropic](league-qa.md) — up from 80% when League's company-wide rollout began
+- [Legora Claude Platform (API) case study | Claude by Anthropic](legora.md) — performance on large legal evaluation set
+- [Lex Claude Platform (API) case study | Claude by Anthropic](lex.md) — within 24 hours of launch
+- [LG CNS Claude Code case study | Claude by Anthropic](lg-cns.md) — 99.1% API conversion completion
+- [Life sciences AI adoption index | Claude](life-sciences-ai-adoption-index.md) — AI is moving faster than most implementation playbooks. Take our AI Adoption Assessment and download the step-by-step guide to building, piloting, and scaling…
+- [Lindy Claude Platform (API) case study | Claude by Anthropic](lindy.md) — customer growth since implementing Claude
+- [Local Falcon Claude Platform (API) case study | Claude by Anthropic](local-falcon.md) — customer reviews analyzed simultaneously
+- [Lokalise Claude Platform (API) case study | Claude by Anthropic](lokalise.md) — for AI translation suggestions with Claude
+- [Lotte Homeshopping Claude Platform (API) case study | Claude by Anthropic](lotte-homeshopping.md) — processed daily through Moni
+- [Lovable Claude Platform (API) case study | Claude by Anthropic](lovable.md) — on the platform, 200,000+ per day
+- [Lyft Claude Platform (API) case study | Claude by Anthropic](lyft.md) — Customer support time reduced by over 87%
+- [MagicSchool Claude Platform (API) case study | Claude by Anthropic](magicschool.md) — EducationBeneficial Deployments
+- [MagicSchool Q&A | Claude Platform (API) | Claude by Anthropic](magicschool-qa.md) — EducationBeneficial Deployments
+- [Matillion Claude Code case study | Claude by Anthropic](matillion.md) — 41% faster pull request completion with Claude Code
+- [Medgate Claude Code case study | Claude by Anthropic](medgate.md) — 90% faster bug resolution
+- [Mercy Corps Claude for Nonprofits case study | Claude by Anthropic](mercy-corps.md) — to analyze community feedback in CARM pilot testing
+- [Mercy Corps Q&A | Claude by Anthropic](mercy-corps-qa.md) — 98% of pilot users report faster workflows
+- [micro1 Claude Platform (API) case study | Claude by Anthropic](micro1.md) — in recruitment costs vs traditional methods
+- [Mintlify Claude Platform (API) case study | Claude by Anthropic](mintlify.md) — Increase in engineering code output per engineer
+- [Miro Claude Cowork case study | Claude by Anthropic](miro-qa.md) — 99% of influencer content live within 48 hours
+- [Money Forward Claude Code case study | Claude by Anthropic](money-forward.md) — have adopted Claude Code as part of their daily workflow
+- [Mutiny Claude Platform (API) case study | Claude by Anthropic](mutiny.md) — 3x improvement in design satisfaction
+- [N26 Claude Platform (API) case study | Claude by Anthropic](n26.md) — of tasks across targeted processes, with ongoing improvements
+- [n8n Claude Platform (API) case study | Claude by Anthropic](n8n.md) — From concept to first production of the AI Workflow Builder, powered by Claude
+- [National Domestic Workers Alliance Claude case study | Claude by Anthropic](national-domestic-workers-alliance.md) — 93% of beta testers took action
+- [National Domestic Workers Alliance Q&A | Claude | Claude by Anthropic](national-domestic-workers-alliance-qa.md) — 93% of beta testers acted on Ask Aya's advice
+- [NBIM Claude Enterprise case study | Claude by Anthropic](nbim.md) — weekly per employee on Claude assisted analytical and operational tasks
+- [Nevis Claude Platform (API) case study | Claude by Anthropic](nevis.md) — saved per advisor on administrative tasks
+- [Newfront Claude Platform (API) case study | Claude by Anthropic](newfront.md) — in document processing through automation
+- [Nonprofits | Claude by Anthropic](nonprofits.md) — Claude helps nonprofits turn limited resources into lasting impact. Generate grant proposals in hours, track program outcomes across hundreds of participants…
+- [Notability Claude Platform (API) case study | Claude by Anthropic](notability.md) — 220 million quiz questions
+- [Notion Claude Managed Agents case study | Claude by Anthropic](notion.md) — 30+ concurrent agent tasks from a single task board
+- [Notion Q&A | Claude Managed Agents | Claude by Anthropic](notion-qa.md) — created in the first three weeks
+- [Novo Nordisk Claude Code case study | Claude by Anthropic](novo-nordisk.md) — time spent producing clinical study documentation reduced from 10+ weeks to 10 minutes
+- [NRI Claude Platform (API) case study | Claude by Anthropic](nri.md) — for complex Japanese business documents
+- [OffDeal Claude Agent SDK case study | Claude by Anthropic](offdeal.md) — Claude Agent SDKClaude Platform
+- [OpusClip Claude Code case study | Claude by Anthropic](opusclip.md) — 100% automated sales call review coverage
+- [Orange Claude Platform (API) case study | Claude by Anthropic](orange.md) — improvements over existing processes
+- [Otter Claude Platform (API) case study | Claude by Anthropic](otter.md) — meetings summarized annually
+- [Pacific Community Ventures Claude case study | Claude by Anthropic](pacific-community-ventures.md) — in one nationwide voice survey, up from 12 in a comparable focus group
+- [Pacific Community Ventures Q&A | Claude | Claude by Anthropic](pacific-community-ventures-qa.md) — Pacific Community Ventures scales worker feedback 10x with Claude
+- [Palo Alto Networks Claude Platform (API) case study | Claude by Anthropic](palo-alto-networks.md) — in feature development velocity
+- [Panorama Claude Platform (API) case study | Claude by Anthropic](panorama.md) — student population served
+- [Panther Claude Platform (API) case study | Claude by Anthropic](panther.md) — in alert fatigue through automated triage
+- [Parcha Claude Platform (API) case study | Claude by Anthropic](parcha.md) — Customer due diligence workflow time reduced
+- [Pelanor Claude Platform (API) case study | Claude by Anthropic](pelanor.md) — of new business from Claude-powered features
+- [Pendo Claude Managed Agents case study | Claude by Anthropic](pendo-qa.md) — Claude Managed AgentsClaude Code
+- [Pensive Claude Platform (API) case study | Claude by Anthropic](pensive.md) — feedback cycle - grading in minutes vs days
+- [Perplexity Claude Platform (API) case study | Claude by Anthropic](perplexity.md) — response times with Claude 3.5 Sonnet
+- [Pictet Claude Code case study | Claude by Anthropic](pictet.md) — 700 people with Claude Code and Claude Cowork
+- [Postman Claude Platform (API) case study | Claude by Anthropic](postman.md) — Up to 1,150 hours saved per year
+- [Pratham International Claude Platform (API) case study | Claude by Anthropic](pratham-international.md) — 1,500+ student assessments
+- [Praxis Claude Platform (API) case study | Claude by Anthropic](praxis.md) — created using natural language prompts
+- [Presien Claude Platform (API) case study | Claude by Anthropic](presien.md) — Over 70% reduction in critical safety events
+- [Pressmaster Claude Platform (API) case study | Claude by Anthropic](pressmaster.md) — in content production time
+- [Pulpit AI Claude Platform (API) case study | Claude by Anthropic](pulpit-ai.md) — in customer base within 3 months
+- [PwC Claude Code case study | Claude by Anthropic](pwc-qa.md) — Legacy code analysis compressed
+- [Qodo Claude Platform (API) case study | Claude by Anthropic](qodo.md) — pull requests reviewed per quarter
+- [Qonto Claude Platform (API) case study | Claude by Anthropic](qonto.md) — with no manual beneficiary search, amount entry, or reference copying
+- [Qualified Health Claude Platform (API) case study | Claude by Anthropic](qualified-health.md) — 4–6 million patients per year
+- [Quantium Claude Enterprise case study | Claude by Anthropic](quantium-qa.md) — 1,200+ Claude Enterprise users
+- [Quantium Claude Platform (API) case study | Claude by Anthropic](quantium.md) — use AI daily in their work
+- [Quillit Claude Platform (API) case study | Claude by Anthropic](quillit.md) — in citation accuracy with Claude 3.5
+- [RAINN Claude case study | Claude by Anthropic](rainn.md) — Signal Messenger integration in 30 days
+- [Rakuten Claude Code case study | Claude by Anthropic](rakuten.md) — in time to market (from 24 days to 5 days)
+- [Rakuten Claude Managed Agents case study | Claude by Anthropic](rakuten-qa.md) — Claude Managed AgentsClaude Platform
+- [Ramp Claude Code case study | Claude by Anthropic](ramp.md) — of AI code implemented in 30 days
+- [Ramp | Office Hours with Boris Cherny | Claude by Anthropic](ramp-boris-office-hours.md) — Office Hours with Boris Cherny
+- [Replit Claude Platform (API) case study | Claude by Anthropic](replit.md) — building software in natural language
+- [Reversia Claude Platform (API) case study | Claude by Anthropic](reversia.md) — validated by native-speaking translation professionals
+- [RileyBot Claude Platform (API) case study | Claude by Anthropic](rileybot.md) — increases self-efficacy and confidence
+- [Rising Academies Claude Platform (API) case study | Claude by Anthropic](rising-academies.md) — EducationBeneficial Deployments
+- [Rocket Claude Platform (API) case study | Claude by Anthropic](rocket.md) — for a comparable website that would take a traditional agency a month to deliver
+- [Rocket Money Claude case study | Claude by Anthropic](rocket-money.md) — 11x increase in code commits
+- [Rocket Money Q&A | Claude Platform (API) | Claude by Anthropic](rocket-money-qa.md) — Read how Rocket Money built its personal finance agent with Claude.
+- [Rogo Claude Platform (API) case study | Claude by Anthropic](rogo.md) — across research, analysis, and artifact generation
+- [Satispay Claude Code case study | Claude by Anthropic](satispay.md) — 75%+ of code committed each month
+- [Scribd Claude Platform (API) case study | Claude by Anthropic](scribd.md) — improved with AI-generated metadata
+- [Section Claude Platform (API) case study | Claude by Anthropic](section.md) — of team members use Claude vs 5% workforce benchmark
+- [Semgrep Claude Platform (API) case study | Claude by Anthropic](semgrep.md) — in false positive security alerts
+- [Sentry Claude Managed Agents case study | Claude by Anthropic](sentry.md) — to ship end-to-end fix automation with Managed Agents
+- [Sett Claude Platform (API) case study | Claude by Anthropic](sett.md) — Time to produce a single playable ad dropped from approximately one week to 75 minutes
+- [Shopify Claude Code case study | Claude by Anthropic](shopify.md) — See Claude Code in action—from concept to commit in one seamless workflow.
+- [Shortcut Claude Platform (API) case study | Claude by Anthropic](shortcut.md) — Shortcut scaled from a consumer app to supporting more than 1,000 companies
+- [SK Telecom Claude Platform (API) case study | Claude by Anthropic](skt.md) — in LLM response quality ratings
+- [Skillfully Claude Platform (API) case study | Claude by Anthropic](skillfully.md) — to convert to full-time hires vs traditional methods
+- [Slack Claude Platform (API) case study | Claude by Anthropic](slack.md) — Saved by the average user through summarization and recap features
+- [Smartsheet Claude Platform (API) case study | Claude by Anthropic](smartsheet.md) — 1.76 million MCP tool calls
+- [Snowflake Claude Platform (API) case study | Claude by Anthropic](snowflake.md) — on complex text-to-SQL tasks
+- [Solvely.ai Claude Platform (API) case study | Claude by Anthropic](solvely.md) — app on App Store with 4.8/5 star rating
+- [Sourcegraph Claude Enterprise case study | Claude by Anthropic](sourcegraph-claude-for-work.md) — accuracy in identifying board meeting issues
+- [Sourcegraph Claude Platform (API) case study | Claude by Anthropic](sourcegraph.md) — improvement over previous model
+- [Spellbook Claude Platform (API) case study | Claude by Anthropic](spellbook.md) — 530,000 contract reviews per month
+- [Spotify Claude Agent SDK case study | Claude by Anthropic](spotify.md) — Claude Agent SDKClaude Platform
+- [Spotify | Office Hours with Boris Cherny | Claude by Anthropic](spotify-boris-office-hours.md) — Office Hours with Boris Cherny
+- [Spring.new Claude Platform (API) case study | Claude by Anthropic](spring-new.md) — time savings on R&D projects
+- [Stairwell Claude Platform (API) case study | Claude by Anthropic](stairwell.md) — characters processed in security data
+- [Steno Claude Platform (API) case study | Claude by Anthropic](steno.md) — window enabled transcript analysis
+- [Stripe Claude Code case study | Claude by Anthropic](stripe.md) — 1,370 engineers using Claude Code
+- [StubHub Claude Platform (API) case study | Claude by Anthropic](stubhub.md) — to near-instant response for customer wait times
+- [StudyFetch Claude Platform (API) case study | Claude by Anthropic](studyfetch.md) — maintained by students on learning platform
+- [Super Teacher Claude Platform (API) case study | Claude by Anthropic](super-teacher.md) — engineering and content teams with Claude
+- [Supermetrics: manage ad campaigns in a Claude conversation | Claude by Anthropic](supermetrics.md) — 250% average month-over-month growth in active users
+- [Syracuse University Claude Enterprise case study | Claude by Anthropic](syracuse-university.md) — Trusted, responsible AI tools for students and educators, from personalized learning to research assistance.
+- [Syracuse University Claude Enterprise case study | Claude by Anthropic](syracuse.md) — EducationBeneficial Deployments
+- [Tabnine Claude Platform (API) case study | Claude by Anthropic](tabnine.md) — answers than other models tested
+- [Tahoe Lead Removal Project Claude Enterprise case study | Claude by Anthropic](tahoe-lead-removal-project.md) — vs traditional mining campaign
+- [Tasklet Claude Platform (API) case study | Claude by Anthropic](tasklet.md) — 450,000 agent actions per day
+- [TELUS Claude Platform (API) case study | Claude by Anthropic](telus.md) — team members actively using generative AI
+- [The IRC turns fragmented health data into faster decisions with Claude | Claude by Anthropic](irc.md) — To prepare management-ready analysis that previously took a full working day
+- [The Patrick J. McGovern Foundation Claude Enterprise case study | Claude by Anthropic](pjmf.md) — GovernmentBeneficial Deployments
+- [Thomson Reuters Claude Cowork case study | Claude by Anthropic](thomson-reuters-qa.md) — Case Study: Thomson Reuters
+- [Thomson Reuters Claude Platform (API) case study | Claude by Anthropic](thomson-reuters.md) — subject matter experts' knowledge delivered
+- [Tidio Claude Platform (API) case study | Claude by Anthropic](tidio.md) — in Lyro adoption in one year
+- [Tines Claude Platform (API) case study | Claude by Anthropic](tines.md) — in complex data transformations
+- [tl;dv Claude Platform (API) case study | Claude by Anthropic](tldv.md) — tl;dv, a platform specializing in meeting intelligence, revolutionized its offering by integrating Claude. This partnership transformed tl;dv from a meeting…
+- [Tome Claude Platform (API) case study | Claude by Anthropic](tome.md) — researching accounts daily
+- [Trellix Claude Platform (API) case study | Claude by Anthropic](trellix.md) — for every 100 security alerts processed
+- [Triple Whale Claude Platform (API) case study | Claude by Anthropic](triple-whale.md) — in north star metrics for early customers
+- [TRY Claude Enterprise case study | Claude by Anthropic](try.md) — reduction in routine tasks
+- [Twilio Claude Code case study | Claude by Anthropic](twilio-qa.md) — packaged into a Claude Code plugin
+- [Vambe Claude Platform (API) case study | Claude by Anthropic](vambe.md) — 95%+ multi-agent reliability
+- [Vanta Claude Platform (API) case study | Claude by Anthropic](vanta.md) — accelerated implementation timeframe
+- [Vapi Claude Platform (API) case study | Claude by Anthropic](vapi.md) — ~3x higher deep activation rate
+- [Vega Claude Platform (API) case study | Claude by Anthropic](vega-security.md) — Completes investigations up to 44 times faster with 82% lower costs
+- [Vega Claude Platform (API) case study | Claude by Anthropic](vega.md) — Claude Agent SDKClaude Platform
+- [Vercel Claude Code case study | Claude by Anthropic](vercel-qa.md) — power Vercel's internal data science agent
+- [Vibecode Claude Platform (API) case study | Claude by Anthropic](vibecode.md) — vs. traditional development typically costing \$10K–\$50K
+- [Warp Claude Platform (API) case study | Claude by Anthropic](warp.md) — build software using Warp
+- [Wedia Group Claude Platform (API) case study | Claude by Anthropic](wedia-group.md) — processed monthly with automated metadata
+- [Windsurf Claude Platform (API) case study | Claude by Anthropic](windsurf.md) — of code written by AI in companies
+- [Wiz Claude Code case study | Claude by Anthropic](wiz.md) — 50,000 lines of Python to Go in ~20 hours
+- [Wondr Health Claude Platform (API) case study | Claude by Anthropic](wondr-health.md) — 700+ questions tested by Wondr's team
+- [Wordsmith Claude Code case study | Claude by Anthropic](wordsmith.md) — 4 minutes instead of 4 days
+- [Workato Claude Platform (API) case study | Claude by Anthropic](workato.md) — In employee adoption after deploying MCP servers
+- [WRTN Claude Platform (API) case study | Claude by Anthropic](wrtn.md) — with larger competitors in Asian market
+- [YMCA South Australia Claude case study | Claude by Anthropic](ymca-south-australia.md) — 10–15 hours saved per week for key users
+- [Yoodli Claude Platform (API) case study | Claude by Anthropic](yoodli.md) — by sales reps who practice three or more scenarios per week on Yoodli
+- [You.com Claude Platform (API) case study | Claude by Anthropic](you-dot-com.md) — increase over the last year
+- [Zapia Claude Platform (API) case study | Claude by Anthropic](zapia.md) — in first year across Latin America
+- [Zapier Claude Cowork case study | Claude by Anthropic](zapier-cowork-qa.md) — synthesizing live data from 6 engineering systems in one Cowork session.
+- [Zapier Claude Enterprise case study | Claude by Anthropic](zapier.md) — Zapier, the leading AI orchestration platform, uses Claude to drive company-wide AI adoption and boost productivity across its remote-first team.
+- [Zencoder Claude Agent SDK case study | Claude by Anthropic](zencoder.md) — In AI code churn compared to previous best solutions
+- [Zingage Claude Platform (API) case study | Claude by Anthropic](zingage.md) — in after-hours labor costs at one Medicaid agency
+- [Zoom Claude Platform (API) case study | Claude by Anthropic](zoom.md) — in meeting summary accuracy

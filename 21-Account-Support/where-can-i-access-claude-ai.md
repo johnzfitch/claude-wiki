@@ -2,10 +2,13 @@
 title: "Where can I access Claude? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8461763-where-can-i-access-claude-ai"
 category: "21-Account-Support"
-fetched_at: "2026-03-18T14:18:53Z"
+fetched_at: "2026-09-29T06:32:07Z"
+tags: ["account"]
 ---
 
 # Where can I access Claude?
+
+March 16, 2026
 
 
 You can access Claude in the following locations:

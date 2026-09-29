@@ -2,12 +2,13 @@
 title: "Who owns and manages the data of my Claude for Education account? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11732894-who-owns-and-manages-the-data-of-my-claude-for-education-account"
 category: "21-Account-Support"
-fetched_at: "2026-03-22T09:01:38Z"
+fetched_at: "2026-09-29T06:31:18Z"
+tags: ["account"]
 ---
 
-3.  Who owns and manages the data of my Claude for Education account?
-
 # Who owns and manages the data of my Claude for Education account?
+
+March 16, 2026
 
 
 This article provides important information about your Claude for Education account associated with your university’s Claude for Education partnership. It includes details about data access and control that were shared with you when your Claude for Education account was set up.
@@ -26,7 +27,7 @@ On Claude for Education, by default, the following capabilities are disabled by 
 
 - Thumbs Feedback
 
-These settings reflect Anthropic’s default approach to Claude for Education, but we understand that universities may have legitimate needs to access data. In these situations, the Primary Owner will need to reach out to [Anthropic support](https://support.anthropic.com/en/articles/9015913-how-to-get-support) to request and enable access.
+These settings reflect Anthropic’s default approach to Claude for Education, but we understand that universities may have legitimate needs to access data. In these situations, the Primary Owner will need to reach out to [Anthropic support](how-can-i-contact-support.md) to request and enable access.
 
 This includes the ability to request access to your user data through data exports, which may contain your conversations with Claude, uploaded files, and usage patterns. Primary Owners can also remove your access to the Claude for Education account if necessary.
 
@@ -36,8 +37,8 @@ Your organization determines which Claude services and features you can access i
 
 The use of your Claude for Education plan account is governed by the agreement between Anthropic and your university. Please contact your Claude for Education administrator for details of this agreement.
 
-While Anthropic’s [Privacy Policy](https://www.anthropic.com/legal/privacy) describes how we collect, use and share personal information when acting as a data controller in providing the Claude services to your university, please note that the Anthropic [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms) and [Privacy Policy](https://www.anthropic.com/legal/privacy) do not apply to the use of the Claude for Education plan where Anthropic acts as the data processor.\
-
+While Anthropic’s [Privacy Policy](https://www.anthropic.com/legal/privacy) describes how we collect, use and share personal information when acting as a data controller in providing the Claude services to your university, please note that the Anthropic [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms) and [Privacy Policy](https://www.anthropic.com/legal/privacy) do not apply to the use of the Claude for Education plan where Anthropic acts as the data processor.  
+​
 
 ## Organizational Policies
 

@@ -2,6 +2,7 @@
 title: "Claude Sonnet 3.7"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-5"
 category: "20-Models"
+tags: ["models"]
 ---
 
 Claude 4.5 introduces three models designed for different use cases:

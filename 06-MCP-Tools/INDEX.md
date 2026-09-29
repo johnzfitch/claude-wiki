@@ -1,334 +1,343 @@
-# MCP Tools
+# Model Context Protocol (MCP)
 
-*306 documents*
+316 pages. The full text of every page is in [llms.txt](llms.txt).
 
+## Community
 
-## Community (13)
+- [Agents Charter - Model Context Protocol](Community/community-working-groups-agents.md) — Charter for the MCP Agents Working Group.
+- [Antitrust Policy - Model Context Protocol](Community/community-antitrust.md) — MCP Project Antitrust Policy for participants and contributors
+- [Authorization Charter - Model Context Protocol](Community/community-interest-groups-auth.md) — Charter for the MCP Authorization Interest Group.
+- [Contributing to MCP - Model Context Protocol](Community/community-contributing.md) — How to contribute to the Model Context Protocol project
+- [Contributor Communication - Model Context Protocol](Community/community-communication.md) — Communication strategy and framework for the Model Context Protocol community
+- [Contributor Ladder - Model Context Protocol](Community/community-contributor-ladder.md) — Roles, responsibilities, and advancement criteria for MCP contributors, from first contribution to Core Maintainer
+- [Design Principles - Model Context Protocol](Community/community-design-principles.md) — The core design principles that guide the development of the Model Context Protocol.
+- [Enterprise Interest Group Charter - Model Context Protocol](Community/community-interest-groups-enterprise.md) — Charter for the MCP Enterprise Interest Group.
+- [Enterprise-Managed Authorization Charter - Model Context Protocol](Community/community-interest-groups-enterprise-managed-authorization.md) — Charter for the MCP Enterprise-Managed Authorization Interest Group.
+- [Feature Lifecycle and Deprecation Policy - Model Context Protocol](Community/community-feature-lifecycle.md) — How individual MCP specification features move through Active, Deprecated, and Removed states, and the timeline implementers can plan against.
+- [File Uploads Charter - Model Context Protocol](Community/community-working-groups-file-uploads.md) — Charter for the MCP File Uploads Working Group.
+- [Filesystems Charter - Model Context Protocol](Community/community-working-groups-filesystems.md) — Charter for the MCP Filesystems Working Group.
+- [Financial Services Charter - Model Context Protocol](Community/community-interest-groups-financial-services.md) — Charter for the MCP Financial Services Interest Group.
+- [Governance and Stewardship - Model Context Protocol](Community/community-governance.md) — Learn about the Model Context Protocol’s governance structure and how to participate in the community
+- [Group Charter Template - Model Context Protocol](Community/community-charter-template.md) — Template for MCP Working Group and Interest Group charters.
+- [Infrastructure Charter - Model Context Protocol](Community/community-working-groups-infrastructure.md) — Charter for the MCP Infrastructure Working Group.
+- [Inspector V2 Working Group Charter - Model Context Protocol](Community/community-working-groups-inspector-v2.md) — Charter for the Inspector V2 Working Group, a Working Group of the Model Context Protocol community.
+- [Interceptors Charter - Model Context Protocol](Community/community-working-groups-interceptors.md) — Charter for the MCP Interceptors Working Group.
+- [Primitive Grouping Charter - Model Context Protocol](Community/community-interest-groups-primitive-grouping.md) — Charter for the MCP Primitive Grouping Interest Group.
+- [Registry Charter - Model Context Protocol](Community/community-working-groups-registry.md) — Charter for the MCP Registry Working Group.
+- [Scientific Computing Charter - Model Context Protocol](Community/community-interest-groups-scientific-computing.md) — Charter for the MCP Scientific Computing Interest Group.
+- [SDK Tiering System - Model Context Protocol](Community/community-sdk-tiers.md) — Feature completeness, protocol support, and maintenance commitment levels for Model Context Protocol SDKs
+- [SDK Working Group Charter - Model Context Protocol](Community/community-working-groups-sdk.md) — Charter for the MCP SDK Working Group.
+- [Security Charter - Model Context Protocol](Community/community-interest-groups-security.md) — Charter for the MCP Security Interest Group.
+- [Security Policy - Model Context Protocol](Community/community-security.md) — How to report security vulnerabilities in the Model Context Protocol specification and SDKs, what is in and out of scope, and how SDK maintainers coordinate…
+- [SEP Guidelines - Model Context Protocol](Community/community-sep-guidelines.md) — Specification Enhancement Proposal (SEP) guidelines for proposing changes to the Model Context Protocol
+- [Server Card Charter - Model Context Protocol](Community/community-working-groups-server-card.md) — Charter for the MCP Server Card Working Group.
+- [Skills Over MCP Charter - Model Context Protocol](Community/community-working-groups-skills-over-mcp.md) — Charter for the MCP Skills Over MCP Working Group.
+- [Tool Annotations Charter - Model Context Protocol](Community/community-interest-groups-tool-annotations.md) — Charter for the MCP Tool Annotations Interest Group.
+- [Transports Charter - Model Context Protocol](Community/community-working-groups-transports.md) — Charter for the MCP Transports Working Group.
+- [Triggers and Events Charter - Model Context Protocol](Community/community-working-groups-triggers-events.md) — Charter for the MCP Triggers and Events Working Group.
+- [Working and Interest Groups - Model Context Protocol](Community/community-working-interest-groups.md) — Governance rules for the two forms of collaborative groups within the Model Context Protocol community — Working Groups and Interest Groups.
 
-- [Antitrust Policy - Model Context Protocol](Community/antitrust-policy-model-context-protocol.md) - MCP Project Antitrust Policy for participants and contributors
-- [Contributing to MCP - Model Context Protocol](Community/contributing-to-mcp-model-context-protocol.md) - How to contribute to the Model Context Protocol project
-- [Contributor Communication - Model Context Protocol](Community/contributor-communication-model-context-protocol.md) - Communication strategy and framework for the Model Context Protocol community
-- [Contributor Ladder - Model Context Protocol](Community/contributor-ladder-model-context-protocol.md) - Roles, responsibilities, and advancement criteria for MCP contributors, from first contribution to Core Maintainer
-- [Design Principles - Model Context Protocol](Community/design-principles-model-context-protocol.md) - The core design principles that guide the development of the Model Context Protocol.
-- [Governance and Stewardship - Model Context Protocol](Community/governance-and-stewardship-model-context-protocol.md) - Learn about the Model Context Protocol’s governance structure and how to participate in the community
-- [Antitrust Policy](Community/mcp-community-antitrust.md) - MCP Project Antitrust Policy for participants and contributors
-- [Mcp Community Communication](Community/mcp-community-communication.md) - [Content of the communication.md file from the previous WebFetch result - the full content about Contributor Communication, Discord, GitHub Discussion
-- [Mcp Community Contributing](Community/mcp-community-contributing.md) - [Content of the contributing.md file - the full guide about Contributing to MCP]
-- [Roadmap - Model Context Protocol](Community/roadmap-model-context-protocol.md) - Our plans for evolving Model Context Protocol
-- [SDK Tiering System - Model Context Protocol](Community/sdk-tiering-system-model-context-protocol.md) - Feature completeness, protocol support, and maintenance commitment levels for Model Context Protocol SDKs
-- [SEP Guidelines - Model Context Protocol](Community/sep-guidelines-model-context-protocol.md) - Specification Enhancement Proposal (SEP) guidelines for proposing changes to the Model Context Protocol
-- [Working and Interest Groups - Model Context Protocol](Community/working-and-interest-groups-model-context-protocol.md) - Learn about the two forms of collaborative groups within the Model Context Protocol’s governance structure - Working Groups and Interest Groups.
+## Extensions
 
-## Extensions (7)
+- [Authorization Extensions - Model Context Protocol](Extensions/extensions-auth-overview.md) — Supplementary authorization mechanisms for the Model Context Protocol
+- [Build an MCP App - Model Context Protocol](Extensions/extensions-apps-build.md) — Getting started guide for building interactive UI applications with MCP Apps
+- [Enterprise-Managed Authorization - Model Context Protocol](Extensions/extensions-auth-enterprise-managed-authorization.md) — Centralized access control for MCP in enterprise environments via identity providers
+- [Extension Support Matrix - Model Context Protocol](Extensions/extensions-client-matrix.md) — Which MCP clients implement which official extensions
+- [Extensions](Extensions/extensions.md) — Optional extensions to the Model Context Protocol
+- [Extensions Overview - Model Context Protocol](Extensions/extensions-overview.md) — Optional extensions to the Model Context Protocol
+- [MCP Apps - Model Context Protocol](Extensions/extensions-apps-overview.md) — Interactive UI applications that render inside MCP hosts like Claude Desktop
+- [OAuth Client Credentials - Model Context Protocol](Extensions/extensions-auth-oauth-client-credentials.md) — Machine-to-machine authentication for MCP using the OAuth 2.0 client credentials flow
+- [Skills - Model Context Protocol](Extensions/extensions-skills-overview.md) — Discover and read Agent Skills from MCP servers
+- [Tasks - Model Context Protocol](Extensions/extensions-tasks-overview.md) — Asynchronous task execution for long-running MCP operations
 
-- [Authorization Extensions - Model Context Protocol](Extensions/authorization-extensions-model-context-protocol.md) - Supplementary authorization mechanisms for the Model Context Protocol
-- [Build an MCP App - Model Context Protocol](Extensions/build-an-mcp-app-model-context-protocol.md) - Getting started guide for building interactive UI applications with MCP Apps
-- [Enterprise-Managed Authorization - Model Context Protocol](Extensions/enterprise-managed-authorization-model-context-protocol.md) - Centralized access control for MCP in enterprise environments via identity providers
-- [Extension Support Matrix - Model Context Protocol](Extensions/extension-support-matrix-model-context-protocol.md) - Which MCP clients implement which official extensions
-- [Extensions Overview - Model Context Protocol](Extensions/extensions-overview-model-context-protocol.md) - Optional extensions to the Model Context Protocol
-- [MCP Apps - Model Context Protocol](Extensions/mcp-apps-model-context-protocol.md) - Interactive UI applications that render inside MCP hosts like Claude Desktop
-- [OAuth Client Credentials - Model Context Protocol](Extensions/oauth-client-credentials-model-context-protocol.md) - Machine-to-machine authentication for MCP using the OAuth 2.0 client credentials flow
+## General
 
-## General (86)
+- [Architecture overview - Model Context Protocol](General/2024-11-05-learn-architecture.md) — This overview of the Model Context Protocol (MCP) discusses its scope and core concepts, and provides an example demonstrating each core concept. Because MCP…
+- [Architecture overview - Model Context Protocol](General/2025-03-26-learn-architecture.md) — This overview of the Model Context Protocol (MCP) discusses its scope and core concepts, and provides an example demonstrating each core concept. Because MCP…
+- [Architecture overview - Model Context Protocol](General/2025-06-18-learn-architecture.md) — This overview of the Model Context Protocol (MCP) discusses its scope and core concepts, and provides an example demonstrating each core concept. Because MCP…
+- [Architecture overview - Model Context Protocol](General/2025-11-25-learn-architecture.md) — This overview of the Model Context Protocol (MCP) discusses its scope and core concepts, and provides an example demonstrating each core concept. Because MCP…
+- [Architecture overview - Model Context Protocol](General/2026-07-28-learn-architecture.md) — This overview of the Model Context Protocol (MCP) discusses its scope and core concepts, and provides an example demonstrating each core concept. Because MCP…
+- [Authorization - Model Context Protocol](General/2026-07-28-tools-inspector-authorization.md) — How the MCP Inspector performs OAuth, re-authorizes mid-session, and shares tokens between its clients
+- [Authorization - Model Context Protocol](General/draft-tools-inspector-authorization.md) — How the MCP Inspector performs OAuth, re-authorizes mid-session, and shares tokens between its clients
+- [Build an MCP client - Model Context Protocol](General/2025-06-18-develop-build-client.md) — Get started building your own client that can integrate with all MCP servers.
+- [Build an MCP client - Model Context Protocol](General/2025-11-25-develop-build-client.md) — Get started building your own client that can integrate with all MCP servers.
+- [Build an MCP client - Model Context Protocol](General/2026-07-28-develop-build-client.md) — Get started building your own client that can integrate with all MCP servers.
+- [Build an MCP client - Model Context Protocol](General/draft-develop-build-client.md) — Get started building your own client that can integrate with all MCP servers.
+- [Build an MCP server - Model Context Protocol](General/2025-11-25-develop-build-server.md) — Get started building your own server to use in Claude for Desktop and other clients.
+- [Build an MCP server - Model Context Protocol](General/2026-07-28-develop-build-server.md) — Get started building your own server to use in Claude for Desktop and other clients.
+- [Build an MCP server - Model Context Protocol](General/draft-develop-build-server.md) — Get started building your own server to use in Claude for Desktop and other clients.
+- [Build with Agent Skills - Model Context Protocol](General/2024-11-05-develop-build-with-agent-skills.md) — Use agent skills to guide AI coding assistants through MCP server design and implementation
+- [Build with Agent Skills - Model Context Protocol](General/2025-03-26-develop-build-with-agent-skills.md) — Use agent skills to guide AI coding assistants through MCP server design and implementation
+- [Build with Agent Skills - Model Context Protocol](General/draft-develop-build-with-agent-skills.md) — Use agent skills to guide AI coding assistants through MCP server design and implementation
+- [CLI client - Model Context Protocol](General/draft-tools-inspector-cli.md) — Scripting the MCP Inspector: methods, output formats, exit codes, and CI recipes
+- [Client Best Practices - Model Context Protocol](General/2025-03-26-develop-clients-client-best-practices.md) — Patterns for scaling MCP host applications across many servers and tools.
+- [Client Best Practices - Model Context Protocol](General/2025-11-25-develop-clients-client-best-practices.md) — Patterns for scaling MCP host applications across many servers and tools.
+- [Client Best Practices - Model Context Protocol](General/draft-develop-clients-client-best-practices.md) — Patterns for scaling MCP host applications across many servers and tools.
+- [Configuration and flags - Model Context Protocol](General/2026-07-28-tools-inspector-configuration.md) — Catalog vs. config files, which client owns which flag, and every environment variable
+- [Configuration and flags - Model Context Protocol](General/draft-tools-inspector-configuration.md) — Catalog vs. config files, which client owns which flag, and every environment variable
+- [Connect Claude Code to tools via MCP - Claude Code Docs](General/mcp.md) — Learn how to connect Claude Code to your tools with the Model Context Protocol.
+- [Connect to local MCP servers - Model Context Protocol](General/2025-11-25-develop-connect-local-servers.md) — Learn how to extend Claude Desktop with local MCP servers to enable file system access and other powerful integrations
+- [Connect to local MCP servers - Model Context Protocol](General/draft-develop-connect-local-servers.md) — Learn how to extend Claude Desktop with local MCP servers to enable file system access and other powerful integrations
+- [Connect to MCP servers - Claude Code Docs](General/mcp-quickstart.md) — Add an MCP server to Claude Code, verify the connection, and find the configuration on disk.
+- [Connect to remote MCP Servers - Model Context Protocol](General/2025-11-25-develop-connect-remote-servers.md) — Learn how to connect Claude to remote MCP servers and extend its capabilities with internet-hosted tools and data sources
+- [Connect to remote MCP Servers - Model Context Protocol](General/2026-07-28-develop-connect-remote-servers.md) — Learn how to connect Claude to remote MCP servers and extend its capabilities with internet-hosted tools and data sources
+- [Control MCP server access for your organization - Claude Code Docs](General/managed-mcp.md) — Restrict which MCP servers users can add or connect to, or provide servers to every user, with managed configuration files, managed settings, allowlists, and…
+- [Debugging - Model Context Protocol](General/2024-11-05-tools-debugging.md) — A comprehensive guide to debugging Model Context Protocol (MCP) integrations
+- [Debugging - Model Context Protocol](General/2025-03-26-tools-debugging.md) — A comprehensive guide to debugging Model Context Protocol (MCP) integrations
+- [Debugging - Model Context Protocol](General/2025-11-25-tools-debugging.md) — A comprehensive guide to debugging Model Context Protocol (MCP) integrations
+- [Debugging - Model Context Protocol](General/draft-tools-debugging.md) — A comprehensive guide to debugging Model Context Protocol (MCP) integrations
+- [Example Clients](General/clients.md) — A list of applications that support MCP integrations
+- [Example Servers - Model Context Protocol](General/examples.md) — A list of example servers and implementations
+- [Extended Thinking with Tool Use](General/claude-cookbooks-extended-thinking-extended-thinking-with-tool-use.md) — This notebook demonstrates how to use Claude 3.7 Sonnet\'s extended
+- [Giving Claude a Crop Tool for Better Image Analysis](General/claude-cookbooks-multimodal-crop-tool.md) — When Claude analyzes images, it sees the entire image at once. For
+- [Local MCP Server Submission Guide | Claude Help Center](General/local-mcp-server-submission-guide.md) — The local MCP server submission guide has moved to the Claude developer docs.
+- [MCP Apps](General/extensions-apps.md) — Build interactive UI applications that render inside MCP hosts like Claude Desktop
+- [MCP Authentication Patterns](General/claude-code-plugins-plugin-dev-skills-mcp-integration-references-authentication.md) — Complete guide to authentication methods for MCP servers in Claude Code plugins.
+- [MCP Everything Server (Test)](General/servers-src-everything-readme.md) — This MCP server attempts to exercise all the features of the MCP protocol. It is not intended to be a useful server, but rather a test server for builders of…
+- [MCP Fetch Server](General/servers-src-fetch-readme.md) — A Model Context Protocol server that provides web content fetching capabilities. This server enables LLMs to retrieve and process content from web pages…
+- [MCP Filesystem Server](General/servers-src-filesystem-readme.md) — Node.js server implementing Model Context Protocol (MCP) for filesystem operations.
+- [MCP Inspector](General/tools-inspector.md) — In-depth guide to using the MCP Inspector for testing and debugging Model Context Protocol servers
+- [MCP Inspector - Model Context Protocol](General/2025-11-25-tools-inspector.md) — In-depth guide to using the MCP Inspector for testing and debugging Model Context Protocol servers
+- [MCP Inspector - Model Context Protocol](General/2026-07-28-tools-inspector.md) — Interactive developer tooling for testing and debugging MCP servers, in the browser, on the command line, and in the terminal
+- [MCP Memory Server](General/servers-src-memory-readme.md) — A basic implementation of persistent memory using a local knowledge graph. This lets Claude remember information about the user across chats.
+- [MCP Python SDK](General/python-sdk-readme.md) — This is v2 of the MCP Python SDK, the current stable release line. It is a major rework of the SDK, both to support the 2026-07-28 MCP specification (and every…
+- [MCP Reference Servers](General/servers-readme.md) — This repository is a collection of reference implementations for the Model Context Protocol (MCP), as well as references to community-built servers and…
+- [MCP Server Types: Deep Dive](General/claude-code-plugins-plugin-dev-skills-mcp-integration-references-server-types.md) — Complete reference for all MCP server types supported in Claude Code plugins.
+- [MCP TypeScript SDK](General/typescript-sdk-readme.md) — [!IMPORTANT] This is the main branch which contains v2 of the SDK (currently in development, pre-alpha).
+- [Note-Saving Tool with Pydantic and Anthropic Tool Use](General/claude-cookbooks-tool-use-tool-use-with-pydantic.md) — In this example, we\'ll create a tool that saves a note with the author
+- [Protocol eras - Model Context Protocol](General/2026-07-28-tools-inspector-protocol-eras.md) — How the Inspector negotiates legacy vs. modern MCP, and how every feature is handled between protocol eras
+- [Recipes - Model Context Protocol](General/2026-07-28-tools-inspector-recipes.md) — Practical guides for transports, importing configs, reviewing MCP Apps, Docker, and network hosting
+- [Remote MCP server submission guide | Claude Help Center](General/remote-mcp-server-submission-guide.md) — The remote MCP server submission guide has moved to the Claude developer docs.
+- [Roadmap - Model Context Protocol](General/development-roadmap.md) — The Model Context Protocol roadmap, covering the priority areas Core Maintainers and Working Groups are driving for the next specification release and how they…
+- [SDKs](General/sdk.md) — Official SDKs for building with Model Context Protocol
+- [SDKs - Model Context Protocol](General/2025-11-25-sdk.md) — Official SDKs for building with Model Context Protocol
+- [SDKs - Model Context Protocol](General/2026-07-28-sdk.md) — Official SDKs for building with Model Context Protocol
+- [Security Best Practices - Model Context Protocol](General/2024-11-05-tutorials-security-security-best-practices.md) — Security considerations, attack vectors, and best practices for MCP implementations
+- [Security Best Practices - Model Context Protocol](General/2025-11-25-tutorials-security-security-best-practices.md) — Security considerations, attack vectors, and best practices for MCP implementations
+- [Security Best Practices - Model Context Protocol](General/draft-tutorials-security-security-best-practices.md) — Security considerations, attack vectors, and best practices for MCP implementations
+- [TUI client - Model Context Protocol](General/draft-tools-inspector-tui.md) — The terminal MCP Inspector: navigation, tabs, and keyboard reference
+- [Understanding Authorization in MCP - Model Context Protocol](General/2025-11-25-tutorials-security-authorization.md) — Learn how to implement secure authorization for MCP servers using OAuth 2.1 to protect sensitive resources and operations
+- [Understanding Authorization in MCP - Model Context Protocol](General/2026-07-28-tutorials-security-authorization.md) — Learn how to implement secure authorization for MCP servers using OAuth 2.1 to protect sensitive resources and operations
+- [Understanding Authorization in MCP - Model Context Protocol](General/draft-tutorials-security-authorization.md) — Learn how to implement secure authorization for MCP servers using OAuth 2.1 to protect sensitive resources and operations
+- [Understanding MCP clients - Model Context Protocol](General/2025-03-26-learn-client-concepts.md) — MCP clients are instantiated by host applications to communicate with particular MCP servers. The host application, like Claude.ai or an IDE, manages the…
+- [Understanding MCP clients - Model Context Protocol](General/2025-11-25-learn-client-concepts.md) — MCP clients are instantiated by host applications to communicate with particular MCP servers. The host application, like Claude.ai or an IDE, manages the…
+- [Understanding MCP clients - Model Context Protocol](General/draft-learn-client-concepts.md) — MCP clients are instantiated by host applications to communicate with particular MCP servers. The host application, like Claude.ai or an IDE, manages the…
+- [Understanding MCP servers - Model Context Protocol](General/2025-11-25-learn-server-concepts.md) — MCP servers are programs that expose specific capabilities to AI applications through standardized protocol interfaces. Common examples include file system…
+- [Understanding MCP servers - Model Context Protocol](General/2026-07-28-learn-server-concepts.md) — MCP servers are programs that expose specific capabilities to AI applications through standardized protocol interfaces. Common examples include file system…
+- [Using a Calculator Tool with Claude](General/claude-cookbooks-tool-use-calculator-tool.md) — In this recipe, we\'ll demonstrate how to provide Claude with a simple
+- [Using MCP Tools in Commands and Agents](General/claude-code-plugins-plugin-dev-skills-mcp-integration-references-tool-usage.md) — Complete guide to using MCP tools effectively in Claude Code plugin commands and agents.
+- [Versioning - Model Context Protocol](General/2025-11-25-learn-versioning.md) — The Model Context Protocol uses string-based version identifiers following the format YYYY-MM-DD, to indicate the last date backwards incompatible changes were…
+- [Versioning - Model Context Protocol](General/draft-learn-versioning.md) — The Model Context Protocol uses string-based version identifiers following the format YYYY-MM-DD, to indicate the last date backwards incompatible changes were…
+- [Web client - Model Context Protocol](General/draft-tools-inspector-web.md) — A tab-by-tab walkthrough of the graphical MCP Inspector
+- [What is the Model Context Protocol (MCP)? - Model Context Protocol](General/draft-getting-started-intro.md) — MCP (Model Context Protocol) is an open-source standard for connecting AI applications to external systems. Using MCP, AI applications like Claude or ChatGPT…
+- [What is the Model Context Protocol (MCP)? - Model Context Protocol](General/getting-started-intro.md) — MCP (Model Context Protocol) is an open-source standard for connecting AI applications to external systems. Using MCP, AI applications like Claude or ChatGPT…
 
-- [MCP Authentication Patterns](General/authentication.md) - Complete guide to authentication methods for MCP servers in Claude Code plugins.
-- [Using a Calculator Tool with Claude](General/calculator-tool.md) - In this recipe, we\'ll demonstrate how to provide Claude with a simple
-- [Claude Code MCP Knowledgebase](General/claude-code-mcp-knowledgebase.md) - Last updated: 2026-03-08
-- [Claude Code Built-in Tools vs grepai: Comprehensive Analysis](General/claude-code-vs-grepai-analysis.md) - Analysis date: 2026-02-05
-- [Connect Claude Code to tools via MCP - Claude Code Docs](General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) - Learn how to connect Claude Code to your tools with the Model Context Protocol.
-- [Giving Claude a Crop Tool for Better Image Analysis](General/crop-tool.md) - When Claude analyzes images, it sees the entire image at once. For
-- [Custom Tools](General/custom-tools.md) - Build and integrate custom tools to extend Claude Agent SDK functionality
-- [Extended Thinking with Tool Use](General/extended-thinking-with-tool-use.md) - - [Setup](#setup)
-- [rnetsharp MCP Server Tools](General/mcp-2.md) - Complete list of 16 tools exposing rnetsharp's capabilities to Claude Code.
-- [MCP Agent Persona & Knowledgebase — Engineering Reference](General/mcp-agent-knowledgebase.md) - Derived from binary analysis of Claude Code 2.1.59/2.1.70 JS payload.
-- [Example Clients](General/mcp-clients.md) - A list of applications that support MCP integrations
-- [✅ COMPLETE MCP Documentation Verification](General/mcp-complete-verification.md) - **Date**: 2026-02-02
-- [MCP Documentation Coverage Report](General/mcp-coverage-report.md) - **Generated**: 2026-02-02
-- [Example Servers](General/mcp-examples.md) - A list of example servers and implementations
-- [SEP-2133: Extensions](General/mcp-ext-2133-extensions.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-932: Model Context Protocol Governance](General/mcp-ext-932-model-context-protocol-governance.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Skills Over MCP - Experimental Extension](General/mcp-ext-ext-skills.md) - **Repository**: https://github.com/modelcontextprotocol/experimental-ext-skills
-- [MCP Apps](General/mcp-ext-extensions-apps.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Extensions](General/mcp-extensions.md) - Optional extensions to the Model Context Protocol
-- [MCP Documentation Index](General/mcp-index.md) - Complete catalog of Model Context Protocol documentation downloaded to this directory.
-- [Module 04: MCP & Tool Execution](General/mcp-overview-report.md) - MCP is entirely JS-layer. The system supports 5 transport types, lazy capability detection, tool name prefixing (`mcp__<server>__<tool>`), and retry o
-- [Model Context Protocol - Complete Documentation Archive](General/mcp-readme.md) - This directory contains a complete archive of the official Model Context Protocol (MCP) documentation.
-- [Model Context Protocol servers](General/mcp-reference-servers.md) - This repository is a collection of *reference implementations* for the [Model Context Protocol](https://modelcontextprotocol.io/) (MCP), as well as re
-- [Mcp Server Configuration Guide](General/mcp-server-configuration-guide.md) - Mastering the configuration of MCP (Modular Control Platform) servers in Claude Code can seem intimidating at first, but with the right guidance, it b
-- [Everything MCP Server](General/mcp-server-everything.md) - **[Architecture](docs/architecture.md)
-- [Fetch MCP Server](General/mcp-server-fetch.md) - <!-- mcp-name: io.github.modelcontextprotocol/server-fetch -->
-- [Filesystem MCP Server](General/mcp-server-filesystem.md) - Node.js server implementing Model Context Protocol (MCP) for filesystem operations.
-- [Knowledge Graph Memory Server](General/mcp-server-memory.md) - A basic implementation of persistent memory using a local knowledge graph. This lets Claude remember information about the user across chats.
-- [MCP Documentation Sitemap Analysis](General/mcp-sitemap-analysis.md) - **Total URLs in Sitemap**: 164
-- [Architecture](General/mcp-specification-2025-11-25-architecture-index.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Authorization](General/mcp-specification-2025-11-25-basic-authorization.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Overview](General/mcp-specification-2025-11-25-basic-index.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Lifecycle](General/mcp-specification-2025-11-25-basic-lifecycle.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Security Best Practices](General/mcp-specification-2025-11-25-basic-security-best-practices.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Transports](General/mcp-specification-2025-11-25-basic-transports.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Cancellation](General/mcp-specification-2025-11-25-basic-utilities-cancellation.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Ping](General/mcp-specification-2025-11-25-basic-utilities-ping.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Progress](General/mcp-specification-2025-11-25-basic-utilities-progress.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Tasks](General/mcp-specification-2025-11-25-basic-utilities-tasks.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Key Changes](General/mcp-specification-2025-11-25-changelog.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Elicitation](General/mcp-specification-2025-11-25-client-elicitation.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Roots](General/mcp-specification-2025-11-25-client-roots.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Sampling](General/mcp-specification-2025-11-25-client-sampling.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Specification](General/mcp-specification-2025-11-25-index.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Schema Reference](General/mcp-specification-2025-11-25-schema.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Overview](General/mcp-specification-2025-11-25-server-index.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Prompts](General/mcp-specification-2025-11-25-server-prompts.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Resources](General/mcp-specification-2025-11-25-server-resources.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Tools](General/mcp-specification-2025-11-25-server-tools.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Completion](General/mcp-specification-2025-11-25-server-utilities-completion.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Logging](General/mcp-specification-2025-11-25-server-utilities-logging.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Pagination](General/mcp-specification-2025-11-25-server-utilities-pagination.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Versioning](General/mcp-specification-versioning.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [✅ MCP Documentation Verification - COMPLETE](General/mcp-verification-complete.md) - **Date**: 2026-02-02
-- [Connect Claude Code to tools via MCP](General/mcp.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-- [**URL:** https://platform.claude.com/cookbook/tool-use-tool-search-with-embeddings](General/pagescope-2026-02-01.md) - **URL:** https://platform.claude.com/cookbook/tool-use-tool-search-with-embeddings
-- [MCP Technical Reference](General/pyghidra-lite.md) - Technical details for MCP server implementation and integration.
-- [Remote MCP Server Submission Guide | Claude Help Center](General/remote-mcp-server-submission-guide-claude-help-center.md) - This is a complete guide for submitting your remote MCP server to Anthropic's MCP Directory for broader distribution and discoverability.
-- [MCP Server Types: Deep Dive](General/server-types.md) - Complete reference for all MCP server types supported in Claude Code plugins.
-- [My Company GDrive Navigation Skill](General/skills-explained-how-skills-compares-to-prompts-projects-mcp-and-subagents-claude.md) - Since introducing [Skills](https://www.anthropic.com/news/skills), there's been interest in understanding how the various components of Claude's agent
-- [Architecture](General/specification-2025-11-25-architecture-index.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Authorization](General/specification-2025-11-25-basic-authorization.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Overview](General/specification-2025-11-25-basic-index.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Lifecycle](General/specification-2025-11-25-basic-lifecycle.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Security Best Practices](General/specification-2025-11-25-basic-security-best-practices.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Transports](General/specification-2025-11-25-basic-transports.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Cancellation](General/specification-2025-11-25-basic-utilities-cancellation.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Ping](General/specification-2025-11-25-basic-utilities-ping.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Progress](General/specification-2025-11-25-basic-utilities-progress.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Tasks](General/specification-2025-11-25-basic-utilities-tasks.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Key Changes](General/specification-2025-11-25-changelog.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Elicitation](General/specification-2025-11-25-client-elicitation.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Roots](General/specification-2025-11-25-client-roots.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Sampling](General/specification-2025-11-25-client-sampling.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Specification](General/specification-2025-11-25-index.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Schema Reference](General/specification-2025-11-25-schema.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Overview](General/specification-2025-11-25-server-index.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Prompts](General/specification-2025-11-25-server-prompts.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Resources](General/specification-2025-11-25-server-resources.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Tools](General/specification-2025-11-25-server-tools.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Completion](General/specification-2025-11-25-server-utilities-completion.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Logging](General/specification-2025-11-25-server-utilities-logging.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Pagination](General/specification-2025-11-25-server-utilities-pagination.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Versioning](General/specification-versioning.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Using MCP Tools in Commands and Agents](General/tool-usage.md) - Complete guide to using MCP tools effectively in Claude Code plugin commands and agents.
-- [Note-Saving Tool with Pydantic and Anthropic Tool Use](General/tool-use-with-pydantic.md) - In this example, we\'ll create a tool that saves a note with the author
+## Registry
 
-## Registry (33)
+- [Frequently Asked Questions - Model Context Protocol](Registry/registry-faq.md) — The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report…
+- [How to Authenticate When Publishing to the Official MCP Registry - Model Context Protocol](Registry/registry-authentication.md) — The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report…
+- [How to Automate Publishing with GitHub Actions - Model Context Protocol](Registry/registry-github-actions.md) — The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report…
+- [MCP Registry Aggregators - Model Context Protocol](Registry/registry-registry-aggregators.md) — The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report…
+- [MCP Registry Supported Package Types - Model Context Protocol](Registry/registry-package-types.md) — The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report…
+- [Official MCP Registry Terms of Service - Model Context Protocol](Registry/registry-terms-of-service.md) — The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report…
+- [Publishing Remote Servers - Model Context Protocol](Registry/registry-remote-servers.md) — The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report…
+- [Quickstart: Publish an MCP Server to the MCP Registry - Model Context Protocol](Registry/registry-quickstart.md) — The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report…
+- [The MCP Registry - Model Context Protocol](Registry/registry-about.md) — The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report…
+- [The MCP Registry Moderation Policy - Model Context Protocol](Registry/registry-moderation-policy.md) — The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report…
+- [Versioning Published MCP Servers - Model Context Protocol](Registry/registry-versioning.md) — The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report…
 
-- [Frequently Asked Questions - Model Context Protocol](Registry/frequently-asked-questions-model-context-protocol.md) - The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please r
-- [How to Authenticate When Publishing to the Official MCP Registry - Model Context Protocol](Registry/how-to-authenticate-when-publishing-to-the-official-mcp-registry-model-context-p.md) - The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please r
-- [How to Automate Publishing with GitHub Actions - Model Context Protocol](Registry/how-to-automate-publishing-with-github-actions-model-context-protocol.md) - The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please r
-- [The MCP Registry](Registry/mcp-registry-about.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [MCP Registry Aggregators - Model Context Protocol](Registry/mcp-registry-aggregators-model-context-protocol.md) - The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please r
-- [How to Authenticate When Publishing to the Official MCP Registry](Registry/mcp-registry-authentication.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Frequently Asked Questions](Registry/mcp-registry-faq.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [How to Automate Publishing with GitHub Actions](Registry/mcp-registry-github-actions.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [The MCP Registry Moderation Policy](Registry/mcp-registry-moderation-policy.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [MCP Registry Supported Package Types](Registry/mcp-registry-package-types.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Quickstart: Publish an MCP Server to the MCP Registry](Registry/mcp-registry-quickstart.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [MCP Registry Aggregators](Registry/mcp-registry-registry-aggregators.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Publishing Remote Servers](Registry/mcp-registry-remote-servers.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [MCP Registry Supported Package Types - Model Context Protocol](Registry/mcp-registry-supported-package-types-model-context-protocol.md) - The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please r
-- [Official MCP Registry Terms of Service](Registry/mcp-registry-terms-of-service.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Versioning Published MCP Servers](Registry/mcp-registry-versioning.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Official MCP Registry Terms of Service - Model Context Protocol](Registry/official-mcp-registry-terms-of-service-model-context-protocol.md) - The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please r
-- [Publishing Remote Servers - Model Context Protocol](Registry/publishing-remote-servers-model-context-protocol.md) - The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please r
-- [Quickstart: Publish an MCP Server to the MCP Registry - Model Context Protocol](Registry/quickstart-publish-an-mcp-server-to-the-mcp-registry-model-context-protocol.md) - The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please r
-- [The MCP Registry](Registry/registry-about.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [How to Authenticate When Publishing to the Official MCP Registry](Registry/registry-authentication.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Frequently Asked Questions](Registry/registry-faq.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [How to Automate Publishing with GitHub Actions](Registry/registry-github-actions.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [The MCP Registry Moderation Policy](Registry/registry-moderation-policy.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [MCP Registry Supported Package Types](Registry/registry-package-types.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Quickstart: Publish an MCP Server to the MCP Registry](Registry/registry-quickstart.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [MCP Registry Aggregators](Registry/registry-registry-aggregators.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Publishing Remote Servers](Registry/registry-remote-servers.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Official MCP Registry Terms of Service](Registry/registry-terms-of-service.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Versioning Published MCP Servers](Registry/registry-versioning.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [The MCP Registry - Model Context Protocol](Registry/the-mcp-registry-model-context-protocol.md) - The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please r
-- [The MCP Registry Moderation Policy - Model Context Protocol](Registry/the-mcp-registry-moderation-policy-model-context-protocol.md) - The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please r
-- [Versioning Published MCP Servers - Model Context Protocol](Registry/versioning-published-mcp-servers-model-context-protocol.md) - The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please r
+## SEPs
 
-## SEPs (50)
+- [SEP-1024: MCP Client Security Requirements for Local Server Installation](SEPs/community-seps-1024-mcp-client-security-requirements-for-local-server.md) — MCP Client Security Requirements for Local Server Installation
+- [SEP-1024: MCP Client Security Requirements for Local Server Installation - Model Context Protocol](SEPs/seps-1024-mcp-client-security-requirements-for-local-server.md) — MCP Client Security Requirements for Local Server Installation
+- [SEP-1034: Support default values for all primitive types in elicitation schemas](SEPs/community-seps-1034-support-default-values-for-all-primitive-types-in.md) — Support default values for all primitive types in elicitation schemas
+- [SEP-1034: Support default values for all primitive types in elicitation schemas - Model Context Protocol](SEPs/seps-1034-support-default-values-for-all-primitive-types-in.md) — Support default values for all primitive types in elicitation schemas
+- [SEP-1036: URL Mode Elicitation for secure out-of-band interactions](SEPs/community-seps-1036-url-mode-elicitation-for-secure-out-of-band-intera.md) — URL Mode Elicitation for secure out-of-band interactions
+- [SEP-1036: URL Mode Elicitation for secure out-of-band interactions - Model Context Protocol](SEPs/seps-1036-url-mode-elicitation-for-secure-out-of-band-intera.md) — URL Mode Elicitation for secure out-of-band interactions
+- [SEP-1046: Support OAuth client credentials flow in authorization](SEPs/community-seps-1046-support-oauth-client-credentials-flow-in-authoriza.md) — Support OAuth client credentials flow in authorization
+- [SEP-1046: Support OAuth client credentials flow in authorization - Model Context Protocol](SEPs/seps-1046-support-oauth-client-credentials-flow-in-authoriza.md) — Support OAuth client credentials flow in authorization
+- [SEP-1302: Formalize Working Groups and Interest Groups in MCP Governance](SEPs/community-seps-1302-formalize-working-groups-and-interest-groups-in-mc.md) — Formalize Working Groups and Interest Groups in MCP Governance
+- [SEP-1302: Formalize Working Groups and Interest Groups in MCP Governance - Model Context Protocol](SEPs/seps-1302-formalize-working-groups-and-interest-groups-in-mc.md) — Formalize Working Groups and Interest Groups in MCP Governance
+- [SEP-1303: Input Validation Errors as Tool Execution Errors](SEPs/community-seps-1303-input-validation-errors-as-tool-execution-errors.md) — Input Validation Errors as Tool Execution Errors
+- [SEP-1303: Input Validation Errors as Tool Execution Errors - Model Context Protocol](SEPs/seps-1303-input-validation-errors-as-tool-execution-errors.md) — Input Validation Errors as Tool Execution Errors
+- [SEP-1319: Decouple Request Payload from RPC Methods Definition](SEPs/community-seps-1319-decouple-request-payload-from-rpc-methods-definiti.md) — Decouple Request Payload from RPC Methods Definition
+- [SEP-1319: Decouple Request Payload from RPC Methods Definition - Model Context Protocol](SEPs/seps-1319-decouple-request-payload-from-rpc-methods-definiti.md) — Decouple Request Payload from RPC Methods Definition
+- [SEP-1330: Elicitation Enum Schema Improvements and Standards Compliance](SEPs/community-seps-1330-elicitation-enum-schema-improvements-and-standards.md) — Elicitation Enum Schema Improvements and Standards Compliance
+- [SEP-1330: Elicitation Enum Schema Improvements and Standards Compliance - Model Context Protocol](SEPs/seps-1330-elicitation-enum-schema-improvements-and-standards.md) — Elicitation Enum Schema Improvements and Standards Compliance
+- [SEP-1577: Sampling With Tools](SEPs/community-seps-1577-sampling-with-tools.md) — export const Badge = ({children, color = "gray"}) => {
+- [SEP-1577: Sampling With Tools - Model Context Protocol](SEPs/seps-1577-sampling-with-tools.md) — This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not…
+- [SEP-1613: Establish JSON Schema 2020-12 as Default Dialect for MCP](SEPs/community-seps-1613-establish-json-schema-2020-12-as-default-dialect-f.md) — Establish JSON Schema 2020-12 as Default Dialect for MCP
+- [SEP-1613: Establish JSON Schema 2020-12 as Default Dialect for MCP - Model Context Protocol](SEPs/seps-1613-establish-json-schema-2020-12-as-default-dialect-f.md) — Establish JSON Schema 2020-12 as Default Dialect for MCP
+- [SEP-1686: Tasks](SEPs/community-seps-1686-tasks.md) — export const Badge = ({children, color = "gray"}) => {
+- [SEP-1686: Tasks - Model Context Protocol](SEPs/seps-1686-tasks.md) — This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not…
+- [SEP-1699: Support SSE polling via server-side disconnect](SEPs/community-seps-1699-support-sse-polling-via-server-side-disconnect.md) — Support SSE polling via server-side disconnect
+- [SEP-1699: Support SSE polling via server-side disconnect - Model Context Protocol](SEPs/seps-1699-support-sse-polling-via-server-side-disconnect.md) — Support SSE polling via server-side disconnect
+- [SEP-1730: SDKs Tiering System](SEPs/community-seps-1730-sdks-tiering-system.md) — export const Badge = ({children, color = "gray"}) => {
+- [SEP-1730: SDKs Tiering System - Model Context Protocol](SEPs/seps-1730-sdks-tiering-system.md) — This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not…
+- [SEP-1850: PR-Based SEP Workflow](SEPs/community-seps-1850-pr-based-sep-workflow.md) — export const Badge = ({children, color = "gray"}) => {
+- [SEP-1850: PR-Based SEP Workflow - Model Context Protocol](SEPs/seps-1850-pr-based-sep-workflow.md) — This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not…
+- [SEP-1865: MCP Apps - Interactive User Interfaces for MCP](SEPs/community-seps-1865-mcp-apps-interactive-user-interfaces-for-mcp.md) — MCP Apps - Interactive User Interfaces for MCP
+- [SEP-1865: MCP Apps - Interactive User Interfaces for MCP - Model Context Protocol](SEPs/seps-1865-mcp-apps-interactive-user-interfaces-for-mcp.md) — MCP Apps - Interactive User Interfaces for MCP
+- [SEP-2085: Governance Succession and Amendment Procedures](SEPs/community-seps-2085-governance-succession-and-amendment.md) — Governance Succession and Amendment Procedures
+- [SEP-2085: Governance Succession and Amendment Procedures - Model Context Protocol](SEPs/seps-2085-governance-succession-and-amendment.md) — Governance Succession and Amendment Procedures
+- [SEP-2106: Tools `inputSchema` & `outputSchema` Conform to JSON Schema 2020-12 - Model Context Protocol](SEPs/seps-2106-json-schema-2020-12.md) — Tools inputSchema & outputSchema Conform to JSON Schema 2020-12
+- [SEP-2133: Extensions](SEPs/community-seps-2133-extensions.md) — export const Badge = ({children, color = "gray"}) => {
+- [SEP-2133: Extensions - Model Context Protocol](SEPs/seps-2133-extensions.md) — This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not…
+- [SEP-2148: MCP Contributor Ladder - Model Context Protocol](SEPs/seps-2148-contributor-ladder.md) — This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not…
+- [SEP-2149: MCP Group Governance and Charter Template - Model Context Protocol](SEPs/seps-2149-working-group-charter-template.md) — MCP Group Governance and Charter Template
+- [SEP-2164: Standardize Resource Not Found Error Code - Model Context Protocol](SEPs/seps-2164-resource-not-found-error.md) — Standardize Resource Not Found Error Code
+- [SEP-2207: OIDC-Flavored Refresh Token Guidance - Model Context Protocol](SEPs/seps-2207-oidc-refresh-token-guidance.md) — OIDC-Flavored Refresh Token Guidance
+- [SEP-2243: HTTP Header Standardization for Streamable HTTP Transport - Model Context Protocol](SEPs/seps-2243-http-standardization.md) — HTTP Header Standardization for Streamable HTTP Transport
+- [SEP-2260: Require Server requests to be associated with a Client request. - Model Context Protocol](SEPs/seps-2260-require-server-requests-to-be-associated-with-client-requests.md) — Require Server requests to be associated with a Client request.
+- [SEP-2322: Multi Round-Trip Requests - Model Context Protocol](SEPs/seps-2322-mrtr.md) — Multi Round-Trip Requests
+- [SEP-2468: Recommend Issuer (iss) Parameter in MCP Auth Responses - Model Context Protocol](SEPs/seps-2468-recommend-issuer-claim-for-auth.md) — Recommend Issuer (iss) Parameter in MCP Auth Responses
+- [SEP-2484: Require Conformance Tests for Standards Track SEPs to Reach Final Status - Model Context Protocol](SEPs/seps-2484-conformance-tests-required-for-final-seps.md) — Require Conformance Tests for Standards Track SEPs to Reach Final Status
+- [SEP-2549: TTL for List Results - Model Context Protocol](SEPs/seps-2549-ttl-for-list-results.md) — This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not…
+- [SEP-2567: Sessionless MCP via Explicit State Handles - Model Context Protocol](SEPs/seps-2567-sessionless-mcp.md) — Sessionless MCP via Explicit State Handles
+- [SEP-2575: Make MCP Stateless - Model Context Protocol](SEPs/seps-2575-stateless-mcp.md) — This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not…
+- [SEP-2577: Deprecate Roots, Sampling, and Logging - Model Context Protocol](SEPs/seps-2577-deprecate-roots-sampling-and-logging.md) — Deprecate Roots, Sampling, and Logging
+- [SEP-2596: Specification Feature Lifecycle and Deprecation Policy - Model Context Protocol](SEPs/seps-2596-spec-feature-lifecycle-and-deprecation.md) — Specification Feature Lifecycle and Deprecation Policy
+- [SEP-2640: Skills Extension - Model Context Protocol](SEPs/seps-2640-skills-extension.md) — This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not…
+- [SEP-2663: Tasks Extension - Model Context Protocol](SEPs/seps-2663-tasks-extension.md) — This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not…
+- [SEP-414: Document OpenTelemetry Trace Context Propagation Conventions - Model Context Protocol](SEPs/seps-414-request-meta.md) — Document OpenTelemetry Trace Context Propagation Conventions
+- [SEP-932: Model Context Protocol Governance](SEPs/community-seps-932-model-context-protocol-governance.md) — Model Context Protocol Governance
+- [SEP-932: Model Context Protocol Governance - Model Context Protocol](SEPs/seps-932-model-context-protocol-governance.md) — Model Context Protocol Governance
+- [SEP-973: Expose additional metadata for Implementations, Resources, Tools and Prompts](SEPs/community-seps-973-expose-additional-metadata-for-implementations-res.md) — Expose additional metadata for Implementations, Resources, Tools and Prompts
+- [SEP-973: Expose additional metadata for Implementations, Resources, Tools and Prompts - Model Context Protocol](SEPs/seps-973-expose-additional-metadata-for-implementations-res.md) — Expose additional metadata for Implementations, Resources, Tools and Prompts
+- [SEP-985: Align OAuth 2.0 Protected Resource Metadata with RFC 9728](SEPs/community-seps-985-align-oauth-20-protected-resource-metadata-with-rf.md) — Align OAuth 2.0 Protected Resource Metadata with RFC 9728
+- [SEP-985: Align OAuth 2.0 Protected Resource Metadata with RFC 9728 - Model Context Protocol](SEPs/seps-985-align-oauth-20-protected-resource-metadata-with-rf.md) — Align OAuth 2.0 Protected Resource Metadata with RFC 9728
+- [SEP-986: Specify Format for Tool Names](SEPs/community-seps-986-specify-format-for-tool-names.md) — Specify Format for Tool Names
+- [SEP-986: Specify Format for Tool Names - Model Context Protocol](SEPs/seps-986-specify-format-for-tool-names.md) — Specify Format for Tool Names
+- [SEP-990: Enable enterprise IdP policy controls during MCP OAuth flows](SEPs/community-seps-990-enable-enterprise-idp-policy-controls-during-mcp-o.md) — Enable enterprise IdP policy controls during MCP OAuth flows
+- [SEP-990: Enable enterprise IdP policy controls during MCP OAuth flows - Model Context Protocol](SEPs/seps-990-enable-enterprise-idp-policy-controls-during-mcp-o.md) — Enable enterprise IdP policy controls during MCP OAuth flows
+- [SEP-991: Enable URL-based Client Registration using OAuth Client ID Metadata Documents](SEPs/community-seps-991-enable-url-based-client-registration-using-oauth-c.md) — Enable URL-based Client Registration using OAuth Client ID Metadata Documents
+- [SEP-991: Enable URL-based Client Registration using OAuth Client ID Metadata Documents - Model Context Protocol](SEPs/seps-991-enable-url-based-client-registration-using-oauth-c.md) — Enable URL-based Client Registration using OAuth Client ID Metadata Documents
+- [SEP-994: Shared Communication Practices/Guidelines](SEPs/community-seps-994-shared-communication-practicesguidelines.md) — Shared Communication Practices/Guidelines
+- [SEP-994: Shared Communication Practices/Guidelines - Model Context Protocol](SEPs/seps-994-shared-communication-practicesguidelines.md) — Shared Communication Practices/Guidelines
+- [Specification Enhancement Proposals (SEPs) - Model Context Protocol](SEPs/seps.md) — Index of all MCP Specification Enhancement Proposals
 
-- [SEP-1024: MCP Client Security Requirements for Local Server Installation](SEPs/mcp-community-seps-1024-mcp-client-security-requirements-for-local-server.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-1034: Support default values for all primitive types in elicitation schemas](SEPs/mcp-community-seps-1034-support-default-values-for-all-primitive-types-in.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-1036: URL Mode Elicitation for secure out-of-band interactions](SEPs/mcp-community-seps-1036-url-mode-elicitation-for-secure-out-of-band-intera.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-1046: Support OAuth client credentials flow in authorization](SEPs/mcp-community-seps-1046-support-oauth-client-credentials-flow-in-authoriza.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-1302: Formalize Working Groups and Interest Groups in MCP Governance](SEPs/mcp-community-seps-1302-formalize-working-groups-and-interest-groups-in-mc.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-1303: Input Validation Errors as Tool Execution Errors](SEPs/mcp-community-seps-1303-input-validation-errors-as-tool-execution-errors.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-1319: Decouple Request Payload from RPC Methods Definition](SEPs/mcp-community-seps-1319-decouple-request-payload-from-rpc-methods-definiti.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-1330: Elicitation Enum Schema Improvements and Standards Compliance](SEPs/mcp-community-seps-1330-elicitation-enum-schema-improvements-and-standards.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-1577: Sampling With Tools](SEPs/mcp-community-seps-1577-sampling-with-tools.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-1613: Establish JSON Schema 2020-12 as Default Dialect for MCP](SEPs/mcp-community-seps-1613-establish-json-schema-2020-12-as-default-dialect-f.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-1686: Tasks](SEPs/mcp-community-seps-1686-tasks.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-1699: Support SSE polling via server-side disconnect](SEPs/mcp-community-seps-1699-support-sse-polling-via-server-side-disconnect.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-1730: SDKs Tiering System](SEPs/mcp-community-seps-1730-sdks-tiering-system.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-1850: PR-Based SEP Workflow](SEPs/mcp-community-seps-1850-pr-based-sep-workflow.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-1865: MCP Apps - Interactive User Interfaces for MCP](SEPs/mcp-community-seps-1865-mcp-apps-interactive-user-interfaces-for-mcp.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-2085: Governance Succession and Amendment Procedures](SEPs/mcp-community-seps-2085-governance-succession-and-amendment.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-973: Expose additional metadata for Implementations, Resources, Tools and Prompts](SEPs/mcp-community-seps-973-expose-additional-metadata-for-implementations-res.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-985: Align OAuth 2.0 Protected Resource Metadata with RFC 9728](SEPs/mcp-community-seps-985-align-oauth-20-protected-resource-metadata-with-rf.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-986: Specify Format for Tool Names](SEPs/mcp-community-seps-986-specify-format-for-tool-names.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-990: Enable enterprise IdP policy controls during MCP OAuth flows](SEPs/mcp-community-seps-990-enable-enterprise-idp-policy-controls-during-mcp-o.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-991: Enable URL-based Client Registration using OAuth Client ID Metadata Documents](SEPs/mcp-community-seps-991-enable-url-based-client-registration-using-oauth-c.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-994: Shared Communication Practices/Guidelines](SEPs/mcp-community-seps-994-shared-communication-practicesguidelines.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [SEP-1024: MCP Client Security Requirements for Local Server Installation - Model Context Protocol](SEPs/sep-1024-mcp-client-security-requirements-for-local-server-installation-model-co.md) - MCP Client Security Requirements for Local Server Installation
-- [SEP-1034: Support default values for all primitive types in elicitation schemas - Model Context Protocol](SEPs/sep-1034-support-default-values-for-all-primitive-types-in-elicitation-schemas-m.md) - Support default values for all primitive types in elicitation schemas
-- [SEP-1036: URL Mode Elicitation for secure out-of-band interactions - Model Context Protocol](SEPs/sep-1036-url-mode-elicitation-for-secure-out-of-band-interactions-model-context.md) - URL Mode Elicitation for secure out-of-band interactions
-- [SEP-1046: Support OAuth client credentials flow in authorization - Model Context Protocol](SEPs/sep-1046-support-oauth-client-credentials-flow-in-authorization-model-context-pr.md) - Support OAuth client credentials flow in authorization
-- [SEP-1302: Formalize Working Groups and Interest Groups in MCP Governance - Model Context Protocol](SEPs/sep-1302-formalize-working-groups-and-interest-groups-in-mcp-governance-model-co.md) - Formalize Working Groups and Interest Groups in MCP Governance
-- [SEP-1303: Input Validation Errors as Tool Execution Errors - Model Context Protocol](SEPs/sep-1303-input-validation-errors-as-tool-execution-errors-model-context-protocol.md) - Input Validation Errors as Tool Execution Errors
-- [SEP-1319: Decouple Request Payload from RPC Methods Definition - Model Context Protocol](SEPs/sep-1319-decouple-request-payload-from-rpc-methods-definition-model-context-prot.md) - Decouple Request Payload from RPC Methods Definition
-- [SEP-1330: Elicitation Enum Schema Improvements and Standards Compliance - Model Context Protocol](SEPs/sep-1330-elicitation-enum-schema-improvements-and-standards-compliance-model-con.md) - Elicitation Enum Schema Improvements and Standards Compliance
-- [SEP-1577: Sampling With Tools - Model Context Protocol](SEPs/sep-1577-sampling-with-tools-model-context-protocol.md) - Sampling With Tools
-- [SEP-1613: Establish JSON Schema 2020-12 as Default Dialect for MCP - Model Context Protocol](SEPs/sep-1613-establish-json-schema-2020-12-as-default-dialect-for-mcp-model-context.md) - Establish JSON Schema 2020-12 as Default Dialect for MCP
-- [SEP-1686: Tasks - Model Context Protocol](SEPs/sep-1686-tasks-model-context-protocol.md) - Tasks
-- [SEP-1699: Support SSE polling via server-side disconnect - Model Context Protocol](SEPs/sep-1699-support-sse-polling-via-server-side-disconnect-model-context-protocol.md) - Support SSE polling via server-side disconnect
-- [SEP-1730: SDKs Tiering System - Model Context Protocol](SEPs/sep-1730-sdks-tiering-system-model-context-protocol.md) - SDKs Tiering System
-- [SEP-1850: PR-Based SEP Workflow - Model Context Protocol](SEPs/sep-1850-pr-based-sep-workflow-model-context-protocol.md) - PR-Based SEP Workflow
-- [SEP-1865: MCP Apps - Interactive User Interfaces for MCP - Model Context Protocol](SEPs/sep-1865-mcp-apps-interactive-user-interfaces-for-mcp-model-context-protocol.md) - MCP Apps - Interactive User Interfaces for MCP
-- [SEP-2085: Governance Succession and Amendment Procedures - Model Context Protocol](SEPs/sep-2085-governance-succession-and-amendment-procedures-model-context-protocol.md) - Governance Succession and Amendment Procedures
-- [SEP-2133: Extensions - Model Context Protocol](SEPs/sep-2133-extensions-model-context-protocol.md) - Extensions
-- [SEP-2148: MCP Contributor Ladder - Model Context Protocol](SEPs/sep-2148-mcp-contributor-ladder-model-context-protocol.md) - MCP Contributor Ladder
-- [SEP-2260: Require Server requests to be associated with a Client request. - Model Context Protocol](SEPs/sep-2260-require-server-requests-to-be-associated-with-a-client-request-model-co.md) - Require Server requests to be associated with a Client request.
-- [SEP-414: Document OpenTelemetry Trace Context Propagation Conventions - Model Context Protocol](SEPs/sep-414-document-opentelemetry-trace-context-propagation-conventions-model-conte.md) - Document OpenTelemetry Trace Context Propagation Conventions
-- [SEP-932: Model Context Protocol Governance - Model Context Protocol](SEPs/sep-932-model-context-protocol-governance-model-context-protocol.md) - Model Context Protocol Governance
-- [SEP-973: Expose additional metadata for Implementations, Resources, Tools and Prompts - Model Context Protocol](SEPs/sep-973-expose-additional-metadata-for-implementations-resources-tools-and-promp.md) - Expose additional metadata for Implementations, Resources, Tools and Prompts
-- [SEP-985: Align OAuth 2.0 Protected Resource Metadata with RFC 9728 - Model Context Protocol](SEPs/sep-985-align-oauth-2-0-protected-resource-metadata-with-rfc-9728-model-context.md) - Align OAuth 2.0 Protected Resource Metadata with RFC 9728
-- [SEP-986: Specify Format for Tool Names - Model Context Protocol](SEPs/sep-986-specify-format-for-tool-names-model-context-protocol.md) - Specify Format for Tool Names
-- [SEP-990: Enable enterprise IdP policy controls during MCP OAuth flows - Model Context Protocol](SEPs/sep-990-enable-enterprise-idp-policy-controls-during-mcp-oauth-flows-model-conte.md) - Enable enterprise IdP policy controls during MCP OAuth flows
-- [SEP-991: Enable URL-based Client Registration using OAuth Client ID Metadata Documents - Model Context Protocol](SEPs/sep-991-enable-url-based-client-registration-using-oauth-client-id-metadata-docu.md) - Enable URL-based Client Registration using OAuth Client ID Metadata Documents
-- [SEP-994: Shared Communication Practices/Guidelines - Model Context Protocol](SEPs/sep-994-shared-communication-practices-guidelines-model-context-protocol.md) - Shared Communication Practices/Guidelines
-- [Specification Enhancement Proposals (SEPs) - Model Context Protocol](SEPs/specification-enhancement-proposals-seps-model-context-protocol.md) - Index of all MCP Specification Enhancement Proposals
+## Spec
 
-## Spec (43)
+- [Architecture - Model Context Protocol](Spec/2026-07-28-architecture.md) — The Model Context Protocol (MCP) follows a client-host-server architecture where each host can run multiple client instances. MCP is a stateless protocol…
+- [Authorization - Model Context Protocol](Spec/2026-07-28-basic-authorization.md) — The Model Context Protocol provides authorization capabilities at the transport level, enabling MCP clients to make requests to restricted MCP servers on…
+- [Authorization Security Considerations - Model Context Protocol](Spec/draft-basic-authorization-security-considerations.md) — This document outlines security requirements that implementers MUST consider when building MCP clients and servers. Additionally, implementors MUST follow…
+- [Authorization Server Discovery - Model Context Protocol](Spec/draft-basic-authorization-authorization-server-discovery.md) — This document describes the mechanisms by which MCP servers advertise their associated authorization servers to MCP clients, as well as the discovery process…
+- [Caching - Model Context Protocol](Spec/2026-07-28-server-utilities-caching.md) — The Model Context Protocol (MCP) supports caching for some results. This allows clients to cache responses and reduce unnecessary re-fetching. Caching is…
+- [Cancellation - Model Context Protocol](Spec/draft-basic-patterns-cancellation.md) — The Model Context Protocol (MCP) supports optional cancellation of in-progress requests through notification messages. A client SHOULD send a cancellation…
+- [Cancellation - Model Context Protocol](Spec/draft-basic-utilities-cancellation.md) — The Model Context Protocol (MCP) supports optional cancellation of in-progress requests through notification messages. Either side can send a cancellation…
+- [Changelog - Model Context Protocol](Spec/draft-changelog.md) — Changes since the most recent release will accumulate here.
+- [Client Registration - Model Context Protocol](Spec/2026-07-28-basic-authorization-client-registration.md) — MCP supports three client registration mechanisms. Choose based on your scenario:
+- [Client Registration - Model Context Protocol](Spec/draft-basic-authorization-client-registration.md) — MCP supports three client registration mechanisms. Choose based on your scenario:
+- [Completion - Model Context Protocol](Spec/draft-server-utilities-completion.md) — The Model Context Protocol (MCP) provides a standardized way for servers to offer autocompletion suggestions for the arguments of prompts and resource…
+- [Deprecated Features - Model Context Protocol](Spec/2026-07-28-deprecated.md) — This page is the registry of specification features that are currently in the Deprecated state under the feature lifecycle and deprecation policy (SEP-2596). A…
+- [Deprecated Features - Model Context Protocol](Spec/draft-deprecated.md) — This page is the registry of specification features that are currently in the Deprecated state under the feature lifecycle and deprecation policy (SEP-2596). A…
+- [Discovery - Model Context Protocol](Spec/2026-07-28-server-discover.md) — server/discover lets a client query a server’s supported protocol versions, capabilities, and identity before sending any other requests. Servers MUST…
+- [Elicitation - Model Context Protocol](Spec/2026-07-28-client-elicitation.md) — The Model Context Protocol (MCP) provides a standardized way for servers to request additional information from users through the client during interactions…
+- [Key Changes - Model Context Protocol](Spec/2026-07-28-changelog.md) — This document lists changes made to the Model Context Protocol (MCP) specification since the previous revision, 2025-11-25.
+- [Lifecycle - Model Context Protocol](Spec/draft-basic-lifecycle.md) — The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server connections that ensures proper capability negotiation and state management.
+- [Logging - Model Context Protocol](Spec/2026-07-28-server-utilities-logging.md) — Deprecated: The Logging feature is deprecated as of protocol version 2026-07-28 (SEP-2577). Under the feature lifecycle policy, it remains in the specification…
+- [Multi Round-Trip Requests - Model Context Protocol](Spec/2026-07-28-basic-patterns-mrtr.md) — Multi Round-Trip Requests (MRTR) was introduced in this version of the MCP specification. This replaces the previous approach of sending server-initiated…
+- [Multi Round-Trip Requests - Model Context Protocol](Spec/draft-basic-patterns-mrtr.md) — Multi Round-Trip Requests (MRTR) was introduced in this version of the MCP specification. This replaces the previous approach of sending server-initiated…
+- [Overview - Model Context Protocol](Spec/2026-07-28-basic-patterns.md) — This page defines the message patterns of the core protocol: the ways a client and server compose JSON-RPC requests, responses, and notifications into…
+- [Overview - Model Context Protocol](Spec/2026-07-28-basic.md) — The Model Context Protocol consists of several key components that work together:
+- [Overview - Model Context Protocol](Spec/draft-basic-transports.md) — This page defines what a transport must provide to carry MCP messages, the standard transport bindings, and the requirements for defining new ones. Protocol…
+- [Overview - Model Context Protocol](Spec/draft-basic.md) — The Model Context Protocol consists of several key components that work together:
+- [Overview - Model Context Protocol](Spec/draft-server.md) — Servers provide the fundamental building blocks for adding context to language models via MCP. These primitives enable rich interactions between clients…
+- [Pagination - Model Context Protocol](Spec/draft-server-utilities-pagination.md) — The Model Context Protocol (MCP) supports paginating list operations that may return large result sets. Pagination allows servers to yield results in smaller…
+- [Ping - Model Context Protocol](Spec/draft-basic-utilities-ping.md) — The Model Context Protocol includes an optional ping mechanism that allows either party to verify that their counterpart is still responsive and the connection…
+- [Progress - Model Context Protocol](Spec/draft-basic-patterns-progress.md) — The Model Context Protocol (MCP) supports optional progress tracking for long-running operations through notification messages. The server MAY send progress…
+- [Progress - Model Context Protocol](Spec/draft-basic-utilities-progress.md) — The Model Context Protocol (MCP) supports optional progress tracking for long-running operations through notification messages. Either side can send progress…
+- [Prompts - Model Context Protocol](Spec/draft-server-prompts.md) — The Model Context Protocol (MCP) provides a standardized way for servers to expose prompt templates to clients. Prompts allow servers to provide structured…
+- [Resources - Model Context Protocol](Spec/2026-07-28-server-resources.md) — The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that provides…
+- [Roots - Model Context Protocol](Spec/draft-client-roots.md) — Deprecated: The Roots feature is deprecated as of protocol version 2026-07-28 (SEP-2577). Under the feature lifecycle policy, it remains in the specification…
+- [Sampling - Model Context Protocol](Spec/2026-07-28-client-sampling.md) — Deprecated: The Sampling feature is deprecated as of protocol version 2026-07-28 (SEP-2577). Under the feature lifecycle policy, it remains in the…
+- [Schema Reference - Model Context Protocol](Spec/2026-07-28-schema.md) — interface JSONRPCErrorResponse {
+- [Specification - Model Context Protocol](Spec/draft.md) — MCP provides a standardized way for applications to:
+- [stdio - Model Context Protocol](Spec/2026-07-28-basic-transports-stdio.md) — In the stdio transport, the client launches the MCP server as a subprocess. The two ends communicate over the subprocess’s standard streams:
+- [Streamable HTTP - Model Context Protocol](Spec/2026-07-28-basic-transports-streamable-http.md) — Streamable HTTP was introduced in protocol version 2025-03-26 as a replacement for the HTTP+SSE transport from protocol version 2024-11-05.
+- [Streamable HTTP - Model Context Protocol](Spec/draft-basic-transports-streamable-http.md) — Streamable HTTP was introduced in protocol version 2025-03-26 as a replacement for the HTTP+SSE transport from protocol version 2024-11-05.
+- [Subscriptions - Model Context Protocol](Spec/2026-07-28-basic-patterns-subscriptions.md) — subscriptions/listen opens a long-lived notification stream from the server to the client. Unlike one-off requests, the stream stays open and delivers…
+- [Tasks - Model Context Protocol](Spec/draft-basic-utilities-tasks.md) — Tasks were introduced in version 2025-11-25 of the MCP specification and are currently considered experimental. The design and behavior of tasks may evolve in…
+- [Tools - Model Context Protocol](Spec/draft-server-tools.md) — The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external systems…
+- [Versioning](Spec/versioning.md) — The Model Context Protocol uses string-based version identifiers following the format
+- [Versioning and Compatibility - Model Context Protocol](Spec/2026-07-28-basic-versioning.md) — This page defines how a client and server agree on what they are speaking: the protocol version, declared on every request; optional extensions, negotiated…
+- [Versioning and Compatibility - Model Context Protocol](Spec/draft-basic-versioning.md) — This page defines how a client and server agree on what they are speaking: the protocol version, declared on every request; optional extensions, negotiated…
 
-- [Architecture - Model Context Protocol](Spec/spec-2025-11-25-architecture-model-context-protocol.md) - The Model Context Protocol (MCP) follows a client-host-server architecture where each host can run multiple client instances. This architecture enable
-- [Authorization - Model Context Protocol](Spec/spec-2025-11-25-authorization-model-context-protocol.md) - Introduction
-- [Cancellation - Model Context Protocol](Spec/spec-2025-11-25-cancellation-model-context-protocol.md) - The Model Context Protocol (MCP) supports optional cancellation of in-progress requests through notification messages. Either side can send a cancella
-- [Completion - Model Context Protocol](Spec/spec-2025-11-25-completion-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to offer autocompletion suggestions for the arguments of prompts and resource
-- [Elicitation - Model Context Protocol](Spec/spec-2025-11-25-elicitation-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to request additional information from users through the client during intera
-- [Key Changes - Model Context Protocol](Spec/spec-2025-11-25-key-changes-model-context-protocol.md) - This document lists changes made to the Model Context Protocol (MCP) specification since the previous revision, [2025-06-18](/specification/2025-06-18
-- [Lifecycle - Model Context Protocol](Spec/spec-2025-11-25-lifecycle-model-context-protocol.md) - The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server connections that ensures proper capability negotiation and state manag
-- [Logging - Model Context Protocol](Spec/spec-2025-11-25-logging-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to send structured log messages to clients. Clients can control logging verbo
-- [Overview - Model Context Protocol](Spec/spec-2025-11-25-overview-model-context-protocol.md) - The Model Context Protocol consists of several key components that work together:
-- [Pagination - Model Context Protocol](Spec/spec-2025-11-25-pagination-model-context-protocol.md) - The Model Context Protocol (MCP) supports paginating list operations that may return large result sets. Pagination allows servers to yield results in 
-- [Ping - Model Context Protocol](Spec/spec-2025-11-25-ping-model-context-protocol.md) - The Model Context Protocol includes an optional ping mechanism that allows either party to verify that their counterpart is still responsive and the c
-- [Progress - Model Context Protocol](Spec/spec-2025-11-25-progress-model-context-protocol.md) - The Model Context Protocol (MCP) supports optional progress tracking for long-running operations through notification messages. Either side can send p
-- [Prompts - Model Context Protocol](Spec/spec-2025-11-25-prompts-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to expose prompt templates to clients. Prompts allow servers to provide struc
-- [Resources - Model Context Protocol](Spec/spec-2025-11-25-resources-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that pr
-- [Roots - Model Context Protocol](Spec/spec-2025-11-25-roots-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for clients to expose filesystem “roots” to servers. Roots define the boundaries of where
-- [Sampling - Model Context Protocol](Spec/spec-2025-11-25-sampling-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to request LLM sampling (“completions” or “generations”) from language models
-- [Schema Reference - Model Context Protocol](Spec/spec-2025-11-25-schema-reference-model-context-protocol.md) - JSON-RPC
-- [Specification - Model Context Protocol](Spec/spec-2025-11-25-specification-model-context-protocol.md) - [Model Context Protocol](https://modelcontextprotocol.io) (MCP) is an open protocol that enables seamless integration between LLM applications and ext
-- [Tasks - Model Context Protocol](Spec/spec-2025-11-25-tasks-model-context-protocol.md) - Tasks were introduced in version 2025-11-25 of the MCP specification and are currently considered **experimental**. The design and behavior of tasks m
-- [Tools - Model Context Protocol](Spec/spec-2025-11-25-tools-model-context-protocol.md) - The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external 
-- [Transports - Model Context Protocol](Spec/spec-2025-11-25-transports-model-context-protocol.md) - MCP uses JSON-RPC to encode messages. JSON-RPC messages **MUST** be UTF-8 encoded. The protocol currently defines two standard transport mechanisms fo
-- [Architecture - Model Context Protocol](Spec/spec-draft-architecture-model-context-protocol.md) - The Model Context Protocol (MCP) follows a client-host-server architecture where each host can run multiple client instances. This architecture enable
-- [Authorization - Model Context Protocol](Spec/spec-draft-authorization-model-context-protocol.md) - Introduction
-- [Cancellation - Model Context Protocol](Spec/spec-draft-cancellation-model-context-protocol.md) - The Model Context Protocol (MCP) supports optional cancellation of in-progress requests through notification messages. Either side can send a cancella
-- [Completion - Model Context Protocol](Spec/spec-draft-completion-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to offer autocompletion suggestions for the arguments of prompts and resource
-- [Elicitation - Model Context Protocol](Spec/spec-draft-elicitation-model-context-protocol.md) - Elicitation is newly introduced in this version of the MCP specification and its design may evolve in future protocol versions.
-- [Key Changes - Model Context Protocol](Spec/spec-draft-key-changes-model-context-protocol.md) - This document lists changes made to the Model Context Protocol (MCP) specification since the previous revision, [2025-11-25](/specification/2025-11-25
-- [Lifecycle - Model Context Protocol](Spec/spec-draft-lifecycle-model-context-protocol.md) - The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server connections that ensures proper capability negotiation and state manag
-- [Logging - Model Context Protocol](Spec/spec-draft-logging-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to send structured log messages to clients. Clients can control logging verbo
-- [Overview - Model Context Protocol](Spec/spec-draft-overview-model-context-protocol.md) - The Model Context Protocol consists of several key components that work together:
-- [Pagination - Model Context Protocol](Spec/spec-draft-pagination-model-context-protocol.md) - The Model Context Protocol (MCP) supports paginating list operations that may return large result sets. Pagination allows servers to yield results in 
-- [Ping - Model Context Protocol](Spec/spec-draft-ping-model-context-protocol.md) - The Model Context Protocol includes an optional ping mechanism that allows either party to verify that their counterpart is still responsive and the c
-- [Progress - Model Context Protocol](Spec/spec-draft-progress-model-context-protocol.md) - The Model Context Protocol (MCP) supports optional progress tracking for long-running operations through notification messages. Either side can send p
-- [Prompts - Model Context Protocol](Spec/spec-draft-prompts-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to expose prompt templates to clients. Prompts allow servers to provide struc
-- [Resources - Model Context Protocol](Spec/spec-draft-resources-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that pr
-- [Roots - Model Context Protocol](Spec/spec-draft-roots-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for clients to expose filesystem “roots” to servers. Roots define the boundaries of where
-- [Sampling - Model Context Protocol](Spec/spec-draft-sampling-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to request LLM sampling (“completions” or “generations”) from language models
-- [Schema Reference - Model Context Protocol](Spec/spec-draft-schema-reference-model-context-protocol.md) - JSON-RPC
-- [Specification - Model Context Protocol](Spec/spec-draft-specification-model-context-protocol.md) - [Model Context Protocol](https://modelcontextprotocol.io) (MCP) is an open protocol that enables seamless integration between LLM applications and ext
-- [Tasks - Model Context Protocol](Spec/spec-draft-tasks-model-context-protocol.md) - Tasks were introduced in version 2025-11-25 of the MCP specification and are currently considered **experimental**. The design and behavior of tasks m
-- [Tools - Model Context Protocol](Spec/spec-draft-tools-model-context-protocol.md) - The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external 
-- [Transports - Model Context Protocol](Spec/spec-draft-transports-model-context-protocol.md) - MCP uses JSON-RPC to encode messages. JSON-RPC messages **MUST** be UTF-8 encoded. The protocol currently defines two standard transport mechanisms fo
-- [Versioning - Model Context Protocol](Spec/spec-versioning-versioning-model-context-protocol.md) - The Model Context Protocol uses string-based version identifiers following the format `YYYY-MM-DD`, to indicate the last date backwards incompatible c
+## Spec Archive
 
-## Spec-Archive (55)
+- [Architecture](Spec-Archive/2025-11-25-architecture-index.md) — The Model Context Protocol (MCP) follows a client-host-server architecture where each
+- [Architecture - Model Context Protocol](Spec-Archive/2024-11-05-architecture.md) — The Model Context Protocol (MCP) follows a client-host-server architecture where each host can run multiple client instances. This architecture enables users…
+- [Architecture - Model Context Protocol](Spec-Archive/2025-11-25-architecture.md) — The Model Context Protocol (MCP) follows a client-host-server architecture where each host can run multiple client instances. This architecture enables users…
+- [Authorization - Model Context Protocol](Spec-Archive/2025-03-26-basic-authorization.md) — The Model Context Protocol provides authorization capabilities at the transport level, enabling MCP clients to make requests to restricted MCP servers on…
+- [Authorization - Model Context Protocol](Spec-Archive/2025-06-18-basic-authorization.md) — The Model Context Protocol provides authorization capabilities at the transport level, enabling MCP clients to make requests to restricted MCP servers on…
+- [Authorization - Model Context Protocol](Spec-Archive/2025-11-25-basic-authorization.md) — The Model Context Protocol provides authorization capabilities at the transport level, enabling MCP clients to make requests to restricted MCP servers on…
+- [Cancellation - Model Context Protocol](Spec-Archive/2025-06-18-basic-utilities-cancellation.md) — The Model Context Protocol (MCP) supports optional cancellation of in-progress requests through notification messages. Either side can send a cancellation…
+- [Cancellation - Model Context Protocol](Spec-Archive/2025-11-25-basic-utilities-cancellation.md) — The Model Context Protocol (MCP) supports optional cancellation of in-progress requests through notification messages. Either side can send a cancellation…
+- [Completion - Model Context Protocol](Spec-Archive/2024-11-05-server-utilities-completion.md) — The Model Context Protocol (MCP) provides a standardized way for servers to offer argument autocompletion suggestions for prompts and resource URIs. This…
+- [Completion - Model Context Protocol](Spec-Archive/2025-03-26-server-utilities-completion.md) — The Model Context Protocol (MCP) provides a standardized way for servers to offer argument autocompletion suggestions for prompts and resource URIs. This…
+- [Completion - Model Context Protocol](Spec-Archive/2025-06-18-server-utilities-completion.md) — The Model Context Protocol (MCP) provides a standardized way for servers to offer argument autocompletion suggestions for prompts and resource URIs. This…
+- [Completion - Model Context Protocol](Spec-Archive/2025-11-25-server-utilities-completion.md) — The Model Context Protocol (MCP) provides a standardized way for servers to offer autocompletion suggestions for the arguments of prompts and resource…
+- [Elicitation - Model Context Protocol](Spec-Archive/2025-06-18-client-elicitation.md) — Elicitation is newly introduced in this version of the MCP specification and its design may evolve in future protocol versions.
+- [Elicitation - Model Context Protocol](Spec-Archive/2025-11-25-client-elicitation.md) — The Model Context Protocol (MCP) provides a standardized way for servers to request additional information from users through the client during interactions…
+- [Key Changes - Model Context Protocol](Spec-Archive/2025-03-26-changelog.md) — This document lists changes made to the Model Context Protocol (MCP) specification since the previous revision, 2024-11-05.
+- [Key Changes - Model Context Protocol](Spec-Archive/2025-06-18-changelog.md) — This document lists changes made to the Model Context Protocol (MCP) specification since the previous revision, 2025-03-26.
+- [Key Changes - Model Context Protocol](Spec-Archive/2025-11-25-changelog.md) — This document lists changes made to the Model Context Protocol (MCP) specification since the previous revision, 2025-06-18.
+- [Lifecycle - Model Context Protocol](Spec-Archive/2024-11-05-basic-lifecycle.md) — The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server connections that ensures proper capability negotiation and state management.
+- [Lifecycle - Model Context Protocol](Spec-Archive/2025-03-26-basic-lifecycle.md) — The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server connections that ensures proper capability negotiation and state management.
+- [Lifecycle - Model Context Protocol](Spec-Archive/2025-06-18-basic-lifecycle.md) — The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server connections that ensures proper capability negotiation and state management.
+- [Lifecycle - Model Context Protocol](Spec-Archive/2025-11-25-basic-lifecycle.md) — The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server connections that ensures proper capability negotiation and state management.
+- [Logging - Model Context Protocol](Spec-Archive/2025-03-26-server-utilities-logging.md) — The Model Context Protocol (MCP) provides a standardized way for servers to send structured log messages to clients. Clients can control logging verbosity by…
+- [Messages - Model Context Protocol](Spec-Archive/2024-11-05-basic-messages.md) — All messages in MCP MUST follow the JSON-RPC 2.0 specification. The protocol defines three types of messages:
+- [Overview](Spec-Archive/2025-11-25-basic-index.md) — The Model Context Protocol consists of several key components that work together:
+- [Overview](Spec-Archive/2025-11-25-server-index.md) — Servers provide the fundamental building blocks for adding context to language models via
+- [Overview - Model Context Protocol](Spec-Archive/2024-11-05-basic.md) — All messages between MCP clients and servers MUST follow the JSON-RPC 2.0 specification. The protocol defines three fundamental types of messages:
+- [Overview - Model Context Protocol](Spec-Archive/2025-03-26-basic.md) — The Model Context Protocol consists of several key components that work together:
+- [Overview - Model Context Protocol](Spec-Archive/2025-06-18-basic.md) — The Model Context Protocol consists of several key components that work together:
+- [Overview - Model Context Protocol](Spec-Archive/2025-11-25-basic.md) — The Model Context Protocol consists of several key components that work together:
+- [Pagination - Model Context Protocol](Spec-Archive/2024-11-05-server-utilities-pagination.md) — The Model Context Protocol (MCP) supports paginating list operations that may return large result sets. Pagination allows servers to yield results in smaller…
+- [Pagination - Model Context Protocol](Spec-Archive/2025-06-18-server-utilities-pagination.md) — The Model Context Protocol (MCP) supports paginating list operations that may return large result sets. Pagination allows servers to yield results in smaller…
+- [Ping - Model Context Protocol](Spec-Archive/2025-11-25-basic-utilities-ping.md) — The Model Context Protocol includes an optional ping mechanism that allows either party to verify that their counterpart is still responsive and the connection…
+- [Progress - Model Context Protocol](Spec-Archive/2024-11-05-basic-utilities-progress.md) — The Model Context Protocol (MCP) supports optional progress tracking for long-running operations through notification messages. Either side can send progress…
+- [Progress - Model Context Protocol](Spec-Archive/2025-06-18-basic-utilities-progress.md) — The Model Context Protocol (MCP) supports optional progress tracking for long-running operations through notification messages. Either side can send progress…
+- [Progress - Model Context Protocol](Spec-Archive/2025-11-25-basic-utilities-progress.md) — The Model Context Protocol (MCP) supports optional progress tracking for long-running operations through notification messages. Either side can send progress…
+- [Prompts - Model Context Protocol](Spec-Archive/2024-11-05-server-prompts.md) — The Model Context Protocol (MCP) provides a standardized way for servers to expose prompt templates to clients. Prompts allow servers to provide structured…
+- [Prompts - Model Context Protocol](Spec-Archive/2025-03-26-server-prompts.md) — The Model Context Protocol (MCP) provides a standardized way for servers to expose prompt templates to clients. Prompts allow servers to provide structured…
+- [Prompts - Model Context Protocol](Spec-Archive/2025-06-18-server-prompts.md) — The Model Context Protocol (MCP) provides a standardized way for servers to expose prompt templates to clients. Prompts allow servers to provide structured…
+- [Prompts - Model Context Protocol](Spec-Archive/2025-11-25-server-prompts.md) — The Model Context Protocol (MCP) provides a standardized way for servers to expose prompt templates to clients. Prompts allow servers to provide structured…
+- [Resources - Model Context Protocol](Spec-Archive/2024-11-05-server-resources.md) — The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that provides…
+- [Resources - Model Context Protocol](Spec-Archive/2025-03-26-server-resources.md) — The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that provides…
+- [Resources - Model Context Protocol](Spec-Archive/2025-06-18-server-resources.md) — The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that provides…
+- [Resources - Model Context Protocol](Spec-Archive/2025-11-25-server-resources.md) — The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that provides…
+- [Roots - Model Context Protocol](Spec-Archive/2024-11-05-client-roots.md) — The Model Context Protocol (MCP) provides a standardized way for clients to expose filesystem “roots” to servers. Roots define the boundaries of where servers…
+- [Sampling - Model Context Protocol](Spec-Archive/2024-11-05-client-sampling.md) — The Model Context Protocol (MCP) provides a standardized way for servers to request LLM sampling (“completions” or “generations”) from language models via…
+- [Sampling - Model Context Protocol](Spec-Archive/2025-06-18-client-sampling.md) — The Model Context Protocol (MCP) provides a standardized way for servers to request LLM sampling (“completions” or “generations”) from language models via…
+- [Sampling - Model Context Protocol](Spec-Archive/2025-11-25-client-sampling.md) — The Model Context Protocol (MCP) provides a standardized way for servers to request LLM sampling (“completions” or “generations”) from language models via…
+- [Schema Reference - Model Context Protocol](Spec-Archive/2025-06-18-schema.md) — A response to a request that indicates an error occurred.
+- [Schema Reference - Model Context Protocol](Spec-Archive/2025-11-25-schema.md) — interface JSONRPCErrorResponse {
+- [Security Best Practices](Spec-Archive/2025-11-25-basic-security-best-practices.md) — This document provides security considerations for the Model Context Protocol (MCP), complementing the MCP Authorization specification. This document…
+- [Specification](Spec-Archive/2025-11-25-index.md) — enables seamless integration between LLM applications and external data sources and
+- [Specification - Model Context Protocol](Spec-Archive/2024-11-05.md) — MCP provides a standardized way for applications to:
+- [Specification - Model Context Protocol](Spec-Archive/2025-03-26.md) — MCP provides a standardized way for applications to:
+- [Specification - Model Context Protocol](Spec-Archive/2025-06-18.md) — MCP provides a standardized way for applications to:
+- [Specification - Model Context Protocol](Spec-Archive/2025-11-25.md) — MCP provides a standardized way for applications to:
+- [Tasks - Model Context Protocol](Spec-Archive/2025-11-25-basic-utilities-tasks.md) — Tasks were introduced in version 2025-11-25 of the MCP specification and are currently considered experimental. The design and behavior of tasks may evolve in…
+- [Tools - Model Context Protocol](Spec-Archive/2024-11-05-server-tools.md) — The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external systems…
+- [Tools - Model Context Protocol](Spec-Archive/2025-03-26-server-tools.md) — The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external systems…
+- [Tools - Model Context Protocol](Spec-Archive/2025-06-18-server-tools.md) — The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external systems…
+- [Tools - Model Context Protocol](Spec-Archive/2025-11-25-server-tools.md) — The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external systems…
+- [Transports - Model Context Protocol](Spec-Archive/2024-11-05-basic-transports.md) — MCP currently defines two standard transport mechanisms for client-server communication:
+- [Transports - Model Context Protocol](Spec-Archive/2025-03-26-basic-transports.md) — MCP uses JSON-RPC to encode messages. JSON-RPC messages MUST be UTF-8 encoded. The protocol currently defines two standard transport mechanisms for…
+- [Transports - Model Context Protocol](Spec-Archive/2025-06-18-basic-transports.md) — MCP uses JSON-RPC to encode messages. JSON-RPC messages MUST be UTF-8 encoded. The protocol currently defines two standard transport mechanisms for…
+- [Transports - Model Context Protocol](Spec-Archive/2025-11-25-basic-transports.md) — MCP uses JSON-RPC to encode messages. JSON-RPC messages MUST be UTF-8 encoded. The protocol currently defines two standard transport mechanisms for…
 
-- [Architecture - Model Context Protocol](Spec-Archive/spec-2024-11-05-architecture-model-context-protocol.md) - The Model Context Protocol (MCP) follows a client-host-server architecture where each host can run multiple client instances. This architecture enable
-- [Cancellation - Model Context Protocol](Spec-Archive/spec-2024-11-05-cancellation-model-context-protocol.md) - The Model Context Protocol (MCP) supports optional cancellation of in-progress requests through notification messages. Either side can send a cancella
-- [Completion - Model Context Protocol](Spec-Archive/spec-2024-11-05-completion-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to offer argument autocompletion suggestions for prompts and resource URIs. T
-- [Lifecycle - Model Context Protocol](Spec-Archive/spec-2024-11-05-lifecycle-model-context-protocol.md) - The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server connections that ensures proper capability negotiation and state manag
-- [Logging - Model Context Protocol](Spec-Archive/spec-2024-11-05-logging-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to send structured log messages to clients. Clients can control logging verbo
-- [Messages - Model Context Protocol](Spec-Archive/spec-2024-11-05-messages-model-context-protocol.md) - All messages in MCP **MUST** follow the [JSON-RPC 2.0](https://www.jsonrpc.org/specification) specification. The protocol defines three types of messa
-- [Overview - Model Context Protocol](Spec-Archive/spec-2024-11-05-overview-model-context-protocol.md) - All messages between MCP clients and servers **MUST** follow the [JSON-RPC 2.0](https://www.jsonrpc.org/specification) specification. The protocol def
-- [Pagination - Model Context Protocol](Spec-Archive/spec-2024-11-05-pagination-model-context-protocol.md) - The Model Context Protocol (MCP) supports paginating list operations that may return large result sets. Pagination allows servers to yield results in 
-- [Ping - Model Context Protocol](Spec-Archive/spec-2024-11-05-ping-model-context-protocol.md) - The Model Context Protocol includes an optional ping mechanism that allows either party to verify that their counterpart is still responsive and the c
-- [Progress - Model Context Protocol](Spec-Archive/spec-2024-11-05-progress-model-context-protocol.md) - The Model Context Protocol (MCP) supports optional progress tracking for long-running operations through notification messages. Either side can send p
-- [Prompts - Model Context Protocol](Spec-Archive/spec-2024-11-05-prompts-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to expose prompt templates to clients. Prompts allow servers to provide struc
-- [Resources - Model Context Protocol](Spec-Archive/spec-2024-11-05-resources-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that pr
-- [Roots - Model Context Protocol](Spec-Archive/spec-2024-11-05-roots-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for clients to expose filesystem “roots” to servers. Roots define the boundaries of where
-- [Sampling - Model Context Protocol](Spec-Archive/spec-2024-11-05-sampling-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to request LLM sampling (“completions” or “generations”) from language models
-- [Specification - Model Context Protocol](Spec-Archive/spec-2024-11-05-specification-model-context-protocol.md) - [Model Context Protocol](https://modelcontextprotocol.io) (MCP) is an open protocol that enables seamless integration between LLM applications and ext
-- [Tools - Model Context Protocol](Spec-Archive/spec-2024-11-05-tools-model-context-protocol.md) - The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external 
-- [Transports - Model Context Protocol](Spec-Archive/spec-2024-11-05-transports-model-context-protocol.md) - MCP currently defines two standard transport mechanisms for client-server communication:
-- [Architecture - Model Context Protocol](Spec-Archive/spec-2025-03-26-architecture-model-context-protocol.md) - The Model Context Protocol (MCP) follows a client-host-server architecture where each host can run multiple client instances. This architecture enable
-- [Authorization - Model Context Protocol](Spec-Archive/spec-2025-03-26-authorization-model-context-protocol.md) - Introduction
-- [Cancellation - Model Context Protocol](Spec-Archive/spec-2025-03-26-cancellation-model-context-protocol.md) - The Model Context Protocol (MCP) supports optional cancellation of in-progress requests through notification messages. Either side can send a cancella
-- [Completion - Model Context Protocol](Spec-Archive/spec-2025-03-26-completion-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to offer argument autocompletion suggestions for prompts and resource URIs. T
-- [Key Changes - Model Context Protocol](Spec-Archive/spec-2025-03-26-key-changes-model-context-protocol.md) - This document lists changes made to the Model Context Protocol (MCP) specification since the previous revision, [2024-11-05](/specification/2024-11-05
-- [Lifecycle - Model Context Protocol](Spec-Archive/spec-2025-03-26-lifecycle-model-context-protocol.md) - The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server connections that ensures proper capability negotiation and state manag
-- [Logging - Model Context Protocol](Spec-Archive/spec-2025-03-26-logging-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to send structured log messages to clients. Clients can control logging verbo
-- [Overview - Model Context Protocol](Spec-Archive/spec-2025-03-26-overview-model-context-protocol.md) - The Model Context Protocol consists of several key components that work together:
-- [Pagination - Model Context Protocol](Spec-Archive/spec-2025-03-26-pagination-model-context-protocol.md) - The Model Context Protocol (MCP) supports paginating list operations that may return large result sets. Pagination allows servers to yield results in 
-- [Ping - Model Context Protocol](Spec-Archive/spec-2025-03-26-ping-model-context-protocol.md) - The Model Context Protocol includes an optional ping mechanism that allows either party to verify that their counterpart is still responsive and the c
-- [Progress - Model Context Protocol](Spec-Archive/spec-2025-03-26-progress-model-context-protocol.md) - The Model Context Protocol (MCP) supports optional progress tracking for long-running operations through notification messages. Either side can send p
-- [Prompts - Model Context Protocol](Spec-Archive/spec-2025-03-26-prompts-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to expose prompt templates to clients. Prompts allow servers to provide struc
-- [Resources - Model Context Protocol](Spec-Archive/spec-2025-03-26-resources-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that pr
-- [Roots - Model Context Protocol](Spec-Archive/spec-2025-03-26-roots-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for clients to expose filesystem “roots” to servers. Roots define the boundaries of where
-- [Sampling - Model Context Protocol](Spec-Archive/spec-2025-03-26-sampling-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to request LLM sampling (“completions” or “generations”) from language models
-- [Specification - Model Context Protocol](Spec-Archive/spec-2025-03-26-specification-model-context-protocol.md) - [Model Context Protocol](https://modelcontextprotocol.io) (MCP) is an open protocol that enables seamless integration between LLM applications and ext
-- [Tools - Model Context Protocol](Spec-Archive/spec-2025-03-26-tools-model-context-protocol.md) - The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external 
-- [Transports - Model Context Protocol](Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md) - MCP uses JSON-RPC to encode messages. JSON-RPC messages **MUST** be UTF-8 encoded. The protocol currently defines two standard transport mechanisms fo
-- [Architecture - Model Context Protocol](Spec-Archive/spec-2025-06-18-architecture-model-context-protocol.md) - The Model Context Protocol (MCP) follows a client-host-server architecture where each host can run multiple client instances. This architecture enable
-- [Authorization - Model Context Protocol](Spec-Archive/spec-2025-06-18-authorization-model-context-protocol.md) - Introduction
-- [Cancellation - Model Context Protocol](Spec-Archive/spec-2025-06-18-cancellation-model-context-protocol.md) - The Model Context Protocol (MCP) supports optional cancellation of in-progress requests through notification messages. Either side can send a cancella
-- [Completion - Model Context Protocol](Spec-Archive/spec-2025-06-18-completion-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to offer argument autocompletion suggestions for prompts and resource URIs. T
-- [Elicitation - Model Context Protocol](Spec-Archive/spec-2025-06-18-elicitation-model-context-protocol.md) - Elicitation is newly introduced in this version of the MCP specification and its design may evolve in future protocol versions.
-- [Key Changes - Model Context Protocol](Spec-Archive/spec-2025-06-18-key-changes-model-context-protocol.md) - This document lists changes made to the Model Context Protocol (MCP) specification since the previous revision, [2025-03-26](/specification/2025-03-26
-- [Lifecycle - Model Context Protocol](Spec-Archive/spec-2025-06-18-lifecycle-model-context-protocol.md) - The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server connections that ensures proper capability negotiation and state manag
-- [Logging - Model Context Protocol](Spec-Archive/spec-2025-06-18-logging-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to send structured log messages to clients. Clients can control logging verbo
-- [Overview - Model Context Protocol](Spec-Archive/spec-2025-06-18-overview-model-context-protocol.md) - The Model Context Protocol consists of several key components that work together:
-- [Pagination - Model Context Protocol](Spec-Archive/spec-2025-06-18-pagination-model-context-protocol.md) - The Model Context Protocol (MCP) supports paginating list operations that may return large result sets. Pagination allows servers to yield results in 
-- [Ping - Model Context Protocol](Spec-Archive/spec-2025-06-18-ping-model-context-protocol.md) - The Model Context Protocol includes an optional ping mechanism that allows either party to verify that their counterpart is still responsive and the c
-- [Progress - Model Context Protocol](Spec-Archive/spec-2025-06-18-progress-model-context-protocol.md) - The Model Context Protocol (MCP) supports optional progress tracking for long-running operations through notification messages. Either side can send p
-- [Prompts - Model Context Protocol](Spec-Archive/spec-2025-06-18-prompts-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to expose prompt templates to clients. Prompts allow servers to provide struc
-- [Resources - Model Context Protocol](Spec-Archive/spec-2025-06-18-resources-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that pr
-- [Roots - Model Context Protocol](Spec-Archive/spec-2025-06-18-roots-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for clients to expose filesystem “roots” to servers. Roots define the boundaries of where
-- [Sampling - Model Context Protocol](Spec-Archive/spec-2025-06-18-sampling-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to request LLM sampling (“completions” or “generations”) from language models
-- [Schema Reference - Model Context Protocol](Spec-Archive/spec-2025-06-18-schema-reference-model-context-protocol.md) - JSON-RPC
-- [Specification - Model Context Protocol](Spec-Archive/spec-2025-06-18-specification-model-context-protocol.md) - [Model Context Protocol](https://modelcontextprotocol.io) (MCP) is an open protocol that enables seamless integration between LLM applications and ext
-- [Tools - Model Context Protocol](Spec-Archive/spec-2025-06-18-tools-model-context-protocol.md) - The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external 
-- [Transports - Model Context Protocol](Spec-Archive/spec-2025-06-18-transports-model-context-protocol.md) - MCP uses JSON-RPC to encode messages. JSON-RPC messages **MUST** be UTF-8 encoded. The protocol currently defines two standard transport mechanisms fo
+## Tutorials
 
-## Tutorials (19)
-
-- [Architecture overview - Model Context Protocol](Tutorials/architecture-overview-model-context-protocol.md) - This overview of the Model Context Protocol (MCP) discusses its [scope](#scope) and [core concepts](#concepts-of-mcp), and provides an [example](#exam
-- [Build an MCP client - Model Context Protocol](Tutorials/build-an-mcp-client-model-context-protocol.md) - Get started building your own client that can integrate with all MCP servers.
-- [Build an MCP server - Model Context Protocol](Tutorials/build-an-mcp-server-model-context-protocol.md) - Get started building your own server to use in Claude for Desktop and other clients.
-- [Connect to local MCP servers - Model Context Protocol](Tutorials/connect-to-local-mcp-servers-model-context-protocol.md) - Learn how to extend Claude Desktop with local MCP servers to enable file system access and other powerful integrations
-- [Connect to remote MCP Servers - Model Context Protocol](Tutorials/connect-to-remote-mcp-servers-model-context-protocol.md) - Learn how to connect Claude to remote MCP servers and extend its capabilities with internet-hosted tools and data sources
-- [Example Clients - Model Context Protocol](Tutorials/example-clients-model-context-protocol.md) - A list of applications that support MCP integrations
-- [Example Servers - Model Context Protocol](Tutorials/example-servers-model-context-protocol.md) - A list of example servers and implementations
-- [SDKs](Tutorials/mcp-docs-sdk.md) - Official SDKs for building with Model Context Protocol
-- [MCP Inspector](Tutorials/mcp-docs-tools-inspector.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [Understanding Authorization in MCP](Tutorials/mcp-docs-tutorials-security-authorization.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-- [MCP Inspector - Model Context Protocol](Tutorials/mcp-inspector-model-context-protocol.md) - In-depth guide to using the MCP Inspector for testing and debugging Model Context Protocol servers
-- [MCP Python SDK](Tutorials/mcp-python-sdk.md) - <div align="center">
-- [MCP TypeScript SDK](Tutorials/mcp-typescript-sdk.md) - [!IMPORTANT] **This is the `main` branch which contains v2 of the SDK (currently in development, pre-alpha).**
-- [SDKs - Model Context Protocol](Tutorials/sdks-model-context-protocol.md) - Official SDKs for building with Model Context Protocol
-- [Security Best Practices - Model Context Protocol](Tutorials/security-best-practices-model-context-protocol.md) - Security considerations, attack vectors, and best practices for MCP implementations
-- [Understanding Authorization in MCP - Model Context Protocol](Tutorials/understanding-authorization-in-mcp-model-context-protocol.md) - Learn how to implement secure authorization for MCP servers using OAuth 2.1 to protect sensitive resources and operations
-- [Understanding MCP clients - Model Context Protocol](Tutorials/understanding-mcp-clients-model-context-protocol.md) - MCP clients are instantiated by host applications to communicate with particular MCP servers. The host application, like Claude.ai or an IDE, manages 
-- [Understanding MCP servers - Model Context Protocol](Tutorials/understanding-mcp-servers-model-context-protocol.md) - MCP servers are programs that expose specific capabilities to AI applications through standardized protocol interfaces. Common examples include file s
-- [What is the Model Context Protocol (MCP)? - Model Context Protocol](Tutorials/what-is-the-model-context-protocol-mcp-model-context-protocol.md) - MCP (Model Context Protocol) is an open-source standard for connecting AI applications to external systems. Using MCP, AI applications like Claude or 
+- [Architecture overview - Model Context Protocol](Tutorials/learn-architecture.md) — This overview of the Model Context Protocol (MCP) discusses its scope and core concepts, and provides an example demonstrating each core concept. Because MCP…
+- [Build an MCP client - Model Context Protocol](Tutorials/develop-build-client.md) — Get started building your own client that can integrate with all MCP servers.
+- [Build an MCP server - Model Context Protocol](Tutorials/develop-build-server.md) — Get started building your own server to use in Claude for Desktop and other clients.
+- [Connect to local MCP servers - Model Context Protocol](Tutorials/develop-connect-local-servers.md) — Learn how to extend Claude Desktop with local MCP servers to enable file system access and other powerful integrations
+- [Connect to remote MCP Servers - Model Context Protocol](Tutorials/develop-connect-remote-servers.md) — Learn how to connect Claude to remote MCP servers and extend its capabilities with internet-hosted tools and data sources
+- [Security Best Practices - Model Context Protocol](Tutorials/tutorials-security-security-best-practices.md) — Security considerations, attack vectors, and best practices for MCP implementations
+- [Understanding Authorization in MCP](Tutorials/tutorials-security-authorization.md) — Learn how to implement secure authorization for MCP servers using OAuth 2.1 to protect sensitive resources and operations
+- [Understanding MCP clients - Model Context Protocol](Tutorials/learn-client-concepts.md) — MCP clients are instantiated by host applications to communicate with particular MCP servers. The host application, like Claude.ai or an IDE, manages the…
+- [Understanding MCP servers - Model Context Protocol](Tutorials/learn-server-concepts.md) — MCP servers are programs that expose specific capabilities to AI applications through standardized protocol interfaces. Common examples include file system…

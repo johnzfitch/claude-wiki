@@ -1,27 +1,27 @@
 ---
-title: "Using Claude Code with your Pro or Max plan | Claude Help Center"
+title: "Use Claude Code with your Pro or Max plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-03-22T09:01:38Z"
+fetched_at: "2026-09-29T06:31:41Z"
 tags: ["billing", "claude-code"]
 ---
 
-3.  Using Claude Code with your Pro or Max plan
+# Use Claude Code with your Pro or Max plan
 
-# Using Claude Code with your Pro or Max plan
+August 19, 2026
 
 
-This article applies to individual consumers using Pro or Max plan subscriptions to access Claude Code. If you’re a member of a Team or Enterprise plan organization, see **[Using Claude Code with your Team or Enterprise plan](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)**.
+This article applies to individual consumers using Pro or Max plan subscriptions to access Claude Code. If you’re a member of a Team or Enterprise plan organization, see **[Use Claude Code with your Team or Enterprise plan](using-claude-code-with-your-team-or-enterprise-plan.md)**.
 
 ## What is Claude Code?
 
-Claude Code is a command line tool that gives you access to Claude models directly in your terminal, allowing you to delegate complex coding tasks while maintaining transparency and control. With Pro and Max plans, you now have access to both Claude on the web, desktop, and mobile apps and Claude Code in your terminal with one unified subscription.
+Claude Code is a coding tool that gives you access to Claude models directly in your terminal or supported IDE, allowing you to delegate complex coding tasks while maintaining transparency and control. With Pro and Max plans, you now have access to both Claude on the web, desktop, and mobile apps and Claude Code in your terminal with one unified subscription.
 
 ### Why use Claude and Claude Code?
 
 Use two powerful AI products in one simple subscription.
 
-- Use Claude for writing, research, analysis, and more — at work and at home.
+- Use Claude for writing, research, analysis, and more—at work and at home.
 
 - Use Claude Code for your terminal-based coding workflows.
 
@@ -35,7 +35,7 @@ Use two powerful AI products in one simple subscription.
 
 2.  **Install Claude Code**
 
-    - Visit the **[Claude Code page in our Claude Docs](../01-Getting-Started/quickstart-claude-code-docs-a21b84bdea.md#step-1-install-claude-code)** to download and install Claude Code.
+    - Visit the **[Claude Code page in our Claude Docs](../01-Getting-Started/quickstart.md#step-1-install-claude-code)** to download and install Claude Code.
 
     - Follow the installation instructions for your operating system.
 
@@ -59,7 +59,13 @@ If you're not seeing the option to authenticate with your preferred account, fol
 
 4.  Run `claude` and select the correct account to use Claude Code.
 
-**Important:** If you have an ANTHROPIC_API_KEY environment variable set on your system, Claude Code will use this API key for authentication instead of your Claude subscription (Pro, Max, Team, or Enterprise plans), resulting in API usage charges rather than using your subscription's included usage. See this article for more information: **[Managing API key environment variables in Claude Code](https://support.claude.com/en/articles/12304248-managing-api-key-environment-variables-in-claude-code).**
+**Important:** If you have an ANTHROPIC_API_KEY environment variable set on your system, Claude Code will use this API key for authentication instead of your Claude subscription (Pro, Max, Team, or Enterprise plans), resulting in API usage charges rather than using your subscription's included usage. See this article for more information: **[Managing API key environment variables in Claude Code](../02-Claude-Code-CLI/managing-api-key-environment-variables-in-claude-code.md).**
+
+## Use Claude Code in your IDE
+
+Your Pro or Max plan also covers Claude Code in supported IDEs, including VS Code, Cursor and other VS Code forks, and JetBrains IDEs like IntelliJ and PyCharm. Log in with the same Claude credentials you use in the terminal. IDE usage counts toward the same usage limits shared across Claude and Claude Code.
+
+To install and set up the extension for your IDE, see **[Platforms and integrations](../02-Claude-Code-CLI/platforms.md)** in our Claude Code Docs.
 
 ------------------------------------------------------------------------
 
@@ -73,9 +79,9 @@ When you reach your usage limits, you can select from a few options based on you
 
 - Consider upgrading to the Max 5x plan if you consistently hit limits and need more capacity for larger repositories.
 
-- **[Enable extra usage](extra-usage-for-max-20x-plans.md)** to continue using Claude with your Pro plan after hitting the included usage limit.
+- **[Enable usage credits](manage-usage-credits-for-paid-claude-plans.md)** to continue using Claude with your Pro plan after hitting the included usage limit.
 
-- You will have the flexibility to switch to **[pay-as-you-go usage](https://support.claude.com/en/articles/8114526-how-will-i-be-billed-for-claude-api-use)** with a Claude Console account for intensive coding sprints.
+- Switch to a Claude Console account and **[purchase API usage credits](../22-Safety-Policy/how-do-i-pay-for-my-claude-api-usage.md)** for intensive coding sprints.
 
 - Wait until your usage limits reset.
 
@@ -83,13 +89,13 @@ When you reach your usage limits, you can select from a few options based on you
 
 - If you're on the Max 5x plan, consider upgrading to the Max 20x plan if you consistently hit limits.
 
-- **[Enable extra usage](extra-usage-for-max-20x-plans.md)** to continue using Claude with your Max plan after hitting the included usage limit.
+- **[Enable usage credits](manage-usage-credits-for-paid-claude-plans.md)** to continue using Claude with your Max plan after hitting the included usage limit.
 
-- You will have the flexibility to switch to **[pay-as-you-go usage](https://support.claude.com/en/articles/8114526-how-will-i-be-billed-for-claude-api-use)** with a Claude Console account for intensive coding sprints.
+- Switch to a Claude Console account and **[purchase API usage credits](../22-Safety-Policy/how-do-i-pay-for-my-claude-api-usage.md)** for intensive coding sprints.
 
 - Wait until your usage limits reset.
 
-For more details on efficient usage, refer to our **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
+For more details on efficient usage, refer to our **[Usage limit best practices](../22-Safety-Policy/usage-limit-best-practices.md)**.
 
 ------------------------------------------------------------------------
 
@@ -107,7 +113,7 @@ It's important to recognize these are separate systems:
 
 If you want to use API credits through Claude Code:
 
-- Usage will be billed at **[standard API rates](https://claude.com/pricing#api)** (distinct from Pro/Max Plan pricing).
+- Usage will be billed at **[standard API rates](pricing.md#api)** (distinct from Pro/Max Plan pricing).
 
 - If auto-reload is enabled in your Console account, additional credits will be automatically added when your balance runs low.
 
@@ -137,7 +143,7 @@ This ensures Claude Code will only use your plan allocation and you won't be pro
 
 Auto-reload functionality is managed within your Claude Console account, not through Claude Code:
 
-- Review your **[Console Billing settings](https://platform.claude.com/settings/billing)** to check auto-reload status.
+- Review your **[Console Billing settings](../04-API-Reference/Other/usage-limits.md)** to check auto-reload status.
 
 - Adjust these settings in the Console if you prefer to avoid automatic credit purchases.
 

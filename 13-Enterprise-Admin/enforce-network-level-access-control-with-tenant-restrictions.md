@@ -2,13 +2,13 @@
 title: "Enforce network-level access control with Tenant Restrictions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13198485-enforce-network-level-access-control-with-tenant-restrictions"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-22T09:01:44Z"
+fetched_at: "2026-09-29T06:32:00Z"
 tags: ["enterprise", "security"]
 ---
 
-4.  Enforce network-level access control with Tenant Restrictions
-
 # Enforce network-level access control with Tenant Restrictions
+
+August 3, 2026
 
 
 Tenant Restrictions are available for members of Enterprise plans and Console organizations.
@@ -42,6 +42,25 @@ When enabled, your network proxy injects an HTTP header into requests to Claude.
     anthropic-allowed-org-ids: 550e8400-e29b-41d4-a716-446655440000,6ba7b810-
     9dad-11d1-80b4-00c04fd430c8
 
+## Split large allowlists across multiple headers
+
+If your allowlist is too long for a single header line on your proxy platform, split it across numbered continuation headers. Append `;n=K` to the base header to declare the total number of header lines, then add the remaining UUIDs in headers `anthropic-allowed-org-ids1` through `anthropic-allowed-org-ids{K-1}`.
+
+    anthropic-allowed-org-ids: <org-uuid>,<org-uuid>,...;n=K
+    anthropic-allowed-org-ids1: <org-uuid>,<org-uuid>,...
+    ...
+    anthropic-allowed-org-ids{K-1}: <org-uuid>,<org-uuid>,...
+
+- Maximum of 10 header lines (`K` ≤ 10)
+
+- Maximum of 500 organization UUIDs total across all lines
+
+- Your proxy must send every declared slot. If you set `;n=3`, all three headers must be present on the request.
+
+- Configure your proxy to overwrite these headers on every request rather than add them only if absent.
+
+------------------------------------------------------------------------
+
 ## Configuration steps
 
 ### 1. Find your organization UUID
@@ -52,7 +71,7 @@ Members of Enterprise plans can find this in two different places:
 
 2.  Navigate to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)** and scroll down to the bottom of the page to locate **Organization ID**.
 
-Members of Console organizations can find this in **[Settings \> Organization](https://platform.claude.com/settings/organization)**.
+Members of Console organizations can find this in **[Settings \> Organization](../04-API-Reference/Other/usage-limits.md)**.
 
 ### 2. Configure your network proxy
 
@@ -76,9 +95,13 @@ From restricted network, test with your org's API key:
       -d '{"model":"claude-sonnet-4-6","max_tokens":1024,"messages":
      [{"role":"user","content":"Hello"}]}'
 
-## Error response
+------------------------------------------------------------------------
 
-When access is blocked, users receive the following error:
+## Error responses
+
+### Access blocked
+
+When a user's organization isn't on the allowlist, they receive a 403 error:
 
     {
       "type": "error",
@@ -89,15 +112,25 @@ When access is blocked, users receive the following error:
       }
     }
 
+### Header configuration errors
+
+If your proxy sends the headers incorrectly, requests fail with a 400 status and one of these messages:
+
+- Multiple `anthropic-allowed-org-ids` headers: A header name appeared more than once on the same request. Configure your proxy to overwrite each header rather than append a duplicate.
+
+- Malformed `anthropic-allowed-org-ids` headers: The `;n=K` value is invalid, a declared continuation slot is missing or extra, or the total allowlist exceeds 500 UUIDs.
+
 ## Supported proxy platforms
-
-- Zscaler ZIA (Cloud App Control policies)
-
-- Palo Alto Prisma Access (SaaS App Management)
 
 - Cato Networks (Tenant Restriction policy)
 
+- Cloudflare Zero Trust / Gateway (HTTP policy, add custom request headers)
+
 - Netskope (Header Insertion rules)
+
+- Palo Alto Prisma Access (SaaS App Management)
+
+- Zscaler ZIA (Cloud App Control policies)
 
 - Generic HTTPS proxies with header injection capability
 

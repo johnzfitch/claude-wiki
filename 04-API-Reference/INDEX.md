@@ -1,2036 +1,1797 @@
 # API Reference
 
-*2014 documents*
+1773 pages. The full text of every page is in [llms.txt](llms.txt).
 
+## About
 
-## About (17)
+- [Additional resources - Claude Platform Docs](About/about-claude-additional-resources.md) — Learning resources and documentation formats optimized for AI ingestion.
+- [Classification - Claude Platform Docs](About/about-claude-use-case-guides-classification.md) — Claude excels at processing, understanding, and recognizing patterns in text, images, and data. These capabilities make Claude especially powerful for…
+- [Commerce agent - Claude Platform Docs](About/about-claude-use-case-guides-commerce-agents.md) — Build a shopping agent and a merchant agent on Claude using Claude for commerce, an open-source blueprint with working implementations on the Messages API, the…
+- [Content moderation - Claude Platform Docs](About/about-claude-use-case-guides-content-moderation.md) — Content moderation is a critical aspect of maintaining a safe, respectful, and productive environment in digital applications. This guide discusses how Claude…
+- [Customer support agent - Claude Platform Docs](About/about-claude-use-case-guides-customer-support-chat.md) — Build a customer support chatbot with Claude that answers product questions, stays on topic, and generates quotes through tool use.
+- [Glossary - Claude Platform Docs](About/about-claude-glossary.md) — These concepts are not unique to Claude. This page presents a brief summary of key terms.
+- [Guides to common use cases - Claude Platform Docs](About/about-claude-use-case-guides-overview.md) — Explore production guides for building common Claude use cases: ticket routing, customer support agents, content moderation, legal summarization, and commerce…
+- [Legal summarization - Claude Platform Docs](About/about-claude-use-case-guides-legal-summarization.md) — This guide walks through how to leverage Claude's advanced natural language processing capabilities to efficiently summarize legal documents, extracting key…
+- [Ticket routing - Claude Platform Docs](About/about-claude-use-case-guides-ticket-routing.md) — This guide walks through how to harness Claude's advanced natural language understanding capabilities to classify customer support tickets at scale based on…
 
-- [Additional resources - Claude Platform Docs](About/about-claude-additional-resources-3ac8d6409f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Glossary](About/about-claude-glossary-1405208f57.md) - These concepts are not unique to Anthropic’s language models, but we present a brief summary of key terms below.
-- [Glossary - Claude Platform Docs](About/about-claude-glossary-4ac776ecda.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Model deprecations](About/about-claude-model-deprecations-51979b6538.md)
-- [Model deprecations - Claude Platform Docs](About/about-claude-model-deprecations-c2c3b48be6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Classification - Claude Platform Docs](About/about-claude-use-case-guides-classification-aea9a302ed.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Commerce agent - Claude Platform Docs](About/about-claude-use-case-guides-commerce-agents-fcc3c56eea.md) - Copy page
-- [Content moderation - Claude Platform Docs](About/about-claude-use-case-guides-content-moderation-68f00a371a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Content moderation](About/about-claude-use-case-guides-content-moderation-9aa9674309.md) - Content moderation is a critical aspect of maintaining a safe, respectful, and productive environment in digital applications. This guide discusses ho
-- [Customer support agent - Claude Platform Docs](About/about-claude-use-case-guides-customer-support-chat-2a1e16a165.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Customer support agent](About/about-claude-use-case-guides-customer-support-chat-5b82b8509b.md) - This guide walks through how to leverage Claude's advanced conversational capabilities to handle customer inquiries in real time, providing 24/7 suppo
-- [Legal summarization](About/about-claude-use-case-guides-legal-summarization-0b045c60ad.md) - This guide walks through how to leverage Claude's advanced natural language processing capabilities to efficiently summarize legal documents, extracti
-- [Legal summarization - Claude Platform Docs](About/about-claude-use-case-guides-legal-summarization-1b978423c3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Guides to common use cases](About/about-claude-use-case-guides-overview-43239e353a.md)
-- [Guides to common use cases - Claude Platform Docs](About/about-claude-use-case-guides-overview-971d8d1b66.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Ticket routing - Claude Platform Docs](About/about-claude-use-case-guides-ticket-routing-6f7b0bee2e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Ticket routing](About/about-claude-use-case-guides-ticket-routing-95526bdf0d.md) - This guide walks through how to harness Claude's advanced natural language understanding capabilities to classify customer support tickets at scale ba
+## Admin
 
-## Admin (189)
+- [Activities - Claude API Reference](Admin/compliance-activities.md) — Count tokens in a Message
+- [Add Federation Rule Workspace - Claude API Reference](Admin/admin-federation-rules-workspaces-create.md) — Count tokens in a Message
+- [Add Federation Rule Workspace - Claude API Reference](Admin/beta-organization-federation-rules-workspaces-add.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Add RBAC Group Member - Claude API Reference](Admin/admin-rbac-groups-members-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Add RBAC Group Member - Claude API Reference](Admin/beta-organization-rbac-groups-members-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Add Workspace To Service Account - Claude API Reference](Admin/admin-service-accounts-workspaces-create.md) — Count tokens in a Message
+- [Add Workspace To Service Account - Claude API Reference](Admin/beta-organization-service-accounts-workspaces-add.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Admin - Claude API Reference](Admin/http-admin.md) — Count tokens in a Message
+- [Analytics - Claude API Reference](Admin/http-admin-analytics.md) — Count tokens in a Message
+- [Analytics - Claude API Reference](Admin/http-beta-organization-analytics.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [API Keys - Claude API Reference](Admin/admin-api-keys.md) — Count tokens in a Message
+- [API Keys - Claude API Reference](Admin/beta-organization-api-keys.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Approve Spend Limit Increase Request - Claude API Reference](Admin/admin-spend-limits-increase-requests-approve.md) — Count tokens in a Message
+- [Approve Spend Limit Increase Request - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-approve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Apps - Claude API Reference](Admin/compliance-apps.md) — Count tokens in a Message
+- [Archive Federation Issuer - Claude API Reference](Admin/admin-federation-issuers-archive.md) — Count tokens in a Message
+- [Archive Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Federation Rule - Claude API Reference](Admin/admin-federation-rules-archive.md) — Count tokens in a Message
+- [Archive Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Service Account - Claude API Reference](Admin/admin-service-accounts-archive.md) — Count tokens in a Message
+- [Archive Service Account - Claude API Reference](Admin/beta-organization-service-accounts-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Tunnel - Claude API Reference](Admin/admin-mcp-tunnels-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Tunnel - Claude API Reference](Admin/beta-organization-mcp-tunnels-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Tunnel Certificate - Claude API Reference](Admin/admin-mcp-tunnels-tunnel-certificates-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Tunnel Certificate - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Workspace - Claude API Reference](Admin/admin-workspaces-archive.md) — Count tokens in a Message
+- [Archive Workspace - Claude API Reference](Admin/beta-organization-workspaces-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Artifacts - Claude API Reference](Admin/beta-organization-analytics-artifacts.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Artifacts - Claude API Reference](Admin/compliance-apps-artifacts.md) — Count tokens in a Message
+- [Artifacts - Claude API Reference](Admin/compliance-code-artifacts.md) — Count tokens in a Message
+- [Artifacts - Claude API Reference](Admin/http-admin-analytics-artifacts.md) — Count tokens in a Message
+- [Attachments - Claude API Reference](Admin/compliance-apps-projects-attachments.md) — Count tokens in a Message
+- [Chat Projects - Claude API Reference](Admin/http-admin-analytics-chat-projects.md) — Count tokens in a Message
+- [Chat Projects - Claude API Reference](Admin/http-beta-organization-analytics-chat-projects.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Chats - Claude API Reference](Admin/compliance-apps-chats.md) — Count tokens in a Message
+- [Code - Claude API Reference](Admin/compliance-code.md) — Count tokens in a Message
+- [Collaborators - Claude API Reference](Admin/compliance-apps-projects-collaborators.md) — Count tokens in a Message
+- [Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Connectors - Claude API Reference](Admin/beta-organization-analytics-connectors.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Connectors - Claude API Reference](Admin/http-admin-analytics-connectors.md) — Count tokens in a Message
+- [Cost - Claude API Reference](Admin/http-admin-analytics-cost.md) — Count tokens in a Message
+- [Cost - Claude API Reference](Admin/http-beta-organization-analytics-cost.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Cost Report - Claude API Reference](Admin/admin-cost-report.md) — Count tokens in a Message
+- [Cost Report - Claude API Reference](Admin/beta-organization-cost-report.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create External Key - Claude API Reference](Admin/admin-external-keys-create.md) — Count tokens in a Message
+- [Create External Key - Claude API Reference](Admin/beta-organization-external-keys-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Federation Issuer - Claude API Reference](Admin/admin-federation-issuers-create.md) — Count tokens in a Message
+- [Create Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Federation Rule - Claude API Reference](Admin/admin-federation-rules-create.md) — Count tokens in a Message
+- [Create Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Invite - Claude API Reference](Admin/beta-organization-invites-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create RBAC Group - Claude API Reference](Admin/admin-rbac-groups-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create RBAC Group - Claude API Reference](Admin/beta-organization-rbac-groups-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Service Account - Claude API Reference](Admin/admin-service-accounts-create.md) — Count tokens in a Message
+- [Create Service Account - Claude API Reference](Admin/beta-organization-service-accounts-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Service Account Workspace Member - Claude API Reference](Admin/admin-workspaces-service-accounts-create.md) — Count tokens in a Message
+- [Create Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-add.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Tunnel Certificate - Claude API Reference](Admin/admin-mcp-tunnels-tunnel-certificates-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Tunnel Certificate - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Workspace - Claude API Reference](Admin/admin-workspaces-create.md) — Count tokens in a Message
+- [Create Workspace - Claude API Reference](Admin/beta-organization-workspaces-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Workspace Member - Claude API Reference](Admin/admin-workspaces-members-create.md) — Count tokens in a Message
+- [Create Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-add.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete chat - Claude API Reference](Admin/compliance-apps-chats-delete.md) — Count tokens in a Message
+- [Delete Code Artifact - Claude API Reference](Admin/compliance-code-artifacts-delete.md) — Count tokens in a Message
+- [Delete External Key - Claude API Reference](Admin/admin-external-keys-delete.md) — Count tokens in a Message
+- [Delete External Key - Claude API Reference](Admin/beta-organization-external-keys-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete file - Claude API Reference](Admin/compliance-apps-chats-files-delete.md) — Count tokens in a Message
+- [Delete Invite - Claude API Reference](Admin/beta-organization-invites-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete project - Claude API Reference](Admin/compliance-apps-projects-delete.md) — Count tokens in a Message
+- [Delete project document - Claude API Reference](Admin/compliance-apps-projects-documents-delete.md) — Count tokens in a Message
+- [Delete RBAC Group - Claude API Reference](Admin/admin-rbac-groups-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete RBAC Group - Claude API Reference](Admin/beta-organization-rbac-groups-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete Service Account Workspace Member - Claude API Reference](Admin/admin-workspaces-service-accounts-delete.md) — Count tokens in a Message
+- [Delete Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete Spend Limit - Claude API Reference](Admin/admin-spend-limits-delete.md) — Count tokens in a Message
+- [Delete Spend Limit - Claude API Reference](Admin/beta-organization-spend-limits-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete Workspace Member - Claude API Reference](Admin/admin-workspaces-members-delete.md) — Count tokens in a Message
+- [Delete Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Deny Spend Limit Increase Request - Claude API Reference](Admin/admin-spend-limits-increase-requests-deny.md) — Count tokens in a Message
+- [Deny Spend Limit Increase Request - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-deny.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Documents - Claude API Reference](Admin/compliance-apps-projects-documents.md) — Count tokens in a Message
+- [Download a Claude-generated file - Claude API Reference](Admin/compliance-apps-chats-generated-files-download.md) — Count tokens in a Message
+- [Download artifact content - Claude API Reference](Admin/compliance-apps-artifacts-download.md) — Count tokens in a Message
+- [Download Code Artifact Version Content - Claude API Reference](Admin/compliance-code-artifacts-retrieve-version.md) — Count tokens in a Message
+- [Download file content - Claude API Reference](Admin/compliance-apps-chats-files-download.md) — Count tokens in a Message
+- [External Keys - Claude API Reference](Admin/admin-external-keys.md) — Count tokens in a Message
+- [External Keys - Claude API Reference](Admin/beta-organization-external-keys.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Federation - Claude API Reference](Admin/beta-organization-federation.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Federation Issuers - Claude API Reference](Admin/admin-federation-issuers.md) — Count tokens in a Message
+- [Federation Rules - Claude API Reference](Admin/admin-federation-rules.md) — Count tokens in a Message
+- [Files - Claude API Reference](Admin/compliance-apps-chats-files.md) — Count tokens in a Message
+- [Generated Files - Claude API Reference](Admin/compliance-apps-chats-generated-files.md) — Count tokens in a Message
+- [Get Activity Summaries - Claude API Reference](Admin/http-admin-analytics-retrieve-summaries.md) — Count tokens in a Message
+- [Get Activity Summaries - Claude API Reference](Admin/http-beta-organization-analytics-retrieve-summaries.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Artifact Activity - Claude API Reference](Admin/http-admin-analytics-artifacts-list.md) — Count tokens in a Message
+- [Get Artifact Activity - Claude API Reference](Admin/http-beta-organization-analytics-artifacts-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get artifact metadata - Claude API Reference](Admin/compliance-apps-artifacts-retrieve.md) — Count tokens in a Message
+- [Get chat messages - Claude API Reference](Admin/compliance-apps-chats-messages-list.md) — Count tokens in a Message
+- [Get Chat Project Usage - Claude API Reference](Admin/http-admin-analytics-chat-projects-list.md) — Count tokens in a Message
+- [Get Chat Project Usage - Claude API Reference](Admin/http-beta-organization-analytics-chat-projects-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Claude Code Usage Report - Claude API Reference](Admin/admin-usage-report-retrieve-claude-code.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Claude Code Usage Report - Claude API Reference](Admin/beta-organization-usage-report-retrieve-claude-code.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Claude-generated file metadata - Claude API Reference](Admin/compliance-apps-chats-generated-files-retrieve.md) — Count tokens in a Message
+- [Get Compliance Group - Claude API Reference](Admin/compliance-groups-retrieve.md) — Count tokens in a Message
+- [Get Compliance Role - Claude API Reference](Admin/compliance-organizations-roles-retrieve.md) — Count tokens in a Message
+- [Get Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Connector Usage - Claude API Reference](Admin/http-admin-analytics-connectors-list.md) — Count tokens in a Message
+- [Get Connector Usage - Claude API Reference](Admin/http-beta-organization-analytics-connectors-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Cost Over Time - Claude API Reference](Admin/http-admin-analytics-cost-list.md) — Count tokens in a Message
+- [Get Cost Over Time - Claude API Reference](Admin/http-beta-organization-analytics-cost-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Cost Report - Claude API Reference](Admin/admin-cost-report-retrieve.md) — Count tokens in a Message
+- [Get Cost Report - Claude API Reference](Admin/beta-organization-cost-report-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Current Organization - Claude API Reference](Admin/admin-organizations-me.md) — Count tokens in a Message
+- [Get Current Organization - Claude API Reference](Admin/beta-organization-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get effective organization settings - Claude API Reference](Admin/compliance-organizations-settings-retrieve.md) — Count tokens in a Message
+- [Get External Key - Claude API Reference](Admin/admin-external-keys-retrieve.md) — Count tokens in a Message
+- [Get External Key - Claude API Reference](Admin/beta-organization-external-keys-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Federation Issuer - Claude API Reference](Admin/admin-federation-issuers-retrieve.md) — Count tokens in a Message
+- [Get Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Federation Rule - Claude API Reference](Admin/admin-federation-rules-retrieve.md) — Count tokens in a Message
+- [Get Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get file metadata - Claude API Reference](Admin/compliance-apps-chats-files-retrieve.md) — Count tokens in a Message
+- [Get Invite - Claude API Reference](Admin/beta-organization-invites-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Messages Usage Report - Claude API Reference](Admin/admin-usage-report-retrieve-messages.md) — Count tokens in a Message
+- [Get Messages Usage Report - Claude API Reference](Admin/beta-organization-usage-report-retrieve-messages.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Per-User Cost - Claude API Reference](Admin/beta-organization-analytics-cost-list-by-user.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Per-User Cost - Claude API Reference](Admin/http-admin-analytics-cost-list-by-user.md) — Count tokens in a Message
+- [Get Per-User Token Usage - Claude API Reference](Admin/beta-organization-analytics-usage-list-by-user.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Per-User Token Usage - Claude API Reference](Admin/http-admin-analytics-usage-list-by-user.md) — Count tokens in a Message
+- [Get Plugin Usage - Claude API Reference](Admin/http-admin-analytics-plugins-list.md) — Count tokens in a Message
+- [Get Plugin Usage - Claude API Reference](Admin/http-beta-organization-analytics-plugins-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get project details - Claude API Reference](Admin/compliance-apps-projects-retrieve.md) — Count tokens in a Message
+- [Get project document content - Claude API Reference](Admin/compliance-apps-projects-documents-retrieve.md) — Count tokens in a Message
+- [Get project document metadata - Claude API Reference](Admin/compliance-apps-projects-documents-metadata.md) — Count tokens in a Message
+- [Get RBAC Group - Claude API Reference](Admin/admin-rbac-groups-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get RBAC Group - Claude API Reference](Admin/beta-organization-rbac-groups-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get RBAC Role - Claude API Reference](Admin/admin-rbac-roles-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get RBAC Role - Claude API Reference](Admin/beta-organization-rbac-roles-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Service Account - Claude API Reference](Admin/admin-service-accounts-retrieve.md) — Count tokens in a Message
+- [Get Service Account - Claude API Reference](Admin/beta-organization-service-accounts-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Service Account Workspace Member - Claude API Reference](Admin/admin-workspaces-service-accounts-retrieve.md) — Count tokens in a Message
+- [Get Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Skill Usage - Claude API Reference](Admin/http-admin-analytics-skills-list.md) — Count tokens in a Message
+- [Get Skill Usage - Claude API Reference](Admin/http-beta-organization-analytics-skills-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Spend Limit - Claude API Reference](Admin/admin-spend-limits-retrieve.md) — Count tokens in a Message
+- [Get Spend Limit - Claude API Reference](Admin/beta-organization-spend-limits-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Spend Limit Increase Request - Claude API Reference](Admin/admin-spend-limits-increase-requests-retrieve.md) — Count tokens in a Message
+- [Get Spend Limit Increase Request - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Token Usage Over Time - Claude API Reference](Admin/http-admin-analytics-usage-list.md) — Count tokens in a Message
+- [Get Token Usage Over Time - Claude API Reference](Admin/http-beta-organization-analytics-usage-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Tunnel - Claude API Reference](Admin/admin-mcp-tunnels-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Tunnel - Claude API Reference](Admin/beta-organization-mcp-tunnels-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Tunnel Certificate - Claude API Reference](Admin/admin-mcp-tunnels-tunnel-certificates-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Tunnel Certificate - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get User - Claude API Reference](Admin/beta-organization-users-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Workspace - Claude API Reference](Admin/admin-workspaces-retrieve.md) — Count tokens in a Message
+- [Get Workspace - Claude API Reference](Admin/beta-organization-workspaces-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Workspace Member - Claude API Reference](Admin/admin-workspaces-members-retrieve.md) — Count tokens in a Message
+- [Get Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Groups - Claude API Reference](Admin/compliance-groups.md) — Count tokens in a Message
+- [Increase Requests - Claude API Reference](Admin/admin-spend-limits-increase-requests.md) — Count tokens in a Message
+- [Increase Requests - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Invites - Claude API Reference](Admin/admin-invites.md) — Count tokens in a Message
+- [Invites - Claude API Reference](Admin/beta-organization-invites.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Issuers - Claude API Reference](Admin/beta-organization-federation-issuers.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List API Keys - Claude API Reference](Admin/admin-api-keys-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List API Keys - Claude API Reference](Admin/beta-organization-api-keys-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List chats - Claude API Reference](Admin/compliance-apps-chats-list.md) — Count tokens in a Message
+- [List Code Artifacts - Claude API Reference](Admin/compliance-code-artifacts-list.md) — Count tokens in a Message
+- [List Compliance Group Members - Claude API Reference](Admin/compliance-groups-members-list.md) — Count tokens in a Message
+- [List Compliance Groups - Claude API Reference](Admin/compliance-groups-list.md) — Count tokens in a Message
+- [List Compliance Role Permissions - Claude API Reference](Admin/compliance-organizations-roles-permissions-list.md) — Count tokens in a Message
+- [List Compliance Roles - Claude API Reference](Admin/compliance-organizations-roles-list.md) — Count tokens in a Message
+- [List Effective Spend Limits - Claude API Reference](Admin/admin-spend-limits-list-effective.md) — Count tokens in a Message
+- [List Effective Spend Limits - Claude API Reference](Admin/beta-organization-spend-limits-list-effective.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List External Keys - Claude API Reference](Admin/admin-external-keys-list.md) — Count tokens in a Message
+- [List External Keys - Claude API Reference](Admin/beta-organization-external-keys-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Federation Issuers - Claude API Reference](Admin/admin-federation-issuers-list.md) — Count tokens in a Message
+- [List Federation Issuers - Claude API Reference](Admin/beta-organization-federation-issuers-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Federation Rule Workspaces - Claude API Reference](Admin/admin-federation-rules-workspaces-list.md) — Count tokens in a Message
+- [List Federation Rule Workspaces - Claude API Reference](Admin/beta-organization-federation-rules-workspaces-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Federation Rules - Claude API Reference](Admin/admin-federation-rules-list.md) — Count tokens in a Message
+- [List Federation Rules - Claude API Reference](Admin/beta-organization-federation-rules-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Invites - Claude API Reference](Admin/admin-invites-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Invites - Claude API Reference](Admin/beta-organization-invites-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List local sessions - Claude API Reference](Admin/compliance-apps-sessions-local-list.md) — Count tokens in a Message
+- [List Organization Rate Limits - Claude API Reference](Admin/admin-rate-limits-list.md) — Count tokens in a Message
+- [List Organization Rate Limits - Claude API Reference](Admin/beta-organization-rate-limits-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List organization users - Claude API Reference](Admin/compliance-organizations-users-list.md) — Count tokens in a Message
+- [List organizations - Claude API Reference](Admin/compliance-organizations-list.md) — Count tokens in a Message
+- [List project attachments - Claude API Reference](Admin/compliance-apps-projects-attachments-list.md) — Count tokens in a Message
+- [List project collaborators - Claude API Reference](Admin/compliance-apps-projects-collaborators-list.md) — Count tokens in a Message
+- [List projects - Claude API Reference](Admin/compliance-apps-projects-list.md) — Count tokens in a Message
+- [List RBAC Group Members - Claude API Reference](Admin/admin-rbac-groups-members-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List RBAC Group Members - Claude API Reference](Admin/beta-organization-rbac-groups-members-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List RBAC Groups - Claude API Reference](Admin/admin-rbac-groups-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List RBAC Groups - Claude API Reference](Admin/beta-organization-rbac-groups-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List RBAC Role Permissions - Claude API Reference](Admin/admin-rbac-roles-permissions-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List RBAC Role Permissions - Claude API Reference](Admin/beta-organization-rbac-roles-permissions-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List RBAC Roles - Claude API Reference](Admin/admin-rbac-roles-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List RBAC Roles - Claude API Reference](Admin/beta-organization-rbac-roles-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List remote sessions - Claude API Reference](Admin/compliance-apps-sessions-remote-list.md) — Count tokens in a Message
+- [List Service Account Workspace Members - Claude API Reference](Admin/admin-workspaces-service-accounts-list.md) — Count tokens in a Message
+- [List Service Account Workspace Members - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Service Accounts - Claude API Reference](Admin/admin-service-accounts-list.md) — Count tokens in a Message
+- [List Service Accounts - Claude API Reference](Admin/beta-organization-service-accounts-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Spend Limit Increase Requests - Claude API Reference](Admin/admin-spend-limits-increase-requests-list.md) — Count tokens in a Message
+- [List Spend Limit Increase Requests - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Tunnel Certificates - Claude API Reference](Admin/admin-mcp-tunnels-tunnel-certificates-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Tunnel Certificates - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Tunnels - Claude API Reference](Admin/admin-mcp-tunnels-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Tunnels - Claude API Reference](Admin/beta-organization-mcp-tunnels-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List User Activity - Claude API Reference](Admin/http-admin-analytics-users-list.md) — Count tokens in a Message
+- [List User Activity - Claude API Reference](Admin/http-beta-organization-analytics-users-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Users - Claude API Reference](Admin/admin-users-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Users - Claude API Reference](Admin/beta-organization-users-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Workspace Members - Claude API Reference](Admin/admin-workspaces-members-list.md) — Count tokens in a Message
+- [List Workspace Members - Claude API Reference](Admin/beta-organization-workspaces-members-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Workspace Rate Limits - Claude API Reference](Admin/admin-workspaces-rate-limits-list.md) — Count tokens in a Message
+- [List Workspace Rate Limits - Claude API Reference](Admin/beta-organization-workspaces-rate-limits-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Workspaces - Claude API Reference](Admin/admin-workspaces-list.md) — Count tokens in a Message
+- [List Workspaces - Claude API Reference](Admin/beta-organization-workspaces-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Workspaces For Service Account - Claude API Reference](Admin/admin-service-accounts-workspaces-list.md) — Count tokens in a Message
+- [List Workspaces For Service Account - Claude API Reference](Admin/beta-organization-service-accounts-workspaces-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Local - Claude API Reference](Admin/compliance-apps-sessions-local.md) — Count tokens in a Message
+- [MCP Tunnels - Claude API Reference](Admin/admin-mcp-tunnels.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [MCP Tunnels - Claude API Reference](Admin/beta-organization-mcp-tunnels.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Members - Claude API Reference](Admin/admin-rbac-groups-members.md) — Count tokens in a Message
+- [Members - Claude API Reference](Admin/admin-workspaces-members.md) — Count tokens in a Message
+- [Members - Claude API Reference](Admin/beta-organization-rbac-groups-members.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Members - Claude API Reference](Admin/beta-organization-workspaces-members.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Members - Claude API Reference](Admin/compliance-groups-members.md) — Count tokens in a Message
+- [Messages - Claude API Reference](Admin/compliance-apps-chats-messages.md) — Count tokens in a Message
+- [Messages - Claude API Reference](Admin/compliance-apps-sessions-local-messages.md) — Count tokens in a Message
+- [Messages - Claude API Reference](Admin/compliance-apps-sessions-remote-messages.md) — Count tokens in a Message
+- [Organization - Claude API Reference](Admin/admin.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Organization - Claude API Reference](Admin/http-beta-organization.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Organizations - Claude API Reference](Admin/admin-organizations.md) — Count tokens in a Message
+- [Organizations - Claude API Reference](Admin/compliance-organizations.md) — Count tokens in a Message
+- [Permissions - Claude API Reference](Admin/admin-rbac-roles-permissions.md) — Count tokens in a Message
+- [Permissions - Claude API Reference](Admin/beta-organization-rbac-roles-permissions.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Permissions - Claude API Reference](Admin/compliance-organizations-roles-permissions.md) — Count tokens in a Message
+- [Plugins - Claude API Reference](Admin/http-admin-analytics-plugins.md) — Count tokens in a Message
+- [Plugins - Claude API Reference](Admin/http-beta-organization-analytics-plugins.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Projects - Claude API Reference](Admin/compliance-apps-projects.md) — Count tokens in a Message
+- [Query compliance activities - Claude API Reference](Admin/compliance-activities-list.md) — Count tokens in a Message
+- [Rate Limits - Claude API Reference](Admin/admin-rate-limits.md) — Count tokens in a Message
+- [Rate Limits - Claude API Reference](Admin/admin-workspaces-rate-limits.md) — Count tokens in a Message
+- [Rate Limits - Claude API Reference](Admin/beta-organization-rate-limits.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Rate Limits - Claude API Reference](Admin/beta-organization-workspaces-rate-limits.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [RBAC Groups - Claude API Reference](Admin/admin-rbac-groups.md) — Count tokens in a Message
+- [RBAC Groups - Claude API Reference](Admin/beta-organization-rbac-groups.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [RBAC Roles - Claude API Reference](Admin/admin-rbac-roles.md) — Count tokens in a Message
+- [RBAC Roles - Claude API Reference](Admin/beta-organization-rbac-roles.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Remote - Claude API Reference](Admin/compliance-apps-sessions-remote.md) — Count tokens in a Message
+- [Remove Federation Rule Workspace - Claude API Reference](Admin/admin-federation-rules-workspaces-delete.md) — Count tokens in a Message
+- [Remove Federation Rule Workspace - Claude API Reference](Admin/beta-organization-federation-rules-workspaces-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Remove RBAC Group Member - Claude API Reference](Admin/admin-rbac-groups-members-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Remove RBAC Group Member - Claude API Reference](Admin/beta-organization-rbac-groups-members-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Remove User - Claude API Reference](Admin/beta-organization-users-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Remove Workspace From Service Account - Claude API Reference](Admin/admin-service-accounts-workspaces-delete.md) — Count tokens in a Message
+- [Remove Workspace From Service Account - Claude API Reference](Admin/beta-organization-service-accounts-workspaces-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Retrieve a local session - Claude API Reference](Admin/compliance-apps-sessions-local-retrieve.md) — Count tokens in a Message
+- [Retrieve API Key (Admin API) - Claude API Reference](Admin/admin-api-keys-retrieve.md) — Count tokens in a Message
+- [Retrieve API Key (Admin API) - Claude API Reference](Admin/beta-organization-api-keys-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Retrieve local session messages - Claude API Reference](Admin/compliance-apps-sessions-local-messages-list.md) — Count tokens in a Message
+- [Retrieve remote session messages - Claude API Reference](Admin/compliance-apps-sessions-remote-messages-list.md) — Count tokens in a Message
+- [Reveal Tunnel Token - Claude API Reference](Admin/admin-mcp-tunnels-reveal-token.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Reveal Tunnel Token - Claude API Reference](Admin/beta-organization-mcp-tunnels-reveal-token.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Roles - Claude API Reference](Admin/compliance-organizations-roles.md) — Count tokens in a Message
+- [Rotate Tunnel Token - Claude API Reference](Admin/admin-mcp-tunnels-rotate-token.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Rotate Tunnel Token - Claude API Reference](Admin/beta-organization-mcp-tunnels-rotate-token.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Rules - Claude API Reference](Admin/beta-organization-federation-rules.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Service Accounts - Claude API Reference](Admin/admin-service-accounts.md) — Count tokens in a Message
+- [Service Accounts - Claude API Reference](Admin/admin-workspaces-service-accounts.md) — Count tokens in a Message
+- [Service Accounts - Claude API Reference](Admin/beta-organization-service-accounts.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Service Accounts - Claude API Reference](Admin/beta-organization-workspaces-service-accounts.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Sessions - Claude API Reference](Admin/compliance-apps-sessions.md) — Count tokens in a Message
+- [Set Spend Limit - Claude API Reference](Admin/admin-spend-limits-create.md) — Count tokens in a Message
+- [Set Spend Limit - Claude API Reference](Admin/beta-organization-spend-limits-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Settings - Claude API Reference](Admin/compliance-organizations-settings.md) — Count tokens in a Message
+- [Skills - Claude API Reference](Admin/beta-organization-analytics-skills.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Skills - Claude API Reference](Admin/http-admin-analytics-skills.md) — Count tokens in a Message
+- [Spend Limits - Claude API Reference](Admin/admin-spend-limits.md) — Count tokens in a Message
+- [Spend Limits - Claude API Reference](Admin/beta-organization-spend-limits.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Tunnel Certificates - Claude API Reference](Admin/admin-mcp-tunnels-tunnel-certificates.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Tunnel Certificates - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update API Key - Claude API Reference](Admin/admin-api-keys-update.md) — Count tokens in a Message
+- [Update API Key - Claude API Reference](Admin/beta-organization-api-keys-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update External Key - Claude API Reference](Admin/admin-external-keys-update.md) — Count tokens in a Message
+- [Update External Key - Claude API Reference](Admin/beta-organization-external-keys-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Federation Issuer - Claude API Reference](Admin/admin-federation-issuers-update.md) — Count tokens in a Message
+- [Update Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Federation Rule - Claude API Reference](Admin/admin-federation-rules-update.md) — Count tokens in a Message
+- [Update Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update RBAC Group - Claude API Reference](Admin/admin-rbac-groups-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update RBAC Group - Claude API Reference](Admin/beta-organization-rbac-groups-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Service Account - Claude API Reference](Admin/admin-service-accounts-update.md) — Count tokens in a Message
+- [Update Service Account - Claude API Reference](Admin/beta-organization-service-accounts-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Service Account Workspace Member - Claude API Reference](Admin/admin-workspaces-service-accounts-update.md) — Count tokens in a Message
+- [Update Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update User - Claude API Reference](Admin/beta-organization-users-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Workspace - Claude API Reference](Admin/admin-workspaces-update.md) — Count tokens in a Message
+- [Update Workspace - Claude API Reference](Admin/beta-organization-workspaces-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Workspace Member - Claude API Reference](Admin/admin-workspaces-members-update.md) — Count tokens in a Message
+- [Update Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Usage - Claude API Reference](Admin/http-admin-analytics-usage.md) — Count tokens in a Message
+- [Usage - Claude API Reference](Admin/http-beta-organization-analytics-usage.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Usage Report - Claude API Reference](Admin/admin-usage-report.md) — Count tokens in a Message
+- [Usage Report - Claude API Reference](Admin/beta-organization-usage-report.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Users - Claude API Reference](Admin/admin-users.md) — Count tokens in a Message
+- [Users - Claude API Reference](Admin/beta-organization-users.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Users - Claude API Reference](Admin/compliance-organizations-users.md) — Count tokens in a Message
+- [Users - Claude API Reference](Admin/http-admin-analytics-users.md) — Count tokens in a Message
+- [Users - Claude API Reference](Admin/http-beta-organization-analytics-users.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Validate External Key - Claude API Reference](Admin/admin-external-keys-validate.md) — Count tokens in a Message
+- [Validate External Key - Claude API Reference](Admin/beta-organization-external-keys-validate.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Workspaces - Claude API Reference](Admin/admin-federation-rules-workspaces.md) — Count tokens in a Message
+- [Workspaces - Claude API Reference](Admin/admin-service-accounts-workspaces.md) — Count tokens in a Message
+- [Workspaces - Claude API Reference](Admin/admin-workspaces.md) — Count tokens in a Message
+- [Workspaces - Claude API Reference](Admin/beta-organization-federation-rules-workspaces.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Workspaces - Claude API Reference](Admin/beta-organization-service-accounts-workspaces.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Workspaces - Claude API Reference](Admin/beta-organization-workspaces.md) — Include beta APIsThe API you’re viewing is only available in beta
 
-- [Artifacts - Claude API Reference](Admin/api-admin-analytics-artifacts-c2ace4e523.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Artifact Activity - Claude API Reference](Admin/api-admin-analytics-artifacts-list-593f739ad4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Analytics - Claude API Reference](Admin/api-admin-analytics-ca7855dc8a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Chat Projects - Claude API Reference](Admin/api-admin-analytics-chat-projects-22f6e2335a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Chat Project Usage - Claude API Reference](Admin/api-admin-analytics-chat-projects-list-08cba7faad.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Connectors - Claude API Reference](Admin/api-admin-analytics-connectors-27c86a7473.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Connector Usage - Claude API Reference](Admin/api-admin-analytics-connectors-list-7520ecef1a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Cost - Claude API Reference](Admin/api-admin-analytics-cost-f840ed94c9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Cost Over Time - Claude API Reference](Admin/api-admin-analytics-cost-list-7120d75eb0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Per-User Cost - Claude API Reference](Admin/api-admin-analytics-cost-list-by-user-3cb2ef4296.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Plugins - Claude API Reference](Admin/api-admin-analytics-plugins-65d6604148.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Plugin Usage - Claude API Reference](Admin/api-admin-analytics-plugins-list-9d1e98e8dd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Activity Summaries - Claude API Reference](Admin/api-admin-analytics-retrieve-summaries-003c474985.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Skills - Claude API Reference](Admin/api-admin-analytics-skills-60ec939467.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Skill Usage - Claude API Reference](Admin/api-admin-analytics-skills-list-18521474ae.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Usage - Claude API Reference](Admin/api-admin-analytics-usage-35dfc78cdc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Token Usage Over Time - Claude API Reference](Admin/api-admin-analytics-usage-list-a18d3dd5d2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Per-User Token Usage - Claude API Reference](Admin/api-admin-analytics-usage-list-by-user-fc5ac93d35.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Users - Claude API Reference](Admin/api-admin-analytics-users-95f1a89853.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List User Activity - Claude API Reference](Admin/api-admin-analytics-users-list-e87db2f77e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [API Keys](Admin/api-admin-api-keys-5e6e893cb4.md) - **get** `/v1/organizations/api_keys/{api_key_id}`
-- [API Keys - Claude API Reference](Admin/api-admin-api-keys-8eedabf18b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Api Keys List 46C6242Fe5](Admin/api-admin-api-keys-list-46c6242fe5.md) - **get** `/v1/organizations/api_keys`
-- [List API Keys - Claude API Reference](Admin/api-admin-api-keys-list-8ec91325a8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Api Keys Retrieve 1Be8681752](Admin/api-admin-api-keys-retrieve-1be8681752.md) - **get** `/v1/organizations/api_keys/{api_key_id}`
-- [Retrieve API Key (Admin API) - Claude API Reference](Admin/api-admin-api-keys-retrieve-a53c55f75c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update API Key - Claude API Reference](Admin/api-admin-api-keys-update-2d5070e66f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Api Keys Update F2523628A4](Admin/api-admin-api-keys-update-f2523628a4.md) - **post** `/v1/organizations/api_keys/{api_key_id}`
-- [Cost Report - Claude API Reference](Admin/api-admin-cost-report-775f37e73b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Cost Report](Admin/api-admin-cost-report-ec1d585117.md) - **get** `/v1/organizations/cost_report`
-- [Get Cost Report - Claude API Reference](Admin/api-admin-cost-report-retrieve-45422adc34.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Cost Report Retrieve 86A0323049](Admin/api-admin-cost-report-retrieve-86a0323049.md) - **get** `/v1/organizations/cost_report`
-- [Create External Key - Claude API Reference](Admin/api-admin-external-keys-create-9746b93b8f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete External Key - Claude API Reference](Admin/api-admin-external-keys-delete-ceda5828fe.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [External Keys - Claude API Reference](Admin/api-admin-external-keys-f7a4752b81.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List External Keys - Claude API Reference](Admin/api-admin-external-keys-list-9f1dc75db6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get External Key - Claude API Reference](Admin/api-admin-external-keys-retrieve-c8e2f4efcc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update External Key - Claude API Reference](Admin/api-admin-external-keys-update-adad1d6546.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Validate External Key - Claude API Reference](Admin/api-admin-external-keys-validate-8c81626c8c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Federation Issuers - Claude API Reference](Admin/api-admin-federation-issuers-0a30d0bcd6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Federation Issuer - Claude API Reference](Admin/api-admin-federation-issuers-archive-158ebf63de.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Federation Issuer - Claude API Reference](Admin/api-admin-federation-issuers-create-d54472467a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Federation Issuers - Claude API Reference](Admin/api-admin-federation-issuers-list-c2842d69f9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Federation Issuer - Claude API Reference](Admin/api-admin-federation-issuers-retrieve-dc1ff0e58a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Federation Issuer - Claude API Reference](Admin/api-admin-federation-issuers-update-59b1f7bf0f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Federation Rule - Claude API Reference](Admin/api-admin-federation-rules-archive-346209d84b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Federation Rule - Claude API Reference](Admin/api-admin-federation-rules-create-0500c5ec91.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Federation Rules - Claude API Reference](Admin/api-admin-federation-rules-dbd00402df.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Federation Rules - Claude API Reference](Admin/api-admin-federation-rules-list-95f4176558.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Federation Rule - Claude API Reference](Admin/api-admin-federation-rules-retrieve-46fc0a0dc7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Federation Rule - Claude API Reference](Admin/api-admin-federation-rules-update-2413653e5a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Workspaces - Claude API Reference](Admin/api-admin-federation-rules-workspaces-9e2a1c5268.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Add Federation Rule Workspace - Claude API Reference](Admin/api-admin-federation-rules-workspaces-create-42e176bc37.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Remove Federation Rule Workspace - Claude API Reference](Admin/api-admin-federation-rules-workspaces-delete-59582bb311.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Federation Rule Workspaces - Claude API Reference](Admin/api-admin-federation-rules-workspaces-list-f756b6bc09.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Invites](Admin/api-admin-invites-c6a7bd3b33.md) - **post** `/v1/organizations/invites`
-- [Api Admin Invites Create 4E7F9221Ab](Admin/api-admin-invites-create-4e7f9221ab.md) - **post** `/v1/organizations/invites`
-- [Create Invite - Claude API Reference](Admin/api-admin-invites-create-ddbb63dd41.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Invites Delete 4D77B687Fd](Admin/api-admin-invites-delete-4d77b687fd.md) - **delete** `/v1/organizations/invites/{invite_id}`
-- [Delete Invite - Claude API Reference](Admin/api-admin-invites-delete-8b66256d2e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Invites - Claude API Reference](Admin/api-admin-invites-ee5daa080d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Invites List D4F19C73C1](Admin/api-admin-invites-list-d4f19c73c1.md) - **get** `/v1/organizations/invites`
-- [List Invites - Claude API Reference](Admin/api-admin-invites-list-e1104b560e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Invites Retrieve 07968Dba44](Admin/api-admin-invites-retrieve-07968dba44.md) - **get** `/v1/organizations/invites/{invite_id}`
-- [Get Invite - Claude API Reference](Admin/api-admin-invites-retrieve-0be0a2e6ea.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Tunnel - Claude API Reference](Admin/api-admin-mcp-tunnels-archive-127a2366d0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [MCP Tunnels - Claude API Reference](Admin/api-admin-mcp-tunnels-f9e9a2a9d4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Tunnels - Claude API Reference](Admin/api-admin-mcp-tunnels-list-f1751a97b3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Tunnel - Claude API Reference](Admin/api-admin-mcp-tunnels-retrieve-c85b2f950e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Reveal Tunnel Token - Claude API Reference](Admin/api-admin-mcp-tunnels-reveal-token-35f21ba902.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Rotate Tunnel Token - Claude API Reference](Admin/api-admin-mcp-tunnels-rotate-token-d0e3cad1c8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Tunnel Certificates - Claude API Reference](Admin/api-admin-mcp-tunnels-tunnel-certificates-59dafa8cbd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Tunnel Certificate - Claude API Reference](Admin/api-admin-mcp-tunnels-tunnel-certificates-archive-3672e7c198.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Tunnel Certificate - Claude API Reference](Admin/api-admin-mcp-tunnels-tunnel-certificates-create-a681df2265.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Tunnel Certificates - Claude API Reference](Admin/api-admin-mcp-tunnels-tunnel-certificates-list-1fafa324ee.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Tunnel Certificate - Claude API Reference](Admin/api-admin-mcp-tunnels-tunnel-certificates-retrieve-f439f3bcc8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Organizations](Admin/api-admin-organizations-2429119ffe.md) - **get** `/v1/organizations/me`
-- [Organizations - Claude API Reference](Admin/api-admin-organizations-c021cbef11.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Organizations Me 85Ca0A0Bba](Admin/api-admin-organizations-me-85ca0a0bba.md) - **get** `/v1/organizations/me`
-- [Get Current Organization - Claude API Reference](Admin/api-admin-organizations-me-d9e732cac8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Rate Limits](Admin/api-admin-rate-limits-1ff96f3780.md) - **get** `/v1/organizations/rate_limits`
-- [Rate Limits - Claude API Reference](Admin/api-admin-rate-limits-614f446d84.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Organization Rate Limits - Claude API Reference](Admin/api-admin-rate-limits-list-79cd935c72.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Rate Limits List 83D9E8Ee16](Admin/api-admin-rate-limits-list-83d9e8ee16.md) - **get** `/v1/organizations/rate_limits`
-- [RBAC Groups - Claude API Reference](Admin/api-admin-rbac-groups-c37482379b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create RBAC Group - Claude API Reference](Admin/api-admin-rbac-groups-create-ccdb836389.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete RBAC Group - Claude API Reference](Admin/api-admin-rbac-groups-delete-0a178f72c6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List RBAC Groups - Claude API Reference](Admin/api-admin-rbac-groups-list-92526d58d5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Members - Claude API Reference](Admin/api-admin-rbac-groups-members-88f6f9853e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Add RBAC Group Member - Claude API Reference](Admin/api-admin-rbac-groups-members-create-e748e0f1db.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Remove RBAC Group Member - Claude API Reference](Admin/api-admin-rbac-groups-members-delete-5eb91f3908.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List RBAC Group Members - Claude API Reference](Admin/api-admin-rbac-groups-members-list-5863ba67ba.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get RBAC Group - Claude API Reference](Admin/api-admin-rbac-groups-retrieve-b1d2e8a041.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update RBAC Group - Claude API Reference](Admin/api-admin-rbac-groups-update-dfda34d490.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [RBAC Roles - Claude API Reference](Admin/api-admin-rbac-roles-fc6b4779e9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List RBAC Roles - Claude API Reference](Admin/api-admin-rbac-roles-list-51ed0cec46.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Permissions - Claude API Reference](Admin/api-admin-rbac-roles-permissions-cfe1ce1dee.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List RBAC Role Permissions - Claude API Reference](Admin/api-admin-rbac-roles-permissions-list-380c9bac50.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get RBAC Role - Claude API Reference](Admin/api-admin-rbac-roles-retrieve-4fc2094763.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Service Accounts - Claude API Reference](Admin/api-admin-service-accounts-a7221288ed.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Service Account - Claude API Reference](Admin/api-admin-service-accounts-archive-9e6baf58e9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Service Account - Claude API Reference](Admin/api-admin-service-accounts-create-3048bc47a1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Service Accounts - Claude API Reference](Admin/api-admin-service-accounts-list-75718033c1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Service Account - Claude API Reference](Admin/api-admin-service-accounts-retrieve-6eaade2a66.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Service Account - Claude API Reference](Admin/api-admin-service-accounts-update-eea73dae86.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Add Workspace To Service Account - Claude API Reference](Admin/api-admin-service-accounts-workspaces-create-44d1cc3747.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Remove Workspace From Service Account - Claude API Reference](Admin/api-admin-service-accounts-workspaces-delete-7f7758bd00.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Workspaces - Claude API Reference](Admin/api-admin-service-accounts-workspaces-e62871b9be.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Workspaces For Service Account - Claude API Reference](Admin/api-admin-service-accounts-workspaces-list-80f1df435c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Spend Limits - Claude API Reference](Admin/api-admin-spend-limits-95db77e800.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Set Spend Limit - Claude API Reference](Admin/api-admin-spend-limits-create-abf50c58a6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete Spend Limit - Claude API Reference](Admin/api-admin-spend-limits-delete-427c3b0186.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Increase Requests - Claude API Reference](Admin/api-admin-spend-limits-increase-requests-3a1990d08a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Approve Spend Limit Increase Request - Claude API Reference](Admin/api-admin-spend-limits-increase-requests-approve-0bf6343e8d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Deny Spend Limit Increase Request - Claude API Reference](Admin/api-admin-spend-limits-increase-requests-deny-176d56e0d9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Spend Limit Increase Requests - Claude API Reference](Admin/api-admin-spend-limits-increase-requests-list-0415944636.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Spend Limit Increase Request - Claude API Reference](Admin/api-admin-spend-limits-increase-requests-retrieve-597b0bf669.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Effective Spend Limits - Claude API Reference](Admin/api-admin-spend-limits-list-effective-22e3bdbcfd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Spend Limit - Claude API Reference](Admin/api-admin-spend-limits-retrieve-ff62e5b39b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Usage Report](Admin/api-admin-usage-report-b05de342cf.md) - **get** `/v1/organizations/usage_report/messages`
-- [Usage Report - Claude API Reference](Admin/api-admin-usage-report-f1f271ff94.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Usage Report Retrieve Claude Code 610A5Cf4A0](Admin/api-admin-usage-report-retrieve-claude-code-610a5cf4a0.md) - **get** `/v1/organizations/usage_report/claude_code`
-- [Get Claude Code Usage Report - Claude API Reference](Admin/api-admin-usage-report-retrieve-claude-code-fefdc219f3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Messages Usage Report - Claude API Reference](Admin/api-admin-usage-report-retrieve-messages-108f06193f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Usage Report Retrieve Messages A10B0B7A1A](Admin/api-admin-usage-report-retrieve-messages-a10b0b7a1a.md) - **get** `/v1/organizations/usage_report/messages`
-- [Users](Admin/api-admin-users-3705274a52.md) - **get** `/v1/organizations/users/{user_id}`
-- [Remove User - Claude API Reference](Admin/api-admin-users-delete-8ce5cd3878.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Users Delete Fbc1A9C080](Admin/api-admin-users-delete-fbc1a9c080.md) - **delete** `/v1/organizations/users/{user_id}`
-- [Users - Claude API Reference](Admin/api-admin-users-f91f4f89c5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Users List 2E0E8109F3](Admin/api-admin-users-list-2e0e8109f3.md) - **get** `/v1/organizations/users`
-- [List Users - Claude API Reference](Admin/api-admin-users-list-ea56cc7fed.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get User - Claude API Reference](Admin/api-admin-users-retrieve-7965222a69.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Users Retrieve Ae028818D3](Admin/api-admin-users-retrieve-ae028818d3.md) - **get** `/v1/organizations/users/{user_id}`
-- [Api Admin Users Update 56Bd0224C1](Admin/api-admin-users-update-56bd0224c1.md) - **post** `/v1/organizations/users/{user_id}`
-- [Update User - Claude API Reference](Admin/api-admin-users-update-f0e5dfd352.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Workspaces - Claude API Reference](Admin/api-admin-workspaces-85c02ab620.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Workspaces Archive 08Df2Be86D](Admin/api-admin-workspaces-archive-08df2be86d.md) - **post** `/v1/organizations/workspaces/{workspace_id}/archive`
-- [Archive Workspace - Claude API Reference](Admin/api-admin-workspaces-archive-f0357c972c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Workspaces](Admin/api-admin-workspaces-bbad0119fd.md) - **post** `/v1/organizations/workspaces`
-- [Api Admin Workspaces Create 6061341E22](Admin/api-admin-workspaces-create-6061341e22.md) - **post** `/v1/organizations/workspaces`
-- [Create Workspace - Claude API Reference](Admin/api-admin-workspaces-create-d7ce468e9b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Workspaces - Claude API Reference](Admin/api-admin-workspaces-list-9a1a726498.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Workspaces List Db96Be5B4C](Admin/api-admin-workspaces-list-db96be5b4c.md) - **get** `/v1/organizations/workspaces`
-- [Members - Claude API Reference](Admin/api-admin-workspaces-members-22e2753d2e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Members](Admin/api-admin-workspaces-members-baf3d594cd.md) - **post** `/v1/organizations/workspaces/{workspace_id}/members`
-- [Create Workspace Member - Claude API Reference](Admin/api-admin-workspaces-members-create-90588f8cea.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Workspaces Members Create F4Ff1D3A79](Admin/api-admin-workspaces-members-create-f4ff1d3a79.md) - **post** `/v1/organizations/workspaces/{workspace_id}/members`
-- [Delete Workspace Member - Claude API Reference](Admin/api-admin-workspaces-members-delete-7ecee4fe03.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Workspaces Members Delete D0Ab41C43A](Admin/api-admin-workspaces-members-delete-d0ab41c43a.md) - **delete** `/v1/organizations/workspaces/{workspace_id}/members/{user_id}`
-- [List Workspace Members - Claude API Reference](Admin/api-admin-workspaces-members-list-4cc8bd7839.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Workspaces Members List 725De557D8](Admin/api-admin-workspaces-members-list-725de557d8.md) - **get** `/v1/organizations/workspaces/{workspace_id}/members`
-- [Get Workspace Member - Claude API Reference](Admin/api-admin-workspaces-members-retrieve-866558bf94.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Workspaces Members Retrieve A68B4Bcb12](Admin/api-admin-workspaces-members-retrieve-a68b4bcb12.md) - **get** `/v1/organizations/workspaces/{workspace_id}/members/{user_id}`
-- [Api Admin Workspaces Members Update A03E7Cf161](Admin/api-admin-workspaces-members-update-a03e7cf161.md) - **post** `/v1/organizations/workspaces/{workspace_id}/members/{user_id}`
-- [Update Workspace Member - Claude API Reference](Admin/api-admin-workspaces-members-update-deb290fa99.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Rate Limits - Claude API Reference](Admin/api-admin-workspaces-rate-limits-1299da20e6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Rate Limits](Admin/api-admin-workspaces-rate-limits-7fd15c7aae.md) - **get** `/v1/organizations/workspaces/{workspace_id}/rate_limits`
-- [List Workspace Rate Limits - Claude API Reference](Admin/api-admin-workspaces-rate-limits-list-17a31beac0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Workspaces Rate Limits List 89661B6Ee2](Admin/api-admin-workspaces-rate-limits-list-89661b6ee2.md) - **get** `/v1/organizations/workspaces/{workspace_id}/rate_limits`
-- [Get Workspace - Claude API Reference](Admin/api-admin-workspaces-retrieve-3dd11b3337.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Workspaces Retrieve E4E9C89D38](Admin/api-admin-workspaces-retrieve-e4e9c89d38.md) - **get** `/v1/organizations/workspaces/{workspace_id}`
-- [Service Accounts - Claude API Reference](Admin/api-admin-workspaces-service-accounts-75c057cb47.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Service Account Workspace Member - Claude API Reference](Admin/api-admin-workspaces-service-accounts-create-27ba3b8a60.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete Service Account Workspace Member - Claude API Reference](Admin/api-admin-workspaces-service-accounts-delete-a469b2ac8c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Service Account Workspace Members - Claude API Reference](Admin/api-admin-workspaces-service-accounts-list-09ca8a7d8c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Service Account Workspace Member - Claude API Reference](Admin/api-admin-workspaces-service-accounts-retrieve-0c088a31a7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Service Account Workspace Member - Claude API Reference](Admin/api-admin-workspaces-service-accounts-update-bf46e42df2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Admin Workspaces Update 44659E11A9](Admin/api-admin-workspaces-update-44659e11a9.md) - **post** `/v1/organizations/workspaces/{workspace_id}`
-- [Update Workspace - Claude API Reference](Admin/api-admin-workspaces-update-6062dd08a6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Analytics - Claude API Reference](Admin/api-http-admin-analytics-6e54a95b9a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Artifacts - Claude API Reference](Admin/api-http-admin-analytics-artifacts-6f54fc6d3f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Artifact Activity - Claude API Reference](Admin/api-http-admin-analytics-artifacts-list-93531c6be2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Chat Projects - Claude API Reference](Admin/api-http-admin-analytics-chat-projects-0af5e99d82.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Chat Project Usage - Claude API Reference](Admin/api-http-admin-analytics-chat-projects-list-17eae8956c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Connectors - Claude API Reference](Admin/api-http-admin-analytics-connectors-084a7e6747.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Connector Usage - Claude API Reference](Admin/api-http-admin-analytics-connectors-list-24a65287c9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Cost - Claude API Reference](Admin/api-http-admin-analytics-cost-d0c7e0382d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Per-User Cost - Claude API Reference](Admin/api-http-admin-analytics-cost-list-by-user-d287c2e561.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Cost Over Time - Claude API Reference](Admin/api-http-admin-analytics-cost-list-f0a5b6ab26.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Plugins - Claude API Reference](Admin/api-http-admin-analytics-plugins-5b2afe090e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Plugin Usage - Claude API Reference](Admin/api-http-admin-analytics-plugins-list-512d01e20b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Activity Summaries - Claude API Reference](Admin/api-http-admin-analytics-retrieve-summaries-79a424b965.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Skills - Claude API Reference](Admin/api-http-admin-analytics-skills-6c4e5150f5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Skill Usage - Claude API Reference](Admin/api-http-admin-analytics-skills-list-3908cc16a7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Usage - Claude API Reference](Admin/api-http-admin-analytics-usage-5c69bf8dbe.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Token Usage Over Time - Claude API Reference](Admin/api-http-admin-analytics-usage-list-8d33319656.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Per-User Token Usage - Claude API Reference](Admin/api-http-admin-analytics-usage-list-by-user-3b894b2695.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Users - Claude API Reference](Admin/api-http-admin-analytics-users-60fb3229e9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List User Activity - Claude API Reference](Admin/api-http-admin-analytics-users-list-23bec50d22.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+## Agents Tools
 
-## Agents-Tools (75)
+- [Advisor tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-advisor-tool.md) — Claude on cloud platforms
+- [Agent Skills - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-overview.md) — Claude on cloud platforms
+- [Architecture and components - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-concepts.md) — Claude on cloud platforms
+- [Bash tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-bash-tool.md) — Claude on cloud platforms
+- [Browser use tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md) — Claude on cloud platforms
+- [Claude API skill - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md) — An open-source Agent Skill that provides Claude with up-to-date API reference material, SDK documentation, and best practices for building applications with…
+- [Code execution tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md) — Claude on cloud platforms
+- [Computer use tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md) — Claude on cloud platforms
+- [Define tools - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md) — Claude on cloud platforms
+- [Deploy MCP tunnels with Docker Compose - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-deploy-compose.md) — Claude on cloud platforms
+- [Deploy MCP tunnels with Helm - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-deploy-helm.md) — Claude on cloud platforms
+- [Fine-grained tool streaming - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md) — Claude on cloud platforms
+- [Get started with Agent Skills in the API - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-quickstart.md) — Claude on cloud platforms
+- [Handle tool calls - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md) — Claude on cloud platforms
+- [How tool use works - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md) — Claude on cloud platforms
+- [Manage tool context - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md) — Claude on cloud platforms
+- [Manage tunnels in the Console - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-console.md) — Claude on cloud platforms
+- [MCP connector - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-connector.md) — Claude on cloud platforms
+- [MCP tunnels - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-overview.md) — Claude on cloud platforms
+- [MCP tunnels quickstart - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-quickstart.md) — Claude on cloud platforms
+- [MCP tunnels reference - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-reference.md) — Claude on cloud platforms
+- [MCP tunnels security - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-security.md) — Claude on cloud platforms
+- [Memory tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-memory-tool.md) — Claude on cloud platforms
+- [Not Found - Claude Platform Docs](Agents-Tools/agents-and-tools-how-tool-use-works.md) — The requested page could not be found.
+- [Not Found - Claude Platform Docs](Agents-Tools/agents-and-tools-memory-tool.md) — The requested page could not be found. These pages are close:
+- [Not Found - Claude Platform Docs](Agents-Tools/agents-and-tools-web-fetch-tool.md) — The requested page could not be found. These pages are close:
+- [Parallel tool use - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md) — Claude on cloud platforms
+- [Programmatic tool calling - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md) — Let Claude call your tools from code in the code execution container, cutting model round trips and token use in multi-tool workflows.
+- [Remote MCP servers - Claude Platform Docs](Agents-Tools/agents-and-tools-remote-mcp-servers.md) — Claude on cloud platforms
+- [Server tools - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-server-tools.md) — Claude on cloud platforms
+- [Skill authoring best practices - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-best-practices.md) — Claude on cloud platforms
+- [Skills for enterprise - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-enterprise.md) — Claude on cloud platforms
+- [Strict tool use - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md) — Claude on cloud platforms
+- [Text editor tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md) — Claude on cloud platforms
+- [Tool combinations - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-combinations.md) — Claude on cloud platforms
+- [Tool reference - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-reference.md) — Claude on cloud platforms
+- [Tool runner (SDK) - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-runner.md) — Claude on cloud platforms
+- [Tool search tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md) — Claude on cloud platforms
+- [Tool use with Claude - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-overview.md) — Claude on cloud platforms
+- [Tool use with prompt caching - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md) — Claude on cloud platforms
+- [Troubleshoot MCP tunnels - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-troubleshooting.md) — Claude on cloud platforms
+- [Troubleshooting tool use - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md) — Claude on cloud platforms
+- [Tutorial: Build a tool-using agent - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md) — Claude on cloud platforms
+- [Web fetch tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md) — Claude on cloud platforms
+- [Web search tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-web-search-tool.md) — Claude on cloud platforms
 
-- [Skill authoring best practices](Agents-Tools/agents-and-tools-agent-skills-best-practices-d1da876439.md) - Learn how to write effective Skills that Claude can discover and use successfully.
-- [Skill authoring best practices - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-best-practices-ee885bfc4c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Skills for enterprise - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-enterprise-552d8d9221.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Skills for enterprise](Agents-Tools/agents-and-tools-agent-skills-enterprise-6168dda2cc.md) - Governance, security review, evaluation, and organizational guidance for deploying Agent Skills at enterprise scale.
-- [Agent Skills - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-overview-5388df5d34.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Agent Skills](Agents-Tools/agents-and-tools-agent-skills-overview-a6ba167cbe.md) - Agent Skills are modular capabilities that extend Claude's functionality. Each Skill packages instructions, metadata, and optional resources (scripts,
-- [Get started with Agent Skills in the API](Agents-Tools/agents-and-tools-agent-skills-quickstart-4b66ca78ee.md) - Learn how to use Agent Skills to create documents with the Claude API in under 10 minutes.
-- [Get started with Agent Skills in the API - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-quickstart-9d70739541.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [MCP connector](Agents-Tools/agents-and-tools-mcp-connector-2b3ff19436.md)
-- [MCP connector - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-connector-83e0e00209.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Architecture and components - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-concepts-4259d94b65.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Manage tunnels in the Console - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-console-61ec0ab65a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Deploy MCP tunnels with Docker Compose - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-deploy-compose-12c9959bf8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Deploy MCP tunnels with Helm - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-deploy-helm-1a36bcc7af.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [MCP tunnels - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-overview-4bc641a728.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [MCP tunnels quickstart - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-quickstart-d84e85df16.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [MCP tunnels reference - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-reference-8fe3088fe2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [MCP tunnels security - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-security-bc2f275195.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Troubleshoot MCP tunnels - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-troubleshooting-f51de6da4b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Remote MCP servers](Agents-Tools/agents-and-tools-remote-mcp-servers-42aeab377e.md)
-- [Remote MCP servers - Claude Platform Docs](Agents-Tools/agents-and-tools-remote-mcp-servers-46c1f8e80f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Advisor tool](Agents-Tools/agents-and-tools-tool-use-advisor-tool-0a75684a7b.md) - Pair a faster executor model with a higher-intelligence advisor model that provides strategic guidance mid-generation.
-- [Advisor tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-advisor-tool-4e22ba57ce.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Bash tool](Agents-Tools/agents-and-tools-tool-use-bash-tool-17760ed12d.md)
-- [Bash tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-bash-tool-e6357c4a47.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Browser use tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-browser-use-tool-5ec44f8935.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Tutorial: Build a tool-using agent](Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent-72a5cd5184.md) - A guided walkthrough from a single tool call to a production-ready agentic loop.
-- [Tutorial: Build a tool-using agent - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent-9fad00092e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Code execution tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-code-execution-tool-193ff6471b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Code execution tool](Agents-Tools/agents-and-tools-tool-use-code-execution-tool-4d0dc9adf8.md) - Run Python and bash code in a sandboxed container to analyze data, generate files, and iterate on solutions.
-- [Code execution tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-code-execution-tool-c20aeb8222.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Code execution tool - Claude API Docs](Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md) - Claude can analyze data, create visualizations, perform complex calculations, run system commands, create and edit files, and process uploaded files d
-- [Computer use tool](Agents-Tools/agents-and-tools-tool-use-computer-use-tool-92d412df82.md) - <Steps>
-- [Computer use tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-computer-use-tool-acf1524a1d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Define tools - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-define-tools-4901dce6b1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Define tools](Agents-Tools/agents-and-tools-tool-use-define-tools-79983959fd.md) - Specify tool schemas, write effective descriptions, and control when Claude calls your tools.
-- [Fine-grained tool streaming - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming-1ab66a0fac.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Fine-grained tool streaming](Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming-3f41c8f967.md) - Stream tool inputs character-by-character for latency-sensitive applications.
-- [Handle tool calls - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-handle-tool-calls-42e907e295.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Handle tool calls](Agents-Tools/agents-and-tools-tool-use-handle-tool-calls-4a48c94000.md) - Parse tool_use blocks, format tool_result responses, and handle errors with is_error.
-- [How tool use works - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-how-tool-use-works-a2c7cb24dc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [How tool use works](Agents-Tools/agents-and-tools-tool-use-how-tool-use-works-fdcca0c844.md) - Understand the tool use loop, where tools execute, and when to use tools instead of prose.
-- [Define tools - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-implement-tool-use-de5021719c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Manage tool context - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-manage-tool-context-950120d599.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Manage tool context](Agents-Tools/agents-and-tools-tool-use-manage-tool-context-ffb2d4526a.md) - Choose between tool search, programmatic tool calling, prompt caching, and context editing to manage context bloat.
-- [Memory tool](Agents-Tools/agents-and-tools-tool-use-memory-tool-6d9391f81f.md)
-- [Memory tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-memory-tool-6f537de146.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Tool use with Claude](Agents-Tools/agents-and-tools-tool-use-overview-631f8e3a7e.md) - Connect Claude to external tools and APIs. Learn where tools execute and how the agentic loop works.
-- [Tool use with Claude - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-overview-82747c62f3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Parallel tool use](Agents-Tools/agents-and-tools-tool-use-parallel-tool-use-93edcb192b.md) - Enable and format parallel tool calls, with message-history guidance and troubleshooting.
-- [Parallel tool use - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-parallel-tool-use-da79ee38f7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Programmatic tool calling - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling-514c8ec7e7.md) - Copy page
-- [Programmatic tool calling](Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling-95ea7cf823.md)
-- [Server tools - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-server-tools-380d2b0919.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Server tools](Agents-Tools/agents-and-tools-tool-use-server-tools-c13eb821bf.md) - Work with Anthropic-executed tools: server_tool_use blocks, pause_turn continuation, and domain filtering.
-- [Strict tool use](Agents-Tools/agents-and-tools-tool-use-strict-tool-use-6896c973b6.md) - Enforce JSON Schema compliance on Claude's tool inputs with grammar-constrained sampling.
-- [Strict tool use - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-strict-tool-use-71fbe07d3f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Text editor tool](Agents-Tools/agents-and-tools-tool-use-text-editor-tool-252bfe1f5b.md) - The text editor tool uses the same pricing structure as other tools used with Claude. It follows the standard input and output token pricing based on 
-- [Text editor tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-text-editor-tool-a7496e8073.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Tool combinations - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-combinations-850984ebe7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Tool combinations](Agents-Tools/agents-and-tools-tool-use-tool-combinations-9ef3cff9d6.md) - Common Anthropic tool pairings for research agents, coding agents, and long-running agents.
-- [Tool reference](Agents-Tools/agents-and-tools-tool-use-tool-reference-73b4586472.md) - Directory of Anthropic-provided tools and reference for optional tool definition properties.
-- [Tool reference - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-reference-fbf88f036d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Tool Runner (SDK)](Agents-Tools/agents-and-tools-tool-use-tool-runner-8ab76faf78.md) - Use the SDK's Tool Runner abstraction to handle the agentic loop, error wrapping, and type safety automatically.
-- [Tool runner (SDK) - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-runner-a1c690959a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Tool search tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-search-tool-1bf8a15bc1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Tool search tool](Agents-Tools/agents-and-tools-tool-use-tool-search-tool-5499cf85ce.md)
-- [Tool use with prompt caching](Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching-a19f41d804.md) - Cache tool definitions across turns and understand what invalidates your cache.
-- [Tool use with prompt caching - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching-e7ac6ba769.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Troubleshooting tool use - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use-9874199c7b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Troubleshooting tool use](Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use-e25c7591a5.md) - Fix the most common tool-use errors with symptom-to-fix diagnostic tables.
-- [Web fetch tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-web-fetch-tool-0bf3ad17f4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Web fetch tool](Agents-Tools/agents-and-tools-tool-use-web-fetch-tool-d9b8c0ffca.md) - Fetch and read content from specific URLs to augment Claude's context with live web content.
-- [Web search tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-web-search-tool-21cf532558.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Web search tool](Agents-Tools/agents-and-tools-tool-use-web-search-tool-874fc28332.md)
+## Endpoints
 
-## Guides (74)
+- [Acknowledge Work - Claude API Reference](Endpoints/beta-environments-work-ack.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Add Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-add.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Agents](Endpoints/cli-beta-agents.md) — - --model: BetaManagedAgentsModelConfigParams
+- [Agents](Endpoints/csharp-beta-agents.md) — BetaManagedAgentsAgent Beta.Agents.Create(AgentCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Agents](Endpoints/go-beta-agents.md) — client.Beta.Agents.New(ctx, params) (BetaManagedAgentsAgent, error)
+- [Agents](Endpoints/java-beta-agents.md) — BetaManagedAgentsAgent beta().agents().create(AgentCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Agents](Endpoints/python-beta-agents.md) — beta.agents.create(AgentCreateParamskwargs)  -> BetaManagedAgentsAgent
+- [Agents](Endpoints/ruby-beta-agents.md) — beta.agents.create(kwargs) -> BetaManagedAgentsAgent
+- [Agents](Endpoints/typescript-beta-agents.md) — client.beta.agents.create(AgentCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsAgent
+- [Agents - Claude API Reference](Endpoints/beta-agents.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Api Beta Agents Delete B1F73666B6](Endpoints/beta-agents-delete.md)
+- [Api Cli Beta Agents Archive F66Ba0A22F](Endpoints/cli-beta-agents-archive.md) — $ ant beta:agents archive
+- [Api Cli Beta Agents Create Cca558Fd89](Endpoints/cli-beta-agents-create.md) — - --model: BetaManagedAgentsModelConfigParams
+- [Api Cli Beta Agents Delete 5Bfe9116Cb](Endpoints/cli-beta-agents-delete.md)
+- [Api Cli Beta Agents List 3Cd6600718](Endpoints/cli-beta-agents-list.md) — - --created-at-gte: optional string
+- [Api Cli Beta Agents Retrieve Fa8D49D1D7](Endpoints/cli-beta-agents-retrieve.md) — $ ant beta:agents retrieve
+- [Api Cli Beta Agents Update 871C6C74C3](Endpoints/cli-beta-agents-update.md) — post /v1/agents/{agentid}
+- [Api Cli Beta Agents Versions List 73D2A4Ef9E](Endpoints/cli-beta-agents-versions-list.md) — $ ant beta:agents:versions list
+- [Api Cli Beta Environments Archive 671D7C4962](Endpoints/cli-beta-environments-archive.md) — $ ant beta:environments archive
+- [Api Cli Beta Environments Create 95C9050Cef](Endpoints/cli-beta-environments-create.md) — $ ant beta:environments create
+- [Api Cli Beta Environments Delete C517E564E3](Endpoints/cli-beta-environments-delete.md) — $ ant beta:environments delete
+- [Api Cli Beta Environments List 6731B616A5](Endpoints/cli-beta-environments-list.md) — $ ant beta:environments list
+- [Api Cli Beta Environments Retrieve B1Cea8A77D](Endpoints/cli-beta-environments-retrieve.md) — $ ant beta:environments retrieve
+- [Api Cli Beta Environments Update D78C270B79](Endpoints/cli-beta-environments-update.md) — $ ant beta:environments update
+- [Api Cli Beta Files Delete C02F26C521](Endpoints/cli-beta-files-delete.md) — delete /v1/files/{fileid}
+- [Api Cli Beta Files Download C3F94484Cd](Endpoints/cli-beta-files-download.md) — $ ant beta:files download
+- [Api Cli Beta Files List Be1465Bc8A](Endpoints/cli-beta-files-list.md) — - --after-id: optional string
+- [Api Cli Beta Files Retrieve Metadata 9Eddf25374](Endpoints/cli-beta-files-retrieve-metadata.md) — $ ant beta:files retrieve-metadata
+- [Api Cli Beta Files Upload Dbe80D4A4C](Endpoints/cli-beta-files-upload.md) — Body param: The file to upload
+- [Api Cli Beta Memory Stores Archive Ffcfb80Af3](Endpoints/cli-beta-memory-stores-archive.md) — $ ant beta:memory-stores archive
+- [Api Cli Beta Memory Stores Create 6Ff3B35C96](Endpoints/cli-beta-memory-stores-create.md) — $ ant beta:memory-stores create
+- [Api Cli Beta Memory Stores Delete 8A40F4429C](Endpoints/cli-beta-memory-stores-delete.md) — $ ant beta:memory-stores delete
+- [Api Cli Beta Memory Stores List 57Fce0Ed1A](Endpoints/cli-beta-memory-stores-list.md) — $ ant beta:memory-stores list
+- [Api Cli Beta Memory Stores Memories Create 9210A992Aa](Endpoints/cli-beta-memory-stores-memories-create.md) — $ ant beta:memory-stores:memories create
+- [Api Cli Beta Memory Stores Memories Delete 4F34C8D23B](Endpoints/cli-beta-memory-stores-memories-delete.md) — $ ant beta:memory-stores:memories delete
+- [Api Cli Beta Memory Stores Memories List 24278795A4](Endpoints/cli-beta-memory-stores-memories-list.md) — $ ant beta:memory-stores:memories list
+- [Api Cli Beta Memory Stores Memories Retrieve 2A76Fb9623](Endpoints/cli-beta-memory-stores-memories-retrieve.md) — $ ant beta:memory-stores:memories retrieve
+- [Api Cli Beta Memory Stores Memories Update 4505Cdd54C](Endpoints/cli-beta-memory-stores-memories-update.md) — $ ant beta:memory-stores:memories update
+- [Api Cli Beta Memory Stores Memory Versions List 4710C65154](Endpoints/cli-beta-memory-stores-memory-versions-list.md) — $ ant beta:memory-stores:memory-versions list
+- [Api Cli Beta Memory Stores Memory Versions Redact D82D078B57](Endpoints/cli-beta-memory-stores-memory-versions-redact.md) — $ ant beta:memory-stores:memory-versions redact
+- [Api Cli Beta Memory Stores Memory Versions Retrieve 7114A49036](Endpoints/cli-beta-memory-stores-memory-versions-retrieve.md) — $ ant beta:memory-stores:memory-versions retrieve
+- [Api Cli Beta Memory Stores Retrieve Fc649E8608](Endpoints/cli-beta-memory-stores-retrieve.md) — $ ant beta:memory-stores retrieve
+- [Api Cli Beta Memory Stores Update Ccd110F5A1](Endpoints/cli-beta-memory-stores-update.md) — $ ant beta:memory-stores update
+- [Api Cli Beta Messages Batches Cancel 5F2508Da1C](Endpoints/cli-beta-messages-batches-cancel.md) — $ ant beta:messages:batches cancel
+- [Api Cli Beta Messages Batches Create 334C15F2B7](Endpoints/cli-beta-messages-batches-create.md) — $ ant beta:messages:batches create
+- [Api Cli Beta Messages Batches Delete 00D17C475D](Endpoints/cli-beta-messages-batches-delete.md) — $ ant beta:messages:batches delete
+- [Api Cli Beta Messages Batches List C6Ef13Fa77](Endpoints/cli-beta-messages-batches-list.md) — $ ant beta:messages:batches list
+- [Api Cli Beta Messages Batches Results 8B1677D1B4](Endpoints/cli-beta-messages-batches-results.md) — $ ant beta:messages:batches results
+- [Api Cli Beta Messages Batches Retrieve 08Ecbfd6Af](Endpoints/cli-beta-messages-batches-retrieve.md) — $ ant beta:messages:batches retrieve
+- [Api Cli Beta Messages Count Tokens 3087666Ddd](Endpoints/cli-beta-messages-count-tokens.md) — $ ant beta:messages count-tokens
+- [Api Cli Beta Messages Create 875F28C998](Endpoints/cli-beta-messages-create.md) — $ ant beta:messages create
+- [Api Cli Beta Models List 5Ec77A878A](Endpoints/cli-beta-models-list.md) — The Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.
+- [Api Cli Beta Models Retrieve Dbbcb4692A](Endpoints/cli-beta-models-retrieve.md) — $ ant beta:models retrieve
+- [Api Cli Beta Sessions Archive 63006Cd882](Endpoints/cli-beta-sessions-archive.md) — $ ant beta:sessions archive
+- [Api Cli Beta Sessions Create 165E95Ea7B](Endpoints/cli-beta-sessions-create.md) — $ ant beta:sessions create
+- [Api Cli Beta Sessions Delete 8E627406A1](Endpoints/cli-beta-sessions-delete.md) — $ ant beta:sessions delete
+- [Api Cli Beta Sessions Events List A9343F872E](Endpoints/cli-beta-sessions-events-list.md) — $ ant beta:sessions:events list
+- [Api Cli Beta Sessions Events Send 1855105335](Endpoints/cli-beta-sessions-events-send.md) — $ ant beta:sessions:events send
+- [Api Cli Beta Sessions Events Stream E9Bb0A4160](Endpoints/cli-beta-sessions-events-stream.md) — $ ant beta:sessions:events stream
+- [Api Cli Beta Sessions List E29471E981](Endpoints/cli-beta-sessions-list.md) — - --agent-id: optional string
+- [Api Cli Beta Sessions Resources Add 1A6A99445E](Endpoints/cli-beta-sessions-resources-add.md) — $ ant beta:sessions:resources add
+- [Api Cli Beta Sessions Resources Delete 3B1C71Ebc9](Endpoints/cli-beta-sessions-resources-delete.md) — $ ant beta:sessions:resources delete
+- [Api Cli Beta Sessions Resources List 8C8A74B5Ba](Endpoints/cli-beta-sessions-resources-list.md) — $ ant beta:sessions:resources list
+- [Api Cli Beta Sessions Resources Retrieve 74318Ee3Fe](Endpoints/cli-beta-sessions-resources-retrieve.md) — $ ant beta:sessions:resources retrieve
+- [Api Cli Beta Sessions Resources Update A532E65D2D](Endpoints/cli-beta-sessions-resources-update.md) — $ ant beta:sessions:resources update
+- [Api Cli Beta Sessions Retrieve Ad471Ee9Af](Endpoints/cli-beta-sessions-retrieve.md) — $ ant beta:sessions retrieve
+- [Api Cli Beta Sessions Update 729Cfb594F](Endpoints/cli-beta-sessions-update.md) — $ ant beta:sessions update
+- [Api Cli Beta Skills Create Cca94E3Dae](Endpoints/cli-beta-skills-create.md) — - --display-title: optional string
+- [Api Cli Beta Skills Delete 504871Ca40](Endpoints/cli-beta-skills-delete.md) — delete /v1/skills/{skillid}
+- [Api Cli Beta Skills List 8F25A728C0](Endpoints/cli-beta-skills-list.md) — - --limit: optional number
+- [Api Cli Beta Skills Retrieve F0D1D64D56](Endpoints/cli-beta-skills-retrieve.md) — $ ant beta:skills retrieve
+- [Api Cli Beta Skills Versions Create 3E91A54C1F](Endpoints/cli-beta-skills-versions-create.md) — $ ant beta:skills:versions create
+- [Api Cli Beta Skills Versions Delete 75496Fd34D](Endpoints/cli-beta-skills-versions-delete.md) — $ ant beta:skills:versions delete
+- [Api Cli Beta Skills Versions List Ed1A396D96](Endpoints/cli-beta-skills-versions-list.md) — $ ant beta:skills:versions list
+- [Api Cli Beta Skills Versions Retrieve 494Dfec345](Endpoints/cli-beta-skills-versions-retrieve.md) — $ ant beta:skills:versions retrieve
+- [Api Cli Beta Vaults Archive Fb33B123F3](Endpoints/cli-beta-vaults-archive.md) — $ ant beta:vaults archive
+- [Api Cli Beta Vaults Create 1E8D3Ee392](Endpoints/cli-beta-vaults-create.md) — Body param: Human-readable name for the vault. 1-255 characters.
+- [Api Cli Beta Vaults Credentials Archive F0Deab75D3](Endpoints/cli-beta-vaults-credentials-archive.md) — $ ant beta:vaults:credentials archive
+- [Api Cli Beta Vaults Credentials Create 2279663D5A](Endpoints/cli-beta-vaults-credentials-create.md) — $ ant beta:vaults:credentials create
+- [Api Cli Beta Vaults Credentials Delete 9B8D5C30F3](Endpoints/cli-beta-vaults-credentials-delete.md) — $ ant beta:vaults:credentials delete
+- [Api Cli Beta Vaults Credentials List Fac330D176](Endpoints/cli-beta-vaults-credentials-list.md) — $ ant beta:vaults:credentials list
+- [Api Cli Beta Vaults Credentials Retrieve 199B5E8B19](Endpoints/cli-beta-vaults-credentials-retrieve.md) — $ ant beta:vaults:credentials retrieve
+- [Api Cli Beta Vaults Credentials Update 5A003A3913](Endpoints/cli-beta-vaults-credentials-update.md) — $ ant beta:vaults:credentials update
+- [Api Cli Beta Vaults Delete Fc20C485B6](Endpoints/cli-beta-vaults-delete.md) — delete /v1/vaults/{vaultid}
+- [Api Cli Beta Vaults List 13D2Dea190](Endpoints/cli-beta-vaults-list.md) — - --include-archived: optional boolean
+- [Api Cli Beta Vaults Retrieve 8Bb9D888A5](Endpoints/cli-beta-vaults-retrieve.md) — $ ant beta:vaults retrieve
+- [Api Cli Beta Vaults Update 146F123E81](Endpoints/cli-beta-vaults-update.md) — post /v1/vaults/{vaultid}
+- [Api Cli Completions Create D57F3F7Be6](Endpoints/cli-completions-create.md) — The Text Completions API is a legacy API. We recommend using the Messages API going forward.
+- [Api Cli Messages Batches Cancel 55B7749055](Endpoints/cli-messages-batches-cancel.md) — $ ant messages:batches cancel
+- [Api Cli Messages Batches Create 8944E8B544](Endpoints/cli-messages-batches-create.md) — $ ant messages:batches create
+- [Api Cli Messages Batches Delete 7668B24B94](Endpoints/cli-messages-batches-delete.md) — $ ant messages:batches delete
+- [Api Cli Messages Batches List F900790450](Endpoints/cli-messages-batches-list.md) — $ ant messages:batches list
+- [Api Cli Messages Batches Results 3A91A8964E](Endpoints/cli-messages-batches-results.md) — $ ant messages:batches results
+- [Api Cli Messages Batches Retrieve 0Cba952F88](Endpoints/cli-messages-batches-retrieve.md) — $ ant messages:batches retrieve
+- [Api Cli Messages Count Tokens 417Eec1417](Endpoints/cli-messages-count-tokens.md) — $ ant messages count-tokens
+- [Api Cli Messages Create 0A922Ab2C1](Endpoints/cli-messages-create.md) — Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.
+- [Api Cli Models List E974Eb8808](Endpoints/cli-models-list.md) — The Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.
+- [Api Cli Models Retrieve 88D62A2309](Endpoints/cli-models-retrieve.md) — The Models API response can be used to determine information about a specific model or resolve a model alias to a model ID.
+- [Api Csharp Beta Agents Archive 381F76D3Eb](Endpoints/csharp-beta-agents-archive.md) — BetaManagedAgentsAgent Beta.Agents.Archive(AgentArchiveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Agents Create 01C1A87Fb7](Endpoints/csharp-beta-agents-create.md) — BetaManagedAgentsAgent Beta.Agents.Create(AgentCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Agents Delete 4103306683](Endpoints/csharp-beta-agents-delete.md)
+- [Api Csharp Beta Agents List Def82571Ee](Endpoints/csharp-beta-agents-list.md) — AgentListPageResponse Beta.Agents.List(AgentListParams?parameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Agents Retrieve C0D2Ce1Ffa](Endpoints/csharp-beta-agents-retrieve.md) — BetaManagedAgentsAgent Beta.Agents.Retrieve(AgentRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Agents Update 5F4F9A510D](Endpoints/csharp-beta-agents-update.md) — BetaManagedAgentsAgent Beta.Agents.Update(AgentUpdateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Agents Versions List B268578C89](Endpoints/csharp-beta-agents-versions-list.md) — VersionListPageResponse Beta.Agents.Versions.List(VersionListParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Environments Archive 514760Ec61](Endpoints/csharp-beta-environments-archive.md) — BetaEnvironment Beta.Environments.Archive(EnvironmentArchiveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Environments Create 002C4450D0](Endpoints/csharp-beta-environments-create.md) — BetaEnvironment Beta.Environments.Create(EnvironmentCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Environments Delete 865Ed1Ba63](Endpoints/csharp-beta-environments-delete.md) — BetaEnvironmentDeleteResponse Beta.Environments.Delete(EnvironmentDeleteParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Environments List A6F94Be48C](Endpoints/csharp-beta-environments-list.md) — EnvironmentListPageResponse Beta.Environments.List(EnvironmentListParams?parameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Environments Retrieve 233Ce78E16](Endpoints/csharp-beta-environments-retrieve.md) — BetaEnvironment Beta.Environments.Retrieve(EnvironmentRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Environments Update 54F047Fda8](Endpoints/csharp-beta-environments-update.md) — BetaEnvironment Beta.Environments.Update(EnvironmentUpdateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Files Delete Afce14644F](Endpoints/csharp-beta-files-delete.md) — DeletedFile Beta.Files.Delete(FileDeleteParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Files Download 29Cf3E5Cbb](Endpoints/csharp-beta-files-download.md) — HttpResponse Beta.Files.Download(FileDownloadParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Files List 624A3B1F5E](Endpoints/csharp-beta-files-list.md) — FileListPageResponse Beta.Files.List(FileListParams?parameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Files Retrieve Metadata 030B4Ba679](Endpoints/csharp-beta-files-retrieve-metadata.md) — FileMetadata Beta.Files.RetrieveMetadata(FileRetrieveMetadataParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Files Upload 78185274B4](Endpoints/csharp-beta-files-upload.md) — FileMetadata Beta.Files.Upload(FileUploadParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Memory Stores Archive 1743C0Ce8B](Endpoints/csharp-beta-memory-stores-archive.md) — BetaManagedAgentsMemoryStore Beta.MemoryStores.Archive(MemoryStoreArchiveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Memory Stores Create 8D6Ae06090](Endpoints/csharp-beta-memory-stores-create.md) — BetaManagedAgentsMemoryStore Beta.MemoryStores.Create(MemoryStoreCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Memory Stores Delete 1B99F1826A](Endpoints/csharp-beta-memory-stores-delete.md) — BetaManagedAgentsDeletedMemoryStore Beta.MemoryStores.Delete(MemoryStoreDeleteParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Memory Stores List Dbfc0Ef5E5](Endpoints/csharp-beta-memory-stores-list.md) — MemoryStoreListPageResponse Beta.MemoryStores.List(MemoryStoreListParams?parameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Memory Stores Memories Create 2D5B31Becb](Endpoints/csharp-beta-memory-stores-memories-create.md) — BetaManagedAgentsMemory Beta.MemoryStores.Memories.Create(MemoryCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Memory Stores Memories Delete F016333318](Endpoints/csharp-beta-memory-stores-memories-delete.md) — BetaManagedAgentsDeletedMemory Beta.MemoryStores.Memories.Delete(MemoryDeleteParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Memory Stores Memories List 78E885A97A](Endpoints/csharp-beta-memory-stores-memories-list.md) — MemoryListPageResponse Beta.MemoryStores.Memories.List(MemoryListParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Memory Stores Memories Retrieve 176Fc3000D](Endpoints/csharp-beta-memory-stores-memories-retrieve.md) — BetaManagedAgentsMemory Beta.MemoryStores.Memories.Retrieve(MemoryRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Memory Stores Memories Update Dc61C150B8](Endpoints/csharp-beta-memory-stores-memories-update.md) — BetaManagedAgentsMemory Beta.MemoryStores.Memories.Update(MemoryUpdateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Memory Stores Memory Versions List 7360D4F114](Endpoints/csharp-beta-memory-stores-memory-versions-list.md) — MemoryVersionListPageResponse Beta.MemoryStores.MemoryVersions.List(MemoryVersionListParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Memory Stores Memory Versions Redact 72E8C8D171](Endpoints/csharp-beta-memory-stores-memory-versions-redact.md) — BetaManagedAgentsMemoryVersion Beta.MemoryStores.MemoryVersions.Redact(MemoryVersionRedactParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Memory Stores Memory Versions Retrieve 99397E186A](Endpoints/csharp-beta-memory-stores-memory-versions-retrieve.md) — BetaManagedAgentsMemoryVersion Beta.MemoryStores.MemoryVersions.Retrieve(MemoryVersionRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Memory Stores Retrieve 3Bd4D5776C](Endpoints/csharp-beta-memory-stores-retrieve.md) — BetaManagedAgentsMemoryStore Beta.MemoryStores.Retrieve(MemoryStoreRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Memory Stores Update E3C6Bea620](Endpoints/csharp-beta-memory-stores-update.md) — BetaManagedAgentsMemoryStore Beta.MemoryStores.Update(MemoryStoreUpdateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Messages Batches Cancel 5A196D3339](Endpoints/csharp-beta-messages-batches-cancel.md) — BetaMessageBatch Beta.Messages.Batches.Cancel(BatchCancelParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Messages Batches Create 143C1Be65B](Endpoints/csharp-beta-messages-batches-create.md) — BetaMessageBatch Beta.Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Messages Batches Delete B2A113B2Cd](Endpoints/csharp-beta-messages-batches-delete.md) — BetaDeletedMessageBatch Beta.Messages.Batches.Delete(BatchDeleteParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Messages Batches List Ec9259Dae9](Endpoints/csharp-beta-messages-batches-list.md) — BatchListPageResponse Beta.Messages.Batches.List(BatchListParams?parameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Messages Batches Results 24Fd381E2A](Endpoints/csharp-beta-messages-batches-results.md) — BetaMessageBatchIndividualResponse Beta.Messages.Batches.ResultsStreaming(BatchResultsParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Messages Batches Retrieve 2F9Fe9066D](Endpoints/csharp-beta-messages-batches-retrieve.md) — BetaMessageBatch Beta.Messages.Batches.Retrieve(BatchRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Messages Count Tokens 9E3B2F1A28](Endpoints/csharp-beta-messages-count-tokens.md) — BetaMessageTokensCount Beta.Messages.CountTokens(MessageCountTokensParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Messages Create 359E2A44D1](Endpoints/csharp-beta-messages-create.md) — BetaMessage Beta.Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Models List B1924F15F6](Endpoints/csharp-beta-models-list.md) — ModelListPageResponse Beta.Models.List(ModelListParams?parameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Models Retrieve Cee06C3353](Endpoints/csharp-beta-models-retrieve.md) — BetaModelInfo Beta.Models.Retrieve(ModelRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Sessions Archive 41A2Ee3346](Endpoints/csharp-beta-sessions-archive.md) — BetaManagedAgentsSession Beta.Sessions.Archive(SessionArchiveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Sessions Create 4Edc1911Ea](Endpoints/csharp-beta-sessions-create.md) — BetaManagedAgentsSession Beta.Sessions.Create(SessionCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Sessions Delete C9Cb18525D](Endpoints/csharp-beta-sessions-delete.md) — BetaManagedAgentsDeletedSession Beta.Sessions.Delete(SessionDeleteParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Sessions Events List 8C391Ec71C](Endpoints/csharp-beta-sessions-events-list.md) — EventListPageResponse Beta.Sessions.Events.List(EventListParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Sessions Events Send C804493Fce](Endpoints/csharp-beta-sessions-events-send.md) — BetaManagedAgentsSendSessionEvents Beta.Sessions.Events.Send(EventSendParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Sessions Events Stream 4E457E0810](Endpoints/csharp-beta-sessions-events-stream.md) — BetaManagedAgentsStreamSessionEvents Beta.Sessions.Events.StreamStreaming(EventStreamParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Sessions List 9Eadfdbd0A](Endpoints/csharp-beta-sessions-list.md) — SessionListPageResponse Beta.Sessions.List(SessionListParams?parameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Sessions Resources Add Cd133F8C06](Endpoints/csharp-beta-sessions-resources-add.md) — BetaManagedAgentsFileResource Beta.Sessions.Resources.Add(ResourceAddParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Sessions Resources Delete 1B83A320B8](Endpoints/csharp-beta-sessions-resources-delete.md) — BetaManagedAgentsDeleteSessionResource Beta.Sessions.Resources.Delete(ResourceDeleteParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Sessions Resources List 3267218A00](Endpoints/csharp-beta-sessions-resources-list.md) — ResourceListPageResponse Beta.Sessions.Resources.List(ResourceListParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Sessions Resources Retrieve 571E3Bf798](Endpoints/csharp-beta-sessions-resources-retrieve.md) — ResourceRetrieveResponse Beta.Sessions.Resources.Retrieve(ResourceRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Sessions Resources Update 6C51Ca09C3](Endpoints/csharp-beta-sessions-resources-update.md) — ResourceUpdateResponse Beta.Sessions.Resources.Update(ResourceUpdateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Sessions Retrieve Ef5Ca01706](Endpoints/csharp-beta-sessions-retrieve.md) — BetaManagedAgentsSession Beta.Sessions.Retrieve(SessionRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Sessions Update Fbb654A179](Endpoints/csharp-beta-sessions-update.md) — BetaManagedAgentsSession Beta.Sessions.Update(SessionUpdateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Skills Create A142405305](Endpoints/csharp-beta-skills-create.md) — SkillCreateResponse Beta.Skills.Create(SkillCreateParams?parameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Skills Delete 6A4D2910D7](Endpoints/csharp-beta-skills-delete.md) — SkillDeleteResponse Beta.Skills.Delete(SkillDeleteParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Skills List 03Ab0Ff502](Endpoints/csharp-beta-skills-list.md) — SkillListPageResponse Beta.Skills.List(SkillListParams?parameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Skills Retrieve Ed2Cb031E1](Endpoints/csharp-beta-skills-retrieve.md) — SkillRetrieveResponse Beta.Skills.Retrieve(SkillRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Skills Versions Create 226A964440](Endpoints/csharp-beta-skills-versions-create.md) — VersionCreateResponse Beta.Skills.Versions.Create(VersionCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Skills Versions Delete Be409658De](Endpoints/csharp-beta-skills-versions-delete.md) — VersionDeleteResponse Beta.Skills.Versions.Delete(VersionDeleteParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Skills Versions List E9Fa957F1B](Endpoints/csharp-beta-skills-versions-list.md) — VersionListPageResponse Beta.Skills.Versions.List(VersionListParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Skills Versions Retrieve C1F3Be777A](Endpoints/csharp-beta-skills-versions-retrieve.md) — VersionRetrieveResponse Beta.Skills.Versions.Retrieve(VersionRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Vaults Archive E4E3E5C79D](Endpoints/csharp-beta-vaults-archive.md) — BetaManagedAgentsVault Beta.Vaults.Archive(VaultArchiveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Vaults Create 808Baa7268](Endpoints/csharp-beta-vaults-create.md) — BetaManagedAgentsVault Beta.Vaults.Create(VaultCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Vaults Credentials Archive C4Ddcdfde0](Endpoints/csharp-beta-vaults-credentials-archive.md) — BetaManagedAgentsCredential Beta.Vaults.Credentials.Archive(CredentialArchiveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Vaults Credentials Create 73D1F807E5](Endpoints/csharp-beta-vaults-credentials-create.md) — BetaManagedAgentsCredential Beta.Vaults.Credentials.Create(CredentialCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Vaults Credentials Delete C3Cfcc1A34](Endpoints/csharp-beta-vaults-credentials-delete.md) — BetaManagedAgentsDeletedCredential Beta.Vaults.Credentials.Delete(CredentialDeleteParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Vaults Credentials List 3Fb5A98E3A](Endpoints/csharp-beta-vaults-credentials-list.md) — CredentialListPageResponse Beta.Vaults.Credentials.List(CredentialListParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Vaults Credentials Retrieve 67Ba746Eb0](Endpoints/csharp-beta-vaults-credentials-retrieve.md) — BetaManagedAgentsCredential Beta.Vaults.Credentials.Retrieve(CredentialRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Vaults Credentials Update 0B296A685D](Endpoints/csharp-beta-vaults-credentials-update.md) — BetaManagedAgentsCredential Beta.Vaults.Credentials.Update(CredentialUpdateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Vaults Delete 1E29335De0](Endpoints/csharp-beta-vaults-delete.md) — BetaManagedAgentsDeletedVault Beta.Vaults.Delete(VaultDeleteParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Vaults List 3764763C58](Endpoints/csharp-beta-vaults-list.md) — VaultListPageResponse Beta.Vaults.List(VaultListParams?parameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Vaults Retrieve Acaf159F14](Endpoints/csharp-beta-vaults-retrieve.md) — BetaManagedAgentsVault Beta.Vaults.Retrieve(VaultRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Vaults Update E1A4F735Ea](Endpoints/csharp-beta-vaults-update.md) — BetaManagedAgentsVault Beta.Vaults.Update(VaultUpdateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Completions Create 8F22Aefc25](Endpoints/csharp-completions-create.md) — The method create is not available in this language.
+- [Api Csharp Messages Batches Cancel De247760E6](Endpoints/csharp-messages-batches-cancel.md) — MessageBatch Messages.Batches.Cancel(BatchCancelParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Messages Batches Create 33Cc6413A7](Endpoints/csharp-messages-batches-create.md) — MessageBatch Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Messages Batches Delete D4B8Ec3C41](Endpoints/csharp-messages-batches-delete.md) — DeletedMessageBatch Messages.Batches.Delete(BatchDeleteParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Messages Batches List Bfba1Ed1A3](Endpoints/csharp-messages-batches-list.md) — BatchListPageResponse Messages.Batches.List(BatchListParams?parameters, CancellationTokencancellationToken = default)
+- [Api Csharp Messages Batches Results 7A022B465D](Endpoints/csharp-messages-batches-results.md) — MessageBatchIndividualResponse Messages.Batches.ResultsStreaming(BatchResultsParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Messages Batches Retrieve 33403C909C](Endpoints/csharp-messages-batches-retrieve.md) — MessageBatch Messages.Batches.Retrieve(BatchRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Messages Count Tokens A7596F297A](Endpoints/csharp-messages-count-tokens.md) — MessageTokensCount Messages.CountTokens(MessageCountTokensParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Messages Create Eaf90Cec85](Endpoints/csharp-messages-create.md) — Message Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Models List B002A3B259](Endpoints/csharp-models-list.md) — ModelListPageResponse Models.List(ModelListParams?parameters, CancellationTokencancellationToken = default)
+- [Api Csharp Models Retrieve 18Bdbda1Bf](Endpoints/csharp-models-retrieve.md) — ModelInfo Models.Retrieve(ModelRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Api Go Beta Agents Archive 02E29E82A4](Endpoints/go-beta-agents-archive.md) — client.Beta.Agents.Archive(ctx, agentID, body) (BetaManagedAgentsAgent, error)
+- [Api Go Beta Agents Create 176F1A0D3A](Endpoints/go-beta-agents-create.md) — client.Beta.Agents.New(ctx, params) (BetaManagedAgentsAgent, error)
+- [Api Go Beta Agents Delete B728Fbc13A](Endpoints/go-beta-agents-delete.md)
+- [Api Go Beta Agents List F1F01F2316](Endpoints/go-beta-agents-list.md) — client.Beta.Agents.List(ctx, params) (PageCursor[BetaManagedAgentsAgent], error)
+- [Api Go Beta Agents Retrieve 951999E9A9](Endpoints/go-beta-agents-retrieve.md) — client.Beta.Agents.Get(ctx, agentID, params) (BetaManagedAgentsAgent, error)
+- [Api Go Beta Agents Update 6568Eb536B](Endpoints/go-beta-agents-update.md) — client.Beta.Agents.Update(ctx, agentID, params) (BetaManagedAgentsAgent, error)
+- [Api Go Beta Agents Versions List Be9505Cb7D](Endpoints/go-beta-agents-versions-list.md) — client.Beta.Agents.Versions.List(ctx, agentID, params) (PageCursor[BetaManagedAgentsAgent], error)
+- [Api Go Beta Environments Archive 1Ed0Ca3308](Endpoints/go-beta-environments-archive.md) — client.Beta.Environments.Archive(ctx, environmentID, body) (BetaEnvironment, error)
+- [Api Go Beta Environments Create 216Ef91726](Endpoints/go-beta-environments-create.md) — client.Beta.Environments.New(ctx, params) (BetaEnvironment, error)
+- [Api Go Beta Environments Delete D582C9610C](Endpoints/go-beta-environments-delete.md) — client.Beta.Environments.Delete(ctx, environmentID, body) (BetaEnvironmentDeleteResponse, error)
+- [Api Go Beta Environments List 68B407142F](Endpoints/go-beta-environments-list.md) — client.Beta.Environments.List(ctx, params) (PageCursor[BetaEnvironment], error)
+- [Api Go Beta Environments Retrieve A752Ca3B02](Endpoints/go-beta-environments-retrieve.md) — client.Beta.Environments.Get(ctx, environmentID, query) (BetaEnvironment, error)
+- [Api Go Beta Environments Update 74Aa27Ef26](Endpoints/go-beta-environments-update.md) — client.Beta.Environments.Update(ctx, environmentID, params) (BetaEnvironment, error)
+- [Api Go Beta Files Delete 0A7B2732B7](Endpoints/go-beta-files-delete.md) — client.Beta.Files.Delete(ctx, fileID, body) (DeletedFile, error)
+- [Api Go Beta Files Download B668832E53](Endpoints/go-beta-files-download.md) — client.Beta.Files.Download(ctx, fileID, query) (Response, error)
+- [Api Go Beta Files List Ee0Cc52C73](Endpoints/go-beta-files-list.md) — client.Beta.Files.List(ctx, params) (Page[FileMetadata], error)
+- [Api Go Beta Files Retrieve Metadata 70Ba27Ce87](Endpoints/go-beta-files-retrieve-metadata.md) — client.Beta.Files.GetMetadata(ctx, fileID, query) (FileMetadata, error)
+- [Api Go Beta Files Upload A9Db62137C](Endpoints/go-beta-files-upload.md) — client.Beta.Files.Upload(ctx, params) (FileMetadata, error)
+- [Api Go Beta Memory Stores Archive 31B974D8Ba](Endpoints/go-beta-memory-stores-archive.md) — client.Beta.MemoryStores.Archive(ctx, memoryStoreID, body) (BetaManagedAgentsMemoryStore, error)
+- [Api Go Beta Memory Stores Create F9E5125148](Endpoints/go-beta-memory-stores-create.md) — client.Beta.MemoryStores.New(ctx, params) (BetaManagedAgentsMemoryStore, error)
+- [Api Go Beta Memory Stores Delete 6076C7C179](Endpoints/go-beta-memory-stores-delete.md) — client.Beta.MemoryStores.Delete(ctx, memoryStoreID, body) (BetaManagedAgentsDeletedMemoryStore, error)
+- [Api Go Beta Memory Stores List 8D9Eda4E59](Endpoints/go-beta-memory-stores-list.md) — client.Beta.MemoryStores.List(ctx, params) (PageCursor[BetaManagedAgentsMemoryStore], error)
+- [Api Go Beta Memory Stores Memories Create C0178D24A0](Endpoints/go-beta-memory-stores-memories-create.md) — client.Beta.MemoryStores.Memories.New(ctx, memoryStoreID, params) (BetaManagedAgentsMemory, error)
+- [Api Go Beta Memory Stores Memories Delete B2D7D5Abce](Endpoints/go-beta-memory-stores-memories-delete.md) — client.Beta.MemoryStores.Memories.Delete(ctx, memoryID, params) (BetaManagedAgentsDeletedMemory, error)
+- [Api Go Beta Memory Stores Memories List F15F5E4Ceb](Endpoints/go-beta-memory-stores-memories-list.md) — client.Beta.MemoryStores.Memories.List(ctx, memoryStoreID, params) (PageCursor[BetaManagedAgentsMemoryListItemUnion], error)
+- [Api Go Beta Memory Stores Memories Retrieve D40A5A8095](Endpoints/go-beta-memory-stores-memories-retrieve.md) — client.Beta.MemoryStores.Memories.Get(ctx, memoryID, params) (BetaManagedAgentsMemory, error)
+- [Api Go Beta Memory Stores Memories Update 5Cdc1841C8](Endpoints/go-beta-memory-stores-memories-update.md) — client.Beta.MemoryStores.Memories.Update(ctx, memoryID, params) (BetaManagedAgentsMemory, error)
+- [Api Go Beta Memory Stores Memory Versions List C736D00Ed4](Endpoints/go-beta-memory-stores-memory-versions-list.md) — client.Beta.MemoryStores.MemoryVersions.List(ctx, memoryStoreID, params) (PageCursor[BetaManagedAgentsMemoryVersion], error)
+- [Api Go Beta Memory Stores Memory Versions Redact 5E01290F1D](Endpoints/go-beta-memory-stores-memory-versions-redact.md) — client.Beta.MemoryStores.MemoryVersions.Redact(ctx, memoryVersionID, params) (BetaManagedAgentsMemoryVersion, error)
+- [Api Go Beta Memory Stores Memory Versions Retrieve 344844E937](Endpoints/go-beta-memory-stores-memory-versions-retrieve.md) — client.Beta.MemoryStores.MemoryVersions.Get(ctx, memoryVersionID, params) (BetaManagedAgentsMemoryVersion, error)
+- [Api Go Beta Memory Stores Retrieve D21B18E652](Endpoints/go-beta-memory-stores-retrieve.md) — client.Beta.MemoryStores.Get(ctx, memoryStoreID, query) (BetaManagedAgentsMemoryStore, error)
+- [Api Go Beta Memory Stores Update 6Fae5C3B80](Endpoints/go-beta-memory-stores-update.md) — client.Beta.MemoryStores.Update(ctx, memoryStoreID, params) (BetaManagedAgentsMemoryStore, error)
+- [Api Go Beta Messages Batches Cancel Be548716Bf](Endpoints/go-beta-messages-batches-cancel.md) — client.Beta.Messages.Batches.Cancel(ctx, messageBatchID, body) (BetaMessageBatch, error)
+- [Api Go Beta Messages Batches Create 22Ab4C9E9F](Endpoints/go-beta-messages-batches-create.md) — client.Beta.Messages.Batches.New(ctx, params) (BetaMessageBatch, error)
+- [Api Go Beta Messages Batches Delete C522D24740](Endpoints/go-beta-messages-batches-delete.md) — client.Beta.Messages.Batches.Delete(ctx, messageBatchID, body) (BetaDeletedMessageBatch, error)
+- [Api Go Beta Messages Batches List 8C96966647](Endpoints/go-beta-messages-batches-list.md) — client.Beta.Messages.Batches.List(ctx, params) (Page[BetaMessageBatch], error)
+- [Api Go Beta Messages Batches Results F78De1Ac13](Endpoints/go-beta-messages-batches-results.md) — client.Beta.Messages.Batches.Results(ctx, messageBatchID, query) (BetaMessageBatchIndividualResponse, error)
+- [Api Go Beta Messages Batches Retrieve 0C050De13A](Endpoints/go-beta-messages-batches-retrieve.md) — client.Beta.Messages.Batches.Get(ctx, messageBatchID, query) (BetaMessageBatch, error)
+- [Api Go Beta Messages Count Tokens Ef4Ef2095B](Endpoints/go-beta-messages-count-tokens.md) — client.Beta.Messages.CountTokens(ctx, params) (BetaMessageTokensCount, error)
+- [Api Go Beta Messages Create 6F03424D72](Endpoints/go-beta-messages-create.md) — client.Beta.Messages.New(ctx, params) (BetaMessage, error)
+- [Api Go Beta Models List 8508160C0C](Endpoints/go-beta-models-list.md) — client.Beta.Models.List(ctx, params) (Page[BetaModelInfo], error)
+- [Api Go Beta Models Retrieve 2C08672762](Endpoints/go-beta-models-retrieve.md) — client.Beta.Models.Get(ctx, modelID, query) (BetaModelInfo, error)
+- [Api Go Beta Sessions Archive 9Abf2808C4](Endpoints/go-beta-sessions-archive.md) — client.Beta.Sessions.Archive(ctx, sessionID, body) (BetaManagedAgentsSession, error)
+- [Api Go Beta Sessions Create 5501E2375B](Endpoints/go-beta-sessions-create.md) — client.Beta.Sessions.New(ctx, params) (BetaManagedAgentsSession, error)
+- [Api Go Beta Sessions Delete 2C9180Cdf6](Endpoints/go-beta-sessions-delete.md) — client.Beta.Sessions.Delete(ctx, sessionID, body) (BetaManagedAgentsDeletedSession, error)
+- [Api Go Beta Sessions Events List Ab57B29196](Endpoints/go-beta-sessions-events-list.md) — client.Beta.Sessions.Events.List(ctx, sessionID, params) (PageCursor[BetaManagedAgentsSessionEventUnion], error)
+- [Api Go Beta Sessions Events Send 529C2A9D42](Endpoints/go-beta-sessions-events-send.md) — client.Beta.Sessions.Events.Send(ctx, sessionID, params) (BetaManagedAgentsSendSessionEvents, error)
+- [Api Go Beta Sessions Events Stream Ed88Fb8037](Endpoints/go-beta-sessions-events-stream.md) — client.Beta.Sessions.Events.Stream(ctx, sessionID, query) (BetaManagedAgentsStreamSessionEventsUnion, error)
+- [Api Go Beta Sessions List E62Ddb3292](Endpoints/go-beta-sessions-list.md) — client.Beta.Sessions.List(ctx, params) (PageCursor[BetaManagedAgentsSession], error)
+- [Api Go Beta Sessions Resources Add 7B3B48007B](Endpoints/go-beta-sessions-resources-add.md) — client.Beta.Sessions.Resources.Add(ctx, sessionID, params) (BetaManagedAgentsFileResource, error)
+- [Api Go Beta Sessions Resources Delete E7Aa6591F0](Endpoints/go-beta-sessions-resources-delete.md) — client.Beta.Sessions.Resources.Delete(ctx, resourceID, params) (BetaManagedAgentsDeleteSessionResource, error)
+- [Api Go Beta Sessions Resources List Ca62Ee8880](Endpoints/go-beta-sessions-resources-list.md) — client.Beta.Sessions.Resources.List(ctx, sessionID, params) (PageCursor[BetaManagedAgentsSessionResourceUnion], error)
+- [Api Go Beta Sessions Resources Retrieve 9C215Be9E9](Endpoints/go-beta-sessions-resources-retrieve.md) — client.Beta.Sessions.Resources.Get(ctx, resourceID, params) (BetaSessionResourceGetResponseUnion, error)
+- [Api Go Beta Sessions Resources Update 14Ecb75C89](Endpoints/go-beta-sessions-resources-update.md) — client.Beta.Sessions.Resources.Update(ctx, resourceID, params) (BetaSessionResourceUpdateResponseUnion, error)
+- [Api Go Beta Sessions Retrieve 1D297Cfb32](Endpoints/go-beta-sessions-retrieve.md) — client.Beta.Sessions.Get(ctx, sessionID, query) (BetaManagedAgentsSession, error)
+- [Api Go Beta Sessions Update 5A5713E51A](Endpoints/go-beta-sessions-update.md) — client.Beta.Sessions.Update(ctx, sessionID, params) (BetaManagedAgentsSession, error)
+- [Api Go Beta Skills Create 5E2A6B9502](Endpoints/go-beta-skills-create.md) — client.Beta.Skills.New(ctx, params) (BetaSkillNewResponse, error)
+- [Api Go Beta Skills Delete Bd1C663D2B](Endpoints/go-beta-skills-delete.md) — client.Beta.Skills.Delete(ctx, skillID, body) (BetaSkillDeleteResponse, error)
+- [Api Go Beta Skills List 85E4205Cb7](Endpoints/go-beta-skills-list.md) — client.Beta.Skills.List(ctx, params) (PageCursor[BetaSkillListResponse], error)
+- [Api Go Beta Skills Retrieve D4B0126139](Endpoints/go-beta-skills-retrieve.md) — client.Beta.Skills.Get(ctx, skillID, query) (BetaSkillGetResponse, error)
+- [Api Go Beta Skills Versions Create 369C226De4](Endpoints/go-beta-skills-versions-create.md) — client.Beta.Skills.Versions.New(ctx, skillID, params) (BetaSkillVersionNewResponse, error)
+- [Api Go Beta Skills Versions Delete 3E652B2971](Endpoints/go-beta-skills-versions-delete.md) — client.Beta.Skills.Versions.Delete(ctx, version, params) (BetaSkillVersionDeleteResponse, error)
+- [Api Go Beta Skills Versions List A773Ca898E](Endpoints/go-beta-skills-versions-list.md) — client.Beta.Skills.Versions.List(ctx, skillID, params) (PageCursor[BetaSkillVersionListResponse], error)
+- [Api Go Beta Skills Versions Retrieve 45A85980Fd](Endpoints/go-beta-skills-versions-retrieve.md) — client.Beta.Skills.Versions.Get(ctx, version, params) (BetaSkillVersionGetResponse, error)
+- [Api Go Beta Vaults Archive 6A019Cf5A3](Endpoints/go-beta-vaults-archive.md) — client.Beta.Vaults.Archive(ctx, vaultID, body) (BetaManagedAgentsVault, error)
+- [Api Go Beta Vaults Create 5B083F721C](Endpoints/go-beta-vaults-create.md) — client.Beta.Vaults.New(ctx, params) (BetaManagedAgentsVault, error)
+- [Api Go Beta Vaults Credentials Archive 963A4Cb43D](Endpoints/go-beta-vaults-credentials-archive.md) — client.Beta.Vaults.Credentials.Archive(ctx, credentialID, params) (BetaManagedAgentsCredential, error)
+- [Api Go Beta Vaults Credentials Create A6Cde5F6F9](Endpoints/go-beta-vaults-credentials-create.md) — client.Beta.Vaults.Credentials.New(ctx, vaultID, params) (BetaManagedAgentsCredential, error)
+- [Api Go Beta Vaults Credentials Delete 0Ef8Fb22C0](Endpoints/go-beta-vaults-credentials-delete.md) — client.Beta.Vaults.Credentials.Delete(ctx, credentialID, params) (BetaManagedAgentsDeletedCredential, error)
+- [Api Go Beta Vaults Credentials List 71A51785A2](Endpoints/go-beta-vaults-credentials-list.md) — client.Beta.Vaults.Credentials.List(ctx, vaultID, params) (PageCursor[BetaManagedAgentsCredential], error)
+- [Api Go Beta Vaults Credentials Retrieve C4Ad2Bed33](Endpoints/go-beta-vaults-credentials-retrieve.md) — client.Beta.Vaults.Credentials.Get(ctx, credentialID, params) (BetaManagedAgentsCredential, error)
+- [Api Go Beta Vaults Credentials Update 0891534180](Endpoints/go-beta-vaults-credentials-update.md) — client.Beta.Vaults.Credentials.Update(ctx, credentialID, params) (BetaManagedAgentsCredential, error)
+- [Api Go Beta Vaults Delete 6B82B23251](Endpoints/go-beta-vaults-delete.md) — client.Beta.Vaults.Delete(ctx, vaultID, body) (BetaManagedAgentsDeletedVault, error)
+- [Api Go Beta Vaults List 86Aeb6462C](Endpoints/go-beta-vaults-list.md) — client.Beta.Vaults.List(ctx, params) (PageCursor[BetaManagedAgentsVault], error)
+- [Api Go Beta Vaults Retrieve A46A416E33](Endpoints/go-beta-vaults-retrieve.md) — client.Beta.Vaults.Get(ctx, vaultID, query) (BetaManagedAgentsVault, error)
+- [Api Go Beta Vaults Update 3532197114](Endpoints/go-beta-vaults-update.md) — client.Beta.Vaults.Update(ctx, vaultID, params) (BetaManagedAgentsVault, error)
+- [Api Go Completions Create Bf064B0E72](Endpoints/go-completions-create.md) — client.Completions.New(ctx, params) (Completion, error)
+- [Api Go Messages Batches Cancel 6A096B0Fc9](Endpoints/go-messages-batches-cancel.md) — client.Messages.Batches.Cancel(ctx, messageBatchID) (MessageBatch, error)
+- [Api Go Messages Batches Create 9Cdc81B5F3](Endpoints/go-messages-batches-create.md) — client.Messages.Batches.New(ctx, body) (MessageBatch, error)
+- [Api Go Messages Batches Delete 646F74B479](Endpoints/go-messages-batches-delete.md) — client.Messages.Batches.Delete(ctx, messageBatchID) (DeletedMessageBatch, error)
+- [Api Go Messages Batches List 13803B8476](Endpoints/go-messages-batches-list.md) — client.Messages.Batches.List(ctx, query) (Page[MessageBatch], error)
+- [Api Go Messages Batches Results 6B3F47Ec42](Endpoints/go-messages-batches-results.md) — client.Messages.Batches.Results(ctx, messageBatchID) (MessageBatchIndividualResponse, error)
+- [Api Go Messages Batches Retrieve Bdc366Efbc](Endpoints/go-messages-batches-retrieve.md) — client.Messages.Batches.Get(ctx, messageBatchID) (MessageBatch, error)
+- [Api Go Messages Count Tokens 4B76269Bb3](Endpoints/go-messages-count-tokens.md) — client.Messages.CountTokens(ctx, body) (MessageTokensCount, error)
+- [Api Go Messages Create 1Cafdbce61](Endpoints/go-messages-create.md) — client.Messages.New(ctx, body) (Message, error)
+- [Api Go Models List B97B073D73](Endpoints/go-models-list.md) — client.Models.List(ctx, params) (Page[ModelInfo], error)
+- [Api Go Models Retrieve 313338Efb3](Endpoints/go-models-retrieve.md) — client.Models.Get(ctx, modelID, query) (ModelInfo, error)
+- [Api Java Beta Agents Archive B74B36A8E0](Endpoints/java-beta-agents-archive.md) — BetaManagedAgentsAgent beta().agents().archive(AgentArchiveParamsparams = AgentArchiveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Agents Create 540B932E88](Endpoints/java-beta-agents-create.md) — BetaManagedAgentsAgent beta().agents().create(AgentCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Agents Delete 35C98E63C4](Endpoints/java-beta-agents-delete.md)
+- [Api Java Beta Agents List 467F17Ff1E](Endpoints/java-beta-agents-list.md) — AgentListPage beta().agents().list(AgentListParamsparams = AgentListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Agents Retrieve Cd53B686Ed](Endpoints/java-beta-agents-retrieve.md) — BetaManagedAgentsAgent beta().agents().retrieve(AgentRetrieveParamsparams = AgentRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Agents Update 5Dec949470](Endpoints/java-beta-agents-update.md) — BetaManagedAgentsAgent beta().agents().update(AgentUpdateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Agents Versions List D8Afa99391](Endpoints/java-beta-agents-versions-list.md) — VersionListPage beta().agents().versions().list(VersionListParamsparams = VersionListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Environments Archive 6C5Acc4Dbd](Endpoints/java-beta-environments-archive.md) — BetaEnvironment beta().environments().archive(EnvironmentArchiveParamsparams = EnvironmentArchiveParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Environments Create 0B602B5D14](Endpoints/java-beta-environments-create.md) — BetaEnvironment beta().environments().create(EnvironmentCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Environments Delete E4333Bcee5](Endpoints/java-beta-environments-delete.md) — BetaEnvironmentDeleteResponse beta().environments().delete(EnvironmentDeleteParamsparams = EnvironmentDeleteParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Environments List 3Af7D49A50](Endpoints/java-beta-environments-list.md) — EnvironmentListPage beta().environments().list(EnvironmentListParamsparams = EnvironmentListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Environments Retrieve Faeea37Fc3](Endpoints/java-beta-environments-retrieve.md) — BetaEnvironment beta().environments().retrieve(EnvironmentRetrieveParamsparams = EnvironmentRetrieveParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Environments Update 954B483024](Endpoints/java-beta-environments-update.md) — BetaEnvironment beta().environments().update(EnvironmentUpdateParamsparams = EnvironmentUpdateParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Files Delete F6Ea26690A](Endpoints/java-beta-files-delete.md) — DeletedFile beta().files().delete(FileDeleteParamsparams = FileDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Files Download 87Ecba48A5](Endpoints/java-beta-files-download.md) — HttpResponse beta().files().download(FileDownloadParamsparams = FileDownloadParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Files List E534Eda3Ce](Endpoints/java-beta-files-list.md) — FileListPage beta().files().list(FileListParamsparams = FileListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Files Retrieve Metadata Aeaea2Dc31](Endpoints/java-beta-files-retrieve-metadata.md) — FileMetadata beta().files().retrieveMetadata(FileRetrieveMetadataParamsparams = FileRetrieveMetadataParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Files Upload 8F01F1838C](Endpoints/java-beta-files-upload.md) — FileMetadata beta().files().upload(FileUploadParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Memory Stores Archive Fe456Dcc71](Endpoints/java-beta-memory-stores-archive.md) — BetaManagedAgentsMemoryStore beta().memoryStores().archive(MemoryStoreArchiveParamsparams = MemoryStoreArchiveParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Memory Stores Create 493E225376](Endpoints/java-beta-memory-stores-create.md) — BetaManagedAgentsMemoryStore beta().memoryStores().create(MemoryStoreCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Memory Stores Delete 80A6Bbfb41](Endpoints/java-beta-memory-stores-delete.md) — BetaManagedAgentsDeletedMemoryStore beta().memoryStores().delete(MemoryStoreDeleteParamsparams = MemoryStoreDeleteParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Memory Stores List 54725Ff281](Endpoints/java-beta-memory-stores-list.md) — MemoryStoreListPage beta().memoryStores().list(MemoryStoreListParamsparams = MemoryStoreListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Memory Stores Memories Create 226941A7D8](Endpoints/java-beta-memory-stores-memories-create.md) — BetaManagedAgentsMemory beta().memoryStores().memories().create(MemoryCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Memory Stores Memories Delete 908415E78E](Endpoints/java-beta-memory-stores-memories-delete.md) — BetaManagedAgentsDeletedMemory beta().memoryStores().memories().delete(MemoryDeleteParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Memory Stores Memories List 0Fd464C316](Endpoints/java-beta-memory-stores-memories-list.md) — MemoryListPage beta().memoryStores().memories().list(MemoryListParamsparams = MemoryListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Memory Stores Memories Retrieve E909Bed744](Endpoints/java-beta-memory-stores-memories-retrieve.md) — BetaManagedAgentsMemory beta().memoryStores().memories().retrieve(MemoryRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Memory Stores Memories Update 5C42558A35](Endpoints/java-beta-memory-stores-memories-update.md) — BetaManagedAgentsMemory beta().memoryStores().memories().update(MemoryUpdateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Memory Stores Memory Versions List F9Fac75819](Endpoints/java-beta-memory-stores-memory-versions-list.md) — MemoryVersionListPage beta().memoryStores().memoryVersions().list(MemoryVersionListParamsparams = MemoryVersionListParams.none(), RequestOptionsrequestOptions…
+- [Api Java Beta Memory Stores Memory Versions Redact A3Ae2C405C](Endpoints/java-beta-memory-stores-memory-versions-redact.md) — BetaManagedAgentsMemoryVersion beta().memoryStores().memoryVersions().redact(MemoryVersionRedactParamsparams, RequestOptionsrequestOptions =…
+- [Api Java Beta Memory Stores Memory Versions Retrieve E6C40E7Cfc](Endpoints/java-beta-memory-stores-memory-versions-retrieve.md) — BetaManagedAgentsMemoryVersion beta().memoryStores().memoryVersions().retrieve(MemoryVersionRetrieveParamsparams, RequestOptionsrequestOptions =…
+- [Api Java Beta Memory Stores Retrieve F406C8A9Ac](Endpoints/java-beta-memory-stores-retrieve.md) — BetaManagedAgentsMemoryStore beta().memoryStores().retrieve(MemoryStoreRetrieveParamsparams = MemoryStoreRetrieveParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Memory Stores Update E404E4Baff](Endpoints/java-beta-memory-stores-update.md) — BetaManagedAgentsMemoryStore beta().memoryStores().update(MemoryStoreUpdateParamsparams = MemoryStoreUpdateParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Messages Batches Cancel Bbbc6E0F9C](Endpoints/java-beta-messages-batches-cancel.md) — BetaMessageBatch beta().messages().batches().cancel(BatchCancelParamsparams = BatchCancelParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Messages Batches Create 83039A259F](Endpoints/java-beta-messages-batches-create.md) — BetaMessageBatch beta().messages().batches().create(BatchCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Messages Batches Delete F0D4E8A095](Endpoints/java-beta-messages-batches-delete.md) — BetaDeletedMessageBatch beta().messages().batches().delete(BatchDeleteParamsparams = BatchDeleteParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Messages Batches List 11801F2F5F](Endpoints/java-beta-messages-batches-list.md) — BatchListPage beta().messages().batches().list(BatchListParamsparams = BatchListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Messages Batches Results Ab2D7Af530](Endpoints/java-beta-messages-batches-results.md) — BetaMessageBatchIndividualResponse beta().messages().batches().resultsStreaming(BatchResultsParamsparams = BatchResultsParams.none()…
+- [Api Java Beta Messages Batches Retrieve 6E3C3B0A48](Endpoints/java-beta-messages-batches-retrieve.md) — BetaMessageBatch beta().messages().batches().retrieve(BatchRetrieveParamsparams = BatchRetrieveParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Messages Count Tokens 3E8D6E7E80](Endpoints/java-beta-messages-count-tokens.md) — BetaMessageTokensCount beta().messages().countTokens(MessageCountTokensParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Messages Create 759C6Db29D](Endpoints/java-beta-messages-create.md) — BetaMessage beta().messages().create(MessageCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Models List 814D420B34](Endpoints/java-beta-models-list.md) — ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Models Retrieve B6B56B8585](Endpoints/java-beta-models-retrieve.md) — BetaModelInfo beta().models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Sessions Archive C133Cd7B6D](Endpoints/java-beta-sessions-archive.md) — BetaManagedAgentsSession beta().sessions().archive(SessionArchiveParamsparams = SessionArchiveParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Sessions Create Ad3716F48D](Endpoints/java-beta-sessions-create.md) — BetaManagedAgentsSession beta().sessions().create(SessionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Sessions Delete 4F9E09E7Eb](Endpoints/java-beta-sessions-delete.md) — BetaManagedAgentsDeletedSession beta().sessions().delete(SessionDeleteParamsparams = SessionDeleteParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Sessions Events List 39Eb4C5888](Endpoints/java-beta-sessions-events-list.md) — EventListPage beta().sessions().events().list(EventListParamsparams = EventListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Sessions Events Send F7D87C9179](Endpoints/java-beta-sessions-events-send.md) — BetaManagedAgentsSendSessionEvents beta().sessions().events().send(EventSendParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Sessions Events Stream Ce7F09F97C](Endpoints/java-beta-sessions-events-stream.md) — BetaManagedAgentsStreamSessionEvents beta().sessions().events().streamStreaming(EventStreamParamsparams = EventStreamParams.none()…
+- [Api Java Beta Sessions List D1393F503F](Endpoints/java-beta-sessions-list.md) — SessionListPage beta().sessions().list(SessionListParamsparams = SessionListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Sessions Resources Add 7A50F15E42](Endpoints/java-beta-sessions-resources-add.md) — BetaManagedAgentsFileResource beta().sessions().resources().add(ResourceAddParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Sessions Resources Delete 38B282Ee84](Endpoints/java-beta-sessions-resources-delete.md) — BetaManagedAgentsDeleteSessionResource beta().sessions().resources().delete(ResourceDeleteParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Sessions Resources List A598Ee08B6](Endpoints/java-beta-sessions-resources-list.md) — ResourceListPage beta().sessions().resources().list(ResourceListParamsparams = ResourceListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Sessions Resources Retrieve 71Bedc677C](Endpoints/java-beta-sessions-resources-retrieve.md) — ResourceRetrieveResponse beta().sessions().resources().retrieve(ResourceRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Sessions Resources Update 41Ae02Ba4E](Endpoints/java-beta-sessions-resources-update.md) — ResourceUpdateResponse beta().sessions().resources().update(ResourceUpdateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Sessions Retrieve E63D7975E2](Endpoints/java-beta-sessions-retrieve.md) — BetaManagedAgentsSession beta().sessions().retrieve(SessionRetrieveParamsparams = SessionRetrieveParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Sessions Update 903C3Cf88C](Endpoints/java-beta-sessions-update.md) — BetaManagedAgentsSession beta().sessions().update(SessionUpdateParamsparams = SessionUpdateParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Skills Create 02303A28Fb](Endpoints/java-beta-skills-create.md) — SkillCreateResponse beta().skills().create(SkillCreateParamsparams = SkillCreateParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Skills Delete 3E6A9F8126](Endpoints/java-beta-skills-delete.md) — SkillDeleteResponse beta().skills().delete(SkillDeleteParamsparams = SkillDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Skills List 95A3708Cf4](Endpoints/java-beta-skills-list.md) — SkillListPage beta().skills().list(SkillListParamsparams = SkillListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Skills Retrieve 0222092Cda](Endpoints/java-beta-skills-retrieve.md) — SkillRetrieveResponse beta().skills().retrieve(SkillRetrieveParamsparams = SkillRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Skills Versions Create 732561Dea0](Endpoints/java-beta-skills-versions-create.md) — VersionCreateResponse beta().skills().versions().create(VersionCreateParamsparams = VersionCreateParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Skills Versions Delete 7359C00B49](Endpoints/java-beta-skills-versions-delete.md) — VersionDeleteResponse beta().skills().versions().delete(VersionDeleteParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Skills Versions List Fdb9Fb1938](Endpoints/java-beta-skills-versions-list.md) — VersionListPage beta().skills().versions().list(VersionListParamsparams = VersionListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Skills Versions Retrieve Faf5Fa16A3](Endpoints/java-beta-skills-versions-retrieve.md) — VersionRetrieveResponse beta().skills().versions().retrieve(VersionRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Vaults Archive 0A0Ce63Cd0](Endpoints/java-beta-vaults-archive.md) — BetaManagedAgentsVault beta().vaults().archive(VaultArchiveParamsparams = VaultArchiveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Vaults Create Ba909A0A5B](Endpoints/java-beta-vaults-create.md) — BetaManagedAgentsVault beta().vaults().create(VaultCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Vaults Credentials Archive 99Da34B9B0](Endpoints/java-beta-vaults-credentials-archive.md) — BetaManagedAgentsCredential beta().vaults().credentials().archive(CredentialArchiveParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Vaults Credentials Create 36D0A7D171](Endpoints/java-beta-vaults-credentials-create.md) — BetaManagedAgentsCredential beta().vaults().credentials().create(CredentialCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Vaults Credentials Delete 1911971D3E](Endpoints/java-beta-vaults-credentials-delete.md) — BetaManagedAgentsDeletedCredential beta().vaults().credentials().delete(CredentialDeleteParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Vaults Credentials List 628B82A75F](Endpoints/java-beta-vaults-credentials-list.md) — CredentialListPage beta().vaults().credentials().list(CredentialListParamsparams = CredentialListParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Beta Vaults Credentials Retrieve 0E6E865529](Endpoints/java-beta-vaults-credentials-retrieve.md) — BetaManagedAgentsCredential beta().vaults().credentials().retrieve(CredentialRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Vaults Credentials Update C91F734073](Endpoints/java-beta-vaults-credentials-update.md) — BetaManagedAgentsCredential beta().vaults().credentials().update(CredentialUpdateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Vaults Delete 1C13E68A61](Endpoints/java-beta-vaults-delete.md) — BetaManagedAgentsDeletedVault beta().vaults().delete(VaultDeleteParamsparams = VaultDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Vaults List 3250Cd77B1](Endpoints/java-beta-vaults-list.md) — VaultListPage beta().vaults().list(VaultListParamsparams = VaultListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Vaults Retrieve 870Ec1F462](Endpoints/java-beta-vaults-retrieve.md) — BetaManagedAgentsVault beta().vaults().retrieve(VaultRetrieveParamsparams = VaultRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Vaults Update E8F05A68Fc](Endpoints/java-beta-vaults-update.md) — BetaManagedAgentsVault beta().vaults().update(VaultUpdateParamsparams = VaultUpdateParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Completions Create 27A1C0B41F](Endpoints/java-completions-create.md) — Completion completions().create(CompletionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Messages Batches Cancel 1839E1Ce51](Endpoints/java-messages-batches-cancel.md) — MessageBatch messages().batches().cancel(BatchCancelParamsparams = BatchCancelParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Messages Batches Create 30052453C3](Endpoints/java-messages-batches-create.md) — MessageBatch messages().batches().create(BatchCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Messages Batches Delete E0B8F507D7](Endpoints/java-messages-batches-delete.md) — DeletedMessageBatch messages().batches().delete(BatchDeleteParamsparams = BatchDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Messages Batches List 4C72371Fbb](Endpoints/java-messages-batches-list.md) — BatchListPage messages().batches().list(BatchListParamsparams = BatchListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Messages Batches Results 20B1A6505E](Endpoints/java-messages-batches-results.md) — MessageBatchIndividualResponse messages().batches().resultsStreaming(BatchResultsParamsparams = BatchResultsParams.none(), RequestOptionsrequestOptions =…
+- [Api Java Messages Batches Retrieve 31Ef3A6186](Endpoints/java-messages-batches-retrieve.md) — MessageBatch messages().batches().retrieve(BatchRetrieveParamsparams = BatchRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Messages Count Tokens 68Be31A803](Endpoints/java-messages-count-tokens.md) — MessageTokensCount messages().countTokens(MessageCountTokensParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Messages Create 08A0E124Cd](Endpoints/java-messages-create.md) — Message messages().create(MessageCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Models List 25D15Be48F](Endpoints/java-models-list.md) — ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Models Retrieve 57894Cb23E](Endpoints/java-models-retrieve.md) — ModelInfo models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [API overview - Claude Platform Docs](Endpoints/overview.md) — Count tokens in a Message
+- [Api Php Beta Agents Archive C8F4Ff6Fe2](Endpoints/php-beta-agents-archive.md)
+- [Api Php Beta Agents C52F409D40](Endpoints/php-beta-agents.md)
+- [Api Php Beta Agents Create 73D8765D97](Endpoints/php-beta-agents-create.md)
+- [Api Php Beta Agents Delete 18408D7220](Endpoints/php-beta-agents-delete.md)
+- [Api Php Beta Agents List Fc44958D39](Endpoints/php-beta-agents-list.md)
+- [Api Php Beta Agents Retrieve E65B5542Ed](Endpoints/php-beta-agents-retrieve.md)
+- [Api Php Beta Agents Update 71D8Bf5A15](Endpoints/php-beta-agents-update.md)
+- [Api Php Beta Agents Versions Cbbc1E476C](Endpoints/php-beta-agents-versions.md)
+- [Api Php Beta Agents Versions List 1Be69A4F24](Endpoints/php-beta-agents-versions-list.md)
+- [Api Php Beta Environments 9817Ab0B8F](Endpoints/php-beta-environments.md)
+- [Api Php Beta Environments Archive B92141Aab2](Endpoints/php-beta-environments-archive.md)
+- [Api Php Beta Environments Create 5Eebfbb47F](Endpoints/php-beta-environments-create.md)
+- [Api Php Beta Environments Delete D1019Dcb03](Endpoints/php-beta-environments-delete.md)
+- [Api Php Beta Environments List B3514C69C1](Endpoints/php-beta-environments-list.md)
+- [Api Php Beta Environments Retrieve F9E6792532](Endpoints/php-beta-environments-retrieve.md)
+- [Api Php Beta Environments Update 1Ac985D6F7](Endpoints/php-beta-environments-update.md)
+- [Api Php Beta F9Bbf7C89F](Endpoints/php-beta.md)
+- [Api Php Beta Files 3B09F3B626](Endpoints/php-beta-files.md)
+- [Api Php Beta Files Delete 293F37C6Be](Endpoints/php-beta-files-delete.md)
+- [Api Php Beta Files Download 85Bf6Cab20](Endpoints/php-beta-files-download.md)
+- [Api Php Beta Files List 2Fc43Aed29](Endpoints/php-beta-files-list.md)
+- [Api Php Beta Files Retrieve Metadata 403Fd92C01](Endpoints/php-beta-files-retrieve-metadata.md)
+- [Api Php Beta Files Upload D87Be0Bec3](Endpoints/php-beta-files-upload.md)
+- [Api Php Beta Memory Stores 1B5B7E868E](Endpoints/php-beta-memory-stores.md)
+- [Api Php Beta Memory Stores Archive 42B8A57883](Endpoints/php-beta-memory-stores-archive.md)
+- [Api Php Beta Memory Stores Create 95A862A05D](Endpoints/php-beta-memory-stores-create.md)
+- [Api Php Beta Memory Stores Delete Fb089Df245](Endpoints/php-beta-memory-stores-delete.md)
+- [Api Php Beta Memory Stores List Eba7B287De](Endpoints/php-beta-memory-stores-list.md)
+- [Api Php Beta Memory Stores Memories Create 53D2B993Bc](Endpoints/php-beta-memory-stores-memories-create.md)
+- [Api Php Beta Memory Stores Memories Delete 734F3A1F4A](Endpoints/php-beta-memory-stores-memories-delete.md)
+- [Api Php Beta Memory Stores Memories Ffb8549429](Endpoints/php-beta-memory-stores-memories.md)
+- [Api Php Beta Memory Stores Memories List 256E07F4Da](Endpoints/php-beta-memory-stores-memories-list.md)
+- [Api Php Beta Memory Stores Memories Retrieve 2629Ff0B44](Endpoints/php-beta-memory-stores-memories-retrieve.md)
+- [Api Php Beta Memory Stores Memories Update 46D6F068Dd](Endpoints/php-beta-memory-stores-memories-update.md)
+- [Api Php Beta Memory Stores Memory Versions 6D2Be3B699](Endpoints/php-beta-memory-stores-memory-versions.md)
+- [Api Php Beta Memory Stores Memory Versions List 8D66930Fa9](Endpoints/php-beta-memory-stores-memory-versions-list.md)
+- [Api Php Beta Memory Stores Memory Versions Redact Dd6F3E035A](Endpoints/php-beta-memory-stores-memory-versions-redact.md)
+- [Api Php Beta Memory Stores Memory Versions Retrieve B9A105Cd2B](Endpoints/php-beta-memory-stores-memory-versions-retrieve.md)
+- [Api Php Beta Memory Stores Retrieve Fd41Ff2E1D](Endpoints/php-beta-memory-stores-retrieve.md)
+- [Api Php Beta Memory Stores Update 35Ae3A7A64](Endpoints/php-beta-memory-stores-update.md)
+- [Api Php Beta Messages 9271Fd59E4](Endpoints/php-beta-messages.md)
+- [Api Php Beta Messages Batches C8Cdf95E70](Endpoints/php-beta-messages-batches.md)
+- [Api Php Beta Messages Batches Cancel Aae45170Ad](Endpoints/php-beta-messages-batches-cancel.md)
+- [Api Php Beta Messages Batches Create 46Ef25B739](Endpoints/php-beta-messages-batches-create.md)
+- [Api Php Beta Messages Batches Delete 00C8A4C708](Endpoints/php-beta-messages-batches-delete.md)
+- [Api Php Beta Messages Batches List 8A1Eecc887](Endpoints/php-beta-messages-batches-list.md)
+- [Api Php Beta Messages Batches Results 6B1Cdeab97](Endpoints/php-beta-messages-batches-results.md)
+- [Api Php Beta Messages Batches Retrieve 3815D1B653](Endpoints/php-beta-messages-batches-retrieve.md)
+- [Api Php Beta Messages Count Tokens 0999417258](Endpoints/php-beta-messages-count-tokens.md)
+- [Api Php Beta Messages Create Bff87C23F5](Endpoints/php-beta-messages-create.md)
+- [Api Php Beta Models Bc11Debf5F](Endpoints/php-beta-models.md)
+- [Api Php Beta Models List A1Aa4Ff86A](Endpoints/php-beta-models-list.md)
+- [Api Php Beta Models Retrieve Bd62E9752A](Endpoints/php-beta-models-retrieve.md)
+- [Api Php Beta Sessions 02Ecc86416](Endpoints/php-beta-sessions.md)
+- [Api Php Beta Sessions Archive 5474083944](Endpoints/php-beta-sessions-archive.md)
+- [Api Php Beta Sessions Create 0Da21F041C](Endpoints/php-beta-sessions-create.md)
+- [Api Php Beta Sessions Delete Fca61174F8](Endpoints/php-beta-sessions-delete.md)
+- [Api Php Beta Sessions Events 9F7B26D42F](Endpoints/php-beta-sessions-events.md)
+- [Api Php Beta Sessions Events List 08F3Adc2Eb](Endpoints/php-beta-sessions-events-list.md)
+- [Api Php Beta Sessions Events Send Fa25Fcc296](Endpoints/php-beta-sessions-events-send.md)
+- [Api Php Beta Sessions Events Stream D1890B2963](Endpoints/php-beta-sessions-events-stream.md)
+- [Api Php Beta Sessions List 7Ec18011Ac](Endpoints/php-beta-sessions-list.md)
+- [Api Php Beta Sessions Resources 8831285299](Endpoints/php-beta-sessions-resources.md)
+- [Api Php Beta Sessions Resources Add 3210222Bc1](Endpoints/php-beta-sessions-resources-add.md)
+- [Api Php Beta Sessions Resources Delete 4587Cb4Afd](Endpoints/php-beta-sessions-resources-delete.md)
+- [Api Php Beta Sessions Resources List 720480D951](Endpoints/php-beta-sessions-resources-list.md)
+- [Api Php Beta Sessions Resources Retrieve E8F7E639F3](Endpoints/php-beta-sessions-resources-retrieve.md)
+- [Api Php Beta Sessions Resources Update 7Af0B12A9D](Endpoints/php-beta-sessions-resources-update.md)
+- [Api Php Beta Sessions Retrieve F53F0F1340](Endpoints/php-beta-sessions-retrieve.md)
+- [Api Php Beta Sessions Update 2064D54D2D](Endpoints/php-beta-sessions-update.md)
+- [Api Php Beta Skills 649Db734F4](Endpoints/php-beta-skills.md)
+- [Api Php Beta Skills Create A374F88Fd9](Endpoints/php-beta-skills-create.md)
+- [Api Php Beta Skills Delete C4Fc8841B1](Endpoints/php-beta-skills-delete.md)
+- [Api Php Beta Skills List 5Ae76Ca621](Endpoints/php-beta-skills-list.md)
+- [Api Php Beta Skills Retrieve 2C8E472Dbf](Endpoints/php-beta-skills-retrieve.md)
+- [Api Php Beta Skills Versions Create 825417629D](Endpoints/php-beta-skills-versions-create.md)
+- [Api Php Beta Skills Versions Delete 9772Ba8544](Endpoints/php-beta-skills-versions-delete.md)
+- [Api Php Beta Skills Versions Eb01B9B050](Endpoints/php-beta-skills-versions.md)
+- [Api Php Beta Skills Versions List F2E412284B](Endpoints/php-beta-skills-versions-list.md)
+- [Api Php Beta Skills Versions Retrieve 0Fd448B1A0](Endpoints/php-beta-skills-versions-retrieve.md)
+- [Api Php Beta Vaults 31E8Fcd1A0](Endpoints/php-beta-vaults.md)
+- [Api Php Beta Vaults Archive 65C367B35A](Endpoints/php-beta-vaults-archive.md)
+- [Api Php Beta Vaults Create 0643572F8E](Endpoints/php-beta-vaults-create.md)
+- [Api Php Beta Vaults Credentials 5A377Fbd9B](Endpoints/php-beta-vaults-credentials.md)
+- [Api Php Beta Vaults Credentials Archive Ecf6Eea40A](Endpoints/php-beta-vaults-credentials-archive.md)
+- [Api Php Beta Vaults Credentials Create 0821F8523E](Endpoints/php-beta-vaults-credentials-create.md)
+- [Api Php Beta Vaults Credentials Delete C515A2Ab86](Endpoints/php-beta-vaults-credentials-delete.md)
+- [Api Php Beta Vaults Credentials List 3Bda8D9Ce1](Endpoints/php-beta-vaults-credentials-list.md)
+- [Api Php Beta Vaults Credentials Retrieve B795Afca14](Endpoints/php-beta-vaults-credentials-retrieve.md)
+- [Api Php Beta Vaults Credentials Update Dc5Aace998](Endpoints/php-beta-vaults-credentials-update.md)
+- [Api Php Beta Vaults Delete A431Cfb749](Endpoints/php-beta-vaults-delete.md)
+- [Api Php Beta Vaults List 4A35Fb0B5B](Endpoints/php-beta-vaults-list.md)
+- [Api Php Beta Vaults Retrieve 1C7Ad40D45](Endpoints/php-beta-vaults-retrieve.md)
+- [Api Php Beta Vaults Update 159E298242](Endpoints/php-beta-vaults-update.md)
+- [Api Php Completions 649F44E319](Endpoints/php-completions.md)
+- [Api Php Completions Create 43C61662Fa](Endpoints/php-completions-create.md)
+- [Api Php Messages 7D8Bbbcf56](Endpoints/php-messages.md)
+- [Api Php Messages Batches 0F504E4Fd3](Endpoints/php-messages-batches.md)
+- [Api Php Messages Batches Cancel 03Ad705101](Endpoints/php-messages-batches-cancel.md)
+- [Api Php Messages Batches Create Ba810F77Ac](Endpoints/php-messages-batches-create.md)
+- [Api Php Messages Batches Delete 5Cb11B8143](Endpoints/php-messages-batches-delete.md)
+- [Api Php Messages Batches List F762F2185B](Endpoints/php-messages-batches-list.md)
+- [Api Php Messages Batches Results C4799D3E40](Endpoints/php-messages-batches-results.md)
+- [Api Php Messages Batches Retrieve 3E84B9Ba59](Endpoints/php-messages-batches-retrieve.md)
+- [Api Php Messages Count Tokens D44B53Dc5F](Endpoints/php-messages-count-tokens.md)
+- [Api Php Messages Create A0441378B3](Endpoints/php-messages-create.md)
+- [Api Php Models Be72888A0C](Endpoints/php-models.md)
+- [Api Php Models List Eab1F9E8C2](Endpoints/php-models-list.md)
+- [Api Php Models Retrieve 0B864180Ca](Endpoints/php-models-retrieve.md)
+- [Api Python Beta Agents Archive 3F4A840943](Endpoints/python-beta-agents-archive.md) — beta.agents.archive(stragentid, AgentArchiveParamskwargs)  -> BetaManagedAgentsAgent
+- [Api Python Beta Agents Create A92Af9F245](Endpoints/python-beta-agents-create.md) — beta.agents.create(AgentCreateParamskwargs)  -> BetaManagedAgentsAgent
+- [Api Python Beta Agents Delete Addb470127](Endpoints/python-beta-agents-delete.md)
+- [Api Python Beta Agents List Ac22A354C1](Endpoints/python-beta-agents-list.md) — beta.agents.list(AgentListParamskwargs)  -> SyncPageCursor[BetaManagedAgentsAgent]
+- [Api Python Beta Agents Retrieve 2683Af7Ad5](Endpoints/python-beta-agents-retrieve.md) — beta.agents.retrieve(stragentid, AgentRetrieveParamskwargs)  -> BetaManagedAgentsAgent
+- [Api Python Beta Agents Update Aef1B12Ce3](Endpoints/python-beta-agents-update.md) — beta.agents.update(stragentid, AgentUpdateParamskwargs)  -> BetaManagedAgentsAgent
+- [Api Python Beta Agents Versions List D3F12B51A3](Endpoints/python-beta-agents-versions-list.md) — beta.agents.versions.list(stragentid, VersionListParamskwargs)  -> SyncPageCursor[BetaManagedAgentsAgent]
+- [Api Python Beta Environments Archive 8D54Be3849](Endpoints/python-beta-environments-archive.md) — beta.environments.archive(strenvironmentid, EnvironmentArchiveParamskwargs)  -> BetaEnvironment
+- [Api Python Beta Environments Create 83F02B93Ae](Endpoints/python-beta-environments-create.md) — beta.environments.create(EnvironmentCreateParamskwargs)  -> BetaEnvironment
+- [Api Python Beta Environments Delete 634A3A78B9](Endpoints/python-beta-environments-delete.md) — beta.environments.delete(strenvironmentid, EnvironmentDeleteParamskwargs)  -> BetaEnvironmentDeleteResponse
+- [Api Python Beta Environments List 10002E122F](Endpoints/python-beta-environments-list.md) — beta.environments.list(EnvironmentListParamskwargs)  -> SyncPageCursor[BetaEnvironment]
+- [Api Python Beta Environments Retrieve 260A873E08](Endpoints/python-beta-environments-retrieve.md) — beta.environments.retrieve(strenvironmentid, EnvironmentRetrieveParamskwargs)  -> BetaEnvironment
+- [Api Python Beta Environments Update 522Abe0Fc6](Endpoints/python-beta-environments-update.md) — beta.environments.update(strenvironmentid, EnvironmentUpdateParamskwargs)  -> BetaEnvironment
+- [Api Python Beta Files Delete 631D2Aff33](Endpoints/python-beta-files-delete.md) — beta.files.delete(strfileid, FileDeleteParamskwargs)  -> DeletedFile
+- [Api Python Beta Files Download A4A6Abc76B](Endpoints/python-beta-files-download.md) — beta.files.download(strfileid, FileDownloadParamskwargs)  -> BinaryResponseContent
+- [Api Python Beta Files List 3Fc3C03112](Endpoints/python-beta-files-list.md) — beta.files.list(FileListParamskwargs)  -> SyncPage[FileMetadata]
+- [Api Python Beta Files Retrieve Metadata 100E5A88Fb](Endpoints/python-beta-files-retrieve-metadata.md) — beta.files.retrievemetadata(strfileid, FileRetrieveMetadataParamskwargs)  -> FileMetadata
+- [Api Python Beta Files Upload F09574Ba0C](Endpoints/python-beta-files-upload.md) — beta.files.upload(FileUploadParamskwargs)  -> FileMetadata
+- [Api Python Beta Memory Stores Archive B0Fa60C65B](Endpoints/python-beta-memory-stores-archive.md) — beta.memorystores.archive(strmemorystoreid, MemoryStoreArchiveParamskwargs)  -> BetaManagedAgentsMemoryStore
+- [Api Python Beta Memory Stores Create 3Bb660C04B](Endpoints/python-beta-memory-stores-create.md) — beta.memorystores.create(MemoryStoreCreateParamskwargs)  -> BetaManagedAgentsMemoryStore
+- [Api Python Beta Memory Stores Delete 2Fada4039C](Endpoints/python-beta-memory-stores-delete.md) — beta.memorystores.delete(strmemorystoreid, MemoryStoreDeleteParamskwargs)  -> BetaManagedAgentsDeletedMemoryStore
+- [Api Python Beta Memory Stores List 1D603F2207](Endpoints/python-beta-memory-stores-list.md) — beta.memorystores.list(MemoryStoreListParamskwargs)  -> SyncPageCursor[BetaManagedAgentsMemoryStore]
+- [Api Python Beta Memory Stores Memories Create Fa4A280287](Endpoints/python-beta-memory-stores-memories-create.md) — beta.memorystores.memories.create(strmemorystoreid, MemoryCreateParamskwargs)  -> BetaManagedAgentsMemory
+- [Api Python Beta Memory Stores Memories Delete 14E76B42C7](Endpoints/python-beta-memory-stores-memories-delete.md) — beta.memorystores.memories.delete(strmemoryid, MemoryDeleteParamskwargs)  -> BetaManagedAgentsDeletedMemory
+- [Api Python Beta Memory Stores Memories List 88B317Cefa](Endpoints/python-beta-memory-stores-memories-list.md) — beta.memorystores.memories.list(strmemorystoreid, MemoryListParamskwargs)  -> SyncPageCursor[BetaManagedAgentsMemoryListItem]
+- [Api Python Beta Memory Stores Memories Retrieve 40F291Fbb5](Endpoints/python-beta-memory-stores-memories-retrieve.md) — beta.memorystores.memories.retrieve(strmemoryid, MemoryRetrieveParamskwargs)  -> BetaManagedAgentsMemory
+- [Api Python Beta Memory Stores Memories Update Cd622C9334](Endpoints/python-beta-memory-stores-memories-update.md) — beta.memorystores.memories.update(strmemoryid, MemoryUpdateParamskwargs)  -> BetaManagedAgentsMemory
+- [Api Python Beta Memory Stores Memory Versions List Cda9D3Dc9C](Endpoints/python-beta-memory-stores-memory-versions-list.md) — beta.memorystores.memoryversions.list(strmemorystoreid, MemoryVersionListParamskwargs)  -> SyncPageCursor[BetaManagedAgentsMemoryVersion]
+- [Api Python Beta Memory Stores Memory Versions Redact 443A66A652](Endpoints/python-beta-memory-stores-memory-versions-redact.md) — beta.memorystores.memoryversions.redact(strmemoryversionid, MemoryVersionRedactParamskwargs)  -> BetaManagedAgentsMemoryVersion
+- [Api Python Beta Memory Stores Memory Versions Retrieve Bd7B861B9F](Endpoints/python-beta-memory-stores-memory-versions-retrieve.md) — beta.memorystores.memoryversions.retrieve(strmemoryversionid, MemoryVersionRetrieveParamskwargs)  -> BetaManagedAgentsMemoryVersion
+- [Api Python Beta Memory Stores Retrieve 5295270Ff4](Endpoints/python-beta-memory-stores-retrieve.md) — beta.memorystores.retrieve(strmemorystoreid, MemoryStoreRetrieveParamskwargs)  -> BetaManagedAgentsMemoryStore
+- [Api Python Beta Memory Stores Update D2430F3729](Endpoints/python-beta-memory-stores-update.md) — beta.memorystores.update(strmemorystoreid, MemoryStoreUpdateParamskwargs)  -> BetaManagedAgentsMemoryStore
+- [Api Python Beta Messages Batches Cancel 8Ff1C2B0Da](Endpoints/python-beta-messages-batches-cancel.md) — beta.messages.batches.cancel(strmessagebatchid, BatchCancelParamskwargs)  -> BetaMessageBatch
+- [Api Python Beta Messages Batches Create 39D6396Be9](Endpoints/python-beta-messages-batches-create.md) — beta.messages.batches.create(BatchCreateParamskwargs)  -> BetaMessageBatch
+- [Api Python Beta Messages Batches Delete 07A0Cc4C3B](Endpoints/python-beta-messages-batches-delete.md) — beta.messages.batches.delete(strmessagebatchid, BatchDeleteParamskwargs)  -> BetaDeletedMessageBatch
+- [Api Python Beta Messages Batches List 2Eba71B2Ba](Endpoints/python-beta-messages-batches-list.md) — beta.messages.batches.list(BatchListParamskwargs)  -> SyncPage[BetaMessageBatch]
+- [Api Python Beta Messages Batches Results Dc532Ae216](Endpoints/python-beta-messages-batches-results.md) — beta.messages.batches.results(strmessagebatchid, BatchResultsParamskwargs)  -> BetaMessageBatchIndividualResponse
+- [Api Python Beta Messages Batches Retrieve 0387D8Aae2](Endpoints/python-beta-messages-batches-retrieve.md) — beta.messages.batches.retrieve(strmessagebatchid, BatchRetrieveParamskwargs)  -> BetaMessageBatch
+- [Api Python Beta Messages Count Tokens 6409Ac3E87](Endpoints/python-beta-messages-count-tokens.md) — beta.messages.counttokens(MessageCountTokensParamskwargs)  -> BetaMessageTokensCount
+- [Api Python Beta Messages Create 6588660858](Endpoints/python-beta-messages-create.md) — beta.messages.create(MessageCreateParamskwargs)  -> BetaMessage
+- [Api Python Beta Models List 87C31713E6](Endpoints/python-beta-models-list.md) — beta.models.list(ModelListParamskwargs)  -> SyncPage[BetaModelInfo]
+- [Api Python Beta Models Retrieve C6856A2Cd8](Endpoints/python-beta-models-retrieve.md) — beta.models.retrieve(strmodelid, ModelRetrieveParamskwargs)  -> BetaModelInfo
+- [Api Python Beta Sessions Archive 3A513Cb123](Endpoints/python-beta-sessions-archive.md) — beta.sessions.archive(strsessionid, SessionArchiveParamskwargs)  -> BetaManagedAgentsSession
+- [Api Python Beta Sessions Create 1E37091D15](Endpoints/python-beta-sessions-create.md) — beta.sessions.create(SessionCreateParamskwargs)  -> BetaManagedAgentsSession
+- [Api Python Beta Sessions Delete 137178619F](Endpoints/python-beta-sessions-delete.md) — beta.sessions.delete(strsessionid, SessionDeleteParamskwargs)  -> BetaManagedAgentsDeletedSession
+- [Api Python Beta Sessions Events List 1Bda75Cfcf](Endpoints/python-beta-sessions-events-list.md) — beta.sessions.events.list(strsessionid, EventListParamskwargs)  -> SyncPageCursor[BetaManagedAgentsSessionEvent]
+- [Api Python Beta Sessions Events Send 02583B87B4](Endpoints/python-beta-sessions-events-send.md) — beta.sessions.events.send(strsessionid, EventSendParamskwargs)  -> BetaManagedAgentsSendSessionEvents
+- [Api Python Beta Sessions Events Stream B24Be06Ebe](Endpoints/python-beta-sessions-events-stream.md) — beta.sessions.events.stream(strsessionid, EventStreamParamskwargs)  -> BetaManagedAgentsStreamSessionEvents
+- [Api Python Beta Sessions List B400C138Ed](Endpoints/python-beta-sessions-list.md) — beta.sessions.list(SessionListParamskwargs)  -> SyncPageCursor[BetaManagedAgentsSession]
+- [Api Python Beta Sessions Resources Add 0486F536A1](Endpoints/python-beta-sessions-resources-add.md) — beta.sessions.resources.add(strsessionid, ResourceAddParamskwargs)  -> BetaManagedAgentsFileResource
+- [Api Python Beta Sessions Resources Delete 117Ebf995A](Endpoints/python-beta-sessions-resources-delete.md) — beta.sessions.resources.delete(strresourceid, ResourceDeleteParamskwargs)  -> BetaManagedAgentsDeleteSessionResource
+- [Api Python Beta Sessions Resources List 69Bae30De3](Endpoints/python-beta-sessions-resources-list.md) — beta.sessions.resources.list(strsessionid, ResourceListParamskwargs)  -> SyncPageCursor[BetaManagedAgentsSessionResource]
+- [Api Python Beta Sessions Resources Retrieve A38A6Df205](Endpoints/python-beta-sessions-resources-retrieve.md) — beta.sessions.resources.retrieve(strresourceid, ResourceRetrieveParamskwargs)  -> ResourceRetrieveResponse
+- [Api Python Beta Sessions Resources Update 7F47D01F35](Endpoints/python-beta-sessions-resources-update.md) — beta.sessions.resources.update(strresourceid, ResourceUpdateParamskwargs)  -> ResourceUpdateResponse
+- [Api Python Beta Sessions Retrieve C6E7F48Ac5](Endpoints/python-beta-sessions-retrieve.md) — beta.sessions.retrieve(strsessionid, SessionRetrieveParamskwargs)  -> BetaManagedAgentsSession
+- [Api Python Beta Sessions Update Ab371947B6](Endpoints/python-beta-sessions-update.md) — beta.sessions.update(strsessionid, SessionUpdateParamskwargs)  -> BetaManagedAgentsSession
+- [Api Python Beta Skills Create F822Ca117D](Endpoints/python-beta-skills-create.md) — beta.skills.create(SkillCreateParamskwargs)  -> SkillCreateResponse
+- [Api Python Beta Skills Delete 45C3501E0A](Endpoints/python-beta-skills-delete.md) — beta.skills.delete(strskillid, SkillDeleteParamskwargs)  -> SkillDeleteResponse
+- [Api Python Beta Skills List F8Ac4D01E7](Endpoints/python-beta-skills-list.md) — beta.skills.list(SkillListParamskwargs)  -> SyncPageCursor[SkillListResponse]
+- [Api Python Beta Skills Retrieve 5493Ff3Ed1](Endpoints/python-beta-skills-retrieve.md) — beta.skills.retrieve(strskillid, SkillRetrieveParamskwargs)  -> SkillRetrieveResponse
+- [Api Python Beta Skills Versions Create 584B853Fa2](Endpoints/python-beta-skills-versions-create.md) — beta.skills.versions.create(strskillid, VersionCreateParamskwargs)  -> VersionCreateResponse
+- [Api Python Beta Skills Versions Delete Bcebb8Fc3D](Endpoints/python-beta-skills-versions-delete.md) — beta.skills.versions.delete(strversion, VersionDeleteParamskwargs)  -> VersionDeleteResponse
+- [Api Python Beta Skills Versions List Cfc842Bc47](Endpoints/python-beta-skills-versions-list.md) — beta.skills.versions.list(strskillid, VersionListParamskwargs)  -> SyncPageCursor[VersionListResponse]
+- [Api Python Beta Skills Versions Retrieve C81F46F194](Endpoints/python-beta-skills-versions-retrieve.md) — beta.skills.versions.retrieve(strversion, VersionRetrieveParamskwargs)  -> VersionRetrieveResponse
+- [Api Python Beta Vaults Archive 92F9A01D85](Endpoints/python-beta-vaults-archive.md) — beta.vaults.archive(strvaultid, VaultArchiveParamskwargs)  -> BetaManagedAgentsVault
+- [Api Python Beta Vaults Create Cf458D3127](Endpoints/python-beta-vaults-create.md) — beta.vaults.create(VaultCreateParamskwargs)  -> BetaManagedAgentsVault
+- [Api Python Beta Vaults Credentials Archive Ac5B3882C3](Endpoints/python-beta-vaults-credentials-archive.md) — beta.vaults.credentials.archive(strcredentialid, CredentialArchiveParamskwargs)  -> BetaManagedAgentsCredential
+- [Api Python Beta Vaults Credentials Create 71Ab102Eeb](Endpoints/python-beta-vaults-credentials-create.md) — beta.vaults.credentials.create(strvaultid, CredentialCreateParamskwargs)  -> BetaManagedAgentsCredential
+- [Api Python Beta Vaults Credentials Delete 68605Fc046](Endpoints/python-beta-vaults-credentials-delete.md) — beta.vaults.credentials.delete(strcredentialid, CredentialDeleteParamskwargs)  -> BetaManagedAgentsDeletedCredential
+- [Api Python Beta Vaults Credentials List 8455721D8A](Endpoints/python-beta-vaults-credentials-list.md) — beta.vaults.credentials.list(strvaultid, CredentialListParamskwargs)  -> SyncPageCursor[BetaManagedAgentsCredential]
+- [Api Python Beta Vaults Credentials Retrieve 5348Da7D4B](Endpoints/python-beta-vaults-credentials-retrieve.md) — beta.vaults.credentials.retrieve(strcredentialid, CredentialRetrieveParamskwargs)  -> BetaManagedAgentsCredential
+- [Api Python Beta Vaults Credentials Update Eda34C6975](Endpoints/python-beta-vaults-credentials-update.md) — beta.vaults.credentials.update(strcredentialid, CredentialUpdateParamskwargs)  -> BetaManagedAgentsCredential
+- [Api Python Beta Vaults Delete A051C48F38](Endpoints/python-beta-vaults-delete.md) — beta.vaults.delete(strvaultid, VaultDeleteParamskwargs)  -> BetaManagedAgentsDeletedVault
+- [Api Python Beta Vaults List E27Eaa9097](Endpoints/python-beta-vaults-list.md) — beta.vaults.list(VaultListParamskwargs)  -> SyncPageCursor[BetaManagedAgentsVault]
+- [Api Python Beta Vaults Retrieve 0A7065335E](Endpoints/python-beta-vaults-retrieve.md) — beta.vaults.retrieve(strvaultid, VaultRetrieveParamskwargs)  -> BetaManagedAgentsVault
+- [Api Python Beta Vaults Update 1F59818Cf4](Endpoints/python-beta-vaults-update.md) — beta.vaults.update(strvaultid, VaultUpdateParamskwargs)  -> BetaManagedAgentsVault
+- [Api Python Completions Create 7C288Eef0A](Endpoints/python-completions-create.md) — completions.create(CompletionCreateParamskwargs)  -> Completion
+- [Api Python Messages Batches Cancel 17492C9094](Endpoints/python-messages-batches-cancel.md) — messages.batches.cancel(strmessagebatchid)  -> MessageBatch
+- [Api Python Messages Batches Create 363Ca1Bd8B](Endpoints/python-messages-batches-create.md) — messages.batches.create(BatchCreateParamskwargs)  -> MessageBatch
+- [Api Python Messages Batches Delete 74Cd4Bbe00](Endpoints/python-messages-batches-delete.md) — messages.batches.delete(strmessagebatchid)  -> DeletedMessageBatch
+- [Api Python Messages Batches List 6De85Ce7F5](Endpoints/python-messages-batches-list.md) — messages.batches.list(BatchListParamskwargs)  -> SyncPage[MessageBatch]
+- [Api Python Messages Batches Results A00Ddd1A31](Endpoints/python-messages-batches-results.md) — messages.batches.results(strmessagebatchid)  -> MessageBatchIndividualResponse
+- [Api Python Messages Batches Retrieve 0D277D4807](Endpoints/python-messages-batches-retrieve.md) — messages.batches.retrieve(strmessagebatchid)  -> MessageBatch
+- [Api Python Messages Count Tokens E8636113F1](Endpoints/python-messages-count-tokens.md) — messages.counttokens(MessageCountTokensParamskwargs)  -> MessageTokensCount
+- [Api Python Messages Create 235F2C8804](Endpoints/python-messages-create.md) — messages.create(MessageCreateParamskwargs)  -> Message
+- [Api Python Models List 2A1Dd5Faa9](Endpoints/python-models-list.md) — models.list(ModelListParamskwargs)  -> SyncPage[ModelInfo]
+- [Api Python Models Retrieve C35Ec69E3E](Endpoints/python-models-retrieve.md) — models.retrieve(strmodelid, ModelRetrieveParamskwargs)  -> ModelInfo
+- [API Reference - Claude API Docs](Endpoints/kotlin-beta-models-list.md)
+- [API Reference - Claude API Docs](Endpoints/kotlin-beta-models-retrieve.md)
+- [API Reference - Claude API Docs](Endpoints/kotlin-beta-models.md)
+- [API Reference - Claude API Docs](Endpoints/kotlin-models-list.md)
+- [API Reference - Claude API Docs](Endpoints/kotlin-models-retrieve.md)
+- [API Reference - Claude API Docs](Endpoints/kotlin-models.md)
+- [Api Ruby Beta Agents Archive C8Be28333D](Endpoints/ruby-beta-agents-archive.md) — beta.agents.archive(agentid, kwargs) -> BetaManagedAgentsAgent
+- [Api Ruby Beta Agents Create 7783Bd2477](Endpoints/ruby-beta-agents-create.md) — beta.agents.create(kwargs) -> BetaManagedAgentsAgent
+- [Api Ruby Beta Agents Delete Bd193B6842](Endpoints/ruby-beta-agents-delete.md)
+- [Api Ruby Beta Agents List 61718A40F8](Endpoints/ruby-beta-agents-list.md) — beta.agents.list(kwargs) -> PageCursor<BetaManagedAgentsAgent>
+- [Api Ruby Beta Agents Retrieve 11D576A2F0](Endpoints/ruby-beta-agents-retrieve.md) — beta.agents.retrieve(agentid, kwargs) -> BetaManagedAgentsAgent
+- [Api Ruby Beta Agents Update A9Cda5936F](Endpoints/ruby-beta-agents-update.md) — beta.agents.update(agentid, kwargs) -> BetaManagedAgentsAgent
+- [Api Ruby Beta Agents Versions List 65Ba6934Ad](Endpoints/ruby-beta-agents-versions-list.md) — beta.agents.versions.list(agentid, kwargs) -> PageCursor<BetaManagedAgentsAgent>
+- [Api Ruby Beta Environments Archive Cb74Dcd96F](Endpoints/ruby-beta-environments-archive.md) — beta.environments.archive(environmentid, kwargs) -> BetaEnvironment
+- [Api Ruby Beta Environments Create Fbccac24Cc](Endpoints/ruby-beta-environments-create.md) — beta.environments.create(kwargs) -> BetaEnvironment
+- [Api Ruby Beta Environments Delete E2995D436B](Endpoints/ruby-beta-environments-delete.md) — beta.environments.delete(environmentid, kwargs) -> BetaEnvironmentDeleteResponse
+- [Api Ruby Beta Environments List A0Af46F461](Endpoints/ruby-beta-environments-list.md) — beta.environments.list(kwargs) -> PageCursor<BetaEnvironment>
+- [Api Ruby Beta Environments Retrieve D7C0235E73](Endpoints/ruby-beta-environments-retrieve.md) — beta.environments.retrieve(environmentid, kwargs) -> BetaEnvironment
+- [Api Ruby Beta Environments Update 50269Ce894](Endpoints/ruby-beta-environments-update.md) — beta.environments.update(environmentid, kwargs) -> BetaEnvironment
+- [Api Ruby Beta Files Delete F27E89Abc3](Endpoints/ruby-beta-files-delete.md) — beta.files.delete(fileid, kwargs) -> DeletedFile
+- [Api Ruby Beta Files Download Fa9828C234](Endpoints/ruby-beta-files-download.md) — beta.files.download(fileid, kwargs) -> StringIO
+- [Api Ruby Beta Files List 5B55A3A3Fc](Endpoints/ruby-beta-files-list.md) — beta.files.list(kwargs) -> Page<FileMetadata>
+- [Api Ruby Beta Files Retrieve Metadata F4763A29C9](Endpoints/ruby-beta-files-retrieve-metadata.md) — beta.files.retrievemetadata(fileid, kwargs) -> FileMetadata
+- [Api Ruby Beta Files Upload Fb5414B563](Endpoints/ruby-beta-files-upload.md) — beta.files.upload(kwargs) -> FileMetadata
+- [Api Ruby Beta Memory Stores Archive 7C047Ae111](Endpoints/ruby-beta-memory-stores-archive.md) — beta.memorystores.archive(memorystoreid, kwargs) -> BetaManagedAgentsMemoryStore
+- [Api Ruby Beta Memory Stores Create 201568Ba67](Endpoints/ruby-beta-memory-stores-create.md) — beta.memorystores.create(kwargs) -> BetaManagedAgentsMemoryStore
+- [Api Ruby Beta Memory Stores Delete 7Fab031F27](Endpoints/ruby-beta-memory-stores-delete.md) — beta.memorystores.delete(memorystoreid, kwargs) -> BetaManagedAgentsDeletedMemoryStore
+- [Api Ruby Beta Memory Stores List 7F3A438351](Endpoints/ruby-beta-memory-stores-list.md) — beta.memorystores.list(kwargs) -> PageCursor<BetaManagedAgentsMemoryStore>
+- [Api Ruby Beta Memory Stores Memories Create 57472D3286](Endpoints/ruby-beta-memory-stores-memories-create.md) — beta.memorystores.memories.create(memorystoreid, kwargs) -> BetaManagedAgentsMemory
+- [Api Ruby Beta Memory Stores Memories Delete Eff328F033](Endpoints/ruby-beta-memory-stores-memories-delete.md) — beta.memorystores.memories.delete(memoryid, kwargs) -> BetaManagedAgentsDeletedMemory
+- [Api Ruby Beta Memory Stores Memories List C16Ea1427B](Endpoints/ruby-beta-memory-stores-memories-list.md) — beta.memorystores.memories.list(memorystoreid, kwargs) -> PageCursor<BetaManagedAgentsMemoryListItem>
+- [Api Ruby Beta Memory Stores Memories Retrieve B1Dde65C41](Endpoints/ruby-beta-memory-stores-memories-retrieve.md) — beta.memorystores.memories.retrieve(memoryid, kwargs) -> BetaManagedAgentsMemory
+- [Api Ruby Beta Memory Stores Memories Update E0F9Bc62Ae](Endpoints/ruby-beta-memory-stores-memories-update.md) — beta.memorystores.memories.update(memoryid, kwargs) -> BetaManagedAgentsMemory
+- [Api Ruby Beta Memory Stores Memory Versions List 1648E59780](Endpoints/ruby-beta-memory-stores-memory-versions-list.md) — beta.memorystores.memoryversions.list(memorystoreid, kwargs) -> PageCursor<BetaManagedAgentsMemoryVersion>
+- [Api Ruby Beta Memory Stores Memory Versions Redact Ad5A102530](Endpoints/ruby-beta-memory-stores-memory-versions-redact.md) — beta.memorystores.memoryversions.redact(memoryversionid, kwargs) -> BetaManagedAgentsMemoryVersion
+- [Api Ruby Beta Memory Stores Memory Versions Retrieve Ee84Cccd82](Endpoints/ruby-beta-memory-stores-memory-versions-retrieve.md) — beta.memorystores.memoryversions.retrieve(memoryversionid, kwargs) -> BetaManagedAgentsMemoryVersion
+- [Api Ruby Beta Memory Stores Retrieve A04F1036C2](Endpoints/ruby-beta-memory-stores-retrieve.md) — beta.memorystores.retrieve(memorystoreid, kwargs) -> BetaManagedAgentsMemoryStore
+- [Api Ruby Beta Memory Stores Update 61F1D5C22A](Endpoints/ruby-beta-memory-stores-update.md) — beta.memorystores.update(memorystoreid, kwargs) -> BetaManagedAgentsMemoryStore
+- [Api Ruby Beta Messages Batches Cancel 126C1D6665](Endpoints/ruby-beta-messages-batches-cancel.md) — beta.messages.batches.cancel(messagebatchid, kwargs) -> BetaMessageBatch
+- [Api Ruby Beta Messages Batches Create D45D51E8Ca](Endpoints/ruby-beta-messages-batches-create.md) — beta.messages.batches.create(kwargs) -> BetaMessageBatch
+- [Api Ruby Beta Messages Batches Delete 627D133246](Endpoints/ruby-beta-messages-batches-delete.md) — beta.messages.batches.delete(messagebatchid, kwargs) -> BetaDeletedMessageBatch
+- [Api Ruby Beta Messages Batches List E7E46E4D66](Endpoints/ruby-beta-messages-batches-list.md) — beta.messages.batches.list(kwargs) -> Page<BetaMessageBatch>
+- [Api Ruby Beta Messages Batches Results 187Ada7Ebd](Endpoints/ruby-beta-messages-batches-results.md) — beta.messages.batches.results(messagebatchid, kwargs) -> BetaMessageBatchIndividualResponse
+- [Api Ruby Beta Messages Batches Retrieve B05140Bd22](Endpoints/ruby-beta-messages-batches-retrieve.md) — beta.messages.batches.retrieve(messagebatchid, kwargs) -> BetaMessageBatch
+- [Api Ruby Beta Messages Count Tokens Fce7B2275A](Endpoints/ruby-beta-messages-count-tokens.md) — beta.messages.counttokens(kwargs) -> BetaMessageTokensCount
+- [Api Ruby Beta Messages Create F5911F2F49](Endpoints/ruby-beta-messages-create.md) — beta.messages.create(kwargs) -> BetaMessage
+- [Api Ruby Beta Models List 7217473A41](Endpoints/ruby-beta-models-list.md) — beta.models.list(kwargs) -> Page<BetaModelInfo>
+- [Api Ruby Beta Models Retrieve E10Ee4385E](Endpoints/ruby-beta-models-retrieve.md) — beta.models.retrieve(modelid, kwargs) -> BetaModelInfo
+- [Api Ruby Beta Sessions Archive B5A3Fb4C0E](Endpoints/ruby-beta-sessions-archive.md) — beta.sessions.archive(sessionid, kwargs) -> BetaManagedAgentsSession
+- [Api Ruby Beta Sessions Create 38856Bed39](Endpoints/ruby-beta-sessions-create.md) — beta.sessions.create(kwargs) -> BetaManagedAgentsSession
+- [Api Ruby Beta Sessions Delete 272Be64C17](Endpoints/ruby-beta-sessions-delete.md) — beta.sessions.delete(sessionid, kwargs) -> BetaManagedAgentsDeletedSession
+- [Api Ruby Beta Sessions Events List 439Eb8Fb9E](Endpoints/ruby-beta-sessions-events-list.md) — beta.sessions.events.list(sessionid, kwargs) -> PageCursor<BetaManagedAgentsSessionEvent>
+- [Api Ruby Beta Sessions Events Send 238Ecd8290](Endpoints/ruby-beta-sessions-events-send.md) — beta.sessions.events.send(sessionid, kwargs) -> BetaManagedAgentsSendSessionEvents
+- [Api Ruby Beta Sessions Events Stream A1B898E289](Endpoints/ruby-beta-sessions-events-stream.md) — beta.sessions.events.stream(sessionid, kwargs) -> BetaManagedAgentsStreamSessionEvents
+- [Api Ruby Beta Sessions List C29693E648](Endpoints/ruby-beta-sessions-list.md) — beta.sessions.list(kwargs) -> PageCursor<BetaManagedAgentsSession>
+- [Api Ruby Beta Sessions Resources Add 54Ce83424E](Endpoints/ruby-beta-sessions-resources-add.md) — beta.sessions.resources.add(sessionid, kwargs) -> BetaManagedAgentsFileResource
+- [Api Ruby Beta Sessions Resources Delete 5E3Be4C0Cb](Endpoints/ruby-beta-sessions-resources-delete.md) — beta.sessions.resources.delete(resourceid, kwargs) -> BetaManagedAgentsDeleteSessionResource
+- [Api Ruby Beta Sessions Resources List 5D35B7Ba7B](Endpoints/ruby-beta-sessions-resources-list.md) — beta.sessions.resources.list(sessionid, kwargs) -> PageCursor<BetaManagedAgentsSessionResource>
+- [Api Ruby Beta Sessions Resources Retrieve 0Baf029E6E](Endpoints/ruby-beta-sessions-resources-retrieve.md) — beta.sessions.resources.retrieve(resourceid, kwargs) -> ResourceRetrieveResponse
+- [Api Ruby Beta Sessions Resources Update E9Ba5E3B5B](Endpoints/ruby-beta-sessions-resources-update.md) — beta.sessions.resources.update(resourceid, kwargs) -> ResourceUpdateResponse
+- [Api Ruby Beta Sessions Retrieve 578822B310](Endpoints/ruby-beta-sessions-retrieve.md) — beta.sessions.retrieve(sessionid, kwargs) -> BetaManagedAgentsSession
+- [Api Ruby Beta Sessions Update B2Fc6D295F](Endpoints/ruby-beta-sessions-update.md) — beta.sessions.update(sessionid, kwargs) -> BetaManagedAgentsSession
+- [Api Ruby Beta Skills Create E6D6726162](Endpoints/ruby-beta-skills-create.md) — beta.skills.create(kwargs) -> SkillCreateResponse
+- [Api Ruby Beta Skills Delete Dafc2D2C18](Endpoints/ruby-beta-skills-delete.md) — beta.skills.delete(skillid, kwargs) -> SkillDeleteResponse
+- [Api Ruby Beta Skills List 3D44Bc469C](Endpoints/ruby-beta-skills-list.md) — beta.skills.list(kwargs) -> PageCursor<SkillListResponse>
+- [Api Ruby Beta Skills Retrieve 693E2F5Cbb](Endpoints/ruby-beta-skills-retrieve.md) — beta.skills.retrieve(skillid, kwargs) -> SkillRetrieveResponse
+- [Api Ruby Beta Skills Versions Create D41413D530](Endpoints/ruby-beta-skills-versions-create.md) — beta.skills.versions.create(skillid, kwargs) -> VersionCreateResponse
+- [Api Ruby Beta Skills Versions Delete C7D572D84F](Endpoints/ruby-beta-skills-versions-delete.md) — beta.skills.versions.delete(version, kwargs) -> VersionDeleteResponse
+- [Api Ruby Beta Skills Versions List 0F78755Be3](Endpoints/ruby-beta-skills-versions-list.md) — beta.skills.versions.list(skillid, kwargs) -> PageCursor<VersionListResponse>
+- [Api Ruby Beta Skills Versions Retrieve 0777105C86](Endpoints/ruby-beta-skills-versions-retrieve.md) — beta.skills.versions.retrieve(version, kwargs) -> VersionRetrieveResponse
+- [Api Ruby Beta Vaults Archive 14649D25D7](Endpoints/ruby-beta-vaults-archive.md) — beta.vaults.archive(vaultid, kwargs) -> BetaManagedAgentsVault
+- [Api Ruby Beta Vaults Create 65B1D8De37](Endpoints/ruby-beta-vaults-create.md) — beta.vaults.create(kwargs) -> BetaManagedAgentsVault
+- [Api Ruby Beta Vaults Credentials Archive Dcf1D7Cd87](Endpoints/ruby-beta-vaults-credentials-archive.md) — beta.vaults.credentials.archive(credentialid, kwargs) -> BetaManagedAgentsCredential
+- [Api Ruby Beta Vaults Credentials Create 0586D6Ea1E](Endpoints/ruby-beta-vaults-credentials-create.md) — beta.vaults.credentials.create(vaultid, kwargs) -> BetaManagedAgentsCredential
+- [Api Ruby Beta Vaults Credentials Delete 44F1Add60E](Endpoints/ruby-beta-vaults-credentials-delete.md) — beta.vaults.credentials.delete(credentialid, kwargs) -> BetaManagedAgentsDeletedCredential
+- [Api Ruby Beta Vaults Credentials List A8997E6C8B](Endpoints/ruby-beta-vaults-credentials-list.md) — beta.vaults.credentials.list(vaultid, kwargs) -> PageCursor<BetaManagedAgentsCredential>
+- [Api Ruby Beta Vaults Credentials Retrieve 0Ba20D6793](Endpoints/ruby-beta-vaults-credentials-retrieve.md) — beta.vaults.credentials.retrieve(credentialid, kwargs) -> BetaManagedAgentsCredential
+- [Api Ruby Beta Vaults Credentials Update Ed14D6C261](Endpoints/ruby-beta-vaults-credentials-update.md) — beta.vaults.credentials.update(credentialid, kwargs) -> BetaManagedAgentsCredential
+- [Api Ruby Beta Vaults Delete 1B74A379D8](Endpoints/ruby-beta-vaults-delete.md) — beta.vaults.delete(vaultid, kwargs) -> BetaManagedAgentsDeletedVault
+- [Api Ruby Beta Vaults List 30D07376E7](Endpoints/ruby-beta-vaults-list.md) — beta.vaults.list(kwargs) -> PageCursor<BetaManagedAgentsVault>
+- [Api Ruby Beta Vaults Retrieve 28D6919Ce8](Endpoints/ruby-beta-vaults-retrieve.md) — beta.vaults.retrieve(vaultid, kwargs) -> BetaManagedAgentsVault
+- [Api Ruby Beta Vaults Update F27F367Dc2](Endpoints/ruby-beta-vaults-update.md) — beta.vaults.update(vaultid, kwargs) -> BetaManagedAgentsVault
+- [Api Ruby Completions Create Bd7183Fbf2](Endpoints/ruby-completions-create.md) — completions.create(kwargs) -> Completion
+- [Api Ruby Messages Batches Cancel C95B6E6Aab](Endpoints/ruby-messages-batches-cancel.md) — messages.batches.cancel(messagebatchid) -> MessageBatch
+- [Api Ruby Messages Batches Create 49D5D59724](Endpoints/ruby-messages-batches-create.md) — messages.batches.create(kwargs) -> MessageBatch
+- [Api Ruby Messages Batches Delete 58810Ae269](Endpoints/ruby-messages-batches-delete.md) — messages.batches.delete(messagebatchid) -> DeletedMessageBatch
+- [Api Ruby Messages Batches List A51Fbb8269](Endpoints/ruby-messages-batches-list.md) — messages.batches.list(kwargs) -> Page<MessageBatch>
+- [Api Ruby Messages Batches Results C1399Fc8E1](Endpoints/ruby-messages-batches-results.md) — messages.batches.results(messagebatchid) -> MessageBatchIndividualResponse
+- [Api Ruby Messages Batches Retrieve 2792A2109A](Endpoints/ruby-messages-batches-retrieve.md) — messages.batches.retrieve(messagebatchid) -> MessageBatch
+- [Api Ruby Messages Count Tokens 75D73E5448](Endpoints/ruby-messages-count-tokens.md) — messages.counttokens(kwargs) -> MessageTokensCount
+- [Api Ruby Messages Create 2754917F1D](Endpoints/ruby-messages-create.md) — messages.create(kwargs) -> Message
+- [Api Ruby Models List 72E050C024](Endpoints/ruby-models-list.md) — models.list(kwargs) -> Page<ModelInfo>
+- [Api Ruby Models Retrieve 295Cc71355](Endpoints/ruby-models-retrieve.md) — models.retrieve(modelid, kwargs) -> ModelInfo
+- [Api Terraform Beta 41E833C2F7](Endpoints/terraform-beta.md)
+- [Api Terraform Beta Agents 742E6327Aa](Endpoints/terraform-beta-agents.md)
+- [Api Terraform Beta Agents Archive 47045A574D](Endpoints/terraform-beta-agents-archive.md)
+- [Api Terraform Beta Agents Create E57034899A](Endpoints/terraform-beta-agents-create.md)
+- [Api Terraform Beta Agents Delete D349B06672](Endpoints/terraform-beta-agents-delete.md)
+- [Api Terraform Beta Agents List 87A7A74Fc1](Endpoints/terraform-beta-agents-list.md)
+- [Api Terraform Beta Agents Retrieve D892E88F88](Endpoints/terraform-beta-agents-retrieve.md)
+- [Api Terraform Beta Agents Update 93B00Eabe0](Endpoints/terraform-beta-agents-update.md)
+- [Api Terraform Beta Agents Versions 80D58Dc101](Endpoints/terraform-beta-agents-versions.md)
+- [Api Terraform Beta Agents Versions List 4B5Bb525Ee](Endpoints/terraform-beta-agents-versions-list.md)
+- [Api Terraform Beta Environments Archive 407147B340](Endpoints/terraform-beta-environments-archive.md)
+- [Api Terraform Beta Environments Ba6E49A5B8](Endpoints/terraform-beta-environments.md)
+- [Api Terraform Beta Environments Create Ac37C5E468](Endpoints/terraform-beta-environments-create.md)
+- [Api Terraform Beta Environments Delete 91Ff92E39D](Endpoints/terraform-beta-environments-delete.md)
+- [Api Terraform Beta Environments List B9Fc4701Bc](Endpoints/terraform-beta-environments-list.md)
+- [Api Terraform Beta Environments Retrieve 5916Da0B56](Endpoints/terraform-beta-environments-retrieve.md)
+- [Api Terraform Beta Environments Update 56B4D72509](Endpoints/terraform-beta-environments-update.md)
+- [Api Terraform Beta Files 0D61A913Cf](Endpoints/terraform-beta-files.md)
+- [Api Terraform Beta Files Delete 5660C77B9B](Endpoints/terraform-beta-files-delete.md)
+- [Api Terraform Beta Files Download 262960Ef41](Endpoints/terraform-beta-files-download.md)
+- [Api Terraform Beta Files List 3A27Ecae36](Endpoints/terraform-beta-files-list.md)
+- [Api Terraform Beta Files Retrieve Metadata 020229B4A3](Endpoints/terraform-beta-files-retrieve-metadata.md)
+- [Api Terraform Beta Files Upload 5389Bf2036](Endpoints/terraform-beta-files-upload.md)
+- [Api Terraform Beta Memory Stores Archive Ade354D76B](Endpoints/terraform-beta-memory-stores-archive.md)
+- [Api Terraform Beta Memory Stores C650Db3B1D](Endpoints/terraform-beta-memory-stores.md)
+- [Api Terraform Beta Memory Stores Create 078Aaae1Dc](Endpoints/terraform-beta-memory-stores-create.md)
+- [Api Terraform Beta Memory Stores Delete 839D753Fda](Endpoints/terraform-beta-memory-stores-delete.md)
+- [Api Terraform Beta Memory Stores List 2Ad73Bccd5](Endpoints/terraform-beta-memory-stores-list.md)
+- [Api Terraform Beta Memory Stores Memories A1F5Ef107C](Endpoints/terraform-beta-memory-stores-memories.md)
+- [Api Terraform Beta Memory Stores Memories Create Bb7C520E64](Endpoints/terraform-beta-memory-stores-memories-create.md)
+- [Api Terraform Beta Memory Stores Memories Delete 46A4D1Dd91](Endpoints/terraform-beta-memory-stores-memories-delete.md)
+- [Api Terraform Beta Memory Stores Memories List 6A5D31E45C](Endpoints/terraform-beta-memory-stores-memories-list.md)
+- [Api Terraform Beta Memory Stores Memories Retrieve 46Aea2Dd88](Endpoints/terraform-beta-memory-stores-memories-retrieve.md)
+- [Api Terraform Beta Memory Stores Memories Update F9A13475F7](Endpoints/terraform-beta-memory-stores-memories-update.md)
+- [Api Terraform Beta Memory Stores Memory Versions C82374Df42](Endpoints/terraform-beta-memory-stores-memory-versions.md)
+- [Api Terraform Beta Memory Stores Memory Versions List 842B18E495](Endpoints/terraform-beta-memory-stores-memory-versions-list.md)
+- [Api Terraform Beta Memory Stores Memory Versions Redact D8Ab79Cd75](Endpoints/terraform-beta-memory-stores-memory-versions-redact.md)
+- [Api Terraform Beta Memory Stores Memory Versions Retrieve 04Ea5Fe8Ad](Endpoints/terraform-beta-memory-stores-memory-versions-retrieve.md)
+- [Api Terraform Beta Memory Stores Retrieve 7504C6B746](Endpoints/terraform-beta-memory-stores-retrieve.md)
+- [Api Terraform Beta Memory Stores Update C8849F2024](Endpoints/terraform-beta-memory-stores-update.md)
+- [Api Terraform Beta Messages Batches 42049C9F83](Endpoints/terraform-beta-messages-batches.md)
+- [Api Terraform Beta Messages Batches Cancel Bbf2B84B7B](Endpoints/terraform-beta-messages-batches-cancel.md)
+- [Api Terraform Beta Messages Batches Create B86498Bebc](Endpoints/terraform-beta-messages-batches-create.md)
+- [Api Terraform Beta Messages Batches Delete B35Cd52C85](Endpoints/terraform-beta-messages-batches-delete.md)
+- [Api Terraform Beta Messages Batches List 8469467D76](Endpoints/terraform-beta-messages-batches-list.md)
+- [Api Terraform Beta Messages Batches Results 27F17E26C4](Endpoints/terraform-beta-messages-batches-results.md)
+- [Api Terraform Beta Messages Batches Retrieve 275B8978Fa](Endpoints/terraform-beta-messages-batches-retrieve.md)
+- [Api Terraform Beta Messages C750Ea0838](Endpoints/terraform-beta-messages.md)
+- [Api Terraform Beta Messages Count Tokens 3F1Ea6Fa43](Endpoints/terraform-beta-messages-count-tokens.md)
+- [Api Terraform Beta Messages Create C06333C8Fd](Endpoints/terraform-beta-messages-create.md)
+- [Api Terraform Beta Models 16Da610869](Endpoints/terraform-beta-models.md)
+- [Api Terraform Beta Models List A7A45D16A6](Endpoints/terraform-beta-models-list.md)
+- [Api Terraform Beta Models Retrieve 1E79A77F5A](Endpoints/terraform-beta-models-retrieve.md)
+- [Api Terraform Beta Sessions 6760523Ebe](Endpoints/terraform-beta-sessions.md)
+- [Api Terraform Beta Sessions Archive D7174107A8](Endpoints/terraform-beta-sessions-archive.md)
+- [Api Terraform Beta Sessions Create E10313306D](Endpoints/terraform-beta-sessions-create.md)
+- [Api Terraform Beta Sessions Delete D0Cb62055B](Endpoints/terraform-beta-sessions-delete.md)
+- [Api Terraform Beta Sessions Events 6B2Fd23B78](Endpoints/terraform-beta-sessions-events.md)
+- [Api Terraform Beta Sessions Events List C58A3A2A75](Endpoints/terraform-beta-sessions-events-list.md)
+- [Api Terraform Beta Sessions Events Send D938C93E36](Endpoints/terraform-beta-sessions-events-send.md)
+- [Api Terraform Beta Sessions Events Stream 9684291Fde](Endpoints/terraform-beta-sessions-events-stream.md)
+- [Api Terraform Beta Sessions List 899E6Ae70E](Endpoints/terraform-beta-sessions-list.md)
+- [Api Terraform Beta Sessions Resources Add D9Ffee5705](Endpoints/terraform-beta-sessions-resources-add.md)
+- [Api Terraform Beta Sessions Resources Ba15D579A8](Endpoints/terraform-beta-sessions-resources.md)
+- [Api Terraform Beta Sessions Resources Delete 8442D9E1A8](Endpoints/terraform-beta-sessions-resources-delete.md)
+- [Api Terraform Beta Sessions Resources List 8786B31865](Endpoints/terraform-beta-sessions-resources-list.md)
+- [Api Terraform Beta Sessions Resources Retrieve E8561433Ca](Endpoints/terraform-beta-sessions-resources-retrieve.md)
+- [Api Terraform Beta Sessions Resources Update D1Bb31C09A](Endpoints/terraform-beta-sessions-resources-update.md)
+- [Api Terraform Beta Sessions Retrieve 67E160Beb0](Endpoints/terraform-beta-sessions-retrieve.md)
+- [Api Terraform Beta Sessions Update A28D4A18E2](Endpoints/terraform-beta-sessions-update.md)
+- [Api Terraform Beta Skills 1A6E51Eda6](Endpoints/terraform-beta-skills.md)
+- [Api Terraform Beta Skills Create D1477557Cc](Endpoints/terraform-beta-skills-create.md)
+- [Api Terraform Beta Skills Delete 1B0E44B2E7](Endpoints/terraform-beta-skills-delete.md)
+- [Api Terraform Beta Skills List 002Ee816E3](Endpoints/terraform-beta-skills-list.md)
+- [Api Terraform Beta Skills Retrieve 9580B0962E](Endpoints/terraform-beta-skills-retrieve.md)
+- [Api Terraform Beta Skills Versions Bbfdfaeaae](Endpoints/terraform-beta-skills-versions.md)
+- [Api Terraform Beta Skills Versions Create Fbf5277914](Endpoints/terraform-beta-skills-versions-create.md)
+- [Api Terraform Beta Skills Versions Delete 89F81Ea7B0](Endpoints/terraform-beta-skills-versions-delete.md)
+- [Api Terraform Beta Skills Versions List 47Cfa14C08](Endpoints/terraform-beta-skills-versions-list.md)
+- [Api Terraform Beta Skills Versions Retrieve Cc2A1Ac2Ea](Endpoints/terraform-beta-skills-versions-retrieve.md)
+- [Api Terraform Beta Vaults 65C6E13B09](Endpoints/terraform-beta-vaults.md)
+- [Api Terraform Beta Vaults Archive 8Bbfad9Fed](Endpoints/terraform-beta-vaults-archive.md)
+- [Api Terraform Beta Vaults Create 5704Acfc51](Endpoints/terraform-beta-vaults-create.md)
+- [Api Terraform Beta Vaults Credentials Archive Fc47D99817](Endpoints/terraform-beta-vaults-credentials-archive.md)
+- [Api Terraform Beta Vaults Credentials B91058F083](Endpoints/terraform-beta-vaults-credentials.md)
+- [Api Terraform Beta Vaults Credentials Create Ea4163Eea5](Endpoints/terraform-beta-vaults-credentials-create.md)
+- [Api Terraform Beta Vaults Credentials Delete Ee4F55D81C](Endpoints/terraform-beta-vaults-credentials-delete.md)
+- [Api Terraform Beta Vaults Credentials List 8938A8Cb00](Endpoints/terraform-beta-vaults-credentials-list.md)
+- [Api Terraform Beta Vaults Credentials Retrieve Dc1B41Ca7B](Endpoints/terraform-beta-vaults-credentials-retrieve.md)
+- [Api Terraform Beta Vaults Credentials Update 29Fc9134E4](Endpoints/terraform-beta-vaults-credentials-update.md)
+- [Api Terraform Beta Vaults Delete 84Ad946B07](Endpoints/terraform-beta-vaults-delete.md)
+- [Api Terraform Beta Vaults List A05E1Fa8Ee](Endpoints/terraform-beta-vaults-list.md)
+- [Api Terraform Beta Vaults Retrieve 9C22F030B3](Endpoints/terraform-beta-vaults-retrieve.md)
+- [Api Terraform Beta Vaults Update 82E06161A5](Endpoints/terraform-beta-vaults-update.md)
+- [Api Terraform Completions 257A3E8523](Endpoints/terraform-completions.md)
+- [Api Terraform Completions Create 48182Fcf40](Endpoints/terraform-completions-create.md)
+- [Api Terraform Messages 46996C1153](Endpoints/terraform-messages.md)
+- [Api Terraform Messages Batches Cancel 8Ee2F3010A](Endpoints/terraform-messages-batches-cancel.md)
+- [Api Terraform Messages Batches Create 8Fb79B9D3A](Endpoints/terraform-messages-batches-create.md)
+- [Api Terraform Messages Batches Delete 2C8Adb7Ac9](Endpoints/terraform-messages-batches-delete.md)
+- [Api Terraform Messages Batches F0Df137D47](Endpoints/terraform-messages-batches.md)
+- [Api Terraform Messages Batches List 7C63A51Ffd](Endpoints/terraform-messages-batches-list.md)
+- [Api Terraform Messages Batches Results Ed9B1Eaa31](Endpoints/terraform-messages-batches-results.md)
+- [Api Terraform Messages Batches Retrieve 4A7F1C25B3](Endpoints/terraform-messages-batches-retrieve.md)
+- [Api Terraform Messages Count Tokens C841Bad880](Endpoints/terraform-messages-count-tokens.md)
+- [Api Terraform Messages Create 3Db93Bbeb9](Endpoints/terraform-messages-create.md)
+- [Api Terraform Models 92Ed38423F](Endpoints/terraform-models.md)
+- [Api Terraform Models List 9B559223F2](Endpoints/terraform-models-list.md)
+- [Api Terraform Models Retrieve C62Ab07A53](Endpoints/terraform-models-retrieve.md)
+- [Api Typescript Beta Agents Archive 1Df950B6B3](Endpoints/typescript-beta-agents-archive.md) — client.beta.agents.archive(stringagentID, AgentArchiveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsAgent
+- [Api Typescript Beta Agents Create Dee9F146Df](Endpoints/typescript-beta-agents-create.md) — client.beta.agents.create(AgentCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsAgent
+- [Api Typescript Beta Agents Delete 61A524F493](Endpoints/typescript-beta-agents-delete.md)
+- [Api Typescript Beta Agents List D182731674](Endpoints/typescript-beta-agents-list.md) — client.beta.agents.list(AgentListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsAgent>
+- [Api Typescript Beta Agents Retrieve 4B66B2Abc4](Endpoints/typescript-beta-agents-retrieve.md) — client.beta.agents.retrieve(stringagentID, AgentRetrieveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsAgent
+- [Api Typescript Beta Agents Update 9E89Bbe678](Endpoints/typescript-beta-agents-update.md) — client.beta.agents.update(stringagentID, AgentUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsAgent
+- [Api Typescript Beta Agents Versions List Fd9A5Bd22B](Endpoints/typescript-beta-agents-versions-list.md) — client.beta.agents.versions.list(stringagentID, VersionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsAgent>
+- [Api Typescript Beta Environments Archive F7Ef990C79](Endpoints/typescript-beta-environments-archive.md) — client.beta.environments.archive(stringenvironmentID, EnvironmentArchiveParamsparams?, RequestOptionsoptions?): BetaEnvironment
+- [Api Typescript Beta Environments Create 8Feeed987A](Endpoints/typescript-beta-environments-create.md) — client.beta.environments.create(EnvironmentCreateParamsparams, RequestOptionsoptions?): BetaEnvironment
+- [Api Typescript Beta Environments Delete 4Da114F720](Endpoints/typescript-beta-environments-delete.md) — client.beta.environments.delete(stringenvironmentID, EnvironmentDeleteParamsparams?, RequestOptionsoptions?): BetaEnvironmentDeleteResponse
+- [Api Typescript Beta Environments List E419B7A025](Endpoints/typescript-beta-environments-list.md) — client.beta.environments.list(EnvironmentListParamsparams?, RequestOptionsoptions?): PageCursor<BetaEnvironment>
+- [Api Typescript Beta Environments Retrieve Ed45F784C9](Endpoints/typescript-beta-environments-retrieve.md) — client.beta.environments.retrieve(stringenvironmentID, EnvironmentRetrieveParamsparams?, RequestOptionsoptions?): BetaEnvironment
+- [Api Typescript Beta Environments Update 50B3F85212](Endpoints/typescript-beta-environments-update.md) — client.beta.environments.update(stringenvironmentID, EnvironmentUpdateParamsparams, RequestOptionsoptions?): BetaEnvironment
+- [Api Typescript Beta Files Delete 8A56C90D11](Endpoints/typescript-beta-files-delete.md) — client.beta.files.delete(stringfileID, FileDeleteParamsparams?, RequestOptionsoptions?): DeletedFile
+- [Api Typescript Beta Files Download 483630B216](Endpoints/typescript-beta-files-download.md) — client.beta.files.download(stringfileID, FileDownloadParamsparams?, RequestOptionsoptions?): Response
+- [Api Typescript Beta Files List E38Ab6779F](Endpoints/typescript-beta-files-list.md) — client.beta.files.list(FileListParamsparams?, RequestOptionsoptions?): Page<FileMetadata>
+- [Api Typescript Beta Files Retrieve Metadata Fd5590Ade5](Endpoints/typescript-beta-files-retrieve-metadata.md) — client.beta.files.retrieveMetadata(stringfileID, FileRetrieveMetadataParamsparams?, RequestOptionsoptions?): FileMetadata
+- [Api Typescript Beta Files Upload 7168F683Ce](Endpoints/typescript-beta-files-upload.md) — client.beta.files.upload(FileUploadParamsparams, RequestOptionsoptions?): FileMetadata
+- [Api Typescript Beta Memory Stores Archive 8D24D6204E](Endpoints/typescript-beta-memory-stores-archive.md) — client.beta.memoryStores.archive(stringmemoryStoreID, MemoryStoreArchiveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsMemoryStore
+- [Api Typescript Beta Memory Stores Create 62A4Ceff0B](Endpoints/typescript-beta-memory-stores-create.md) — client.beta.memoryStores.create(MemoryStoreCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemoryStore
+- [Api Typescript Beta Memory Stores Delete F2039E0096](Endpoints/typescript-beta-memory-stores-delete.md) — client.beta.memoryStores.delete(stringmemoryStoreID, MemoryStoreDeleteParamsparams?, RequestOptionsoptions?): BetaManagedAgentsDeletedMemoryStore
+- [Api Typescript Beta Memory Stores List 6497D5B8C4](Endpoints/typescript-beta-memory-stores-list.md) — client.beta.memoryStores.list(MemoryStoreListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsMemoryStore>
+- [Api Typescript Beta Memory Stores Memories Create 6578972Df7](Endpoints/typescript-beta-memory-stores-memories-create.md) — client.beta.memoryStores.memories.create(stringmemoryStoreID, MemoryCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemory
+- [Api Typescript Beta Memory Stores Memories Delete 041909980E](Endpoints/typescript-beta-memory-stores-memories-delete.md) — client.beta.memoryStores.memories.delete(stringmemoryID, MemoryDeleteParamsparams, RequestOptionsoptions?): BetaManagedAgentsDeletedMemory
+- [Api Typescript Beta Memory Stores Memories List C229Ee913B](Endpoints/typescript-beta-memory-stores-memories-list.md) — client.beta.memoryStores.memories.list(stringmemoryStoreID, MemoryListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsMemoryListItem>
+- [Api Typescript Beta Memory Stores Memories Retrieve 11D594C648](Endpoints/typescript-beta-memory-stores-memories-retrieve.md) — client.beta.memoryStores.memories.retrieve(stringmemoryID, MemoryRetrieveParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemory
+- [Api Typescript Beta Memory Stores Memories Update 9Cf435B6F0](Endpoints/typescript-beta-memory-stores-memories-update.md) — client.beta.memoryStores.memories.update(stringmemoryID, MemoryUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemory
+- [Api Typescript Beta Memory Stores Memory Versions List F7Daa94279](Endpoints/typescript-beta-memory-stores-memory-versions-list.md) — client.beta.memoryStores.memoryVersions.list(stringmemoryStoreID, MemoryVersionListParamsparams?, RequestOptionsoptions?)…
+- [Api Typescript Beta Memory Stores Memory Versions Redact F2E7Ec64B1](Endpoints/typescript-beta-memory-stores-memory-versions-redact.md) — client.beta.memoryStores.memoryVersions.redact(stringmemoryVersionID, MemoryVersionRedactParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemoryVersion
+- [Api Typescript Beta Memory Stores Memory Versions Retrieve 13De79Ede7](Endpoints/typescript-beta-memory-stores-memory-versions-retrieve.md) — client.beta.memoryStores.memoryVersions.retrieve(stringmemoryVersionID, MemoryVersionRetrieveParamsparams, RequestOptionsoptions?)…
+- [Api Typescript Beta Memory Stores Retrieve 3Fb85D85B2](Endpoints/typescript-beta-memory-stores-retrieve.md) — client.beta.memoryStores.retrieve(stringmemoryStoreID, MemoryStoreRetrieveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsMemoryStore
+- [Api Typescript Beta Memory Stores Update C461Ea6F03](Endpoints/typescript-beta-memory-stores-update.md) — client.beta.memoryStores.update(stringmemoryStoreID, MemoryStoreUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemoryStore
+- [Api Typescript Beta Messages Batches Cancel 1916Ce7E90](Endpoints/typescript-beta-messages-batches-cancel.md) — client.beta.messages.batches.cancel(stringmessageBatchID, BatchCancelParamsparams?, RequestOptionsoptions?): BetaMessageBatch
+- [Api Typescript Beta Messages Batches Create D99F19Dd8D](Endpoints/typescript-beta-messages-batches-create.md) — client.beta.messages.batches.create(BatchCreateParamsparams, RequestOptionsoptions?): BetaMessageBatch
+- [Api Typescript Beta Messages Batches Delete 3Dd175B594](Endpoints/typescript-beta-messages-batches-delete.md) — client.beta.messages.batches.delete(stringmessageBatchID, BatchDeleteParamsparams?, RequestOptionsoptions?): BetaDeletedMessageBatch
+- [Api Typescript Beta Messages Batches List 58D100B77D](Endpoints/typescript-beta-messages-batches-list.md) — client.beta.messages.batches.list(BatchListParamsparams?, RequestOptionsoptions?): Page<BetaMessageBatch>
+- [Api Typescript Beta Messages Batches Results C0B2Ceacf3](Endpoints/typescript-beta-messages-batches-results.md) — client.beta.messages.batches.results(stringmessageBatchID, BatchResultsParamsparams?, RequestOptionsoptions?): BetaMessageBatchIndividualResponse |…
+- [Api Typescript Beta Messages Batches Retrieve 54Fcbd11Cd](Endpoints/typescript-beta-messages-batches-retrieve.md) — client.beta.messages.batches.retrieve(stringmessageBatchID, BatchRetrieveParamsparams?, RequestOptionsoptions?): BetaMessageBatch
+- [Api Typescript Beta Messages Count Tokens A8443595B0](Endpoints/typescript-beta-messages-count-tokens.md) — client.beta.messages.countTokens(MessageCountTokensParamsparams, RequestOptionsoptions?): BetaMessageTokensCount
+- [Api Typescript Beta Messages Create F2Fd3D94E6](Endpoints/typescript-beta-messages-create.md) — client.beta.messages.create(MessageCreateParamsparams, RequestOptionsoptions?): BetaMessage | Stream<BetaRawMessageStreamEvent>
+- [Api Typescript Beta Models List Ea157F6718](Endpoints/typescript-beta-models-list.md) — client.beta.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<BetaModelInfo>
+- [Api Typescript Beta Models Retrieve 4B1Af399Ce](Endpoints/typescript-beta-models-retrieve.md) — client.beta.models.retrieve(stringmodelID, ModelRetrieveParamsparams?, RequestOptionsoptions?): BetaModelInfo
+- [Api Typescript Beta Sessions Archive D66D7E1798](Endpoints/typescript-beta-sessions-archive.md) — client.beta.sessions.archive(stringsessionID, SessionArchiveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsSession
+- [Api Typescript Beta Sessions Create 0Bb99Ed0Ef](Endpoints/typescript-beta-sessions-create.md) — client.beta.sessions.create(SessionCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsSession
+- [Api Typescript Beta Sessions Delete De491Eb1Ee](Endpoints/typescript-beta-sessions-delete.md) — client.beta.sessions.delete(stringsessionID, SessionDeleteParamsparams?, RequestOptionsoptions?): BetaManagedAgentsDeletedSession
+- [Api Typescript Beta Sessions Events List Cb5B872E44](Endpoints/typescript-beta-sessions-events-list.md) — client.beta.sessions.events.list(stringsessionID, EventListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsSessionEvent>
+- [Api Typescript Beta Sessions Events Send 1Fac917C66](Endpoints/typescript-beta-sessions-events-send.md) — client.beta.sessions.events.send(stringsessionID, EventSendParamsparams, RequestOptionsoptions?): BetaManagedAgentsSendSessionEvents
+- [Api Typescript Beta Sessions Events Stream C7Abfe3147](Endpoints/typescript-beta-sessions-events-stream.md) — client.beta.sessions.events.stream(stringsessionID, EventStreamParamsparams?, RequestOptionsoptions?): BetaManagedAgentsStreamSessionEvents |…
+- [Api Typescript Beta Sessions List 7Dcc171392](Endpoints/typescript-beta-sessions-list.md) — client.beta.sessions.list(SessionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsSession>
+- [Api Typescript Beta Sessions Resources Add 1B0A88Adac](Endpoints/typescript-beta-sessions-resources-add.md) — client.beta.sessions.resources.add(stringsessionID, ResourceAddParamsparams, RequestOptionsoptions?): BetaManagedAgentsFileResource
+- [Api Typescript Beta Sessions Resources Delete 265Deb2Eba](Endpoints/typescript-beta-sessions-resources-delete.md) — client.beta.sessions.resources.delete(stringresourceID, ResourceDeleteParamsparams, RequestOptionsoptions?): BetaManagedAgentsDeleteSessionResource
+- [Api Typescript Beta Sessions Resources List 7D2Fc80A5A](Endpoints/typescript-beta-sessions-resources-list.md) — client.beta.sessions.resources.list(stringsessionID, ResourceListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsSessionResource>
+- [Api Typescript Beta Sessions Resources Retrieve 0625D0Fefa](Endpoints/typescript-beta-sessions-resources-retrieve.md) — client.beta.sessions.resources.retrieve(stringresourceID, ResourceRetrieveParamsparams, RequestOptionsoptions?): ResourceRetrieveResponse
+- [Api Typescript Beta Sessions Resources Update 31E491Fa98](Endpoints/typescript-beta-sessions-resources-update.md) — client.beta.sessions.resources.update(stringresourceID, ResourceUpdateParamsparams, RequestOptionsoptions?): ResourceUpdateResponse
+- [Api Typescript Beta Sessions Retrieve 67F1002E03](Endpoints/typescript-beta-sessions-retrieve.md) — client.beta.sessions.retrieve(stringsessionID, SessionRetrieveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsSession
+- [Api Typescript Beta Sessions Update 429A82Aef2](Endpoints/typescript-beta-sessions-update.md) — client.beta.sessions.update(stringsessionID, SessionUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsSession
+- [Api Typescript Beta Skills Create 6Ee8B16A2C](Endpoints/typescript-beta-skills-create.md) — client.beta.skills.create(SkillCreateParamsparams?, RequestOptionsoptions?): SkillCreateResponse
+- [Api Typescript Beta Skills Delete 705A8F5C21](Endpoints/typescript-beta-skills-delete.md) — client.beta.skills.delete(stringskillID, SkillDeleteParamsparams?, RequestOptionsoptions?): SkillDeleteResponse
+- [Api Typescript Beta Skills List A095Bc2Add](Endpoints/typescript-beta-skills-list.md) — client.beta.skills.list(SkillListParamsparams?, RequestOptionsoptions?): PageCursor<SkillListResponse>
+- [Api Typescript Beta Skills Retrieve Ec7B6683Ee](Endpoints/typescript-beta-skills-retrieve.md) — client.beta.skills.retrieve(stringskillID, SkillRetrieveParamsparams?, RequestOptionsoptions?): SkillRetrieveResponse
+- [Api Typescript Beta Skills Versions Create 5C84475818](Endpoints/typescript-beta-skills-versions-create.md) — client.beta.skills.versions.create(stringskillID, VersionCreateParamsparams?, RequestOptionsoptions?): VersionCreateResponse
+- [Api Typescript Beta Skills Versions Delete E6277765A9](Endpoints/typescript-beta-skills-versions-delete.md) — client.beta.skills.versions.delete(stringversion, VersionDeleteParamsparams, RequestOptionsoptions?): VersionDeleteResponse
+- [Api Typescript Beta Skills Versions List E9C0071F2E](Endpoints/typescript-beta-skills-versions-list.md) — client.beta.skills.versions.list(stringskillID, VersionListParamsparams?, RequestOptionsoptions?): PageCursor<VersionListResponse>
+- [Api Typescript Beta Skills Versions Retrieve 7279Caeba1](Endpoints/typescript-beta-skills-versions-retrieve.md) — client.beta.skills.versions.retrieve(stringversion, VersionRetrieveParamsparams, RequestOptionsoptions?): VersionRetrieveResponse
+- [Api Typescript Beta Vaults Archive D7556D01B8](Endpoints/typescript-beta-vaults-archive.md) — client.beta.vaults.archive(stringvaultID, VaultArchiveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsVault
+- [Api Typescript Beta Vaults Create B42E01D8Eb](Endpoints/typescript-beta-vaults-create.md) — client.beta.vaults.create(VaultCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsVault
+- [Api Typescript Beta Vaults Credentials Archive 4114C64B30](Endpoints/typescript-beta-vaults-credentials-archive.md) — client.beta.vaults.credentials.archive(stringcredentialID, CredentialArchiveParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential
+- [Api Typescript Beta Vaults Credentials Create 4Afd741D84](Endpoints/typescript-beta-vaults-credentials-create.md) — client.beta.vaults.credentials.create(stringvaultID, CredentialCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential
+- [Api Typescript Beta Vaults Credentials Delete D8C182D6C3](Endpoints/typescript-beta-vaults-credentials-delete.md) — client.beta.vaults.credentials.delete(stringcredentialID, CredentialDeleteParamsparams, RequestOptionsoptions?): BetaManagedAgentsDeletedCredential
+- [Api Typescript Beta Vaults Credentials List 70Dcbd98C6](Endpoints/typescript-beta-vaults-credentials-list.md) — client.beta.vaults.credentials.list(stringvaultID, CredentialListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsCredential>
+- [Api Typescript Beta Vaults Credentials Retrieve 38E483Eb73](Endpoints/typescript-beta-vaults-credentials-retrieve.md) — client.beta.vaults.credentials.retrieve(stringcredentialID, CredentialRetrieveParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential
+- [Api Typescript Beta Vaults Credentials Update 0Dd0F085Be](Endpoints/typescript-beta-vaults-credentials-update.md) — client.beta.vaults.credentials.update(stringcredentialID, CredentialUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential
+- [Api Typescript Beta Vaults Delete E183B93286](Endpoints/typescript-beta-vaults-delete.md) — client.beta.vaults.delete(stringvaultID, VaultDeleteParamsparams?, RequestOptionsoptions?): BetaManagedAgentsDeletedVault
+- [Api Typescript Beta Vaults List 0501Bb42E3](Endpoints/typescript-beta-vaults-list.md) — client.beta.vaults.list(VaultListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsVault>
+- [Api Typescript Beta Vaults Retrieve B75C03B1Eb](Endpoints/typescript-beta-vaults-retrieve.md) — client.beta.vaults.retrieve(stringvaultID, VaultRetrieveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsVault
+- [Api Typescript Beta Vaults Update Bb26Ea95C8](Endpoints/typescript-beta-vaults-update.md) — client.beta.vaults.update(stringvaultID, VaultUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsVault
+- [Api Typescript Completions Create 1A4F2687B1](Endpoints/typescript-completions-create.md) — client.completions.create(CompletionCreateParamsparams, RequestOptionsoptions?): Completion | Stream<Completion>
+- [Api Typescript Messages Batches Cancel A9B39Fec23](Endpoints/typescript-messages-batches-cancel.md) — client.messages.batches.cancel(stringmessageBatchID, RequestOptionsoptions?): MessageBatch
+- [Api Typescript Messages Batches Create 54D7Cab36A](Endpoints/typescript-messages-batches-create.md) — client.messages.batches.create(BatchCreateParamsbody, RequestOptionsoptions?): MessageBatch
+- [Api Typescript Messages Batches Delete 119Dfb75F4](Endpoints/typescript-messages-batches-delete.md) — client.messages.batches.delete(stringmessageBatchID, RequestOptionsoptions?): DeletedMessageBatch
+- [Api Typescript Messages Batches List F08B6A4Ebd](Endpoints/typescript-messages-batches-list.md) — client.messages.batches.list(BatchListParamsquery?, RequestOptionsoptions?): Page<MessageBatch>
+- [Api Typescript Messages Batches Results 3D319B03D1](Endpoints/typescript-messages-batches-results.md) — client.messages.batches.results(stringmessageBatchID, RequestOptionsoptions?): MessageBatchIndividualResponse | Stream<MessageBatchIndividualResponse>
+- [Api Typescript Messages Batches Retrieve A46E305636](Endpoints/typescript-messages-batches-retrieve.md) — client.messages.batches.retrieve(stringmessageBatchID, RequestOptionsoptions?): MessageBatch
+- [Api Typescript Messages Count Tokens Cbf98247De](Endpoints/typescript-messages-count-tokens.md) — client.messages.countTokens(MessageCountTokensParamsbody, RequestOptionsoptions?): MessageTokensCount
+- [Api Typescript Messages Create D3193B53Fa](Endpoints/typescript-messages-create.md) — client.messages.create(MessageCreateParamsbody, RequestOptionsoptions?): Message | Stream<RawMessageStreamEvent>
+- [Api Typescript Models List E65Ad3192F](Endpoints/typescript-models-list.md) — client.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<ModelInfo>
+- [Api Typescript Models Retrieve A0206D3Dca](Endpoints/typescript-models-retrieve.md) — client.models.retrieve(stringmodelID, ModelRetrieveParamsparams?, RequestOptionsoptions?): ModelInfo
+- [Archive a Dream - Claude API Reference](Endpoints/beta-dreams-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive a memory store - Claude API Reference](Endpoints/beta-memory-stores-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Agent - Claude API Reference](Endpoints/beta-agents-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Credential - Claude API Reference](Endpoints/beta-vaults-credentials-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Deployment - Claude API Reference](Endpoints/beta-deployments-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Environment - Claude API Reference](Endpoints/beta-environments-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Session - Claude API Reference](Endpoints/beta-sessions-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Session Thread - Claude API Reference](Endpoints/beta-sessions-threads-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Tunnel - Claude API Reference](Endpoints/http-beta-tunnels-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Tunnel Certificate - Claude API Reference](Endpoints/beta-tunnels-certificates-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Vault - Claude API Reference](Endpoints/beta-vaults-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Batches](Endpoints/cli-beta-messages-batches.md) — $ ant beta:messages:batches create
+- [Batches](Endpoints/cli-messages-batches.md) — $ ant messages:batches create
+- [Batches](Endpoints/csharp-beta-messages-batches.md) — BetaMessageBatch Beta.Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Batches](Endpoints/csharp-messages-batches.md) — MessageBatch Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Batches](Endpoints/go-beta-messages-batches.md) — client.Beta.Messages.Batches.New(ctx, params) (BetaMessageBatch, error)
+- [Batches](Endpoints/go-messages-batches.md) — client.Messages.Batches.New(ctx, body) (MessageBatch, error)
+- [Batches](Endpoints/java-beta-messages-batches.md) — BetaMessageBatch beta().messages().batches().create(BatchCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Batches](Endpoints/java-messages-batches.md) — MessageBatch messages().batches().create(BatchCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Batches](Endpoints/python-beta-messages-batches.md) — beta.messages.batches.create(BatchCreateParamskwargs)  -> BetaMessageBatch
+- [Batches](Endpoints/python-messages-batches.md) — messages.batches.create(BatchCreateParamskwargs)  -> MessageBatch
+- [Batches](Endpoints/ruby-beta-messages-batches.md) — beta.messages.batches.create(kwargs) -> BetaMessageBatch
+- [Batches](Endpoints/ruby-messages-batches.md) — messages.batches.create(kwargs) -> MessageBatch
+- [Batches](Endpoints/typescript-beta-messages-batches.md) — client.beta.messages.batches.create(BatchCreateParamsparams, RequestOptionsoptions?): BetaMessageBatch
+- [Batches](Endpoints/typescript-messages-batches.md) — client.messages.batches.create(BatchCreateParamsbody, RequestOptionsoptions?): MessageBatch
+- [Batches - Claude API Reference](Endpoints/beta-messages-batches.md) — Count tokens in a Message
+- [Batches - Claude API Reference](Endpoints/messages-batches.md) — Count tokens in a Message
+- [Beta](Endpoints/cli-beta.md) — - betaapierror: object { message, type }
+- [Beta](Endpoints/csharp-beta.md) — - required string Message
+- [Beta](Endpoints/go-beta.md) — - type AnthropicBeta interface{…}
+- [Beta](Endpoints/java-beta.md) — - MESSAGEBATCHES20240924("message-batches-2024-09-24")
+- [Beta](Endpoints/python-beta.md) — - Union[str, Literal["message-batches-2024-09-24", "prompt-caching-2024-07-31", "computer-use-2024-10-22", 19 more]]
+- [Beta](Endpoints/ruby-beta.md) — - AnthropicBeta = String | :"message-batches-2024-09-24" | :"prompt-caching-2024-07-31" | :"computer-use-2024-10-22" | 19 more
+- [Beta](Endpoints/typescript-beta.md) — - AnthropicBeta = (string & {}) | "message-batches-2024-09-24" | "prompt-caching-2024-07-31" | "computer-use-2024-10-22" | 19 more
+- [Beta - Claude API Reference](Endpoints/http-beta.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Beta headers - Claude Platform Docs](Endpoints/beta-headers.md) — Count tokens in a Message
+- [C# SDK](Endpoints/sdks-csharp.md) — Install and configure the Anthropic C# SDK for .NET applications with IChatClient integration
+- [Cancel a Dream - Claude API Reference](Endpoints/beta-dreams-cancel.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Cancel a Message Batch - Claude API Reference](Endpoints/beta-messages-batches-cancel.md) — Count tokens in a Message
+- [Cancel a Message Batch - Claude API Reference](Endpoints/messages-batches-cancel.md) — Count tokens in a Message
+- [Certificates - Claude API Reference](Endpoints/beta-tunnels-certificates.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Claude API errors - Claude Platform Docs](Endpoints/errors.md) — Count tokens in a Message
+- [CLI](Endpoints/sdks-cli.md) — Interact with the Claude API directly from your terminal with the ant command-line tool
+- [Client SDKs](Endpoints/client-sdks.md) — Official SDKs for building with the Claude API in Python, TypeScript, Java, Go, Ruby, C#, PHP, and the command line.
+- [Completions](Endpoints/cli-completions.md) — The Text Completions API is a legacy API. We recommend using the Messages API going forward.
+- [Completions](Endpoints/csharp-completions.md)
+- [Completions](Endpoints/go-completions.md) — client.Completions.New(ctx, params) (Completion, error)
+- [Completions](Endpoints/java-completions.md) — Completion completions().create(CompletionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Completions](Endpoints/python-completions.md) — completions.create(CompletionCreateParamskwargs)  -> Completion
+- [Completions](Endpoints/ruby-completions.md) — completions.create(kwargs) -> Completion
+- [Completions](Endpoints/typescript-completions.md) — client.completions.create(CompletionCreateParamsparams, RequestOptionsoptions?): Completion | Stream<Completion>
+- [Completions - Claude API Reference](Endpoints/http-completions.md) — Count tokens in a Message
+- [Compliance API - Claude API Reference](Endpoints/http-compliance.md) — Count tokens in a Message
+- [Count tokens in a Message - Claude API Reference](Endpoints/http-beta-messages-count-tokens.md) — Count tokens in a Message
+- [Count tokens in a Message - Claude API Reference](Endpoints/messages-count-tokens.md) — Count tokens in a Message
+- [Count tokens in a Message - Claude API Reference](Endpoints/platform-claude-com-messages-count-tokens.md) — Count tokens in a Message
+- [Create a Dream - Claude API Reference](Endpoints/beta-dreams-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create a memory - Claude API Reference](Endpoints/beta-memory-stores-memories-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create a memory store - Claude API Reference](Endpoints/beta-memory-stores-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create a Message - Claude API Reference](Endpoints/beta-messages-create.md) — Count tokens in a Message
+- [Create a Message - Claude API Reference](Endpoints/http-beta-messages-create.md) — Count tokens in a Message
+- [Create a Message - Claude API Reference](Endpoints/messages-create.md) — Count tokens in a Message
+- [Create a Message Batch - Claude API Reference](Endpoints/beta-messages-batches-create.md) — Count tokens in a Message
+- [Create a Message Batch - Claude API Reference](Endpoints/messages-batches-create.md) — Count tokens in a Message
+- [Create a Text Completion - Claude API Reference](Endpoints/http-completions-create.md) — Count tokens in a Message
+- [Create Agent - Claude API Reference](Endpoints/beta-agents-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Credential - Claude API Reference](Endpoints/beta-vaults-credentials-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Deployment - Claude API Reference](Endpoints/beta-deployments-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Enrollment URL - Claude API Reference](Endpoints/http-beta-user-profiles-create-enrollment-url.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Environment - Claude API Reference](Endpoints/beta-environments-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Session - Claude API Reference](Endpoints/beta-sessions-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Skill - Claude API Reference](Endpoints/http-beta-skills-create.md) — Count tokens in a Message
+- [Create Skill - Claude API Reference](Endpoints/skills-create-skill.md) — Count tokens in a Message
+- [Create Skill - Claude API Reference](Endpoints/skills-create.md) — Count tokens in a Message
+- [Create Skill Version - Claude API Reference](Endpoints/beta-skills-versions-create.md) — Count tokens in a Message
+- [Create Skill Version - Claude API Reference](Endpoints/skills-versions-create.md) — Count tokens in a Message
+- [Create Tunnel - Claude API Reference](Endpoints/http-beta-tunnels-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Tunnel Certificate - Claude API Reference](Endpoints/beta-tunnels-certificates-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create User Profile - Claude API Reference](Endpoints/http-beta-user-profiles-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Vault - Claude API Reference](Endpoints/beta-vaults-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Credentials](Endpoints/cli-beta-vaults-credentials.md) — $ ant beta:vaults:credentials create
+- [Credentials](Endpoints/csharp-beta-vaults-credentials.md) — BetaManagedAgentsCredential Beta.Vaults.Credentials.Create(CredentialCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Credentials](Endpoints/go-beta-vaults-credentials.md) — client.Beta.Vaults.Credentials.New(ctx, vaultID, params) (BetaManagedAgentsCredential, error)
+- [Credentials](Endpoints/java-beta-vaults-credentials.md) — BetaManagedAgentsCredential beta().vaults().credentials().create(CredentialCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Credentials](Endpoints/python-beta-vaults-credentials.md) — beta.vaults.credentials.create(strvaultid, CredentialCreateParamskwargs)  -> BetaManagedAgentsCredential
+- [Credentials](Endpoints/ruby-beta-vaults-credentials.md) — beta.vaults.credentials.create(vaultid, kwargs) -> BetaManagedAgentsCredential
+- [Credentials](Endpoints/typescript-beta-vaults-credentials.md) — client.beta.vaults.credentials.create(stringvaultID, CredentialCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential
+- [Credentials - Claude API Reference](Endpoints/beta-vaults-credentials.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete a memory - Claude API Reference](Endpoints/beta-memory-stores-memories-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete a memory store - Claude API Reference](Endpoints/beta-memory-stores-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete a Message Batch - Claude API Reference](Endpoints/beta-messages-batches-delete.md) — Count tokens in a Message
+- [Delete a Message Batch - Claude API Reference](Endpoints/messages-batches-delete.md) — Count tokens in a Message
+- [Delete Credential - Claude API Reference](Endpoints/beta-vaults-credentials-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete Environment - Claude API Reference](Endpoints/beta-environments-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete File - Claude API Reference](Endpoints/files-delete.md) — Count tokens in a Message
+- [Delete File - Claude API Reference](Endpoints/http-beta-files-delete.md) — Count tokens in a Message
+- [Delete Session - Claude API Reference](Endpoints/beta-sessions-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete Skill - Claude API Reference](Endpoints/http-beta-skills-delete.md) — Count tokens in a Message
+- [Delete Skill - Claude API Reference](Endpoints/skills-delete.md) — Count tokens in a Message
+- [Delete Skill Version - Claude API Reference](Endpoints/beta-skills-versions-delete.md) — Count tokens in a Message
+- [Delete Skill Version - Claude API Reference](Endpoints/skills-versions-delete.md) — Count tokens in a Message
+- [Delete Vault - Claude API Reference](Endpoints/beta-vaults-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Deployment Runs - Claude API Reference](Endpoints/beta-deployment-runs.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Deployments - Claude API Reference](Endpoints/beta-deployments.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Download File - Claude API Reference](Endpoints/files-download.md) — Count tokens in a Message
+- [Download File - Claude API Reference](Endpoints/http-beta-files-download.md) — Count tokens in a Message
+- [Download Skill Version Content - Claude API Reference](Endpoints/beta-skills-versions-download.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Dreams - Claude API Reference](Endpoints/beta-dreams.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Environments](Endpoints/cli-beta-environments.md) — $ ant beta:environments create
+- [Environments](Endpoints/csharp-beta-environments.md) — BetaEnvironment Beta.Environments.Create(EnvironmentCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Environments](Endpoints/go-beta-environments.md) — client.Beta.Environments.New(ctx, params) (BetaEnvironment, error)
+- [Environments](Endpoints/java-beta-environments.md) — BetaEnvironment beta().environments().create(EnvironmentCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Environments](Endpoints/python-beta-environments.md) — beta.environments.create(EnvironmentCreateParamskwargs)  -> BetaEnvironment
+- [Environments](Endpoints/ruby-beta-environments.md) — beta.environments.create(kwargs) -> BetaEnvironment
+- [Environments](Endpoints/typescript-beta-environments.md) — client.beta.environments.create(EnvironmentCreateParamsparams, RequestOptionsoptions?): BetaEnvironment
+- [Environments - Claude API Reference](Endpoints/beta-environments.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Events](Endpoints/cli-beta-sessions-events.md) — $ ant beta:sessions:events list
+- [Events](Endpoints/csharp-beta-sessions-events.md) — EventListPageResponse Beta.Sessions.Events.List(EventListParamsparameters, CancellationTokencancellationToken = default)
+- [Events](Endpoints/go-beta-sessions-events.md) — client.Beta.Sessions.Events.List(ctx, sessionID, params) (PageCursor[BetaManagedAgentsSessionEventUnion], error)
+- [Events](Endpoints/java-beta-sessions-events.md) — EventListPage beta().sessions().events().list(EventListParamsparams = EventListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Events](Endpoints/python-beta-sessions-events.md) — beta.sessions.events.list(strsessionid, EventListParamskwargs)  -> SyncPageCursor[BetaManagedAgentsSessionEvent]
+- [Events](Endpoints/ruby-beta-sessions-events.md) — beta.sessions.events.list(sessionid, kwargs) -> PageCursor<BetaManagedAgentsSessionEvent>
+- [Events](Endpoints/typescript-beta-sessions-events.md) — client.beta.sessions.events.list(stringsessionID, EventListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsSessionEvent>
+- [Events - Claude API Reference](Endpoints/beta-sessions-events.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Events - Claude API Reference](Endpoints/beta-sessions-threads-events.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Files](Endpoints/cli-beta-files.md) — Body param: The file to upload
+- [Files](Endpoints/csharp-beta-files.md) — FileMetadata Beta.Files.Upload(FileUploadParamsparameters, CancellationTokencancellationToken = default)
+- [Files](Endpoints/go-beta-files.md) — client.Beta.Files.Upload(ctx, params) (FileMetadata, error)
+- [Files](Endpoints/java-beta-files.md) — FileMetadata beta().files().upload(FileUploadParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Files](Endpoints/python-beta-files.md) — beta.files.upload(FileUploadParamskwargs)  -> FileMetadata
+- [Files](Endpoints/ruby-beta-files.md) — beta.files.upload(kwargs) -> FileMetadata
+- [Files](Endpoints/typescript-beta-files.md) — client.beta.files.upload(FileUploadParamsparams, RequestOptionsoptions?): FileMetadata
+- [Files - Claude API Reference](Endpoints/files.md) — Count tokens in a Message
+- [Files - Claude API Reference](Endpoints/http-beta-files.md) — Count tokens in a Message
+- [Get a Dream - Claude API Reference](Endpoints/beta-dreams-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get a Model - Claude API Reference](Endpoints/http-beta-models-retrieve.md) — Count tokens in a Message
+- [Get a Model - Claude API Reference](Endpoints/models-retrieve.md) — Count tokens in a Message
+- [Get Agent - Claude API Reference](Endpoints/beta-agents-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Credential - Claude API Reference](Endpoints/beta-vaults-credentials-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Deployment - Claude API Reference](Endpoints/beta-deployments-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Deployment Run - Claude API Reference](Endpoints/beta-deployment-runs-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Environment - Claude API Reference](Endpoints/beta-environments-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get File Metadata - Claude API Reference](Endpoints/files-retrieve-metadata.md) — Count tokens in a Message
+- [Get File Metadata - Claude API Reference](Endpoints/http-beta-files-retrieve-metadata.md) — Count tokens in a Message
+- [Get Queue Statistics - Claude API Reference](Endpoints/beta-environments-work-stats.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Session - Claude API Reference](Endpoints/beta-sessions-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Session Thread - Claude API Reference](Endpoints/beta-sessions-threads-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Skill - Claude API Reference](Endpoints/http-beta-skills-retrieve.md) — Count tokens in a Message
+- [Get Skill - Claude API Reference](Endpoints/skills-retrieve.md) — Count tokens in a Message
+- [Get Skill Version - Claude API Reference](Endpoints/beta-skills-versions-retrieve.md) — Count tokens in a Message
+- [Get Skill Version - Claude API Reference](Endpoints/skills-versions-retrieve.md) — Count tokens in a Message
+- [Get Tunnel - Claude API Reference](Endpoints/http-beta-tunnels-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Tunnel Certificate - Claude API Reference](Endpoints/beta-tunnels-certificates-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get User Profile - Claude API Reference](Endpoints/http-beta-user-profiles-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Vault - Claude API Reference](Endpoints/beta-vaults-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Work Item - Claude API Reference](Endpoints/beta-environments-work-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Go SDK](Endpoints/sdks-go.md) — Install and configure the Anthropic Go SDK with context-based cancellation and functional options
+- [HTTP API reference - Claude API Reference](Endpoints/http.md) — Count tokens in a Message
+- [IAM actions for Claude Platform on AWS - Claude Platform Docs](Endpoints/claude-platform-on-aws-iam-actions.md) — Count tokens in a Message
+- [IP addresses - Claude Platform Docs](Endpoints/ip-addresses.md) — Count tokens in a Message
+- [Java SDK](Endpoints/sdks-java.md) — Install and configure the Anthropic Java SDK with builder patterns and async support
+- [List Agent Versions - Claude API Reference](Endpoints/beta-agents-versions-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Agents - Claude API Reference](Endpoints/beta-agents-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Credentials - Claude API Reference](Endpoints/beta-vaults-credentials-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Deployment Runs - Claude API Reference](Endpoints/beta-deployment-runs-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Deployments - Claude API Reference](Endpoints/beta-deployments-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Dreams - Claude API Reference](Endpoints/beta-dreams-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Environments - Claude API Reference](Endpoints/beta-environments-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Events - Claude API Reference](Endpoints/beta-sessions-events-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Files - Claude API Reference](Endpoints/files-list.md) — Count tokens in a Message
+- [List Files - Claude API Reference](Endpoints/http-beta-files-list.md) — Count tokens in a Message
+- [List memories - Claude API Reference](Endpoints/beta-memory-stores-memories-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List memory stores - Claude API Reference](Endpoints/beta-memory-stores-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List memory versions - Claude API Reference](Endpoints/beta-memory-stores-memory-versions-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Message Batches - Claude API Reference](Endpoints/beta-messages-batches-list.md) — Count tokens in a Message
+- [List Message Batches - Claude API Reference](Endpoints/messages-batches-list.md) — Count tokens in a Message
+- [List Models - Claude API Reference](Endpoints/http-beta-models-list.md) — Count tokens in a Message
+- [List Models - Claude API Reference](Endpoints/models-list.md) — Count tokens in a Message
+- [List Session Resources - Claude API Reference](Endpoints/beta-sessions-resources-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Session Thread Events - Claude API Reference](Endpoints/beta-sessions-threads-events-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Session Threads - Claude API Reference](Endpoints/beta-sessions-threads-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Sessions - Claude API Reference](Endpoints/beta-sessions-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Skill Versions - Claude API Reference](Endpoints/beta-skills-versions-list.md) — Count tokens in a Message
+- [List Skill Versions - Claude API Reference](Endpoints/skills-versions-list.md) — Count tokens in a Message
+- [List Skills - Claude API Reference](Endpoints/http-beta-skills-list.md) — Count tokens in a Message
+- [List Skills - Claude API Reference](Endpoints/skills-list.md) — Count tokens in a Message
+- [List Tunnel Certificates - Claude API Reference](Endpoints/beta-tunnels-certificates-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Tunnels - Claude API Reference](Endpoints/http-beta-tunnels-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List User Profiles - Claude API Reference](Endpoints/http-beta-user-profiles-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Vaults - Claude API Reference](Endpoints/beta-vaults-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Work Items - Claude API Reference](Endpoints/beta-environments-work-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Memories](Endpoints/cli-beta-memory-stores-memories.md) — $ ant beta:memory-stores:memories create
+- [Memories](Endpoints/csharp-beta-memory-stores-memories.md) — BetaManagedAgentsMemory Beta.MemoryStores.Memories.Create(MemoryCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Memories](Endpoints/go-beta-memory-stores-memories.md) — client.Beta.MemoryStores.Memories.New(ctx, memoryStoreID, params) (BetaManagedAgentsMemory, error)
+- [Memories](Endpoints/java-beta-memory-stores-memories.md) — BetaManagedAgentsMemory beta().memoryStores().memories().create(MemoryCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Memories](Endpoints/python-beta-memory-stores-memories.md) — beta.memorystores.memories.create(strmemorystoreid, MemoryCreateParamskwargs)  -> BetaManagedAgentsMemory
+- [Memories](Endpoints/ruby-beta-memory-stores-memories.md) — beta.memorystores.memories.create(memorystoreid, kwargs) -> BetaManagedAgentsMemory
+- [Memories](Endpoints/typescript-beta-memory-stores-memories.md) — client.beta.memoryStores.memories.create(stringmemoryStoreID, MemoryCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemory
+- [Memories - Claude API Reference](Endpoints/beta-memory-stores-memories.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Memory Stores](Endpoints/cli-beta-memory-stores.md) — $ ant beta:memory-stores create
+- [Memory Stores](Endpoints/csharp-beta-memory-stores.md) — BetaManagedAgentsMemoryStore Beta.MemoryStores.Create(MemoryStoreCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Memory Stores](Endpoints/go-beta-memory-stores.md) — client.Beta.MemoryStores.New(ctx, params) (BetaManagedAgentsMemoryStore, error)
+- [Memory Stores](Endpoints/java-beta-memory-stores.md) — BetaManagedAgentsMemoryStore beta().memoryStores().create(MemoryStoreCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Memory Stores](Endpoints/python-beta-memory-stores.md) — beta.memorystores.create(MemoryStoreCreateParamskwargs)  -> BetaManagedAgentsMemoryStore
+- [Memory Stores](Endpoints/ruby-beta-memory-stores.md) — beta.memorystores.create(kwargs) -> BetaManagedAgentsMemoryStore
+- [Memory Stores](Endpoints/typescript-beta-memory-stores.md) — client.beta.memoryStores.create(MemoryStoreCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemoryStore
+- [Memory Stores - Claude API Reference](Endpoints/beta-memory-stores.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Memory Versions](Endpoints/cli-beta-memory-stores-memory-versions.md) — $ ant beta:memory-stores:memory-versions list
+- [Memory Versions](Endpoints/csharp-beta-memory-stores-memory-versions.md) — MemoryVersionListPageResponse Beta.MemoryStores.MemoryVersions.List(MemoryVersionListParamsparameters, CancellationTokencancellationToken = default)
+- [Memory Versions](Endpoints/go-beta-memory-stores-memory-versions.md) — client.Beta.MemoryStores.MemoryVersions.List(ctx, memoryStoreID, params) (PageCursor[BetaManagedAgentsMemoryVersion], error)
+- [Memory Versions](Endpoints/java-beta-memory-stores-memory-versions.md) — MemoryVersionListPage beta().memoryStores().memoryVersions().list(MemoryVersionListParamsparams = MemoryVersionListParams.none(), RequestOptionsrequestOptions…
+- [Memory Versions](Endpoints/python-beta-memory-stores-memory-versions.md) — beta.memorystores.memoryversions.list(strmemorystoreid, MemoryVersionListParamskwargs)  -> SyncPageCursor[BetaManagedAgentsMemoryVersion]
+- [Memory Versions](Endpoints/ruby-beta-memory-stores-memory-versions.md) — beta.memorystores.memoryversions.list(memorystoreid, kwargs) -> PageCursor<BetaManagedAgentsMemoryVersion>
+- [Memory Versions](Endpoints/typescript-beta-memory-stores-memory-versions.md) — client.beta.memoryStores.memoryVersions.list(stringmemoryStoreID, MemoryVersionListParamsparams?, RequestOptionsoptions?)…
+- [Memory Versions - Claude API Reference](Endpoints/beta-memory-stores-memory-versions.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Messages](Endpoints/cli-beta-messages.md) — $ ant beta:messages create
+- [Messages](Endpoints/cli-messages.md) — Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.
+- [Messages](Endpoints/csharp-beta-messages.md) — BetaMessage Beta.Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Messages](Endpoints/csharp-messages.md) — Message Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Messages](Endpoints/go-beta-messages.md) — client.Beta.Messages.New(ctx, params) (BetaMessage, error)
+- [Messages](Endpoints/go-messages.md) — client.Messages.New(ctx, body) (Message, error)
+- [Messages](Endpoints/java-beta-messages.md) — BetaMessage beta().messages().create(MessageCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Messages](Endpoints/java-messages.md) — Message messages().create(MessageCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Messages](Endpoints/python-beta-messages.md) — beta.messages.create(MessageCreateParamskwargs)  -> BetaMessage
+- [Messages](Endpoints/python-messages.md) — messages.create(MessageCreateParamskwargs)  -> Message
+- [Messages](Endpoints/ruby-beta-messages.md) — beta.messages.create(kwargs) -> BetaMessage
+- [Messages](Endpoints/ruby-messages.md) — messages.create(kwargs) -> Message
+- [Messages](Endpoints/typescript-beta-messages.md) — client.beta.messages.create(MessageCreateParamsparams, RequestOptionsoptions?): BetaMessage | Stream<BetaRawMessageStreamEvent>
+- [Messages](Endpoints/typescript-messages.md) — client.messages.create(MessageCreateParamsbody, RequestOptionsoptions?): Message | Stream<RawMessageStreamEvent>
+- [Messages - Claude API Reference](Endpoints/http-beta-messages.md) — Count tokens in a Message
+- [Messages - Claude API Reference](Endpoints/messages.md) — Count tokens in a Message
+- [Models](Endpoints/cli-beta-models.md) — The Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.
+- [Models](Endpoints/cli-models.md) — The Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.
+- [Models](Endpoints/csharp-beta-models.md) — ModelListPageResponse Beta.Models.List(ModelListParams?parameters, CancellationTokencancellationToken = default)
+- [Models](Endpoints/csharp-models.md) — ModelListPageResponse Models.List(ModelListParams?parameters, CancellationTokencancellationToken = default)
+- [Models](Endpoints/go-beta-models.md) — client.Beta.Models.List(ctx, params) (Page[BetaModelInfo], error)
+- [Models](Endpoints/go-models.md) — client.Models.List(ctx, params) (Page[ModelInfo], error)
+- [Models](Endpoints/java-beta-models.md) — ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Models](Endpoints/java-models.md) — ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Models](Endpoints/python-beta-models.md) — beta.models.list(ModelListParamskwargs)  -> SyncPage[BetaModelInfo]
+- [Models](Endpoints/python-models.md) — models.list(ModelListParamskwargs)  -> SyncPage[ModelInfo]
+- [Models](Endpoints/ruby-beta-models.md) — beta.models.list(kwargs) -> Page<BetaModelInfo>
+- [Models](Endpoints/ruby-models.md) — models.list(kwargs) -> Page<ModelInfo>
+- [Models](Endpoints/typescript-beta-models.md) — client.beta.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<BetaModelInfo>
+- [Models](Endpoints/typescript-models.md) — client.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<ModelInfo>
+- [Models - Claude API Reference](Endpoints/http-beta-models.md) — Count tokens in a Message
+- [Models - Claude API Reference](Endpoints/models.md) — Count tokens in a Message
+- [OpenAI SDK compatibility](Endpoints/openai-sdk.md) — Anthropic provides a compatibility layer that enables you to use the OpenAI SDK to test the Claude API. With a few code changes, you can quickly evaluate…
+- [Parse Unverified - Claude API Reference](Endpoints/http-beta-webhooks-parse-unverified.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Pause Deployment - Claude API Reference](Endpoints/beta-deployments-pause.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [PHP SDK](Endpoints/sdks-php.md) — Install and configure the Anthropic PHP SDK with value objects and builder patterns
+- [Poll for Work - Claude API Reference](Endpoints/beta-environments-work-poll.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Python SDK](Endpoints/sdks-python.md) — Install and configure the Anthropic Python SDK with sync and async client support
+- [Rate limits - Claude Platform Docs](Endpoints/rate-limits.md) — Count tokens in a Message
+- [Record Heartbeat - Claude API Reference](Endpoints/beta-environments-work-heartbeat.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Redact a memory version - Claude API Reference](Endpoints/beta-memory-stores-memory-versions-redact.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Resources](Endpoints/cli-beta-sessions-resources.md) — $ ant beta:sessions:resources add
+- [Resources](Endpoints/csharp-beta-sessions-resources.md) — BetaManagedAgentsFileResource Beta.Sessions.Resources.Add(ResourceAddParamsparameters, CancellationTokencancellationToken = default)
+- [Resources](Endpoints/go-beta-sessions-resources.md) — client.Beta.Sessions.Resources.Add(ctx, sessionID, params) (BetaManagedAgentsFileResource, error)
+- [Resources](Endpoints/java-beta-sessions-resources.md) — BetaManagedAgentsFileResource beta().sessions().resources().add(ResourceAddParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Resources](Endpoints/python-beta-sessions-resources.md) — beta.sessions.resources.add(strsessionid, ResourceAddParamskwargs)  -> BetaManagedAgentsFileResource
+- [Resources](Endpoints/ruby-beta-sessions-resources.md) — beta.sessions.resources.add(sessionid, kwargs) -> BetaManagedAgentsFileResource
+- [Resources](Endpoints/typescript-beta-sessions-resources.md) — client.beta.sessions.resources.add(stringsessionID, ResourceAddParamsparams, RequestOptionsoptions?): BetaManagedAgentsFileResource
+- [Resources - Claude API Reference](Endpoints/beta-sessions-resources.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Retrieve a memory - Claude API Reference](Endpoints/beta-memory-stores-memories-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Retrieve a memory store - Claude API Reference](Endpoints/beta-memory-stores-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Retrieve a memory version - Claude API Reference](Endpoints/beta-memory-stores-memory-versions-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Retrieve a Message Batch - Claude API Reference](Endpoints/beta-messages-batches-retrieve.md) — Count tokens in a Message
+- [Retrieve a Message Batch - Claude API Reference](Endpoints/messages-batches-retrieve.md) — Count tokens in a Message
+- [Retrieve Message Batch results - Claude API Reference](Endpoints/beta-messages-batches-results.md) — Count tokens in a Message
+- [Retrieve Message Batch results - Claude API Reference](Endpoints/messages-batches-results.md) — Count tokens in a Message
+- [Reveal Tunnel Token - Claude API Reference](Endpoints/http-beta-tunnels-reveal-token.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Rotate Tunnel Token - Claude API Reference](Endpoints/http-beta-tunnels-rotate-token.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Ruby SDK](Endpoints/sdks-ruby.md) — Install and configure the Anthropic Ruby SDK with Sorbet types, streaming helpers, and connection pooling
+- [Run Deployment Now - Claude API Reference](Endpoints/beta-deployments-run.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Send Events - Claude API Reference](Endpoints/beta-sessions-events-send.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Service tiers - Claude Platform Docs](Endpoints/service-tiers.md) — Count tokens in a Message
+- [Sessions](Endpoints/cli-beta-sessions.md) — $ ant beta:sessions create
+- [Sessions](Endpoints/csharp-beta-sessions.md) — BetaManagedAgentsSession Beta.Sessions.Create(SessionCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Sessions](Endpoints/go-beta-sessions.md) — client.Beta.Sessions.New(ctx, params) (BetaManagedAgentsSession, error)
+- [Sessions](Endpoints/java-beta-sessions.md) — BetaManagedAgentsSession beta().sessions().create(SessionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Sessions](Endpoints/python-beta-sessions.md) — beta.sessions.create(SessionCreateParamskwargs)  -> BetaManagedAgentsSession
+- [Sessions](Endpoints/ruby-beta-sessions.md) — beta.sessions.create(kwargs) -> BetaManagedAgentsSession
+- [Sessions](Endpoints/typescript-beta-sessions.md) — client.beta.sessions.create(SessionCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsSession
+- [Sessions - Claude API Reference](Endpoints/beta-sessions.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Skills](Endpoints/cli-beta-skills.md) — - --display-title: optional string
+- [Skills](Endpoints/csharp-beta-skills.md) — SkillCreateResponse Beta.Skills.Create(SkillCreateParams?parameters, CancellationTokencancellationToken = default)
+- [Skills](Endpoints/go-beta-skills.md) — client.Beta.Skills.New(ctx, params) (BetaSkillNewResponse, error)
+- [Skills](Endpoints/java-beta-skills.md) — SkillCreateResponse beta().skills().create(SkillCreateParamsparams = SkillCreateParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Skills](Endpoints/python-beta-skills.md) — beta.skills.create(SkillCreateParamskwargs)  -> SkillCreateResponse
+- [Skills](Endpoints/ruby-beta-skills.md) — beta.skills.create(kwargs) -> SkillCreateResponse
+- [Skills](Endpoints/typescript-beta-skills.md) — client.beta.skills.create(SkillCreateParamsparams?, RequestOptionsoptions?): SkillCreateResponse
+- [Skills - Claude API Reference](Endpoints/http-beta-skills.md) — Count tokens in a Message
+- [Skills - Claude API Reference](Endpoints/skills.md) — Count tokens in a Message
+- [Stop Work - Claude API Reference](Endpoints/beta-environments-work-stop.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Stream Events - Claude API Reference](Endpoints/beta-sessions-events-stream.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Stream Session Thread Events - Claude API Reference](Endpoints/beta-sessions-threads-events-stream.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Supported regions - Claude Platform Docs](Endpoints/supported-regions.md) — Count tokens in a Message
+- [Threads - Claude API Reference](Endpoints/beta-sessions-threads.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Trigger a routine through the API - Claude Platform Docs](Endpoints/claude-code-routines-fire.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Tunnels - Claude API Reference](Endpoints/http-beta-tunnels.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [TypeScript SDK](Endpoints/sdks-typescript.md) — Install and configure the Anthropic TypeScript SDK for Node.js, Deno, Bun, and browser environments
+- [Unpause Deployment - Claude API Reference](Endpoints/beta-deployments-unpause.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Unwrap - Claude API Reference](Endpoints/http-beta-webhooks-unwrap.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update a memory - Claude API Reference](Endpoints/beta-memory-stores-memories-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update a memory store - Claude API Reference](Endpoints/beta-memory-stores-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Agent - Claude API Reference](Endpoints/beta-agents-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Credential - Claude API Reference](Endpoints/beta-vaults-credentials-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Deployment - Claude API Reference](Endpoints/beta-deployments-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Environment - Claude API Reference](Endpoints/beta-environments-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Session - Claude API Reference](Endpoints/beta-sessions-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update User Profile - Claude API Reference](Endpoints/http-beta-user-profiles-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Vault - Claude API Reference](Endpoints/beta-vaults-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Work Item - Claude API Reference](Endpoints/beta-environments-work-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Upload File - Claude API Reference](Endpoints/files-upload.md) — Count tokens in a Message
+- [Upload File - Claude API Reference](Endpoints/http-beta-files-upload.md) — Count tokens in a Message
+- [User Profiles - Claude API Reference](Endpoints/http-beta-user-profiles.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Validate Credential - Claude API Reference](Endpoints/beta-vaults-credentials-mcp-oauth-validate.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Vaults](Endpoints/cli-beta-vaults.md) — Body param: Human-readable name for the vault. 1-255 characters.
+- [Vaults](Endpoints/csharp-beta-vaults.md) — BetaManagedAgentsVault Beta.Vaults.Create(VaultCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Vaults](Endpoints/go-beta-vaults.md) — client.Beta.Vaults.New(ctx, params) (BetaManagedAgentsVault, error)
+- [Vaults](Endpoints/java-beta-vaults.md) — BetaManagedAgentsVault beta().vaults().create(VaultCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
+- [Vaults](Endpoints/python-beta-vaults.md) — beta.vaults.create(VaultCreateParamskwargs)  -> BetaManagedAgentsVault
+- [Vaults](Endpoints/ruby-beta-vaults.md) — beta.vaults.create(kwargs) -> BetaManagedAgentsVault
+- [Vaults](Endpoints/typescript-beta-vaults.md) — client.beta.vaults.create(VaultCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsVault
+- [Vaults - Claude API Reference](Endpoints/beta-vaults.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Versions](Endpoints/cli-beta-agents-versions.md) — $ ant beta:agents:versions list
+- [Versions](Endpoints/cli-beta-skills-versions.md) — $ ant beta:skills:versions create
+- [Versions](Endpoints/csharp-beta-agents-versions.md) — VersionListPageResponse Beta.Agents.Versions.List(VersionListParamsparameters, CancellationTokencancellationToken = default)
+- [Versions](Endpoints/csharp-beta-skills-versions.md) — VersionCreateResponse Beta.Skills.Versions.Create(VersionCreateParamsparameters, CancellationTokencancellationToken = default)
+- [Versions](Endpoints/go-beta-agents-versions.md) — client.Beta.Agents.Versions.List(ctx, agentID, params) (PageCursor[BetaManagedAgentsAgent], error)
+- [Versions](Endpoints/go-beta-skills-versions.md) — client.Beta.Skills.Versions.New(ctx, skillID, params) (BetaSkillVersionNewResponse, error)
+- [Versions](Endpoints/java-beta-agents-versions.md) — VersionListPage beta().agents().versions().list(VersionListParamsparams = VersionListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Versions](Endpoints/java-beta-skills-versions.md) — VersionCreateResponse beta().skills().versions().create(VersionCreateParamsparams = VersionCreateParams.none(), RequestOptionsrequestOptions =…
+- [Versions](Endpoints/python-beta-agents-versions.md) — beta.agents.versions.list(stragentid, VersionListParamskwargs)  -> SyncPageCursor[BetaManagedAgentsAgent]
+- [Versions](Endpoints/python-beta-skills-versions.md) — beta.skills.versions.create(strskillid, VersionCreateParamskwargs)  -> VersionCreateResponse
+- [Versions](Endpoints/ruby-beta-agents-versions.md) — beta.agents.versions.list(agentid, kwargs) -> PageCursor<BetaManagedAgentsAgent>
+- [Versions](Endpoints/ruby-beta-skills-versions.md) — beta.skills.versions.create(skillid, kwargs) -> VersionCreateResponse
+- [Versions](Endpoints/typescript-beta-agents-versions.md) — client.beta.agents.versions.list(stringagentID, VersionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsAgent>
+- [Versions](Endpoints/typescript-beta-skills-versions.md) — client.beta.skills.versions.create(stringskillID, VersionCreateParamsparams?, RequestOptionsoptions?): VersionCreateResponse
+- [Versions - Claude API Reference](Endpoints/beta-agents-versions.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Versions - Claude API Reference](Endpoints/beta-skills-versions.md) — Count tokens in a Message
+- [Versions - Claude API Reference](Endpoints/skills-versions.md) — Count tokens in a Message
+- [Versions - Claude Platform Docs](Endpoints/versioning.md) — Count tokens in a Message
+- [Webhooks - Claude API Reference](Endpoints/beta-webhooks.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Webhooks - Claude API Reference](Endpoints/http-beta-webhooks.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Work - Claude API Reference](Endpoints/beta-environments-work.md) — Include beta APIsThe API you’re viewing is only available in beta
 
-- [Adaptive thinking](Guides/build-with-claude-adaptive-thinking-2b96627d8d.md) - Let Claude dynamically determine when and how much to use extended thinking with adaptive thinking mode.
-- [Steering thinking - Claude Platform Docs](Guides/build-with-claude-adaptive-thinking-5b1e2979e6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Admin API overview](Guides/build-with-claude-administration-api-eb3a280106.md)
-- [API and data retention](Guides/build-with-claude-api-and-data-retention-11a5180442.md) - Learn about how Anthropic's APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access
-- [API and data retention - Claude Platform Docs](Guides/build-with-claude-api-and-data-retention-5a49106226.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Batch processing](Guides/build-with-claude-batch-processing-58f98b4064.md) - The Message Batches API is a powerful, cost-effective way to asynchronously process large volumes of [Messages](/docs/en/api/messages/create) requests
-- [Batch processing - Claude Platform Docs](Guides/build-with-claude-batch-processing-dbcb362197.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Cache diagnostics - Claude Platform Docs](Guides/build-with-claude-cache-diagnostics-b6d54db8b2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Citations - Claude Platform Docs](Guides/build-with-claude-citations-4cc5ec4116.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Citations](Guides/build-with-claude-citations-a7ca911a58.md) - Integrate citations with Claude in these steps:
-- [Compaction](Guides/build-with-claude-compaction-47672e5bbf.md) - Server-side context compaction for managing long conversations that approach context window limits.
-- [Compaction overview - Claude Platform Docs](Guides/build-with-claude-compaction-54d4071243.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Compaction in the background - Claude Platform Docs](Guides/build-with-claude-compaction-background-35e3aa97a1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Compaction that keeps recent turns - Claude Platform Docs](Guides/build-with-claude-compaction-keep-recent-turns-549f71e82d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Compaction on demand - Claude Platform Docs](Guides/build-with-claude-compaction-on-demand-1c096c0a5e.md) - We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our s
-- [Compaction and preserved thinking - Claude Platform Docs](Guides/build-with-claude-compaction-thinking-blocks-eb643d1730.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Compaction at a token threshold - Claude Platform Docs](Guides/build-with-claude-compaction-threshold-20ed9a8385.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Context editing](Guides/build-with-claude-context-editing-16aa20ebd8.md) - Automatically manage conversation context as it grows with context editing.
-- [Context editing - Claude Platform Docs](Guides/build-with-claude-context-editing-5ab7f1535f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Context windows](Guides/build-with-claude-context-windows-13ca780d1d.md)
-- [Context windows - Claude Platform Docs](Guides/build-with-claude-context-windows-49d2cb1948.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Context windows - Claude Platform Docs](Guides/build-with-claude-context-windows-9b5191cd34.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Context windows - Claude API Docs](Guides/build-with-claude-context-windows.md) - As conversations grow, you'll eventually approach context window limits. This guide explains how context windows work and introduces strategies for ma
-- [Data residency](Guides/build-with-claude-data-residency-6c8e324ea6.md) - Manage where model inference runs and where data is stored with geographic controls.
-- [Data residency - Claude Platform Docs](Guides/build-with-claude-data-residency-7726f6ba25.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Effort](Guides/build-with-claude-effort-20d7f07a6f.md) - Control how many tokens Claude uses when responding with the effort parameter, trading off between response thoroughness and token efficiency.
-- [Effort - Claude Platform Docs](Guides/build-with-claude-effort-7804d5c825.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Embeddings - Claude Platform Docs](Guides/build-with-claude-embeddings-b7330ee1ef.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Embeddings](Guides/build-with-claude-embeddings-bf8288b900.md) - Text embeddings are numerical representations of text that enable measuring semantic similarity. This guide introduces embeddings, their applications,
-- [Extended thinking - Claude Platform Docs](Guides/build-with-claude-extended-thinking-5ee636ca2d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Building with extended thinking](Guides/build-with-claude-extended-thinking-dd12780e6a.md)
-- [Fallback credit - Claude Platform Docs](Guides/build-with-claude-fallback-credit-1bbb5f39a6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Fast mode (beta: research preview)](Guides/build-with-claude-fast-mode-7af2fa7ffd.md) - Higher output speed for Claude Opus 4.6, delivering significantly faster token generation for latency-sensitive and agentic workflows.
-- [Fast mode (research preview) - Claude Platform Docs](Guides/build-with-claude-fast-mode-d0875172c0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Files API - Claude Platform Docs](Guides/build-with-claude-files-0f030b5355.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Files API](Guides/build-with-claude-files-dacd285bb2.md) - - **Maximum file size:** 500 MB per file
-- [Handling stop reasons](Guides/build-with-claude-handling-stop-reasons-767bec5b32.md)
-- [Stop reasons and fallback - Claude Platform Docs](Guides/build-with-claude-handling-stop-reasons-849de77ad4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Build an orchestration mode - Claude Platform Docs](Guides/build-with-claude-mid-conversation-effort-example-f59bd2aa64.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Mid-conversation system messages and tool changes - Claude Platform Docs](Guides/build-with-claude-mid-conversation-system-messages-d90fd5feae.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Multilingual support - Claude Platform Docs](Guides/build-with-claude-multilingual-support-07c29d6102.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Multilingual support](Guides/build-with-claude-multilingual-support-2d75e26f84.md) - Claude excels at tasks across multiple languages, maintaining strong cross-lingual performance relative to English.
-- [Features overview - Claude Platform Docs](Guides/build-with-claude-overview-00017bc274.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Features overview](Guides/build-with-claude-overview-236d3362b2.md) - Explore Claude's advanced features and capabilities.
-- [PDF support](Guides/build-with-claude-pdf-support-01e729abfc.md) - Process PDFs with Claude. Extract text, analyze charts, and understand visual content from your documents.
-- [PDF support - Claude Platform Docs](Guides/build-with-claude-pdf-support-e65a646dc7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Preserved thinking - Claude Platform Docs](Guides/build-with-claude-preserved-thinking-ec83017903.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Rate Limits API](Guides/build-with-claude-rate-limits-api-f95b04961e.md) - Programmatically query your organization's API rate limits with the Rate Limits API.
-- [Refusals and fallback - Claude Platform Docs](Guides/build-with-claude-refusals-and-fallback-990d87c7cf.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Search results - Claude Platform Docs](Guides/build-with-claude-search-results-e0b9e7777f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Search results](Guides/build-with-claude-search-results-e16f90758e.md) - Enable natural citations for RAG applications by providing search results with source attribution
-- [Using Agent Skills with the API - Claude Platform Docs](Guides/build-with-claude-skills-guide-832e2fe21e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Using Agent Skills with the API](Guides/build-with-claude-skills-guide-8feadbbf7d.md) - Learn how to use Agent Skills to extend Claude's capabilities through the API.
-- [Streaming messages - Claude Platform Docs](Guides/build-with-claude-streaming-0712ffc466.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Streaming Messages](Guides/build-with-claude-streaming-74f4dddaf7.md)
-- [Structured outputs - Claude Platform Docs](Guides/build-with-claude-structured-outputs-1ba2260198.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Structured outputs](Guides/build-with-claude-structured-outputs-2638e81449.md) - Get validated JSON results from agent workflows
-- [Task budgets](Guides/build-with-claude-task-budgets-7152010a55.md) - Give Claude an advisory token budget for the full agentic loop to help the model self-regulate on long agentic tasks with task budgets.
-- [Task budgets - Claude Platform Docs](Guides/build-with-claude-task-budgets-e82e7818b8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Thinking - Claude Platform Docs](Guides/build-with-claude-thinking-03550646e4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Steering thinking - Claude Platform Docs](Guides/build-with-claude-thinking-steering-and-cost-d22e3e33d3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Thinking in tool and multi-turn workflows - Claude Platform Docs](Guides/build-with-claude-thinking-tool-workflows-6c124c5d5f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Troubleshooting thinking - Claude Platform Docs](Guides/build-with-claude-thinking-troubleshooting-b0c866cce8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Token counting - Claude Platform Docs](Guides/build-with-claude-token-counting-29ea82f0e3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Token counting](Guides/build-with-claude-token-counting-acaef15da2.md) - The [token counting](/docs/en/api/messages-count-tokens) endpoint accepts the same structured list of inputs for creating a message, including support
-- [Usage and Cost API - Claude Platform Docs](Guides/build-with-claude-usage-cost-api-4157fedfb4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Usage and Cost API](Guides/build-with-claude-usage-cost-api-ea9ab3260c.md) - Programmatically access your organization's API usage and cost data with the Usage & Cost Admin API.
-- [Vision](Guides/build-with-claude-vision-789a5b8cc6.md) - Claude's vision capabilities allow it to understand and analyze images, opening up exciting possibilities for multimodal interaction.
-- [Vision - Claude Platform Docs](Guides/build-with-claude-vision-bf29971bcf.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Coordinates and bounding boxes - Claude Platform Docs](Guides/build-with-claude-vision-coordinates-e24da6ad12.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Using the Messages API - Claude Platform Docs](Guides/build-with-claude-working-with-messages-620b08ba3a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Using the Messages API](Guides/build-with-claude-working-with-messages-c26ad950fc.md) - Practical patterns and examples for using the Messages API effectively
-- [Workspaces](Guides/build-with-claude-workspaces-12135e8f23.md) - Organize API keys, manage team access, and control costs with workspaces.
-- [Workspaces - Claude Platform Docs](Guides/build-with-claude-workspaces-572ba130b6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+## Guides
 
-## Other (1642)
+- [Admin API overview](Guides/build-with-claude-administration-api.md) — The Admin API is unavailable for individual accounts. To collaborate with teammates and add members, set up your organization in Console → Settings →…
+- [Batch processing - Claude Platform Docs](Guides/build-with-claude-batch-processing.md) — Claude on cloud platforms
+- [Build an orchestration mode - Claude Platform Docs](Guides/build-with-claude-mid-conversation-effort-example.md) — Claude on cloud platforms
+- [Cache diagnostics - Claude Platform Docs](Guides/build-with-claude-cache-diagnostics.md) — Claude on cloud platforms
+- [Citations - Claude Platform Docs](Guides/build-with-claude-citations.md) — Claude on cloud platforms
+- [Claude in Amazon Bedrock (Opus 4.7 and later) - Claude Platform Docs](Guides/build-with-claude-claude-in-amazon-bedrock.md) — Claude on cloud platforms
+- [Claude in Microsoft Foundry - Claude Platform Docs](Guides/build-with-claude-claude-in-microsoft-foundry.md) — Claude on cloud platforms
+- [Claude on Amazon Bedrock (Opus 4.6 and earlier) - Claude Platform Docs](Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md) — Claude on cloud platforms
+- [Claude on Amazon Bedrock - Claude API Docs](Guides/build-with-claude-claude-on-amazon-bedrock.md) — Anthropic's Claude models are now generally available through Amazon Bedrock.
+- [Claude on Google Cloud - Claude Platform Docs](Guides/build-with-claude-claude-on-vertex-ai.md) — Claude on cloud platforms
+- [Claude Platform on AWS - Claude Platform Docs](Guides/build-with-claude-claude-platform-on-aws.md) — Claude on cloud platforms
+- [Compaction and preserved thinking - Claude Platform Docs](Guides/build-with-claude-compaction-thinking-blocks.md) — Claude on cloud platforms
+- [Compaction at a token threshold - Claude Platform Docs](Guides/build-with-claude-compaction-threshold.md) — Claude on cloud platforms
+- [Compaction in the background - Claude Platform Docs](Guides/build-with-claude-compaction-background.md) — Claude on cloud platforms
+- [Compaction on demand - Claude Platform Docs](Guides/build-with-claude-compaction-on-demand.md) — We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services…
+- [Compaction overview - Claude Platform Docs](Guides/build-with-claude-compaction.md) — Claude on cloud platforms
+- [Compaction that keeps recent turns - Claude Platform Docs](Guides/build-with-claude-compaction-keep-recent-turns.md) — Claude on cloud platforms
+- [Context editing - Claude Platform Docs](Guides/build-with-claude-context-editing.md) — Claude on cloud platforms
+- [Context windows - Claude Platform Docs](Guides/build-with-claude-context-windows.md) — Claude on cloud platforms
+- [Coordinates and bounding boxes - Claude Platform Docs](Guides/build-with-claude-vision-coordinates.md) — Claude on cloud platforms
+- [Data residency - Claude Platform Docs](Guides/build-with-claude-data-residency.md) — Manage where model inference runs and where data is stored with geographic controls.
+- [Effort - Claude Platform Docs](Guides/build-with-claude-effort.md) — Claude on cloud platforms
+- [Embeddings - Claude Platform Docs](Guides/build-with-claude-embeddings.md) — Claude on cloud platforms
+- [Extended thinking - Claude Platform Docs](Guides/build-with-claude-extended-thinking.md) — Claude on cloud platforms
+- [Fallback credit - Claude Platform Docs](Guides/build-with-claude-fallback-credit.md) — Claude on cloud platforms
+- [Fast mode (research preview) - Claude Platform Docs](Guides/build-with-claude-fast-mode.md) — Claude on cloud platforms
+- [Features overview - Claude Platform Docs](Guides/build-with-claude-overview.md) — Claude on cloud platforms
+- [Files API - Claude Platform Docs](Guides/build-with-claude-files.md) — Claude on cloud platforms
+- [Mid-conversation system messages and tool changes - Claude Platform Docs](Guides/build-with-claude-mid-conversation-system-messages.md) — Claude on cloud platforms
+- [Multilingual support - Claude Platform Docs](Guides/build-with-claude-multilingual-support.md) — Claude on cloud platforms
+- [PDF support - Claude Platform Docs](Guides/build-with-claude-pdf-support.md) — Claude on cloud platforms
+- [Preserved thinking - Claude Platform Docs](Guides/build-with-claude-preserved-thinking.md) — Claude on cloud platforms
+- [Prompt caching - Claude Platform Docs](Guides/build-with-claude-prompt-caching.md) — Claude on cloud platforms
+- [Rate Limits API](Guides/build-with-claude-rate-limits-api.md) — Programmatically query your organization's API rate limits with the Rate Limits API.
+- [Refusals and fallback - Claude Platform Docs](Guides/build-with-claude-refusals-and-fallback.md) — Claude on cloud platforms
+- [Search results - Claude Platform Docs](Guides/build-with-claude-search-results.md) — Claude on cloud platforms
+- [Steering thinking - Claude Platform Docs](Guides/build-with-claude-thinking-steering-and-cost.md) — Claude on cloud platforms
+- [Stop reasons and fallback - Claude Platform Docs](Guides/build-with-claude-handling-stop-reasons.md) — Claude on cloud platforms
+- [Streaming messages - Claude Platform Docs](Guides/build-with-claude-streaming.md) — Claude on cloud platforms
+- [Structured outputs - Claude Platform Docs](Guides/build-with-claude-structured-outputs.md) — Claude on cloud platforms
+- [Task budgets - Claude Platform Docs](Guides/build-with-claude-task-budgets.md) — Claude on cloud platforms
+- [Thinking - Claude Platform Docs](Guides/build-with-claude-thinking.md) — Claude on cloud platforms
+- [Thinking in tool and multi-turn workflows - Claude Platform Docs](Guides/build-with-claude-thinking-tool-workflows.md) — Claude on cloud platforms
+- [Token counting - Claude Platform Docs](Guides/build-with-claude-token-counting.md) — Claude on cloud platforms
+- [Troubleshooting thinking - Claude Platform Docs](Guides/build-with-claude-thinking-troubleshooting.md) — Claude on cloud platforms
+- [Usage and Cost API - Claude Platform Docs](Guides/build-with-claude-usage-cost-api.md) — Programmatically access your organization's API usage and cost data with the Usage & Cost Admin API.
+- [Using Agent Skills with the API - Claude Platform Docs](Guides/build-with-claude-skills-guide.md) — Claude on cloud platforms
+- [Using the Messages API - Claude Platform Docs](Guides/build-with-claude-working-with-messages.md) — Claude on cloud platforms
+- [Vision - Claude Platform Docs](Guides/build-with-claude-vision.md) — Claude on cloud platforms
 
-- [Agent quickstart | Claude Platform](Other/agent-quickstart-816298763c.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Agent Skills](Other/agent-skills.md) - Agent Skills are modular capabilities that extend Claude's functionality. Each Skill packages instructions, metadata, and optional resources (scripts,
-- [Agents | Claude Platform](Other/agents-1aa78050fa.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Amazon Bedrock | Claude](Other/amazon-bedrock-claude.md) - Build innovative AI applications with safer systems from Anthropic, supported by secure infrastructure from AWS.
-- [Claude Platform release notes - Claude Platform Docs](Other/api-4e661726ec.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Organization - Claude API Reference](Other/api-admin-51a2ab146d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Admin](Other/api-admin-8fbba842b3.md) - **get** `/v1/organizations/me`
-- [Get Invite - Claude API Reference](Other/api-admin-api-invites-get-invite-9340bcfd0f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Current Organization - Claude API Reference](Other/api-admin-api-organization-get-me-246ef83d7d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get User - Claude API Reference](Other/api-admin-api-users-get-user-2ad1eada6f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Workspace Member - Claude API Reference](Other/api-admin-api-workspace-members-get-workspace-member-9451e9d23a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Beta](Other/api-beta-1abaedf17c.md) - - `AnthropicBeta = string or "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 19 more`
-- [Beta - Claude API Reference](Other/api-beta-4e4a851846.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Agents](Other/api-beta-agents-054f11e5a5.md) - **post** `/v1/agents`
-- [Archive Agent - Claude API Reference](Other/api-beta-agents-archive-4218107b42.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Agents Archive Bb89Ea4C30](Other/api-beta-agents-archive-bb89ea4c30.md) - **post** `/v1/agents/{agent_id}/archive`
-- [Create Agent - Claude API Reference](Other/api-beta-agents-create-282dabd865.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Agents Create 840B7Ddb29](Other/api-beta-agents-create-840b7ddb29.md) - **post** `/v1/agents`
-- [Api Beta Agents Delete B1F73666B6](Other/api-beta-agents-delete-b1f73666b6.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Agents - Claude API Reference](Other/api-beta-agents-fd98652b90.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Agents List 02C6A68585](Other/api-beta-agents-list-02c6a68585.md) - **get** `/v1/agents`
-- [List Agents - Claude API Reference](Other/api-beta-agents-list-6c025a0a37.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Agents Retrieve 303D032960](Other/api-beta-agents-retrieve-303d032960.md) - **get** `/v1/agents/{agent_id}`
-- [Get Agent - Claude API Reference](Other/api-beta-agents-retrieve-ce69f389d7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Agent - Claude API Reference](Other/api-beta-agents-update-acb91da1b7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Agents Update Afff94C113](Other/api-beta-agents-update-afff94c113.md) - **post** `/v1/agents/{agent_id}`
-- [Versions](Other/api-beta-agents-versions-24ed271fc9.md) - **get** `/v1/agents/{agent_id}/versions`
-- [Versions - Claude API Reference](Other/api-beta-agents-versions-86ccf846b5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Agent Versions - Claude API Reference](Other/api-beta-agents-versions-list-42bbec27b0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Agents Versions List Be98A6737B](Other/api-beta-agents-versions-list-be98a6737b.md) - **get** `/v1/agents/{agent_id}/versions`
-- [Deployment Runs - Claude API Reference](Other/api-beta-deployment-runs-006e751376.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Deployment Runs - Claude API Reference](Other/api-beta-deployment-runs-list-c5b17dedb2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Deployment Run - Claude API Reference](Other/api-beta-deployment-runs-retrieve-f576390e2d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Deployments - Claude API Reference](Other/api-beta-deployments-0088acb9c5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Deployment - Claude API Reference](Other/api-beta-deployments-archive-01418fb29e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Deployment - Claude API Reference](Other/api-beta-deployments-create-ad7ee90336.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Deployments - Claude API Reference](Other/api-beta-deployments-list-050c8680e8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Pause Deployment - Claude API Reference](Other/api-beta-deployments-pause-5086079faa.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Deployment - Claude API Reference](Other/api-beta-deployments-retrieve-112e4239fd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Run Deployment Now - Claude API Reference](Other/api-beta-deployments-run-5442783dff.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Unpause Deployment - Claude API Reference](Other/api-beta-deployments-unpause-aeda66fe77.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Deployment - Claude API Reference](Other/api-beta-deployments-update-f366855dc3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Dreams - Claude API Reference](Other/api-beta-dreams-6203459350.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive a Dream - Claude API Reference](Other/api-beta-dreams-archive-69f5040421.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Cancel a Dream - Claude API Reference](Other/api-beta-dreams-cancel-ca49563820.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create a Dream - Claude API Reference](Other/api-beta-dreams-create-63c9e5a792.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Dreams - Claude API Reference](Other/api-beta-dreams-list-a809244645.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get a Dream - Claude API Reference](Other/api-beta-dreams-retrieve-7c40051762.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Environments](Other/api-beta-environments-9586b7a5ec.md) - **post** `/v1/environments`
-- [Archive Environment - Claude API Reference](Other/api-beta-environments-archive-235699f19b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Environments Archive 521F24Dc36](Other/api-beta-environments-archive-521f24dc36.md) - **post** `/v1/environments/{environment_id}/archive`
-- [Environments - Claude API Reference](Other/api-beta-environments-cfa7777aa7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Environments Create 3801Bc5B1E](Other/api-beta-environments-create-3801bc5b1e.md) - **post** `/v1/environments`
-- [Create Environment - Claude API Reference](Other/api-beta-environments-create-d4d5ff264d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete Environment - Claude API Reference](Other/api-beta-environments-delete-6ee6a89fd5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Environments Delete E2059Cced9](Other/api-beta-environments-delete-e2059cced9.md) - **delete** `/v1/environments/{environment_id}`
-- [List Environments - Claude API Reference](Other/api-beta-environments-list-159a900cf2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Environments List 488B2Aed5D](Other/api-beta-environments-list-488b2aed5d.md) - **get** `/v1/environments`
-- [Api Beta Environments Retrieve 7C7F000Ede](Other/api-beta-environments-retrieve-7c7f000ede.md) - **get** `/v1/environments/{environment_id}`
-- [Get Environment - Claude API Reference](Other/api-beta-environments-retrieve-936ee9ec49.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Environments Update 1Ce25Fe54E](Other/api-beta-environments-update-1ce25fe54e.md) - **post** `/v1/environments/{environment_id}`
-- [Update Environment - Claude API Reference](Other/api-beta-environments-update-80474e39a3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Acknowledge Work - Claude API Reference](Other/api-beta-environments-work-ack-a956deba5a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Work - Claude API Reference](Other/api-beta-environments-work-f2e6989d6d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Record Heartbeat - Claude API Reference](Other/api-beta-environments-work-heartbeat-bfa213641e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Work Items - Claude API Reference](Other/api-beta-environments-work-list-1aa3ac77bd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Poll for Work - Claude API Reference](Other/api-beta-environments-work-poll-4f15c9b8f8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Work Item - Claude API Reference](Other/api-beta-environments-work-retrieve-c35ff56bce.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Queue Statistics - Claude API Reference](Other/api-beta-environments-work-stats-2f7a2fcf84.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Stop Work - Claude API Reference](Other/api-beta-environments-work-stop-37a6ce8412.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Work Item - Claude API Reference](Other/api-beta-environments-work-update-6926cd3aa1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Files](Other/api-beta-files-4ca47bac33.md) - **post** `/v1/files`
-- [Delete File - Claude API Reference](Other/api-beta-files-delete-2becc516bb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Files Delete 9Dc5Be1D20](Other/api-beta-files-delete-9dc5be1d20.md) - **delete** `/v1/files/{file_id}`
-- [Files - Claude API Reference](Other/api-beta-files-df2d296387.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Download File - Claude API Reference](Other/api-beta-files-download-6c85aba640.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Files Download Eb9C73B460](Other/api-beta-files-download-eb9c73b460.md) - **get** `/v1/files/{file_id}/content`
-- [Api Beta Files List 1Cfa0Ac955](Other/api-beta-files-list-1cfa0ac955.md) - **get** `/v1/files`
-- [List Files - Claude API Reference](Other/api-beta-files-list-36aaca94fc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get File Metadata - Claude API Reference](Other/api-beta-files-retrieve-metadata-8e9216151a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Files Retrieve Metadata A8Dcdde9F1](Other/api-beta-files-retrieve-metadata-a8dcdde9f1.md) - **get** `/v1/files/{file_id}`
-- [Api Beta Files Upload 33844460F0](Other/api-beta-files-upload-33844460f0.md) - **post** `/v1/files`
-- [Upload File - Claude API Reference](Other/api-beta-files-upload-e040ed4760.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Beta headers - Claude Platform Docs](Other/api-beta-headers-01851843c8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Memory Stores](Other/api-beta-memory-stores-22b2aa2db9.md) - **post** `/v1/memory_stores`
-- [Api Beta Memory Stores Archive 3E02Cd1Bde](Other/api-beta-memory-stores-archive-3e02cd1bde.md) - **post** `/v1/memory_stores/{memory_store_id}/archive`
-- [Archive a memory store - Claude API Reference](Other/api-beta-memory-stores-archive-48c744376b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create a memory store - Claude API Reference](Other/api-beta-memory-stores-create-9e99fe10c6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Memory Stores Create E283E33F45](Other/api-beta-memory-stores-create-e283e33f45.md) - **post** `/v1/memory_stores`
-- [Delete a memory store - Claude API Reference](Other/api-beta-memory-stores-delete-27361e42f8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Memory Stores Delete A1Eb77Bf61](Other/api-beta-memory-stores-delete-a1eb77bf61.md) - **delete** `/v1/memory_stores/{memory_store_id}`
-- [Memory Stores - Claude API Reference](Other/api-beta-memory-stores-e72bb8f60f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List memory stores - Claude API Reference](Other/api-beta-memory-stores-list-083b5306e6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Memory Stores List 1Af788E2B4](Other/api-beta-memory-stores-list-1af788e2b4.md) - **get** `/v1/memory_stores`
-- [Memories - Claude API Reference](Other/api-beta-memory-stores-memories-1c728e04d4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Memories](Other/api-beta-memory-stores-memories-2c0cff2ab9.md) - **post** `/v1/memory_stores/{memory_store_id}/memories`
-- [Create a memory - Claude API Reference](Other/api-beta-memory-stores-memories-create-d191328d31.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Memory Stores Memories Create E5261290F2](Other/api-beta-memory-stores-memories-create-e5261290f2.md) - **post** `/v1/memory_stores/{memory_store_id}/memories`
-- [Api Beta Memory Stores Memories Delete 305D3A3E23](Other/api-beta-memory-stores-memories-delete-305d3a3e23.md) - **delete** `/v1/memory_stores/{memory_store_id}/memories/{memory_id}`
-- [Delete a memory - Claude API Reference](Other/api-beta-memory-stores-memories-delete-ae3b47e2d4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List memories - Claude API Reference](Other/api-beta-memory-stores-memories-list-1fed76165f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Memory Stores Memories List C9548E5C6B](Other/api-beta-memory-stores-memories-list-c9548e5c6b.md) - **get** `/v1/memory_stores/{memory_store_id}/memories`
-- [Retrieve a memory - Claude API Reference](Other/api-beta-memory-stores-memories-retrieve-52a4c10006.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Memory Stores Memories Retrieve B54A279Eee](Other/api-beta-memory-stores-memories-retrieve-b54a279eee.md) - **get** `/v1/memory_stores/{memory_store_id}/memories/{memory_id}`
-- [Api Beta Memory Stores Memories Update 07Aaa4Fcfb](Other/api-beta-memory-stores-memories-update-07aaa4fcfb.md) - **post** `/v1/memory_stores/{memory_store_id}/memories/{memory_id}`
-- [Update a memory - Claude API Reference](Other/api-beta-memory-stores-memories-update-c727db2318.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Memory Versions - Claude API Reference](Other/api-beta-memory-stores-memory-versions-c81f1d9d2d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Memory Versions](Other/api-beta-memory-stores-memory-versions-d3c59bdd52.md) - **get** `/v1/memory_stores/{memory_store_id}/memory_versions`
-- [Api Beta Memory Stores Memory Versions List 5E4A76B6A7](Other/api-beta-memory-stores-memory-versions-list-5e4a76b6a7.md) - **get** `/v1/memory_stores/{memory_store_id}/memory_versions`
-- [List memory versions - Claude API Reference](Other/api-beta-memory-stores-memory-versions-list-647208fce0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Memory Stores Memory Versions Redact 77E154C5Fb](Other/api-beta-memory-stores-memory-versions-redact-77e154c5fb.md) - **post** `/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}/redact`
-- [Redact a memory version - Claude API Reference](Other/api-beta-memory-stores-memory-versions-redact-8213651d28.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Memory Stores Memory Versions Retrieve Bcfcda7Ef8](Other/api-beta-memory-stores-memory-versions-retrieve-bcfcda7ef8.md) - **get** `/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}`
-- [Retrieve a memory version - Claude API Reference](Other/api-beta-memory-stores-memory-versions-retrieve-f72592beaf.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Retrieve a memory store - Claude API Reference](Other/api-beta-memory-stores-retrieve-113ae8a71d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Memory Stores Retrieve E1B6C4B9A9](Other/api-beta-memory-stores-retrieve-e1b6c4b9a9.md) - **get** `/v1/memory_stores/{memory_store_id}`
-- [Api Beta Memory Stores Update 61A62D903E](Other/api-beta-memory-stores-update-61a62d903e.md) - **post** `/v1/memory_stores/{memory_store_id}`
-- [Update a memory store - Claude API Reference](Other/api-beta-memory-stores-update-9b931c793b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Messages - Claude API Reference](Other/api-beta-messages-383df4f5d4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Messages](Other/api-beta-messages-629bde7c38.md) - **post** `/v1/messages`
-- [Batches - Claude API Reference](Other/api-beta-messages-batches-2aa1f23df3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Batches](Other/api-beta-messages-batches-9362c4622e.md) - **post** `/v1/messages/batches`
-- [Api Beta Messages Batches Cancel Bf8A823D0D](Other/api-beta-messages-batches-cancel-bf8a823d0d.md) - **post** `/v1/messages/batches/{message_batch_id}/cancel`
-- [Cancel a Message Batch - Claude API Reference](Other/api-beta-messages-batches-cancel-f3ab2dc8b9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create a Message Batch - Claude API Reference](Other/api-beta-messages-batches-create-3c402005da.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Messages Batches Create C199B3A9B4](Other/api-beta-messages-batches-create-c199b3a9b4.md) - **post** `/v1/messages/batches`
-- [Delete a Message Batch - Claude API Reference](Other/api-beta-messages-batches-delete-475fc8697d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Messages Batches Delete C4202372A5](Other/api-beta-messages-batches-delete-c4202372a5.md) - **delete** `/v1/messages/batches/{message_batch_id}`
-- [List Message Batches - Claude API Reference](Other/api-beta-messages-batches-list-1e005ad901.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Messages Batches List E0Df3Efce5](Other/api-beta-messages-batches-list-e0df3efce5.md) - **get** `/v1/messages/batches`
-- [Retrieve Message Batch results - Claude API Reference](Other/api-beta-messages-batches-results-07f5c3e6bb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Messages Batches Results 539Ec9C8Eb](Other/api-beta-messages-batches-results-539ec9c8eb.md) - **get** `/v1/messages/batches/{message_batch_id}/results`
-- [Api Beta Messages Batches Retrieve 605552B630](Other/api-beta-messages-batches-retrieve-605552b630.md) - **get** `/v1/messages/batches/{message_batch_id}`
-- [Retrieve a Message Batch - Claude API Reference](Other/api-beta-messages-batches-retrieve-d6931eccf4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Messages Count Tokens Da904Efd4D](Other/api-beta-messages-count-tokens-da904efd4d.md) - **post** `/v1/messages/count_tokens`
-- [Count tokens in a Message - Claude API Reference](Other/api-beta-messages-count-tokens-df3ddc2251.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create a Message - Claude API Reference](Other/api-beta-messages-create-11937789a9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Messages Create F6Cca594F3](Other/api-beta-messages-create-f6cca594f3.md) - **post** `/v1/messages`
-- [Analytics - Claude API Reference](Other/api-beta-organization-analytics-57d334b023.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Artifacts - Claude API Reference](Other/api-beta-organization-analytics-artifacts-0a0b5eb0c3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Artifact Activity - Claude API Reference](Other/api-beta-organization-analytics-artifacts-list-fe7831cafa.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Chat Projects - Claude API Reference](Other/api-beta-organization-analytics-chat-projects-8639557835.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Chat Project Usage - Claude API Reference](Other/api-beta-organization-analytics-chat-projects-list-7c7cd6528e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Connectors - Claude API Reference](Other/api-beta-organization-analytics-connectors-c356631cf1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Connector Usage - Claude API Reference](Other/api-beta-organization-analytics-connectors-list-75490770c4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Cost - Claude API Reference](Other/api-beta-organization-analytics-cost-120fd3ebb6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Cost Over Time - Claude API Reference](Other/api-beta-organization-analytics-cost-list-bdd30aa88e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Per-User Cost - Claude API Reference](Other/api-beta-organization-analytics-cost-list-by-user-716dd119c3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Plugins - Claude API Reference](Other/api-beta-organization-analytics-plugins-ac0574db45.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Plugin Usage - Claude API Reference](Other/api-beta-organization-analytics-plugins-list-970b4f7f8d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Activity Summaries - Claude API Reference](Other/api-beta-organization-analytics-retrieve-summaries-90cbc61371.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Skills - Claude API Reference](Other/api-beta-organization-analytics-skills-a789c2eec3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Skill Usage - Claude API Reference](Other/api-beta-organization-analytics-skills-list-3740e88e53.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Usage - Claude API Reference](Other/api-beta-organization-analytics-usage-c3ed627ce7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Token Usage Over Time - Claude API Reference](Other/api-beta-organization-analytics-usage-list-1b749fe4a1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Per-User Token Usage - Claude API Reference](Other/api-beta-organization-analytics-usage-list-by-user-c91ccc5b21.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Users - Claude API Reference](Other/api-beta-organization-analytics-users-fa15d9524f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List User Activity - Claude API Reference](Other/api-beta-organization-analytics-users-list-b65c86b90f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [API Keys - Claude API Reference](Other/api-beta-organization-api-keys-156945d45c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List API Keys - Claude API Reference](Other/api-beta-organization-api-keys-list-80688ed46e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Retrieve API Key (Admin API) - Claude API Reference](Other/api-beta-organization-api-keys-retrieve-196e29b309.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update API Key - Claude API Reference](Other/api-beta-organization-api-keys-update-b357966dfb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Compliance Settings - Claude API Reference](Other/api-beta-organization-compliance-settings-3f583a7593.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Compliance Settings - Claude API Reference](Other/api-beta-organization-compliance-settings-retrieve-7843bd7189.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Compliance Settings - Claude API Reference](Other/api-beta-organization-compliance-settings-update-3a658a5e50.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Cost Report - Claude API Reference](Other/api-beta-organization-cost-report-c219514425.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Cost Report - Claude API Reference](Other/api-beta-organization-cost-report-retrieve-5a97e0ad3c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Organization - Claude API Reference](Other/api-beta-organization-eefe4014d6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [External Keys - Claude API Reference](Other/api-beta-organization-external-keys-92d687c543.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create External Key - Claude API Reference](Other/api-beta-organization-external-keys-create-973b9995cd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete External Key - Claude API Reference](Other/api-beta-organization-external-keys-delete-392db410d1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List External Keys - Claude API Reference](Other/api-beta-organization-external-keys-list-b868a33e69.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get External Key - Claude API Reference](Other/api-beta-organization-external-keys-retrieve-959c039bd8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update External Key - Claude API Reference](Other/api-beta-organization-external-keys-update-cdd6af2f0b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Validate External Key - Claude API Reference](Other/api-beta-organization-external-keys-validate-c123a1266a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Federation - Claude API Reference](Other/api-beta-organization-federation-2d3f54714c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Issuers - Claude API Reference](Other/api-beta-organization-federation-issuers-548fe27692.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Federation Issuer - Claude API Reference](Other/api-beta-organization-federation-issuers-archive-b998410a28.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Federation Issuer - Claude API Reference](Other/api-beta-organization-federation-issuers-create-11950588a3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Federation Issuers - Claude API Reference](Other/api-beta-organization-federation-issuers-list-726aa10050.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Federation Issuer - Claude API Reference](Other/api-beta-organization-federation-issuers-retrieve-1902075b1c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Federation Issuer - Claude API Reference](Other/api-beta-organization-federation-issuers-update-6deea9598e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Federation Rule - Claude API Reference](Other/api-beta-organization-federation-rules-archive-a28a52cf36.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Federation Rule - Claude API Reference](Other/api-beta-organization-federation-rules-create-1f3ffcc444.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Rules - Claude API Reference](Other/api-beta-organization-federation-rules-da63af27e6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Federation Rules - Claude API Reference](Other/api-beta-organization-federation-rules-list-de309d1e7d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Federation Rule - Claude API Reference](Other/api-beta-organization-federation-rules-retrieve-0d31ad2816.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Federation Rule - Claude API Reference](Other/api-beta-organization-federation-rules-update-6513035833.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Workspaces - Claude API Reference](Other/api-beta-organization-federation-rules-workspaces-7ccda9aa41.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Add Federation Rule Workspace - Claude API Reference](Other/api-beta-organization-federation-rules-workspaces-add-6dcaa68521.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Federation Rule Workspaces - Claude API Reference](Other/api-beta-organization-federation-rules-workspaces-list-e08a4379c7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Remove Federation Rule Workspace - Claude API Reference](Other/api-beta-organization-federation-rules-workspaces-remove-53e185363c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Invites - Claude API Reference](Other/api-beta-organization-invites-9d3e7b7e9a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Invite - Claude API Reference](Other/api-beta-organization-invites-create-60d9d4a2f5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete Invite - Claude API Reference](Other/api-beta-organization-invites-delete-a4eb5a6ed4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Invites - Claude API Reference](Other/api-beta-organization-invites-list-6cbea65f9a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Invite - Claude API Reference](Other/api-beta-organization-invites-retrieve-ce10d3ef89.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [MCP Tunnels - Claude API Reference](Other/api-beta-organization-mcp-tunnels-417e0406ea.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Tunnel - Claude API Reference](Other/api-beta-organization-mcp-tunnels-archive-fb62505ed3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Tunnels - Claude API Reference](Other/api-beta-organization-mcp-tunnels-list-e98c176bb9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Tunnel - Claude API Reference](Other/api-beta-organization-mcp-tunnels-retrieve-7d63835117.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Reveal Tunnel Token - Claude API Reference](Other/api-beta-organization-mcp-tunnels-reveal-token-356c75933c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Rotate Tunnel Token - Claude API Reference](Other/api-beta-organization-mcp-tunnels-rotate-token-80095dbf08.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Tunnel Certificates - Claude API Reference](Other/api-beta-organization-mcp-tunnels-tunnel-certificates-879dbc768d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Tunnel Certificate - Claude API Reference](Other/api-beta-organization-mcp-tunnels-tunnel-certificates-archive-eb011b3333.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Tunnel Certificate - Claude API Reference](Other/api-beta-organization-mcp-tunnels-tunnel-certificates-create-b909ce3fc1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Tunnel Certificates - Claude API Reference](Other/api-beta-organization-mcp-tunnels-tunnel-certificates-list-3a9e12105e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Tunnel Certificate - Claude API Reference](Other/api-beta-organization-mcp-tunnels-tunnel-certificates-retrieve-5aad941e4f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Rate Limits - Claude API Reference](Other/api-beta-organization-rate-limits-ad4f361034.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Organization Rate Limits - Claude API Reference](Other/api-beta-organization-rate-limits-list-70bdcc3d1e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [RBAC Groups - Claude API Reference](Other/api-beta-organization-rbac-groups-5afd2db058.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create RBAC Group - Claude API Reference](Other/api-beta-organization-rbac-groups-create-36d7ace784.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete RBAC Group - Claude API Reference](Other/api-beta-organization-rbac-groups-delete-a96176a86a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List RBAC Groups - Claude API Reference](Other/api-beta-organization-rbac-groups-list-800eab2fd5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Add RBAC Group Member - Claude API Reference](Other/api-beta-organization-rbac-groups-members-create-2c2e78db46.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Remove RBAC Group Member - Claude API Reference](Other/api-beta-organization-rbac-groups-members-delete-4d277732ba.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Members - Claude API Reference](Other/api-beta-organization-rbac-groups-members-fa1469862a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List RBAC Group Members - Claude API Reference](Other/api-beta-organization-rbac-groups-members-list-246dd2f3a5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get RBAC Group - Claude API Reference](Other/api-beta-organization-rbac-groups-retrieve-d15070b292.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update RBAC Group - Claude API Reference](Other/api-beta-organization-rbac-groups-update-a3cd151fa8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [RBAC Roles - Claude API Reference](Other/api-beta-organization-rbac-roles-c9e80fa671.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List RBAC Roles - Claude API Reference](Other/api-beta-organization-rbac-roles-list-e0944f68d2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Permissions - Claude API Reference](Other/api-beta-organization-rbac-roles-permissions-2c9ab083b6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List RBAC Role Permissions - Claude API Reference](Other/api-beta-organization-rbac-roles-permissions-list-d5d17e1e79.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get RBAC Role - Claude API Reference](Other/api-beta-organization-rbac-roles-retrieve-00f05eb2a5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Current Organization - Claude API Reference](Other/api-beta-organization-retrieve-658b1cab4f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Service Account - Claude API Reference](Other/api-beta-organization-service-accounts-archive-02f395f870.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Service Accounts - Claude API Reference](Other/api-beta-organization-service-accounts-c57480c482.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Service Account - Claude API Reference](Other/api-beta-organization-service-accounts-create-02916631ba.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Service Accounts - Claude API Reference](Other/api-beta-organization-service-accounts-list-158cf2ba9e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Service Account - Claude API Reference](Other/api-beta-organization-service-accounts-retrieve-8e3a294c1e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Service Account - Claude API Reference](Other/api-beta-organization-service-accounts-update-235fb07d1e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Workspaces - Claude API Reference](Other/api-beta-organization-service-accounts-workspaces-1c97d9ead0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Add Workspace To Service Account - Claude API Reference](Other/api-beta-organization-service-accounts-workspaces-add-c77bb95192.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Workspaces For Service Account - Claude API Reference](Other/api-beta-organization-service-accounts-workspaces-list-be1940453e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Remove Workspace From Service Account - Claude API Reference](Other/api-beta-organization-service-accounts-workspaces-remove-3be74c82c0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Set Spend Limit - Claude API Reference](Other/api-beta-organization-spend-limits-create-9c8ba56da5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete Spend Limit - Claude API Reference](Other/api-beta-organization-spend-limits-delete-e4386001af.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Spend Limits - Claude API Reference](Other/api-beta-organization-spend-limits-f22d1f844c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Increase Requests - Claude API Reference](Other/api-beta-organization-spend-limits-increase-requests-2b2325fdfc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Approve Spend Limit Increase Request - Claude API Reference](Other/api-beta-organization-spend-limits-increase-requests-approve-99b88536ed.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Deny Spend Limit Increase Request - Claude API Reference](Other/api-beta-organization-spend-limits-increase-requests-deny-f70ba000d1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Spend Limit Increase Requests - Claude API Reference](Other/api-beta-organization-spend-limits-increase-requests-list-730d356e99.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Spend Limit Increase Request - Claude API Reference](Other/api-beta-organization-spend-limits-increase-requests-retrieve-159d4336eb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Effective Spend Limits - Claude API Reference](Other/api-beta-organization-spend-limits-list-effective-3fb895df07.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Spend Limit - Claude API Reference](Other/api-beta-organization-spend-limits-retrieve-1af5b8d131.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Usage Report - Claude API Reference](Other/api-beta-organization-usage-report-ea1866b66d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Claude Code Usage Report - Claude API Reference](Other/api-beta-organization-usage-report-retrieve-claude-code-a1a735ec25.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Messages Usage Report - Claude API Reference](Other/api-beta-organization-usage-report-retrieve-messages-94410bfaa8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Users - Claude API Reference](Other/api-beta-organization-users-594b56614d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Users - Claude API Reference](Other/api-beta-organization-users-list-3fdd43a78e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Remove User - Claude API Reference](Other/api-beta-organization-users-remove-574527b4c3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get User - Claude API Reference](Other/api-beta-organization-users-retrieve-fd95c8bc51.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update User - Claude API Reference](Other/api-beta-organization-users-update-dd5c1e97fe.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Workspaces - Claude API Reference](Other/api-beta-organization-workspaces-acb79a1ff5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Workspace - Claude API Reference](Other/api-beta-organization-workspaces-archive-92cd9df5cc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Workspace - Claude API Reference](Other/api-beta-organization-workspaces-create-58bfd88a31.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Workspaces - Claude API Reference](Other/api-beta-organization-workspaces-list-ce2fa34c4e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Members - Claude API Reference](Other/api-beta-organization-workspaces-members-566ad39e34.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Workspace Member - Claude API Reference](Other/api-beta-organization-workspaces-members-add-7958573529.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Workspace Members - Claude API Reference](Other/api-beta-organization-workspaces-members-list-cda118dc6b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete Workspace Member - Claude API Reference](Other/api-beta-organization-workspaces-members-remove-b49801df74.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Workspace Member - Claude API Reference](Other/api-beta-organization-workspaces-members-retrieve-a0c96db99b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Workspace Member - Claude API Reference](Other/api-beta-organization-workspaces-members-update-5cbce5d7d7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Rate Limits - Claude API Reference](Other/api-beta-organization-workspaces-rate-limits-a1f0a7592d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Workspace Rate Limits - Claude API Reference](Other/api-beta-organization-workspaces-rate-limits-list-ef01070c82.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Workspace - Claude API Reference](Other/api-beta-organization-workspaces-retrieve-591da5e496.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Service Accounts - Claude API Reference](Other/api-beta-organization-workspaces-service-accounts-37c659bff7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Service Account Workspace Member - Claude API Reference](Other/api-beta-organization-workspaces-service-accounts-add-c03ef14288.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Service Account Workspace Members - Claude API Reference](Other/api-beta-organization-workspaces-service-accounts-list-35b7f2755a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete Service Account Workspace Member - Claude API Reference](Other/api-beta-organization-workspaces-service-accounts-remove-29c920e0b5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Service Account Workspace Member - Claude API Reference](Other/api-beta-organization-workspaces-service-accounts-retrieve-73365c87b6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Service Account Workspace Member - Claude API Reference](Other/api-beta-organization-workspaces-service-accounts-update-a4b05e134f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Workspace - Claude API Reference](Other/api-beta-organization-workspaces-update-24bad78184.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Sessions - Claude API Reference](Other/api-beta-sessions-8a01470785.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Sessions](Other/api-beta-sessions-8b0f41e303.md) - **post** `/v1/sessions`
-- [Api Beta Sessions Archive 8770425919](Other/api-beta-sessions-archive-8770425919.md) - **post** `/v1/sessions/{session_id}/archive`
-- [Archive Session - Claude API Reference](Other/api-beta-sessions-archive-bfeb4446b6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Sessions Create 19B33Fd2C9](Other/api-beta-sessions-create-19b33fd2c9.md) - **post** `/v1/sessions`
-- [Create Session - Claude API Reference](Other/api-beta-sessions-create-aa557389d7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Sessions Delete 37B4690E54](Other/api-beta-sessions-delete-37b4690e54.md) - **delete** `/v1/sessions/{session_id}`
-- [Delete Session - Claude API Reference](Other/api-beta-sessions-delete-de468a721a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Events - Claude API Reference](Other/api-beta-sessions-events-8c89df2fa8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Events](Other/api-beta-sessions-events-b91e946879.md) - **get** `/v1/sessions/{session_id}/events`
-- [List Events - Claude API Reference](Other/api-beta-sessions-events-list-127b84edac.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Sessions Events List 90A51551Ca](Other/api-beta-sessions-events-list-90a51551ca.md) - **get** `/v1/sessions/{session_id}/events`
-- [Api Beta Sessions Events Send 0Bc6B19D12](Other/api-beta-sessions-events-send-0bc6b19d12.md) - **post** `/v1/sessions/{session_id}/events`
-- [Send Events - Claude API Reference](Other/api-beta-sessions-events-send-a48e435a1d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Stream Events - Claude API Reference](Other/api-beta-sessions-events-stream-51de01f63d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Sessions Events Stream F42870Faea](Other/api-beta-sessions-events-stream-f42870faea.md) - **get** `/v1/sessions/{session_id}/events/stream`
-- [List Sessions - Claude API Reference](Other/api-beta-sessions-list-3c8cf89125.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Sessions List C0B76985D3](Other/api-beta-sessions-list-c0b76985d3.md) - **get** `/v1/sessions`
-- [Resources - Claude API Reference](Other/api-beta-sessions-resources-1a0cdb87e1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Add Session Resource - Claude API Reference](Other/api-beta-sessions-resources-add-76a5c15bb2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Sessions Resources Add E906Aec3Ad](Other/api-beta-sessions-resources-add-e906aec3ad.md) - **post** `/v1/sessions/{session_id}/resources`
-- [Resources](Other/api-beta-sessions-resources-cdaf231a72.md) - **post** `/v1/sessions/{session_id}/resources`
-- [Api Beta Sessions Resources Delete 2F08F335Fb](Other/api-beta-sessions-resources-delete-2f08f335fb.md) - **delete** `/v1/sessions/{session_id}/resources/{resource_id}`
-- [Delete Session Resource - Claude API Reference](Other/api-beta-sessions-resources-delete-d511d8bee0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Session Resources - Claude API Reference](Other/api-beta-sessions-resources-list-22ad995377.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Sessions Resources List 9Baa97431B](Other/api-beta-sessions-resources-list-9baa97431b.md) - **get** `/v1/sessions/{session_id}/resources`
-- [Get Session Resource - Claude API Reference](Other/api-beta-sessions-resources-retrieve-3441642717.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Sessions Resources Retrieve A1C6E95Df4](Other/api-beta-sessions-resources-retrieve-a1c6e95df4.md) - **get** `/v1/sessions/{session_id}/resources/{resource_id}`
-- [Api Beta Sessions Resources Update 88C5296A05](Other/api-beta-sessions-resources-update-88c5296a05.md) - **post** `/v1/sessions/{session_id}/resources/{resource_id}`
-- [Update Session Resource - Claude API Reference](Other/api-beta-sessions-resources-update-938ed1b76d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Sessions Retrieve F096D967B7](Other/api-beta-sessions-retrieve-f096d967b7.md) - **get** `/v1/sessions/{session_id}`
-- [Get Session - Claude API Reference](Other/api-beta-sessions-retrieve-f6e82b48f2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Threads - Claude API Reference](Other/api-beta-sessions-threads-00e83861b5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Session Thread - Claude API Reference](Other/api-beta-sessions-threads-archive-5f41147f57.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Events - Claude API Reference](Other/api-beta-sessions-threads-events-22954be6e1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Session Thread Events - Claude API Reference](Other/api-beta-sessions-threads-events-list-fa52ee9668.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Stream Session Thread Events - Claude API Reference](Other/api-beta-sessions-threads-events-stream-1df1342f3a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Session Threads - Claude API Reference](Other/api-beta-sessions-threads-list-5f344ea69b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Session Thread - Claude API Reference](Other/api-beta-sessions-threads-retrieve-85ad43cb80.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Session - Claude API Reference](Other/api-beta-sessions-update-6d1f0b889f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Sessions Update F228A44Faa](Other/api-beta-sessions-update-f228a44faa.md) - **post** `/v1/sessions/{session_id}`
-- [Skills - Claude API Reference](Other/api-beta-skills-a9beaa1302.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Skills Create 06386Aa4D7](Other/api-beta-skills-create-06386aa4d7.md) - **post** `/v1/skills`
-- [Create Skill - Claude API Reference](Other/api-beta-skills-create-d6f20615fa.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete Skill - Claude API Reference](Other/api-beta-skills-delete-61afed88ac.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Skills Delete 749A6Dfadb](Other/api-beta-skills-delete-749a6dfadb.md) - **delete** `/v1/skills/{skill_id}`
-- [Skills](Other/api-beta-skills-f30b69c01d.md) - **post** `/v1/skills`
-- [Api Beta Skills List 134402061E](Other/api-beta-skills-list-134402061e.md) - **get** `/v1/skills`
-- [List Skills - Claude API Reference](Other/api-beta-skills-list-9cf7dc2cc1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Skill - Claude API Reference](Other/api-beta-skills-retrieve-05179a28ff.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Skills Retrieve C64858A4Ce](Other/api-beta-skills-retrieve-c64858a4ce.md) - **get** `/v1/skills/{skill_id}`
-- [Versions - Claude API Reference](Other/api-beta-skills-versions-0ac54f36c2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Versions](Other/api-beta-skills-versions-9a050a7643.md) - **post** `/v1/skills/{skill_id}/versions`
-- [Create Skill Version - Claude API Reference](Other/api-beta-skills-versions-create-4ac85729e0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Skills Versions Create F9B5120935](Other/api-beta-skills-versions-create-f9b5120935.md) - **post** `/v1/skills/{skill_id}/versions`
-- [Api Beta Skills Versions Delete 004A3E88C8](Other/api-beta-skills-versions-delete-004a3e88c8.md) - **delete** `/v1/skills/{skill_id}/versions/{version}`
-- [Delete Skill Version - Claude API Reference](Other/api-beta-skills-versions-delete-7fff4a3392.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Download Skill Version Content - Claude API Reference](Other/api-beta-skills-versions-download-7ffd2368a2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Skill Versions - Claude API Reference](Other/api-beta-skills-versions-list-090a7a3431.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Skills Versions List Ac76F57C6E](Other/api-beta-skills-versions-list-ac76f57c6e.md) - **get** `/v1/skills/{skill_id}/versions`
-- [Api Beta Skills Versions Retrieve 14Ac4Dc8B8](Other/api-beta-skills-versions-retrieve-14ac4dc8b8.md) - **get** `/v1/skills/{skill_id}/versions/{version}`
-- [Get Skill Version - Claude API Reference](Other/api-beta-skills-versions-retrieve-8544f206da.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Tunnels - Claude API Reference](Other/api-beta-tunnels-20585ff10f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Tunnel - Claude API Reference](Other/api-beta-tunnels-archive-e7f0acd25b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Certificates - Claude API Reference](Other/api-beta-tunnels-certificates-16bd4ddf77.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Tunnel Certificate - Claude API Reference](Other/api-beta-tunnels-certificates-archive-406d8e1c18.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Tunnel Certificate - Claude API Reference](Other/api-beta-tunnels-certificates-create-ad91de7a2d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Tunnel Certificates - Claude API Reference](Other/api-beta-tunnels-certificates-list-e7d21046e8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Tunnel Certificate - Claude API Reference](Other/api-beta-tunnels-certificates-retrieve-0966088ef9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Tunnel - Claude API Reference](Other/api-beta-tunnels-create-7960fdda29.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Tunnels - Claude API Reference](Other/api-beta-tunnels-list-35949a5c31.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Tunnel - Claude API Reference](Other/api-beta-tunnels-retrieve-85fd0ae16f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Reveal Tunnel Token - Claude API Reference](Other/api-beta-tunnels-reveal-token-3a160599b1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Rotate Tunnel Token - Claude API Reference](Other/api-beta-tunnels-rotate-token-eef5e6f37d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [User Profiles - Claude API Reference](Other/api-beta-user-profiles-b744dbea7e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create User Profile - Claude API Reference](Other/api-beta-user-profiles-create-4ddfd8d758.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Enrollment URL - Claude API Reference](Other/api-beta-user-profiles-create-enrollment-url-e54e1f677a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List User Profiles - Claude API Reference](Other/api-beta-user-profiles-list-8b233de8fd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get User Profile - Claude API Reference](Other/api-beta-user-profiles-retrieve-46f88829bb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update User Profile - Claude API Reference](Other/api-beta-user-profiles-update-4784295734.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Vaults - Claude API Reference](Other/api-beta-vaults-9926f7946d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Vault - Claude API Reference](Other/api-beta-vaults-archive-5f2550c215.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Vaults Archive 7Bdb8253Dd](Other/api-beta-vaults-archive-7bdb8253dd.md) - **post** `/v1/vaults/{vault_id}/archive`
-- [Create Vault - Claude API Reference](Other/api-beta-vaults-create-90da2e1201.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Vaults Create Cb92A8A125](Other/api-beta-vaults-create-cb92a8a125.md) - **post** `/v1/vaults`
-- [Credentials](Other/api-beta-vaults-credentials-19c32c92b0.md) - **post** `/v1/vaults/{vault_id}/credentials`
-- [Credentials - Claude API Reference](Other/api-beta-vaults-credentials-932dea78d9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Vaults Credentials Archive 11Cdff89B1](Other/api-beta-vaults-credentials-archive-11cdff89b1.md) - **post** `/v1/vaults/{vault_id}/credentials/{credential_id}/archive`
-- [Archive Credential - Claude API Reference](Other/api-beta-vaults-credentials-archive-c0da49d0d2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Credential - Claude API Reference](Other/api-beta-vaults-credentials-create-5ca69c68c7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Vaults Credentials Create 84910084D0](Other/api-beta-vaults-credentials-create-84910084d0.md) - **post** `/v1/vaults/{vault_id}/credentials`
-- [Delete Credential - Claude API Reference](Other/api-beta-vaults-credentials-delete-7ad75bbbe7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Vaults Credentials Delete 8C397B2175](Other/api-beta-vaults-credentials-delete-8c397b2175.md) - **delete** `/v1/vaults/{vault_id}/credentials/{credential_id}`
-- [Api Beta Vaults Credentials List 1E5669Ce2C](Other/api-beta-vaults-credentials-list-1e5669ce2c.md) - **get** `/v1/vaults/{vault_id}/credentials`
-- [List Credentials - Claude API Reference](Other/api-beta-vaults-credentials-list-5036da61ac.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Validate Credential - Claude API Reference](Other/api-beta-vaults-credentials-mcp-oauth-validate-b8a2efa274.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Vaults Credentials Retrieve 869A32A2D0](Other/api-beta-vaults-credentials-retrieve-869a32a2d0.md) - **get** `/v1/vaults/{vault_id}/credentials/{credential_id}`
-- [Get Credential - Claude API Reference](Other/api-beta-vaults-credentials-retrieve-f96d7a6a05.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update Credential - Claude API Reference](Other/api-beta-vaults-credentials-update-a1091bfce5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Vaults Credentials Update E8A45A516C](Other/api-beta-vaults-credentials-update-e8a45a516c.md) - **post** `/v1/vaults/{vault_id}/credentials/{credential_id}`
-- [Vaults](Other/api-beta-vaults-d9adf85bef.md) - **post** `/v1/vaults`
-- [Delete Vault - Claude API Reference](Other/api-beta-vaults-delete-ac3949cc8b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Vaults Delete F9Bd99C708](Other/api-beta-vaults-delete-f9bd99c708.md) - **delete** `/v1/vaults/{vault_id}`
-- [List Vaults - Claude API Reference](Other/api-beta-vaults-list-21ddcaae16.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Vaults List 4C1D43D233](Other/api-beta-vaults-list-4c1d43d233.md) - **get** `/v1/vaults`
-- [Get Vault - Claude API Reference](Other/api-beta-vaults-retrieve-2872cd56c6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Vaults Retrieve C9731Ac28F](Other/api-beta-vaults-retrieve-c9731ac28f.md) - **get** `/v1/vaults/{vault_id}`
-- [Update Vault - Claude API Reference](Other/api-beta-vaults-update-42978a7e67.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Vaults Update 91688B1A4F](Other/api-beta-vaults-update-91688b1a4f.md) - **post** `/v1/vaults/{vault_id}`
-- [Webhooks - Claude API Reference](Other/api-beta-webhooks-cd9d2c16a4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Cli Beta Agents Archive F66Ba0A22F](Other/api-cli-beta-agents-archive-f66ba0a22f.md) - `$ ant beta:agents archive`
-- [Api Cli Beta Agents Create Cca558Fd89](Other/api-cli-beta-agents-create-cca558fd89.md) - `$ ant beta:agents create`
-- [Api Cli Beta Agents Delete 5Bfe9116Cb](Other/api-cli-beta-agents-delete-5bfe9116cb.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Agents](Other/api-cli-beta-agents-f6a28f933c.md) - `$ ant beta:agents create`
-- [Api Cli Beta Agents List 3Cd6600718](Other/api-cli-beta-agents-list-3cd6600718.md) - `$ ant beta:agents list`
-- [Api Cli Beta Agents Retrieve Fa8D49D1D7](Other/api-cli-beta-agents-retrieve-fa8d49d1d7.md) - `$ ant beta:agents retrieve`
-- [Api Cli Beta Agents Update 871C6C74C3](Other/api-cli-beta-agents-update-871c6c74c3.md) - `$ ant beta:agents update`
-- [Versions](Other/api-cli-beta-agents-versions-ce71a10e71.md) - `$ ant beta:agents:versions list`
-- [Api Cli Beta Agents Versions List 73D2A4Ef9E](Other/api-cli-beta-agents-versions-list-73d2a4ef9e.md) - `$ ant beta:agents:versions list`
-- [Beta](Other/api-cli-beta-cd6f1a45bd.md) - - `beta_api_error: object { message, type }`
-- [Environments](Other/api-cli-beta-environments-0bb5efafae.md) - `$ ant beta:environments create`
-- [Api Cli Beta Environments Archive 671D7C4962](Other/api-cli-beta-environments-archive-671d7c4962.md) - `$ ant beta:environments archive`
-- [Api Cli Beta Environments Create 95C9050Cef](Other/api-cli-beta-environments-create-95c9050cef.md) - `$ ant beta:environments create`
-- [Api Cli Beta Environments Delete C517E564E3](Other/api-cli-beta-environments-delete-c517e564e3.md) - `$ ant beta:environments delete`
-- [Api Cli Beta Environments List 6731B616A5](Other/api-cli-beta-environments-list-6731b616a5.md) - `$ ant beta:environments list`
-- [Api Cli Beta Environments Retrieve B1Cea8A77D](Other/api-cli-beta-environments-retrieve-b1cea8a77d.md) - `$ ant beta:environments retrieve`
-- [Api Cli Beta Environments Update D78C270B79](Other/api-cli-beta-environments-update-d78c270b79.md) - `$ ant beta:environments update`
-- [Files](Other/api-cli-beta-files-7d1f431d0f.md) - `$ ant beta:files upload`
-- [Api Cli Beta Files Delete C02F26C521](Other/api-cli-beta-files-delete-c02f26c521.md) - `$ ant beta:files delete`
-- [Api Cli Beta Files Download C3F94484Cd](Other/api-cli-beta-files-download-c3f94484cd.md) - `$ ant beta:files download`
-- [Api Cli Beta Files List Be1465Bc8A](Other/api-cli-beta-files-list-be1465bc8a.md) - `$ ant beta:files list`
-- [Api Cli Beta Files Retrieve Metadata 9Eddf25374](Other/api-cli-beta-files-retrieve-metadata-9eddf25374.md) - `$ ant beta:files retrieve-metadata`
-- [Api Cli Beta Files Upload Dbe80D4A4C](Other/api-cli-beta-files-upload-dbe80d4a4c.md) - `$ ant beta:files upload`
-- [Api Cli Beta Memory Stores Archive Ffcfb80Af3](Other/api-cli-beta-memory-stores-archive-ffcfb80af3.md) - `$ ant beta:memory-stores archive`
-- [Memory Stores](Other/api-cli-beta-memory-stores-cbe907822d.md) - `$ ant beta:memory-stores create`
-- [Api Cli Beta Memory Stores Create 6Ff3B35C96](Other/api-cli-beta-memory-stores-create-6ff3b35c96.md) - `$ ant beta:memory-stores create`
-- [Api Cli Beta Memory Stores Delete 8A40F4429C](Other/api-cli-beta-memory-stores-delete-8a40f4429c.md) - `$ ant beta:memory-stores delete`
-- [Api Cli Beta Memory Stores List 57Fce0Ed1A](Other/api-cli-beta-memory-stores-list-57fce0ed1a.md) - `$ ant beta:memory-stores list`
-- [Memories](Other/api-cli-beta-memory-stores-memories-49492a5220.md) - `$ ant beta:memory-stores:memories create`
-- [Api Cli Beta Memory Stores Memories Create 9210A992Aa](Other/api-cli-beta-memory-stores-memories-create-9210a992aa.md) - `$ ant beta:memory-stores:memories create`
-- [Api Cli Beta Memory Stores Memories Delete 4F34C8D23B](Other/api-cli-beta-memory-stores-memories-delete-4f34c8d23b.md) - `$ ant beta:memory-stores:memories delete`
-- [Api Cli Beta Memory Stores Memories List 24278795A4](Other/api-cli-beta-memory-stores-memories-list-24278795a4.md) - `$ ant beta:memory-stores:memories list`
-- [Api Cli Beta Memory Stores Memories Retrieve 2A76Fb9623](Other/api-cli-beta-memory-stores-memories-retrieve-2a76fb9623.md) - `$ ant beta:memory-stores:memories retrieve`
-- [Api Cli Beta Memory Stores Memories Update 4505Cdd54C](Other/api-cli-beta-memory-stores-memories-update-4505cdd54c.md) - `$ ant beta:memory-stores:memories update`
-- [Memory Versions](Other/api-cli-beta-memory-stores-memory-versions-f6d546e3dd.md) - `$ ant beta:memory-stores:memory-versions list`
-- [Api Cli Beta Memory Stores Memory Versions List 4710C65154](Other/api-cli-beta-memory-stores-memory-versions-list-4710c65154.md) - `$ ant beta:memory-stores:memory-versions list`
-- [Api Cli Beta Memory Stores Memory Versions Redact D82D078B57](Other/api-cli-beta-memory-stores-memory-versions-redact-d82d078b57.md) - `$ ant beta:memory-stores:memory-versions redact`
-- [Api Cli Beta Memory Stores Memory Versions Retrieve 7114A49036](Other/api-cli-beta-memory-stores-memory-versions-retrieve-7114a49036.md) - `$ ant beta:memory-stores:memory-versions retrieve`
-- [Api Cli Beta Memory Stores Retrieve Fc649E8608](Other/api-cli-beta-memory-stores-retrieve-fc649e8608.md) - `$ ant beta:memory-stores retrieve`
-- [Api Cli Beta Memory Stores Update Ccd110F5A1](Other/api-cli-beta-memory-stores-update-ccd110f5a1.md) - `$ ant beta:memory-stores update`
-- [Batches](Other/api-cli-beta-messages-batches-910c01ab74.md) - `$ ant beta:messages:batches create`
-- [Api Cli Beta Messages Batches Cancel 5F2508Da1C](Other/api-cli-beta-messages-batches-cancel-5f2508da1c.md) - `$ ant beta:messages:batches cancel`
-- [Api Cli Beta Messages Batches Create 334C15F2B7](Other/api-cli-beta-messages-batches-create-334c15f2b7.md) - `$ ant beta:messages:batches create`
-- [Api Cli Beta Messages Batches Delete 00D17C475D](Other/api-cli-beta-messages-batches-delete-00d17c475d.md) - `$ ant beta:messages:batches delete`
-- [Api Cli Beta Messages Batches List C6Ef13Fa77](Other/api-cli-beta-messages-batches-list-c6ef13fa77.md) - `$ ant beta:messages:batches list`
-- [Api Cli Beta Messages Batches Results 8B1677D1B4](Other/api-cli-beta-messages-batches-results-8b1677d1b4.md) - `$ ant beta:messages:batches results`
-- [Api Cli Beta Messages Batches Retrieve 08Ecbfd6Af](Other/api-cli-beta-messages-batches-retrieve-08ecbfd6af.md) - `$ ant beta:messages:batches retrieve`
-- [Api Cli Beta Messages Count Tokens 3087666Ddd](Other/api-cli-beta-messages-count-tokens-3087666ddd.md) - `$ ant beta:messages count-tokens`
-- [Api Cli Beta Messages Create 875F28C998](Other/api-cli-beta-messages-create-875f28c998.md) - `$ ant beta:messages create`
-- [Messages](Other/api-cli-beta-messages-e57b2cef82.md) - `$ ant beta:messages create`
-- [Sessions](Other/api-cli-beta-sessions-6f69d7e449.md) - `$ ant beta:sessions create`
-- [Api Cli Beta Sessions Archive 63006Cd882](Other/api-cli-beta-sessions-archive-63006cd882.md) - `$ ant beta:sessions archive`
-- [Api Cli Beta Sessions Create 165E95Ea7B](Other/api-cli-beta-sessions-create-165e95ea7b.md) - `$ ant beta:sessions create`
-- [Api Cli Beta Sessions Delete 8E627406A1](Other/api-cli-beta-sessions-delete-8e627406a1.md) - `$ ant beta:sessions delete`
-- [Events](Other/api-cli-beta-sessions-events-522fe555e1.md) - `$ ant beta:sessions:events list`
-- [Api Cli Beta Sessions Events List A9343F872E](Other/api-cli-beta-sessions-events-list-a9343f872e.md) - `$ ant beta:sessions:events list`
-- [Api Cli Beta Sessions Events Send 1855105335](Other/api-cli-beta-sessions-events-send-1855105335.md) - `$ ant beta:sessions:events send`
-- [Api Cli Beta Sessions Events Stream E9Bb0A4160](Other/api-cli-beta-sessions-events-stream-e9bb0a4160.md) - `$ ant beta:sessions:events stream`
-- [Api Cli Beta Sessions List E29471E981](Other/api-cli-beta-sessions-list-e29471e981.md) - `$ ant beta:sessions list`
-- [Resources](Other/api-cli-beta-sessions-resources-0ad72f63cc.md) - `$ ant beta:sessions:resources add`
-- [Api Cli Beta Sessions Resources Add 1A6A99445E](Other/api-cli-beta-sessions-resources-add-1a6a99445e.md) - `$ ant beta:sessions:resources add`
-- [Api Cli Beta Sessions Resources Delete 3B1C71Ebc9](Other/api-cli-beta-sessions-resources-delete-3b1c71ebc9.md) - `$ ant beta:sessions:resources delete`
-- [Api Cli Beta Sessions Resources List 8C8A74B5Ba](Other/api-cli-beta-sessions-resources-list-8c8a74b5ba.md) - `$ ant beta:sessions:resources list`
-- [Api Cli Beta Sessions Resources Retrieve 74318Ee3Fe](Other/api-cli-beta-sessions-resources-retrieve-74318ee3fe.md) - `$ ant beta:sessions:resources retrieve`
-- [Api Cli Beta Sessions Resources Update A532E65D2D](Other/api-cli-beta-sessions-resources-update-a532e65d2d.md) - `$ ant beta:sessions:resources update`
-- [Api Cli Beta Sessions Retrieve Ad471Ee9Af](Other/api-cli-beta-sessions-retrieve-ad471ee9af.md) - `$ ant beta:sessions retrieve`
-- [Api Cli Beta Sessions Update 729Cfb594F](Other/api-cli-beta-sessions-update-729cfb594f.md) - `$ ant beta:sessions update`
-- [Skills](Other/api-cli-beta-skills-6f5dd1254e.md) - `$ ant beta:skills create`
-- [Api Cli Beta Skills Create Cca94E3Dae](Other/api-cli-beta-skills-create-cca94e3dae.md) - `$ ant beta:skills create`
-- [Api Cli Beta Skills Delete 504871Ca40](Other/api-cli-beta-skills-delete-504871ca40.md) - `$ ant beta:skills delete`
-- [Api Cli Beta Skills List 8F25A728C0](Other/api-cli-beta-skills-list-8f25a728c0.md) - `$ ant beta:skills list`
-- [Api Cli Beta Skills Retrieve F0D1D64D56](Other/api-cli-beta-skills-retrieve-f0d1d64d56.md) - `$ ant beta:skills retrieve`
-- [Versions](Other/api-cli-beta-skills-versions-9f0e17a5ba.md) - `$ ant beta:skills:versions create`
-- [Api Cli Beta Skills Versions Create 3E91A54C1F](Other/api-cli-beta-skills-versions-create-3e91a54c1f.md) - `$ ant beta:skills:versions create`
-- [Api Cli Beta Skills Versions Delete 75496Fd34D](Other/api-cli-beta-skills-versions-delete-75496fd34d.md) - `$ ant beta:skills:versions delete`
-- [Api Cli Beta Skills Versions List Ed1A396D96](Other/api-cli-beta-skills-versions-list-ed1a396d96.md) - `$ ant beta:skills:versions list`
-- [Api Cli Beta Skills Versions Retrieve 494Dfec345](Other/api-cli-beta-skills-versions-retrieve-494dfec345.md) - `$ ant beta:skills:versions retrieve`
-- [Vaults](Other/api-cli-beta-vaults-7a5a41367b.md) - `$ ant beta:vaults create`
-- [Api Cli Beta Vaults Archive Fb33B123F3](Other/api-cli-beta-vaults-archive-fb33b123f3.md) - `$ ant beta:vaults archive`
-- [Api Cli Beta Vaults Create 1E8D3Ee392](Other/api-cli-beta-vaults-create-1e8d3ee392.md) - `$ ant beta:vaults create`
-- [Api Cli Beta Vaults Credentials Archive F0Deab75D3](Other/api-cli-beta-vaults-credentials-archive-f0deab75d3.md) - `$ ant beta:vaults:credentials archive`
-- [Api Cli Beta Vaults Credentials Create 2279663D5A](Other/api-cli-beta-vaults-credentials-create-2279663d5a.md) - `$ ant beta:vaults:credentials create`
-- [Api Cli Beta Vaults Credentials Delete 9B8D5C30F3](Other/api-cli-beta-vaults-credentials-delete-9b8d5c30f3.md) - `$ ant beta:vaults:credentials delete`
-- [Credentials](Other/api-cli-beta-vaults-credentials-f49e2b3e4e.md) - `$ ant beta:vaults:credentials create`
-- [Api Cli Beta Vaults Credentials List Fac330D176](Other/api-cli-beta-vaults-credentials-list-fac330d176.md) - `$ ant beta:vaults:credentials list`
-- [Api Cli Beta Vaults Credentials Retrieve 199B5E8B19](Other/api-cli-beta-vaults-credentials-retrieve-199b5e8b19.md) - `$ ant beta:vaults:credentials retrieve`
-- [Api Cli Beta Vaults Credentials Update 5A003A3913](Other/api-cli-beta-vaults-credentials-update-5a003a3913.md) - `$ ant beta:vaults:credentials update`
-- [Api Cli Beta Vaults Delete Fc20C485B6](Other/api-cli-beta-vaults-delete-fc20c485b6.md) - `$ ant beta:vaults delete`
-- [Api Cli Beta Vaults List 13D2Dea190](Other/api-cli-beta-vaults-list-13d2dea190.md) - `$ ant beta:vaults list`
-- [Api Cli Beta Vaults Retrieve 8Bb9D888A5](Other/api-cli-beta-vaults-retrieve-8bb9d888a5.md) - `$ ant beta:vaults retrieve`
-- [Api Cli Beta Vaults Update 146F123E81](Other/api-cli-beta-vaults-update-146f123e81.md) - `$ ant beta:vaults update`
-- [Completions](Other/api-cli-completions-002a1f33fa.md) - `$ ant completions create`
-- [Api Cli Completions Create D57F3F7Be6](Other/api-cli-completions-create-d57f3f7be6.md) - `$ ant completions create`
-- [Messages](Other/api-cli-messages-20f70ae0c1.md) - `$ ant messages create`
-- [Api Cli Messages Batches Cancel 55B7749055](Other/api-cli-messages-batches-cancel-55b7749055.md) - `$ ant messages:batches cancel`
-- [Api Cli Messages Batches Create 8944E8B544](Other/api-cli-messages-batches-create-8944e8b544.md) - `$ ant messages:batches create`
-- [Api Cli Messages Batches Delete 7668B24B94](Other/api-cli-messages-batches-delete-7668b24b94.md) - `$ ant messages:batches delete`
-- [Batches](Other/api-cli-messages-batches-f633ea8244.md) - `$ ant messages:batches create`
-- [Api Cli Messages Batches List F900790450](Other/api-cli-messages-batches-list-f900790450.md) - `$ ant messages:batches list`
-- [Api Cli Messages Batches Results 3A91A8964E](Other/api-cli-messages-batches-results-3a91a8964e.md) - `$ ant messages:batches results`
-- [Api Cli Messages Batches Retrieve 0Cba952F88](Other/api-cli-messages-batches-retrieve-0cba952f88.md) - `$ ant messages:batches retrieve`
-- [Api Cli Messages Count Tokens 417Eec1417](Other/api-cli-messages-count-tokens-417eec1417.md) - `$ ant messages count-tokens`
-- [Api Cli Messages Create 0A922Ab2C1](Other/api-cli-messages-create-0a922ab2c1.md) - `$ ant messages create`
-- [Client SDKs](Other/api-client-sdks-ab34496e4f.md) - Official SDKs for building with the Claude API in Python, TypeScript, Java, Go, Ruby, C#, PHP, and the command line.
-- [Api Completions Create 2Fba139F24](Other/api-completions-create-2fba139f24.md) - **post** `/v1/complete`
-- [Create a Text Completion - Claude API Reference](Other/api-completions-create-d4197f248b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Completions](Other/api-completions-e6fced0efa.md) - **post** `/v1/complete`
-- [Completions - Claude API Reference](Other/api-completions-eea01eb6c9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Compliance API - Claude API Reference](Other/api-compliance-99526132b4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Activities - Claude API Reference](Other/api-compliance-activities-f5c1d0b8cd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Query compliance activities - Claude API Reference](Other/api-compliance-activities-list-329bbb7795.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Artifacts - Claude API Reference](Other/api-compliance-apps-artifacts-7f806e87b4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Download artifact content - Claude API Reference](Other/api-compliance-apps-artifacts-download-4b1d73e531.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get artifact metadata - Claude API Reference](Other/api-compliance-apps-artifacts-retrieve-1380eddd8c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Apps - Claude API Reference](Other/api-compliance-apps-c0d96a3ba8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Chats - Claude API Reference](Other/api-compliance-apps-chats-20f574f745.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete chat - Claude API Reference](Other/api-compliance-apps-chats-delete-2598c63764.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete file - Claude API Reference](Other/api-compliance-apps-chats-files-delete-93e3f176c7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Download file content - Claude API Reference](Other/api-compliance-apps-chats-files-download-4e3e9f4673.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Files - Claude API Reference](Other/api-compliance-apps-chats-files-ef6579c813.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get file metadata - Claude API Reference](Other/api-compliance-apps-chats-files-retrieve-a7ee3ca22a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Generated Files - Claude API Reference](Other/api-compliance-apps-chats-generated-files-026307900e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Download a Claude-generated file - Claude API Reference](Other/api-compliance-apps-chats-generated-files-download-cfee2d189f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Claude-generated file metadata - Claude API Reference](Other/api-compliance-apps-chats-generated-files-retrieve-da162aa39b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List chats - Claude API Reference](Other/api-compliance-apps-chats-list-33efa7ad1a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Messages - Claude API Reference](Other/api-compliance-apps-chats-messages-40b77c0fd4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get chat messages - Claude API Reference](Other/api-compliance-apps-chats-messages-list-ac07acbc5b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Attachments - Claude API Reference](Other/api-compliance-apps-projects-attachments-f8416ecc84.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List project attachments - Claude API Reference](Other/api-compliance-apps-projects-attachments-list-d945a21be7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Collaborators - Claude API Reference](Other/api-compliance-apps-projects-collaborators-0be2014ac1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List project collaborators - Claude API Reference](Other/api-compliance-apps-projects-collaborators-list-109b0c2cf7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete project - Claude API Reference](Other/api-compliance-apps-projects-delete-c7a0b68298.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Documents - Claude API Reference](Other/api-compliance-apps-projects-documents-1281f9fc6a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete project document - Claude API Reference](Other/api-compliance-apps-projects-documents-delete-0cae89cd4b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get project document metadata - Claude API Reference](Other/api-compliance-apps-projects-documents-metadata-e42facfe93.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get project document content - Claude API Reference](Other/api-compliance-apps-projects-documents-retrieve-a37d433157.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Projects - Claude API Reference](Other/api-compliance-apps-projects-fe6492f5e5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List projects - Claude API Reference](Other/api-compliance-apps-projects-list-0c003847a8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get project details - Claude API Reference](Other/api-compliance-apps-projects-retrieve-296c320e37.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Sessions - Claude API Reference](Other/api-compliance-apps-sessions-2f16e98649.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Local - Claude API Reference](Other/api-compliance-apps-sessions-local-026660853b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List local sessions - Claude API Reference](Other/api-compliance-apps-sessions-local-list-8308a0b8e0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Messages - Claude API Reference](Other/api-compliance-apps-sessions-local-messages-8d8d0bc5a3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Retrieve local session messages - Claude API Reference](Other/api-compliance-apps-sessions-local-messages-list-fe55dde2b9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Retrieve a local session - Claude API Reference](Other/api-compliance-apps-sessions-local-retrieve-5f1ae60908.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Remote - Claude API Reference](Other/api-compliance-apps-sessions-remote-8ab9f36b83.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List remote sessions - Claude API Reference](Other/api-compliance-apps-sessions-remote-list-e6720f4d9f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Messages - Claude API Reference](Other/api-compliance-apps-sessions-remote-messages-4c967b934f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Retrieve remote session messages - Claude API Reference](Other/api-compliance-apps-sessions-remote-messages-list-bcbe330fb4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Artifacts - Claude API Reference](Other/api-compliance-code-artifacts-4a5df4ce87.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete Code Artifact - Claude API Reference](Other/api-compliance-code-artifacts-delete-4e6f24d485.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Code Artifacts - Claude API Reference](Other/api-compliance-code-artifacts-list-da65e93fec.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Download Code Artifact Version Content - Claude API Reference](Other/api-compliance-code-artifacts-retrieve-version-447dda8a8d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Code - Claude API Reference](Other/api-compliance-code-c79254061d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Groups - Claude API Reference](Other/api-compliance-groups-4f4664bfb3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Compliance Groups - Claude API Reference](Other/api-compliance-groups-list-d7bd4e4976.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Members - Claude API Reference](Other/api-compliance-groups-members-035070f623.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Compliance Group Members - Claude API Reference](Other/api-compliance-groups-members-list-43c6dc6223.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Compliance Group - Claude API Reference](Other/api-compliance-groups-retrieve-ce1171ba7b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Organizations - Claude API Reference](Other/api-compliance-organizations-f6be733317.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List organizations - Claude API Reference](Other/api-compliance-organizations-list-4ccad4d475.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Roles - Claude API Reference](Other/api-compliance-organizations-roles-724bbd550b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Compliance Roles - Claude API Reference](Other/api-compliance-organizations-roles-list-da9233ce3b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Permissions - Claude API Reference](Other/api-compliance-organizations-roles-permissions-e0153edf76.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Compliance Role Permissions - Claude API Reference](Other/api-compliance-organizations-roles-permissions-list-419636b106.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Compliance Role - Claude API Reference](Other/api-compliance-organizations-roles-retrieve-a072358b68.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Settings - Claude API Reference](Other/api-compliance-organizations-settings-b4db23c2cc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get effective organization settings - Claude API Reference](Other/api-compliance-organizations-settings-retrieve-a34a00700d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Users - Claude API Reference](Other/api-compliance-organizations-users-0a58fddc28.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List organization users - Claude API Reference](Other/api-compliance-organizations-users-list-bbc00d83e1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Beta](Other/api-csharp-beta-65d62c7c4f.md) - - `class BetaApiError:`
-- [Agents](Other/api-csharp-beta-agents-0b1932777f.md) - `BetaManagedAgentsAgent Beta.Agents.Create(AgentCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Agents Archive 381F76D3Eb](Other/api-csharp-beta-agents-archive-381f76d3eb.md) - `BetaManagedAgentsAgent Beta.Agents.Archive(AgentArchiveParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Agents Create 01C1A87Fb7](Other/api-csharp-beta-agents-create-01c1a87fb7.md) - `BetaManagedAgentsAgent Beta.Agents.Create(AgentCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Agents Delete 4103306683](Other/api-csharp-beta-agents-delete-4103306683.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Csharp Beta Agents List Def82571Ee](Other/api-csharp-beta-agents-list-def82571ee.md) - `AgentListPageResponse Beta.Agents.List(AgentListParams?parameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Agents Retrieve C0D2Ce1Ffa](Other/api-csharp-beta-agents-retrieve-c0d2ce1ffa.md) - `BetaManagedAgentsAgent Beta.Agents.Retrieve(AgentRetrieveParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Agents Update 5F4F9A510D](Other/api-csharp-beta-agents-update-5f4f9a510d.md) - `BetaManagedAgentsAgent Beta.Agents.Update(AgentUpdateParamsparameters, CancellationTokencancellationToken = default)`
-- [Versions](Other/api-csharp-beta-agents-versions-61dbc3c519.md) - `VersionListPageResponse Beta.Agents.Versions.List(VersionListParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Agents Versions List B268578C89](Other/api-csharp-beta-agents-versions-list-b268578c89.md) - `VersionListPageResponse Beta.Agents.Versions.List(VersionListParamsparameters, CancellationTokencancellationToken = default)`
-- [Environments](Other/api-csharp-beta-environments-4c97e311fa.md) - `BetaEnvironment Beta.Environments.Create(EnvironmentCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Environments Archive 514760Ec61](Other/api-csharp-beta-environments-archive-514760ec61.md) - `BetaEnvironment Beta.Environments.Archive(EnvironmentArchiveParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Environments Create 002C4450D0](Other/api-csharp-beta-environments-create-002c4450d0.md) - `BetaEnvironment Beta.Environments.Create(EnvironmentCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Environments Delete 865Ed1Ba63](Other/api-csharp-beta-environments-delete-865ed1ba63.md) - `BetaEnvironmentDeleteResponse Beta.Environments.Delete(EnvironmentDeleteParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Environments List A6F94Be48C](Other/api-csharp-beta-environments-list-a6f94be48c.md) - `EnvironmentListPageResponse Beta.Environments.List(EnvironmentListParams?parameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Environments Retrieve 233Ce78E16](Other/api-csharp-beta-environments-retrieve-233ce78e16.md) - `BetaEnvironment Beta.Environments.Retrieve(EnvironmentRetrieveParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Environments Update 54F047Fda8](Other/api-csharp-beta-environments-update-54f047fda8.md) - `BetaEnvironment Beta.Environments.Update(EnvironmentUpdateParamsparameters, CancellationTokencancellationToken = default)`
-- [Files](Other/api-csharp-beta-files-554f57a16f.md) - `FileMetadata Beta.Files.Upload(FileUploadParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Files Delete Afce14644F](Other/api-csharp-beta-files-delete-afce14644f.md) - `DeletedFile Beta.Files.Delete(FileDeleteParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Files Download 29Cf3E5Cbb](Other/api-csharp-beta-files-download-29cf3e5cbb.md) - `HttpResponse Beta.Files.Download(FileDownloadParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Files List 624A3B1F5E](Other/api-csharp-beta-files-list-624a3b1f5e.md) - `FileListPageResponse Beta.Files.List(FileListParams?parameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Files Retrieve Metadata 030B4Ba679](Other/api-csharp-beta-files-retrieve-metadata-030b4ba679.md) - `FileMetadata Beta.Files.RetrieveMetadata(FileRetrieveMetadataParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Files Upload 78185274B4](Other/api-csharp-beta-files-upload-78185274b4.md) - `FileMetadata Beta.Files.Upload(FileUploadParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Memory Stores Archive 1743C0Ce8B](Other/api-csharp-beta-memory-stores-archive-1743c0ce8b.md) - `BetaManagedAgentsMemoryStore Beta.MemoryStores.Archive(MemoryStoreArchiveParamsparameters, CancellationTokencancellationToken = default)`
-- [Memory Stores](Other/api-csharp-beta-memory-stores-ccc3cc3b7c.md) - `BetaManagedAgentsMemoryStore Beta.MemoryStores.Create(MemoryStoreCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Memory Stores Create 8D6Ae06090](Other/api-csharp-beta-memory-stores-create-8d6ae06090.md) - `BetaManagedAgentsMemoryStore Beta.MemoryStores.Create(MemoryStoreCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Memory Stores Delete 1B99F1826A](Other/api-csharp-beta-memory-stores-delete-1b99f1826a.md) - `BetaManagedAgentsDeletedMemoryStore Beta.MemoryStores.Delete(MemoryStoreDeleteParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Memory Stores List Dbfc0Ef5E5](Other/api-csharp-beta-memory-stores-list-dbfc0ef5e5.md) - `MemoryStoreListPageResponse Beta.MemoryStores.List(MemoryStoreListParams?parameters, CancellationTokencancellationToken = default)`
-- [Memories](Other/api-csharp-beta-memory-stores-memories-764aeb951b.md) - `BetaManagedAgentsMemory Beta.MemoryStores.Memories.Create(MemoryCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Memory Stores Memories Create 2D5B31Becb](Other/api-csharp-beta-memory-stores-memories-create-2d5b31becb.md) - `BetaManagedAgentsMemory Beta.MemoryStores.Memories.Create(MemoryCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Memory Stores Memories Delete F016333318](Other/api-csharp-beta-memory-stores-memories-delete-f016333318.md) - `BetaManagedAgentsDeletedMemory Beta.MemoryStores.Memories.Delete(MemoryDeleteParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Memory Stores Memories List 78E885A97A](Other/api-csharp-beta-memory-stores-memories-list-78e885a97a.md) - `MemoryListPageResponse Beta.MemoryStores.Memories.List(MemoryListParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Memory Stores Memories Retrieve 176Fc3000D](Other/api-csharp-beta-memory-stores-memories-retrieve-176fc3000d.md) - `BetaManagedAgentsMemory Beta.MemoryStores.Memories.Retrieve(MemoryRetrieveParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Memory Stores Memories Update Dc61C150B8](Other/api-csharp-beta-memory-stores-memories-update-dc61c150b8.md) - `BetaManagedAgentsMemory Beta.MemoryStores.Memories.Update(MemoryUpdateParamsparameters, CancellationTokencancellationToken = default)`
-- [Memory Versions](Other/api-csharp-beta-memory-stores-memory-versions-44d855c929.md) - `MemoryVersionListPageResponse Beta.MemoryStores.MemoryVersions.List(MemoryVersionListParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Memory Stores Memory Versions List 7360D4F114](Other/api-csharp-beta-memory-stores-memory-versions-list-7360d4f114.md) - `MemoryVersionListPageResponse Beta.MemoryStores.MemoryVersions.List(MemoryVersionListParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Memory Stores Memory Versions Redact 72E8C8D171](Other/api-csharp-beta-memory-stores-memory-versions-redact-72e8c8d171.md) - `BetaManagedAgentsMemoryVersion Beta.MemoryStores.MemoryVersions.Redact(MemoryVersionRedactParamsparameters, CancellationTokencancellationToken = defa
-- [Api Csharp Beta Memory Stores Memory Versions Retrieve 99397E186A](Other/api-csharp-beta-memory-stores-memory-versions-retrieve-99397e186a.md) - `BetaManagedAgentsMemoryVersion Beta.MemoryStores.MemoryVersions.Retrieve(MemoryVersionRetrieveParamsparameters, CancellationTokencancellationToken = 
-- [Api Csharp Beta Memory Stores Retrieve 3Bd4D5776C](Other/api-csharp-beta-memory-stores-retrieve-3bd4d5776c.md) - `BetaManagedAgentsMemoryStore Beta.MemoryStores.Retrieve(MemoryStoreRetrieveParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Memory Stores Update E3C6Bea620](Other/api-csharp-beta-memory-stores-update-e3c6bea620.md) - `BetaManagedAgentsMemoryStore Beta.MemoryStores.Update(MemoryStoreUpdateParamsparameters, CancellationTokencancellationToken = default)`
-- [Messages](Other/api-csharp-beta-messages-8c1207ba82.md) - `BetaMessage Beta.Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Batches](Other/api-csharp-beta-messages-batches-66e2675131.md) - `BetaMessageBatch Beta.Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Messages Batches Cancel 5A196D3339](Other/api-csharp-beta-messages-batches-cancel-5a196d3339.md) - `BetaMessageBatch Beta.Messages.Batches.Cancel(BatchCancelParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Messages Batches Create 143C1Be65B](Other/api-csharp-beta-messages-batches-create-143c1be65b.md) - `BetaMessageBatch Beta.Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Messages Batches Delete B2A113B2Cd](Other/api-csharp-beta-messages-batches-delete-b2a113b2cd.md) - `BetaDeletedMessageBatch Beta.Messages.Batches.Delete(BatchDeleteParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Messages Batches List Ec9259Dae9](Other/api-csharp-beta-messages-batches-list-ec9259dae9.md) - `BatchListPageResponse Beta.Messages.Batches.List(BatchListParams?parameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Messages Batches Results 24Fd381E2A](Other/api-csharp-beta-messages-batches-results-24fd381e2a.md) - `BetaMessageBatchIndividualResponse Beta.Messages.Batches.ResultsStreaming(BatchResultsParamsparameters, CancellationTokencancellationToken = default)
-- [Api Csharp Beta Messages Batches Retrieve 2F9Fe9066D](Other/api-csharp-beta-messages-batches-retrieve-2f9fe9066d.md) - `BetaMessageBatch Beta.Messages.Batches.Retrieve(BatchRetrieveParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Messages Count Tokens 9E3B2F1A28](Other/api-csharp-beta-messages-count-tokens-9e3b2f1a28.md) - `BetaMessageTokensCount Beta.Messages.CountTokens(MessageCountTokensParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Messages Create 359E2A44D1](Other/api-csharp-beta-messages-create-359e2a44d1.md) - `BetaMessage Beta.Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Sessions](Other/api-csharp-beta-sessions-20b7be78ba.md) - `BetaManagedAgentsSession Beta.Sessions.Create(SessionCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Sessions Archive 41A2Ee3346](Other/api-csharp-beta-sessions-archive-41a2ee3346.md) - `BetaManagedAgentsSession Beta.Sessions.Archive(SessionArchiveParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Sessions Create 4Edc1911Ea](Other/api-csharp-beta-sessions-create-4edc1911ea.md) - `BetaManagedAgentsSession Beta.Sessions.Create(SessionCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Sessions Delete C9Cb18525D](Other/api-csharp-beta-sessions-delete-c9cb18525d.md) - `BetaManagedAgentsDeletedSession Beta.Sessions.Delete(SessionDeleteParamsparameters, CancellationTokencancellationToken = default)`
-- [Events](Other/api-csharp-beta-sessions-events-dce4347bbd.md) - `EventListPageResponse Beta.Sessions.Events.List(EventListParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Sessions Events List 8C391Ec71C](Other/api-csharp-beta-sessions-events-list-8c391ec71c.md) - `EventListPageResponse Beta.Sessions.Events.List(EventListParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Sessions Events Send C804493Fce](Other/api-csharp-beta-sessions-events-send-c804493fce.md) - `BetaManagedAgentsSendSessionEvents Beta.Sessions.Events.Send(EventSendParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Sessions Events Stream 4E457E0810](Other/api-csharp-beta-sessions-events-stream-4e457e0810.md) - `BetaManagedAgentsStreamSessionEvents Beta.Sessions.Events.StreamStreaming(EventStreamParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Sessions List 9Eadfdbd0A](Other/api-csharp-beta-sessions-list-9eadfdbd0a.md) - `SessionListPageResponse Beta.Sessions.List(SessionListParams?parameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Sessions Resources Add Cd133F8C06](Other/api-csharp-beta-sessions-resources-add-cd133f8c06.md) - `BetaManagedAgentsFileResource Beta.Sessions.Resources.Add(ResourceAddParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Sessions Resources Delete 1B83A320B8](Other/api-csharp-beta-sessions-resources-delete-1b83a320b8.md) - `BetaManagedAgentsDeleteSessionResource Beta.Sessions.Resources.Delete(ResourceDeleteParamsparameters, CancellationTokencancellationToken = default)`
-- [Resources](Other/api-csharp-beta-sessions-resources-e3bbdfdd3d.md) - `BetaManagedAgentsFileResource Beta.Sessions.Resources.Add(ResourceAddParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Sessions Resources List 3267218A00](Other/api-csharp-beta-sessions-resources-list-3267218a00.md) - `ResourceListPageResponse Beta.Sessions.Resources.List(ResourceListParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Sessions Resources Retrieve 571E3Bf798](Other/api-csharp-beta-sessions-resources-retrieve-571e3bf798.md) - `ResourceRetrieveResponse Beta.Sessions.Resources.Retrieve(ResourceRetrieveParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Sessions Resources Update 6C51Ca09C3](Other/api-csharp-beta-sessions-resources-update-6c51ca09c3.md) - `ResourceUpdateResponse Beta.Sessions.Resources.Update(ResourceUpdateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Sessions Retrieve Ef5Ca01706](Other/api-csharp-beta-sessions-retrieve-ef5ca01706.md) - `BetaManagedAgentsSession Beta.Sessions.Retrieve(SessionRetrieveParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Sessions Update Fbb654A179](Other/api-csharp-beta-sessions-update-fbb654a179.md) - `BetaManagedAgentsSession Beta.Sessions.Update(SessionUpdateParamsparameters, CancellationTokencancellationToken = default)`
-- [Skills](Other/api-csharp-beta-skills-63d55f1e2b.md) - `SkillCreateResponse Beta.Skills.Create(SkillCreateParams?parameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Skills Create A142405305](Other/api-csharp-beta-skills-create-a142405305.md) - `SkillCreateResponse Beta.Skills.Create(SkillCreateParams?parameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Skills Delete 6A4D2910D7](Other/api-csharp-beta-skills-delete-6a4d2910d7.md) - `SkillDeleteResponse Beta.Skills.Delete(SkillDeleteParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Skills List 03Ab0Ff502](Other/api-csharp-beta-skills-list-03ab0ff502.md) - `SkillListPageResponse Beta.Skills.List(SkillListParams?parameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Skills Retrieve Ed2Cb031E1](Other/api-csharp-beta-skills-retrieve-ed2cb031e1.md) - `SkillRetrieveResponse Beta.Skills.Retrieve(SkillRetrieveParamsparameters, CancellationTokencancellationToken = default)`
-- [Versions](Other/api-csharp-beta-skills-versions-759348427a.md) - `VersionCreateResponse Beta.Skills.Versions.Create(VersionCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Skills Versions Create 226A964440](Other/api-csharp-beta-skills-versions-create-226a964440.md) - `VersionCreateResponse Beta.Skills.Versions.Create(VersionCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Skills Versions Delete Be409658De](Other/api-csharp-beta-skills-versions-delete-be409658de.md) - `VersionDeleteResponse Beta.Skills.Versions.Delete(VersionDeleteParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Skills Versions List E9Fa957F1B](Other/api-csharp-beta-skills-versions-list-e9fa957f1b.md) - `VersionListPageResponse Beta.Skills.Versions.List(VersionListParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Skills Versions Retrieve C1F3Be777A](Other/api-csharp-beta-skills-versions-retrieve-c1f3be777a.md) - `VersionRetrieveResponse Beta.Skills.Versions.Retrieve(VersionRetrieveParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Vaults Archive E4E3E5C79D](Other/api-csharp-beta-vaults-archive-e4e3e5c79d.md) - `BetaManagedAgentsVault Beta.Vaults.Archive(VaultArchiveParamsparameters, CancellationTokencancellationToken = default)`
-- [Vaults](Other/api-csharp-beta-vaults-b790b9d98d.md) - `BetaManagedAgentsVault Beta.Vaults.Create(VaultCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Vaults Create 808Baa7268](Other/api-csharp-beta-vaults-create-808baa7268.md) - `BetaManagedAgentsVault Beta.Vaults.Create(VaultCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Credentials](Other/api-csharp-beta-vaults-credentials-207278a17a.md) - `BetaManagedAgentsCredential Beta.Vaults.Credentials.Create(CredentialCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Vaults Credentials Archive C4Ddcdfde0](Other/api-csharp-beta-vaults-credentials-archive-c4ddcdfde0.md) - `BetaManagedAgentsCredential Beta.Vaults.Credentials.Archive(CredentialArchiveParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Vaults Credentials Create 73D1F807E5](Other/api-csharp-beta-vaults-credentials-create-73d1f807e5.md) - `BetaManagedAgentsCredential Beta.Vaults.Credentials.Create(CredentialCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Vaults Credentials Delete C3Cfcc1A34](Other/api-csharp-beta-vaults-credentials-delete-c3cfcc1a34.md) - `BetaManagedAgentsDeletedCredential Beta.Vaults.Credentials.Delete(CredentialDeleteParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Vaults Credentials List 3Fb5A98E3A](Other/api-csharp-beta-vaults-credentials-list-3fb5a98e3a.md) - `CredentialListPageResponse Beta.Vaults.Credentials.List(CredentialListParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Vaults Credentials Retrieve 67Ba746Eb0](Other/api-csharp-beta-vaults-credentials-retrieve-67ba746eb0.md) - `BetaManagedAgentsCredential Beta.Vaults.Credentials.Retrieve(CredentialRetrieveParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Vaults Credentials Update 0B296A685D](Other/api-csharp-beta-vaults-credentials-update-0b296a685d.md) - `BetaManagedAgentsCredential Beta.Vaults.Credentials.Update(CredentialUpdateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Vaults Delete 1E29335De0](Other/api-csharp-beta-vaults-delete-1e29335de0.md) - `BetaManagedAgentsDeletedVault Beta.Vaults.Delete(VaultDeleteParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Vaults List 3764763C58](Other/api-csharp-beta-vaults-list-3764763c58.md) - `VaultListPageResponse Beta.Vaults.List(VaultListParams?parameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Vaults Retrieve Acaf159F14](Other/api-csharp-beta-vaults-retrieve-acaf159f14.md) - `BetaManagedAgentsVault Beta.Vaults.Retrieve(VaultRetrieveParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Vaults Update E1A4F735Ea](Other/api-csharp-beta-vaults-update-e1a4f735ea.md) - `BetaManagedAgentsVault Beta.Vaults.Update(VaultUpdateParamsparameters, CancellationTokencancellationToken = default)`
-- [Completions](Other/api-csharp-completions-1755d2314a.md)
-- [Api Csharp Completions Create 8F22Aefc25](Other/api-csharp-completions-create-8f22aefc25.md) - The method `create` is not available in this language.
-- [Batches](Other/api-csharp-messages-batches-8821554a6b.md) - `MessageBatch Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Messages Batches Cancel De247760E6](Other/api-csharp-messages-batches-cancel-de247760e6.md) - `MessageBatch Messages.Batches.Cancel(BatchCancelParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Messages Batches Create 33Cc6413A7](Other/api-csharp-messages-batches-create-33cc6413a7.md) - `MessageBatch Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Messages Batches Delete D4B8Ec3C41](Other/api-csharp-messages-batches-delete-d4b8ec3c41.md) - `DeletedMessageBatch Messages.Batches.Delete(BatchDeleteParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Messages Batches List Bfba1Ed1A3](Other/api-csharp-messages-batches-list-bfba1ed1a3.md) - `BatchListPageResponse Messages.Batches.List(BatchListParams?parameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Messages Batches Results 7A022B465D](Other/api-csharp-messages-batches-results-7a022b465d.md) - `MessageBatchIndividualResponse Messages.Batches.ResultsStreaming(BatchResultsParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Messages Batches Retrieve 33403C909C](Other/api-csharp-messages-batches-retrieve-33403c909c.md) - `MessageBatch Messages.Batches.Retrieve(BatchRetrieveParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Messages Count Tokens A7596F297A](Other/api-csharp-messages-count-tokens-a7596f297a.md) - `MessageTokensCount Messages.CountTokens(MessageCountTokensParamsparameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Messages Create Eaf90Cec85](Other/api-csharp-messages-create-eaf90cec85.md) - `Message Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Messages](Other/api-csharp-messages-decc83c8c4.md) - `Message Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)`
-- [Claude API errors - Claude Platform Docs](Other/api-errors-854b88aad1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Errors](Other/api-errors-90b9605eae.md)
-- [Files - Claude API Reference](Other/api-files-b064c21aab.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete File - Claude API Reference](Other/api-files-delete-d11985eb47.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Download File - Claude API Reference](Other/api-files-download-1fe96ee61c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Files - Claude API Reference](Other/api-files-list-cbb23c4177.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get File Metadata - Claude API Reference](Other/api-files-retrieve-metadata-5d496303ef.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Upload File - Claude API Reference](Other/api-files-upload-17c0093d30.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Beta](Other/api-go-beta-471060c5d8.md) - - `type AnthropicBeta interface{…}`
-- [Api Go Beta Agents Archive 02E29E82A4](Other/api-go-beta-agents-archive-02e29e82a4.md) - `client.Beta.Agents.Archive(ctx, agentID, body) (*BetaManagedAgentsAgent, error)`
-- [Api Go Beta Agents Create 176F1A0D3A](Other/api-go-beta-agents-create-176f1a0d3a.md) - `client.Beta.Agents.New(ctx, params) (*BetaManagedAgentsAgent, error)`
-- [Agents](Other/api-go-beta-agents-dcc4a1e953.md) - `client.Beta.Agents.New(ctx, params) (*BetaManagedAgentsAgent, error)`
-- [Api Go Beta Agents Delete B728Fbc13A](Other/api-go-beta-agents-delete-b728fbc13a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Go Beta Agents List F1F01F2316](Other/api-go-beta-agents-list-f1f01f2316.md) - `client.Beta.Agents.List(ctx, params) (*PageCursor[BetaManagedAgentsAgent], error)`
-- [Api Go Beta Agents Retrieve 951999E9A9](Other/api-go-beta-agents-retrieve-951999e9a9.md) - `client.Beta.Agents.Get(ctx, agentID, params) (*BetaManagedAgentsAgent, error)`
-- [Api Go Beta Agents Update 6568Eb536B](Other/api-go-beta-agents-update-6568eb536b.md) - `client.Beta.Agents.Update(ctx, agentID, params) (*BetaManagedAgentsAgent, error)`
-- [Versions](Other/api-go-beta-agents-versions-c32f32de14.md) - `client.Beta.Agents.Versions.List(ctx, agentID, params) (*PageCursor[BetaManagedAgentsAgent], error)`
-- [Api Go Beta Agents Versions List Be9505Cb7D](Other/api-go-beta-agents-versions-list-be9505cb7d.md) - `client.Beta.Agents.Versions.List(ctx, agentID, params) (*PageCursor[BetaManagedAgentsAgent], error)`
-- [Api Go Beta Environments Archive 1Ed0Ca3308](Other/api-go-beta-environments-archive-1ed0ca3308.md) - `client.Beta.Environments.Archive(ctx, environmentID, body) (*BetaEnvironment, error)`
-- [Api Go Beta Environments Create 216Ef91726](Other/api-go-beta-environments-create-216ef91726.md) - `client.Beta.Environments.New(ctx, params) (*BetaEnvironment, error)`
-- [Api Go Beta Environments Delete D582C9610C](Other/api-go-beta-environments-delete-d582c9610c.md) - `client.Beta.Environments.Delete(ctx, environmentID, body) (*BetaEnvironmentDeleteResponse, error)`
-- [Environments](Other/api-go-beta-environments-e5226192f7.md) - `client.Beta.Environments.New(ctx, params) (*BetaEnvironment, error)`
-- [Api Go Beta Environments List 68B407142F](Other/api-go-beta-environments-list-68b407142f.md) - `client.Beta.Environments.List(ctx, params) (*PageCursor[BetaEnvironment], error)`
-- [Api Go Beta Environments Retrieve A752Ca3B02](Other/api-go-beta-environments-retrieve-a752ca3b02.md) - `client.Beta.Environments.Get(ctx, environmentID, query) (*BetaEnvironment, error)`
-- [Api Go Beta Environments Update 74Aa27Ef26](Other/api-go-beta-environments-update-74aa27ef26.md) - `client.Beta.Environments.Update(ctx, environmentID, params) (*BetaEnvironment, error)`
-- [Api Go Beta Files Delete 0A7B2732B7](Other/api-go-beta-files-delete-0a7b2732b7.md) - `client.Beta.Files.Delete(ctx, fileID, body) (*DeletedFile, error)`
-- [Api Go Beta Files Download B668832E53](Other/api-go-beta-files-download-b668832e53.md) - `client.Beta.Files.Download(ctx, fileID, query) (*Response, error)`
-- [Files](Other/api-go-beta-files-fe55c30f54.md) - `client.Beta.Files.Upload(ctx, params) (*FileMetadata, error)`
-- [Api Go Beta Files List Ee0Cc52C73](Other/api-go-beta-files-list-ee0cc52c73.md) - `client.Beta.Files.List(ctx, params) (*Page[FileMetadata], error)`
-- [Api Go Beta Files Retrieve Metadata 70Ba27Ce87](Other/api-go-beta-files-retrieve-metadata-70ba27ce87.md) - `client.Beta.Files.GetMetadata(ctx, fileID, query) (*FileMetadata, error)`
-- [Api Go Beta Files Upload A9Db62137C](Other/api-go-beta-files-upload-a9db62137c.md) - `client.Beta.Files.Upload(ctx, params) (*FileMetadata, error)`
-- [Memory Stores](Other/api-go-beta-memory-stores-288020e563.md) - `client.Beta.MemoryStores.New(ctx, params) (*BetaManagedAgentsMemoryStore, error)`
-- [Api Go Beta Memory Stores Archive 31B974D8Ba](Other/api-go-beta-memory-stores-archive-31b974d8ba.md) - `client.Beta.MemoryStores.Archive(ctx, memoryStoreID, body) (*BetaManagedAgentsMemoryStore, error)`
-- [Api Go Beta Memory Stores Create F9E5125148](Other/api-go-beta-memory-stores-create-f9e5125148.md) - `client.Beta.MemoryStores.New(ctx, params) (*BetaManagedAgentsMemoryStore, error)`
-- [Api Go Beta Memory Stores Delete 6076C7C179](Other/api-go-beta-memory-stores-delete-6076c7c179.md) - `client.Beta.MemoryStores.Delete(ctx, memoryStoreID, body) (*BetaManagedAgentsDeletedMemoryStore, error)`
-- [Api Go Beta Memory Stores List 8D9Eda4E59](Other/api-go-beta-memory-stores-list-8d9eda4e59.md) - `client.Beta.MemoryStores.List(ctx, params) (*PageCursor[BetaManagedAgentsMemoryStore], error)`
-- [Api Go Beta Memory Stores Memories Create C0178D24A0](Other/api-go-beta-memory-stores-memories-create-c0178d24a0.md) - `client.Beta.MemoryStores.Memories.New(ctx, memoryStoreID, params) (*BetaManagedAgentsMemory, error)`
-- [Memories](Other/api-go-beta-memory-stores-memories-dd6c58a54f.md) - `client.Beta.MemoryStores.Memories.New(ctx, memoryStoreID, params) (*BetaManagedAgentsMemory, error)`
-- [Api Go Beta Memory Stores Memories Delete B2D7D5Abce](Other/api-go-beta-memory-stores-memories-delete-b2d7d5abce.md) - `client.Beta.MemoryStores.Memories.Delete(ctx, memoryID, params) (*BetaManagedAgentsDeletedMemory, error)`
-- [Api Go Beta Memory Stores Memories List F15F5E4Ceb](Other/api-go-beta-memory-stores-memories-list-f15f5e4ceb.md) - `client.Beta.MemoryStores.Memories.List(ctx, memoryStoreID, params) (*PageCursor[BetaManagedAgentsMemoryListItemUnion], error)`
-- [Api Go Beta Memory Stores Memories Retrieve D40A5A8095](Other/api-go-beta-memory-stores-memories-retrieve-d40a5a8095.md) - `client.Beta.MemoryStores.Memories.Get(ctx, memoryID, params) (*BetaManagedAgentsMemory, error)`
-- [Api Go Beta Memory Stores Memories Update 5Cdc1841C8](Other/api-go-beta-memory-stores-memories-update-5cdc1841c8.md) - `client.Beta.MemoryStores.Memories.Update(ctx, memoryID, params) (*BetaManagedAgentsMemory, error)`
-- [Memory Versions](Other/api-go-beta-memory-stores-memory-versions-181a455477.md) - `client.Beta.MemoryStores.MemoryVersions.List(ctx, memoryStoreID, params) (*PageCursor[BetaManagedAgentsMemoryVersion], error)`
-- [Api Go Beta Memory Stores Memory Versions List C736D00Ed4](Other/api-go-beta-memory-stores-memory-versions-list-c736d00ed4.md) - `client.Beta.MemoryStores.MemoryVersions.List(ctx, memoryStoreID, params) (*PageCursor[BetaManagedAgentsMemoryVersion], error)`
-- [Api Go Beta Memory Stores Memory Versions Redact 5E01290F1D](Other/api-go-beta-memory-stores-memory-versions-redact-5e01290f1d.md) - `client.Beta.MemoryStores.MemoryVersions.Redact(ctx, memoryVersionID, params) (*BetaManagedAgentsMemoryVersion, error)`
-- [Api Go Beta Memory Stores Memory Versions Retrieve 344844E937](Other/api-go-beta-memory-stores-memory-versions-retrieve-344844e937.md) - `client.Beta.MemoryStores.MemoryVersions.Get(ctx, memoryVersionID, params) (*BetaManagedAgentsMemoryVersion, error)`
-- [Api Go Beta Memory Stores Retrieve D21B18E652](Other/api-go-beta-memory-stores-retrieve-d21b18e652.md) - `client.Beta.MemoryStores.Get(ctx, memoryStoreID, query) (*BetaManagedAgentsMemoryStore, error)`
-- [Api Go Beta Memory Stores Update 6Fae5C3B80](Other/api-go-beta-memory-stores-update-6fae5c3b80.md) - `client.Beta.MemoryStores.Update(ctx, memoryStoreID, params) (*BetaManagedAgentsMemoryStore, error)`
-- [Messages](Other/api-go-beta-messages-9dbbc9d704.md) - `client.Beta.Messages.New(ctx, params) (*BetaMessage, error)`
-- [Batches](Other/api-go-beta-messages-batches-01a6a53957.md) - `client.Beta.Messages.Batches.New(ctx, params) (*BetaMessageBatch, error)`
-- [Api Go Beta Messages Batches Cancel Be548716Bf](Other/api-go-beta-messages-batches-cancel-be548716bf.md) - `client.Beta.Messages.Batches.Cancel(ctx, messageBatchID, body) (*BetaMessageBatch, error)`
-- [Api Go Beta Messages Batches Create 22Ab4C9E9F](Other/api-go-beta-messages-batches-create-22ab4c9e9f.md) - `client.Beta.Messages.Batches.New(ctx, params) (*BetaMessageBatch, error)`
-- [Api Go Beta Messages Batches Delete C522D24740](Other/api-go-beta-messages-batches-delete-c522d24740.md) - `client.Beta.Messages.Batches.Delete(ctx, messageBatchID, body) (*BetaDeletedMessageBatch, error)`
-- [Api Go Beta Messages Batches List 8C96966647](Other/api-go-beta-messages-batches-list-8c96966647.md) - `client.Beta.Messages.Batches.List(ctx, params) (*Page[BetaMessageBatch], error)`
-- [Api Go Beta Messages Batches Results F78De1Ac13](Other/api-go-beta-messages-batches-results-f78de1ac13.md) - `client.Beta.Messages.Batches.Results(ctx, messageBatchID, query) (*BetaMessageBatchIndividualResponse, error)`
-- [Api Go Beta Messages Batches Retrieve 0C050De13A](Other/api-go-beta-messages-batches-retrieve-0c050de13a.md) - `client.Beta.Messages.Batches.Get(ctx, messageBatchID, query) (*BetaMessageBatch, error)`
-- [Api Go Beta Messages Count Tokens Ef4Ef2095B](Other/api-go-beta-messages-count-tokens-ef4ef2095b.md) - `client.Beta.Messages.CountTokens(ctx, params) (*BetaMessageTokensCount, error)`
-- [Api Go Beta Messages Create 6F03424D72](Other/api-go-beta-messages-create-6f03424d72.md) - `client.Beta.Messages.New(ctx, params) (*BetaMessage, error)`
-- [Api Go Beta Sessions Archive 9Abf2808C4](Other/api-go-beta-sessions-archive-9abf2808c4.md) - `client.Beta.Sessions.Archive(ctx, sessionID, body) (*BetaManagedAgentsSession, error)`
-- [Sessions](Other/api-go-beta-sessions-bbdce5bb0b.md) - `client.Beta.Sessions.New(ctx, params) (*BetaManagedAgentsSession, error)`
-- [Api Go Beta Sessions Create 5501E2375B](Other/api-go-beta-sessions-create-5501e2375b.md) - `client.Beta.Sessions.New(ctx, params) (*BetaManagedAgentsSession, error)`
-- [Api Go Beta Sessions Delete 2C9180Cdf6](Other/api-go-beta-sessions-delete-2c9180cdf6.md) - `client.Beta.Sessions.Delete(ctx, sessionID, body) (*BetaManagedAgentsDeletedSession, error)`
-- [Events](Other/api-go-beta-sessions-events-594b3481fc.md) - `client.Beta.Sessions.Events.List(ctx, sessionID, params) (*PageCursor[BetaManagedAgentsSessionEventUnion], error)`
-- [Api Go Beta Sessions Events List Ab57B29196](Other/api-go-beta-sessions-events-list-ab57b29196.md) - `client.Beta.Sessions.Events.List(ctx, sessionID, params) (*PageCursor[BetaManagedAgentsSessionEventUnion], error)`
-- [Api Go Beta Sessions Events Send 529C2A9D42](Other/api-go-beta-sessions-events-send-529c2a9d42.md) - `client.Beta.Sessions.Events.Send(ctx, sessionID, params) (*BetaManagedAgentsSendSessionEvents, error)`
-- [Api Go Beta Sessions Events Stream Ed88Fb8037](Other/api-go-beta-sessions-events-stream-ed88fb8037.md) - `client.Beta.Sessions.Events.Stream(ctx, sessionID, query) (*BetaManagedAgentsStreamSessionEventsUnion, error)`
-- [Api Go Beta Sessions List E62Ddb3292](Other/api-go-beta-sessions-list-e62ddb3292.md) - `client.Beta.Sessions.List(ctx, params) (*PageCursor[BetaManagedAgentsSession], error)`
-- [Resources](Other/api-go-beta-sessions-resources-27b3c6fee1.md) - `client.Beta.Sessions.Resources.Add(ctx, sessionID, params) (*BetaManagedAgentsFileResource, error)`
-- [Api Go Beta Sessions Resources Add 7B3B48007B](Other/api-go-beta-sessions-resources-add-7b3b48007b.md) - `client.Beta.Sessions.Resources.Add(ctx, sessionID, params) (*BetaManagedAgentsFileResource, error)`
-- [Api Go Beta Sessions Resources Delete E7Aa6591F0](Other/api-go-beta-sessions-resources-delete-e7aa6591f0.md) - `client.Beta.Sessions.Resources.Delete(ctx, resourceID, params) (*BetaManagedAgentsDeleteSessionResource, error)`
-- [Api Go Beta Sessions Resources List Ca62Ee8880](Other/api-go-beta-sessions-resources-list-ca62ee8880.md) - `client.Beta.Sessions.Resources.List(ctx, sessionID, params) (*PageCursor[BetaManagedAgentsSessionResourceUnion], error)`
-- [Api Go Beta Sessions Resources Retrieve 9C215Be9E9](Other/api-go-beta-sessions-resources-retrieve-9c215be9e9.md) - `client.Beta.Sessions.Resources.Get(ctx, resourceID, params) (*BetaSessionResourceGetResponseUnion, error)`
-- [Api Go Beta Sessions Resources Update 14Ecb75C89](Other/api-go-beta-sessions-resources-update-14ecb75c89.md) - `client.Beta.Sessions.Resources.Update(ctx, resourceID, params) (*BetaSessionResourceUpdateResponseUnion, error)`
-- [Api Go Beta Sessions Retrieve 1D297Cfb32](Other/api-go-beta-sessions-retrieve-1d297cfb32.md) - `client.Beta.Sessions.Get(ctx, sessionID, query) (*BetaManagedAgentsSession, error)`
-- [Api Go Beta Sessions Update 5A5713E51A](Other/api-go-beta-sessions-update-5a5713e51a.md) - `client.Beta.Sessions.Update(ctx, sessionID, params) (*BetaManagedAgentsSession, error)`
-- [Skills](Other/api-go-beta-skills-40037cbfea.md) - `client.Beta.Skills.New(ctx, params) (*BetaSkillNewResponse, error)`
-- [Api Go Beta Skills Create 5E2A6B9502](Other/api-go-beta-skills-create-5e2a6b9502.md) - `client.Beta.Skills.New(ctx, params) (*BetaSkillNewResponse, error)`
-- [Api Go Beta Skills Delete Bd1C663D2B](Other/api-go-beta-skills-delete-bd1c663d2b.md) - `client.Beta.Skills.Delete(ctx, skillID, body) (*BetaSkillDeleteResponse, error)`
-- [Api Go Beta Skills List 85E4205Cb7](Other/api-go-beta-skills-list-85e4205cb7.md) - `client.Beta.Skills.List(ctx, params) (*PageCursor[BetaSkillListResponse], error)`
-- [Api Go Beta Skills Retrieve D4B0126139](Other/api-go-beta-skills-retrieve-d4b0126139.md) - `client.Beta.Skills.Get(ctx, skillID, query) (*BetaSkillGetResponse, error)`
-- [Versions](Other/api-go-beta-skills-versions-793af75e69.md) - `client.Beta.Skills.Versions.New(ctx, skillID, params) (*BetaSkillVersionNewResponse, error)`
-- [Api Go Beta Skills Versions Create 369C226De4](Other/api-go-beta-skills-versions-create-369c226de4.md) - `client.Beta.Skills.Versions.New(ctx, skillID, params) (*BetaSkillVersionNewResponse, error)`
-- [Api Go Beta Skills Versions Delete 3E652B2971](Other/api-go-beta-skills-versions-delete-3e652b2971.md) - `client.Beta.Skills.Versions.Delete(ctx, version, params) (*BetaSkillVersionDeleteResponse, error)`
-- [Api Go Beta Skills Versions List A773Ca898E](Other/api-go-beta-skills-versions-list-a773ca898e.md) - `client.Beta.Skills.Versions.List(ctx, skillID, params) (*PageCursor[BetaSkillVersionListResponse], error)`
-- [Api Go Beta Skills Versions Retrieve 45A85980Fd](Other/api-go-beta-skills-versions-retrieve-45a85980fd.md) - `client.Beta.Skills.Versions.Get(ctx, version, params) (*BetaSkillVersionGetResponse, error)`
-- [Vaults](Other/api-go-beta-vaults-0588f773c5.md) - `client.Beta.Vaults.New(ctx, params) (*BetaManagedAgentsVault, error)`
-- [Api Go Beta Vaults Archive 6A019Cf5A3](Other/api-go-beta-vaults-archive-6a019cf5a3.md) - `client.Beta.Vaults.Archive(ctx, vaultID, body) (*BetaManagedAgentsVault, error)`
-- [Api Go Beta Vaults Create 5B083F721C](Other/api-go-beta-vaults-create-5b083f721c.md) - `client.Beta.Vaults.New(ctx, params) (*BetaManagedAgentsVault, error)`
-- [Api Go Beta Vaults Credentials Archive 963A4Cb43D](Other/api-go-beta-vaults-credentials-archive-963a4cb43d.md) - `client.Beta.Vaults.Credentials.Archive(ctx, credentialID, params) (*BetaManagedAgentsCredential, error)`
-- [Api Go Beta Vaults Credentials Create A6Cde5F6F9](Other/api-go-beta-vaults-credentials-create-a6cde5f6f9.md) - `client.Beta.Vaults.Credentials.New(ctx, vaultID, params) (*BetaManagedAgentsCredential, error)`
-- [Credentials](Other/api-go-beta-vaults-credentials-d704fa168a.md) - `client.Beta.Vaults.Credentials.New(ctx, vaultID, params) (*BetaManagedAgentsCredential, error)`
-- [Api Go Beta Vaults Credentials Delete 0Ef8Fb22C0](Other/api-go-beta-vaults-credentials-delete-0ef8fb22c0.md) - `client.Beta.Vaults.Credentials.Delete(ctx, credentialID, params) (*BetaManagedAgentsDeletedCredential, error)`
-- [Api Go Beta Vaults Credentials List 71A51785A2](Other/api-go-beta-vaults-credentials-list-71a51785a2.md) - `client.Beta.Vaults.Credentials.List(ctx, vaultID, params) (*PageCursor[BetaManagedAgentsCredential], error)`
-- [Api Go Beta Vaults Credentials Retrieve C4Ad2Bed33](Other/api-go-beta-vaults-credentials-retrieve-c4ad2bed33.md) - `client.Beta.Vaults.Credentials.Get(ctx, credentialID, params) (*BetaManagedAgentsCredential, error)`
-- [Api Go Beta Vaults Credentials Update 0891534180](Other/api-go-beta-vaults-credentials-update-0891534180.md) - `client.Beta.Vaults.Credentials.Update(ctx, credentialID, params) (*BetaManagedAgentsCredential, error)`
-- [Api Go Beta Vaults Delete 6B82B23251](Other/api-go-beta-vaults-delete-6b82b23251.md) - `client.Beta.Vaults.Delete(ctx, vaultID, body) (*BetaManagedAgentsDeletedVault, error)`
-- [Api Go Beta Vaults List 86Aeb6462C](Other/api-go-beta-vaults-list-86aeb6462c.md) - `client.Beta.Vaults.List(ctx, params) (*PageCursor[BetaManagedAgentsVault], error)`
-- [Api Go Beta Vaults Retrieve A46A416E33](Other/api-go-beta-vaults-retrieve-a46a416e33.md) - `client.Beta.Vaults.Get(ctx, vaultID, query) (*BetaManagedAgentsVault, error)`
-- [Api Go Beta Vaults Update 3532197114](Other/api-go-beta-vaults-update-3532197114.md) - `client.Beta.Vaults.Update(ctx, vaultID, params) (*BetaManagedAgentsVault, error)`
-- [Completions](Other/api-go-completions-760ed40fb1.md) - `client.Completions.New(ctx, params) (*Completion, error)`
-- [Api Go Completions Create Bf064B0E72](Other/api-go-completions-create-bf064b0e72.md) - `client.Completions.New(ctx, params) (*Completion, error)`
-- [Api Go Messages Batches Cancel 6A096B0Fc9](Other/api-go-messages-batches-cancel-6a096b0fc9.md) - `client.Messages.Batches.Cancel(ctx, messageBatchID) (*MessageBatch, error)`
-- [Api Go Messages Batches Create 9Cdc81B5F3](Other/api-go-messages-batches-create-9cdc81b5f3.md) - `client.Messages.Batches.New(ctx, body) (*MessageBatch, error)`
-- [Batches](Other/api-go-messages-batches-dc84748643.md) - `client.Messages.Batches.New(ctx, body) (*MessageBatch, error)`
-- [Api Go Messages Batches Delete 646F74B479](Other/api-go-messages-batches-delete-646f74b479.md) - `client.Messages.Batches.Delete(ctx, messageBatchID) (*DeletedMessageBatch, error)`
-- [Api Go Messages Batches List 13803B8476](Other/api-go-messages-batches-list-13803b8476.md) - `client.Messages.Batches.List(ctx, query) (*Page[MessageBatch], error)`
-- [Api Go Messages Batches Results 6B3F47Ec42](Other/api-go-messages-batches-results-6b3f47ec42.md) - `client.Messages.Batches.Results(ctx, messageBatchID) (*MessageBatchIndividualResponse, error)`
-- [Api Go Messages Batches Retrieve Bdc366Efbc](Other/api-go-messages-batches-retrieve-bdc366efbc.md) - `client.Messages.Batches.Get(ctx, messageBatchID) (*MessageBatch, error)`
-- [Api Go Messages Count Tokens 4B76269Bb3](Other/api-go-messages-count-tokens-4b76269bb3.md) - `client.Messages.CountTokens(ctx, body) (*MessageTokensCount, error)`
-- [Api Go Messages Create 1Cafdbce61](Other/api-go-messages-create-1cafdbce61.md) - `client.Messages.New(ctx, body) (*Message, error)`
-- [Messages](Other/api-go-messages-e9487bb0eb.md) - `client.Messages.New(ctx, body) (*Message, error)`
-- [Admin - Claude API Reference](Other/api-http-admin-487488cd22.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Beta - Claude API Reference](Other/api-http-beta-a0e7c204d8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Files - Claude API Reference](Other/api-http-beta-files-a3793651df.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete File - Claude API Reference](Other/api-http-beta-files-delete-3a2f4ddd8e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Download File - Claude API Reference](Other/api-http-beta-files-download-8628dec35c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Files - Claude API Reference](Other/api-http-beta-files-list-cd812dfc74.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get File Metadata - Claude API Reference](Other/api-http-beta-files-retrieve-metadata-507403e0c4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Upload File - Claude API Reference](Other/api-http-beta-files-upload-667dd462fd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Messages - Claude API Reference](Other/api-http-beta-messages-c90922d83f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Count tokens in a Message - Claude API Reference](Other/api-http-beta-messages-count-tokens-49bd65934b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create a Message - Claude API Reference](Other/api-http-beta-messages-create-db2402eec1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Organization - Claude API Reference](Other/api-http-beta-organization-3e4a4b3bea.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Artifacts - Claude API Reference](Other/api-http-beta-organization-analytics-artifacts-39eb25bea0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Artifact Activity - Claude API Reference](Other/api-http-beta-organization-analytics-artifacts-list-a2815915ec.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Analytics - Claude API Reference](Other/api-http-beta-organization-analytics-cb7d3b5487.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Chat Projects - Claude API Reference](Other/api-http-beta-organization-analytics-chat-projects-328ba4587f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Chat Project Usage - Claude API Reference](Other/api-http-beta-organization-analytics-chat-projects-list-9a465a28bc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Connectors - Claude API Reference](Other/api-http-beta-organization-analytics-connectors-f9e51620a9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Connector Usage - Claude API Reference](Other/api-http-beta-organization-analytics-connectors-list-ef6e6aafd8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Cost - Claude API Reference](Other/api-http-beta-organization-analytics-cost-a4e7151888.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Cost Over Time - Claude API Reference](Other/api-http-beta-organization-analytics-cost-list-9df3cb13ff.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Per-User Cost - Claude API Reference](Other/api-http-beta-organization-analytics-cost-list-by-user-5421725e30.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Plugins - Claude API Reference](Other/api-http-beta-organization-analytics-plugins-389294439c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Plugin Usage - Claude API Reference](Other/api-http-beta-organization-analytics-plugins-list-8243854d44.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Activity Summaries - Claude API Reference](Other/api-http-beta-organization-analytics-retrieve-summaries-315075cd3d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Skills - Claude API Reference](Other/api-http-beta-organization-analytics-skills-319ae9e9ee.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Skill Usage - Claude API Reference](Other/api-http-beta-organization-analytics-skills-list-9f08ce42bb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Usage - Claude API Reference](Other/api-http-beta-organization-analytics-usage-b0d7a2b85c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Token Usage Over Time - Claude API Reference](Other/api-http-beta-organization-analytics-usage-list-425c30fe5a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Per-User Token Usage - Claude API Reference](Other/api-http-beta-organization-analytics-usage-list-by-user-101cce8295.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Users - Claude API Reference](Other/api-http-beta-organization-analytics-users-26d2b7a7ab.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List User Activity - Claude API Reference](Other/api-http-beta-organization-analytics-users-list-2790453fdf.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Current Organization - Claude API Reference](Other/api-http-beta-organization-retrieve-23129f6618.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Skills - Claude API Reference](Other/api-http-beta-skills-5096826311.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Skill - Claude API Reference](Other/api-http-beta-skills-create-3ae68a1880.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete Skill - Claude API Reference](Other/api-http-beta-skills-delete-7ee664c2c1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Skills - Claude API Reference](Other/api-http-beta-skills-list-7080909e69.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Skill - Claude API Reference](Other/api-http-beta-skills-retrieve-d2603de4d5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Tunnels - Claude API Reference](Other/api-http-beta-tunnels-66d0b9eac0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Archive Tunnel - Claude API Reference](Other/api-http-beta-tunnels-archive-2c16400b53.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Tunnel - Claude API Reference](Other/api-http-beta-tunnels-create-1106051583.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Tunnels - Claude API Reference](Other/api-http-beta-tunnels-list-b2695cac18.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Tunnel - Claude API Reference](Other/api-http-beta-tunnels-retrieve-ac274b5b64.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Reveal Tunnel Token - Claude API Reference](Other/api-http-beta-tunnels-reveal-token-0ccb8702cb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Rotate Tunnel Token - Claude API Reference](Other/api-http-beta-tunnels-rotate-token-1c79bc97e5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [User Profiles - Claude API Reference](Other/api-http-beta-user-profiles-470e5ca9f0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create User Profile - Claude API Reference](Other/api-http-beta-user-profiles-create-308a7e4dc6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Enrollment URL - Claude API Reference](Other/api-http-beta-user-profiles-create-enrollment-url-c0fdc85c85.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List User Profiles - Claude API Reference](Other/api-http-beta-user-profiles-list-c727f17bf7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get User Profile - Claude API Reference](Other/api-http-beta-user-profiles-retrieve-9cc1ae6644.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Update User Profile - Claude API Reference](Other/api-http-beta-user-profiles-update-828496ea46.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Webhooks - Claude API Reference](Other/api-http-beta-webhooks-b959cf6735.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Parse Unverified - Claude API Reference](Other/api-http-beta-webhooks-parse-unverified-538065cb96.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Unwrap - Claude API Reference](Other/api-http-beta-webhooks-unwrap-ed02798fcc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [HTTP API reference - Claude API Reference](Other/api-http-cafd9bbdb7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Completions - Claude API Reference](Other/api-http-completions-02b858759c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create a Text Completion - Claude API Reference](Other/api-http-completions-create-dbfb05df6c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Compliance API - Claude API Reference](Other/api-http-compliance-689315981d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [IP addresses - Claude Platform Docs](Other/api-ip-addresses-6b10f23b50.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [IP addresses](Other/api-ip-addresses-cc3c763ed7.md) - Anthropic services use fixed IP addresses for both inbound and outbound connections. You can use these addresses to configure your firewall rules for 
-- [Beta](Other/api-java-beta-7db3559367.md) - - `enum AnthropicBeta:`
-- [Agents](Other/api-java-beta-agents-8ed4c2e1a3.md) - `BetaManagedAgentsAgent beta().agents().create(AgentCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Agents Archive B74B36A8E0](Other/api-java-beta-agents-archive-b74b36a8e0.md) - `BetaManagedAgentsAgent beta().agents().archive(AgentArchiveParamsparams = AgentArchiveParams.none(), RequestOptionsrequestOptions = RequestOptions.no
-- [Api Java Beta Agents Create 540B932E88](Other/api-java-beta-agents-create-540b932e88.md) - `BetaManagedAgentsAgent beta().agents().create(AgentCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Agents Delete 35C98E63C4](Other/api-java-beta-agents-delete-35c98e63c4.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Java Beta Agents List 467F17Ff1E](Other/api-java-beta-agents-list-467f17ff1e.md) - `AgentListPage beta().agents().list(AgentListParamsparams = AgentListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Agents Retrieve Cd53B686Ed](Other/api-java-beta-agents-retrieve-cd53b686ed.md) - `BetaManagedAgentsAgent beta().agents().retrieve(AgentRetrieveParamsparams = AgentRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions
-- [Api Java Beta Agents Update 5Dec949470](Other/api-java-beta-agents-update-5dec949470.md) - `BetaManagedAgentsAgent beta().agents().update(AgentUpdateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Versions](Other/api-java-beta-agents-versions-1033627838.md) - `VersionListPage beta().agents().versions().list(VersionListParamsparams = VersionListParams.none(), RequestOptionsrequestOptions = RequestOptions.non
-- [Api Java Beta Agents Versions List D8Afa99391](Other/api-java-beta-agents-versions-list-d8afa99391.md) - `VersionListPage beta().agents().versions().list(VersionListParamsparams = VersionListParams.none(), RequestOptionsrequestOptions = RequestOptions.non
-- [Environments](Other/api-java-beta-environments-4affe14c5f.md) - `BetaEnvironment beta().environments().create(EnvironmentCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Environments Archive 6C5Acc4Dbd](Other/api-java-beta-environments-archive-6c5acc4dbd.md) - `BetaEnvironment beta().environments().archive(EnvironmentArchiveParamsparams = EnvironmentArchiveParams.none(), RequestOptionsrequestOptions = Reques
-- [Api Java Beta Environments Create 0B602B5D14](Other/api-java-beta-environments-create-0b602b5d14.md) - `BetaEnvironment beta().environments().create(EnvironmentCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Environments Delete E4333Bcee5](Other/api-java-beta-environments-delete-e4333bcee5.md) - `BetaEnvironmentDeleteResponse beta().environments().delete(EnvironmentDeleteParamsparams = EnvironmentDeleteParams.none(), RequestOptionsrequestOptio
-- [Api Java Beta Environments List 3Af7D49A50](Other/api-java-beta-environments-list-3af7d49a50.md) - `EnvironmentListPage beta().environments().list(EnvironmentListParamsparams = EnvironmentListParams.none(), RequestOptionsrequestOptions = RequestOpti
-- [Api Java Beta Environments Retrieve Faeea37Fc3](Other/api-java-beta-environments-retrieve-faeea37fc3.md) - `BetaEnvironment beta().environments().retrieve(EnvironmentRetrieveParamsparams = EnvironmentRetrieveParams.none(), RequestOptionsrequestOptions = Req
-- [Api Java Beta Environments Update 954B483024](Other/api-java-beta-environments-update-954b483024.md) - `BetaEnvironment beta().environments().update(EnvironmentUpdateParamsparams = EnvironmentUpdateParams.none(), RequestOptionsrequestOptions = RequestOp
-- [Files](Other/api-java-beta-files-a9df87f743.md) - `FileMetadata beta().files().upload(FileUploadParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Files Delete F6Ea26690A](Other/api-java-beta-files-delete-f6ea26690a.md) - `DeletedFile beta().files().delete(FileDeleteParamsparams = FileDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Files Download 87Ecba48A5](Other/api-java-beta-files-download-87ecba48a5.md) - `HttpResponse beta().files().download(FileDownloadParamsparams = FileDownloadParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Files List E534Eda3Ce](Other/api-java-beta-files-list-e534eda3ce.md) - `FileListPage beta().files().list(FileListParamsparams = FileListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Files Retrieve Metadata Aeaea2Dc31](Other/api-java-beta-files-retrieve-metadata-aeaea2dc31.md) - `FileMetadata beta().files().retrieveMetadata(FileRetrieveMetadataParamsparams = FileRetrieveMetadataParams.none(), RequestOptionsrequestOptions = Req
-- [Api Java Beta Files Upload 8F01F1838C](Other/api-java-beta-files-upload-8f01f1838c.md) - `FileMetadata beta().files().upload(FileUploadParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Memory Stores](Other/api-java-beta-memory-stores-af726c996d.md) - `BetaManagedAgentsMemoryStore beta().memoryStores().create(MemoryStoreCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Memory Stores Archive Fe456Dcc71](Other/api-java-beta-memory-stores-archive-fe456dcc71.md) - `BetaManagedAgentsMemoryStore beta().memoryStores().archive(MemoryStoreArchiveParamsparams = MemoryStoreArchiveParams.none(), RequestOptionsrequestOpt
-- [Api Java Beta Memory Stores Create 493E225376](Other/api-java-beta-memory-stores-create-493e225376.md) - `BetaManagedAgentsMemoryStore beta().memoryStores().create(MemoryStoreCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Memory Stores Delete 80A6Bbfb41](Other/api-java-beta-memory-stores-delete-80a6bbfb41.md) - `BetaManagedAgentsDeletedMemoryStore beta().memoryStores().delete(MemoryStoreDeleteParamsparams = MemoryStoreDeleteParams.none(), RequestOptionsreques
-- [Api Java Beta Memory Stores List 54725Ff281](Other/api-java-beta-memory-stores-list-54725ff281.md) - `MemoryStoreListPage beta().memoryStores().list(MemoryStoreListParamsparams = MemoryStoreListParams.none(), RequestOptionsrequestOptions = RequestOpti
-- [Api Java Beta Memory Stores Memories Create 226941A7D8](Other/api-java-beta-memory-stores-memories-create-226941a7d8.md) - `BetaManagedAgentsMemory beta().memoryStores().memories().create(MemoryCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Memory Stores Memories Delete 908415E78E](Other/api-java-beta-memory-stores-memories-delete-908415e78e.md) - `BetaManagedAgentsDeletedMemory beta().memoryStores().memories().delete(MemoryDeleteParamsparams, RequestOptionsrequestOptions = RequestOptions.none()
-- [Memories](Other/api-java-beta-memory-stores-memories-f81c491a2e.md) - `BetaManagedAgentsMemory beta().memoryStores().memories().create(MemoryCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Memory Stores Memories List 0Fd464C316](Other/api-java-beta-memory-stores-memories-list-0fd464c316.md) - `MemoryListPage beta().memoryStores().memories().list(MemoryListParamsparams = MemoryListParams.none(), RequestOptionsrequestOptions = RequestOptions.
-- [Api Java Beta Memory Stores Memories Retrieve E909Bed744](Other/api-java-beta-memory-stores-memories-retrieve-e909bed744.md) - `BetaManagedAgentsMemory beta().memoryStores().memories().retrieve(MemoryRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Memory Stores Memories Update 5C42558A35](Other/api-java-beta-memory-stores-memories-update-5c42558a35.md) - `BetaManagedAgentsMemory beta().memoryStores().memories().update(MemoryUpdateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Memory Versions](Other/api-java-beta-memory-stores-memory-versions-2a15632d49.md) - `MemoryVersionListPage beta().memoryStores().memoryVersions().list(MemoryVersionListParamsparams = MemoryVersionListParams.none(), RequestOptionsreque
-- [Api Java Beta Memory Stores Memory Versions List F9Fac75819](Other/api-java-beta-memory-stores-memory-versions-list-f9fac75819.md) - `MemoryVersionListPage beta().memoryStores().memoryVersions().list(MemoryVersionListParamsparams = MemoryVersionListParams.none(), RequestOptionsreque
-- [Api Java Beta Memory Stores Memory Versions Redact A3Ae2C405C](Other/api-java-beta-memory-stores-memory-versions-redact-a3ae2c405c.md) - `BetaManagedAgentsMemoryVersion beta().memoryStores().memoryVersions().redact(MemoryVersionRedactParamsparams, RequestOptionsrequestOptions = RequestO
-- [Api Java Beta Memory Stores Memory Versions Retrieve E6C40E7Cfc](Other/api-java-beta-memory-stores-memory-versions-retrieve-e6c40e7cfc.md) - `BetaManagedAgentsMemoryVersion beta().memoryStores().memoryVersions().retrieve(MemoryVersionRetrieveParamsparams, RequestOptionsrequestOptions = Requ
-- [Api Java Beta Memory Stores Retrieve F406C8A9Ac](Other/api-java-beta-memory-stores-retrieve-f406c8a9ac.md) - `BetaManagedAgentsMemoryStore beta().memoryStores().retrieve(MemoryStoreRetrieveParamsparams = MemoryStoreRetrieveParams.none(), RequestOptionsrequest
-- [Api Java Beta Memory Stores Update E404E4Baff](Other/api-java-beta-memory-stores-update-e404e4baff.md) - `BetaManagedAgentsMemoryStore beta().memoryStores().update(MemoryStoreUpdateParamsparams = MemoryStoreUpdateParams.none(), RequestOptionsrequestOption
-- [Messages](Other/api-java-beta-messages-273bd923ac.md) - `BetaMessage beta().messages().create(MessageCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Batches](Other/api-java-beta-messages-batches-c8d9682bb6.md) - `BetaMessageBatch beta().messages().batches().create(BatchCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Messages Batches Cancel Bbbc6E0F9C](Other/api-java-beta-messages-batches-cancel-bbbc6e0f9c.md) - `BetaMessageBatch beta().messages().batches().cancel(BatchCancelParamsparams = BatchCancelParams.none(), RequestOptionsrequestOptions = RequestOptions
-- [Api Java Beta Messages Batches Create 83039A259F](Other/api-java-beta-messages-batches-create-83039a259f.md) - `BetaMessageBatch beta().messages().batches().create(BatchCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Messages Batches Delete F0D4E8A095](Other/api-java-beta-messages-batches-delete-f0d4e8a095.md) - `BetaDeletedMessageBatch beta().messages().batches().delete(BatchDeleteParamsparams = BatchDeleteParams.none(), RequestOptionsrequestOptions = Request
-- [Api Java Beta Messages Batches List 11801F2F5F](Other/api-java-beta-messages-batches-list-11801f2f5f.md) - `BatchListPage beta().messages().batches().list(BatchListParamsparams = BatchListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Messages Batches Results Ab2D7Af530](Other/api-java-beta-messages-batches-results-ab2d7af530.md) - `BetaMessageBatchIndividualResponse beta().messages().batches().resultsStreaming(BatchResultsParamsparams = BatchResultsParams.none(), RequestOptionsr
-- [Api Java Beta Messages Batches Retrieve 6E3C3B0A48](Other/api-java-beta-messages-batches-retrieve-6e3c3b0a48.md) - `BetaMessageBatch beta().messages().batches().retrieve(BatchRetrieveParamsparams = BatchRetrieveParams.none(), RequestOptionsrequestOptions = RequestO
-- [Api Java Beta Messages Count Tokens 3E8D6E7E80](Other/api-java-beta-messages-count-tokens-3e8d6e7e80.md) - `BetaMessageTokensCount beta().messages().countTokens(MessageCountTokensParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Messages Create 759C6Db29D](Other/api-java-beta-messages-create-759c6db29d.md) - `BetaMessage beta().messages().create(MessageCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Sessions](Other/api-java-beta-sessions-6323a8582e.md) - `BetaManagedAgentsSession beta().sessions().create(SessionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Sessions Archive C133Cd7B6D](Other/api-java-beta-sessions-archive-c133cd7b6d.md) - `BetaManagedAgentsSession beta().sessions().archive(SessionArchiveParamsparams = SessionArchiveParams.none(), RequestOptionsrequestOptions = RequestOp
-- [Api Java Beta Sessions Create Ad3716F48D](Other/api-java-beta-sessions-create-ad3716f48d.md) - `BetaManagedAgentsSession beta().sessions().create(SessionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Sessions Delete 4F9E09E7Eb](Other/api-java-beta-sessions-delete-4f9e09e7eb.md) - `BetaManagedAgentsDeletedSession beta().sessions().delete(SessionDeleteParamsparams = SessionDeleteParams.none(), RequestOptionsrequestOptions = Reque
-- [Events](Other/api-java-beta-sessions-events-8033a96b32.md) - `EventListPage beta().sessions().events().list(EventListParamsparams = EventListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Sessions Events List 39Eb4C5888](Other/api-java-beta-sessions-events-list-39eb4c5888.md) - `EventListPage beta().sessions().events().list(EventListParamsparams = EventListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Sessions Events Send F7D87C9179](Other/api-java-beta-sessions-events-send-f7d87c9179.md) - `BetaManagedAgentsSendSessionEvents beta().sessions().events().send(EventSendParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Sessions Events Stream Ce7F09F97C](Other/api-java-beta-sessions-events-stream-ce7f09f97c.md) - `BetaManagedAgentsStreamSessionEvents beta().sessions().events().streamStreaming(EventStreamParamsparams = EventStreamParams.none(), RequestOptionsreq
-- [Api Java Beta Sessions List D1393F503F](Other/api-java-beta-sessions-list-d1393f503f.md) - `SessionListPage beta().sessions().list(SessionListParamsparams = SessionListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Resources](Other/api-java-beta-sessions-resources-23e1df2ed7.md) - `BetaManagedAgentsFileResource beta().sessions().resources().add(ResourceAddParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Sessions Resources Add 7A50F15E42](Other/api-java-beta-sessions-resources-add-7a50f15e42.md) - `BetaManagedAgentsFileResource beta().sessions().resources().add(ResourceAddParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Sessions Resources Delete 38B282Ee84](Other/api-java-beta-sessions-resources-delete-38b282ee84.md) - `BetaManagedAgentsDeleteSessionResource beta().sessions().resources().delete(ResourceDeleteParamsparams, RequestOptionsrequestOptions = RequestOptions
-- [Api Java Beta Sessions Resources List A598Ee08B6](Other/api-java-beta-sessions-resources-list-a598ee08b6.md) - `ResourceListPage beta().sessions().resources().list(ResourceListParamsparams = ResourceListParams.none(), RequestOptionsrequestOptions = RequestOptio
-- [Api Java Beta Sessions Resources Retrieve 71Bedc677C](Other/api-java-beta-sessions-resources-retrieve-71bedc677c.md) - `ResourceRetrieveResponse beta().sessions().resources().retrieve(ResourceRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Sessions Resources Update 41Ae02Ba4E](Other/api-java-beta-sessions-resources-update-41ae02ba4e.md) - `ResourceUpdateResponse beta().sessions().resources().update(ResourceUpdateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Sessions Retrieve E63D7975E2](Other/api-java-beta-sessions-retrieve-e63d7975e2.md) - `BetaManagedAgentsSession beta().sessions().retrieve(SessionRetrieveParamsparams = SessionRetrieveParams.none(), RequestOptionsrequestOptions = Reques
-- [Api Java Beta Sessions Update 903C3Cf88C](Other/api-java-beta-sessions-update-903c3cf88c.md) - `BetaManagedAgentsSession beta().sessions().update(SessionUpdateParamsparams = SessionUpdateParams.none(), RequestOptionsrequestOptions = RequestOptio
-- [Skills](Other/api-java-beta-skills-4cabcc6f07.md) - `SkillCreateResponse beta().skills().create(SkillCreateParamsparams = SkillCreateParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Skills Create 02303A28Fb](Other/api-java-beta-skills-create-02303a28fb.md) - `SkillCreateResponse beta().skills().create(SkillCreateParamsparams = SkillCreateParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Skills Delete 3E6A9F8126](Other/api-java-beta-skills-delete-3e6a9f8126.md) - `SkillDeleteResponse beta().skills().delete(SkillDeleteParamsparams = SkillDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Skills List 95A3708Cf4](Other/api-java-beta-skills-list-95a3708cf4.md) - `SkillListPage beta().skills().list(SkillListParamsparams = SkillListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Skills Retrieve 0222092Cda](Other/api-java-beta-skills-retrieve-0222092cda.md) - `SkillRetrieveResponse beta().skills().retrieve(SkillRetrieveParamsparams = SkillRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.
-- [Versions](Other/api-java-beta-skills-versions-48a753bfbf.md) - `VersionCreateResponse beta().skills().versions().create(VersionCreateParamsparams = VersionCreateParams.none(), RequestOptionsrequestOptions = Reques
-- [Api Java Beta Skills Versions Create 732561Dea0](Other/api-java-beta-skills-versions-create-732561dea0.md) - `VersionCreateResponse beta().skills().versions().create(VersionCreateParamsparams = VersionCreateParams.none(), RequestOptionsrequestOptions = Reques
-- [Api Java Beta Skills Versions Delete 7359C00B49](Other/api-java-beta-skills-versions-delete-7359c00b49.md) - `VersionDeleteResponse beta().skills().versions().delete(VersionDeleteParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Skills Versions List Fdb9Fb1938](Other/api-java-beta-skills-versions-list-fdb9fb1938.md) - `VersionListPage beta().skills().versions().list(VersionListParamsparams = VersionListParams.none(), RequestOptionsrequestOptions = RequestOptions.non
-- [Api Java Beta Skills Versions Retrieve Faf5Fa16A3](Other/api-java-beta-skills-versions-retrieve-faf5fa16a3.md) - `VersionRetrieveResponse beta().skills().versions().retrieve(VersionRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Vaults](Other/api-java-beta-vaults-a873cc1c7f.md) - `BetaManagedAgentsVault beta().vaults().create(VaultCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Vaults Archive 0A0Ce63Cd0](Other/api-java-beta-vaults-archive-0a0ce63cd0.md) - `BetaManagedAgentsVault beta().vaults().archive(VaultArchiveParamsparams = VaultArchiveParams.none(), RequestOptionsrequestOptions = RequestOptions.no
-- [Api Java Beta Vaults Create Ba909A0A5B](Other/api-java-beta-vaults-create-ba909a0a5b.md) - `BetaManagedAgentsVault beta().vaults().create(VaultCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Credentials](Other/api-java-beta-vaults-credentials-0a05f15a23.md) - `BetaManagedAgentsCredential beta().vaults().credentials().create(CredentialCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Vaults Credentials Archive 99Da34B9B0](Other/api-java-beta-vaults-credentials-archive-99da34b9b0.md) - `BetaManagedAgentsCredential beta().vaults().credentials().archive(CredentialArchiveParamsparams, RequestOptionsrequestOptions = RequestOptions.none()
-- [Api Java Beta Vaults Credentials Create 36D0A7D171](Other/api-java-beta-vaults-credentials-create-36d0a7d171.md) - `BetaManagedAgentsCredential beta().vaults().credentials().create(CredentialCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Vaults Credentials Delete 1911971D3E](Other/api-java-beta-vaults-credentials-delete-1911971d3e.md) - `BetaManagedAgentsDeletedCredential beta().vaults().credentials().delete(CredentialDeleteParamsparams, RequestOptionsrequestOptions = RequestOptions.n
-- [Api Java Beta Vaults Credentials List 628B82A75F](Other/api-java-beta-vaults-credentials-list-628b82a75f.md) - `CredentialListPage beta().vaults().credentials().list(CredentialListParamsparams = CredentialListParams.none(), RequestOptionsrequestOptions = Reques
-- [Api Java Beta Vaults Credentials Retrieve 0E6E865529](Other/api-java-beta-vaults-credentials-retrieve-0e6e865529.md) - `BetaManagedAgentsCredential beta().vaults().credentials().retrieve(CredentialRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none
-- [Api Java Beta Vaults Credentials Update C91F734073](Other/api-java-beta-vaults-credentials-update-c91f734073.md) - `BetaManagedAgentsCredential beta().vaults().credentials().update(CredentialUpdateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Vaults Delete 1C13E68A61](Other/api-java-beta-vaults-delete-1c13e68a61.md) - `BetaManagedAgentsDeletedVault beta().vaults().delete(VaultDeleteParamsparams = VaultDeleteParams.none(), RequestOptionsrequestOptions = RequestOption
-- [Api Java Beta Vaults List 3250Cd77B1](Other/api-java-beta-vaults-list-3250cd77b1.md) - `VaultListPage beta().vaults().list(VaultListParamsparams = VaultListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Vaults Retrieve 870Ec1F462](Other/api-java-beta-vaults-retrieve-870ec1f462.md) - `BetaManagedAgentsVault beta().vaults().retrieve(VaultRetrieveParamsparams = VaultRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions
-- [Api Java Beta Vaults Update E8F05A68Fc](Other/api-java-beta-vaults-update-e8f05a68fc.md) - `BetaManagedAgentsVault beta().vaults().update(VaultUpdateParamsparams = VaultUpdateParams.none(), RequestOptionsrequestOptions = RequestOptions.none(
-- [Api Java Completions Create 27A1C0B41F](Other/api-java-completions-create-27a1c0b41f.md) - `Completion completions().create(CompletionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Completions](Other/api-java-completions-e302645afc.md) - `Completion completions().create(CompletionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Batches](Other/api-java-messages-batches-8e273642d1.md) - `MessageBatch messages().batches().create(BatchCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Messages Batches Cancel 1839E1Ce51](Other/api-java-messages-batches-cancel-1839e1ce51.md) - `MessageBatch messages().batches().cancel(BatchCancelParamsparams = BatchCancelParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Messages Batches Create 30052453C3](Other/api-java-messages-batches-create-30052453c3.md) - `MessageBatch messages().batches().create(BatchCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Messages Batches Delete E0B8F507D7](Other/api-java-messages-batches-delete-e0b8f507d7.md) - `DeletedMessageBatch messages().batches().delete(BatchDeleteParamsparams = BatchDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.non
-- [Api Java Messages Batches List 4C72371Fbb](Other/api-java-messages-batches-list-4c72371fbb.md) - `BatchListPage messages().batches().list(BatchListParamsparams = BatchListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Messages Batches Results 20B1A6505E](Other/api-java-messages-batches-results-20b1a6505e.md) - `MessageBatchIndividualResponse messages().batches().resultsStreaming(BatchResultsParamsparams = BatchResultsParams.none(), RequestOptionsrequestOptio
-- [Api Java Messages Batches Retrieve 31Ef3A6186](Other/api-java-messages-batches-retrieve-31ef3a6186.md) - `MessageBatch messages().batches().retrieve(BatchRetrieveParamsparams = BatchRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none
-- [Api Java Messages Count Tokens 68Be31A803](Other/api-java-messages-count-tokens-68be31a803.md) - `MessageTokensCount messages().countTokens(MessageCountTokensParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Messages Create 08A0E124Cd](Other/api-java-messages-create-08a0e124cd.md) - `Message messages().create(MessageCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Messages](Other/api-java-messages-e181f638a6.md) - `Message messages().create(MessageCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
-- [Messages](Other/api-messages-2dd213ca95.md) - **post** `/v1/messages`
-- [Messages - Claude API Reference](Other/api-messages-74a8b3fa47.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Batches](Other/api-messages-batches-bd6675d656.md) - **post** `/v1/messages/batches`
-- [Api Messages Batches Cancel 2140B04Da1](Other/api-messages-batches-cancel-2140b04da1.md) - **post** `/v1/messages/batches/{message_batch_id}/cancel`
-- [Cancel a Message Batch - Claude API Reference](Other/api-messages-batches-cancel-2594ac756e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create a Message Batch - Claude API Reference](Other/api-messages-batches-create-10a480d56c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Messages Batches Create Cf002296B8](Other/api-messages-batches-create-cf002296b8.md) - **post** `/v1/messages/batches`
-- [Delete a Message Batch - Claude API Reference](Other/api-messages-batches-delete-d7205ccba1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Messages Batches Delete Fe9C8A3D0B](Other/api-messages-batches-delete-fe9c8a3d0b.md) - **delete** `/v1/messages/batches/{message_batch_id}`
-- [Batches - Claude API Reference](Other/api-messages-batches-e095247d02.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Message Batches - Claude API Reference](Other/api-messages-batches-list-eb567e9766.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Messages Batches List F5De1Aac62](Other/api-messages-batches-list-f5de1aac62.md) - **get** `/v1/messages/batches`
-- [Api Messages Batches Results A94Edbe8F8](Other/api-messages-batches-results-a94edbe8f8.md) - **get** `/v1/messages/batches/{message_batch_id}/results`
-- [Retrieve Message Batch results - Claude API Reference](Other/api-messages-batches-results-b3eb00bad6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Retrieve a Message Batch - Claude API Reference](Other/api-messages-batches-retrieve-3af3b6571d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Messages Batches Retrieve 8B77133253](Other/api-messages-batches-retrieve-8b77133253.md) - **get** `/v1/messages/batches/{message_batch_id}`
-- [Count tokens in a Message - Claude API Reference](Other/api-messages-count-tokens-4c64d9c0a6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Messages Count Tokens 7849A1414A](Other/api-messages-count-tokens-7849a1414a.md) - **post** `/v1/messages/count_tokens`
-- [Count tokens in a Message - Claude API Reference](Other/api-messages-count-tokens-e6e3983a80.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Messages Create 07971E1Cdf](Other/api-messages-create-07971e1cdf.md) - **post** `/v1/messages`
-- [Create a Message - Claude API Reference](Other/api-messages-create-e77afe85aa.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [OpenAI SDK compatibility](Other/api-openai-sdk-9632fe784c.md) - Anthropic provides a compatibility layer that enables you to use the OpenAI SDK to test the Claude API. With a few code changes, you can quickly evalu
-- [API overview - Claude Platform Docs](Other/api-overview-0882f00e62.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [API Overview](Other/api-overview-606ecbff81.md)
-- [Api Php Beta Agents Archive C8F4Ff6Fe2](Other/api-php-beta-agents-archive-c8f4ff6fe2.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Agents C52F409D40](Other/api-php-beta-agents-c52f409d40.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Agents Create 73D8765D97](Other/api-php-beta-agents-create-73d8765d97.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Agents Delete 18408D7220](Other/api-php-beta-agents-delete-18408d7220.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Agents List Fc44958D39](Other/api-php-beta-agents-list-fc44958d39.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Agents Retrieve E65B5542Ed](Other/api-php-beta-agents-retrieve-e65b5542ed.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Agents Update 71D8Bf5A15](Other/api-php-beta-agents-update-71d8bf5a15.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Agents Versions Cbbc1E476C](Other/api-php-beta-agents-versions-cbbc1e476c.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Agents Versions List 1Be69A4F24](Other/api-php-beta-agents-versions-list-1be69a4f24.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Environments 9817Ab0B8F](Other/api-php-beta-environments-9817ab0b8f.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Environments Archive B92141Aab2](Other/api-php-beta-environments-archive-b92141aab2.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Environments Create 5Eebfbb47F](Other/api-php-beta-environments-create-5eebfbb47f.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Environments Delete D1019Dcb03](Other/api-php-beta-environments-delete-d1019dcb03.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Environments List B3514C69C1](Other/api-php-beta-environments-list-b3514c69c1.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Environments Retrieve F9E6792532](Other/api-php-beta-environments-retrieve-f9e6792532.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Environments Update 1Ac985D6F7](Other/api-php-beta-environments-update-1ac985d6f7.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta F9Bbf7C89F](Other/api-php-beta-f9bbf7c89f.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Files 3B09F3B626](Other/api-php-beta-files-3b09f3b626.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Files Delete 293F37C6Be](Other/api-php-beta-files-delete-293f37c6be.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Files Download 85Bf6Cab20](Other/api-php-beta-files-download-85bf6cab20.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Files List 2Fc43Aed29](Other/api-php-beta-files-list-2fc43aed29.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Files Retrieve Metadata 403Fd92C01](Other/api-php-beta-files-retrieve-metadata-403fd92c01.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Files Upload D87Be0Bec3](Other/api-php-beta-files-upload-d87be0bec3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores 1B5B7E868E](Other/api-php-beta-memory-stores-1b5b7e868e.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores Archive 42B8A57883](Other/api-php-beta-memory-stores-archive-42b8a57883.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores Create 95A862A05D](Other/api-php-beta-memory-stores-create-95a862a05d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores Delete Fb089Df245](Other/api-php-beta-memory-stores-delete-fb089df245.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores List Eba7B287De](Other/api-php-beta-memory-stores-list-eba7b287de.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores Memories Create 53D2B993Bc](Other/api-php-beta-memory-stores-memories-create-53d2b993bc.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores Memories Delete 734F3A1F4A](Other/api-php-beta-memory-stores-memories-delete-734f3a1f4a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores Memories Ffb8549429](Other/api-php-beta-memory-stores-memories-ffb8549429.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores Memories List 256E07F4Da](Other/api-php-beta-memory-stores-memories-list-256e07f4da.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores Memories Retrieve 2629Ff0B44](Other/api-php-beta-memory-stores-memories-retrieve-2629ff0b44.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores Memories Update 46D6F068Dd](Other/api-php-beta-memory-stores-memories-update-46d6f068dd.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores Memory Versions 6D2Be3B699](Other/api-php-beta-memory-stores-memory-versions-6d2be3b699.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores Memory Versions List 8D66930Fa9](Other/api-php-beta-memory-stores-memory-versions-list-8d66930fa9.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores Memory Versions Redact Dd6F3E035A](Other/api-php-beta-memory-stores-memory-versions-redact-dd6f3e035a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores Memory Versions Retrieve B9A105Cd2B](Other/api-php-beta-memory-stores-memory-versions-retrieve-b9a105cd2b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores Retrieve Fd41Ff2E1D](Other/api-php-beta-memory-stores-retrieve-fd41ff2e1d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Memory Stores Update 35Ae3A7A64](Other/api-php-beta-memory-stores-update-35ae3a7a64.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Messages 9271Fd59E4](Other/api-php-beta-messages-9271fd59e4.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Messages Batches C8Cdf95E70](Other/api-php-beta-messages-batches-c8cdf95e70.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Messages Batches Cancel Aae45170Ad](Other/api-php-beta-messages-batches-cancel-aae45170ad.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Messages Batches Create 46Ef25B739](Other/api-php-beta-messages-batches-create-46ef25b739.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Messages Batches Delete 00C8A4C708](Other/api-php-beta-messages-batches-delete-00c8a4c708.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Messages Batches List 8A1Eecc887](Other/api-php-beta-messages-batches-list-8a1eecc887.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Messages Batches Results 6B1Cdeab97](Other/api-php-beta-messages-batches-results-6b1cdeab97.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Messages Batches Retrieve 3815D1B653](Other/api-php-beta-messages-batches-retrieve-3815d1b653.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Messages Count Tokens 0999417258](Other/api-php-beta-messages-count-tokens-0999417258.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Messages Create Bff87C23F5](Other/api-php-beta-messages-create-bff87c23f5.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions 02Ecc86416](Other/api-php-beta-sessions-02ecc86416.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions Archive 5474083944](Other/api-php-beta-sessions-archive-5474083944.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions Create 0Da21F041C](Other/api-php-beta-sessions-create-0da21f041c.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions Delete Fca61174F8](Other/api-php-beta-sessions-delete-fca61174f8.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions Events 9F7B26D42F](Other/api-php-beta-sessions-events-9f7b26d42f.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions Events List 08F3Adc2Eb](Other/api-php-beta-sessions-events-list-08f3adc2eb.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions Events Send Fa25Fcc296](Other/api-php-beta-sessions-events-send-fa25fcc296.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions Events Stream D1890B2963](Other/api-php-beta-sessions-events-stream-d1890b2963.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions List 7Ec18011Ac](Other/api-php-beta-sessions-list-7ec18011ac.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions Resources 8831285299](Other/api-php-beta-sessions-resources-8831285299.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions Resources Add 3210222Bc1](Other/api-php-beta-sessions-resources-add-3210222bc1.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions Resources Delete 4587Cb4Afd](Other/api-php-beta-sessions-resources-delete-4587cb4afd.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions Resources List 720480D951](Other/api-php-beta-sessions-resources-list-720480d951.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions Resources Retrieve E8F7E639F3](Other/api-php-beta-sessions-resources-retrieve-e8f7e639f3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions Resources Update 7Af0B12A9D](Other/api-php-beta-sessions-resources-update-7af0b12a9d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions Retrieve F53F0F1340](Other/api-php-beta-sessions-retrieve-f53f0f1340.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Sessions Update 2064D54D2D](Other/api-php-beta-sessions-update-2064d54d2d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Skills 649Db734F4](Other/api-php-beta-skills-649db734f4.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Skills Create A374F88Fd9](Other/api-php-beta-skills-create-a374f88fd9.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Skills Delete C4Fc8841B1](Other/api-php-beta-skills-delete-c4fc8841b1.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Skills List 5Ae76Ca621](Other/api-php-beta-skills-list-5ae76ca621.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Skills Retrieve 2C8E472Dbf](Other/api-php-beta-skills-retrieve-2c8e472dbf.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Skills Versions Create 825417629D](Other/api-php-beta-skills-versions-create-825417629d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Skills Versions Delete 9772Ba8544](Other/api-php-beta-skills-versions-delete-9772ba8544.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Skills Versions Eb01B9B050](Other/api-php-beta-skills-versions-eb01b9b050.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Skills Versions List F2E412284B](Other/api-php-beta-skills-versions-list-f2e412284b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Skills Versions Retrieve 0Fd448B1A0](Other/api-php-beta-skills-versions-retrieve-0fd448b1a0.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Vaults 31E8Fcd1A0](Other/api-php-beta-vaults-31e8fcd1a0.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Vaults Archive 65C367B35A](Other/api-php-beta-vaults-archive-65c367b35a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Vaults Create 0643572F8E](Other/api-php-beta-vaults-create-0643572f8e.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Vaults Credentials 5A377Fbd9B](Other/api-php-beta-vaults-credentials-5a377fbd9b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Vaults Credentials Archive Ecf6Eea40A](Other/api-php-beta-vaults-credentials-archive-ecf6eea40a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Vaults Credentials Create 0821F8523E](Other/api-php-beta-vaults-credentials-create-0821f8523e.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Vaults Credentials Delete C515A2Ab86](Other/api-php-beta-vaults-credentials-delete-c515a2ab86.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Vaults Credentials List 3Bda8D9Ce1](Other/api-php-beta-vaults-credentials-list-3bda8d9ce1.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Vaults Credentials Retrieve B795Afca14](Other/api-php-beta-vaults-credentials-retrieve-b795afca14.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Vaults Credentials Update Dc5Aace998](Other/api-php-beta-vaults-credentials-update-dc5aace998.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Vaults Delete A431Cfb749](Other/api-php-beta-vaults-delete-a431cfb749.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Vaults List 4A35Fb0B5B](Other/api-php-beta-vaults-list-4a35fb0b5b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Vaults Retrieve 1C7Ad40D45](Other/api-php-beta-vaults-retrieve-1c7ad40d45.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Vaults Update 159E298242](Other/api-php-beta-vaults-update-159e298242.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Completions 649F44E319](Other/api-php-completions-649f44e319.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Completions Create 43C61662Fa](Other/api-php-completions-create-43c61662fa.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Messages 7D8Bbbcf56](Other/api-php-messages-7d8bbbcf56.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Messages Batches 0F504E4Fd3](Other/api-php-messages-batches-0f504e4fd3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Messages Batches Cancel 03Ad705101](Other/api-php-messages-batches-cancel-03ad705101.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Messages Batches Create Ba810F77Ac](Other/api-php-messages-batches-create-ba810f77ac.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Messages Batches Delete 5Cb11B8143](Other/api-php-messages-batches-delete-5cb11b8143.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Messages Batches List F762F2185B](Other/api-php-messages-batches-list-f762f2185b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Messages Batches Results C4799D3E40](Other/api-php-messages-batches-results-c4799d3e40.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Messages Batches Retrieve 3E84B9Ba59](Other/api-php-messages-batches-retrieve-3e84b9ba59.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Messages Count Tokens D44B53Dc5F](Other/api-php-messages-count-tokens-d44b53dc5f.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Messages Create A0441378B3](Other/api-php-messages-create-a0441378b3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Agents](Other/api-python-beta-agents-7b5675f634.md) - `beta.agents.create(AgentCreateParams**kwargs)  -> BetaManagedAgentsAgent`
-- [Api Python Beta Agents Archive 3F4A840943](Other/api-python-beta-agents-archive-3f4a840943.md) - `beta.agents.archive(stragent_id, AgentArchiveParams**kwargs)  -> BetaManagedAgentsAgent`
-- [Api Python Beta Agents Create A92Af9F245](Other/api-python-beta-agents-create-a92af9f245.md) - `beta.agents.create(AgentCreateParams**kwargs)  -> BetaManagedAgentsAgent`
-- [Api Python Beta Agents Delete Addb470127](Other/api-python-beta-agents-delete-addb470127.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Python Beta Agents List Ac22A354C1](Other/api-python-beta-agents-list-ac22a354c1.md) - `beta.agents.list(AgentListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsAgent]`
-- [Api Python Beta Agents Retrieve 2683Af7Ad5](Other/api-python-beta-agents-retrieve-2683af7ad5.md) - `beta.agents.retrieve(stragent_id, AgentRetrieveParams**kwargs)  -> BetaManagedAgentsAgent`
-- [Api Python Beta Agents Update Aef1B12Ce3](Other/api-python-beta-agents-update-aef1b12ce3.md) - `beta.agents.update(stragent_id, AgentUpdateParams**kwargs)  -> BetaManagedAgentsAgent`
-- [Versions](Other/api-python-beta-agents-versions-663ca8c5bb.md) - `beta.agents.versions.list(stragent_id, VersionListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsAgent]`
-- [Api Python Beta Agents Versions List D3F12B51A3](Other/api-python-beta-agents-versions-list-d3f12b51a3.md) - `beta.agents.versions.list(stragent_id, VersionListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsAgent]`
-- [Api Python Beta Environments Archive 8D54Be3849](Other/api-python-beta-environments-archive-8d54be3849.md) - `beta.environments.archive(strenvironment_id, EnvironmentArchiveParams**kwargs)  -> BetaEnvironment`
-- [Api Python Beta Environments Create 83F02B93Ae](Other/api-python-beta-environments-create-83f02b93ae.md) - `beta.environments.create(EnvironmentCreateParams**kwargs)  -> BetaEnvironment`
-- [Environments](Other/api-python-beta-environments-d62fe1ba95.md) - `beta.environments.create(EnvironmentCreateParams**kwargs)  -> BetaEnvironment`
-- [Api Python Beta Environments Delete 634A3A78B9](Other/api-python-beta-environments-delete-634a3a78b9.md) - `beta.environments.delete(strenvironment_id, EnvironmentDeleteParams**kwargs)  -> BetaEnvironmentDeleteResponse`
-- [Api Python Beta Environments List 10002E122F](Other/api-python-beta-environments-list-10002e122f.md) - `beta.environments.list(EnvironmentListParams**kwargs)  -> SyncPageCursor[BetaEnvironment]`
-- [Api Python Beta Environments Retrieve 260A873E08](Other/api-python-beta-environments-retrieve-260a873e08.md) - `beta.environments.retrieve(strenvironment_id, EnvironmentRetrieveParams**kwargs)  -> BetaEnvironment`
-- [Api Python Beta Environments Update 522Abe0Fc6](Other/api-python-beta-environments-update-522abe0fc6.md) - `beta.environments.update(strenvironment_id, EnvironmentUpdateParams**kwargs)  -> BetaEnvironment`
-- [Beta](Other/api-python-beta-fe747b8b97.md) - - `Union[str, Literal["message-batches-2024-09-24", "prompt-caching-2024-07-31", "computer-use-2024-10-22", 19 more]]`
-- [Api Python Beta Files Delete 631D2Aff33](Other/api-python-beta-files-delete-631d2aff33.md) - `beta.files.delete(strfile_id, FileDeleteParams**kwargs)  -> DeletedFile`
-- [Api Python Beta Files Download A4A6Abc76B](Other/api-python-beta-files-download-a4a6abc76b.md) - `beta.files.download(strfile_id, FileDownloadParams**kwargs)  -> BinaryResponseContent`
-- [Files](Other/api-python-beta-files-fceda54f11.md) - `beta.files.upload(FileUploadParams**kwargs)  -> FileMetadata`
-- [Api Python Beta Files List 3Fc3C03112](Other/api-python-beta-files-list-3fc3c03112.md) - `beta.files.list(FileListParams**kwargs)  -> SyncPage[FileMetadata]`
-- [Api Python Beta Files Retrieve Metadata 100E5A88Fb](Other/api-python-beta-files-retrieve-metadata-100e5a88fb.md) - `beta.files.retrieve_metadata(strfile_id, FileRetrieveMetadataParams**kwargs)  -> FileMetadata`
-- [Api Python Beta Files Upload F09574Ba0C](Other/api-python-beta-files-upload-f09574ba0c.md) - `beta.files.upload(FileUploadParams**kwargs)  -> FileMetadata`
-- [Memory Stores](Other/api-python-beta-memory-stores-a983851e0b.md) - `beta.memory_stores.create(MemoryStoreCreateParams**kwargs)  -> BetaManagedAgentsMemoryStore`
-- [Api Python Beta Memory Stores Archive B0Fa60C65B](Other/api-python-beta-memory-stores-archive-b0fa60c65b.md) - `beta.memory_stores.archive(strmemory_store_id, MemoryStoreArchiveParams**kwargs)  -> BetaManagedAgentsMemoryStore`
-- [Api Python Beta Memory Stores Create 3Bb660C04B](Other/api-python-beta-memory-stores-create-3bb660c04b.md) - `beta.memory_stores.create(MemoryStoreCreateParams**kwargs)  -> BetaManagedAgentsMemoryStore`
-- [Api Python Beta Memory Stores Delete 2Fada4039C](Other/api-python-beta-memory-stores-delete-2fada4039c.md) - `beta.memory_stores.delete(strmemory_store_id, MemoryStoreDeleteParams**kwargs)  -> BetaManagedAgentsDeletedMemoryStore`
-- [Api Python Beta Memory Stores List 1D603F2207](Other/api-python-beta-memory-stores-list-1d603f2207.md) - `beta.memory_stores.list(MemoryStoreListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsMemoryStore]`
-- [Memories](Other/api-python-beta-memory-stores-memories-2bbcba76a7.md) - `beta.memory_stores.memories.create(strmemory_store_id, MemoryCreateParams**kwargs)  -> BetaManagedAgentsMemory`
-- [Api Python Beta Memory Stores Memories Create Fa4A280287](Other/api-python-beta-memory-stores-memories-create-fa4a280287.md) - `beta.memory_stores.memories.create(strmemory_store_id, MemoryCreateParams**kwargs)  -> BetaManagedAgentsMemory`
-- [Api Python Beta Memory Stores Memories Delete 14E76B42C7](Other/api-python-beta-memory-stores-memories-delete-14e76b42c7.md) - `beta.memory_stores.memories.delete(strmemory_id, MemoryDeleteParams**kwargs)  -> BetaManagedAgentsDeletedMemory`
-- [Api Python Beta Memory Stores Memories List 88B317Cefa](Other/api-python-beta-memory-stores-memories-list-88b317cefa.md) - `beta.memory_stores.memories.list(strmemory_store_id, MemoryListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsMemoryListItem]`
-- [Api Python Beta Memory Stores Memories Retrieve 40F291Fbb5](Other/api-python-beta-memory-stores-memories-retrieve-40f291fbb5.md) - `beta.memory_stores.memories.retrieve(strmemory_id, MemoryRetrieveParams**kwargs)  -> BetaManagedAgentsMemory`
-- [Api Python Beta Memory Stores Memories Update Cd622C9334](Other/api-python-beta-memory-stores-memories-update-cd622c9334.md) - `beta.memory_stores.memories.update(strmemory_id, MemoryUpdateParams**kwargs)  -> BetaManagedAgentsMemory`
-- [Memory Versions](Other/api-python-beta-memory-stores-memory-versions-5a25fc22f1.md) - `beta.memory_stores.memory_versions.list(strmemory_store_id, MemoryVersionListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsMemoryVersion]`
-- [Api Python Beta Memory Stores Memory Versions List Cda9D3Dc9C](Other/api-python-beta-memory-stores-memory-versions-list-cda9d3dc9c.md) - `beta.memory_stores.memory_versions.list(strmemory_store_id, MemoryVersionListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsMemoryVersion]`
-- [Api Python Beta Memory Stores Memory Versions Redact 443A66A652](Other/api-python-beta-memory-stores-memory-versions-redact-443a66a652.md) - `beta.memory_stores.memory_versions.redact(strmemory_version_id, MemoryVersionRedactParams**kwargs)  -> BetaManagedAgentsMemoryVersion`
-- [Api Python Beta Memory Stores Memory Versions Retrieve Bd7B861B9F](Other/api-python-beta-memory-stores-memory-versions-retrieve-bd7b861b9f.md) - `beta.memory_stores.memory_versions.retrieve(strmemory_version_id, MemoryVersionRetrieveParams**kwargs)  -> BetaManagedAgentsMemoryVersion`
-- [Api Python Beta Memory Stores Retrieve 5295270Ff4](Other/api-python-beta-memory-stores-retrieve-5295270ff4.md) - `beta.memory_stores.retrieve(strmemory_store_id, MemoryStoreRetrieveParams**kwargs)  -> BetaManagedAgentsMemoryStore`
-- [Api Python Beta Memory Stores Update D2430F3729](Other/api-python-beta-memory-stores-update-d2430f3729.md) - `beta.memory_stores.update(strmemory_store_id, MemoryStoreUpdateParams**kwargs)  -> BetaManagedAgentsMemoryStore`
-- [Messages](Other/api-python-beta-messages-7a8b7acd68.md) - `beta.messages.create(MessageCreateParams**kwargs)  -> BetaMessage`
-- [Batches](Other/api-python-beta-messages-batches-1096256e16.md) - `beta.messages.batches.create(BatchCreateParams**kwargs)  -> BetaMessageBatch`
-- [Api Python Beta Messages Batches Cancel 8Ff1C2B0Da](Other/api-python-beta-messages-batches-cancel-8ff1c2b0da.md) - `beta.messages.batches.cancel(strmessage_batch_id, BatchCancelParams**kwargs)  -> BetaMessageBatch`
-- [Api Python Beta Messages Batches Create 39D6396Be9](Other/api-python-beta-messages-batches-create-39d6396be9.md) - `beta.messages.batches.create(BatchCreateParams**kwargs)  -> BetaMessageBatch`
-- [Api Python Beta Messages Batches Delete 07A0Cc4C3B](Other/api-python-beta-messages-batches-delete-07a0cc4c3b.md) - `beta.messages.batches.delete(strmessage_batch_id, BatchDeleteParams**kwargs)  -> BetaDeletedMessageBatch`
-- [Api Python Beta Messages Batches List 2Eba71B2Ba](Other/api-python-beta-messages-batches-list-2eba71b2ba.md) - `beta.messages.batches.list(BatchListParams**kwargs)  -> SyncPage[BetaMessageBatch]`
-- [Api Python Beta Messages Batches Results Dc532Ae216](Other/api-python-beta-messages-batches-results-dc532ae216.md) - `beta.messages.batches.results(strmessage_batch_id, BatchResultsParams**kwargs)  -> BetaMessageBatchIndividualResponse`
-- [Api Python Beta Messages Batches Retrieve 0387D8Aae2](Other/api-python-beta-messages-batches-retrieve-0387d8aae2.md) - `beta.messages.batches.retrieve(strmessage_batch_id, BatchRetrieveParams**kwargs)  -> BetaMessageBatch`
-- [Api Python Beta Messages Count Tokens 6409Ac3E87](Other/api-python-beta-messages-count-tokens-6409ac3e87.md) - `beta.messages.count_tokens(MessageCountTokensParams**kwargs)  -> BetaMessageTokensCount`
-- [Api Python Beta Messages Create 6588660858](Other/api-python-beta-messages-create-6588660858.md) - `beta.messages.create(MessageCreateParams**kwargs)  -> BetaMessage`
-- [Api Python Beta Sessions Archive 3A513Cb123](Other/api-python-beta-sessions-archive-3a513cb123.md) - `beta.sessions.archive(strsession_id, SessionArchiveParams**kwargs)  -> BetaManagedAgentsSession`
-- [Sessions](Other/api-python-beta-sessions-b1e2d20ba9.md) - `beta.sessions.create(SessionCreateParams**kwargs)  -> BetaManagedAgentsSession`
-- [Api Python Beta Sessions Create 1E37091D15](Other/api-python-beta-sessions-create-1e37091d15.md) - `beta.sessions.create(SessionCreateParams**kwargs)  -> BetaManagedAgentsSession`
-- [Api Python Beta Sessions Delete 137178619F](Other/api-python-beta-sessions-delete-137178619f.md) - `beta.sessions.delete(strsession_id, SessionDeleteParams**kwargs)  -> BetaManagedAgentsDeletedSession`
-- [Events](Other/api-python-beta-sessions-events-5f1c4c4d73.md) - `beta.sessions.events.list(strsession_id, EventListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsSessionEvent]`
-- [Api Python Beta Sessions Events List 1Bda75Cfcf](Other/api-python-beta-sessions-events-list-1bda75cfcf.md) - `beta.sessions.events.list(strsession_id, EventListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsSessionEvent]`
-- [Api Python Beta Sessions Events Send 02583B87B4](Other/api-python-beta-sessions-events-send-02583b87b4.md) - `beta.sessions.events.send(strsession_id, EventSendParams**kwargs)  -> BetaManagedAgentsSendSessionEvents`
-- [Api Python Beta Sessions Events Stream B24Be06Ebe](Other/api-python-beta-sessions-events-stream-b24be06ebe.md) - `beta.sessions.events.stream(strsession_id, EventStreamParams**kwargs)  -> BetaManagedAgentsStreamSessionEvents`
-- [Api Python Beta Sessions List B400C138Ed](Other/api-python-beta-sessions-list-b400c138ed.md) - `beta.sessions.list(SessionListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsSession]`
-- [Api Python Beta Sessions Resources Add 0486F536A1](Other/api-python-beta-sessions-resources-add-0486f536a1.md) - `beta.sessions.resources.add(strsession_id, ResourceAddParams**kwargs)  -> BetaManagedAgentsFileResource`
-- [Resources](Other/api-python-beta-sessions-resources-c7d49d7788.md) - `beta.sessions.resources.add(strsession_id, ResourceAddParams**kwargs)  -> BetaManagedAgentsFileResource`
-- [Api Python Beta Sessions Resources Delete 117Ebf995A](Other/api-python-beta-sessions-resources-delete-117ebf995a.md) - `beta.sessions.resources.delete(strresource_id, ResourceDeleteParams**kwargs)  -> BetaManagedAgentsDeleteSessionResource`
-- [Api Python Beta Sessions Resources List 69Bae30De3](Other/api-python-beta-sessions-resources-list-69bae30de3.md) - `beta.sessions.resources.list(strsession_id, ResourceListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsSessionResource]`
-- [Api Python Beta Sessions Resources Retrieve A38A6Df205](Other/api-python-beta-sessions-resources-retrieve-a38a6df205.md) - `beta.sessions.resources.retrieve(strresource_id, ResourceRetrieveParams**kwargs)  -> ResourceRetrieveResponse`
-- [Api Python Beta Sessions Resources Update 7F47D01F35](Other/api-python-beta-sessions-resources-update-7f47d01f35.md) - `beta.sessions.resources.update(strresource_id, ResourceUpdateParams**kwargs)  -> ResourceUpdateResponse`
-- [Api Python Beta Sessions Retrieve C6E7F48Ac5](Other/api-python-beta-sessions-retrieve-c6e7f48ac5.md) - `beta.sessions.retrieve(strsession_id, SessionRetrieveParams**kwargs)  -> BetaManagedAgentsSession`
-- [Api Python Beta Sessions Update Ab371947B6](Other/api-python-beta-sessions-update-ab371947b6.md) - `beta.sessions.update(strsession_id, SessionUpdateParams**kwargs)  -> BetaManagedAgentsSession`
-- [Skills](Other/api-python-beta-skills-8350aa4305.md) - `beta.skills.create(SkillCreateParams**kwargs)  -> SkillCreateResponse`
-- [Api Python Beta Skills Create F822Ca117D](Other/api-python-beta-skills-create-f822ca117d.md) - `beta.skills.create(SkillCreateParams**kwargs)  -> SkillCreateResponse`
-- [Api Python Beta Skills Delete 45C3501E0A](Other/api-python-beta-skills-delete-45c3501e0a.md) - `beta.skills.delete(strskill_id, SkillDeleteParams**kwargs)  -> SkillDeleteResponse`
-- [Api Python Beta Skills List F8Ac4D01E7](Other/api-python-beta-skills-list-f8ac4d01e7.md) - `beta.skills.list(SkillListParams**kwargs)  -> SyncPageCursor[SkillListResponse]`
-- [Api Python Beta Skills Retrieve 5493Ff3Ed1](Other/api-python-beta-skills-retrieve-5493ff3ed1.md) - `beta.skills.retrieve(strskill_id, SkillRetrieveParams**kwargs)  -> SkillRetrieveResponse`
-- [Api Python Beta Skills Versions Create 584B853Fa2](Other/api-python-beta-skills-versions-create-584b853fa2.md) - `beta.skills.versions.create(strskill_id, VersionCreateParams**kwargs)  -> VersionCreateResponse`
-- [Api Python Beta Skills Versions Delete Bcebb8Fc3D](Other/api-python-beta-skills-versions-delete-bcebb8fc3d.md) - `beta.skills.versions.delete(strversion, VersionDeleteParams**kwargs)  -> VersionDeleteResponse`
-- [Versions](Other/api-python-beta-skills-versions-feee2f388e.md) - `beta.skills.versions.create(strskill_id, VersionCreateParams**kwargs)  -> VersionCreateResponse`
-- [Api Python Beta Skills Versions List Cfc842Bc47](Other/api-python-beta-skills-versions-list-cfc842bc47.md) - `beta.skills.versions.list(strskill_id, VersionListParams**kwargs)  -> SyncPageCursor[VersionListResponse]`
-- [Api Python Beta Skills Versions Retrieve C81F46F194](Other/api-python-beta-skills-versions-retrieve-c81f46f194.md) - `beta.skills.versions.retrieve(strversion, VersionRetrieveParams**kwargs)  -> VersionRetrieveResponse`
-- [Vaults](Other/api-python-beta-vaults-019a584675.md) - `beta.vaults.create(VaultCreateParams**kwargs)  -> BetaManagedAgentsVault`
-- [Api Python Beta Vaults Archive 92F9A01D85](Other/api-python-beta-vaults-archive-92f9a01d85.md) - `beta.vaults.archive(strvault_id, VaultArchiveParams**kwargs)  -> BetaManagedAgentsVault`
-- [Api Python Beta Vaults Create Cf458D3127](Other/api-python-beta-vaults-create-cf458d3127.md) - `beta.vaults.create(VaultCreateParams**kwargs)  -> BetaManagedAgentsVault`
-- [Api Python Beta Vaults Credentials Archive Ac5B3882C3](Other/api-python-beta-vaults-credentials-archive-ac5b3882c3.md) - `beta.vaults.credentials.archive(strcredential_id, CredentialArchiveParams**kwargs)  -> BetaManagedAgentsCredential`
-- [Credentials](Other/api-python-beta-vaults-credentials-b95f70ef40.md) - `beta.vaults.credentials.create(strvault_id, CredentialCreateParams**kwargs)  -> BetaManagedAgentsCredential`
-- [Api Python Beta Vaults Credentials Create 71Ab102Eeb](Other/api-python-beta-vaults-credentials-create-71ab102eeb.md) - `beta.vaults.credentials.create(strvault_id, CredentialCreateParams**kwargs)  -> BetaManagedAgentsCredential`
-- [Api Python Beta Vaults Credentials Delete 68605Fc046](Other/api-python-beta-vaults-credentials-delete-68605fc046.md) - `beta.vaults.credentials.delete(strcredential_id, CredentialDeleteParams**kwargs)  -> BetaManagedAgentsDeletedCredential`
-- [Api Python Beta Vaults Credentials List 8455721D8A](Other/api-python-beta-vaults-credentials-list-8455721d8a.md) - `beta.vaults.credentials.list(strvault_id, CredentialListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsCredential]`
-- [Api Python Beta Vaults Credentials Retrieve 5348Da7D4B](Other/api-python-beta-vaults-credentials-retrieve-5348da7d4b.md) - `beta.vaults.credentials.retrieve(strcredential_id, CredentialRetrieveParams**kwargs)  -> BetaManagedAgentsCredential`
-- [Api Python Beta Vaults Credentials Update Eda34C6975](Other/api-python-beta-vaults-credentials-update-eda34c6975.md) - `beta.vaults.credentials.update(strcredential_id, CredentialUpdateParams**kwargs)  -> BetaManagedAgentsCredential`
-- [Api Python Beta Vaults Delete A051C48F38](Other/api-python-beta-vaults-delete-a051c48f38.md) - `beta.vaults.delete(strvault_id, VaultDeleteParams**kwargs)  -> BetaManagedAgentsDeletedVault`
-- [Api Python Beta Vaults List E27Eaa9097](Other/api-python-beta-vaults-list-e27eaa9097.md) - `beta.vaults.list(VaultListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsVault]`
-- [Api Python Beta Vaults Retrieve 0A7065335E](Other/api-python-beta-vaults-retrieve-0a7065335e.md) - `beta.vaults.retrieve(strvault_id, VaultRetrieveParams**kwargs)  -> BetaManagedAgentsVault`
-- [Api Python Beta Vaults Update 1F59818Cf4](Other/api-python-beta-vaults-update-1f59818cf4.md) - `beta.vaults.update(strvault_id, VaultUpdateParams**kwargs)  -> BetaManagedAgentsVault`
-- [Completions](Other/api-python-completions-ce913cd326.md) - `completions.create(CompletionCreateParams**kwargs)  -> Completion`
-- [Api Python Completions Create 7C288Eef0A](Other/api-python-completions-create-7c288eef0a.md) - `completions.create(CompletionCreateParams**kwargs)  -> Completion`
-- [Batches](Other/api-python-messages-batches-8b8b2fa927.md) - `messages.batches.create(BatchCreateParams**kwargs)  -> MessageBatch`
-- [Api Python Messages Batches Cancel 17492C9094](Other/api-python-messages-batches-cancel-17492c9094.md) - `messages.batches.cancel(strmessage_batch_id)  -> MessageBatch`
-- [Api Python Messages Batches Create 363Ca1Bd8B](Other/api-python-messages-batches-create-363ca1bd8b.md) - `messages.batches.create(BatchCreateParams**kwargs)  -> MessageBatch`
-- [Api Python Messages Batches Delete 74Cd4Bbe00](Other/api-python-messages-batches-delete-74cd4bbe00.md) - `messages.batches.delete(strmessage_batch_id)  -> DeletedMessageBatch`
-- [Api Python Messages Batches List 6De85Ce7F5](Other/api-python-messages-batches-list-6de85ce7f5.md) - `messages.batches.list(BatchListParams**kwargs)  -> SyncPage[MessageBatch]`
-- [Api Python Messages Batches Results A00Ddd1A31](Other/api-python-messages-batches-results-a00ddd1a31.md) - `messages.batches.results(strmessage_batch_id)  -> MessageBatchIndividualResponse`
-- [Api Python Messages Batches Retrieve 0D277D4807](Other/api-python-messages-batches-retrieve-0d277d4807.md) - `messages.batches.retrieve(strmessage_batch_id)  -> MessageBatch`
-- [Api Python Messages Count Tokens E8636113F1](Other/api-python-messages-count-tokens-e8636113f1.md) - `messages.count_tokens(MessageCountTokensParams**kwargs)  -> MessageTokensCount`
-- [Api Python Messages Create 235F2C8804](Other/api-python-messages-create-235f2c8804.md) - `messages.create(MessageCreateParams**kwargs)  -> Message`
-- [Messages](Other/api-python-messages-fd35ed7675.md) - `messages.create(MessageCreateParams**kwargs)  -> Message`
-- [Rate limits](Other/api-rate-limits-28d3302987.md) - To mitigate misuse and manage capacity on the API, limits are in place on how much an organization can use the Claude API.
-- [Rate limits - Claude Platform Docs](Other/api-rate-limits-ed2ea3ed3d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Beta](Other/api-ruby-beta-2b0c869591.md) - - `AnthropicBeta = String | :"message-batches-2024-09-24" | :"prompt-caching-2024-07-31" | :"computer-use-2024-10-22" | 19 more`
-- [Api Ruby Beta Agents Archive C8Be28333D](Other/api-ruby-beta-agents-archive-c8be28333d.md) - `beta.agents.archive(agent_id, **kwargs) -> BetaManagedAgentsAgent`
-- [Api Ruby Beta Agents Create 7783Bd2477](Other/api-ruby-beta-agents-create-7783bd2477.md) - `beta.agents.create(**kwargs) -> BetaManagedAgentsAgent`
-- [Agents](Other/api-ruby-beta-agents-d24d50cd53.md) - `beta.agents.create(**kwargs) -> BetaManagedAgentsAgent`
-- [Api Ruby Beta Agents Delete Bd193B6842](Other/api-ruby-beta-agents-delete-bd193b6842.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Ruby Beta Agents List 61718A40F8](Other/api-ruby-beta-agents-list-61718a40f8.md) - `beta.agents.list(**kwargs) -> PageCursor<BetaManagedAgentsAgent>`
-- [Api Ruby Beta Agents Retrieve 11D576A2F0](Other/api-ruby-beta-agents-retrieve-11d576a2f0.md) - `beta.agents.retrieve(agent_id, **kwargs) -> BetaManagedAgentsAgent`
-- [Api Ruby Beta Agents Update A9Cda5936F](Other/api-ruby-beta-agents-update-a9cda5936f.md) - `beta.agents.update(agent_id, **kwargs) -> BetaManagedAgentsAgent`
-- [Versions](Other/api-ruby-beta-agents-versions-e13ffdc0d6.md) - `beta.agents.versions.list(agent_id, **kwargs) -> PageCursor<BetaManagedAgentsAgent>`
-- [Api Ruby Beta Agents Versions List 65Ba6934Ad](Other/api-ruby-beta-agents-versions-list-65ba6934ad.md) - `beta.agents.versions.list(agent_id, **kwargs) -> PageCursor<BetaManagedAgentsAgent>`
-- [Environments](Other/api-ruby-beta-environments-9094393654.md) - `beta.environments.create(**kwargs) -> BetaEnvironment`
-- [Api Ruby Beta Environments Archive Cb74Dcd96F](Other/api-ruby-beta-environments-archive-cb74dcd96f.md) - `beta.environments.archive(environment_id, **kwargs) -> BetaEnvironment`
-- [Api Ruby Beta Environments Create Fbccac24Cc](Other/api-ruby-beta-environments-create-fbccac24cc.md) - `beta.environments.create(**kwargs) -> BetaEnvironment`
-- [Api Ruby Beta Environments Delete E2995D436B](Other/api-ruby-beta-environments-delete-e2995d436b.md) - `beta.environments.delete(environment_id, **kwargs) -> BetaEnvironmentDeleteResponse`
-- [Api Ruby Beta Environments List A0Af46F461](Other/api-ruby-beta-environments-list-a0af46f461.md) - `beta.environments.list(**kwargs) -> PageCursor<BetaEnvironment>`
-- [Api Ruby Beta Environments Retrieve D7C0235E73](Other/api-ruby-beta-environments-retrieve-d7c0235e73.md) - `beta.environments.retrieve(environment_id, **kwargs) -> BetaEnvironment`
-- [Api Ruby Beta Environments Update 50269Ce894](Other/api-ruby-beta-environments-update-50269ce894.md) - `beta.environments.update(environment_id, **kwargs) -> BetaEnvironment`
-- [Files](Other/api-ruby-beta-files-d58b783d5b.md) - `beta.files.upload(**kwargs) -> FileMetadata`
-- [Api Ruby Beta Files Delete F27E89Abc3](Other/api-ruby-beta-files-delete-f27e89abc3.md) - `beta.files.delete(file_id, **kwargs) -> DeletedFile`
-- [Api Ruby Beta Files Download Fa9828C234](Other/api-ruby-beta-files-download-fa9828c234.md) - `beta.files.download(file_id, **kwargs) -> StringIO`
-- [Api Ruby Beta Files List 5B55A3A3Fc](Other/api-ruby-beta-files-list-5b55a3a3fc.md) - `beta.files.list(**kwargs) -> Page<FileMetadata>`
-- [Api Ruby Beta Files Retrieve Metadata F4763A29C9](Other/api-ruby-beta-files-retrieve-metadata-f4763a29c9.md) - `beta.files.retrieve_metadata(file_id, **kwargs) -> FileMetadata`
-- [Api Ruby Beta Files Upload Fb5414B563](Other/api-ruby-beta-files-upload-fb5414b563.md) - `beta.files.upload(**kwargs) -> FileMetadata`
-- [Memory Stores](Other/api-ruby-beta-memory-stores-3693d8973c.md) - `beta.memory_stores.create(**kwargs) -> BetaManagedAgentsMemoryStore`
-- [Api Ruby Beta Memory Stores Archive 7C047Ae111](Other/api-ruby-beta-memory-stores-archive-7c047ae111.md) - `beta.memory_stores.archive(memory_store_id, **kwargs) -> BetaManagedAgentsMemoryStore`
-- [Api Ruby Beta Memory Stores Create 201568Ba67](Other/api-ruby-beta-memory-stores-create-201568ba67.md) - `beta.memory_stores.create(**kwargs) -> BetaManagedAgentsMemoryStore`
-- [Api Ruby Beta Memory Stores Delete 7Fab031F27](Other/api-ruby-beta-memory-stores-delete-7fab031f27.md) - `beta.memory_stores.delete(memory_store_id, **kwargs) -> BetaManagedAgentsDeletedMemoryStore`
-- [Api Ruby Beta Memory Stores List 7F3A438351](Other/api-ruby-beta-memory-stores-list-7f3a438351.md) - `beta.memory_stores.list(**kwargs) -> PageCursor<BetaManagedAgentsMemoryStore>`
-- [Memories](Other/api-ruby-beta-memory-stores-memories-54d3cac5e1.md) - `beta.memory_stores.memories.create(memory_store_id, **kwargs) -> BetaManagedAgentsMemory`
-- [Api Ruby Beta Memory Stores Memories Create 57472D3286](Other/api-ruby-beta-memory-stores-memories-create-57472d3286.md) - `beta.memory_stores.memories.create(memory_store_id, **kwargs) -> BetaManagedAgentsMemory`
-- [Api Ruby Beta Memory Stores Memories Delete Eff328F033](Other/api-ruby-beta-memory-stores-memories-delete-eff328f033.md) - `beta.memory_stores.memories.delete(memory_id, **kwargs) -> BetaManagedAgentsDeletedMemory`
-- [Api Ruby Beta Memory Stores Memories List C16Ea1427B](Other/api-ruby-beta-memory-stores-memories-list-c16ea1427b.md) - `beta.memory_stores.memories.list(memory_store_id, **kwargs) -> PageCursor<BetaManagedAgentsMemoryListItem>`
-- [Api Ruby Beta Memory Stores Memories Retrieve B1Dde65C41](Other/api-ruby-beta-memory-stores-memories-retrieve-b1dde65c41.md) - `beta.memory_stores.memories.retrieve(memory_id, **kwargs) -> BetaManagedAgentsMemory`
-- [Api Ruby Beta Memory Stores Memories Update E0F9Bc62Ae](Other/api-ruby-beta-memory-stores-memories-update-e0f9bc62ae.md) - `beta.memory_stores.memories.update(memory_id, **kwargs) -> BetaManagedAgentsMemory`
-- [Memory Versions](Other/api-ruby-beta-memory-stores-memory-versions-946bc51246.md) - `beta.memory_stores.memory_versions.list(memory_store_id, **kwargs) -> PageCursor<BetaManagedAgentsMemoryVersion>`
-- [Api Ruby Beta Memory Stores Memory Versions List 1648E59780](Other/api-ruby-beta-memory-stores-memory-versions-list-1648e59780.md) - `beta.memory_stores.memory_versions.list(memory_store_id, **kwargs) -> PageCursor<BetaManagedAgentsMemoryVersion>`
-- [Api Ruby Beta Memory Stores Memory Versions Redact Ad5A102530](Other/api-ruby-beta-memory-stores-memory-versions-redact-ad5a102530.md) - `beta.memory_stores.memory_versions.redact(memory_version_id, **kwargs) -> BetaManagedAgentsMemoryVersion`
-- [Api Ruby Beta Memory Stores Memory Versions Retrieve Ee84Cccd82](Other/api-ruby-beta-memory-stores-memory-versions-retrieve-ee84cccd82.md) - `beta.memory_stores.memory_versions.retrieve(memory_version_id, **kwargs) -> BetaManagedAgentsMemoryVersion`
-- [Api Ruby Beta Memory Stores Retrieve A04F1036C2](Other/api-ruby-beta-memory-stores-retrieve-a04f1036c2.md) - `beta.memory_stores.retrieve(memory_store_id, **kwargs) -> BetaManagedAgentsMemoryStore`
-- [Api Ruby Beta Memory Stores Update 61F1D5C22A](Other/api-ruby-beta-memory-stores-update-61f1d5c22a.md) - `beta.memory_stores.update(memory_store_id, **kwargs) -> BetaManagedAgentsMemoryStore`
-- [Messages](Other/api-ruby-beta-messages-3c3c72e30d.md) - `beta.messages.create(**kwargs) -> BetaMessage`
-- [Api Ruby Beta Messages Batches Cancel 126C1D6665](Other/api-ruby-beta-messages-batches-cancel-126c1d6665.md) - `beta.messages.batches.cancel(message_batch_id, **kwargs) -> BetaMessageBatch`
-- [Api Ruby Beta Messages Batches Create D45D51E8Ca](Other/api-ruby-beta-messages-batches-create-d45d51e8ca.md) - `beta.messages.batches.create(**kwargs) -> BetaMessageBatch`
-- [Api Ruby Beta Messages Batches Delete 627D133246](Other/api-ruby-beta-messages-batches-delete-627d133246.md) - `beta.messages.batches.delete(message_batch_id, **kwargs) -> BetaDeletedMessageBatch`
-- [Batches](Other/api-ruby-beta-messages-batches-ed90201ba7.md) - `beta.messages.batches.create(**kwargs) -> BetaMessageBatch`
-- [Api Ruby Beta Messages Batches List E7E46E4D66](Other/api-ruby-beta-messages-batches-list-e7e46e4d66.md) - `beta.messages.batches.list(**kwargs) -> Page<BetaMessageBatch>`
-- [Api Ruby Beta Messages Batches Results 187Ada7Ebd](Other/api-ruby-beta-messages-batches-results-187ada7ebd.md) - `beta.messages.batches.results(message_batch_id, **kwargs) -> BetaMessageBatchIndividualResponse`
-- [Api Ruby Beta Messages Batches Retrieve B05140Bd22](Other/api-ruby-beta-messages-batches-retrieve-b05140bd22.md) - `beta.messages.batches.retrieve(message_batch_id, **kwargs) -> BetaMessageBatch`
-- [Api Ruby Beta Messages Count Tokens Fce7B2275A](Other/api-ruby-beta-messages-count-tokens-fce7b2275a.md) - `beta.messages.count_tokens(**kwargs) -> BetaMessageTokensCount`
-- [Api Ruby Beta Messages Create F5911F2F49](Other/api-ruby-beta-messages-create-f5911f2f49.md) - `beta.messages.create(**kwargs) -> BetaMessage`
-- [Sessions](Other/api-ruby-beta-sessions-a517d980af.md) - `beta.sessions.create(**kwargs) -> BetaManagedAgentsSession`
-- [Api Ruby Beta Sessions Archive B5A3Fb4C0E](Other/api-ruby-beta-sessions-archive-b5a3fb4c0e.md) - `beta.sessions.archive(session_id, **kwargs) -> BetaManagedAgentsSession`
-- [Api Ruby Beta Sessions Create 38856Bed39](Other/api-ruby-beta-sessions-create-38856bed39.md) - `beta.sessions.create(**kwargs) -> BetaManagedAgentsSession`
-- [Api Ruby Beta Sessions Delete 272Be64C17](Other/api-ruby-beta-sessions-delete-272be64c17.md) - `beta.sessions.delete(session_id, **kwargs) -> BetaManagedAgentsDeletedSession`
-- [Events](Other/api-ruby-beta-sessions-events-7cc5d50142.md) - `beta.sessions.events.list(session_id, **kwargs) -> PageCursor<BetaManagedAgentsSessionEvent>`
-- [Api Ruby Beta Sessions Events List 439Eb8Fb9E](Other/api-ruby-beta-sessions-events-list-439eb8fb9e.md) - `beta.sessions.events.list(session_id, **kwargs) -> PageCursor<BetaManagedAgentsSessionEvent>`
-- [Api Ruby Beta Sessions Events Send 238Ecd8290](Other/api-ruby-beta-sessions-events-send-238ecd8290.md) - `beta.sessions.events.send_(session_id, **kwargs) -> BetaManagedAgentsSendSessionEvents`
-- [Api Ruby Beta Sessions Events Stream A1B898E289](Other/api-ruby-beta-sessions-events-stream-a1b898e289.md) - `beta.sessions.events.stream(session_id, **kwargs) -> BetaManagedAgentsStreamSessionEvents`
-- [Api Ruby Beta Sessions List C29693E648](Other/api-ruby-beta-sessions-list-c29693e648.md) - `beta.sessions.list(**kwargs) -> PageCursor<BetaManagedAgentsSession>`
-- [Resources](Other/api-ruby-beta-sessions-resources-7e9cbc9352.md) - `beta.sessions.resources.add(session_id, **kwargs) -> BetaManagedAgentsFileResource`
-- [Api Ruby Beta Sessions Resources Add 54Ce83424E](Other/api-ruby-beta-sessions-resources-add-54ce83424e.md) - `beta.sessions.resources.add(session_id, **kwargs) -> BetaManagedAgentsFileResource`
-- [Api Ruby Beta Sessions Resources Delete 5E3Be4C0Cb](Other/api-ruby-beta-sessions-resources-delete-5e3be4c0cb.md) - `beta.sessions.resources.delete(resource_id, **kwargs) -> BetaManagedAgentsDeleteSessionResource`
-- [Api Ruby Beta Sessions Resources List 5D35B7Ba7B](Other/api-ruby-beta-sessions-resources-list-5d35b7ba7b.md) - `beta.sessions.resources.list(session_id, **kwargs) -> PageCursor<BetaManagedAgentsSessionResource>`
-- [Api Ruby Beta Sessions Resources Retrieve 0Baf029E6E](Other/api-ruby-beta-sessions-resources-retrieve-0baf029e6e.md) - `beta.sessions.resources.retrieve(resource_id, **kwargs) -> ResourceRetrieveResponse`
-- [Api Ruby Beta Sessions Resources Update E9Ba5E3B5B](Other/api-ruby-beta-sessions-resources-update-e9ba5e3b5b.md) - `beta.sessions.resources.update(resource_id, **kwargs) -> ResourceUpdateResponse`
-- [Api Ruby Beta Sessions Retrieve 578822B310](Other/api-ruby-beta-sessions-retrieve-578822b310.md) - `beta.sessions.retrieve(session_id, **kwargs) -> BetaManagedAgentsSession`
-- [Api Ruby Beta Sessions Update B2Fc6D295F](Other/api-ruby-beta-sessions-update-b2fc6d295f.md) - `beta.sessions.update(session_id, **kwargs) -> BetaManagedAgentsSession`
-- [Skills](Other/api-ruby-beta-skills-2f698cae97.md) - `beta.skills.create(**kwargs) -> SkillCreateResponse`
-- [Api Ruby Beta Skills Create E6D6726162](Other/api-ruby-beta-skills-create-e6d6726162.md) - `beta.skills.create(**kwargs) -> SkillCreateResponse`
-- [Api Ruby Beta Skills Delete Dafc2D2C18](Other/api-ruby-beta-skills-delete-dafc2d2c18.md) - `beta.skills.delete(skill_id, **kwargs) -> SkillDeleteResponse`
-- [Api Ruby Beta Skills List 3D44Bc469C](Other/api-ruby-beta-skills-list-3d44bc469c.md) - `beta.skills.list(**kwargs) -> PageCursor<SkillListResponse>`
-- [Api Ruby Beta Skills Retrieve 693E2F5Cbb](Other/api-ruby-beta-skills-retrieve-693e2f5cbb.md) - `beta.skills.retrieve(skill_id, **kwargs) -> SkillRetrieveResponse`
-- [Versions](Other/api-ruby-beta-skills-versions-b2ac07dba5.md) - `beta.skills.versions.create(skill_id, **kwargs) -> VersionCreateResponse`
-- [Api Ruby Beta Skills Versions Create D41413D530](Other/api-ruby-beta-skills-versions-create-d41413d530.md) - `beta.skills.versions.create(skill_id, **kwargs) -> VersionCreateResponse`
-- [Api Ruby Beta Skills Versions Delete C7D572D84F](Other/api-ruby-beta-skills-versions-delete-c7d572d84f.md) - `beta.skills.versions.delete(version, **kwargs) -> VersionDeleteResponse`
-- [Api Ruby Beta Skills Versions List 0F78755Be3](Other/api-ruby-beta-skills-versions-list-0f78755be3.md) - `beta.skills.versions.list(skill_id, **kwargs) -> PageCursor<VersionListResponse>`
-- [Api Ruby Beta Skills Versions Retrieve 0777105C86](Other/api-ruby-beta-skills-versions-retrieve-0777105c86.md) - `beta.skills.versions.retrieve(version, **kwargs) -> VersionRetrieveResponse`
-- [Api Ruby Beta Vaults Archive 14649D25D7](Other/api-ruby-beta-vaults-archive-14649d25d7.md) - `beta.vaults.archive(vault_id, **kwargs) -> BetaManagedAgentsVault`
-- [Vaults](Other/api-ruby-beta-vaults-bfb73f47d7.md) - `beta.vaults.create(**kwargs) -> BetaManagedAgentsVault`
-- [Api Ruby Beta Vaults Create 65B1D8De37](Other/api-ruby-beta-vaults-create-65b1d8de37.md) - `beta.vaults.create(**kwargs) -> BetaManagedAgentsVault`
-- [Api Ruby Beta Vaults Credentials Archive Dcf1D7Cd87](Other/api-ruby-beta-vaults-credentials-archive-dcf1d7cd87.md) - `beta.vaults.credentials.archive(credential_id, **kwargs) -> BetaManagedAgentsCredential`
-- [Credentials](Other/api-ruby-beta-vaults-credentials-ba7f35ec19.md) - `beta.vaults.credentials.create(vault_id, **kwargs) -> BetaManagedAgentsCredential`
-- [Api Ruby Beta Vaults Credentials Create 0586D6Ea1E](Other/api-ruby-beta-vaults-credentials-create-0586d6ea1e.md) - `beta.vaults.credentials.create(vault_id, **kwargs) -> BetaManagedAgentsCredential`
-- [Api Ruby Beta Vaults Credentials Delete 44F1Add60E](Other/api-ruby-beta-vaults-credentials-delete-44f1add60e.md) - `beta.vaults.credentials.delete(credential_id, **kwargs) -> BetaManagedAgentsDeletedCredential`
-- [Api Ruby Beta Vaults Credentials List A8997E6C8B](Other/api-ruby-beta-vaults-credentials-list-a8997e6c8b.md) - `beta.vaults.credentials.list(vault_id, **kwargs) -> PageCursor<BetaManagedAgentsCredential>`
-- [Api Ruby Beta Vaults Credentials Retrieve 0Ba20D6793](Other/api-ruby-beta-vaults-credentials-retrieve-0ba20d6793.md) - `beta.vaults.credentials.retrieve(credential_id, **kwargs) -> BetaManagedAgentsCredential`
-- [Api Ruby Beta Vaults Credentials Update Ed14D6C261](Other/api-ruby-beta-vaults-credentials-update-ed14d6c261.md) - `beta.vaults.credentials.update(credential_id, **kwargs) -> BetaManagedAgentsCredential`
-- [Api Ruby Beta Vaults Delete 1B74A379D8](Other/api-ruby-beta-vaults-delete-1b74a379d8.md) - `beta.vaults.delete(vault_id, **kwargs) -> BetaManagedAgentsDeletedVault`
-- [Api Ruby Beta Vaults List 30D07376E7](Other/api-ruby-beta-vaults-list-30d07376e7.md) - `beta.vaults.list(**kwargs) -> PageCursor<BetaManagedAgentsVault>`
-- [Api Ruby Beta Vaults Retrieve 28D6919Ce8](Other/api-ruby-beta-vaults-retrieve-28d6919ce8.md) - `beta.vaults.retrieve(vault_id, **kwargs) -> BetaManagedAgentsVault`
-- [Api Ruby Beta Vaults Update F27F367Dc2](Other/api-ruby-beta-vaults-update-f27f367dc2.md) - `beta.vaults.update(vault_id, **kwargs) -> BetaManagedAgentsVault`
-- [Completions](Other/api-ruby-completions-a05392297c.md) - `completions.create(**kwargs) -> Completion`
-- [Api Ruby Completions Create Bd7183Fbf2](Other/api-ruby-completions-create-bd7183fbf2.md) - `completions.create(**kwargs) -> Completion`
-- [Batches](Other/api-ruby-messages-batches-63b94248d7.md) - `messages.batches.create(**kwargs) -> MessageBatch`
-- [Api Ruby Messages Batches Cancel C95B6E6Aab](Other/api-ruby-messages-batches-cancel-c95b6e6aab.md) - `messages.batches.cancel(message_batch_id) -> MessageBatch`
-- [Api Ruby Messages Batches Create 49D5D59724](Other/api-ruby-messages-batches-create-49d5d59724.md) - `messages.batches.create(**kwargs) -> MessageBatch`
-- [Api Ruby Messages Batches Delete 58810Ae269](Other/api-ruby-messages-batches-delete-58810ae269.md) - `messages.batches.delete(message_batch_id) -> DeletedMessageBatch`
-- [Api Ruby Messages Batches List A51Fbb8269](Other/api-ruby-messages-batches-list-a51fbb8269.md) - `messages.batches.list(**kwargs) -> Page<MessageBatch>`
-- [Api Ruby Messages Batches Results C1399Fc8E1](Other/api-ruby-messages-batches-results-c1399fc8e1.md) - `messages.batches.results(message_batch_id) -> MessageBatchIndividualResponse`
-- [Api Ruby Messages Batches Retrieve 2792A2109A](Other/api-ruby-messages-batches-retrieve-2792a2109a.md) - `messages.batches.retrieve(message_batch_id) -> MessageBatch`
-- [Messages](Other/api-ruby-messages-c8e554c2c6.md) - `messages.create(**kwargs) -> Message`
-- [Api Ruby Messages Count Tokens 75D73E5448](Other/api-ruby-messages-count-tokens-75d73e5448.md) - `messages.count_tokens(**kwargs) -> MessageTokensCount`
-- [Api Ruby Messages Create 2754917F1D](Other/api-ruby-messages-create-2754917f1d.md) - `messages.create(**kwargs) -> Message`
-- [Service tiers](Other/api-service-tiers-165fc24251.md) - Different tiers of service allow you to balance availability, performance, and predictable costs based on your application's needs.
-- [Service tiers - Claude Platform Docs](Other/api-service-tiers-df1a1bb212.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Skills - Claude API Reference](Other/api-skills-4de5eb9dee.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Skill - Claude API Reference](Other/api-skills-create-fd598ad54c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Skill - Claude API Reference](Other/api-skills-create-skill-36d1c415b1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete Skill - Claude API Reference](Other/api-skills-delete-8661fa3772.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Skills - Claude API Reference](Other/api-skills-list-7c5e75b4b7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Skill - Claude API Reference](Other/api-skills-retrieve-fcaf2be607.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Versions - Claude API Reference](Other/api-skills-versions-606c72655f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create Skill Version - Claude API Reference](Other/api-skills-versions-create-eeca93c363.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Delete Skill Version - Claude API Reference](Other/api-skills-versions-delete-d7546c071b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Skill Versions - Claude API Reference](Other/api-skills-versions-list-4ef8aea4f8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get Skill Version - Claude API Reference](Other/api-skills-versions-retrieve-085c192020.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Supported regions - Claude Platform Docs](Other/api-supported-regions-977a706d0c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Supported regions](Other/api-supported-regions-efff04f8b8.md) - Here are the countries, regions, and territories we can currently support access from:
-- [Api Terraform Beta 41E833C2F7](Other/api-terraform-beta-41e833c2f7.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Agents 742E6327Aa](Other/api-terraform-beta-agents-742e6327aa.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Agents Archive 47045A574D](Other/api-terraform-beta-agents-archive-47045a574d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Agents Create E57034899A](Other/api-terraform-beta-agents-create-e57034899a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Agents Delete D349B06672](Other/api-terraform-beta-agents-delete-d349b06672.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Agents List 87A7A74Fc1](Other/api-terraform-beta-agents-list-87a7a74fc1.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Agents Retrieve D892E88F88](Other/api-terraform-beta-agents-retrieve-d892e88f88.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Agents Update 93B00Eabe0](Other/api-terraform-beta-agents-update-93b00eabe0.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Agents Versions 80D58Dc101](Other/api-terraform-beta-agents-versions-80d58dc101.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Agents Versions List 4B5Bb525Ee](Other/api-terraform-beta-agents-versions-list-4b5bb525ee.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Environments Archive 407147B340](Other/api-terraform-beta-environments-archive-407147b340.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Environments Ba6E49A5B8](Other/api-terraform-beta-environments-ba6e49a5b8.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Environments Create Ac37C5E468](Other/api-terraform-beta-environments-create-ac37c5e468.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Environments Delete 91Ff92E39D](Other/api-terraform-beta-environments-delete-91ff92e39d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Environments List B9Fc4701Bc](Other/api-terraform-beta-environments-list-b9fc4701bc.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Environments Retrieve 5916Da0B56](Other/api-terraform-beta-environments-retrieve-5916da0b56.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Environments Update 56B4D72509](Other/api-terraform-beta-environments-update-56b4d72509.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Files 0D61A913Cf](Other/api-terraform-beta-files-0d61a913cf.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Files Delete 5660C77B9B](Other/api-terraform-beta-files-delete-5660c77b9b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Files Download 262960Ef41](Other/api-terraform-beta-files-download-262960ef41.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Files List 3A27Ecae36](Other/api-terraform-beta-files-list-3a27ecae36.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Files Retrieve Metadata 020229B4A3](Other/api-terraform-beta-files-retrieve-metadata-020229b4a3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Files Upload 5389Bf2036](Other/api-terraform-beta-files-upload-5389bf2036.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores Archive Ade354D76B](Other/api-terraform-beta-memory-stores-archive-ade354d76b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores C650Db3B1D](Other/api-terraform-beta-memory-stores-c650db3b1d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores Create 078Aaae1Dc](Other/api-terraform-beta-memory-stores-create-078aaae1dc.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores Delete 839D753Fda](Other/api-terraform-beta-memory-stores-delete-839d753fda.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores List 2Ad73Bccd5](Other/api-terraform-beta-memory-stores-list-2ad73bccd5.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores Memories A1F5Ef107C](Other/api-terraform-beta-memory-stores-memories-a1f5ef107c.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores Memories Create Bb7C520E64](Other/api-terraform-beta-memory-stores-memories-create-bb7c520e64.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores Memories Delete 46A4D1Dd91](Other/api-terraform-beta-memory-stores-memories-delete-46a4d1dd91.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores Memories List 6A5D31E45C](Other/api-terraform-beta-memory-stores-memories-list-6a5d31e45c.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores Memories Retrieve 46Aea2Dd88](Other/api-terraform-beta-memory-stores-memories-retrieve-46aea2dd88.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores Memories Update F9A13475F7](Other/api-terraform-beta-memory-stores-memories-update-f9a13475f7.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores Memory Versions C82374Df42](Other/api-terraform-beta-memory-stores-memory-versions-c82374df42.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores Memory Versions List 842B18E495](Other/api-terraform-beta-memory-stores-memory-versions-list-842b18e495.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores Memory Versions Redact D8Ab79Cd75](Other/api-terraform-beta-memory-stores-memory-versions-redact-d8ab79cd75.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores Memory Versions Retrieve 04Ea5Fe8Ad](Other/api-terraform-beta-memory-stores-memory-versions-retrieve-04ea5fe8ad.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores Retrieve 7504C6B746](Other/api-terraform-beta-memory-stores-retrieve-7504c6b746.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Memory Stores Update C8849F2024](Other/api-terraform-beta-memory-stores-update-c8849f2024.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Messages Batches 42049C9F83](Other/api-terraform-beta-messages-batches-42049c9f83.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Messages Batches Cancel Bbf2B84B7B](Other/api-terraform-beta-messages-batches-cancel-bbf2b84b7b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Messages Batches Create B86498Bebc](Other/api-terraform-beta-messages-batches-create-b86498bebc.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Messages Batches Delete B35Cd52C85](Other/api-terraform-beta-messages-batches-delete-b35cd52c85.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Messages Batches List 8469467D76](Other/api-terraform-beta-messages-batches-list-8469467d76.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Messages Batches Results 27F17E26C4](Other/api-terraform-beta-messages-batches-results-27f17e26c4.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Messages Batches Retrieve 275B8978Fa](Other/api-terraform-beta-messages-batches-retrieve-275b8978fa.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Messages C750Ea0838](Other/api-terraform-beta-messages-c750ea0838.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Messages Count Tokens 3F1Ea6Fa43](Other/api-terraform-beta-messages-count-tokens-3f1ea6fa43.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Messages Create C06333C8Fd](Other/api-terraform-beta-messages-create-c06333c8fd.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions 6760523Ebe](Other/api-terraform-beta-sessions-6760523ebe.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions Archive D7174107A8](Other/api-terraform-beta-sessions-archive-d7174107a8.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions Create E10313306D](Other/api-terraform-beta-sessions-create-e10313306d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions Delete D0Cb62055B](Other/api-terraform-beta-sessions-delete-d0cb62055b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions Events 6B2Fd23B78](Other/api-terraform-beta-sessions-events-6b2fd23b78.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions Events List C58A3A2A75](Other/api-terraform-beta-sessions-events-list-c58a3a2a75.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions Events Send D938C93E36](Other/api-terraform-beta-sessions-events-send-d938c93e36.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions Events Stream 9684291Fde](Other/api-terraform-beta-sessions-events-stream-9684291fde.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions List 899E6Ae70E](Other/api-terraform-beta-sessions-list-899e6ae70e.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions Resources Add D9Ffee5705](Other/api-terraform-beta-sessions-resources-add-d9ffee5705.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions Resources Ba15D579A8](Other/api-terraform-beta-sessions-resources-ba15d579a8.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions Resources Delete 8442D9E1A8](Other/api-terraform-beta-sessions-resources-delete-8442d9e1a8.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions Resources List 8786B31865](Other/api-terraform-beta-sessions-resources-list-8786b31865.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions Resources Retrieve E8561433Ca](Other/api-terraform-beta-sessions-resources-retrieve-e8561433ca.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions Resources Update D1Bb31C09A](Other/api-terraform-beta-sessions-resources-update-d1bb31c09a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions Retrieve 67E160Beb0](Other/api-terraform-beta-sessions-retrieve-67e160beb0.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Sessions Update A28D4A18E2](Other/api-terraform-beta-sessions-update-a28d4a18e2.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Skills 1A6E51Eda6](Other/api-terraform-beta-skills-1a6e51eda6.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Skills Create D1477557Cc](Other/api-terraform-beta-skills-create-d1477557cc.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Skills Delete 1B0E44B2E7](Other/api-terraform-beta-skills-delete-1b0e44b2e7.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Skills List 002Ee816E3](Other/api-terraform-beta-skills-list-002ee816e3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Skills Retrieve 9580B0962E](Other/api-terraform-beta-skills-retrieve-9580b0962e.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Skills Versions Bbfdfaeaae](Other/api-terraform-beta-skills-versions-bbfdfaeaae.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Skills Versions Create Fbf5277914](Other/api-terraform-beta-skills-versions-create-fbf5277914.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Skills Versions Delete 89F81Ea7B0](Other/api-terraform-beta-skills-versions-delete-89f81ea7b0.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Skills Versions List 47Cfa14C08](Other/api-terraform-beta-skills-versions-list-47cfa14c08.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Skills Versions Retrieve Cc2A1Ac2Ea](Other/api-terraform-beta-skills-versions-retrieve-cc2a1ac2ea.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Vaults 65C6E13B09](Other/api-terraform-beta-vaults-65c6e13b09.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Vaults Archive 8Bbfad9Fed](Other/api-terraform-beta-vaults-archive-8bbfad9fed.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Vaults Create 5704Acfc51](Other/api-terraform-beta-vaults-create-5704acfc51.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Vaults Credentials Archive Fc47D99817](Other/api-terraform-beta-vaults-credentials-archive-fc47d99817.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Vaults Credentials B91058F083](Other/api-terraform-beta-vaults-credentials-b91058f083.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Vaults Credentials Create Ea4163Eea5](Other/api-terraform-beta-vaults-credentials-create-ea4163eea5.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Vaults Credentials Delete Ee4F55D81C](Other/api-terraform-beta-vaults-credentials-delete-ee4f55d81c.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Vaults Credentials List 8938A8Cb00](Other/api-terraform-beta-vaults-credentials-list-8938a8cb00.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Vaults Credentials Retrieve Dc1B41Ca7B](Other/api-terraform-beta-vaults-credentials-retrieve-dc1b41ca7b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Vaults Credentials Update 29Fc9134E4](Other/api-terraform-beta-vaults-credentials-update-29fc9134e4.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Vaults Delete 84Ad946B07](Other/api-terraform-beta-vaults-delete-84ad946b07.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Vaults List A05E1Fa8Ee](Other/api-terraform-beta-vaults-list-a05e1fa8ee.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Vaults Retrieve 9C22F030B3](Other/api-terraform-beta-vaults-retrieve-9c22f030b3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Vaults Update 82E06161A5](Other/api-terraform-beta-vaults-update-82e06161a5.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Completions 257A3E8523](Other/api-terraform-completions-257a3e8523.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Completions Create 48182Fcf40](Other/api-terraform-completions-create-48182fcf40.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Messages 46996C1153](Other/api-terraform-messages-46996c1153.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Messages Batches Cancel 8Ee2F3010A](Other/api-terraform-messages-batches-cancel-8ee2f3010a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Messages Batches Create 8Fb79B9D3A](Other/api-terraform-messages-batches-create-8fb79b9d3a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Messages Batches Delete 2C8Adb7Ac9](Other/api-terraform-messages-batches-delete-2c8adb7ac9.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Messages Batches F0Df137D47](Other/api-terraform-messages-batches-f0df137d47.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Messages Batches List 7C63A51Ffd](Other/api-terraform-messages-batches-list-7c63a51ffd.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Messages Batches Results Ed9B1Eaa31](Other/api-terraform-messages-batches-results-ed9b1eaa31.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Messages Batches Retrieve 4A7F1C25B3](Other/api-terraform-messages-batches-retrieve-4a7f1c25b3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Messages Count Tokens C841Bad880](Other/api-terraform-messages-count-tokens-c841bad880.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Messages Create 3Db93Bbeb9](Other/api-terraform-messages-create-3db93bbeb9.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Beta](Other/api-typescript-beta-81405a90dc.md) - - `AnthropicBeta = (string & {}) | "message-batches-2024-09-24" | "prompt-caching-2024-07-31" | "computer-use-2024-10-22" | 19 more`
-- [Agents](Other/api-typescript-beta-agents-1a8275d6e8.md) - `client.beta.agents.create(AgentCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsAgent`
-- [Api Typescript Beta Agents Archive 1Df950B6B3](Other/api-typescript-beta-agents-archive-1df950b6b3.md) - `client.beta.agents.archive(stringagentID, AgentArchiveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsAgent`
-- [Api Typescript Beta Agents Create Dee9F146Df](Other/api-typescript-beta-agents-create-dee9f146df.md) - `client.beta.agents.create(AgentCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsAgent`
-- [Api Typescript Beta Agents Delete 61A524F493](Other/api-typescript-beta-agents-delete-61a524f493.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Typescript Beta Agents List D182731674](Other/api-typescript-beta-agents-list-d182731674.md) - `client.beta.agents.list(AgentListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsAgent>`
-- [Api Typescript Beta Agents Retrieve 4B66B2Abc4](Other/api-typescript-beta-agents-retrieve-4b66b2abc4.md) - `client.beta.agents.retrieve(stringagentID, AgentRetrieveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsAgent`
-- [Api Typescript Beta Agents Update 9E89Bbe678](Other/api-typescript-beta-agents-update-9e89bbe678.md) - `client.beta.agents.update(stringagentID, AgentUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsAgent`
-- [Versions](Other/api-typescript-beta-agents-versions-9e995749dd.md) - `client.beta.agents.versions.list(stringagentID, VersionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsAgent>`
-- [Api Typescript Beta Agents Versions List Fd9A5Bd22B](Other/api-typescript-beta-agents-versions-list-fd9a5bd22b.md) - `client.beta.agents.versions.list(stringagentID, VersionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsAgent>`
-- [Environments](Other/api-typescript-beta-environments-32b9a77dc7.md) - `client.beta.environments.create(EnvironmentCreateParamsparams, RequestOptionsoptions?): BetaEnvironment`
-- [Api Typescript Beta Environments Archive F7Ef990C79](Other/api-typescript-beta-environments-archive-f7ef990c79.md) - `client.beta.environments.archive(stringenvironmentID, EnvironmentArchiveParamsparams?, RequestOptionsoptions?): BetaEnvironment`
-- [Api Typescript Beta Environments Create 8Feeed987A](Other/api-typescript-beta-environments-create-8feeed987a.md) - `client.beta.environments.create(EnvironmentCreateParamsparams, RequestOptionsoptions?): BetaEnvironment`
-- [Api Typescript Beta Environments Delete 4Da114F720](Other/api-typescript-beta-environments-delete-4da114f720.md) - `client.beta.environments.delete(stringenvironmentID, EnvironmentDeleteParamsparams?, RequestOptionsoptions?): BetaEnvironmentDeleteResponse`
-- [Api Typescript Beta Environments List E419B7A025](Other/api-typescript-beta-environments-list-e419b7a025.md) - `client.beta.environments.list(EnvironmentListParamsparams?, RequestOptionsoptions?): PageCursor<BetaEnvironment>`
-- [Api Typescript Beta Environments Retrieve Ed45F784C9](Other/api-typescript-beta-environments-retrieve-ed45f784c9.md) - `client.beta.environments.retrieve(stringenvironmentID, EnvironmentRetrieveParamsparams?, RequestOptionsoptions?): BetaEnvironment`
-- [Api Typescript Beta Environments Update 50B3F85212](Other/api-typescript-beta-environments-update-50b3f85212.md) - `client.beta.environments.update(stringenvironmentID, EnvironmentUpdateParamsparams, RequestOptionsoptions?): BetaEnvironment`
-- [Files](Other/api-typescript-beta-files-1e8ff0bb0a.md) - `client.beta.files.upload(FileUploadParamsparams, RequestOptionsoptions?): FileMetadata`
-- [Api Typescript Beta Files Delete 8A56C90D11](Other/api-typescript-beta-files-delete-8a56c90d11.md) - `client.beta.files.delete(stringfileID, FileDeleteParamsparams?, RequestOptionsoptions?): DeletedFile`
-- [Api Typescript Beta Files Download 483630B216](Other/api-typescript-beta-files-download-483630b216.md) - `client.beta.files.download(stringfileID, FileDownloadParamsparams?, RequestOptionsoptions?): Response`
-- [Api Typescript Beta Files List E38Ab6779F](Other/api-typescript-beta-files-list-e38ab6779f.md) - `client.beta.files.list(FileListParamsparams?, RequestOptionsoptions?): Page<FileMetadata>`
-- [Api Typescript Beta Files Retrieve Metadata Fd5590Ade5](Other/api-typescript-beta-files-retrieve-metadata-fd5590ade5.md) - `client.beta.files.retrieveMetadata(stringfileID, FileRetrieveMetadataParamsparams?, RequestOptionsoptions?): FileMetadata`
-- [Api Typescript Beta Files Upload 7168F683Ce](Other/api-typescript-beta-files-upload-7168f683ce.md) - `client.beta.files.upload(FileUploadParamsparams, RequestOptionsoptions?): FileMetadata`
-- [Memory Stores](Other/api-typescript-beta-memory-stores-ad5b8c963a.md) - `client.beta.memoryStores.create(MemoryStoreCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemoryStore`
-- [Api Typescript Beta Memory Stores Archive 8D24D6204E](Other/api-typescript-beta-memory-stores-archive-8d24d6204e.md) - `client.beta.memoryStores.archive(stringmemoryStoreID, MemoryStoreArchiveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsMemoryStore`
-- [Api Typescript Beta Memory Stores Create 62A4Ceff0B](Other/api-typescript-beta-memory-stores-create-62a4ceff0b.md) - `client.beta.memoryStores.create(MemoryStoreCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemoryStore`
-- [Api Typescript Beta Memory Stores Delete F2039E0096](Other/api-typescript-beta-memory-stores-delete-f2039e0096.md) - `client.beta.memoryStores.delete(stringmemoryStoreID, MemoryStoreDeleteParamsparams?, RequestOptionsoptions?): BetaManagedAgentsDeletedMemoryStore`
-- [Api Typescript Beta Memory Stores List 6497D5B8C4](Other/api-typescript-beta-memory-stores-list-6497d5b8c4.md) - `client.beta.memoryStores.list(MemoryStoreListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsMemoryStore>`
-- [Memories](Other/api-typescript-beta-memory-stores-memories-9bf2036f03.md) - `client.beta.memoryStores.memories.create(stringmemoryStoreID, MemoryCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemory`
-- [Api Typescript Beta Memory Stores Memories Create 6578972Df7](Other/api-typescript-beta-memory-stores-memories-create-6578972df7.md) - `client.beta.memoryStores.memories.create(stringmemoryStoreID, MemoryCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemory`
-- [Api Typescript Beta Memory Stores Memories Delete 041909980E](Other/api-typescript-beta-memory-stores-memories-delete-041909980e.md) - `client.beta.memoryStores.memories.delete(stringmemoryID, MemoryDeleteParamsparams, RequestOptionsoptions?): BetaManagedAgentsDeletedMemory`
-- [Api Typescript Beta Memory Stores Memories List C229Ee913B](Other/api-typescript-beta-memory-stores-memories-list-c229ee913b.md) - `client.beta.memoryStores.memories.list(stringmemoryStoreID, MemoryListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsMemoryListI
-- [Api Typescript Beta Memory Stores Memories Retrieve 11D594C648](Other/api-typescript-beta-memory-stores-memories-retrieve-11d594c648.md) - `client.beta.memoryStores.memories.retrieve(stringmemoryID, MemoryRetrieveParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemory`
-- [Api Typescript Beta Memory Stores Memories Update 9Cf435B6F0](Other/api-typescript-beta-memory-stores-memories-update-9cf435b6f0.md) - `client.beta.memoryStores.memories.update(stringmemoryID, MemoryUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemory`
-- [Memory Versions](Other/api-typescript-beta-memory-stores-memory-versions-a354907633.md) - `client.beta.memoryStores.memoryVersions.list(stringmemoryStoreID, MemoryVersionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgen
-- [Api Typescript Beta Memory Stores Memory Versions List F7Daa94279](Other/api-typescript-beta-memory-stores-memory-versions-list-f7daa94279.md) - `client.beta.memoryStores.memoryVersions.list(stringmemoryStoreID, MemoryVersionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgen
-- [Api Typescript Beta Memory Stores Memory Versions Redact F2E7Ec64B1](Other/api-typescript-beta-memory-stores-memory-versions-redact-f2e7ec64b1.md) - `client.beta.memoryStores.memoryVersions.redact(stringmemoryVersionID, MemoryVersionRedactParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemo
-- [Api Typescript Beta Memory Stores Memory Versions Retrieve 13De79Ede7](Other/api-typescript-beta-memory-stores-memory-versions-retrieve-13de79ede7.md) - `client.beta.memoryStores.memoryVersions.retrieve(stringmemoryVersionID, MemoryVersionRetrieveParamsparams, RequestOptionsoptions?): BetaManagedAgents
-- [Api Typescript Beta Memory Stores Retrieve 3Fb85D85B2](Other/api-typescript-beta-memory-stores-retrieve-3fb85d85b2.md) - `client.beta.memoryStores.retrieve(stringmemoryStoreID, MemoryStoreRetrieveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsMemoryStore`
-- [Api Typescript Beta Memory Stores Update C461Ea6F03](Other/api-typescript-beta-memory-stores-update-c461ea6f03.md) - `client.beta.memoryStores.update(stringmemoryStoreID, MemoryStoreUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemoryStore`
-- [Messages](Other/api-typescript-beta-messages-90db5b8c59.md) - `client.beta.messages.create(MessageCreateParamsparams, RequestOptionsoptions?): BetaMessage | Stream<BetaRawMessageStreamEvent>`
-- [Batches](Other/api-typescript-beta-messages-batches-3bac1a1406.md) - `client.beta.messages.batches.create(BatchCreateParamsparams, RequestOptionsoptions?): BetaMessageBatch`
-- [Api Typescript Beta Messages Batches Cancel 1916Ce7E90](Other/api-typescript-beta-messages-batches-cancel-1916ce7e90.md) - `client.beta.messages.batches.cancel(stringmessageBatchID, BatchCancelParamsparams?, RequestOptionsoptions?): BetaMessageBatch`
-- [Api Typescript Beta Messages Batches Create D99F19Dd8D](Other/api-typescript-beta-messages-batches-create-d99f19dd8d.md) - `client.beta.messages.batches.create(BatchCreateParamsparams, RequestOptionsoptions?): BetaMessageBatch`
-- [Api Typescript Beta Messages Batches Delete 3Dd175B594](Other/api-typescript-beta-messages-batches-delete-3dd175b594.md) - `client.beta.messages.batches.delete(stringmessageBatchID, BatchDeleteParamsparams?, RequestOptionsoptions?): BetaDeletedMessageBatch`
-- [Api Typescript Beta Messages Batches List 58D100B77D](Other/api-typescript-beta-messages-batches-list-58d100b77d.md) - `client.beta.messages.batches.list(BatchListParamsparams?, RequestOptionsoptions?): Page<BetaMessageBatch>`
-- [Api Typescript Beta Messages Batches Results C0B2Ceacf3](Other/api-typescript-beta-messages-batches-results-c0b2ceacf3.md) - `client.beta.messages.batches.results(stringmessageBatchID, BatchResultsParamsparams?, RequestOptionsoptions?): BetaMessageBatchIndividualResponse | S
-- [Api Typescript Beta Messages Batches Retrieve 54Fcbd11Cd](Other/api-typescript-beta-messages-batches-retrieve-54fcbd11cd.md) - `client.beta.messages.batches.retrieve(stringmessageBatchID, BatchRetrieveParamsparams?, RequestOptionsoptions?): BetaMessageBatch`
-- [Api Typescript Beta Messages Count Tokens A8443595B0](Other/api-typescript-beta-messages-count-tokens-a8443595b0.md) - `client.beta.messages.countTokens(MessageCountTokensParamsparams, RequestOptionsoptions?): BetaMessageTokensCount`
-- [Api Typescript Beta Messages Create F2Fd3D94E6](Other/api-typescript-beta-messages-create-f2fd3d94e6.md) - `client.beta.messages.create(MessageCreateParamsparams, RequestOptionsoptions?): BetaMessage | Stream<BetaRawMessageStreamEvent>`
-- [Sessions](Other/api-typescript-beta-sessions-5a1087c705.md) - `client.beta.sessions.create(SessionCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsSession`
-- [Api Typescript Beta Sessions Archive D66D7E1798](Other/api-typescript-beta-sessions-archive-d66d7e1798.md) - `client.beta.sessions.archive(stringsessionID, SessionArchiveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsSession`
-- [Api Typescript Beta Sessions Create 0Bb99Ed0Ef](Other/api-typescript-beta-sessions-create-0bb99ed0ef.md) - `client.beta.sessions.create(SessionCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsSession`
-- [Api Typescript Beta Sessions Delete De491Eb1Ee](Other/api-typescript-beta-sessions-delete-de491eb1ee.md) - `client.beta.sessions.delete(stringsessionID, SessionDeleteParamsparams?, RequestOptionsoptions?): BetaManagedAgentsDeletedSession`
-- [Events](Other/api-typescript-beta-sessions-events-3306ba8ca3.md) - `client.beta.sessions.events.list(stringsessionID, EventListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsSessionEvent>`
-- [Api Typescript Beta Sessions Events List Cb5B872E44](Other/api-typescript-beta-sessions-events-list-cb5b872e44.md) - `client.beta.sessions.events.list(stringsessionID, EventListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsSessionEvent>`
-- [Api Typescript Beta Sessions Events Send 1Fac917C66](Other/api-typescript-beta-sessions-events-send-1fac917c66.md) - `client.beta.sessions.events.send(stringsessionID, EventSendParamsparams, RequestOptionsoptions?): BetaManagedAgentsSendSessionEvents`
-- [Api Typescript Beta Sessions Events Stream C7Abfe3147](Other/api-typescript-beta-sessions-events-stream-c7abfe3147.md) - `client.beta.sessions.events.stream(stringsessionID, EventStreamParamsparams?, RequestOptionsoptions?): BetaManagedAgentsStreamSessionEvents | Stream<
-- [Api Typescript Beta Sessions List 7Dcc171392](Other/api-typescript-beta-sessions-list-7dcc171392.md) - `client.beta.sessions.list(SessionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsSession>`
-- [Resources](Other/api-typescript-beta-sessions-resources-a2b0db3bbd.md) - `client.beta.sessions.resources.add(stringsessionID, ResourceAddParamsparams, RequestOptionsoptions?): BetaManagedAgentsFileResource`
-- [Api Typescript Beta Sessions Resources Add 1B0A88Adac](Other/api-typescript-beta-sessions-resources-add-1b0a88adac.md) - `client.beta.sessions.resources.add(stringsessionID, ResourceAddParamsparams, RequestOptionsoptions?): BetaManagedAgentsFileResource`
-- [Api Typescript Beta Sessions Resources Delete 265Deb2Eba](Other/api-typescript-beta-sessions-resources-delete-265deb2eba.md) - `client.beta.sessions.resources.delete(stringresourceID, ResourceDeleteParamsparams, RequestOptionsoptions?): BetaManagedAgentsDeleteSessionResource`
-- [Api Typescript Beta Sessions Resources List 7D2Fc80A5A](Other/api-typescript-beta-sessions-resources-list-7d2fc80a5a.md) - `client.beta.sessions.resources.list(stringsessionID, ResourceListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsSessionResource>
-- [Api Typescript Beta Sessions Resources Retrieve 0625D0Fefa](Other/api-typescript-beta-sessions-resources-retrieve-0625d0fefa.md) - `client.beta.sessions.resources.retrieve(stringresourceID, ResourceRetrieveParamsparams, RequestOptionsoptions?): ResourceRetrieveResponse`
-- [Api Typescript Beta Sessions Resources Update 31E491Fa98](Other/api-typescript-beta-sessions-resources-update-31e491fa98.md) - `client.beta.sessions.resources.update(stringresourceID, ResourceUpdateParamsparams, RequestOptionsoptions?): ResourceUpdateResponse`
-- [Api Typescript Beta Sessions Retrieve 67F1002E03](Other/api-typescript-beta-sessions-retrieve-67f1002e03.md) - `client.beta.sessions.retrieve(stringsessionID, SessionRetrieveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsSession`
-- [Api Typescript Beta Sessions Update 429A82Aef2](Other/api-typescript-beta-sessions-update-429a82aef2.md) - `client.beta.sessions.update(stringsessionID, SessionUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsSession`
-- [Skills](Other/api-typescript-beta-skills-b0004cbaad.md) - `client.beta.skills.create(SkillCreateParamsparams?, RequestOptionsoptions?): SkillCreateResponse`
-- [Api Typescript Beta Skills Create 6Ee8B16A2C](Other/api-typescript-beta-skills-create-6ee8b16a2c.md) - `client.beta.skills.create(SkillCreateParamsparams?, RequestOptionsoptions?): SkillCreateResponse`
-- [Api Typescript Beta Skills Delete 705A8F5C21](Other/api-typescript-beta-skills-delete-705a8f5c21.md) - `client.beta.skills.delete(stringskillID, SkillDeleteParamsparams?, RequestOptionsoptions?): SkillDeleteResponse`
-- [Api Typescript Beta Skills List A095Bc2Add](Other/api-typescript-beta-skills-list-a095bc2add.md) - `client.beta.skills.list(SkillListParamsparams?, RequestOptionsoptions?): PageCursor<SkillListResponse>`
-- [Api Typescript Beta Skills Retrieve Ec7B6683Ee](Other/api-typescript-beta-skills-retrieve-ec7b6683ee.md) - `client.beta.skills.retrieve(stringskillID, SkillRetrieveParamsparams?, RequestOptionsoptions?): SkillRetrieveResponse`
-- [Api Typescript Beta Skills Versions Create 5C84475818](Other/api-typescript-beta-skills-versions-create-5c84475818.md) - `client.beta.skills.versions.create(stringskillID, VersionCreateParamsparams?, RequestOptionsoptions?): VersionCreateResponse`
-- [Api Typescript Beta Skills Versions Delete E6277765A9](Other/api-typescript-beta-skills-versions-delete-e6277765a9.md) - `client.beta.skills.versions.delete(stringversion, VersionDeleteParamsparams, RequestOptionsoptions?): VersionDeleteResponse`
-- [Versions](Other/api-typescript-beta-skills-versions-ed1f5704a5.md) - `client.beta.skills.versions.create(stringskillID, VersionCreateParamsparams?, RequestOptionsoptions?): VersionCreateResponse`
-- [Api Typescript Beta Skills Versions List E9C0071F2E](Other/api-typescript-beta-skills-versions-list-e9c0071f2e.md) - `client.beta.skills.versions.list(stringskillID, VersionListParamsparams?, RequestOptionsoptions?): PageCursor<VersionListResponse>`
-- [Api Typescript Beta Skills Versions Retrieve 7279Caeba1](Other/api-typescript-beta-skills-versions-retrieve-7279caeba1.md) - `client.beta.skills.versions.retrieve(stringversion, VersionRetrieveParamsparams, RequestOptionsoptions?): VersionRetrieveResponse`
-- [Vaults](Other/api-typescript-beta-vaults-4fa88061d2.md) - `client.beta.vaults.create(VaultCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsVault`
-- [Api Typescript Beta Vaults Archive D7556D01B8](Other/api-typescript-beta-vaults-archive-d7556d01b8.md) - `client.beta.vaults.archive(stringvaultID, VaultArchiveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsVault`
-- [Api Typescript Beta Vaults Create B42E01D8Eb](Other/api-typescript-beta-vaults-create-b42e01d8eb.md) - `client.beta.vaults.create(VaultCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsVault`
-- [Credentials](Other/api-typescript-beta-vaults-credentials-7b9f0deb49.md) - `client.beta.vaults.credentials.create(stringvaultID, CredentialCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential`
-- [Api Typescript Beta Vaults Credentials Archive 4114C64B30](Other/api-typescript-beta-vaults-credentials-archive-4114c64b30.md) - `client.beta.vaults.credentials.archive(stringcredentialID, CredentialArchiveParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential`
-- [Api Typescript Beta Vaults Credentials Create 4Afd741D84](Other/api-typescript-beta-vaults-credentials-create-4afd741d84.md) - `client.beta.vaults.credentials.create(stringvaultID, CredentialCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential`
-- [Api Typescript Beta Vaults Credentials Delete D8C182D6C3](Other/api-typescript-beta-vaults-credentials-delete-d8c182d6c3.md) - `client.beta.vaults.credentials.delete(stringcredentialID, CredentialDeleteParamsparams, RequestOptionsoptions?): BetaManagedAgentsDeletedCredential`
-- [Api Typescript Beta Vaults Credentials List 70Dcbd98C6](Other/api-typescript-beta-vaults-credentials-list-70dcbd98c6.md) - `client.beta.vaults.credentials.list(stringvaultID, CredentialListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsCredential>`
-- [Api Typescript Beta Vaults Credentials Retrieve 38E483Eb73](Other/api-typescript-beta-vaults-credentials-retrieve-38e483eb73.md) - `client.beta.vaults.credentials.retrieve(stringcredentialID, CredentialRetrieveParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential`
-- [Api Typescript Beta Vaults Credentials Update 0Dd0F085Be](Other/api-typescript-beta-vaults-credentials-update-0dd0f085be.md) - `client.beta.vaults.credentials.update(stringcredentialID, CredentialUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential`
-- [Api Typescript Beta Vaults Delete E183B93286](Other/api-typescript-beta-vaults-delete-e183b93286.md) - `client.beta.vaults.delete(stringvaultID, VaultDeleteParamsparams?, RequestOptionsoptions?): BetaManagedAgentsDeletedVault`
-- [Api Typescript Beta Vaults List 0501Bb42E3](Other/api-typescript-beta-vaults-list-0501bb42e3.md) - `client.beta.vaults.list(VaultListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsVault>`
-- [Api Typescript Beta Vaults Retrieve B75C03B1Eb](Other/api-typescript-beta-vaults-retrieve-b75c03b1eb.md) - `client.beta.vaults.retrieve(stringvaultID, VaultRetrieveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsVault`
-- [Api Typescript Beta Vaults Update Bb26Ea95C8](Other/api-typescript-beta-vaults-update-bb26ea95c8.md) - `client.beta.vaults.update(stringvaultID, VaultUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsVault`
-- [Completions](Other/api-typescript-completions-0052628b8a.md) - `client.completions.create(CompletionCreateParamsparams, RequestOptionsoptions?): Completion | Stream<Completion>`
-- [Api Typescript Completions Create 1A4F2687B1](Other/api-typescript-completions-create-1a4f2687b1.md) - `client.completions.create(CompletionCreateParamsparams, RequestOptionsoptions?): Completion | Stream<Completion>`
-- [Messages](Other/api-typescript-messages-2ee0725222.md) - `client.messages.create(MessageCreateParamsbody, RequestOptionsoptions?): Message | Stream<RawMessageStreamEvent>`
-- [Batches](Other/api-typescript-messages-batches-98ce88e31a.md) - `client.messages.batches.create(BatchCreateParamsbody, RequestOptionsoptions?): MessageBatch`
-- [Api Typescript Messages Batches Cancel A9B39Fec23](Other/api-typescript-messages-batches-cancel-a9b39fec23.md) - `client.messages.batches.cancel(stringmessageBatchID, RequestOptionsoptions?): MessageBatch`
-- [Api Typescript Messages Batches Create 54D7Cab36A](Other/api-typescript-messages-batches-create-54d7cab36a.md) - `client.messages.batches.create(BatchCreateParamsbody, RequestOptionsoptions?): MessageBatch`
-- [Api Typescript Messages Batches Delete 119Dfb75F4](Other/api-typescript-messages-batches-delete-119dfb75f4.md) - `client.messages.batches.delete(stringmessageBatchID, RequestOptionsoptions?): DeletedMessageBatch`
-- [Api Typescript Messages Batches List F08B6A4Ebd](Other/api-typescript-messages-batches-list-f08b6a4ebd.md) - `client.messages.batches.list(BatchListParamsquery?, RequestOptionsoptions?): Page<MessageBatch>`
-- [Api Typescript Messages Batches Results 3D319B03D1](Other/api-typescript-messages-batches-results-3d319b03d1.md) - `client.messages.batches.results(stringmessageBatchID, RequestOptionsoptions?): MessageBatchIndividualResponse | Stream<MessageBatchIndividualResponse
-- [Api Typescript Messages Batches Retrieve A46E305636](Other/api-typescript-messages-batches-retrieve-a46e305636.md) - `client.messages.batches.retrieve(stringmessageBatchID, RequestOptionsoptions?): MessageBatch`
-- [Api Typescript Messages Count Tokens Cbf98247De](Other/api-typescript-messages-count-tokens-cbf98247de.md) - `client.messages.countTokens(MessageCountTokensParamsbody, RequestOptionsoptions?): MessageTokensCount`
-- [Api Typescript Messages Create D3193B53Fa](Other/api-typescript-messages-create-d3193b53fa.md) - `client.messages.create(MessageCreateParamsbody, RequestOptionsoptions?): Message | Stream<RawMessageStreamEvent>`
-- [Versions - Claude Platform Docs](Other/api-versioning-27f1ef6fa2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Versions](Other/api-versioning-f7848bbf23.md) - When making API requests, you must send an `anthropic-version` request header. For example, `anthropic-version: 2023-06-01`. If you are using our [cli
-- [Api](Other/api.md) - Updates to the Claude Developer Platform, including the Claude API, client SDKs, and the Claude Console.
-- [Batch Processing with Message Batches API](Other/batch-processing.md) - Message Batches allow you to process large volumes of Messages requests
-- [Batches | Claude Platform](Other/batches-854a046958.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Claude API Monitoring Setup Guide](Other/claude-api-monitoring-setup.md) - This guide will help you set up monitoring for Claude Opus API calls using MITMproxy and view them in your terminal viewer at localhost:3001.
-- [API usage primer for Claude - Claude Platform Docs](Other/claude-api-primer-84652a8c9f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude in Microsoft Foundry | Claude by Anthropic](Other/claude-in-microsoft-foundry-claude-by-anthropic.md) - Deploy frontier AI solutions safely and simply, using your existing Azure ecosystem.
-- [Manage resources as code with ant apply - Claude Platform Docs](Other/cli-sdks-libraries-cli-apply-a9d07d4888.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [CLI authentication options - Claude Platform Docs](Other/cli-sdks-libraries-cli-authentication-faf5ddb9fb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [CLI quickstart - Claude Platform Docs](Other/cli-sdks-libraries-cli-quickstart-8285596437.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [CLI scripting and automation - Claude Platform Docs](Other/cli-sdks-libraries-cli-scripting-f05d9ea3d8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Connect to a Managed Agents session from your terminal - Claude Platform Docs](Other/cli-sdks-libraries-cli-sessions-connect-3a0edf7fc0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Using the CLI - Claude Platform Docs](Other/cli-sdks-libraries-cli-using-3cef4a9e38.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Apple Foundation Models - Claude Platform Docs](Other/cli-sdks-libraries-libraries-apple-foundation-models-8edad02aa4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [OpenAI SDK compatibility - Claude Platform Docs](Other/cli-sdks-libraries-libraries-openai-sdk-807d713e7b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [SDK middleware - Claude Platform Docs](Other/cli-sdks-libraries-middleware-6738007e59.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [CLI, SDKs, and libraries - Claude Platform Docs](Other/cli-sdks-libraries-overview-91dfb49fd7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Connectors | Claude](Other/connectors-claude.md) - Claude can work with your tools, databases, and applications to give you more relevant responses. Choose from a variety of connectors, powered by the 
-- [Cost | Claude Platform](Other/cost-d4b811e07f.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Deployments | Claude Platform](Other/deployments-7927d46dbe.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Environments | Claude Platform](Other/environments-d54c4bd149.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Files | Claude Platform](Other/files-2cdedbea08.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Get your Claude API key - Claude Platform Docs](Other/get-api-key-6b5482cd80.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Google Cloud Vertex AI | Claude](Other/google-cloud-vertex-ai-claude.md) - Get access to advanced AI and agent-building capabilities with built-in safeguards and efficient scaling.
-- [Documentation - Claude Platform Docs](Other/home-e41ade5b86.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Documentation - Claude API Docs](Other/home.md) - Everything you need to integrate Claude into your applications. From first API call to production.
-- [How can I access the Claude API? | Claude Help Center](Other/how-can-i-access-the-anthropic-api.md) - Organizations interested in building with the Claude API can create a [Claude Console account](platform-claude-com.md). The Claude Console is where yo
-- [Logs | Claude Platform](Other/logs-59abf26687.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Access Transparency - Claude Platform Docs](Other/manage-claude-access-transparency-5a9d460dea.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Verify Access Transparency events with the transparency log - Claude Platform Docs](Other/manage-claude-access-transparency-log-33df14ae43.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Admin API - Claude Platform Docs](Other/manage-claude-admin-api-b68cbf8cc4.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Create an Admin API key - Claude Platform Docs](Other/manage-claude-admin-api-keys-864b183d97.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Analytics APIs - Claude Platform Docs](Other/manage-claude-analytics-api-f8c0b3123f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [API and data retention - Claude Platform Docs](Other/manage-claude-api-and-data-retention-6bc4022c86.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [App Attest for iOS and macOS apps - Claude Platform Docs](Other/manage-claude-app-attest-81a116478f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Authentication - Claude Platform Docs](Other/manage-claude-authentication-c9def02fc9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Configure AWS KMS for CMEK - Claude Platform Docs](Other/manage-claude-cmek-aws-kms-b904d89f08.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Configure Azure Key Vault for CMEK - Claude Platform Docs](Other/manage-claude-cmek-azure-key-vault-bee2bb5de9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Customer-managed encryption keys - Claude Platform Docs](Other/manage-claude-cmek-efcdb6010f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Configure Google Cloud KMS for CMEK - Claude Platform Docs](Other/manage-claude-cmek-google-cloud-kms-3b643d3a9e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Query the Activity Feed - Claude Platform Docs](Other/manage-claude-compliance-activity-feed-3a78dd7a53.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Compliance API - Claude Platform Docs](Other/manage-claude-compliance-api-a26043848a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Set up the Compliance API - Claude Platform Docs](Other/manage-claude-compliance-api-access-2aaa0e2386.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Retrieve and delete chats, files, and projects - Claude Platform Docs](Other/manage-claude-compliance-content-data-313b7c7642.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Handle Compliance API errors - Claude Platform Docs](Other/manage-claude-compliance-errors-0d138151dc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Compliance API FAQ - Claude Platform Docs](Other/manage-claude-compliance-faq-8a88303cbf.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Design your compliance integration - Claude Platform Docs](Other/manage-claude-compliance-integration-patterns-3b580eebdf.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List organizations, users, roles, groups, and settings - Claude Platform Docs](Other/manage-claude-compliance-org-data-196102dc29.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Retrieve session transcripts - Claude Platform Docs](Other/manage-claude-compliance-sessions-2f1754cc8c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Data residency - Claude Platform Docs](Other/manage-claude-data-residency-86972328a9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Inference hooks - Claude Platform Docs](Other/manage-claude-inference-hooks-76cfcbea77.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Configure Inference hooks - Claude Platform Docs](Other/manage-claude-inference-hooks-configuration-f2076de02d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Develop an Inference hooks integration - Claude Platform Docs](Other/manage-claude-inference-hooks-endpoint-87802a46d9.md) - We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our s
-- [Rate Limits API - Claude Platform Docs](Other/manage-claude-rate-limits-api-63efdf3221.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Spend Limits API - Claude Platform Docs](Other/manage-claude-spend-limits-api-4e546fc4d5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Usage and Cost API - Claude Platform Docs](Other/manage-claude-usage-cost-api-37b5ac0645.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [User management - Claude Platform Docs](Other/manage-claude-user-management-4a1afd8146.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Manage WIF with the Admin API - Claude Platform Docs](Other/manage-claude-wif-admin-api-f83f09f4be.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Use WIF with AWS - Claude Platform Docs](Other/manage-claude-wif-providers-aws-5cfedc3b43.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Use WIF with Microsoft Entra ID - Claude Platform Docs](Other/manage-claude-wif-providers-azure-cbf09571f3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Use WIF with Google Cloud - Claude Platform Docs](Other/manage-claude-wif-providers-gcp-4eb84cdb92.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Use WIF with GitHub Actions - Claude Platform Docs](Other/manage-claude-wif-providers-github-actions-35c3690d41.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Use WIF with Kubernetes - Claude Platform Docs](Other/manage-claude-wif-providers-kubernetes-621ae82bcb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Use WIF with Okta - Claude Platform Docs](Other/manage-claude-wif-providers-okta-72a503c68e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Use WIF with SPIFFE - Claude Platform Docs](Other/manage-claude-wif-providers-spiffe-e3ae6540f7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [WIF reference - Claude Platform Docs](Other/manage-claude-wif-reference-34cbff4f04.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Workload Identity Federation - Claude Platform Docs](Other/manage-claude-workload-identity-federation-42a19360e3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Workspaces - Claude Platform Docs](Other/manage-claude-workspaces-863f778f98.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Define your agent](Other/managed-agents-agent-setup-82ca4932fa.md) - Create a reusable, versioned agent configuration.
-- [Define your agent - Claude Platform Docs](Other/managed-agents-agent-setup-bbee5602d1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Session budgets - Claude Platform Docs](Other/managed-agents-budgets-2ff9db28f8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Container reference](Other/managed-agents-cloud-containers-18695a12bf.md) - Pre-installed packages, databases, and utilities available in cloud containers.
-- [Cloud sandbox reference - Claude Platform Docs](Other/managed-agents-cloud-sandboxes-reference-b054ece020.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Define outcomes](Other/managed-agents-define-outcomes-03fe519bce.md) - Tell the agent what 'done' looks like, and let it iterate until it gets there.
-- [Define outcomes - Claude Platform Docs](Other/managed-agents-define-outcomes-4fbd5b54eb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Dreams - Claude Platform Docs](Other/managed-agents-dreams-6cbb9e07e2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Cloud environment setup - Claude Platform Docs](Other/managed-agents-environments-68386e9e32.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Cloud environment setup](Other/managed-agents-environments-8a675d3732.md) - Customize cloud containers for your sessions.
-- [Session event stream](Other/managed-agents-events-and-streaming-8c00282409.md) - Send events, stream responses, and interrupt or redirect your session mid-execution.
-- [Session event stream - Claude Platform Docs](Other/managed-agents-events-and-streaming-d1d36b6e01.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Adding files](Other/managed-agents-files-5f1ffdd866.md) - Upload files and mount them in your container for reading and processing.
-- [Adding files - Claude Platform Docs](Other/managed-agents-files-99a555626a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Accessing GitHub - Claude Platform Docs](Other/managed-agents-github-81825b0a15.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Accessing GitHub](Other/managed-agents-github-c3d0fb911e.md) - Connect your agent to GitHub repositories for cloning, reading, and creating pull requests.
-- [MCP connector](Other/managed-agents-mcp-connector-212f0c2926.md) - Connect MCP servers to your agents for access to external tools and data sources.
-- [MCP connector - Claude Platform Docs](Other/managed-agents-mcp-connector-dac2f16e09.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Using agent memory - Claude Platform Docs](Other/managed-agents-memory-755b02d24c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Using agent memory](Other/managed-agents-memory-e08b227fea.md) - Give your agents persistent memory that survives across sessions using memory stores.
-- [Migration](Other/managed-agents-migration-07487dca6e.md) - Move an existing agent built on the Messages API or the Claude Agent SDK to Claude Managed Agents.
-- [Migration - Claude Platform Docs](Other/managed-agents-migration-69eca80ff3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Multiagent sessions](Other/managed-agents-multi-agent-c4b5f85b6c.md) - Coordinate multiple agents within a single session.
-- [Multiagent orchestration - Claude Platform Docs](Other/managed-agents-multiagent-orchestration-babbaaa764.md) - Copy page
-- [Session tracing](Other/managed-agents-observability-ba24eca2e9.md) - Monitor and debug your sessions using the Console timeline and raw event views.
-- [Build in Console - Claude Platform Docs](Other/managed-agents-onboarding-ef3d4575a1.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Prototype in Console](Other/managed-agents-onboarding-f5f453a1ca.md) - Create and test agents visually in Console without writing API calls.
-- [Claude Managed Agents overview](Other/managed-agents-overview-b12cd03916.md) - Pre-built, configurable agent harness that runs in managed infrastructure. Best for long-running tasks and asynchronous work.
-- [Claude Managed Agents overview - Claude Platform Docs](Other/managed-agents-overview-e98c272292.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Permission policies](Other/managed-agents-permission-policies-778df12305.md) - Control when agent and MCP tools execute.
-- [Permission policies - Claude Platform Docs](Other/managed-agents-permission-policies-cac6fb3d4c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get started with Claude Managed Agents](Other/managed-agents-quickstart-841ac0c596.md) - Create your first autonomous agent.
-- [Get started with Claude Managed Agents - Claude Platform Docs](Other/managed-agents-quickstart-fc5a48f298.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Reference - Claude Platform Docs](Other/managed-agents-reference-926d82f274.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Scheduled deployments - Claude Platform Docs](Other/managed-agents-scheduled-deployments-43eca459a6.md) - Copy page
-- [Self-hosted sandboxes - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-db41d6bba0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Security model - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-security-0b0439fc93.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Session operations - Claude Platform Docs](Other/managed-agents-session-operations-bb92c49437.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Start a session](Other/managed-agents-sessions-ae84d9adc1.md) - Create a session to run your agent and begin executing tasks.
-- [Start a session - Claude Platform Docs](Other/managed-agents-sessions-e1a2f0aa5f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Skills](Other/managed-agents-skills-63d5f0ec63.md) - Attach reusable, filesystem-based expertise to your agent for domain-specific workflows.
-- [Skills - Claude Platform Docs](Other/managed-agents-skills-dac7b36a85.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Tools - Claude Platform Docs](Other/managed-agents-tools-b215a6818a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Tools](Other/managed-agents-tools-ed0f3609b3.md) - Configure tools available to your agent.
-- [Authenticate with vaults - Claude Platform Docs](Other/managed-agents-vaults-4097739f94.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Authenticate with vaults](Other/managed-agents-vaults-47da9057c3.md) - Register per-user credentials when creating sessions.
-- [Subscribe to webhooks - Claude Platform Docs](Other/managed-agents-webhooks-e10d5a5180.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Memory stores | Claude Platform](Other/memory-stores-308027f154.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Partners | Claude by Anthropic](Other/partners-claude-by-anthropic.md) - Build the enterprise AI practice your customers are asking for — with the training, technical support, and co-investment to back it up.
-- [\](Other/pdf-upload-summarization.md) - :::
-- [Claude Platform](Other/platform-claude-com-0140f2ae7b.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Documentation - Claude Platform Docs](Other/platform-claude-com-343c4bc078.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Sign In | Claude Platform](Other/platform-claude-com.md) - Continue with Google
-- [Playground | Claude Platform](Other/playground-7effb0df8b.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Powered by Claude | Claude](Other/powered-by-claude-claude.md) - A curated list of businesses that use Claude to build better, faster, and safer.
-- [Programatic Tool Calling (PTC) with the Claude API](Other/programmatic-tool-calling-ptc.md) - Programmatic Tool Calling (PTC) allows Claude to write code that calls
-- [Prompt caching through the Claude API](Other/prompt-caching.md) - Prompt caching allows you to store and reuse context within your prompt.
-- [Claude Platform](Other/release-notes-overview-0570f9f216.md) - Updates to the Claude Platform, including the Claude API, client SDKs, and the Claude Console.
-- [Claude Platform release notes - Claude Platform Docs](Other/release-notes-overview-4182359e79.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [System Prompts](Other/release-notes-system-prompts-92664eecb0.md) - See updates to the core system prompts on [claude.ai](https://www.claude.ai) and the Claude [iOS](http://anthropic.com/ios) and [Android](http://anthr
-- [System Prompts - Claude Platform Docs](Other/release-notes-system-prompts-eb4edca3b5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [System prompts - Claude Platform Docs](Other/release-notes-system-prompts-overview-be5518ef7c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Resources Overview 965F97A2Ea](Other/resources-overview-965f97a2ea.md) - <h2}>
-- [Model cards - Claude Platform Docs](Other/resources-overview-c3ec667cbb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Service partners | Claude](Other/service-partners-claude.md) - Find a consulting partner or system integrator to help you build your AI strategy and successfully implement Claude.
-- [Sessions | Claude Platform](Other/sessions-e119ec85db.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Admin keys | Claude Platform](Other/settings-admin-keys-a4ac23a367.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Billing | Claude Platform](Other/settings-billing-baf11cd209.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Capabilities | Claude Platform](Other/settings-capabilities-c352cd4ffd.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [General | Claude Platform](Other/settings-general-5181522683.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [API keys | Claude Platform](Other/settings-keys-cabfb2f1ca.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Rate limits | Claude Platform](Other/settings-limits-cb9eefdc6c.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Members | Claude Platform](Other/settings-members-99e2c45677.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Organization | Claude Platform](Other/settings-organization-39ed71b3e6.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Privacy | Claude Platform](Other/settings-privacy-f20d78602c.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Security | Claude Platform](Other/settings-security-b01be1c2d7.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Workspaces | Claude Platform](Other/settings-workspaces-00ce19b952.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Skill Authoring Best Practices](Other/skill-authoring-best-practices.md) - Learn how to write effective Skills that Claude can discover and use successfully.
-- [Skills | Claude Platform](Other/skills-b6cfddee5c.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Usage | Claude Platform](Other/usage-004efd043d.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Caching | Claude Platform](Other/usage-cache-1de365f6c3.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Usage & Cost Admin API Cookbook {#usage--cost-admin-api-cookbook}](Other/usage-cost-api.md) - ::: {#9610be80 .cell .markdown id="9610be80"}
-- [Rate limits | Claude Platform](Other/usage-limits-0d7ad7f7cc.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Using the Wolfram Alpha LLM API as a Tool with Claude](Other/using-llm-api.md) - In this recipe, we\'ll show you how to integrate the Wolfram Alpha LLM
-- [Credential vaults | Claude Platform](Other/vaults-6dd7b16eb2.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Intro to Claude - Claude Platform Docs](Other/welcome-f5b1091bdb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+## Other
 
-## Test-Evaluate (17)
+- [Access the Compliance API | Claude Help Center](Other/how-can-i-access-the-compliance-api.md) — The Compliance API lets your organization programmatically pull activity feed events, chat data, and file content across all your Claude deployments. Use it to…
+- [Access Transparency - Claude Platform Docs](Other/manage-claude-access-transparency.md) — Receive an audit record of human access to your organization's data by Anthropic personnel through the Compliance API.
+- [Accessing GitHub - Claude Platform Docs](Other/managed-agents-github.md) — Configure agent environment
+- [Adding files - Claude Platform Docs](Other/managed-agents-files.md) — Configure agent environment
+- [Admin API - Claude Platform Docs](Other/manage-claude-admin-api.md) — Manage organization members, workspaces, invites, and API keys programmatically with the Admin API, using an Admin API key, an org:admin OAuth token, or a…
+- [Analytics APIs - Claude Platform Docs](Other/manage-claude-analytics-api.md) — Understand which analytics API and API key your organization needs, then provision access to Claude Code productivity metrics or Claude Enterprise engagement…
+- [API and data retention - Claude Platform Docs](Other/manage-claude-api-and-data-retention.md) — Learn about how Anthropic's APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access.
+- [API Key Best Practices: Keeping Your Keys Safe and Secure | Claude Help Center](Other/api-key-best-practices-keeping-your-keys-safe-and-secure.md) — API keys enable access to the Claude API, but they can pose significant security risks if not handled properly. Your API key is a digital key to your account…
+- [API Safeguards Tools | Claude Help Center](Other/api-safeguards-tools.md) — Whether you are just starting the process of setting up safeguards for your API deployment of Claude, or your deployment is already running, here are some…
+- [API usage primer for Claude - Claude Platform Docs](Other/claude-api-primer.md) — This guide is designed to give Claude the basics of using the Claude API. It gives explanation and examples of model IDs/the basic messages API, tool use…
+- [App Attest for iOS and macOS apps - Claude Platform Docs](Other/manage-claude-app-attest.md) — Let genuine installations of your iOS or macOS app call the Claude API without shipping an API key or running a proxy, using Apple's App Attest service.
+- [Apple Foundation Models - Claude Platform Docs](Other/cli-sdks-libraries-libraries-apple-foundation-models.md) — Libraries and integrations
+- [Authenticate with vaults - Claude Platform Docs](Other/managed-agents-vaults.md) — Configure agent environment
+- [Authentication - Claude Platform Docs](Other/manage-claude-authentication.md) — Claude on cloud platforms
+- [Batch Processing with Message Batches API](Other/claude-cookbooks-misc-batch-processing.md) — Message Batches allow you to process large volumes of Messages requests
+- [Build in Console - Claude Platform Docs](Other/managed-agents-onboarding.md) — Configure agent environment
+- [C# SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-csharp.md) — Libraries and integrations
+- [Can I use the Claude API for individual use? | Claude Help Center](Other/can-i-use-the-claude-api-for-individual-use.md) — Yes, individuals and hobbyists are welcome to use the Claude API. However, please note that use of the API is subject to our Commercial Terms of Service…
+- [Claude Code Analytics API - Claude Platform Docs](Other/manage-claude-claude-code-analytics-api.md) — Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
+- [Claude Console roles and permissions | Claude Help Center](Other/claude-console-roles-and-permissions.md) — The Claude Console uses a role-based access system with six distinct roles: User, Claude Code User, Limited Developer, Developer, Billing, and Admin. Each role…
+- [Claude in Microsoft Foundry | Claude by Anthropic](Other/partners-microsoft-foundry.md) — Deploy frontier AI solutions safely and simply, using your existing Azure ecosystem.
+- [Claude Managed Agents overview - Claude Platform Docs](Other/managed-agents-overview.md) — Configure agent environment
+- [Claude on AWS | Claude by Anthropic](Other/partners-amazon-bedrock.md) — Give your team a thinking partner, build agents, and ship AI products to customers in your AWS environment.
+- [Claude on AWS | Claude by Anthropic](Other/partners-claude-on-aws.md) — Give your team a thinking partner, build agents, and ship AI products to customers in your AWS environment.
+- [Claude Partner Network Directory](Other/partners-services.md) — Find a Claude certified consulting partner or system integrator to help you build your AI strategy and successfully implement Claude.
+- [CLI authentication options - Claude Platform Docs](Other/cli-sdks-libraries-cli-authentication.md) — Libraries and integrations
+- [CLI quickstart - Claude Platform Docs](Other/cli-sdks-libraries-cli-quickstart.md) — Libraries and integrations
+- [CLI scripting and automation - Claude Platform Docs](Other/cli-sdks-libraries-cli-scripting.md) — Libraries and integrations
+- [CLI, SDKs, and libraries - Claude Platform Docs](Other/cli-sdks-libraries-overview.md) — Libraries and integrations
+- [Cloud environment setup - Claude Platform Docs](Other/managed-agents-environments.md) — Configure agent environment
+- [Cloud sandbox reference - Claude Platform Docs](Other/managed-agents-cloud-sandboxes-reference.md) — Configure agent environment
+- [Compliance API - Claude Platform Docs](Other/manage-claude-compliance-api.md) — Programmatic access to your organization's Claude activity, chats, files, projects, sessions in Claude apps, and users for compliance, audit, and governance.
+- [Compliance API FAQ - Claude Platform Docs](Other/manage-claude-compliance-faq.md) — Answers to common questions about Compliance API access, scopes, retention, and integration.
+- [Configure AWS KMS for CMEK - Claude Platform Docs](Other/manage-claude-cmek-aws-kms.md) — Use AWS KMS to provide an encryption key for your organization.
+- [Configure Azure Key Vault for CMEK - Claude Platform Docs](Other/manage-claude-cmek-azure-key-vault.md) — Use Azure Key Vault to provide an encryption key for your organization.
+- [Configure Google Cloud KMS for CMEK - Claude Platform Docs](Other/manage-claude-cmek-google-cloud-kms.md) — Use Google Cloud KMS to provide an encryption key for your organization.
+- [Configure Inference hooks - Claude Platform Docs](Other/manage-claude-inference-hooks-configuration.md) — Allow Inference hooks for your Claude Enterprise organization, connect your AI security server, and control enforcement, failure handling, and rollout.
+- [Connect to a Managed Agents session from your terminal - Claude Platform Docs](Other/cli-sdks-libraries-cli-sessions-connect.md) — Libraries and integrations
+- [Connectors and plugins | Claude Marketplace | Claude by Anthropic](Other/partners-mcp.md) — Bring the tools you already use into every Claude conversation.
+- [Container reference](Other/managed-agents-cloud-containers.md) — Pre-installed packages, databases, and utilities available in cloud containers.
+- [Create an Admin API key - Claude Platform Docs](Other/manage-claude-admin-api-keys.md) — Create an Admin API key for your Claude Console or Claude Enterprise organization.
+- [Customer-managed encryption keys - Claude Platform Docs](Other/manage-claude-cmek.md) — Encrypt Claude workspace data at rest with a key you control.
+- [Define outcomes](Other/managed-agents-output-patterns.md) — Tell the agent what 'done' looks like, and let it iterate until it gets there.
+- [Define outcomes - Claude Platform Docs](Other/managed-agents-define-outcomes.md) — Configure agent environment
+- [Define your agent - Claude Platform Docs](Other/managed-agents-agent-setup.md) — Configure agent environment
+- [Design your compliance integration - Claude Platform Docs](Other/manage-claude-compliance-integration-patterns.md) — Choose between polling and cursor-driven Activity Feed consumption, correlate Compliance API events with your SIEM, and plan retention.
+- [Develop an Inference hooks integration - Claude Platform Docs](Other/manage-claude-inference-hooks-endpoint.md) — We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services…
+- [Documentation - Claude Platform Docs](Other/home.md) — Everything you need to integrate Claude into your applications. From first API call to production.
+- [Dreams - Claude Platform Docs](Other/managed-agents-dreams.md) — Configure agent environment
+- [Get started with Claude Managed Agents - Claude Platform Docs](Other/managed-agents-quickstart.md) — Configure agent environment
+- [Get your Claude API key - Claude Platform Docs](Other/get-api-key.md) — Claude on cloud platforms
+- [Go SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-go.md) — Libraries and integrations
+- [Google Cloud | Claude by Anthropic](Other/partners-google-cloud-vertex-ai.md) — Build advanced AI agents with Claude on Google Cloud.
+- [Google Cloud | Claude by Anthropic](Other/partners-google-cloud.md) — Build advanced AI agents with Claude on Google Cloud.
+- [Handle Compliance API errors - Claude Platform Docs](Other/manage-claude-compliance-errors.md) — Compliance API error responses by HTTP status code, with the cause and fix for each.
+- [How can I access the Claude API? | Claude Help Center](Other/how-can-i-access-the-anthropic-api.md) — Organizations interested in building with the Claude API can create a Claude Console account. The Claude Console is where you can create API keys, add users to…
+- [How can I check connectivity to the Claude API? | Claude Help Center](Other/how-can-i-check-connectivity-to-the-claude-api.md) — You can programmatically verify your connection to the Claude API by following these steps:
+- [How can I get higher rate limits on the Claude API? | Claude Help Center](Other/how-can-i-get-higher-rate-limits-on-the-claude-api.md) — Usage tiers are assigned automatically. There's no deposit or purchase that moves you up, and you don't need to take any action.
+- [How do I get access to Claude in Amazon Bedrock? | Claude Help Center](Other/how-do-i-get-access-to-claude-in-amazon-bedrock.md) — Get started with Claude in Amazon Bedrock by visiting the Amazon Bedrock console. For a step-by-step walkthrough on how to request Claude model access in the…
+- [How will I be billed for Claude API use? | Anthropic Help Center](Other/how-will-i-be-billed-for-claude-api-use.md) — Note: If you have received access to the Claude Console on or after 2/13/24, you will pay via our prepaid billing process. Refer to this article for more…
+- [I created a Claude Console organization - how do I start using the Claude API? | Claude Help Center](Other/i-created-a-claude-console-organization-how-do-i-start-using-the-claude-api.md) — To use the Claude API and the playground, add usage credits to your organization's balance. You’ll need to fill out some additional information about your…
+- [I use Claude in Amazon Bedrock. Who do I contact for customer support inquiries? | Claude Help Center](Other/i-use-claude-in-amazon-bedrock-who-do-i-contact-for-customer-support-inquiries.md) — If you're using Claude through AWS Bedrock, your usage is non-refundable. If you are a customer with a private offer and direct contract with Anthropic for…
+- [I'm getting an API connection error. How can I fix it? | Claude Help Center](Other/i-m-getting-an-api-connection-error-how-can-i-fix-it.md) — This error usually indicates an issue on your end, potentially related to your firewall, network, or VPN. Try these steps:
+- [Inference hooks - Claude Platform Docs](Other/manage-claude-inference-hooks.md) — Send each governed prompt to your organization's AI security server for an allow or deny verdict before inference proceeds.
+- [Intro to Claude - Claude Platform Docs](Other/welcome.md) — Claude on cloud platforms
+- [Inviting members to the Claude Console | Claude Help Center](Other/inviting-members-to-the-claude-console.md) — The instructions in this article apply to your overall Console organization. If you are working within a specific Console Workspace, see this article: Creating…
+- [Java SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-java.md) — Libraries and integrations
+- [Legal summarization](Other/build-use-case-legal-summarization.md) — This guide walks through how to leverage Claude's advanced natural language processing capabilities to efficiently summarize legal documents, extracting key…
+- [List organizations, users, roles, groups, and settings - Claude Platform Docs](Other/manage-claude-compliance-org-data.md) — Enumerate organizations under your parent organization (their users, roles, and groups) and read each organization's effective settings through the Compliance…
+- [Manage resources as code with ant apply - Claude Platform Docs](Other/cli-sdks-libraries-cli-apply.md) — Libraries and integrations
+- [Manage WIF with the Admin API - Claude Platform Docs](Other/manage-claude-wif-admin-api.md) — Create and manage Workload Identity Federation service accounts, issuers, and rules programmatically for infrastructure-as-code and CI workflows.
+- [MCP connector](Other/agents-mcp-connector.md) — Claude's Model Context Protocol (MCP) connector feature enables you to connect to remote MCP servers directly from the Messages API without a separate MCP…
+- [MCP connector](Other/managed-agents-custom-mcp-servers.md) — Connect MCP servers to your agents for access to external tools and data sources.
+- [MCP connector - Claude Platform Docs](Other/managed-agents-mcp-connector.md) — Configure agent environment
+- [Migration - Claude Platform Docs](Other/managed-agents-migration.md) — Configure agent environment
+- [Model cards - Claude Platform Docs](Other/resources-overview.md) — Model cards with detailed documentation for Claude models.
+- [Models overview - Claude Platform Docs](Other/how-large-is-the-claude-api-s-context-window.md) — Claude is a family of state-of-the-art large language models developed by Anthropic. Compare the current lineup, find the model ID for every platform, and open…
+- [Multiagent orchestration - Claude Platform Docs](Other/managed-agents-multiagent-orchestration.md) — Coordinate multiple agents within a single session.
+- [Multiagent sessions](Other/managed-agents-multi-agent.md) — Coordinate multiple agents within a single session.
+- [Not Found - Claude Platform Docs](Other/features-adaptive-thinking.md) — The requested page could not be found. These pages are close:
+- [Not Found - Claude Platform Docs](Other/features-api-fast-mode.md) — The requested page could not be found. These pages are close:
+- [OpenAI SDK compatibility - Claude Platform Docs](Other/cli-sdks-libraries-libraries-openai-sdk.md) — Libraries and integrations
+- [Partners | Claude by Anthropic](Other/partners.md) — Build the enterprise AI practice your customers are asking for — with the training, technical support, and co-investment to back it up.
+- [Permission policies - Claude Platform Docs](Other/managed-agents-permission-policies.md) — Configure agent environment
+- [PHP SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-php.md) — Libraries and integrations
+- [Powered by Claude | Claude by Anthropic](Other/partners-powered-by-claude.md) — A curated list of businesses that use Claude to build better, faster, and safer.
+- [Programatic Tool Calling (PTC) with the Claude API](Other/claude-cookbooks-tool-use-programmatic-tool-calling-ptc.md) — Programmatic Tool Calling (PTC) allows Claude to write code that calls
+- [Prompt caching through the Claude API](Other/claude-cookbooks-misc-prompt-caching.md) — Prompt caching allows you to store and reuse context within your prompt.
+- [Python SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-python.md) — Libraries and integrations
+- [Query the Activity Feed - Claude Platform Docs](Other/manage-claude-compliance-activity-feed.md) — Retrieve, filter, and paginate your organization's Compliance API Activity Feed.
+- [Rate Limits API - Claude Platform Docs](Other/manage-claude-rate-limits-api.md) — Programmatically query your organization's API rate limits with the Rate Limits API.
+- [Rate limits | Claude Platform](Other/usage-limits.md) — Create agents and applications with frontier Claude models and managed agent infrastructure.
+- [Reference - Claude Platform Docs](Other/managed-agents-reference.md) — Configure agent environment
+- [Remote MCP servers](Other/agents-remote-mcp-servers.md) — Several companies have deployed remote MCP servers that developers can connect to via the Anthropic MCP connector API. These servers expand the capabilities…
+- [Retrieve and delete chats, files, and projects - Claude Platform Docs](Other/manage-claude-compliance-content-data.md) — Access chat content, file attachments, and projects for claude.ai organizations through the Compliance API.
+- [Retrieve session transcripts - Claude Platform Docs](Other/manage-claude-compliance-sessions.md) — List the sessions your users run in Claude apps and agents, such as Claude Cowork and Claude Code, and retrieve their transcripts through the Compliance API.
+- [Ruby SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-ruby.md) — Libraries and integrations
+- [Scheduled deployments - Claude Platform Docs](Other/managed-agents-scheduled-deployments.md) — Create and manage deployments with the Claude API: run an agent on a recurring cron schedule and inspect its run history.
+- [SDK middleware - Claude Platform Docs](Other/cli-sdks-libraries-middleware.md) — Libraries and integrations
+- [Security model - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-security.md) — Configure agent environment
+- [Self-hosted sandboxes - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes.md) — Configure agent environment
+- [Session budgets - Claude Platform Docs](Other/managed-agents-budgets.md) — Configure agent environment
+- [Session event stream](Other/managed-agents-how-managed-agents-work.md) — Send events, stream responses, and interrupt or redirect your session mid-execution.
+- [Session event stream - Claude Platform Docs](Other/managed-agents-events-and-streaming.md) — Configure agent environment
+- [Session operations - Claude Platform Docs](Other/managed-agents-session-operations.md) — Configure agent environment
+- [Session tracing](Other/managed-agents-observability.md) — Monitor and debug your sessions using the Console timeline and raw event views.
+- [Set up the Compliance API - Claude Platform Docs](Other/manage-claude-compliance-api-access.md) — Enable the Compliance API for your organization, then create a Compliance Access Key (with scoped permissions) or an Admin API key, and learn which to use.
+- [Skills - Claude Platform Docs](Other/managed-agents-skills.md) — Configure agent environment
+- [Spend Limits API - Claude Platform Docs](Other/manage-claude-spend-limits-api.md) — Set a spend limit on each Claude Enterprise member, see where each member's spend limit is inherited from, and review or act on members' requests for a higher…
+- [Start a session - Claude Platform Docs](Other/managed-agents-sessions.md) — Configure agent environment
+- [Subscribe to webhooks - Claude Platform Docs](Other/managed-agents-webhooks.md) — Configure agent environment
+- [Tools](Other/managed-agents-tool-use.md) — Configure tools available to your agent.
+- [Tools - Claude Platform Docs](Other/managed-agents-tools.md) — Configure agent environment
+- [TypeScript SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-typescript.md) — Libraries and integrations
+- [Understanding your Claude API invoices | Claude Help Center](Other/understanding-your-claude-api-invoices.md) — This article explains the invoices and receipts you'll receive for Claude API and Console usage, where to find them, and how to read the line items on them.
+- [Uploading" PDFs to Claude Via the API](Other/claude-cookbooks-misc-pdf-upload-summarization.md) — ::: {.cell .markdown id="pOwrbbrDBmn"}
+- [Usage & Cost Admin API Cookbook](Other/claude-cookbooks-observability-usage-cost-api.md) — ::: {#9610be80 .cell .markdown id="9610be80"}
+- [Usage and Cost API - Claude Platform Docs](Other/manage-claude-usage-cost-api.md) — Programmatically access your organization's API usage and cost data with the Usage & Cost Admin API.
+- [Use WIF with AWS - Claude Platform Docs](Other/manage-claude-wif-providers-aws.md) — Authenticate AWS workloads on Lambda, EC2, ECS, or EKS to the Claude API with Workload Identity Federation and STS-issued identity tokens.
+- [Use WIF with GitHub Actions - Claude Platform Docs](Other/manage-claude-wif-providers-github-actions.md) — Authenticate GitHub Actions workflows to the Claude API with short-lived identity tokens instead of long-lived API keys.
+- [Use WIF with Google Cloud - Claude Platform Docs](Other/manage-claude-wif-providers-gcp.md) — Federate Google Cloud workloads (Cloud Run, Cloud Functions, App Engine, GCE, GKE) to the Claude API using Google-signed identity tokens instead of static API…
+- [Use WIF with Kubernetes - Claude Platform Docs](Other/manage-claude-wif-providers-kubernetes.md) — Authenticate to the Claude API from self-managed Kubernetes clusters using projected service account tokens.
+- [Use WIF with Microsoft Entra ID - Claude Platform Docs](Other/manage-claude-wif-providers-azure.md) — Federate Azure managed identities and Entra Workload Identity with the Claude API so your Azure workloads can call Claude without static API keys.
+- [Use WIF with Okta - Claude Platform Docs](Other/manage-claude-wif-providers-okta.md) — Federate Okta service application identities to the Claude API with Workload Identity Federation.
+- [Use WIF with SPIFFE - Claude Platform Docs](Other/manage-claude-wif-providers-spiffe.md) — Authenticate SPIFFE workloads to the Claude API using JWT-SVIDs from SPIRE or any other SPIFFE-conformant issuer.
+- [User management - Claude Platform Docs](Other/manage-claude-user-management.md) — Manage the people in your Claude Enterprise organization with the Admin API: list members and change roles, send and withdraw invites, manage groups, and read…
+- [Using agent memory - Claude Platform Docs](Other/managed-agents-memory.md) — Configure agent environment
+- [Using the CLI - Claude Platform Docs](Other/cli-sdks-libraries-cli-using.md) — Libraries and integrations
+- [Using the Wolfram Alpha LLM API as a Tool with Claude](Other/claude-cookbooks-third-party-wolframalpha-using-llm-api.md) — In this recipe, we\'ll show you how to integrate the Wolfram Alpha LLM
+- [Verify Access Transparency events with the transparency log - Claude Platform Docs](Other/manage-claude-access-transparency-log.md) — Use signed checkpoints and Merkle proofs from the Compliance API to verify that no Access Transparency event was removed or altered after it was committed to…
+- [What is Amazon Bedrock? | Claude Help Center](Other/what-is-amazon-bedrock.md) — Amazon Bedrock is a fully managed service that offers a choice of high-performing
+- [What should I do if I suspect my API key has been compromised? | Claude Help Center](Other/what-should-i-do-if-i-suspect-my-api-key-has-been-compromised.md) — If you suspect that your API key may be compromised, we recommend revoking the key immediately. You can do so by logging into your Claude Console account…
+- [Where can I find full receipts and invoices for my Claude API and Console payments? | Anthropic Help Center](Other/where-can-i-find-full-receipts-and-invoices-for-my-claude-api-and-console-payments.md) — Invoices are visible to Console Billing and Admin roles.
+- [Where can I find your API documentation? | Claude Help Center](Other/where-can-i-find-your-api-documentation.md) — You can access our API documentation by visiting our Claude Docs: https://docs.claude.com/en/api/overview.
+- [Where can I go for Claude API support and assistance? | Claude Help Center](Other/where-can-i-go-for-claude-api-support-and-assistance.md) — For our API users, we currently maintain three main resources:
+- [Where do I find Claude in Amazon Bedrock documentation? | Claude Help Center](Other/where-do-i-find-claude-in-amazon-bedrock-documentation.md) — Visit the Claude in Amazon Bedrock user guide.
+- [Where is the Claude API supported? | Claude Help Center](Other/where-is-the-claude-api-supported.md) — We support using the Claude API in a number of locations. Please check our website in the future for updates.
+- [WIF reference - Claude Platform Docs](Other/manage-claude-wif-reference.md) — Environment variables, validation rules, profile configuration, and error reference for Workload Identity Federation.
+- [Workload Identity Federation - Claude Platform Docs](Other/manage-claude-workload-identity-federation.md) — Authenticate workloads to the Claude API with short-lived identity tokens from your own identity provider instead of long-lived static API keys.
+- [Workspaces - Claude Platform Docs](Other/manage-claude-workspaces.md) — Organize API keys, manage team access, and control costs with workspaces.
 
-- [Define your success criteria - Claude API Docs](Test-Evaluate/test-and-evaluate-define-success.md) - Building a successful LLM-based application starts with clearly defining your success criteria. How will you know when your application is good enough
-- [Define success criteria and build evaluations - Claude Platform Docs](Test-Evaluate/test-and-evaluate-develop-tests-6727386d51.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Define success criteria and build evaluations](Test-Evaluate/test-and-evaluate-develop-tests-c4d321a9da.md)
-- [Using the Evaluation Tool](Test-Evaluate/test-and-evaluate-eval-tool-c4e35d37b9.md) - The [Claude Console](/dashboard) features an **Evaluation tool** that allows you to test your prompts under various scenarios.
-- [Streaming refusals](Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals-4bf5b1e3e7.md)
-- [Handle streaming refusals - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals-b7adb739a7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Increase output consistency - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency-44ba86b36c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Increase output consistency](Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency-8ccae35b1c.md)
-- [Mitigate jailbreaks and prompt injections](Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks-19976860e0.md)
-- [Mitigate jailbreaks and prompt injections - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks-3dd36a9677.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Mitigate jailbreaks and prompt injections - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks-85b05c0992.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Reduce hallucinations - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations-2baa756322.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Reduce hallucinations](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations-32760d4211.md)
-- [Reducing latency](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency-322e8242bc.md) - When discussing latency, you may come across several terms and measurements:
-- [Reducing latency - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency-40e6755235.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Reduce prompt leak](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak-3eb5ab36bc.md)
-- [Reduce prompt leak - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak-bfdd29c552.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+## Test Evaluate
+
+- [Define success criteria and build evaluations - Claude Platform Docs](Test-Evaluate/test-and-evaluate-develop-tests.md) — Define measurable success criteria for your LLM application and build evaluations to test it, from exact match checks to LLM-based grading.
+- [Define your success criteria - Claude API Docs](Test-Evaluate/test-and-evaluate-define-success.md) — Building a successful LLM-based application starts with clearly defining your success criteria. How will you know when your application is good enough to…
+- [Handle streaming refusals - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md) — Claude on cloud platforms
+- [Increase output consistency - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md) — Make Claude's outputs more consistent by specifying exact formats, prefilling responses, constraining with examples, and grounding answers in retrieval.
+- [Keep Claude in character with role prompting and prefilling - Claude API Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-keep-claude-in-character.md) — This guide provides actionable tips to keep Claude in character, even during long, complex interactions.
+- [Mitigate jailbreaks and prompt injections - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md) — Defend your application against jailbreaks and prompt injection with input screening, hardened system prompts, and safe handling of untrusted tool content.
+- [Reduce hallucinations - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md) — Minimize hallucinations in Claude's outputs by allowing uncertainty, grounding responses in direct quotes, and verifying claims with citations.
+- [Reduce prompt leak - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md) — Reduce the risk of prompt leaks by separating context from user queries, filtering Claude's outputs, and auditing prompts, without degrading task performance.
+- [Reducing latency - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency.md) — Reduce Claude's response latency by choosing a faster model like Claude Haiku 4.5, trimming prompt and output tokens, and streaming responses.
+- [Using the Evaluation Tool](Test-Evaluate/test-and-evaluate-eval-tool.md) — The Claude Console features an Evaluation tool that allows you to test your prompts under various scenarios.

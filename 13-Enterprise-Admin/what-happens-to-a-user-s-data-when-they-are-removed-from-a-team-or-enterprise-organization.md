@@ -1,0 +1,50 @@
+---
+title: "What happens to a user's data when they are removed from a Team or Enterprise organization? | Claude Help Center"
+source_url: "https://support.claude.com/en/articles/12053672-what-happens-to-a-user-s-data-when-they-are-removed-from-a-team-or-enterprise-organization"
+category: "13-Enterprise-Admin"
+fetched_at: "2026-09-29T06:31:23Z"
+tags: ["enterprise", "skills"]
+---
+
+# What happens to a user's data when they are removed from a Team or Enterprise organization?
+
+August 17, 2026
+
+
+This article explains what happens to projects, chats, and skills when a member is removed from your Team or Enterprise plan organization.
+
+## Deleting individual accounts within an organization
+
+If you are a non-Owner member of a Team or Enterprise plan, you will need to contact an organization Owner to have your account removed.
+
+## Deleting organization-level accounts
+
+For help with deleting your organization’s Team or Enterprise plan, please **[reach out to our Support team](../21-Account-Support/how-can-i-contact-support.md)**. Note that organization level account deletion requests must be made by your account's Primary Owner.
+
+## Will a user’s projects still be accessible after removing them?
+
+Once a user is removed from your Team or Enterprise organization, whether remaining members can access their projects or not depends on the project's visibility settings.
+
+### Private projects
+
+If the project’s visibility was set to private, other members of the organization will not be able to access it once the team member has been removed from the account. If a team member knows they're working on something in a private project they want to pass on, they will need to adjust the project’s permissions so either everyone in the organization can edit it, or invite specific users and grant them "Can edit" permissions.
+
+### Shared projects
+
+If a deleted team member shared their project with the entire organization, it will appear under the "Team" tab where remaining members can view or edit the project, depending on their permissions. If the deleted team member shared the project with specific users only, it will appear under the "Shared with me" tab for those specific users after the member is removed from the organization.
+
+## Will a user’s chats still be accessible after removing them?
+
+When a user is removed from your Team or Enterprise organization, remaining members will no longer be able to access their chats. This applies to chat snapshots that are shared with the organization. After the user who created the chat is removed, remaining members will see this message when they try to access any shared chat URLs: "Conversation not found. The requested conversation either doesn't exist or you don't have permission to access it."
+
+Note that the removed user’s data will still be included in any **[data exports](../21-Account-Support/how-can-i-export-my-claude-ai-data.md)** run by your organization’s Primary Owner. For Enterprise organizations specifically, the removed user’s data will still be subject to any configured **[custom data retention settings](../17-Billing-Plans/configure-custom-data-retention-controls-for-enterprise-plans.md)**.
+
+## Will a user's skills still be accessible after removing them?
+
+Removing a user from your Team or Enterprise organization doesn't delete the skills they uploaded to their own account. Skills the user uploaded and never shared stay on their account and remain recoverable. If the user is later added back to the organization with the same email address, those skills will reappear under **[Customize \> Skills](https://claude.ai/new#settings/customize-skills)**, where they can download them.
+
+## What happens if a member is re-added to an organization?
+
+If a team member is removed and later added back to the same organization using the same email address, previous chats, projects, and skills will be restored. The Primary Owner can also always export the member's project data and chats (note that customer data retention settings may impact this).
+
+To learn more about Anthropic’s data retention periods see **[here](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)**.

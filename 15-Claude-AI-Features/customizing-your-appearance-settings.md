@@ -2,10 +2,13 @@
 title: "Customizing your appearance settings | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8887527-customizing-your-appearance-settings"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-22T09:01:47Z"
+fetched_at: "2026-09-29T06:31:09Z"
+tags: ["claude-ai"]
 ---
 
 # Customizing your appearance settings
+
+March 16, 2026
 
 
 ## How to switch between light and dark mode

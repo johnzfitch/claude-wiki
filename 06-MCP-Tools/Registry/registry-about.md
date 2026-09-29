@@ -1,101 +1,121 @@
 ---
-title: "The MCP Registry"
-source_url: "https://modelcontextprotocol.io/registry/about.md"
-category: "06-MCP-Tools"
-fetched_at: "2026-04-26T00:00:00Z"
-tags: ["mcp", "mcp-registry", "security"]
+title: "The MCP Registry - Model Context Protocol"
+source_url: "https://modelcontextprotocol.io/registry/about"
+category: "06-MCP-Tools/Registry"
+fetched_at: "2026-09-29T06:30:20Z"
+tags: ["mcp", "mcp-registry"]
 ---
 
-> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-> Use this file to discover all available pages before exploring further.
+## On this page
+
+- [The MCP Registry Ecosystem](#the-mcp-registry-ecosystem)
+  - [Relationship with Package Registries](#relationship-with-package-registries)
+  - [Relationship with Server Developers](#relationship-with-server-developers)
+  - [Relationship with Downstream Aggregators](#relationship-with-downstream-aggregators)
+  - [Relationship with Other MCP Registries](#relationship-with-other-mcp-registries)
+  - [Relationship with MCP Host Applications](#relationship-with-mcp-host-applications)
+- [Trust and Security](#trust-and-security)
+  - [Verifying Server Authenticity](#verifying-server-authenticity)
+  - [Security Scanning](#security-scanning)
+  - [Spam Prevention](#spam-prevention)
 
 # The MCP Registry
 
-<Note>
-  The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report them on [GitHub](https://github.com/modelcontextprotocol/registry/issues).
-</Note>
+Copy pageCopy page
 
-The MCP Registry is the official centralized metadata repository for publicly accessible MCP servers, backed by major trusted contributors to the MCP ecosystem such as Anthropic, GitHub, PulseMCP, and Microsoft.
+Copy pageCopy page
 
-The MCP Registry provides:
+The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report them on [GitHub](https://github.com/modelcontextprotocol/registry/issues).
 
-* A single place for server creators to publish metadata about their servers
-* Namespace management through DNS verification
-* A REST API for MCP clients and aggregators to discover available servers
-* Standardized installation and configuration information
+The MCP Registry is the official centralized metadata repository for publicly accessible MCP servers, backed by major trusted contributors to the MCP ecosystem such as Anthropic, GitHub, PulseMCP, and Microsoft. The MCP Registry provides:
 
-Server metadata is stored in a standardized [`server.json` format](https://github.com/modelcontextprotocol/registry/blob/main/docs/reference/server-json/server.schema.json), which contains:
+- A single place for server creators to publish metadata about their servers
+- Namespace management through DNS verification
+- A REST API for MCP clients and aggregators to discover available servers
+- Standardized installation and configuration information
 
-* The server's unique name (e.g., `io.github.user/server-name`)
-* Where to locate the server (e.g., npm package name, remote server URL)
-* Execution instructions (e.g., command-line args, env vars)
-* Other discovery data (e.g., description, server capabilities)
+Server metadata is stored in a standardized [`server.json` format](https://github.com/modelcontextprotocol/registry/blob/main/docs/reference/server-json/draft/server.schema.json), which contains:
 
-## The MCP Registry Ecosystem
+- The server’s unique name (e.g., `io.github.user/server-name`)
+- Where to locate the server (e.g., npm package name, remote server URL)
+- Execution instructions (e.g., command-line args, env vars)
+- Other discovery data (e.g., description, server capabilities)
+
+
+[​](#the-mcp-registry-ecosystem)
+
+The MCP Registry Ecosystem
 
 The MCP Registry is part of an ecosystem that looks something like:
 
-<img src="https://mintcdn.com/mcp/WmrSrXfM6_AfDOK2/registry/ecosystem-diagram.excalidraw.svg?fit=max&auto=format&n=WmrSrXfM6_AfDOK2&q=85&s=ebb7663d04e9d5e6f03ac23e93936801" alt="The MCP Registry ecosystem" data-og-width="2787" width="2787" data-og-height="1811" height="1811" data-path="registry/ecosystem-diagram.excalidraw.svg" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/mcp/WmrSrXfM6_AfDOK2/registry/ecosystem-diagram.excalidraw.svg?w=280&fit=max&auto=format&n=WmrSrXfM6_AfDOK2&q=85&s=c18a9979c2c86dd7caaf5fecc2127e8d 280w, https://mintcdn.com/mcp/WmrSrXfM6_AfDOK2/registry/ecosystem-diagram.excalidraw.svg?w=560&fit=max&auto=format&n=WmrSrXfM6_AfDOK2&q=85&s=619b6682805cd17f6dadac528ff7f918 560w, https://mintcdn.com/mcp/WmrSrXfM6_AfDOK2/registry/ecosystem-diagram.excalidraw.svg?w=840&fit=max&auto=format&n=WmrSrXfM6_AfDOK2&q=85&s=1e0f2f291b0e924abfdeafb86f402381 840w, https://mintcdn.com/mcp/WmrSrXfM6_AfDOK2/registry/ecosystem-diagram.excalidraw.svg?w=1100&fit=max&auto=format&n=WmrSrXfM6_AfDOK2&q=85&s=d832c709e1aa96ba3bfb56d5976c47b4 1100w, https://mintcdn.com/mcp/WmrSrXfM6_AfDOK2/registry/ecosystem-diagram.excalidraw.svg?w=1650&fit=max&auto=format&n=WmrSrXfM6_AfDOK2&q=85&s=e564a4e6895fd73113a6c74ed50005f6 1650w, https://mintcdn.com/mcp/WmrSrXfM6_AfDOK2/registry/ecosystem-diagram.excalidraw.svg?w=2500&fit=max&auto=format&n=WmrSrXfM6_AfDOK2&q=85&s=d182b402ba7078e4d137b6706c82db4c 2500w" />
 
-### Relationship with Package Registries
+[​](#relationship-with-package-registries)
 
-Package registries — such as npm, PyPI, and Docker Hub — host packages with code and binaries.
+Relationship with Package Registries
 
-The MCP Registry hosts metadata that points to those packages.
+Package registries — such as npm, PyPI, and Docker Hub — host packages with code and binaries. The MCP Registry hosts metadata that points to those packages. For example, a `weather-mcp` package could be hosted on npm, and metadata in the MCP Registry could map the “weather v1.2.0” server to `npm:weather-mcp`. The [Package Types guide](registry-package-types.md) lists the supported package types and registries. More package registries may be supported in the future based on community demand. If you are interested in building support for a package registry, please [open an issue](https://github.com/modelcontextprotocol/registry).
 
-For example, a `weather-mcp` package could be hosted on npm, and metadata in the MCP Registry could map the "weather v1.2.0" server to `npm:weather-mcp`.
 
-The [Package Types guide](./package-types.mdx) lists the supported package types and registries. More package registries may be supported in the future based on community demand. If you are interested in building support for a package registry, please [open an issue](https://github.com/modelcontextprotocol/registry).
+[​](#relationship-with-server-developers)
 
-### Relationship with Server Developers
+Relationship with Server Developers
 
-The MCP Registry supports both open-source and closed-source servers. Server developers can publish their server's metadata to the registry as long as the server's installation method is publicly available (e.g., an npm package or a Docker image on a public registry) *or* the server itself is publicly accessible (e.g., a remote server that is not restricted to private networks).
+The MCP Registry supports both open-source and closed-source servers. Server developers can publish their server’s metadata to the registry as long as the server’s installation method is publicly available (e.g., an npm package or a Docker image on a public registry) *or* the server itself is publicly accessible (e.g., a remote server that is not restricted to private networks). The MCP Registry **does not** support private servers. Private servers are those that are only accessible to a narrow set of users. For example, servers published on a private network (like `mcp.acme-corp.internal`) or on private package registries (e.g. `npx -y @acme/mcp --registry https://artifactory.acme-corp.internal/npm`). If you want to publish private servers, we recommend that you host your own private MCP registry and add them there.
 
-The MCP Registry **does not** support private servers. Private servers are those that are only accessible to a narrow set of users. For example, servers published on a private network (like `mcp.acme-corp.internal`) or on private package registries (e.g. `npx -y @acme/mcp --registry https://artifactory.acme-corp.internal/npm`). If you want to publish private servers, we recommend that you host your own private MCP registry and add them there.
 
-### Relationship with Downstream Aggregators
+[​](#relationship-with-downstream-aggregators)
 
-The MCP Registry is intended to be consumed primarily by downstream aggregators, such as MCP server marketplaces.
+Relationship with Downstream Aggregators
 
-The metadata hosted by the MCP Registry is deliberately unopinionated. Downstream aggregators can provide curation or additional metadata such as community ratings.
+The MCP Registry is intended to be consumed primarily by downstream aggregators, such as MCP server marketplaces. The metadata hosted by the MCP Registry is deliberately unopinionated. Downstream aggregators can provide curation or additional metadata such as community ratings. We expect that downstream aggregators will use the MCP Registry API to pull new metadata on a regular but infrequent basis (for example, once per hour). See the [MCP Registry Aggregators guide](registry-registry-aggregators.md) for more information.
 
-We expect that downstream aggregators will use the MCP Registry API to pull new metadata on a regular but infrequent basis (for example, once per hour). See the [MCP Registry Aggregators guide](./registry-aggregators.mdx) for more information.
 
-### Relationship with Other MCP Registries
+[​](#relationship-with-other-mcp-registries)
 
-In addition to a public REST API, the MCP Registry defines an [OpenAPI spec](https://github.com/modelcontextprotocol/registry/blob/main/docs/reference/api/openapi.yaml) that other MCP registries can implement in order to provide a standardized interface for MCP host applications.
+Relationship with Other MCP Registries
 
-We expect that many downstream aggregators will implement this interface. Private MCP registries can implement it as well to benefit from existing host application support.
+In addition to a public REST API, the MCP Registry defines an [OpenAPI spec](https://github.com/modelcontextprotocol/registry/blob/main/docs/reference/api/openapi.yaml) that other MCP registries can implement in order to provide a standardized interface for MCP host applications. We expect that many downstream aggregators will implement this interface. Private MCP registries can implement it as well to benefit from existing host application support. Note that the official MCP Registry codebase is **not** designed for self-hosting, and the registry maintainers cannot provide support for this use case. If you choose to fork it, you would need to maintain and operate it independently.
 
-Note that the official MCP Registry codebase is **not** designed for self-hosting, and the registry maintainers cannot provide support for this use case. If you choose to fork it, you would need to maintain and operate it independently.
 
-### Relationship with MCP Host Applications
+[​](#relationship-with-mcp-host-applications)
 
-The MCP Registry is not intended to be directly consumed by host applications. Instead, host applications should consume other MCP registries, such as downstream marketplaces, via a REST API conforming to the official MCP Registry's OpenAPI spec.
+Relationship with MCP Host Applications
 
-## Trust and Security
+The MCP Registry is not intended to be directly consumed by host applications. Instead, host applications should consume other MCP registries, such as downstream marketplaces, via a REST API conforming to the official MCP Registry’s OpenAPI spec.
 
-### Verifying Server Authenticity
 
-The MCP Registry uses namespace authentication to ensure that servers come from their claimed sources. Server names follow a reverse DNS format (like `io.github.username/server` or `com.example/server`) that ties them to verified GitHub accounts or domains.
+[​](#trust-and-security)
 
-This namespace system ensures that only the legitimate owner of a GitHub account or domain can publish servers under that namespace, providing trust and accountability in the ecosystem. For details on authentication methods, see the [Authentication guide](./authentication.mdx).
+Trust and Security
 
-### Security Scanning
+
+[​](#verifying-server-authenticity)
+
+Verifying Server Authenticity
+
+The MCP Registry uses namespace authentication to ensure that servers come from their claimed sources. Server names follow a reverse DNS format (like `io.github.username/server` or `com.example/server`) that ties them to verified GitHub accounts or domains. This namespace system ensures that only the legitimate owner of a GitHub account or domain can publish servers under that namespace, providing trust and accountability in the ecosystem. For details on authentication methods, see the [Authentication guide](registry-authentication.md).
+
+
+[​](#security-scanning)
+
+Security Scanning
 
 The MCP Registry delegates security scanning to:
 
-* **Underlying package registries** — npm, PyPI, Docker Hub, and other package registries perform their own security scanning and vulnerability detection.
-* **Downstream aggregators** — MCP Registry aggregators and marketplaces can implement additional security checks, ratings, or curation.
+- **Underlying package registries** — npm, PyPI, Docker Hub, and other package registries perform their own security scanning and vulnerability detection.
+- **Downstream aggregators** — MCP Registry aggregators and marketplaces can implement additional security checks, ratings, or curation.
 
 The MCP Registry focuses on namespace authentication and metadata hosting, while relying on the broader ecosystem for security scanning of actual server code.
 
-### Spam Prevention
+
+[​](#spam-prevention)
+
+Spam Prevention
 
 The MCP Registry uses multiple mechanisms to prevent spam:
 
-* **Namespace authentication requirements** — Publishers must verify ownership of their namespace through GitHub, DNS, or HTTP challenges, preventing arbitrary spam submissions.
-* **Character limits and validation** — Free-form fields have strict character limits and regex validation to prevent abuse.
-* **Manual takedown** — The registry maintainers can manually remove spam or malicious servers. See the [Moderation Policy](./moderation-policy.mdx) for details on what content is removed.
+- **Namespace authentication requirements** — Publishers must verify ownership of their namespace through GitHub, DNS, or HTTP challenges, preventing arbitrary spam submissions.
+- **Character limits and validation** — Free-form fields have strict character limits and regex validation to prevent abuse.
+- **Manual takedown** — The registry maintainers can manually remove spam or malicious servers. See the [Moderation Policy](registry-moderation-policy.md) for details on what content is removed.
 
 Future spam prevention measures under consideration include stricter rate limiting, AI-based spam detection, and community reporting capabilities.

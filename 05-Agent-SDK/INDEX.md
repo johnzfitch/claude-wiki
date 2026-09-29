@@ -1,56 +1,39 @@
 # Agent SDK
 
-*51 documents*
+35 pages. The full text of every page is in [llms.txt](llms.txt).
 
-
-- [How the agent loop works - Claude API Docs](agent-sdk-agent-loop.md) - Understand the message lifecycle, tool execution, context window, and architecture that power your SDK agents.
-- [Use Claude Code features in the SDK - Claude API Docs](agent-sdk-claude-code-features.md) - Load project instructions, skills, hooks, and other Claude Code features into your SDK agents.
-- [Custom Tools - Claude API Docs](agent-sdk-custom-tools.md) - Build and integrate custom tools to extend Claude Agent SDK functionality
-- [Rewind file changes with checkpointing - Claude API Docs](agent-sdk-file-checkpointing.md) - Track file changes during agent sessions and restore files to any previous state
-- [Intercept and control agent behavior with hooks - Claude API Docs](agent-sdk-hooks.md) - Intercept and customize agent behavior at key execution points with hooks
-- [Hosting the Agent SDK - Claude API Docs](agent-sdk-hosting.md) - Deploy and host Claude Agent SDK in production environments
-- [Connect to external tools with MCP - Claude API Docs](agent-sdk-mcp.md) - Configure MCP servers to extend your agent with external tools. Covers transport types, tool search for large tool sets, authentication, and error han
-- [Migrate to Claude Agent SDK - Claude API Docs](agent-sdk-migration-guide.md) - Guide for migrating the Claude Code TypeScript and Python SDKs to the Claude Agent SDK
-- [Modifying system prompts - Claude API Docs](agent-sdk-modifying-system-prompts.md) - Learn how to customize Claude's behavior by modifying system prompts using three approaches - output styles, systemPrompt with append, and custom syst
-- [Agent SDK overview - Claude API Docs](agent-sdk-overview.md) - Build production AI agents with Claude Code as a library
-- [Configure permissions - Claude API Docs](agent-sdk-permissions.md) - Control how your agent uses tools with permission modes, hooks, and declarative allow/deny rules.
-- [Plugins in the SDK - Claude API Docs](agent-sdk-plugins.md) - Load custom plugins to extend Claude Code with commands, agents, skills, and hooks through the Agent SDK
-- [Agent SDK reference - Python - Claude API Docs](agent-sdk-python.md) - Complete API reference for the Python Agent SDK, including all functions, types, and classes.
-- [Quickstart - Claude API Docs](agent-sdk-quickstart.md) - Get started with the Python or TypeScript Agent SDK to build AI agents that work autonomously
-- [Securely deploying AI agents - Claude API Docs](agent-sdk-secure-deployment.md) - A guide to securing Claude Code and Agent SDK deployments with isolation, credential management, and network controls
-- [Work with sessions - Claude API Docs](agent-sdk-sessions.md) - How sessions persist agent conversation history, and when to use continue, resume, and fork to return to a prior run.
-- [Agent Skills in the SDK - Claude API Docs](agent-sdk-skills.md) - Extend Claude with specialized capabilities using Agent Skills in the Claude Agent SDK
-- [Slash Commands in the SDK - Claude API Docs](agent-sdk-slash-commands.md) - Learn how to use slash commands to control Claude Code sessions through the SDK
-- [Stream responses in real-time - Claude API Docs](agent-sdk-streaming-output.md) - Get real-time responses from the Agent SDK as text and tool calls stream in
-- [Streaming Input - Claude API Docs](agent-sdk-streaming-vs-single-mode.md) - Understanding the two input modes for Claude Agent SDK and when to use each
-- [Get structured output from agents - Claude API Docs](agent-sdk-structured-outputs.md) - Return validated JSON from agent workflows using JSON Schema, Zod, or Pydantic. Get type-safe, structured data after multi-turn tool use.
-- [Subagents in the SDK - Claude API Docs](agent-sdk-subagents.md) - Define and invoke subagents to isolate context, run tasks in parallel, and apply specialized instructions in your Claude Agent SDK applications.
-- [Todo Lists - Claude API Docs](agent-sdk-todo-tracking.md) - Track and display todos using the Claude Agent SDK for organized task management
-- [TypeScript SDK V2 interface (preview) - Claude API Docs](agent-sdk-typescript-v2-preview.md) - Preview of the simplified V2 TypeScript Agent SDK, with session-based send/stream patterns for multi-turn conversations.
-- [Agent SDK reference - TypeScript - Claude API Docs](agent-sdk-typescript.md) - Complete API reference for the TypeScript Agent SDK, including all functions, types, and interfaces.
-- [Handle approvals and user input - Claude API Docs](agent-sdk-user-input.md) - Surface Claude's approval requests and clarifying questions to users, then return their decisions to the SDK.
-- [Agent Sdk Verifier Py](agent-sdk-verifier-py.md) - You are a Python Agent SDK application verifier. Your role is to thoroughly inspect Python Agent SDK applications for correct SDK usage, adherence to 
-- [Agent Sdk Verifier Ts](agent-sdk-verifier-ts.md) - You are a TypeScript Agent SDK application verifier. Your role is to thoroughly inspect TypeScript Agent SDK applications for correct SDK usage, adher
-- [CLI](api-sdks-cli-a2ae8fcd63.md) - Interact with the Claude API directly from your terminal with the ant command-line tool
-- [C# SDK](api-sdks-csharp-c3ec9926bf.md) - Install and configure the Anthropic C# SDK for .NET applications with IChatClient integration
-- [C# SDK - Claude API Docs](api-sdks-csharp.md) - Install and configure the Anthropic C# SDK for .NET applications with IChatClient integration
-- [Go SDK](api-sdks-go-da9ab007b4.md) - Install and configure the Anthropic Go SDK with context-based cancellation and functional options
-- [Go SDK - Claude API Docs](api-sdks-go.md) - Install and configure the Anthropic Go SDK with context-based cancellation and functional options
-- [Java SDK](api-sdks-java-aa574e7e08.md) - Install and configure the Anthropic Java SDK with builder patterns and async support
-- [Java SDK - Claude API Docs](api-sdks-java.md) - Install and configure the Anthropic Java SDK with builder patterns and async support
-- [PHP SDK](api-sdks-php-aa7fe03fbe.md) - Install and configure the Anthropic PHP SDK with value objects and builder patterns
-- [PHP SDK - Claude API Docs](api-sdks-php.md) - Install and configure the Anthropic PHP SDK with value objects and builder patterns
-- [Python SDK](api-sdks-python-c2f25dfe4b.md) - Install and configure the Anthropic Python SDK with sync and async client support
-- [Python SDK - Claude API Docs](api-sdks-python.md) - Install and configure the Anthropic Python SDK with sync and async client support
-- [Ruby SDK](api-sdks-ruby-87651d02f9.md) - Install and configure the Anthropic Ruby SDK with Sorbet types, streaming helpers, and connection pooling
-- [Ruby SDK - Claude API Docs](api-sdks-ruby.md) - Install and configure the Anthropic Ruby SDK with Sorbet types, streaming helpers, and connection pooling
-- [TypeScript SDK](api-sdks-typescript-1f3f5e1a7a.md) - Install and configure the Anthropic TypeScript SDK for Node.js, Deno, Bun, and browser environments
-- [TypeScript SDK - Claude API Docs](api-sdks-typescript.md) - Install and configure the Anthropic TypeScript SDK for Node.js, Deno, Bun, and browser environments
-- [C# SDK - Claude Platform Docs](cli-sdks-libraries-sdks-csharp-36116fed35.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Go SDK - Claude Platform Docs](cli-sdks-libraries-sdks-go-da6aac81d3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Java SDK - Claude Platform Docs](cli-sdks-libraries-sdks-java-7a179eb409.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [PHP SDK - Claude Platform Docs](cli-sdks-libraries-sdks-php-bf1820dae3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Python SDK - Claude Platform Docs](cli-sdks-libraries-sdks-python-c049b5bcea.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Ruby SDK - Claude Platform Docs](cli-sdks-libraries-sdks-ruby-bad489a6fa.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [TypeScript SDK - Claude Platform Docs](cli-sdks-libraries-sdks-typescript-98e3a9f720.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Track cost and usage](cost-tracking.md) - Learn how to track token usage, deduplicate parallel tool calls, and calculate costs with the Claude Agent SDK.
+- [Agent SDK overview - Claude Code Docs](agent-sdk-overview.md) — Build production AI agents with Claude Code as a library
+- [Agent SDK reference - Python - Claude Code Docs](agent-sdk-python.md) — Complete API reference for the Python Agent SDK, including all functions, types, and classes.
+- [Agent SDK reference - TypeScript - Claude Code Docs](agent-sdk-typescript.md) — Complete API reference for the TypeScript Agent SDK, including all functions, types, and interfaces.
+- [Agent Sdk Verifier Py](claude-code-plugins-agent-sdk-dev-agents-agent-sdk-verifier-py.md) — You are a Python Agent SDK application verifier. Your role is to thoroughly inspect Python Agent SDK applications for correct SDK usage, adherence to official…
+- [Agent Sdk Verifier Ts](claude-code-plugins-agent-sdk-dev-agents-agent-sdk-verifier-ts.md) — You are a TypeScript Agent SDK application verifier. Your role is to thoroughly inspect TypeScript Agent SDK applications for correct SDK usage, adherence to…
+- [Configure permissions - Claude Code Docs](agent-sdk-permissions.md) — Control and observability
+- [Configure your agent - Claude Code Docs](agent-sdk-configuration.md) — Configure Agent SDK sessions: compose the options object, set the model, environment, and limits, and find each feature option’s page.
+- [Connect to external tools with MCP - Claude Code Docs](agent-sdk-mcp.md) — Configure MCP servers to extend your agent with external tools. Covers transport types, tool search for large tool sets, authentication, and error handling.
+- [Examples - Claude Code Docs](agent-sdk-examples.md) — Find a complete, runnable Agent SDK project or a guided recipe in the Claude Cookbook that matches what you want to build.
+- [Extend agents with skills - Claude Code Docs](agent-sdk-skills.md) — Control which skills Claude can invoke in Claude Agent SDK sessions, dispatch commands by name, and author skills your sessions discover
+- [Get structured output from agents - Claude Code Docs](agent-sdk-structured-outputs.md) — Return validated JSON from agent workflows using JSON Schema, Zod, or Pydantic. Get type-safe, structured data after multi-turn tool use.
+- [Give Claude custom tools - Claude Code Docs](agent-sdk-custom-tools.md) — Define custom tools with the Claude Agent SDK’s in-process MCP server so Claude can call your functions, hit your APIs, and perform domain-specific operations.
+- [Handle approvals and user input - Claude Code Docs](agent-sdk-user-input.md) — Surface Claude’s approval requests and clarifying questions to users, then return their decisions to the SDK.
+- [Hosting the Agent SDK - Claude Code Docs](agent-sdk-hosting.md) — Deploy the Agent SDK in production: subprocess architecture, session persistence, scaling, observability, and multi-tenant isolation for Docker, Kubernetes…
+- [How the agent loop works - Claude Code Docs](agent-sdk-agent-loop.md) — Understand the message lifecycle, tool execution, context window, and architecture that power your SDK agents.
+- [Intercept and control agent behavior with hooks - Claude Code Docs](agent-sdk-hooks.md) — Control and observability
+- [Migrate to Claude Agent SDK - Claude Code Docs](agent-sdk-migration-guide.md) — Guide for migrating the Claude Code TypeScript and Python SDKs to the Claude Agent SDK
+- [Modifying system prompts - Claude Code Docs](agent-sdk-modifying-system-prompts.md) — Choose between the claudecode preset and a custom system prompt, and customize behavior with CLAUDE.md, output styles, append, or a fully custom prompt.
+- [Observability with OpenTelemetry - Claude Code Docs](agent-sdk-observability.md) — Control and observability
+- [Persist sessions to external storage - Claude Code Docs](agent-sdk-session-storage.md) — Mirror Agent SDK session transcripts to your own object store, key-value store, or database so other hosts can resume your sessions.
+- [Plugins in the SDK - Claude Code Docs](agent-sdk-plugins.md) — Load custom plugins to extend Claude Code with skills, agents, hooks, and MCP servers through the Agent SDK
+- [Quickstart - Claude Code Docs](agent-sdk-quickstart.md) — Get started with the Python or TypeScript Agent SDK to build AI agents that work autonomously
+- [Rewind file changes with checkpointing - Claude Code Docs](agent-sdk-file-checkpointing.md) — Control and observability
+- [Scale to many tools with tool search - Claude Code Docs](agent-sdk-tool-search.md) — Scale your agent to thousands of tools by discovering and loading only what’s needed, on demand.
+- [Securely deploying AI agents - Claude Code Docs](agent-sdk-secure-deployment.md) — A guide to securing Claude Code and Agent SDK deployments with isolation, credential management, and network controls
+- [Slash Commands in the SDK - Claude Code Docs](agent-sdk-slash-commands.md) — Learn how to use slash commands to control Claude Code sessions through the SDK
+- [Stream responses in real-time - Claude Code Docs](agent-sdk-streaming-output.md) — Get real-time responses from the Agent SDK as text and tool calls stream in
+- [Streaming Input - Claude Code Docs](agent-sdk-streaming-vs-single-mode.md) — Understanding the two input modes for Claude Agent SDK and when to use each
+- [Subagents in the SDK - Claude Code Docs](agent-sdk-subagents.md) — Define and invoke subagents to isolate context, run tasks in parallel, and apply specialized instructions in your Claude Agent SDK applications.
+- [Track cost and usage - Claude Code Docs](agent-sdk-cost-tracking.md) — Control and observability
+- [Track todos - Claude Code Docs](agent-sdk-todo-tracking.md) — Control and observability
+- [Troubleshoot the Agent SDK - Claude Code Docs](agent-sdk-troubleshooting.md) — Fix Agent SDK errors when the Claude Code CLI fails to start, the CLI process exits, or a successful result arrives without structured output.
+- [TypeScript SDK V2 session API (removed) - Claude Code Docs](agent-sdk-typescript-v2-preview.md) — Reference for the removed V2 TypeScript Agent SDK session API, with session-based send/stream patterns for multi-turn conversations.
+- [Use Claude Code features in the SDK - Claude Code Docs](agent-sdk-claude-code-features.md) — Load project instructions, skills, hooks, and other Claude Code features into your SDK agents.
+- [Work with sessions - Claude Code Docs](agent-sdk-sessions.md) — How sessions persist agent conversation history, and when to use continue, resume, and fork to return to a prior run.

@@ -1,0 +1,70 @@
+---
+title: "Troubleshoot Claude error messages | Claude Help Center"
+source_url: "https://support.claude.com/en/articles/12466728-understanding-claude-error-messages"
+category: "15-Claude-AI-Features"
+fetched_at: "2026-09-29T06:31:52Z"
+tags: ["claude-ai"]
+---
+
+# Troubleshoot Claude error messages
+
+May 18, 2026
+
+
+This article explains common error messages and warnings you may encounter when using Claude and provides guidance on how to address them.
+
+## Usage limit warnings and errors
+
+Usage limit warnings appear when you're approaching your plan’s limit within a five-hour session: *“Approaching 5-hour limit.”*
+
+If you hit your plan’s limit after the warning appears, you’ll see a blocking error message letting you know when you can use Claude again: *“5-hour limit reached - resets \[time\].”*
+
+Looking for ways to maximize your Claude usage? Refer to **[Usage limit best practices](../22-Safety-Policy/usage-limit-best-practices.md)**.
+
+### Usage credits
+
+Paid Claude users with usage credits enabled in Usage settings will see a slightly different usage limit error: *"5-hour limit resets \[time\] - continuing with usage credits."* Note that this will only appear for members with access to usage credits.
+
+Refer to these articles for more information about this feature depending on your plan:
+
+- **[Manage usage credits for paid Claude plans](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md)**
+
+- **[Manage usage credits for Team and seat-based Enterprise plans](../17-Billing-Plans/manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**
+
+## Length limit errors
+
+You may encounter a length limit error when your message to Claude exceeds the maximum input length allowed: "Your message will exceed the length limit for this chat. Try attaching fewer or smaller files or starting a new conversation." This error indicates that your message is too long and needs to be shortened before sending it to Claude.
+
+For users on paid plans with code execution enabled, Claude automatically manages long conversations by summarizing earlier messages when context limits are approached. This means most users will rarely encounter length limit errors during normal use. Your full chat history is preserved so Claude can reference it even after summarization. In rare cases where you still encounter this error (such as when sending a very large first message), you can:
+
+- Break your content into smaller chunks and process them separately
+
+- Summarize or extract key sections before sending to Claude
+
+- Use Claude to first identify the most relevant portions of your content
+
+- Start a new conversation
+
+## Login errors
+
+If you see a generic error message when attempting to log in to your Claude account (e.g, "There was an error logging you in"), try the following troubleshooting steps:
+
+- Ensure you’re not using a VPN when accessing Claude.
+
+- Disable any browser extensions that you currently have active.
+
+- Clear your browser’s cache and cookies.
+
+If you're still seeing an error, check **[our status page](http://status.claude.com)** for active incidents.
+
+## Capacity constraints
+
+Capacity issues occur when Claude’s infrastructure experiences high demand system-wide. When capacity is constrained, you may see this message when chatting with Claude: *"Due to unexpected capacity constraints, Claude is unable to respond to your message. Please try again soon."*
+
+**Important:** Capacity constraints are not outages. The system is functioning normally but managing high demand across all users. These issues are temporary and typically resolve as demand patterns shift throughout the day. If you encounter this message, try again in a few minutes.
+
+Capacity issues will not appear on our status page because they represent normal load management rather than technical problems.
+
+## Service incidents and outages
+
+Service incidents are disruptions where Claude is unavailable or significantly degraded for all or most users. These represent actual technical problems with our systems. To check for confirmed incidents, visit status.claude.com, where you'll find real-time updates on scope, impact, and resolution progress for any active incidents.

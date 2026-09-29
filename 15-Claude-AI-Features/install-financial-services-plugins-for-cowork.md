@@ -3,7 +3,7 @@ title: "Install financial services plugins for Cowork | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13851150-install-financial-services-plugins-for-cowork"
 category: "15-Claude-AI-Features"
 fetched_at: "2026-03-22T09:01:46Z"
-tags: ["connectors", "mcp", "plugins", "skills"]
+tags: ["claude-ai", "connectors", "mcp", "plugins", "skills"]
 ---
 
 # Install financial services plugins for Cowork

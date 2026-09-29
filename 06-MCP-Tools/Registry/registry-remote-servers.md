@@ -1,23 +1,33 @@
 ---
-title: "Publishing Remote Servers"
-source_url: "https://modelcontextprotocol.io/registry/remote-servers.md"
-category: "06-MCP-Tools"
-fetched_at: "2026-04-26T00:00:00Z"
+title: "Publishing Remote Servers - Model Context Protocol"
+source_url: "https://modelcontextprotocol.io/registry/remote-servers"
+category: "06-MCP-Tools/Registry"
+fetched_at: "2026-09-29T06:30:21Z"
 tags: ["mcp", "mcp-registry"]
 ---
 
-> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-> Use this file to discover all available pages before exploring further.
+## On this page
+
+- [Transport Type](#transport-type)
+- [URL Template Variables](#url-template-variables)
+- [HTTP Headers](#http-headers)
+- [Supporting Remote and Non-remote Installation](#supporting-remote-and-non-remote-installation)
+
+Publishing
 
 # Publishing Remote Servers
 
-<Note>
-  The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report them on [GitHub](https://github.com/modelcontextprotocol/registry/issues).
-</Note>
+Copy pageCopy page
+
+Copy pageCopy page
+
+The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report them on [GitHub](https://github.com/modelcontextprotocol/registry/issues).
 
 The MCP Registry supports remote MCP servers via the `remotes` property in `server.json`:
 
-```json server.json highlight={7-12} theme={null}
+server.json
+
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.example/acme-analytics",
@@ -35,13 +45,16 @@ The MCP Registry supports remote MCP servers via the `remotes` property in `serv
 
 A remote server **MUST** be publicly accessible at its specified URL.
 
-## Transport Type
 
-Remote servers can use the Streamable HTTP transport (recommended) or the SSE transport. Remote servers can also support both transports simultaneously at different URLs.
+[​](#transport-type)
 
-Specify the transport by setting the `type` property of the `remotes` entry to either `"streamable-http"` or `"sse"`:
+Transport Type
 
-```json server.json highlight={9,13} theme={null}
+Remote servers should use the Streamable HTTP transport. The SSE transport is [deprecated](../Spec/draft-deprecated.md), so publish an `"sse"` remote only to support existing clients. Remote servers can also support both transports simultaneously at different URLs. Specify the transport by setting the `type` property of the `remotes` entry to either `"streamable-http"` or `"sse"`:
+
+server.json
+
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.example/acme-analytics",
@@ -61,11 +74,16 @@ Specify the transport by setting the `type` property of the `remotes` entry to e
 }
 ```
 
-## URL Template Variables
+
+[​](#url-template-variables)
+
+URL Template Variables
 
 Remote servers can define URL template variables using `{curly_braces}` notation. This enables multi-tenant deployments where a single server definition can support multiple endpoints with configurable values:
 
-```json server.json highlight={10-17} theme={null}
+server.json
+
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.example/acme-analytics",
@@ -87,11 +105,11 @@ Remote servers can define URL template variables using `{curly_braces}` notation
 }
 ```
 
-When configuring this server, users provide their `tenant_id` value, and the URL template gets resolved to the appropriate endpoint (e.g., `https://us-cell1.analytics.example.com/mcp`).
+When configuring this server, users provide their `tenant_id` value, and the URL template gets resolved to the appropriate endpoint (e.g., `https://us-cell1.analytics.example.com/mcp`). Variables support additional properties like `default`, `choices`, and `isSecret`:
 
-Variables support additional properties like `default`, `choices`, and `isSecret`:
+server.json
 
-```json server.json highlight={12-22} theme={null}
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.example/multi-region-mcp",
@@ -119,11 +137,16 @@ Variables support additional properties like `default`, `choices`, and `isSecret
 }
 ```
 
-## HTTP Headers
+
+[​](#http-headers)
+
+HTTP Headers
 
 MCP clients can be instructed to send specific HTTP headers by adding the `headers` property to the `remotes` entry:
 
-```json server.json highlight={11-18} theme={null}
+server.json
+
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.example/acme-analytics",
@@ -147,11 +170,16 @@ MCP clients can be instructed to send specific HTTP headers by adding the `heade
 }
 ```
 
-## Supporting Remote and Non-remote Installation
+
+[​](#supporting-remote-and-non-remote-installation)
+
+Supporting Remote and Non-remote Installation
 
 The `remotes` property can coexist with the `packages` property in `server.json` in order to allow MCP host applications to choose the preferred method of installation.
 
-```json server.json highlight={7-22} theme={null}
+server.json
+
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.username/email-integration-mcp",

@@ -2,13 +2,13 @@
 title: "How to redeem a Claude gift subscription | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12938695-how-to-redeem-a-claude-gift-subscription"
 category: "17-Billing-Plans"
-fetched_at: "2026-03-22T09:01:43Z"
+fetched_at: "2026-09-29T06:31:31Z"
 tags: ["billing", "mobile"]
 ---
 
-4.  How to redeem a Claude gift subscription
-
 # How to redeem a Claude gift subscription
+
+March 16, 2026
 
 
 Someone sent you a Claude gift subscription—here's how to redeem it and start using Claude.

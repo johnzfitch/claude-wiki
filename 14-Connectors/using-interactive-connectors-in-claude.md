@@ -1,27 +1,27 @@
 ---
-title: "Using interactive connectors in Claude | Claude Help Center"
+title: "Use interactive connectors in Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-03-22T09:01:45Z"
+fetched_at: "2026-09-29T06:31:38Z"
 tags: ["connectors", "enterprise", "mcp", "security"]
 ---
 
-4.  Using interactive connectors in Claude
+# Use interactive connectors in Claude
 
-# Using interactive connectors in Claude
+August 11, 2026
 
 
-Interactive connectors are available for all users on Claude, Cowork, and Claude Desktop.
+Interactive connectors are available for all users on Claude, Cowork, Claude Desktop, and Claude for iOS/Android.
 
 ## What are interactive connectors?
 
-Some connectors can now display live, interactive apps directly within your Claude conversations. Instead of returning text-only responses, these connectors render interfaces — like analytics dashboards, task boards, or design tools — that you can interact with without leaving the chat.
+Some connectors can now display live, interactive apps directly within your Claude conversations. Instead of returning text-only responses, these connectors render interfaces—like analytics dashboards, task boards, or design tools—that you can interact with without leaving the chat.
 
-For example, you might ask Claude about your project status, and instead of just describing it, Claude opens your Asana board right in the conversation. You can check off tasks, update statuses, and keep chatting with Claude — all in one place.
+For example, you might ask Claude about your project status, and instead of just describing it, Claude opens your Asana board right in the conversation. You can check off tasks, update statuses, and keep chatting with Claude—all in one place.
 
 Claude can also generate its own custom visuals—diagrams, charts, and simple interactive elements built from scratch for your question. When a connected service offers an interactive interface that handles your request, like an MCP app, Claude will use it. Custom visuals fill the gaps when no connector interface fits what you’re asking for.
 
-For more on Claude-generated visuals, see **[Custom visuals in chat](../15-Claude-AI-Features/custom-visuals-in-chat.md)**.
+For more on Claude-generated visuals, see **[Custom visuals in chat](../15-Claude-AI-Features/custom-visuals-in-chat-and-cowork.md)**.
 
 ------------------------------------------------------------------------
 
@@ -29,7 +29,7 @@ For more on Claude-generated visuals, see **[Custom visuals in chat](../15-Claud
 
 Interactive connectors display in two ways:
 
-**Inline cards** are compact components embedded directly in the conversation. They're ideal for quick summaries, confirmations, and single actions — like a status update or a message draft ready to send.
+**Inline cards** are compact components embedded directly in the conversation. They're ideal for quick summaries, confirmations, and single actions—like a status update or a message draft ready to send.
 
 **Fullscreen view** provides an immersive interface for complex interactions like data visualizations, document editing, or detailed project views. The conversation input remains available so you can continue talking to Claude while interacting with the connector.
 
@@ -45,7 +45,7 @@ You can interact directly with elements inside the connector:
 
 - Expand and collapse content sections
 
-If you need to ask Claude to modify something, refine a result, or navigate to a different context, type in the conversation input — Claude can interpret your request and update the interface accordingly.
+If you need to ask Claude to modify something, refine a result, or navigate to a different context, type in the conversation input—Claude can interpret your request and update the interface accordingly.
 
 ## Which connectors are interactive?
 
@@ -77,7 +77,7 @@ We’re adding support for more interactive connectors over time.
 
 3.  Connect and authenticate with the connector.
 
-4.  Start a conversation with Claude and ask about something the connector handles — the interactive elements will appear automatically when relevant.
+4.  Start a conversation with Claude and ask about something the connector handles—the interactive elements will appear automatically when relevant.
 
 **Note:** Interactive connectors are default on when you have the relevant connector enabled. No additional setup is needed.
 
@@ -86,6 +86,8 @@ We’re adding support for more interactive connectors over time.
 ### Can Team and Enterprise owners control interactive connectors separately from standard connectors?
 
 Yes. Team and Enterprise owners can disable the specific tool calls that render interactive connectors within **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**. This does not disable the connector itself — text-based tool functionality continues to work normally.
+
+------------------------------------------------------------------------
 
 ## Permissions and security
 
@@ -101,11 +103,11 @@ No. Interactive connectors use the same permissions you granted when connecting 
 
 No. Purchases through third-party interactive connectors are not supported.
 
+------------------------------------------------------------------------
+
 ## Troubleshooting
 
 ### The interface isn't appearing
-
-- Confirm you're using Claude web or Claude Desktop (not mobile).
 
 - Check that the connector is connected and enabled for your current conversation.
 
@@ -125,6 +127,8 @@ No. Purchases through third-party interactive connectors are not supported.
 
 - **Individual users:** You can disable specific connector tools via the "Search and tools" menu in your conversation.
 
+------------------------------------------------------------------------
+
 ## I'm a developer. Where can I learn about building MCP Apps?
 
-MCP Apps is the open-source extension to the Model Context Protocol that powers interactive apps. If you are building your own interactive connector, note that it must meet additional design, security, and testing requirements. See the **[Remote MCP Server Submission Guide](../06-MCP-Tools/General/remote-mcp-server-submission-guide-claude-help-center.md)** for details.
+MCP Apps is the open-source extension to the Model Context Protocol that powers interactive apps. If you are building your own interactive connector, note that it must meet additional design, security, and testing requirements. For details, see **[Submitting to the Connectors Directory](https://claude.com/docs/connectors/building/submission)** on Claude Docs.

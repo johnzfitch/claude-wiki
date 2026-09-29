@@ -1,0 +1,243 @@
+---
+title: "CLI client - Model Context Protocol"
+source_url: "https://modelcontextprotocol.io/docs/draft/tools/inspector/cli"
+category: "06-MCP-Tools/General"
+fetched_at: "2026-08-03T07:18:10Z"
+tags: ["cli", "mcp"]
+---
+
+## On this page
+
+- [Choosing a server](#choosing-a-server)
+- [Methods](#methods)
+  - [Passing arguments](#passing-arguments)
+- [Output](#output)
+- [Probing MCP Apps](#probing-mcp-apps)
+- [Exit codes and error envelopes](#exit-codes-and-error-envelopes)
+- [Authorization in scripts](#authorization-in-scripts)
+- [Recipes](#recipes)
+  - [Verify a server in CI](#verify-a-server-in-ci)
+  - [Branch on the failure class](#branch-on-the-failure-class)
+  - [Smoke-test every tool that has a UI](#smoke-test-every-tool-that-has-a-ui)
+  - [Inspect a catalog without connecting](#inspect-a-catalog-without-connecting)
+- [Proxies](#proxies)
+
+Inspector
+
+# CLI client
+
+Copy pageCopy page
+
+Scripting the MCP Inspector: methods, output formats, exit codes, and CI recipes
+
+Copy pageCopy page
+
+Each CLI run connects to a server, invokes the single request you name with `--method`, prints the result, and exits. That makes it a good fit for CI pipelines, shell one-liners, and coding agents that need to verify a server change immediately.
+
+```python
+npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
+```
+
+The examples below use the installed `mcp-inspector` binary. Without a global install, prefix each command with `npx @modelcontextprotocol/inspector` instead, as above.
+
+
+[​](#choosing-a-server)
+
+Choosing a server
+
+The CLI accepts a positional command (stdio), a `--server-url` (HTTP/SSE), or a named server out of a catalog or config file:
+
+```python
+# stdio: everything positional is the command to spawn
+mcp-inspector --cli node build/index.js --method tools/list
+
+# HTTP
+mcp-inspector --cli https://api.example.com/mcp --transport http --method tools/list
+
+# From a file
+mcp-inspector --cli --config ./mcp.json --server myserver --method tools/list
+```
+
+When the server comes from a file, its per-server settings (headers, timeouts, OAuth, [protocol era](2026-07-28-tools-inspector-protocol-eras.md), and roots) apply to the connection, resolved exactly as the TUI and web client resolve them. A `--header` flag overrides the file’s headers for that run while leaving its timeouts and OAuth in place. Later examples abbreviate whichever of these forms you use, along with its `--transport` or `--config`/`--server` flags, as `<server>`.
+
+**The config file is the only durable way to give a run its [roots](../Spec/draft-client-roots.md):** there is no roots flag, and `--method roots/set` applies only to that one short-lived connection. Roots configured for a server are advertised at connect, so a server that calls `roots/list` (as `@modelcontextprotocol/server-filesystem` does, to learn its allowed directories) gets them.
+
+See [Configuration and flags](draft-tools-inspector-configuration.md) for `--catalog` vs. `--config`, the `--` separator, and the shared server-selection flags.
+
+
+[​](#methods)
+
+Methods
+
+| `--method`                     | Required companions                                   | Notes                                                                            |
+|--------------------------------|-------------------------------------------------------|----------------------------------------------------------------------------------|
+| `initialize`                   | None                                                  | Connect-only probe: `{serverInfo, protocolVersion, capabilities, instructions}`. |
+| `tools/list`                   | None                                                  |                                                                                  |
+| `tools/call`                   | `--tool-name`, plus `--tool-arg` / `--tool-args-json` |                                                                                  |
+| `resources/list`               | None                                                  |                                                                                  |
+| `resources/read`               | `--uri`                                               |                                                                                  |
+| `resources/templates/list`     | None                                                  |                                                                                  |
+| `prompts/list`                 | None                                                  |                                                                                  |
+| `prompts/get`                  | `--prompt-name`, `--prompt-args`                      |                                                                                  |
+| `logging/setLevel`             | `--log-level`                                         | Legacy era only; modern servers opt in per request instead.                      |
+| `servers/list`, `servers/show` | None                                                  | Read the catalog **without connecting** to anything.                             |
+
+Stream- or session-only methods (`logging/tail`, for example) are rejected, since a process that exits can’t hold a stream open.
+
+
+[​](#passing-arguments)
+
+Passing arguments
+
+`--tool-arg` takes `key=value` and **coerces** values by JSON-parsing them, so `count=1` becomes a number and `"012"` becomes `12`:
+
+```python
+mcp-inspector --cli <server> --method tools/call --tool-name mytool \
+  --tool-arg key=value --tool-arg count=1 --tool-arg 'options={"format":"json"}'
+```
+
+`--tool-args-json` takes the whole argument object at once and passes it **verbatim**, with no coercion, so `"012"` stays the string `012`. The two are mutually exclusive:
+
+```python
+mcp-inspector --cli <server> --method tools/call --tool-name mytool \
+  --tool-args-json '{"zip":"10001"}'
+```
+
+
+[​](#output)
+
+Output
+
+`--format text` (the default) pretty-prints for humans. `--format json` emits a single JSON object on stdout with no banners, so the whole output pipes cleanly:
+
+```python
+mcp-inspector --cli <server> --method tools/list --format json | jq '.result.tools[].name'
+```
+
+
+[​](#probing-mcp-apps)
+
+Probing MCP Apps
+
+`--app-info` reports whether a tool ships an [MCP App](../Extensions/extensions-apps-overview.md) UI (its `ui://` resource, CSP, and permissions) **without calling the tool**, so a pipeline can decide whether it needs a browser before invoking anything:
+
+```python
+# One tool -> one JSON line
+mcp-inspector --cli <server> --method tools/call --tool-name my_tool --app-info
+# {"hasApp":true,"toolName":"my_tool","resourceUri":"ui://...","csp":{...},"permissions":{...}}
+
+# Every tool -> NDJSON, one line each, over a single connection
+mcp-inspector --cli <server> --method tools/list --app-info | jq -c 'select(.hasApp)'
+```
+
+Exit codes distinguish the outcomes: a tool with an app exits `0`, one with no app exits `2`, and a missing tool exits `5`, so a typo isn’t mistaken for “no app”. A probe failure (unreadable UI resource, malformed `resourceUri`) is reported in a `resourceError` field rather than aborting, so one bad tool never kills a whole listing.
+
+`tools/list --app-info` always emits NDJSON (one line per tool) regardless of `--format`; `--format json` reshapes only the single-tool output of `tools/call --app-info`.
+
+
+[​](#exit-codes-and-error-envelopes)
+
+Exit codes and error envelopes
+
+Every non-zero exit maps to a stable failure class, so a caller can branch on *why* without scraping prose:
+
+| Code | Meaning                                                                      |
+|------|------------------------------------------------------------------------------|
+| `0`  | Success.                                                                     |
+| `1`  | Usage or unexpected error (the catch-all).                                   |
+| `2`  | No MCP App found on the tool (`--app-info` probe).                           |
+| `3`  | Server requires authentication (401/403, `WWW-Authenticate`, OAuth).         |
+| `4`  | Server unreachable (DNS, connection refused, timeout, `fetch failed`).       |
+| `5`  | Tool error: `tools/call` returned `isError: true`, or the tool wasn’t found. |
+
+On any non-zero exit the CLI also writes a **single JSON line to stderr**:
+
+```python
+{
+  "error": {
+    "code": "auth_required",
+    "message": "Unauthorized",
+    "status": 401,
+    "url": "https://api.example/mcp"
+  }
+}
+```
+
+Because it’s one line, a caller can parse it with `2>&1 | tail -1 | jq .error`. A `tools/call` that returns `isError: true` still prints its payload, but exits `5`, so an `&&` chain doesn’t proceed on a failed call.
+
+
+[​](#authorization-in-scripts)
+
+Authorization in scripts
+
+By default the CLI runs the same loopback OAuth flow as the TUI: it opens a browser and waits on a localhost callback that a CI job can’t complete. Two flags make non-interactive runs predictable:
+
+- `--stored-auth-only`: never start interactive OAuth or step-up, and never auto-open a browser. Use tokens from the shared store if present, otherwise fail immediately with `auth_required`. This is the flag CI wants.
+- `--use-stored-auth`: reuse a token that the web Inspector already obtained on this machine, refreshing it first when a refresh token is stored.
+
+Without either, and with no TTY on stdin or stderr, the CLI fails fast with `auth_required` rather than hanging for fifteen minutes on a callback nobody will complete. See [Authorization](draft-tools-inspector-authorization.md) for the full flow, the web-to-CLI handoff, and `--print-handoff`.
+
+
+[​](#recipes)
+
+Recipes
+
+
+[​](#verify-a-server-in-ci)
+
+Verify a server in CI
+
+```python
+set -euo pipefail
+
+# Fail the build if the server can't be reached or doesn't expose the tool
+mcp-inspector --cli --config ./ci-servers.json --server my-server \
+  --stored-auth-only --method tools/list --format json \
+  | jq -e '.result.tools | map(.name) | index("get_weather")' > /dev/null
+```
+
+
+[​](#branch-on-the-failure-class)
+
+Branch on the failure class
+
+```python
+if out=$(mcp-inspector --cli "$URL" --transport http --method tools/list 2>err.json); then
+  echo "$out"
+else
+  case $? in
+    3) echo "needs auth: run the web inspector once to sign in" ;;
+    4) echo "server unreachable" ;;
+    *) jq .error < err.json ;;
+  esac
+fi
+```
+
+
+[​](#smoke-test-every-tool-that-has-a-ui)
+
+Smoke-test every tool that has a UI
+
+```python
+mcp-inspector --cli "$URL" --transport http --method tools/list --app-info \
+  | jq -r 'select(.hasApp) | .toolName'
+```
+
+
+[​](#inspect-a-catalog-without-connecting)
+
+Inspect a catalog without connecting
+
+```python
+mcp-inspector --cli --catalog ~/.mcp-inspector/mcp.json --method servers/list
+mcp-inspector --cli --catalog ~/.mcp-inspector/mcp.json --method servers/show --server my-server
+```
+
+`servers/show` redacts secret-bearing fields (`env` values, sensitive headers, OAuth client secrets), but it does **not** scrub credentials embedded in a server `url` (userinfo or query tokens) or in stdio `args`. Treat raw URL and `detail` fields as sensitive before pasting them into an issue.
+
+
+[​](#proxies)
+
+Proxies
+
+Connections to remote HTTP/SSE servers honor the conventional proxy variables: `HTTPS_PROXY` / `HTTP_PROXY` (and their lowercase forms) select the proxy and `NO_PROXY` exempts hosts. No Inspector-specific flag is needed, and the proxy agent is loaded lazily, so runs without a proxy pay nothing. The same applies to the web client’s backend.

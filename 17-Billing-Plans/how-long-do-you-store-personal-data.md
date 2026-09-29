@@ -2,11 +2,13 @@
 title: "How long do you store my organization’s data? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/7996866-how-long-do-you-store-personal-data"
 category: "17-Billing-Plans"
-fetched_at: "2026-03-18T14:18:52Z"
+fetched_at: "2026-08-04T07:05:59Z"
 tags: ["billing"]
 ---
 
 # How long do you store my organization’s data?
+
+July 1, 2026
 
 
 *This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see* *[here](https://privacy.anthropic.com/en/articles/10023548-how-long-do-you-store-personal-data).*
@@ -31,11 +33,17 @@ You control your conversations and can [delete your chats](https://privacy.anthr
 
 - Deleted from our back-end storage systems within 30 days
 
-Incognito chats are automatically deleted within 30 days unless flagged as a Usage Policy violation. [Learn more](https://support.anthropic.com/en/articles/12260368-using-incognito-chats) about Incognito chats for your organization.
+Incognito chats are automatically deleted within 30 days unless flagged as a Usage Policy violation. [Learn more](../15-Claude-AI-Features/using-incognito-chats.md) about Incognito chats for your organization.
+
+## **Covered Models**
+
+Additionally, for Covered Models, we require limited data retention and review as a part of our safety work. To learn more about Covered Models and these requirements, see [here](../20-Models/data-retention-practices-for-mythos-class-models.md).
 
 ## Usage Policy Violations
 
-We retain inputs and outputs for up to 2 years and trust and safety classification scores for up to 7 years if your chat is flagged by our trust and safety classifiers as violating our [Usage Policy](https://www.anthropic.com/legal/aup).
+We retain inputs and outputs for up to 2 years and trust and safety classification scores for up to 7 years if your chat is flagged by our automated trust and safety systems as violating our [Usage Policy](https://www.anthropic.com/legal/aup).
+
+In all cases, we may retain your chats or sessions as required by law or as necessary to combat violations of our [Usage Policy](https://www.anthropic.com/legal/aup). If permitted in your contract with us, we may anonymize your organization’s data for research or statistical purposes, in which case we may retain this information for longer.
 
 ## Feedback Data
 

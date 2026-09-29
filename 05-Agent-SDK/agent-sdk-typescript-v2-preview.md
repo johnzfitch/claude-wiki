@@ -1,70 +1,84 @@
 ---
-title: "TypeScript SDK V2 interface (preview) - Claude API Docs"
-source_url: "https://platform.claude.com/docs/en/agent-sdk/typescript-v2-preview"
+title: "TypeScript SDK V2 session API (removed) - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/agent-sdk/typescript-v2-preview"
 category: "05-Agent-SDK"
-fetched_at: "2026-03-20T10:34:43Z"
-tags: ["agents", "api", "sdk", "typescript"]
+fetched_at: "2026-09-16T06:23:59Z"
+tags: ["agents", "api", "claude-code", "sdk", "typescript"]
 ---
 
-# TypeScript SDK V2 interface (preview)
+## On this page
 
+- [Installation](#installation)
+- [Quick start](#quick-start)
+  - [One-shot prompt](#one-shot-prompt)
+  - [Basic session](#basic-session)
+  - [Multi-turn conversation](#multi-turn-conversation)
+  - [Session resume](#session-resume)
+  - [Cleanup](#cleanup)
+- [API reference](#api-reference)
+  - [unstable_v2_createSession()](#unstable_v2_createsession)
+  - [unstable_v2_resumeSession()](#unstable_v2_resumesession)
+  - [unstable_v2_prompt()](#unstable_v2_prompt)
+  - [SDKSession interface](#sdksession-interface)
+- [Feature availability](#feature-availability)
+- [See also](#see-also)
 
-Preview of the simplified V2 TypeScript Agent SDK, with session-based send/stream patterns for multi-turn conversations.
+SDK references
 
+# TypeScript SDK V2 session API (removed)
 
-The V2 interface is an **unstable preview**. APIs may change based on feedback before becoming stable. Some features like session forking are only available in the [V1 SDK](/docs/en/agent-sdk/typescript).
+Copy pageCopy page
 
-The V2 Claude Agent TypeScript SDK removes the need for async generators and yield coordination. This makes multi-turn conversations simpler, instead of managing generator state across turns, each turn is a separate `send()`/`stream()` cycle. The API surface reduces to three concepts:
+Reference for the removed V2 TypeScript Agent SDK session API, with session-based send/stream patterns for multi-turn conversations.
+
+Copy pageCopy page
+
+The V2 session API is no longer supported. TypeScript Agent SDK 0.3.142 removes `unstable_v2_createSession`, `unstable_v2_resumeSession`, `unstable_v2_prompt`, and the `SDKSession` and `SDKSessionOptions` types.To migrate, use the [`query()` API](agent-sdk-typescript.md) and the [session options](agent-sdk-sessions.md) it accepts. Pass an `AsyncIterable<SDKUserMessage>` for multi-turn conversations, or `options.resume` to continue a saved session. This page is kept for reference if you maintain code on Agent SDK 0.2.x or earlier.
+
+V2 was an experimental session API that removed the need for async generators and yield coordination. Instead of managing generator state across turns, each turn was a separate `send()`/`stream()` cycle. The API surface reduced to creating a session, sending a message, and streaming the response:
 
 - `createSession()` / `resumeSession()`: Start or continue a conversation
 - `session.send()`: Send a message
 - `session.stream()`: Get the response
 
 
+[​](#installation)
+
 Installation
 
-The V2 interface is included in the existing SDK package:
+Agent SDK 0.2.x is the last version that includes the V2 interface. The package version jumped from 0.2.x directly to 0.3.142, so the removal version above and the install pin below describe the same boundary. To install the last V2-compatible release, pin the major and minor version:
 
 ```python
-npm install @anthropic-ai/claude-agent-sdk
+npm install @anthropic-ai/claude-agent-sdk@0.2
 ```
 
+The SDK bundles a native Claude Code binary for your platform as an optional dependency, so most installs need no separate Claude Code install. See the [quickstart’s install note](agent-sdk-quickstart.md) for the installs that need one.
+
+
+[​](#quick-start)
 
 Quick start
 
 
+[​](#one-shot-prompt)
+
 One-shot prompt
 
-For simple single-turn queries where you don't need to maintain a session, use `unstable_v2_prompt()`. This example sends a math question and logs the answer:
+For simple single-turn queries where you don’t need to maintain a session, use `unstable_v2_prompt()`. This example sends a math question and logs the answer:
 
 ```python
 import { unstable_v2_prompt } from "@anthropic-ai/claude-agent-sdk";
 
 const result = await unstable_v2_prompt("What is 2 + 2?", {
-  model: "claude-opus-4-6"
+  model: "claude-opus-4-7"
 });
 if (result.subtype === "success") {
   console.log(result.result);
 }
 ```
 
-See the same operation in V1
 
-```python
-import { query } from "@anthropic-ai/claude-agent-sdk";
-
-const q = query({
-  prompt: "What is 2 + 2?",
-  options: { model: "claude-opus-4-6" }
-});
-
-for await (const msg of q) {
-  if (msg.type === "result") {
-    console.log(msg.result);
-  }
-}
-```
-
+[​](#basic-session)
 
 Basic session
 
@@ -73,15 +87,13 @@ For interactions beyond a single prompt, create a session. V2 separates sending 
 - `send()` dispatches your message
 - `stream()` streams back the response
 
-This explicit separation makes it easier to add logic between turns (like processing responses before sending follow-ups).
-
-The example below creates a session, sends "Hello!" to Claude, and prints the text response. It uses [`await using`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-2.html#using-declarations-and-explicit-resource-management) (TypeScript 5.2+) to automatically close the session when the block exits. You can also call `session.close()` manually.
+This explicit separation makes it easier to add logic between turns (like processing responses before sending follow-ups). The example below creates a session, sends “Hello!” to Claude, and prints the text response. It uses [`await using`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-2.html#using-declarations-and-explicit-resource-management) (TypeScript 5.2+) to automatically close the session when the block exits. You can also call `session.close()` manually.
 
 ```python
 import { unstable_v2_createSession } from "@anthropic-ai/claude-agent-sdk";
 
 await using session = unstable_v2_createSession({
-  model: "claude-opus-4-6"
+  model: "claude-opus-4-7"
 });
 
 await session.send("Hello!");
@@ -97,41 +109,18 @@ for await (const msg of session.stream()) {
 }
 ```
 
-See the same operation in V1
 
-In V1, both input and output flow through a single async generator. For a basic prompt this looks similar, but adding multi-turn logic requires restructuring to use an input generator.
-
-```python
-import { query } from "@anthropic-ai/claude-agent-sdk";
-
-const q = query({
-  prompt: "Hello!",
-  options: { model: "claude-opus-4-6" }
-});
-
-for await (const msg of q) {
-  if (msg.type === "assistant") {
-    const text = msg.message.content
-      .filter((block) => block.type === "text")
-      .map((block) => block.text)
-      .join("");
-    console.log(text);
-  }
-}
-```
-
+[​](#multi-turn-conversation)
 
 Multi-turn conversation
 
-Sessions persist context across multiple exchanges. To continue a conversation, call `send()` again on the same session. Claude remembers the previous turns.
-
-This example asks a math question, then asks a follow-up that references the previous answer:
+Sessions persist context across multiple exchanges. To continue a conversation, call `send()` again on the same session. Claude remembers the previous turns. This example asks a math question, then asks a follow-up that references the previous answer:
 
 ```python
 import { unstable_v2_createSession } from "@anthropic-ai/claude-agent-sdk";
 
 await using session = unstable_v2_createSession({
-  model: "claude-opus-4-6"
+  model: "claude-opus-4-7"
 });
 
 // Turn 1
@@ -160,50 +149,12 @@ for await (const msg of session.stream()) {
 }
 ```
 
-See the same operation in V1
 
-```python
-import { query } from "@anthropic-ai/claude-agent-sdk";
-
-// Must create an async iterable to feed messages
-async function* createInputStream() {
-  yield {
-    type: "user",
-    session_id: "",
-    message: { role: "user", content: [{ type: "text", text: "What is 5 + 3?" }] },
-    parent_tool_use_id: null
-  };
-  // Must coordinate when to yield next message
-  yield {
-    type: "user",
-    session_id: "",
-    message: { role: "user", content: [{ type: "text", text: "Multiply by 2" }] },
-    parent_tool_use_id: null
-  };
-}
-
-const q = query({
-  prompt: createInputStream(),
-  options: { model: "claude-opus-4-6" }
-});
-
-for await (const msg of q) {
-  if (msg.type === "assistant") {
-    const text = msg.message.content
-      .filter((block) => block.type === "text")
-      .map((block) => block.text)
-      .join("");
-    console.log(text);
-  }
-}
-```
-
+[​](#session-resume)
 
 Session resume
 
-If you have a session ID from a previous interaction, you can resume it later. This is useful for long-running workflows or when you need to persist conversations across application restarts.
-
-This example creates a session, stores its ID, closes it, then resumes the conversation:
+If you have a session ID from a previous interaction, you can resume it later. This is useful for long-running workflows or when you need to persist conversations across application restarts. This example creates a session, stores its ID, closes it, then resumes the conversation:
 
 ```python
 import {
@@ -223,7 +174,7 @@ function getAssistantText(msg: SDKMessage): string | null {
 
 // Create initial session and have a conversation
 const session = unstable_v2_createSession({
-  model: "claude-opus-4-6"
+  model: "claude-opus-4-7"
 });
 
 await session.send("Remember this number: 42");
@@ -241,7 +192,7 @@ session.close();
 
 // Later: resume the session using the stored ID
 await using resumedSession = unstable_v2_resumeSession(sessionId!, {
-  model: "claude-opus-4-6"
+  model: "claude-opus-4-7"
 });
 
 await resumedSession.send("What number did I ask you to remember?");
@@ -251,64 +202,18 @@ for await (const msg of resumedSession.stream()) {
 }
 ```
 
-See the same operation in V1
 
-```python
-import { query } from "@anthropic-ai/claude-agent-sdk";
-
-// Create initial session
-const initialQuery = query({
-  prompt: "Remember this number: 42",
-  options: { model: "claude-opus-4-6" }
-});
-
-// Get session ID from any message
-let sessionId: string | undefined;
-for await (const msg of initialQuery) {
-  sessionId = msg.session_id;
-  if (msg.type === "assistant") {
-    const text = msg.message.content
-      .filter((block) => block.type === "text")
-      .map((block) => block.text)
-      .join("");
-    console.log("Initial response:", text);
-  }
-}
-
-console.log("Session ID:", sessionId);
-
-// Later: resume the session
-const resumedQuery = query({
-  prompt: "What number did I ask you to remember?",
-  options: {
-    model: "claude-opus-4-6",
-    resume: sessionId
-  }
-});
-
-for await (const msg of resumedQuery) {
-  if (msg.type === "assistant") {
-    const text = msg.message.content
-      .filter((block) => block.type === "text")
-      .map((block) => block.text)
-      .join("");
-    console.log("Resumed response:", text);
-  }
-}
-```
-
+[​](#cleanup)
 
 Cleanup
 
-Sessions can be closed manually or automatically using [`await using`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-2.html#using-declarations-and-explicit-resource-management), a TypeScript 5.2+ feature for automatic resource cleanup. If you're using an older TypeScript version or encounter compatibility issues, use manual cleanup instead.
-
-**Automatic cleanup (TypeScript 5.2+):**
+Sessions can be closed manually or automatically using [`await using`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-2.html#using-declarations-and-explicit-resource-management), a TypeScript 5.2+ feature for automatic resource cleanup. If you’re using an older TypeScript version or encounter compatibility issues, use manual cleanup instead. The examples below show only the cleanup pattern and don’t send any messages, so running them produces no output. **Automatic cleanup (TypeScript 5.2+):**
 
 ```python
 import { unstable_v2_createSession } from "@anthropic-ai/claude-agent-sdk";
 
 await using session = unstable_v2_createSession({
-  model: "claude-opus-4-6"
+  model: "claude-opus-4-7"
 });
 // Session closes automatically when the block exits
 ```
@@ -319,15 +224,19 @@ await using session = unstable_v2_createSession({
 import { unstable_v2_createSession } from "@anthropic-ai/claude-agent-sdk";
 
 const session = unstable_v2_createSession({
-  model: "claude-opus-4-6"
+  model: "claude-opus-4-7"
 });
 // ... use the session ...
 session.close();
 ```
 
 
+[​](#api-reference)
+
 API reference
 
+
+[​](#unstable_v2_createsession)
 
 `unstable_v2_createSession()`
 
@@ -340,6 +249,8 @@ function unstable_v2_createSession(options: {
 }): SDKSession;
 ```
 
+
+[​](#unstable_v2_resumesession)
 
 `unstable_v2_resumeSession()`
 
@@ -356,6 +267,8 @@ function unstable_v2_resumeSession(
 ```
 
 
+[​](#unstable_v2_prompt)
+
 `unstable_v2_prompt()`
 
 One-shot convenience function for single-turn queries.
@@ -371,6 +284,8 @@ function unstable_v2_prompt(
 ```
 
 
+[​](#sdksession-interface)
+
 SDKSession interface
 
 ```python
@@ -383,21 +298,20 @@ interface SDKSession {
 ```
 
 
+[​](#feature-availability)
+
 Feature availability
 
-Not all V1 features are available in V2 yet. The following require using the [V1 SDK](/docs/en/agent-sdk/typescript):
+The V2 session API does not support every V1 feature. The following require the [V1 SDK](agent-sdk-typescript.md):
 
 - Session forking (`forkSession` option)
 - Some advanced streaming input patterns
 
 
-Feedback
-
-Share your feedback on the V2 interface before it becomes stable. Report issues and suggestions through [GitHub Issues](https://github.com/anthropics/claude-code/issues).
-
+[​](#see-also)
 
 See also
 
-- [TypeScript SDK reference (V1)](/docs/en/agent-sdk/typescript) - Full V1 SDK documentation
-- [SDK overview](/docs/en/agent-sdk/overview) - General SDK concepts
+- [TypeScript SDK reference (V1)](agent-sdk-typescript.md) - Full V1 SDK documentation
+- [SDK overview](agent-sdk-overview.md) - General SDK concepts
 - [V2 examples on GitHub](https://github.com/anthropics/claude-agent-sdk-demos/tree/main/hello-world-v2) - Working code examples

@@ -2,11 +2,13 @@
 title: "Account management FAQs | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13325567-account-management-faqs"
 category: "21-Account-Support"
-fetched_at: "2026-03-22T09:01:44Z"
-tags: ["enterprise"]
+fetched_at: "2026-09-29T06:32:01Z"
+tags: ["account", "enterprise"]
 ---
 
 # Account management FAQs
+
+August 6, 2026
 
 
 ## How do I change my team name?
@@ -19,7 +21,7 @@ It's not possible to change another user's name on their behalf, but a user can 
 
 1.  Log in to your Claude account.
 
-2.  Navigate to **[Settings \> General](http://claude.ai/settings/general)**.
+2.  Navigate to **[Settings \> General](https://claude.ai/settings/general)**.
 
 3.  Make edits to the "Full name" field and click "Save changes."
 
@@ -41,7 +43,7 @@ Admins and Owners can view a list of all members on a team by navigating to **[O
 
 The email domain that was used to create your Team or Enterprise plan organization is the allowed email domain for your team members. After the account is created, Owners of organizations that are not using domain capture can add additional domains by following these steps:
 
-1.  Navigate to **[Organization](https://claude.ai/admin-settings/organization)** **[settings \> Identity and access](https://claude.ai/admin-settings/identity).**
+1.  Navigate to **[Organization](https://claude.ai/admin-settings/organization) [settings \> Identity and access](https://claude.ai/admin-settings/identity).**
 
 2.  Click "Add or edit domains" under **Domains**.
 

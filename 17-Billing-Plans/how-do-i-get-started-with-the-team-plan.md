@@ -2,11 +2,13 @@
 title: "Get started with the Team plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9267247-how-do-i-get-started-with-the-team-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-03-22T09:01:48Z"
+fetched_at: "2026-09-29T06:32:38Z"
 tags: ["billing"]
 ---
 
 # Get started with the Team plan
+
+Updated today
 
 
 ## Requirements to sign up for a Team plan
@@ -19,22 +21,42 @@ tags: ["billing"]
 
   - Refer to this article for more information: **[How is my Team plan bill calculated?](how-is-my-team-plan-bill-calculated.md)**
 
-- Team plans require a minimum of five members and are not intended for individual use.
+- Team plans require a minimum of two members and are not intended for individual use.
 
 ## Create a new Team organization
 
-To get started with the Team plan, navigate to **[claude.ai/login](http://claude.ai/login)** and enter your work email address. Follow the onboarding prompts and select the Team plan.
+To get started with the Team plan, navigate to **[claude.ai/login](https://claude.ai/login)** and enter your work email address. Follow the onboarding prompts and select the Team plan.
 
 ## Upgrade from an individual plan to the Team plan
 
-If you already have a free or paid Claude account associated with your work email and wish to create a Team plan, sign into your account, then visit **[claude.ai/upgrade](http://claude.ai/upgrade)**. Follow the steps to create your Team.
+If you already have a Free, Pro, or Max account on your work email and want to upgrade to Team, sign in to your account and visit **[claude.ai/upgrade](https://claude.ai/upgrade)**. Follow the steps to create your Team.
 
-- Upgrading to the Team plan will create a new Claude organization, and your individual free or paid account (Pro or Max) will remain separate. You can toggle between them by clicking your initials or name in the lower left, then selecting the account you'd like to access.
+If you see the **Keep your personal account separate** checkbox, then upgrading to Team upgrades your existing organization in place by default. Your organization ID stays the same and some of your content carries over to your new Team plan. For a full list of what does and doesn’t migrate, see **[Move your personal Claude account to a Team or Enterprise organization](../21-Account-Support/can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md#h_4e63ef6e87)**.
 
-- Team plan organizations are separate from free and paid individual Claude accounts. Data cannot be transferred between the separate instances.
+**Note:** Once content has been moved into an organization, it can't be moved back to a personal account.
 
-- If you only want to use your Team plan after upgrading, you'll need to cancel your paid subscription and/or delete your free or paid individual Claude account separately.
+If you don’t see the **Keep your personal account separate** checkbox, then this upgrade process will create a separate Team plan with a new organization ID instead. This applies to subscriptions purchased via the Apple App Store, paused plans, and plans using unsupported currencies.
 
-  - **[How do I cancel my paid Claude subscription?](https://support.claude.com/en/articles/8325617-how-do-i-cancel-my-paid-claude-subscription)**
+What else happens during an in-place upgrade:
 
-  - **[How can I delete my Claude account?](../21-Account-Support/how-can-i-delete-my-claude-account.md)**
+- Your individual Pro or Max subscription is cancelled automatically and you receive a prorated refund for the unused portion of your billing period. The refund is issued about 24 hours after your Team payment goes through, and depending on your bank, it can take several more business days to appear on your statement.
+
+- Any prepaid usage credits on your individual account are refunded.
+
+- Public projects in your account become private once the upgrade is complete. Project owners can give others in their organization access to the project from its **Share** menu. For details, see **[Manage project visibility and sharing](../22-Safety-Policy/manage-project-visibility-and-sharing.md)**.
+
+**Note:** If you'd rather keep your personal Claude account active alongside your new Team plan, check this box in the team-creation flow before completing your upgrade: **Keep your personal account separate**. We’ll set up a new workspace for this team and your existing chats and projects stay in your personal account. If you check this, your individual subscription stays active and your personal data stays in your individual account instead of moving into the Team org.
+
+### Apple App Store subscribers
+
+Because Apple doesn't allow third-party cancellation of App Store subscriptions, in-place upgrades work differently if you signed up for Pro or Max through the Apple App Store. By default, you will upgrade to a new, separate Team organization. If you'd prefer to upgrade in place, you’ll need to **[cancel your iOS subscription](how-do-i-cancel-my-paid-claude-subscription.md#h_54384c9962)** first and wait for the billing period to end.
+
+### Google Play Store subscribers
+
+Subscriptions purchased through the Google Play Store are eligible for in-place upgrade. Your refund doesn't have the 24-hour wait, but it can take a few days to appear.
+
+### If you decline the in-place upgrade
+
+If you choose to keep your personal account, your Team plan creates a separate Claude organization. You can switch between your personal account and the Team org by clicking your initials or name in the lower left corner and selecting the account you want to access. Data isn't shared between separate accounts.
+
+To use only your Team plan after upgrading separately, you'll need to **[cancel your paid subscription](how-do-i-cancel-my-paid-claude-subscription.md)** and **[delete your individual Claude account](../21-Account-Support/how-can-i-delete-my-claude-account.md)**.

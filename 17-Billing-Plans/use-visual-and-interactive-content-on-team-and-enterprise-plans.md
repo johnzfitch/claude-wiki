@@ -2,18 +2,18 @@
 title: "Use visual and interactive content on Team and Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13663666-use-visual-and-interactive-content-on-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-03-22T09:01:45Z"
+fetched_at: "2026-09-29T06:32:05Z"
 tags: ["billing", "enterprise"]
 ---
 
-4.  Use visual and interactive content on Team and Enterprise plans
-
 # Use visual and interactive content on Team and Enterprise plans
+
+March 16, 2026
 
 
 Maps and image search results are enabled by default on Team plans. On Enterprise plans, these features are off by default — an Owner or Primary Owner can enable them in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**.
 
-When these features are active, some data is shared with third-party services. For more information, see **[Visual and interactive content](https://support.claude.com/en/articles/13641943-visual-and-interactive-content)**.
+When these features are active, some data is shared with third-party services. For more information, see **[Visual and interactive content](../15-Claude-AI-Features/visual-responses-and-interactive-widgets.md)**.
 
 ## How is your information processed by Google?
 

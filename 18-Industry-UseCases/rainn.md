@@ -1,0 +1,348 @@
+---
+title: "RAINN Claude case study | Claude by Anthropic"
+source_url: "https://www.claude.com/customers/rainn"
+category: "18-Industry-UseCases"
+fetched_at: "2026-09-29T06:31:47Z"
+tags: ["bedrock", "case-studies", "claude-code", "enterprise", "security"]
+---
+
+# RAINN brings crisis support to encrypted messaging platforms with Claude
+
+[Try Claude](https://claude.ai)
+
+Industry:  
+Beneficial Deployments
+
+Company size:  
+Small
+
+Product:  
+[Claude for Nonprofits](nonprofits.md)[Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)[Claude Enterprise](enterprise.md)
+
+Location:  
+North America
+
+Signal Messenger integration in 30 days
+
+extending encrypted, anonymous access to RAINN's services
+
+Full crisis support deployed for higher education institution in one week
+
+via WhatsApp, text, and phone services
+
+Beneficial Deployments
+
+Accelerate the work that matters most
+
+[Read more](../19-Reference/claude-for-nonprofits.md)
+
+[RAINN](https://rainn.org/help-and-healing/hotline/), the Rape, Abuse & Incest National Network, has connected survivors of sexual violence with confidential support for over 30 years through its National Sexual Assault Hotline and online services. As CTO, William Bondurant leads the engineering work that extends RAINN's reach to new channels, including building the hotline interface on encrypted messaging platforms like Signal. We spoke with William about how RAINN's engineering team uses Claude Code to build infrastructure for crisis support, while still keeping the crisis support itself fully human. As RAINN has adopted Claude across its operations, their guiding principle is that AI's role is to connect survivors with human support faster, not to replace people. The following conversation has been edited for length and clarity.
+
+## Anthropic: You're CTO of an organization that has supported survivors of sexual violence for over 30 years. What is the role of technology and AI in that mission?
+
+**William Bondurant, RAINN:** The mission has been the same for 30 years: connect survivors with confidential, anonymous support. What's changed is how people reach out, and that's where technology comes in. Every channel we build has to be anonymous, confidential, and encrypted, because the people reaching out are navigating a crisis and need to trust us completely. And the efficiency matters as much as the reach: when we don't have to spend on building a channel by hand, that funding can go to supporting RAINN’s victim services. RAINN support specialists are highly trained, trauma-informed professionals who staff the National Sexual Assault Hotline. They provide free, confidential, 24/7 crisis interventions and support for survivors of sexual violence and their loved ones. That's how I think about technology here. It's always in service of the mission to stop sexual violence and get support to more people, more of the time.
+
+## Anthropic: RAINN has expanded from the traditional phone, online, and text hotline to encrypted messaging platforms like Signal. For survivors specifically, why does the choice of channel matter so much?
+
+**Bondurant:** For a survivor, there can be real fear of repercussions in reaching out for help. When a survivor works up the courage to make contact, maybe they’re ready and maybe they’re not, and they need to know they can trust the channel completely. We have an obligation, from a safety and a trust perspective, to be completely anonymous and completely confidential. That's why we've been adding ways for survivors to reach us through Signal, WhatsApp, and coming soon, Telegram. You don't have to give us any information about who you are. When you're ready, we're here.
+
+## Anthropic: What's the standard you hold yourselves to for any new channel you bring online?
+
+**Bondurant:** Your privacy and your anonymity. These conversations are 100% encrypted. I don't know who you are. You don't know who you're talking to on the other end. But we're here to provide that support. That's the standard. It has to be like that for the medium to be aligned with our mission.
+
+That trust has to extend to the platform itself, not just our promise to the survivor. Platforms like Signal, WhatsApp, and Telegram work because no one, whether employees or bad actors, can see the messages.
+
+## Anthropic: RAINN runs on AWS and uses Claude Code through Amazon Bedrock. Walk us through how your engineering team uses Claude Code to build new integrations.
+
+**Bondurant:** We're an AWS shop, so we go through Amazon Bedrock. What Claude Code changes is how much my engineers can take on, and how fast. They can spin up a council of agents to cut code for an integration like Signal, with Telegram next, working from a clear spec and reviewing everything before it ships. An integration like that used to be months of engineering work. Now our small team can stand it up in a fraction of the time. That speed is the whole point for us: the faster we can build a channel, the sooner survivors have one more safe way to reach a support specialist. We're not a large engineering organization. We have to move fast and do more with what we have.
+
+## Anthropic: Tell us about the Signal Messenger integration. What did it take to build, and what does it look like for the survivor and the support specialist?
+
+**Bondurant:** Signal provides a command-line interface that developers can use to build connectors into support platforms. The work is taking that CLI, wiring it into AWS, piping the conversation into our victim services console, and implementing the redaction logic. In our particular case, everything has to be anonymous and confidential. If a survivor puts in "I live at 123 Maple Lane," we have to redact that and wipe it to make sure it's not transmitted, logged, or stored. That's not a small thing to get right.
+
+When you reach out, it's anonymous and confidential. We're not looking at your IP address, and we're not looking at the content of why you reached out. Keeping messages from being logged or stored, and redacting personal details in real time, took real engineering, and we built that pipeline ourselves, with Claude Code’s help. The redaction runs entirely in our own system; the survivor’s message is never sent to or stored by Claude. Claude Code let us build to our anonymity and confidentiality standards without compromising them.
+
+From the survivor's side, you're messaging on Signal. You can find RAINN there the same way you'd find anyone else on the app. From the victim services side, the message comes into the same console that support specialists already use. They're not logged into Signal. They're not switching between tools. The conversation just shows up where they work. End-to-end encrypted, no survivor PII retained in our system, no break in anonymity.
+
+With Claude Code, we shipped the full Signal integration in roughly 30 days. We're one of the first crisis hotlines where people can actually reach out directly to us over Signal.
+
+## Anthropic: You also recently stood up a full WhatsApp, text, and phone service suite with a higher education institution in one week. How did Claude Code make that possible?
+
+**Bondurant:** This university approached us as they were expanding services for students affected by sexual violence on campus. But the timing shifted. They weren’t sure when exactly they'd be ready. Normally that's a problem because development timelines don't bend to moving deadlines. With Claude Code, we could move on their schedule. When they said go, my principal engineers tasked Claude Code with building out the connectors, and we deployed a full WhatsApp, text, and phone service within a week. That velocity is not something I could have delivered otherwise.
+
+## Anthropic: Beyond engineering, you run much of RAINN’s operations on Claude. What made it the right fit across the whole organization?
+
+**Bondurant:** Claude is our connector. It enables us to run one suite instead of a stack of separate solutions, integrated with the applications we already use. Our finance team works inside Excel with connectors Claude provides to our accounting and personnel management tools.
+
+The communications team uses Claude connectors for fast-tracking everything from presentations to creative briefs. Having Claude help with administrative tasks allows you to free up resources to focus on your core services. For my own day-to-day, I don't schedule my own meetings anymore. Cowork does it.
+
+## Anthropic: You've come up through AOL, AWS, and Facebook. What's different about the AI shift, and how have you helped your team navigate it?
+
+**Bondurant:** I came up through America Online in the late nineties and early 2000s, then Amazon Web Services, then I built out the AI network for Facebook. So I'd already seen the leap from dial-up, broadband, on-prem to virtualization to cloud, and the leap to AI inside AWS and Facebook. By the time I came over to RAINN, I didn't need any convincing to implement AI.
+
+Every efficiency on the tech side is capacity we can put back into people. Every new channel we add, like Signal or WhatsApp, means more contacts coming in, which means we need to scale our support specialists staffing appropriately. Solutions like Claude Code allow us to scale rapidly from a tech perspective, while we are cost efficient to ensure our contact agents can scale appropriately as we expand our reachability.
+
+## Anthropic: How do you address concerns from stakeholders about AI in a sensitive domain like crisis support?
+
+**Bondurant:** The headlines around AI are usually about layoffs or replacing people, and in the crisis support world that overlaps with the documented and dire danger of using AI to replace humans in crisis intervention. Both are very real concerns. My approach as the builder of the tech infrastructure that makes human engagement possible has been to keep the framing on automation, not replacement. The tech does more so the mission can have more human connection, not less.  
+  
+We've also been clear philosophically: AI is not going in front of the survivor. We're not putting a bot up to triage people. Our mission is to put a survivor in contact with a trained human. Everything Claude does at RAINN is on the way to that connection, not in place of it.
+
+Nonprofits
+
+Turn limited resources into lasting impact. Generate grant proposals, track program outcomes, and free your team to focus on serving your community.
+
+[Read more](nonprofits.md)
+
+## Anthropic: RAINN's work extends beyond direct support into policy. Does that shape how you approach building AI tools in this domain?
+
+**Bondurant:** It does. We have a policy team that works on legislation like the Take It Down Act, so we understand tech-enabled sexual abuse (TESA) from the legislative side, not just the support side. That perspective shapes how we build. We know what survivors are up against, and we build survivor-facing tools accordingly: every channel is encrypted end to end, and survivor conversations stay inside our own environment—they’re never sent to the AI tools we build with.
+
+## Anthropic: RAINN has been firm that AI will not replace your victim services staff. Why is that line so important?
+
+**Bondurant:** We are not going to replace our victim services staff with AI. How we're going to use AI is to automate and get that human being to a human being quicker, faster, and better.
+
+The hotline has been around for 32 years, and what's made it work is that on the other end of the line, when someone finds the courage to call, there's a person. A trained person who knows what they're doing. The role of the technology is to clear the path between the survivor and that human being.
+
+## Anthropic: What's next on your roadmap?
+
+**Bondurant:** The next build I want to do is a real-time search sidebar for our support specialists. Think about how the Claude plugin appears in Excel, Word or PowerPoint. I want that for the support specialists. It would surface what the support specialist needs, right when they need it, without storing anything, and without Claude ever reading the survivor’s side of the conversation. The specialist asks a question; the sidebar answers from our own information database.
+
+As an example: what's the statute of limitations in a given state? Today, the support specialist has to swivel over to the information database we maintain internally, look it up, and come back to the conversation. Same thing with local resources. The goal is if someone needs to know where the nearest shelter is in a given city, the sidebar would surface the address. The survivor doesn't wait.
+
+## Anthropic: What advice would you give to other nonprofit leaders thinking about adopting AI for mission-critical work?
+
+**Bondurant:** Two things. First, don't let the headlines convince you AI is just about cutting headcount. If you approach it that way internally, you'll lose your team. Instead, approach it as automation that frees your people to do more of what they're trained to do. That's a different conversation.
+
+Second, take your encryption and confidentiality requirements seriously when you pick platforms. The technology has to be aligned with your mission. For us, that meant going with platforms where the privacy story is end-to-end. If you skip that step, the rest of what you build doesn't matter.
+
+## Related stories
+
+
+### Mercy Corps on what AI makes possible in humanitarian work
+
+
+### Mercy Corps accelerates global humanitarian response to community feedback with Claude
+
+
+### The Epilepsy Foundation turns years of expert content into a personal epilepsy assistant with Claude
+
+
+### How the Epilepsy Foundation uses Claude across the organization
+
+[](https://www.claude.com/)
+
+© 2026 Anthropic PBC
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../14-Connectors/claude-for-slack.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](customer-support.md)
+- [Cybersecurity](cybersecurity.md)
+- [Legal](legal.md)
+- [Sales](sales.md)
+
+## Industries
+
+- [Financial services](finance.md)
+- [Government](government.md)
+- [Healthcare](healthcare.md)
+- [Higher education](education.md)
+- [K-12 teachers](teachers.md)
+- [Life sciences](life-sciences.md)
+- [Nonprofits](nonprofits.md)
+- [Small business](small-business.md)
+
+## Programs
+
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Blog](https://www.claude.com/blog)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
+- [Security and compliance](https://trust.anthropic.com/)
+- [Status](https://status.anthropic.com/)
+- [Support center](https://support.claude.com/en/)
+
+## Company
+
+- [Anthropic](https://www.anthropic.com/)
+- [Careers](https://www.anthropic.com/careers)
+- [Policy](https://www.anthropic.com/policy)
+- [Research](../19-Reference/anthropic-com-research.md)
+- [Anthropic news](../19-Reference/news.md)
+- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
+- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
+- [Transparency](https://anthropic.com/transparency)
+
+## Terms and policies
+
+- Privacy choices
+- [Privacy policy](https://www.anthropic.com/legal/privacy)
+- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
+- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
+- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
+- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
+- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
+- [Usage Policy](https://www.anthropic.com/legal/aup)
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../14-Connectors/claude-for-slack.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](customer-support.md)
+- [Cybersecurity](cybersecurity.md)
+- [Legal](legal.md)
+- [Sales](sales.md)
+
+## Industries
+
+- [Financial services](finance.md)
+- [Government](government.md)
+- [Healthcare](healthcare.md)
+- [Higher education](education.md)
+- [K-12 teachers](teachers.md)
+- [Life sciences](life-sciences.md)
+- [Nonprofits](nonprofits.md)
+- [Small business](small-business.md)
+
+## Programs
+
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Blog](https://www.claude.com/blog)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

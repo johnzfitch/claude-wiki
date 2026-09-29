@@ -1,284 +1,89 @@
 # Models
 
-*279 documents*
+85 pages. The full text of every page is in [llms.txt](llms.txt).
 
-
-- [Choosing the right model - Claude Platform Docs](about-claude-models-choosing-a-model-38ebff0fff.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Choosing the right model](about-claude-models-choosing-a-model-84da495643.md) - Selecting the optimal Claude model for your application involves balancing three key considerations: capabilities, speed, and cost. This guide helps y
-- [Choosing the right model - Claude API Docs](about-claude-models-choosing-a-model.md) - Selecting the optimal Claude model for your application involves balancing three key considerations: capabilities, speed, and cost. This guide helps y
-- [Before (Claude Sonnet 3.7)](about-claude-models-migrating-to-claude-4.md) - This guide covers two key migration paths to Claude 4.5 models:
-- [Migration guides - Claude Platform Docs](about-claude-models-migration-guide-4311c39782.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Migration guide](about-claude-models-migration-guide-6c790f7501.md) - Guide for migrating to Claude Opus 4.7 and Claude 4.6 models from previous Claude versions
-- [Migration guide - Claude API Docs](about-claude-models-migration-guide.md) - Guide for migrating to Claude 4.6 models from previous Claude versions
-- [Model IDs and versioning - Claude Platform Docs](about-claude-models-model-ids-and-versions-9332683246.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Optimizing for cost and intelligence - Claude Platform Docs](about-claude-models-optimizing-for-cost-and-intelligence-5492096e7c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Models overview - Claude Platform Docs](about-claude-models-overview-2536dd9f05.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Models overview](about-claude-models-overview-2bbf09ff82.md) - Claude is a family of state-of-the-art large language models developed by Anthropic. This guide introduces the available models and compares their per
-- [Models overview - Claude Platform Docs](about-claude-models-overview-a06a84876f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Models overview - Claude API Docs](about-claude-models-overview.md) - Claude is a family of state-of-the-art large language models developed by Anthropic. This guide introduces the available models and compares their per
-- [Claude Sonnet 3.7](about-claude-models-whats-new-claude-4-5.md) - Claude 4.5 introduces three models designed for different use cases:
-- [What's new in Claude 4.6 - Claude API Docs](about-claude-models-whats-new-claude-4-6.md) - Overview of new features and capabilities in Claude Opus 4.6 and Sonnet 4.6.
-- [What's new in Claude Opus 4.7](about-claude-models-whats-new-claude-4-7-3e4989177d.md) - Overview of new features, breaking changes, and behavior changes in Claude Opus 4.7.
-- [What's new in Claude Opus 5 - Claude Platform Docs](about-claude-models-whats-new-opus-5-855446aa29.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [What's new in Claude Sonnet 5 - Claude Platform Docs](about-claude-models-whats-new-sonnet-5-d31213b17d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Adapt to new model personas after deprecations | Claude Help Center](adapt-to-new-model-personas-after-deprecations-e76aacc6b0.md) - July 10, 2026
-- [Adapt to new model personas after deprecations | Claude Help Center](adapting-to-new-model-personas-after-deprecations-24851bca6e.md) - July 10, 2026
-- [Adapting to new model personas after deprecations | Claude Help Center](adapting-to-new-model-personas-after-deprecations.md) - 4.  Adapting to new model personas after deprecations
-- [Claude API skill](agents-and-tools-agent-skills-claude-api-skill-195bd9fb41.md) - An open-source Agent Skill that provides Claude with up-to-date API reference material, SDK documentation, and best practices for building application
-- [Claude API skill - Claude Platform Docs](agents-and-tools-agent-skills-claude-api-skill-a5f702dd17.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Code on Amazon Bedrock](amazon-bedrock.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-- [Models - Claude API Reference](api-beta-models-5b6f2e637e.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Models](api-beta-models-a2ec582f9d.md) - **get** `/v1/models`
-- [List Models - Claude API Reference](api-beta-models-list-46fe2c6773.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Beta Models List Ae1Bbbc10A](api-beta-models-list-ae1bbbc10a.md) - **get** `/v1/models`
-- [List Models - Claude API Reference](api-beta-models-list.md) - GET/v1/models
-- [Api Beta Models Retrieve 14Ec84A11D](api-beta-models-retrieve-14ec84a11d.md) - **get** `/v1/models/{model_id}`
-- [Get a Model - Claude API Reference](api-beta-models-retrieve-672ee26e06.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get a Model - Claude API Reference](api-beta-models-retrieve.md) - GET/v1/models/{model_id}
-- [Models - Claude API Reference](api-beta-models.md) - GET/v1/models
-- [Trigger a routine through the API - Claude Platform Docs](api-claude-code-routines-fire-d96a9582fb.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Trigger a routine via API](api-claude-code-routines-fire-df6c51ff06.md) - Start a Claude Code routine session on demand by sending an authenticated POST request.
-- [Claude on Amazon Bedrock - Claude API Docs](api-claude-on-amazon-bedrock.md) - Anthropic's Claude models are now generally available through Amazon Bedrock.
-- [Claude on Google Cloud - Claude Platform Docs](api-claude-on-vertex-ai-7ed9b92e0b.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude on Vertex AI - Claude API Docs](api-claude-on-vertex-ai.md) - Anthropic's Claude models are now generally available through [Vertex AI](https://cloud.google.com/vertex-ai).
-- [IAM actions for Claude Platform on AWS - Claude Platform Docs](api-claude-platform-on-aws-iam-actions-46a81874e2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Models](api-cli-beta-models-385ff34a98.md) - `$ ant beta:models list`
-- [Api Cli Beta Models List 5Ec77A878A](api-cli-beta-models-list-5ec77a878a.md) - `$ ant beta:models list`
-- [API Reference - Claude API Docs](api-cli-beta-models-list.md)
-- [Api Cli Beta Models Retrieve Dbbcb4692A](api-cli-beta-models-retrieve-dbbcb4692a.md) - `$ ant beta:models retrieve`
-- [API Reference - Claude API Docs](api-cli-beta-models-retrieve.md)
-- [Models](api-cli-models-3936ae0c6e.md) - `$ ant models list`
-- [Api Cli Models List E974Eb8808](api-cli-models-list-e974eb8808.md) - `$ ant models list`
-- [API Reference - Claude API Docs](api-cli-models-list.md)
-- [Api Cli Models Retrieve 88D62A2309](api-cli-models-retrieve-88d62a2309.md) - `$ ant models retrieve`
-- [API Reference - Claude API Docs](api-cli-models-retrieve.md)
-- [API Reference - Claude API Docs](api-cli-models.md)
-- [Models](api-csharp-beta-models-bebc8508a9.md) - `ModelListPageResponse Beta.Models.List(ModelListParams?parameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Beta Models List B1924F15F6](api-csharp-beta-models-list-b1924f15f6.md) - `ModelListPageResponse Beta.Models.List(ModelListParams?parameters, CancellationTokencancellationToken = default)`
-- [List Models - Claude API Reference](api-csharp-beta-models-list.md) - [ModelListPageResponse](/docs/en/api/beta#ModelListPageResponse) Beta.Models.List(ModelListParams?parameters, CancellationTokencancellationToken = def
-- [Api Csharp Beta Models Retrieve Cee06C3353](api-csharp-beta-models-retrieve-cee06c3353.md) - `BetaModelInfo Beta.Models.Retrieve(ModelRetrieveParamsparameters, CancellationTokencancellationToken = default)`
-- [Get a Model - Claude API Reference](api-csharp-beta-models-retrieve.md) - [BetaModelInfo](/docs/en/api/beta#beta_model_info) Beta.Models.Retrieve(ModelRetrieveParamsparameters, CancellationTokencancellationToken = default)
-- [Models - Claude API Reference](api-csharp-beta-models.md) - [ModelListPageResponse](/docs/en/api/beta#ModelListPageResponse) Beta.Models.List(ModelListParams?parameters, CancellationTokencancellationToken = def
-- [Models](api-csharp-models-b1bf3133da.md) - `ModelListPageResponse Models.List(ModelListParams?parameters, CancellationTokencancellationToken = default)`
-- [Api Csharp Models List B002A3B259](api-csharp-models-list-b002a3b259.md) - `ModelListPageResponse Models.List(ModelListParams?parameters, CancellationTokencancellationToken = default)`
-- [List Models - Claude API Reference](api-csharp-models-list.md) - [ModelListPageResponse](/docs/en/api/models#ModelListPageResponse) Models.List(ModelListParams?parameters, CancellationTokencancellationToken = defaul
-- [Api Csharp Models Retrieve 18Bdbda1Bf](api-csharp-models-retrieve-18bdbda1bf.md) - `ModelInfo Models.Retrieve(ModelRetrieveParamsparameters, CancellationTokencancellationToken = default)`
-- [Get a Model - Claude API Reference](api-csharp-models-retrieve.md) - [ModelInfo](/docs/en/api/models#model_info) Models.Retrieve(ModelRetrieveParamsparameters, CancellationTokencancellationToken = default)
-- [Models - Claude API Reference](api-csharp-models.md) - [ModelListPageResponse](/docs/en/api/models#ModelListPageResponse) Models.List(ModelListParams?parameters, CancellationTokencancellationToken = defaul
-- [Models](api-go-beta-models-dc67d6d98f.md) - `client.Beta.Models.List(ctx, params) (*Page[BetaModelInfo], error)`
-- [Api Go Beta Models List 8508160C0C](api-go-beta-models-list-8508160c0c.md) - `client.Beta.Models.List(ctx, params) (*Page[BetaModelInfo], error)`
-- [List Models - Claude API Reference](api-go-beta-models-list.md) - client.Beta.Models.List(ctx, params) (\*Page\[[BetaModelInfo](/docs/en/api/beta#beta_model_info)\], error)
-- [Api Go Beta Models Retrieve 2C08672762](api-go-beta-models-retrieve-2c08672762.md) - `client.Beta.Models.Get(ctx, modelID, query) (*BetaModelInfo, error)`
-- [Get a Model - Claude API Reference](api-go-beta-models-retrieve.md) - client.Beta.Models.Get(ctx, modelID, query) (\*[BetaModelInfo](/docs/en/api/beta#beta_model_info), error)
-- [Models - Claude API Reference](api-go-beta-models.md) - client.Beta.Models.List(ctx, params) (\*Page\[[BetaModelInfo](/docs/en/api/beta#beta_model_info)\], error)
-- [Models](api-go-models-25db9e22b0.md) - `client.Models.List(ctx, params) (*Page[ModelInfo], error)`
-- [Api Go Models List B97B073D73](api-go-models-list-b97b073d73.md) - `client.Models.List(ctx, params) (*Page[ModelInfo], error)`
-- [List Models - Claude API Reference](api-go-models-list.md) - client.Models.List(ctx, params) (\*Page\[[ModelInfo](/docs/en/api/models#model_info)\], error)
-- [Api Go Models Retrieve 313338Efb3](api-go-models-retrieve-313338efb3.md) - `client.Models.Get(ctx, modelID, query) (*ModelInfo, error)`
-- [Get a Model - Claude API Reference](api-go-models-retrieve.md) - client.Models.Get(ctx, modelID, query) (\*[ModelInfo](/docs/en/api/models#model_info), error)
-- [Models - Claude API Reference](api-go-models.md) - client.Models.List(ctx, params) (\*Page\[[ModelInfo](/docs/en/api/models#model_info)\], error)
-- [Models - Claude API Reference](api-http-beta-models-634c8759da.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Models - Claude API Reference](api-http-beta-models-list-388647d0ba.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Get a Model - Claude API Reference](api-http-beta-models-retrieve-637442e047.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Models](api-java-beta-models-64a1025640.md) - `ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Beta Models List 814D420B34](api-java-beta-models-list-814d420b34.md) - `ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [List Models - Claude API Reference](api-java-beta-models-list.md) - ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
-- [Api Java Beta Models Retrieve B6B56B8585](api-java-beta-models-retrieve-b6b56b8585.md) - `BetaModelInfo beta().models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Get a Model - Claude API Reference](api-java-beta-models-retrieve.md) - [BetaModelInfo](/docs/en/api/beta#beta_model_info) beta().models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequ
-- [Models - Claude API Reference](api-java-beta-models.md) - ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
-- [Models](api-java-models-fd4e62202c.md) - `ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Api Java Models List 25D15Be48F](api-java-models-list-25d15be48f.md) - `ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [List Models - Claude API Reference](api-java-models-list.md) - ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
-- [Api Java Models Retrieve 57894Cb23E](api-java-models-retrieve-57894cb23e.md) - `ModelInfo models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
-- [Get a Model - Claude API Reference](api-java-models-retrieve.md) - [ModelInfo](/docs/en/api/models#model_info) models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequestOptions = R
-- [Models - Claude API Reference](api-java-models.md) - ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
-- [API Reference - Claude API Docs](api-kotlin-beta-models-list.md)
-- [API Reference - Claude API Docs](api-kotlin-beta-models-retrieve.md)
-- [API Reference - Claude API Docs](api-kotlin-beta-models.md)
-- [API Reference - Claude API Docs](api-kotlin-models-list.md)
-- [API Reference - Claude API Docs](api-kotlin-models-retrieve.md)
-- [API Reference - Claude API Docs](api-kotlin-models.md)
-- [Models](api-models-4198291c1d.md) - **get** `/v1/models`
-- [Models - Claude API Reference](api-models-4808ef942f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [List Models - Claude API Reference](api-models-list-77e92174d5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Models List B413Cb243D](api-models-list-b413cb243d.md) - **get** `/v1/models`
-- [List Models - Claude API Reference](api-models-list.md) - GET/v1/models
-- [Get a Model - Claude API Reference](api-models-retrieve-340bf38c10.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Api Models Retrieve 3Fb773E9F6](api-models-retrieve-3fb773e9f6.md) - **get** `/v1/models/{model_id}`
-- [Get a Model - Claude API Reference](api-models-retrieve.md) - GET/v1/models/{model_id}
-- [Models - Claude API Reference](api-models.md) - GET/v1/models
-- [Api Php Beta Models Bc11Debf5F](api-php-beta-models-bc11debf5f.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Beta Models List A1Aa4Ff86A](api-php-beta-models-list-a1aa4ff86a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [API Reference - Claude API Docs](api-php-beta-models-list.md)
-- [Api Php Beta Models Retrieve Bd62E9752A](api-php-beta-models-retrieve-bd62e9752a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [API Reference - Claude API Docs](api-php-beta-models-retrieve.md)
-- [API Reference - Claude API Docs](api-php-beta-models.md)
-- [Api Php Models Be72888A0C](api-php-models-be72888a0c.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Php Models List Eab1F9E8C2](api-php-models-list-eab1f9e8c2.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [API Reference - Claude API Docs](api-php-models-list.md)
-- [Api Php Models Retrieve 0B864180Ca](api-php-models-retrieve-0b864180ca.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [API Reference - Claude API Docs](api-php-models-retrieve.md)
-- [API Reference - Claude API Docs](api-php-models.md)
-- [Models](api-python-beta-models-eec7c66fe8.md) - `beta.models.list(ModelListParams**kwargs)  -> SyncPage[BetaModelInfo]`
-- [Api Python Beta Models List 87C31713E6](api-python-beta-models-list-87c31713e6.md) - `beta.models.list(ModelListParams**kwargs)  -> SyncPage[BetaModelInfo]`
-- [List Models - Claude API Reference](api-python-beta-models-list.md) - beta.models.list(ModelListParams\*\*kwargs) -\> SyncPage\[[BetaModelInfo](/docs/en/api/beta#beta_model_info)\]
-- [Api Python Beta Models Retrieve C6856A2Cd8](api-python-beta-models-retrieve-c6856a2cd8.md) - `beta.models.retrieve(strmodel_id, ModelRetrieveParams**kwargs)  -> BetaModelInfo`
-- [Get a Model - Claude API Reference](api-python-beta-models-retrieve.md) - beta.models.retrieve(strmodel_id, ModelRetrieveParams\*\*kwargs) -\> [BetaModelInfo](/docs/en/api/beta#beta_model_info)
-- [Models - Claude API Reference](api-python-beta-models.md) - beta.models.list(ModelListParams\*\*kwargs) -\> SyncPage\[[BetaModelInfo](/docs/en/api/beta#beta_model_info)\]
-- [Models](api-python-models-a341fb37d1.md) - `models.list(ModelListParams**kwargs)  -> SyncPage[ModelInfo]`
-- [Api Python Models List 2A1Dd5Faa9](api-python-models-list-2a1dd5faa9.md) - `models.list(ModelListParams**kwargs)  -> SyncPage[ModelInfo]`
-- [List Models - Claude API Reference](api-python-models-list.md) - models.list(ModelListParams\*\*kwargs) -\> SyncPage\[[ModelInfo](/docs/en/api/models#model_info)\]
-- [Api Python Models Retrieve C35Ec69E3E](api-python-models-retrieve-c35ec69e3e.md) - `models.retrieve(strmodel_id, ModelRetrieveParams**kwargs)  -> ModelInfo`
-- [Get a Model - Claude API Reference](api-python-models-retrieve.md) - models.retrieve(strmodel_id, ModelRetrieveParams\*\*kwargs) -\> [ModelInfo](/docs/en/api/models#model_info)
-- [Models - Claude API Reference](api-python-models.md) - models.list(ModelListParams\*\*kwargs) -\> SyncPage\[[ModelInfo](/docs/en/api/models#model_info)\]
-- [Models](api-ruby-beta-models-7b883a56af.md) - `beta.models.list(**kwargs) -> Page<BetaModelInfo>`
-- [Api Ruby Beta Models List 7217473A41](api-ruby-beta-models-list-7217473a41.md) - `beta.models.list(**kwargs) -> Page<BetaModelInfo>`
-- [List Models - Claude API Reference](api-ruby-beta-models-list.md) - beta.models.list(\*\*kwargs) -\> Page\<[BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, capabilities, created_at, 4 more } \>
-- [Api Ruby Beta Models Retrieve E10Ee4385E](api-ruby-beta-models-retrieve-e10ee4385e.md) - `beta.models.retrieve(model_id, **kwargs) -> BetaModelInfo`
-- [Get a Model - Claude API Reference](api-ruby-beta-models-retrieve.md) - beta.models.retrieve(model_id, \*\*kwargs) -\> [BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, capabilities, created_at, 4 more }
-- [Models - Claude API Reference](api-ruby-beta-models.md) - beta.models.list(\*\*kwargs) -\> Page\<[BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, capabilities, created_at, 4 more } \>
-- [Models](api-ruby-models-2213575730.md) - `models.list(**kwargs) -> Page<ModelInfo>`
-- [Api Ruby Models List 72E050C024](api-ruby-models-list-72e050c024.md) - `models.list(**kwargs) -> Page<ModelInfo>`
-- [List Models - Claude API Reference](api-ruby-models-list.md) - models.list(\*\*kwargs) -\> Page\<[ModelInfo](/docs/en/api/models#model_info) { id, capabilities, created_at, 4 more } \>
-- [Api Ruby Models Retrieve 295Cc71355](api-ruby-models-retrieve-295cc71355.md) - `models.retrieve(model_id, **kwargs) -> ModelInfo`
-- [Get a Model - Claude API Reference](api-ruby-models-retrieve.md) - models.retrieve(model_id, \*\*kwargs) -\> [ModelInfo](/docs/en/api/models#model_info) { id, capabilities, created_at, 4 more }
-- [Models - Claude API Reference](api-ruby-models.md) - models.list(\*\*kwargs) -\> Page\<[ModelInfo](/docs/en/api/models#model_info) { id, capabilities, created_at, 4 more } \>
-- [Api Terraform Beta Models 16Da610869](api-terraform-beta-models-16da610869.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Beta Models List A7A45D16A6](api-terraform-beta-models-list-a7a45d16a6.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [API Reference - Claude API Docs](api-terraform-beta-models-list.md)
-- [Api Terraform Beta Models Retrieve 1E79A77F5A](api-terraform-beta-models-retrieve-1e79a77f5a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [API Reference - Claude API Docs](api-terraform-beta-models-retrieve.md)
-- [API Reference - Claude API Docs](api-terraform-beta-models.md)
-- [Api Terraform Models 92Ed38423F](api-terraform-models-92ed38423f.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [Api Terraform Models List 9B559223F2](api-terraform-models-list-9b559223f2.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [API Reference - Claude API Docs](api-terraform-models-list.md)
-- [Api Terraform Models Retrieve C62Ab07A53](api-terraform-models-retrieve-c62ab07a53.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
-- [API Reference - Claude API Docs](api-terraform-models-retrieve.md)
-- [API Reference - Claude API Docs](api-terraform-models.md)
-- [Models](api-typescript-beta-models-cad3407342.md) - `client.beta.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<BetaModelInfo>`
-- [Api Typescript Beta Models List Ea157F6718](api-typescript-beta-models-list-ea157f6718.md) - `client.beta.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<BetaModelInfo>`
-- [List Models - Claude API Reference](api-typescript-beta-models-list.md) - client.beta.models.list(ModelListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[BetaModelInfo](/docs/en/api/bet
-- [Api Typescript Beta Models Retrieve 4B1Af399Ce](api-typescript-beta-models-retrieve-4b1af399ce.md) - `client.beta.models.retrieve(stringmodelID, ModelRetrieveParamsparams?, RequestOptionsoptions?): BetaModelInfo`
-- [Get a Model - Claude API Reference](api-typescript-beta-models-retrieve.md) - client.beta.models.retrieve(stringmodelID, ModelRetrieveParams { betas } params?, RequestOptionsoptions?): [BetaModelInfo](/docs/en/api/beta#beta_mode
-- [Models - Claude API Reference](api-typescript-beta-models.md) - client.beta.models.list(ModelListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[BetaModelInfo](/docs/en/api/bet
-- [Models](api-typescript-models-87c153d4e2.md) - `client.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<ModelInfo>`
-- [Api Typescript Models List E65Ad3192F](api-typescript-models-list-e65ad3192f.md) - `client.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<ModelInfo>`
-- [List Models - Claude API Reference](api-typescript-models-list.md) - client.models.list(ModelListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[ModelInfo](/docs/en/api/models#model
-- [Api Typescript Models Retrieve A0206D3Dca](api-typescript-models-retrieve-a0206d3dca.md) - `client.models.retrieve(stringmodelID, ModelRetrieveParamsparams?, RequestOptionsoptions?): ModelInfo`
-- [Get a Model - Claude API Reference](api-typescript-models-retrieve.md) - client.models.retrieve(stringmodelID, ModelRetrieveParams { betas } params?, RequestOptionsoptions?): [ModelInfo](/docs/en/api/models#model_info) { id
-- [Models - Claude API Reference](api-typescript-models.md) - client.models.list(ModelListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[ModelInfo](/docs/en/api/models#model
-- [Applying Claude Opus 4.5&#x27;s strengths to your everyday work | Claude by Anthropic](applying-claude-opus-4-5-s-strengths-to-your-everyday-work-2a9028ba10.md) - Learn how Claude Opus 4.5 excels at complex multi-step work including long conversations, polished document creation, and sophisticated coding.
-- [Applying Claude Opus 4.5&#x27;s strengths to your everyday work | Claude](applying-claude-opus-4-5-s-strengths-to-your-everyday-work.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Bd2A28D2535Bfb0494Cc8E2A3Bf135D2E7523226 Model Card Claude 2 Pdf 48080Cce0D](bd2a28d2535bfb0494cc8e2a3bf135d2e7523226-model-card-claude-2-pdf-48080cce0d.md) - Model Card and Evaluations for Claude Models
-- [Claude Code Analytics API - Claude Platform Docs](build-with-claude-claude-code-analytics-api-ad04ca4f32.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Code Analytics API](build-with-claude-claude-code-analytics-api-f78828c053.md) - Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
-- [Claude Code Analytics API - Claude API Docs](build-with-claude-claude-code-analytics-api.md) - Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
-- [Claude in Amazon Bedrock (Opus 4.7 and later) - Claude Platform Docs](build-with-claude-claude-in-amazon-bedrock-f34fd90d33.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock-fe322d327e.md) - Access Claude models through Amazon Bedrock with AWS-native authentication, billing, and security boundaries.
-- [Claude in Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry-cac680095c.md) - Access Claude models through Microsoft Foundry with Azure-native endpoints and authentication.
-- [Claude in Microsoft Foundry - Claude Platform Docs](build-with-claude-claude-in-microsoft-foundry-dc337252fd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude in Microsoft Foundry - Claude API Docs](build-with-claude-claude-in-microsoft-foundry.md) - Access Claude models through Microsoft Foundry with Azure-native endpoints and authentication.
-- [Claude on Amazon Bedrock (Opus 4.6 and earlier) - Claude Platform Docs](build-with-claude-claude-on-amazon-bedrock-legacy-cbb175336d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude on Amazon Bedrock (legacy)](build-with-claude-claude-on-amazon-bedrock-legacy-d59184ae62.md) - The legacy Amazon Bedrock integration for Claude models, using InvokeModel and Converse APIs with ARN-versioned model identifiers.
-- [Claude on Amazon Bedrock - Claude API Docs](build-with-claude-claude-on-amazon-bedrock.md) - Anthropic's Claude models are now generally available through Amazon Bedrock.
-- [Claude on Vertex AI](build-with-claude-claude-on-vertex-ai-8049f13ebc.md) - Anthropic's Claude models are now generally available through [Vertex AI](https://cloud.google.com/vertex-ai).
-- [Claude on Google Cloud - Claude Platform Docs](build-with-claude-claude-on-vertex-ai-8cb4ce8e8a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude on Vertex AI - Claude API Docs](build-with-claude-claude-on-vertex-ai.md) - Anthropic's Claude models are now generally available through [Vertex AI](https://cloud.google.com/vertex-ai).
-- [Claude Platform on AWS - Claude Platform Docs](build-with-claude-claude-platform-on-aws-3044b3f1e2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Can I use my Outputs to train an AI model? | Claude Help Center](can-i-use-my-outputs-to-train-an-ai-model-4a7108e3bc.md) - March 16, 2026
-- [Can I use my Outputs to train an AI model? | Claude Help Center](can-i-use-my-outputs-to-train-an-ai-model.md) - 3.  Can I use my Outputs to train an AI model?
-- [Change Breakdown: 2.1.42 vs 2.1.41](change-breakdown-2.1.42-vs-2.1.41.md) - - Most differences are minifier/symbol churn.
-- [Claude Code usage | Claude Platform](claude-code-49a7f965aa.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Claude Code model configuration | Claude Help Center](claude-code-model-configuration-2eca096d89.md) - Updated today
-- [Claude Code model configuration | Claude Help Center](claude-code-model-configuration.md) - This guide shows you three ways to change which Claude model you're using with Claude Code: the quick `/model` command for instant changes, the `--mod
-- [Claude Code on Amazon Bedrock - Claude Code Docs](claude-code-on-amazon-bedrock-claude-code-docs-435e92efd0.md) - Learn about configuring Claude Code through Amazon Bedrock, including setup, IAM configuration, and troubleshooting.
-- [Claude Code on Google Vertex AI - Claude Code Docs](claude-code-on-google-vertex-ai-claude-code-docs-2acd050a7a.md) - Learn about configuring Claude Code through Google Vertex AI, including setup, IAM configuration, and troubleshooting.
-- [Claude Code on Microsoft Foundry - Claude Code Docs](claude-code-on-microsoft-foundry-claude-code-docs-ee35d755a6.md) - Learn about configuring Claude Code through Microsoft Foundry, including setup, configuration, and troubleshooting.
-- [Managed settings | Claude Code | Claude Platform](claude-code-settings-7c217351f0.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Claude Code Binary Diff: 2.1.42 → 2.1.50](claude-diff-2142-vs-2150.md) - **Method:** ELF section analysis + Bun SFE bundle string extraction
-- [Claude Mythos Preview](claude-mythos-preview.md) - Claude Mythos Preview is a new general-purpose language model announced April 7, 2026, that is strikingly capable at computer security tasks. It is no
-- [Claude Binary Reverse Engineering Diff Report](claude-pyghidra-diff-2.1.50-2.1.55-2.1.59.md) - Scope: `/home/zack/.local/share/claude/versions/2.1.50` -> `/home/zack/.local/share/claude/versions/2.1.55` -> `/home/zack/.local/share/claude/version
-- [Covered Models | Claude Help Center](covered-models-9b5d036943.md) - Copy for LLM
-- [Create professional results across tools with Claude Sonnet 4.5 | Claude by Anthropic](create-professional-results-across-tools-with-claude-sonnet-4-5-5a84b3acfa.md) - Use Claude Sonnet 4.5's code execution and file creation to build professional presentations, spreadsheets, and documents efficiently.
-- [Create professional results across tools with Claude Sonnet 4.5 | Claude](create-professional-results-across-tools-with-claude-sonnet-4-5.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Data retention practices for Covered Models | Claude Help Center](data-retention-practices-for-covered-models-98f93eb2a2.md) - Copy for LLM
-- [Data retention practices for Covered Models | Claude Help Center](data-retention-practices-for-mythos-class-models-1ff23ce16e.md) - Copy for LLM
-- [De8Ba9B01C9Ab7Cbabf5C33B80B7Bbc618857627 Model Card Claude 3 Pdf 1B2Bfa31A5](de8ba9b01c9ab7cbabf5c33b80b7bbc618857627-model-card-claude-3-pdf-1b2bfa31a5.md) - The Claude 3 Model Family: Opus, Sonnet, Haiku
-- [DELTA: Claude Code 2.1.59 → 2.1.70](delta.md) - **Analysis date:** 2026-03-06
-- [Fed9Cc193A14B84131812372D8D5857F8F304C52 Modelcard Claudeopus4 Pdf E9Ed793Fc4](fed9cc193a14b84131812372d8d5857f8f304c52-modelcard-claudeopus4-pdf-e9ed793fc4.md) - This addendum to our Claude 3 Model Card describes Claude 3.5 Sonnet, a new model which outperforms
-- [Finetuning Claude 3 Haiku on Bedrock](finetuning-on-bedrock.md) - In this notebook, we\'ll walk you through the process of finetuning
-- [Getting the most out of Sonnet 4.5 in Claude.ai | Claude by Anthropic](getting-the-most-out-of-sonnet-4-5-in-claude-ai-fc1a455125.md) - Maximize Claude Sonnet 4.5's capabilities for creating professional documents, writing code, conducting research, and completing complex tasks.
-- [Getting the most out of Sonnet 4.5 in Claude.ai | Claude](getting-the-most-out-of-sonnet-4-5-in-claude-ai.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Claude Code on Google Vertex AI](google-vertex-ai.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-- [Change the model, effort, and thinking settings | Claude Help Center](how-can-i-change-the-model-version-that-i-m-chatting-with-41d8bba7a6.md) - Updated today
-- [LLM gateway configuration](llm-gateway.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-- [Claude Code Analytics API - Claude Platform Docs](manage-claude-claude-code-analytics-api-f4b723bc91.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Code on Microsoft Foundry](microsoft-foundry.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-- [Model availability in Claude for Government | Claude Help Center](model-availability-in-claude-for-government-c3cffdee09.md) - April 10, 2026
-- [Model configuration](model-config.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-- [Model deprecations](model-deprecations.md)
-- [Migrating to Claude Fable 5.1 and Claude Mythos 5.1 - Claude Platform Docs](models-fable-5-1-migration-guide-c7c8c40275.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Fable 5.1 - Claude Platform Docs](models-fable-5-1-overview-ad9aa6f1b8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [What's new in Claude Fable 5.1 - Claude Platform Docs](models-fable-5-1-whats-new-fable-5-1-c7eceee3e7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Migrating to Claude Mythos 5 and Claude Fable 5 - Claude Platform Docs](models-fable-5-migration-guide-10364cb284.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Fable 5 - Claude Platform Docs](models-fable-5-overview-8872f2abd0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Migrating to Claude Haiku 4.5 - Claude Platform Docs](models-haiku-4-5-migration-guide-3254a8c4a9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Haiku 4.5 - Claude Platform Docs](models-haiku-4-5-overview-e1910c5126.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Mythos 5.1 - Claude Platform Docs](models-mythos-5-1-overview-f4e22e5864.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Mythos 5 - Claude Platform Docs](models-mythos-5-overview-c4974ae533.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Opus 4.5 - Claude Platform Docs](models-opus-4-5-overview-7e389b0b8a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Opus 4.6 - Claude Platform Docs](models-opus-4-6-overview-aa021366c2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Opus 4.7 - Claude Platform Docs](models-opus-4-7-overview-bcdb1dab53.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Opus 4.8 - Claude Platform Docs](models-opus-4-8-overview-6082558954.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Migrating to Claude Opus 5.5 - Claude Platform Docs](models-opus-5-5-migration-guide-b5430c116c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Opus 5.5 - Claude Platform Docs](models-opus-5-5-overview-4d070c5c8c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [What's new in Claude Opus 5.5 - Claude Platform Docs](models-opus-5-5-whats-new-opus-5-5-71b2a432a3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Migrating to Claude Opus 5 - Claude Platform Docs](models-opus-5-migration-guide-28359efd97.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Opus 5 - Claude Platform Docs](models-opus-5-overview-8644e982e7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [What's new in Claude Opus 5 - Claude Platform Docs](models-opus-5-whats-new-opus-5-4d6cfe8346.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Models overview - Claude Platform Docs](models-overview-f3655eaf14.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Sonnet 4.5 - Claude Platform Docs](models-sonnet-4-5-overview-cc2cddad67.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Sonnet 4.6 - Claude Platform Docs](models-sonnet-4-6-overview-cbaf022d46.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Migrating to Claude Sonnet 5.5 - Claude Platform Docs](models-sonnet-5-5-migration-guide-51113b1418.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Sonnet 5.5 - Claude Platform Docs](models-sonnet-5-5-overview-752375ff0c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [What's new in Claude Sonnet 5.5 - Claude Platform Docs](models-sonnet-5-5-whats-new-sonnet-5-5-a84a4ae6e3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Migrating to Claude Sonnet 5 - Claude Platform Docs](models-sonnet-5-migration-guide-6953741a40.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Sonnet 5 - Claude Platform Docs](models-sonnet-5-overview-b09669c7cc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [What's new in Claude Sonnet 5 - Claude Platform Docs](models-sonnet-5-whats-new-sonnet-5-75a11d1965.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Opus 1M Context Migration — Implementation Details](opus-1m-migration.md) - **Feature Flag**: `tengu_cobalt_compass`
-- [Parallel tool calls on Claude 3.7 Sonnet {#parallel-tool-calls-on-claude-37-sonnet}](parallel-tools.md) - :::
-- [Prompt / Env / Model Change Report](prompt-env-model-changes-2.1.50-2.1.55-2.1.59.md) - Scope: `2.1.50 -> 2.1.55 -> 2.1.59`
-- [Summarizing Web Page Content with Claude 3 Haiku](read-web-pages-with-haiku.md) - In this recipe, we\'ll learn how to fetch the content of a web page
-- [Real-time cyber safeguards on Claude Opus and Sonnet | Claude Help Center](real-time-cyber-safeguards-on-claude-opus-and-sonnet-3e3f54fb4c.md) - Updated today
-- [Claude Fable 5.1 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-fable-5-1-b08f5506b2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Fable 5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-fable-5-d044576b42.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Haiku 3 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-haiku-3-38c8ef3485.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Haiku 3.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-haiku-3-5-d1f461f470.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Haiku 4.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-haiku-4-5-39a47c5388.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Opus 3 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-3-c862b1ffd6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Opus 4.1 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-1-f85803be64.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Opus 4 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-30feefb979.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Opus 4.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-5-3f2ab83d1c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Opus 4.6 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-6-70b9556df0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Opus 4.7 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-7-09368196d3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Opus 4.8 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-8-70056ecf74.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Opus 5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-5-11cb43f7b5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Opus 5.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-5-5-3e045f5252.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Sonnet 3.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-3-5-f493d61046.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Sonnet 3.7 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-3-7-ff147a2308.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Sonnet 4 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-4-1c949476fd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Sonnet 4.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-4-5-610402ea32.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Sonnet 4.6 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-4-6-a840e2344c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Sonnet 5.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-5-5-d005db5abc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Claude Sonnet 5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-5-77a6f8b786.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Responsible Use of Anthropic&#x27;s Models: Guidelines for Organizations Serving Minors | Claude Help Center](responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minor-758a9593b9.md) - March 16, 2026
-- [Set a default model for your organization | Claude Help Center](set-a-default-model-for-your-organization-98e8ab7944.md) - Copy for LLM
-- [Keep Claude in character with role prompting and prefilling - Claude API Docs](test-and-evaluate-strengthen-guardrails-keep-claude-in-character.md) - This guide provides actionable tips to keep Claude in character, even during long, complex interactions.
-- [Claude Help Center](using-claude-for-financial-services-for-analysis-and-modeling.md) - Search for articles...
-- [What AWS Regions are Claude models available in Amazon Bedrock? | Claude Help Center](what-aws-regions-are-claude-models-available-in-amazon-bedrock-ff32dc1fab.md) - March 16, 2026
-- [What AWS Regions are Claude models available in Amazon Bedrock? | Claude Help Center](what-aws-regions-are-claude-models-available-in-amazon-bedrock.md) - 3.  What AWS Regions are Claude models available in Amazon Bedrock?
-- [Why Claude switched models in your conversation with Fable 5 or Fable 5.1 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-fable-5-2d51d90ee2.md) - Copy for LLM
-- [Why Claude switched models in your conversation with Fable 5 or Fable 5.1 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1-1ebc705736.md) - Copy for LLM
-- [Why Claude switched models in your conversation with Opus 5 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-opus-5-f79cee93bc.md) - August 6, 2026
-- [Why Claude switched models in your conversation with Opus 5 or Opus 5.5 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5-ee0f076a8d.md) - Copy for LLM
-- [Why Claude switched models in your conversation with Sonnet 5.5 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-sonnet-5-5-5cc41f0b88.md) - Updated today
+- [Adapt to new model personas after deprecations | Claude Help Center](adapting-to-new-model-personas-after-deprecations.md) — Model deprecations and retirements are routine parts of the model lifecycle. While we would like to keep past models publicly available as we continue to…
+- [Applying Claude Opus 4.5's strengths to your everyday work | Claude by Anthropic](applying-claude-opus-4-5-s-strengths-to-your-everyday-work.md) — Learn how Claude Opus 4.5 excels at complex multi-step work including long conversations, polished document creation, and sophisticated coding.
+- [Before (Claude Sonnet 3.7)](about-claude-models-migrating-to-claude-4.md) — This guide covers two key migration paths to Claude 4.5 models:
+- [Can I use my Outputs to train an AI model? | Claude Help Center](can-i-use-my-outputs-to-train-an-ai-model.md) — When you use Claude, you own the Outputs generated from your Inputs. However, there are important restrictions on using these Outputs to train AI models which…
+- [Choosing the right model - Claude Platform Docs](about-claude-models-choosing-a-model.md) — Choosing a Claude model means balancing capabilities, speed, and cost. This guide covers the questions to ask, two ways to pick a starting model, and how to…
+- [Claude Code model configuration | Claude Help Center](claude-code-model-configuration.md) — This guide shows you three ways to change which Claude model you're using with Claude Code: the quick /model command for instant changes, the --model flag for…
+- [Claude Fable 5 - Claude Platform Docs](models-fable-5-overview.md) — Although Claude Fable 5 is still available, you should consider migrating to Claude Fable 5.1 for improved performance.
+- [Claude Fable 5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-fable-5.md) — See updates to the core system prompt for Claude Fable 5 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Fable 5.1 - Claude Platform Docs](models-fable-5-1-overview.md) — For demanding reasoning and long-horizon agentic work
+- [Claude Fable 5.1 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-fable-5-1.md) — See updates to the core system prompt for Claude Fable 5.1 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Haiku 3 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-haiku-3.md) — See updates to the core system prompt for Claude Haiku 3 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Haiku 3.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-haiku-3-5.md) — See updates to the core system prompt for Claude Haiku 3.5 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Haiku 4.5 - Claude Platform Docs](models-haiku-4-5-overview.md) — The fastest model with near-frontier intelligence
+- [Claude Haiku 4.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-haiku-4-5.md) — See updates to the core system prompt for Claude Haiku 4.5 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Help Center](using-claude-for-financial-services-for-analysis-and-modeling.md) — Uh oh. That page doesn’t exist.
+- [Claude Mythos 5 - Claude Platform Docs](models-mythos-5-overview.md) — Most capable model for cybersecurity and biology research
+- [Claude Mythos 5.1 - Claude Platform Docs](models-mythos-5-1-overview.md) — Claude Fable 5.1 for Project Glasswing participants
+- [Claude Opus 3 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-3.md) — See updates to the core system prompt for Claude Opus 3 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Opus 4 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4.md) — See updates to the core system prompt for Claude Opus 4 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Opus 4.1 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-1.md) — See updates to the core system prompt for Claude Opus 4.1 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Opus 4.5 - Claude Platform Docs](models-opus-4-5-overview.md) — Although Claude Opus 4.5 is still available, you should consider migrating to Claude Opus 5.5 for improved performance.
+- [Claude Opus 4.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-5.md) — See updates to the core system prompt for Claude Opus 4.5 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Opus 4.6 - Claude Platform Docs](models-opus-4-6-overview.md) — Although Claude Opus 4.6 is still available, you should consider migrating to Claude Opus 5.5 for improved performance.
+- [Claude Opus 4.6 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-6.md) — See updates to the core system prompt for Claude Opus 4.6 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Opus 4.7 - Claude Platform Docs](models-opus-4-7-overview.md) — Although Claude Opus 4.7 is still available, you should consider migrating to Claude Opus 5.5 for improved performance.
+- [Claude Opus 4.7 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-7.md) — See updates to the core system prompt for Claude Opus 4.7 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Opus 4.8 - Claude Platform Docs](models-opus-4-8-overview.md) — Although Claude Opus 4.8 is still available, you should consider migrating to Claude Opus 5.5 for improved performance.
+- [Claude Opus 4.8 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-8.md) — See updates to the core system prompt for Claude Opus 4.8 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Opus 5 - Claude Platform Docs](models-opus-5-overview.md) — Although Claude Opus 5 is still available, you should consider migrating to Claude Opus 5.5 for improved performance.
+- [Claude Opus 5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-5.md) — See updates to the core system prompt for Claude Opus 5 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Opus 5.5 - Claude Platform Docs](models-opus-5-5-overview.md) — For long-running agentic coding and knowledge work
+- [Claude Opus 5.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-5-5.md) — See updates to the core system prompt for Claude Opus 5.5 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Platform release notes - Claude Platform Docs](release-notes-api.md) — Updates to the Claude Platform, including the Claude API, client SDKs, and the Claude Console.
+- [Claude Platform release notes - Claude Platform Docs](release-notes-overview.md) — Updates to the Claude Platform, including the Claude API, client SDKs, and the Claude Console.
+- [Claude Sonnet 3.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-3-5.md) — See updates to the core system prompt for Claude Sonnet 3.5 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Sonnet 3.7](about-claude-models-whats-new-claude-4-5.md) — Claude 4.5 introduces three models designed for different use cases:
+- [Claude Sonnet 3.7 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-3-7.md) — See updates to the core system prompt for Claude Sonnet 3.7 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Sonnet 4 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-4.md) — See updates to the core system prompt for Claude Sonnet 4 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Sonnet 4.5 - Claude Platform Docs](models-sonnet-4-5-overview.md) — Although Claude Sonnet 4.5 is still available, you should consider migrating to Claude Sonnet 5 for improved performance.
+- [Claude Sonnet 4.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-4-5.md) — See updates to the core system prompt for Claude Sonnet 4.5 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Sonnet 4.6 - Claude Platform Docs](models-sonnet-4-6-overview.md) — Although Claude Sonnet 4.6 is still available, you should consider migrating to Claude Sonnet 5 for improved performance.
+- [Claude Sonnet 4.6 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-4-6.md) — See updates to the core system prompt for Claude Sonnet 4.6 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Sonnet 5 - Claude Platform Docs](models-sonnet-5-overview.md) — The best combination of speed and intelligence
+- [Claude Sonnet 5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-5.md) — See updates to the core system prompt for Claude Sonnet 5 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Sonnet 5.5 - Claude Platform Docs](models-sonnet-5-5-overview.md) — The best combination of speed and intelligence
+- [Claude Sonnet 5.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-5-5.md) — See updates to the core system prompt for Claude Sonnet 5.5 on claude.ai and the Claude iOS app and Claude Android app.
+- [Covered Models | Claude Help Center](covered-models.md) — Anthropic may designate certain models as “Covered Models” when they cross capability thresholds that warrant additional safeguards or other treatment. This…
+- [Create professional results across tools with Claude Sonnet 4.5 | Claude by Anthropic](create-professional-results-across-tools-with-claude-sonnet-4-5.md) — Use Claude Sonnet 4.5's code execution and file creation to build professional presentations, spreadsheets, and documents efficiently.
+- [Data retention practices for Covered Models | Claude Help Center](data-retention-practices-for-mythos-class-models.md) — To ensure we’re responsibly deploying covered models, we are requiring limited data retention and review as part of our safety work. Prompts submitted to, and…
+- [Finetuning Claude 3 Haiku on Bedrock](claude-cookbooks-finetuning-finetuning-on-bedrock.md) — In this notebook, we\'ll walk you through the process of finetuning
+- [Getting the most out of Sonnet 4.5 in Claude.ai | Claude by Anthropic](getting-the-most-out-of-sonnet-4-5-in-claude-ai.md) — Maximize Claude Sonnet 4.5's capabilities for creating professional documents, writing code, conducting research, and completing complex tasks.
+- [Introducing Claude Fable 5 and Claude Mythos 5 - Claude Platform Docs](about-claude-models-introducing-claude-fable-5-and-claude-mythos-5.md) — Claude Fable 5 and Claude Mythos 5 capabilities, API changes, and availability.
+- [Introducing Claude Fable 5 and Claude Mythos 5 - Claude Platform Docs](models-fable-5-introducing-claude-fable-5-and-claude-mythos-5.md) — Claude Fable 5 and Claude Mythos 5 capabilities, API changes, and availability.
+- [Migrating to Claude Fable 5.1 and Claude Mythos 5.1 - Claude Platform Docs](models-fable-5-1-migration-guide.md) — Migrate to Claude Fable 5.1 and Claude Mythos 5.1 from Claude Fable 5, Claude Mythos 5, Claude Opus 5, or Claude Opus 4.8: model IDs, breaking changes, and…
+- [Migrating to Claude Haiku 4.5 - Claude Platform Docs](models-haiku-4-5-migration-guide.md) — Migrate to Claude Haiku 4.5 from earlier Haiku models: model IDs, breaking changes, and a migration checklist.
+- [Migrating to Claude Mythos 5 and Claude Fable 5 - Claude Platform Docs](models-fable-5-migration-guide.md) — Migrate to Claude Mythos 5 and Claude Fable 5 from Claude Mythos Preview, Claude Opus 5, or Claude Opus 4.8: model IDs, API changes, and migration checklists.
+- [Migrating to Claude Opus 5 - Claude Platform Docs](models-opus-5-migration-guide.md) — Migrate to Claude Opus 5 from earlier Claude models: model IDs, breaking changes, recommended changes, and migration checklists.
+- [Migrating to Claude Opus 5.5 - Claude Platform Docs](models-opus-5-5-migration-guide.md) — Migrate to Claude Opus 5.5 from earlier Claude models: model IDs, breaking changes, recommended changes, and migration checklists.
+- [Migrating to Claude Sonnet 5 - Claude Platform Docs](models-sonnet-5-migration-guide.md) — Migrate to Claude Sonnet 5 from earlier Claude models: model IDs, breaking changes, and migration checklists.
+- [Migrating to Claude Sonnet 5.5 - Claude Platform Docs](models-sonnet-5-5-migration-guide.md) — Move code to Claude Sonnet 5.5 from Claude Sonnet 5, Claude Sonnet 4.6, Claude Sonnet 4.5, Claude Sonnet 4, Claude 3.7 Sonnet, or Claude Haiku 4.5: settings…
+- [Migration guides - Claude Platform Docs](about-claude-models-migration-guide.md) — Guides for migrating to the latest Claude models from previous Claude versions
+- [Model availability in Claude for Government | Claude Help Center](model-availability-in-claude-for-government.md) — Claude is a family of state-of-the-art large language models developed by Anthropic. This guide introduces the models available for customers using Claude for…
+- [Model deprecations - Claude Platform Docs](about-claude-model-deprecations.md) — See which Claude models are active, deprecated, or retired, and find retirement dates and recommended replacements for models and API parameters.
+- [Model IDs and versioning - Claude Platform Docs](about-claude-models-model-ids-and-versions.md) — How Claude model IDs are structured and versioned, including the dateless format introduced with the Claude 4.6 generation and what it means for stability.
+- [Models overview - Claude Platform Docs](about-claude-models-overview.md) — Claude is a family of state-of-the-art large language models developed by Anthropic. Compare the current lineup, find the model ID for every platform, and open…
+- [Optimizing for cost and intelligence - Claude Platform Docs](about-claude-models-optimizing-for-cost-and-intelligence.md) — Balance cost and intelligence on the Claude Platform, with measured results for prompt caching, effort, model choice, budgets, and multi-model strategies.
+- [Parallel tool calls on Claude 3.7 Sonnet](claude-cookbooks-tool-use-parallel-tools.md) — Claude 3.7 Sonnet may be less likely to make make parallel tool calls in
+- [Real-time cyber safeguards on Claude Opus and Sonnet | Claude Help Center](real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) — Note: This article applies only to Opus and Sonnet class models, but doesn’t apply to Claude Opus 5.5 or Sonnet 5.5. We'll soon be expanding the Cyber…
+- [Set a default model for your organization | Claude Help Center](set-a-default-model-for-your-organization.md) — This guide explains how to choose the Claude model that new conversations start on across your organization. You can set one default for your whole…
+- [Summarizing Web Page Content with Claude 3 Haiku](claude-cookbooks-misc-read-web-pages-with-haiku.md) — In this recipe, we\'ll learn how to fetch the content of a web page
+- [System prompts - Claude Platform Docs](release-notes-system-prompts-overview.md) — See updates to the core system prompts on claude.ai and the Claude iOS app and Claude Android app.
+- [System Prompts - Claude Platform Docs](release-notes-system-prompts.md) — See updates to the core system prompts on claude.ai and the Claude iOS app and Claude Android app.
+- [What AWS Regions are Claude models available in Amazon Bedrock? | Claude Help Center](what-aws-regions-are-claude-models-available-in-amazon-bedrock.md) — Visit the Amazon Bedrock user guide to see the Claude models that are available by AWS Region in Amazon Bedrock.
+- [What's new in Claude 4.6](about-claude-models-whats-new-claude-4-6.md) — Overview of new features and capabilities in Claude Opus 4.6 and Sonnet 4.6.
+- [What's new in Claude Fable 5.1 - Claude Platform Docs](models-fable-5-1-whats-new-fable-5-1.md) — Overview of new features, breaking changes, and capability improvements in Claude Fable 5.1 and Claude Mythos 5.1.
+- [What's new in Claude Opus 4.7](about-claude-models-whats-new-claude-4-7.md) — Overview of new features, breaking changes, and behavior changes in Claude Opus 4.7.
+- [What's new in Claude Opus 5 - Claude Platform Docs](about-claude-models-whats-new-opus-5.md) — Overview of new features and behavior changes in Claude Opus 5.
+- [What's new in Claude Opus 5 - Claude Platform Docs](models-opus-5-whats-new-opus-5.md) — Overview of new features and behavior changes in Claude Opus 5.
+- [What's new in Claude Opus 5.5 - Claude Platform Docs](models-opus-5-5-whats-new-opus-5-5.md) — Overview of breaking changes, feature support, and behavior differences in Claude Opus 5.5.
+- [What's new in Claude Sonnet 5 - Claude Platform Docs](about-claude-models-whats-new-sonnet-5.md) — Overview of new features and behavior changes in Claude Sonnet 5.
+- [What's new in Claude Sonnet 5 - Claude Platform Docs](models-sonnet-5-whats-new-sonnet-5.md) — Overview of new features and behavior changes in Claude Sonnet 5.
+- [What's new in Claude Sonnet 5.5 - Claude Platform Docs](models-sonnet-5-5-whats-new-sonnet-5-5.md) — What changes when you move from Claude Sonnet 5 to Claude Sonnet 5.5: breaking changes, feature support, behavior differences, pricing, and availability.
+- [Why Claude switched models in your conversation with Fable 5 or Fable 5.1 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1.md) — This article explains why a request might be blocked on Claude Fable 5 or Fable 5.1, what happens when your conversation switches to a different Claude model…
+- [Why Claude switched models in your conversation with Opus 5 or Opus 5.5 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5.md) — This article explains why a request might fall back on Claude Opus 5 or Opus 5.5, what happens when your conversation switches to another model, and how to…
+- [Why Claude switched models in your conversation with Sonnet 5.5 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-sonnet-5-5.md) — This article explains why a request might fall back to another model or be blocked on Claude Sonnet 5.5, what happens when your chat switches models, and how…

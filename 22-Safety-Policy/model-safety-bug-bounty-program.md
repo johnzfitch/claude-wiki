@@ -2,10 +2,12 @@
 title: "Model Safety Bug Bounty Program | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12119250-model-safety-bug-bounty-program"
 category: "22-Safety-Policy"
-fetched_at: "2026-03-22T09:01:39Z"
+fetched_at: "2026-09-29T06:31:24Z"
+tags: ["safety"]
 ---
 
 # Model Safety Bug Bounty Program
+
 
 
 ## Purpose
@@ -22,7 +24,7 @@ We believe external testing is crucial for building a safe AI ecosystem. As mode
 
 ## Program Overview
 
-Our Model Safety Bug Bounty Program is run through HackerOne. Through this Program, we are interested in finding universal jailbreaks that surpass our [Constitutional Classifiers](https://www.anthropic.com/news/constitutional-classifiers) system. We also occasionally run targeted programs within our overall Program to test the robustness of classifiers we hope to launch in the future.
+Our Model Safety Bug Bounty Program is run through HackerOne. Through this Program, we are interested in finding universal jailbreaks that surpass our [Constitutional Classifiers](../19-Reference/constitutional-classifiers.md) system. We also occasionally run targeted programs within our overall Program to test the robustness of classifiers we hope to launch in the future.
 
 A universal jailbreak is a generalized technique that reliably elicits policy-violating responses from a language model, regardless of the input prompt. Unlike narrow jailbreaks, which depend on the specifics of a particular question or context, universal jailbreaks work across a wide range of prompts and scenarios.
 
@@ -36,11 +38,11 @@ To emphasize, we are interested in jailbreaks that extract information that answ
 
 We will pay **up to \$35,000 per novel, universal jailbreak identified.** We are only interested in jailbreaks that reveal substantial amounts of harmful information based on our sole criteria and discretion. We award bounties using a sliding scale based on an internal grading rubric which determines how detailed and accurate responses are.
 
-This program is scoped to jailbreaks on our Constitutional Classifiers. For technical vulnerabilities that potentially exist on our Information Systems such as misconfigurations, CSRFs or cross site request forgeries, privilege escalation attacks, SQL Injection, XSS, and directory traversal attacks, please refer to our [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy) and submit your report [here](https://hackerone.com/297a385f-b3bd-4ecd-9466-7d9ad55371ce/embedded_submissions/new).
+This program is scoped to jailbreaks on our Constitutional Classifiers. For technical vulnerabilities that potentially exist on our Information Systems such as misconfigurations, CSRFs or cross site request forgeries, privilege escalation attacks, SQL Injection, XSS, and directory traversal attacks, please refer to our [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy) and submit your report [here](https://hackerone.com/4f1f16ba-10d3-4d09-9ecc-c721aad90f24/embedded_submissions/new).
 
 ## How to Apply
 
-You can apply to join our Program [here](https://docs.google.com/forms/d/e/1FAIpQLSf3IuyunFH1Rbz_9Bpt2kGBfwSW5QQ1TBkeAzNZrtCP-hRvNA/viewform). We review applications on a rolling basis. If accepted, you will receive an invite via HackerOne. IIf you do not already have a HackerOne account, please create one before applying to the Program so we can invite you directly on the platform. You must use your @wearehackerone.com email alias to create a [Claude Console account](../04-API-Reference/Other/platform-claude-com.md).
+You can apply to join our Program [here](https://docs.google.com/forms/d/e/1FAIpQLSf3IuyunFH1Rbz_9Bpt2kGBfwSW5QQ1TBkeAzNZrtCP-hRvNA/viewform). We review applications on a rolling basis. If accepted, you will receive an invite via HackerOne. IIf you do not already have a HackerOne account, please create one before applying to the Program so we can invite you directly on the platform. You must use your @wearehackerone.com email alias to create a [Claude Console account](../04-API-Reference/Other/usage-limits.md).
 
 ## Disclosure Guidelines & Confidentiality Obligations
 

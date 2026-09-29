@@ -2,13 +2,13 @@
 title: "What is the External Researcher Access Program? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-22T09:01:47Z"
-tags: ["search"]
+fetched_at: "2026-09-29T06:31:11Z"
+tags: ["claude-ai", "search"]
 ---
 
-4.  What is the External Researcher Access Program?
-
 # What is the External Researcher Access Program?
+
+March 16, 2026
 
 
 Our External Researcher Access Program is specifically designed to support and lower the barrier to entry for researchers working on AI safety and alignment topics that we consider high priority by providing free API credits.
@@ -41,7 +41,7 @@ Please complete the following application form with details about your team and 
 
 3.  **Please note that given the substantial number of applications we receive (sometimes thousands in a single week), we regret that we cannot provide individual responses to unapproved submissions.** In addition, we reserve the right to reject submissions for any reason and will not be able to provide explanations for each individual applicant. However, we appreciate the time and effort put into each submission and will carefully review all entries. Thank you for your understanding.
 
-If you are having an issue that requires a response urgently (e.g., you’ve suddenly run out of your credits before a major conference), please email [\[email protected\]](/cdn-cgi/l/email-protection#dba9bea8bebaa9b8b3bea9bab8b8bea8a89bbab5afb3a9b4abb2b8f5b8b4b6). However, please note that we will not be able to respond if your question is already addressed by the following FAQ.
+If you are having an issue that requires a response urgently (e.g., you’ve suddenly run out of your credits before a major conference), please email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#a1d3c4d2c4c0d3c2c9c4d3c0c2c2c4d2d2e1c0cfd5c9d3ced1c8c28fc2cecc). However, please note that we will not be able to respond if your question is already addressed by the following FAQ.
 
 ------------------------------------------------------------------------
 
@@ -105,5 +105,5 @@ Thank you for your interest in our Researcher Access Program and for taking the 
 
 5.  **Reapplication:** Please note that this program was substantially revised in **July 2024**. If you contacted us before that time, or if significant time has passed since your initial application, you're welcome to submit a new application through the new application form with any updated information about your research: [Application Form - Anthropic's External Researcher Access Program](https://forms.gle/pZYC8f6qYqSKvRWn9).
 
-\
-Thank you for your understanding. We're committed to supporting the AI research community to the best of our ability while maintaining a sustainable process.
+  
+​Thank you for your understanding. We're committed to supporting the AI research community to the best of our ability while maintaining a sustainable process.

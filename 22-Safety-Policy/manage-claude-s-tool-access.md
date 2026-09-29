@@ -2,10 +2,13 @@
 title: "Manage Claude’s tool access | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13730515-manage-claude-s-tool-access"
 category: "22-Safety-Policy"
-fetched_at: "2026-03-22T09:01:45Z"
+fetched_at: "2026-09-29T06:31:39Z"
+tags: ["safety"]
 ---
 
 # Manage Claude’s tool access
+
+March 16, 2026
 
 
 When you connect many services to Claude, you can control how those connectors are loaded into your conversations. This helps Claude work more accurately and efficiently, especially if you've added 10 or more connectors.

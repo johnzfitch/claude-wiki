@@ -2,16 +2,18 @@
 title: "HIPAA-ready Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-03-22T09:01:44Z"
+fetched_at: "2026-09-29T06:31:35Z"
 tags: ["api", "billing", "enterprise"]
 ---
 
 # HIPAA-ready Enterprise plans
 
+July 23, 2026
 
-This feature is available for Enterprise plans only.
 
-We now offer a HIPAA-ready version of Claude that is available for organizations with Enterprise plans that choose to process protected health information (PHI) through Claude. This article explains what the offering includes, which features are available, and how to get started.
+This feature is available for Enterprise plans only (both self-serve and sales-assisted).
+
+We offer a HIPAA-ready version of Claude that is available for organizations on Enterprise plans that choose to process protected health information (PHI) through Claude. This article explains what the offering includes, which features are available, and how to get started.
 
 ## Overview
 
@@ -35,32 +37,70 @@ If you're unsure whether your organization benefits from a HIPAA-ready product, 
 
 ## Feature availability
 
-The HIPAA-ready Enterprise offering includes access to most of the features available on **[standard Enterprise plans](what-is-the-enterprise-plan.md)**. For example, users can chat with Claude, create projects and artifacts, and use voice mode. Depending on what functions are enabled by the organization’s plan administrator, users can also leverage connectors, enterprise search, file creation and code execution, web search, research, and skills. More information about the specific features, functionality, and administrator controls are included in the **[Implementation Guide for HIPAA Entities](https://trust.anthropic.com/resources?s=rgirr4qe8u7ek8c2igx3&name=claude-for-enterprise-hipaa-ready-offering-implementation-guide)**.
+The HIPAA-ready Enterprise offering includes many of the features available on **[standard Enterprise plans](what-is-the-enterprise-plan.md)**—but enabling HIPAA doesn't bring every feature under your BAA. Features fall into three categories: covered by your BAA, available but not covered, and disabled. PHI should only be processed through covered features, so it's important for administrators to know which features fall in which category and to configure their workspace accordingly. The **[Implementation Guide for HIPAA Entities](https://trust.anthropic.com/resources?s=rgirr4qe8u7ek8c2igx3&name=claude-for-enterprise-hipaa-ready-offering-implementation-guide)** on the Anthropic Trust Center lists every feature's status and is the authoritative source.
 
-**Important:** Claude Code bundled seats are not currently covered as part of the HIPAA-ready offering. If you purchase Enterprise seats that include Claude Code access, only the chat functionality is covered. Claude Code usage is not covered, even when purchased as part of a bundled seat. If your organization wants to have Claude Code usage covered as part of HIPAA-related services, contact your account team to discuss available options.
+**Important:** Enabling HIPAA readiness alone doesn't bring Claude Code under your BAA. Claude Code is covered under your BAA only with zero data retention (ZDR) enabled, and only on qualified accounts. Without ZDR, Claude Code remains available to use but isn't covered—including when Claude Code access is bundled into your Enterprise seats. To explore Claude Code coverage, contact your Anthropic account team or our **[Sales team](https://www.anthropic.com/contact-sales)**.
 
-Additionally, Cowork is not yet available for any HIPAA-ready Enterprise plans.
+Additionally, Cowork is not yet covered under Anthropic’s BAA.
 
 ## Additional resources
 
-For detailed implementation requirements and technical specifications, review the **[Implementation Guide for HIPAA Entities](https://trust.anthropic.com/resources?s=rgirr4qe8u7ek8c2igx3&name=claude-for-enterprise-hipaa-ready-offering-implementation-guide)** on the Anthropic Trust Center.
+For detailed implementation requirements and technical specifications, review the **[Implementation Guide for HIPAA Entities](https://trust.anthropic.com/resources?s=rgirr4qe8u7ek8c2igx3&name=claude-for-enterprise-hipaa-ready-offering-implementation-guide)** on the Anthropic Trust Center. You can download the Implementation Guide directly during the setup flow.
 
 **Note:** You'll need to request access to view the Implementation Guide. Requests from domains matching existing customer accounts are approved automatically.
 
-## Getting started
+------------------------------------------------------------------------
 
-The HIPAA-ready offering requires a sales-assisted Enterprise plan and is not available on self-serve Enterprise plans. To get started, your organization must execute a BAA with our Sales team.
+## Get started
 
-1.  **[Contact our Sales team](http://claude.com/contact-sales)** to discuss your organization's needs.
+Eligible Enterprise organizations can enable HIPAA-ready configuration directly from organization settings—no sales or legal cycle required. The Business Associate Agreement (BAA) is included in the flow as click-to-accept, so there's no separate document to sign and return. Clicking “Accept and Enable HIPAA” constitutes acceptance of the BAA.
 
-2.  Review the Business Associate Agreement and the Implementation Guide.
+### Eligibility
 
-3.  Execute the Business Associate Agreement.
+You can enable the HIPAA configuration from organization settings if your organization is on an Enterprise plan. Team plans and individual plans (Free, Pro, and Max) can't enable HIPAA.
 
-4.  Work with your account team to appropriately set up and configure your HIPAA-ready Enterprise plan.
+Only the **Primary Owner** of the organization can accept the BAA and enable HIPAA. Other Owners or Admins can't complete this flow on the org's behalf. If you're an admin but not the Primary Owner of the Enterprise organization, ask your Primary Owner to sign in and complete enablement.
+
+### Before you begin
+
+Two things to know up front:
+
+- **Enabling HIPAA resets certain settings across your organization.** Some configurations return to defaults as part of the transition to a HIPAA-ready state. The onboarding modal and the Implementation Guide (downloadable during the flow) detail what changes.
+
+- **This is a one-way decision.** Once HIPAA is enabled and the BAA is accepted, the change can't be reversed from organization settings.
+
+You must review the BAA and the Implementation Guide before accepting, as this is an irreversible organization transition.
+
+**Note:** The BAA offered through the self-serve flow is a standard agreement and can't be modified.
+
+### Enable HIPAA
+
+1.  Sign in to Claude as the Primary Owner and go to **[Organization settings \> Data and privacy](https://claude.ai/admin-settings/data-privacy-controls)**.
+
+2.  Go to **HIPAA Compliance.**
+
+3.  Click “Enable” to open the consent flow.
+
+4.  Download the Business Associate Agreement, review it, then click “Next.”
+
+5.  Download the Implementation Guide, review it, then click “Next.”
+
+6.  Click “Accept and enable HIPAA.”
+
+### Confirmation
+
+Once enabled, you'll see a checkmark in the **HIPAA Compliance** section of organization settings, confirming your organization has been configured to process PHI through Claude in accordance with HIPAA. If you don't see this checkmark, your organization isn't enabled.
+
+The onboarding modal will guide you through next steps for your team.
+
+For help with the BAA, the Implementation Guide, or post-enablement questions, reach out to your Anthropic account team or **[our support team](../21-Account-Support/how-can-i-contact-support.md)**.
+
+------------------------------------------------------------------------
 
 ## If you have an existing API BAA
 
 If your organization signed a BAA for Claude API usage before December 2, 2025, that agreement only covers API usage—it does not extend to the HIPAA-ready Enterprise plan. To add this Enterprise plan access, you'll need to sign a new BAA with your account team.
 
 BAAs signed after December 2, 2025 can cover both API usage and the Enterprise plan under a single agreement.
+
+If you use the Claude API, learn more about **[HIPAA-ready Claude API access and how to set it up](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#hipaa-readiness)**.

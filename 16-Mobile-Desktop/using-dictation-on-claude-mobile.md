@@ -1,19 +1,23 @@
 ---
-title: "Using dictation on Claude Mobile | Claude Help Center"
+title: "Use dictation on Claude Mobile | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10065434-using-dictation-on-claude-mobile"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-22T09:01:36Z"
+fetched_at: "2026-09-29T06:31:33Z"
 tags: ["desktop", "mobile"]
 ---
 
-# Using dictation on Claude Mobile
+# Use dictation on Claude Mobile
+
+July 23, 2026
 
 
-Dictation is currently available for users on free, Pro, and Team plans
+Dictation is available to all Claude users (Free, Pro, Max, Team, and Enterprise plans). Support for languages other than English is in beta.
 
 Dictation allows you to speak your prompts instead of typing them when using Claude for iOS or Android.
 
-## Getting started
+**Note:** Dictation is different from voice mode. Dictation turns your speech into text so you can send a written prompt, and Claude replies in text. Voice mode is a full spoken conversation—you talk to Claude and Claude talks back, and it can use your connected tools. Learn more about **[voice mode](using-voice-mode-on-claude-mobile-apps.md)**.
+
+## Get started with dictation
 
 1.  Open Claude for iOS or Android.
 
@@ -59,7 +63,7 @@ Dictation is currently available in these languages:
 
 - Ukrainian
 
-## Changing your language settings
+## Change your language settings
 
 To change your speech input language:
 
@@ -73,4 +77,4 @@ To change your speech input language:
 
 After converting your speech input to text, we will delete your audio recording. We will not retain a copy of your speech input or use it for training our generative models.
 
-Learn more about our privacy practices by visiting our [Privacy Policy](https://www.anthropic.com/legal/privacy) and [Privacy Center](https://privacy.anthropic.com/en/).
+Learn more about our privacy practices by visiting our **[Privacy Policy](https://www.anthropic.com/legal/privacy)** and **[Privacy Center](https://privacy.anthropic.com/en/)**.

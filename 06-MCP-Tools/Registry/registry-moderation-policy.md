@@ -1,70 +1,94 @@
 ---
-title: "The MCP Registry Moderation Policy"
-source_url: "https://modelcontextprotocol.io/registry/moderation-policy.md"
-category: "06-MCP-Tools"
-fetched_at: "2026-04-26T00:00:00Z"
+title: "The MCP Registry Moderation Policy - Model Context Protocol"
+source_url: "https://modelcontextprotocol.io/registry/moderation-policy"
+category: "06-MCP-Tools/Registry"
+fetched_at: "2026-09-29T06:30:21Z"
 tags: ["mcp", "mcp-registry"]
 ---
 
-> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-> Use this file to discover all available pages before exploring further.
+## On this page
+
+- [Scope](#scope)
+- [Disclaimer](#disclaimer)
+- [What We Remove](#what-we-remove)
+- [What We Don’t Remove](#what-we-don%E2%80%99t-remove)
+- [How Removal Works](#how-removal-works)
+- [Appeals](#appeals)
+- [Changes to This Policy](#changes-to-this-policy)
+
+Publishing
 
 # The MCP Registry Moderation Policy
 
-<Note>
-  The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report them on [GitHub](https://github.com/modelcontextprotocol/registry/issues).
-</Note>
+Copy pageCopy page
+
+Copy pageCopy page
+
+The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report them on [GitHub](https://github.com/modelcontextprotocol/registry/issues).
 
 **TL;DR**: The MCP Registry is quite permissive! We only remove illegal content, malware, spam, and completely broken servers.
 
-## Scope
 
-This policy applies to the official MCP Registry at `registry.modelcontextprotocol.io`.
+[​](#scope)
 
-Subregistries may have their own moderation policies. If you have questions about content on a specific subregistry, please contact them directly.
+Scope
 
-## Disclaimer
+This policy applies to the official MCP Registry at `registry.modelcontextprotocol.io`. Subregistries may have their own moderation policies. If you have questions about content on a specific subregistry, please contact them directly.
 
-The MCP Registry **does not** make guarantees about moderation, and consumers should assume minimal-to-no moderation.
 
-The MCP Registry is a community supported project, and we have limited active moderation capabilities. We largely rely on upstream package registries (like NPM, PyPI, and Docker) or downstream subregistries (like the GitHub MCP Registry) to do more in-depth moderation.
+[​](#disclaimer)
 
-This means there may be content in the MCP Registry that should be removed under this policy, but which we haven't yet removed. Consumers should treat scraped data accordingly.
+Disclaimer
 
-## What We Remove
+The MCP Registry **does not** make guarantees about moderation, and consumers should assume minimal-to-no moderation. The MCP Registry is a community supported project, and we have limited active moderation capabilities. We largely rely on upstream package registries (like NPM, PyPI, and Docker) or downstream subregistries (like the GitHub MCP Registry) to do more in-depth moderation. This means there may be content in the MCP Registry that should be removed under this policy, but which we haven’t yet removed. Consumers should treat scraped data accordingly.
+
+
+[​](#what-we-remove)
+
+What We Remove
 
 We will remove servers that contain:
 
-* Illegal content, which includes obscene content, copyright violations, and hacking tools
-* Malware, regardless of intentions
-* Spam, especially mass-created servers that disrupt the registry. Examples:
-  * The same server being submitted multiple times under different names
-  * A server that doesn't do anything but provide a fixed response with some marketing copy
-  * A server with a description stuffed with marketing copy and an unrelated implementation
-* Non-functioning servers
+- Illegal content, which includes obscene content, copyright violations, and hacking tools
+- Malware, regardless of intentions
+- Spam, especially mass-created servers that disrupt the registry. Examples:
+  - The same server being submitted multiple times under different names
+  - A server that doesn’t do anything but provide a fixed response with some marketing copy
+  - A server with a description stuffed with marketing copy and an unrelated implementation
+- Non-functioning servers
 
-## What We Don't Remove
 
-Generally, we believe in keeping the registry open and pushing moderation to subregistries. We therefore **won't** remove:
+[​](#what-we-don’t-remove)
 
-* Low-quality or buggy servers
-* Servers with security vulnerabilities
-* Servers that do the same thing as other servers
-* Servers that provide or contain adult content
+What We Don’t Remove
 
-## How Removal Works
+Generally, we believe in keeping the registry open and pushing moderation to subregistries. We therefore **won’t** remove:
 
-When we remove a server, we set the server's `status` to `"deleted"`, but the server's metadata remains accessible via the MCP Registry API. Aggregators may then remove the server from their indexes.
+- Low-quality or buggy servers
+- Servers with security vulnerabilities
+- Servers that do the same thing as other servers
+- Servers that provide or contain adult content
 
-In extreme cases, we may overwrite or erase the server's metadata. For example, if the metadata itself is unlawful.
 
-## Appeals
+[​](#how-removal-works)
+
+How Removal Works
+
+When we remove a server, we set the server’s `status` to `"deleted"`, but the server’s metadata remains accessible via the MCP Registry API. Aggregators may then remove the server from their indexes. In extreme cases, we may overwrite or erase the server’s metadata. For example, if the metadata itself is unlawful.
+
+
+[​](#appeals)
+
+Appeals
 
 Think we made a mistake? Open an issue on our [GitHub repository](https://github.com/modelcontextprotocol/registry) with:
 
-* The name of the server
-* Why you believe the server doesn't meet the above criteria for removal
+- The name of the server
+- Why you believe the server doesn’t meet the above criteria for removal
 
-## Changes to This Policy
 
-We're still learning how best to run the MCP Registry! As such, we might end up changing this policy in the future.
+[​](#changes-to-this-policy)
+
+Changes to This Policy
+
+We’re still learning how best to run the MCP Registry! As such, we might end up changing this policy in the future.

@@ -1,0 +1,44 @@
+---
+title: "Inviting members to the Claude Console | Claude Help Center"
+source_url: "https://support.claude.com/en/articles/13443764-inviting-members-to-the-claude-console"
+category: "04-API-Reference/Other"
+fetched_at: "2026-09-29T06:32:03Z"
+tags: ["api"]
+---
+
+# Inviting members to the Claude Console
+
+March 16, 2026
+
+
+The instructions in this article apply to your overall Console organization. If you are working within a specific Console Workspace, see this article: [Creating and managing Workspaces in the Claude Console](../../21-Account-Support/creating-and-managing-workspaces-in-the-claude-console.md).
+
+**Note:** Only organization Admins can manage Console members and invitations. See [Claude Console Roles and Permissions](claude-console-roles-and-permissions.md).
+
+## Inviting members to your Console organization
+
+1.  Log in as a Admin.
+
+2.  Navigate to [Settings \> Members](usage-limits.md).
+
+3.  Click the "+ Invite" button in the upper right corner of the page.
+
+4.  Enter up to 50 email addresses in the text box, separated by commas or new lines.
+
+5.  Select the role for the new users from the drop-down.
+
+6.  Click "Send Invites."
+
+7.  The newly-added users will receive an emailed invite and appear on the **Members** list with a "Pending" badge.
+
+## Do Console invitations expire?
+
+Yes, newly-invited members have three weeks to accept the invitation via email.
+
+## Revoking invitations to your Console organization
+
+1.  Locate the "Pending" member in [Settings \> Members](usage-limits.md).
+
+2.  Click the trash can icon to the right of the listed user to revoke their invitation.
+
+3.  Confirm the action by clicking "Revoke" in the **Revoke invitation?** modal.

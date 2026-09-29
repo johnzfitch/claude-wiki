@@ -2,16 +2,18 @@
 title: "Anthropic Software Directory Policy | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy"
 category: "22-Safety-Policy"
-fetched_at: "2026-03-22T09:01:44Z"
-tags: ["mcp", "security"]
+fetched_at: "2026-09-29T06:31:12Z"
+tags: ["safety"]
 ---
 
 # Anthropic Software Directory Policy
 
+April 15, 2026
+
 
 Anthropic allows users to discover high-quality Model Context Protocol servers, Skill folders, plugins, apps, and other software, containers, or data (“Software”) that work seamlessly within Claude through directories, repositories, surfaces, or similar offerings (collectively, “Directories”). We review submissions to our Directories to ensure they meet our standards for safety, security, and compatibility with Anthropic Services and other Software. We conduct both initial and ongoing reviews of Software, and may require developers to address compliance issues to continue being included in our Directories. All Software must maintain compliance with these requirements, including any future changes, to remain in our Directories.
 
-## 1. Safety and Security
+# 1. Safety and Security
 
 A. Software must not violate or facilitate violation of our [Usage Policy](https://www.anthropic.com/legal/aup). All Software must comply with our Universal Usage Standards and High-Risk Use Case requirements and with our policy on the [countries and regions Anthropic currently supports](https://www.anthropic.com/supported-countries).
 
@@ -25,7 +27,7 @@ E. Software must not infringe on the intellectual property rights of others.
 
 F. Software must not query or extract data from Claude's memory, chat history, conversation summaries, or user-generated or uploaded files.
 
-## 2. Compatibility
+# 2. Compatibility
 
 This section applies to Software that provides Claude with tools or capabilities through natural language descriptions, including MCP servers, Skill folders, and similar Software ("Instructional Software").
 
@@ -43,7 +45,7 @@ F. Instructional Software must not direct Claude to dynamically pull behavioral 
 
 G. Instructional Software must not contain hidden, obfuscated, or encoded instructions. All behavioral guidance must be human-readable and clearly presented.
 
-## 3. Developer Requirements
+# 3. Developer Requirements
 
 A. Developers of Software that collects user data or connects to a remote service must provide a clear, accessible privacy policy link explaining data collection, usage, and retention. Developers must provide Anthropic with links to all applicable privacy policies and ensure such policies are presented to users as required by law.
 
@@ -61,7 +63,7 @@ G. Developers must maintain their Software and address issues within reasonable 
 
 H. Developers must agree to our [Software Directory Terms](anthropic-software-directory-terms.md) and follow design guidelines Anthropic publishes applicable to Software.
 
-## 4. Unsupported Use Cases
+# 4. Unsupported Use Cases
 
 Unless otherwise expressly permitted by us in writing, we do not allow Software with certain capabilities into our Directories. We may revisit these restrictions as our Directories and Anthropic Services evolve.
 
@@ -69,9 +71,9 @@ A. Software that transfers money, cryptocurrency, or other financial assets, or 
 
 B. Software that uses AI models to generate images, video, or audio content. Design-focused software that uses AI models to create visual aids (such as slides, diagrams, charts, UI mockups, logos, or other design assets) are permitted. These servers may generate images as part of a design workflow, provided the developer does not offer standalone image generation as a primary service.
 
-C. Software that serves [advertisements](../19-Reference/claude-is-a-space-to-think-anthropic-anthropic.md), sponsored content, paid product placements, or exists primarily as an advertising or promotional vehicle.
+C. Software that serves [advertisements](../19-Reference/claude-is-a-space-to-think.md), sponsored content, paid product placements, or exists primarily as an advertising or promotional vehicle.
 
-## 5. Additional Requirements for Model Context Protocol Servers
+# 5. Additional Requirements for Model Context Protocol Servers
 
 A. MCP servers must gracefully handle errors and provide helpful feedback rather than generic error messages.
 
@@ -81,9 +83,9 @@ C. MCP tool names must not exceed 64 characters.
 
 D. Remote MCP servers that connect to a remote service and require authentication must use secure OAuth 2.0 with certificates from recognized authorities.
 
-E. MCP servers must provide all applicable [annotations](../06-MCP-Tools/Spec/spec-draft-schema-reference-model-context-protocol.md#toolannotations) for their tools, in particular *readOnlyHint*, *destructiveHint*, and *title*.
+E. MCP servers must provide all applicable [annotations](../06-MCP-Tools/Spec-Archive/2025-11-25-schema.md#toolannotations) for their tools, in particular *readOnlyHint*, *destructiveHint*, and *title*.
 
-F. Remote MCP servers should support the [Streamable HTTP](../06-MCP-Tools/Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md#streamable-http) transport. Servers may support [SSE](../06-MCP-Tools/Spec-Archive/spec-2024-11-05-transports-model-context-protocol.md#http-with-sse) for the time being, but in the future it will be deprecated.
+F. Remote MCP servers should support the [Streamable HTTP](../06-MCP-Tools/Spec-Archive/2025-03-26-basic-transports.md#streamable-http) transport. Servers may support [SSE](../06-MCP-Tools/Spec-Archive/2024-11-05-basic-transports.md#http-with-sse) for the time being, but in the future it will be deprecated.
 
 G. Local MCP servers must be built with reasonably current versions of all dependencies, including packages in *node_modules*.
 

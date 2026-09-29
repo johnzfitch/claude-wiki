@@ -2,15 +2,17 @@
 title: "Manage project visibility and sharing | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9519189-manage-project-visibility-and-sharing"
 category: "22-Safety-Policy"
-fetched_at: "2026-03-22T09:01:48Z"
+fetched_at: "2026-09-29T06:32:40Z"
+tags: ["safety"]
 ---
-
-4.  Manage project visibility and sharing
 
 # Manage project visibility and sharing
 
 
-Project visibility and sharing features are available to users on Team or Enterprise plans. This article assumes that public projects are enabled for your organization. For more information, see **[How can I disable public projects?](https://support.claude.com/en/articles/9927533-how-can-i-disable-public-projects)**
+
+Project visibility and sharing features are available to users on Team or Enterprise plans. This article assumes that public projects and project sharing are enabled for your organization. Admins can turn either off. For more information, see **[Control project sharing for your organization](../15-Claude-AI-Features/disable-public-projects-for-your-organization.md)**.
+
+Sharing a project with a group requires an Enterprise plan and is currently in beta.
 
 ## Understand the two project visibility options
 
@@ -20,18 +22,15 @@ When creating a project on a Team or Enterprise plan, you can choose between two
 
 - **Private:** Only invited members can view and use the project.
 
-
 ## What are public projects?
 
-If you choose to share a project with the rest of your organization upon creation, this means that any other member of your team can find it by browsing or searching the [Team tab in the Projects section](https://claude.ai/projects?category=team), and use it to start a chat. Even if a project is public, your chats within that project will be private and inaccessible to other members of your organization unless you manually share them.
+If you choose to share a project with the rest of your organization upon creation, this means that any other member of your team can find it by browsing or searching the **[Organization tab in the Projects section](https://claude.ai/projects?category=team)**, and use it to start a chat. Even if a project is public, your chats within that project will be private and inaccessible to other members of your organization unless you manually share them.
 
 ### Can I change a project from public to private?
 
-Yes, you can switch the visibility of a project you created as public to private at any time by opening the project and clicking the “Share” button to the right of the project name:
+Yes, you can switch the visibility of a project you created as public to private at any time by opening the project and clicking the “Share” button to the right of the project name.
 
-
-Click “Everyone at \[your organization\]” under **General access** and select “Only people invited” to change the project from public to private:
-
+Click “Everyone at \[your organization\]” under **General access** and select “Only people invited” to change the project from public to private.
 
 ## What are private projects?
 
@@ -39,19 +38,17 @@ Choosing “Only people invited” keeps your project private so that you are th
 
 ### Can I change a project from private to public?
 
-Yes, you can switch the visibility of a project you created as private to public at any time by opening the project and clicking the “Share” button to the right of the project name:
+Yes, you can switch the visibility of a project you created as private to public at any time by opening the project and clicking the “Share” button to the right of the project name.
 
+Click “Only people invited” under General access and select “Everyone at \[your organization\]” to change the project from private to public.
 
-Click “Only people invited” under General access and select “Everyone at \[your organization\]” to change the project from private to public:
-
-
-## Add and remove member access to private projects
+## Add and remove access to private projects
 
 ### To add members to a private project
 
 1.  Click the "Share" button to the right of the project name.
 
-2.  In the window that appears, add individual members from your organization using their names or email addresses.
+2.  In the window that appears, add people from your organization by name or email address. On Enterprise plans, you can also add a group if its visibility settings allow project sharing. Groups appear in the results with a group icon and the label **Group**.
 
 3.  Select the appropriate permission level:
 
@@ -73,21 +70,66 @@ This will share the project and knowledge base with the member, but your chats w
 
 ### Add members in bulk
 
-You can add multiple users at once by copying and pasting a list of email addresses into the **Invite by email** field after clicking “Share”:
+You can add multiple users at once by copying and pasting a list of email addresses into the **Add people or groups** field after clicking “Share."
 
+### Share a project with a group
+
+Sharing a project with a group is currently in beta for Enterprise plans.
+
+On Enterprise plans, you can share a project with a group instead of adding each member individually. Access follows group membership, so members who join the group later get access automatically, and members who leave lose it.
+
+Before you can share with a group, an admin needs to turn on **Share resources with this group** in the group's visibility settings. See **[Manage groups and group spend limits on Enterprise plans](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**.
+
+1.  Click the "Share" button to the right of the project name.
+
+2.  Type the group name in the **Add people or groups** field.
+
+3.  Select the group from the results.
+
+4.  Select "Can view" or "Can edit."
+
+5.  Click "Share."
+
+A few things to know:
+
+- A newly visible group can take a few minutes to appear in the picker.
+
+- Access changes can take up to five minutes to apply.
+
+- Group members only get access if they're also members of the organization the project belongs to. A group can span child organizations, but a shared project stays scoped to its own organization.
+
+- Once a project is shared with a group, every member of that group can open it, even if the group isn't visible to their organization. Visibility controls who can find a group in the picker, not who can reach a project that's already shared.
+
+- If a member leaves a group, they lose access to projects shared through it unless they have access another way.
+
+- Deleting a group removes its access to any projects shared with it.
 
 ### Email notifications
 
-When someone shares a project with you, you'll receive an email notification letting you know about the new shared project and your permission level.\
+When someone shares a project with you, you'll receive an email notification letting you know about the new shared project and your permission level.  
+​
 
+### “Shared with you” tab
 
-### “Shared with me” tab
-
-Projects that have been shared with you will appear in a "Shared with you" tab on your [Projects section](https://claude.ai/projects?category=shared_with_me), making it easy to find and access collaborative work.
+Projects that have been shared with you will appear in a "Shared with you" tab on your **[Projects section](https://claude.ai/projects?category=shared_with_me)**, making it easy to find and access collaborative work.
 
 ### What happens when archiving a shared project?
 
-When a project is archived, all sharing permissions are reset to private and previous sharing context is wiped for security.
+Archiving a project doesn't reset its sharing permissions or remove members. All members, permission levels, and project knowledge are preserved, and everything is restored exactly as it was when you unarchive the project. To revoke someone's access, remove them in the project's sharing settings before or after archiving.
+
+## If you can't share projects
+
+Owners can turn off project sharing for your organization. On Enterprise plans, they can also turn it off for specific roles. When sharing is off for you:
+
+- You can still open a project's “Share” menu, but you'll see "Project sharing is turned off by your administrator." You can't add new users or groups.
+
+- You can still change or remove existing access.
+
+- Projects that are already shared stay shared, and users who already have access keep it.
+
+- Public projects become private, so people who only had access because a project was public lose it. They stay private if your admin turns sharing back on.
+
+Contact your admin if you need to share a project.
 
 ## Share and unshare chats
 

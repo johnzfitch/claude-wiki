@@ -1,21 +1,21 @@
 ---
-title: "Using Claude App Intents, Shortcuts, and Widgets on iOS | Claude Help Center"
+title: "Use Claude app intents, shortcuts, and widgets on iOS | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10263469-using-claude-app-intents-shortcuts-and-widgets-on-ios"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-22T09:01:37Z"
+fetched_at: "2026-09-29T06:31:09Z"
 tags: ["desktop"]
 ---
 
-4.  Using Claude App Intents, Shortcuts, and Widgets on iOS
+# Use Claude app intents, shortcuts, and widgets on iOS
 
-# Using Claude App Intents, Shortcuts, and Widgets on iOS
+July 9, 2026
 
 
 The features described in this guide are available on iOS 18 and above.
 
 Claude for iOS supports multiple powerful features: the Claude widget, the "Analyze Photo with Claude" control, the "Ask Claude" App Intent, and the ability to use this intent within iOS Shortcuts. This guide will explain these features and show you how to make the most of them.
 
-## Ask Claude Intent
+## Ask Claude intent
 
 The "Ask Claude" intent is a standalone feature that lets you interact with Claude directly from:
 
@@ -35,7 +35,7 @@ You can use this intent on its own to quickly ask Claude questions or give it ta
 
 - Type "Ask Claude" in Spotlight search to quickly send a query
 
-## Using Ask Claude With Shortcuts
+## Use Ask Claude with shortcuts
 
 While the "Ask Claude" intent is powerful on its own, you can also use it as a building block within the Shortcuts app to create more complex workflows. Shortcuts allow you to:
 
@@ -47,7 +47,7 @@ While the "Ask Claude" intent is powerful on its own, you can also use it as a b
 
 - Process Claude's responses in various ways
 
-## Creating Your First Claude Shortcut
+## Create your first Claude shortcut
 
 There are many customizable workflows you can set up within the Shortcuts app. Let's look at an example of a brief but useful shortcut that helps you summarize text:
 
@@ -73,7 +73,7 @@ More information on setting up shortcuts on your iOS device can be found [here](
 
 **Note:** When using the "Ask Claude" intent, messages to Claude will count towards your overall usage limit.
 
-## Adding the Claude Widget
+## Add the Claude Widget
 
 The Claude widget provides quick access to chat and voice features directly from your Home Screen or Today View. The widget includes buttons for:
 
@@ -97,11 +97,11 @@ The Claude widget provides quick access to chat and voice features directly from
 
 6.  Tap Done
 
-### To add the Claude widget to your Today View
+### Add the Claude widget to your Today View
 
 Swipe right from the Home Screen or Lock Screen, then follow the same steps as adding to the Home Screen.
 
-### Using the Widget
+### Use the widget
 
 - Tap the chat button to start a new conversation with Claude.
 
@@ -111,11 +111,11 @@ Swipe right from the Home Screen or Lock Screen, then follow the same steps as a
 
 **Note:** Like the "Ask Claude" intent, interactions started through the widget will count toward your usage limit.
 
-## The Analyze Photo with Claude Control
+## The Analyze Photo with Claude control
 
 The "Analyze Photo with Claude" control lets you quickly send images to Claude for analysis directly from Control Center or your Lock Screen.
 
-### Adding to Control Center
+### Add to Control Center
 
 1.  Open Control Center (swipe down from the top-right corner on iPhones with Face ID, or swipe up from the bottom on iPhones with a Home button)
 
@@ -133,7 +133,7 @@ Once added, you can quickly access it from Control Center by swiping down from t
 
 More information on using and setting up controls via Control Center can be found [here](https://support.apple.com/guide/iphone/use-and-customize-control-center-iph59095ec58/ios).
 
-### Adding to Your Lock Screen
+### Add to your lock screen
 
 1.  On your Lock Screen, touch and hold until the customization screen appears
 

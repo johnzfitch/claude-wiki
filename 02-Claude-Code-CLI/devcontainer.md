@@ -1,86 +1,201 @@
 ---
-title: "Development containers"
+title: "Development containers - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/devcontainer"
 category: "02-Claude-Code-CLI"
-tags: ["claude-code", "containers", "security"]
+fetched_at: "2026-09-16T06:24:05Z"
+tags: ["claude-code", "containers"]
 ---
 
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
+## On this page
+
+- [Add Claude Code to your dev container](#add-claude-code-to-your-dev-container)
+- [Persist authentication and settings across rebuilds](#persist-authentication-and-settings-across-rebuilds)
+- [Enforce organization policy](#enforce-organization-policy)
+- [Restrict network egress](#restrict-network-egress)
+- [Run without permission prompts](#run-without-permission-prompts)
+- [Try the reference container](#try-the-reference-container)
+- [Next steps](#next-steps)
+
+Deployment
 
 # Development containers
 
-> Learn about the Claude Code development container for teams that need consistent, secure environments.
+Copy pageCopy page
 
-The reference [devcontainer setup](https://github.com/anthropics/claude-code/tree/main/.devcontainer) and associated [Dockerfile](https://github.com/anthropics/claude-code/blob/main/.devcontainer/Dockerfile) offer a preconfigured development container that you can use as is, or customize for your needs. This devcontainer works with the Visual Studio Code [Dev Containers extension](https://code.visualstudio.com/docs/devcontainers/containers) and similar tools.
+Run Claude Code inside a dev container for consistent, isolated environments across your team.
 
-The container's enhanced security measures (isolation and firewall rules) allow you to run `claude --dangerously-skip-permissions` to bypass permission prompts for unattended operation.
+Copy pageCopy page
 
-<Warning>
-  While the devcontainer provides substantial protections, no system is completely immune to all attacks.
-  When executed with `--dangerously-skip-permissions`, devcontainers don't prevent a malicious project from exfiltrating anything accessible in the devcontainer including Claude Code credentials.
-  We recommend only using devcontainers when developing with trusted repositories.
-  Always maintain good security practices and monitor Claude's activities.
-</Warning>
+A [development container](https://containers.dev/), or dev container, lets you define an identical, isolated environment that every engineer on your team can run. With Claude Code installed in that container, commands Claude runs execute inside it rather than on the host machine, while edits to your project files appear in your local repository as you work. This page covers [installing Claude Code in a dev container](#add-claude-code-to-your-dev-container), then a set of self-contained configuration topics: persisting authentication across rebuilds, enforcing organization policy, restricting network egress, and running without permission prompts. Read the ones that match your setup.
 
-## Key features
+While the dev container provides substantial protections, no system is completely immune to all attacks. When executed with `--dangerously-skip-permissions`, dev containers do not prevent a malicious project from exfiltrating anything accessible inside the container, including the Claude Code credentials stored in [`~/.claude`](claude-directory.md). Only use dev containers when developing with trusted repositories, and monitor Claude’s activities. Avoid mounting host secrets such as `~/.ssh` or cloud credential files into the container; prefer repository-scoped or short-lived tokens.
 
-* **Production-ready Node.js**: Built on Node.js 20 with essential development dependencies
-* **Security by design**: Custom firewall restricting network access to only necessary services
-* **Developer-friendly tools**: Includes git, ZSH with productivity enhancements, fzf, and more
-* **Seamless VS Code integration**: Pre-configured extensions and optimized settings
-* **Session persistence**: Preserves command history and configurations between container restarts
-* **Works everywhere**: Compatible with macOS, Windows, and Linux development environments
+How dev containers work with your editor
 
-## Getting started in 4 steps
+A dev container runs as a Docker container, either on your machine or on a cloud host such as GitHub Codespaces. An editor that supports the Dev Containers spec, such as VS Code, GitHub Codespaces, a JetBrains IDE, or Cursor, connects to that container: you browse and edit files in the editor as usual, but the integrated terminal, language servers, and build tools all run inside the container rather than on your host. Editors without dev container support, such as plain Vim, are not part of this workflow.Claude Code runs inside the container, so it sees the same files, dependencies, and tools as the rest of your project’s toolchain. In VS Code you can use either the [Claude Code extension panel](../03-IDE-Integrations/vs-code.md) or run `claude` in the integrated terminal; both run inside the container and share the same `~/.claude` configuration.
 
-1. Install VS Code and the Remote - Containers extension
-2. Clone the [Claude Code reference implementation](https://github.com/anthropics/claude-code/tree/main/.devcontainer) repository
-3. Open the repository in VS Code
-4. When prompted, click "Reopen in Container" (or use Command Palette: Cmd+Shift+P → "Remote-Containers: Reopen in Container")
 
-## Configuration breakdown
+[​](#add-claude-code-to-your-dev-container)
 
-The devcontainer setup consists of three primary components:
+Add Claude Code to your dev container
 
-* [**devcontainer.json**](https://github.com/anthropics/claude-code/blob/main/.devcontainer/devcontainer.json): Controls container settings, extensions, and volume mounts
-* [**Dockerfile**](https://github.com/anthropics/claude-code/blob/main/.devcontainer/Dockerfile): Defines the container image and installed tools
-* [**init-firewall.sh**](https://github.com/anthropics/claude-code/blob/main/.devcontainer/init-firewall.sh): Establishes network security rules
+Claude Code installs into any dev container through the [Claude Code Dev Container Feature](https://github.com/anthropics/devcontainer-features/tree/main/src/claude-code). The settings work with any tool that supports the Dev Containers spec, such as VS Code, GitHub Codespaces, or JetBrains IDEs. The steps below use VS Code as an example. When you open the container in VS Code or Codespaces, the feature also adds the Claude Code VS Code extension; other editors ignore that part.
 
-## Security features
+New to dev containers? The [VS Code Dev Containers tutorial](https://code.visualstudio.com/docs/devcontainers/tutorial) walks through installing Docker, the extension, and opening your first container. For a fuller hardened example with a firewall and persistent volumes, see [Try the reference container](#try-the-reference-container).
 
-The container implements a multi-layered security approach with its firewall configuration:
+1
 
-* **Precise access control**: Restricts outbound connections to whitelisted domains only (npm registry, GitHub, Claude API, etc.)
-* **Allowed outbound connections**: The firewall permits outbound DNS and SSH connections
-* **Default-deny policy**: Blocks all other external network access
-* **Startup verification**: Validates firewall rules when the container initializes
-* **Isolation**: Creates a secure development environment separated from your main system
+Create or update devcontainer.json
 
-## Customization options
+Save the following as `.devcontainer/devcontainer.json` in your repository, or add the `features` block to your existing file.The version tag at the end, such as `:1.0`, pins the feature’s install script, not the Claude Code release. The feature installs the latest Claude Code, and Claude Code auto-updates itself inside the container by default.To pin the CLI version or disable auto-update, see [Enforce organization policy](#enforce-organization-policy).
 
-The devcontainer configuration is designed to be adaptable to your needs:
+.devcontainer/devcontainer.json
 
-* Add or remove VS Code extensions based on your workflow
-* Modify resource allocations for different hardware environments
-* Adjust network access permissions
-* Customize shell configurations and developer tooling
+```python
+{
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+  }
+}
+```
 
-## Example use cases
+Replace the `image` line with your project’s base image or remove it if your existing file uses a Dockerfile.The Claude Code feature installs Node.js itself when the base image doesn’t provide it. If that install fails and the build stops with `Failed to install Node.js and npm`, add `"ghcr.io/devcontainers/features/node:1": {}` to the `features` block above the Claude Code feature and rebuild.
 
-### Secure client work
+2
 
-Use devcontainers to isolate different client projects, ensuring code and credentials never mix between environments.
+Rebuild the container
 
-### Team onboarding
+Open the VS Code Command Palette with `Cmd+Shift+P` on Mac or `Ctrl+Shift+P` on Windows and Linux, and run **Dev Containers: Rebuild Container**.For other tools, follow that tool’s rebuild action: see [rebuilding in GitHub Codespaces](https://docs.github.com/en/codespaces/developing-in-a-codespace/rebuilding-the-container-in-a-codespace), the [Dev Containers CLI](https://github.com/devcontainers/cli), or your IDE’s dev container documentation.
 
-New team members can get a fully configured development environment in minutes, with all necessary tools and settings pre-installed.
+3
 
-### Consistent CI/CD environments
+Sign in to Claude Code
 
-Mirror your devcontainer configuration in CI/CD pipelines to ensure development and production environments match.
+Open a terminal in the rebuilt container and run `claude`, then follow the authentication prompt.
 
-## Related resources
+What you see at the authentication prompt depends on your provider:
 
-* [VS Code devcontainers documentation](https://code.visualstudio.com/docs/devcontainers/containers)
-* [Claude Code security best practices](security-claude-code-docs.md)
-* [Enterprise network configuration](enterprise-network-configuration-claude-code-docs.md)
+- **Anthropic**: sign in through a browser with your Claude or Anthropic Console account
+- **[Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry](third-party-integrations.md)**: Claude Code uses your cloud provider credentials, with no browser prompt
+
+For cloud providers, pass credentials into the container as environment variables through `containerEnv`, a Codespaces secret, or your cloud’s workload identity rather than mounting credential files from the host. See [Amazon Bedrock](amazon-bedrock.md), [Google Cloud’s Agent Platform](google-vertex-ai.md), or [Microsoft Foundry](microsoft-foundry.md) for the credential chain Claude Code reads. See [Choose your API provider](../13-Enterprise-Admin/admin-setup.md#choose-your-api-provider) to decide which path fits your organization.
+
+If the browser sign-in completes but the callback never reaches the container, copy the code shown in the browser and paste it at the `Paste code here if prompted` prompt in the terminal. This can happen when the editor’s port forwarding doesn’t route the localhost callback.
+
+
+[​](#persist-authentication-and-settings-across-rebuilds)
+
+Persist authentication and settings across rebuilds
+
+By default, the container’s home directory is discarded on rebuild, so engineers must sign in again each time. Claude Code stores its authentication token, user settings, and session history under the [`~/.claude`](claude-directory.md) directory. It stores your OAuth account, personal MCP servers, and per-project trust in [`~/.claude.json`](settings-reference.md#global-config-settings), a separate file outside that directory, so mounting a volume at `~/.claude` alone doesn’t keep you signed in. Mount a named volume at `~/.claude` and set [`CLAUDE_CONFIG_DIR`](env-vars.md) to the same path so Claude Code writes `.claude.json` inside the volume. The following example mounts the volume and sets `CLAUDE_CONFIG_DIR` for a container whose `remoteUser` is `node`:
+
+devcontainer.json
+
+```python
+"mounts": [
+  "source=claude-code-config,target=/home/node/.claude,type=volume"
+],
+"containerEnv": {
+  "CLAUDE_CONFIG_DIR": "/home/node/.claude"
+}
+```
+
+Replace `/home/node` with the home directory of your container’s `remoteUser`. If you already set `containerEnv`, for example in [Enforce organization policy](#enforce-organization-policy), add `CLAUDE_CONFIG_DIR` to that object rather than adding a second one. To isolate state per project rather than sharing one volume across all repositories, include the `${devcontainerId}` variable in the source name. The [reference configuration](https://github.com/anthropics/claude-code/blob/main/.devcontainer/devcontainer.json) uses `source=claude-code-config-${devcontainerId}` for this purpose. In GitHub Codespaces, `~/.claude` persists when you stop and start a codespace but is cleared when you rebuild the container, so the configuration above applies there too. To carry authentication across codespaces, store `ANTHROPIC_API_KEY` or a `CLAUDE_CODE_OAUTH_TOKEN` from [`claude setup-token`](../13-Enterprise-Admin/iam.md#generate-a-long-lived-token) as a [Codespaces secret](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces). Codespaces exposes secrets as environment variables inside the container automatically.
+
+
+[​](#enforce-organization-policy)
+
+Enforce organization policy
+
+A dev container is a convenient place to apply organization policy, because the same image and configuration run on every engineer’s machine. Claude Code reads `/etc/claude-code/managed-settings.json` on Linux and applies it at the highest precedence in the [settings hierarchy](settings.md#settings-precedence), so values there override anything an engineer sets in `~/.claude` or the project’s `.claude/` directory. Copy the file into place from your Dockerfile:
+
+Dockerfile
+
+```python
+RUN mkdir -p /etc/claude-code
+COPY managed-settings.json /etc/claude-code/managed-settings.json
+```
+
+Because the Dockerfile lives in the repository, anyone with write access can change or remove this step. For policy that engineers cannot bypass by editing repository files, deliver managed settings through [server-managed settings](../13-Enterprise-Admin/server-managed-settings.md) or your MDM instead. See [managed settings files](../13-Enterprise-Admin/managed-settings.md#delivery-mechanisms) for the available keys and the other delivery paths. To set [environment variables](env-vars.md) that apply to every Claude Code session in the container, add them to `containerEnv` in your `devcontainer.json`. The following example opts out of telemetry and error reporting and prevents Claude Code from auto-updating after install:
+
+devcontainer.json
+
+```python
+"containerEnv": {
+  "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+  "DISABLE_AUTOUPDATER": "1"
+}
+```
+
+`CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` also disables the feature-flag evaluation that [Remote Control](remote-control.md#requirements) and the other [features that need feature-flag fetching](env-vars.md#features-that-need-feature-flag-fetching) depend on, so sessions in the container can’t use them. The Dev Container Feature always installs the latest Claude Code release. To pin a specific Claude Code version for reproducible builds, install it from your Dockerfile with `npm install -g @anthropic-ai/claude-code@X.Y.Z` instead of using the feature, and set `DISABLE_AUTOUPDATER` to `1` in `containerEnv`. For the full list of policy controls including permission rules, tool restrictions, and MCP server allowlists, see [Set up Claude Code for your organization](../13-Enterprise-Admin/admin-setup.md). To make [MCP servers](../06-MCP-Tools/General/mcp.md) available inside the container, define them at [project scope](../06-MCP-Tools/General/mcp.md#mcp-installation-scopes) in a `.mcp.json` file at the repository root so they are checked in alongside your dev container configuration. Install any binaries that local stdio servers depend on in your Dockerfile, and add remote server domains to your network allowlist.
+
+
+[​](#restrict-network-egress)
+
+Restrict network egress
+
+You can limit the container’s outbound traffic to only the domains Claude Code needs. See [Network access requirements](../13-Enterprise-Admin/network-config.md#network-access-requirements) for the inference and authentication domains, and [Telemetry services](../13-Enterprise-Admin/data-usage.md#telemetry-services) for the optional telemetry and error reporting connections and how to disable them. The reference container includes an [`init-firewall.sh`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/init-firewall.sh) script that limits outbound traffic to the destinations the script allows. Running a firewall inside a container requires extra permissions, so the reference adds the `NET_ADMIN` and `NET_RAW` capabilities through `runArgs`. The firewall script and these capabilities are not required for Claude Code itself: you can leave them out and rely on your own network controls instead.
+
+
+[​](#run-without-permission-prompts)
+
+Run without permission prompts
+
+Because the container runs Claude Code as a non-root user and confines command execution to the container, you can pass `--dangerously-skip-permissions` for unattended operation. The CLI rejects this flag when launched as root, so confirm `remoteUser` is set to a non-root account. Skipping permission prompts removes your opportunity to review tool calls before they run. Claude can still modify any file in the bind-mounted workspace, which appears directly on your host, and reach anything the container’s network policy allows. Pair this flag with the [network egress restrictions](#restrict-network-egress) above to limit what a bypassed session can reach. If you want fewer prompts without disabling safety checks, consider [auto mode](permission-modes.md#eliminate-prompts-with-auto-mode) instead, which has a classifier review actions before they run. To prevent engineers from using `--dangerously-skip-permissions` at all, set `permissions.disableBypassPermissionsMode` to `"disable"` in [managed settings](settings-reference.md#permission-settings).
+
+
+[​](#try-the-reference-container)
+
+Try the reference container
+
+The [`anthropics/claude-code`](https://github.com/anthropics/claude-code/tree/main/.devcontainer) repository includes an example dev container that combines the CLI, the egress firewall, persistent volumes, and a Zsh-based shell. It is provided as a working example rather than a maintained base image; use it to see how the pieces fit together before applying them to your own configuration.
+
+1
+
+Install prerequisites
+
+Install VS Code and the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
+
+2
+
+Clone the reference
+
+Clone the [Claude Code repository](https://github.com/anthropics/claude-code) and open it in VS Code.
+
+3
+
+Reopen in container
+
+When prompted, click **Reopen in Container**, or run **Dev Containers: Reopen in Container** from the Command Palette.
+
+4
+
+Start Claude Code
+
+Once the container finishes building, open a terminal with `` Ctrl+` `` and run `claude` to sign in and start your first session.
+
+To use this configuration with your own project, copy the `.devcontainer/` directory into your repository and adjust the Dockerfile for your toolchain, or return to [Add Claude Code to your dev container](#add-claude-code-to-your-dev-container) to add only the feature to a setup you already have. The reference configuration consists of three files. None of them are required when you add Claude Code to your own dev container through the feature, but they show one way to combine the pieces.
+
+| File                                                                                                       | Purpose                                                                       |
+|------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| [`devcontainer.json`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/devcontainer.json) | Volume mounts, `runArgs` capabilities, VS Code extensions, and `containerEnv` |
+| [`Dockerfile`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/Dockerfile)               | Base image, development tools, and the Claude Code install                    |
+| [`init-firewall.sh`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/init-firewall.sh)   | Limits outbound network traffic to the destinations the script allows         |
+
+
+[​](#next-steps)
+
+Next steps
+
+Once Claude Code is running in your dev container, the pages below cover the rest of an organization rollout: choosing an authentication path, delivering managed policy outside the repository, monitoring usage, and understanding what Claude Code stores and sends.
+
+- [Set up Claude Code for your organization](../13-Enterprise-Admin/admin-setup.md): choose an authentication provider, decide how policy reaches devices, and plan the rollout
+- [Server-managed settings](../13-Enterprise-Admin/server-managed-settings.md): deliver managed policy from the claude.ai admin console so engineers cannot bypass it by editing repository files
+- [Monitor usage and audit activity](../13-Enterprise-Admin/monitoring-usage.md): export OpenTelemetry metrics and review what your team is running
+- [Network access requirements](../13-Enterprise-Admin/network-config.md#network-access-requirements): the full domain allowlist for proxies and firewalls
+- [Telemetry services and opt-out](../13-Enterprise-Admin/data-usage.md#telemetry-services): what Claude Code sends by default and the environment variables that disable it
+- [Explore the `.claude` directory](claude-directory.md): what the volume mount holds, including credentials, settings, and session history
+- [Sandbox environments](sandbox-environments.md): compare dev containers with the built-in Bash sandbox, custom containers, and VMs
+- [Security model](../13-Enterprise-Admin/security.md): how Claude Code’s permission system, sandboxing, and prompt-injection protections fit together
+- [Permission modes](permission-modes.md): the full range from plan mode to auto mode to bypass, and when to use each

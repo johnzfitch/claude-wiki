@@ -2,38 +2,35 @@
 title: "What is the Pro plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-03-22T09:01:46Z"
+fetched_at: "2026-09-29T06:31:07Z"
 tags: ["billing"]
 ---
 
 # What is the Pro plan?
 
 
+
 This article is about paid Pro plans for individual consumers. If you're part of an organization looking to use Claude with your team, refer to **[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)**.
 
-The Pro plan is a paid plan for our Claude chat experience. It is currently available in certain **[supported locations](https://support.claude.com/en/articles/8461763-where-can-i-access-claude)**.
+The Pro plan is a paid plan for our Claude chat experience. It is currently available in certain **[supported locations](../21-Account-Support/where-can-i-access-claude-ai.md)**.
 
 ## Key benefits
 
 The benefits of the Pro plan are:
 
-- At least five times the usage per session compared to our free service.
+- More usage per session than the Free plan.
 
 - Priority access to Claude during high-traffic periods.
 
 - Early access to new features that help you get the most out of Claude.
 
-- Ability to choose another model with the **[model selector](../15-Claude-AI-Features/how-can-i-change-the-model-version-that-i-m-chatting-with.md)**.
-
-- Access to **[projects and knowledge bases](https://support.claude.com/en/articles/9517075-what-are-projects)**.
-
 - **[Claude Code access](using-claude-code-with-your-pro-or-max-plan.md)**
 
-- Access to the **[Cowork](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)** research preview
+- **[Longer, multi-step tasks](../15-Claude-AI-Features/claude-cowork-and-chat-are-one-claude.md)**
 
 Learn how to **[sign up for the Pro plan](../21-Account-Support/how-do-i-sign-up-for-the-pro-plan.md)**.
 
-**Note:** The Pro plan does not include API usage through the Claude Console. If you're interested in both enhanced Claude features and the Claude API, you'll need to **[set up Console access](https://support.claude.com/en/articles/8114521-how-can-i-access-the-claude-api)** to pay for API usage separately.
+**Note:** The Pro plan does not include API usage through the Claude Console. If you're interested in both enhanced Claude features and the Claude API, you'll need to **[set up Console access](../04-API-Reference/Other/how-can-i-access-the-anthropic-api.md)** to pay for API usage separately.
 
 ------------------------------------------------------------------------
 
@@ -45,9 +42,11 @@ You can choose to save with an annual subscription plan. Annual subscriptions ar
 
 Visit **[claude.ai/upgrade](https://claude.ai/upgrade)** or check your mobile app store for current pricing in your region.
 
+Price and plans are subject to change at Anthropic's discretion.
+
 ## How can I get a free or discounted Pro plan?
 
-We do not offer standard discounted pricing any of our paid plans, including Pro plans. With that said, anyone in a supported location can access the free version of Claude by navigating to claude.ai and signing up using an email address.
+We do not offer standard discounted pricing for any of our paid plans, including Pro plans. With that said, anyone in a supported location can access the free version of Claude by navigating to claude.ai and signing up using an email address.
 
 We occasionally run limited-time promotions, but we don't have any standing discounts available upon request. These promotional offers are typically announced through our official channels when available. If you're interested in potential future promotions, we recommend following our official social media accounts or signing up for our newsletter to be notified of any special offers. Our Support team cannot issue one-off discounts or coupons.
 
@@ -55,16 +54,18 @@ We occasionally run limited-time promotions, but we don't have any standing disc
 
 ## Does the Pro plan have any usage limits?
 
-Yes. During peak hours, the Pro plan offers at least five times the usage per session compared to our free service. The number of messages you can send will vary based on message length, including the length of files you attach, the length of your current conversation, and the model or feature you use. Your session-based usage limit will reset every five hours.
+Yes. The Pro plan offers more usage per session than the Free plan. The number of messages you can send will vary based on message length, including the length of files you attach, the length of your current conversation, and the model or feature you use. Your session-based usage limit will reset every five hours.
 
-Pro plans also have a weekly usage limit that applies across all models and resets seven days after your session starts.
+Pro plans also have a weekly usage limit that applies across all models. Weekly limits reset at a fixed time each week that is assigned to your account. Your reset day and time stay the same regardless of when you start using Claude or when your subscription begins, and you receive your full weekly allowance each cycle. You can see your next reset time in **[Settings \> Usage](https://claude.ai/new#settings/usage)**.
 
 In addition, to manage capacity and ensure fair access to all users, we may limit your usage in other ways, such as weekly and monthly caps or model and feature usage, at our discretion.
 
-For more information about usage and length limits, refer to **[Understanding usage and length limits](../15-Claude-AI-Features/understanding-usage-and-length-limits.md)**. For guidance on using your Pro capacity efficiently, we also have **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
+For more information about usage and length limits, refer to **[Understanding usage and length limits](../22-Safety-Policy/understanding-usage-and-length-limits.md)**. For guidance on using your Pro capacity efficiently, we also have **[Usage limit best practices](../22-Safety-Policy/usage-limit-best-practices.md)**.
+
+**Note:** If you have a limit reset, you can use it to reset your five-hour session limit or weekly usage limits back to full. Learn more **[about limit resets](../15-Claude-AI-Features/what-is-a-limit-reset.md)**.
 
 ### How do I increase my Pro plan usage limits?
 
 Our Max plans offer more usage for individuals than Pro plans. For additional information, see **[What is the Max plan?](what-is-the-max-plan.md)**
 
-Pro subscribers can also enable extra usage to continue working with Claude beyond the plan’s included usage limits. For more information and instructions for enabling this feature, see **[Extra usage for paid Claude plans](extra-usage-for-paid-claude-plans.md)**.
+Pro subscribers can also enable usage credits to continue working with Claude beyond the plan’s included usage limits. For more information and instructions for enabling this feature, see **[Manage usage credits for paid Claude plans](manage-usage-credits-for-paid-claude-plans.md)**.

@@ -1,0 +1,981 @@
+---
+title: "Create Deployment - Claude API Reference"
+source_url: "https://platform.claude.com/docs/en/api/beta/deployments/create"
+category: "04-API-Reference/Endpoints"
+fetched_at: "2026-09-26T06:38:22Z"
+tags: ["api"]
+---
+
+- [Managed Agents](../Other/managed-agents-overview.md)
+
+- [Admin](../Other/manage-claude-admin-api.md)
+
+- Resources
+  - [Best practices](../About/about-claude-use-case-guides-overview.md)
+  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
+  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
+  - [Release notes](../../20-Models/release-notes-overview.md)
+
+[API reference](overview.md)
+
+
+
+
+[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fdeployments%2Fcreate)
+
+
+
+
+
+SearchCtrlK
+
+Include beta APIsThe API you’re viewing is only available in beta
+
+Using the API
+
+[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
+
+
+Messages
+
+
+Create a Message
+
+
+Count tokens in a Message
+
+Batches
+
+Managed Agents
+
+Agents
+
+Environments
+
+Sessions
+
+Deployments
+
+
+Create Deployment
+
+
+List Deployments
+
+
+Get Deployment
+
+
+Update Deployment
+
+
+Archive Deployment
+
+
+Run Deployment Now
+
+
+Pause Deployment
+
+
+Unpause Deployment
+
+Deployment Runs
+
+Vaults
+
+Memory Stores
+
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
+
+Models
+
+
+List Models
+
+
+Get a Model
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
+
+
+Tunnels
+
+
+Create Tunnel
+
+
+Get Tunnel
+
+
+List Tunnels
+
+
+Archive Tunnel
+
+
+Reveal Tunnel Token
+
+
+Rotate Tunnel Token
+
+Certificates
+
+
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Create Enrollment URL
+
+
+Compliance API
+
+Activities
+
+Organizations
+
+Groups
+
+Apps
+
+Code
+
+
+Completions
+
+
+Create a Text Completion
+
+Support & configuration
+
+[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
+
+Claude Code
+
+[Trigger a routine](claude-code-routines-fire.md)
+
+[Console](../Other/usage-limits.md)
+
+Copy page
+
+
+
+cURL
+
+1.  [API reference](http.md)
+2.  [Beta](http-beta.md)
+3.  [Deployments](https://platform.claude.com/docs/en/api/http/beta/deployments)
+
+# Create Deployment
+
+POST/v1/deployments
+
+Create Deployment
+
+##### Headers
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+
+
+
+Optional header to specify the beta version(s) you want to use.
+
+One of the following:
+
+string
+
+
+
+
+
+"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
+
+
+
+One of the following:
+
+"message-batches-2024-09-24"
+
+
+
+"prompt-caching-2024-07-31"
+
+
+
+"computer-use-2024-10-22"
+
+
+
+"computer-use-2025-01-24"
+
+
+
+"pdfs-2024-09-25"
+
+
+
+"token-counting-2024-11-01"
+
+
+
+"token-efficient-tools-2025-02-19"
+
+
+
+"output-128k-2025-02-19"
+
+
+
+"files-api-2025-04-14"
+
+
+
+"mcp-client-2025-04-04"
+
+
+
+"mcp-client-2025-11-20"
+
+
+
+"dev-full-thinking-2025-05-14"
+
+
+
+"interleaved-thinking-2025-05-14"
+
+
+
+"code-execution-2025-05-22"
+
+
+
+"extended-cache-ttl-2025-04-11"
+
+
+
+"context-1m-2025-08-07"
+
+
+
+"context-management-2025-06-27"
+
+
+
+"model-context-window-exceeded-2025-08-26"
+
+
+
+"skills-2025-10-02"
+
+
+
+"fast-mode-2026-02-01"
+
+
+
+"output-300k-2026-03-24"
+
+
+
+"user-profiles-2026-03-24"
+
+
+
+"user-profiles-2026-08-18"
+
+
+
+"user-profiles-2026-09-04"
+
+
+
+"advisor-tool-2026-03-01"
+
+
+
+"managed-agents-2026-04-01"
+
+
+
+"cache-diagnosis-2026-04-07"
+
+
+
+"dreaming-2026-04-21"
+
+
+
+"thinking-token-count-2026-05-13"
+
+
+
+"server-side-fallback-2026-06-01"
+
+
+
+"server-side-fallback-2026-07-01"
+
+
+
+"fallback-credit-2026-06-01"
+
+
+
+"fallback-credit-2026-07-01"
+
+
+
+"agent-memory-2026-07-22"
+
+
+
+"mid-conversation-tool-changes-2026-07-01"
+
+
+
+"compact-2026-01-12"
+
+
+
+"computer-use-2025-11-24"
+
+
+
+"mcp-tunnels-2026-06-22"
+
+
+
+"structured-outputs-2025-11-13"
+
+
+
+"task-budgets-2026-03-13"
+
+
+
+"thinking-display-updates-2026-08-18"
+
+
+
+"ce-user-management-2026-07-13"
+
+
+
+"mid-conversation-output-config-2026-07-01"
+
+
+
+"thinking-binding-controls-2026-08-01"
+
+
+
+"mid-conversation-system-clear-at-2026-08-21"
+
+
+
+"compact-2026-09-04"
+
+
+
+"inline-tools-2026-09-15"
+
+
+
+"mcp-client-2026-09-15"
+
+
+
+
+
+"anthropic-workspace-id": optional string
+
+
+
+Optional header to select the Workspace for this request. The value is a Workspace ID (for example, `wrkspc_011CZkZaBF1tNoB5wlCeusgy`).
+
+Only needed for credentials that can act on more than one Workspace. A credential that belongs to a specific Workspace may omit it; if sent, it must match that Workspace.
+
+##### Body
+
+
+
+agent: string or [BetaManagedAgentsAgentParams](https://platform.claude.com/docs/en/api/http/beta/sessions#beta_managed_agents_agent_params)
+
+
+
+Agent to deploy. Accepts the `agent` ID string, which pins the latest version, or an `agent` object with both id and version specified. The agent must exist and not be archived.
+
+One of the following:
+
+string
+
+
+
+
+
+BetaManagedAgentsAgentParams object{ type: "agent", id, version }
+
+
+
+Specification for an Agent. Provide a specific `version` or use the short-form `agent="agent_id"` for the most recent version
+
+type: "agent"
+
+
+
+
+
+id: string
+
+
+
+The `agent` ID.
+
+minLength1
+
+maxLength128
+
+
+
+version: optional number
+
+
+
+The specific `agent` version to use. Omit to use the latest version. Must be at least 1 if specified.
+
+formatint32
+
+
+
+environment_id: string
+
+
+
+ID of the `environment` defining the container configuration for sessions created from this deployment.
+
+minLength1
+
+maxLength128
+
+
+
+initial_events: array of [BetaManagedAgentsDeploymentInitialEventParams](https://platform.claude.com/docs/en/api/http/beta/deployments#beta_managed_agents_deployment_initial_event_params)
+
+
+
+Events to send to each session immediately after creation. At least 1, maximum 50.
+
+One of the following:
+
+
+
+BetaManagedAgentsUserMessageEventParams object{ type: "user.message", content }
+
+
+
+Parameters for sending a user message to the session.
+
+
+
+BetaManagedAgentsUserDefineOutcomeEventParams object{ type: "user.define_outcome", description, rubric, max_iterations }
+
+
+
+Parameters for defining an outcome the agent should work toward. The agent begins work on receipt.
+
+
+
+BetaManagedAgentsSystemMessageEventParams object{ type: "system.message", content }
+
+
+
+Privileged context for the accompanying turn and all subsequent turns, appended to the session's system context as a `role: "system"` turn rather than replacing the top-level system prompt. At most one per request: it must be the final event and immediately follow the `user.message`, `user.tool_result`, or `user.custom_tool_result` it accompanies. Only supported on models that accept mid-conversation system messages.
+
+type: "system.message"
+
+
+
+
+
+content: array of [BetaManagedAgentsSystemContentBlock](https://platform.claude.com/docs/en/api/http/beta/sessions#beta_managed_agents_system_content_block) { type: "text", text }
+
+
+
+System content blocks to append. Text-only.
+
+type: "text"
+
+
+
+
+
+text: string
+
+
+
+The text content.
+
+minLength1
+
+
+
+name: string
+
+
+
+Human-readable name for the deployment.
+
+minLength1
+
+maxLength256
+
+
+
+budget: optional [BetaManagedAgentsBudgetLimit](https://platform.claude.com/docs/en/api/http/beta/sessions#beta_managed_agents_budget_limit) { type: "limit", max_list_cost } or null
+
+
+
+Enforced spend ceiling stamped onto each session created from this deployment, copied at session-creation time. Omit to leave sessions uncapped. The deployment agent's model must have a public list price, or the request is rejected; a multiagent roster is re-validated in full when each fire copies the cap, which fails closed the same way.
+
+type: "limit"
+
+
+
+
+
+max_list_cost: [BetaMonetaryAmount](http-beta.md#beta_monetary_amount) { amount, currency }
+
+
+
+Maximum list cost the session may accrue. List price is used regardless of any negotiated discount, so the cap fires at or before the actual charge.
+
+amount: string
+
+
+
+Amount in minor units of the currency, as an integer decimal string with no leading zeros: "2500" is \$25.00 and "50" is fifty cents. A string rather than a number so no float rounding is ever applied.
+
+currency: [BetaCurrency](http-beta.md#beta_currency)
+
+
+
+Uppercase ISO-4217 currency code. `USD` is the only currency currently supported; the accepted set is closed and grows only when a new currency is priced.
+
+
+
+description: optional string or null
+
+
+
+Description of what the deployment does.
+
+maxLength2048
+
+metadata: optional map\[string\]
+
+
+
+Arbitrary key-value metadata. Maximum 16 pairs, keys up to 64 chars, values up to 512 chars.
+
+
+
+resources: optional array of [BetaManagedAgentsGitHubRepositoryResourceParams](https://platform.claude.com/docs/en/api/http/beta/sessions#beta_managed_agents_github_repository_resource_params) or [BetaManagedAgentsFileResourceParams](https://platform.claude.com/docs/en/api/http/beta/sessions#beta_managed_agents_file_resource_params) or [BetaManagedAgentsMemoryStoreResourceParam](https://platform.claude.com/docs/en/api/http/beta/sessions#beta_managed_agents_memory_store_resource_param)
+
+
+
+Resources (e.g. repositories, files) to mount into each session's container. Maximum 500.
+
+One of the following:
+
+
+
+BetaManagedAgentsGitHubRepositoryResourceParams object{ type: "github_repository", url, authorization_token, 2 more }
+
+
+
+Mount a GitHub repository into the session's container.
+
+
+
+BetaManagedAgentsFileResourceParams object{ type: "file", file_id, mount_path }
+
+
+
+Mount a file uploaded via the Files API into the session.
+
+type: "file"
+
+
+
+
+
+file_id: string
+
+
+
+ID of a previously uploaded file.
+
+minLength1
+
+maxLength128
+
+
+
+mount_path: optional string or null
+
+
+
+Mount path in the container. Defaults to `/mnt/session/uploads/<file_id>`.
+
+minLength1
+
+maxLength4096
+
+
+
+BetaManagedAgentsMemoryStoreResourceParam object{ type: "memory_store", memory_store_id, access, instructions }
+
+
+
+Parameters for attaching a memory store to an agent session.
+
+type: "memory_store"
+
+
+
+memory_store_id: string
+
+
+
+The memory store ID (memstore\_...). Must belong to the caller's organization and workspace.
+
+
+
+access: optional "read_write" or "read_only" or null
+
+
+
+Access mode for the mounted store. Defaults to read_write. read_only mounts the store as a read-only filesystem.
+
+One of the following:
+
+"read_write"
+
+
+
+"read_only"
+
+
+
+
+
+instructions: optional string or null
+
+
+
+Per-attachment guidance for the agent on how to use this store. Rendered into the memory section of the system prompt. Max 4096 chars.
+
+maxLength4096
+
+
+
+schedule: optional [BetaManagedAgentsScheduleParams](https://platform.claude.com/docs/en/api/http/beta/deployments#beta_managed_agents_schedule_params) { type: "cron", expression, timezone } or null
+
+
+
+Optional recurring cron schedule. When present, the deployment fires automatically. Both expression and timezone are required when schedule is set.
+
+type: "cron"
+
+
+
+
+
+expression: string
+
+
+
+5-field POSIX cron expression: minute hour day-of-month month day-of-week (e.g., "0 9 \* \* 1-5" for weekdays at 9am). Day-of-week is 0-7 where 0 and 7 both mean Sunday. Extended cron syntax - seconds or year fields, and the special characters L, W, \#, and ? - is not supported, nor are predefined shortcuts (@daily).
+
+minLength1
+
+maxLength256
+
+
+
+timezone: string
+
+
+
+Required. IANA timezone identifier (e.g., "America/Los_Angeles", "UTC"). Validated against the IANA timezone database.
+
+minLength1
+
+vault_ids: optional array of string
+
+
+
+Vault IDs for stored credentials the agent can use during sessions created from this deployment. Maximum 50.
+
+##### Returns
+
+
+
+BetaManagedAgentsDeployment object{ type: "deployment", id, agent, 14 more }
+
+
+
+A deployment is a configured instance of an agent — it binds the agent to everything needed to run it autonomously: an environment, credentials, initial events, and an optional schedule.
+
+Create Deployment
+
+cURL
+
+
+
+```python
+curl https://api.anthropic.com/v1/deployments \
+    -H 'Content-Type: application/json' \
+    -H 'anthropic-version: 2023-06-01' \
+    -H 'anthropic-beta: managed-agents-2026-04-01' \
+    -H "X-Api-Key: $ANTHROPIC_API_KEY" \
+    -d '{
+          "agent": "string",
+          "environment_id": "x",
+          "initial_events": [
+            {
+              "content": [
+                {
+                  "text": "Where is my order #1234?",
+                  "type": "text"
+                }
+              ],
+              "type": "user.message"
+            }
+          ],
+          "name": "x",
+          "schedule": {
+            "expression": "0 9 * * 1-5",
+            "timezone": "America/Los_Angeles",
+            "type": "cron"
+          }
+        }'
+```
+
+Response 200
+
+
+
+```python
+{
+  "id": "depl_011CZkZcDH3vPqd7xnEfwTai",
+  "agent": {
+    "id": "agent_011CZkYpogX7uDKUyvBTophP",
+    "type": "agent",
+    "version": 1
+  },
+  "archived_at": null,
+  "created_at": "2026-03-15T10:00:00Z",
+  "description": "Compiles yesterday's orders into a report every weekday morning.",
+  "environment_id": "env_011CZkZ9X2dpNyB7HsEFoRfW",
+  "initial_events": [
+    {
+      "content": [
+        {
+          "text": "Compile yesterday's orders into report.md.",
+          "type": "text"
+        }
+      ],
+      "type": "user.message"
+    }
+  ],
+  "metadata": {},
+  "name": "Daily order report",
+  "paused_reason": {
+    "type": "manual"
+  },
+  "resources": [
+    {
+      "type": "github_repository",
+      "url": "url",
+      "checkout": {
+        "name": "main",
+        "type": "branch"
+      },
+      "mount_path": "mount_path"
+    }
+  ],
+  "schedule": {
+    "expression": "0 9 * * 1-5",
+    "timezone": "America/Los_Angeles",
+    "type": "cron",
+    "last_run_at": "2026-03-16T16:00:09Z",
+    "upcoming_runs_at": [
+      "2026-03-17T16:00:00Z",
+      "2026-03-18T16:00:00Z"
+    ]
+  },
+  "status": "active",
+  "type": "deployment",
+  "updated_at": "2026-03-15T10:00:00Z",
+  "vault_ids": [
+    "vlt_011CZkZDLs7fYzm1hXNPeRjv"
+  ],
+  "budget": {
+    "max_list_cost": {
+      "amount": "2500",
+      "currency": "USD"
+    },
+    "type": "limit"
+  }
+}
+```
+
+##### Returns Examples
+
+Response 200
+
+
+
+```python
+{
+  "id": "depl_011CZkZcDH3vPqd7xnEfwTai",
+  "agent": {
+    "id": "agent_011CZkYpogX7uDKUyvBTophP",
+    "type": "agent",
+    "version": 1
+  },
+  "archived_at": null,
+  "created_at": "2026-03-15T10:00:00Z",
+  "description": "Compiles yesterday's orders into a report every weekday morning.",
+  "environment_id": "env_011CZkZ9X2dpNyB7HsEFoRfW",
+  "initial_events": [
+    {
+      "content": [
+        {
+          "text": "Compile yesterday's orders into report.md.",
+          "type": "text"
+        }
+      ],
+      "type": "user.message"
+    }
+  ],
+  "metadata": {},
+  "name": "Daily order report",
+  "paused_reason": {
+    "type": "manual"
+  },
+  "resources": [
+    {
+      "type": "github_repository",
+      "url": "url",
+      "checkout": {
+        "name": "main",
+        "type": "branch"
+      },
+      "mount_path": "mount_path"
+    }
+  ],
+  "schedule": {
+    "expression": "0 9 * * 1-5",
+    "timezone": "America/Los_Angeles",
+    "type": "cron",
+    "last_run_at": "2026-03-16T16:00:09Z",
+    "upcoming_runs_at": [
+      "2026-03-17T16:00:00Z",
+      "2026-03-18T16:00:00Z"
+    ]
+  },
+  "status": "active",
+  "type": "deployment",
+  "updated_at": "2026-03-15T10:00:00Z",
+  "vault_ids": [
+    "vlt_011CZkZDLs7fYzm1hXNPeRjv"

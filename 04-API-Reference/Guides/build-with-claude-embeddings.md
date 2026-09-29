@@ -1,0 +1,447 @@
+---
+title: "Embeddings - Claude Platform Docs"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/embeddings"
+category: "04-API-Reference/Guides"
+fetched_at: "2026-09-26T06:39:21Z"
+tags: ["api"]
+---
+
+- [Managed Agents](../Other/managed-agents-overview.md)
+
+- [Admin](../Other/manage-claude-admin-api.md)
+
+- Resources
+  - [Best practices](../About/about-claude-use-case-guides-overview.md)
+  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
+  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
+  - [Release notes](../../20-Models/release-notes-overview.md)
+
+[API reference](../Endpoints/overview.md)
+
+
+
+
+[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fembeddings)
+
+
+
+
+
+SearchCtrlK
+
+First steps
+
+[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
+
+Building with Claude
+
+[Features overview](build-with-claude-overview.md)[Using the Messages API](build-with-claude-working-with-messages.md)[Stop reasons and fallback](build-with-claude-handling-stop-reasons.md)[Refusals and fallback](build-with-claude-refusals-and-fallback.md)[Fallback credit](build-with-claude-fallback-credit.md)
+
+Model capabilities
+
+[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode (research preview)](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
+
+[Thinking](build-with-claude-thinking.md)
+
+Tools
+
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+
+Tool infrastructure
+
+[Tool reference](../Agents-Tools/agents-and-tools-tool-use-tool-reference.md)[Manage tool context](../Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](../Agents-Tools/agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](../Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](../Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](../Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md)
+
+Context management
+
+[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
+
+[Compaction](build-with-claude-compaction.md)
+
+Working with files
+
+[Files API](build-with-claude-files.md)[PDF support](build-with-claude-pdf-support.md)
+
+[Images and vision](build-with-claude-vision.md)
+
+Skills
+
+[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Quickstart](../Agents-Tools/agents-and-tools-agent-skills-quickstart.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)[Skills in the API](build-with-claude-skills-guide.md)
+
+MCP
+
+[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)[MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md)
+
+[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
+
+Claude on cloud platforms
+
+[Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+
+[Console](../Other/usage-limits.md)
+
+[Messages](../../01-Getting-Started/intro.md)Model capabilities
+
+# Embeddings
+
+Copy page
+
+
+
+Text embeddings are numerical representations of text that enable measuring semantic similarity. This guide introduces embeddings, their applications, and how to use embedding models for tasks like search, recommendations, and anomaly detection.
+
+Copy page
+
+
+
+## Before implementing embeddings
+
+When selecting an embeddings provider, there are several factors you can consider depending on your needs and preferences:
+
+- Dataset size & domain specificity: size of the model training dataset and its relevance to the domain you want to embed. Larger or more domain-specific data generally produces better in-domain embeddings
+- Inference performance: embedding lookup speed and end-to-end latency. This is a particularly important consideration for large scale production deployments
+- Customization: options for continued training on private data, or specialization of models for very specific domains. This can improve performance on unique vocabularies
+
+## How to get embeddings with Anthropic
+
+Anthropic does not offer its own embedding model. One embeddings provider that has a wide variety of options and capabilities encompassing all of the preceding considerations is Voyage AI.
+
+Voyage AI makes state-of-the-art embedding models and offers customized models for specific industry domains such as finance and healthcare, or bespoke fine-tuned models for individual customers.
+
+The rest of this guide is for Voyage AI, but you should assess a variety of embeddings vendors to find the best fit for your specific use case.
+
+## Available models
+
+Voyage recommends using the following text embedding models:
+
+**Voyage 4 (latest generation)**
+
+| Model            | Context length | Embedding dimension            | Description                                                                                                                                                                                  |
+|------------------|----------------|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `voyage-4-large` | 32,000         | 1024 (default), 256, 512, 2048 | The best general-purpose and multilingual retrieval quality. See the [Voyage 4 blog post](https://blog.voyageai.com/2026/01/15/voyage-4/) for details.                                       |
+| `voyage-4`       | 32,000         | 1024 (default), 256, 512, 2048 | Optimized for general-purpose and multilingual retrieval quality. Balances quality and efficiency. See the [Voyage 4 blog post](https://blog.voyageai.com/2026/01/15/voyage-4/) for details. |
+| `voyage-4-lite`  | 32,000         | 1024 (default), 256, 512, 2048 | Optimized for latency and cost. See the [Voyage 4 blog post](https://blog.voyageai.com/2026/01/15/voyage-4/) for details.                                                                    |
+| `voyage-4-nano`  | 32,000         | 1024 (default), 256, 512, 2048 | Open-weight model (Apache 2.0 license) available on Hugging Face. See the [Voyage 4 blog post](https://blog.voyageai.com/2026/01/15/voyage-4/) for details.                                  |
+
+**Previous generation**
+
+| Model              | Context length | Embedding dimension            | Description                                                                                                                                                                                                                                                            |
+|--------------------|----------------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `voyage-3-large`   | 32,000         | 1024 (default), 256, 512, 2048 | The best general-purpose and multilingual retrieval quality. See the [voyage-3-large blog post](https://blog.voyageai.com/2025/01/07/voyage-3-large/) for details.                                                                                                     |
+| `voyage-3.5`       | 32,000         | 1024 (default), 256, 512, 2048 | Optimized for general-purpose and multilingual retrieval quality. See the [voyage-3.5 blog post](https://blog.voyageai.com/2025/05/20/voyage-3-5/) for details.                                                                                                        |
+| `voyage-3.5-lite`  | 32,000         | 1024 (default), 256, 512, 2048 | Optimized for latency and cost. See the [voyage-3.5 blog post](https://blog.voyageai.com/2025/05/20/voyage-3-5/) for details.                                                                                                                                          |
+| `voyage-code-3`    | 32,000         | 1024 (default), 256, 512, 2048 | Optimized for **code** retrieval. See the [voyage-code-3 blog post](https://blog.voyageai.com/2024/12/04/voyage-code-3/) for details.                                                                                                                                  |
+| `voyage-finance-2` | 32,000         | 1024                           | Optimized for **finance** retrieval and RAG. See the [voyage-finance-2 blog post](https://blog.voyageai.com/2024/06/03/domain-specific-embeddings-finance-edition-voyage-finance-2/) for details.                                                                      |
+| `voyage-law-2`     | 16,000         | 1024                           | Optimized for **legal** and **long-context** retrieval and RAG. Also improved performance across all domains. See the [voyage-law-2 blog post](https://blog.voyageai.com/2024/04/15/domain-specific-embeddings-and-retrieval-legal-edition-voyage-law-2/) for details. |
+
+Additionally, Voyage recommends the following multimodal embedding models:
+
+| Model                   | Context length | Embedding dimension            | Description                                                                                                                                                                                                                                                                              |
+|-------------------------|----------------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `voyage-multimodal-3.5` | 32,000         | 1024 (default), 256, 512, 2048 | Rich multimodal embedding model that can vectorize interleaved text, images, and videos. Includes video support as the first production-grade video embedding model. See the [voyage-multimodal-3.5 blog post](https://blog.voyageai.com/2026/01/15/voyage-multimodal-3-5/) for details. |
+| `voyage-multimodal-3`   | 32,000         | 1024                           | Rich multimodal embedding model that can vectorize interleaved text and content-rich images, such as screenshots of PDFs, slides, tables, figures, and more. See the [voyage-multimodal-3 blog post](https://blog.voyageai.com/2024/11/12/voyage-multimodal-3/) for details.             |
+
+The following contextualized chunk embedding models produce chunk-level vectors that capture full document context without manual metadata augmentation. Call these models with `contextualized_embed()` instead of `embed()`:
+
+| Model              | Context length | Embedding dimension            | Description                                                                                                                                                                                                 |
+|--------------------|----------------|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `voyage-context-4` | 120,000        | 1024 (default), 256, 512, 2048 | Contextualized chunk embeddings optimized for general-purpose and multilingual retrieval quality. See the [voyage-context-4 blog post](https://blog.voyageai.com/2026/06/29/voyage-context-4/) for details. |
+| `voyage-context-3` | 120,000        | 1024 (default), 256, 512, 2048 | Contextualized chunk embeddings optimized for general-purpose and multilingual retrieval quality. See the [voyage-context-3 blog post](https://blog.voyageai.com/2025/07/23/voyage-context-3/) for details. |
+
+Voyage AI also offers rerankers, which take a query and a list of documents and return them ranked by relevance to the query. Call these models with `rerank()`:
+
+| Model             | Context length | Description                                                                                                                                        |
+|-------------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `rerank-2.5`      | 32,000         | Highest accuracy. Recommended for most applications. See the [rerank-2.5 blog post](https://blog.voyageai.com/2025/08/11/rerank-2-5/) for details. |
+| `rerank-2.5-lite` | 32,000         | Optimized for latency and cost. See the [rerank-2.5 blog post](https://blog.voyageai.com/2025/08/11/rerank-2-5/) for details.                      |
+
+Need help deciding which text embedding model to use? Check out the [Voyage AI FAQ](https://docs.voyageai.com/docs/faq#what-embedding-models-are-available-and-which-one-should-i-use&ref=anthropic).
+
+## Getting started with Voyage AI
+
+To access Voyage embeddings:
+
+1.  Sign up on Voyage AI's website.
+2.  Obtain an API key.
+3.  Set the API key as an environment variable for convenience:
+
+```python
+export VOYAGE_API_KEY="<your secret key>"
+```
+
+
+
+You can obtain the embeddings by either using the official [`voyageai` Python package](https://github.com/voyage-ai/voyageai-python) or HTTP requests, as described in the following sections.
+
+### Voyage Python library
+
+Install the `voyageai` package using the following command:
+
+```python
+pip install -U voyageai
+```
+
+
+
+Then, you can create a client object and start using it to embed your texts:
+
+```python
+import voyageai
+
+vo = voyageai.Client()
+# This will automatically use the environment variable VOYAGE_API_KEY.
+# Alternatively, you can use vo = voyageai.Client(api_key="<your secret key>")
+
+texts = ["Sample text 1", "Sample text 2"]
+
+result = vo.embed(texts, model="voyage-4", input_type="document")
+print(result.embeddings[0])
+print(result.embeddings[1])
+```
+
+
+
+`result.embeddings` is a list of two embedding vectors, each containing 1024 floating-point numbers. After running the preceding code, the two embeddings are printed on the screen:
+
+``` inline-block
+[-0.013131560757756233, 0.019828535616397858, ...]   # embedding for "Sample text 1"
+[-0.0069352793507277966, 0.020878976210951805, ...]  # embedding for "Sample text 2"
+```
+
+
+
+When creating the embeddings, you can specify a few other arguments to the `embed()` function.
+
+For more information on the Voyage Python package, see the [Voyage Python package documentation](https://docs.voyageai.com/docs/embeddings#python-api).
+
+### Voyage HTTP API
+
+You can also get embeddings by requesting Voyage HTTP API. For example, you can send an HTTP request through the `curl` command in a terminal:
+
+cURL
+
+
+
+```python
+curl https://api.voyageai.com/v1/embeddings \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $VOYAGE_API_KEY" \
+  -d '{
+    "input": ["Sample text 1", "Sample text 2"],
+    "model": "voyage-4"
+  }'
+```
+
+The response you would get is a JSON object containing the embeddings and the token usage:
+
+```python
+{
+  "object": "list",
+  "data": [
+    {
+      "embedding": [-0.013131560757756233, 0.019828535616397858 /* ... */],
+      "index": 0
+    },
+    {
+      "embedding": [-0.0069352793507277966, 0.020878976210951805 /* ... */],
+      "index": 1
+    }
+  ],
+  "model": "voyage-4",
+  "usage": {
+    "total_tokens": 10
+  }
+}
+```
+
+
+
+For more information on the Voyage HTTP API, see the [Voyage HTTP API documentation](https://docs.voyageai.com/reference/embeddings-api).
+
+### AWS Marketplace
+
+Voyage embeddings are available on [AWS Marketplace](https://aws.amazon.com/marketplace/seller-profile?id=c9032c7b-70dd-459f-834f-c1e23cf3d092). Instructions for accessing Voyage on AWS are available in the [Voyage AWS Marketplace documentation](https://docs.voyageai.com/docs/aws-marketplace-mongodb-voyage?ref=anthropic).
+
+## Quickstart example
+
+The following brief example shows how to use embeddings.
+
+Suppose you have a small corpus of six documents to retrieve from
+
+```python
+documents = [
+    "The Mediterranean diet emphasizes fish, olive oil, and vegetables, believed to reduce chronic diseases.",
+    "Photosynthesis in plants converts light energy into glucose and produces essential oxygen.",
+    "20th-century innovations, from radios to smartphones, centered on electronic advancements.",
+    "Rivers provide water, irrigation, and habitat for aquatic species, vital for ecosystems.",
+    "Apple's conference call to discuss fourth fiscal quarter results and business updates is scheduled for Thursday, November 2, 2023 at 2:00 p.m. PT / 5:00 p.m. ET.",
+    "Shakespeare's works, like 'Hamlet' and 'A Midsummer Night's Dream,' endure in literature.",
+]
+```
+
+
+
+First, use Voyage to convert each document into an embedding vector.
+
+```python
+import voyageai
+
+vo = voyageai.Client()
+
+# Embed the documents
+doc_embds = vo.embed(documents, model="voyage-4", input_type="document").embeddings
+```
+
+
+
+The embeddings allow you to do semantic search / retrieval in the vector space. Given an example query,
+
+```python
+query = "When is Apple's conference call scheduled?"
+```
+
+
+
+Next, convert it into an embedding and conduct a nearest neighbor search to find the most relevant document based on the distance in the embedding space.
+
+```python
+import numpy as np
+
+# Embed the query
+query_embd = vo.embed([query], model="voyage-4", input_type="query").embeddings[0]
+
+# Compute the similarity
+# Voyage embeddings are normalized to length 1, therefore dot-product
+# and cosine similarity are the same.
+similarities = np.dot(doc_embds, query_embd)
+
+retrieved_id = np.argmax(similarities)
+print(documents[retrieved_id])
+```
+
+
+
+Note that `input_type="document"` and `input_type="query"` are used for embedding the document and query, respectively. More specification can be found in [Voyage Python library](#voyage-python-library).
+
+The output is the fifth document, which is indeed the most relevant to the query:
+
+``` block
+Apple's conference call to discuss fourth fiscal quarter results and business updates is scheduled for Thursday, November 2, 2023 at 2:00 p.m. PT / 5:00 p.m. ET.
+```
+
+
+
+If you are looking for a detailed set of recipes on how to do RAG with embeddings, including vector databases, check out the [RAG recipe](https://platform.claude.com/cookbook/third-party-pinecone-rag-using-pinecone).
+
+## FAQ
+
+### Why do Voyage embeddings have superior quality?
+
+Embedding models rely on powerful neural networks to capture and compress semantic context, similar to generative models. Voyage's team of experienced AI researchers optimizes every component of the embedding process, including:
+
+- Model architecture
+- Data collection
+- Loss functions
+- Optimizer selection
+
+Learn more about Voyage's technical approach on the [Voyage AI blog](https://blog.voyageai.com/).
+
+### What embedding models are available and which should I use?
+
+For general-purpose embedding, the recommended models are:
+
+- `voyage-4-large`: Best quality
+- `voyage-4-lite`: Lowest latency and cost
+- `voyage-4`: Balanced performance
+
+For retrieval, use the `input_type` parameter to specify whether the text is a query or document type.
+
+Domain-specific models:
+
+- Legal tasks: `voyage-law-2`
+- Code and programming documentation: `voyage-code-3`
+- Finance-related tasks: `voyage-finance-2`
+
+For chunk-level and document-level retrieval: `voyage-context-4`
+
+### Which similarity function should I use?
+
+You can use Voyage embeddings with either dot-product similarity, cosine similarity, or Euclidean distance. For an explanation of embedding similarity, see this [vector similarity guide](https://www.pinecone.io/learn/vector-similarity/).
+
+Voyage AI embeddings are normalized to length 1, which means that:
+
+- Cosine similarity is equivalent to dot-product similarity, while the latter can be computed more quickly.
+- Cosine similarity and Euclidean distance result in identical rankings.
+
+### What is the relationship between characters, words, and tokens?
+
+See the [Voyage tokenization guide](https://docs.voyageai.com/docs/tokenization?ref=anthropic).
+
+### When and how should I use the input_type parameter?
+
+For all retrieval tasks and use cases (for example, RAG), use the `input_type` parameter to specify whether the input text is a query or document. Do not omit `input_type` or set `input_type=None`. Specifying whether input text is a query or document can create better dense vector representations for retrieval, which can lead to better retrieval quality.
+
+When using the `input_type` parameter, special prompts are prepended to the input text prior to embedding. Specifically:
+
+> 📘 **Prompts associated with `input_type`**
+>
+> - For a query, the prompt is “Represent the query for retrieving supporting documents: “.
+> - For a document, the prompt is “Represent the document for retrieval: “.
+> - Example
+>   - When `input_type="query"`, a query like "When is Apple's conference call scheduled?" will become "**Represent the query for retrieving supporting documents:** When is Apple's conference call scheduled?"
+>   - When `input_type="document"`, a query like "Apple's conference call to discuss fourth fiscal quarter results and business updates is scheduled for Thursday, November 2, 2023 at 2:00 p.m. PT / 5:00 p.m. ET." will become "**Represent the document for retrieval:** Apple's conference call to discuss fourth fiscal quarter results and business updates is scheduled for Thursday, November 2, 2023 at 2:00 p.m. PT / 5:00 p.m. ET."
+
+`voyage-large-2-instruct`, as the name suggests, is trained to be responsive to additional instructions that are prepended to the input text. For classification, clustering, or other [MTEB](https://huggingface.co/mteb) subtasks, use the [voyage-large-2-instruct instructions](https://github.com/voyage-ai/voyage-large-2-instruct).
+
+### What quantization options are available?
+
+Quantization in embeddings converts high-precision values, such as 32-bit single-precision floating-point numbers, to lower-precision formats such as 8-bit integers or 1-bit binary values, reducing storage, memory, and costs by 4x and 32x, respectively. Supported Voyage models enable quantization by specifying the output data type with the `output_dtype` parameter:
+
+- `float`: Each returned embedding is a list of 32-bit (4-byte) single-precision floating-point numbers. This is the default and provides the highest precision / retrieval accuracy.
+- `int8` and `uint8`: Each returned embedding is a list of 8-bit (1-byte) integers ranging from -128 to 127 and 0 to 255, respectively.
+- `binary` and `ubinary`: Each returned embedding is a list of 8-bit integers that represent bit-packed, quantized single-bit embedding values: `int8` for `binary` and `uint8` for `ubinary`. The length of the returned list of integers is 1/8 of the actual dimension of the embedding. The binary type uses the offset binary method, which you can learn more about in the [embeddings FAQ](#faq).
+
+> **Binary quantization example**
+>
+> Consider the following eight embedding values: -0.03955078, 0.006214142, -0.07446289, -0.039001465, 0.0046463013, 0.00030612946, -0.08496094, and 0.03994751. With binary quantization, values less than or equal to zero will be quantized to a binary zero, and positive values to a binary one, resulting in the following binary sequence: 0, 1, 0, 0, 1, 1, 0, 1. These eight bits are then packed into a single 8-bit integer, 01001101 (with the leftmost bit as the most significant bit).
+>
+> - `ubinary`: The binary sequence is directly converted and represented as the unsigned integer (`uint8`) 77.
+> - `binary`: The binary sequence is represented as the signed integer (`int8`) -51, calculated using the offset binary method (77 - 128 = -51).
+
+### How can I truncate Matryoshka embeddings?
+
+Matryoshka learning creates embeddings with coarse-to-fine representations within a single vector. Voyage models, such as `voyage-code-3`, that support multiple output dimensions generate such Matryoshka embeddings. You can truncate these vectors by keeping the leading subset of dimensions. For example, the following Python code demonstrates how to truncate 1024-dimensional vectors to 256 dimensions:
+
+```python
+import voyageai
+import numpy as np
+
+
+def embd_normalize(v: np.ndarray) -> np.ndarray:
+    """
+    Normalize the rows of a 2D numpy array to unit vectors by dividing each row by its Euclidean
+    norm. Raises a ValueError if any row has a norm of zero to prevent division by zero.
+    """
+    row_norms = np.linalg.norm(v, axis=1, keepdims=True)
+    if np.any(row_norms == 0):
+        raise ValueError("Cannot normalize rows with a norm of zero.")
+    return v / row_norms
+
+
+vo = voyageai.Client()
+
+# Generate voyage-code-3 vectors, which by default are 1024-dimensional floating-point numbers
+embd = vo.embed(["Sample text 1", "Sample text 2"], model="voyage-code-3").embeddings
+
+# Set shorter dimension
+short_dim = 256
+
+# Resize and normalize vectors to shorter dimension
+resized_embd = embd_normalize(np.array(embd)[:, :short_dim]).tolist()
+```
+
+
+
+## Pricing
+
+Visit Voyage's [pricing page](https://docs.voyageai.com/docs/pricing?ref=anthropic) for the most up to date pricing details.

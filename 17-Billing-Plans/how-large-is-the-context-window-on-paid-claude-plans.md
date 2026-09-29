@@ -2,22 +2,34 @@
 title: "How large is the context window on paid Claude plans? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-03-22T09:01:47Z"
-tags: ["billing"]
+fetched_at: "2026-09-29T06:32:07Z"
+tags: ["billing", "claude-code"]
 ---
-
-4.  How large is the context window on paid Claude plans?
 
 # How large is the context window on paid Claude plans?
 
+Updated today
 
-Claude’s context window size is 200K, meaning it can ingest 200K+ tokens (about 500 pages of text or more) when using a paid Claude plan.
 
-**Note:** Users on Enterprise plans have access to a 500K context window when using specific models. See **[What is the Enterprise plan?](what-is-the-enterprise-plan.md)** for more information.
+This article explains how large the context window is on paid Claude plans (Pro, Max, Team, Enterprise) when you chat with Claude, or use Claude Code or Claude Cowork.
+
+## Chatting with Claude
+
+[TABLE]
+
+Outside of these models, Claude’s context window size is 200K, meaning it can ingest 200K+ tokens (about 500 pages of text or more) when using a paid Claude plan to chat with Claude.
+
+## Claude Code
+
+[TABLE]
+
+## Claude Cowork
+
+[TABLE]
 
 ## Automatic context management
 
-For users on paid plans with code execution enabled, Claude automatically manages your conversation context. When your conversation approaches the context window limit, Claude summarizes earlier messages to make room for new content. This does not count towards your usage limit, and allows conversations to continue indefinitely in most cases.
+For users on paid plans with code execution enabled, Claude automatically manages your conversation context. When your conversation approaches the context window limit, Claude summarizes earlier messages to make room for new content. This allows conversations to continue indefinitely in most cases. Longer conversations that trigger automatic context management use more of your usage limit.
 
 Your full chat history is preserved so Claude can reference it, even after earlier portions have been summarized. You may occasionally notice Claude "organizing its thoughts" during long conversations—this is the automatic context management at work.
 

@@ -1,31 +1,45 @@
 ---
-title: "Quickstart: Publish an MCP Server to the MCP Registry"
-source_url: "https://modelcontextprotocol.io/registry/quickstart.md"
-category: "06-MCP-Tools"
-fetched_at: "2026-04-26T00:00:00Z"
+title: "Quickstart: Publish an MCP Server to the MCP Registry - Model Context Protocol"
+source_url: "https://modelcontextprotocol.io/registry/quickstart"
+category: "06-MCP-Tools/Registry"
+fetched_at: "2026-09-29T06:29:44Z"
 tags: ["mcp", "mcp-registry"]
 ---
 
-> Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
-> Use this file to discover all available pages before exploring further.
+## On this page
+
+- [Prerequisites](#prerequisites)
+- [Step 1: Add verification information to the package](#step-1-add-verification-information-to-the-package)
+- [Step 2: Publish the package](#step-2-publish-the-package)
+- [Step 3: Install mcp-publisher](#step-3-install-mcp-publisher)
+- [Step 4: Create server.json](#step-4-create-server-json)
+- [Step 5: Authenticate with the MCP Registry](#step-5-authenticate-with-the-mcp-registry)
+- [Step 6: Publish to the MCP Registry](#step-6-publish-to-the-mcp-registry)
+- [Troubleshooting](#troubleshooting)
+- [Next Steps](#next-steps)
 
 # Quickstart: Publish an MCP Server to the MCP Registry
 
-<Note>
-  The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report them on [GitHub](https://github.com/modelcontextprotocol/registry/issues).
-</Note>
+Copy pageCopy page
+
+Copy pageCopy page
+
+The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report them on [GitHub](https://github.com/modelcontextprotocol/registry/issues).
 
 This tutorial will show you how to publish an MCP server written in TypeScript to the MCP Registry using the official `mcp-publisher` CLI tool.
 
-## Prerequisites
 
-* **Node.js** — This tutorial assumes the MCP server is written in TypeScript.
-* **npm account** — The MCP Registry only hosts metadata, not artifacts. Before publishing to the MCP Registry, we will publish the MCP server's package to npm, so you will need an [npm](https://www.npmjs.com) account.
-* **GitHub account** — The MCP Registry supports [multiple authentication methods](./authentication.mdx). For simplicity, this tutorial will use GitHub-based authentication, so you will need a [GitHub](https://github.com/) account.
+[​](#prerequisites)
+
+Prerequisites
+
+- **Node.js** — This tutorial assumes the MCP server is written in TypeScript.
+- **npm account** — The MCP Registry only hosts metadata, not artifacts. Before publishing to the MCP Registry, we will publish the MCP server’s package to npm, so you will need an [npm](https://www.npmjs.com) account.
+- **GitHub account** — The MCP Registry supports [multiple authentication methods](https://modelcontextprotocol.io/registry/authentication). For simplicity, this tutorial will use GitHub-based authentication, so you will need a [GitHub](https://github.com/) account.
 
 If you do not have an MCP server written in TypeScript, you can copy the `weather-server-typescript` server from the [`modelcontextprotocol/quickstart-resources` repository](https://github.com/modelcontextprotocol/quickstart-resources) to follow along with this tutorial:
 
-```bash  theme={null}
+```python
 git clone --depth 1 git@github.com:modelcontextprotocol/quickstart-resources.git
 cp -r quickstart-resources/weather-server-typescript .
 rm -rf quickstart-resources
@@ -34,7 +48,9 @@ cd weather-server-typescript
 
 And edit `package.json` to reflect your information:
 
-```diff package.json theme={null}
+package.json
+
+```python
  {
 -  "name": "mcp-quickstart-ts",
 -  "version": "1.0.0",
@@ -43,7 +59,9 @@ And edit `package.json` to reflect your information:
    "main": "index.js",
 ```
 
-```diff package.json theme={null}
+package.json
+
+```python
    "license": "ISC",
 -  "description": "",
 +  "repository": {
@@ -54,11 +72,16 @@ And edit `package.json` to reflect your information:
    "devDependencies": {
 ```
 
-## Step 1: Add verification information to the package
 
-The MCP Registry verifies that a server's underlying package matches its metadata. For npm packages, this requires adding an `mcpName` property to `package.json`:
+[​](#step-1-add-verification-information-to-the-package)
 
-```diff package.json theme={null}
+Step 1: Add verification information to the package
+
+The MCP Registry verifies that a server’s underlying package matches its metadata. For npm packages, this requires adding an `mcpName` property to `package.json`:
+
+package.json
+
+```python
  {
    "name": "@my-username/mcp-weather-server",
    "version": "1.0.1",
@@ -66,17 +89,16 @@ The MCP Registry verifies that a server's underlying package matches its metadat
    "main": "index.js",
 ```
 
-The value of `mcpName` will be your server's name in the MCP Registry.
+The value of `mcpName` will be your server’s name in the MCP Registry. Because we will be using GitHub-based authentication, `mcpName` **must** start with `io.github.my-username/`.
 
-Because we will be using GitHub-based authentication, `mcpName` **must** start with `io.github.my-username/`.
 
-## Step 2: Publish the package
+[​](#step-2-publish-the-package)
 
-The MCP Registry only hosts metadata, not artifacts, so we must publish the package to npm before publishing the server to the MCP Registry.
+Step 2: Publish the package
 
-Ensure the distribution files are built:
+The MCP Registry only hosts metadata, not artifacts, so we must publish the package to npm before publishing the server to the MCP Registry. Ensure the distribution files are built:
 
-```bash  theme={null}
+```python
 # Navigate to project directory
 cd weather-server-typescript
 
@@ -87,9 +109,9 @@ npm install
 npm run build
 ```
 
-Then follow npm's [publishing guide](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages). In particular, you will probably need to run the following commands:
+Then follow npm’s [publishing guide](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages). In particular, you will probably need to run the following commands:
 
-```bash  theme={null}
+```python
 # If necessary, authenticate to npm
 npm adduser
 
@@ -99,34 +121,41 @@ npm publish --access public
 
 You can verify your package is published by visiting its npm URL, such as [https://www.npmjs.com/package/@my-username/mcp-weather-server](https://www.npmjs.com/package/@my-username/mcp-weather-server).
 
-## Step 3: Install `mcp-publisher`
+
+[​](#step-3-install-mcp-publisher)
+
+Step 3: Install `mcp-publisher`
 
 Install the `mcp-publisher` CLI tool using a pre-built binary or [Homebrew](https://brew.sh):
 
-<CodeGroup>
-  ```bash macOS/Linux theme={null}
-  curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher && sudo mv mcp-publisher /usr/local/bin/
-  ```
+macOS/Linux
 
-  ```powershell Windows theme={null}
-  $arch = if ([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture -eq "Arm64") { "arm64" } else { "amd64" }; Invoke-WebRequest -Uri "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_windows_$arch.tar.gz" -OutFile "mcp-publisher.tar.gz"; tar xf mcp-publisher.tar.gz mcp-publisher.exe; rm mcp-publisher.tar.gz
-  # Move mcp-publisher.exe to a directory in your PATH
-  ```
+Windows
 
-  ```bash  theme={null}
-  brew install mcp-publisher
-  ```
-</CodeGroup>
+```python
+curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher && sudo mv mcp-publisher /usr/local/bin/
+```
+
+```python
+$arch = if ([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture -eq "Arm64") { "arm64" } else { "amd64" }; Invoke-WebRequest -Uri "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_windows_$arch.tar.gz" -OutFile "mcp-publisher.tar.gz"; tar xf mcp-publisher.tar.gz mcp-publisher.exe; rm mcp-publisher.tar.gz
+# Move mcp-publisher.exe to a directory in your PATH
+```
+
+```python
+brew install mcp-publisher
+```
 
 Verify that `mcp-publisher` is correctly installed by running:
 
-```bash  theme={null}
+```python
 mcp-publisher --help
 ```
 
 You should see output like:
 
-```text Output theme={null}
+Output
+
+```python
 MCP Registry Publisher Tool
 
 Usage:
@@ -139,19 +168,22 @@ Commands:
   publish       Publish server.json to the registry
 ```
 
-## Step 4: Create `server.json`
 
-The `mcp-publisher init` command can generate a `server.json` template file with some information derived from your project.
+[​](#step-4-create-server-json)
 
-In your server project directory, run `mcp-publisher init`:
+Step 4: Create `server.json`
 
-```bash  theme={null}
+The `mcp-publisher init` command can generate a `server.json` template file with some information derived from your project. In your server project directory, run `mcp-publisher init`:
+
+```python
 mcp-publisher init
 ```
 
 Open the generated `server.json` file, and you should see contents like:
 
-```json server.json theme={null}
+server.json
+
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.my-username/weather",
@@ -185,7 +217,9 @@ Open the generated `server.json` file, and you should see contents like:
 
 Edit the contents as necessary:
 
-```diff server.json theme={null}
+server.json
+
+```python
  {
    "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
    "name": "io.github.my-username/weather",
@@ -222,19 +256,22 @@ Edit the contents as necessary:
 
 The `name` property in `server.json` **must** match the `mcpName` property in `package.json`.
 
-## Step 5: Authenticate with the MCP Registry
 
-For this tutorial, we will authenticate with the MCP Registry using GitHub-based authentication.
+[​](#step-5-authenticate-with-the-mcp-registry)
 
-Run the `mcp-publisher login` command to initiate authentication:
+Step 5: Authenticate with the MCP Registry
 
-```bash  theme={null}
+For this tutorial, we will authenticate with the MCP Registry using GitHub-based authentication. Run the `mcp-publisher login` command to initiate authentication:
+
+```python
 mcp-publisher login github
 ```
 
 You should see output like:
 
-```text Output theme={null}
+Output
+
+```python
 Logging in with github...
 
 To authenticate, please:
@@ -246,22 +283,29 @@ Waiting for authorization...
 
 Visit the link, follow the prompts, and enter the authorization code that was printed in the terminal (e.g., `ABCD-1234` in the above output). Once complete, go back to the terminal, and you should see output like:
 
-```text Output theme={null}
+Output
+
+```python
 Successfully authenticated!
 ✓ Successfully logged in
 ```
 
-## Step 6: Publish to the MCP Registry
+
+[​](#step-6-publish-to-the-mcp-registry)
+
+Step 6: Publish to the MCP Registry
 
 Finally, publish your server to the MCP Registry using the `mcp-publisher publish` command:
 
-```bash  theme={null}
+```python
 mcp-publisher publish
 ```
 
 You should see output like:
 
-```text Output theme={null}
+Output
+
+```python
 Publishing to https://registry.modelcontextprotocol.io...
 ✓ Successfully published
 ✓ Server io.github.my-username/weather version 1.0.1
@@ -269,27 +313,35 @@ Publishing to https://registry.modelcontextprotocol.io...
 
 You can verify that your server is published by searching for it using the MCP Registry API:
 
-```bash  theme={null}
+```python
 curl "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.my-username/weather"
 ```
 
-You should see your server's metadata in the search results JSON:
+You should see your server’s metadata in the search results JSON:
 
-```text Output theme={null}
+Output
+
+```python
 {"servers":[{ ... "name":"io.github.my-username/weather" ... }]}
 ```
 
-## Troubleshooting
+
+[​](#troubleshooting)
+
+Troubleshooting
 
 | Error Message                                       | Action                                                                                                                                                  |
-| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| "Registry validation failed for package"            | Ensure your package includes the required validation information (e.g, `mcpName` property in `package.json`).                                           |
-| "Invalid or expired Registry JWT token"             | Re-authenticate by running `mcp-publisher login github`.                                                                                                |
-| "You do not have permission to publish this server" | Your authentication method doesn't match your server's namespace format. With GitHub auth, your server name must start with `io.github.your-username/`. |
+|-----------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ”Registry validation failed for package”            | Ensure your package includes the required validation information (e.g, `mcpName` property in `package.json`).                                           |
+| ”Invalid or expired Registry JWT token”             | Re-authenticate by running `mcp-publisher login github`.                                                                                                |
+| ”You do not have permission to publish this server” | Your authentication method doesn’t match your server’s namespace format. With GitHub auth, your server name must start with `io.github.your-username/`. |
 
-## Next Steps
 
-* Learn about [support for other package types](./package-types.mdx).
-* Learn about [support for remote servers](./remote-servers.mdx).
-* Learn how to [use other authentication methods](./authentication.mdx), such as [DNS authentication](./authentication.mdx#dns-authentication) which enables custom domains for server name prefixes.
-* Learn how to [automate publishing with GitHub Actions](./github-actions.mdx).
+[​](#next-steps)
+
+Next Steps
+
+- Learn about [support for other package types](https://modelcontextprotocol.io/registry/package-types).
+- Learn about [support for remote servers](https://modelcontextprotocol.io/registry/remote-servers).
+- Learn how to [use other authentication methods](https://modelcontextprotocol.io/registry/authentication), such as [DNS authentication](https://modelcontextprotocol.io/registry/authentication#dns-authentication) which enables custom domains for server name prefixes.
+- Learn how to [automate publishing with GitHub Actions](https://modelcontextprotocol.io/registry/github-actions).

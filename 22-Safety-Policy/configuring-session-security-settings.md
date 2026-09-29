@@ -2,13 +2,13 @@
 title: "Configuring session security settings | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13163631-configuring-session-security-settings"
 category: "22-Safety-Policy"
-fetched_at: "2026-03-22T09:01:44Z"
-tags: ["security"]
+fetched_at: "2026-09-29T06:30:35Z"
+tags: ["safety", "security"]
 ---
 
-4.  Configuring session security settings
-
 # Configuring session security settings
+
+May 7, 2026
 
 
 This feature is available to Admins and Owners of Enterprise plans and Console Admins.
@@ -21,11 +21,11 @@ Session duration controls allow Enterprise and Console Admins to set a maximum s
 
 1.  Log in to your Enterprise organization as an Admin or above.
 
-2.  Navigate to **[Organization settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
+2.  Navigate to **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**.
 
 3.  Locate the **Session security** section.
 
-4.  Click “Enable” next to **Shortened session length**, then select a duration from the dropdown: 7 days, 14 days, or 28 days.
+4.  Click “Enable” next to **Shortened session length**, then select a duration from the dropdown: 1 day, 7 days, 14 days, or 28 days.
 
 5.  Confirm your selection by clicking “Enable.”
 
@@ -34,7 +34,7 @@ Session duration controls allow Enterprise and Console Admins to set a maximum s
 
 1.  Log in to your Console account as an Admin.
 
-2.  Navigate to **[Settings \> Identity and access](http://platform.claude.com/settings/identity)**.
+2.  Navigate to **[Settings \> Organization and access](../04-API-Reference/Other/usage-limits.md)**.
 
 3.  Locate the **Session security** section.
 

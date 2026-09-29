@@ -1,16 +1,8 @@
 # IDE Integrations
 
-*11 documents*
+4 pages. The full text of every page is in [llms.txt](llms.txt).
 
-
-- [Use Claude Code with Chrome (beta)](chrome.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-- [Claude in Chrome | Claude by Anthropic](claude-in-chrome-claude-by-anthropic-c075b75523.md) - Claude in Chrome reads the page you’re signed in to, then clicks, types, and fills forms while you decide what happens next.
-- [Claude Code on desktop](desktop.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-- [Claude Code with GitHub Enterprise Server](github-enterprise-server.md) - Connect Claude Code to your self-hosted GitHub Enterprise Server instance for web sessions, code review, and plugin marketplaces.
-- [JetBrains IDEs](jetbrains-4cf6bd8c22.md) - ## Documentation Index
-- [JetBrains IDEs - Claude Code Docs](jetbrains-ides-claude-code-docs-5ca7e27787.md) - - [Supported IDEs](#supported-ides)
-- [JetBrains IDEs](jetbrains.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-- [Resources Tutorials Simplify Your Browsing Experience With Claude For Chrome](resources-tutorials-simplify-your-browsing-experience-with-claude-for-chrome.md) - <!-- Source: https://claude.com/resources/tutorials/simplify-your-browsing-experience-with-claude-for-chrome -->
-- [Use Claude Code in VS Code - Claude Code Docs](use-claude-code-in-vs-code-claude-code-docs-29143b6fee.md) - Install and configure the Claude Code extension for VS Code. Get AI coding assistance with inline diffs, @-mentions, plan review, and keyboard shortcu
-- [Use Claude Code with Chrome (beta) - Claude Code Docs](use-claude-code-with-chrome-beta-claude-code-docs-4f2f5a5a96.md) - Connect Claude Code to your Chrome browser to test web apps, debug with console logs, automate form filling, and extract data from web pages.
-- [Use Claude Code in VS Code](vs-code.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Claude in Chrome | Claude by Anthropic](claude-for-chrome.md) — Claude in Chrome reads the page you’re signed in to, then clicks, types, and fills forms while you decide what happens next.
+- [JetBrains IDEs - Claude Code Docs](jetbrains.md) — Platforms and integrations
+- [Use Claude Code in VS Code - Claude Code Docs](vs-code.md) — Platforms and integrations
+- [Use Claude Code with Chrome - Claude Code Docs](chrome.md) — Platforms and integrations

@@ -2,24 +2,25 @@
 title: "What is the Team plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9266767-what-is-the-team-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-03-22T09:01:48Z"
+fetched_at: "2026-09-29T06:32:11Z"
 tags: ["billing"]
 ---
 
 # What is the Team plan?
 
 
-The Team plan is a paid plan for our Claude chat experience built for ambitious teams. It is currently available in certain **[supported locations](https://support.claude.com/en/articles/8461763-where-can-i-access-claude)**.
+
+The Team plan is a paid plan for our Claude chat experience built for ambitious teams. It is currently available in certain **[supported locations](../21-Account-Support/where-can-i-access-claude-ai.md)**.
 
 ## What’s included in the Team plan?
 
 Users with Standard seats on the Team plan can access the following:
 
-- **Increased usage:** More usage than the Pro plan per five-hour session, so every team member can get what they need from Claude.
+- **Increased usage:** A larger per-session usage allowance than the Pro plan, so every team member can get what they need from Claude.
 
-- **Option to purchase extra usage:** Prepay for extra usage, allowing team members to continue working after reaching limits.
+- **Option to purchase usage credits:** Prepay for usage credits, allowing team members to continue working after reaching limits.
 
-  - Read more here: **[Extra usage for Team and seat-based Enterprise plans](extra-usage-for-team-and-seat-based-enterprise-plans.md)**
+  - Read more here: **[Manage usage credits for Team and seat-based Enterprise plans](manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**
 
 - **Admin tools and billing management:** Manage access and billing in a centralized place.
 
@@ -41,7 +42,7 @@ Users with Standard seats on the Team plan can access the following:
 
   - Search across Slack, Microsoft 365, and custom connectors
 
-  - For more details, see **[Using Enterprise Search](../13-Enterprise-Admin/using-enterprise-search.md)**
+  - For more details, see **[Use enterprise search](../13-Enterprise-Admin/using-enterprise-search.md)**
 
 - **Connectors for your workplace tools:** Connect Claude to Google Drive, Gmail, Google Calendar, GitHub, Microsoft 365, and Slack to search and retrieve context from your existing documents, emails, calendars, and team communications—without manual uploads.
 
@@ -50,6 +51,8 @@ Users with Standard seats on the Team plan can access the following:
   - Access to all available models.
 
   - Access to Claude Code to delegate coding tasks from concept to completion directly from your terminal.
+
+  - Access to **[Cowork](../15-Claude-AI-Features/getting-started-with-local-agent-mode.md)**.
 
   - Access to projects, knowledge bases, and collaboration features.
 
@@ -65,13 +68,13 @@ In addition to all features of Standard seats listed above, Premium seats offer 
 
 Organizations can mix and match seat types, assigning Premium seats to power users who need more usage while keeping other team members on Standard seats.
 
-Refer to this article for more information about Premium seats: **[Purchasing and managing seats on Team plans](purchasing-and-managing-seats-on-team-plans.md)**.
+Refer to this article for more information about Premium seats: **[Purchase and manage seats on Team plans](purchasing-and-managing-seats-on-team-plans.md)**.
 
 ------------------------------------------------------------------------
 
 ## How much does the Team plan cost?
 
-Team plans require a minimum of five members. Pricing varies by seat type and billing interval:
+Team plans require a minimum of two members. Pricing varies by seat type and billing interval:
 
 **Standard seats**
 
@@ -89,24 +92,29 @@ Prices shown are for US customers and exclude applicable taxes. Pricing, currenc
 
 For more details on billing, see **[How is my Team plan bill calculated?](how-is-my-team-plan-bill-calculated.md)**
 
-Team plans support up to 150 seats. If your organization needs more than 150 seats, you can upgrade to the **[Enterprise plan](what-is-the-enterprise-plan.md)**. The flow for Team plans to upgrade to self-serve Enterprise isn't supported at this time, so if you are interested in upgrading, reach out to **[our Sales team](https://claude.com/contact-sales)**.
+Team plans support up to 150 seats. If your organization is on the Team plan and needs more than 150 seats, you can upgrade to the **[Enterprise plan](what-is-the-enterprise-plan.md)**. For more information, see **[Migrate your organization from Team to Enterprise](../13-Enterprise-Admin/migrate-your-organization-from-team-to-enterprise.md)**.
 
+Price and plans are subject to change at Anthropic's discretion.
 
 ------------------------------------------------------------------------
 
 ## Do Team plans have any usage limits?
 
-Yes. Usage limits differ between Standard and Premium seats.
+Yes. For both Standard and Premium seats, weekly limits reset at a fixed time each week that is assigned to your account. Your reset day and time stay the same regardless of when you start using Claude or when your subscription begins, and you receive your full weekly allowance each cycle. You can see your next reset time in **[Settings \> Usage](https://claude.ai/new#settings/usage)**.  
+​  
+Usage limits differ between Standard and Premium seats in the following ways:
 
-**Standard seats:** Team plan Standard seats offer 1.25x more usage per session than the Pro plan and have a weekly usage limit that applies across all models and resets seven days after your session starts.
+**Standard seats:** Team plan Standard seats include 1.25x the Pro plan's per-session usage allowance and have a weekly usage limit that applies across all models.
 
-**Premium seats:** Team plan Premium seats offer 6.25x more usage per session than the Pro plan. Users assigned to these seats also have two weekly usage limits: one that applies across all models and another for Sonnet models only. Both limits reset seven days after your session starts.
+**Premium seats:** Team plan Premium seats include 6.25x the Pro plan's per-session usage allowance and have a weekly usage limit that applies across all models.
+
+**Note:** If you have a limit reset, you can use it to reset your five-hour session limit or weekly usage limits back to full. Learn more **[about limit resets](../15-Claude-AI-Features/what-is-a-limit-reset.md)**.
 
 ### Do usage limits apply across the team or to individual members?
 
 Usage limits on Team plans are per-member, rather than applied to the team as a whole.
 
-\
+  
 This means:
 
 - Each team member has their own set of usage limits.
@@ -117,4 +125,4 @@ This means:
 
 ### How do I increase my Team plan usage limits?
 
-Your Team plan organization can enable extra usage to allow team members on all seat types to continue working with Claude and Claude Code after reaching their included usage limits. See this article for more information: **[Extra usage for Team and seat-based Enterprise plans](extra-usage-for-team-and-seat-based-enterprise-plans.md).**
+Your Team plan organization can enable usage credits to allow team members on all seat types to continue working with Claude, Cowork, and Claude Code after reaching their included usage limits. For more information, see **[Manage usage credits for Team and seat-based Enterprise plans](manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**.

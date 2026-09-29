@@ -1,16 +1,19 @@
 ---
-title: "Sharing and Unsharing Chats | Claude Help Center"
+title: "Share and unshare chats | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10593882-sharing-and-unsharing-chats"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-22T09:01:37Z"
+fetched_at: "2026-09-29T06:31:38Z"
+tags: ["claude-ai"]
 ---
 
-# Sharing and Unsharing Chats
+# Share and unshare chats
+
+June 15, 2026
 
 
 Learn how to create shareable links to your chats with Claude. While chats are always private by default, you can easily create snapshots of your conversations to share via direct link. This guide walks you through the process of sharing and unsharing chats.
 
-## Sharing Chats
+## Share chats
 
 To share a chat:
 
@@ -20,9 +23,9 @@ To share a chat:
 
 Once a chat has been shared, anyone with the link can view the chat snapshot. The chat snapshot includes all messages that were sent prior to sharing the chat, including any artifacts. All messages sent after sharing a chat will remain private by default. However, if you unshare the chat and share it again, the snapshot will be updated to include any new messages.
 
-**Note:** Users on Team and Enterprise plans can only share chats with other members of the same organization, not publicly. Read more here: [Project visibility and sharing](https://support.claude.com/en/articles/9519189-project-visibility-and-sharing).
+**Note:** Users on Team and Enterprise plans can only share chats with other members of the same organization, not publicly. Read more here: **[Project visibility and sharing](../22-Safety-Policy/manage-project-visibility-and-sharing.md)**.
 
-### Sharing Chats with Files or MCP Integrations
+### Share chats with files or MCP integrations
 
 When sharing chats that include uploaded files or MCP (Model Context Protocol) integrations, it's important to understand what information is included in the shared snapshot.
 
@@ -32,7 +35,7 @@ When sharing chats that include uploaded files or MCP (Model Context Protocol) i
 
 This ensures that sensitive information from your files and connected tools is protected, even when you share a chat snapshot.
 
-## Unsharing Chats
+## Unshare chats
 
 To unshare a chat:
 
@@ -42,9 +45,9 @@ To unshare a chat:
 
 3.  Change the chat from "Public" to "Private" to disable the direct link.
 
-## Managing Shared Chats
+## Manage shared chats
 
-Users on free, Pro, or Max plans can review a log of shared chats by navigating to [Settings \> Privacy](https://claude.ai/settings/data-privacy-controls). Find the **Privacy settings** section and click “Manage” next to **Shared chats:**
+Users on free, Pro, or Max plans can review a log of shared chats by navigating to **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**. Find the **Privacy settings** section and click “Manage” next to **Shared chats:**
 
 
 This will open a **Shared chats** modal listing the title, date shared, and link to each chat, allowing you to easily review and access all your previously-shared content. From here, you also have the option to click “Unshare” next to each listed chat to revoke access to the last snapshot you shared:

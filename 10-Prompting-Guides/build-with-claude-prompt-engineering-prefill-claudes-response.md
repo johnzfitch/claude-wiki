@@ -17,7 +17,7 @@ This guide assumes that you have:
 2.  Some ways to empirically test against those criteria
 3.  A first draft prompt you want to improve
 
-If not, we highly suggest you spend time establishing that first. Check out [Define success criteria and build evaluations](/docs/en/test-and-evaluate/develop-tests) for tips and guidance.
+If not, we highly suggest you spend time establishing that first. Check out [Define success criteria and build evaluations](../04-API-Reference/Test-Evaluate/test-and-evaluate-develop-tests.md) for tips and guidance.
 
 
 Prompt generator
@@ -41,9 +41,9 @@ This guide focuses on success criteria that are controllable through prompt engi
 
 How to prompt engineer
 
-All prompting techniques — from clarity and examples to XML structuring, role prompting, thinking, and prompt chaining — are covered in [Prompting best practices](/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices). That's the living reference; start there.
+All prompting techniques — from clarity and examples to XML structuring, role prompting, thinking, and prompt chaining — are covered in [Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md). That's the living reference; start there.
 
-The [Claude Console](/dashboard) also offers [prompting tools](/docs/en/build-with-claude/prompt-engineering/prompting-tools)—prompt generator, templates and variables, and prompt improver—to help you build and refine prompts quickly.
+The [Claude Console](https://platform.claude.com/dashboard) also offers [prompting tools](build-with-claude-prompt-engineering-prompting-tools.md)—prompt generator, templates and variables, and prompt improver—to help you build and refine prompts quickly.
 
 ------------------------------------------------------------------------
 

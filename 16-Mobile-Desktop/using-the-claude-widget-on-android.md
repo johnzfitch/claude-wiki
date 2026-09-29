@@ -1,19 +1,21 @@
 ---
-title: "Using the Claude Widget on Android | Claude Help Center"
+title: "Use the Claude widget on Android | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10534883-using-the-claude-widget-on-android"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-22T09:01:37Z"
+fetched_at: "2026-09-29T06:31:12Z"
 tags: ["desktop"]
 ---
 
-# Using the Claude Widget on Android
+# Use the Claude widget on Android
+
+July 9, 2026
 
 
 The Claude Android widget is available on Android 8.0 Oreo and above.
 
 The Claude Android widget provides quick and convenient access to core features directly from your home screen, allowing you to start new chats, capture images, and use voice dictation with a single tap.
 
-## Adding the Claude Widget
+## Add the Claude widget
 
 The Claude widget puts Claude's key features right on your home screen. To add it:
 
@@ -29,7 +31,7 @@ The Claude widget puts Claude's key features right on your home screen. To add i
 
 6.  Optional: Drag the edges of the widget to resize it
 
-## Widget Features
+## Widget features
 
 The widget offers three quick-access buttons:
 
@@ -39,17 +41,17 @@ The widget offers three quick-access buttons:
 
 - A microphone button for voice dictation
 
-## Using the Widget
+## Use the widget
 
-### Starting a Chat
+### Start a chat
 
 Tap the main chat button (with the spark icon) to instantly start a new conversation with Claude.
 
-### Taking Photos
+### Take photos
 
 Tap the camera button to start a new chat and immediately open your camera. You can capture an image and share it with Claude for analysis.
 
-### Voice Dictation
+### Voice dictation
 
 Tap the microphone button to start a new chat and begin voice dictation. The first time you use this feature, you'll see a brief explanation about how automatic recording works. You may also need to grant voice permissions if you haven't already done so.
 

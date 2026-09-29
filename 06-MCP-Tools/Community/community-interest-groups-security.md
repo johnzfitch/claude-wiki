@@ -1,0 +1,148 @@
+---
+title: "Security Charter - Model Context Protocol"
+source_url: "https://modelcontextprotocol.io/community/interest-groups/security"
+category: "06-MCP-Tools/Community"
+fetched_at: "2026-08-26T06:27:45Z"
+tags: ["mcp", "mcp-community", "security"]
+---
+
+## On this page
+
+- [Group Type](#group-type)
+- [Mission Statement](#mission-statement)
+- [Scope](#scope)
+  - [In Scope](#in-scope)
+  - [Out of Scope](#out-of-scope)
+  - [Related Groups](#related-groups)
+- [Leadership](#leadership)
+- [Membership](#membership)
+- [Operations](#operations)
+- [Discussion Topics](#discussion-topics)
+- [Changelog](#changelog)
+
+Interest Group Charters
+
+# Security Charter
+
+Copy pageCopy page
+
+Charter for the MCP Security Interest Group.
+
+Copy pageCopy page
+
+
+[​](#group-type)
+
+Group Type
+
+**Interest Group**
+
+
+[​](#mission-statement)
+
+Mission Statement
+
+The Security Interest Group catalogs MCP-specific threats, reviews security-relevant proposals, and scopes validated problems into focused Working Groups or [SEPs](community-sep-guidelines.md).
+
+
+[​](#scope)
+
+Scope
+
+
+[​](#in-scope)
+
+In Scope
+
+- **Threat modeling**: developing and maintaining a shared, layered view of MCP attack surfaces spanning admission and identity, caller governance, runtime behavior, interception and enforcement, and auditability, to give individual proposals a common frame of reference
+- **Server identity, attestation, and admission**: requirements for establishing that a server is what it claims to be before a client dispatches to it, including signed assertions, trust roots, and the boundary between protocol-level and registry-level verification
+- **Supply chain and provenance**: integrity of locally executed server binaries and packages (typosquatting, unpinned dependencies, unsigned artifacts) and how clients can verify what they spawn
+- **Runtime drift and post-admission change**: treatment of tool, schema, or behavior changes after a server has been approved, and whether such changes are versioning, re-approval, or security events
+- **Auditability and observability**: requirements for tamper-evident records of what a tool call did and under what authority, for compliance and incident review
+- **Transport-adjacent security**: secrets handling, process isolation, and unauthenticated surface area for stdio and other non-HTTP transports where the HTTP authorization specification does not apply
+- **Security Best Practices documentation**: authoring and reviewing entries in the [Security Best Practices](../Tutorials/tutorials-security-security-best-practices.md) guidance, including liaising with external bodies such as OWASP GenAI and CoSAI on MCP-specific content
+- **Vulnerability disclosure routing**: providing a known point of contact for reporters who have filed a private security advisory against an MCP repository and need help reaching the right maintainer
+
+
+[​](#out-of-scope)
+
+Out of Scope
+
+- **Authorization protocol mechanics**: OAuth flows, scopes, client registration, and token handling belong to the [Authorization IG](community-interest-groups-auth.md) and its spawned Working Groups
+- **Transport wire security**: TLS, mTLS, and certificate handling belong to the Transports WG
+- **Tool annotation design**: the annotation model itself belongs to the [Tool Annotations IG](community-interest-groups-tool-annotations.md). This group provides security requirements as input
+- **Registry service operation**: running and securing the hosted Registry service belongs to the [Registry WG](community-working-groups-registry.md). This group provides threat input on provenance and publishing
+- **Product-specific hardening guides**: step-by-step configuration for individual host applications or cloud platforms is documentation for those products rather than protocol work
+- **Competitively sensitive or non-public business information**, per the [MCP Antitrust Policy](community-antitrust.md)
+
+
+[​](#related-groups)
+
+Related Groups
+
+- **[Authorization IG](community-interest-groups-auth.md)**: token confusion, audience mismatch, and SSRF in metadata discovery sit at the boundary between the two groups
+- **[Tool Annotations IG](community-interest-groups-tool-annotations.md)**: trust and sensitivity annotations ([SEP-1913](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1913)) span both groups
+- **[Interceptors WG](community-working-groups-interceptors.md)**: interceptors are the primary enforcement point for runtime security decisions surfaced here
+- **[Server Card WG](community-working-groups-server-card.md) / [Registry WG](community-working-groups-registry.md)**: server identity, provenance, and discovery metadata intersect with admission and supply-chain concerns
+- **[Transports WG](community-working-groups-transports.md)**: stdio process isolation and unauthenticated method surface
+- **SDK Maintainers**: coordinated handling of SDK security advisories and cross-SDK security defaults
+
+
+[​](#leadership)
+
+Leadership
+
+| Role        | Name           | Organization | GitHub                                     | Term    |
+|-------------|----------------|--------------|--------------------------------------------|---------|
+| Facilitator | Den Delimarsky | Anthropic    | [@localden](https://github.com/localden)   | Initial |
+| Facilitator | Paul Carleton  | Anthropic    | [@pcarleton](https://github.com/pcarleton) | Initial |
+
+
+[​](#membership)
+
+Membership
+
+| Name                     | Organization | GitHub                                               | Discord          | Level       |
+|--------------------------|--------------|------------------------------------------------------|------------------|-------------|
+| Sam Morrow               | GitHub       | [@SamMorrowDrums](https://github.com/SamMorrowDrums) | `sammorrowdrums` | Participant |
+| Ola Hungerford           | Nordstrom    | [@olaservo](https://github.com/olaservo)             | `olaservo`       | Participant |
+| Peder Holdgaard Pedersen | Saxo Bank    | [@PederHP](https://github.com/PederHP)               | `pederhp`        | Participant |
+| Stefano Ortolani         | Broadcom     | [@ostefano](https://github.com/ostefano)             | `ostefano.`      | Participant |
+
+Open to anyone. Join the `#security-ig` channel on the [MCP Contributors Discord](community-communication.md#discord). Calls are open and active participation is highly encouraged. The group is looking for contributors who will engage with proposals and help drive work forward rather than observe.
+
+
+[​](#operations)
+
+Operations
+
+| Meeting      | Frequency     | Duration | Purpose                                                                 |
+|--------------|---------------|----------|-------------------------------------------------------------------------|
+| Office Hours | Every 2 weeks | 45 min   | Threat review, proposal triage, deployment reports, WG-proposal scoping |
+
+An agenda is shared in `#security-ig` ahead of each call. Discord: [\#security-ig](https://discord.com/channels/1358869848138059966/1379811011669921883) Meeting notes are posted to the [Meeting Notes - Security IG](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/categories/meeting-notes-security-ig) category in GitHub Discussions.
+
+
+[​](#discussion-topics)
+
+Discussion Topics
+
+The following items form the IG’s current discussion agenda. This list is not exhaustive and will evolve as the group identifies new areas of interest.
+
+| Item                                                                               | Name                                                                                                                        | Status      | Champion                                                 |
+|------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|-------------|----------------------------------------------------------|
+| [SEP-2809](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2809) | Attested Tool-Server Admission (ATSA)                                                                                       | Draft       | [@metereconsulting](https://github.com/metereconsulting) |
+| —                                                                                  | SDK vulnerability disclosure                                                                                                | In progress | Facilitators                                             |
+| —                                                                                  | Runtime drift: `list_changed` semantics after approval                                                                      | Open        | —                                                        |
+| —                                                                                  | Supply-chain integrity: protocol, registry, or companion standard                                                           | Open        | —                                                        |
+| —                                                                                  | Tool identity across servers                                                                                                | Open        | —                                                        |
+| —                                                                                  | Capability declarations: hints or contracts (joint with [Tool Annotations IG](community-interest-groups-tool-annotations.md)) | Open        | —                                                        |
+
+
+[​](#changelog)
+
+Changelog
+
+| Date       | Change          |
+|------------|-----------------|
+| 2026-06-13 | Initial charter |

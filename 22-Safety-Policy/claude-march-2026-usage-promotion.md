@@ -3,6 +3,7 @@ title: "Claude March 2026 usage promotion | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
 category: "22-Safety-Policy"
 fetched_at: "2026-03-22T09:01:46Z"
+tags: ["safety"]
 ---
 
 # Claude March 2026 usage promotion

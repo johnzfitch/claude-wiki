@@ -3,6 +3,7 @@ title: "Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11145627-what-is-extended-thinking-and-how-do-i-use-it"
 category: "15-Claude-AI-Features"
 fetched_at: "2026-03-22T09:01:38Z"
+tags: ["claude-ai"]
 ---
 
 # Search for answers or browse by topic

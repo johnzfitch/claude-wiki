@@ -2,18 +2,18 @@
 title: "Find and join a Team or Enterprise organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13566435-find-and-join-a-team-or-enterprise-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-22T09:01:45Z"
+fetched_at: "2026-09-29T06:32:04Z"
 tags: ["enterprise"]
 ---
 
-4.  Find and join a Team or Enterprise organization
-
 # Find and join a Team or Enterprise organization
+
+July 21, 2026
 
 
 Organization discovery allows you to find and join your company's existing Team or Enterprise plan organization when you start the sign-up flow with a work email address. Instead of creating a separate personal account, you can request to join—or be added automatically—depending on your organization's configuration.
 
-**Note:** Organization discovery is only available for organizations that don't have **[single sign-on (SSO) enabled](../21-Account-Support/setting-up-single-sign-on-sso.md)**. If your organization uses SSO, your existing provisioning settings remain in effect.
+Organization discovery must be enabled by an admin before the capability is available. It’s unavailable for organizations that have **[single sign-on (SSO) enabled](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md)**. If your organization uses SSO, your existing provisioning settings remain in effect.
 
 ------------------------------------------------------------------------
 
@@ -21,13 +21,13 @@ Organization discovery allows you to find and join your company's existing Team 
 
 ### Enable discoverability
 
-Admins and above can manage organization discovery from **[Organization settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
+Admins and above can manage organization discovery from **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**.
 
 - **New organizations:**
 
   - **Team plans:** Discoverability is on by default. Admins see the option during plan onboarding with it pre-selected.
 
-  - **Enterprise plans:** Discoverability is off by default. Admins will see the option disabled on the Identity and access page.
+  - **Enterprise plans:** Discoverability is off by default. Admins will see the option disabled on the Organization and access page.
 
 - **Existing organizations:** Discoverability is off by default. Admins can turn it on from settings at any time.
 
@@ -35,25 +35,25 @@ To enable discoverability:
 
 1.  Log in as an Admin, Owner, Primary Owner.
 
-2.  Navigate to **[Organization settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
+2.  Navigate to **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**.
 
 3.  Your organization’s domains are listed at the top of the page.
 
 4.  Find the domain you want users to search for and click the toggle under **Discoverable**.
 
-5.  Find **New member approval** under **Global access settings** and choose either “Approve automatically” or “Require admin approval.”
+5.  Find **New member approval** under **User provisioning** and choose either “Approve automatically” or “Require admin approval.”
 
 ### Configure allowed domains
 
-Admins can specify which email domains are allowed to discover and join the organization by clicking “+ Add domain” under **Domains** on the Identity and access page. The organization owner’s domain will appear on the **Domains** list automatically, but admins can configure additional allowed domains by adding them here, verifying them, and toggling **Discoverable** on. Personal email domains (like Gmail) and .edu domains can't be added to the allowed list.
+Admins can specify which email domains are allowed to discover and join the organization by clicking “+ Add domain” under **Domains** on the organization and access page. The organization owner’s domain will appear on the **Domains** list automatically, but admins can configure additional allowed domains by adding them here, verifying them, and toggling **Discoverable** on. Personal email domains (like Gmail) and .edu domains can't be added to the allowed list.
 
 ### Choose an approval mode
 
 Admins select how join requests are handled:
 
-**Instant approval:** Users are added to the organization’s lowest available seat tier automatically when they ask to join. Billing begins as soon as a user joins—if the organization has no available seats, billing auto-expands and a new seat is purchased immediately.
+**Approve automatically:** Users are added to the organization’s lowest available seat tier automatically when they ask to join. Billing begins as soon as a user joins—if the organization has no available seats, billing auto-expands and a new seat is purchased immediately.
 
-**Request + approve:** The admin reviews and approves each join request individually. Users aren't added to the organization until the admin approves. Billing begins when the request is approved—if no seats are available at that point, a new seat is purchased.
+**Require admin approval:** The admin reviews and approves each join request individually. Users aren't added to the organization until the admin approves. Billing begins when the request is approved—if no seats are available at that point, a new seat is purchased.
 
 This approval mode also applies to invitations sent by existing members of your organization. For additional details, see **[Manage members on Team and Enterprise plans](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**.
 
@@ -67,7 +67,21 @@ When someone signs up for Claude with a work email address that matches a discov
 
 - If the organization uses **request + approve**, a request is sent to the admin. The requester can choose to continue with a personal account (as long as "Restrict organization creation" is disabled) until the request is approved or denied.
 
-If multiple organizations share the same email domain and are all discoverable, users will see all of them and can choose which one to join.
+If multiple organizations share the same email domain and are all discoverable, users will see all of them and can choose which one to join. You can be a member of multiple Team or Enterprise organizations at the same time.
+
+------------------------------------------------------------------------
+
+## Join when you already have a personal Claude account
+
+If you have a Free, Pro, or Max account on the same email address as the organization you're joining, you can choose what to do with it:
+
+- **Keep both accounts.** Your personal account stays active, and you switch between it and your organization account from your account menu.
+
+- **Use your organization account only.** Your personal account closes. You choose whether to bring your data with you or delete it.
+
+Some things don't move either way, including custom skills and your connected apps. Before you choose, review **[Move your personal Claude account to a Team or Enterprise organization](../21-Account-Support/can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md)**.
+
+On Team plans, you're prompted when you accept the invite. On Team and Enterprise plans, you can start the migration from **[Settings \> Account](https://claude.ai/settings/account)** at any time after joining. Start from your organization account rather than your personal one—if you're signed in to the personal account, switch first by clicking your initials or name in the lower left corner.
 
 ------------------------------------------------------------------------
 
@@ -75,7 +89,7 @@ If multiple organizations share the same email domain and are all discoverable, 
 
 In addition to organization discovery, there are a few other ways to join a Team or Enterprise organization:
 
-- **Invite link:** Your admin may share an invite link that lets you join directly. See **[Join an organization via invite link](https://support.claude.com/en/articles/13776697-join-an-organization-via-invite-link#h_af9f6b7825)**.
+- **Invite link:** Your admin may share an invite link that lets you join directly. See **[Join an organization via invite link](join-an-organization-via-invite-link.md#h_af9f6b7825)**.
 
   - **Note:** If the invite link has been disabled or regenerated by your admin, it will no longer work. Ask your admin to share a new link.
 

@@ -1,990 +1,109 @@
 ---
-title: "Using the GitHub integration | Claude"
-source_url: "https://support.claude.com/en/articles/9945670-using-the-github-integration"
+title: "Use the GitHub integration | Claude Help Center"
+source_url: "https://support.claude.com/en/articles/10167454-using-the-github-integration"
 category: "14-Connectors"
-fetched_at: "2026-03-14T10:17:10Z"
+fetched_at: "2026-09-29T06:31:08Z"
 tags: ["connectors", "git", "github"]
 ---
 
-- [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-    Opus
-  - [](../15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-    Sonnet
-  - [](../15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-    Haiku
-
-- Platform
-
-  - [](/platform/api)
-    Overview
-  - [](https://platform.claude.com/docs)
-    Developer docs
-  - [](http://claude.com/pricing#api)
-    Pricing
+# Use the GitHub integration
 
-  - [](../04-API-Reference/Other/platform-claude-com.md)
-    Console login
 
-- Solutions
 
-  Use cases
+For more information on enabling GitHub within your account, see **[Use connectors to extend Claude's capabilities](use-connectors-to-extend-claude-s-capabilities.md)**.
 
-  - [](/solutions/agents)
-    AI agents
-  - [](/solutions/claude-code-security)
-    Claude Code Security
-  - [](/solutions/coding)
-    Coding
+Connect your GitHub repositories directly to Claude to provide comprehensive context for your software development tasks. You can easily add repositories by selecting them from a list, helping Claude better understand and assist with your codebase.
 
-  Industries
+## How to add GitHub repositories
 
-  - [](/solutions/customer-support)
-    Customer support
-  - [](/solutions/education)
-    Education
-  - [](/solutions/financial-services)
-    Financial services
-  - [](/solutions/government)
-    Government
-  - [](/solutions/healthcare)
-    Healthcare
-  - [](/solutions/life-sciences)
-    Life sciences
-  - [](/solutions/nonprofits)
-    Nonprofits
+**Note:** If you're currently unauthenticated with GitHub, you'll be redirected to GitHub to authenticate before you can use this integration.
 
-- Pricing
+### Chats
 
-  - [](/pricing)
-    Overview
-  - [](/pricing#api)
-    API
+1.  Click the "+" button on the lower left corner of the chat interface.
 
-  Pricing
+2.  Select "Add from GitHub" from the drop-down.
 
-  - [](/pricing/max)
-    Max plan
-  - [](/pricing/team)
-    Team plan
-  - [](/pricing/enterprise)
-    Enterprise plan
+3.  Use the file browser to select specific files and folders.
 
-- Resources
+4.  When you send your message, Claude will access and process the content to inform its response.
 
-  Insights
+### Projects
 
-  - [](/blog)
-    Blog
-  - [](/customers)
-    Customer stories
-  - [](https://www.anthropic.com/news)
-    Anthropic news
+1.  Click the "+" button in the upper right corner of your project knowledge section.
 
-  Learn
+2.  Select "GitHub" from the drop-down.
 
-  - [](https://www.anthropic.com/learn)
-    Anthropic Academy
-  - [](/resources/courses)
-    Courses
-  - [](/resources/tutorials)
-    Tutorials
-  - [](/resources/use-cases)
-    Use cases
+3.  Search through your accessible repositories, or paste a repository URL.
 
-  Tools
+4.  Use the file browser to select specific files and folders.
 
-  - [](/connectors)
-    Connectors
-  - [](/plugins)
-    Plugins
+5.  Your selected content will be added to the project knowledge for Claude to access and process.
 
-  Connect
+6.  You can use the "Sync" icon to ensure you're working with the most up-to-date version of your codebase.
 
-  - [](https://www.anthropic.com/events)
-    Events
-  - [](/community)
-    Community
+7.  You can use the "Configure files" icon to modify which files and folders Claude analyzes.
 
-- [](https://claude.ai/login)
-  Login
+## Connect to private repositories
 
-&nbsp;
+- **If Claude cannot access a repository after you enter a valid URL, it most likely means you're attempting to connect Claude to a private repository**: Follow the link to our GitHub App, where you can grant access to repos if you're a GitHub administrator, or send a request to your GitHub organization's administrators.
 
-- 
+- **Grant access yourself if you can**: You can choose between letting Claude access all repos or specific ones.
 
-  Contact sales
+- **Request access if you don't have the necessary permissions**: The administrators of your GitHub organization will receive an email notification about your request. Once they approve the request, you'll be able to sync and access the repository in Claude.
 
-  [Contact sales](/contact-sales)
-  Contact sales
+------------------------------------------------------------------------
 
-- 
+## Best practices
 
-  Try Claude
+1.  **Start small**: Begin by selecting a small subset of your codebase to analyze. This will help you get familiar with how Claude interprets and discusses your code.
 
-  [Try Claude](https://claude.ai/)
-  Try Claude
+2.  **Iterate and refine**: If Claude's initial response doesn't fully address your question, don't hesitate to ask follow-up questions or request clarification.
 
-- 
+3.  **Combine with human expertise**: Use Claude's insights as a starting point for further investigation and discussion with your team. Please review Claude's work.
 
-  Contact sales
+4.  **Thoughtful file selection**: When using "Configure files," be strategic about your selections. Include key files and directories that are central to your current task or project, but avoid selecting unnecessary files to keep within token limits and maintain focus.
 
-  [Contact sales](/contact-sales)
-  Contact sales
+5.  **Regular updates**: Remember to refresh your project's GitHub sync periodically to ensure Claude is working with the most up-to-date version of your codebase and especially before starting a new analysis or when you know there have been significant changes to your repo.
 
-- 
+------------------------------------------------------------------------
 
-  Try Claude
+## Troubleshooting
 
-  [Try Claude](https://claude.ai/)
-  Try Claude
+### Repositories from an organization don't appear after connecting
 
-[](#)
+If your GitHub connection shows as connected but private repositories from a specific organization don't appear, that organization may require single sign-on (SSO). When SSO is required, each user must separately authorize the Claude app for that organization. Until you do, GitHub filters that organization's private repositories from your view, even though your connection is otherwise working.
 
-- 
+When Claude detects this state, the repository picker shows a banner prompting you to authorize SSO. To authorize the Claude app for your organization:
 
-  Contact sales
+1.  Go to **[github.com/settings/applications](https://github.com/settings/applications)** and open the **Claude** entry.
 
-  [Contact sales](/contact-sales)
-  Contact sales
+2.  Under **Organization access**, click "Grant" next to the relevant GitHub organization.
 
-- 
+3.  If the button reads "Request" instead of "Grant," you don't have permission to authorize the app yourself. A GitHub organization admin must approve your request from the organization's OAuth application policy settings.
 
-  Try Claude
+**Important:** Disconnecting and reconnecting GitHub in your Claude settings won't fix this. A fresh connection doesn't automatically authorize organizations that require SSO, so you'll need to complete the authorization steps above.
 
-  [Try Claude](https://claude.ai/)
-  Try Claude
+If your organization uses GitHub Enterprise Cloud with Enterprise Managed Users (EMU), connect GitHub while you're signed in with your managed account and have an active SSO session. An organization owner can check the Claude app under Settings \> Third-party Access \> GitHub Apps in your GitHub organization, and confirm that it has access to the repositories you need and has no pending permission requests.
 
-- 
+------------------------------------------------------------------------
 
-  Contact sales
+## Frequently asked questions
 
-  [Contact sales](/contact-sales)
-  Contact sales
+### What information is retrieved from GitHub?
 
-- 
+Only files (names and contents) in a repo on a specific branch are synced. We do not retrieve commit history, PRs, or other metadata.
 
-  Try Claude
+### What happens if my repository is updated after adding it to a project?
 
-  [Try Claude](https://claude.ai/)
-  Try Claude
+You can click "Sync now" to fetch the latest changes from your repository. This will update all previously selected files and folders.
 
-- Meet Claude
+### Can I add multiple repositories to a single project or chat?
 
-  Products
+Yes, you can add multiple repositories to provide Claude with comprehensive context for your development tasks. The repositories must fit within Claude's context window.
 
-  - [](/product/overview)
-    Claude
-  - [](/product/claude-code)
-    Claude Code
-  - [](/product/cowork)
-    Claude Cowork
+### What happens if I lose access to a repository?
 
-  Features
+If you lose access to a repository, you won't be able to view its contents in projects where it was previously added. The repository preview will be removed, though the conversation history will be maintained.
 
-  - [](/claude-for-chrome)
-    Claude for Chrome
-  - [](/claude-for-slack)
-    Claude for Slack
-  - [](/claude-for-excel)
-    Claude for Excel
-  - [](/claude-for-powerpoint)
-    Claude for PowerPoint
-  - [](/skills)
-    Skills
-
-  Models
-
-  - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-    Opus
-  - [](../15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-    Sonnet
-  - [](../15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-    Haiku
-
-- Platform
-
-  - [](/platform/api)
-    Overview
-  - [](https://platform.claude.com/docs)
-    Developer docs
-  - [](http://claude.com/pricing#api)
-    Pricing
-
-  - [](../04-API-Reference/Other/platform-claude-com.md)
-    Console login
-
-- Solutions
-
-  Use cases
-
-  - [](/solutions/agents)
-    AI agents
-  - [](/solutions/claude-code-security)
-    Claude Code Security
-  - [](/solutions/coding)
-    Coding
-
-  Industries
-
-  - [](/solutions/customer-support)
-    Customer support
-  - [](/solutions/education)
-    Education
-  - [](/solutions/financial-services)
-    Financial services
-  - [](/solutions/government)
-    Government
-  - [](/solutions/healthcare)
-    Healthcare
-  - [](/solutions/life-sciences)
-    Life sciences
-  - [](/solutions/nonprofits)
-    Nonprofits
-
-- Pricing
-
-  - [](/pricing)
-    Overview
-  - [](/pricing#api)
-    API
-
-  Pricing
-
-  - [](/pricing/max)
-    Max plan
-  - [](/pricing/team)
-    Team plan
-  - [](/pricing/enterprise)
-    Enterprise plan
-
-- Resources
-
-  Insights
-
-  - [](/blog)
-    Blog
-  - [](/customers)
-    Customer stories
-  - [](https://www.anthropic.com/news)
-    Anthropic news
-
-  Learn
-
-  - [](https://www.anthropic.com/learn)
-    Anthropic Academy
-  - [](/resources/courses)
-    Courses
-  - [](/resources/tutorials)
-    Tutorials
-  - [](/resources/use-cases)
-    Use cases
-
-  Tools
-
-  - [](/connectors)
-    Connectors
-  - [](/plugins)
-    Plugins
-
-  Connect
-
-  - [](https://www.anthropic.com/events)
-    Events
-  - [](/community)
-    Community
-
-- [](https://claude.ai/login)
-  Login
-
-- 
-
-  Contact sales
-
-  [Contact sales](/contact-sales)
-  Contact sales
-
-- 
-
-  Try Claude
-
-  [Try Claude](https://claude.ai/)
-  Try Claude
-
-- 
-
-  Contact sales
-
-  [Contact sales](/contact-sales)
-  Contact sales
-
-- 
-
-  Try Claude
-
-  [Try Claude](https://claude.ai/)
-  Try Claude
-
-1.  Tutorials
-
-    [](/resources/tutorials)
-    Tutorials
-
-    /
-
-2.  
-    Using the GitHub integration
-
-Explore here
-
-- [](#)
-
-  Ask questions about this page
-- [](#)
-
-  Copy as markdown
-
-# Using the GitHub integration
-
-Explore how the GitHub integration can enhance your development process with Claude.
-
-- 
-
-  Category
-
-  Engineering
-
-- 
-
-  Product
-
-  Claude.ai
-
-- 
-
-  Reading time
-
-  Watch time
-
-  5
-
-  min
-
-  3
-
-  min
-
-- 
-
-  Share
-
-  [Copy link](#)
-  https://claude.com/resources/tutorials/using-the-github-integration
-
-## Related tutorials
-
-[Troubleshooting skills](/resources/tutorials/troubleshooting-skills)
-
-Troubleshooting skills
-
-Troubleshooting skills
-
-Tutorial
-
-[Tutorial](/resources/tutorials/troubleshooting-skills)
-
-Tutorial
-
-[Sharing skills](/resources/tutorials/sharing-skills)
-
-Sharing skills
-
-Sharing skills
-
-Tutorial
-
-[Tutorial](/resources/tutorials/sharing-skills)
-
-Tutorial
-
-[How skills compare to other Claude Code features](/resources/tutorials/how-skills-compare-to-other-claude-code-features)
-
-How skills compare to other Claude Code features
-
-How skills compare to other Claude Code features
-
-Tutorial
-
-[Tutorial](/resources/tutorials/how-skills-compare-to-other-claude-code-features)
-
-Tutorial
-
-[Configuration and multi-file skills](/resources/tutorials/configuration-and-multi-file-skills)
-
-Configuration and multi-file skills
-
-Configuration and multi-file skills
-
-Tutorial
-
-[Tutorial](/resources/tutorials/configuration-and-multi-file-skills)
-
-Tutorial
-
-[Homepage](https://claude.com)
-
-Homepage
-
-[Next](#)
-
-Next
-
-Thank you! Your submission has been received!
-
-Oops! Something went wrong while submitting the form.
-
-Write
-
-[Button Text](#)
-
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-  [](#)
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
-  \
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-  [](#)
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
-  \
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-  [](#)
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
-  \
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-  [](#)
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
-  \
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-  [](#)
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
-  \
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-  [](#)
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
-  \
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-  [](#)
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
-  \
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-  [](#)
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
-  \
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-  [](#)
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
-  \
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-  [](#)
-
-  This is another test
-
-- Write grant proposals
-
-  [](#)
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
-  \
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-  [](#)
-
-  this is a test
-
-[Anthropic](https://www.anthropic.com/)
-
-Anthropic
-
-© \[year\] Anthropic PBC
-
-Products
-
-- Claude
-
-  [Claude](/product/overview)
-  Claude
-
-- Claude Code
-
-  [Claude Code](/product/claude-code)
-  Claude Code
-
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
-- Claude Cowork
-
-  [Claude Cowork](/product/cowork)
-  Claude Cowork
-
-- Max plan
-
-  [Max plan](/pricing/max)
-  Max plan
-
-- Team plan
-
-  [Team plan](/pricing/team)
-  Team plan
-
-- Enterprise plan
-
-  [Enterprise plan](/pricing/enterprise)
-  Enterprise plan
-
-- Download app
-
-  [Download app](/download)
-  Download app
-
-- Pricing
-
-  [Pricing](/pricing)
-  Pricing
-
-- Log in
-
-  [Log in](https://claude.ai/login)
-  Log in
-
-Features
-
-- Claude for Chrome
-
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
-
-- Claude for Slack
-
-  [Claude for Slack](/claude-for-slack)
-  Claude for Slack
-
-- Claude for Excel
-
-  [Claude for Excel](/claude-for-excel)
-  Claude for Excel
-
-- Claude for PowerPoint
-
-  [Claude for PowerPoint](/claude-for-powerpoint)
-  Claude for PowerPoint
-
-- Skills
-
-  [Skills](/skills)
-  Skills
-
-Models
-
-- Opus
-
-  [Opus](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-  Opus
-
-- Sonnet
-
-  [Sonnet](../15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-  Sonnet
-
-- Haiku
-
-  [Haiku](../15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-  Haiku
-
-Solutions
-
-- AI agents
-
-  [AI agents](/solutions/agents)
-  AI agents
-
-- Claude Code Security
-
-  [Claude Code Security](/solutions/claude-code-security)
-  Claude Code Security
-
-- Code modernization
-
-  [Code modernization](/solutions/code-modernization)
-  Code modernization
-
-- Coding
-
-  [Coding](/solutions/coding)
-  Coding
-
-- Customer support
-
-  [Customer support](/solutions/customer-support)
-  Customer support
-
-- Education
-
-  [Education](/solutions/education)
-  Education
-
-- Financial services
-
-  [Financial services](/solutions/financial-services)
-  Financial services
-
-- Government
-
-  [Government](/solutions/government)
-  Government
-
-- Healthcare
-
-  [Healthcare](/solutions/healthcare)
-  Healthcare
-
-- Life sciences
-
-  [Life sciences](/solutions/life-sciences)
-  Life sciences
-
-- Nonprofits
-
-  [Nonprofits](/solutions/nonprofits)
-  Nonprofits
-
-Claude Platform
-
-- Overview
-
-  [Overview](/platform/api)
-  Overview
-
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
-
-- Marketplace
-
-  [Marketplace](/platform/marketplace)
-  Marketplace
-
-- Amazon Bedrock
-
-  [Amazon Bedrock](/partners/amazon-bedrock)
-  Amazon Bedrock
-
-- Google Cloud’s Vertex AI
-
-  [Google Cloud’s Vertex AI](/partners/google-cloud-vertex-ai)
-  Google Cloud’s Vertex AI
-
-- Microsoft Foundry
-
-  [Microsoft Foundry](/partners/microsoft-foundry)
-  Microsoft Foundry
-
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](../04-API-Reference/Other/platform-claude-com.md)
-  Console login
-
-Resources
-
-- Blog
-
-  [Blog](/blog)
-  Blog
-
-- Claude partner network
-
-  [Claude partner network](/partners)
-  Claude partner network
-
-- Community
-
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
-
-- Customer stories
-
-  [Customer stories](/customers)
-  Customer stories
-
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
-- Events
-
-  [Events](https://www.anthropic.com/events)
-  Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
-
-- Powered by Claude
-
-  [Powered by Claude](/partners/powered-by-claude)
-  Powered by Claude
-
-- Service partners
-
-  [Service partners](/partners/services)
-  Service partners
-
-- Startups program
-
-  [Startups program](/programs/startups)
-  Startups program
-
-- Tutorials
-
-  [Tutorials](/resources/tutorials)
-  Tutorials
-
-- Use cases
-
-  [Use cases](/resources/use-cases)
-  Use cases
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
-- Research
-
-  [Research](https://www.anthropic.com/research)
-  Research
-
-- News
-
-  [News](https://www.anthropic.com/news)
-  News
-
-- Responsible Scaling Policy
-
-  [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy-anthropic.md)
-  Responsible Scaling Policy
-
-- Security and compliance
-
-  [Security and compliance](https://trust.anthropic.com/)
-  Security and compliance
-
-- Transparency
-
-  [Transparency](https://anthropic.com/transparency)
-  Transparency
-
-Help and security
-
-- Availability
-
-  [Availability](https://www.anthropic.com/supported-countries)
-  Availability
-
-- Status
-
-  [Status](https://status.anthropic.com/)
-  Status
-
-- Support center
-
-  [Support center](https://support.claude.com/en/)
-  Support center
-
-Terms and policies
-
-Privacy choices
-
-### Cookie settings
-
-We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services to you. You can read our Cookie Policy [here](https://www.anthropic.com/legal/cookies).
-
-Customize cookie settings
-
-Reject all cookies
-
-Accept all cookies
-
-###### Necessary
-
-Enables security and basic functionality.
-
-Required
-
-###### Analytics
-
-Enables tracking of site performance.
-
-Off
-
-###### Marketing
-
-Enables ads personalization and tracking.
-
-Off
-
-Save preferences
-
-Privacy policy
-
-[Privacy policy](https://www.anthropic.com/legal/privacy)
-
-Privacy policy
-
-Responsible disclosure policy
-
-[Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-
-Responsible disclosure policy
-
-Terms of service: Commercial
-
-[Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-
-Terms of service: Commercial
-
-Terms of service: Consumer
-
-[Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-
-Terms of service: Consumer
-
-Usage policy
-
-[Usage policy](https://www.anthropic.com/legal/aup)
-
-Usage policy
-
-[x.com](https://x.com/claudeai)
-
-x.com
-
-[LinkedIn](https://www.linkedin.com/showcase/claude/)
-
-LinkedIn
-
-[YouTube](https://www.youtube.com/@anthropic-ai)
-
-YouTube
-
-[Instagram](https://www.instagram.com/claudeai)
-
-Instagram
-
-English (US)
-
-[English (US)](/resources/tutorials/using-the-github-integration)
-
-[日本語 (Japan)](/ja-jp/resources/tutorials/using-the-github-integration)
-
-[Deutsch (Germany)](/de-de/resources/tutorials/using-the-github-integration)
-
-[Français (France)](/fr-fr/resources/tutorials/using-the-github-integration)
-
-[한국어 (South Korea)](/ko-kr/resources/tutorials/using-the-github-integration)
+Browse all available connectors in the **[Connectors Directory](https://claude.ai/directory)**.

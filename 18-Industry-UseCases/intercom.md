@@ -1,0 +1,322 @@
+---
+title: "Intercom Claude Platform (API) case study | Claude by Anthropic"
+source_url: "https://www.claude.com/customers/intercom"
+category: "18-Industry-UseCases"
+fetched_at: "2026-09-29T06:33:01Z"
+tags: ["api", "case-studies", "enterprise", "security"]
+---
+
+# Intercom provides customer service tech that delivers up to 86% resolution rates with Claude
+
+[Try Claude](https://claude.ai)
+
+Industry:  
+Software
+
+Company size:  
+Medium
+
+Product:  
+Claude Platform
+
+Location:  
+Europe
+
+86% resolution
+
+rate with human-quality support responses
+
+51% average
+
+resolution rate out of the box
+
+Intercom is a leading customer service platform that uses Claude to help its over 25,000 customers automatically resolve millions of customer support queries with human-quality responses. Powered by Claude, Intercom's AI agent Fin provides instant, accurate answers for customers 24/7, delivers personalized, conversational support, and enables human agents to focus on more complex queries.
+
+With Claude, Intercom’s Fin:
+
+- Resolves up to 86% of customer's support volume with human-quality, personalized responses
+- Achieves a 51% average resolution rate out of the box
+- Reduces response times from 30 minutes to seconds
+- Delivers responses in over 45 languages for global customers
+- Provides customized tone of voice and answer length for each business
+
+
+## The challenge of delivering human-quality support at scale
+
+As a pioneer in customer service software, Intercom has consistently pushed the boundaries of what's possible. Through years of experience, they saw that traditional support models were breaking under modern pressures: support teams were stretched thin, customers expected instant, human-quality answers, and businesses needed to scale support without sacrificing the personal touch.
+
+"Customer support is very expensive to deliver," said Fergal Reid, VP of AI at Intercom. "Support reps spend a lot of time searching for authoritative answers, even for questions they've seen before. Meanwhile, businesses must choose between slower response times, lower quality, or hiring to scale their team in an unsustainable fashion."
+
+While other AI agents focused on deflecting customer inquiries, Intercom saw an opportunity to build something fundamentally different with Fin. "We never wanted to build a deflection engine that would just frustrate a customer and get in their way. We've always believed that truly resolving customer questions is the better approach to customer support in the long run," said Reid.
+
+## Choosing Claude for superior intelligence and reliability
+
+"Our testing process is exhaustive," explains Pedro Tabacof, Staff Machine Learning Scientist at Intercom. "Every change, from minor tweaks to major updates, is rigorously tested against our production baseline." The evaluation goes beyond basic metrics, examining answer accuracy, resolution rates, customer satisfaction, and response quality. Most importantly, each model must prove it can deliver consistent, high-quality responses at scale.
+
+After analyzing millions of real customer conversations, three key factors led Intercom to choose Claude:
+
+- **Superior performance:** Through comprehensive evaluations, Claude consistently outperformed other models. "We switched to Anthropic because its Claude models are the best at providing high-quality answers to our customers at scale," said Reid. The results speak for themselves—Fin achieves a 51% resolution rate out of the box, before any customization or tuning.
+- **Reliability and scale:** Claude demonstrated enterprise-grade reliability at global scale across Intercom's diverse customer base. Claude helps Fin maintain high-quality responses while handling millions of support queries daily, delivering consistent results whether serving startups or global enterprises. This scalability enables Intercom's customers to grow their support operations without compromising on quality or response time.
+- **Strategic partnership:** Intercom's relationship with Anthropic has proven valuable beyond model performance. "The partnership with Anthropic was excellent because we had very good solutions engineers who shared important expertise," noted Tabacof. This collaboration helped Intercom optimize their implementation and unlock new capabilities, including personalized answer length and tone, policy-aware responses, and sophisticated conversation analysis.
+
+The strongest validation of Intercom's approach comes from Anthropic choosing Fin as their customer service AI agent. Mike Krieger, Chief Product Officer at Anthropic, describes the Intercom linkup as his “favorite kind of partnership” because it’s based on “experimentation and evaluation.” Des Traynor, Co-founder & Chief Strategy Officer of Intercom adds, "Working with Anthropic keeps us at the forefront of AI, letting us explore the future and work on the bleeding edge, while delivering stable, reliable, and incredible results for our customers.”
+
+## The four pillars of high quality AI support
+
+Through testing and refinement, Intercom integrated Claude into their Fin AI agent to revolutionize customer support through four key capabilities:
+
+- **Knowledge**: Fin learns everything about a company's products and services, using their entire knowledge base to generate accurate answers. "Previously, someone might spend 30 minutes searching through help articles. With Fin powered by Claude, they get their answer instantly," said Reid.
+- **Behavior**: Fin adapts its communication style to match each business, maintaining a consistent tone of voice while following specific policies and procedures. This ensures reliable, personalized support that aligns with each company's brand and guidelines.
+- **Actions**: Rather than just providing information, Fin can take concrete actions on behalf of customers - from processing refunds to managing account changes. "This capability to handle complex workflows autonomously will take us from 50% average resolution rates to potentially 80 or 90%," said Tabacof.
+- **Insights**: Fin provides visibility across the entire support operation through AI-generated analytics. This helps businesses ensure consistently high-quality support while identifying areas for improvement.
+
+## Customer success: How companies like Synthesia, Fundrise, and Lightspeed measure the business value of Claude
+
+Through rigorous testing and monitoring, Intercom has documented that Fin powered by Claude consistently achieves a 51% average resolution rate across their customer base. This impact is evident across organizations of all sizes.
+
+For startups like **Synthesia**, the results were immediate. Within six months of implementing Fin, the software company saw the AI agent resolve over 6,000 conversations, save over 1,300 hours, and achieve self-serve support rates as high as 87%.
+
+Growing companies like **Fundrise** underwent similar transformation. Within three months of implementing Fin, the real estate investment platform automated over 50% of their total support volume while maintaining a 95% response accuracy rate. During seasonal support spikes, Fin helped reduce their case volume by nearly 50% year-over-year.
+
+Large enterprises like **Lightspeed** demonstrate Fin's ability to scale while maintaining quality. Using AI across their global support operations, Lightspeed achieves resolution rates of up to 65% while maintaining stable customer satisfaction scores. Their AI system is involved in 99% of conversations, enabling their support agents to close 31% more conversations daily while reducing training time and costs to serve.
+
+The impact extends beyond just automation metrics. By handling routine inquiries, Fin enables support teams to focus on more strategic work. "We're seeing people deploy Fin and switch roles. The customer service team does things they couldn't do before and move up the value chain," said Reid. At Fundrise, this meant their Investor Relations team could focus on complex investment strategy questions rather than routine password resets or account statement queries.
+
+## Leading the future of human-AI collaboration in customer support
+
+With Claude, Intercom is reimagining the partnership between AI and human support teams. Their next frontier is enabling Fin to handle complex tasks like processing refunds and managing account changes autonomously.
+
+The transformation goes far beyond automation metrics. Intercom has already seen how AI can elevate the role of support teams, enabling them to focus on strategic work instead of repetitive tasks. "When people deploy Fin, they don't do layoffs. Instead, the customer service team moves up the value chain, doing things they couldn't do before," said Reid.
+
+Looking ahead, Intercom envisions support teams becoming strategic operators who enhance AI systems while focusing on the most complex customer needs. "We build product at the very boundary of what's possible," said Reid.
+
+## Related stories
+
+
+### Supermetrics lets marketers manage ad campaigns from a conversation with Claude
+
+
+### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
+
+
+### Rocket Money on building agents that fix their own code
+
+
+### How Rocket Money built its personal finance agent with Claude
+
+[](https://www.claude.com/)
+
+© 2026 Anthropic PBC
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../14-Connectors/claude-for-slack.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](customer-support.md)
+- [Cybersecurity](cybersecurity.md)
+- [Legal](legal.md)
+- [Sales](sales.md)
+
+## Industries
+
+- [Financial services](finance.md)
+- [Government](government.md)
+- [Healthcare](healthcare.md)
+- [Higher education](education.md)
+- [K-12 teachers](teachers.md)
+- [Life sciences](life-sciences.md)
+- [Nonprofits](nonprofits.md)
+- [Small business](small-business.md)
+
+## Programs
+
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Blog](https://www.claude.com/blog)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
+- [Security and compliance](https://trust.anthropic.com/)
+- [Status](https://status.anthropic.com/)
+- [Support center](https://support.claude.com/en/)
+
+## Company
+
+- [Anthropic](https://www.anthropic.com/)
+- [Careers](https://www.anthropic.com/careers)
+- [Policy](https://www.anthropic.com/policy)
+- [Research](../19-Reference/anthropic-com-research.md)
+- [Anthropic news](../19-Reference/news.md)
+- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
+- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
+- [Transparency](https://anthropic.com/transparency)
+
+## Terms and policies
+
+- Privacy choices
+- [Privacy policy](https://www.anthropic.com/legal/privacy)
+- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
+- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
+- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
+- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
+- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
+- [Usage Policy](https://www.anthropic.com/legal/aup)
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../14-Connectors/claude-for-slack.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](customer-support.md)
+- [Cybersecurity](cybersecurity.md)
+- [Legal](legal.md)
+- [Sales](sales.md)
+
+## Industries
+
+- [Financial services](finance.md)
+- [Government](government.md)
+- [Healthcare](healthcare.md)
+- [Higher education](education.md)
+- [K-12 teachers](teachers.md)
+- [Life sciences](life-sciences.md)
+- [Nonprofits](nonprofits.md)
+- [Small business](small-business.md)
+
+## Programs
+
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Blog](https://www.claude.com/blog)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

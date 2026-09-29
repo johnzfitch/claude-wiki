@@ -1,84 +1,84 @@
 # Enterprise Admin
 
-*79 documents*
+80 pages. The full text of every page is in [llms.txt](llms.txt).
 
-
-- [Access audit logs | Claude Help Center](access-audit-logs-46c922da47.md) - June 15, 2026
-- [Access audit logs | Claude Help Center](access-audit-logs.md) - Audit logs are available for Enterprise organizations only.
-- [Track team usage with analytics](analytics.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-- [Authentication - Claude Code Docs](authentication-claude-code-docs-2c6ada8385.md) - Log in to Claude Code and configure authentication for individuals, teams, and organizations.
-- [Business Associate Agreements (BAA) for Commercial Customers | Claude Help Center](business-associate-agreements-baa-for-commercial-customers-6dc84f1bde.md) - Copy for LLM
-- [Business Associate Agreements (BAA) for Commercial Customers | Claude Help Center](business-associate-agreements-baa-for-commercial-customers.md) - 3.  Business Associate Agreements (BAA) for Commercial Customers
-- [Claude Code on Console to Enterprise migration | Claude Help Center](claude-code-on-console-to-enterprise-migration-c8cfcdf144.md) - Claude Console (API) → Claude Enterprise
-- [Claude Enterprise activation promo for Claude Code and Cowork | Claude Help Center](claude-enterprise-activation-promo-for-claude-code-and-cowork-91bf3dd443.md) - August 6, 2026
-- [Claude Enterprise Admin API reference guide | Claude Help Center](claude-enterprise-admin-api-reference-guide-1f3a991354.md) - June 24, 2026
-- [Claude Enterprise Analytics API reference guide | Claude Help Center](claude-enterprise-analytics-api-reference-guide.md) - 4.  Claude Enterprise Analytics API reference guide
-- [Claude Enterprise consumption guide | Claude Help Center](claude-enterprise-consumption-guide-7a3cd25965.md) - Copy for LLM
-- [Claude Enterprise Plan | Claude by Anthropic](claude-enterprise-plan-claude-by-anthropic-9b7d7e2403.md) - The frontier, on every desk
-- [Claude in Chrome admin controls | Claude Help Center](claude-for-chrome-admin-controls-b494b90cb5.md) - Updated today
-- [Claude in Chrome admin controls | Claude Help Center](claude-for-chrome-admin-controls.md) - Claude in Chrome admin controls are available in beta for Team and Enterprise plans.
-- [Claude for nonprofits partnership success guide for admins · Claude Academy](claude-for-nonprofits-partnership-success-guide-for-admins-fa6f94acfc.md) - A phased implementation framework to help nonprofit admins launch, scale, and sustain Claude adoption across their organization.
-- [Claude in Chrome admin controls | Claude Help Center](claude-in-chrome-admin-controls-c84c63ca00.md) - Updated today
-- [Claude in Chrome admin controls | Claude Help Center](claude-in-chrome-admin-controls.md) - Claude in Chrome admin controls are available in beta for Team and Enterprise plans.
-- [Claude Tag launch promo for Claude Team and Enterprise | Claude Help Center](claude-tag-launch-promo-for-claude-team-and-enterprise-aa16fd74a3.md) - June 23, 2026
-- [Configure server-managed settings - Claude Code Docs](configure-server-managed-settings-claude-code-docs-d6a169b0bf.md) - Centrally configure Claude Code for your organization through server-delivered settings, without requiring device management infrastructure.
-- [Console Log Warning.Local](console-log-warning.local.md) - You're adding a console.log statement. Please consider:
-- [Covered Models under a Business Associate Agreement (BAA) | Claude Help Center](covered-models-under-a-business-associate-agreement-baa-e97ea15919.md) - July 1, 2026
-- [Configure custom data retention controls for Enterprise plans | Claude Help Center](custom-data-retention-controls-for-claude-enterprise-93f29461af.md) - Copy for LLM
-- [Configure custom data retention controls for Enterprise plans | Claude Help Center](custom-data-retention-controls-for-claude-enterprise.md) - 4.  Configure custom data retention controls for Enterprise plans
-- [Deploying enterprise-grade MCP servers with desktop extensions | Claude Help Center](deploying-enterprise-grade-mcp-servers-with-desktop-extensions-71834ffb88.md) - August 5, 2026
-- [Deploying enterprise-grade MCP servers with desktop extensions | Claude Help Center](deploying-enterprise-grade-mcp-servers-with-desktop-extensions.md) - 4.  Deploying enterprise-grade MCP servers with desktop extensions
-- [Does Anthropic Act as a Data Processor or Controller? | Claude Help Center](does-anthropic-act-as-a-data-processor-or-controller-a0e5070335.md) - March 16, 2026
-- [Does Anthropic Act as a Data Processor or Controller? | Claude Help Center](does-anthropic-act-as-a-data-processor-or-controller.md) - 4.  Does Anthropic Act as a Data Processor or Controller?
-- [Enforce network-level access control with Tenant Restrictions | Claude Help Center](enforce-network-level-access-control-with-tenant-restrictions-68c3479753.md) - August 3, 2026
-- [Enforce network-level access control with Tenant Restrictions | Claude Help Center](enforce-network-level-access-control-with-tenant-restrictions.md) - 4.  Enforce network-level access control with Tenant Restrictions
-- [Claude Code Enterprise Architecture — System Interconnections](enterprise-architecture-diagram.md) - **Date**: 2026-03-13
-- [Enterprise configuration for Claude Desktop | Claude Help Center](enterprise-configuration-886d7d6b70.md) - Copy for LLM
-- [Enterprise configuration for Claude Desktop | Claude Help Center](enterprise-configuration-for-claude-desktop-4c802241e3.md) - Copy for LLM
-- [Enterprise configuration | Claude Help Center](enterprise-configuration.md) - Administrators on Team or Enterprise plans can control Claude Desktop through system policies.
-- [Enterprise Providers Changes: 2.1.59 → 2.1.70](enterprise-providers-changes.md) - 2.1.70 adds **Microsoft Foundry** as a third enterprise provider, making Claude Code
-- [Find and join a Team or Enterprise organization | Claude Help Center](find-and-join-a-team-or-enterprise-organization-6735fae88c.md) - July 21, 2026
-- [Find and join a Team or Enterprise organization | Claude Help Center](find-and-join-a-team-or-enterprise-organization.md) - 4.  Find and join a Team or Enterprise organization
-- [Get started with Claude for Education at your university (for Owners/Admins) | Claude Help Center](get-started-with-claude-for-education-at-your-university-for-owners-admins-aae7f0f0a8.md) - August 6, 2026
-- [Getting started with Claude Enterprise | Claude Help Center](getting-started-with-claude-for-enterprise-5d8093716a.md) - Resources for new enterprise customers.
-- [Getting started with Claude Enterprise | Claude Help Center](getting-started-with-claude-for-enterprise.md) - Resources for new enterprise customers.
-- [Google Workspace SSO/SCIM email mismatch | Claude Help Center](google-workspace-sso-scim-email-mismatch-52ef2e5662.md) - March 24, 2026
-- [Google Workspace SSO setup | Claude Help Center](google-workspace-sso-setup-97b99a9148.md) - August 6, 2026
-- [How SCIM sync works for Enterprise organizations | Claude Help Center](how-scim-sync-works-for-enterprise-organizations-1ecbfa28d1.md) - Copy for LLM
-- [Access audit logs | Claude Help Center](how-to-access-audit-logs-0d282fce82.md) - June 15, 2026
-- [Identity and Access Management](iam.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-- [Legal and compliance](legal-and-compliance.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-- [Let team members run smart reports for specific groups | Claude Help Center](let-team-members-run-smart-reports-for-specific-groups-1320744358.md) - Copy for LLM
-- [LLM gateway configuration - Claude Code Docs](llm-gateway-configuration-claude-code-docs-7a1628ac88.md) - Learn how to configure Claude Code to work with LLM gateway solutions. Covers gateway requirements, authentication configuration, model selection, and
-- [Provision and manage skills for your organization | Claude Help Center](managing-skills-as-an-admin-cf9a112c53.md) - Copy for LLM
-- [Microsoft Entra ID SSO/SCIM email mismatch | Claude Help Center](microsoft-entra-id-sso-scim-email-mismatch-739c62a0db.md) - March 24, 2026
-- [Microsoft Entra ID SSO setup | Claude Help Center](microsoft-entra-id-sso-setup-caaadafdbe.md) - August 4, 2026
-- [Migrate your organization from Team to Enterprise | Claude Help Center](migrate-your-organization-from-team-to-enterprise-d818fccba5.md) - Copy for LLM
-- [Migrate your organization from Team to Enterprise | Claude Help Center](migrate-your-organization-from-team-to-enterprise.md) - 4.  Migrate your organization from Team to Enterprise
-- [Minimum age requirement access restriction | Claude Help Center](minimum-age-requirement-access-restriction-6eb479fad8.md) - March 16, 2026
-- [Monitoring - Claude Code Docs](monitoring-claude-code-docs-72c46f3dc8.md) - Learn how to enable and configure OpenTelemetry for Claude Code.
-- [Enterprise network configuration](network-config.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-- [Okta SSO/SCIM email mismatch | Claude Help Center](okta-sso-scim-email-mismatch-c8d6886fbe.md) - March 24, 2026
-- [Okta SSO setup | Claude Help Center](okta-sso-setup-e059d8f41d.md) - Copy for LLM
-- [Find and join a Team or Enterprise organization | Claude Help Center](organization-discovery.md) - 4.  Find and join a Team or Enterprise organization
-- [Ping Identity SSO/SCIM email mismatch | Claude Help Center](ping-identity-sso-scim-email-mismatch-54da2fa921.md) - March 24, 2026
-- [Ping Identity SSO setup | Claude Help Center](ping-identity-sso-setup-727708f215.md) - August 6, 2026
-- [Responsible Use of Anthropic&#x27;s Models: Guidelines for Organizations Serving Minors | Claude Help Center](responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minor.md) - 3.  Responsible Use of Anthropic's Models: Guidelines for Organizations Serving Minors
-- [Restrict access to Claude with IP allowlisting | Claude Help Center](restrict-access-to-claude-with-ip-allowlisting-6a04d3eee7.md) - Copy for LLM
-- [Restrict access to Claude with IP allowlisting | Claude Help Center](restrict-access-to-claude-with-ip-allowlisting.md) - 4.  Restrict access to Claude with IP allowlisting
-- [Restrict verified-domain connectors to your Enterprise | Claude Help Center](restrict-verified-domain-connectors-to-your-enterprise-1a35abaa53.md) - Copy for LLM
-- [Security](security.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-- [Set up JIT or SCIM provisioning | Claude Help Center](set-up-jit-or-scim-provisioning-57efdf29d3.md) - Copy for LLM
-- [Set up JIT or SCIM provisioning | Claude Help Center](set-up-jit-or-scim-provisioning.md) - JIT provisioning is available for Team plans, Enterprise plans, and Console organizations. SCIM provisioning is available for Enterprise and Console o
-- [Set up SCIM in Claude for Government | Claude Help Center](set-up-scim-in-claude-for-government-d492b48fec.md) - August 6, 2026
-- [Set up JIT or SCIM provisioning | Claude Help Center](setting-up-jit-or-scim-provisioning-242b773291.md) - Copy for LLM
-- [Set up JIT or SCIM provisioning | Claude Help Center](setting-up-jit-or-scim-provisioning.md) - JIT provisioning is available for Team plans, Enterprise plans, and Console organizations. SCIM provisioning is available for Enterprise and Console o
-- [Track team usage with analytics - Claude Code Docs](track-team-usage-with-analytics-claude-code-docs-35e754aabf.md) - View Claude Code usage metrics, track adoption, and measure engineering velocity in the analytics dashboard.
-- [Use enterprise search | Claude Help Center](use-enterprise-search-e9b9cb6127.md) - August 6, 2026
-- [Use enterprise search | Claude Help Center](use-enterprise-search.md) - Enterprise search capabilities are available for users on Claude for Work (Team and Enterprise) plans.
-- [Use enterprise search | Claude Help Center](using-enterprise-search-9cf96aaa0f.md) - August 6, 2026
-- [Use enterprise search | Claude Help Center](using-enterprise-search.md) - Enterprise search capabilities are available for users on Claude for Work (Team and Enterprise) plans.
-- [What happens to a user&#x27;s data when they are removed from a Team or Enterprise organization? | Claude Help Center](what-happens-to-a-user-s-data-when-they-are-removed-from-a-team-or-enterprise-or-04f7126821.md) - August 17, 2026
-- [What happens to a user&#x27;s data when they are removed from a Team or Enterprise organization? | Claude Help Center](what-happens-to-a-user-s-data-when-they-are-removed-from-a-team-or-enterprise-or.md) - 4.  What happens to a user's data when they are removed from a Team or Enterprise organization?
-- [Who owns and manages the data of my team? | Claude Help Center](who-owns-and-manages-the-data-of-my-team-4cfa17727c.md) - March 16, 2026
-- [Who owns and manages the data of my team? | Claude Help Center](who-owns-and-manages-the-data-of-my-team.md) - 4.  Who owns and manages the data of my team?
+- [Access audit logs | Claude Help Center](how-to-access-audit-logs.md) — Audit logs are available for Enterprise organizations only.
+- [Authentication - Claude Code Docs](iam.md) — Log in to Claude Code and configure authentication for individuals, teams, and organizations.
+- [Business Associate Agreements (BAA) for Commercial Customers | Claude Help Center](business-associate-agreements-baa-for-commercial-customers.md) — This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when…
+- [Champion kit - Claude Code Docs](champion-kit.md) — A playbook for engineers advocating Claude Code internally: what to share, how to answer questions, and how to grow adoption on your team.
+- [Claude apps gateway configuration - Claude Code Docs](claude-apps-gateway-config.md) — Reference for every gateway.yaml option: listener and TLS, OIDC, session, Postgres store, Amazon Bedrock, Claude Platform on AWS, Google Cloud’s Agent…
+- [Claude apps gateway deployment and operations - Claude Code Docs](claude-apps-gateway-deploy.md) — Register the gateway with your IdP, build the container, deploy on Kubernetes or Cloud Run, and operate it: health checks, secret rotation, upgrades, and…
+- [Claude apps gateway for Amazon Bedrock, Claude Platform on AWS, Google Cloud, and Microsoft Foundry - Claude Code Docs](claude-apps-gateway.md) — Run Claude Code through Amazon Bedrock, Claude Platform on AWS, Google Cloud, or Microsoft Foundry behind a self-hosted gateway with SSO sign-in, per-group…
+- [Claude apps gateway spend limits - Claude Code Docs](claude-apps-gateway-spend-limits.md) — Cap each developer’s spend through the Claude apps gateway by day, week, or month. Set limits with an Admin API and the gateway enforces them live on every…
+- [Claude Code gateway compatibility guide - Claude Code Docs](llm-gateway-protocol.md) — Keep an LLM gateway compatible with Claude Code: the endpoints it calls, the headers and body fields to forward, and what breaks when they’re stripped.
+- [Claude Code on Console to Enterprise migration | Claude Help Center](claude-code-on-console-to-enterprise-migration.md) — Claude Console (API) → Claude Enterprise
+- [Claude Enterprise activation promo for Claude Code and Cowork | Claude Help Center](claude-enterprise-activation-promo-for-claude-code-and-cowork.md) — We're issuing \$1,000 in usage credits to every user in a Claude Enterprise organization—up to \$10M per organization—who activates Claude Code or Claude…
+- [Claude Enterprise Admin API reference guide | Claude Help Center](claude-enterprise-admin-api-reference-guide.md) — This guide covers spend limits and spend limit increase requests for your Claude Enterprise organization using the Claude Enterprise Admin API. Spend limits…
+- [Claude Enterprise Analytics API reference guide | Claude Help Center](claude-enterprise-analytics-api-reference-guide.md) — 4.  Claude Enterprise Analytics API reference guide
+- [Claude Enterprise consumption guide | Claude Help Center](claude-enterprise-consumption-guide.md) — Claude Enterprise gives your organization access to powerful AI across chat, Claude Code, Claude Cowork, Claude Design, and Claude in the tools your teams…
+- [Claude for nonprofits partnership success guide for admins · Claude Academy](claude-for-nonprofits-partnership-success-guide-for-admins.md) — A phased implementation framework to help nonprofit admins launch, scale, and sustain Claude adoption across their organization.
+- [Claude in Chrome admin controls | Claude Help Center](claude-for-chrome-admin-controls.md) — This article explains how Team and Enterprise owners can manage Claude in Chrome for their organization.
+- [Claude Tag launch promo for Claude Team and Enterprise | Claude Help Center](claude-tag-launch-promo-for-claude-team-and-enterprise.md) — With the launch of Claude Tag, we're issuing a one-time Claude Tag usage credit to eligible organizations—\$25000 per Claude Enterprise organization and \$2500…
+- [Communications kit - Claude Code Docs](communications-kit.md) — Launch announcements, drip-campaign messages, and FAQ responses for rolling Claude Code out to your engineering organization.
+- [Configure server-managed settings - Claude Code Docs](server-managed-settings.md) — Centrally configure Claude Code for your organization through server-delivered settings, without requiring device management infrastructure.
+- [Connect Claude Code to an LLM gateway - Claude Code Docs](llm-gateway-connect.md) — Point Claude Code at your organization’s LLM gateway. Check whether your admin already configured it, or set the base URL and credential yourself, then verify…
+- [Console Log Warning.Local](claude-code-plugins-hookify-examples-console-log-warning-local.md) — You're adding a console.log statement. Please consider:
+- [Covered Models under a Business Associate Agreement (BAA) | Claude Help Center](covered-models-under-a-business-associate-agreement-baa.md) — This article is for organizations that use Anthropic's HIPAA-ready services under a Business Associate Agreement (BAA). It explains which configurations are…
+- [Create surveys for your organization | Claude Help Center](create-surveys-for-your-organization.md) — Surveys let admins ask users short, in-product questions about how they're using Claude and review the aggregated answers in the Admin console. This article…
+- [Customize sessions in self-hosted environments - Claude Code Docs](self-hosted-environments-configuration.md) — Customize self-hosted environment sessions with wrapper scripts for per-session credentials, lifecycle hooks, and on-demand runner spawning.
+- [Data usage - Claude Code Docs](data-usage.md) — Learn about Anthropic’s data usage policies for Claude
+- [Deploy Claude apps gateway on AWS - Claude Code Docs](claude-apps-gateway-on-aws.md) — A worked example of running Claude apps gateway on AWS: ECS Fargate or EKS, Amazon RDS for PostgreSQL, AWS Secrets Manager, and IAM-role auth to Amazon Bedrock.
+- [Deploy Claude apps gateway on Google Cloud - Claude Code Docs](claude-apps-gateway-on-gcp.md) — A worked example of running Claude apps gateway on Google Cloud: Cloud Run or GKE, Cloud SQL for PostgreSQL, Secret Manager, and service-account auth to Google…
+- [Deploy managed settings - Claude Code Docs](managed-settings.md) — Deploy managed settings to every developer’s machine: delivery mechanisms per OS, how Claude Code combines managed sources, and how to verify enforcement.
+- [Deploy self-hosted environments to production - Claude Code Docs](self-hosted-environments-deploy.md) — Run self-hosted runners in production: security hardening, network egress control, git credentials, Kubernetes and Compose recipes, and troubleshooting.
+- [Deploying enterprise-grade MCP servers with desktop extensions | Claude Help Center](deploying-enterprise-grade-mcp-servers-with-desktop-extensions.md) — Desktop extensions are installable packages that run Model Context Protocol (MCP) servers locally on your machine. They provide Claude Desktop with secure…
+- [Does Anthropic Act as a Data Processor or Controller? | Claude Help Center](does-anthropic-act-as-a-data-processor-or-controller.md) — This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when…
+- [Enable US-only inference for your organization | Claude Help Center](enable-us-only-inference-for-your-organization.md) — This article explains what the US-only inference setting does, how to turn it on, and how it affects billing for your Enterprise organization.
+- [Enforce network-level access control with Tenant Restrictions | Claude Help Center](enforce-network-level-access-control-with-tenant-restrictions.md) — Tenant Restrictions are available for members of Enterprise plans and Console organizations.
+- [Enterprise configuration for Claude Desktop | Claude Help Center](enterprise-configuration-for-claude-desktop.md) — Administrators on Team or Enterprise plans can control Claude Desktop through system policies.
+- [Enterprise network configuration - Claude Code Docs](network-config.md) — Configure Claude Code for enterprise environments with proxy servers, custom Certificate Authorities (CA), and mutual Transport Layer Security (mTLS)…
+- [Export your organization's data | Claude Help Center](how-can-i-export-my-organization-s-data.md) — Organization data exports are only available to Team and Enterprise plan Primary Owners. Data exports include conversation data and the user data for your…
+- [Find and join a Console organization | Claude Help Center](find-and-join-a-console-organization.md) — Organization discovery lets you find and join your company’s existing Console organization when you start the sign-up flow with a business email address…
+- [Find and join a Team or Enterprise organization | Claude Help Center](find-and-join-a-team-or-enterprise-organization.md) — Organization discovery allows you to find and join your company's existing Team or Enterprise plan organization when you start the sign-up flow with a work…
+- [Get started with Claude for Education at your university (for Owners/Admins) | Claude Help Center](getting-started-with-claude-for-education-at-your-university-for-owners-admins.md) — This guide helps Admins, Owners, and Primary Owners set up and manage Claude for Education at universities. Account users can find more information in our FAQs…
+- [Getting started with Claude Enterprise | Claude Help Center](getting-started-with-claude-for-enterprise.md) — Resources for new enterprise customers.
+- [Google Workspace SSO setup | Claude Help Center](google-workspace-sso-setup.md) — This guide helps you configure Claude to use Google Workspace as your identity provider for SSO and automated user provisioning. It applies to Team plans…
+- [Google Workspace SSO/SCIM email mismatch | Claude Help Center](google-workspace-sso-scim-email-mismatch.md) — Claude uses email as the primary identifier to match SSO logins to provisioned seats. In Google Workspace, SCIM auto-provisioning and SAML SSO can send…
+- [How SCIM sync works for Enterprise organizations | Claude Help Center](how-scim-sync-works-for-enterprise-organizations.md) — SCIM provisioning keeps your Enterprise organization's membership and groups in sync with your identity provider. This article covers what gets synced, how…
+- [Join an organization via invite link | Claude Help Center](join-an-organization-via-invite-link.md) — Admins on Team and Enterprise plans can share an invite link that lets teammates join the organization directly—without requiring individual email invitations.
+- [Legal and compliance - Claude Code Docs](legal-and-compliance.md) — Legal agreements, compliance certifications, and security information for Claude Code.
+- [Let team members run smart reports for specific groups | Claude Help Center](let-team-members-run-smart-reports-for-specific-groups.md) — Smart reports show how your organization uses Claude. By default, only Primary Owners, Owners, Admins, and custom roles with analytics view access can create…
+- [Microsoft Entra ID SSO setup | Claude Help Center](microsoft-entra-id-sso-setup.md) — This guide walks you through configuring single sign-on (SSO) for Claude using Microsoft Entra ID (formerly Azure Active Directory) as your identity provider…
+- [Microsoft Entra ID SSO/SCIM email mismatch | Claude Help Center](microsoft-entra-id-sso-scim-email-mismatch.md) — Claude uses email as the primary identifier to match SSO logins to provisioned seats. In Microsoft Entra ID, SCIM provisioning and SSO authentication are…
+- [Migrate your organization from Team to Enterprise | Claude Help Center](migrate-your-organization-from-team-to-enterprise.md) — When upgrading from a Team plan to an Enterprise plan, we recommend you keep the same Team organization and follow the upgrade path to change it to Enterprise…
+- [Minimum age requirement access restriction | Claude Help Center](minimum-age-requirement-access-restriction.md) — This article explains why you may be unable to create a Claude account or sign in to an existing account when using the Claude mobile app.
+- [Monitoring - Claude Code Docs](monitoring-usage.md) — Learn how to enable and configure OpenTelemetry for Claude Code.
+- [Okta SSO setup | Claude Help Center](okta-sso-setup.md) — This guide covers configuring SSO and SCIM provisioning for Claude with Okta as your identity provider. It applies to Team plans, Enterprise plans, and Console…
+- [Okta SSO/SCIM email mismatch | Claude Help Center](okta-sso-scim-email-mismatch.md) — Claude uses email as the primary identifier to match SSO logins to provisioned seats. In Okta, SCIM provisioning and SSO are configured separately and can pull…
+- [Organization instructions in Claude for Government | Claude Help Center](organization-instructions-in-claude-for-government.md) — Organization instructions allow administrators to define custom instructions that Claude follows in every conversation for all users in the organization. Use…
+- [Other LLM gateways - Claude Code Docs](llm-gateway.md) — Route Claude Code through an LLM gateway your organization already runs. Covers connecting Claude Code to a gateway, rolling one out for your organization, and…
+- [Ping Identity SSO setup | Claude Help Center](ping-identity-sso-setup.md) — This guide covers configuring Claude with PingOne or PingFederate as your identity provider. It applies to Team plans, Enterprise plans, and Console…
+- [Ping Identity SSO/SCIM email mismatch | Claude Help Center](ping-identity-sso-scim-email-mismatch.md) — Claude uses email as the primary identifier to match SSO logins to provisioned seats. Ping Identity products (PingOne and PingFederate) have flexible, layered…
+- [Responsible Use of Anthropic's Models: Guidelines for Organizations Serving Minors | Claude Help Center](responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minors.md) — At Anthropic, we recognize the unique vulnerabilities and needs of children in digital spaces. In order to create a safer digital environment and mitigate…
+- [Restrict access to Claude with IP allowlisting | Claude Help Center](restrict-access-to-claude-with-ip-allowlisting.md) — IP allowlisting is available for Enterprise plans only.
+- [Restrict verified-domain connectors to your Enterprise | Claude Help Center](restrict-verified-domain-connectors-to-your-enterprise.md) — This article explains how to prevent Claude accounts outside your Enterprise organization from connecting certain services, like Gmail and Slack, using an…
+- [Roles and permissions | Claude Help Center](roles-and-permissions.md) — Roles and permissions that can be set for members of your plan
+- [Roll out an LLM gateway for your organization - Claude Code Docs](llm-gateway-rollout.md) — Deploy a gateway product for Claude Code: configure it to forward what Claude Code sends, issue developer credentials, distribute the configuration through…
+- [Run Claude Code behind a corporate launcher - Claude Code Docs](corporate-launcher.md) — Route the processes Claude Code starts from its own binary, including the background service and every agent view session, through a required launcher with…
+- [Run Claude Code through a gateway - Claude Code Docs](gateways.md) — Route Claude Code through a self-hosted gateway for centralized credentials, usage tracking, and cost controls. Covers the architecture, Anthropic’s Claude…
+- [Security - Claude Code Docs](security.md) — Learn about Claude Code’s security safeguards and best practices for safe usage.
+- [Self-hosted environments - Claude Code Docs](self-hosted-environments.md) — Run Claude Code cloud sessions on infrastructure you control: set up a self-hosted environment, deploy runners, and route sessions to your own compute.
+- [Self-hosted environments quickstart - Claude Code Docs](self-hosted-environments-quickstart.md) — Set up your first self-hosted environment: install Claude Code, create the environment, start a runner, and route a session to it.
+- [Self-hosted environments reference - Claude Code Docs](self-hosted-environments-reference.md) — Complete reference for the self-hosted runner and orchestrator: CLI flags, environment variables, and Prometheus metrics.
+- [Set organization instructions | Claude Help Center](set-organization-instructions.md) — Organization instructions let owners of Team and Enterprise plans set custom instructions that Claude follows in every conversation across your organization…
+- [Set up Claude Code for your organization - Claude Code Docs](admin-setup.md) — A decision map for administrators deploying Claude Code, covering API providers, managed settings, policy enforcement, usage monitoring, and data handling.
+- [Set up JIT or SCIM provisioning | Claude Help Center](setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md) — This guide covers how to configure user provisioning and role assignment for your Claude or Claude Console organization.
+- [Set up SCIM in Claude for Government | Claude Help Center](set-up-scim-in-claude-for-government.md) — System for Cross-domain Identity Management (SCIM) lets your identity provider automatically manage user accounts in Claude for Government. With SCIM, your IdP…
+- [Test self-hosted environments end to end - Claude Code Docs](self-hosted-environments-testing.md) — Verify a self-hosted runner image from CI: dispatch a session with the CLI, read Claude’s replies through a Stop hook, and script the full loop.
+- [Track team usage with analytics - Claude Code Docs](analytics.md) — View Claude Code usage metrics, track adoption, and measure engineering velocity in the analytics dashboard.
+- [Turn on data retention for a Workspace in a zero data retention organization | Claude Help Center](turn-on-data-retention-for-a-workspace-in-a-zero-data-retention-organization.md) — This article shows you how to turn on 30-day data retention for a Workspace in your Claude Console organization when your organization uses zero data retention…
+- [Use enterprise search | Claude Help Center](using-enterprise-search.md) — Enterprise search capabilities are available for users on Team and Enterprise plans.
+- [Verify session identity in self-hosted environments - Claude Code Docs](self-hosted-environments-identity.md) — Verify the CLAUDECODESESSIONACCESSTOKEN JWT so services on your network can trust requests from sessions in your self-hosted environment.
+- [View your organization's support tickets | Claude Help Center](view-your-organization-s-support-tickets-claude-help-center.md) — The Customer Portal gives you a single view of every support conversation your organization has open or closed with Anthropic, not just the tickets you filed…
+- [What happens to a user's data when they are removed from a Team or Enterprise organization? | Claude Help Center](what-happens-to-a-user-s-data-when-they-are-removed-from-a-team-or-enterprise-organization.md) — This article explains what happens to projects, chats, and skills when a member is removed from your Team or Enterprise plan organization.
+- [Who owns and manages the data of my team? | Claude Help Center](who-owns-and-manages-the-data-of-my-team.md) — This article provides important information about your Claude for Work account associated with your organization's Claude for Work plan (Team or Enterprise…

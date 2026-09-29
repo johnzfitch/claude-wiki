@@ -1,16 +1,21 @@
 ---
-title: "How can I export my Claude data? | Claude Help Center"
+title: "Export your Claude data | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-ai-data"
 category: "21-Account-Support"
-fetched_at: "2026-03-20T10:36:44Z"
+fetched_at: "2026-09-29T06:32:39Z"
+tags: ["account"]
 ---
 
-# How can I export my Claude data?
+# Export your Claude data
+
+July 8, 2026
 
 
-Data exports are available to individual Claude users (free, Pro, and Max) with active accounts. Data exports include conversation data and the user data for your account.
+Data exports are available to individual Claude users on Free, Pro, and Max plans. Data exports include conversation data and the user data for your account.
 
-Individual Claude users can export user information and chat history from [Settings \> Privacy](https://claude.ai/settings/data-privacy-controls) on the web app or Claude Desktop (it's not possible to run an export from Claude for iOS or Android).
+If you're a member of a Team or Enterprise plan, only your organization's Primary Owner can access data exports. For more information, see **[Export your organization's data](../13-Enterprise-Admin/how-can-i-export-my-organization-s-data.md)**.
+
+Individual Claude users can export user information and chat history from **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)** on the web app or Claude Desktop (it's not possible to run an export from Claude for iOS or Android).
 
 Follow these steps to export your data:
 
@@ -38,4 +43,6 @@ Please note:
 
 ## Can I import or migrate this data to another Claude account?
 
-We do not support migrating data between separate accounts at this time.
+Exported data can't be imported into another personal Claude account, and we don't support migrating data between personal accounts.
+
+If you're joining a Team or Enterprise organization, you don't need an export to bring your work with you—you can migrate your personal account directly into the organization's workspace. For details, see **[Move your personal Claude account to a Team or Enterprise organization](can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md)**.

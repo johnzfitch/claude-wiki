@@ -2,13 +2,15 @@
 title: "Getting started with Claude Enterprise | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12166798-getting-started-with-claude-for-enterprise"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-22T09:01:40Z"
+fetched_at: "2026-08-05T07:04:41Z"
 tags: ["enterprise"]
 ---
 
 # Getting started with Claude Enterprise
 
 Resources for new enterprise customers.
+
+March 16, 2026
 
 
 Welcome to Claude Enterprise! Our Customer Success team has put together the following guides to jumpstart your Claude for Enterprise journey with best practices, practical guidance, launch checklists, and more.
@@ -21,7 +23,7 @@ If you're responsible for rolling out Claude to your organization, you may also 
 
 ## Additional support
 
-Anthropic has services partners (advisory, training, change management, MCP development) available who can help provide additional support. If you'd like to discuss further, please submit [this interest form](https://forms.gle/ubnR5f7q5E71ECR79). For requests to connect with our Sales team, please contact [\[email protected\]](/cdn-cgi/l/email-protection#75061419100635141b011d071a051c165b161a18)
+Anthropic has services partners (advisory, training, change management, MCP development) available who can help provide additional support. If you'd like to discuss further, please submit [this interest form](https://forms.gle/ubnR5f7q5E71ECR79). For requests to connect with our Sales team, please contact [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#a0d3c1ccc5d3e0c1ced4c8d2cfd0c9c38ec3cfcd)
 
-\
-
+  
+​

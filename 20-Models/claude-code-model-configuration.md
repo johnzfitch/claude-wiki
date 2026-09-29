@@ -2,11 +2,13 @@
 title: "Claude Code model configuration | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11940350-claude-code-model-configuration"
 category: "20-Models"
-fetched_at: "2026-03-22T09:01:39Z"
-tags: ["claude-code"]
+fetched_at: "2026-09-29T06:31:21Z"
+tags: ["claude-code", "models"]
 ---
 
 # Claude Code model configuration
+
+Updated today
 
 
 This guide shows you three ways to change which Claude model you're using with Claude Code: the quick `/model` command for instant changes, the `--model` flag for one-time session changes, and environment variables to set your preferred model as the permanent default.
@@ -25,6 +27,22 @@ The simplest way to change models is to use the /model command directly within C
 
 ## Supported models
 
+- Sonnet 5.5, `claude-sonnet-5-5`
+
+- Opus 5.5, `claude-opus-5-5`
+
+- Fable 5.1, `claude-fable-5-1`
+
+- Opus 5, `claude-opus-5`
+
+- Sonnet 5, `claude-sonnet-5`
+
+- Fable 5, `claude-fable-5`
+
+- Opus 4.8, `claude-opus-4-8`
+
+- Opus 4.7, `claude-opus-4-7`
+
 - Sonnet 4.6, `claude-sonnet-4-6`
 
 - Opus 4.6, `claude-opus-4-6`
@@ -35,8 +53,6 @@ The simplest way to change models is to use the /model command directly within C
 
 - Sonnet 4.5, `claude-sonnet-4-5-20250929`
 
-**⚠️ Model access:** When using a Pro plan with Claude Code, you will only be able to use Opus models after **[enabling and purchasing extra usage](../17-Billing-Plans/extra-usage-for-paid-claude-plans.md#h_8d1a703b92)**.
-
 ## Change model for current session only
 
 Use the `--model` flag when starting Claude Code.
@@ -45,15 +61,31 @@ Use the `--model` flag when starting Claude Code.
 
 2.  Enter the following commands (depending on the model you’d like to use for that session):
 
-    - **For Sonnet 4.6:** `claude --model claude-sonnet-4-6`
+    - **For Sonnet 5.5**: `claude --model claude-sonnet-5-5`
 
-    - **For Opus 4.6:** `claude --model claude-opus-4-6`
+    - **For Opus 5.5**: `claude --model claude-opus-5-5`
 
-    - **For Opus 4.5:** `claude --model claude-opus-4-5-20251101`
+    - **For Fable 5.1**: `claude --model claude-fable-5-1`
+
+    - **For Opus 5**: `claude --model claude-opus-5`
+
+    - **For Sonnet 5**: `claude --model claude-sonnet-5`
+
+    - **For Fable 5**: `claude --model claude-fable-5`
+
+    - **For Opus 4.8**: `claude --model claude-opus-4-8`
+
+    - **For Opus 4.7**: `claude --model claude-opus-4-7`
+
+    - **For Sonnet 4.6**: `claude --model claude-sonnet-4-6`
+
+    - **For Opus 4.6**: `claude --model claude-opus-4-6`
+
+    - **For Opus 4.5**: `claude --model claude-opus-4-5-20251101`
 
     - **For Haiku 4.5:** `claude --model `` claude-haiku-4-5-20251001`
 
-    - **For Sonnet 4.5:** `claude --model claude-sonnet-4-5-20250929`
+    - **For Sonnet 4.5**: `claude --model claude-sonnet-4-5-20250929`
 
 ## Change default model for all future sessions
 
@@ -67,7 +99,23 @@ Use the `--model` flag when starting Claude Code.
 
 ### For ZSH users (macOS)
 
-- Spnnet 4.6: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-6"' >> ~/.zshrc`
+- Sonnet 5.5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-5-5"' >> ~/.zshrc`
+
+- Opus 5.5: `echo 'export ANTHROPIC_MODEL="claude-opus-5-5"' >> ~/.zshrc`
+
+- Fable 5.1: `echo 'export ANTHROPIC_MODEL="claude-fable-5-1"' >> ~/.zshrc`
+
+- Opus 5: `echo 'export ANTHROPIC_MODEL="claude-opus-5"' >> ~/.zshrc`
+
+- Sonnet 5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-5"' >> ~/.zshrc`
+
+- Fable 5: `echo 'export ANTHROPIC_MODEL="claude-fable-5"' >> ~/.zshrc`
+
+- Opus 4.8: `echo 'export ANTHROPIC_MODEL="claude-opus-4-8"' >> ~/.zshrc`
+
+- Opus 4.7: `echo 'export ANTHROPIC_MODEL="claude-opus-4-7"' >> ~/.zshrc`
+
+- Sonnet 4.6: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-6"' >> ~/.zshrc`
 
 - Opus 4.6: `echo 'export ANTHROPIC_MODEL="claude-opus-4-6"' >> ~/.zshrc`
 
@@ -78,6 +126,22 @@ Use the `--model` flag when starting Claude Code.
 - Sonnet 4.5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-5-20250929"' >> ~/.zshrc`
 
 ### For BASH users (Linux)
+
+- Sonnet 5.5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-5-5"' >> ~/.bashrc`
+
+- Opus 5.5: `echo 'export ANTHROPIC_MODEL="claude-opus-5-5"' >> ~/.bashrc`
+
+- Fable 5.1: `echo 'export ANTHROPIC_MODEL="claude-fable-5-1"' >> ~/.bashrc`
+
+- Opus 5: `echo 'export ANTHROPIC_MODEL="claude-opus-5"' >> ~/.bashrc`
+
+- Sonnet 5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-5"' >> ~/.bashrc`
+
+- Fable 5: `echo 'export ANTHROPIC_MODEL="claude-fable-5"' >> ~/.bashrc`
+
+- Opus 4.8: `echo 'export ANTHROPIC_MODEL="claude-opus-4-8"' >> ~/.bashrc`
+
+- Opus 4.7: `echo 'export ANTHROPIC_MODEL="claude-opus-4-7"' >> ~/.bashrc`
 
 - Sonnet 4.6: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-6"' >> ~/.bashrc`
 

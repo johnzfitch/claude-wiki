@@ -6,6 +6,3 @@ documentation, provided for convenience, offline access, and searchability.
 All documentation content in this repository is authored by and belongs to
 Anthropic. It is reproduced here under fair use for educational and reference
 purposes. For official terms, see https://www.anthropic.com/terms.
-
-The build scripts and automation tooling in this repository (scripts/, meta/,
-.github/) are released under the MIT License by the repository maintainer.

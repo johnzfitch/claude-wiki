@@ -1,0 +1,554 @@
+---
+title: "Add components to a plugin - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/plugins/components"
+category: "08-Plugins-Skills"
+fetched_at: "2026-09-26T06:38:11Z"
+tags: ["claude-code", "plugins"]
+---
+
+## On this page
+
+- [Explore the plugin directory](#explore-the-plugin-directory)
+- [Add each kind of component](#add-each-kind-of-component)
+  - [Skills](#skills)
+  - [Commands](#commands)
+  - [Define commands in the manifest](#define-commands-in-the-manifest)
+  - [Agents](#agents)
+  - [Organize agents in subfolders](#organize-agents-in-subfolders)
+  - [Frontmatter fields in plugin agents](#frontmatter-fields-in-plugin-agents)
+  - [Hooks](#hooks)
+  - [When plugin hooks fire](#when-plugin-hooks-fire)
+  - [Environment, quoting, and matching MCP tools](#environment-quoting-and-matching-mcp-tools)
+  - [MCP servers](#mcp-servers)
+  - [Reach users on claude.ai and Cowork](#reach-users-on-claude-ai-and-cowork)
+  - [Server names, tool names, and reloads](#server-names-tool-names-and-reloads)
+  - [Include a packaged MCPB server](#include-a-packaged-mcpb-server)
+  - [LSP servers](#lsp-servers)
+  - [Executables](#executables)
+  - [Default settings](#default-settings)
+  - [Themes and output styles](#themes-and-output-styles)
+  - [Channels](#channels)
+  - [Monitors](#monitors)
+- [Ask the user for configuration values](#user-configuration)
+  - [When the configuration dialog appears](#when-the-configuration-dialog-appears)
+- [Reference plugin paths and store data](#path-variables-and-persistent-data)
+  - [Install dependencies into the data directory](#install-dependencies-into-the-data-directory)
+- [Next steps](#next-steps)
+
+Create plugins
+
+# Add components to a plugin
+
+Copy pageCopy page
+
+Add skills, hooks, MCP servers, and every other component type to a Claude Code plugin, with an example that validates for each.
+
+Copy pageCopy page
+
+A Claude Code plugin is built from components, such as skills, agents, hooks, and MCP servers. Each component has a default folder in the plugin, an optional manifest key in `.claude-plugin/plugin.json` that replaces or adds to that folder, and a name the user sees. For each key’s full field table, see the [manifest reference](plugins-reference.md#fields). Use this page to add a component to a plugin that already loads. After you add a component, run `/reload-plugins` in a running session or start a new one so Claude Code loads it. To check the component’s file before loading it, run [`claude plugin validate .`](plugins-cli-reference.md#plugin-validate) in your shell from the plugin directory.
+
+These cases are covered on other pages:
+
+- **Building your first plugin**: start with [Create a plugin](plugins-create.md)
+- **Installing someone else’s plugin**: see [Install plugins](discover-plugins.md)
+- **Your plugin’s users are on claude.ai or in Cowork**: a different set of components loads there. See [Plugin structure and testing](https://claude.com/docs/plugins/build) and the [component support table](https://claude.com/docs/plugins/platform-support#compare-component-support-by-app)
+
+
+[​](#explore-the-plugin-directory)
+
+Explore the plugin directory
+
+The explorer shows an example plugin, `my-plugin`, that has one of every kind of component in its default location:
+
+- A review skill and an `about` command
+- A security-review subagent
+- A hook that formats files after Claude edits them, and the `scripts/` folder it calls
+- A log monitor
+- An output style and a color theme
+- A route-audit workflow
+- A `hello-plugin` executable
+- Default settings
+- A local MCP server and a Go language server
+
+Each file is the smallest valid example of its format, there to show the shape rather than to be useful: a real skill or agent carries full instructions and often supporting files, and a real hook or monitor does real work. The sections after the explorer use the same files as their examples and link to fuller ones. Select a file or folder to read what it’s for, see what goes in it, and find the section that covers it.
+
+
+[​](#add-each-kind-of-component)
+
+Add each kind of component
+
+Each section below covers one kind of component: where its files go in the plugin, an example that validates, what the user sees once the plugin loads, and the manifest key that changes the default location. Add the ones your plugin needs; none is required.
+
+
+[​](#skills)
+
+Skills
+
+A [skill](skills.md) is a `SKILL.md` file that Claude can load when its description matches the task. The user can also run it as a command. Save each skill in its own directory under `skills/`:
+
+```python
+my-plugin/
+├── .claude-plugin/
+│   └── plugin.json
+└── skills/
+    └── review/
+        └── SKILL.md
+```
+
+Give the `SKILL.md` a `description` so Claude knows when to use it:
+
+skills/review/SKILL.md
+
+```python
+---
+description: Reviews a pull request for style and test coverage. Use when asked to review code.
+---
+
+Review the changed files. Report style problems first, then missing tests.
+```
+
+After you load the plugin, `/my-plugin:review` runs the skill. The command name and who can invoke it follow these rules:
+
+- **Command name**: `/<plugin>:<directory>`, so `skills/review/SKILL.md` in `my-plugin` is `/my-plugin:review`. If you set `name` in the frontmatter, it replaces the last segment and the plugin prefix stays. See [how a skill gets its command name](skills.md#how-a-skill-gets-its-command-name)
+- **Who invokes it**: Claude, the user, or both, controlled by frontmatter. See [Control who invokes a skill](skills.md#control-who-invokes-a-skill)
+
+You can also place skills outside the default `skills/` directory:
+
+- **Additional directories**: list them in the `skills` manifest key. They add to the default `skills/` scan rather than replacing it, unlike `commands` and `agents`
+- **A single skill at the plugin root**: with no `skills/` directory and no `skills` manifest key, a `SKILL.md` at the plugin root loads as one skill. Set `name` in its frontmatter, because otherwise a marketplace install names the skill after its [cache directory](plugins-loading.md#find-plugins-on-disk) rather than your plugin
+
+To include instructions in a plugin, write them as a skill. Claude Code doesn’t load a `CLAUDE.md` at the plugin root, and `claude plugin validate` warns `CLAUDE.md at the plugin root is not loaded as project context`. For frontmatter fields and supporting files, see [Skills](skills.md).
+
+
+[​](#commands)
+
+Commands
+
+A command is a single Markdown file the user runs by name, such as `/my-plugin:about`.
+
+Commands are the older format, and [skills](#skills) supersede them for new work. A skill runs by name the same way, and it can also carry supporting files in its directory. Keep `commands/` for files you’re moving over from `.claude/commands/`.
+
+Save a command at `commands/<file>.md` and it becomes `/<plugin>:<file>`. A subdirectory adds a segment, so `commands/db/migrate.md` is `/my-plugin:db:migrate`. Command files take the same frontmatter as skills.
+
+
+[​](#define-commands-in-the-manifest)
+
+Define commands in the manifest
+
+You only need this if you want to keep command files somewhere other than `commands/`, or to define a short command inside `plugin.json` without a separate Markdown file. Set the `commands` manifest key, and Claude Code reads it instead of scanning `commands/`. The key takes a path, an array of paths, or an object that maps each command name to either a `source` file or inline `content`. This manifest defines `/my-plugin:about` inline, with no Markdown file:
+
+.claude-plugin/plugin.json
+
+```python
+{
+  "name": "my-plugin",
+  "commands": {
+    "about": {
+      "content": "Summarize what this repository does in three sentences.",
+      "description": "Summarize the repository"
+    }
+  }
+}
+```
+
+Load the plugin and run `/my-plugin:about` in the session to confirm it loaded. For the full key syntax, see [`commands`](plugins-reference.md#commands).
+
+
+[​](#agents)
+
+Agents
+
+A [subagent](../09-Agents-Patterns/sub-agents.md) is a separate assistant, with its own instructions and context window, that Claude can delegate a task to. Each Markdown file under `agents/` defines one:
+
+agents/security-reviewer.md
+
+```python
+---
+name: security-reviewer
+description: Reviews code changes for security issues. Use after edits to authentication or input handling.
+model: sonnet
+---
+
+You are a security reviewer. Read the changed files and report injection, authentication, and secrets-handling risks.
+```
+
+This agent is named `my-plugin:security-reviewer`, and the user can [invoke it explicitly](../09-Agents-Patterns/sub-agents.md#invoke-subagents-explicitly) with `@agent-my-plugin:security-reviewer`. The name form is `<plugin>:<name>`, where `<name>` comes from the frontmatter, or from the file name when there is none. The `agents` manifest key replaces the `agents/` scan.
+
+
+[​](#organize-agents-in-subfolders)
+
+Organize agents in subfolders
+
+You can put plugin agent files in subfolders of `agents/`. Claude Code [loads them recursively](../09-Agents-Patterns/sub-agents.md#choose-the-subagent-scope) and joins the plugin name, each subfolder name, and the file name with colons to form the agent’s scoped name. For example, `agents/review/security.md` in a plugin named `my-plugin` loads as `my-plugin:review:security`. Two settings change that name:
+
+- Frontmatter `name`: it replaces only the file name, so `name: audit` in `agents/review/security.md` loads as `my-plugin:review:audit`
+- Manifest [`agents`](plugins-reference.md#fields) field: a file you list there loads without subfolder names, so `"agents": "./custom/review/security.md"` loads as `my-plugin:security`
+
+
+[​](#frontmatter-fields-in-plugin-agents)
+
+Frontmatter fields in plugin agents
+
+A plugin agent’s frontmatter follows these rules:
+
+- **Supported fields**: `name`, `description`, `model`, `effort`, `maxTurns`, `tools`, `disallowedTools`, `skills`, `memory`, `background`, `omitClaudeMd`, `isolation`, `color`, and the `cacheTtl` key of `experimental`. The only valid `isolation` value is `"worktree"`. See [supported frontmatter fields](../09-Agents-Patterns/sub-agents.md#supported-frontmatter-fields) for what each one does
+- **Ignored fields**: `permissionMode`, `hooks`, `mcpServers`, and `initialPrompt`. An agent file can’t add hooks or MCP servers on its own, so add those as plugin [hooks](#hooks) and [MCP servers](#mcp-servers) instead
+- **Frontmatter that doesn’t parse**: the agent still loads with every field ignored. It’s named after the file, and its description reads `Agent from my-plugin plugin`. Run [`claude plugin validate`](plugins-cli-reference.md#plugin-validate) in your shell to find these files
+
+For what each field does and the precedence rules, see [Subagents](../09-Agents-Patterns/sub-agents.md#supported-frontmatter-fields).
+
+
+[​](#hooks)
+
+Hooks
+
+A [hook](../07-Hooks/hooks-guide.md) runs something automatically at a point in Claude Code’s lifecycle, such as after every file edit: a shell command, an HTTP request, an MCP tool call, a prompt to a model, or a subagent. Save the plugin’s hooks in `hooks/hooks.json` at the plugin root, under a top-level `"hooks"` key, in the same shape as the `hooks` object in `settings.json`. That lets you copy an existing settings hook in unchanged. This hook runs a bundled script after every `Write` or `Edit`:
+
+hooks/hooks.json
+
+```python
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/scripts/format.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Save the script at `scripts/format.sh` and make it executable. Load the plugin and ask Claude to edit a file. A `PostToolUse` hook that exits 0 shows nothing in the transcript, so confirm it ran with [debug logging](../07-Hooks/hooks.md#debug-hooks) or by what the script itself changes. Hooks in `hooks/hooks.json` and in the `hooks` manifest key both load. For every event and its payload, see [Hook events](../07-Hooks/hooks.md#hook-events).
+
+
+[​](#when-plugin-hooks-fire)
+
+When plugin hooks fire
+
+A plugin’s hooks don’t wait for one of the plugin’s skills or commands to be used. Claude Code registers them when a session loads the plugin, and they fire on their events from then on. To limit when a hook runs, narrow its `matcher`. If a hook never fires, see [hooks that don’t fire](plugins-troubleshooting.md#failed-to-load-hooks-from-and-hooks-that-dont-fire).
+
+
+[​](#environment-quoting-and-matching-mcp-tools)
+
+Environment, quoting, and matching MCP tools
+
+The hook’s environment, the quoting of `${CLAUDE_PLUGIN_ROOT}`, and matchers for the plugin’s own MCP tools work as follows:
+
+- **Environment**: every hook process receives `CLAUDE_PLUGIN_ROOT` and `CLAUDE_PLUGIN_DATA` in its environment, plus `CLAUDE_PLUGIN_OPTION_<KEY>` for each [user configuration](#user-configuration) value, so your script can read them from there
+- **Quoting**: when `command` has no `args`, it runs through a shell, so wrap the `${CLAUDE_PLUGIN_ROOT}` path in double quotes, as the `hooks/hooks.json` example under [Hooks](#hooks) does, to keep the expanded path one shell word. When you pass `args` instead, each element is passed as one argument with no shell and needs no quoting. See [exec form and shell form](../07-Hooks/hooks.md#exec-form-and-shell-form)
+- **Matching the plugin’s own MCP tools**: a tool from an [MCP server this plugin declares](#mcp-servers) is named `mcp__plugin_<plugin>_<server>__<tool>`, so write that full name in the matcher. A matcher on the server name alone never fires. See [Match MCP tools](../07-Hooks/hooks.md#match-mcp-tools)
+
+
+[​](#mcp-servers)
+
+MCP servers
+
+An MCP server gives Claude tools from an external system. Declare it in `.mcp.json` at the plugin root, in the same shape as a [project `.mcp.json`](../06-MCP-Tools/General/mcp.md#project-scope). This `.mcp.json` declares one server named `db`:
+
+.mcp.json
+
+```python
+{
+  "mcpServers": {
+    "db": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/server.js"]
+    }
+  }
+}
+```
+
+You can also omit the `mcpServers` wrapper and put `db` at the top level of the file. Load the plugin and run `/mcp` to confirm the server appears as `plugin:my-plugin:db`. `claude plugin validate` checks `.mcp.json` and reports a server entry that Claude Code would drop at load time as an error. Requires Claude Code v2.1.281 or later. For where a bad entry shows up at load time, see [MCP servers that don’t start](plugins-troubleshooting.md#invalid-mcp-server-config-for-and-mcp-servers-that-dont-start). The `mcpServers` manifest key takes an inline server map, a path to a JSON file, or an array of those. When a manifest server has the same name as one in `.mcp.json`, the manifest server replaces it.
+
+
+[​](#reach-users-on-claude-ai-and-cowork)
+
+Reach users on claude.ai and Cowork
+
+A local stdio server, such as the `db` server under [MCP servers](#mcp-servers), runs in Claude Code and in a Cowork session that runs on your machine in the Claude Desktop app, but not on claude.ai. To reach users there too, reference a remote server by its `https://` URL, which claude.ai and Cowork offer to the user as a connector, as [Bundle an MCP connector with its skill](https://claude.com/docs/plugins/build#bundle-an-mcp-connector-with-its-skill) shows.
+
+
+[​](#server-names-tool-names-and-reloads)
+
+Server names, tool names, and reloads
+
+The server’s names, variable substitution, and reload behavior follow these rules:
+
+- **Server name**: `plugin:<plugin>:<server>`, so the `db` server in `my-plugin` is `plugin:my-plugin:db` in `/mcp`. Use the same form to name the server in an [`mcp_tool` hook](../07-Hooks/hooks.md#mcp-tool-hook-fields)
+- **Tool names**: `mcp__plugin_<plugin>_<server>__<tool>`, so a `query` tool on that `db` server is `mcp__plugin_my-plugin_db__query`. That is the name to use in [permission rules](../02-Claude-Code-CLI/permissions.md) and [hook matchers](#hooks)
+- **Substitution**: `${CLAUDE_PLUGIN_ROOT}` and the other [path variables](#path-variables-and-persistent-data) are substituted in `command`, `args`, and `env`. No quoting is needed in `args`, because each element is passed as one argument
+- **Reload**: when the user runs `/reload-plugins` and [the reload applies](plugins-cli-reference.md#reloads-that-change-mcp-tools), a server whose configuration is unchanged keeps its connection. A server whose configuration changed reconnects, and one you removed disconnects
+
+
+[​](#include-a-packaged-mcpb-server)
+
+Include a packaged MCPB server
+
+The `mcpServers` key also accepts a packaged server as an [MCPB file](https://github.com/modelcontextprotocol/mcpb), whose extension is `.mcpb` or the older `.dxt`. Point the key at the file, as a path inside the plugin or an `https://` URL:
+
+.claude-plugin/plugin.json
+
+```python
+{
+  "name": "my-plugin",
+  "mcpServers": "./servers/db.mcpb"
+}
+```
+
+The server takes its name from the `name` in the bundle’s manifest. For transports and authentication, see [MCP](../06-MCP-Tools/General/mcp.md#plugin-provided-mcp-servers).
+
+
+[​](#lsp-servers)
+
+LSP servers
+
+An LSP server gives Claude diagnostics and code navigation for a language. If an [official code intelligence plugin](plugins-code-intelligence.md) already covers your language, install that instead of writing one. Otherwise declare the server in `.lsp.json` at the plugin root:
+
+.lsp.json
+
+```python
+{
+  "gopls": {
+    "command": "gopls",
+    "args": ["serve"],
+    "extensionToLanguage": {
+      ".go": "go"
+    }
+  }
+}
+```
+
+The file maps each server name directly to its configuration, with no wrapper object around the map. `command` is the binary’s name, with its arguments in `args`. `extensionToLanguage` needs at least one extension, each starting with `.`. `claude plugin validate` doesn’t read this file. When any entry is invalid, the whole file is skipped at load and `Invalid LSP server config for ".lsp.json"` appears in the `/plugin` **Errors** tab. Your plugin configures the connection but doesn’t install the server binary, and each file extension gets one server:
+
+- **Missing binary**: Claude Code starts `command` by name from the user’s `PATH`. When the binary isn’t there, the server fails to start and `claude --debug` logs `LSP server <name> failed to start`
+- **Extension conflicts**: when two enabled servers claim the same extension, the first registered handles those files and the other isn’t used for them, whether the servers come from one plugin or two. The `/plugin` **Errors** tab shows the warning `LSP server "<name>" is not used for <ext> files`
+
+The `lspServers` manifest key takes the same map inline, a path to a JSON file, or an array of those, and its servers add to the ones in `.lsp.json`. When a manifest server has the same name as one in `.lsp.json`, the manifest server replaces it. For `transport`, timeouts, restarts, and the other fields, see [`lspServers`](plugins-reference.md#lspservers). Send log output to stderr, not stdout. Claude Code reads a server’s stdout as protocol messages only, and accepts message headers up to 64 KiB and a message body up to 32 MiB. Claude Code disconnects a server that exceeds either limit or writes non-protocol output to stdout, and counts the disconnect as a crash for `restartOnCrash` and `maxRestarts`. When you run with `--debug`, Claude Code writes an error naming the cause to the debug log.
+
+
+[​](#executables)
+
+Executables
+
+Files in `bin/` at the plugin root are on the `PATH` of the Bash tool’s shell while the plugin is enabled, so Claude can run them as bare commands. Add an executable script:
+
+bin/hello-plugin
+
+```python
+#!/bin/bash
+echo "hello from my-plugin"
+```
+
+Make it executable with `chmod +x bin/hello-plugin` and load the plugin. When you ask Claude to run `hello-plugin`, the Bash tool result shows the script’s output. Plugin `bin/` directories come after the user’s own `PATH` entries, so a plugin can’t shadow `git`, `ls`, or another system command. claude.ai and Cowork don’t install a plugin that has a top-level `bin/` directory, including one you [distribute through claude.ai organization settings](https://claude.com/docs/plugins/org-sync#keep-executables-out-of-the-top-level-bin-directory).
+
+
+[​](#default-settings)
+
+Default settings
+
+To set defaults that apply while the plugin is enabled, add a `settings.json` at the plugin root, or put the same object inline in the `settings` manifest key. Two keys take effect, `agent` and `subagentStatusLine`, and every other key is dropped. Set `agent` to run one of the plugin’s own agents as the main thread:
+
+settings.json
+
+```python
+{
+  "agent": "security-reviewer"
+}
+```
+
+Load the plugin and start a session. Claude then answers in the main conversation with the `security-reviewer` agent’s system prompt and model. For everything the key controls, see the [`agent` setting](../02-Claude-Code-CLI/settings-reference.md#agent). When the same key is set in more than one place, these rules decide which value applies:
+
+- **File over manifest**: when both exist and `settings.json` sets at least one supported key, `settings.json` applies and the manifest’s `settings` is ignored
+- **User settings over plugin defaults**: across settings sources, plugin defaults are the lowest layer, so a user’s own `agent` in `~/.claude/settings.json` overrides yours
+- **Two plugins set the same key**: the value from the plugin loaded last applies, and `claude --debug` logs `overrides setting`
+
+For the `subagentStatusLine` shape, see [subagent status lines](../02-Claude-Code-CLI/statusline.md#subagent-status-lines).
+
+
+[​](#themes-and-output-styles)
+
+Themes and output styles
+
+A plugin can include color themes and output styles. Both appear in the same pickers as the user’s own. For either one, setting the manifest key replaces the folder scan.
+
+| Component    | Save as                   | Format                                                                                                                           | Appears in                            | Manifest key          |
+|:-------------|:--------------------------|:---------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------|:----------------------|
+| Theme        | `themes/<slug>.json`      | The [custom theme file](../02-Claude-Code-CLI/terminal-config.md#create-a-custom-theme) format users write in `~/.claude/themes/`                | `/theme`, under the file’s `name`     | `experimental.themes` |
+| Output style | `output-styles/<name>.md` | The [custom output style](../02-Claude-Code-CLI/output-styles.md#create-a-custom-output-style) format, with `name` and `description` frontmatter | `/output-style`, as `<plugin>:<name>` | `outputStyles`        |
+
+Plugin themes are read-only, so when a user edits one in `/theme`, the edit is saved as a copy in their own themes directory. This theme recolors the prompt accent and error text on the dark preset:
+
+themes/dracula.json
+
+```python
+{
+  "name": "Dracula",
+  "base": "dark",
+  "overrides": {
+    "claude": "#bd93f9",
+    "error": "#ff5555"
+  }
+}
+```
+
+
+[​](#channels)
+
+Channels
+
+A [channel](../02-Claude-Code-CLI/channels.md) lets an outside system such as a chat app send messages into a session. In a plugin, a channel is one of the MCP servers plus a `channels` entry that binds to it and can prompt for its own configuration. This manifest binds a channel to a `telegram` server and asks for a bot token:
+
+.claude-plugin/plugin.json
+
+```python
+{
+  "name": "my-plugin",
+  "mcpServers": {
+    "telegram": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/server.js"],
+      "env": { "BOT_TOKEN": "${user_config.bot_token}" }
+    }
+  },
+  "channels": [
+    {
+      "server": "telegram",
+      "userConfig": {
+        "bot_token": {
+          "type": "string",
+          "title": "Bot token",
+          "description": "Telegram bot token",
+          "sensitive": true
+        }
+      }
+    }
+  ]
+}
+```
+
+`server` must match a key in `mcpServers`. The per-channel `userConfig` takes the same shape as the [top-level `userConfig` key](#user-configuration). For what the server must implement and how users enable a channel plugin, see [Package as a plugin](../02-Claude-Code-CLI/channels-reference.md#package-as-a-plugin) in the channels reference. For the field table, see [`channels`](plugins-reference.md#channels).
+
+
+[​](#monitors)
+
+Monitors
+
+A monitor is a shell command that runs in the background for the whole session. What it prints reaches Claude as notifications, so Claude can react to a log or a status change without being asked to watch it. Save the entries in `monitors/monitors.json`:
+
+monitors/monitors.json
+
+```python
+[
+  {
+    "name": "error-log",
+    "command": "tail -F ./logs/error.log",
+    "description": "Application error log"
+  }
+]
+```
+
+The command runs in a shell, in the working directory the session started in. A monitor’s command is limited in where it starts and what it can reference:
+
+- **Interactive sessions only**: plugin monitors start in an interactive session and never in non-interactive mode with the `-p` flag. They also start only where the [Monitor tool](../02-Claude-Code-CLI/tools-reference.md#monitor-tool) is available
+- **No user configuration**: `command` gets the [path variables](#path-variables-and-persistent-data) and `${ENV_VAR}` from the environment, but never `${user_config.*}`. A monitor that references one doesn’t start, and monitor processes don’t receive `CLAUDE_PLUGIN_OPTION_<KEY>` either
+- **Disabling mid-session**: if you disable a plugin mid-session, Claude Code doesn’t stop monitors that are already running. They stop when the session ends
+
+The `experimental.monitors` manifest key takes the same array inline or a path to a JSON file, and is read instead of `monitors/monitors.json`. For the `when` trigger and the other fields, see [`monitors`](plugins-reference.md#monitors).
+
+
+[​](#user-configuration)
+
+Ask the user for configuration values
+
+Declare the values your plugin needs from the user in the `userConfig` manifest key, so users don’t edit `settings.json` themselves. Each option appears in a dialog with its `title` as the label and its `description` beneath it. Set `"sensitive": true` for a token or password. The dialog then masks the input, and the value is stored in secure storage rather than `settings.json`. This manifest asks for an endpoint and a token:
+
+.claude-plugin/plugin.json
+
+```python
+{
+  "name": "my-plugin",
+  "userConfig": {
+    "api_url": {
+      "type": "string",
+      "title": "API URL",
+      "description": "Base URL of your team's API"
+    },
+    "api_token": {
+      "type": "string",
+      "title": "API token",
+      "description": "Token for your team's API",
+      "sensitive": true
+    }
+  }
+}
+```
+
+
+[​](#when-the-configuration-dialog-appears)
+
+When the configuration dialog appears
+
+The dialog appears only in the interactive `/plugin` interface. It opens for any option that isn’t set yet when the user does any of the following:
+
+- Installs the plugin in `/plugin`
+- Runs `/plugin install <plugin>@<marketplace>` inside a session
+- Enables the plugin from the **Installed** tab in `/plugin`
+
+To open the same dialog at any time, the user runs `/plugin configure <plugin>@<marketplace>`. The `claude plugin install` shell command never prompts for `userConfig` values. To set values from the shell, pass each one as `--config KEY=VALUE`. When options remain unset, the command prints a `userConfig options not yet set` line that names both ways to set them. [The `userConfig` dialog never appears](plugins-troubleshooting.md#the-userconfig-dialog-never-appears) quotes the line. For the option fields, where each value is stored, how a component references a saved value, and which fields reject `${user_config.*}`, see [User configuration](plugins-reference.md#user-configuration).
+
+
+[​](#path-variables-and-persistent-data)
+
+Reference plugin paths and store data
+
+You don’t know where your plugin will be installed, so refer to its files and data through these variables rather than fixed paths. They’re substituted in skill, command, and agent content, in hook and monitor commands, and in MCP and LSP server configurations. They’re also exported to hook, MCP, and LSP processes:
+
+- **`${CLAUDE_PLUGIN_ROOT}`**: the plugin’s install directory. Each version has its own [cache directory](plugins-loading.md#find-plugins-on-disk), so the path changes when the plugin updates. Don’t write state there
+- **`${CLAUDE_PLUGIN_DATA}`**: a directory that survives updates, for `node_modules`, virtual environments, and caches. It resolves to `~/.claude/plugins/data/<id>/` and is created when first referenced
+- **`${CLAUDE_PROJECT_DIR}`**: the project root, the same value hooks receive
+
+In the data directory path, `<id>` is the plugin identifier with every character other than letters, digits, `_`, and `-` replaced by `-`, so `my-plugin@my-marketplace` becomes `my-plugin-my-marketplace`. On Windows, the substituted paths use forward slashes so a shell doesn’t read backslashes as escapes.
+
+
+[​](#install-dependencies-into-the-data-directory)
+
+Install dependencies into the data directory
+
+For a marketplace-installed plugin, Claude Code installs eligible [Node.js package dependencies](plugins-loading.md#node-js-package-dependencies) automatically when it caches the plugin, so you may not need to install them yourself. When you do, this `SessionStart` hook installs `node_modules` into `${CLAUDE_PLUGIN_DATA}` on first run and again after an update changes `package.json`:
+
+hooks/hooks.json
+
+```python
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "diff -q \"${CLAUDE_PLUGIN_ROOT}/package.json\" \"${CLAUDE_PLUGIN_DATA}/package.json\" >/dev/null 2>&1 || (cd \"${CLAUDE_PLUGIN_DATA}\" && cp \"${CLAUDE_PLUGIN_ROOT}/package.json\" . && npm install) || rm -f \"${CLAUDE_PLUGIN_DATA}/package.json\""
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+After the first session, `~/.claude/plugins/data/<id>/node_modules` exists. An MCP server can then set `NODE_PATH` to `${CLAUDE_PLUGIN_DATA}/node_modules` in its `env`. For which fields substitute which variable, see [Environment variables](plugins-reference.md#environment-variables).
+
+
+[​](#next-steps)
+
+Next steps
+
+- [Plugin manifest reference](plugins-reference.md): `plugin.json` fields, path rules, and the standard layout
+- [Test plugins with evals](plugin-evals.md): check that the components you added change Claude’s behavior the way you intend
+- [Publish and distribute a plugin](plugins-publish.md): version the plugin and put it in a marketplace
+- [Troubleshoot plugins](plugins-troubleshooting.md): what to do when a component doesn’t load or a hook doesn’t fire

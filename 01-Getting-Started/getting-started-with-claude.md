@@ -1,11 +1,13 @@
 ---
-title: "Getting started with Claude | Claude Help Center"
+title: "Get started with Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114491-getting-started-with-claude"
 category: "01-Getting-Started"
-fetched_at: "2026-03-22T09:01:46Z"
+fetched_at: "2026-09-29T06:32:04Z"
+tags: ["getting-started"]
 ---
 
-# Getting started with Claude
+# Get started with Claude
+
 
 
 ## What is Claude?
@@ -16,15 +18,15 @@ Claude is a large language model (LLM) built by Anthropic. It's trained to be a 
 
 You can access Claude through several platforms:
 
-- **Web**: Visit [claude.ai](https://claude.ai/) to chat with Claude in a web browser.
+- **Web**: Visit **[claude.ai](https://claude.ai/)** to chat with Claude in a web browser.
 
-- **Desktop**: [Download Claude Desktop](https://claude.ai/download) for Mac or Windows.
+- **Desktop**: **[Download Claude Desktop](https://claude.ai/download)** for Mac or Windows.
 
 - **Mobile**: Download Claude for iOS or Android to chat on your mobile device.
 
 ## Supported locations
 
-You must be in one of our [supported locations](https://support.claude.com/en/articles/8461763-where-can-i-access-claude) to access Claude.
+You must be in one of our **[supported locations](../21-Account-Support/where-can-i-access-claude-ai.md)** to access Claude.
 
 ## Is there an age requirement to use Claude?
 
@@ -40,7 +42,7 @@ You use **prompts** to communicate with Claude. The best approach is to speak to
 
 - **Complex requests**: Multi-step projects, analysis, creative writing, coding, or technical tasks.
 
-### Using the Claude chat interface
+### Use the Claude chat interface
 
 Type your prompt into the chat interface and click the submit button to start a conversation with Claude. You can click the "+" button in the lower left or type "/" to view additional options and commands:
 
@@ -51,7 +53,9 @@ Type your prompt into the chat interface and click the submit button to start a 
 
 ### Which model am I talking to?
 
-The model you're currently chatting with is displayed below your text input. Free users can’t adjust this, but users on paid plans can toggle between different models using the model selector.
+The model you're currently chatting with is displayed either below your text input (on web and desktop) or at the top of your screen (on mobile). You can click on the model you're using to open the model selector and switch to another available model.
+
+You can also choose how much effort Claude puts into each response and whether it uses extended thinking. Learn more about **[changing the model, effort, and thinking settings](../15-Claude-AI-Features/how-can-i-change-the-model-version-that-i-m-chatting-with.md)**.
 
 ### Can I chat with Claude in different languages?
 
@@ -63,11 +67,15 @@ For instructions to select a language in your settings, see **[How to use Claude
 
 While using the free Claude plan, there is a session-based usage limit that will reset every five hours. Also, the number of messages you can send will vary based on demand, and we may impose other types of usage limits to ensure fair access to all users. Claude will notify you when you’ve reached your limit, or if your prompt exceeds the available context window.
 
-For more information about usage and length limits, refer to **[Understanding usage and length limits](../15-Claude-AI-Features/understanding-usage-and-length-limits.md)**.
+For more information about usage and length limits, refer to **[How do usage and length limits work?](../22-Safety-Policy/understanding-usage-and-length-limits.md)**
 
-## How do I increase my usage limits?
+### How do I increase my usage limits?
 
-We also have several paid subscriptions that offer additional usage. For more information, view our guide on **[Choosing a Claude plan](../17-Billing-Plans/choosing-a-claude-plan.md)**.
+We also have several paid subscriptions that offer additional usage. For more information, refer to our **[Plans & Pricing page](../17-Billing-Plans/pricing.md)**.
+
+### Can I import my conversation history from another AI provider?
+
+No, it's not possible to import conversation history from another AI provider into Claude at this time. However, Free, Pro, and Max users can use the memory import feature to transfer memory from other AI providers into Claude. For more information, see **[Import and export your memory from Claude](../15-Claude-AI-Features/importing-and-exporting-your-memory-from-claude.md)**.
 
 ------------------------------------------------------------------------
 
@@ -89,8 +97,8 @@ Once you've started using Claude, you can:
 
 - **[Customize your appearance settings](../15-Claude-AI-Features/customizing-your-appearance-settings.md)**
 
-- **[Explore Claude’s personalization features](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features)**
+- **[Explore Claude’s personalization features](../15-Claude-AI-Features/understanding-claude-s-personalization-features.md)**
 
-- Learn more about designing effective prompts in our [**prompt engineering documentation**](../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md).
+- Learn more about designing effective prompts in our **[prompt engineering documentation](../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)**.
 
-- For additional features and more usage, consider **[upgrading to a paid plan](../17-Billing-Plans/choosing-a-claude-plan.md)**.
+- For additional features and more usage, consider **[upgrading to a paid plan](../17-Billing-Plans/pricing.md)**.

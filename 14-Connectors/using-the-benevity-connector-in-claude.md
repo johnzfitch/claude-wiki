@@ -1,130 +1,104 @@
 ---
-title: "Using the Benevity Connector in Claude | Claude Help Center"
+title: "Using the Benevity connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923227-using-the-benevity-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-03-22T09:01:42Z"
+fetched_at: "2026-09-26T06:40:19Z"
 tags: ["connectors"]
 ---
 
-3.  Using the Benevity Connector in Claude
+# Using the Benevity connector in Claude
 
-# Using the Benevity Connector in Claude
+Connect Claude to Benevity's database of 2.5M+ nonprofits to discover and research charitable organizations.
 
+9 minClaude.ai
 
-The Benevity integration enables you to discover and research charitable causes and nonprofit organizations through natural conversation. This article explains how to set up and use the Benevity Nonprofit connector with Claude to find nonprofits that align with your values.
+[Open Claude](https://claude.ai/new)
 
-# An error occurred.
+The Benevity connector gives Claude access to a database of 2.5M+ nonprofit organizations. Search by cause, location, or keyword, and get detailed profiles including mission statements, program descriptions, and geographic focus.
 
-Unable to execute JavaScript.
+The Benevity integration relies on Claude's ability to [use remote connectors(opens in new tab)](use-connectors-to-extend-claude-s-capabilities.md).
 
-The Benevity integration relies upon Claude’s ability to use remote connectors.
+## What this connector provides[](#what-this-connector-provides)
 
-## What this integration provides
+- Access to 2.5M+ nonprofit organizations
+- Detailed profiles including mission statements, program descriptions, and geographic focus
+- Keyword search for local and international organizations
+- Direct website links to organizations
 
-The Benevity integration connects Claude directly to Benevity’s extensive database of charitable organizations. This integration allows you to search for nonprofits, learn about their missions and programs, and access their websites—all through conversation with Claude.
+## Who can use this[](#who-can-use-this)
 
-This integration provides access to:
+Available to all paid Claude plan users (Pro, Max, Team, or Enterprise). No Benevity account or authentication is required.
 
-- 2.5M+ nonprofit organizations
+## Setting up the connector[](#setting-up-the-connector)
 
-- Detailed organization profiles, including mission statements, program descriptions, and geographic focus
+### For organization owners (Team and Enterprise)[](#for-organization-owners-team-and-enterprise)
 
-- Keyword search to find local and national/international organizations
+1.  Navigate to [Admin settings(opens in new tab)](https://claude.ai/admin-settings) \> Connectors
+2.  Select `Browse connectors`
+3.  Find and select Benevity
+4.  Select `Add to your team`
 
-- Direct website links to learn more and support nonprofits you care about
+### For individual users[](#for-individual-users)
 
-## Who can access the Benevity integration?
+1.  Navigate to [Settings(opens in new tab)](https://claude.ai/settings) \> Connectors
+2.  Select `Browse connectors`
+3.  Find and select Benevity
+4.  Follow the instructions to enable
 
-The Benevity integration is available to users with paid Claude plans (Pro, Max, Team, or Enterprise). A Benevity account is not required to use the connector. Authentication or login is not needed—simply connect and start searching.
+## Example use cases[](#example-use-cases)
 
-## Setting up the Benevity integration
+**Interest-based discovery:**
 
-### For Organization Owners (Team and Enterprise)
+Find nonprofits working on ocean conservation in the Pacific Northwest
 
-1.  Navigate to [Admin settings \> Connectors](https://claude.ai/admin-settings/connectors)
+
 
-2.  Select “Browse connectors”
+Open in Claude
 
-3.  Search and select “Benevity”
+**Local charity research:**
 
-4.  Select “Add to your team”
+What community organizations serve homeless populations in Denver?
 
-### For Individual Claude Users
+
 
-1.  Navigate to Settings \> Connectors
+Open in Claude
 
-2.  Select “Browse connectors”
+**Pre-donation research:**
 
-3.  Search and select “Benevity”
+Tell me about the mission and programs of \[organization name\]
 
-4.  Follow the instructions to enable the Benevity connector
+
 
-Learn about [finding and connecting tools](https://support.claude.com/en/articles/11724452-using-the-connectors-directory-to-extend-claude-s-capabilities) in Claude.
+Open in Claude
 
-## Common use cases
+**Corporate giving:**
 
-### Discover nonprofits by interest area
+Find verified nonprofits focused on STEM education for workplace giving programs
 
-Describe the type of nonprofit you want to support and get recommendations for relevant nonprofits.
+
 
-Example prompts:
+Open in Claude
 
-    I’m passionate about environmental conservation, especially ocean health. 
-    Can you help me find organizations working on marine ecosystem protection?
+## Frequently asked questions[](#frequently-asked-questions)
 
-    I’d like to learn about organizations working on mental health support for 
-    veterans. What options are out there?
+### Does it cost extra?[](#does-it-cost-extra)
 
-### Find local charities
+No. The integration is free for all paid Claude plans. No separate Benevity account is needed.
 
-Search for nonprofits in your community by location to support local impact.
+### Can I donate through Claude?[](#can-i-donate-through-claude)
 
-Example prompts:
+The connector supports research only. To donate, visit the nonprofit's website directly.
 
-    I want to volunteer with a food bank in Seattle. Can you help me find 
-    local organizations that address food insecurity?
+### How current is the data?[](#how-current-is-the-data)
 
-    Our company wants to support education initiatives in Chicago. Can you 
-    find nonprofits focused on youth education in that area?
+Claude accesses Benevity's database in real time. Organization profiles are updated regularly.
 
-### Research before donating
+### Does it include international organizations?[](#does-it-include-international-organizations)
 
-Learn comprehensive details about an organization’s mission, programs, and impact before contributing.
+Yes. The database includes nonprofit organizations worldwide.
 
-Example prompts:
-
-    I heard about Ocean Conservancy. Can you tell me more about what they do 
-    and what communities they serve?
-
-    Can you compare these three environmental nonprofits and tell me which has 
-    the broadest geographic reach?
-
-### Plan corporate giving
-
-Identify verified nonprofits for workplace giving programs or team volunteering events.
-
-Example prompts:
-
-    We’re planning a company volunteer day focused on STEM education. What 
-    organizations in our area could we partner with?
-
-    Our team wants to set up a matching gift program. Can you help us find 
-    reputable charities in the housing and homelessness space?
-
-## FAQs
-
-### Is the Benevity integration free to use?
-
-Yes! The integration is free for all Claude Pro users. No Benevity account is required to search and discover nonprofit organizations.
-
-### Can I donate directly through this integration?
-
-No, the integration is designed for discovery and research. To donate or volunteer, you’ll need to visit the nonprofit’s website directly. Claude can provide you with links to the organizations you’re interested in.
-
-### How current is the data?
-
-The integration provides real-time access to Benevity’s database, which includes over 2.5 million nonprofit organizations. Organization profiles are regularly updated to reflect current information.
-
-### Does this work internationally?
-
-Yes, the Benevity database includes nonprofit organizations from around the world. You can search for local charities in your community or explore international organizations working on global issues.
+- [What this connector provides](#what-this-connector-provides)
+- [Who can use this](#who-can-use-this)
+- [Setting up the connector](#setting-up-the-connector)
+- [Example use cases](#example-use-cases)
+- [Frequently asked questions](#frequently-asked-questions)

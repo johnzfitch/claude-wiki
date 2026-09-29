@@ -2,12 +2,13 @@
 title: "Does Anthropic crawl data from the web, and how can site owners block the crawler? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
 category: "19-Reference"
-fetched_at: "2026-03-22T09:01:47Z"
+fetched_at: "2026-09-29T06:32:34Z"
+tags: ["news-research"]
 ---
 
-3.  Does Anthropic crawl data from the web, and how can site owners block the crawler?
-
 # Does Anthropic crawl data from the web, and how can site owners block the crawler?
+
+April 7, 2026
 
 
 As per industry standard, Anthropic uses a variety of robots to gather data from the public web for model development, to search the web, and to retrieve web content at users’ direction. Anthropic uses different robots to enable website owner transparency and choice. Below is information on the three robots that Anthropic uses and how to set your site preferences to enable those you want to access your content and limit those you don’t.
@@ -36,9 +37,9 @@ User-agent: ClaudeBot
 
 Disallow: /
 
-Opting out of being crawled by Anthropic Bots requires modifying the robots.txt file in the manner above. Alternate methods like blocking IP address(es) from which Anthropic Bots operates may not work correctly or persistently guarantee an opt-out, as doing so impedes our ability to read your robots.txt file. Additionally, we do not currently publish IP ranges, as we use service provider public IPs. This may change in the future.
+Opting out of being crawled by Anthropic Bots requires modifying the robots.txt file in the manner above. Alternate methods like blocking IP address(es) from which Anthropic Bots operates may not work correctly or persistently guarantee an opt-out, as doing so impedes our ability to read your robots.txt file. If a crawler has a source IP address on **[this list](https://claude.com/crawling/bots.json)**, it indicates that the crawler is coming from Anthropic.
 
-You can learn more about our data handling practices and commitments at our [Help Center](https://support.anthropic.com/en/collections/4078534-privacy-legal). If you have further questions, or believe that our Bots may be malfunctioning, please reach out to [\[email protected\]](/cdn-cgi/l/email-protection#e2818e83978687808d96a2838c968a908d928b81cc818d8f). Please reach out from an email that includes the domain you are contacting us about, as it is otherwise difficult to verify reports.
+You can learn more about our data handling practices and commitments at our **[Help Center](https://support.claude.com/en/collections/4078534-privacy-and-legal)**. If you have further questions, or believe that our Bots may be malfunctioning, please reach out to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#c9aaa5a8bcadacaba6bd89a8a7bda1bba6b9a0aae7aaa6a4). Please reach out from an email that includes the domain you are contacting us about, as it is otherwise difficult to verify reports.
 
 You can be notified of substantial changes to this article by clicking here and completing the form:
 

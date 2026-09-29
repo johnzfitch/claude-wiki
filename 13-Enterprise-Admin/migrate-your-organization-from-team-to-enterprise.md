@@ -2,16 +2,17 @@
 title: "Migrate your organization from Team to Enterprise | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13779868-migrate-your-organization-from-team-to-enterprise"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-22T09:01:45Z"
-tags: ["billing", "enterprise"]
+fetched_at: "2026-09-29T06:31:17Z"
+tags: ["enterprise"]
 ---
-
-4.  Migrate your organization from Team to Enterprise
 
 # Migrate your organization from Team to Enterprise
 
 
-When upgrading from a Team plan to an Enterprise plan, we recommend you keep the same Team organization and follow the upgrade path to change it to Enterprise. This way your data (memberships/roles, conversations and projects) and settings will be preserved. If a you create a brand new Enterprise organization, then you'll need to set up everything from scratch.
+
+When upgrading from a Team plan to an Enterprise plan, we recommend you keep the same Team organization and follow the upgrade path to change it to Enterprise. This will allow you to preserve your data (memberships/roles, conversations, and projects) and some of the settings from your Team plan organization. If you create a brand new Enterprise organization, then you'll need to set up everything from scratch.
+
+There are two ways to upgrade: upgrade using the self-serve flow, or follow the sales-assisted flow if you’re working with an Anthropic account executive on an invoiced or contracted agreement. The steps and timing differ, so use the section that matches your situation.
 
 ## What's retained (same organization upgrade)
 
@@ -21,7 +22,11 @@ When upgrading from a Team plan to an Enterprise plan, we recommend you keep the
 
 - User memberships and roles
 
-## Migrate from Team to Enterprise
+## Before you migrate
+
+If you previously set a spend limit on your Team plan, consider increasing it before your go-live date so users aren’t locked out. Once the org-level spend limit is reached, all users lose access immediately until the spend limit is raised or the new month begins.
+
+## Migrate from Team to self-serve Enterprise
 
 You can migrate from a Team plan to a self-serve Enterprise plan by following these steps:
 
@@ -35,48 +40,98 @@ You can migrate from a Team plan to a self-serve Enterprise plan by following th
 
 5.  Your payment information will be saved from previous Team plan payments, but you can click the pencil icon to change it if needed.
 
-    1.  We only support credit card payments for self-serve Enterprise plans. For more information, see **[Self-serve vs. sales-assisted Enterprise](../17-Billing-Plans/what-is-the-enterprise-plan.md#h_3058c781c5)**.
+    1.  When you migrate from a Team to a self-serve Enterprise plan, we only support credit card payments. After you migrate to a self-serve Enterprise plan, you can choose to use a credit card, debit card, or bank transfer. For more information, see **[Self-serve vs. sales-assisted Enterprise](../17-Billing-Plans/what-is-the-enterprise-plan.md#h_3058c781c5)**.
 
 6.  Review your order summary and click "Confirm upgrade."
 
-**Important:** Migrating an organization from Team to Enterprise via this pathway is not reversible; please ensure that an Enterprise plan is the right fit for your organization before initiating this change.
+**Important:** Migrating an organization from Team to Enterprise via this pathway is not reversible. Please ensure that an Enterprise plan is the right fit for your organization before initiating this change.
 
-## Seat assignment
+## Migrate from Team to sales-assisted Enterprise
 
-During migration, some users may appear as "Unassigned" rather than being automatically mapped to seat tiers. Admins should verify all users have correct seat assignments after the cutover.
+You can migrate from a Team plan to a sales-assisted Enterprise plan through the Anthropic **[sales team](https://claude.com/contact-sales?utm_source=support&utm_medium=article&utm_content=enterprise-plan_contact-sales_intro)**. If your organization is migrating to a sales-assisted Enterprise plan, review the following before your go-live date:
 
-For detailed guidance, refer to **[Purchasing and managing seats on Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**.
+- **Plan your activation timing:** Work with your account executive to agree on a go-live time before your contract is countersigned. Once your agreement is countersigned, your organization is provisioned on your contracted start date. Activation may not complete until later that day, so plan your internal rollout for the next business morning to avoid disruption mid-workday.
 
-## SSO and identity setup timeline
+- **Expect a brief disruption at cutover:** Your users won’t be able to access Claude while provisioning is in progress. After the migration is complete, all users, including admins and standard users, should log out and log back in to refresh their session and clear any cached legacy settings.
+
+## After you migrate
+
+After your self-serve or sales-assisted migration is complete, we recommend reviewing the following settings.
+
+### Capabilities
+
+Some features that are turned on by default on Team plans may be turned off by default on Enterprise plans, so it's worth checking that your configuration matches your preferences.
+
+Your underlying data is preserved even when a capability is turned off. For example, if your Team plan had skills enabled and members had created custom skills, those skills are not deleted during the migration—they're retained in your organization. When an admin re-enables skills on the Enterprise plan, any previously created custom skills will be available again. The same applies to other default-off capabilities: turning the setting back on restores access to existing content rather than starting from scratch.
+
+The following capabilities are default-off for Enterprise plans:
+
+- Skills and by dependency, Skill creation and Skill sharing (both public and within the organization)
+
+- Code execution and file creation
+
+- Claude Design, Claude Slides, and Claude Docs (in Organization settings \> Artifacts)
+
+- Standalone Claude Design at claude.ai/design
+
+- Claude in Chrome
+
+### Per-user spend limits
+
+Go to **[Organization settings \> Usage](https://claude.ai/admin-settings/usage)** and review per-user spend limits for all members. Clear or adjust any that are no longer appropriate for your Enterprise plan configuration.
+
+### Seat assignments
+
+During migration, some users may appear as **No seat assigned** rather than being automatically mapped to seat tiers. Admins should verify all users have correct seat assignments after the cutover. Pay attention to your highest-usage members, and note that users without a seat won't have access until an admin corrects their seat assignment.
+
+For detailed guidance, refer to **[Purchase and manage seats on Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**.
+
+### Role-based access controls
+
+After migrating your organization from a Team plan to an Enterprise plan, an Owner or Primary Owner can follow the instructions to configure custom roles, groups, and group spend limits: **[Set up role-based permissions on Enterprise plans](../17-Billing-Plans/set-up-role-based-entitlements-on-enterprise-plans.md)**.
+
+Read more about groups, group spend limits, and custom roles:
+
+- **[Manage groups and group spend limits on Enterprise plans](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**
+
+- **[Manage custom roles on Enterprise plans](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**
+
+------------------------------------------------------------------------
+
+## Additional information
+
+### SSO and identity setup timeline
 
 - **Domain verification (DNS):** Allow 24–48 hours for DNS changes to propagate globally, though many changes take effect within 10 minutes.
 
 - **SCIM provisioning sync:** Microsoft Entra ID pushes changes approximately every 40 minutes. Okta syncs more frequently.
 
-For detailed setup instructions, refer to **[Setting up single sign-on (SSO)](../21-Account-Support/setting-up-single-sign-on-sso.md)** and **[Setting up JIT or SCIM provisioning](setting-up-jit-or-scim-provisioning.md).**
+For detailed setup instructions, refer to **[Set up single sign-on (SSO)](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md)** and **[Set up JIT or SCIM provisioning](setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md).**
 
 **Note:** Once you turn on SSO, existing users will be forced to log out and log back in.
 
-## Billing and usage configuration
+### Billing and usage configuration
 
 For usage-based Enterprise plans, usage is billed based on actual consumption. For more detailed information, refer to **[How am I billed for my Enterprise plan?](../17-Billing-Plans/how-am-i-billed-for-my-enterprise-plan.md)**
 
-If you had purchased extra usage for your Team plan, any unused credits will roll over and become available on your new usage-based Enterprise plan.
+If you had purchased usage credits for your Team plan, any unused balance will roll over and become available on your new usage-based Enterprise plan.
 
-## Provisioning process
+### Provisioning process
 
-On the start date, you'll be provisioned and able to use the new features by the end of the day. After initial setup, Owners and Primary Owners can self-serve additional seats by navigating to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)** and clicking "Manage" under **Total seats**.
+On the start date, you'll be provisioned and able to use the new features by the end of the day. After initial setup, Owners and Primary Owners can self-serve additional seats by navigating to **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)** and clicking "Manage" under **Total seats**.
+
+------------------------------------------------------------------------
 
 ## Helpful resources
 
-- **[Set up single sign-on (SSO)](../21-Account-Support/set-up-single-sign-on-sso.md)**
+- **[Set up single sign-on (SSO)](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md)**
 
-- **[Set up JIT or SCIM provisioning](set-up-jit-or-scim-provisioning.md)**
+- **[Set up JIT or SCIM provisioning](setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)**
 
-- **[Purchase and manage seats on Enterprise plans](../17-Billing-Plans/purchase-and-manage-seats-on-enterprise-plans.md)**
+- **[Purchase and manage seats on Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**
 
-- **[Manage members on Team and Enterprise plans](../17-Billing-Plans/manage-members-on-team-and-enterprise-plans.md)**
+- **[Manage members on Team and Enterprise plans](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**
 
 - **[Enterprise billing information](../17-Billing-Plans/how-am-i-billed-for-my-enterprise-plan.md)**
 
-- **[Use Claude Code with your Team or Enterprise plan](../17-Billing-Plans/use-claude-code-with-your-team-or-enterprise-plan.md)**
+- **[Use Claude Code with your Team or Enterprise plan](../17-Billing-Plans/using-claude-code-with-your-team-or-enterprise-plan.md)**

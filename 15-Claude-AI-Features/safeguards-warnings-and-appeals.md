@@ -1,0 +1,50 @@
+---
+title: "Safeguards warnings and appeals | Claude Help Center"
+source_url: "https://support.claude.com/en/articles/8241253-safeguards-warnings-and-appeals"
+category: "15-Claude-AI-Features"
+fetched_at: "2026-09-29T06:31:07Z"
+tags: ["claude-ai"]
+---
+
+# Safeguards warnings and appeals
+
+July 9, 2026
+
+
+**Note:** Our response times are currently longer than normal due to our recent launch and an increase in email volume. We will reply to your appeal/email as soon as we can and we ask for your patience in the meantime.
+
+## Appeals
+
+As part of our safety process, we may ban an account for a variety of reasons:
+
+- Repeated violations of our **[Usage Policy](https://www.anthropic.com/legal/aup)**
+
+- Account creation from an **[unsupported location](../21-Account-Support/where-can-i-access-claude-ai.md)**
+
+- **[Terms of Service](https://www.anthropic.com/legal/consumer-terms)** violations
+
+If you feel your account has been wrongly suspended or terminated, please go to **[claude.ai](http://claude.ai)**, log in with your banned account, and fill out the appeal form linked below. Our Safeguards team can further investigate why your account was disabled.
+
+[Submit an appeal](https://claude.ai/restricted)
+
+**Important:** You must be logged in to access the appeal form.
+
+## Export your data or delete your account
+
+If your Free, Pro, or Max account has been banned for violating our Usage Policy, you can still log in at **[claude.ai](https://claude.ai)** to export your data or delete your account. You don't need to contact Anthropic to do this. The options available to your account are shown on the same screen as the appeal form after you log in.
+
+All banned users can delete their own account. Self-serve data exports are available to all banned users, but the data you’re able to access and export may be restricted depending upon the Usage Policy violation associated with your account.
+
+For more information on exporting and deleting your Claude data, see **[Export your Claude data](../21-Account-Support/how-can-i-export-my-claude-ai-data.md)** and **[How can I delete my Claude account?](../21-Account-Support/how-can-i-delete-my-claude-account.md)**
+
+## If your organization is on hold
+
+If your own account is in good standing but an organization you belong to has been paused because of unusual activity, this will be noted when you log in to your Claude account. The restricted account screen lists each organization that's on hold.
+
+Click "Request a review" on the affected organization to ask our Safeguards team to take another look.
+
+## Warnings
+
+As part of our safety process, we warn users if we believe their prompts are violating our **[Usage Policy](https://www.anthropic.com/legal/aup)**. For API customers, these warnings are linked to ongoing thresholds of violative behavior across their entire API account.
+
+If you believe we’ve made a mistake in issuing you a warning, please email **[\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#80f5f3e5f2f3e1e6e5f4f9c0e1eef4e8f2eff0e9e3aee3efed)** with the details of your situation and your account information.

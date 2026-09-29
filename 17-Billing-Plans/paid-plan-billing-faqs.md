@@ -1,13 +1,17 @@
 ---
-title: "Paid Plan Billing FAQs | Claude Help Center"
+title: "Paid plan billing FAQs | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8325618-paid-plan-billing-faqs"
 category: "17-Billing-Plans"
-fetched_at: "2026-03-22T09:01:47Z"
+fetched_at: "2026-09-29T06:32:33Z"
 tags: ["billing"]
 ---
 
-# Paid Plan Billing FAQs
+# Paid plan billing FAQs
 
+July 13, 2026
+
+
+This article covers Pro and Max subscriptions purchased on the web. If you subscribed through Claude for iOS or Claude for Android, your payment is handled by the Apple App Store or Google Play, and you'll manage your payment method and receipts through your app store account. To cancel or manage an app store subscription, see **[Cancel your Pro or Max subscription](how-do-i-cancel-my-paid-claude-subscription.md)**.
 
 ## Where can I find the invoice or receipt for my Pro or Max plan payment?
 
@@ -15,7 +19,7 @@ If you are subscribed to a paid plan (Pro or Max), follow these steps to access 
 
 1.  Click on your initials or name in the lower left corner and select “Settings” from the menu.
 
-2.  Navigate to [Settings \> Billing](http://claude.ai/settings/billing).
+2.  Navigate to **[Settings \> Billing](https://claude.ai/settings/billing)**.
 
 3.  Find the **Invoices** section.
 
@@ -27,7 +31,7 @@ Additionally, all invoices are automatically emailed to your billing email addre
 
 1.  Click on your initials or name in the lower left corner and select “Settings” from the menu.
 
-2.  Navigate to [Settings \> Billing](http://claude.ai/settings/billing).
+2.  Navigate to **[Settings \> Billing](https://claude.ai/settings/billing)**.
 
 3.  Click the "Update" button next to your payment method.
 
@@ -37,9 +41,25 @@ Additionally, all invoices are automatically emailed to your billing email addre
 
 6.  Your updated payment method will be charged the next time your subscription renews.
 
+## How can I change or remove the card on my Pro or Max subscription?
+
+To change the card on your Pro or Max subscription:
+
+1.  Navigate to **[Settings \> Billing](https://claude.ai/settings/billing)**.
+
+2.  Click the “Update” button next to your payment method.
+
+3.  Enter your new card details.
+
+4.  Click “Update” to save your changes.
+
+The new card becomes your default payment method, and all future subscription renewals are charged to it. Your previous card is no longer billed.
+
+There's no separate option to remove a card, and updating to a new card replaces the old one for billing purposes. The billing page only shows your current default card. Previously used cards are no longer charged, but they may remain stored with our payment processor. If you need a previous card fully removed from your account, please contact **[our support team](../21-Account-Support/how-can-i-contact-support.md)**.
+
 ## How can I use a different name on my invoices?
 
-If you want to use a name other than the one tied to your payment method, check the "Use a different name on invoices" box when adding or updating your payment method in [Settings \> Billing](http://claude.ai/settings/billing).
+If you want to use a name other than the one tied to your payment method, check the "Use a different name on invoices" box when adding or updating your payment method in **[Settings \> Billing](https://claude.ai/settings/billing)**.
 
 
 ## How can I edit a paid invoice?
@@ -52,7 +72,7 @@ No, there isn't a direct way to change your subscription billing date. However, 
 
 ## What alternate payment methods are available?
 
-We only accept credit or debit cards for Pro or Max plan payments.
+For subscriptions purchased on the web, we only accept credit or debit cards. If you subscribed through Claude for iOS or Claude for Android, available payment options are determined by the Apple App Store or Google Play.
 
 ## I have a paid plan, but my account is showing as free; how can I access my paid account?
 
@@ -60,4 +80,4 @@ If you've paid for a Pro or Max plan but are not seeing this reflected in your a
 
 1.  You've logged in with a different email. We recommend trying to sign in with any alternative emails you may have used to create your paid account.
 
-2.  Your payment method failed and your account was downgraded. To check this, navigate to [Settings \> Billing](https://claude.ai/settings/billing) to confirm your recent payment status and update your payment method or billing details if needed.
+2.  Your payment method failed and your account was downgraded. To check this, navigate to **[Settings \> Billing](https://claude.ai/settings/billing)** to confirm your recent payment status and update your payment method or billing details if needed.

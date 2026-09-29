@@ -2,24 +2,20 @@
 title: "How to get support for Claude for Government | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13047024-how-to-get-support-for-claude-for-government"
 category: "21-Account-Support"
-fetched_at: "2026-03-22T09:01:43Z"
+fetched_at: "2026-09-29T06:31:32Z"
+tags: ["account"]
 ---
-
-4.  How to get support for Claude for Government
 
 # How to get support for Claude for Government
 
 
-**Please note:** This page is hosted outside of Claude for Government's FedRAMP boundary.
 
-This article explains how Claude for Government Owners and Primary Owners can contact Anthropic Support. We've designed a specialized process to ensure your sensitive information remains secure while providing you with the help you need.
+**Please note:** This page is hosted outside of Claude for Government's FedRAMP boundary. Don't share sensitive information with our AI support bot.
 
-## How to Get Started
+This article explains how Claude for Government Admins can contact Anthropic Support. We've designed a specialized process to ensure your sensitive information remains secure while providing you with the help you need.
 
-1.  Log in to your Owner or Primary Owner Claude for Government account.
+## How to get started
 
-2.  Click your initials or name in the lower left corner and select “Get help” from the menu.
+Claude for Government Desktop Org Admins or Tenant Admins can click "Support" at the bottom of the Claude for Government admin portal. This will open a help center article with a messenger icon in the lower right corner. Click "Send us a message" to initiate the support process.
 
-3.  You will be directed to a page describing additional guidelines for our specialized support process.
-
-4.  Follow the guidelines described on that page to submit a support inquiry.
+**Note:** Only Claude for Government Desktop Org Admins and Tenant Admins can access this prioritized support path. If you have a different role and need to contact Support, please have an Org Admin or Tenant Admin submit the request on your behalf.

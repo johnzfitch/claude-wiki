@@ -1,0 +1,147 @@
+---
+title: "Let Claude use your computer in Cowork | Claude Help Center"
+source_url: "https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork"
+category: "15-Claude-AI-Features"
+fetched_at: "2026-09-29T06:32:11Z"
+tags: ["claude-ai"]
+---
+
+# Let Claude use your computer in Cowork
+
+
+
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](claude-cowork-and-chat-are-one-claude.md)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+
+Claude can now use your computer to complete tasks in Claude Cowork and Claude Code (refer to our **[Claude Code Docs](../16-Mobile-Desktop/desktop.md#let-claude-use-your-computer)** for more information about this). When computer use is enabled and Claude doesn't have a connector or tool for what you need, it may navigate to your screen directly—clicking, typing, and opening apps just like you would. It can work in your browser, open files, and run your dev tools automatically, with no setup required other than enablement.
+
+Computer use is in beta for Pro and Max plans. It’s available in Cowork and Claude Code in the Claude Desktop application for both macOS and Windows. This capability comes with risks—review **[Use Claude Cowork safely](use-claude-cowork-safely.md)** before using it.
+
+------------------------------------------------------------------------
+
+## How computer use works with Cowork
+
+In Cowork, Claude uses the most precise tool first. When you assign a task, Claude follows this order:
+
+1.  **Connectors.** If a connector is available—like Gmail, Google Drive, Microsoft 365, or Slack—Claude uses it. This is the fastest and most reliable path.
+
+2.  **Browser.** When there isn't a connector for the tool you need, Claude may work on your task in the browser built into the Claude Desktop app, or in your own Chrome browser through Claude in Chrome if that's your preferred browser. Learn more in **[Use the built-in browser in Claude Cowork](use-the-built-in-browser-in-claude-cowork.md)**.
+
+3.  **Screen interaction.** Claude uses computer use to interact directly with your screen: clicking, typing, and navigating your desktop apps.
+
+Claude typically prioritizes the fastest method. For example, pulling messages through your Slack connection takes seconds, but navigating Slack through your screen takes much longer and is more error-prone.
+
+------------------------------------------------------------------------
+
+## What you can do
+
+Computer use lets Claude work with the apps and files on your machine. For example:
+
+- Pull together a competitive analysis using local files and connected tools, then compile it into a formatted report.
+
+- Open your phone simulator, interact with the app you developed, and find UX issues.
+
+- Navigate apps that don’t have connectors—like an internal dashboard or a specialized tool your team uses.
+
+If your work involves a physical machine, Claude keeps working while you step away. Your computer just needs to be on.
+
+On macOS (version 15 or later), Claude works in background windows, so you can keep using your computer while it runs. Claude doesn't take over your pointer or keyboard, and it generally waits if you're in the middle of typing. Claude asks for your permission the first time a task needs the full screen in each session before taking over.
+
+**Note:** Working in the background is the default on macOS 15 or later. If you’d rather have Claude take over the screen while it works, go to **Settings \> General** (under **Desktop app**) and set **When Claude requests access to an app** to “Full control.”
+
+------------------------------------------------------------------------
+
+## Permissions and access
+
+Claude asks for your permission before accessing each application. You’ll see a prompt and must approve before Claude can interact with that app. Some apps are off-limits by default.
+
+Claude is trained to avoid risky operations—like transferring funds, modifying or deleting files, or handling sensitive data—and to flag signs of prompt injection. However, these safeguards aren't perfect, and Claude may occasionally act outside these boundaries.
+
+------------------------------------------------------------------------
+
+## Safeguarding personal data
+
+When Claude uses computer use, Claude takes screenshots of your computer to understand how to navigate the screen and the apps to which you’ve given permission. This means Claude can see any information visible on your screen or those apps, including personal data, sensitive documents, or private information belonging to you or others.
+
+Be mindful of what's visible when using Claude, especially on apps containing confidential information. Close files or apps with sensitive information before using computer use.
+
+### Claude is trained to avoid
+
+- Engaging in stock trading or investment transactions
+
+- Inputting sensitive data
+
+- Gathering or scraping facial images
+
+These guardrails are part of how Claude is trained and instructed, but they aren't absolute. Don't rely on them as a substitute for blocking access to sensitive apps.
+
+### Recommendations
+
+- Do not give computer use permission access to sensitive apps (such as banking, healthcare, government).
+
+- Start with simple tasks like research or organizing rather than complex multi-step workflows.
+
+- Make sure your prompts are specific and carefully tailored to avoid Claude doing things you didn't intend.
+
+### What to avoid
+
+We strongly advise against using computer use to manage or take actions on sensitive information including but not limited to:
+
+- Managing financial accounts or investments
+
+- Handling legal documents or contracts
+
+- Processing medical or health information
+
+- Interacting with apps containing personal information of others
+
+### Memory
+
+Cowork in the cloud shares the memory you use in chat, so Claude can start from what it already knows about how you work. By default, Claude doesn't save topics some people consider sensitive, such as health information, unless you turn on **Include sensitive topics in memory** in **[Settings \> Memory](https://claude.ai/settings/memory)**. Some information is never saved, including government ID numbers, criminal history, financial account numbers, and immigration status. You can view, edit, and delete what Claude remembers at any time. Learn more about **[Claude's memory](using-claude-s-chat-search-and-memory-to-build-on-previous-context.md#h_82126ebcc9)**.
+
+------------------------------------------------------------------------
+
+## Safety
+
+Computer use has no sandbox between Claude and your applications. Claude interacts directly with your desktop, apps, and browser—clicking, typing, and navigating your screen. We've built safeguards for this:
+
+- **Per-app permissions.** Claude asks before accessing each application, and some sensitive apps (investment and trading platforms, cryptocurrency) are blocked by default.
+
+- **App blocklist.** Prevent Claude from accessing certain apps by adding them to a blocklist. Any requests from Claude to use blocked applications will be automatically denied.
+
+- **Action review.** Our system scans for signs of prompt injection when Claude uses your computer, and Claude will ask permission before accessing new applications. You can stop Claude at any point. But this capability is still early, and attacks are constantly evolving—stay cautious.
+
+That said, computer use is a new capability, and the threats it guards against are constantly evolving. Claude makes mistakes, and no safeguards are perfect. Start with apps you trust and monitor Claude’s work—especially early on. Note that actions taken in one app can impact other apps. For example, clicking a link in your email app might open it in Chrome, even if you haven’t explicitly granted Claude permission to use Chrome (we can prevent Claude from seeing the Chrome window but can’t stop the link from opening). We don't recommend for use on apps with sensitive data relating to your healthcare, finances, or other personal records.
+
+For detailed safety guidance, see **[Use Cowork safely](use-claude-cowork-safely.md)**.
+
+------------------------------------------------------------------------
+
+## Current limitations
+
+Computer use is in beta. Keep the following in mind:
+
+- Your desktop must be active. Your computer needs to be awake and the Claude Desktop app needs to be open for computer use to work.
+
+- Complex tasks sometimes need a second try. Computer use works well for many tasks, but may struggle with complex multi-step workflows.
+
+- Screen interaction is slower than connectors. When Claude works through your screen instead of a direct integration, tasks take longer. Where possible, connect the tools you use most.
+
+- Available for Pro and Max plans only. Team and Enterprise plans don’t have access to computer use at this time.
+
+------------------------------------------------------------------------
+
+## Get started with computer use
+
+To start using computer use:
+
+1.  Make sure you have the latest version of Claude Desktop. Download or update at claude.com/download.
+
+2.  Open the desktop app and go to **Settings \> General** (under **Desktop app**).
+
+3.  Find the **Enable computer use** toggle and turn it on.
+
+4.  Open Cowork or Claude Code in the desktop app and start a session.
+
+5.  Ask Claude to do something that involves an app on your computer. Claude will ask for permission to access the app before proceeding.
+
+We’re sharing this early because it’s the kind of capability that gets better with real usage. If something doesn’t work as expected, use the in-app feedback button or reach out to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#97e2e4f2e5e4f6f1f2e3eed7f6f9e3ffe5f8e7fef4b9f4f8fa).

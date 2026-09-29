@@ -1,158 +1,119 @@
 ---
-title: "Using the Blackbaud Connector in Claude | Claude Help Center"
+title: "Using the Blackbaud connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923221-using-the-blackbaud-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-03-22T09:01:42Z"
+fetched_at: "2026-09-26T06:40:09Z"
 tags: ["connectors"]
 ---
 
-3.  Using the Blackbaud Connector in Claude
+# Using the Blackbaud connector in Claude
 
-# Using the Blackbaud Connector in Claude
+Connect Claude to Raiser's Edge NXT to access donor records, gift history, events, and draft personalized communications.
 
+10 minClaude.ai
 
-The Blackbaud Connector provides Claude with secure access to Raiser’s Edge NXT fundraising data, enabling nonprofit professionals to retrieve donor records, gifts, events, and generate communications using natural language. This article explains how to set up and use the Blackbaud Connector for your fundraising workflows.
+[Open Claude](https://claude.ai/new)
 
-The Blackbaud Connector relies upon Claude’s ability to use remote connectors.
+The Blackbaud connector gives Claude secure access to your Raiser's Edge NXT fundraising data. Look up donor profiles, review gift history, search events, and draft personalized communications through natural language.
 
-## What This Integration Provides
+The Blackbaud integration relies on Claude's ability to [use remote connectors(opens in new tab)](use-connectors-to-extend-claude-s-capabilities.md).
 
-### Capabilities
+## What this connector provides[](#what-this-connector-provides)
 
-The Blackbaud Connector enables Claude to access and interact with your fundraising data from Raiser’s Edge NXT.
+- **Constituent profiles:** Access detailed donor records including contact information, affiliations, and giving history
+- **Constituent search:** Search donors by full or partial name across your database
+- **Event discovery:** Search fundraising events by name or keyword and retrieve details like dates, locations, and funds raised
+- **Gift records:** View donation amounts, dates, donors, and associated campaigns
+- **Communications:** Draft personalized thank-you notes and donor outreach referencing specific gifts
+- **Real-time data:** Fetch current information directly from Raiser's Edge NXT
 
-- **Constituent Profile Retrieval:** Access detailed donor profiles including contact information, affiliations, and giving history. Claude can retrieve comprehensive constituent data on demand.
+## Setting up the connector[](#setting-up-the-connector)
 
-- **Constituent Search:** Search for donors by name or partial name across your Raiser’s Edge NXT database, making it easy to find specific individuals in your records.
+### For Blackbaud marketplace admins[](#for-blackbaud-marketplace-admins)
 
-- **Event Discovery:** Search for fundraising events by name or keyword and retrieve event details including dates, locations, funds raised, and participant information.
+1.  Navigate to the Claude for Blackbaud app in the Blackbaud Marketplace
+2.  Connect to your Blackbaud environment
+3.  Approve scopes for constituent and event data access
 
-- **Gift Record Access:** View specific gift records including donation amounts, dates, donors, and associated campaigns to understand giving patterns.
+### For organization owners[](#for-organization-owners)
 
-- **Communication Generation:** Draft personalized thank-you notes, outreach emails, and other donor communications using data from your records.
+1.  Go to [Claude.ai Settings(opens in new tab)](https://claude.ai/settings)
+2.  Select Connectors or Integrations
+3.  Choose `Add server` or `Browse connectors`
+4.  Search for and select Blackbaud
+5.  Select `Add to your team`
+6.  Confirm authorization
 
-- **Real-Time Data Access:** The connector fetches information on-demand from Raiser’s Edge NXT, ensuring the data Claude provides is current at the moment you ask.
+### For individual users[](#for-individual-users)
 
-### How Claude Uses Blackbaud Data
+1.  Log in to Claude with your enterprise account
+2.  Access [Settings(opens in new tab)](https://claude.ai/settings) \> Connectors
+3.  Select the Blackbaud connector and authorize
+4.  Sign in with your Blackbaud ID and grant permissions
+5.  Your account displays as "Linked" when complete
 
-Claude applies your Blackbaud fundraising data to support nonprofit workflows.
+## Common use cases[](#common-use-cases)
 
-- Donor Research: Retrieves constituent profiles and giving histories to help you understand donor relationships and prepare for meetings or outreach.
+### Donor lookup[](#donor-lookup)
 
-- Gift Analysis: Pulls donation records to identify giving patterns, track campaign performance, and recognize major donors.
+Show me the profile for Jane Smith, including her contact information and recent donations.
 
-- Event Planning Support: Searches event records to review past fundraising activities, compare results, and inform future event strategies.
+
 
-- Personalized Communications: Uses donor data to draft customized thank-you letters, appeals, and follow-up messages that reference specific gifts and engagement history.
+Open in Claude
 
-- Quick Data Lookups: Enables rapid answers to questions about constituents, events, or gifts without requiring you to open Raiser’s Edge NXT directly.
+*When to use: Preparing for donor meetings, reviewing relationships, verifying contact details.*
 
-## Setting Up the Blackbaud Connector
+### Gift history analysis[](#gift-history-analysis)
 
-### For Blackbaud Marketplace Admins
+What are the details of John Doe's donations over the past year? Include amounts, dates, and campaigns.
 
-Your Marketplace admin needs to connect the Claude for Blackbaud application:
+
 
-1.  Navigate to the [Claude for Blackbaud app](https://app.blackbaud.com/marketplace) in the Blackbaud Marketplace.
+Open in Claude
 
-2.  Connect it to your Blackbaud environment.
+*When to use: Reviewing engagement, preparing acknowledgments, analyzing patterns. Works well with 1–3 year timeframes.*
 
-3.  Approve scopes during installation for access to constituent and event data.
+### Event research[](#event-research)
 
-### For Organization Owners
+Find any events titled 'Annual Gala' and show details including attendance and funds raised.
 
-1.  From [Claude.ai](http://claude.ai), navigate to Settings.
+
 
-2.  Select Connectors or Integrations.
+Open in Claude
 
-3.  Select Add server or Browse connectors.
+*When to use: Planning future events, comparing performance, researching past activities.*
 
-4.  Search for and select Blackbaud from the available connectors.
+### Thank-you letter drafting[](#thank-you-letter-drafting)
 
-5.  Follow the prompts to add the Blackbaud server to your Claude organization.
+Draft a personalized thank-you email to Sarah Johnson for her recent \$500 donation to the Building Fund campaign.
 
-6.  Confirm authorization to enable the integration.
+
 
-### For Individual Users
+Open in Claude
 
-After admin setup is complete:
+*When to use: Following up on donations, acknowledging major gifts. Claude retrieves donor info and gift details for personalized communications.*
 
-1.  Log into Claude with your enterprise account.
+### Constituent search[](#constituent-search)
 
-2.  Go to Settings, then Connectors.
+Find all constituents named Williams in our database.
 
-3.  Select Blackbaud Connector, then choose Connect or Authorize.
+
 
-4.  Sign in with your Blackbaud ID and grant permission for Claude to access your data.
+Open in Claude
 
-5.  Your Blackbaud account will show as Linked once authorization is complete.
+*When to use: Locating donors with partial names, finding family members.*
 
-## Common Use Cases
+## Tips for using the connector[](#tips-for-using-the-connector)
 
-### Donor Lookup
-
-Example prompt:
-
-    Show me the profile for Jane Smith, including her contact information and 
-    recent donations.
-
-**When to use:** Preparing for donor meetings, reviewing constituent relationships, or verifying contact details.
-
-**Tip:** Include the donor’s full name for more accurate results.
-
-### Gift History Analysis
-
-Example prompt:
-
-    What are the details of John Doe’s donations over the past year? Include 
-    amounts, dates, and which campaigns they supported.
-
-**When to use:** Reviewing donor engagement, preparing acknowledgment letters, or analyzing giving patterns.
-
-**Works well with:** Requests spanning 1-3 years to identify trends without overwhelming detail.
-
-### Event Research
-
-Example prompt:
-
-    Find any events titled “Annual Gala” and show me the details including 
-    attendance and funds raised.
-
-**When to use:** Planning future events, comparing year-over-year performance, or researching past fundraising activities.
-
-**Note:** Use specific keywords that match your event naming conventions for best results.
-
-### Thank-You Letter Drafting
-
-Example prompt:
-
-    Draft a personalized thank-you email to Sarah Johnson for her recent $500 
-    donation to the Building Fund campaign.
-
-**When to use:** Following up on donations, acknowledging major gifts, or sending timely appreciation messages.
-
-**Key benefit:** Claude retrieves the donor’s information and gift details to create personalized, accurate communications.
-
-### Constituent Search
-
-Example prompt:
-
-    Find all constituents named Williams in our database.
-
-**When to use:** Locating donors when you have partial name information or searching for related family members.
-
-**Tip:** Start with partial searches and narrow down results based on additional identifying information.
-
-## Tips for Using the Blackbaud Connector
-
-- Use full donor names for more accurate constituent lookups.
-
-- Specify time periods when requesting gift histories (e.g., “past 12 months,” “2024 fiscal year”).
-
-- Ask naturally—describe what you need as if asking a colleague.
-
-- Combine multiple requests when helpful (e.g., “Show me Jane’s profile and draft a thank-you for her last gift”).
-
-- Always review AI-generated communications before sending, especially those involving sensitive donor information.
-
-- Remember that Claude only accesses data your Blackbaud user account is authorized to view.
+- Use full donor names for accurate constituent lookups
+- Specify time periods in gift history requests
+- Ask naturally, as if asking a colleague
+- Combine multiple requests when helpful
+- Review AI-generated communications before sending, especially with sensitive donor data
+- Claude only accesses data your Blackbaud account authorizes
+
+- [What this connector provides](#what-this-connector-provides)
+- [Setting up the connector](#setting-up-the-connector)
+- [Common use cases](#common-use-cases)
+- [Tips for using the connector](#tips-for-using-the-connector)

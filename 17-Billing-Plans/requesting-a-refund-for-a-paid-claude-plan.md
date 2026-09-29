@@ -1,14 +1,14 @@
 ---
-title: "Requesting a refund for a paid Claude plan | Claude Help Center"
+title: "Request a refund for a paid Claude plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12386328-requesting-a-refund-for-a-paid-claude-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-03-22T09:01:40Z"
+fetched_at: "2026-09-29T06:31:25Z"
 tags: ["billing"]
 ---
 
-4.  Requesting a refund for a paid Claude plan
+# Request a refund for a paid Claude plan
 
-# Requesting a refund for a paid Claude plan
+Updated today
 
 
 **Important:** Except as expressly provided in our **[Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms)** or where required by law, all payments are non-refundable.
@@ -31,18 +31,50 @@ To request a refund for a payment defined as refundable in our Terms of Service,
 
 ------------------------------------------------------------------------
 
+## Refunds for customers in the European Economic Area (EEA) and the United Kingdom (UK)
+
+In the European Economic Area and the United Kingdom, you may receive a refund within 14 days of purchase. You may find this option available in your **Settings**. Your refunds will be prorated according to your use.
+
+------------------------------------------------------------------------
+
 ## What should I do if I can't access the account I'm requesting a refund for?
 
-If you're unable to log in to the account associated with your payment (for example, if you can't access the email account you used to sign up), you'll need to **[contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** using another email and 'cc' the email address tied to the account you can't access. Write back to cancel your paid plan and request a refund so our team can assist.\
+If you're unable to log in to the account associated with your payment (for example, if you can't access the email account you used to sign up), you'll need to **[contact our Support team](../21-Account-Support/how-can-i-contact-support.md)** using another email and 'cc' the email address tied to the account you can't access. Write back to cancel your paid plan and request a refund so our team can assist.  
+​﻿
 
+## I paid for my plan on Claude for iOS—what's the process for requesting a refund?
 
-## I paid for my plan on Claude for iOS -- what's the process for requesting a refund?
+If you paid for your plan on **[Claude for iOS](https://support.claude.com/en/collections/9879000-claude-for-ios)**, this means your subscription was purchased through the Apple App Store. Apple processed this payment, so only Apple can review and issue a refund—our Support team can't access or refund App Store charges.
 
-If you paid for your plan on **[Claude for iOS](https://support.claude.com/en/collections/9879000-claude-for-ios)**, this means your subscription was started from the Apple App Store. We didn't process this payment, so you will need to reach out to **[Apple Support](https://support.apple.com/billing)** to request a refund.
+To request a refund from Apple:
 
-## I paid for my plan on Claude for Android -- what's the process for requesting a refund?
+1.  Sign in at **reportaproblem.apple.com** with the Apple Account you used to purchase your subscription.
 
-If you have an active subscription purchased on **[Claude for Android](https://support.claude.com/en/collections/9879004-claude-for-android)**, our Support team will need to check your eligibility before assisting with a refund. When contacting us, provide any relevant details upfront so our team can help with your request. However, if you are requesting a refund for an inactive subscription, our team won't be able to issue refunds for historical payments made through the Play Store. Please get in touch with **[Google Support](https://support.google.com/googleplay/workflow/9813244?hl=en)** for further assistance.
+2.  Tap or click "I'd like to," then choose "Request a refund."
+
+3.  Choose the reason for your refund request, then click "Next."
+
+4.  Select your Claude subscription, then click "Submit."
+
+Apple will review your request and notify you of their decision. You can check the status of your request any time by returning to reportaproblem.apple.com. Refunds for App Store purchases are granted at Apple's discretion.
+
+**Note:** Requesting a refund doesn't cancel your subscription. To avoid future charges, you'll also need to cancel. For instructions, see **[Cancel your Pro or Max subscription](how-do-i-cancel-my-paid-claude-subscription.md)**.
+
+For more details, see Apple's guide: **[Request a refund for apps or content that you bought from Apple](https://support.apple.com/en-us/118223)**.
+
+## I paid for my plan on Claude for Android—what's the process for requesting a refund?
+
+If you have an active subscription purchased on **[Claude for Android](https://support.claude.com/en/collections/9879004-claude-for-android)**, our Support team will need to check your eligibility before assisting with a refund. When contacting us, provide any relevant details upfront so our team can help with your request.
+
+If you're requesting a refund for an inactive subscription, you'll need to **[contact our Support team](../21-Account-Support/how-can-i-contact-support.md)** with the email address associated with your Google Play account or your GPA order number (found on your Google Play receipt, formatted GPA.xxxx-xxxx-xxxx-xxxxx) to further review the charge and refund eligibility.
+
+### I upgraded from Pro or Max to Team—when do I get my refund?
+
+When you upgrade to a Team plan from a Pro or Max plan, your individual subscription is cancelled automatically and you receive a prorated refund for the unused portion of your billing period. You don't need to request it manually. The refund is issued about 24 hours after your Team payment goes through, and depending on your bank, it can take several more business days to appear on your statement. Google Play purchases don't have this wait, but the refund can take a few days to appear. Any prepaid usage credits on your individual account are refunded.
+
+If you signed up for Pro or Max through the Apple App Store, you can't upgrade to Team in place. **[Cancel your iOS subscription](how-do-i-cancel-my-paid-claude-subscription.md#h_54384c9962)** through your Apple ID settings first, then start the Team upgrade. App Store subscription refunds need to be requested through Apple directly, as described above.
+
+For full upgrade details, see **[Get started with the Team plan](how-do-i-get-started-with-the-team-plan.md#h_830eec632d)**.
 
 ## How do I request a refund when I'm disputing the payment?
 

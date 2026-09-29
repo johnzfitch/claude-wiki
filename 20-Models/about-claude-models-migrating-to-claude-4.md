@@ -2,6 +2,7 @@
 title: "Before (Claude Sonnet 3.7)"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/migrating-to-claude-4"
 category: "20-Models"
+tags: ["models"]
 ---
 
 This guide covers two key migration paths to Claude 4.5 models:

@@ -1,11 +1,14 @@
 ---
-title: "Uploading files to Claude | Claude Help Center"
+title: "Upload files to Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8241126-what-kinds-of-documents-can-i-upload-to-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-22T09:01:46Z"
+fetched_at: "2026-09-29T06:32:31Z"
+tags: ["claude-ai"]
 ---
 
-# Uploading files to Claude
+# Upload files to Claude
+
+July 23, 2026
 
 
 This article explains how to upload documents and images to Claude, including supported file types, size limits, and how to get started.
@@ -36,7 +39,7 @@ Claude can work with the following document types:
 
 - XLSX\*
 
-**Note:** You must enable **[code execution and file creation](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190)** in your account to upload XLSX files.
+**Note:** You must enable **[code execution and file creation](create-and-edit-files-with-claude.md#h_1c99382190)** in your account to upload XLSX files.
 
 ### Images
 
@@ -74,11 +77,13 @@ Files can be uploaded to individual chats or uploaded to a project's **Files** s
 
 ### Chat uploads
 
-- **File size:** 30MB per file
+- **File size:** 500MB per file
 
 - **Number of files:** Up to 20 files per chat
 
 - **Image dimensions:** Up to 8000x8000 pixels
+
+- **Number of pages:** PDFs are limited to 1000 pages
 
 ### Project files
 
@@ -94,7 +99,7 @@ Files can be uploaded to individual chats or uploaded to a project's **Files** s
 
 ## PDF processing
 
-Claude models can analyze both text and visual elements (like images, charts, and graphics) in PDFs that are under 100 pages. Claude will only process text from PDFs over 1000 pages.
+Claude analyzes both text and visual elements (like images, charts, and graphics) in PDFs of 100 pages or fewer. For PDFs from 101 to 1000 pages, Claude processes text only and doesn't analyze visual elements. You can't upload PDFs over 1000 pages. If you try, you'll see an "Uploaded file is too large" error.
 
 ------------------------------------------------------------------------
 

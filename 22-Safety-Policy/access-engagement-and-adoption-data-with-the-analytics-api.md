@@ -3,7 +3,7 @@ title: "Access engagement and adoption data with the Analytics API | Claude Help
 source_url: "https://support.claude.com/en/articles/13694757-access-engagement-and-adoption-data-with-the-analytics-api"
 category: "22-Safety-Policy"
 fetched_at: "2026-03-22T09:01:45Z"
-tags: ["api"]
+tags: ["api", "safety"]
 ---
 
 4.  Access engagement and adoption data with the Analytics API

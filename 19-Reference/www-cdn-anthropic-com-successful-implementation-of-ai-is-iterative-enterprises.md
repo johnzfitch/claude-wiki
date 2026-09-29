@@ -1,0 +1,112 @@
+---
+title: "Successful implementation of AI is iterative. Enterprises"
+source_url: "https://www-cdn.anthropic.com/2db91550aa050eae0f205b04c908cd32ec1dab4b.pdf"
+category: "19-Reference"
+fetched_at: "2026-08-13T06:48:27Z"
+tags: ["enterprise", "news-research"]
+---
+
+Successful implementation of AI is iterative. Enterprises   Safety and Security: Prioritize models with strong
+that are leading the way in AI transformation start         safety measures. All Claude models are designed to be
+small, evaluate thoroughly, and scale gradually before      helpful, honest, and harmless. Anthropic’s leadership
+achieving their best results. With any new technology       in AI research and focus on safety helps protect your
+like Claude, optimal results require careful planning and   brand and mitigate risks. Our models reduce the risk of
+                                                            harmful or biased outputs, position you for compliance
+ongoing refinement.
+                                                            with current and future AI regulations, and provide
+By choosing Claude, you’re starting with a framework        strong safeguards against data leakage or misuse.
+and foundation that are grounded in frontier-defining
+models, reinforced by Anthopic’s commitment to safety       Best Practices for Implementing
+and security.                                               Claude in Your Business
+                                                            Successful Gen AI implementations follow a
+Choosing the Right Claude Model:                            structured approach:
+Capabilities, Cost, and Safety
+Selecting the appropriate Claude model is crucial for the           Planning                         Prompting
+success and safety of your AI implementation. Here’s
+what you need to know:
+
+                                                                                   Deployment
+Key Considerations
+
+Capabilities: Match the model approach to your
+task complexity. For example, our most capable                    Optimization                       Evaluation
+Sonnet models can handle everything from nuanced
+reasoning to complex problem-solving in an enterprise
+                                                            Let’s dive into what that looks like in practice.
+environment. Sonnet is particularly strong for agentic
+coding, tool use, and customer facing agents. Haiku
+                                                            Planning
+is ideal for straightforward classification or analysis
+particularly when cost is a consideration.                  Start by selecting the right use case and model, and
+                                                            defining clear success criteria.
+Cost and Speed: Balance your budget with
+performance needs. Start by assessing your task             The right use case to start with should be well suited to
+
+complexity and volume while also considering your           current generative AI capabilities, such as understanding
+
+budget and performance needs – higher capability models     text and sentiment, classifying intent, generating content,
+
+may actually be more cost-effective for complex tasks. As   or solving a repetitive problem or task. Then select the
+
+with all projects you should start small, evaluating the    appropriate Claude model depending on your required
+
+performance of your chosen model, and then scale based      combination of intelligence, speed, and cost. Make sure
+
+on your evaluation tests.                                   to establish specific, measurable success metrics that are
+aligned with your business objectives. You need to be able          Optimization
+to show a clear and quantifiable return on investment.
+                                                                    The results of your evaluation tests will help guide iterative
+Many organizations are interested in building agentic               improvements. Start by refining your prompts based on
+systems as part of their AI implementations. These                  evaluation insights. Experiment with additional techniques
+systems range from simple workflows with predefined                 like Chain of Thought (COT) reasoning, which encourages
+paths to autonomous agents that dynamically direct their            Claude to break down problems step-by-step, generating
+own processes. To succeed, you need to understand when              more accurate and nuanced outputs, and potentially
+agents are appropriate and how to implement them.                   highlighting where prompts are unclear. Few-shot prompting
+Anthropic recommends starting with the simplest solution            i.e. providing examples of correct answers to demonstrate
+possible and only increasing complexity when needed.                desired outputs, is also a useful optimization technique.
+Optimizing single LLM calls with retrieval and in-context
+examples is sufficient for many applications. More                  Deployment
+complex implementations should be used only when they
+                                                                    Roll out your Claude implementation strategically and
+demonstrably improve outcomes. For detailed guidance on
+                                                                    prepare for ongoing refinement. Start with a small-scale pilot
+building effective agents, visit Anthropic’s page on agents here.
+                                                                    to identify and address issues early. Set up infrastructure
+
+Prompting                                                           for A/B testing of different prompts or models. Develop
+                                                                    UI elements for human feedback and oversight, allowing
+Good prompting, or prompt engineering, is simply                    users to interact directly with the system to flag concerning
+adopting a strategic approach to communicating with                 or incorrect outputs, label edge cases, and check results.
+AI systems to get the desired business outcomes. It’s the           Evaluation should be ongoing–you’ll need to regularly update
+difference between getting generic, unreliable outputs and          your offline evaluations based on production data.
+achieving consistent, business-specific results that align
+with your organization’s needs – whether that’s generating
+analysis, writing code, or developing content.                            TIPS FOR THE ROAD TO IMPLEMENTATION
+
+At its core, a good prompt will provide a detailed task               Team Up with Experts: Leverage Anthropic’ and our
+                                                                      partners for a range of supports–from custom
+description and rules for how you want the model to
+                                                                      evaluations to deployment strategies.
+handle it. Structure your prompts with clear task context,
+                                                                      Stay Current: Keep an eye on Claude’s evolving
+instructions, and desired output format. Include relevant
+                                                                      capabilities to maximize your implementation’s potential,
+background data and examples to guide the model.                      including regularly reviewing documentation, guides, and
+                                                                      code samples at docs.anthropic.com.
+Evaluation                                                            Prepare for the Future: Progressing with
+                                                                      implementation is not a one-time task. It takes time to
+You’ll need to implement robust evaluations to assess
+                                                                      iterate and improve. Anthropic is at the forefront of AI
+model performance accurately. Start by creating a                     development, consistently pushing the boundaries of
+comprehensive evaluation dataset, including edge cases.               what’s possible. Partnering with Anthropic means you can
+Consider leveraging larger models as evaluators for smaller           build more confidently with frontier AI you can trust to be
+                                                                      safer, more secure, and more reliable.
+ones. Claude Sonnet 3.7 can augment human review when
+evaluating smaller models like Haiku, providing high-
+quality automated assessment at scale. For evaluating larger
+models like Sonnet itself, decompose the evaluation into            Visit docs.anthropic.com to explore our comprehensive
+smaller, more nuanced metrics. The most robust evaluation           developer documentation and cookbooks to get started
+systems typically combine multiple approaches: rule-                building. You can also experience Claude’s capabilities
+based evaluations implemented in code, LLM-powered                  firsthand at console.anthropic.com, or connect with our
+evaluations using model evaluators, and targeted human              Sales team to discuss your specific needs. The future of AI
+grading for critical aspects.                                       is evolving rapidly – let’s build it together.

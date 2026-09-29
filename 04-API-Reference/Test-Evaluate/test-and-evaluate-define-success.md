@@ -1,7 +1,7 @@
 ---
 title: "Define your success criteria - Claude API Docs"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/define-success"
-category: "04-API-Reference"
+category: "04-API-Reference/Test-Evaluate"
 fetched_at: "2026-02-07T10:04:58Z"
 tags: ["api"]
 ---
@@ -80,7 +80,7 @@ Brainstorm success criteria for your use case with Claude on claude.ai.
   
 **Tip**: Drop this page into the chat as guidance for Claude!
 
-[](/docs/en/build-with-claude/prompt-engineering/be-clear-and-direct)
+[](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/be-clear-and-direct)
 
 Design evaluations
 
