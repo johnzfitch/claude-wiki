@@ -2,7 +2,7 @@
 title: "Claude Code on Microsoft Foundry - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/microsoft-foundry"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:36:27Z"
+fetched_at: "2026-09-16T06:24:08Z"
 tags: ["claude-code"]
 ---
 
@@ -54,7 +54,7 @@ Setup
 
 First, create a Claude resource in Azure:
 
-1.  Navigate to the [Microsoft Foundry portal](https://ai.azure.com/)
+1.  Go to the [Microsoft Foundry portal](https://ai.azure.com/)
 2.  Create a new resource, noting your resource name
 3.  Create deployments for the Claude models, noting the deployment name you give each; you’ll set these names as the model variables in step 4:
     - Claude Opus
@@ -132,6 +132,8 @@ Background tasks such as session title generation use the small/fast model, norm
 ```python
 export ENABLE_PROMPT_CACHING_1H=1
 ```
+
+To set different TTLs for your main conversation and for the requests Claude Code makes outside it, [choose the TTL yourself](/docs/en/prompt-caching#choose-the-ttl-yourself).
 
 
 [​](#5-run-claude-code)

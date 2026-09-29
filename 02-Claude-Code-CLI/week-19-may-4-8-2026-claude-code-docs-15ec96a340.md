@@ -2,7 +2,7 @@
 title: "Week 19 · May 4–8, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w19"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:38:28Z"
+fetched_at: "2026-09-25T06:29:48Z"
 tags: ["claude-code"]
 ---
 
@@ -28,7 +28,7 @@ terminal
 claude --plugin-url https://example.com/my-plugin.zip
 ```
 
-[Plugins guide](/docs/en/plugins)
+[Plugins guide](/docs/en/plugins/overview)
 
 History search across all your projectsv2.1.129
 

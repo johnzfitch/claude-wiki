@@ -2,11 +2,14 @@
 title: "See your monthly recap | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15672559"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:51Z"
+fetched_at: "2026-09-29T06:32:22Z"
 ---
 
 # See your monthly recap
 
+July 9, 2026
+
+Copy for LLM
 
 Your monthly recap shows you how you’ve been using Claude—the topics you spent time on, when you tend to reach for it, and where you might try something new. It’s designed to reflect your patterns back without judgment so you can decide what, if anything, you’d like to change.
 

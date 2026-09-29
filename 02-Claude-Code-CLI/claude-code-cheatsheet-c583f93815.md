@@ -2,14 +2,15 @@
 title: "Claude Code cheatsheet | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14553413-claude-code-cheatsheet"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:41:11Z"
+fetched_at: "2026-09-29T06:30:50Z"
 tags: ["claude-code"]
 ---
 
 # Claude Code cheatsheet
 
-April 15, 2026
+August 7, 2026
 
+Copy for LLM
 
 This page collects the vocabulary, commands, and keyboard shortcuts that are worth committing to muscle memory. Keep it open in a browser tab (or printed beside your keyboard) during your first few weeks with Claude Code. Most of the friction new users hit comes from not knowing a command already exists for what they are trying to do, so a quick scan here before reaching for a workaround usually pays off.
 

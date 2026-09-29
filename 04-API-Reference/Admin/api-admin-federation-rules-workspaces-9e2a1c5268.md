@@ -2,7 +2,7 @@
 title: "Workspaces - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/federation_rules/workspaces"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:39:26Z"
+fetched_at: "2026-09-10T06:42:02Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fadmin%2Ffederation_rules%2Fworkspaces)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,96 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,22 +160,28 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
+Create Enrollment URL
 
 
 Webhooks
+
+
+Unwrap
+
+
+Parse Unverified
 
 
 Admin
@@ -182,9 +192,9 @@ Invites
 
 Users
 
-RBAC Groups
+RBAC Groups
 
-RBAC Roles
+RBAC Roles
 
 Workspaces
 
@@ -209,30 +219,30 @@ Federation Issuers
 Federation Rules
 
 
-Create Federation Rule
+Create Federation Rule
 
 
-Get Federation Rule
+Get Federation Rule
 
 
-List Federation Rules
+List Federation Rules
 
 
-Update Federation Rule
+Update Federation Rule
 
 
-Archive Federation Rule
+Archive Federation Rule
 
 Workspaces
 
 
-List Federation Rule Workspaces
+List Federation Rule Workspaces
 
 
-Add Federation Rule Workspace
+Add Federation Rule Workspace
 
 
-Remove Federation Rule Workspace
+Remove Federation Rule Workspace
 
 MCP Tunnels
 
@@ -253,49 +263,49 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Workspaces
-
+Copy page
 
 
 
+1.  [API reference](/docs/en/api/http)
+2.  [Admin](/docs/en/api/http/admin)
+3.  [Federation Rules](/docs/en/api/http/admin/federation_rules)
+
 # Workspaces
 
-##### [List Federation Rule Workspaces](/docs/en/api/admin/federation_rules/workspaces/list)
+##### [List Federation Rule Workspaces](/docs/en/api/http/admin/federation_rules/workspaces/list)
 
-GET/v1/organizations/federation_rules/{federation_rule_id}/workspaces
+GET/v1/organizations/federation_rules/{federation_rule_id}/workspaces
 
-##### [Add Federation Rule Workspace](/docs/en/api/admin/federation_rules/workspaces/create)
+##### [Add Federation Rule Workspace](/docs/en/api/http/admin/federation_rules/workspaces/create)
 
-POST/v1/organizations/federation_rules/{federation_rule_id}/workspaces
+POST/v1/organizations/federation_rules/{federation_rule_id}/workspaces
 
-##### [Remove Federation Rule Workspace](/docs/en/api/admin/federation_rules/workspaces/delete)
+##### [Remove Federation Rule Workspace](/docs/en/api/http/admin/federation_rules/workspaces/delete)
 
-DELETE/v1/organizations/federation_rules/{federation_rule_id}/workspaces/{workspace_id}
+DELETE/v1/organizations/federation_rules/{federation_rule_id}/workspaces/{workspace_id}
 
-##### ModelsExpand Collapse 
+##### Models
 
 
 
-WorkspaceListResponse object { created_at, created_by_actor_id, federation_rule_id, 3 more }
+WorkspaceCreateResponse object{ created_at, created_by_actor_id, federation_rule_id, 3 more }
 
 
+
+
 
 created_at: string
 
@@ -303,15 +313,13 @@ created_at: string
 
 When this workspace was enabled for the rule.
 
-[](#workspace_list_response.created_at)
+formatdate-time
 
-created_by_actor_id: string
+created_by_actor_id: string or null
 
 
 
 Tagged ID (`user_...` or `svac_...`) of the actor that enabled this workspace for the rule, if known.
-
-[](#workspace_list_response.created_by_actor_id)
 
 federation_rule_id: string
 
@@ -319,13 +327,13 @@ federation_rule_id: string
 
 Tagged ID of the federation rule.
 
-[](#workspace_list_response.federation_rule_id)
+
 
 type: "federation_rule_workspace"
 
 
 
-[](#workspace_list_response.type)
+defaultfederation_rule_workspace
 
 workspace_id: string
 
@@ -333,23 +341,19 @@ workspace_id: string
 
 Tagged ID of the workspace this rule is enabled for.
 
-[](#workspace_list_response.workspace_id)
-
-workspace_name: string
+workspace_name: string or null
 
 
 
 Workspace display name. Populated when listing; null in the enable response.
 
-[](#workspace_list_response.workspace_name)
-
-[](#workspace_list_response)
-
 
 
-WorkspaceCreateResponse object { created_at, created_by_actor_id, federation_rule_id, 3 more }
+WorkspaceListResponse object{ created_at, created_by_actor_id, federation_rule_id, 3 more }
 
 
+
+
 
 created_at: string
 
@@ -357,15 +361,13 @@ created_at: string
 
 When this workspace was enabled for the rule.
 
-[](#workspace_create_response.created_at)
+formatdate-time
 
-created_by_actor_id: string
+created_by_actor_id: string or null
 
 
 
 Tagged ID (`user_...` or `svac_...`) of the actor that enabled this workspace for the rule, if known.
-
-[](#workspace_create_response.created_by_actor_id)
 
 federation_rule_id: string
 
@@ -373,13 +375,13 @@ federation_rule_id: string
 
 Tagged ID of the federation rule.
 
-[](#workspace_create_response.federation_rule_id)
+
 
 type: "federation_rule_workspace"
 
 
 
-[](#workspace_create_response.type)
+defaultfederation_rule_workspace
 
 workspace_id: string
 
@@ -387,21 +389,15 @@ workspace_id: string
 
 Tagged ID of the workspace this rule is enabled for.
 
-[](#workspace_create_response.workspace_id)
-
-workspace_name: string
+workspace_name: string or null
 
 
 
 Workspace display name. Populated when listing; null in the enable response.
 
-[](#workspace_create_response.workspace_name)
-
-[](#workspace_create_response)
-
 
 
-WorkspaceDeleteResponse object { federation_rule_id, type, workspace_id }
+WorkspaceDeleteResponse object{ federation_rule_id, type, workspace_id }
 
 
 
@@ -411,20 +407,16 @@ federation_rule_id: string
 
 Tagged ID of the federation rule.
 
-[](#workspace_delete_response.federation_rule_id)
+
 
 type: "federation_rule_workspace_deleted"
 
 
 
-[](#workspace_delete_response.type)
+defaultfederation_rule_workspace_deleted
 
 workspace_id: string
 
 
 
 Tagged ID of the workspace named in the delete request. Removal is idempotent.
-
-[](#workspace_delete_response.workspace_id)
-
-[](#workspace_delete_response)

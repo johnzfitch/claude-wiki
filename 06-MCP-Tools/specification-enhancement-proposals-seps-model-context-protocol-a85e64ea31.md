@@ -2,7 +2,7 @@
 title: "Specification Enhancement Proposals (SEPs) - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:27Z"
+fetched_at: "2026-09-29T06:30:52Z"
 tags: ["mcp"]
 ---
 
@@ -20,7 +20,7 @@ Index of all MCP Specification Enhancement Proposals
 
 Copy pageCopy page
 
-Specification Enhancement Proposals (SEPs) are the primary mechanism for proposing major changes to the Model Context Protocol. Each SEP provides a concise technical specification and rationale for proposed features.
+Specification Enhancement Proposals (SEPs) are the primary mechanism for proposing major changes to the Model Context Protocol. Each SEP provides a concise technical specification and rationale for proposed features. Each SEP is reachable by number at `/seps/<number>` (for example, [/seps/1850](/seps/1850)).
 
 ## Submit a SEP
 
@@ -31,7 +31,7 @@ Learn how to submit your own Specification Enhancement Proposal
 
 Summary
 
-- **Final**: 41
+- **Final**: 42
 
 
 [​](#all-seps)
@@ -41,6 +41,7 @@ All SEPs
 | SEP                                                                                  | Title                                                                         | Status | Type             | Created    |
 |--------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|--------|------------------|------------|
 | [SEP-2663](/seps/2663-tasks-extension)                                               | Tasks Extension                                                               | Final  | Extensions Track | 2026-04-27 |
+| [SEP-2640](/seps/2640-skills-extension)                                              | Skills Extension                                                              | Final  | Extensions Track | 2026-04-23 |
 | [SEP-2596](/seps/2596-spec-feature-lifecycle-and-deprecation)                        | Specification Feature Lifecycle and Deprecation Policy                        | Final  | Process          | 2026-04-17 |
 | [SEP-2577](/seps/2577-deprecate-roots-sampling-and-logging)                          | Deprecate Roots, Sampling, and Logging                                        | Final  | Standards Track  | 2026-04-14 |
 | [SEP-2575](/seps/2575-stateless-mcp)                                                 | Make MCP Stateless                                                            | Final  | Standards Track  | 2025-06-18 |

@@ -1,14 +1,16 @@
 ---
-title: "Claude Team plan for research labs | Claude by Anthropic"
+title: "Claude Team plan for scientists | Claude by Anthropic"
 source_url: "https://www.claude.com/programs/claude-team-plan-for-research-labs"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:43:55Z"
+fetched_at: "2026-09-29T06:31:56Z"
 tags: ["search"]
 ---
 
-# Claude Team plan for research labs
+# Claude Team plan for scientists
 
-A thinking partner for academic and nonprofit labs to advance scientific discovery and innovation.
+## Putting Claude in the hands of scientists
+
+Scientists at academic and nonprofit research institutions around the world can now get Claude at no cost to start.
 
 Get started
 
@@ -16,311 +18,73 @@ Get started
 
 Get started
 
+Limited availability, final pricing confirmed after verification at sign up; [terms apply](https://www.anthropic.com/legal/team-plan-for-scientists-terms).
+
 ## Made for scientific research
 
-### A collaborator for your whole lab
+### A workbench built for science
 
-Claude writes code, reads the literature, and reasons through experiments alongside your team.
+Claude generates and tests hypotheses, writes code, and runs analyses on your data. It scales compute from your laptop to hundreds of GPUs on demand, and traces steps from data wrangling to publication.
 
-### Grounded in science and research
+### Grounded in scientific research
 
-Claude pulls directly from PubMed, Benchling, and other connectors, so answers are grounded in verifiable references.
+Claude cites its sources, shows the math behind results, and pushes back when the evidence doesn't support the claim.
 
-### Verifiable with citations
+### One plan that grows with you
 
-Claude cites its sources, shows its work, and flags uncertainty. Your research data stays yours.
+Start free, bring your group into one shared workspace, and scale up as your projects demand it. Your research data stays yours.
 
-### One plan for your organization
+Research
 
-Replace scattered individual subscriptions with a single Team plan. Everyone in your lab gets the same access at an affordable rate to support academic and nonprofit labs.
+How Claude is accelerating protein design and analytical chemistry
 
-Video
+Learn more
 
-[Play video](#)
+[Learn more](https://www.anthropic.com/research/Claude-accelerates-protein-design)
 
-Play video
+Learn more
 
-Jonah Cool and Eric Kauderer-Abrams share their vision for making Claude the go-to AI research assistant for scientists.
+## How scientists use Claude
 
+Astrophysics
 
-## How labs use Claude
+### Fusion of astronomical datasets
 
-Research code
+Create a map of the full sky in ultraviolet by combining and calibrating observations from different space telescopes. Use statistical techniques to fill in regions with missing data.
 
-Data analysis
+Biology
 
-Literature synthesis
+### Analyze biological data end to end
 
-Numerical experiments
+Analyze molecular datasets like scRNA, WGS, ATAC, MS-Spec, and more from raw feature counts to biologically resolved results. Claude scales your analysis and fits quantitative models on demand.
 
-Active
+Chemistry
 
-Prompt
+### Plan a synthesis route for any target
 
-\> use the scRNA-qc skill to perform QC and filtering on the raw_feature_matrix from my experiment
+Run retrosynthesis on a drawn structure or SMILES, review each route for protecting-group strategy, selectivity, and step order, and land on a path from in-stock materials.
 
-- Now let me run the QC analysis on the raw feature matrix:
-- Bash(python3 scripts/qc_analysis.pypbmc_test_data/raw_feature_bc_matrix.h5)  
-  ↳===========================================================  
-  Single-Cell RNA-seq Quality Control AnalysisFollowing scVerse Best Practices  
-  … +60 lines (ctrl+o to expand)
+Quantum computing
 
+### Optimize and verify quantum circuits
 
-- Excellent! The QC analysis completed successfully. Let me update the visualizations:
-- Read(qc_metrics_before_filtering.png)↳ Read image (732.3KB)
-- Read(qc_filtering_thresholds.png)↳ Read image (210KB)
-- Read(qc_metrics_after_filtering.png)↳ Read image (1.1MB)
-- Perfect! I've successfully completed the QC analysis on your raw feature matrix using the scRNA-qc skill. Here's a summary of the results:QC Analysis SummaryDataset: 2,700 cells × 32,738 genes (raw)Quality Metrics Detected:
-  - 13 mitochondrial genes
-  - 106 ribosomal genes
-  - 13 hemoglobin genes
+Claude rewrites fault tolerant quantum circuits and verifies changes, so work that used to take specialists months per circuit can run largely on its own.
 
-  MAD-Based Filtering Thresholds:
-  - Total counts: 709 - 6,812
-  - Genes detected: 367 - 1,821
-  - Mitochondrial %: MAD threshold 3.65%, Hard threshold 8.0%
-
-  Filtering Results:
-  - 266 cells removed as outliers (9.9%)
-  - 2,434 cells retained (90.1%)
-  - Gene filtering reduced from 32,738 to 9,487 genes (29.0%)
-
-  Key Observations from Visualizations:
-  1.  Before Filtering: The data shows typical scRNA-seq quality with most cells having 1,000-2,000 counts and detecting 500-1,000 genes. Mitochondrial content is generally low (\<5%), which is excellent.
-  2.  Thresholds: The MAD-based thresholds are permissive (5 MADs for counts/genes, 3 MADs for MT%), following scverse best practices to avoid over-filtering.
-  3.  After Filtering: The filtered dataset shows cleaner distributions with tighter clustering, lower mitochondrial content (mostly \<3%), and good cell-gene correlation.
-
-  Output Files Created:
-  - raw_feature_bc_matrix_filtered.h5ad - Clean filtered dataset ready for downstream analysis
-  - raw_feature_bc_matrix_with_qc.h5ad - Original data with QC annotations
-  - QC visualization PNGs (before/thresholds/after)
-
-  The data quality looks excellent! You can now proceed with downstream analysis like normalization, dimensionality reduction, and clustering using the filtered dataset.
-
-### Turn ideas into working code
-
-Claude Code writes, debugs, and runs scripts for analysis from your terminal. Build pipelines, prototype methods, and QC data without waiting on the person who knows the repository.
-
-Prompt
-
-Look in this folder and pull together the results CSV and sample metadata. Run treatment vs. control comparisons on every measured endpoint, flag anything significant after multiple-comparison correction, and generate a figure I can drop straight into my slides.
-
-Working folder
-
-~/Data/cytokine_study/
-
-# Treatment vs. control: cytokine panel
-
-Welch's t-test · Benjamini–Hochberg FDR · n = 12 per group
-
-4 of 6 Significant
-
-**Figure 1.** Mean ± SEM serum concentration (pg/mL) at 72h post-dose. Treatment significantly reduced IL-6, TNF-α, CXCL10, and CCL2 after FDR correction.
-
-\* q \< 0.05  ·  \*\* q \< 0.01  ·  \*\*\* q \< 0.001
-
-### From dataset to figure, on your desktop
-
-Hand Claude Cowork a dataset and a question. Fit models, run stats, generate publication-ready figures locally, with your own files and environment.
-
-Read guide
-
-[Read guide](https://claude.com/resources/use-cases/genomic-data-analysis)
-
-Read guide
-
-Prompt
-
-I'm preparing a review on CAR-T cell exhaustion mechanisms. Search PubMed for recent papers on transcriptional regulators of T cell exhaustion in solid tumors. Summarize which transcription factors are consistently implicated, where the field disagrees on their roles, and create a figure I can use in my review draft.
-
-Transcriptional regulators of T cell exhaustion
-
-Reported role across 47 papers on solid tumors, 2021–2025 · 6 representative studies shown
-
- 
-Chen  
-2024
-
-Scott  
-2023
-
-Beltra  
-2023
-
-Giles  
-2022
-
-Zebley  
-2024
-
-Wang  
-2025
-
-TOX
-
-drives
-
-drives
-
-drives
-
-drives
-
-drives
-
-drives
-
-TCF1
-
-restrains
-
-restrains
-
-restrains
-
-restrains
-
-context
-
-restrains
-
-NR4A
-
-drives
-
-drives
-
-context
-
-drives
-
-—
-
-drives
-
-BATF
-
-drives
-
-restrains
-
-drives
-
-context
-
-restrains
-
-context
-
-IRF4
-
-drives
-
-context
-
-drives
-
-restrains
-
-drives
-
-context
-
-BLIMP-1
-
-drives
-
-drives
-
-—
-
-context
-
-drives
-
-restrains
-
-T-bet
-
-restrains
-
-restrains
-
-context
-
-restrains
-
-—
-
-restrains
-
-Drives exhaustion
-
-Restrains exhaustion
-
-Context-dependent
-
-Not assessed
-
-Source: PubMed
-
-### Survey an entire field in an afternoon
-
-Pull from PubMed and bioRxiv, find contradictions across papers, and surface testable hypotheses with real citations you can check.
-
-Read guide
-
-[Read guide](https://claude.com/resources/tutorials/using-the-pubmed-connector-in-claude)
-
-Read guide
-
-Prompt
-
-Benchmark our MC integrator on the 24-dim Genz test function. Sweep sample sizes 10² to 10⁷, 200 replicates each for 95% CIs, compare against the analytical value (μ = 1.5). Publication-ready convergence figure with a summary strip — final estimate, relative error, wall time.
-
-Attachments
-
-mc_integrator
-
-14.2 KB
-
-PY
-
-genz_testfunctions
-
-3.8 MB
-
-NPZ
-
-# Monte Carlo convergence: high-dimensional integrand
-
-Sample mean Î vs. sample size N across 200 independent replicates · d = 24
-
-Final estimate 1.4994± 0.0021
-
-Relative error 0.04%
-
-Samples 10⁷
-
-Replicates 200
-
-Wall time 12.7s
-
-Sample mean Î
-
-95% CI (200 replicates)
-
-Theoretical mean
-
-**Figure 3.** Monte Carlo estimator Î of a 24-dimensional integrand plotted against sample size N, with 95% confidence bands from 200 independent replicates. The estimator converges to the theoretical mean (μ = 1.5000) within 0.04% relative error at N = 10⁷.
+Statistics
 
 ### Test hypotheses computationally
 
-Run large-scale numerical experiments, compare results against theoretical predictions, and generate publication-ready figures in a fraction of the time.
+Run numerical experiments, compare results against theoretical predictions, and generate publication-ready figures in a fraction of the time it used to take.
+
+Materials science
+
+### Materials discovery and prediction
+
+Work backward from target properties to candidate structures, validate them with first-principles simulations, and screen for what can be synthesized.
 
 ## Claude connects to your tools
 
-Work across your literature databases, lab platforms, and productivity tools in one place.
+Work across your literature databases, research platforms, and productivity tools in one place.
 
 Explore connectors
 
@@ -328,19 +92,115 @@ Explore connectors
 
 Explore connectors
 
+## Products and programs to support scientists
+
+### Claude Science
+
+The Claude Science app is your workbench for rigorous scientific research. It runs analyses, searches databases, and traces steps from data wrangling to publication, so you can spend more time on science.
+
+Learn more
+
+[Learn more](/product/claude-science)
+
+Learn more
+
+### AI for Science
+
+Anthropic’s grant program for ambitious research funds months of sustained work through extra usage credits. We’ve backed hundreds of projects so far across institutions and scientific domains.
+
+Learn more
+
+[Learn more](https://www.anthropic.com/news/ai-for-science-program)
+
+Learn more
+
+Putting Claude in the hands of scientists
+
+10,000 scientists around the world can now get Claude at no cost to start. Verified principal investigators qualify for a Claude Team subscription plan and then add their research team to Standard Seats for free, or Premium seats for \$15 per month.
+
+Promotional pricing for 12 months for verified research groups.  
+Limited availability, final pricing confirmed after verification at sign up; [terms apply.](https://www.anthropic.com/legal/team-plan-for-scientists-terms)
+
+### Standard
+
+\$0/month
+
+regularly \$20/month
+
+Verify now
+
+[Verify now](https://claude.ai/labs-verification/attestation)
+
+Verify now
+
+- Access to Claude Science, Code, & Cowork
+- Connectors to scientific databases and skills
+- Shared projects and file creation
+- Central billing and administration
+- Single sign-on (SSO)
+- Minimum 1 seat
+
+### Premium
+
+\$15/month
+
+regularly \$100/month
+
+Verify now
+
+[Verify now](https://claude.ai/labs-verification/attestation)
+
+Verify now
+
+Everything in Standard, plus:
+
+- 5x more usage\*
+- Higher limits for long-running analyses
+
+### Extra usage
+
+Apply for credits
+
+
+Learn more
+
+[Learn more](https://www.anthropic.com/news/ai-for-science-program)
+
+Learn more
+
+When a project outgrows existing capacity, apply for extra usage credits through the AI for Science program.
+
+\*Extra [usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax and may change at Anthropic’s discretion.
+
+Promotional pricing is not guaranteed, given limited availability. Final pricing confirmed after verification at sign up.
+
+1–25 seats per group; contact us for larger groups. Annual billing available (\$0 / \$180 per seat).
+
+Promotional pricing applies for 12 months from sign-up, and to charges after that date.  
+
+Read the [full terms](https://www.anthropic.com/legal/team-plan-for-scientists-terms)  
+
 ## Why scientists choose Claude
 
 "After collaborating with Claude Code for the past 3 months, turning one idea after another into research projects, I am totally hooked. I cannot imagine research anymore without it! Claude's coding and reasoning capabilities are out of this world, and it's dramatically expanded my conception of what's possible."
 
 David Shih, Professor of Physics, Rutgers University
 
-“Claude has helped our lab identify promising research directions to hone in on by enabling rapid preliminary analysis and statistical power prediction for complex, highly specialized experimental designs.”
-
-Silvia Domke, Assistant Professor, University of Zurich
-
 “\[Claude\] was extraordinarily useful for my research -- both a larger, purely empirical project with a complicated codebase, and some more basic research projects and idea seeds where I needed to prototype something quickly. It definitely changed the game for me, and I re-subscribed!"
 
 Hannah Lawrence, Computer Science Ph.D. student, Massachusetts Institute of Technology
+
+"Claude has changed the way that I do science, from the way that I explore the literature and brainstorm for a new hypothesis, to our ability to analyze large-scale datasets and integrate diverse information sources at a scale that would be difficult to achieve otherwise. It has accelerated my work, but has also allowed me to generate testable and verifiable ideas and to think about the science in fundamentally new ways. Claude passes the scientific “deletion test” - it has become an essential tool for our work.”
+
+Iain Cheeseman, Herman and Margaret Sokol Professor of Biology; Core Member, Whitehead Institute; Associate Department Head
+
+“Claude has become a useful tool for our medicinal chemistry work. It pulls structure-activity trends out of dense SAR tables and can read chemistry from images into SMILES and reaction steps. We've even built a med chem agent using Claude that reasons over structures, computed and predicted properties, and experimental data to flag liabilities and surface which series are worth advancing.”
+
+Akhila Kosaraju, CEO, Phare Bio
+
+“Claude has helped our lab identify promising research directions to hone in on by enabling rapid preliminary analysis and statistical power prediction for complex, highly specialized experimental designs.”
+
+Silvia Domke, Assistant Professor, University of Zurich
 
 “We have taken data harmonization projects and standards development efforts that would have taken a decade to complete and realized them in months. Claude has fundamentally changed how we interact with domain experts and the content we can deliver, such as for rare disease diagnostics and drug repurposing.”
 
@@ -353,10 +213,6 @@ Jonathan Balkind, Assistant Professor of Computer Science, University of Califor
 “I use Opus as an intellectual partner to find holes in my ideas before I commit resources to experiments. At the bench, I generate protocols and troubleshoot logistics in real time. With Claude Code, I automate data transformations and build analysis pipelines. As an MD-PhD student juggling course work, lab experiments, analysis, collaborations and scientific writing, having a tool this versatile has been transformative.”
 
 Maia Madison, MD PhD Student, University of California, San Francisco
-
-"Claude has changed the way that I do science, from the way that I explore the literature and brainstorm for a new hypothesis, to our ability to analyze large-scale datasets and integrate diverse information sources at a scale that would be difficult to achieve otherwise. It has accelerated my work, but has also allowed me to generate testable and verifiable ideas and to think about the science in fundamentally new ways. Claude passes the scientific “deletion test” - it has become an essential tool for our work.”
-
-Iain Cheeseman, Herman and Margaret Sokol Professor of Biology; Core Member, Whitehead Institute; Associate Department Head
 
 "I’ve been able to take advantage of Claude’s broad knowledge to connect a research problem in theoretical particle physics to techniques developed for industrial systems engineering and number theory. Claude Code has allowed me to identify and integrate well developed libraries into our niche problem setting and explore bespoke solutions that leverage advanced reasoning capabilities. It has dramatically changed the pace and ambition of this research project."
 
@@ -373,94 +229,37 @@ Prev
 0/5
 
 
-## Get Claude for your lab
-
-Principal investigators from labs with fewer than 75 people can get started by verifying their lab status. For larger labs, reach out to our sales team.
-
-### Standard
-
-\$15 /user
-
-Per month
-
-Verify your lab
-
-[Verify your lab](https://claude.ai/labs-verification/attestation)
-
-Verify your lab
-
-- Access to Claude Code & Cowork
-- Life sciences connectors and skills
-- Shared projects and file creation
-- Access to Research
-- Central billing and administration
-- Single sign-on (SSO)
-- Minimum 2 seats
-
-### Premium
-
-\$75 /user
-
-Per month
-
-Verify your lab
-
-[Verify your lab](https://claude.ai/labs-verification/attestation)
-
-Verify your lab
-
-Everything in Standard, plus:
-
-- 5x more usage\*
-- Higher limits for long-running analyses
-
-\*Extra [usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax.
-
-Price and plans are subject to change at Anthropic’s discretion.
-
 ## More resources
 
-[Getting started with Claude for life sciences](https://claude.com/resources/tutorials/getting-started-with-claude-for-life-sciences)
+[Get started with Claude team for scientists](https://support.claude.com/en/articles/16634237)
 
-Getting started with Claude for life sciences
+Get started with Claude team for scientists
 
-Getting started with Claude for life sciences
-
-Tutorial
-
-[Tutorial](https://claude.com/resources/tutorials/getting-started-with-claude-for-life-sciences)
-
-Tutorial
-
-[Advancing Claude in Life Sciences](https://www.anthropic.com/news/healthcare-life-sciences)
-
-Advancing Claude in Life Sciences
-
-Advancing Claude in Life Sciences
-
-Blog
-
-[Blog](https://www.anthropic.com/news/healthcare-life-sciences)
-
-Blog
-
-[Explore the full range of Claude’s capabilities for scientific research](https://claude.com/solutions/life-sciences)
-
-Explore the full range of Claude’s capabilities for scientific research
-
-Explore the full range of Claude’s capabilities for scientific research
+Get started with Claude team for scientists
 
 Learn
 
-[Learn](https://claude.com/solutions/life-sciences)
+[Learn](https://support.claude.com/en/articles/16634237)
 
 Learn
 
-[Learn about the AI for Science program by Anthropic](https://www.anthropic.com/news/ai-for-science-program)
+[See Claude Science in action](https://www.youtube.com/watch?v=i8g1pdzWJik&t=2643s)
 
-Learn about the AI for Science program by Anthropic
+See Claude Science in action
 
-Learn about the AI for Science program by Anthropic
+See Claude Science in action
+
+Demo
+
+[Demo](https://www.youtube.com/watch?v=i8g1pdzWJik&t=2643s)
+
+Demo
+
+[Learn about the AI for Science grant program](https://www.anthropic.com/news/ai-for-science-program)
+
+Learn about the AI for Science grant program
+
+Learn about the AI for Science grant program
 
 Learn
 
@@ -468,25 +267,75 @@ Learn
 
 Learn
 
+[How Claude is accelerating protein design and analytical chemistry](https://www.anthropic.com/research/Claude-accelerates-protein-design)
+
+How Claude is accelerating protein design and analytical chemistry
+
+How Claude is accelerating protein design and analytical chemistry
+
+Learn
+
+[Learn](https://www.anthropic.com/research/Claude-accelerates-protein-design)
+
+Learn
+
+[Vibe physics: The AI grad student](https://www.anthropic.com/research/vibe-physics)
+
+Vibe physics: The AI grad student
+
+Vibe physics: The AI grad student
+
+Learn
+
+[Learn](https://www.anthropic.com/research/vibe-physics)
+
+Learn
+
+[Making Claude a chemist](https://www.anthropic.com/research/making-claude-a-chemist)
+
+Making Claude a chemist
+
+Making Claude a chemist
+
+Learn
+
+[Learn](https://www.anthropic.com/research/making-claude-a-chemist)
+
+Learn
+
 ## FAQ
 
-### Who is eligible for the grant-funded research discount?
+### Who is eligible to apply?
 
-The discounted Claude Team plan for research labs plan is available to active scientific labs at academic institutions and nonprofit research organizations. Specifically, biomedical and basic science labs are being prioritized in addition to the hard sciences including chemistry, math, computer science, and physics. Eligibility is verified through the lab’s principal investigator.
+Principal investigators (PIs) or equivalent at accredited universities and nonprofit research institutes working in the natural sciences, mathematics, computer science, engineering, and related fields are eligible to apply.
 
 If you are a for-profit company, contract research organization, or industry R&D team, please see [our Team and Enterprise plans](https://claude.com/pricing#team-&-enterprise).
 
 ### What’s included in this discounted Claude Team plan?
 
-The Claude Team plan for research labs includes everything in Claude Team: shared projects, Claude Code, Cowork, file creation, built-in connectors to research databases, single sign-on, and central billing and administration with a minimum purchase of 2 seats.
+The plan includes everything in Claude Team: shared projects, Claude Science, Code, Cowork, file creation, built-in connectors to research databases, single sign-on, and central billing and administration with a minimum purchase of 1 seat.
 
 ### If I don’t qualify, which plan is right for me?
 
 If you're at a for-profit organization or don't meet the eligibility criteria, Claude Team and Claude Enterprise offer the same capabilities at standard pricing. Visit [claude.com/pricing](https://claude.com/pricing#team-&-enterprise) to compare plans, or contact our sales team for help choosing the right fit.
 
-### What resources are available to help me get started?
+### How does verification work, and how long does it take?
 
-We have [tutorials](https://claude.com/resources/tutorials-category/life-sciences) covering common research use cases, including a walkthrough of sample agent skills and MCP connectors. You can also explore life sciences guides and documentation at [claude.com/lifesciences](http://claude.com/lifesciences), and connect research tools like PubMed, Benchling, and 10X Genomics through built-in connectors.
+You'll confirm your institutional affiliation and tell us briefly about your research. Most applications are reviewed within 5-7 business days. You'll get an email when you're approved and can add seats right away.
+
+### What does it cost and how many seats can I have?
+
+Standard seats are free. Premium seats are \$15 per month. This is promotional pricing for verified research groups, available for 12 months from when you sign up and offered to a limited number of groups. After 12 months, seats renew at the then-current price for this plan. We will notify admins before that happens.
+
+This promotional pricing has limited availability and is not guaranteed. Final pricing is confirmed after verification at sign up.
+
+### What is AI for Science, and how does it relate to this plan?
+
+[AI for Science](https://www.anthropic.com/news/ai-for-science-program) is Anthropic's grant program for ambitious research projects that need more credits than a seat provides. Groups on this plan can apply for extra usage or API credits to support months of sustained work. It's application-based and reviewed on merit.
+
+### What if I stop using it?
+
+If a group has no activity for 90 days, we may return it to standard Team pricing so the promotional seats go to active researchers. We'll email the admin before that happens.
 
 ### Does Claude train on my data?
 
@@ -506,112 +355,6 @@ Thank you! Your submission has been received!
 
 Oops! Something went wrong while submitting the form.
 
-Write
-
-[Button Text](#)
-
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
-
 [Anthropic](https://www.anthropic.com/)
 
 Anthropic
@@ -630,11 +373,6 @@ Products
   [Claude Code](/product/claude-code)
   Claude Code
 
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
 - Claude Cowork
 
   [Claude Cowork](/product/cowork)
@@ -644,11 +382,6 @@ Products
 
   [@Claude](/product/tag)
   @Claude
-
-- Claude Design
-
-  [Claude Design](/product/design)
-  Claude Design
 
 - Claude Science
 
@@ -674,22 +407,44 @@ Products
 
   [Log in](https://claude.ai/login)
 
-Features
+Capabilities
 
-- Claude for Chrome
+- Artifacts
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Artifacts](/features/artifacts)
+  Artifacts
 
-- Claude for Microsoft 365
+- Design
 
-  [Claude for Microsoft 365](/claude-for-microsoft-365)
-  Claude for Microsoft 365
+  [Design](/product/design)
+  Design
+
+- Connectors
+
+  [Connectors](/marketplace/connectors-plugins)
+  Connectors
+
+- Plugins
+
+  [Plugins](/marketplace/plugins)
+  Plugins
 
 - Skills
 
   [Skills](/skills)
   Skills
+
+Extensions
+
+- Claude in Chrome
+
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
+
+- Claude for Microsoft 365
+
+  [Claude for Microsoft 365](/claude-for-microsoft-365)
+  Claude for Microsoft 365
 
 Models
 
@@ -718,7 +473,19 @@ Models
   [Haiku](https://www.anthropic.com/claude/haiku)
   Haiku
 
-Solutions
+Enterprise
+
+- Overview
+
+  [Overview](/solutions/enterprise)
+  Overview
+
+- Claude Code for Enterprise
+
+  [Claude Code for Enterprise](/product/claude-code/enterprise)
+  Claude Code for Enterprise
+
+Use cases
 
 - AI agents
 
@@ -735,6 +502,13 @@ Solutions
   [Coding](/solutions/coding)
   Coding
 
+- Commerce
+
+  [Commerce](/solutions/commerce)
+  Commerce
+
+Departments
+
 - Customer support
 
   [Customer support](/solutions/customer-support)
@@ -745,10 +519,17 @@ Solutions
   [Cybersecurity](/solutions/cybersecurity)
   Cybersecurity
 
-- Enterprise
+- Legal
 
-  [Enterprise](/solutions/enterprise)
-  Enterprise
+  [Legal](/solutions/legal)
+  Legal
+
+- Sales
+
+  [Sales](/solutions/sales)
+  Sales
+
+Industries
 
 - Financial services
 
@@ -775,11 +556,6 @@ Solutions
   [K-12 teachers](/solutions/teachers)
   K-12 teachers
 
-- Legal
-
-  [Legal](/solutions/legal)
-  Legal
-
 - Life sciences
 
   [Life sciences](/solutions/life-sciences)
@@ -795,31 +571,55 @@ Solutions
   [Small business](/solutions/small-business)
   Small business
 
-Claude Platform
+Programs
+
+- Startups
+
+  [Startups](/programs/startups)
+  Startups
+
+- Scientists
+
+  [Scientists](/programs/team-plan-for-scientists)
+  Scientists
+
+Developers
+
+- Developer docs
+
+  [Developer docs](https://code.claude.com/docs/en/overview)
+  Developer docs
+
+- Developer blog
+
+  [Developer blog](https://claude.dev/)
+  Developer blog
+
+- Community
+
+  [Community](/community)
+  Community
+
+- Console
+
+  [Console](https://platform.claude.com/docs/en/home)
+  Console
+
+- Engineering at Anthropic
+
+  [Engineering at Anthropic](https://www.anthropic.com/engineering)
+  Engineering at Anthropic
+
+Platform
 
 - Overview
 
   [Overview](/platform/api)
   Overview
 
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
-
-- Ecosystem
-
-  [Ecosystem](/ecosystem)
-  Ecosystem
-
 - Marketplace
 
-  [Marketplace](/platform/marketplace)
+  [Marketplace](/marketplace)
   Marketplace
 
 - Claude on AWS
@@ -837,16 +637,6 @@ Claude Platform
   [Microsoft Foundry](/partners/microsoft-foundry)
   Microsoft Foundry
 
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](https://platform.claude.com/)
-  Console login
-
 Resources
 
 - Blog
@@ -859,40 +649,20 @@ Resources
   [Claude partner network](/partners)
   Claude partner network
 
-- Community
+- Claude Academy
 
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
+  [Claude Academy](https://academy.claude.com/)
+  Claude Academy
 
 - Customer stories
 
   [Customer stories](/customers)
   Customer stories
 
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
 - Events
 
   [Events](https://www.anthropic.com/events)
   Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
 
 - Powered by Claude
 
@@ -901,18 +671,45 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](/marketplace/service-partners)
   Service partners
 
-- Tutorials
+Help and security
 
-  [Tutorials](/resources/tutorials)
-  Tutorials
+- Availability
 
-- Use cases
+  [Availability](https://www.anthropic.com/supported-countries)
+  Availability
 
-  [Use cases](/resources/use-cases)
-  Use cases
+- Check files
+
+  [Check files](https://claude.com/check-files)
+  Check files
+
+- Regional compliance
+
+  [Regional compliance](/regional-compliance)
+  Regional compliance
+
+- Report abuse
+
+  [Report abuse](https://claude.com/form/anthropic-content-reporting)
+  Report abuse
+
+- Security and compliance
+
+  [Security and compliance](https://trust.anthropic.com/)
+  Security and compliance
+
+- Status
+
+  [Status](https://status.anthropic.com/)
+  Status
+
+- Support center
+
+  [Support center](https://support.claude.com/en/)
+  Support center
 
 Company
 
@@ -931,19 +728,14 @@ Company
   [Policy](https://www.anthropic.com/policy)
   Policy
 
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
 - Research
 
   [Research](https://www.anthropic.com/research)
   Research
 
-- News
+- Anthropic news
 
-  [News](https://www.anthropic.com/news)
-  News
+  [Anthropic news](https://www.anthropic.com/news)
+  Anthropic news
 
 - Policy on the AI Exponential

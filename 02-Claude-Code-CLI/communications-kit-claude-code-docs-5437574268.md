@@ -2,7 +2,7 @@
 title: "Communications kit - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/communications-kit"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:38:14Z"
+fetched_at: "2026-09-29T06:29:31Z"
 tags: ["claude-code"]
 ---
 
@@ -135,7 +135,7 @@ Data usage → https://code.claude.com/docs/en/data-usage
 📚 Quickstart · VS Code · Free 1-hr course
    https://code.claude.com/docs/en/quickstart
    https://code.claude.com/docs/en/vs-code
-   https://anthropic.skilljar.com/claude-code-in-action
+   https://academy.claude.com/courses/claude-code-in-action
 
 Questions → this thread. [Owner] is on point.
 ```
@@ -239,7 +239,7 @@ Anthropic team. I can share a short playbook if you're in.
 
 Tips and tricks campaign
 
-Ready-to-paste Slack or Teams messages designed to drive feature activation after launch. Each follows the same pattern: a hook, the payoff, a “try it now” prompt, and a docs link. Drip them one or two a week in `#claude-code`, or pick the handful that match your team’s gaps. They stand alone with no required order. Copy the message body from each block directly into Slack or Teams. Replace `[bracketed placeholders]` before sending.
+Ready-to-paste Slack or Teams messages designed to drive feature activation after launch. Each follows the same pattern: a hook, the payoff, a “try it now” prompt, and a docs link. Drip them one or two a week in `#claude-code`, or pick the handful that match your team’s gaps. They stand alone with no required order.
 
 
 [​](#get-started)
@@ -258,12 +258,15 @@ Claude Code runs on the same models as the Claude app, and you can switch
 mid-session. *Sonnet* is the workhorse default for everyday feature work,
 bugs, tests, and reviews. Reach for *Opus* on large refactors, gnarly
 debugging, or anything high-stakes. Drop to *Haiku* for quick questions,
-formatting, and mechanical edits where speed wins. *Fable 5* is the most
+formatting, and mechanical edits where speed wins.
+
+*Fable* is the most
 capable model for your hardest, longest-running tasks; it is not the
 default, so select it with `/model fable`, and note that cybersecurity and
-biology content falls back to Opus automatically. Opus 5 runs its own
-checks, so flagged cybersecurity content switches models and flagged
-biology content is refused.
+biology content falls back to Opus automatically. Opus 5.5, Sonnet 5.5, and
+Opus 5 run their own checks too: flagged content switches to an earlier model
+in the same family, except that flagged biology content on Opus 5 or Sonnet
+5.5 is refused.
 
 *Try it now:* type `/model` and pick Sonnet if you haven't already. It is
 the right default for most tasks.
@@ -271,12 +274,12 @@ the right default for most tasks.
 📖 Model configuration → https://code.claude.com/docs/en/model-config
 ```
 
-| Model   | Best for                                                                                                                                                                                                                            |
-|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Fable 5 | The hardest, longest-running tasks. Opt-in only: select it with `/model fable`. Cybersecurity or biology content [falls back to Opus](/docs/en/model-config#automatic-model-fallback)                                               |
-| Opus    | Large-scale refactors, complex debugging, architecture decisions, high-stakes changes. On Opus 5, cybersecurity or biology content triggers [automatic model fallback or a refusal](/docs/en/model-config#automatic-model-fallback) |
-| Sonnet  | Everyday feature work, bug fixes, tests, documentation, code review. Recommended default.                                                                                                                                           |
-| Haiku   | Quick questions, formatting, mechanical edits, rapid iteration                                                                                                                                                                      |
+| Model  | Best for                                                                                                                                                                                                                                         |
+|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Fable  | The hardest, longest-running tasks. Opt-in only: select it with `/model fable`. Cybersecurity or biology content triggers [automatic model fallback to Opus](/docs/en/model-config#automatic-model-fallback)                                     |
+| Opus   | Large-scale refactors, complex debugging, architecture decisions, high-stakes changes. On Opus 5.5 and Opus 5, cybersecurity or biology content triggers [automatic model fallback or a refusal](/docs/en/model-config#automatic-model-fallback) |
+| Sonnet | Everyday feature work, bug fixes, tests, documentation, code review. Recommended default. On Sonnet 5.5, cybersecurity or biology content triggers [automatic model fallback or a refusal](/docs/en/model-config#automatic-model-fallback)       |
+| Haiku  | Quick questions, formatting, mechanical edits, rapid iteration                                                                                                                                                                                   |
 
 **Quick wins to try first**
 
@@ -467,7 +470,7 @@ and it's pointing at line 47-ish"? Screenshot it.
 
 Drag a screenshot straight into the terminal and Claude sees it: error
 dialogs, UI mockups, whiteboard photos, Figma exports. *Ctrl+V* pastes from
-clipboard (Ctrl+V works on macOS too, and Cmd+V works in iTerm2).
+the clipboard, or *Alt+V* on Windows and WSL.
 
 *Try it now:* next time something visual breaks, screenshot it and paste it
 right into the prompt. Then just type "what's wrong here?"

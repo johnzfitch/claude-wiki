@@ -2,12 +2,15 @@
 title: "How to create custom skills | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12512198-how-to-create-custom-skills"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:42:36Z"
+fetched_at: "2026-09-29T06:31:05Z"
 tags: ["claude-code", "security", "skills"]
 ---
 
 # How to create custom skills
 
+July 22, 2026
+
+Copy for LLM
 
 Skills are available for users on Free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190)**. Skills are also available in beta for Claude Code users and for all API users using the code execution tool.
 

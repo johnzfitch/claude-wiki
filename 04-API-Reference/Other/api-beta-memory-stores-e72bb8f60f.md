@@ -2,7 +2,7 @@
 title: "Memory Stores - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:39:34Z"
+fetched_at: "2026-09-26T06:38:38Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmemory_stores)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -68,109 +64,131 @@ Vaults
 Memory Stores
 
 
-Create a memory store
+Create a memory store
 
 
-List memory stores
+List memory stores
 
 
-Retrieve a memory store
+Retrieve a memory store
 
 
-Update a memory store
+Update a memory store
 
 
-Delete a memory store
+Delete a memory store
 
 
-Archive a memory store
+Archive a memory store
 
 Memories
 
 Memory Versions
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -178,59 +196,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -249,65 +227,66 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Memory stores
-
+Copy page
 
 
 
 cURL
 
+1.  [API reference](/docs/en/api/http)
+2.  [Beta](/docs/en/api/http/beta)
+
 # Memory Stores
 
-##### [Create a memory store](/docs/en/api/beta/memory_stores/create)
+##### [Create a memory store](/docs/en/api/http/beta/memory_stores/create)
 
-POST/v1/memory_stores
+POST/v1/memory_stores
 
-##### [List memory stores](/docs/en/api/beta/memory_stores/list)
+##### [List memory stores](/docs/en/api/http/beta/memory_stores/list)
 
-GET/v1/memory_stores
+GET/v1/memory_stores
 
-##### [Retrieve a memory store](/docs/en/api/beta/memory_stores/retrieve)
+##### [Retrieve a memory store](/docs/en/api/http/beta/memory_stores/retrieve)
 
-GET/v1/memory_stores/{memory_store_id}
+GET/v1/memory_stores/{memory_store_id}
 
-##### [Update a memory store](/docs/en/api/beta/memory_stores/update)
+##### [Update a memory store](/docs/en/api/http/beta/memory_stores/update)
 
-POST/v1/memory_stores/{memory_store_id}
+POST/v1/memory_stores/{memory_store_id}
 
-##### [Delete a memory store](/docs/en/api/beta/memory_stores/delete)
+##### [Delete a memory store](/docs/en/api/http/beta/memory_stores/delete)
 
-DELETE/v1/memory_stores/{memory_store_id}
+DELETE/v1/memory_stores/{memory_store_id}
 
-##### [Archive a memory store](/docs/en/api/beta/memory_stores/archive)
+##### [Archive a memory store](/docs/en/api/http/beta/memory_stores/archive)
 
-POST/v1/memory_stores/{memory_store_id}/archive
+POST/v1/memory_stores/{memory_store_id}/archive
 
-##### ModelsExpand Collapse 
+##### Models
 
 
 
-BetaManagedAgentsDeletedMemoryStore object { id, type }
+BetaManagedAgentsDeletedMemoryStore object{ type: "memory_store_deleted", id }
 
 
 
 Confirmation that a `memory_store` was deleted.
+
+type: "memory_store_deleted"
+
+
 
 id: string
 
@@ -315,23 +294,17 @@ id: string
 
 ID of the deleted memory store (a `memstore_...` identifier). The store and all its memories and versions are no longer retrievable.
 
-[](#beta_managed_agents_deleted_memory_store.id)
-
-type: "memory_store_deleted"
-
-
-
-[](#beta_managed_agents_deleted_memory_store.type)
-
-[](#beta_managed_agents_deleted_memory_store)
-
 
 
-BetaManagedAgentsMemoryStore object { id, created_at, name, 5 more }
+BetaManagedAgentsMemoryStore object{ type: "memory_store", id, created_at, 5 more }
 
 
 
 A `memory_store`: a named container for agent memories, scoped to a workspace. Attach a store to a session via `resources[]` to mount it as a directory the agent can read and write.
+
+type: "memory_store"
+
+
 
 id: string
 
@@ -339,15 +312,15 @@ id: string
 
 Unique identifier for the memory store (a `memstore_...` tagged ID). Use this when attaching the store to a session, or in the `{memory_store_id}` path parameter of subsequent calls.
 
-[](#beta_managed_agents_memory_store.id)
+
 
 created_at: string
 
 
 
-A timestamp in RFC 3339 format
+Timestamp when the store was created.
 
-[](#beta_managed_agents_memory_store.created_at)
+formatdate-time
 
 name: string
 
@@ -355,29 +328,25 @@ name: string
 
 Human-readable name for the store. 1–255 characters. The store's mount-path slug under `/mnt/memory/` is derived from this name.
 
-[](#beta_managed_agents_memory_store.name)
-
-type: "memory_store"
-
-
-
-[](#beta_managed_agents_memory_store.type)
+
 
 updated_at: string
 
 
 
-A timestamp in RFC 3339 format
+Timestamp when the store's `name`, `description`, or `metadata` was last modified. Memory writes inside the store do not advance this.
 
-[](#beta_managed_agents_memory_store.updated_at)
+formatdate-time
 
-archived_at: optional string
+
+
+archived_at: optional string or null
 
 
 
-A timestamp in RFC 3339 format
+Timestamp when the store was archived, or `null` if active. Set once and never cleared; archiving is one-way. Archived stores are read-only and cannot be attached to new sessions.
 
-[](#beta_managed_agents_memory_store.archived_at)
+formatdate-time
 
 description: optional string
 
@@ -385,50 +354,44 @@ description: optional string
 
 Free-text description of what the store contains, up to 1024 characters. Included in the agent's system prompt when the store is attached, so word it to be useful to the agent. Empty string when unset.
 
-[](#beta_managed_agents_memory_store.description)
-
 metadata: optional map\[string\]
 
 
 
 Arbitrary key-value tags for your own bookkeeping (such as the end user a store belongs to). Up to 16 pairs; keys 1–64 characters; values up to 512 characters. Returned on retrieve/list but not filterable.
 
-[](#beta_managed_agents_memory_store.metadata)
+#### Memory Stores[Memories](/docs/en/api/http/beta/memory_stores/memories)
 
-[](#beta_managed_agents_memory_store)
+##### [Create a memory](/docs/en/api/http/beta/memory_stores/memories/create)
 
-#### Memory StoresMemories
+POST/v1/memory_stores/{memory_store_id}/memories
 
-##### [Create a memory](/docs/en/api/beta/memory_stores/memories/create)
+##### [List memories](/docs/en/api/http/beta/memory_stores/memories/list)
 
-POST/v1/memory_stores/{memory_store_id}/memories
+GET/v1/memory_stores/{memory_store_id}/memories
 
-##### [List memories](/docs/en/api/beta/memory_stores/memories/list)
+##### [Retrieve a memory](/docs/en/api/http/beta/memory_stores/memories/retrieve)
 
-GET/v1/memory_stores/{memory_store_id}/memories
+GET/v1/memory_stores/{memory_store_id}/memories/{memory_id}
 
-##### [Retrieve a memory](/docs/en/api/beta/memory_stores/memories/retrieve)
+##### [Update a memory](/docs/en/api/http/beta/memory_stores/memories/update)
 
-GET/v1/memory_stores/{memory_store_id}/memories/{memory_id}
+POST/v1/memory_stores/{memory_store_id}/memories/{memory_id}
 
-##### [Update a memory](/docs/en/api/beta/memory_stores/memories/update)
+##### [Delete a memory](/docs/en/api/http/beta/memory_stores/memories/delete)
 
-POST/v1/memory_stores/{memory_store_id}/memories/{memory_id}
+DELETE/v1/memory_stores/{memory_store_id}/memories/{memory_id}
 
-##### [Delete a memory](/docs/en/api/beta/memory_stores/memories/delete)
+#### Memory Stores[Memory Versions](/docs/en/api/http/beta/memory_stores/memory_versions)
 
-DELETE/v1/memory_stores/{memory_store_id}/memories/{memory_id}
+##### [List memory versions](/docs/en/api/http/beta/memory_stores/memory_versions/list)
 
-#### Memory StoresMemory Versions
+GET/v1/memory_stores/{memory_store_id}/memory_versions
 
-##### [List memory versions](/docs/en/api/beta/memory_stores/memory_versions/list)
+##### [Retrieve a memory version](/docs/en/api/http/beta/memory_stores/memory_versions/retrieve)
 
-GET/v1/memory_stores/{memory_store_id}/memory_versions
+GET/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}
 
-##### [Retrieve a memory version](/docs/en/api/beta/memory_stores/memory_versions/retrieve)
+##### [Redact a memory version](/docs/en/api/http/beta/memory_stores/memory_versions/redact)
 
-GET/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}
-
-##### [Redact a memory version](/docs/en/api/beta/memory_stores/memory_versions/redact)
-
-POST/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}/redact
+POST/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}/redact

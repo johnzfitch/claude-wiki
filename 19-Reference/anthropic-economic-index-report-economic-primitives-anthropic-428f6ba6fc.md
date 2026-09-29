@@ -1,8 +1,8 @@
 ---
-title: "Anthropic Economic Index report: Economic primitives \\ Anthropic"
+title: "Economic Index report: Economic primitives \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:12:00Z"
+fetched_at: "2026-09-10T06:46:17Z"
 ---
 
 # Anthropic Economic Index report: Economic primitives
@@ -78,9 +78,9 @@ In this chapter we analyze how Claude usage and diffusion patterns changed from 
 
 ### Shifting patterns of usage across tasks and associated occupations
 
-Even though frontier LLMs have an impressive range of capabilities relevant to every facet of the modern economy, Claude usage remains very concentrated among a small number of tasks. As compared to nearly one year ago, consumer usage on [Claude.ai](http://claude.ai/redirect/website.v1.8c78bfd3-9a6e-4623-bf96-ee0bc172da53) is modestly more concentrated: The share of conversations assigned to the ten most prevalent O\*NET tasks was 24% in November 2025, 1pp higher than in August and up from 21% in January 2025. The most prevalent task in November 2025—modifying software to correct errors—alone represented 6% of usage.
+Even though frontier LLMs have an impressive range of capabilities relevant to every facet of the modern economy, Claude usage remains very concentrated among a small number of tasks. As compared to nearly one year ago, consumer usage on [Claude.ai](http://claude.ai/redirect/website.v1.b8abdda9-f95c-4495-afe9-757afb1adb67) is modestly more concentrated: The share of conversations assigned to the ten most prevalent O\*NET tasks was 24% in November 2025, 1pp higher than in August and up from 21% in January 2025. The most prevalent task in November 2025—modifying software to correct errors—alone represented 6% of usage.
 
-In our last Anthropic Economic Index Report we began tracking business adoption patterns by studying Claude usage among 1P API customers. The ten most common tasks grew from 28% of API records in August to 32% in November. Rising concentration among a small set of tasks suggests the highest-value applications continue to generate outsized economic value even as models have become more capable at a wider range of tasks. As with [Claude.ai](http://claude.ai/redirect/website.v1.8c78bfd3-9a6e-4623-bf96-ee0bc172da53) the most common task among API customers was modifying software to correct errors, which accounted for one in ten records.
+In our last Anthropic Economic Index Report we began tracking business adoption patterns by studying Claude usage among 1P API customers. The ten most common tasks grew from 28% of API records in August to 32% in November. Rising concentration among a small set of tasks suggests the highest-value applications continue to generate outsized economic value even as models have become more capable at a wider range of tasks. As with [Claude.ai](http://claude.ai/redirect/website.v1.b8abdda9-f95c-4495-afe9-757afb1adb67) the most common task among API customers was modifying software to correct errors, which accounted for one in ten records.
 
 Indeed, computer and mathematical tasks—like modifying software to correct errors—continue to dominate Claude usage overall, representing a third of conversations on Claude.ai and nearly half of 1P API traffic. Such dominance has subsided on Claude.ai: the share of conversations on Claude.ai assigned to such (mostly) coding-related tasks is down from a peak of 40% in March 2025 to 34% in November 2025. At the same time, the share of transcripts assigned to computer and mathematical tasks among 1P API traffic edged higher from 44% in August to 46% in November 2025 (Figure 1.2).
 
@@ -329,7 +329,7 @@ Recent work on AI “task horizons” ([Kwa et al., 2025](https://metr.org/blog/
 
 Figure 4.3 shows a similar measure using our primitives. The plot shows task-level success rates against the human time required, all at the O\*NET task level. In the API data, success rates drop from around 60% for sub-hour tasks to roughly 45% for tasks estimated to take humans 5+ hours. The fitted line crosses the horizontal 50% success line at 3.5 hours, suggesting that API calls attain a 50% success rate for tasks that are 3.5 hours. The analogous time estimate in METR’s software engineering benchmark is 2 hours for Sonnet 4.5 and about 5 hours for Opus 4.5. (The data in this report predates the release of Opus 4.5.)
 
-Claude.ai data tells a different story. Success rates decline far slower as a function of task length. Extrapolating using the linear fit, [Claude.ai](http://claude.ai/redirect/website.v1.8c78bfd3-9a6e-4623-bf96-ee0bc172da53) would hit a 50% success rate at about 19 hours. This may reflect how multi-turn conversation effectively breaks complex tasks into smaller steps, with each turn providing a feedback loop that allows users to correct course.
+Claude.ai data tells a different story. Success rates decline far slower as a function of task length. Extrapolating using the linear fit, [Claude.ai](http://claude.ai/redirect/website.v1.b8abdda9-f95c-4495-afe9-757afb1adb67) would hit a 50% success rate at about 19 hours. This may reflect how multi-turn conversation effectively breaks complex tasks into smaller steps, with each turn providing a feedback loop that allows users to correct course.
 
 It’s worth noting that a fundamental difference from the METR setting is selection. METR constructs a benchmark where a fixed set of tasks is assigned to models. In our data, users choose which tasks to bring to Claude. This means observed success rates reflect not just model capability but also user judgment about what will work, the cost of setting up the problem for Claude, and the expected time savings if the task succeeds.
 
@@ -377,7 +377,7 @@ However, our education-based measure differs from Autor and Thompson's expertise
 
 In earlier work, we [estimated that widespread adoption of AI could increase US labor productivity growth by 1.8 percentage points](https://www.anthropic.com/research/estimating-productivity-gains) annually over the next decade. Here we revisit that analysis, incorporating the task success primitive introduced in this report and a richer treatment of task complementarity.
 
-Based on the speedups associated with tasks with at least 200 observations in our sample of 1M [Claude.ai](http://claude.ai/redirect/website.v1.8c78bfd3-9a6e-4623-bf96-ee0bc172da53) conversations,⁶ we replicate our previous finding that current-generation AI models and current usage patterns imply a productivity effect of 1.8 percentage points per year over the next decade.⁷
+Based on the speedups associated with tasks with at least 200 observations in our sample of 1M [Claude.ai](http://claude.ai/redirect/website.v1.b8abdda9-f95c-4495-afe9-757afb1adb67) conversations,⁶ we replicate our previous finding that current-generation AI models and current usage patterns imply a productivity effect of 1.8 percentage points per year over the next decade.⁷
 
 With the inclusion of 1P API data, we can assess whether implied labor productivity effects differ based on enterprise Claude deployment patterns. Two countervailing forces are at play: API usage is more concentrated in a narrower set of tasks and occupations (particularly coding-related work), which would tend to reduce implied effects; but task-level speedups are higher on average among API tasks, as implied by Figure 4.1. These forces largely offset: the API sample likewise implies a 1.8 percentage point increase in labor productivity over the next decade.
 
@@ -391,11 +391,11 @@ The key parameter is the elasticity of substitution across tasks, σ. When the e
 
 Figure 4.6 reports the results of this exercise for different values of task substitutability. As expected, when the elasticity of substitution is equal to one the implied productivity effect is the same as in our baseline analysis: An increase in labor productivity growth of ~1.8 percentage points per year over the next decade implied by both Claude.ai and API samples.
 
-When tasks are complements, however, the implied aggregate labor productivity impact declines sharply as the economic effects are bottlenecked by tasks that AI speeds up the least. For example, at =0.5 the implied overall labor productivity effect is 0.7-0.9 percentage points per year—around half the size as implied by our baseline estimates. Additionally adjusting for task success further reduces the implied productivity effects to 0.8pp for [Claude.ai](http://claude.ai/redirect/website.v1.8c78bfd3-9a6e-4623-bf96-ee0bc172da53) and 0.6pp for API.
+When tasks are complements, however, the implied aggregate labor productivity impact declines sharply as the economic effects are bottlenecked by tasks that AI speeds up the least. For example, at =0.5 the implied overall labor productivity effect is 0.7-0.9 percentage points per year—around half the size as implied by our baseline estimates. Additionally adjusting for task success further reduces the implied productivity effects to 0.8pp for [Claude.ai](http://claude.ai/redirect/website.v1.b8abdda9-f95c-4495-afe9-757afb1adb67) and 0.6pp for API.
 
 On the other hand, when the elasticity of substitution is greater than one, the implied labor productivity based on pre-Opus 4.5 usage patterns is materially higher. For example, at =1.5 the implied labor productivity effect rises to 2.2-2.6 percentage points per year, consistent with greater specialization in tasks where AI provides the largest speedups.
 
-In both cases the implied productivity impact based on API traffic is more responsive to the degree of task substitutability. This is consistent with the fact that there is a larger share of API traffic concentrated in fewer tasks and associated occupations as compared to [Claude.ai](http://claude.ai/redirect/website.v1.8c78bfd3-9a6e-4623-bf96-ee0bc172da53): When tasks are complements, this concentration amplifies the bottleneck problem; when they are substitutes, it amplifies productivity gains from task specialization.
+In both cases the implied productivity impact based on API traffic is more responsive to the degree of task substitutability. This is consistent with the fact that there is a larger share of API traffic concentrated in fewer tasks and associated occupations as compared to [Claude.ai](http://claude.ai/redirect/website.v1.b8abdda9-f95c-4495-afe9-757afb1adb67): When tasks are complements, this concentration amplifies the bottleneck problem; when they are substitutes, it amplifies productivity gains from task specialization.
 
 What this analysis shows is that the productivity effects of automation may ultimately be constrained by bottleneck tasks that elude AI automation for the time being. And the labor market implications of increasingly capable AI could be similarly affected by such forces. For example, [Gans and Goldfarb (2026)](https://www.nber.org/papers/w34639) argue that the presence of bottleneck tasks within jobs means that partial AI automation can lead to an increase in labor income as such tasks increase in economic value (at least until a job is *entirely* automated).
 
@@ -419,7 +419,7 @@ The counterpart to these transformative labor market effects is the broader impa
 
 ⁵ On the other hand, some historical evidence suggests that when technologies automating job tasks appear in patent data, employment and wages subsequently fall for exposed occupations ([Webb 2020](https://www.michaelwebb.co/webb_ai.pdf)).
 
-⁶ When we first assessed the aggregate productivity implications of Claude usage, we relied on a sample of 100k Claude.ai conversations from Fall 2025. Based on the set of tasks for which we observed speedups, we estimated that labor productivity could be 1.8 percentage points higher per year over the next decade. Expanding the sample to 1M observations means that we need to take a stand on how to handle very infrequently occurring tasks—which are very common given that usage follows a power law, as we documented in our past report. We choose a threshold of 0.02% because it replicates our previous results for our sample of [Claude.ai](http://claude.ai/redirect/website.v1.8c78bfd3-9a6e-4623-bf96-ee0bc172da53) conversations. For privacy-preserving reasons, we only ever analyze tasks with at least 15 observations, or an implied threshold of 0.015% for a 100k sample. And so our results are internally consistent across samples. If we do not impose a restriction on our 1M sample and assume that efficiency gains for any task in our sample, even those with just 15 observations out of one million, the implied aggregate labor productivity growth over the next decade would be roughly 5% percentage points per year—a mechanical increase based on a the much larger set of tasks included.
+⁶ When we first assessed the aggregate productivity implications of Claude usage, we relied on a sample of 100k Claude.ai conversations from Fall 2025. Based on the set of tasks for which we observed speedups, we estimated that labor productivity could be 1.8 percentage points higher per year over the next decade. Expanding the sample to 1M observations means that we need to take a stand on how to handle very infrequently occurring tasks—which are very common given that usage follows a power law, as we documented in our past report. We choose a threshold of 0.02% because it replicates our previous results for our sample of [Claude.ai](http://claude.ai/redirect/website.v1.b8abdda9-f95c-4495-afe9-757afb1adb67) conversations. For privacy-preserving reasons, we only ever analyze tasks with at least 15 observations, or an implied threshold of 0.015% for a 100k sample. And so our results are internally consistent across samples. If we do not impose a restriction on our 1M sample and assume that efficiency gains for any task in our sample, even those with just 15 observations out of one million, the implied aggregate labor productivity growth over the next decade would be roughly 5% percentage points per year—a mechanical increase based on a the much larger set of tasks included.
 
 ⁷ As before, this result is based on applying [Hulten’s Theorem](https://doi.org/10.3982/ECTA15202) to task-level productivity shocks and assuming that the corresponding one-time increase in total factor productivity materializes over the course of a decade alongside capital deepening effects.  
 ⁸ As a reminder, for aggregating to implied labor productivity we calculate task-level efficiency gains as the log difference between human time without AI and with AI. There are certainly other ways to adjust based on task reliability. If tasks in our sample are composed of sub-tasks with heterogeneous AI applicability, and workers optimally deploy AI only on sub-tasks where it is effective, then scaling the efficiency gain by the success rate captures the extensive margin of AI adoption within a task.
@@ -473,21 +473,23 @@ Copy
 
 ## Related content
 
-### Discovering cryptographic weaknesses with Claude
+### An alignment assessment of recent cybersecurity incidents
 
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
+We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
 
-[Read more](/research/discovering-cryptographic-weaknesses)
+[Read more](/research/alignment-assessment-cybersecurity-incidents)
 
-### Project Pilot: Can AI control a drone?
+### Formalizing Fermat's Last Theorem
 
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
+We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.
 
-[Read more](/research/project-pilot)
+[Read more](/research/formalizing-fermats-last-theorem)
 
-### How Canada uses Claude: Findings from the Anthropic Economic Index
+### Automated researchers can reliably mitigate alignment failures
 
-[Read more](/research/how-canada-uses-claude)
+We had Claude autonomously train models to improve their performance on several public benchmarks that measure 10 categories of alignment failure. For all 10, Claude found fixes that improved the target benchmarks without degrading capabilities.
+
+[Read more](/research/automated-researchers-mitigate-alignment-failures)
 
 [](/)
 
@@ -501,7 +503,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -521,6 +523,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -553,7 +556,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -566,7 +569,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -578,6 +581,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

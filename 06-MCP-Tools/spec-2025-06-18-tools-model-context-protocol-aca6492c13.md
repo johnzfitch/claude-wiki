@@ -2,7 +2,7 @@
 title: "Tools - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-06-18/server/tools"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:36Z"
+fetched_at: "2026-09-29T06:30:26Z"
 tags: ["mcp"]
 ---
 
@@ -231,12 +231,11 @@ Image Content
 {
   "type": "image",
   "data": "base64-encoded-data",
-  "mimeType": "image/png"
+  "mimeType": "image/png",
   "annotations": {
     "audience": ["user"],
     "priority": 0.9
   }
-
 }
 ```
 

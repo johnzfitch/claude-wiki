@@ -1,36 +1,65 @@
 ---
-title: "Use dictation in Office agents | Claude Help Center"
+title: "Use dictation in Claude for M365 - Claude.ai Documentation"
 source_url: "https://support.claude.com/en/articles/14479591-use-dictation-in-office-agents"
 category: "22-Safety-Policy"
-fetched_at: "2026-08-02T05:42:47Z"
-tags: ["agents", "authentication"]
+fetched_at: "2026-09-14T06:26:59Z"
 ---
 
-# Use dictation in Office agents
+## On this page
+
+- [Use dictation](#use-dictation)
+- [How it works](#how-it-works)
+- [Why dictation is not available with third-party authentication](#why-dictation-is-not-available-with-third-party-authentication)
+
+Features
+
+# Use dictation in Claude for M365
+
+Copy pageCopy page
+
+Speak your prompts instead of typing them in Claude for Excel, PowerPoint, Word, and Outlook.
+
+Copy pageCopy page
+
+Dictation lets you speak prompts instead of typing them. Click the microphone icon in the chat input, speak, and see your words appear in the composer in real time.
+
+Dictation requires the desktop version of Excel, PowerPoint, Word, or Outlook. It is not available in Office on the web because browser-hosted add-ins cannot access the microphone. On the web, use your operating system’s built-in dictation or your Office application’s dictation feature instead.Dictation is also available only for organizations using direct Claude authentication. It is not supported when Claude for M365 connects through a third-party platform such as Amazon Bedrock, Google Cloud Vertex AI, Azure AI Foundry, or an LLM gateway. See [Use Claude for M365 with third-party platforms](/docs/office-agents/third-party-platforms) for platform support details.
 
 
-Dictation lets you speak your prompts instead of typing them when using Office agents. Click the microphone icon in the chat input, speak, and your words appear in the composer as you talk.
+[​](#use-dictation)
 
-Dictation is available for organizations that sign in with Claude directly. It isn't available when Office agents is configured with third-party authentication such as a gateway, Vertex AI, or Bedrock. See below for more information.
+Use dictation
 
-**Note:** Dictation is different from voice mode. Dictation turns your speech into text so you can send a written prompt, and Claude replies in text. Voice mode is a full spoken conversation—you talk to Claude and Claude talks back, and it can use your connected tools. Learn more about **[voice mode](https://support.claude.com/en/articles/11101966-use-voice-mode)**.
+1
 
-## How it works
+Start listening
 
-When you click the microphone, Office agents streams your audio to Anthropic's transcription service, the same infrastructure that powers dictation in the Claude apps. The transcribed text appears in the composer in real time. Click the microphone again to stop, or press Enter to stop and send in one step.
+Click the microphone icon on the right side of the chat input. The placeholder changes to “Listening…” and the button highlights.
 
-Nothing is transcribed on your device, and your audio isn’t sent to any third-party service. Audio is processed entirely on Anthropic’s infrastructure and isn’t retained; only the resulting text remains in your composer.
+2
 
-## Use dictation
+Speak your prompt
 
-- Click the microphone icon on the right side of the chat input. The placeholder changes to *Listening...* and the button turns blue.
+Words appear in the composer as you talk.
 
-- Speak your prompt. Your words appear in the composer as you talk.
+3
 
-- Click the microphone again to stop, or press Enter to stop and send in one step.
+Stop or send
 
-- To choose a different microphone, hover over the microphone icon and click the arrow that appears.
+Click the microphone again to stop, or press Enter to stop and send in one step.
 
-## Why dictation isn't available with third-party authentication
+To select a different microphone, hover over the microphone icon and click the arrow that appears.
 
-In third-party environments, Office agents do not send prompts to Anthropic directly. Spoken audio is effectively a prompt, so dictation isn’t offered there. If you need voice input in a third-party environment, use the dictation feature built into your operating system or Office application instead.
+
+[​](#how-it-works)
+
+How it works
+
+When you start dictating, the add-in streams your audio to Anthropic’s transcription service, the same infrastructure that powers dictation in the Claude apps. The transcribed text displays in real time in the composer. Nothing is transcribed on your device. Audio is streamed to Anthropic, which uses a contracted speech-to-text subprocessor to generate the transcript. Audio is not retained after transcription; only the resulting text remains in your composer.
+
+
+[​](#why-dictation-is-not-available-with-third-party-authentication)
+
+Why dictation is not available with third-party authentication
+
+In third-party environments, Claude for M365 does not send prompts to Anthropic directly. Spoken audio is effectively a prompt, so dictation is not offered there. Use your operating system’s built-in dictation or your Office application’s dictation feature instead.

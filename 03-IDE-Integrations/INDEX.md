@@ -1,9 +1,10 @@
 # IDE Integrations
 
-*10 documents*
+*11 documents*
 
 
 - [Use Claude Code with Chrome (beta)](chrome.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Claude in Chrome | Claude by Anthropic](claude-in-chrome-claude-by-anthropic-c075b75523.md) - Claude in Chrome reads the page you’re signed in to, then clicks, types, and fills forms while you decide what happens next.
 - [Claude Code on desktop](desktop.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 - [Claude Code with GitHub Enterprise Server](github-enterprise-server.md) - Connect Claude Code to your self-hosted GitHub Enterprise Server instance for web sessions, code review, and plugin marketplaces.
 - [JetBrains IDEs](jetbrains-4cf6bd8c22.md) - ## Documentation Index

@@ -2,7 +2,7 @@
 title: "SEP-2549: TTL for List Results - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps/2549-TTL-for-list-results"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:30Z"
+fetched_at: "2026-09-01T06:25:10Z"
 tags: ["mcp"]
 ---
 
@@ -263,4 +263,4 @@ Reference Implementation
 
 Security Implications
 
-A misconfigured or malicious serer could set an excessively long TTL, causing clients to cache stale data for longer than desired. However, since the TTL is a hint and clients can choose to ignore it or re-fetch if they suspect changes, the security risk is minimal. Clients should be designed to handle unexpected TTL values gracefully.
+A misconfigured or malicious server could set an excessively long TTL, causing clients to cache stale data for longer than desired. However, since the TTL is a hint and clients can choose to ignore it or re-fetch if they suspect changes, the security risk is minimal. Clients should be designed to handle unexpected TTL values gracefully.

@@ -2,7 +2,7 @@
 title: "Ping Identity SSO/SCIM email mismatch | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917875-ping-identity-sso-scim-email-mismatch"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:41:08Z"
+fetched_at: "2026-09-29T06:31:20Z"
 tags: ["enterprise"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["enterprise"]
 
 March 24, 2026
 
+Copy for LLM
 
 Claude uses email as the primary identifier to match SSO logins to provisioned seats. Ping Identity products (PingOne and PingFederate) have flexible, layered attribute configuration. When SCIM provisioning and SAML/OIDC SSO pull from different user attributes, a mismatch blocks access.
 

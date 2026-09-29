@@ -2,7 +2,7 @@
 title: "Authentication - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/authentication"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:41:10Z"
+fetched_at: "2026-09-27T06:27:09Z"
 tags: ["api", "authentication"]
 ---
 
@@ -12,102 +12,135 @@ tags: ["api", "authentication"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fauthentication)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Organization
+First steps
 
-[Admin API](/docs/en/manage-claude/admin-api)[User management (beta)](/docs/en/manage-claude/user-management)[Workspaces](/docs/en/manage-claude/workspaces)
+[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)[Authentication](/docs/en/manage-claude/authentication)
 
-Authentication
+Building with Claude
 
-[Overview](/docs/en/manage-claude/authentication)[Create an Admin API key](/docs/en/manage-claude/admin-api-keys)[Workload Identity Federation](/docs/en/manage-claude/workload-identity-federation)[Manage WIF via API](/docs/en/manage-claude/wif-admin-api)[WIF reference](/docs/en/manage-claude/wif-reference)
+[Features overview](/docs/en/build-with-claude/overview)[Using the Messages API](/docs/en/build-with-claude/working-with-messages)[Stop reasons and fallback](/docs/en/build-with-claude/handling-stop-reasons)[Refusals and fallback](/docs/en/build-with-claude/refusals-and-fallback)[Fallback credit](/docs/en/build-with-claude/fallback-credit)
 
-Identity providers
+Model capabilities
 
-Monitoring
+[Effort](/docs/en/build-with-claude/effort)[Task budgets (beta)](/docs/en/build-with-claude/task-budgets)[Fast mode (research preview)](/docs/en/build-with-claude/fast-mode)[Structured outputs](/docs/en/build-with-claude/structured-outputs)[Citations](/docs/en/build-with-claude/citations)[Streaming Messages](/docs/en/build-with-claude/streaming)[Batch processing](/docs/en/build-with-claude/batch-processing)[Search results](/docs/en/build-with-claude/search-results)[Streaming refusals](/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals)[Multilingual support](/docs/en/build-with-claude/multilingual-support)[Embeddings](/docs/en/build-with-claude/embeddings)
 
-[Usage and Cost API](/docs/en/manage-claude/usage-cost-api)[Rate Limits API](/docs/en/manage-claude/rate-limits-api)[Analytics APIs](/docs/en/manage-claude/analytics-api)[Claude Code Analytics API](/docs/en/manage-claude/claude-code-analytics-api)[Spend Limits API](/docs/en/manage-claude/spend-limits-api)
+[Thinking](/docs/en/build-with-claude/thinking)
 
-Data & compliance
+Tools
 
-[Data residency](/docs/en/manage-claude/data-residency)[API and data retention](/docs/en/manage-claude/api-and-data-retention)[Access Transparency](/docs/en/manage-claude/access-transparency)
+[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Browser use tool](/docs/en/agents-and-tools/tool-use/browser-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
 
-Encryption keys
+Tool infrastructure
 
-Compliance API
+[Tool reference](/docs/en/agents-and-tools/tool-use/tool-reference)[Manage tool context](/docs/en/agents-and-tools/tool-use/manage-tool-context)[Tool combinations](/docs/en/agents-and-tools/tool-use/tool-combinations)[Tool use with prompt caching](/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching)[Programmatic tool calling](/docs/en/agents-and-tools/tool-use/programmatic-tool-calling)[Fine-grained tool streaming](/docs/en/agents-and-tools/tool-use/fine-grained-tool-streaming)
 
-[Overview](/docs/en/manage-claude/compliance-api)[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)[Activity Feed](/docs/en/manage-claude/compliance-activity-feed)[Chats, files, and projects](/docs/en/manage-claude/compliance-content-data)[Organizations, users, roles, groups, and settings](/docs/en/manage-claude/compliance-org-data)[Design your integration](/docs/en/manage-claude/compliance-integration-patterns)[Errors](/docs/en/manage-claude/compliance-errors)[FAQ](/docs/en/manage-claude/compliance-faq)
+Context management
 
-[](/login)
+[Context windows](/docs/en/build-with-claude/context-windows)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
 
+[Compaction](/docs/en/build-with-claude/compaction)
 
-
+Working with files
 
-Admin
+[Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
 
-Overview
+[Images and vision](/docs/en/build-with-claude/vision)
 
-Admin/Authentication
+Skills
+
+[Overview](/docs/en/agents-and-tools/agent-skills/overview)[Quickstart](/docs/en/agents-and-tools/agent-skills/quickstart)[Best practices](/docs/en/agents-and-tools/agent-skills/best-practices)[Skills for enterprise](/docs/en/agents-and-tools/agent-skills/enterprise)[Skills in the API](/docs/en/build-with-claude/skills-guide)
+
+MCP
+
+[Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)[MCP connector](/docs/en/agents-and-tools/mcp-connector)
+
+[MCP tunnels](/docs/en/agents-and-tools/mcp-tunnels/overview)
+
+Claude on cloud platforms
+
+[Amazon Bedrock (Opus 4.7 and later)](/docs/en/build-with-claude/claude-in-amazon-bedrock)[Amazon Bedrock (Opus 4.6 and earlier)](/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy)[Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)[Google Cloud](/docs/en/build-with-claude/claude-on-vertex-ai)[Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry)
+
+[Console](/)
+
+[Messages](/docs/en/intro)First steps
 
 # Authentication
 
+Copy page
 
 
 
-Authenticate to the Claude API with API keys or Workload Identity Federation.
+Authenticate to the Claude API with API keys, Workload Identity Federation, or App Attest.
 
+Copy page
 
 
 
-The Claude API supports two ways to authenticate requests:
+The Claude API supports three ways to authenticate requests:
 
-| Method                                                        | Credential                                                                      | Best for                                                                                                                                        |
-|---------------------------------------------------------------|---------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| [API key](#api-keys)                                          | Static `sk-ant-api...` secret in the `x-api-key` header                         | Local development, prototyping, scripts, and single-tenant servers where you control secret storage                                             |
-| [Workload Identity Federation](#workload-identity-federation) | Short-lived bearer token exchanged from your identity provider's identity token | Production workloads on cloud platforms (AWS, Google Cloud, Azure), CI/CD pipelines, and Kubernetes, where you want to eliminate static secrets |
+| Method                                                        | Credential                                                                                              | Best for                                                                                                                                        |
+|---------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| [API key](#api-keys)                                          | Static `sk-ant-api...` secret sent as a bearer token in the `Authorization` header                      | Local development, prototyping, scripts, and servers where you control secret storage                                                           |
+| [Workload Identity Federation](#workload-identity-federation) | Short-lived bearer token exchanged from your identity provider's identity token                         | Production workloads on cloud platforms (AWS, Google Cloud, Azure), CI/CD pipelines, and Kubernetes, where you want to eliminate static secrets |
+| [App Attest](#app-attest)                                     | Short-lived access token issued to a genuine, attested installation of your registered iOS or macOS app | iOS and macOS apps distributed to end users, where the app calls the Claude API directly with no back end or proxy                              |
 
-Both methods grant the same access to Claude API endpoints. Choose API keys to get started quickly, and move to Workload Identity Federation when your workload already has a platform-issued identity you can federate.
+API keys and Workload Identity Federation grant the same access to Claude API endpoints. Choose API keys to get started quickly: a personal key for your own development, or a service account key for anything shared. Move to Workload Identity Federation when your workload already has a platform-issued identity you can federate. Use App Attest for iOS and macOS apps you distribute to end users.
 
+## API keys
 
-
+API keys are static secrets that you generate in the Claude Console and send on every request as a bearer token in the `Authorization` header.
 
-API keys
+### Key types
 
-API keys are static secrets that you generate in the Claude Console and pass on every request.
+When you create a key, you choose its type, which determines what the key can do, where it works, and when it stops working:
 
-- **Create a key:** Go to [Settings → API keys](https://platform.claude.com/settings/keys) in the Claude Console. You choose an [expiration](#key-expiration) as part of creation. Use [workspaces](https://platform.claude.com/settings/workspaces) to scope keys by project or environment.
-- **Send the key:** Set the `x-api-key` header on direct HTTP requests, or set the `ANTHROPIC_API_KEY` environment variable and the [client SDKs](/docs/en/cli-sdks-libraries/overview) pick it up automatically.
+| Key type                   | Acts as                                                                                   | Works in                                                                                                                                                                                              | Stops working when                                                                                                                                                                                                                   |
+|----------------------------|-------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Personal key**           | You, the user, with your roles and permissions                                            | Either a single workspace or the workspaces where your role allows API use, chosen when the key is created                                                                                            | You lose access to the organization or, for a single-workspace key, to that workspace. Personal keys are archived when you are removed from the organization. If you are re-invited, create new keys; archived keys are not restored |
+| **Service account key**    | A [service account](/docs/en/manage-claude/workload-identity-federation#service-accounts) | Either a single workspace or anything the service account has access to, chosen when the key is created. A service account has access to the Default Workspace and to workspaces it has been added to | The service account is archived or, for a single-workspace key, is removed from that workspace                                                                                                                                       |
+| **Workspace key** (legacy) | No one: it belongs to the workspace it was created in                                     | That workspace                                                                                                                                                                                        | It expires, is disabled or deleted, or its workspace is archived, regardless of whether its creator leaves the organization                                                                                                          |
+
+Personal keys and service account keys are identity-backed: each belongs to a user or service account your organization already manages, and every request acts as that identity. When that identity is removed from the organization, the key stops working. This means that keys won't accidentally outlive the people or workloads that own them. Prefer them over workspace keys for new integrations.
+
+Use a personal key for your own development and scripts. A shared personal key acts as one person and breaks when they leave. For shared or automated workloads (CI, production services), have an organization admin create a service account so the workload has its own identity.
+
+Workspace API keys still work but should be considered legacy; identity-backed keys or [Workload Identity Federation](/docs/en/manage-claude/workload-identity-federation) are preferred. To migrate, see [Replacing workspace API keys](#replacing-workspace-api-keys).
+
+### Create and use a key
+
+- **Create a key:** Go to [Settings → API keys](https://platform.claude.com/settings/keys) in the Claude Console and click **Create key**. Name the key and choose an [expiration](#key-expiration). Set **Linked account** to yourself for a personal key, or to a service account for a key shared across multiple users. You can also scope the key to a specific workspace, which lets you skip setting a workspace ID manually in future requests.
+- **Use the key:** Send it as `Authorization: Bearer <key>` on direct HTTP requests, or set the `ANTHROPIC_API_KEY` environment variable and the [client SDKs](/docs/en/cli-sdks-libraries/overview) pick it up automatically.
 
 ```python
 POST /v1/messages
-x-api-key: YOUR_API_KEY
+Authorization: Bearer YOUR_API_KEY
 anthropic-version: 2023-06-01
 content-type: application/json
 ```
 
 
 
-Store API keys in a secrets manager, rotate them periodically, and revoke any key you suspect has leaked. You can also set an [expiration](#key-expiration) when you create a key to limit how long a leaked credential stays usable.
+The legacy `x-api-key: YOUR_API_KEY` header is still supported in place of `Authorization`.
+
+Store API keys in a secrets manager, rotate them periodically, and disable or delete any key you suspect has leaked. On the [API keys page](https://platform.claude.com/settings/keys), **Disable** is reversible (the Admin API reports the key's `status` as `"inactive"`, and **Re-enable** returns it to `"active"`), while **Delete** is permanent: the key is archived and still appears in [List API Keys](/docs/en/api/beta/organization/api_keys/list) with `status: "archived"`. Expired keys can only be deleted. You can also set an [expiration](#key-expiration) when you create a key to limit how long a leaked credential stays usable.
 
 cURL
 
@@ -135,10 +168,77 @@ client = Anthropic(api_key="my-anthropic-api-key")
 client = Anthropic()
 ```
 
+### Select a workspace
 
-
+API keys that are created for a specific workspace only work in that workspace, and API requests using these keys can omit the workspace ID.
 
-Key expiration
+If your API key isn't scoped to a workspace, you must specify the workspace ID in the `anthropic-workspace-id` header for each request. See the following example for how to set this header in a request or in SDKs.
+
+The [Admin API](/docs/en/manage-claude/admin-api) accepts a personal key or service account key only if the key isn't scoped to a specific workspace.
+
+You can find a workspace's ID in the **ID** column of [Settings → Workspaces](https://platform.claude.com/settings/workspaces) in the Claude Console, or by calling the [List Workspaces](/docs/en/api/beta/organization/workspaces/list) endpoint. List Workspaces omits the Default Workspace; its ID is in the `anthropic-workspace-id` [response header](/docs/en/manage-claude/workspaces#identify-the-workspace-behind-an-api-response) of any request that runs there.
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
+
+```python
+client = Anthropic()  # reads ANTHROPIC_API_KEY
+
+# Required on every request for a multi-workspace key.
+# Omit extra_headers for a single-workspace key.
+message = client.messages.create(
+    model="claude-opus-5-5",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "Hello, Claude"}],
+    extra_headers={"anthropic-workspace-id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"},
+)
+print(message.content)
+
+# Or set it once for every request from this client:
+workspace_client = Anthropic(
+    default_headers={"anthropic-workspace-id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"},
+)
+```
+
+If a request made with a key that isn't scoped to a workspace omits the header, the API returns a 400 `invalid_request_error`:
+
+JSON
+
+
+
+```python
+{
+  "type": "error",
+  "error": {
+    "type": "invalid_request_error",
+    "message": "anthropic-workspace-id is required when authenticating with an identity-linked API key; send the id of the workspace this request acts in."
+  },
+  "request_id": "req_011CSHoEeqs5C35K2UUqR7Fy"
+}
+```
+
+A header value that isn't a valid workspace ID returns a 400 `invalid_request_error` with the message `anthropic-workspace-id header must be a valid workspace ID.` If the workspace doesn't exist, or the key's user or service account doesn't have access to it, the API returns a 404 `not_found_error` with the message `` Workspace `<id>` not found. ``, the same response as for any unknown workspace.
+
+Workload Identity Federation selects a workspace at token exchange instead; see the [WIF reference](/docs/en/manage-claude/wif-reference) for details.
+
+### Key expiration
 
 When you create an API key from the [API keys page](https://platform.claude.com/settings/keys) in the Claude Console, you choose an expiration: a preset (3 hours, 1 day, 7 days, or 30 days), a custom duration, or **Never** for keys you store in a secrets manager and rotate yourself. If your organization has a maximum expiration policy, the Console limits presets and custom durations to the policy maximum, and **Never** is unavailable. Existing keys keep their current behavior; expiration is set at creation time and cannot be changed afterward. The same expiration choice applies when you [create an Admin API key](/docs/en/manage-claude/admin-api-keys) in the Claude Console.
 
@@ -146,14 +246,25 @@ Anthropic emails the key's creator as the expiration approaches: 7 days before e
 
 After a key expires, requests made with it return a `401 authentication_error`. Create a new key to restore access; expired keys cannot be reactivated.
 
-The Console API keys table shows each key's expiration, and the Admin API reports each key's `expires_at` timestamp on the [List API Keys](/docs/en/api/admin/api_keys/list) and [Retrieve API Key](/docs/en/api/admin/api_keys/retrieve) endpoints, so you can audit and rotate keys before they expire. The field is `null` for keys without an expiration.
+The Console API keys table shows each key's expiration, and the Admin API reports each key's `expires_at` timestamp on the [List API Keys](/docs/en/api/beta/organization/api_keys/list) and [Retrieve API Key](/docs/en/api/beta/organization/api_keys/retrieve) endpoints, so you can audit and rotate keys before they expire. The field is `null` for keys without an expiration.
 
-Expiration limits the lifetime of a leaked credential, but it is not a substitute for secret hygiene. Regardless of expiration, store keys in a secrets manager and revoke any key you suspect has leaked.
+Expiration limits the lifetime of a leaked credential, but it is not a substitute for secret hygiene. Regardless of expiration, store keys in a secrets manager and disable or delete any key you suspect has leaked.
 
+### Replacing workspace API keys
 
-
+If you have a workspace key, you may want to replace it with [Workload Identity Federation](/docs/en/manage-claude/wif-reference) or a personal or service account key. This provides better security and observability.
 
-Workload Identity Federation
+See [Workload Identity Federation](/docs/en/manage-claude/wif-reference) for details on configuring Workload Identity Federation, which is preferred over long-lived keys.
+
+To replace a workspace key with a personal or service account key:
+
+1.  **Decide the key type.** Your own tooling should use a personal key. A shared or unattended workload should use a service account key.
+2.  **Create a service account** if necessary. You may have to ask an organization admin to create one in [Settings → Service accounts](https://platform.claude.com/settings/service-accounts) and add it to the relevant workspace.
+3.  **Create the new key.** Create it specifically for the integration's workspace unless multiple workspaces are needed.
+4.  **Deploy the new key.** Replace the old key wherever the integration reads it, typically the `ANTHROPIC_API_KEY` environment variable or a secrets manager entry. For a multi-workspace key, also send the `anthropic-workspace-id` header as shown in [Select a workspace](#select-a-workspace).
+5.  **Delete the old key.** Confirm that requests succeed, then delete the workspace key on the [API keys page](https://platform.claude.com/settings/keys).
+
+## Workload Identity Federation
 
 Workload Identity Federation (WIF) lets a workload authenticate with a short-lived identity token issued by an identity provider (IdP) you already trust, such as AWS IAM, Google Cloud, or any standards-compliant OIDC issuer (such as GitHub Actions, Kubernetes service accounts, SPIFFE, Microsoft Entra ID, or Okta). The workload exchanges its IdP-issued JWT at `POST /v1/oauth/token` for a short-lived Claude API access token, and the SDK refreshes that token automatically before it expires. There is no `sk-ant-api...` string to mint, distribute, or rotate.
 
@@ -161,33 +272,38 @@ Federation removes long-lived Claude API keys from your environment, which shrin
 
 To configure federation, you create three resources in the Claude Console (a service account, a federation issuer, and a federation rule) and then point your SDK at the rule. See [Workload Identity Federation](/docs/en/manage-claude/workload-identity-federation) for the full setup walkthrough.
 
+## App Attest
 
-
+App Attest authenticates iOS and macOS apps that call the Claude API directly from the device. Each installation proves that it is a genuine, unmodified build of an app you registered in the Claude Console, using Apple's App Attest service. Anthropic then issues the device a short-lived access token that bills usage to your workspace. Tokens are scoped to your workspace, expire after one hour, and authorize only [Messages API](/docs/en/api/messages/create) calls.
 
-Next steps
+To register your app and get a client ID, see [App Attest for iOS and macOS apps](/docs/en/manage-claude/app-attest).
 
+## Next steps
 
 
 
-Set up Workload Identity Federation
+[Set up Workload Identity Federation](/docs/en/manage-claude/workload-identity-federation)
 
 Configure issuers, rules, and service accounts, then exchange tokens
 
+
 
-Identity provider guides
+[Identity provider guides](/docs/en/manage-claude/workload-identity-federation#identity-providers)
 
 Step-by-step guides for AWS, Google Cloud, Azure, GitHub Actions, Kubernetes, SPIFFE, and Okta
 
-
 
 
-WIF reference
+[WIF reference](/docs/en/manage-claude/wif-reference)
 
 Environment variables, validation rules, profile configuration, and error reference
 
+[App Attest for iOS and macOS apps](/docs/en/manage-claude/app-attest)
+
+Let genuine installations of your app call the Claude API without shipping an API key
 
 
 
-Client SDKs
+[Client SDKs](/docs/en/cli-sdks-libraries/overview)
 
 Python, TypeScript, C#, Go, Java, PHP, Ruby, and the CLI

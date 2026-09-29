@@ -2,7 +2,7 @@
 title: "Citations - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/citations"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-08-02T05:40:24Z"
+fetched_at: "2026-09-26T06:39:19Z"
 tags: ["api"]
 ---
 
@@ -12,31 +12,27 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fcitations)
 
 
 
-Search
+
 
+SearchCtrlK
 
 First steps
 
-[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)
+[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)[Authentication](/docs/en/manage-claude/authentication)
 
 Building with Claude
 
@@ -46,11 +42,11 @@ Model capabilities
 
 [Effort](/docs/en/build-with-claude/effort)[Task budgets (beta)](/docs/en/build-with-claude/task-budgets)[Fast mode (research preview)](/docs/en/build-with-claude/fast-mode)[Structured outputs](/docs/en/build-with-claude/structured-outputs)[Citations](/docs/en/build-with-claude/citations)[Streaming Messages](/docs/en/build-with-claude/streaming)[Batch processing](/docs/en/build-with-claude/batch-processing)[Search results](/docs/en/build-with-claude/search-results)[Streaming refusals](/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals)[Multilingual support](/docs/en/build-with-claude/multilingual-support)[Embeddings](/docs/en/build-with-claude/embeddings)
 
-Thinking
+[Thinking](/docs/en/build-with-claude/thinking)
 
 Tools
 
-[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
+[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Browser use tool](/docs/en/agents-and-tools/tool-use/browser-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
 
 Tool infrastructure
 
@@ -58,13 +54,15 @@ Tool infrastructure
 
 Context management
 
-[Context windows](/docs/en/build-with-claude/context-windows)[Compaction](/docs/en/build-with-claude/compaction)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics (beta)](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+[Context windows](/docs/en/build-with-claude/context-windows)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+
+[Compaction](/docs/en/build-with-claude/compaction)
 
 Working with files
 
 [Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
 
-Images and vision
+[Images and vision](/docs/en/build-with-claude/vision)
 
 Skills
 
@@ -74,40 +72,39 @@ MCP
 
 [Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)[MCP connector](/docs/en/agents-and-tools/mcp-connector)
 
-MCP tunnels
+[MCP tunnels](/docs/en/agents-and-tools/mcp-tunnels/overview)
 
 Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](/docs/en/build-with-claude/claude-in-amazon-bedrock)[Amazon Bedrock (Opus 4.6 and earlier)](/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy)[Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)[Google Cloud](/docs/en/build-with-claude/claude-on-vertex-ai)[Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry)
 
-[](/login)
+[Console](/)
 
-
-
-
-Messages
-
-Citations
-
-Messages/Model capabilities
+[Messages](/docs/en/intro)Model capabilities
 
 # Citations
 
+Copy page
 
 
 
 Ground Claude's responses in your source documents. Citations return the exact passages that support each claim, so you can verify answers and surface sources to your users.
 
+Copy page
 
 
 
-
+Citations
 
-For how zero data retention (ZDR) applies to this feature, see [API and data retention](/docs/en/manage-claude/api-and-data-retention).
+[ZDR](/docs/en/manage-claude/api-and-data-retention)
+
+Eligible
+
+excludes [Covered Models](/docs/en/manage-claude/api-and-data-retention#model-specific-data-retention-requirements)
 
 Claude can provide detailed citations when answering questions about documents, helping you track and verify the sources behind each response.
 
-All [active models](/docs/en/about-claude/models/overview) support citations.
+All [active models](/docs/en/models/overview) support citations.
 
 
 
@@ -139,7 +136,7 @@ Ruby
 client = anthropic.Anthropic()
 
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     messages=[
         {
@@ -176,16 +173,13 @@ Compared to prompting Claude to cite sources, the citations feature offers the f
 
 ------------------------------------------------------------------------
 
-
-
-
-How citations work
+## How citations work
 
 Integrate citations with Claude in these steps:
 
 1.  1
 
-    Provide document(s) and enable citations
+    ### Provide document(s) and enable citations
 
     - Include documents in any of the supported formats: [PDFs](#pdf-documents), [plain text](#plain-text-documents), or [custom content](#custom-content-documents) documents.
     - Set `citations.enabled=true` on each of your documents. Currently, citations must be enabled on all or none of the documents within a request.
@@ -193,7 +187,7 @@ Integrate citations with Claude in these steps:
 
 2.  2
 
-    Documents get processed
+    ### Documents get processed
 
     - Document contents are "chunked" to define the minimum granularity of possible citations. For example, sentence chunking lets Claude cite a single sentence or chain together multiple consecutive sentences to cite a paragraph or longer passage.
       - **For PDFs:** Text is extracted as described in [PDF support](/docs/en/build-with-claude/pdf-support) and content is chunked into sentences. Citing images from PDFs is not currently supported.
@@ -202,7 +196,7 @@ Integrate citations with Claude in these steps:
 
 3.  3
 
-    Claude provides cited response
+    ### Claude provides cited response
 
     - Responses may now include multiple text blocks where each text block can contain a claim that Claude is making and a list of citations that support the claim.
     - Citations reference specific locations in source documents. The format of these citations is dependent on the type of document being cited from.
@@ -219,38 +213,26 @@ By default, plain text and PDF documents are automatically chunked into sentence
 
 For example, if you want Claude to be able to cite specific sentences from your RAG chunks, you should put each RAG chunk into a plain text document. Otherwise, if you do not want any further chunking to be done, or if you want to customize any additional chunking, you can put RAG chunks into custom content document(s).
 
-
-
-
-Citable versus non-citable content
+### Citable versus non-citable content
 
 - Text found within a document's `source` content can be cited from.
 - `title` and `context` are optional fields that are passed to the model but not used toward cited content.
 - `title` is limited in length, so the `context` field is useful for storing document metadata as text or stringified JSON.
 
-
-
-
-Citation indices
+### Citation indices
 
 - Document indices are 0-indexed from the list of all document content blocks in the request (spanning across all messages).
 - Character indices are 0-indexed with exclusive end indices.
 - Page numbers are 1-indexed with exclusive end page numbers.
 - Content block indices are 0-indexed with exclusive end indices from the `content` list provided in the custom content document.
 
-
-
-
-Token costs
+### Token costs
 
 - Enabling citations incurs a slight increase in input tokens because of system prompt additions and document chunking.
 - However, the citations feature is very efficient with output tokens. Internally, the model outputs citations in a standardized format that are then parsed into cited text and document location indices. The `cited_text` field is provided for convenience and does not count toward output tokens.
 - When passed back in subsequent conversation turns, `cited_text` is also not counted toward input tokens.
 
-
-
-
-Feature compatibility
+### Feature compatibility
 
 Citations work in conjunction with other API features including [prompt caching](/docs/en/build-with-claude/prompt-caching), [token counting](/docs/en/build-with-claude/token-counting), and [batch processing](/docs/en/build-with-claude/batch-processing).
 
@@ -262,10 +244,7 @@ Citations cannot be used together with [structured outputs](/docs/en/build-with-
 
 This is because citations require interleaving citation blocks with text output, which is incompatible with the strict JSON schema constraints of structured outputs.
 
-
-
-
-Using prompt caching with citations
+#### Using prompt caching with citations
 
 Citations and prompt caching can be used together effectively.
 
@@ -300,7 +279,7 @@ long_document = (
 )  # Minimum cacheable length
 
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     messages=[
         {
@@ -336,40 +315,27 @@ In this example:
 - Claude can generate responses with citations while benefiting from cached document content.
 - Subsequent requests using the same document benefit from the cached content.
 
+## Document types
 
-
-
-Document types
-
-
-
-
-Choosing a document type
+### Choosing a document type
 
 Three document types are supported for citations. Documents can be provided directly in the message (base64, text, or URL) or uploaded through the [Files API](/docs/en/build-with-claude/files) and referenced by `file_id`:
 
 | Type           | Best for                                                        | Chunking               | Citation format               |
-|----------------|-----------------------------------------------------------------|------------------------|-------------------------------|
+|:---------------|:----------------------------------------------------------------|:-----------------------|:------------------------------|
 | Plain text     | Simple text documents, prose                                    | Sentence               | Character indices (0-indexed) |
 | PDF            | PDF files with text content                                     | Sentence               | Page numbers (1-indexed)      |
 | Custom content | Lists, transcripts, special formatting, more granular citations | No additional chunking | Block indices (0-indexed)     |
 
-
+
 
 For file types that the `document` block doesn't support (for example, .docx and .xlsx), convert the files to plain text and include the content directly in message content. Files that are already plain text, such as .csv and .md files, can also be uploaded with an explicit `text/plain` content type. See [Working with other file formats](/docs/en/build-with-claude/files#working-with-other-file-formats).
 
-
-
-
-Plain text documents
+### Plain text documents
 
 Plain text documents are automatically chunked into sentences. You can provide them inline or by reference with their `file_id`:
 
 Inline text
-
-Inline text
-
-Files API
 
 Files API
 
@@ -393,22 +359,26 @@ The intro example at the top of this page shows a complete plain text request in
 
 ### Example plain text citation
 
+```python
+{
+  "type": "char_location",
+  "cited_text": "The exact text being cited", // not counted toward output tokens
+  "document_index": 0,
+  "document_title": "Document Title",
+  "start_char_index": 0, // 0-indexed
+  "end_char_index": 50 // exclusive
+}
+```
 
-
+
 
-PDF documents
+### PDF documents
 
 PDF documents can be provided as base64-encoded data, a URL, or by `file_id`. PDF text is extracted and chunked into sentences. As image citations are not yet supported, PDFs that are scans of documents and do not contain extractable text are not citable.
 
 Base64
 
-Base64
-
 URL
-
-URL
-
-Files API
 
 Files API
 
@@ -440,7 +410,7 @@ pdf_base64 = base64.standard_b64encode(
 ).decode()
 
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     messages=[
         {
@@ -467,10 +437,20 @@ print(response)
 
 ### Example PDF citation
 
+```python
+{
+  "type": "page_location",
+  "cited_text": "The exact text being cited", // not counted toward output tokens
+  "document_index": 0,
+  "document_title": "Document Title",
+  "start_page_number": 1, // 1-indexed
+  "end_page_number": 2 // exclusive
+}
+```
 
-
+
 
-Custom content documents
+### Custom content documents
 
 Custom content documents give you control over citation granularity. No additional chunking is done and chunks are provided to the model according to the content blocks provided.
 
@@ -498,7 +478,7 @@ Ruby
 client = anthropic.Anthropic()
 
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     messages=[
         {
@@ -527,122 +507,161 @@ print(response)
 
 ### Example citation
 
-------------------------------------------------------------------------
-
-
-
-
-Response structure
-
-When citations are enabled, responses include multiple text blocks with citations:
-
 ```python
 {
-    "content": [
-        {"type": "text", "text": "According to the document, "},
-        {
-            "type": "text",
-            "text": "the grass is green",
-            "citations": [
-                {
-                    "type": "char_location",
-                    "cited_text": "The grass is green.",
-                    "document_index": 0,
-                    "document_title": "Example Document",
-                    "start_char_index": 0,
-                    "end_char_index": 20,
-                }
-            ],
-        },
-        {"type": "text", "text": " and "},
-        {
-            "type": "text",
-            "text": "the sky is blue",
-            "citations": [
-                {
-                    "type": "char_location",
-                    "cited_text": "The sky is blue.",
-                    "document_index": 0,
-                    "document_title": "Example Document",
-                    "start_char_index": 20,
-                    "end_char_index": 36,
-                }
-            ],
-        },
-        {
-            "type": "text",
-            "text": ". Information from page 5 states that ",
-        },
-        {
-            "type": "text",
-            "text": "water is essential",
-            "citations": [
-                {
-                    "type": "page_location",
-                    "cited_text": "Water is essential for life.",
-                    "document_index": 1,
-                    "document_title": "PDF Document",
-                    "start_page_number": 5,
-                    "end_page_number": 6,
-                }
-            ],
-        },
-        {
-            "type": "text",
-            "text": ". The custom document mentions ",
-        },
-        {
-            "type": "text",
-            "text": "important findings",
-            "citations": [
-                {
-                    "type": "content_block_location",
-                    "cited_text": "These are important findings.",
-                    "document_index": 2,
-                    "document_title": "Custom Content Document",
-                    "start_block_index": 0,
-                    "end_block_index": 1,
-                }
-            ],
-        },
-    ]
+  "type": "content_block_location",
+  "cited_text": "The exact text being cited", // not counted toward output tokens
+  "document_index": 0,
+  "document_title": "Document Title",
+  "start_block_index": 0, // 0-indexed
+  "end_block_index": 1 // exclusive
 }
 ```
 
 
 
+------------------------------------------------------------------------
 
-
+## Response structure
 
-Streaming support
+When citations are enabled, responses include multiple text blocks with citations:
+
+```python
+{
+  "content": [
+    { "type": "text", "text": "According to the document, " },
+    {
+      "type": "text",
+      "text": "the grass is green",
+      "citations": [
+        {
+          "type": "char_location",
+          "cited_text": "The grass is green.",
+          "document_index": 0,
+          "document_title": "Example Document",
+          "start_char_index": 0,
+          "end_char_index": 20
+        }
+      ]
+    },
+    { "type": "text", "text": " and " },
+    {
+      "type": "text",
+      "text": "the sky is blue",
+      "citations": [
+        {
+          "type": "char_location",
+          "cited_text": "The sky is blue.",
+          "document_index": 0,
+          "document_title": "Example Document",
+          "start_char_index": 20,
+          "end_char_index": 36
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": ". Information from page 5 states that "
+    },
+    {
+      "type": "text",
+      "text": "water is essential",
+      "citations": [
+        {
+          "type": "page_location",
+          "cited_text": "Water is essential for life.",
+          "document_index": 1,
+          "document_title": "PDF Document",
+          "start_page_number": 5,
+          "end_page_number": 6
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": ". The custom document mentions "
+    },
+    {
+      "type": "text",
+      "text": "important findings",
+      "citations": [
+        {
+          "type": "content_block_location",
+          "cited_text": "These are important findings.",
+          "document_index": 2,
+          "document_title": "Custom Content Document",
+          "start_block_index": 0,
+          "end_block_index": 1
+        }
+      ]
+    }
+  ]
+}
+```
+
+
+
+### Streaming support
 
 For streaming responses, citations arrive as a `citations_delta` delta type inside `content_block_delta` events. Each delta contains a single citation to add to the `citations` list on the current `text` content block.
 
 ### Example streaming events
 
+```python
+event: message_start
+data: {"type": "message_start", ...}
 
-
+event: content_block_start
+data: {"type": "content_block_start", "index": 0, ...}
 
-Next steps
+event: content_block_delta
+data: {"type": "content_block_delta", "index": 0,
+       "delta": {"type": "text_delta", "text": "According to..."}}
 
+event: content_block_delta
+data: {"type": "content_block_delta", "index": 0,
+       "delta": {"type": "citations_delta",
+                 "citation": {
+                     "type": "char_location",
+                     "cited_text": "...",
+                     "document_index": 0,
+                     ...
+                 }}}
 
-Streaming messages
+event: content_block_stop
+data: {"type": "content_block_stop", "index": 0}
+
+event: message_stop
+data: {"type": "message_stop"}
+```
+
+
+
+## Next steps
+
+[Streaming messages](/docs/en/build-with-claude/streaming)
 
 Handle the `citations_delta` delta type alongside text deltas to render cited responses as they stream.
 
-
-Search results
+[Search results](/docs/en/build-with-claude/search-results)
 
 Pass search results from your RAG pipeline as first-class content blocks with built-in citation support.
 
-
 
 
-PDF support
+[PDF support](/docs/en/build-with-claude/pdf-support)
 
 Learn how Claude extracts text from PDFs and how page-based citations map back to your source files.
 
-
-Files API
+[Files API](/docs/en/build-with-claude/files)
 
 Upload documents once and reference them by `file_id` across multiple citation requests.
+
+## Compatibility
+
+Supported platforms  
+- Claude API
+- Claude Platform on AWS
+- Amazon Bedrock
+- Google Cloud
+- Microsoft Foundry

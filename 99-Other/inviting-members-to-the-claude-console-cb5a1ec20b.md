@@ -2,13 +2,14 @@
 title: "Inviting members to the Claude Console | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13443764-inviting-members-to-the-claude-console"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:06Z"
+fetched_at: "2026-09-29T06:32:03Z"
 ---
 
 # Inviting members to the Claude Console
 
 March 16, 2026
 
+Copy for LLM
 
 The instructions in this article apply to your overall Console organization. If you are working within a specific Console Workspace, see this article: [Creating and managing Workspaces in the Claude Console](https://support.claude.com/en/articles/9796807-creating-and-managing-workspaces-in-the-claude-console).
 

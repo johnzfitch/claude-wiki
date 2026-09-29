@@ -2,7 +2,7 @@
 title: "Events - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions/threads/events"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:39:54Z"
+fetched_at: "2026-09-26T06:38:49Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions%2Fthreads%2Fevents)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -60,22 +56,22 @@ Environments
 Sessions
 
 
-Create Session
+Create Session
 
 
-List Sessions
+List Sessions
 
 
-Get Session
+Get Session
 
 
-Update Session
+Update Session
 
 
-Delete Session
+Delete Session
 
 
-Archive Session
+Archive Session
 
 Events
 
@@ -84,21 +80,21 @@ Resources
 Threads
 
 
-List Session Threads
+List Session Threads
 
 
-Get Session Thread
+Get Session Thread
 
 
-Archive Session Thread
+Archive Session Thread
 
 Events
 
 
-List Session Thread Events
+List Session Thread Events
 
 
-Stream Session Thread Events
+Stream Session Thread Events
 
 Deployments
 
@@ -108,88 +104,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -197,59 +215,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -268,36 +246,35 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Events
-
+Copy page
 
 
 
 cURL
 
+1.  [API reference](/docs/en/api/http)
+2.  [Beta](/docs/en/api/http/beta)
+3.  [Sessions](/docs/en/api/http/beta/sessions)
+4.  [Threads](/docs/en/api/http/beta/sessions/threads)
+
 # Events
 
-##### [List Session Thread Events](/docs/en/api/beta/sessions/threads/events/list)
+##### [List Session Thread Events](/docs/en/api/http/beta/sessions/threads/events/list)
 
-GET/v1/sessions/{session_id}/threads/{thread_id}/events
+GET/v1/sessions/{session_id}/threads/{thread_id}/events
 
-##### [Stream Session Thread Events](/docs/en/api/beta/sessions/threads/events/stream)
+##### [Stream Session Thread Events](/docs/en/api/http/beta/sessions/threads/events/stream)
 
-GET/v1/sessions/{session_id}/threads/{thread_id}/stream
+GET/v1/sessions/{session_id}/threads/{thread_id}/stream

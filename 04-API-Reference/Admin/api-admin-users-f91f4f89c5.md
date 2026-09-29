@@ -2,7 +2,7 @@
 title: "Users - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/users"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:40:18Z"
+fetched_at: "2026-09-10T06:43:11Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fadmin%2Fusers)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,96 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,22 +160,28 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
+Create Enrollment URL
 
 
 Webhooks
+
+
+Unwrap
+
+
+Parse Unverified
 
 
 Admin
@@ -183,20 +193,20 @@ Invites
 Users
 
 
-Get User
+Get User
 
 
-List Users
+List Users
 
 
-Update User
+Update User
 
 
-Remove User
+Remove User
 
-RBAC Groups
+RBAC Groups
 
-RBAC Roles
+RBAC Roles
 
 Workspaces
 
@@ -239,51 +249,48 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Users
-
+Copy page
 
 
 
+1.  [API reference](/docs/en/api/http)
+2.  [Admin](/docs/en/api/http/admin)
+
 # Users
 
-##### [Get User](/docs/en/api/admin/users/retrieve)
+##### [Get User](/docs/en/api/http/admin/users/retrieve)
 
-GET/v1/organizations/users/{user_id}
+GET/v1/organizations/users/{user_id}
 
-##### [List Users](/docs/en/api/admin/users/list)
+##### [List Users](/docs/en/api/http/admin/users/list)
 
-GET/v1/organizations/users
+GET/v1/organizations/users
 
-##### [Update User](/docs/en/api/admin/users/update)
+##### [Update User](/docs/en/api/http/admin/users/update)
 
-POST/v1/organizations/users/{user_id}
+POST/v1/organizations/users/{user_id}
 
-##### [Remove User](/docs/en/api/admin/users/delete)
+##### [Remove User](/docs/en/api/http/admin/users/delete)
 
-DELETE/v1/organizations/users/{user_id}
+DELETE/v1/organizations/users/{user_id}
 
-##### ModelsExpand Collapse 
+##### Models
 
 
 
-User object { id, added_at, email, 3 more }
+User object{ id, added_at, email, 3 more }
 
 
 
@@ -293,7 +300,7 @@ id: string
 
 ID of the User.
 
-[](#user.id)
+
 
 added_at: string
 
@@ -301,7 +308,7 @@ added_at: string
 
 RFC 3339 datetime string indicating when the User joined the Organization.
 
-[](#user.added_at)
+formatdate-time
 
 email: string
 
@@ -309,15 +316,11 @@ email: string
 
 Email of the User.
 
-[](#user.email)
-
 name: string
 
 
 
 Name of the User.
-
-[](#user.name)
 
 
 
@@ -333,57 +336,37 @@ One of the following:
 
 
 
-[](#user.role%5B0%5D)
-
 "billing"
 
 
-
-[](#user.role%5B1%5D)
 
 "claude_code_user"
 
 
 
-[](#user.role%5B2%5D)
-
 "developer"
 
 
-
-[](#user.role%5B3%5D)
 
 "managed"
 
 
 
-[](#user.role%5B4%5D)
-
 "membership_admin"
 
 
-
-[](#user.role%5B5%5D)
 
 "owner"
 
 
 
-[](#user.role%5B6%5D)
-
 "primary_owner"
 
 
 
-[](#user.role%5B7%5D)
-
 "user"
 
 
-
-[](#user.role%5B8%5D)
-
-[](#user.role)
 
 
 
@@ -395,13 +378,11 @@ Object type.
 
 For Users, this is always `"user"`.
 
-[](#user.type)
-
-[](#user)
+defaultuser
 
 
 
-UserDeleteResponse object { id, type }
+UserDeleteResponse object{ id, type }
 
 
 
@@ -410,8 +391,6 @@ id: string
 
 
 ID of the User.
-
-[](#user_delete_response.id)
 
 
 
@@ -422,5 +401,3 @@ type: "user_deleted"
 Deleted object type.
 
 For Users, this is always `"user_deleted"`.
-
-[](#user_delete_response.type)

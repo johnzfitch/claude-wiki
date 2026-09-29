@@ -2,13 +2,14 @@
 title: "Set up the Claude LTI in Canvas by Instructure | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11725453-set-up-the-claude-lti-in-canvas-by-instructure"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:40:51Z"
+fetched_at: "2026-09-29T06:30:56Z"
 ---
 
 # Set up the Claude LTI in Canvas by Instructure
 
 March 16, 2026
 
+Copy for LLM
 
 This article provides information on how to enable the Claude LTI integration in Canvas LMS. These steps are intended for Claude for Education administrators and Learning Management Systems (LMS) administrators.
 

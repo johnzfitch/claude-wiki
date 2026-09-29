@@ -2,7 +2,7 @@
 title: "Getting the most out of Sonnet 4.5 in Claude.ai | Claude by Anthropic"
 source_url: "https://support.claude.com/en/articles/12439373-getting-the-most-out-of-sonnet-4-5-in-claude-ai"
 category: "20-Models"
-fetched_at: "2026-08-02T05:41:06Z"
+fetched_at: "2026-08-19T06:30:01Z"
 tags: ["prompting"]
 ---
 
@@ -90,6 +90,18 @@ Sonnet 4.5 represents a significant leap forward in what's possible with AI assi
 
 ## Related tutorials
 
+[How to choose between voice mode and dictation](/resources/tutorials/how-to-choose-between-voice-mode-and-dictation)
+
+How to choose between voice mode and dictation
+
+How to choose between voice mode and dictation
+
+Tutorial
+
+[Tutorial](/resources/tutorials/how-to-choose-between-voice-mode-and-dictation)
+
+Tutorial
+
 [Delegating and scheduling tasks in Claude Cowork](/resources/tutorials/delegating-and-scheduling-tasks-in-claude-cowork)
 
 Delegating and scheduling tasks in Claude Cowork
@@ -123,18 +135,6 @@ Best practices for using @Claude
 Tutorial
 
 [Tutorial](/resources/tutorials/best-practices-using-claude-tag)
-
-Tutorial
-
-[Using Claude Cowork for legal: answer fast questions on past decisions](/resources/tutorials/using-claude-cowork-for-legal-question-briefing)
-
-Using Claude Cowork for legal: answer fast questions on past decisions
-
-Using Claude Cowork for legal: answer fast questions on past decisions
-
-Tutorial
-
-[Tutorial](/resources/tutorials/using-claude-cowork-for-legal-question-briefing)
 
 Tutorial
 
@@ -317,10 +317,10 @@ Products
 
 Features
 
-- Claude for Chrome
+- Claude in Chrome
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
 
 - Claude for Microsoft 365
 
@@ -542,7 +542,7 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](#)
   Service partners
 
 - Tutorials

@@ -2,7 +2,7 @@
 title: "Apps - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:40:28Z"
+fetched_at: "2026-09-26T06:38:55Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -227,126 +205,199 @@ Projects
 
 Artifacts
 
+Sessions
+
 Code
 
 
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
+To enable the Compliance API, see the setup guide.
 
-Apps
+[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)
 
+Copy page
 
 
 
-
-
-To enable the Compliance API, see [Set up the Compliance API](/docs/en/manage-claude/compliance-api-access).
+1.  [API reference](/docs/en/api/http)
+2.  [Compliance API](/docs/en/api/http/compliance)
 
 # Apps
 
-#### AppsChats
+#### Apps[Chats](/docs/en/api/http/compliance/apps/chats)
 
-##### [List chats](/docs/en/api/compliance/apps/chats/list)
+##### [List chats](/docs/en/api/http/compliance/apps/chats/list)
 
-GET/v1/compliance/apps/chats
+GET/v1/compliance/apps/chats
 
-##### [Delete chat](/docs/en/api/compliance/apps/chats/delete)
+Lists chat metadata with filtering capabilities for targeted compliance review. Results are sorted chronologically (time ascending) by the `order_by` key, with ties broken by id.
 
-DELETE/v1/compliance/apps/chats/{claude_chat_id}
+##### [Delete chat](/docs/en/api/http/compliance/apps/chats/delete)
 
-#### AppsChatsMessages
+DELETE/v1/compliance/apps/chats/{claude_chat_id}
 
-##### [Get chat messages](/docs/en/api/compliance/apps/chats/messages/list)
+Permanently deletes a chat and all associated messages and files. This is a destructive operation that cannot be undone.
 
-GET/v1/compliance/apps/chats/{claude_chat_id}/messages
+#### AppsChats[Messages](/docs/en/api/http/compliance/apps/chats/messages)
 
-#### AppsChatsFiles
+##### [Get chat messages](/docs/en/api/http/compliance/apps/chats/messages/list)
 
-##### [Get file metadata](/docs/en/api/compliance/apps/chats/files/retrieve)
+GET/v1/compliance/apps/chats/{claude_chat_id}/messages
 
-GET/v1/compliance/apps/chats/files/{claude_file_id}
+Retrieves message history and file metadata for a specific chat.
 
-##### [Delete file](/docs/en/api/compliance/apps/chats/files/delete)
+#### AppsChats[Files](/docs/en/api/http/compliance/apps/chats/files)
 
-DELETE/v1/compliance/apps/chats/files/{claude_file_id}
+##### [Get file metadata](/docs/en/api/http/compliance/apps/chats/files/retrieve)
 
-##### [Download file content](/docs/en/api/compliance/apps/chats/files/download)
+GET/v1/compliance/apps/chats/files/{claude_file_id}
 
-GET/v1/compliance/apps/chats/files/{claude_file_id}/content
+Retrieves metadata for a file referenced in chat messages, without downloading the file content. Use the sibling `/content` endpoint to download the bytes.
 
-#### AppsChatsGenerated Files
+##### [Delete file](/docs/en/api/http/compliance/apps/chats/files/delete)
 
-##### [Get Claude-generated file metadata](/docs/en/api/compliance/apps/chats/generated_files/retrieve)
+DELETE/v1/compliance/apps/chats/files/{claude_file_id}
 
-GET/v1/compliance/apps/chats/generated-files/{claude_gen_file_id}
+Permanently deletes a specific file. This is a destructive operation that cannot be undone.
 
-##### [Download a Claude-generated file](/docs/en/api/compliance/apps/chats/generated_files/download)
+##### [Download file content](/docs/en/api/http/compliance/apps/chats/files/download)
 
-GET/v1/compliance/apps/chats/generated-files/{claude_gen_file_id}/content
+GET/v1/compliance/apps/chats/files/{claude_file_id}/content
 
-#### AppsProjects
+Downloads the binary content of a file referenced in chat messages.
 
-##### [List projects](/docs/en/api/compliance/apps/projects/list)
+#### AppsChats[Generated Files](/docs/en/api/http/compliance/apps/chats/generated_files)
 
-GET/v1/compliance/apps/projects
+##### [Get Claude-generated file metadata](/docs/en/api/http/compliance/apps/chats/generated_files/retrieve)
 
-##### [Get project details](/docs/en/api/compliance/apps/projects/retrieve)
+GET/v1/compliance/apps/chats/generated-files/{claude_gen_file_id}
 
-GET/v1/compliance/apps/projects/{project_id}
+Returns metadata for a file the assistant created via tool use.
 
-##### [Delete project](/docs/en/api/compliance/apps/projects/delete)
+##### [Download a Claude-generated file](/docs/en/api/http/compliance/apps/chats/generated_files/download)
 
-DELETE/v1/compliance/apps/projects/{project_id}
+GET/v1/compliance/apps/chats/generated-files/{claude_gen_file_id}/content
 
-#### AppsProjectsAttachments
+Downloads the binary content of a file the assistant created via tool use.
 
-##### [List project attachments](/docs/en/api/compliance/apps/projects/attachments/list)
+#### Apps[Projects](/docs/en/api/http/compliance/apps/projects)
 
-GET/v1/compliance/apps/projects/{project_id}/attachments
+##### [List projects](/docs/en/api/http/compliance/apps/projects/list)
 
-#### AppsProjectsCollaborators
+GET/v1/compliance/apps/projects
 
-##### [List project collaborators](/docs/en/api/compliance/apps/projects/collaborators/list)
+Lists project metadata with filtering capabilities. Results are sorted chronologically (time ascending) by created_at.
 
-GET/v1/compliance/apps/projects/{project_id}/collaborators
+##### [Get project details](/docs/en/api/http/compliance/apps/projects/retrieve)
 
-#### AppsProjectsDocuments
+GET/v1/compliance/apps/projects/{project_id}
 
-##### [Get project document content](/docs/en/api/compliance/apps/projects/documents/retrieve)
+Get detailed information for a specific project.
 
-GET/v1/compliance/apps/projects/documents/{document_id}
+##### [Delete project](/docs/en/api/http/compliance/apps/projects/delete)
 
-##### [Get project document metadata](/docs/en/api/compliance/apps/projects/documents/metadata)
+DELETE/v1/compliance/apps/projects/{project_id}
 
-GET/v1/compliance/apps/projects/documents/{document_id}/metadata
+Delete a project for compliance purposes.
 
-##### [Delete project document](/docs/en/api/compliance/apps/projects/documents/delete)
+#### AppsProjects[Attachments](/docs/en/api/http/compliance/apps/projects/attachments)
 
-DELETE/v1/compliance/apps/projects/documents/{document_id}
+##### [List project attachments](/docs/en/api/http/compliance/apps/projects/attachments/list)
 
-#### AppsArtifacts
+GET/v1/compliance/apps/projects/{project_id}/attachments
 
-##### [Get artifact metadata](/docs/en/api/compliance/apps/artifacts/retrieve)
+List files and documents attached to a project.
 
-GET/v1/compliance/apps/artifacts/{artifact_version_id}
+#### AppsProjects[Collaborators](/docs/en/api/http/compliance/apps/projects/collaborators)
 
-##### [Download artifact content](/docs/en/api/compliance/apps/artifacts/download)
+##### [List project collaborators](/docs/en/api/http/compliance/apps/projects/collaborators/list)
 
-GET/v1/compliance/apps/artifacts/{artifact_version_id}/content
+GET/v1/compliance/apps/projects/{project_id}/collaborators
+
+List the users, groups, and organization-wide grants on a project.
+
+#### AppsProjects[Documents](/docs/en/api/http/compliance/apps/projects/documents)
+
+##### [Get project document content](/docs/en/api/http/compliance/apps/projects/documents/retrieve)
+
+GET/v1/compliance/apps/projects/documents/{document_id}
+
+Get detailed information for a specific project document.
+
+##### [Get project document metadata](/docs/en/api/http/compliance/apps/projects/documents/metadata)
+
+GET/v1/compliance/apps/projects/documents/{document_id}/metadata
+
+Returns metadata for a project document, without the content body.
+
+##### [Delete project document](/docs/en/api/http/compliance/apps/projects/documents/delete)
+
+DELETE/v1/compliance/apps/projects/documents/{document_id}
+
+Delete a project document for compliance purposes.
+
+#### Apps[Artifacts](/docs/en/api/http/compliance/apps/artifacts)
+
+##### [Get artifact metadata](/docs/en/api/http/compliance/apps/artifacts/retrieve)
+
+GET/v1/compliance/apps/artifacts/{artifact_version_id}
+
+Returns metadata for an artifact version, without the content body.
+
+##### [Download artifact content](/docs/en/api/http/compliance/apps/artifacts/download)
+
+GET/v1/compliance/apps/artifacts/{artifact_version_id}/content
+
+Download the content of an artifact version for compliance purposes.
+
+#### AppsSessions[Local](/docs/en/api/http/compliance/apps/sessions/local)
+
+##### [List local sessions](/docs/en/api/http/compliance/apps/sessions/local/list)
+
+GET/v1/compliance/apps/sessions/local
+
+List local sessions across the organizations the key may read.
+
+##### [Retrieve a local session](/docs/en/api/http/compliance/apps/sessions/local/retrieve)
+
+GET/v1/compliance/apps/sessions/local/{local_session_id}
+
+Retrieve one local session.
+
+#### AppsSessionsLocal[Messages](/docs/en/api/http/compliance/apps/sessions/local/messages)
+
+##### [Retrieve local session messages](/docs/en/api/http/compliance/apps/sessions/local/messages/list)
+
+GET/v1/compliance/apps/sessions/local/{local_session_id}/messages
+
+Read one local session's transcript, oldest-first by default.
+
+#### AppsSessions[Remote](/docs/en/api/http/compliance/apps/sessions/remote)
+
+##### [List remote sessions](/docs/en/api/http/compliance/apps/sessions/remote/list)
+
+GET/v1/compliance/apps/sessions/remote
+
+List remote sessions (Cowork sessions that run in Anthropic-managed cloud environments) across the organizations the key may read.
+
+#### AppsSessionsRemote[Messages](/docs/en/api/http/compliance/apps/sessions/remote/messages)
+
+##### [Retrieve remote session messages](/docs/en/api/http/compliance/apps/sessions/remote/messages/list)
+
+GET/v1/compliance/apps/sessions/remote/{claude_remote_session_id}/messages
+
+Retrieve one remote session's transcript: user prompts, assistant responses, and tool calls and results. Thinking blocks and images are not included.

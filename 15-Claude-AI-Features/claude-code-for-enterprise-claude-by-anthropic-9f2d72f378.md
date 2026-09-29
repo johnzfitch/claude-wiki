@@ -2,7 +2,7 @@
 title: "Claude Code for Enterprise | Claude by Anthropic"
 source_url: "https://www.claude.com/product/claude-code/enterprise"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:43:53Z"
+fetched_at: "2026-09-16T06:25:38Z"
 tags: ["claude-code", "enterprise", "security"]
 ---
 
@@ -318,10 +318,6 @@ Read API docs
 ### Is Claude Code secure?
 
 Yes. Claude Code runs locally in your terminal and talks directly to model APIs without requiring a backend server or remote code index. It also asks for permission before making changes to your files or running commands.
-
-### Which models does Claude Code use?
-
-Claude Code works with the Fable 5, Opus 4.6, Sonnet 4.6, and Haiku 4.5 models. Enterprise users can run Claude Code using models in existing Amazon Bedrock or Google Cloud Vertex AI instances.
 
 ### How does Claude Code integrate with our existing security infrastructure?
 

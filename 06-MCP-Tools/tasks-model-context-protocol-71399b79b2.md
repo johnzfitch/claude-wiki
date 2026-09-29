@@ -2,7 +2,7 @@
 title: "Tasks - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/extensions/tasks/overview"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:26Z"
+fetched_at: "2026-08-03T07:18:11Z"
 tags: ["mcp"]
 ---
 
@@ -29,7 +29,7 @@ Asynchronous task execution for long-running MCP operations
 
 Copy pageCopy page
 
-The [experimental-ext-tasks repository](https://github.com/modelcontextprotocol/experimental-ext-tasks) contains the full specification and documentation for MCP Tasks.
+The [ext-tasks repository](https://github.com/modelcontextprotocol/ext-tasks) contains the full specification and documentation for MCP Tasks.
 
 ## modelcontextprotocol/ext-tasks
 
@@ -226,4 +226,4 @@ See the [client matrix](/extensions/client-matrix) for extension support across 
 
 Specification
 
-The Tasks extension is specified in the [experimental-ext-tasks repository](https://github.com/modelcontextprotocol/experimental-ext-tasks). It uses the standard MCP [extension negotiation](/extensions/overview#negotiation) mechanism: clients declare support in the `extensions` field of the `io.modelcontextprotocol/clientCapabilities` they send in each request’s `_meta`, and servers advertise theirs in the capabilities returned by [`server/discover`](/specification/draft/server/discover).
+The Tasks extension is specified in the [ext-tasks repository](https://github.com/modelcontextprotocol/ext-tasks). It uses the standard MCP [extension negotiation](/extensions/overview#negotiation) mechanism: clients declare support in the `extensions` field of the `io.modelcontextprotocol/clientCapabilities` they send in each request’s `_meta`, and servers advertise theirs in the capabilities returned by [`server/discover`](/specification/draft/server/discover).

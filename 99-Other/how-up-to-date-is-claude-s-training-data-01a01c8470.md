@@ -2,13 +2,22 @@
 title: "How up-to-date is Claude&#x27;s training data? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:52Z"
+fetched_at: "2026-09-29T06:32:30Z"
 ---
 
 # How up-to-date is Claude's training data?
 
+Updated today
+
+Copy for LLM
 
 While we're constantly updating Claude's data, each model has a knowledge cutoff:
+
+- Claude Sonnet 5.5 was trained on data up until June 2026.
+
+- Claude Opus 5.5 was trained on data up until June 2026.
+
+- Claude Fable 5.1 was trained on data up until June 2026.
 
 - Claude Opus 5 was trained on data up until May 2026.
 

@@ -2,12 +2,15 @@
 title: "Find and join a Team or Enterprise organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13566435-organization-discovery"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:15Z"
+fetched_at: "2026-09-29T06:31:16Z"
 tags: ["enterprise"]
 ---
 
 # Find and join a Team or Enterprise organization
 
+July 21, 2026
+
+Copy for LLM
 
 Organization discovery allows you to find and join your company's existing Team or Enterprise plan organization when you start the sign-up flow with a work email address. Instead of creating a separate personal account, you can request to join—or be added automatically—depending on your organization's configuration.
 

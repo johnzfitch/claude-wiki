@@ -2,33 +2,24 @@
 title: "Attention Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/attention"
 category: "18-Industry-UseCases"
-fetched_at: "2026-08-02T05:41:40Z"
-tags: ["api"]
+fetched_at: "2026-09-29T06:31:28Z"
+tags: ["api", "enterprise", "security"]
 ---
 
 # Attention automates sales operations and accelerates revenue with Claude
 
-
 [Try Claude](https://claude.ai)
 
-
-[Contact sales](/contact-sales)
-
-
-Industry:
-
+Industry:  
 Software
 
-Company size:
-
+Company size:  
 Small
 
-Product:
-
+Product:  
 Claude Platform
 
-Location:
-
+Location:  
 North America
 
 1.6 million hours of admin work automated
@@ -43,50 +34,11 @@ Introducing Claude Opus 4.6
 
 We’re upgrading our smartest model. The new Claude Opus 4.6 improves on its predecessor’s coding skills. It plans more carefully, sustains agentic tasks for longer, and features a 1M token context window.
 
-Read more
-
-[Read more](#)
-
-Read more
-
-Introducing Claude Opus 4.6
-
-
-We’re upgrading our smartest model. The new Claude Opus 4.6 improves on its predecessor’s coding skills. It plans more carefully, sustains agentic tasks for longer, and features a 1M token context window.
-
-Video caption
-
-
-Introducing Claude Opus 4.6
-
-We’re upgrading our smartest model. The new Claude Opus 4.6 improves on its predecessor’s coding skills. It plans more carefully, sustains agentic tasks for longer, and features a 1M token context window.
-
 Cowork
 
 Give Claude access to your local files and let it complete tasks autonomously. Agentic capabilities for non-technical knowledge work.
-
-Read more
 
 [Read more](/product/cowork)
-
-Read more
-
-Cowork
-
-
-Give Claude access to your local files and let it complete tasks autonomously. Agentic capabilities for non-technical knowledge work.
-
-Video caption
-
-
-Cowork
-
-Give Claude access to your local files and let it complete tasks autonomously. Agentic capabilities for non-technical knowledge work.
-
-[Prev](#)
-
-Prev
-
 
 Sales reps spend a surprising portion of their day not selling. After every call, there are CRM fields to update, follow-up emails to write, notes to log. For organizations running thousands of calls, that accumulated burden becomes a serious drag on revenue. [Attention](https://www.attention.com/) set out to change that by building a platform of AI agents that automates the full administrative layer of sales. Not just transcription, but action.
 
@@ -103,7 +55,7 @@ Sales reps spend a surprising portion of their day not selling. After every call
 
 The technical bar for an AI-powered sales platform is higher than it first appears. Transcription is easy. Reliable, nuanced sales intelligence is not.
 
-Attention's platform evaluates calls against strict qualification frameworks like MEDDIC (Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion) without hallucinating details or producing advice too generic to act on. It analyzes patterns across thousands of conversations to surface why deals were lost to a specific competitor last quarter.  "We realized early on that just transcription was not enough," said Stewart White, VP of Growth at Attention. "Sales teams did not need more text; they needed action.”
+Attention's platform evaluates calls against strict qualification frameworks like MEDDIC (Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion) without hallucinating details or producing advice too generic to act on. It analyzes patterns across thousands of conversations to surface why deals were lost to a specific competitor last quarter. "We realized early on that just transcription was not enough," said Stewart White, VP of Growth at Attention. "Sales teams did not need more text; they needed action.”
 
 And because Attention automates customer-facing communications like follow-up emails, every output has to match the quality and tone of a skilled sales rep. If it doesn't, reps won't use it, and none of the downstream revenue gains materialize.
 
@@ -113,7 +65,7 @@ The model also had to handle scale: “We needed a model with a massive context 
 
 Attention tested several leading models before choosing Claude as the reasoning engine of the product. The deciding factor was tone. Sales communication lives or dies on trust, and AI-generated outputs that sound robotic simply don’t get used. “In sales, tone is everything,” said White. “Claude was the only model that consistently produced warm, empathetic, and human-sounding outputs right out of the box. Whether it is drafting an email or giving feedback to a rep, Claude avoids the robotic syntax that plagues other LLMs. This human quality was non-negotiable for winning the trust of our users.”
 
-Sales interactions are full of subtext: a prospect who says “we’re evaluating options” means something different than one who says “we’re not in a position to move forward this quarter.” Claude consistently outperformed alternatives in understanding intent, evaluating calls with the sophistication of a seasoned manager rather than a pattern-matching algorithm. And because Claude follows complex system prompts precisely, Attention’s engineering team could support a wide variety of sales tasks without building separate pipelines for each one. 
+Sales interactions are full of subtext: a prospect who says “we’re evaluating options” means something different than one who says “we’re not in a position to move forward this quarter.” Claude consistently outperformed alternatives in understanding intent, evaluating calls with the sophistication of a seasoned manager rather than a pattern-matching algorithm. And because Claude follows complex system prompts precisely, Attention’s engineering team could support a wide variety of sales tasks without building separate pipelines for each one.
 
 Implementation confirmed the fit. The team integrated all three Claude models (Haiku, Sonnet, and Opus), selecting the right one for each task based on complexity and latency requirements. Attention integrated Claude into their core scoring pipeline in under two weeks, and the model’s steerability meant engineers spent less time cleaning up outputs and more time shipping features.
 
@@ -142,518 +94,233 @@ Attention is expanding into a new generation of autonomous agents, ones that go 
 "As Anthropic makes advancements in inference speed and context window size, Attention will be there to translate those technical gains into wins for our customers," said White. "We view Anthropic as a core infrastructure partner in our mission to automate the sales stack."
 
 
-"Claude's reasoning capabilities are what make the intelligence layer exceptional."
-
-Stewart White
-
-VP of Growth, Attention
-
-
-Video caption
-
-
-[Prev](#)
-
-Prev
-
-
 ## Related stories
 
-[Dust enables agents to go deeper at lower cost with Claude](/customers/dust)
 
-Dust enables agents to go deeper at lower cost with Claude
+### Supermetrics lets marketers manage ad campaigns from a conversation with Claude
 
-Dust enables agents to go deeper at lower cost with Claude
 
-Customer story
+### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
 
-[Customer story](/customers/dust)
 
-Customer story
+### Rocket Money on building agents that fix their own code
 
-[How Vercel built an ecosystem on the open skills standard](/customers/vercel-qa)
 
-How Vercel built an ecosystem on the open skills standard
+### How Rocket Money built its personal finance agent with Claude
 
-How Vercel built an ecosystem on the open skills standard
+[](/)
 
-Customer story
+© 2026 Anthropic PBC
 
-[Customer story](/customers/vercel-qa)
+## Products
 
-Customer story
+- [Claude](/product/overview)
+- [Claude Code](/product/claude-code)
+- [Claude Cowork](/product/cowork)
+- [@Claude](/product/tag)
+- [Claude Science](/product/claude-science)
+- [Claude Security](/product/claude-security)
+- [Download app](/download)
+- [Pricing](/pricing)
+- [Log in](https://claude.ai/login)
 
-[Box builds document creation into its AI agent with Claude](/customers/box)
+## Capabilities
 
-Box builds document creation into its AI agent with Claude
+- [Artifacts](/features/artifacts)
+- [Design](/product/design)
+- [Connectors](/marketplace/connectors-plugins)
+- [Plugins](/marketplace/plugins)
+- [Skills](/skills)
 
-Box builds document creation into its AI agent with Claude
+## Extensions
 
-Customer story
+- [Claude in Chrome](/claude-in-chrome)
+- [Claude for Microsoft 365](/claude-for-microsoft-365)
 
-[Customer story](/customers/box)
+## Models
 
-Customer story
+- [Mythos](https://www.anthropic.com/claude/mythos)
+- [Fable](https://www.anthropic.com/claude/fable)
+- [Opus](https://www.anthropic.com/claude/opus)
+- [Sonnet](https://www.anthropic.com/claude/sonnet)
+- [Haiku](https://www.anthropic.com/claude/haiku)
 
-[Juno helps people with chronic illness find patterns in their symptoms with Claude](/customers/juno)
+## Enterprise
 
-Juno helps people with chronic illness find patterns in their symptoms with Claude
+- [Overview](/solutions/enterprise)
+- [Claude Code for Enterprise](/product/claude-code/enterprise)
 
-Juno helps people with chronic illness find patterns in their symptoms with Claude
+## Departments
 
-Customer story
+- [Customer support](/solutions/customer-support)
+- [Cybersecurity](/solutions/cybersecurity)
+- [Legal](/solutions/legal)
+- [Sales](/solutions/sales)
 
-[Customer story](/customers/juno)
+## Industries
 
-Customer story
+- [Financial services](/solutions/financial-services)
+- [Government](/solutions/government)
+- [Healthcare](/solutions/healthcare)
+- [Higher education](/solutions/education)
+- [K-12 teachers](/solutions/teachers)
+- [Life sciences](/solutions/life-sciences)
+- [Nonprofits](/solutions/nonprofits)
+- [Small business](/solutions/small-business)
 
-[Homepage](https://claude.com)
+## Programs
 
-Homepage
+- [Startups](/programs/startups)
+- [Scientists](/programs/team-plan-for-scientists)
 
+## Developers
 
-Thank you! Your submission has been received!
+- [Developer docs](https://code.claude.com/docs/en/overview)
+- [Developer blog](https://claude.dev)
+- [Community](/community)
+- [Console](https://platform.claude.com/docs/en/home)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
 
-Oops! Something went wrong while submitting the form.
+## Platform
 
-Write
+- [Overview](/platform/api)
+- [Marketplace](/marketplace)
+- [Claude on AWS](/partners/claude-on-aws)
+- [Google Cloud](/partners/google-cloud)
+- [Microsoft Foundry](/partners/microsoft-foundry)
 
-[Button Text](#)
+## Resources
 
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
-
-[Anthropic](https://www.anthropic.com/)
-
-Anthropic
-
-© \[year\] Anthropic PBC
-
-Products
-
-- Claude
-
-  [Claude](/product/overview)
-  Claude
-
-- Claude Code
-
-  [Claude Code](/product/claude-code)
-  Claude Code
-
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
-- Claude Cowork
-
-  [Claude Cowork](/product/cowork)
-  Claude Cowork
-
-- @Claude
-
-  [@Claude](/product/tag)
-  @Claude
-
-- Claude Design
-
-  [Claude Design](/product/design)
-  Claude Design
-
-- Claude Science
-
-  [Claude Science](/product/claude-science)
-  Claude Science
-
-- Claude Security
-
-  [Claude Security](/product/claude-security)
-  Claude Security
-
-- Download app
-
-  [Download app](/download)
-  Download app
-
-- Pricing
-
-  [Pricing](/pricing)
-  Pricing
-
-- Log in
-
-  [Log in](https://claude.ai/login)
-
-Features
-
-- Claude for Chrome
-
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
-
-- Claude for Microsoft 365
-
-  [Claude for Microsoft 365](/claude-for-microsoft-365)
-  Claude for Microsoft 365
-
-- Skills
-
-  [Skills](/skills)
-  Skills
-
-Models
-
-- Mythos
-
-  [Mythos](https://www.anthropic.com/claude/mythos)
-  Mythos
-
-- Fable
-
-  [Fable](https://www.anthropic.com/claude/fable)
-  Fable
-
-- Opus
-
-  [Opus](https://www.anthropic.com/claude/opus)
-  Opus
-
-- Sonnet
-
-  [Sonnet](https://www.anthropic.com/claude/sonnet)
-  Sonnet
-
-- Haiku
-
-  [Haiku](https://www.anthropic.com/claude/haiku)
-  Haiku
-
-Solutions
-
-- AI agents
-
-  [AI agents](/solutions/agents)
-  AI agents
-
-- Code modernization
-
-  [Code modernization](/solutions/code-modernization)
-  Code modernization
-
-- Coding
-
-  [Coding](/solutions/coding)
-  Coding
-
-- Customer support
-
-  [Customer support](/solutions/customer-support)
-  Customer support
-
-- Cybersecurity
-
-  [Cybersecurity](/solutions/cybersecurity)
-  Cybersecurity
-
-- Enterprise
-
-  [Enterprise](/solutions/enterprise)
-  Enterprise
-
-- Financial services
-
-  [Financial services](/solutions/financial-services)
-  Financial services
-
-- Government
-
-  [Government](/solutions/government)
-  Government
-
-- Healthcare
-
-  [Healthcare](/solutions/healthcare)
-  Healthcare
-
-- Higher education
-
-  [Higher education](/solutions/education)
-  Higher education
-
-- K-12 teachers
-
-  [K-12 teachers](/solutions/teachers)
-  K-12 teachers
-
-- Legal
-
-  [Legal](/solutions/legal)
-  Legal
-
-- Life sciences
-
-  [Life sciences](/solutions/life-sciences)
-  Life sciences
-
-- Nonprofits
-
-  [Nonprofits](/solutions/nonprofits)
-  Nonprofits
-
-- Small business
-
-  [Small business](/solutions/small-business)
-  Small business
-
-Claude Platform
-
-- Overview
-
-  [Overview](/platform/api)
-  Overview
-
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
-
-- Ecosystem
-
-  [Ecosystem](/ecosystem)
-  Ecosystem
-
-- Marketplace
-
-  [Marketplace](/platform/marketplace)
-  Marketplace
-
-- Claude on AWS
-
-  [Claude on AWS](/partners/claude-on-aws)
-  Claude on AWS
-
-- Google Cloud
-
-  [Google Cloud](/partners/google-cloud)
-  Google Cloud
-
-- Microsoft Foundry
-
-  [Microsoft Foundry](/partners/microsoft-foundry)
-  Microsoft Foundry
-
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](https://platform.claude.com/)
-  Console login
-
-Resources
-
-- Blog
-
-  [Blog](/blog)
-  Blog
-
-- Claude partner network
-
-  [Claude partner network](/partners)
-  Claude partner network
-
-- Community
-
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
-
-- Customer stories
-
-  [Customer stories](/customers)
-  Customer stories
-
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
-- Events
-
-  [Events](https://www.anthropic.com/events)
-  Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
-
-- Powered by Claude
-
-  [Powered by Claude](/partners/powered-by-claude)
-  Powered by Claude
-
-- Service partners
-
-  [Service partners](/partners/services)
-  Service partners
-
-- Tutorials
-
-  [Tutorials](/resources/tutorials)
-  Tutorials
-
-- Use cases
-
-  [Use cases](/resources/use-cases)
-  Use cases
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Policy
-
-  [Policy](https://www.anthropic.com/policy)
-  Policy
-
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
-- Research
-
-  [Research](https://www.anthropic.com/research)
-  Research
-
-- News
-
-  [News](https://www.anthropic.com/news)
-  News
-
-- Policy on the AI Exponential
+- [Blog](/blog)
+- [Claude partner network](/partners)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](/customers)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](/partners/powered-by-claude)
+- [Service partners](/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](/check-files)
+- [Regional compliance](/regional-compliance)
+- [Report abuse](/form/anthropic-content-reporting)
+- [Security and compliance](https://trust.anthropic.com/)
+- [Status](https://status.anthropic.com/)
+- [Support center](https://support.claude.com/en/)
+
+## Company
+
+- [Anthropic](https://www.anthropic.com/)
+- [Careers](https://www.anthropic.com/careers)
+- [Policy](https://www.anthropic.com/policy)
+- [Research](https://www.anthropic.com/research)
+- [Anthropic news](https://www.anthropic.com/news)
+- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
+- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
+- [Transparency](https://anthropic.com/transparency)
+
+## Terms and policies
+
+- Privacy choices
+- [Privacy policy](https://www.anthropic.com/legal/privacy)
+- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
+- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
+- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
+- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
+- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
+- [Usage Policy](https://www.anthropic.com/legal/aup)
+
+## Products
+
+- [Claude](/product/overview)
+- [Claude Code](/product/claude-code)
+- [Claude Cowork](/product/cowork)
+- [@Claude](/product/tag)
+- [Claude Science](/product/claude-science)
+- [Claude Security](/product/claude-security)
+- [Download app](/download)
+- [Pricing](/pricing)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](/features/artifacts)
+- [Design](/product/design)
+- [Connectors](/marketplace/connectors-plugins)
+- [Plugins](/marketplace/plugins)
+- [Skills](/skills)
+
+## Extensions
+
+- [Claude in Chrome](/claude-in-chrome)
+- [Claude for Microsoft 365](/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](https://www.anthropic.com/claude/mythos)
+- [Fable](https://www.anthropic.com/claude/fable)
+- [Opus](https://www.anthropic.com/claude/opus)
+- [Sonnet](https://www.anthropic.com/claude/sonnet)
+- [Haiku](https://www.anthropic.com/claude/haiku)
+
+## Enterprise
+
+- [Overview](/solutions/enterprise)
+- [Claude Code for Enterprise](/product/claude-code/enterprise)
+
+## Departments
+
+- [Customer support](/solutions/customer-support)
+- [Cybersecurity](/solutions/cybersecurity)
+- [Legal](/solutions/legal)
+- [Sales](/solutions/sales)
+
+## Industries
+
+- [Financial services](/solutions/financial-services)
+- [Government](/solutions/government)
+- [Healthcare](/solutions/healthcare)
+- [Higher education](/solutions/education)
+- [K-12 teachers](/solutions/teachers)
+- [Life sciences](/solutions/life-sciences)
+- [Nonprofits](/solutions/nonprofits)
+- [Small business](/solutions/small-business)
+
+## Programs
+
+- [Startups](/programs/startups)
+- [Scientists](/programs/team-plan-for-scientists)
+
+## Developers
+
+- [Developer docs](https://code.claude.com/docs/en/overview)
+- [Developer blog](https://claude.dev)
+- [Community](/community)
+- [Console](https://platform.claude.com/docs/en/home)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](/platform/api)
+- [Marketplace](/marketplace)
+- [Claude on AWS](/partners/claude-on-aws)
+- [Google Cloud](/partners/google-cloud)
+- [Microsoft Foundry](/partners/microsoft-foundry)
+
+## Resources
+
+- [Blog](/blog)
+- [Claude partner network](/partners)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](/customers)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](/partners/powered-by-claude)
+- [Service partners](/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](/check-files)
+- [Regional compliance](/regional-compliance)
+- [Report abuse](/form/anthropic-content-reporting)

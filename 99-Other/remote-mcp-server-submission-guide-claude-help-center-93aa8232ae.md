@@ -1,15 +1,18 @@
 ---
-title: "Remote MCP Server Submission Guide | Claude Help Center"
+title: "Remote MCP server submission guide | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12922490"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:11Z"
+fetched_at: "2026-08-11T06:35:11Z"
 tags: ["mcp"]
 ---
 
-# Remote MCP Server Submission Guide
+# Remote MCP server submission guide
 
-April 15, 2026
+
+Copy for LLM
 
 The remote MCP server submission guide has moved to the Claude developer docs.
 
-[View the submission guide →](https://claude.com/docs/connectors/building/submission) · [Pre-submission checklist →](https://claude.com/docs/connectors/building/review-criteria)
+**[View the submission guide →](https://claude.com/docs/connectors/building/submission)**
+
+**[Pre-submission checklist →](https://claude.com/docs/connectors/building/review-criteria)**

@@ -2,7 +2,7 @@
 title: "Interceptors Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-groups/interceptors"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:05Z"
+fetched_at: "2026-08-26T06:27:46Z"
 tags: ["mcp"]
 ---
 
@@ -76,7 +76,7 @@ Out of Scope
 
 Related Groups
 
-- **Transports WG** — interceptors operate on MCP message flows whose delivery behavior depends on the transport; coordination needed on transport-level interception points.
+- **[Transports WG](/community/working-groups/transports)** — interceptors operate on MCP message flows whose delivery behavior depends on the transport; coordination needed on transport-level interception points.
 - **Gateways IG** — gateways are a key deployment model for interceptors; coordination needed on gateway-based interceptor patterns and shared concerns around routing, policy, and observability.
 
 

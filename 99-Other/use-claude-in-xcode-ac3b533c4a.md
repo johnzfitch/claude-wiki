@@ -2,13 +2,14 @@
 title: "Use Claude in Xcode | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12293051-use-claude-in-xcode"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:05Z"
+fetched_at: "2026-09-29T06:30:26Z"
 ---
 
 # Use Claude in Xcode
 
 May 19, 2026
 
+Copy for LLM
 
 Claude in Xcode is available for individuals with Pro and Max plans, and users with premium seats on Team and Enterprise plans.
 

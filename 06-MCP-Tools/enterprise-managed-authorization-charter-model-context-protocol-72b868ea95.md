@@ -2,7 +2,7 @@
 title: "Enterprise-Managed Authorization Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/interest-groups/enterprise-managed-authorization"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:30Z"
+fetched_at: "2026-08-22T06:27:29Z"
 tags: ["authorization", "enterprise", "mcp"]
 ---
 
@@ -28,6 +28,8 @@ Copy pageCopy page
 Charter for the MCP Enterprise-Managed Authorization Interest Group.
 
 Copy pageCopy page
+
+As of 2026-08-17 this Interest Group is folded into the [Authorization IG](/community/interest-groups/auth). EMA interoperability and deployment progress is presented as agenda slots on the Auth IG call, discussion continues in `#auth-ig` threads, and `#enterprise-managed-auth-ig` is archived. This page is kept for reference.
 
 
 [​](#group-type)
@@ -113,6 +115,7 @@ An agenda is shared in `#enterprise-managed-auth-ig` ahead of each call. Meeting
 
 Changelog
 
-| Date       | Change          |
-|------------|-----------------|
-| 2026-06-16 | Initial charter |
+| Date       | Change                                             |
+|------------|----------------------------------------------------|
+| 2026-08-17 | Folded into the Authorization IG; channel archived |
+| 2026-06-16 | Initial charter                                    |

@@ -2,7 +2,7 @@
 title: "Claude Cowork | Claude by Anthropic"
 source_url: "https://www.claude.com/product/cowork"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:42:30Z"
+fetched_at: "2026-09-17T06:28:26Z"
 tags: ["plugins"]
 ---
 
@@ -60,7 +60,7 @@ Switch to Claude Cowork when you want to hand off a task. Find it next to Chat.
 
 ### Claude Cowork takes on your tasks
 
-It works directly in folders and tools you choose, and runs your task end-to-end to deliver work for review. No need to copy from a chat or paste into files.
+Works directly in folders and tools you choose, and runs your task to deliver work for review. No need to copy from a chat or paste into files.
 
 ### Say what, not how
 
@@ -76,15 +76,23 @@ Claude Cowork runs on web, desktop, and mobile and is the same Claude, wherever 
 
 ### Claude works when you don’t
 
-Close your laptop, Claude Cowork keeps going. Schedule a task for any cadence, and it runs unattended. You come back to your deck, spreadsheet, or research.
+Close your laptop, it keeps going. Schedule a task for any cadence, and it runs unattended. You come back to your deck, spreadsheet, or research.
 
 ### More than one thing at a time
 
-Claude Cowork splits big projects into chunks that run together. While it drafts, it also researches and organizes at the same time. You review polished work.
+Big projects are split into chunks that run together. While it drafts, it researches and organizes at the same time. You review polished work.
 
-Claude Cowork doesn't just answer, it takes action
+A built-in browser for Cowork
 
-Spend less time fixing and formatting. Claude wrangles your data and research into a deck, spreadsheet, or doc. You sign off.
+When a task requires opening a site, reading a page, or filling a form, Claude opens a browser in the Cowork side panel instead of yours while you keep working.  
+
+- No installation needed.
+- Separate from your own browser, logins, and tabs.
+- Sign in once for every session, or import cookies to say signed in to your browser (Chrome, Edge, and Firefox on macOS; Firefox on Windows and Linux).
+
+Available in the Cowork desktop app on Pro, Max, and Team plans. Enterprise admins manage it in Organization settings → Cowork.
+
+## Power through tedious tasks
 
 See more use cases
 
@@ -92,55 +100,358 @@ See more use cases
 
 See more use cases
 
-Marketing
+Schedule reports
 
-Sales
+Build spreadsheets
 
-Legal
+Review in bulk
+
+Analyze notes
 
 Active
 
-[Play video](#)
+Note
 
-Play video
+Interact with the data—hover and toggle views to uncover patterns
 
-### Build your weekly metrics deck
+Prompt
 
-Attach your campaign exports, schedule a weekly task. Ask for a 4-slide deck with recommended actions for you to review every Monday.
+Every Monday morning, build last week's marketing readout. Pull web views and signups from Amplitude, and the newsletter, social, and webinar numbers from Marketing/Channel-tracker in Drive. Compare everything to the week before. Slide one: company name and the week. Slide two: awareness metrics with anything that moved more than 10% flagged. Slide three: consideration metrics, same flags. Note any trend worth watching and anything you couldn't pull. Save to Marketing/Weekly in Drive.
 
-Learn more
+Connectors
 
-[Learn more](https://claude.com/resources/tutorials/using-claude-cowork-for-marketing-ops-review)
+Amplitude
 
-Learn more
 
-[Play video](#)
+Microsoft 365
 
-Play video
 
-### Walk in fully prepared
+P
 
-Connect your CRM, call recordings, messaging app, calendar, and email. Get a brief for every meeting: who's coming, recent threads, what’s new at their company.
+Presentation.pptx - PowerPoint
 
-Learn more
+1 of 1
 
-[Learn more](https://claude.com/resources/tutorials/using-claude-cowork-for-sales-account-research)
+Week of Jul 6–12, 2026
 
-Learn more
+Weekly marketing readout · Pulled Monday, Jul 13
 
-[Play video](#)
+# Gladehart Wellness *Foundation*
 
-Play video
+Last week’s marketing numbers, compared with the week before — web views and sign-ups from Amplitude; newsletter, social, and webinar figures from Marketing/Channel-tracker.
 
-### Organize your audit
+Amplitude
 
-Attach a folder of policies and contracts. Claude renames every file, sorts by control area, and flags coverage gaps.
+Web views · Sign-ups
 
-Learn more
+Channel-tracker
 
-[Learn more](https://claude.com/resources/tutorials/using-claude-cowork-for-legal-question-briefing)
+Newsletter · Social · Webinar
 
-Learn more
+Jun 29 – Jul 5
+
+Compared against
+
+01 — 05
+
+Gladehart Wellness Foundation
+
+Awareness · vs Jun 29 – Jul 5
+
+## Who we reached
+
+### Web views
+
+Amplitude
+
+58.2k+7%
+
+54.4k last week — held under the 10% flag
+
+### Social reach
+
+Channel-tracker
+
+46.2k▲ +36%
+
+33.9k last week — volunteer-story post
+
+### Engagements
+
+Channel-tracker
+
+3.1k▲ +19%
+
+2.6k last week — likes, comments, and shares
+
+**Worth watching:** social reach has grown 2.5× over six weeks on the volunteer-story series — the next post lands Thursday, so expect another jump.
+
+02 — 05
+
+Gladehart Wellness Foundation
+
+Consideration · vs Jun 29 – Jul 5
+
+## Who leaned in
+
+### Sign-ups
+
+Amplitude
+
+1,024+6%
+
+962 last week — held under the 10% flag
+
+### Subscribers
+
+Channel-tracker
+
+132▲ +38%
+
+96 last week — Jul 8 issue plus the welcome series
+
+### Webinar
+
+Channel-tracker
+
+204▼ −18%
+
+Registrations · 248 last week — quiet calendar
+
+**Worth watching:** webinar registrations have slipped four of the last five weeks — nothing is on the calendar until the Jul 21 session, so expect one more soft week.
+
+**Couldn’t pull:** Jul 9 webinar attendance — not logged in Marketing/Channel-tracker yet, so registrations stand in for it.
+
+03 — 05
+
+Gladehart Wellness Foundation
+
+Trends · Six-week view
+
+## Worth watching
+
+### Social reach
+
+▲ +36%
+
+Every volunteer-story post has outdone the last — reach is up 2.5× since Jun 1, and post five lands Thursday, Jul 16.
+
+### Webinar registrations
+
+▼ −18%
+
+Down four of the last five weeks — nothing on the calendar until “Preventive care at home” runs Tuesday, Jul 21.
+
+04 — 05
+
+Gladehart Wellness Foundation
+
+Week of Jul 6–12, 2026
+
+Before next Monday
+
+## The week ahead
+
+On the calendar
+
+Volunteer-story post five lands Thursday, Jul 16, and “Preventive care at home” runs Tuesday, Jul 21 — expect social reach to jump again and webinar registrations to turn.
+
+Still open from this pull
+
+Jul 9 webinar attendance isn’t logged in Marketing/Channel-tracker yet — once it lands, attendance replaces registrations on next week’s consideration slide.
+
+Marketing/Weekly
+
+Saved to Drive · Mon, Jul 13, 7:41 AM
+
+Monday, Jul 20
+
+Next readout lands
+
+05 — 05
+
+### Schedule recurring reports, ready for review
+
+Schedule a report once and get it daily, weekly, or monthly. Claude pulls the numbers, compares them to the period before, and builds the deck, so Monday starts with the readout instead of the assembly.
+
+Note
+
+Interact with the data—hover and toggle views to uncover patterns
+
+Prompt
+
+Our October close is in the Close/October folder. Pull actuals from the four regional exports, roll them into one summary tab, and compare against the budget file. Flag any line where the variance is over 5% or over \$50k. Give me a tab per region plus the summary, and a short note on what didn't reconcile.
+
+Connectors
+
+Microsoft 365
+
+
+X
+
+workforce-program-toolkit.xlsx Saved
+
+A1
+
+fx
+
++
+
+Ready
+
+−
+
+100%
+
+\+
+
+### Reconcile data in spreadsheets
+
+Hand off recurring close work. Point Claude at the folder of regional exports and budget files, and come back to a working spreadsheet with variances flagged and a note on what didn't reconcile.
+
+Note
+
+Interact with the data—hover and toggle views to uncover patterns
+
+Prompt
+
+These vendor agreements in Contracts/Inbound are up for review. Check each one against our playbook in Legal/Playbook.docx and write me a memo per contract: where it departs from our positions, how far, and which departures are worth pushing back on. Cite the clause number for every issue. Flag anything the playbook doesn't cover.
+
+Connectors
+
+Microsoft 365
+
+
+### Kelmswick Supply Co. — MSA review
+
+*Memo 3 of 12 for Contracts/Inbound · draft v2 (June 30, 2026) · vs Legal/Playbook.docx rev. March 2026 · prepared by Claude, July 9, 2026*
+
+#### What matters most
+
+Push back hard on two departures (liability cap, one-way indemnity), negotiate two (payment terms, renewal notice), accept one (governing law). Two clauses the playbook doesn't cover — those need you.
+
+- **§11.2 · Limitation of liability** — High · Push back
+- **§14.1 · Indemnification** — High · Push back
+- **§7.3 · Payment terms** — Medium · Negotiate
+- **§9.1 · Auto-renewal notice** — Medium · Negotiate
+- **§16.4 · Governing law** — Low · Accept
+- **§12.5 · AI-assisted deliverables** — Not covered · Needs you
+- **§18.2 · Data localization** — Not covered · Needs you
+
+#### Push back — high severity
+
+##### §11.2 · Limitation of liability
+
+- **Playbook:** Cap at 12 months' fees, with carve-outs for confidentiality, IP, and indemnity obligations (playbook §4.1)
+- **This contract:** Cap at 3 months' fees, no carve-outs
+- **Gap:** On projected spend (~\$45k/month), the cap drops from ~\$540k to ~\$135k — and a confidentiality breach would sit inside it
+- **Suggested ask:** Restore the 12-month cap and the three standard carve-outs; the playbook marks both as non-negotiable
+
+##### §14.1 · Indemnification
+
+- **Playbook:** Mutual indemnity for third-party claims (playbook §5.2)
+- **This contract:** One-way — we indemnify Kelmswick; no reciprocal obligation
+- **Gap:** Full asymmetry on third-party IP and negligence claims
+- **Suggested ask:** Make §14 mutual, mirroring the obligations in §14.2 back to Kelmswick
+
+#### Negotiate — medium severity
+
+##### §7.3 · Invoicing and payment
+
+- **Playbook:** Net 45; late-fee clauses discouraged (playbook §2.3)
+- **This contract:** Net 20, with 1.5% per month on late balances
+- **Gap:** 25 days of float on roughly \$45k a month, plus late-fee exposure
+- **Recommendation:** Open at net 45; the playbook allows settling at net 30 with the late fee struck
+
+##### §9.1 · Term and auto-renewal
+
+- **Playbook:** Non-renewal notice of 60 days or less (playbook §2.6)
+- **This contract:** 12-month auto-renew with 120-day non-renewal notice
+- **Gap:** Doubles the notice window; a missed date locks in a full year
+- **Recommendation:** Counter at 60; 90 is a livable compromise if they hold
+
+#### Accept — low severity
+
+**§16.4 · Governing law.** The contract selects New York; the playbook prefers Delaware but lists New York as an acceptable alternative (playbook §7.4). No action needed.
+
+#### Where the playbook is silent
+
+**§12.5 · Ownership of AI-assisted deliverables.** The contract assigns Kelmswick all rights in deliverables "produced in whole or part by automated means." The playbook (rev. March 2026) takes no position on AI work-product.
+
+**§18.2 · Data localization.** Adds UK and Swiss residency requirements; playbook guidance covers EU residency only (playbook §6.1). Whether we can operationally commit is a question for you, not the playbook.
+
+#### Suggested next step
+
+The two high-severity blocks end with language written to be lifted straight into your negotiation email. The other eleven memos in this folder follow the same structure, so the same email skeleton works across the batch.
+
+*Reviewed: kelmswick-supply-MSA-v2.docx (14,210 words) against Legal/Playbook.docx rev. March 2026. Clause numbers follow the contract's own numbering.*
+
+### Get a first-pass review of every contract at once
+
+Hand off first-pass contract review. Point Claude at the folder of inbound agreements and your playbook, and come back to a memo per contract with every departure cited to the clause, and the gaps your playbook doesn't cover marked for you.
+
+Note
+
+Interact with the data—hover and toggle views to uncover patterns
+
+Prompt
+
+My call notes for this quarter are in Deals/Q3. Read through them and write me a memo: where each open deal stands, what the customer said was blocking it, and who has to sign off. Then a section on objections that came up across more than one deal. Quote the note each point comes from. Call out any account I haven't touched in three weeks.
+
+Connectors
+
+Amplitude
+
+
+Google Drive
+
+
+Slack
+
+
+Search
+
+Claude
+
+Messages
+
+Message Claude
+
+Pull my call notes and activity for every open deal this quarter from HubSpot and Slack. Read through them and write me a memo: where each deal stands, what the customer said was blocking it, and who has to sign off. Then a section on objections that came up across more than one deal. Quote the note each point comes from.
+
+Call out any account I haven't touched in three weeks. Save it to **Deals/Q3** in Drive.
+
+Done — I read 47 call notes and activity entries across your 9 open Q3 deals in HubSpot, plus the deal channels here in Slack. The memo is saved to **Deals/Q3** → [Q3 Open Deals — Pipeline Memo (Jul 22)](#). The short version:
+
+**Where the quarter stands**
+
+\$412k open across 9 deals, \$186k of it weighted to close this quarter. Three deals need something from you this week, two have gone quiet, and the other four are moving on their own. The three blocked ones all stall on someone else's sign-off — not price.
+
+**Needs attention**
+
+- **Norlend Freight** (\$86k) — blocked on their security review. *"We can't route this for signature until Elena's team closes out the SOC 2 review — realistically two more weeks."* (HubSpot call note, Jul 15). Sign-off: Elena Barna, CISO.
+- **Ondermere Labs** (\$54k) — the number is agreed, the approval isn't. *"The price works for me, but anything over \$50k goes to Nathan for board-level sign-off."* (HubSpot call note, Jul 10). Sign-off: Nathan Wilson, CFO.
+- **Tessary Mutual** (\$38k) — DPA redlines sitting with procurement. *"Legal kicked the DPA back — the data-residency clause has to say EU-only before Omar will touch it."* (Slack, \#tessary-deal, Jul 17). Sign-off: Omar Johansson, Procurement.
+
+**Objections that came up in more than one deal**
+
+- **Security review before signature** — Norlend and Glimbrook Supply. Glimbrook: *"New policy — every vendor goes through the full security questionnaire now, even the ones we like."* (HubSpot call note, Jul 8). Same shape as Norlend's Jul 15 note above. Both are timing objections, not trust objections — sending the completed questionnaire up front would collapse both.
+- **Annual prepay** — Ondermere Labs and Aster & Finch. Ondermere: *"Annual up front is a hard sell internally this year — can we do quarterly?"* (HubSpot call note, Jul 10). Aster & Finch: *"Quarterly billing or Angela can't get it past finance."* (HubSpot call note, Jun 24).
+
+**Gone quiet**
+
+- **Aster & Finch** (\$29k) — last contact **Jun 24**, four weeks ago. You still owe Angela Patel the revised order form from that call.
+- **Alderwick Health** (\$41k) — last contact **Jun 18**, almost five weeks. Your champion Fatima Davis is out until Aug 3 per her last reply; no one else on the account has responded.
+
+**What I couldn't read**
+
+Two voice memos on the Glimbrook Supply record (Jun 30, Jul 7) have no transcript, and the Ostermarch Group deal has no call notes attached at all — its section in the memo is built from Slack and email activity only. All three gaps are flagged in the memo.
+
+[Open session in Claude](#)
+
+### Analyze every objection you’ve heard this quarter, in one place
+
+Hand off the read-back. Point Claude at a quarter of call notes and come back to a memo on where every open deal stands, what the customer said was blocking it, and which objections keep coming up, each one quoted from the note it came from.
 
 ## Customize Claude with plugins
 
@@ -233,6 +544,20 @@ Prev
 ## Latest feature announcements
 
 
+[**Built-in browser:** Claude can now open sites, fill forms, and finish web tasks in a browser built into Cowork](https://claude.com/blog/cowork-built-in-browser)
+
+**Built-in browser:** Claude can now open sites, fill forms, and finish web tasks in a browser built into Cowork
+
+**Built-in browser:** Claude can now open sites, fill forms, and finish web tasks in a browser built into Cowork
+
+Blog
+
+[Blog](https://claude.com/blog/cowork-built-in-browser)
+
+Blog
+
+Aug 26, 2026
+
 [**Enterprise deployment:** Manage feature access, control spend, and track Claude Cowork usage across the org](https://claude.com/blog/cowork-for-enterprise)
 
 **Enterprise deployment:** Manage feature access, control spend, and track Claude Cowork usage across the org
@@ -260,6 +585,58 @@ Blog
 Blog
 
 Feb 24, 2026
+
+## Claude Cowork doesn’t just answer, it takes action
+
+Marketing
+
+Sales
+
+Legal
+
+Active
+
+[Play video](#)
+
+Play video
+
+### Claude Cowork for marketing
+
+See how Anthropic uses Claude Cowork to gather weekly reviews on a schedule.
+
+Learn more
+
+[Learn more](https://claude.com/resources/tutorials/using-claude-cowork-for-marketing-ops-review)
+
+Learn more
+
+[Play video](#)
+
+Play video
+
+Claude Cowork for sales
+
+See how Anthropic uses Claude Cowork to research any account before the first call.
+
+Learn more
+
+[Learn more](https://claude.com/resources/tutorials/using-claude-cowork-for-sales-account-research)
+
+Learn more
+
+[Play video](#)
+
+Play video
+
+Claude Cowork for legal teams
+
+See how Anthropic uses Claude Cowork to answer questions on past decisions.
+
+Learn more
+
+[Learn more](https://claude.com/resources/tutorials/using-claude-cowork-for-legal-question-briefing)
+
+Learn more
 
 ## Stay in control
 
@@ -388,7 +765,7 @@ Get Team plan
 
 ### Enterprise
 
-Claude Cowork is included in your Enterprise plan. Admin controls, usage analytics, Analytics API and OpenTelemetry observability available. Cowork activity is not yet captured in audit logs or Compliance API.
+Claude Cowork is included in your Enterprise plan. Admin controls, usage analytics, Analytics API and OpenTelemetry observability available.
 
 
 Get Enterprise plan
@@ -419,7 +796,7 @@ Cowork is built for non-coding knowledge work — research, analysis, document c
 
 ### Can I assign tasks to Claude from my phone?
 
-Yes. Web and mobile are in beta: start a task from your phone, and Claude keeps working in the cloud even when your laptop is closed. Check in, redirect, or review the result from anywhere.
+Yes. Start a task from your phone, and Claude keeps working in the cloud even when your laptop is closed. Check in, redirect, or review the result from anywhere. Available in Pro, Max, and Team plans automatically. Enterprise plans can opt in.
 
 ### What does computer use mean?
 
@@ -519,112 +896,6 @@ Thank you! Your submission has been received!
 
 Oops! Something went wrong while submitting the form.
 
-Write
-
-[Button Text](#)
-
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
-
 [Anthropic](https://www.anthropic.com/)
 
 Anthropic
@@ -643,11 +914,6 @@ Products
   [Claude Code](/product/claude-code)
   Claude Code
 
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
 - Claude Cowork
 
   [Claude Cowork](/product/cowork)
@@ -657,11 +923,6 @@ Products
 
   [@Claude](/product/tag)
   @Claude
-
-- Claude Design
-
-  [Claude Design](/product/design)
-  Claude Design
 
 - Claude Science
 
@@ -687,22 +948,44 @@ Products
 
   [Log in](https://claude.ai/login)
 
-Features
+Capabilities
 
-- Claude for Chrome
+- Artifacts
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Artifacts](/features/artifacts)
+  Artifacts
 
-- Claude for Microsoft 365
+- Design
 
-  [Claude for Microsoft 365](/claude-for-microsoft-365)
-  Claude for Microsoft 365
+  [Design](/product/design)
+  Design
+
+- Connectors
+
+  [Connectors](/connectors)
+  Connectors
+
+- Plugins
+
+  [Plugins](/plugins)
+  Plugins
 
 - Skills
 
   [Skills](/skills)
   Skills
+
+Extensions
+
+- Claude in Chrome
+
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
+
+- Claude for Microsoft 365
+
+  [Claude for Microsoft 365](/claude-for-microsoft-365)
+  Claude for Microsoft 365
 
 Models
 
@@ -731,7 +1014,19 @@ Models
   [Haiku](https://www.anthropic.com/claude/haiku)
   Haiku
 
-Solutions
+Enterprise
+
+- Overview
+
+  [Overview](/solutions/enterprise)
+  Overview
+
+- Claude Code for Enterprise
+
+  [Claude Code for Enterprise](/product/claude-code/enterprise)
+  Claude Code for Enterprise
+
+Use cases
 
 - AI agents
 
@@ -748,6 +1043,13 @@ Solutions
   [Coding](/solutions/coding)
   Coding
 
+- Commerce
+
+  [Commerce](/solutions/commerce)
+  Commerce
+
+Departments
+
 - Customer support
 
   [Customer support](/solutions/customer-support)
@@ -758,10 +1060,17 @@ Solutions
   [Cybersecurity](/solutions/cybersecurity)
   Cybersecurity
 
-- Enterprise
+- Legal
 
-  [Enterprise](/solutions/enterprise)
-  Enterprise
+  [Legal](/solutions/legal)
+  Legal
+
+- Sales
+
+  [Sales](/solutions/sales)
+  Sales
+
+Industries
 
 - Financial services
 
@@ -788,11 +1097,6 @@ Solutions
   [K-12 teachers](/solutions/teachers)
   K-12 teachers
 
-- Legal
-
-  [Legal](/solutions/legal)
-  Legal
-
 - Life sciences
 
   [Life sciences](/solutions/life-sciences)
@@ -808,22 +1112,46 @@ Solutions
   [Small business](/solutions/small-business)
   Small business
 
-Claude Platform
+Programs
+
+- Startups
+
+  [Startups](https://claude.com/programs/startups)
+  Startups
+
+- Scientists
+
+  [Scientists](/programs/team-plan-for-scientists)
+  Scientists
+
+Developers
+
+- Developer docs
+
+  [Developer docs](https://code.claude.com/docs/en/overview)
+  Developer docs
+
+- Community
+
+  [Community](/community)
+  Community
+
+- Console
+
+  [Console](https://platform.claude.com/docs/en/home)
+  Console
+
+- Engineering at Anthropic
+
+  [Engineering at Anthropic](https://www.anthropic.com/engineering)
+  Engineering at Anthropic
+
+Platform
 
 - Overview
 
   [Overview](/platform/api)
   Overview
-
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
 
 - Ecosystem
 
@@ -850,16 +1178,6 @@ Claude Platform
   [Microsoft Foundry](/partners/microsoft-foundry)
   Microsoft Foundry
 
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](https://platform.claude.com/)
-  Console login
-
 Resources
 
 - Blog
@@ -872,40 +1190,20 @@ Resources
   [Claude partner network](/partners)
   Claude partner network
 
-- Community
+- Claude Academy
 
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
+  [Claude Academy](https://academy.claude.com/)
+  Claude Academy
 
 - Customer stories
 
   [Customer stories](/customers)
   Customer stories
 
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
 - Events
 
   [Events](https://www.anthropic.com/events)
   Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
 
 - Powered by Claude
 
@@ -914,18 +1212,45 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](#)
   Service partners
 
-- Tutorials
+Help and security
 
-  [Tutorials](/resources/tutorials)
-  Tutorials
+- Availability
 
-- Use cases
+  [Availability](https://www.anthropic.com/supported-countries)
+  Availability
 
-  [Use cases](/resources/use-cases)
-  Use cases
+- Check files
+
+  [Check files](https://claude.com/check-files)
+  Check files
+
+- Regional compliance
+
+  [Regional compliance](/regional-compliance)
+  Regional compliance
+
+- Report abuse
+
+  [Report abuse](https://claude.com/form/anthropic-content-reporting)
+  Report abuse
+
+- Security and compliance
+
+  [Security and compliance](https://trust.anthropic.com/)
+  Security and compliance
+
+- Status
+
+  [Status](https://status.anthropic.com/)
+  Status
+
+- Support center
+
+  [Support center](https://support.claude.com/en/)
+  Support center
 
 Company
 
@@ -944,19 +1269,14 @@ Company
   [Policy](https://www.anthropic.com/policy)
   Policy
 
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
 - Research
 
   [Research](https://www.anthropic.com/research)
   Research
 
-- News
+- Anthropic news
 
-  [News](https://www.anthropic.com/news)
-  News
+  [Anthropic news](https://www.anthropic.com/news)
+  Anthropic news
 
 - Policy on the AI Exponential

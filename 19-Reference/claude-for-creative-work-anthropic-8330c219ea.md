@@ -2,7 +2,7 @@
 title: "Claude for Creative Work \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-for-creative-work"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:42:13Z"
+fetched_at: "2026-09-10T06:43:58Z"
 ---
 
 # Claude for Creative Work
@@ -17,14 +17,14 @@ Today, we’re releasing a set of connectors—tools that let Claude work alongs
 
 Connectors allow Claude to access other platforms and tools directly. We are adding several new connectors that are designed to make it easier to use Claude for creative work:
 
-- **[Ableton](https://claude.ai/redirect/website.v1.7e3ecfe2-abc9-4365-8536-2f7af9332004/directory/connectors/ant.dir.gh.ableton.ableton-knowledge)** grounds Claude’s answers in official product documentation for Live and Push.
-- **[Adobe for creativity](https://claude.ai/redirect/website.v1.7e3ecfe2-abc9-4365-8536-2f7af9332004/directory/connectors/adobe-creativity)** enables users to bring images, videos, and designs to life, drawing from 50+ tools across Creative Cloud apps including Photoshop, Premiere, Express, and more.
-- [**Affinity by Canva**](https://claude.ai/redirect/website.v1.7e3ecfe2-abc9-4365-8536-2f7af9332004/directory/connectors/ant.dir.gh.canva.affinity) automates repetitive production tasks across pro creative workflows - such as batch image adjustments, layer renaming, and file export - and generates custom features directly in the app.
-- **[Autodesk Fusion](https://claude.ai/redirect/website.v1.7e3ecfe2-abc9-4365-8536-2f7af9332004/directory/connectors/ant.dir.gh.autodesk.fusion-mcp)** allows designers and engineers with a Fusion subscription to create and modify 3D models through conversations with Claude.
-- **[Blender](https://claude.ai/redirect/website.v1.7e3ecfe2-abc9-4365-8536-2f7af9332004/directory/connectors/ant.dir.gh.blender.blender-mcp)** offers a natural-language interface to its Python API, allowing users to explore and understand complex setups and making it easier to access Blender’s documentation.
-- **[Resolume Arena](https://claude.ai/redirect/website.v1.7e3ecfe2-abc9-4365-8536-2f7af9332004/directory/connectors/ant.dir.gh.resolume.resolume-arena) and [Resolume Wire](https://claude.ai/redirect/website.v1.7e3ecfe2-abc9-4365-8536-2f7af9332004/directory/connectors/ant.dir.gh.resolume.resolume-wire)** let VJs and live visual artists control Arena, Avenue, and Wire in real time through natural language for live performance and AV production.
-- **[SketchUp](https://claude.ai/redirect/website.v1.7e3ecfe2-abc9-4365-8536-2f7af9332004/directory/connectors/sketchup)** turns a conversation with Claude into a starting point for 3D modeling—describe a room, a piece of furniture, or a site concept, then open it in SketchUp to refine**.**
-- **[Splice](https://claude.ai/redirect/website.v1.7e3ecfe2-abc9-4365-8536-2f7af9332004/directory/connectors/splice)** gives music producers the ability to search its catalog of royalty-free samples from within Claude.
+- **[Ableton](https://claude.ai/redirect/website.v1.6e5f34d2-4c86-4f9a-bb34-9b43d3ccbc19/directory/connectors/ant.dir.gh.ableton.ableton-knowledge)** grounds Claude’s answers in official product documentation for Live and Push.
+- **[Adobe for creativity](https://claude.ai/redirect/website.v1.6e5f34d2-4c86-4f9a-bb34-9b43d3ccbc19/directory/connectors/adobe-creativity)** enables users to bring images, videos, and designs to life, drawing from 50+ tools across Creative Cloud apps including Photoshop, Premiere, Express, and more.
+- [**Affinity by Canva**](https://claude.ai/redirect/website.v1.6e5f34d2-4c86-4f9a-bb34-9b43d3ccbc19/directory/connectors/ant.dir.gh.canva.affinity) automates repetitive production tasks across pro creative workflows - such as batch image adjustments, layer renaming, and file export - and generates custom features directly in the app.
+- **[Autodesk Fusion](https://claude.ai/redirect/website.v1.6e5f34d2-4c86-4f9a-bb34-9b43d3ccbc19/directory/connectors/ant.dir.gh.autodesk.fusion-mcp)** allows designers and engineers with a Fusion subscription to create and modify 3D models through conversations with Claude.
+- **[Blender](https://claude.ai/redirect/website.v1.6e5f34d2-4c86-4f9a-bb34-9b43d3ccbc19/directory/connectors/ant.dir.gh.blender.blender-mcp)** offers a natural-language interface to its Python API, allowing users to explore and understand complex setups and making it easier to access Blender’s documentation.
+- **[Resolume Arena](https://claude.ai/redirect/website.v1.6e5f34d2-4c86-4f9a-bb34-9b43d3ccbc19/directory/connectors/ant.dir.gh.resolume.resolume-arena) and [Resolume Wire](https://claude.ai/redirect/website.v1.6e5f34d2-4c86-4f9a-bb34-9b43d3ccbc19/directory/connectors/ant.dir.gh.resolume.resolume-wire)** let VJs and live visual artists control Arena, Avenue, and Wire in real time through natural language for live performance and AV production.
+- **[SketchUp](https://claude.ai/redirect/website.v1.6e5f34d2-4c86-4f9a-bb34-9b43d3ccbc19/directory/connectors/sketchup)** turns a conversation with Claude into a starting point for 3D modeling—describe a room, a piece of furniture, or a site concept, then open it in SketchUp to refine**.**
+- **[Splice](https://claude.ai/redirect/website.v1.6e5f34d2-4c86-4f9a-bb34-9b43d3ccbc19/directory/connectors/splice)** gives music producers the ability to search its catalog of royalty-free samples from within Claude.
 
 ## Using Claude for creative work
 
@@ -53,17 +53,21 @@ We’re also working with art and design programs to support curricula that invo
 
 ## Related content
 
-### Investigating three real-world incidents in our cybersecurity evaluations
+### Developing Enterprise Frontier Safeguards with our customers
 
-[Read more](/news/investigating-incidents-cybersecurity-evals)
+[Read more](/news/enterprise-frontier-safeguards)
 
-### Our position on open-weights models
+### Improving our alignment and security efforts
 
-[Read more](/news/position-open-weights-models)
+On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
 
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+[Read more](/news/improving-alignment-security-efforts)
 
-[Read more](/news/cognizant-anthropic)
+### Previewing the Model Hardware Standard
+
+We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
+
+[Read more](/news/model-hardware-standard-research-preview)
 
 [](/)
 
@@ -77,7 +81,7 @@ We’re also working with art and design programs to support curricula that invo
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -97,6 +101,7 @@ We’re also working with art and design programs to support curricula that invo
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -129,7 +134,7 @@ We’re also working with art and design programs to support curricula that invo
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -142,7 +147,7 @@ We’re also working with art and design programs to support curricula that invo
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -154,6 +159,7 @@ We’re also working with art and design programs to support curricula that invo
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

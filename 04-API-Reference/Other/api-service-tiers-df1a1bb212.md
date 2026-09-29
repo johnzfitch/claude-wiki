@@ -2,7 +2,7 @@
 title: "Service tiers - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/service-tiers"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:41:50Z"
+fetched_at: "2026-09-26T06:39:26Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fservice-tiers)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -227,34 +205,29 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Service tiers
-
-API reference/Support & configuration
+[API reference](/docs/en/api/overview)Support & configuration
 
 # Service tiers
 
+Copy page
 
 
 
 Different tiers of service allow you to balance availability, performance, and predictable costs based on your application's needs.
 
+Copy page
 
 
 
@@ -268,26 +241,17 @@ Anthropic offers three service tiers:
 - **Standard:** Default tier for both piloting and scaling everyday use cases
 - **Batch:** Best for asynchronous workflows that can wait or benefit from being outside your normal capacity
 
-
-
-
-Standard Tier
+## Standard tier
 
 The standard tier is the default service tier for all API requests. The API prioritizes these requests alongside all other requests with best-effort availability.
 
-
-
-
-Priority Tier
+## Priority Tier
 
 The API prioritizes requests in this tier over all other requests. This prioritization helps minimize ["server overloaded" errors](/docs/en/api/errors#http-errors), even during peak times.
 
 For more information, see [Existing Priority Tier commitments](#existing-priority-tier-commitments).
 
-
-
-
-How requests get assigned tiers
+## How requests get assigned tiers
 
 When handling a request, Anthropic decides to assign a request to Priority Tier in the following scenarios:
 
@@ -311,18 +275,15 @@ Anthropic counts usage against Priority Tier capacity as follows:
 
 Otherwise, requests proceed at standard tier.
 
-
+
 
 These burndown rates reflect the relative pricing of each token type. For example, US-only inference is priced at 1.1x on Claude 4.6 and later models, so each token consumed with `inference_geo: "us"` draws down 1.1 tokens from your Priority Tier capacity.
 
-
+
 
 Requests assigned Priority Tier pull from both the Priority Tier capacity and the regular rate limits. If servicing the request would exceed the rate limits, the request is declined.
 
-
-
-
-Using service tiers
+## Using service tiers
 
 You can control which service tiers can be used for a request by setting the `service_tier` parameter:
 
@@ -396,10 +357,7 @@ anthropic-priority-output-tokens-reset: 2025-01-12T23:12:21Z
 
 You can use the presence of these headers to detect if your request was eligible for Priority Tier, even if it was over the limit.
 
-
-
-
-Existing Priority Tier commitments
+## Existing Priority Tier commitments
 
 A Priority Tier commitment consists of:
 
@@ -410,11 +368,8 @@ A Priority Tier commitment consists of:
 
 Priority Tier targets 99.5% uptime with prioritized computational resources. Requests beyond your committed capacity automatically fall back to standard tier.
 
+### Supported models
 
-
+Priority Tier is supported on all available Claude models except Claude Fable 5.1, Claude Mythos 5.1, Claude Mythos 5, [Claude Mythos Preview](https://anthropic.com/glasswing), Claude Opus 5.5, Claude Opus 5, and Claude Sonnet 5.
 
-Supported models
-
-Priority Tier is supported on all available Claude models except Claude Mythos 5, [Claude Mythos Preview](https://anthropic.com/glasswing), Claude Opus 5, and Claude Sonnet 5.
-
-Check the [Models overview](/docs/en/about-claude/models/overview) for more details on available models.
+Check the [Models overview](/docs/en/models/overview) for more details on available models.

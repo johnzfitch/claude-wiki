@@ -2,7 +2,7 @@
 title: "Manage API key environment variables in Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12304248-managing-api-key-environment-variables-in-claude-code"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:41:35Z"
+fetched_at: "2026-09-29T06:31:25Z"
 tags: ["api", "authentication", "claude-code"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["api", "authentication", "claude-code"]
 
 May 5, 2026
 
+Copy for LLM
 
 When using Claude Code, it's important to understand how authentication methods are prioritized to avoid unexpected API charges and ensure you're using your intended account.
 

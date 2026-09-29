@@ -2,7 +2,7 @@
 title: "List Federation Issuers - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/federation_issuers/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:37:44Z"
+fetched_at: "2026-09-10T06:41:31Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fadmin%2Ffederation_issuers%2Flist)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,96 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,22 +160,28 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
+Create Enrollment URL
 
 
 Webhooks
+
+
+Unwrap
+
+
+Parse Unverified
 
 
 Admin
@@ -182,9 +192,9 @@ Invites
 
 Users
 
-RBAC Groups
+RBAC Groups
 
-RBAC Roles
+RBAC Roles
 
 Workspaces
 
@@ -207,19 +217,19 @@ Service Accounts
 Federation Issuers
 
 
-Create Federation Issuer
+Create Federation Issuer
 
 
-Get Federation Issuer
+Get Federation Issuer
 
 
-List Federation Issuers
+List Federation Issuers
 
 
-Update Federation Issuer
+Update Federation Issuer
 
 
-Archive Federation Issuer
+Archive Federation Issuer
 
 Federation Rules
 
@@ -242,37 +252,39 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-List
-
+Copy page
 
 
 
+1.  [API reference](/docs/en/api/http)
+2.  [Admin](/docs/en/api/http/admin)
+3.  [Federation Issuers](/docs/en/api/http/admin/federation_issuers)
+
 # List Federation Issuers
 
-GET/v1/organizations/federation_issuers
+GET/v1/organizations/federation_issuers
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
 
 List federation issuers in your organization.
 
 Archived issuers are excluded unless `include_archived=true`.
 
-##### Query ParametersExpand Collapse 
+##### Query parameters
+
+
 
 include_archived: optional boolean
 
@@ -280,7 +292,9 @@ include_archived: optional boolean
 
 Include archived resources. Defaults to false.
 
-[](#list.include_archived)
+defaultfalse
+
+
 
 limit: optional number
 
@@ -288,7 +302,11 @@ limit: optional number
 
 Number of results per page.
 
-[](#list.limit)
+default20
+
+maximum100
+
+minimum1
 
 page: optional string
 
@@ -296,9 +314,7 @@ page: optional string
 
 Opaque cursor from a previous response's `next_page`.
 
-[](#list.page)
-
-##### Header ParametersExpand Collapse 
+##### Headers
 
 
 
@@ -310,13 +326,11 @@ Optional header to specify the beta version(s) you want to use.
 
 To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
 
-[](#list.anthropic-beta)
-
-##### ReturnsExpand Collapse 
+##### Returns
 
 
 
-data: array of [FederationIssuer](/docs/en/api/admin/federation_issuers#federation_issuer) { id, archived_at, archived_by_actor_id, 12 more }
+data: array of [FederationIssuer](/docs/en/api/http/admin/federation_issuers#federation_issuer) { id, archived_at, archived_by_actor_id, 12 more }
 
 
 
@@ -326,23 +340,21 @@ id: string
 
 Tagged ID of the federation issuer.
 
-[](#federation_issuer.id)
+
 
-archived_at: string
+archived_at: string or null
 
 
 
 If set, all rules referencing this issuer reject token exchange.
 
-[](#federation_issuer.archived_at)
+formatdate-time
 
-archived_by_actor_id: string
+archived_by_actor_id: string or null
 
 
 
 Tagged ID (`user_`/`svac_`) of the actor that archived this issuer.
-
-[](#federation_issuer.archived_by_actor_id)
 
 check_jti: boolean
 
@@ -350,7 +362,7 @@ check_jti: boolean
 
 Whether the jwt-bearer exchange enforces JTI single-use (replay protection) for tokens from this issuer. Applies only to assertions carrying a `jti` claim; tokens without one are accepted without single-use enforcement.
 
-[](#federation_issuer.check_jti)
+
 
 created_at: string
 
@@ -358,15 +370,13 @@ created_at: string
 
 When this issuer was created.
 
-[](#federation_issuer.created_at)
+formatdate-time
 
-created_by_actor_id: string
+created_by_actor_id: string or null
 
 
 
 Tagged ID (`user_`/`svac_`) of the actor that created this issuer.
-
-[](#federation_issuer.created_by_actor_id)
 
 issuer_url: string
 
@@ -374,11 +384,9 @@ issuer_url: string
 
 The `iss` claim value. Incoming JWTs must match exactly.
 
-[](#federation_issuer.issuer_url)
-
 
 
-jwks: object { type, ca_cert_pem, discovery_base } or object { type, url, ca_cert_pem } or object { keys, type }
+jwks: object{ type, ca_cert_pem, discovery_base } or object{ type, url, ca_cert_pem } or object{ keys, type }
 
 
 
@@ -388,7 +396,7 @@ One of the following:
 
 
 
-Discovery object { type, ca_cert_pem, discovery_base }
+Discovery object{ type, ca_cert_pem, discovery_base }
 
 
 
@@ -398,29 +406,25 @@ type: "discovery"
 
 
 
-[](#federation_issuer.jwks%5B0%5D.type)
+
 
-ca_cert_pem: optional string
+ca_cert_pem: optional string or null
 
 
 
 Optional custom CA (PEM) for TLS verification of the JWKS fetch.
 
-[](#federation_issuer.jwks%5B0%5D.ca_cert_pem)
+maxLength8192
 
-discovery_base: optional string
+discovery_base: optional string or null
 
 
 
 Set when the discovery URL differs from `issuer_url`.
 
-[](#federation_issuer.jwks%5B0%5D.discovery_base)
-
-[](#federation_issuer.jwks%5B0%5D)
-
 
 
-ExplicitURL object { type, url, ca_cert_pem }
+ExplicitURL object{ type, url, ca_cert_pem }
 
 
 
@@ -430,7 +434,7 @@ type: "explicit_url"
 
 
 
-[](#federation_issuer.jwks%5B1%5D.type)
+
 
 url: string
 
@@ -438,25 +442,27 @@ url: string
 
 JWKS endpoint.
 
-[](#federation_issuer.jwks%5B1%5D.url)
+minLength1
 
-ca_cert_pem: optional string
+
+
+ca_cert_pem: optional string or null
 
 
 
 Optional custom CA (PEM) for TLS verification of the JWKS fetch.
 
-[](#federation_issuer.jwks%5B1%5D.ca_cert_pem)
-
-[](#federation_issuer.jwks%5B1%5D)
+maxLength8192
 
 
 
-Inline object { keys, type }
+Inline object{ keys, type }
 
 
 
 JWKS supplied directly; no network fetch.
+
+
 
 keys: array of map\[unknown\]
 
@@ -464,25 +470,21 @@ keys: array of map\[unknown\]
 
 Inline JWK objects.
 
-[](#federation_issuer.jwks%5B2%5D.keys)
+minItems1
 
 type: "inline"
 
 
 
-[](#federation_issuer.jwks%5B2%5D.type)
+
 
-[](#federation_issuer.jwks%5B2%5D)
-
-[](#federation_issuer.jwks)
-
-jwks_polling_disabled_at: string
+jwks_polling_disabled_at: string or null
 
 
 
 If set, Anthropic's JWKS poller has paused polling for this issuer after repeated fetch failures. Re-enable by sending `jwks_polling_disabled: false` via the issuer update endpoint (POST) once the upstream JWKS endpoint is fixed. An OAuth caller cannot send this when the issuer backs a rule with any scope other than `workspace:developer` or `workspace:inference`; use a Console session.
 
-[](#federation_issuer.jwks_polling_disabled_at)
+formatdate-time
 
 max_jwt_lifetime_seconds: number
 
@@ -490,19 +492,15 @@ max_jwt_lifetime_seconds: number
 
 Maximum allowed iat→exp spread for assertions from this issuer (1-176400 seconds, i.e. up to 49h). Assertions must carry both `iat` and `exp`; a missing `iat` is rejected.
 
-[](#federation_issuer.max_jwt_lifetime_seconds)
-
 name: string
 
 
 
 Admin-chosen slug identifier.
 
-[](#federation_issuer.name)
-
 
 
-poll_status: object { consecutive_failures, last_fetched_at, next_poll_at }
+poll_status: object{ consecutive_failures, last_fetched_at, next_poll_at } or null
 
 
 
@@ -516,31 +514,35 @@ consecutive_failures: number
 
 Consecutive fetch failures since the last success.
 
-[](#federation_issuer.poll_status.consecutive_failures)
+
 
-last_fetched_at: string
+last_fetched_at: string or null
 
 
 
 When the last successful fetch completed.
 
-[](#federation_issuer.poll_status.last_fetched_at)
+formatdate-time
 
-next_poll_at: string
+
+
+next_poll_at: string or null
 
 
 
 When the next fetch is scheduled. Null if paused.
 
-[](#federation_issuer.poll_status.next_poll_at)
+formatdate-time
 
-[](#federation_issuer.poll_status)
+
 
 type: "federation_issuer"
 
 
 
-[](#federation_issuer.type)
+defaultfederation_issuer
+
+
 
 updated_at: string
 
@@ -548,34 +550,30 @@ updated_at: string
 
 When this issuer was last updated.
 
-[](#federation_issuer.updated_at)
+formatdate-time
 
-updated_by_actor_id: string
+updated_by_actor_id: string or null
 
 
 
 Tagged ID (`user_`/`svac_`) of the actor that last updated this issuer.
 
-[](#federation_issuer.updated_by_actor_id)
-
-[](#list)
-
-next_page: string
+next_page: string or null
 
 
 
 Opaque cursor for the next page, or null if no more results.
 
-[](#list)
+List Federation Issuers
 
-List Federation Issuers
+cURL
 
 
 
 ```python
 curl https://api.anthropic.com/v1/organizations/federation_issuers \
     -H 'anthropic-version: 2023-06-01' \
-    -H "Authorization: Bearer $ANTHROPIC_OAUTH_TOKEN"
+    -H "Authorization: Bearer $ANTHROPIC_AUTH_TOKEN"
 ```
 
 Response 200

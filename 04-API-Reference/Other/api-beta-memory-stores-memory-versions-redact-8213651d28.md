@@ -2,7 +2,7 @@
 title: "Redact a memory version - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/memory_versions/redact"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:40:40Z"
+fetched_at: "2026-09-26T06:38:31Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmemory_stores%2Fmemory_versions%2Fredact)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -68,118 +64,140 @@ Vaults
 Memory Stores
 
 
-Create a memory store
+Create a memory store
 
 
-List memory stores
+List memory stores
 
 
-Retrieve a memory store
+Retrieve a memory store
 
 
-Update a memory store
+Update a memory store
 
 
-Delete a memory store
+Delete a memory store
 
 
-Archive a memory store
+Archive a memory store
 
 Memories
 
 Memory Versions
 
 
-List memory versions
+List memory versions
 
 
-Retrieve a memory version
+Retrieve a memory version
 
 
-Redact a memory version
+Redact a memory version
+
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
 
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -187,59 +205,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -258,55 +236,54 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Redact
-
+Copy page
 
 
 
 cURL
 
+1.  [API reference](/docs/en/api/http)
+2.  [Beta](/docs/en/api/http/beta)
+3.  [Memory Stores](/docs/en/api/http/beta/memory_stores)
+4.  [Memory Versions](/docs/en/api/http/beta/memory_stores/memory_versions)
+
 # Redact a memory version
 
-POST/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}/redact
+POST/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}/redact
 
 Redact a memory version
 
-##### Path ParametersExpand Collapse 
+##### Path parameters
 
 memory_store_id: string
 
 
 
-[](#redact.memory_store_id)
+The ID of the memory store that holds the version (`memstore_...`).
 
 memory_version_id: string
 
 
 
-[](#redact.memory_version_id)
+The ID of the memory version to redact (`memver_...`).
 
-##### Header ParametersExpand Collapse 
+##### Headers
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](/docs/en/api/beta#anthropic_beta)
+"anthropic-beta": optional array of [AnthropicBeta](/docs/en/api/http/beta#anthropic_beta)
 
 
 
@@ -318,11 +295,9 @@ string
 
 
 
-[](#anthropic_beta%5B0%5D)
-
 
 
-"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 29 more
+"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
 
 
 
@@ -332,487 +307,215 @@ One of the following:
 
 
 
-[](#anthropic_beta%5B1%5D%5B0%5D)
-
 "prompt-caching-2024-07-31"
 
 
-
-[](#anthropic_beta%5B1%5D%5B1%5D)
 
 "computer-use-2024-10-22"
 
 
 
-[](#anthropic_beta%5B1%5D%5B2%5D)
-
 "computer-use-2025-01-24"
 
 
-
-[](#anthropic_beta%5B1%5D%5B3%5D)
 
 "pdfs-2024-09-25"
 
 
 
-[](#anthropic_beta%5B1%5D%5B4%5D)
-
 "token-counting-2024-11-01"
 
 
-
-[](#anthropic_beta%5B1%5D%5B5%5D)
 
 "token-efficient-tools-2025-02-19"
 
 
 
-[](#anthropic_beta%5B1%5D%5B6%5D)
-
 "output-128k-2025-02-19"
 
 
-
-[](#anthropic_beta%5B1%5D%5B7%5D)
 
 "files-api-2025-04-14"
 
 
 
-[](#anthropic_beta%5B1%5D%5B8%5D)
-
 "mcp-client-2025-04-04"
 
 
-
-[](#anthropic_beta%5B1%5D%5B9%5D)
 
 "mcp-client-2025-11-20"
 
 
 
-[](#anthropic_beta%5B1%5D%5B10%5D)
-
 "dev-full-thinking-2025-05-14"
 
 
-
-[](#anthropic_beta%5B1%5D%5B11%5D)
 
 "interleaved-thinking-2025-05-14"
 
 
 
-[](#anthropic_beta%5B1%5D%5B12%5D)
-
 "code-execution-2025-05-22"
 
 
-
-[](#anthropic_beta%5B1%5D%5B13%5D)
 
 "extended-cache-ttl-2025-04-11"
 
 
 
-[](#anthropic_beta%5B1%5D%5B14%5D)
-
 "context-1m-2025-08-07"
 
 
-
-[](#anthropic_beta%5B1%5D%5B15%5D)
 
 "context-management-2025-06-27"
 
 
 
-[](#anthropic_beta%5B1%5D%5B16%5D)
-
 "model-context-window-exceeded-2025-08-26"
 
 
-
-[](#anthropic_beta%5B1%5D%5B17%5D)
 
 "skills-2025-10-02"
 
 
 
-[](#anthropic_beta%5B1%5D%5B18%5D)
-
 "fast-mode-2026-02-01"
 
 
-
-[](#anthropic_beta%5B1%5D%5B19%5D)
 
 "output-300k-2026-03-24"
 
 
 
-[](#anthropic_beta%5B1%5D%5B20%5D)
-
 "user-profiles-2026-03-24"
 
 
 
-[](#anthropic_beta%5B1%5D%5B21%5D)
+"user-profiles-2026-08-18"
+
+
+
+"user-profiles-2026-09-04"
+
+
 
 "advisor-tool-2026-03-01"
 
 
 
-[](#anthropic_beta%5B1%5D%5B22%5D)
-
 "managed-agents-2026-04-01"
 
 
-
-[](#anthropic_beta%5B1%5D%5B23%5D)
 
 "cache-diagnosis-2026-04-07"
 
 
 
-[](#anthropic_beta%5B1%5D%5B24%5D)
-
 "dreaming-2026-04-21"
 
 
-
-[](#anthropic_beta%5B1%5D%5B25%5D)
 
 "thinking-token-count-2026-05-13"
 
 
 
-[](#anthropic_beta%5B1%5D%5B26%5D)
-
 "server-side-fallback-2026-06-01"
 
 
-
-[](#anthropic_beta%5B1%5D%5B27%5D)
 
 "server-side-fallback-2026-07-01"
 
 
 
-[](#anthropic_beta%5B1%5D%5B28%5D)
-
 "fallback-credit-2026-06-01"
 
 
-
-[](#anthropic_beta%5B1%5D%5B29%5D)
 
 "fallback-credit-2026-07-01"
 
 
 
-[](#anthropic_beta%5B1%5D%5B30%5D)
-
 "agent-memory-2026-07-22"
 
 
 
-[](#anthropic_beta%5B1%5D%5B31%5D)
+"mid-conversation-tool-changes-2026-07-01"
 
-[](#anthropic_beta%5B1%5D)
+
 
-[](#redact.betas)
+"compact-2026-01-12"
 
-##### ReturnsExpand Collapse 
+
+
+"computer-use-2025-11-24"
+
+
+
+"mcp-tunnels-2026-06-22"
+
+
+
+"structured-outputs-2025-11-13"
+
+
+
+"task-budgets-2026-03-13"
+
+
+
+"thinking-display-updates-2026-08-18"
+
+
+
+"ce-user-management-2026-07-13"
+
+
+
+"mid-conversation-output-config-2026-07-01"
+
+
+
+"thinking-binding-controls-2026-08-01"
+
+
+
+"mid-conversation-system-clear-at-2026-08-21"
+
+
+
+"compact-2026-09-04"
+
+
+
+"inline-tools-2026-09-15"
+
+
+
+"mcp-client-2026-09-15"
+
+
 
 
 
-BetaManagedAgentsMemoryVersion object { id, created_at, memory_id, 10 more }
+"anthropic-workspace-id": optional string
 
 
 
-A `memory_version` object: one immutable, attributed row in a memory's append-only history. Every non-no-op mutation to a memory produces a new version. Versions belong to the store (not the individual memory) and persist after the memory is deleted. Retrieving a redacted version returns 200 with `content`, `path`, `content_size_bytes`, and `content_sha256` set to `null`; branch on `redacted_at`, not HTTP status.
+Optional header to select the Workspace for this request. The value is a Workspace ID (for example, `wrkspc_011CZkZaBF1tNoB5wlCeusgy`).
 
-id: string
+Only needed for credentials that can act on more than one Workspace. A credential that belongs to a specific Workspace may omit it; if sent, it must match that Workspace.
 
-
-
-Unique identifier for this version (a `memver_...` value).
-
-[](#beta_managed_agents_memory_version.id)
-
-created_at: string
-
-
-
-A timestamp in RFC 3339 format
-
-[](#beta_managed_agents_memory_version.created_at)
-
-memory_id: string
-
-
-
-ID of the memory this version snapshots (a `mem_...` value). Remains valid after the memory is deleted; pass it as `memory_id` to [List memory versions](/docs/en/api/beta/memory_stores/memory_versions/list) to retrieve the full lineage including the `deleted` row.
-
-[](#beta_managed_agents_memory_version.memory_id)
-
-memory_store_id: string
-
-
-
-ID of the memory store this version belongs to (a `memstore_...` value).
-
-[](#beta_managed_agents_memory_version.memory_store_id)
+##### Returns
 
 
 
-operation: [BetaManagedAgentsMemoryVersionOperation](/docs/en/api/beta/memory_stores/memory_versions#beta_managed_agents_memory_version_operation)
+BetaManagedAgentsMemoryVersion object{ type: "memory_version", id, created_at, 10 more }
 
 
 
-The kind of mutation a `memory_version` records. Every non-no-op mutation to a memory appends exactly one version row with one of these values.
+A `memory_version` object: one immutable, attributed row in a memory's append-only history. Every non-no-op mutation to a memory produces a new version. Versions belong to the store (not the individual memory) and are not deleted with the memory; each version is retained for at least the version retention period after it was written, unless the store itself is deleted. Retrieving a redacted version returns 200 with `content`, `path`, `content_size_bytes`, and `content_sha256` set to `null`; branch on `redacted_at`, not HTTP status.
 
-One of the following:
-
-"created"
-
-
-
-[](#beta_managed_agents_memory_version.operation%20%2B%20(resource)%20beta.memory_stores.memory_versions%5B0%5D)
-
-"modified"
-
-
-
-[](#beta_managed_agents_memory_version.operation%20%2B%20(resource)%20beta.memory_stores.memory_versions%5B1%5D)
-
-"deleted"
-
-
-
-[](#beta_managed_agents_memory_version.operation%20%2B%20(resource)%20beta.memory_stores.memory_versions%5B2%5D)
-
-[](#beta_managed_agents_memory_version.operation)
-
-type: "memory_version"
-
-
-
-[](#beta_managed_agents_memory_version.type)
-
-content: optional string
-
-
-
-The memory's UTF-8 text content as of this version. `null` when `view=basic`, when `operation` is `deleted`, or when `redacted_at` is set.
-
-[](#beta_managed_agents_memory_version.content)
-
-content_sha256: optional string
-
-
-
-Lowercase hex SHA-256 digest of `content` as of this version (64 characters). `null` when `redacted_at` is set or `operation` is `deleted`. Populated regardless of `view` otherwise.
-
-[](#beta_managed_agents_memory_version.content_sha256)
-
-content_size_bytes: optional number
-
-
-
-Size of `content` in bytes as of this version. `null` when `redacted_at` is set or `operation` is `deleted`. Populated regardless of `view` otherwise.
-
-[](#beta_managed_agents_memory_version.content_size_bytes)
-
-
-
-created_by: optional [BetaManagedAgentsActor](/docs/en/api/beta/memory_stores/memory_versions#beta_managed_agents_actor)
-
-
-
-Identifies who performed a write or redact operation. Captured at write time on the `memory_version` row. The API key that created a session is not recorded on agent writes; attribution answers who made the write, not who is ultimately responsible. Look up session provenance separately via the [Sessions API](/docs/en/api/sessions-retrieve).
-
-One of the following:
-
-
-
-BetaManagedAgentsSessionActor object { session_id, type }
-
-
-
-Attribution for a write made by an agent during a session, through the mounted filesystem at `/mnt/memory/`.
-
-session_id: string
-
-
-
-ID of the session that performed the write (a `sesn_...` value). Look up the session via [Retrieve a session](/docs/en/api/sessions-retrieve) for further provenance.
-
-[](#beta_managed_agents_memory_version.created_by%20%2B%20(resource)%20beta.memory_stores.memory_versions.session_id)
-
-type: "session_actor"
-
-
-
-[](#beta_managed_agents_memory_version.created_by%20%2B%20(resource)%20beta.memory_stores.memory_versions.type)
-
-[](#beta_managed_agents_memory_version.created_by%20%2B%20(resource)%20beta.memory_stores.memory_versions)
-
-
-
-BetaManagedAgentsAPIActor object { api_key_id, type }
-
-
-
-Attribution for a write made directly via the public API (outside of any session).
-
-api_key_id: string
-
-
-
-ID of the API key that performed the write. This identifies the key, not the secret.
-
-[](#beta_managed_agents_memory_version.created_by%20%2B%20(resource)%20beta.memory_stores.memory_versions.api_key_id)
-
-type: "api_actor"
-
-
-
-[](#beta_managed_agents_memory_version.created_by%20%2B%20(resource)%20beta.memory_stores.memory_versions.type)
-
-[](#beta_managed_agents_memory_version.created_by%20%2B%20(resource)%20beta.memory_stores.memory_versions)
-
-
-
-BetaManagedAgentsUserActor object { type, user_id }
-
-
-
-Attribution for a write made by a human user through the Anthropic Console.
-
-type: "user_actor"
-
-
-
-[](#beta_managed_agents_memory_version.created_by%20%2B%20(resource)%20beta.memory_stores.memory_versions.type)
-
-user_id: string
-
-
-
-ID of the user who performed the write (a `user_...` value).
-
-[](#beta_managed_agents_memory_version.created_by%20%2B%20(resource)%20beta.memory_stores.memory_versions.user_id)
-
-[](#beta_managed_agents_memory_version.created_by%20%2B%20(resource)%20beta.memory_stores.memory_versions)
-
-[](#beta_managed_agents_memory_version.created_by)
-
-path: optional string
-
-
-
-The memory's path at the time of this write. `null` if and only if `redacted_at` is set.
-
-[](#beta_managed_agents_memory_version.path)
-
-redacted_at: optional string
-
-
-
-A timestamp in RFC 3339 format
-
-[](#beta_managed_agents_memory_version.redacted_at)
-
-
-
-redacted_by: optional [BetaManagedAgentsActor](/docs/en/api/beta/memory_stores/memory_versions#beta_managed_agents_actor)
-
-
-
-Identifies who performed a write or redact operation. Captured at write time on the `memory_version` row. The API key that created a session is not recorded on agent writes; attribution answers who made the write, not who is ultimately responsible. Look up session provenance separately via the [Sessions API](/docs/en/api/sessions-retrieve).
-
-One of the following:
-
-
-
-BetaManagedAgentsSessionActor object { session_id, type }
-
-
-
-Attribution for a write made by an agent during a session, through the mounted filesystem at `/mnt/memory/`.
-
-session_id: string
-
-
-
-ID of the session that performed the write (a `sesn_...` value). Look up the session via [Retrieve a session](/docs/en/api/sessions-retrieve) for further provenance.
-
-[](#beta_managed_agents_memory_version.redacted_by%20%2B%20(resource)%20beta.memory_stores.memory_versions.session_id)
-
-type: "session_actor"
-
-
-
-[](#beta_managed_agents_memory_version.redacted_by%20%2B%20(resource)%20beta.memory_stores.memory_versions.type)
-
-[](#beta_managed_agents_memory_version.redacted_by%20%2B%20(resource)%20beta.memory_stores.memory_versions)
-
-
-
-BetaManagedAgentsAPIActor object { api_key_id, type }
-
-
-
-Attribution for a write made directly via the public API (outside of any session).
-
-api_key_id: string
-
-
-
-ID of the API key that performed the write. This identifies the key, not the secret.
-
-[](#beta_managed_agents_memory_version.redacted_by%20%2B%20(resource)%20beta.memory_stores.memory_versions.api_key_id)
-
-type: "api_actor"
-
-
-
-[](#beta_managed_agents_memory_version.redacted_by%20%2B%20(resource)%20beta.memory_stores.memory_versions.type)
-
-[](#beta_managed_agents_memory_version.redacted_by%20%2B%20(resource)%20beta.memory_stores.memory_versions)
-
-
-
-BetaManagedAgentsUserActor object { type, user_id }
-
-
-
-Attribution for a write made by a human user through the Anthropic Console.
-
-type: "user_actor"
-
-
-
-[](#beta_managed_agents_memory_version.redacted_by%20%2B%20(resource)%20beta.memory_stores.memory_versions.type)
-
-user_id: string
-
-
-
-ID of the user who performed the write (a `user_...` value).
-
-[](#beta_managed_agents_memory_version.redacted_by%20%2B%20(resource)%20beta.memory_stores.memory_versions.user_id)
-
-[](#beta_managed_agents_memory_version.redacted_by%20%2B%20(resource)%20beta.memory_stores.memory_versions)
-
-[](#beta_managed_agents_memory_version.redacted_by)
-
-[](#beta_managed_agents_memory_version)
-
-Redact a memory version
+Redact a memory version
 
 cURL
 

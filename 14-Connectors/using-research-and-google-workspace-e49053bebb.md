@@ -2,7 +2,7 @@
 title: "Using Research and Google Workspace | Claude by Anthropic"
 source_url: "https://support.claude.com/en/articles/11101545-using-research-and-google-workspace"
 category: "14-Connectors"
-fetched_at: "2026-08-02T05:42:25Z"
+fetched_at: "2026-08-19T06:29:49Z"
 tags: ["connectors", "search"]
 ---
 
@@ -41,6 +41,18 @@ Learn how to leverage Claude's Research capabilities alongside Google Workspace 
 
 ## Related tutorials
 
+[How to choose between voice mode and dictation](/resources/tutorials/how-to-choose-between-voice-mode-and-dictation)
+
+How to choose between voice mode and dictation
+
+How to choose between voice mode and dictation
+
+Tutorial
+
+[Tutorial](/resources/tutorials/how-to-choose-between-voice-mode-and-dictation)
+
+Tutorial
+
 [Delegating and scheduling tasks in Claude Cowork](/resources/tutorials/delegating-and-scheduling-tasks-in-claude-cowork)
 
 Delegating and scheduling tasks in Claude Cowork
@@ -74,18 +86,6 @@ Best practices for using @Claude
 Tutorial
 
 [Tutorial](/resources/tutorials/best-practices-using-claude-tag)
-
-Tutorial
-
-[Using Claude Cowork for legal: answer fast questions on past decisions](/resources/tutorials/using-claude-cowork-for-legal-question-briefing)
-
-Using Claude Cowork for legal: answer fast questions on past decisions
-
-Using Claude Cowork for legal: answer fast questions on past decisions
-
-Tutorial
-
-[Tutorial](/resources/tutorials/using-claude-cowork-for-legal-question-briefing)
 
 Tutorial
 
@@ -268,10 +268,10 @@ Products
 
 Features
 
-- Claude for Chrome
+- Claude in Chrome
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
 
 - Claude for Microsoft 365
 
@@ -493,7 +493,7 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](#)
   Service partners
 
 - Tutorials

@@ -2,7 +2,7 @@
 title: "Chats - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/chats"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:40:29Z"
+fetched_at: "2026-09-26T06:38:56Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fchats)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -224,10 +202,10 @@ Apps
 Chats
 
 
-List chats
+List chats
 
 
-Delete chat
+Delete chat
 
 Messages
 
@@ -239,181 +217,71 @@ Projects
 
 Artifacts
 
+Sessions
+
 Code
 
 
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
+To enable the Compliance API, see the setup guide.
 
-Chats
+[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)
 
+Copy page
 
 
 
-
-
-To enable the Compliance API, see [Set up the Compliance API](/docs/en/manage-claude/compliance-api-access).
+1.  [API reference](/docs/en/api/http)
+2.  [Compliance API](/docs/en/api/http/compliance)
+3.  [Apps](/docs/en/api/http/compliance/apps)
 
 # Chats
 
-##### [List chats](/docs/en/api/compliance/apps/chats/list)
+##### [List chats](/docs/en/api/http/compliance/apps/chats/list)
 
-GET/v1/compliance/apps/chats
+GET/v1/compliance/apps/chats
 
-##### [Delete chat](/docs/en/api/compliance/apps/chats/delete)
+Lists chat metadata with filtering capabilities for targeted compliance review. Results are sorted chronologically (time ascending) by the `order_by` key, with ties broken by id.
 
-DELETE/v1/compliance/apps/chats/{claude_chat_id}
+##### [Delete chat](/docs/en/api/http/compliance/apps/chats/delete)
 
-##### ModelsExpand Collapse 
+DELETE/v1/compliance/apps/chats/{claude_chat_id}
+
+Permanently deletes a chat and all associated messages and files. This is a destructive operation that cannot be undone.
+
+##### Models
 
 
 
-ChatListResponse object { id, created_at, deleted_at, 8 more }
+ChatListResponse object{ id, created_at, deleted_at, 8 more }
 
 
 
 Chat metadata for listing chats (without messages).
 
-id: string
-
-
-
-Chat ID
-
-[](#chat_list_response.id)
-
-created_at: string
-
-
-
-Creation timestamp
-
-[](#chat_list_response.created_at)
-
-deleted_at: string
-
-
-
-Deletion timestamp if deleted
-
-[](#chat_list_response.deleted_at)
-
-href: string
-
-
-
-URL to view this chat in claude.ai
-
-[](#chat_list_response.href)
-
-model: string
-
-
-
-Model selected for this chat (e.g. 'claude-opus-4-7'). May be null for legacy chats that never had a model recorded.
-
-[](#chat_list_response.model)
-
-name: string
-
-
-
-Chat name/title
-
-[](#chat_list_response.name)
-
-organization_uuid: string
-
-
-
-Organization UUID this chat belongs to
-
-[](#chat_list_response.organization_uuid)
-
-project_id: string
-
-
-
-Project ID this chat belongs to
-
-[](#chat_list_response.project_id)
-
-updated_at: string
-
-
-
-Last update timestamp
-
-[](#chat_list_response.updated_at)
-
 
 
-user: object { id, email_address }
-
-
-
-User information for compliance responses.
-
-id: string
-
-
-
-User identifier
-
-[](#chat_list_response.user.id)
-
-email_address: string
-
-
-
-User's email address
-
-[](#chat_list_response.user.email_address)
-
-[](#chat_list_response.user)
-
-organization_id: string⁠Deprecated
-
-
-
-Organization ID this chat belongs to
-
-[](#chat_list_response.organization_id)
-
-[](#chat_list_response)
-
-
-
-ChatDeleteResponse object { id, type }
+ChatDeleteResponse object{ type: "claude_chat_deleted", id }
 
 
 
 Response for deleting a Claude chat.
 
-id: string
-
-
-
-The ID of the Claude chat that was deleted
-
-[](#chat_delete_response.id)
+
 
 type: optional "claude_chat_deleted"
 
@@ -421,36 +289,52 @@ type: optional "claude_chat_deleted"
 
 Constant string confirming deletion
 
-[](#chat_delete_response.type)
+defaultclaude_chat_deleted
 
-[](#chat_delete_response)
+id: string
 
-#### ChatsMessages
+
 
-##### [Get chat messages](/docs/en/api/compliance/apps/chats/messages/list)
+The ID of the Claude chat that was deleted
 
-GET/v1/compliance/apps/chats/{claude_chat_id}/messages
+#### Chats[Messages](/docs/en/api/http/compliance/apps/chats/messages)
 
-#### ChatsFiles
+##### [Get chat messages](/docs/en/api/http/compliance/apps/chats/messages/list)
 
-##### [Get file metadata](/docs/en/api/compliance/apps/chats/files/retrieve)
+GET/v1/compliance/apps/chats/{claude_chat_id}/messages
 
-GET/v1/compliance/apps/chats/files/{claude_file_id}
+Retrieves message history and file metadata for a specific chat.
 
-##### [Delete file](/docs/en/api/compliance/apps/chats/files/delete)
+#### Chats[Files](/docs/en/api/http/compliance/apps/chats/files)
 
-DELETE/v1/compliance/apps/chats/files/{claude_file_id}
+##### [Get file metadata](/docs/en/api/http/compliance/apps/chats/files/retrieve)
 
-##### [Download file content](/docs/en/api/compliance/apps/chats/files/download)
+GET/v1/compliance/apps/chats/files/{claude_file_id}
 
-GET/v1/compliance/apps/chats/files/{claude_file_id}/content
+Retrieves metadata for a file referenced in chat messages, without downloading the file content. Use the sibling `/content` endpoint to download the bytes.
 
-#### ChatsGenerated Files
+##### [Delete file](/docs/en/api/http/compliance/apps/chats/files/delete)
 
-##### [Get Claude-generated file metadata](/docs/en/api/compliance/apps/chats/generated_files/retrieve)
+DELETE/v1/compliance/apps/chats/files/{claude_file_id}
 
-GET/v1/compliance/apps/chats/generated-files/{claude_gen_file_id}
+Permanently deletes a specific file. This is a destructive operation that cannot be undone.
 
-##### [Download a Claude-generated file](/docs/en/api/compliance/apps/chats/generated_files/download)
+##### [Download file content](/docs/en/api/http/compliance/apps/chats/files/download)
 
-GET/v1/compliance/apps/chats/generated-files/{claude_gen_file_id}/content
+GET/v1/compliance/apps/chats/files/{claude_file_id}/content
+
+Downloads the binary content of a file referenced in chat messages.
+
+#### Chats[Generated Files](/docs/en/api/http/compliance/apps/chats/generated_files)
+
+##### [Get Claude-generated file metadata](/docs/en/api/http/compliance/apps/chats/generated_files/retrieve)
+
+GET/v1/compliance/apps/chats/generated-files/{claude_gen_file_id}
+
+Returns metadata for a file the assistant created via tool use.
+
+##### [Download a Claude-generated file](/docs/en/api/http/compliance/apps/chats/generated_files/download)
+
+GET/v1/compliance/apps/chats/generated-files/{claude_gen_file_id}/content
+
+Downloads the binary content of a file the assistant created via tool use.

@@ -2,7 +2,7 @@
 title: "File Uploads Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-groups/file-uploads"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:30Z"
+fetched_at: "2026-09-29T06:30:48Z"
 tags: ["mcp"]
 ---
 
@@ -78,7 +78,7 @@ The WG may evaluate approaches such as streaming, chunked transfer, or presigned
 Related Groups
 
 - **MCP Apps WG** — embedded app UIs may surface their own file pickers; the descriptor format should be reusable in that context.
-- **Security WG** — host-side validation requirements for user-supplied file content (the SEP references [OWASP ASVS V5](https://owasp.org/www-project-application-security-verification-standard/) for general upload hygiene).
+- **Security WG** — host-side validation requirements for user-supplied file content (the SEP references [OWASP ASVS V5](https://owasp.org/projects/asvs) for general upload hygiene).
 - **Tool Annotations IG** — file input descriptors are a form of input-parameter metadata and should remain consistent with the broader annotation taxonomy.
 
 

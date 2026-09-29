@@ -24240,27 +24240,23 @@ Additional resources
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fcsharp)
 
 
 
-Search
+
 
+SearchCtrlK
 
 CLI, SDKs, and libraries
 
@@ -24268,7 +24264,7 @@ CLI, SDKs, and libraries
 
 ant CLI
 
-[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)
+[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)[Manage resources as code](/docs/en/cli-sdks-libraries/cli/apply)[Connect to a Managed Agents session](/docs/en/cli-sdks-libraries/cli/sessions-connect)
 
 Client SDKs
 
@@ -24278,34 +24274,25 @@ Libraries and integrations
 
 [Apple Foundation Models](/docs/en/cli-sdks-libraries/libraries/apple-foundation-models)[OpenAI SDK compatibility](/docs/en/cli-sdks-libraries/libraries/openai-sdk)
 
-[](/login)
+[Console](/)
 
-
-
-
-CLI, SDKs, and libraries
-
-C#
-
-CLI, SDKs, and libraries/Client SDKs
+[CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)Client SDKs
 
 # C# SDK
 
+Copy page
 
 
 
 Install and configure the Anthropic C# SDK for .NET applications with IChatClient integration
 
+Copy page
 
 
 
-The Anthropic C# SDK provides convenient access to the Anthropic REST API from applications written in C#.
+The Anthropic C# SDK provides convenient access to the Claude API from applications written in C#.
 
-
-
-The C# SDK is currently in beta. APIs may change between versions.
-
-
+
 
 For API feature documentation with code examples, see the [API reference](/docs/en/api/overview). This page covers C#-specific SDK features and configuration.
 
@@ -24313,10 +24300,7 @@ For API feature documentation with code examples, see the [API reference](/docs/
 
 As of version 10+, the `Anthropic` package is now the official Anthropic SDK for C#. Package versions 3.X and below were previously used for the tryAGI community-built SDK, which has moved to [`tryAGI.Anthropic`](https://www.nuget.org/packages/tryagi.Anthropic/). If you need to continue using the former client in your project, update your package reference to `tryAGI.Anthropic`.
 
-
-
-
-Installation
+## Installation
 
 Install the package from [NuGet](https://www.nuget.org/packages/Anthropic):
 
@@ -24326,17 +24310,11 @@ dotnet add package Anthropic
 
 
 
-
-
-
-Requirements
+## Requirements
 
 This library requires .NET Standard 2.0 or later.
 
-
-
-
-Usage
+## Usage
 
 ```python
 using System;
@@ -24356,7 +24334,7 @@ MessageCreateParams parameters = new()
             Content = "Hello, Claude",
         },
     ],
-    Model = Model.ClaudeOpus5,
+    Model = Model.ClaudeOpus5_5,
 };
 
 var message = await client.Messages.Create(parameters);
@@ -24372,12 +24350,9 @@ foreach (var block in message.Content)
 
 
 
-For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication).
+For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication). If your API key is a [personal or service account key](/docs/en/manage-claude/authentication#key-types) with access to multiple workspaces, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](/docs/en/manage-claude/authentication#select-a-workspace) shows the per-request option for this SDK.
 
-
-
-
-Client configuration
+## Client configuration
 
 Configure the client using environment variables:
 
@@ -24410,10 +24385,7 @@ See this table for the available options:
 | `AuthToken` | `ANTHROPIC_AUTH_TOKEN` | false    | \-                            |
 | `BaseUrl`   | `ANTHROPIC_BASE_URL`   | true     | `"https://api.anthropic.com"` |
 
-
-
-
-Modifying configuration
+### Modifying configuration
 
 To temporarily use a modified client configuration, while reusing the same connection and thread pools, call `WithOptions` on any client or service:
 
@@ -24439,10 +24411,7 @@ Using a [`with` expression](https://learn.microsoft.com/en-us/dotnet/csharp/lang
 
 The `WithOptions` method does not affect the original client or service.
 
-
-
-
-Streaming
+## Streaming
 
 The SDK defines methods that return response "chunk" streams, where each chunk can be individually processed as soon as it arrives instead of waiting on the full response. Streaming methods generally correspond to [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) or [JSONL](https://jsonlines.org) responses.
 
@@ -24465,7 +24434,7 @@ MessageCreateParams parameters = new()
             Content = "Hello, Claude",
         },
     ],
-    Model = Model.ClaudeOpus5,
+    Model = Model.ClaudeOpus5_5,
 };
 
 await foreach (var message in client.Messages.CreateStreaming(parameters))
@@ -24476,10 +24445,7 @@ await foreach (var message in client.Messages.CreateStreaming(parameters))
 
 
 
-
-
-
-Error handling
+## Error handling
 
 The SDK throws custom unchecked exception types:
 
@@ -24506,10 +24472,7 @@ Additionally, all 4xx errors inherit from `Anthropic4xxException`.
 
 - `AnthropicException`: Base class for all exceptions.
 
-
-
-
-Retries
+## Retries
 
 The SDK automatically retries 2 times by default, with a short exponential backoff between requests.
 
@@ -24549,10 +24512,7 @@ Console.WriteLine(message);
 
 
 
-
-
-
-Timeouts
+## Timeouts
 
 Requests time out after 10 minutes by default.
 
@@ -24583,17 +24543,11 @@ Console.WriteLine(message);
 
 
 
-
-
-
-Pagination
+## Pagination
 
 The SDK defines methods that return paginated lists of results. It provides convenient ways to access the results either one page at a time or item-by-item across all pages.
 
-
-
-
-Auto-pagination
+### Auto-pagination
 
 To iterate through all results across all pages, use the `Paginate` method, which automatically fetches more pages as needed. The method returns an [`IAsyncEnumerable`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.iasyncenumerable-1):
 
@@ -24609,10 +24563,7 @@ await foreach (var item in page.Paginate())
 
 
 
-
-
-
-Manual pagination
+### Manual pagination
 
 To access individual page items and manually request the next page, use the `Items` property, and `HasNext` and `Next` methods:
 
@@ -24634,10 +24585,7 @@ while (true)
 
 
 
-
-
-
-Response validation
+## Response validation
 
 In rare cases, the API may return a response that doesn't match the expected type. By default, the SDK does not throw an exception in this case. It throws `AnthropicInvalidDataException` only if you directly access the property.
 
@@ -24676,10 +24624,7 @@ Console.WriteLine(message);
 
 
 
-
-
-
-IChatClient integration
+## IChatClient integration
 
 The SDK provides an implementation of the `IChatClient` interface from the `Microsoft.Extensions.AI.Abstractions` library. This enables `AnthropicClient` (and `Anthropic.Services.IBetaService`) to be used with other libraries that integrate with these core abstractions. For example, tools in the MCP C# SDK (`ModelContextProtocol`) library can be used directly with an `AnthropicClient` exposed through `IChatClient`.
 
@@ -24691,7 +24636,7 @@ using ModelContextProtocol.Client;
 // Configured using the ANTHROPIC_API_KEY, ANTHROPIC_AUTH_TOKEN and ANTHROPIC_BASE_URL environment variables
 AnthropicClient client = new();
 
-IChatClient chatClient = client.AsIChatClient("claude-opus-5")
+IChatClient chatClient = client.AsIChatClient("claude-opus-5-5")
     .AsBuilder()
     .UseFunctionInvocation()
     .Build();
@@ -24707,24 +24652,15 @@ Console.WriteLine(await chatClient.GetResponseAsync("Tell me about IChatClient",
 
 
 
-
-
-
-Requests and responses
+## Requests and responses
 
 To send a request to the Claude API, build an instance of a `Params` class and pass it to the corresponding client method. When the response is received, it's deserialized into an instance of a C# class.
 
 For example, `client.Messages.Create` should be called with an instance of `MessageCreateParams`, and it will return an instance of `Task<Message>`.
 
+## Advanced usage
 
-
-
-Advanced usage
-
-
-
-
-Binary responses
+### Binary responses
 
 The SDK defines methods that return binary responses, which are used for API responses that shouldn't necessarily be parsed, like non-JSON data.
 
@@ -24732,11 +24668,11 @@ These methods return `HttpResponse`:
 
 ```python
 using System;
-using Anthropic.Models.Beta.Files;
+using Anthropic.Models.Files;
 
 FileDownloadParams parameters = new() { FileID = "file_id" };
 
-var response = await client.Beta.Files.Download(parameters);
+var response = await client.Files.Download(parameters);
 
 Console.WriteLine(response);
 ```
@@ -24748,7 +24684,7 @@ To save the response content to a file, or any [`Stream`](https://learn.microsof
 ```python
 using System.IO;
 
-using var response = await client.Beta.Files.Download(parameters);
+using var response = await client.Files.Download(parameters);
 using var contentStream = await response.ReadAsStream();
 using var fileStream = File.Open(path, FileMode.OpenOrCreate);
 await contentStream.CopyToAsync(fileStream); // Or any other Stream
@@ -24756,10 +24692,7 @@ await contentStream.CopyToAsync(fileStream); // Or any other Stream
 
 
 
-
-
-
-Raw responses
+### Raw responses
 
 The SDK defines methods that deserialize responses into instances of C# classes. To access response headers, status code, or the raw response body, prefix any HTTP method call on a client or service with `WithRawResponse`:
 
@@ -24800,10 +24733,7 @@ await foreach (var item in response.Enumerate())
 
 
 
-
-
-
-Logging
+### Logging
 
 
 
@@ -24817,19 +24747,13 @@ export ANTHROPIC_LOG=debug
 
 
 
-
-
-
-Undocumented API functionality
+### Undocumented API functionality
 
 The SDK is typed for convenient usage of the documented API. However, it also supports working with undocumented or not yet supported parts of the API.
 
+## Platform integrations
 
-
-
-Platform integrations
-
-
+
 
 For detailed platform setup guides with code examples, see:
 
@@ -24848,26 +24772,16 @@ The C# SDK supports the following platforms through separate NuGet packages:
 
 Use `AnthropicBedrockMantleClient` for new projects; `AnthropicBedrockClient` remains for existing applications using the Bedrock `InvokeModel` API.
 
+## Semantic versioning
 
-
-
-Semantic versioning
-
-
-
-Although this package is versioned as 10+, it's currently in beta. During the beta period, breaking changes may occur in minor or patch releases. Once the library reaches stable release, SemVer conventions will be followed more strictly. Share feedback by [filing an issue](https://github.com/anthropics/anthropic-sdk-csharp/issues/new).
-
-This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:
+This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backward-incompatible changes may be released as minor versions:
 
 1.  Changes to library internals that are technically public but not intended or documented for external use.
 2.  Changes that aren't expected to impact the vast majority of users in practice.
 
-Backwards-compatibility is taken seriously to ensure you can rely on a smooth upgrade experience.
+Backward-compatibility is taken seriously to ensure you can rely on a smooth upgrade experience.
 
-
-
-
-Additional resources
+## Additional resources
 
 - [GitHub repository](https://github.com/anthropics/anthropic-sdk-csharp)
 - [NuGet package](https://www.nuget.org/packages/Anthropic)
@@ -24884,27 +24798,23 @@ Additional resources
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fgo)
 
 
 
-Search
+
 
+SearchCtrlK
 
 CLI, SDKs, and libraries
 
@@ -24912,7 +24822,7 @@ CLI, SDKs, and libraries
 
 ant CLI
 
-[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)
+[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)[Manage resources as code](/docs/en/cli-sdks-libraries/cli/apply)[Connect to a Managed Agents session](/docs/en/cli-sdks-libraries/cli/sessions-connect)
 
 Client SDKs
 
@@ -24922,37 +24832,29 @@ Libraries and integrations
 
 [Apple Foundation Models](/docs/en/cli-sdks-libraries/libraries/apple-foundation-models)[OpenAI SDK compatibility](/docs/en/cli-sdks-libraries/libraries/openai-sdk)
 
-[](/login)
+[Console](/)
 
-
-
-
-CLI, SDKs, and libraries
-
-Go
-
-CLI, SDKs, and libraries/Client SDKs
+[CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)Client SDKs
 
 # Go SDK
 
+Copy page
 
 
 
 Install and configure the Anthropic Go SDK with context-based cancellation and functional options
 
+Copy page
 
 
 
-The Anthropic Go library provides convenient access to the Anthropic REST API from applications written in Go.
+The Anthropic Go library provides convenient access to the Claude API from applications written in Go.
 
-
+
 
 For API feature documentation with code examples, see the [API reference](/docs/en/api/overview). This page covers Go-specific SDK features and configuration.
 
-
-
-
-Installation
+## Installation
 
 ```python
 import (
@@ -24970,17 +24872,11 @@ go get github.com/anthropics/anthropic-sdk-go
 
 
 
+## Requirements
 
-
+This library requires Go 1.24+.
 
-Requirements
-
-This library requires Go 1.23+.
-
-
-
-
-Usage
+## Usage
 
 ```python
 package main
@@ -25002,7 +24898,7 @@ func main() {
         Messages: []anthropic.MessageParam{
             anthropic.NewUserMessage(anthropic.NewTextBlock("What is a quaternion?")),
         },
-        Model: anthropic.ModelClaudeOpus5,
+        Model: anthropic.ModelClaudeOpus5_5,
     })
     if err != nil {
         panic(err.Error())
@@ -25017,26 +24913,196 @@ func main() {
 
 
 
-For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication).
+For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication). If your API key is a [personal or service account key](/docs/en/manage-claude/authentication#key-types) with access to multiple workspaces, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](/docs/en/manage-claude/authentication#select-a-workspace) shows the per-request option for this SDK.
 
 ### Conversations
 
+```python
+messages := []anthropic.MessageParam{
+    anthropic.NewUserMessage(anthropic.NewTextBlock("What is my first name?")),
+}
+
+message, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
+    Model:     anthropic.ModelClaudeOpus5_5,
+    Messages:  messages,
+    MaxTokens: 1024,
+})
+if err != nil {
+    panic(err)
+}
+
+fmt.Printf("%+v\n", message.Content)
+
+messages = append(messages, message.ToParam())
+messages = append(messages, anthropic.NewUserMessage(
+    anthropic.NewTextBlock("My full name is John Doe"),
+))
+
+message, err = client.Messages.New(context.TODO(), anthropic.MessageNewParams{
+    Model:     anthropic.ModelClaudeOpus5_5,
+    Messages:  messages,
+    MaxTokens: 1024,
+})
+if err != nil {
+    panic(err)
+}
+
+fmt.Printf("%+v\n", message.Content)
+```
+
+
+
 ### System prompts
+
+```python
+message, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
+    Model:     anthropic.ModelClaudeOpus5_5,
+    MaxTokens: 1024,
+    System: []anthropic.TextBlockParam{
+        {Text: "Be very serious at all times."},
+    },
+    Messages: messages,
+})
+if err != nil {
+    panic(err)
+}
+fmt.Printf("%+v\n", message.Content)
+```
+
+
 
 ### Streaming
 
+```python
+content := "What is a quaternion?"
+
+stream := client.Messages.NewStreaming(context.TODO(), anthropic.MessageNewParams{
+    Model:     anthropic.ModelClaudeOpus5_5,
+    MaxTokens: 1024,
+    Messages: []anthropic.MessageParam{
+        anthropic.NewUserMessage(anthropic.NewTextBlock(content)),
+    },
+})
+
+message := anthropic.Message{}
+for stream.Next() {
+    event := stream.Current()
+    err := message.Accumulate(event)
+    if err != nil {
+        panic(err)
+    }
+
+    switch eventVariant := event.AsAny().(type) {
+    case anthropic.ContentBlockDeltaEvent:
+        switch deltaVariant := eventVariant.Delta.AsAny().(type) {
+        case anthropic.TextDelta:
+            print(deltaVariant.Text)
+        }
+
+    }
+}
+
+if stream.Err() != nil {
+    panic(stream.Err())
+}
+```
+
+
+
 ### Tool calling
 
+```python
+messages := []anthropic.MessageParam{
+    anthropic.NewUserMessage(anthropic.NewTextBlock(content)),
+}
 
-
+toolParams := []anthropic.ToolParam{
+    {
+        Name:        "get_coordinates",
+        Description: anthropic.String("Accepts a place as an address, then returns the latitude and longitude coordinates."),
+        InputSchema: GetCoordinatesInputSchema,
+    },
+}
+tools := make([]anthropic.ToolUnionParam, len(toolParams))
+for i, toolParam := range toolParams {
+    tools[i] = anthropic.ToolUnionParam{OfTool: &toolParam}
+}
 
-Request fields
+for {
+    message, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
+        Model:     anthropic.ModelClaudeOpus5_5,
+        MaxTokens: 1024,
+        Messages:  messages,
+        Tools:     tools,
+    })
+
+    if err != nil {
+        panic(err)
+    }
+
+    print(color("[assistant]: "))
+    for _, block := range message.Content {
+        switch block := block.AsAny().(type) {
+        case anthropic.TextBlock:
+            println(block.Text)
+            println()
+        case anthropic.ToolUseBlock:
+            inputJSON, _ := json.Marshal(block.Input)
+            println(block.Name + ": " + string(inputJSON))
+            println()
+        }
+    }
+
+    messages = append(messages, message.ToParam())
+    toolResults := []anthropic.ContentBlockParamUnion{}
+
+    for _, block := range message.Content {
+        switch variant := block.AsAny().(type) {
+        case anthropic.ToolUseBlock:
+            print(color("[user (" + block.Name + ")]: "))
+
+            var response interface{}
+            switch block.Name {
+            case "get_coordinates":
+                var input struct {
+                    Location string `json:"location"`
+                }
+
+                err := json.Unmarshal([]byte(variant.JSON.Input.Raw()), &input)
+                if err != nil {
+                    panic(err)
+                }
+
+                response = GetCoordinates(input.Location)
+            }
+
+            b, err := json.Marshal(response)
+            if err != nil {
+                panic(err)
+            }
+
+            println(string(b))
+
+            toolResults = append(toolResults, anthropic.NewToolResultBlock(block.ID, string(b), false))
+        }
+
+    }
+    if len(toolResults) == 0 {
+        break
+    }
+    messages = append(messages, anthropic.NewUserMessage(toolResults...))
+}
+```
+
+
+
+## Request fields
 
 The anthropic library uses the [`omitzero`](https://tip.golang.org/doc/go1.24#encodingjsonpkgencodingjson) semantics from the Go 1.24+ `encoding/json` release for request fields.
 
-Required primitive fields (`int64`, `string`, etc.) feature the tag `` `json:"...,required"` ``. These fields are always serialized, even their zero values.
+Required primitive fields (such as `int64` or `string`) feature the tag `` `json:"...,required"` ``. These fields are always serialized, even their zero values.
 
-Optional primitive types are wrapped in a `param.Opt[T]`. These fields can be set with the provided constructors, `anthropic.String(string)`, `anthropic.Int(int64)`, etc.
+Optional primitive types are wrapped in a `param.Opt[T]`. These fields can be set with the provided constructors, such as `anthropic.String(string)` or `anthropic.Int(int64)`.
 
 Any `param.Opt[T]`, map, slice, struct or string enum uses the tag `` `json:"...,omitzero"` ``. Its zero value is considered omitted.
 
@@ -25092,10 +25158,7 @@ custom := param.Override[anthropic.FooParams](12)
 
 
 
-
-
-
-Request unions
+### Request unions
 
 Unions are represented as a struct with fields prefixed by "Of" for each of its variants, only one field can be non-zero. The non-zero field will be serialized.
 
@@ -25125,12 +25188,9 @@ if address := animal.GetOwner().GetAddress(); address != nil {
 
 
 
+### Deserializing params
 
-
-
-Deserializing params
-
-
+
 
 `param.SetJSON` requires SDK v1.20.0 or later.
 
@@ -25164,10 +25224,7 @@ fmt.Println(string(b) == string(b2)) // true
 
 For this use case, `param.SetJSON` (available since v1.20.0) is preferred over the more general `param.Override[T](any)` because it doesn't require spelling out the type parameter and makes the round-trip intent explicit.
 
-
-
-
-Response objects
+## Response objects
 
 All fields in response structs are ordinary value types (not pointers or wrappers). Response structs also include a special `JSON` field containing metadata about each property.
 
@@ -25228,10 +25285,7 @@ body := res.JSON.ExtraFields["my_unexpected_field"].Raw()
 
 
 
-
-
-
-Response unions
+### Response unions
 
 In responses, unions are represented by a flattened struct containing all possible fields from each of the object variants. To convert it to a variant use the `.AsFooVariant()` method or the `.AsAny()` method if present.
 
@@ -25269,12 +25323,9 @@ default:
 
 
 
+## Error handling
 
-
-
-Error handling
-
-When the API returns a non-success status code, the SDK returns an error with type `*anthropic.Error`. This contains the `StatusCode`, `*http.Request`, and `*http.Response` values of the request, as well as the JSON of the error body (much like other response objects in the SDK). The error also includes the `RequestID` from the response headers, which is useful for troubleshooting with Anthropic support.
+When the API returns a non-success status code, the SDK returns an error with type `*anthropic.Error`. This contains the `StatusCode`, `*http.Request`, and `*http.Response` values of the request, along with the JSON of the error body (much like other response objects in the SDK). The error also includes the `RequestID` from the response headers, which is useful for troubleshooting with Anthropic support.
 
 To handle errors, use the `errors.As` pattern:
 
@@ -25289,7 +25340,7 @@ _, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
         }},
         Role: anthropic.MessageParamRoleUser,
     }},
-    Model: anthropic.ModelClaudeOpus5,
+    Model: anthropic.ModelClaudeOpus5_5,
 })
 if err != nil {
     var apierr *anthropic.Error
@@ -25306,10 +25357,7 @@ if err != nil {
 
 When other errors occur, they are returned unwrapped; for example, if HTTP transport fails, you might receive `*url.Error` wrapping `*net.OpError`.
 
-
-
-
-Retries
+## Retries
 
 Certain errors will be automatically retried 2 times by default, with a short exponential backoff. The SDK retries by default all connection errors, 408 Request Timeout, 409 Conflict, 429 Rate Limit, and \>=500 Internal errors.
 
@@ -25335,7 +25383,7 @@ client := anthropic.NewClient(
                 }},
                 Role: anthropic.MessageParamRoleUser,
             }},
-            Model: anthropic.ModelClaudeOpus5,
+            Model: anthropic.ModelClaudeOpus5_5,
         },
         option.WithMaxRetries(5),
     )
@@ -25343,10 +25391,7 @@ client := anthropic.NewClient(
 
 
 
-
-
-
-Timeouts
+## Timeouts
 
 Non-streaming Messages requests time out after 10 minutes by default; other requests have no default timeout. Use context to configure a timeout for a request lifecycle.
 
@@ -25369,7 +25414,7 @@ defer cancel()
                 }},
                 Role: anthropic.MessageParamRoleUser,
             }},
-            Model: anthropic.ModelClaudeOpus5,
+            Model: anthropic.ModelClaudeOpus5_5,
         },
         // This sets the per-retry timeout
         option.WithRequestTimeout(20*time.Second),
@@ -25378,10 +25423,7 @@ defer cancel()
 
 
 
-
-
-
-Long requests
+## Long requests
 
 
 
@@ -25391,22 +25433,19 @@ Avoid setting a large `MaxTokens` value without using streaming as some networks
 
 This SDK will also return an error if a non-streaming request is expected to be above roughly 10 minutes long. Calling `.Messages.NewStreaming()` or [setting a custom timeout](#timeouts) disables this error.
 
-
-
-
-File uploads
+## File uploads
 
 Request parameters that correspond to file uploads in multipart requests are typed as `io.Reader`. The contents of the `io.Reader` will by default be sent as a multipart form part with the file name of "anonymous_file" and content-type of "application/octet-stream", so the recommended approach is to specify a custom content-type with the `anthropic.File(reader io.Reader, filename string, contentType string)` helper, which wraps any `io.Reader` with the appropriate file name and content type.
 
 ```python
 // A file from the file system
 file, err := os.Open("/path/to/file.json")
-anthropic.BetaFileUploadParams{
+anthropic.FileUploadParams{
     File: anthropic.File(file, "custom-name.json", "application/json"),
 }
 
 // A file from a string
-anthropic.BetaFileUploadParams{
+anthropic.FileUploadParams{
     File: anthropic.File(strings.NewReader("my file contents"), "custom-name.json", "application/json"),
 }
 ```
@@ -25415,10 +25454,7 @@ anthropic.BetaFileUploadParams{
 
 The file name and content-type can also be customized by implementing `Name() string` or `ContentType() string` on the run-time type of `io.Reader`. Note that `os.File` implements `Name() string`, so a file returned by `os.Open` will be sent with the file name on disk.
 
-
-
-
-Pagination
+## Pagination
 
 This library provides some conveniences for working with paginated list endpoints.
 
@@ -25431,7 +25467,7 @@ iter := client.Messages.Batches.ListAutoPaging(context.TODO(), anthropic.Message
 // Automatically fetches more pages as needed.
 for iter.Next() {
     messageBatch := iter.Current()
-    fmt.Printf("%+v\n", messageBatch)
+    fmt.Println(messageBatch.ID)
 }
 if err := iter.Err(); err != nil {
     panic(err.Error())
@@ -25448,7 +25484,7 @@ page, err := client.Messages.Batches.List(context.TODO(), anthropic.MessageBatch
 })
 for page != nil {
     for _, batch := range page.Data {
-        fmt.Printf("%+v\n", batch)
+        fmt.Println(batch.ID)
     }
     page, err = page.GetNextPage()
 }
@@ -25459,10 +25495,7 @@ if err != nil {
 
 
 
-
-
-
-RequestOptions
+## RequestOptions
 
 This library uses the functional options pattern. Functions defined in the `option` package return a `RequestOption`, which is a closure that mutates a `RequestConfig`. These options can be supplied to the client or at individual requests. For example:
 
@@ -25486,19 +25519,13 @@ The request option `option.WithDebugLog(nil)` may be helpful while debugging.
 
 See the [full list of request options](https://pkg.go.dev/github.com/anthropics/anthropic-sdk-go/option).
 
-
-
-
-HTTP client customization
+## HTTP client customization
 
 For request middleware (`option.WithMiddleware`) and replacing the default `http.Client` (`option.WithHTTPClient`), see [SDK middleware](/docs/en/cli-sdks-libraries/middleware).
 
+## Platform integrations
 
-
-
-Platform integrations
-
-
+
 
 For detailed platform setup guides with code examples, see:
 
@@ -25516,15 +25543,9 @@ The Go SDK supports the following platforms:
 
 Use `bedrock.NewMantleClient` for new projects; `bedrock.WithLoadDefaultConfig`/`WithConfig` remain for existing applications using the Bedrock `InvokeModel` API.
 
+## Advanced usage
 
-
-
-Advanced usage
-
-
-
-
-Accessing raw response data (for example, response headers)
+### Accessing raw response data (for example, response headers)
 
 You can access the raw HTTP response data by using the `option.WithResponseInto()` request option. This is useful when you need to examine response headers, status codes, or other details.
 
@@ -25543,14 +25564,14 @@ message, err := client.Messages.New(
             }},
             Role: anthropic.MessageParamRoleUser,
         }},
-        Model: anthropic.ModelClaudeOpus5,
+        Model: anthropic.ModelClaudeOpus5_5,
     },
     option.WithResponseInto(&response),
 )
 if err != nil {
     // handle error
 }
-fmt.Printf("%+v\n", message)
+fmt.Printf("%+v\n", message.Content)
 
 fmt.Printf("Status Code: %d\n", response.StatusCode)
 fmt.Printf("Headers: %+#v\n", response.Header)
@@ -25558,17 +25579,11 @@ fmt.Printf("Headers: %+#v\n", response.Header)
 
 
 
-
-
-
-Making custom/undocumented requests
+### Making custom/undocumented requests
 
 This library is typed for convenient access to the documented API. If you need to access undocumented endpoints, params, or response properties, the library can still be used.
 
-
-
-
-Undocumented endpoints
+#### Undocumented endpoints
 
 To make requests to undocumented endpoints, you can use `client.Get`, `client.Post`, and other HTTP verbs. `RequestOptions` on the client, such as retries, will be respected when making these requests.
 
@@ -25590,10 +25605,7 @@ if err != nil {
 
 
 
-
-
-
-Undocumented request params
+#### Undocumented request params
 
 To make requests using undocumented parameters, you may use either the `option.WithQuerySet()` or the `option.WithJSONSet()` methods.
 
@@ -25609,33 +25621,24 @@ client.Foo.New(context.Background(), params, option.WithJSONSet("data.last_name"
 
 
 
-
-
-
-Undocumented response properties
+#### Undocumented response properties
 
 To access undocumented response properties, you may either access the raw JSON of the response as a string with `result.JSON.RawJSON()`, or get the raw JSON of a particular field on the result with `result.JSON.Foo.Raw()`.
 
 Any fields that are not present on the response struct are saved and can be accessed through `result.JSON.ExtraFields`, which is a `map[string]respjson.Field`.
 
+## Semantic versioning
 
-
-
-Semantic versioning
-
-This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:
+This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backward-incompatible changes may be released as minor versions:
 
 1.  Changes to library internals that are technically public but not intended or documented for external use.
 2.  Changes that aren't expected to impact the vast majority of users in practice.
 
-Backwards-compatibility is taken seriously to ensure you can rely on a smooth upgrade experience.
+Backward-compatibility is taken seriously to ensure you can rely on a smooth upgrade experience.
 
 Your feedback is welcome; open an [issue](https://github.com/anthropics/anthropic-sdk-go/issues) with questions, bugs, or suggestions.
 
-
-
-
-Additional resources
+## Additional resources
 
 - [GitHub repository](https://github.com/anthropics/anthropic-sdk-go)
 - [Go package documentation](https://pkg.go.dev/github.com/anthropics/anthropic-sdk-go)
@@ -25652,27 +25655,23 @@ Additional resources
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fjava)
 
 
 
-Search
+
 
+SearchCtrlK
 
 CLI, SDKs, and libraries
 
@@ -25680,7 +25679,7 @@ CLI, SDKs, and libraries
 
 ant CLI
 
-[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)
+[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)[Manage resources as code](/docs/en/cli-sdks-libraries/cli/apply)[Connect to a Managed Agents session](/docs/en/cli-sdks-libraries/cli/sessions-connect)
 
 Client SDKs
 
@@ -25690,67 +25689,49 @@ Libraries and integrations
 
 [Apple Foundation Models](/docs/en/cli-sdks-libraries/libraries/apple-foundation-models)[OpenAI SDK compatibility](/docs/en/cli-sdks-libraries/libraries/openai-sdk)
 
-[](/login)
+[Console](/)
 
-
-
-
-CLI, SDKs, and libraries
-
-Java
-
-CLI, SDKs, and libraries/Client SDKs
+[CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)Client SDKs
 
 # Java SDK
 
+Copy page
 
 
 
 Install and configure the Anthropic Java SDK with builder patterns and async support
 
+Copy page
 
 
 
-The Anthropic Java SDK provides convenient access to the Anthropic REST API from applications written in Java. It uses the builder pattern for creating requests and supports both synchronous and asynchronous operations.
+The Anthropic Java SDK provides convenient access to the Claude API from applications written in Java. It uses the builder pattern for creating requests and supports both synchronous and asynchronous operations.
 
-
+
 
 For API feature documentation with code examples, see the [API reference](/docs/en/api/overview). This page covers Java-specific SDK features and configuration.
 
-
-
-
-Installation
+## Installation
 
 Gradle
-
-Gradle
-
-Maven
 
 Maven
 
 ```python
-implementation("com.anthropic:anthropic-java:2.52.0")
+implementation("com.anthropic:anthropic-java:2.65.0")
 ```
 
 
 
-
-
-
-Requirements
+## Requirements
 
 This library requires Java 8 or later.
 
-
+
 
 The SDK supports Java 8 and later. Code examples in this documentation are written as [JDK 25 compact source files](https://openjdk.org/jeps/512), using a bare `void main()` entry point and `IO.println()` for output. The API calls themselves are identical on every supported JDK; to compile an example on an earlier version, replace `IO.println(...)` with `System.out.println(...)` and place the body inside `public static void main(String[] args)` within a class.
 
-
-
-
-Quick start
+## Quick start
 
 ```python
 import com.anthropic.client.AnthropicClient;
@@ -25766,7 +25747,7 @@ AnthropicClient client = AnthropicOkHttpClient.fromEnv();
 MessageCreateParams params = MessageCreateParams.builder()
   .maxTokens(1024L)
   .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .build();
 
 Message message = client.messages().create(params);
@@ -25774,15 +25755,9 @@ Message message = client.messages().create(params);
 
 
 
+## Client configuration
 
-
-
-Client configuration
-
-
-
-
-API key setup
+### API key setup
 
 Configure the client using system properties or environment variables:
 
@@ -25825,12 +25800,9 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
 
 
 
-For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication).
+For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication). If your API key is a [personal or service account key](/docs/en/manage-claude/authentication#key-types) with access to multiple workspaces, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](/docs/en/manage-claude/authentication#select-a-workspace) shows the per-request option for this SDK.
 
-
-
-
-Configuration options
+### Configuration options
 
 | Setter      | System property       | Environment variable   | Required | Default value                 |
 |-------------|-----------------------|------------------------|----------|-------------------------------|
@@ -25844,10 +25816,7 @@ System properties take precedence over environment variables.
 
 Don't create more than one client in the same application. Each client has a connection pool and thread pools, which are more efficient to share between requests.
 
-
-
-
-Modifying configuration
+### Modifying configuration
 
 To temporarily use a modified client configuration while reusing the same connection and thread pools, call `withOptions()` on any client or service:
 
@@ -25864,10 +25833,7 @@ AnthropicClient clientWithOptions = client.withOptions(optionsBuilder -> {
 
 The `withOptions()` method does not affect the original client or service.
 
-
-
-
-Async usage
+## Async usage
 
 The default client is synchronous. To switch to asynchronous execution, call the `async()` method:
 
@@ -25883,7 +25849,7 @@ AnthropicClient client = AnthropicOkHttpClient.fromEnv();
 MessageCreateParams params = MessageCreateParams.builder()
   .maxTokens(1024L)
   .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .build();
 
 CompletableFuture<Message> message = client.async().messages().create(params);
@@ -25905,7 +25871,7 @@ AnthropicClientAsync client = AnthropicOkHttpClientAsync.fromEnv();
 MessageCreateParams params = MessageCreateParams.builder()
   .maxTokens(1024L)
   .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .build();
 
 CompletableFuture<Message> message = client.messages().create(params);
@@ -25915,17 +25881,11 @@ CompletableFuture<Message> message = client.messages().create(params);
 
 The asynchronous client supports the same options as the synchronous one, except most methods return `CompletableFuture`s.
 
-
-
-
-Streaming
+## Streaming
 
 The SDK defines methods that return response "chunk" streams, where each chunk can be individually processed as soon as it arrives instead of waiting on the full response.
 
-
-
-
-Synchronous streaming
+### Synchronous streaming
 
 These streaming methods return `StreamResponse` for synchronous clients:
 
@@ -25943,10 +25903,7 @@ try (StreamResponse<RawMessageStreamEvent> streamResponse = client.messages().cr
 
 
 
-
-
-
-Asynchronous streaming
+### Asynchronous streaming
 
 For asynchronous clients, the method returns `AsyncStreamResponse`:
 
@@ -26019,10 +25976,7 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
 
 
 
-
-
-
-Streaming with message accumulator
+### Streaming with message accumulator
 
 A `MessageAccumulator` can record the stream of events in the response as they are processed and accumulate a `Message` object similar to what would have been returned by the non-streaming API.
 
@@ -26073,17 +26027,11 @@ Message message = messageAccumulator.message();
 
 A `BetaMessageAccumulator` is also available for the accumulation of a `BetaMessage` object. It is used in the same manner as the `MessageAccumulator`.
 
-
-
-
-Structured outputs
+## Structured outputs
 
 For complete structured outputs documentation including Java examples, see [Structured outputs](/docs/en/build-with-claude/structured-outputs).
 
-
-
-
-Tool use
+## Tool use
 
 [Tool use with Claude](/docs/en/agents-and-tools/tool-use/overview) lets you integrate external tools and functions directly into the AI model's responses. Instead of producing plain text, the model can output instructions (with parameters) for calling a tool or function when appropriate. You define JSON schemas for tools, and the model uses the schemas to determine when and how to use these tools.
 
@@ -26091,14 +26039,11 @@ The tool use feature supports a "strict" mode that guarantees that the JSON outp
 
 The SDK can derive a tool and its parameters automatically from the structure of an arbitrary Java class: the class's name (converted to snake case) provides the tool name, and the class's fields define the tool's parameters.
 
-
+
 
 Declare your tool classes as top-level classes or `static` nested classes. This requirement comes from the Jackson Databind library (`com.fasterxml.jackson.databind`), which the SDK uses to deserialize tool inputs into your class instances and cannot instantiate non-static inner classes.
 
-
-
-
-Defining tools with annotations
+### Defining tools with annotations
 
 ```python
 import com.fasterxml.jackson.annotation.JsonClassDescription;
@@ -26155,10 +26100,7 @@ static class Weather {
 
 
 
-
-
-
-Calling tools
+### Calling tools
 
 When your tool classes are defined, add them to the message parameters using `MessageCreateParams.Builder.addTool(Class<T>)` and then call them if requested to do so in the AI model's response. `BetaToolUseBlock.input(Class<T>)` can be used to parse a tool's parameters in JSON form to an instance of your tool-defining class.
 
@@ -26173,7 +26115,7 @@ import com.anthropic.models.messages.Model;
 AnthropicClient client = AnthropicOkHttpClient.fromEnv();
 
 MessageCreateParams.Builder createParamsBuilder = MessageCreateParams.builder()
-        .model(Model.CLAUDE_OPUS_5)
+        .model(Model.CLAUDE_OPUS_5_5)
         .maxTokens(2048)
         .addTool(GetWeather.class)
         .addUserMessage("What's the temperature in New York?");
@@ -26211,23 +26153,17 @@ private static Object callTool(BetaToolUseBlock toolUseBlock) {
 
 
 
-
-
-
-Tool name conversion
+### Tool name conversion
 
 Tool names are derived from the camel case tool class names (for example, `GetWeather`) and converted to snake case (for example, `get_weather`). Word boundaries begin where the current character is not the first character, is upper-case, and either the preceding character is lower-case, or the following character is lower-case. For example, `MyJSONParser` becomes `my_json_parser` and `ParseJSON` becomes `parse_json`. This conversion can be overridden using the `@JsonTypeName` annotation.
 
-
-
-
-Local tool JSON schema validation
+### Local tool JSON schema validation
 
 You can perform local validation to check that the JSON schema derived from your tool class respects Anthropic's restrictions. Local validation is enabled by default, but it can be disabled:
 
 ```python
 MessageCreateParams.Builder createParamsBuilder = MessageCreateParams.builder()
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .maxTokens(2048)
   .addTool(GetWeather.class, JsonSchemaLocalValidation.NO)
   .addUserMessage("What's the temperature in New York?");
@@ -26235,10 +26171,7 @@ MessageCreateParams.Builder createParamsBuilder = MessageCreateParams.builder()
 
 
 
-
-
-
-Annotating tool classes
+### Annotating tool classes
 
 You can use annotations to add further information about tools to the JSON schemas:
 
@@ -26248,24 +26181,18 @@ You can use annotations to add further information about tools to the JSON schem
 - `@JsonIgnore` - Exclude a `public` field or getter method from the generated JSON schema for a tool's parameters.
 - `@JsonProperty` - Include a non-`public` field or getter method in the generated JSON schema for a tool's parameters.
 
-
-
-
-Message batches
+## Message batches
 
 The SDK provides support for [Batch processing](/docs/en/build-with-claude/batch-processing) under the `client.messages().batches()` namespace. See [Pagination](#pagination) for how to list and paginate through batches.
 
-
-
-
-File uploads
+## File uploads
 
 The SDK defines methods that accept files through the `MultipartField` class:
 
 ```python
 import com.anthropic.core.MultipartField;
-import com.anthropic.models.beta.files.FileMetadata;
-import com.anthropic.models.beta.files.FileUploadParams;
+import com.anthropic.models.files.FileMetadata;
+import com.anthropic.models.files.FileUploadParams;
 
 FileUploadParams params = FileUploadParams.builder()
   .file(
@@ -26276,7 +26203,7 @@ FileUploadParams params = FileUploadParams.builder()
   )
   .build();
 
-FileMetadata fileMetadata = client.beta().files().upload(params);
+FileMetadata fileMetadata = client.files().upload(params);
 ```
 
 
@@ -26285,8 +26212,8 @@ Or from an `InputStream`:
 
 ```python
 import com.anthropic.core.MultipartField;
-import com.anthropic.models.beta.files.FileMetadata;
-import com.anthropic.models.beta.files.FileUploadParams;
+import com.anthropic.models.files.FileMetadata;
+import com.anthropic.models.files.FileUploadParams;
 
 FileUploadParams params = FileUploadParams.builder()
   .file(
@@ -26298,7 +26225,7 @@ FileUploadParams params = FileUploadParams.builder()
   )
   .build();
 
-FileMetadata fileMetadata = client.beta().files().upload(params);
+FileMetadata fileMetadata = client.files().upload(params);
 ```
 
 
@@ -26307,8 +26234,8 @@ Or from in-memory bytes:
 
 ```python
 import com.anthropic.core.MultipartField;
-import com.anthropic.models.beta.files.FileMetadata;
-import com.anthropic.models.beta.files.FileUploadParams;
+import com.anthropic.models.files.FileMetadata;
+import com.anthropic.models.files.FileUploadParams;
 
 FileUploadParams params = FileUploadParams.builder()
   .file(
@@ -26320,22 +26247,19 @@ FileUploadParams params = FileUploadParams.builder()
   )
   .build();
 
-FileMetadata fileMetadata = client.beta().files().upload(params);
+FileMetadata fileMetadata = client.files().upload(params);
 ```
 
 
 
-
-
-
-Binary responses
+### Binary responses
 
 The SDK defines methods that return binary responses for API responses that aren't necessarily parsed as JSON:
 
 ```python
 import com.anthropic.core.http.HttpResponse;
 
-HttpResponse response = client.beta().files().download("file_abc123");
+HttpResponse response = client.files().download("file_abc123");
 ```
 
 
@@ -26345,7 +26269,7 @@ To save the response content to a file:
 ```python
 import com.anthropic.core.http.HttpResponse;
 
-try (HttpResponse response = client.beta().files().download(params)) {
+try (HttpResponse response = client.files().download(params)) {
     Files.copy(
         response.body(),
         Paths.get(path),
@@ -26364,7 +26288,7 @@ Or transfer the response content to any `OutputStream`:
 ```python
 import com.anthropic.core.http.HttpResponse;
 
-try (HttpResponse response = client.beta().files().download(params)) {
+try (HttpResponse response = client.files().download(params)) {
     response.body().transferTo(Files.newOutputStream(Paths.get(path)));
 } catch (Exception e) {
     IO.println("Something went wrong!");
@@ -26374,10 +26298,7 @@ try (HttpResponse response = client.beta().files().download(params)) {
 
 
 
-
-
-
-Error handling
+## Error handling
 
 The SDK throws custom unchecked exception types:
 
@@ -26387,10 +26308,7 @@ The SDK throws custom unchecked exception types:
 - `AnthropicInvalidDataException` - Failure to interpret successfully parsed data (for example, when accessing a property that's supposed to be required, but the API unexpectedly omitted it).
 - `AnthropicException` - Base class for all exceptions.
 
-
-
-
-Status code mapping
+### Status code mapping
 
 | Status | Exception                       |
 |--------|---------------------------------|
@@ -26423,10 +26341,7 @@ try {
 
 
 
-
-
-
-Request IDs
+## Request IDs
 
 When using [raw responses](#raw-response-access), you can access the `request-id` response header using the `requestId()` method:
 
@@ -26443,10 +26358,7 @@ Optional<String> requestId = message.requestId();
 
 This can be used to quickly log failing requests and report them back to Anthropic. For more information on debugging requests, see [Request ID](/docs/en/api/errors#request-id).
 
-
-
-
-Retries
+## Retries
 
 The SDK automatically retries 2 times by default, with a short exponential backoff between requests.
 
@@ -26471,10 +26383,7 @@ AnthropicClient client = AnthropicOkHttpClient.builder().fromEnv().maxRetries(4)
 
 
 
-
-
-
-Timeouts
+## Timeouts
 
 Requests time out after 10 minutes by default.
 
@@ -26524,10 +26433,7 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
 
 
 
-
-
-
-Long requests
+## Long requests
 
 
 
@@ -26537,17 +26443,11 @@ Avoid setting a large `maxTokens` value without using streaming. Some networks m
 
 The SDK throws an error if a non-streaming request is expected to take longer than 10 minutes. Using a [streaming method](#streaming) or [overriding the timeout](#timeouts) at the client or request level disables the error.
 
-
-
-
-Pagination
+## Pagination
 
 The SDK provides convenient ways to access paginated results either one page at a time or item-by-item across all pages.
 
-
-
-
-Auto-pagination
+### Auto-pagination
 
 To iterate through all results across all pages, use the `autoPager()` method, which automatically fetches more pages as needed.
 
@@ -26620,10 +26520,7 @@ pageFuture.thenAccept(page -> page.autoPager()
 
 
 
-
-
-
-Manual pagination
+### Manual pagination
 
 To access individual page items and manually request the next page:
 
@@ -26647,15 +26544,9 @@ while (true) {
 
 
 
+## Type system
 
-
-
-Type system
-
-
-
-
-Immutability and builders
+### Immutability and builders
 
 Each class in the SDK has an associated builder for constructing it. Each class is immutable once constructed. If the class has an associated builder, then it has a `toBuilder()` method, which can be used to convert it back to a builder for making a modified copy.
 
@@ -26663,7 +26554,7 @@ Each class in the SDK has an associated builder for constructing it. Each class 
 MessageCreateParams params = MessageCreateParams.builder()
   .maxTokens(1024L)
   .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .build();
 
 // Create a modified copy using toBuilder()
@@ -26674,19 +26565,13 @@ MessageCreateParams modified = params.toBuilder().maxTokens(2048L).build();
 
 Because each class is immutable, builder modification never affects already built class instances.
 
-
-
-
-Requests and responses
+### Requests and responses
 
 To send a request to the Claude API, build an instance of some `Params` class and pass it to the corresponding client method. When the response is received, it is deserialized into an instance of a Java class.
 
 For example, `client.messages().create(...)` should be called with an instance of `MessageCreateParams`, and it returns an instance of `Message`.
 
-
-
-
-Undocumented parameters
+### Undocumented parameters
 
 To set undocumented parameters, call the `putAdditionalHeader`, `putAdditionalQueryParam`, or `putAdditionalBodyProperty` methods on any `Params` class:
 
@@ -26737,16 +26622,13 @@ import com.anthropic.models.messages.Model;
 MessageCreateParams params = MessageCreateParams.builder()
   .maxTokens(JsonValue.from(3.14))
   .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .build();
 ```
 
 
 
-
-
-
-JsonValue creation
+### JsonValue creation
 
 The most straightforward way to create a `JsonValue` is using its `from(...)` method:
 
@@ -26775,10 +26657,7 @@ JsonValue complexValue = JsonValue.from(Map.of("a", List.of(1, 2), "b", List.of(
 
 
 
-
-
-
-Forcibly omitting required parameters
+### Forcibly omitting required parameters
 
 Normally a `Builder` class's `build` method will throw `IllegalStateException` if any required parameter or property is unset. To forcibly omit a required parameter or property, pass `JsonMissing`:
 
@@ -26789,17 +26668,14 @@ import com.anthropic.models.messages.Model;
 
 MessageCreateParams params = MessageCreateParams.builder()
   .addUserMessage("Hello, world")
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .maxTokens(JsonMissing.of())
   .build();
 ```
 
 
 
-
-
-
-Response properties
+### Response properties
 
 To access undocumented response properties, call the `_additionalProperties()` method:
 
@@ -26861,10 +26737,7 @@ if (stopReason.isMissing()) {
 
 
 
-
-
-
-Response validation
+### Response validation
 
 By default, the SDK does not throw an exception when the API returns a response that doesn't match the expected type. It throws `AnthropicInvalidDataException` only if you directly access the property.
 
@@ -26904,15 +26777,9 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
 
 
 
+## HTTP client customization
 
-
-
-HTTP client customization
-
-
-
-
-Proxy configuration
+### Proxy configuration
 
 ```python
 import com.anthropic.client.AnthropicClient;
@@ -26927,12 +26794,9 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
 
 
 
+### HTTPS / SSL configuration
 
-
-
-HTTPS / SSL configuration
-
-
+
 
 Most applications should not call these methods, and instead use the system defaults. The defaults include special optimizations that can be lost if the implementations are modified.
 
@@ -26950,10 +26814,7 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
 
 
 
-
-
-
-Custom HTTP client
+### Custom HTTP client
 
 The SDK consists of three artifacts:
 
@@ -26963,10 +26824,7 @@ The SDK consists of three artifacts:
 
 This structure allows replacing the SDK's default HTTP client without pulling in unnecessary dependencies.
 
-
-
-
-Customized OkHttpClient
+#### Customized OkHttpClient
 
 
 
@@ -26978,10 +26836,7 @@ To use a customized `OkHttpClient`:
 2.  Copy `anthropic-java-client-okhttp`'s `OkHttpClient` class into your code and customize it.
 3.  Construct `AnthropicClientImpl` or `AnthropicClientAsyncImpl` using your customized client.
 
-
-
-
-Completely custom HTTP client
+#### Completely custom HTTP client
 
 To use a completely custom HTTP client:
 
@@ -26989,12 +26844,9 @@ To use a completely custom HTTP client:
 2.  Write a class that implements the `HttpClient` interface.
 3.  Construct `AnthropicClientImpl` or `AnthropicClientAsyncImpl` using your new client class.
 
+## Platform integrations
 
-
-
-Platform integrations
-
-
+
 
 For detailed platform setup guides with code examples, see:
 
@@ -27013,17 +26865,11 @@ The Java SDK supports the following platforms through separate dependencies that
 
 Use `BedrockMantleBackend` for new projects; `BedrockBackend` remains for existing applications using the Bedrock `InvokeModel` API.
 
-Each `Backend` implementation is passed to the client with `.backend()` on `AnthropicOkHttpClient.builder()`. Each cloud backend pulls in its respective cloud-platform SDK classes as transitive dependencies.
+The platform artifacts are add-ons to the base `com.anthropic:anthropic-java` dependency, which provides `AnthropicOkHttpClient`, so install both. Each `Backend` implementation is passed to the client with `.backend()` on `AnthropicOkHttpClient.builder()`. Each cloud backend pulls in its respective cloud-platform SDK classes as transitive dependencies.
 
+## Advanced usage
 
-
-
-Advanced usage
-
-
-
-
-Raw response access
+### Raw response access
 
 To access HTTP headers, status codes, and the raw response body, prefix any HTTP method call with `withRawResponse()`:
 
@@ -27037,7 +26883,7 @@ import com.anthropic.models.messages.Model;
 MessageCreateParams params = MessageCreateParams.builder()
   .maxTokens(1024L)
   .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .build();
 
 HttpResponseFor<Message> message = client.messages().withRawResponse().create(params);
@@ -27059,10 +26905,7 @@ Message parsedMessage = message.parse();
 
 
 
-
-
-
-Logging
+### Logging
 
 The SDK uses the standard OkHttp logging interceptor.
 
@@ -27084,33 +26927,37 @@ export ANTHROPIC_LOG=debug
 
 ### Jackson compatibility
 
+The SDK depends on Jackson for JSON serialization/deserialization. It is compatible with version 2.13.4 or higher, but depends on version 2.19.4 by default.
+
+The SDK throws an exception if it detects an incompatible Jackson version at runtime (for example, if the default version was overridden in your Maven or Gradle config).
+
+If the SDK threw an exception, but you're certain the version is compatible, then disable the version check using `checkJacksonVersionCompatibility` on `AnthropicOkHttpClient` or `AnthropicOkHttpClientAsync`.
+
+
+
+There is no guarantee that the SDK works correctly when the Jackson version check is disabled.
+
+There are also bugs in older Jackson versions that can affect the SDK. The SDK doesn't work around all Jackson bugs and expects users to upgrade Jackson for those instead.
+
 ### ProGuard/R8 configuration
 
+Although the SDK uses reflection, it is still usable with ProGuard and R8 because `anthropic-java-core` is published with a configuration file containing keep rules.
 
-
+ProGuard and R8 should automatically detect and use the published rules, but you can also manually copy the keep rules if necessary.
 
-Undocumented API functionality
+### Undocumented API functionality
 
 The SDK is typed for convenient usage of the documented API. However, it also supports working with undocumented or not yet supported parts of the API.
 
-
-
-
-Undocumented request parameters
+#### Undocumented request parameters
 
 To set undocumented request parameters, use the `putAdditionalHeader`, `putAdditionalQueryParam`, or `putAdditionalBodyProperty` methods as described in [Undocumented parameters](#undocumented-parameters).
 
-
-
-
-Undocumented response properties
+#### Undocumented response properties
 
 To access undocumented response properties, use the `_additionalProperties()` method as described in [Response properties](#response-properties).
 
-
-
-
-New or unreleased enum values
+#### New or unreleased enum values
 
 Enum-like classes in the SDK, such as `Model` and `AnthropicBeta`, are not closed Java `enum` types. Each one provides an `of(String)` factory method that accepts any string, so you can use values that have not been added to the SDK yet, such as a model or beta header released after your SDK version:
 
@@ -27140,23 +26987,17 @@ MessageCreateParams params = MessageCreateParams.builder()
 
 Prefer the well-typed constants (for example, `Model.CLAUDE_OPUS_5`) so you get autocomplete and deprecation warnings. The `String` overloads and `of(...)` are primarily for setting the field to an undocumented or not yet supported value while waiting for an SDK release that includes it.
 
-
-
-
-Beta features
+## Beta features
 
 Beta features are available before general release to get early feedback and test new functionality. You can check the availability of all of Claude's capabilities and tools in the [build with Claude overview](/docs/en/build-with-claude/overview).
 
 You can access most beta API features through the `beta()` method on the client. To enable a particular beta feature, add the appropriate [beta header](/docs/en/api/beta-headers) with `.addBeta()` when building the message params.
 
-For example, to use the [Files API](/docs/en/build-with-claude/files):
+For example, to enable [context editing](/docs/en/build-with-claude/context-editing):
 
 ```python
 import com.anthropic.models.beta.AnthropicBeta;
-import com.anthropic.models.beta.messages.BetaContentBlockParam;
 import com.anthropic.models.beta.messages.BetaMessage;
-import com.anthropic.models.beta.messages.BetaRequestDocumentBlock;
-import com.anthropic.models.beta.messages.BetaTextBlockParam;
 import com.anthropic.models.beta.messages.MessageCreateParams;
 // ...
 void main() {
@@ -27164,51 +27005,55 @@ void main() {
 
     BetaMessage message = client.beta().messages().create(
         MessageCreateParams.builder()
-            .model(Model.CLAUDE_OPUS_5)
+            .model(Model.CLAUDE_OPUS_5_5)
             .maxTokens(1024L)
-            .addBeta(AnthropicBeta.FILES_API_2025_04_14)
-            .addUserMessageOfBetaContentBlockParams(List.of(
-                BetaContentBlockParam.ofText(
-                    BetaTextBlockParam.builder()
-                        .text("Please summarize this document for me.")
-                        .build()),
-                BetaContentBlockParam.ofDocument(
-                    BetaRequestDocumentBlock.builder()
-                        .fileSource("file_abc123")
-                        .build())))
+            .addBeta(AnthropicBeta.CONTEXT_MANAGEMENT_2025_06_27)
+            .addUserMessage("Hello, Claude")
             .build());
 }
 ```
 
 
 
-
-
-
-Frequently asked questions
+## Frequently asked questions
 
 ### Why doesn't the SDK use plain enum classes?
 
+Java `enum` classes are not trivially forward compatible. Using them in the SDK could cause runtime exceptions if the API is updated to respond with a new enum value.
+
+Because these classes are open, you can also construct them with any string value through their `of(String)` factory method. See [New or unreleased enum values](#new-or-unreleased-enum-values) if you need to use a value that isn't in your SDK version yet.
+
 ### Why are fields represented using JsonField\<T\> instead of just plain T?
+
+Using `JsonField<T>` enables a few features:
+
+- Allowing usage of undocumented API functionality
+- Lazily validating the API response against the expected shape
+- Representing absent vs explicitly null values
 
 ### Why doesn't the SDK use data classes?
 
+It is not backwards compatible to add new fields to a data class, and the SDK avoids introducing a breaking change every time a field is added to a class.
+
 ### Why doesn't the SDK use checked exceptions?
 
+Checked exceptions are widely considered a mistake in the Java programming language. In fact, they were omitted from Kotlin for this reason.
 
-
+Checked exceptions:
 
-Semantic versioning
+- Are verbose to handle
+- Encourage error handling at the wrong level of abstraction, where nothing can be done about the error
+- Are tedious to propagate because of the function coloring problem
+- Don't play well with lambdas (also because of the function coloring problem)
 
-This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:
+## Semantic versioning
+
+This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backward-incompatible changes may be released as minor versions:
 
 1.  Changes to library internals which are technically public but not intended or documented for external use.
 2.  Changes that aren't expected to impact the vast majority of users in practice.
 
-
-
-
-Additional resources
+## Additional resources
 
 - [GitHub repository](https://github.com/anthropics/anthropic-sdk-java)
 - [Javadocs](https://javadoc.io/doc/com.anthropic/anthropic-java)
@@ -27226,27 +27071,23 @@ Additional resources
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fphp)
 
 
 
-Search
+
 
+SearchCtrlK
 
 CLI, SDKs, and libraries
 
@@ -27254,7 +27095,7 @@ CLI, SDKs, and libraries
 
 ant CLI
 
-[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)
+[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)[Manage resources as code](/docs/en/cli-sdks-libraries/cli/apply)[Connect to a Managed Agents session](/docs/en/cli-sdks-libraries/cli/sessions-connect)
 
 Client SDKs
 
@@ -27264,41 +27105,33 @@ Libraries and integrations
 
 [Apple Foundation Models](/docs/en/cli-sdks-libraries/libraries/apple-foundation-models)[OpenAI SDK compatibility](/docs/en/cli-sdks-libraries/libraries/openai-sdk)
 
-[](/login)
+[Console](/)
 
-
-
-
-CLI, SDKs, and libraries
-
-PHP
-
-CLI, SDKs, and libraries/Client SDKs
+[CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)Client SDKs
 
 # PHP SDK
 
+Copy page
 
 
 
 Install and configure the Anthropic PHP SDK with value objects and builder patterns
 
+Copy page
 
 
 
-The Anthropic PHP library provides convenient access to the Anthropic REST API from any PHP 8.1.0+ application.
+The Anthropic PHP library provides convenient access to the Claude API from any PHP 8.1.0+ application.
 
-
+
 
 The PHP SDK is currently in beta. APIs might change between versions.
 
-
+
 
 For API feature documentation with code examples, see the [API reference](/docs/en/api/overview). This page covers PHP-specific SDK features and configuration.
 
-
-
-
-Installation
+## Installation
 
 The SDK uses [PSR-18](https://www.php-fig.org/psr/psr-18/) for HTTP and discovers any installed PSR-18 client automatically. [Guzzle](https://docs.guzzlephp.org/) is recommended because the SDK configures it for streaming with no additional setup:
 
@@ -27308,17 +27141,11 @@ composer require "anthropic-ai/sdk" "guzzlehttp/guzzle:^7"
 
 
 
-
-
-
-Requirements
+## Requirements
 
 PHP 8.1.0 or higher.
 
-
-
-
-Usage
+## Usage
 
 This library uses named parameters to specify optional arguments. Parameters with a default value must be set by name.
 
@@ -27328,7 +27155,7 @@ $client = new Client();
 $message = $client->messages->create(
   maxTokens: 1024,
   messages: [['role' => 'user', 'content' => 'Hello, Claude']],
-  model: 'claude-opus-5',
+  model: 'claude-opus-5-5',
 );
 
 $textBlock = array_find($message->content, static fn ($block): bool => $block->type === 'text');
@@ -27337,21 +27164,15 @@ echo $textBlock->text;
 
 
 
-For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication).
+For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication). If your API key is a [personal or service account key](/docs/en/manage-claude/authentication#key-types) with access to multiple workspaces, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](/docs/en/manage-claude/authentication#select-a-workspace) shows the per-request option for this SDK.
 
-
-
-
-Value objects
+## Value objects
 
 It is recommended to use the static `with` constructor `Base64ImageSource::with(data: "U3RhaW5sZXNzIHJvY2tz", ...)` and named parameters to initialize value objects.
 
 However, builders are also provided `(new Base64ImageSource)->withData("U3RhaW5sZXNzIHJvY2tz")`.
 
-
-
-
-Streaming
+## Streaming
 
 The SDK provides support for streaming responses using Server-Sent Events (SSE).
 
@@ -27361,7 +27182,7 @@ $client = new Client();
 $stream = $client->messages->createStream(
   maxTokens: 1024,
   messages: [['role' => 'user', 'content' => 'Hello, Claude']],
-  model: 'claude-opus-5',
+  model: 'claude-opus-5-5',
 );
 
 foreach ($stream as $event) {
@@ -27381,10 +27202,7 @@ $client = new Anthropic\Client(
 
 
 
-
-
-
-Error handling
+## Error handling
 
 When the library is unable to connect to the API, or if the API returns a non-success status code (that is, a 4xx or 5xx response), a subclass of `Anthropic\Core\Exceptions\APIException` is thrown:
 
@@ -27399,7 +27217,7 @@ try {
   $message = $client->messages->create(
     maxTokens: 1024,
     messages: [['role' => 'user', 'content' => 'Hello, Claude']],
-    model: 'claude-opus-5',
+    model: 'claude-opus-5-5',
   );
 } catch (APIConnectionException $e) {
   echo "The server could not be reached", PHP_EOL;
@@ -27430,10 +27248,7 @@ Error codes are as follows:
 | Timeout          | `APITimeoutException`          |
 | Network error    | `APIConnectionException`       |
 
-
-
-
-Retries
+## Retries
 
 Certain errors are automatically retried two times by default, with a short exponential backoff.
 
@@ -27451,17 +27266,14 @@ $client = new Client(requestOptions: RequestOptions::with(maxRetries: 0));
 $result = $client->messages->create(
   maxTokens: 1024,
   messages: [['role' => 'user', 'content' => 'Hello, Claude']],
-  model: 'claude-opus-5',
+  model: 'claude-opus-5-5',
   requestOptions: RequestOptions::with(maxRetries: 5),
 );
 ```
 
 
 
-
-
-
-Pagination
+## Pagination
 
 List methods in the Claude API are paginated.
 
@@ -27484,19 +27296,13 @@ foreach ($page->pagingEachItem() as $item) {
 
 
 
+## Advanced usage
 
-
-
-Advanced usage
-
-
-
-
-Undocumented properties
+### Undocumented properties
 
 You can send undocumented parameters to any endpoint, and read undocumented response properties, as follows:
 
-
+
 
 The `extra*` parameters of the same name override the documented parameters.
 
@@ -27508,7 +27314,7 @@ use Anthropic\RequestOptions;
 $message = $client->messages->create(
   maxTokens: 1024,
   messages: [['role' => 'user', 'content' => 'Hello, Claude']],
-  model: 'claude-opus-5',
+  model: 'claude-opus-5-5',
   requestOptions: RequestOptions::with(
     extraQueryParams: ['my_query_parameter' => 'value'],
     extraBodyParams: ['my_body_parameter' => 'value'],
@@ -27519,17 +27325,11 @@ $message = $client->messages->create(
 
 
 
-
-
-
-Undocumented request parameters
+### Undocumented request parameters
 
 If you want to explicitly send an extra parameter, you can do so with the `extraQueryParams`, `extraBodyParams`, and `extraHeaders` options under `RequestOptions::with()` when making a request, as seen in the preceding example.
 
-
-
-
-Undocumented endpoints
+### Undocumented endpoints
 
 To make requests to undocumented endpoints while retaining the benefit of authentication, retries, and other client features, you can make requests using `client->request`, as follows:
 
@@ -27547,12 +27347,9 @@ $response = $client->request(
 
 
 
+## Platform integrations
 
-
-
-Platform integrations
-
-
+
 
 For detailed platform setup guides with code examples, see:
 
@@ -27572,19 +27369,13 @@ The PHP SDK supports the following platforms:
 
 Use `MantleClient` for new projects; `Anthropic\Bedrock\Client` remains for existing applications using the Bedrock `InvokeModel` API.
 
-
-
-
-Semantic versioning
+## Semantic versioning
 
 This package follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions. As the library is in initial development and has a major version of `0`, APIs might change at any time.
 
 This package considers improvements to the (non-runtime) PHPDoc type definitions to be non-breaking changes.
 
-
-
-
-Additional resources
+## Additional resources
 
 - [GitHub repository](https://github.com/anthropics/anthropic-sdk-php)
 - [Packagist](https://packagist.org/packages/anthropic-ai/sdk)
@@ -27601,27 +27392,23 @@ Additional resources
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fpython)
 
 
 
-Search
+
 
+SearchCtrlK
 
 CLI, SDKs, and libraries
 
@@ -27629,7 +27416,7 @@ CLI, SDKs, and libraries
 
 ant CLI
 
-[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)
+[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)[Manage resources as code](/docs/en/cli-sdks-libraries/cli/apply)[Connect to a Managed Agents session](/docs/en/cli-sdks-libraries/cli/sessions-connect)
 
 Client SDKs
 
@@ -27639,37 +27426,29 @@ Libraries and integrations
 
 [Apple Foundation Models](/docs/en/cli-sdks-libraries/libraries/apple-foundation-models)[OpenAI SDK compatibility](/docs/en/cli-sdks-libraries/libraries/openai-sdk)
 
-[](/login)
+[Console](/)
 
-
-
-
-CLI, SDKs, and libraries
-
-Python
-
-CLI, SDKs, and libraries/Client SDKs
+[CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)Client SDKs
 
 # Python SDK
 
+Copy page
 
 
 
 Install and configure the Anthropic Python SDK with sync and async client support
 
+Copy page
 
 
 
-The Anthropic Python SDK provides convenient access to the Anthropic REST API from Python applications. It supports both synchronous and asynchronous operations, streaming, and integrations with Amazon Bedrock, Claude Platform on AWS, Google Cloud, and Microsoft Foundry.
+The Anthropic Python SDK provides convenient access to the Claude API from Python applications. It supports both synchronous and asynchronous operations, streaming, and integrations with Amazon Bedrock, Claude Platform on AWS, Google Cloud, and Microsoft Foundry.
 
-
+
 
 For API feature documentation with code examples, see the [API reference](/docs/en/api/overview). This page covers Python-specific SDK features and configuration.
 
-
-
-
-Installation
+## Installation
 
 ```python
 pip install anthropic
@@ -27697,17 +27476,11 @@ pip install "anthropic[aiohttp]"
 
 
 
+## Requirements
 
-
+Python 3.10 or later is required. If you are upgrading from a 0.x release of the SDK, see the [v1 migration guide](https://github.com/anthropics/anthropic-sdk-python/blob/main/MIGRATION.md) for the list of breaking changes.
 
-Requirements
-
-Python 3.9 or later is required.
-
-
-
-
-Usage
+## Usage
 
 ```python
 import os
@@ -27726,7 +27499,7 @@ message = client.messages.create(
             "content": "Hello, Claude",
         }
     ],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
 )
 
 for block in message.content:
@@ -27740,12 +27513,9 @@ for block in message.content:
 
 Consider using [python-dotenv](https://pypi.org/project/python-dotenv/) to add `ANTHROPIC_API_KEY="my-anthropic-api-key"` to your `.env` file so that your API key isn't stored in source control.
 
-For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication).
+For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication). If your API key is a [personal or service account key](/docs/en/manage-claude/authentication#key-types) with access to multiple workspaces, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](/docs/en/manage-claude/authentication#select-a-workspace) shows the per-request option for this SDK.
 
-
-
-
-Async usage
+## Async usage
 
 ```python
 import os
@@ -27766,7 +27536,7 @@ async def main() -> None:
                 "content": "Hello, Claude",
             }
         ],
-        model="claude-opus-5",
+        model="claude-opus-5-5",
     )
     print(message.content)
 
@@ -27776,12 +27546,9 @@ asyncio.run(main())
 
 
 
+### Using aiohttp for better concurrency
 
-
-
-Using aiohttp for better concurrency
-
-For improved async performance, you can use the `aiohttp` HTTP backend instead of the default `httpx`:
+For improved async performance, you can use the `aiohttp` HTTP backend instead of the default `httpx2`:
 
 ```python
 import os
@@ -27802,7 +27569,7 @@ async def main() -> None:
                     "content": "Hello, Claude",
                 }
             ],
-            model="claude-opus-5",
+            model="claude-opus-5-5",
         )
         print(message.content)
 
@@ -27812,10 +27579,7 @@ asyncio.run(main())
 
 
 
-
-
-
-Streaming responses
+## Streaming responses
 
 The SDK provides support for streaming responses using Server-Sent Events (SSE).
 
@@ -27830,7 +27594,7 @@ stream = client.messages.create(
             "content": "Hello, Claude",
         }
     ],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     stream=True,
 )
 for event in stream:
@@ -27852,7 +27616,7 @@ stream = await client.messages.create(
             "content": "Hello, Claude",
         }
     ],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     stream=True,
 )
 async for event in stream:
@@ -27861,10 +27625,7 @@ async for event in stream:
 
 
 
-
-
-
-Streaming helpers
+### Streaming helpers
 
 The SDK also provides streaming helpers that use context managers and provide access to the accumulated text and the final message:
 
@@ -27878,7 +27639,7 @@ async def main() -> None:
                 "content": "Say hello there!",
             }
         ],
-        model="claude-opus-5",
+        model="claude-opus-5-5",
     ) as stream:
         async for text in stream.text_stream:
             print(text, end="", flush=True)
@@ -27897,10 +27658,7 @@ Streaming with `client.messages.stream(...)` exposes various helpers including a
 
 Alternatively, you can use `client.messages.create(..., stream=True)` which only returns an iterable of the events in the stream and uses less memory (it doesn't build up a final message object for you).
 
-
-
-
-Token counting
+## Token counting
 
 You can see the exact usage for a given request through the `usage` response property:
 
@@ -27916,24 +27674,19 @@ You can also count tokens before making a request:
 
 ```python
 count = client.messages.count_tokens(
-    model="claude-opus-5", messages=[{"role": "user", "content": "Hello, world"}]
+    model="claude-opus-5-5",
+    messages=[{"role": "user", "content": "Hello, world"}],
 )
 print(count.input_tokens)  # 10
 ```
 
 
 
-
-
-
-Tool use
+## Tool use
 
 This SDK provides support for tool use, also known as function calling. For more details, see [Tool use with Claude](/docs/en/agents-and-tools/tool-use/overview).
 
-
-
-
-Tool helpers
+### Tool helpers
 
 The SDK provides helpers for defining and running tools as pure Python functions. The `@beta_tool` decorator generates the tool schema from the function signature and docstring:
 
@@ -27965,7 +27718,7 @@ def get_weather(location: str) -> str:
 # Use the tool_runner to automatically handle tool calls
 runner = client.beta.messages.tool_runner(
     max_tokens=1024,
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     tools=[get_weather],
     messages=[
         {"role": "user", "content": "What is the weather in SF?"},
@@ -27979,17 +27732,11 @@ for message in runner:
 
 On every iteration, an API request is made. If the response includes a call to one of the given tools, the tool is automatically called, and the result is returned directly to the model in the next iteration.
 
+## Message batches
 
-
+This SDK provides support for [Batch processing](/docs/en/build-with-claude/batch-processing) under `client.messages.batches`.
 
-Message batches
-
-This SDK provides support for the [Message Batches API](/docs/en/build-with-claude/batch-processing) under `client.messages.batches`.
-
-
-
-
-Creating a batch
+### Creating a batch
 
 Message Batches takes an array of requests, where each object has a `custom_id` identifier and the same request `params` as the standard Messages API:
 
@@ -27999,7 +27746,7 @@ client.messages.batches.create(
         {
             "custom_id": "my-first-request",
             "params": {
-                "model": "claude-opus-5",
+                "model": "claude-opus-5-5",
                 "max_tokens": 1024,
                 "messages": [{"role": "user", "content": "Hello, world"}],
             },
@@ -28007,7 +27754,7 @@ client.messages.batches.create(
         {
             "custom_id": "my-second-request",
             "params": {
-                "model": "claude-opus-5",
+                "model": "claude-opus-5-5",
                 "max_tokens": 1024,
                 "messages": [{"role": "user", "content": "Hi again, friend"}],
             },
@@ -28018,10 +27765,7 @@ client.messages.batches.create(
 
 
 
-
-
-
-Getting results from a batch
+### Getting results from a batch
 
 Once a Message Batch has been processed, indicated by `.processing_status == 'ended'`, you can access the results with `.batches.results()`:
 
@@ -28036,10 +27780,7 @@ for entry in result_stream:
 
 
 
-
-
-
-File uploads
+## File uploads
 
 Request parameters that correspond to file uploads can be passed in many different forms:
 
@@ -28054,12 +27795,12 @@ from anthropic import Anthropic
 client = Anthropic()
 
 # Upload using a file path
-client.beta.files.upload(
+client.files.upload(
     file=Path("/path/to/file"),
 )
 
 # Upload using bytes
-client.beta.files.upload(
+client.files.upload(
     file=("file.txt", b"my bytes", "text/plain"),
 )
 ```
@@ -28068,10 +27809,7 @@ client.beta.files.upload(
 
 The async client uses the exact same interface. If you pass a `PathLike` instance, the file contents are read asynchronously automatically.
 
-
-
-
-Handling errors
+## Handling errors
 
 When the library is unable to connect to the API, or if the API returns a non-success status code (that is, 4xx or 5xx response), a subclass of `APIError` is raised:
 
@@ -28087,11 +27825,11 @@ try:
                 "content": "Hello, Claude",
             }
         ],
-        model="claude-opus-5",
+        model="claude-opus-5-5",
     )
 except anthropic.APIConnectionError as e:
     print("The server could not be reached")
-    print(e.__cause__)  # an underlying Exception, likely raised within httpx
+    print(e.__cause__)  # an underlying Exception, likely raised within httpx2
 except anthropic.RateLimitError as e:
     print("A 429 status code was received; we should back off a bit.")
 except anthropic.APIStatusError as e:
@@ -28116,10 +27854,7 @@ Error codes are as follows:
 | \>=500      | `InternalServerError`      |
 | N/A         | `APIConnectionError`       |
 
-
-
-
-Request IDs
+## Request IDs
 
 > For more information on debugging requests, see [Request ID](/docs/en/api/errors#request-id).
 
@@ -28129,21 +27864,18 @@ All object responses in the SDK provide a `_request_id` property which is added 
 message = client.messages.create(
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello, Claude"}],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
 )
 print(message._request_id)  # e.g., req_018EeWyXxfu5pfWkrYcMdjWG
 ```
 
 
 
-
+
 
 Unlike other properties that use an `_` prefix, the `_request_id` property is public. Unless documented otherwise, all other `_` prefix properties, methods, and modules are private.
 
-
-
-
-Retries
+## Retries
 
 Certain errors are automatically retried 2 times by default, with a short exponential backoff. Connection errors (for example, because of a network connectivity problem), 408 Request Timeout, 409 Conflict, 429 Rate Limit, and \>=500 Internal errors are all retried by default.
 
@@ -28159,21 +27891,18 @@ client = Anthropic(
 client.with_options(max_retries=5).messages.create(
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello, Claude"}],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
 )
 ```
 
 
 
+## Timeouts
 
-
-
-Timeouts
-
-By default requests time out after 10 minutes. You can configure this with a `timeout` option, which accepts a float or an `httpx.Timeout` object:
+By default requests time out after 10 minutes. You can configure this with a `timeout` option, which accepts a float or an `httpx2.Timeout` object:
 
 ```python
-import httpx
+import httpx2
 from anthropic import Anthropic
 
 # Configure the default for all requests:
@@ -28183,14 +27912,14 @@ client = Anthropic(
 
 # More granular control:
 client = Anthropic(
-    timeout=httpx.Timeout(60.0, read=5.0, write=10.0, connect=2.0),
+    timeout=httpx2.Timeout(60.0, read=5.0, write=10.0, connect=2.0),
 )
 
 # Override per-request:
 client.with_options(timeout=5.0).messages.create(
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello, Claude"}],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
 )
 ```
 
@@ -28200,10 +27929,7 @@ On timeout, the SDK throws an `APITimeoutError`.
 
 Note that requests that time out are [retried twice by default](#retries).
 
-
-
-
-Long requests
+## Long requests
 
 
 
@@ -28217,10 +27943,7 @@ An expected request latency longer than the [timeout](#timeouts) for a non-strea
 
 The SDK sets a [TCP socket keep-alive](https://tldp.org/HOWTO/TCP-Keepalive-HOWTO/overview.html) option to reduce the impact of idle connection timeouts on some networks. This can be overridden by passing a custom `http_client` option to the client.
 
-
-
-
-Auto-pagination
+## Auto-pagination
 
 List methods in the Claude API are paginated. You can use the `for` syntax to iterate through items across all pages:
 
@@ -28280,10 +28003,7 @@ for batch in first_page.data:
 
 
 
-
-
-
-Default headers
+## Default headers
 
 The SDK automatically sends the `anthropic-version` header set to `2023-06-01`.
 
@@ -28303,31 +28023,22 @@ client = Anthropic(
 client.messages.with_raw_response.create(
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello, Claude"}],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     extra_headers={"anthropic-version": "My-Custom-Value"},
 )
 ```
 
 
 
+## Type system
 
-
-
-Type system
-
-
-
-
-Request parameters
+### Request parameters
 
 Nested request parameters are [TypedDicts](https://docs.python.org/3/library/typing.html#typing.TypedDict). Responses are [Pydantic models](https://docs.pydantic.dev) which also have helper methods for things like serializing back into JSON ([`v1`](https://docs.pydantic.dev/1.10/usage/models/), [`v2`](https://docs.pydantic.dev/latest/concepts/serialization/)).
 
 Typed requests and responses provide autocomplete and documentation within your editor. If you'd like to see type errors in VS Code to help catch bugs earlier, set `python.analysis.typeCheckingMode` to `basic`.
 
-
-
-
-Response models
+### Response models
 
 To convert a Pydantic model to a dictionary, use the helper methods:
 
@@ -28343,16 +28054,13 @@ data = message.to_dict()
 
 
 
-
-
-
-Handling null vs missing fields
+### Handling null vs missing fields
 
 In responses, you can distinguish between fields that are explicitly `null` versus fields that were not returned (missing):
 
 ```python
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello"}],
 )
@@ -28365,17 +28073,11 @@ if response.my_field is None:
 
 
 
+## Advanced usage
 
-
+### Accessing raw response data (for example, headers)
 
-Advanced usage
-
-
-
-
-Accessing raw response data (for example, headers)
-
-The "raw" `Response` returned by `httpx` can be accessed through the `.with_raw_response` property on the client. This is useful for accessing response headers or other metadata:
+The "raw" `Response` returned by `httpx2` can be accessed through the `.with_raw_response` property on the client. This is useful for accessing response headers or other metadata:
 
 ```python
 client = Anthropic()
@@ -28383,7 +28085,7 @@ client = Anthropic()
 response = client.messages.with_raw_response.create(
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello, Claude"}],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
 )
 
 print(response.headers.get("request-id"))
@@ -28395,12 +28097,9 @@ print(message.content)
 
 
 
-These methods return an `APIResponse` object.
+These methods return an `APIResponse` object. On the async client they return an `AsyncAPIResponse`, and `.parse()`, `.read()`, `.text()`, and `.json()` must be awaited.
 
-
-
-
-Streaming response body
+### Streaming response body
 
 The `.with_raw_response` approach eagerly reads the full response body when you make the request. To stream the response body instead, use `.with_streaming_response`, which requires a context manager and only reads the response body once you call `.read()`, `.text()`, `.json()`, `.iter_bytes()`, `.iter_text()`, `.iter_lines()`, or `.parse()`. In the async client, these are async methods.
 
@@ -28408,7 +28107,7 @@ The `.with_raw_response` approach eagerly reads the full response body when you 
 with client.messages.with_streaming_response.create(
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello, Claude"}],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
 ) as response:
     print(response.headers.get("request-id"))
 
@@ -28420,10 +28119,7 @@ with client.messages.with_streaming_response.create(
 
 The context manager is required so that the response will reliably be closed.
 
-
-
-
-Logging
+### Logging
 
 The SDK uses the standard library `logging` module.
 
@@ -28435,26 +28131,20 @@ export ANTHROPIC_LOG=debug
 
 
 
-
-
-
-Making custom/undocumented requests
+### Making custom/undocumented requests
 
 This library is typed for convenient access to the documented API. If you need to access undocumented endpoints, params, or response properties, the library can still be used.
 
-
-
-
-Undocumented endpoints
+#### Undocumented endpoints
 
 To make requests to undocumented endpoints, you can use `client.get`, `client.post`, and other HTTP verbs. Options on the client, such as retries, are respected when making these requests.
 
 ```python
-import httpx
+import httpx2
 
 response = client.post(
     "/foo",
-    cast_to=httpx.Response,
+    cast_to=httpx2.Response,
     body={"my_param": True},
 )
 
@@ -28463,10 +28153,7 @@ print(response.json())
 
 
 
-
-
-
-Undocumented request params
+#### Undocumented request params
 
 If you want to explicitly send an extra parameter, you can do so with the `extra_query`, `extra_body`, and `extra_headers` request options.
 
@@ -28474,22 +28161,16 @@ If you want to explicitly send an extra parameter, you can do so with the `extra
 
 The `extra_` parameters override documented parameters of the same name. For security reasons, ensure these methods are only used with trusted input data.
 
-
-
-
-Undocumented response properties
+#### Undocumented response properties
 
 To access undocumented response properties, you can access the extra fields like `response.unknown_prop`. You can also get all extra fields on the Pydantic model as a dict with `response.model_extra`.
 
+### Configuring the HTTP client
 
-
-
-Configuring the HTTP client
-
-You can directly override the [httpx client](https://www.python-httpx.org/api/#client) to customize it for your use case, including support for proxies and transports:
+The SDK sends requests with [httpx2](https://httpx2.pydantic.dev), an API-compatible fork of `httpx`. To customize the HTTP client, including proxies and transports, pass your own [httpx2 client](https://httpx2.pydantic.dev/api/#client) as `http_client`:
 
 ```python
-import httpx
+import httpx2
 from anthropic import Anthropic, DefaultHttpxClient
 
 client = Anthropic(
@@ -28497,7 +28178,7 @@ client = Anthropic(
     base_url="http://my.test.server.example.com:8083",
     http_client=DefaultHttpxClient(
         proxy="http://my.test.proxy.example.com",
-        transport=httpx.HTTPTransport(local_address="0.0.0.0"),
+        transport=httpx2.HTTPTransport(local_address="0.0.0.0"),
     ),
 )
 ```
@@ -28512,14 +28193,13 @@ client.with_options(http_client=DefaultHttpxClient(...))
 
 
 
-
+
 
-Use `DefaultHttpxClient` and `DefaultAsyncHttpxClient` instead of raw `httpx.Client` and `httpx.AsyncClient` to ensure the SDK's default configuration (such as timeouts and connection limits) is preserved.
+Use `DefaultHttpxClient` and `DefaultAsyncHttpxClient` instead of raw `httpx2.Client` and `httpx2.AsyncClient` to ensure the SDK's default configuration (such as timeouts and connection limits) is preserved. The `http_client` argument must be an `httpx2` client. Passing a client from the separate `httpx` package raises a `TypeError`.
 
+Tracing and mocking tools that patch `httpx` itself, such as OpenTelemetry's `HTTPXClientInstrumentor`, Sentry's `httpx` integration, `respx`, or `pytest-httpx`, do not see the SDK's requests by default. To use them, call `httpx2.alias_httpx()` once at startup, before anything imports `httpx`. This makes `import httpx` resolve to `httpx2` for the whole process.
 
-
-
-Managing HTTP resources
+### Managing HTTP resources
 
 By default the library closes underlying HTTP connections whenever the client is [garbage collected](https://docs.python.org/3/reference/datamodel.html#object.__del__). You can manually close the client using the `.close()` method if desired, or with a context manager that closes when exiting.
 
@@ -28532,50 +28212,30 @@ with Anthropic() as client:
 
 
 
-
-
-
-Beta features
+## Beta features
 
 Beta features are available before general release to get early feedback and test new functionality. You can check the availability of all of Claude's capabilities and tools in the [build with Claude overview](/docs/en/build-with-claude/overview).
 
 You can access most beta API features through the `beta` property of the client. To enable a particular beta feature, you need to add the appropriate [beta header](/docs/en/api/beta-headers) to the `betas` field when creating a message.
 
-For example, to use the [Files API](/docs/en/build-with-claude/files):
+For example, to enable [context editing](/docs/en/build-with-claude/context-editing):
 
 ```python
 client = Anthropic()
 
 response = client.beta.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
-    messages=[
-        {
-            "role": "user",
-            "content": [
-                {"type": "text", "text": "Please summarize this document for me."},
-                {
-                    "type": "document",
-                    "source": {
-                        "type": "file",
-                        "file_id": "file_abc123",
-                    },
-                },
-            ],
-        },
-    ],
-    betas=["files-api-2025-04-14"],
+    messages=[{"role": "user", "content": "Hello, Claude"}],
+    betas=["context-management-2025-06-27"],
 )
 ```
 
 
 
+## Platform integrations
 
-
-
-Platform integrations
-
-
+
 
 For detailed platform setup guides with code examples, see:
 
@@ -28599,10 +28259,7 @@ The `AnthropicAWS` client is in beta. Pass `workspace_id` to the constructor or 
 
 Use `AnthropicBedrockMantle` for new projects; `AnthropicBedrock` remains for existing applications using the Bedrock `InvokeModel` API.
 
-
-
-
-Semantic versioning
+## Semantic versioning
 
 This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backward-incompatible changes may be released as minor versions:
 
@@ -28610,10 +28267,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 2.  Changes to library internals which are technically public but not intended or documented for external use.
 3.  Changes that aren't expected to impact the vast majority of users in practice.
 
-
-
-
-Determining the installed version
+### Determining the installed version
 
 If you've upgraded to the latest version but aren't seeing new features you were expecting, your Python environment is likely still using an older version. You can determine the version being used at runtime with:
 
@@ -28623,10 +28277,7 @@ print(anthropic.__version__)
 
 
 
-
-
-
-Additional resources
+## Additional resources
 
 - [GitHub repository](https://github.com/anthropics/anthropic-sdk-python)
 - [API reference](/docs/en/api/overview)
@@ -28643,27 +28294,23 @@ Additional resources
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fruby)
 
 
 
-Search
+
 
+SearchCtrlK
 
 CLI, SDKs, and libraries
 
@@ -28671,7 +28318,7 @@ CLI, SDKs, and libraries
 
 ant CLI
 
-[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)
+[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)[Manage resources as code](/docs/en/cli-sdks-libraries/cli/apply)[Connect to a Managed Agents session](/docs/en/cli-sdks-libraries/cli/sessions-connect)
 
 Client SDKs
 
@@ -28681,37 +28328,29 @@ Libraries and integrations
 
 [Apple Foundation Models](/docs/en/cli-sdks-libraries/libraries/apple-foundation-models)[OpenAI SDK compatibility](/docs/en/cli-sdks-libraries/libraries/openai-sdk)
 
-[](/login)
+[Console](/)
 
-
-
-
-CLI, SDKs, and libraries
-
-Ruby
-
-CLI, SDKs, and libraries/Client SDKs
+[CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)Client SDKs
 
 # Ruby SDK
 
+Copy page
 
 
 
 Install and configure the Anthropic Ruby SDK with Sorbet types, streaming helpers, and connection pooling
 
+Copy page
 
 
 
-The Anthropic Ruby library provides convenient access to the Anthropic REST API from any Ruby 3.2.0+ application. It ships with comprehensive types and docstrings in Yard, RBS, and RBI. The standard library's `net/http` is used as the HTTP transport, with connection pooling through the `connection_pool` gem.
+The Anthropic Ruby library provides convenient access to the Claude API from any Ruby 3.2.0+ application. It ships with comprehensive types and docstrings in Yard, RBS, and RBI. The standard library's `net/http` is used as the HTTP transport, with connection pooling through the `connection_pool` gem.
 
-
+
 
 For API feature documentation with code examples, see the [API reference](/docs/en/api/overview). This page covers Ruby-specific SDK features and configuration.
 
-
-
-
-Installation
+## Installation
 
 Add the gem to your application's `Gemfile` with Bundler:
 
@@ -28721,17 +28360,11 @@ bundle add anthropic
 
 
 
-
-
-
-Requirements
+## Requirements
 
 Ruby 3.2.0 or higher.
 
-
-
-
-Usage
+## Usage
 
 ```python
 anthropic = Anthropic::Client.new(
@@ -28741,7 +28374,7 @@ anthropic = Anthropic::Client.new(
 message = anthropic.messages.create(
   max_tokens: 1024,
   messages: [{role: "user", content: "Hello, Claude"}],
-  model: :"claude-opus-5"
+  model: :"claude-opus-5-5"
 )
 
 message.content.each do |block|
@@ -28751,12 +28384,9 @@ end
 
 
 
-For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication).
+For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication). If your API key is a [personal or service account key](/docs/en/manage-claude/authentication#key-types) with access to multiple workspaces, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](/docs/en/manage-claude/authentication#select-a-workspace) shows the per-request option for this SDK.
 
-
-
-
-Streaming
+## Streaming
 
 The SDK provides support for streaming responses using Server-Sent Events (SSE).
 
@@ -28765,7 +28395,7 @@ anthropic = Anthropic::Client.new
 stream = anthropic.messages.stream(
   max_tokens: 1024,
   messages: [{role: "user", content: "Hello, Claude"}],
-  model: :"claude-opus-5"
+  model: :"claude-opus-5-5"
 )
 
 stream.each do |message|
@@ -28775,10 +28405,7 @@ end
 
 
 
-
-
-
-Streaming helpers
+### Streaming helpers
 
 This library provides several conveniences for streaming messages, for example:
 
@@ -28787,7 +28414,7 @@ anthropic = Anthropic::Client.new
 stream = anthropic.messages.stream(
   max_tokens: 1024,
   messages: [{role: :user, content: "Say hello there!"}],
-  model: :"claude-opus-5"
+  model: :"claude-opus-5-5"
 )
 
 stream.text.each do |text|
@@ -28799,10 +28426,7 @@ end
 
 Streaming with `anthropic.messages.stream(...)` exposes various helpers including accumulation and SDK-specific events.
 
-
-
-
-Input schema and tool calling
+## Input schema and tool calling
 
 The SDK provides helper mechanisms to define structured data classes for tools and let Claude automatically execute them. For detailed documentation on tool use patterns including the tool runner, see [Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner).
 
@@ -28824,7 +28448,7 @@ end
 
 # Automatically handles tool execution loop
 anthropic.beta.messages.tool_runner(
-  model: "claude-opus-5",
+  model: "claude-opus-5-5",
   max_tokens: 1024,
   messages: [{role: "user", content: "What's 15 * 7?"}],
   tools: [Calculator.new]
@@ -28833,17 +28457,11 @@ anthropic.beta.messages.tool_runner(
 
 
 
-
-
-
-Structured outputs
+## Structured outputs
 
 For complete structured outputs documentation including Ruby examples, see [Structured outputs](/docs/en/build-with-claude/structured-outputs).
 
-
-
-
-Handling errors
+## Handling errors
 
 When the library is unable to connect to the API, or if the API returns a non-success status code (that is, 4xx or 5xx response), a subclass of `Anthropic::Errors::APIError` is raised:
 
@@ -28853,7 +28471,7 @@ begin
   message = anthropic.messages.create(
     max_tokens: 1024,
     messages: [{role: "user", content: "Hello, Claude"}],
-    model: :"claude-opus-5"
+    model: :"claude-opus-5-5"
   )
 rescue Anthropic::Errors::APIConnectionError => e
   puts("The server could not be reached")
@@ -28884,10 +28502,7 @@ Error codes are as follows:
 | Timeout          | `APITimeoutError`          |
 | Network error    | `APIConnectionError`       |
 
-
-
-
-Retries
+## Retries
 
 Certain errors will be automatically retried 2 times by default, with a short exponential backoff.
 
@@ -28905,17 +28520,14 @@ anthropic = Anthropic::Client.new(
 anthropic.messages.create(
   max_tokens: 1024,
   messages: [{role: "user", content: "Hello, Claude"}],
-  model: :"claude-opus-5",
+  model: :"claude-opus-5-5",
   request_options: {max_retries: 5}
 )
 ```
 
 
 
-
-
-
-Timeouts
+## Timeouts
 
 By default, requests time out after 10 minutes. You can use the `timeout` option to configure this:
 
@@ -28929,7 +28541,7 @@ anthropic = Anthropic::Client.new(
 anthropic.messages.create(
   max_tokens: 1024,
   messages: [{role: "user", content: "Hello, Claude"}],
-  model: :"claude-opus-5",
+  model: :"claude-opus-5-5",
   request_options: {timeout: 5}
 )
 ```
@@ -28940,10 +28552,7 @@ On timeout, `Anthropic::Errors::APITimeoutError` is raised.
 
 Note that requests that time out are retried by default.
 
-
-
-
-Pagination
+## Pagination
 
 List methods in the Claude API are paginated.
 
@@ -28979,10 +28588,7 @@ end
 
 
 
-
-
-
-File uploads
+## File uploads
 
 Request parameters that correspond to file uploads can be passed as raw contents, a [`Pathname`](https://rubyapi.org/3.2/o/pathname) instance, [`StringIO`](https://rubyapi.org/3.2/o/stringio), or more.
 
@@ -28991,14 +28597,14 @@ anthropic = Anthropic::Client.new
 require "pathname"
 
 # Use `Pathname` to send the filename and/or avoid paging a large file into memory:
-file_metadata = anthropic.beta.files.upload(file: Pathname("/path/to/file"))
+file_metadata = anthropic.files.upload(file: Pathname("/path/to/file"))
 
 # Alternatively, pass file contents or a `StringIO` directly:
-file_metadata = anthropic.beta.files.upload(file: File.read("/path/to/file"))
+file_metadata = anthropic.files.upload(file: File.read("/path/to/file"))
 
 # Or, to control the filename and/or content type:
 file = Anthropic::FilePart.new(File.read("/path/to/file"), filename: "/path/to/file", content_type: "...")
-file_metadata = anthropic.beta.files.upload(file: file)
+file_metadata = anthropic.files.upload(file: file)
 
 puts(file_metadata.id)
 ```
@@ -29007,10 +28613,7 @@ puts(file_metadata.id)
 
 Note that you can also pass a raw `IO` descriptor, but this disables retries, as the library can't be sure if the descriptor is a file or pipe (which cannot be rewound).
 
-
-
-
-Sorbet
+## Sorbet
 
 This library provides comprehensive [RBI](https://sorbet.org/docs/rbi) definitions, and has no dependency on sorbet-runtime.
 
@@ -29021,7 +28624,7 @@ anthropic = Anthropic::Client.new
 anthropic.messages.create(
   max_tokens: 1024,
   messages: [Anthropic::MessageParam.new(role: "user", content: "Hello, Claude")],
-  model: :"claude-opus-5"
+  model: :"claude-opus-5-5"
 )
 ```
 
@@ -29035,24 +28638,21 @@ anthropic = Anthropic::Client.new
 anthropic.messages.create(
   max_tokens: 1024,
   messages: [{role: "user", content: "Hello, Claude"}],
-  model: :"claude-opus-5"
+  model: :"claude-opus-5-5"
 )
 
 # You can also splat a full Params class:
 params = Anthropic::MessageCreateParams.new(
   max_tokens: 1024,
   messages: [Anthropic::MessageParam.new(role: "user", content: "Hello, Claude")],
-  model: :"claude-opus-5"
+  model: :"claude-opus-5-5"
 )
 anthropic.messages.create(**params)
 ```
 
 
 
-
-
-
-Enums
+### Enums
 
 Since this library does not depend on `sorbet-runtime`, it cannot provide [`T::Enum`](https://sorbet.org/docs/tenum) instances. Instead, the SDK provides "tagged symbols", which is always a primitive at runtime:
 
@@ -29084,10 +28684,7 @@ anthropic.messages.create(
 
 
 
-
-
-
-BaseModel
+## BaseModel
 
 All parameter and response objects inherit from `Anthropic::Internal::Type::BaseModel`, which provides several conveniences, including:
 
@@ -29099,10 +28696,7 @@ All parameter and response objects inherit from `Anthropic::Internal::Type::Base
 
 4.  Helpers such as `#to_h`, `#deep_to_h`, `#to_json`, and `#to_yaml`.
 
-
-
-
-Concurrency and connection pooling
+## Concurrency and connection pooling
 
 The `Anthropic::Client` instances are threadsafe, but are only fork-safe when there are no in-flight HTTP requests.
 
@@ -29112,15 +28706,9 @@ When all available connections from the pool are checked out, requests wait for 
 
 Unless otherwise specified, other classes in the SDK do not have locks protecting their underlying data structure.
 
+## Making custom or undocumented requests
 
-
-
-Making custom or undocumented requests
-
-
-
-
-Undocumented properties
+### Undocumented properties
 
 You can send undocumented parameters to any endpoint, and read undocumented response properties, like so:
 
@@ -29135,7 +28723,7 @@ message =
   anthropic.messages.create(
     max_tokens: 1024,
     messages: [{role: "user", content: "Hello, Claude"}],
-    model: :"claude-opus-5",
+    model: :"claude-opus-5-5",
     request_options: {
       extra_query: {my_query_parameter: value},
       extra_body: {my_body_parameter: value},
@@ -29148,17 +28736,11 @@ puts(message[:my_undocumented_property])
 
 
 
-
-
-
-Undocumented request params
+### Undocumented request params
 
 If you want to explicitly send an extra param, you can do so with the `extra_query`, `extra_body`, and `extra_headers` under the `request_options:` parameter when making a request, as seen in the examples above.
 
-
-
-
-Undocumented endpoints
+### Undocumented endpoints
 
 To make requests to undocumented endpoints while retaining the benefit of auth, retries, and so on, you can make requests using `anthropic.request`, like so:
 
@@ -29174,12 +28756,9 @@ response = anthropic.request(
 
 
 
+## Platform integrations
 
-
-
-Platform integrations
-
-
+
 
 For detailed platform setup guides with code examples, see:
 
@@ -29197,19 +28776,13 @@ The Ruby SDK supports the following platforms:
 
 Use `Anthropic::BedrockMantleClient` for new projects; `Anthropic::BedrockClient` remains for existing applications using the Bedrock `InvokeModel` API.
 
+## Semantic versioning
 
-
-
-Semantic versioning
-
-This package follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions. As the library is in initial development and has a major version of `0`, APIs may change at any time.
+This package follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions.
 
 This package considers improvements to the (non-runtime) `*.rbi` and `*.rbs` type definitions to be non-breaking changes.
 
-
-
-
-Additional resources
+## Additional resources
 
 - [GitHub repository](https://github.com/anthropics/anthropic-sdk-ruby)
 - [YARD documentation](https://gemdocs.org/gems/anthropic)
@@ -29226,27 +28799,23 @@ Additional resources
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Ftypescript)
 
 
 
-Search
+
 
+SearchCtrlK
 
 CLI, SDKs, and libraries
 
@@ -29254,7 +28823,7 @@ CLI, SDKs, and libraries
 
 ant CLI
 
-[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)
+[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)[Manage resources as code](/docs/en/cli-sdks-libraries/cli/apply)[Connect to a Managed Agents session](/docs/en/cli-sdks-libraries/cli/sessions-connect)
 
 Client SDKs
 
@@ -29264,37 +28833,29 @@ Libraries and integrations
 
 [Apple Foundation Models](/docs/en/cli-sdks-libraries/libraries/apple-foundation-models)[OpenAI SDK compatibility](/docs/en/cli-sdks-libraries/libraries/openai-sdk)
 
-[](/login)
+[Console](/)
 
-
-
-
-CLI, SDKs, and libraries
-
-TypeScript
-
-CLI, SDKs, and libraries/Client SDKs
+[CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)Client SDKs
 
 # TypeScript SDK
 
+Copy page
 
 
 
 Install and configure the Anthropic TypeScript SDK for Node.js, Deno, Bun, and browser environments
 
+Copy page
 
 
 
-This library provides convenient access to the Anthropic REST API from TypeScript or JavaScript.
+This library provides convenient access to the Claude API from TypeScript or JavaScript.
 
-
+
 
 For API feature documentation with code examples, see the [API reference](/docs/en/api/overview). This page covers TypeScript-specific SDK features and configuration.
 
-
-
-
-Installation
+## Installation
 
 ```python
 npm install @anthropic-ai/sdk
@@ -29302,12 +28863,9 @@ npm install @anthropic-ai/sdk
 
 
 
+## Requirements
 
-
-
-Requirements
-
-TypeScript \>= 4.9 is supported.
+TypeScript \>= 5.0 is supported.
 
 The following runtimes are supported:
 
@@ -29324,10 +28882,7 @@ Note that React Native is not supported at this time.
 
 If you are interested in other runtime environments, open or upvote an issue on the [GitHub repository](https://github.com/anthropics/anthropic-sdk-typescript).
 
-
-
-
-Usage
+## Usage
 
 ```python
 const client = new Anthropic({
@@ -29337,7 +28892,7 @@ const client = new Anthropic({
 const message = await client.messages.create({
   max_tokens: 1024,
   messages: [{ role: "user", content: "Hello, Claude" }],
-  model: "claude-opus-5"
+  model: "claude-opus-5-5"
 });
 
 for (const block of message.content) {
@@ -29349,12 +28904,9 @@ for (const block of message.content) {
 
 
 
-For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication).
+For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication). If your API key is a [personal or service account key](/docs/en/manage-claude/authentication#key-types) with access to multiple workspaces, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](/docs/en/manage-claude/authentication#select-a-workspace) shows the per-request option for this SDK.
 
-
-
-
-Request and response types
+## Request and response types
 
 This library includes TypeScript definitions for all request parameters and response fields. You may import and use them like so:
 
@@ -29366,7 +28918,7 @@ const client = new Anthropic({
 const params: Anthropic.MessageCreateParams = {
   max_tokens: 1024,
   messages: [{ role: "user", content: "Hello, Claude" }],
-  model: "claude-opus-5"
+  model: "claude-opus-5-5"
 };
 const message: Anthropic.Message = await client.messages.create(params);
 ```
@@ -29375,10 +28927,7 @@ const message: Anthropic.Message = await client.messages.create(params);
 
 Documentation for each method, request parameter, and response field is available in docstrings and appears on hover in most modern editors.
 
-
-
-
-Counting tokens
+## Counting tokens
 
 You can see the exact usage for a given request through the `usage` response property, for example:
 
@@ -29390,10 +28939,7 @@ console.log(message.usage);
 
 
 
-
-
-
-Streaming responses
+## Streaming responses
 
 The SDK provides support for streaming responses using Server Sent Events (SSE).
 
@@ -29403,7 +28949,7 @@ const client = new Anthropic();
 const stream = await client.messages.create({
   max_tokens: 1024,
   messages: [{ role: "user", content: "Hello, Claude" }],
-  model: "claude-opus-5",
+  model: "claude-opus-5-5",
   stream: true
 });
 for await (const messageStreamEvent of stream) {
@@ -29415,10 +28961,7 @@ for await (const messageStreamEvent of stream) {
 
 If you need to cancel a stream, you can `break` from the loop or call `stream.controller.abort()`.
 
-
-
-
-Streaming helpers
+## Streaming helpers
 
 This library provides several conveniences for streaming messages, for example:
 
@@ -29427,7 +28970,7 @@ const anthropic = new Anthropic();
 
 const stream = anthropic.messages
   .stream({
-    model: "claude-opus-5",
+    model: "claude-opus-5-5",
     max_tokens: 1024,
     messages: [
       {
@@ -29450,10 +28993,7 @@ Streaming with `client.messages.stream(...)` exposes various helpers for your co
 
 Alternatively, you can use `client.messages.create({ ..., stream: true })` which only returns an async iterable of the events in the stream and thus uses less memory (it does not build up a final message object for you).
 
-
-
-
-Tool helpers
+## Tool helpers
 
 This SDK provides helpers for making it easy to create and run tools in the Messages API. You can use Zod schemas or JSON Schemas to describe the input to a tool. You can then run those tools using the `client.beta.messages.toolRunner()` method. This method handles passing the inputs generated by the chosen model into the right tool and passing the result back to the model.
 
@@ -29477,7 +29017,7 @@ const weatherTool = betaZodTool({
 });
 
 const finalMessage = await anthropic.beta.messages.toolRunner({
-  model: "claude-opus-5",
+  model: "claude-opus-5-5",
   max_tokens: 1000,
   messages: [{ role: "user", content: "What is the weather in San Francisco?" }],
   tools: [weatherTool]
@@ -29488,10 +29028,7 @@ console.log(finalMessage.content);
 
 
 
-
-
-
-Tool errors
+### Tool errors
 
 To report an error from a tool back to the model, throw a `ToolError` from the `run` function. Unlike a plain `Error`, `ToolError` accepts content blocks, allowing you to include images or other structured content in the error response:
 
@@ -29528,17 +29065,11 @@ const screenshotTool = betaZodTool({
 
 If a plain `Error` is thrown, the message will be converted to a text content block.
 
-
-
-
-Tool use
+## Tool use
 
 This SDK provides support for tool use, also known as function calling. For more details, see [Tool use with Claude](/docs/en/agents-and-tools/tool-use/overview).
 
-
-
-
-MCP helpers
+## MCP helpers
 
 This SDK provides helpers for integrating with [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers. These helpers convert MCP types to Claude API types, reducing boilerplate when working with MCP tools, prompts, and resources.
 
@@ -29566,7 +29097,7 @@ await mcpClient.connect(transport);
 // Use MCP prompts
 const { messages } = await mcpClient.getPrompt({ name: "my-prompt" });
 const response = await anthropic.beta.messages.create({
-  model: "claude-opus-5",
+  model: "claude-opus-5-5",
   max_tokens: 1024,
   messages: mcpMessages(messages)
 });
@@ -29575,7 +29106,7 @@ console.log(response.content);
 // Use MCP tools with toolRunner
 const { tools } = await mcpClient.listTools();
 const finalMessage = await anthropic.beta.messages.toolRunner({
-  model: "claude-opus-5",
+  model: "claude-opus-5-5",
   max_tokens: 1024,
   messages: [{ role: "user", content: "Use the available tools" }],
   tools: mcpTools(tools, mcpClient)
@@ -29585,7 +29116,7 @@ console.log(finalMessage.content);
 // Use MCP resources as content
 const resource = await mcpClient.readResource({ uri: "file:///path/to/doc.txt" });
 await anthropic.beta.messages.create({
-  model: "claude-opus-5",
+  model: "claude-opus-5-5",
   max_tokens: 1024,
   messages: [
     {
@@ -29600,29 +29131,20 @@ await anthropic.beta.messages.create({
 
 // Upload MCP resources as files
 const fileResource = await mcpClient.readResource({ uri: "file:///path/to/data.json" });
-await anthropic.beta.files.upload({ file: mcpResourceToFile(fileResource) });
+await anthropic.files.upload({ file: mcpResourceToFile(fileResource) });
 ```
 
 
 
-
-
-
-MCP error handling
+### MCP error handling
 
 The conversion functions throw `UnsupportedMCPValueError` if an MCP value isn't supported by the Claude API (for example, unsupported content type, unsupported MIME type, non-http/https resource link).
 
+## Message batches
 
-
+This SDK provides support for [Batch processing](/docs/en/build-with-claude/batch-processing) under the `client.messages.batches` namespace.
 
-Message batches
-
-This SDK provides support for the [Message Batches API](/docs/en/build-with-claude/batch-processing) under the `client.messages.batches` namespace.
-
-
-
-
-Creating a batch
+### Creating a batch
 
 Message Batches takes an array of requests, where each object has a `custom_id` identifier, and the exact same request `params` as the standard Messages API:
 
@@ -29632,7 +29154,7 @@ const batch = await client.messages.batches.create({
     {
       custom_id: "my-first-request",
       params: {
-        model: "claude-opus-5",
+        model: "claude-opus-5-5",
         max_tokens: 1024,
         messages: [{ role: "user", content: "Hello, world" }]
       }
@@ -29640,7 +29162,7 @@ const batch = await client.messages.batches.create({
     {
       custom_id: "my-second-request",
       params: {
-        model: "claude-opus-5",
+        model: "claude-opus-5-5",
         max_tokens: 1024,
         messages: [{ role: "user", content: "Hi again, friend" }]
       }
@@ -29651,10 +29173,7 @@ const batch = await client.messages.batches.create({
 
 
 
-
-
-
-Getting results from a batch
+### Getting results from a batch
 
 Once a Message Batch has been processed, indicated by `.processing_status === 'ended'`, you can access the results with `.batches.results()`
 
@@ -29669,10 +29188,7 @@ for await (const entry of results) {
 
 
 
-
-
-
-File uploads
+## File uploads
 
 Request parameters that correspond to file uploads can be passed in many different forms:
 
@@ -29690,36 +29206,33 @@ import Anthropic, { toFile } from "@anthropic-ai/sdk";
 const client = new Anthropic();
 
 // If you have access to Node `fs`, use `fs.createReadStream()`:
-await client.beta.files.upload({
+await client.files.upload({
   file: await toFile(fs.createReadStream("/path/to/file"), undefined, {
     type: "application/json"
   })
 });
 
 // Or if you have the web `File` API you can pass a `File` instance:
-await client.beta.files.upload({
+await client.files.upload({
   file: new File(["my bytes"], "file.txt", { type: "text/plain" })
 });
 // You can also pass a `fetch` `Response`:
-await client.beta.files.upload({
+await client.files.upload({
   file: await fetch("https://somesite/file")
 });
 
 // Or a `Buffer` / `Uint8Array`
-await client.beta.files.upload({
+await client.files.upload({
   file: await toFile(Buffer.from("my bytes"), "file", { type: "text/plain" })
 });
-await client.beta.files.upload({
+await client.files.upload({
   file: await toFile(new Uint8Array([0, 1, 2]), "file", { type: "text/plain" })
 });
 ```
 
 
 
-
-
-
-Handling errors
+## Handling errors
 
 When the library is unable to connect to the API, or if the API returns a non-success status code (that is, 4xx or 5xx response), a subclass of `APIError` is thrown:
 
@@ -29728,7 +29241,7 @@ const message = await client.messages
   .create({
     max_tokens: 1024,
     messages: [{ role: "user", content: "Hello, Claude" }],
-    model: "claude-opus-5"
+    model: "claude-opus-5-5"
   })
   .catch(async (err) => {
     if (err instanceof Anthropic.APIError) {
@@ -29757,10 +29270,7 @@ Error codes are as follows:
 | \>=500      | `InternalServerError`      |
 | N/A         | `APIConnectionError`       |
 
-
-
-
-Request IDs
+## Request IDs
 
 > For more information on debugging requests, see [Request ID](/docs/en/api/errors#request-id).
 
@@ -29770,17 +29280,14 @@ All object responses in the SDK provide a `_request_id` property which is added 
 const message = await client.messages.create({
   max_tokens: 1024,
   messages: [{ role: "user", content: "Hello, Claude" }],
-  model: "claude-opus-5"
+  model: "claude-opus-5-5"
 });
 console.log(message._request_id); // req_018EeWyXxfu5pfWkrYcMdjWG
 ```
 
 
 
-
-
-
-Retries
+## Retries
 
 Certain errors are automatically retried 2 times by default, with a short exponential backoff. Connection errors (for example, because of a network connectivity problem), 408 Request Timeout, 409 Conflict, 429 Rate Limit, and \>=500 Internal errors are all retried by default.
 
@@ -29797,7 +29304,7 @@ await client.messages.create(
   {
     max_tokens: 1024,
     messages: [{ role: "user", content: "Hello, Claude" }],
-    model: "claude-opus-5"
+    model: "claude-opus-5-5"
   },
   { maxRetries: 5 }
 );
@@ -29805,10 +29312,7 @@ await client.messages.create(
 
 
 
-
-
-
-Timeouts
+## Timeouts
 
 By default requests time out after 10 minutes. However if you have specified a large `max_tokens` value and are *not* streaming, the default timeout will be calculated dynamically using the formula:
 
@@ -29835,7 +29339,7 @@ await client.messages.create(
   {
     max_tokens: 1024,
     messages: [{ role: "user", content: "Hello, Claude" }],
-    model: "claude-opus-5"
+    model: "claude-opus-5-5"
   },
   { timeout: 5 * 1000 }
 );
@@ -29847,10 +29351,7 @@ On timeout, an `APIConnectionTimeoutError` is thrown.
 
 Note that requests that time out are [retried twice by default](#retries).
 
-
-
-
-Long requests
+## Long requests
 
 
 
@@ -29864,10 +29365,7 @@ An expected request latency longer than the [timeout](#timeouts) for a non-strea
 
 When supported by the `fetch` implementation, the SDK sets a [TCP socket keep-alive](https://tldp.org/HOWTO/TCP-Keepalive-HOWTO/overview.html) option to reduce the impact of idle connection timeouts on some networks. This can be [overridden](#configuring-proxies) by configuring a custom proxy.
 
-
-
-
-Auto-pagination
+## Auto-pagination
 
 List methods in the Claude API are paginated. You can use the `for await ... of` syntax to iterate through items across all pages:
 
@@ -29901,10 +29399,7 @@ while (page.hasNextPage()) {
 
 
 
-
-
-
-Default headers
+## Default headers
 
 The SDK automatically sends the `anthropic-version` header set to `2023-06-01`.
 
@@ -29919,7 +29414,7 @@ const message = await client.messages.create(
   {
     max_tokens: 1024,
     messages: [{ role: "user", content: "Hello, Claude" }],
-    model: "claude-opus-5"
+    model: "claude-opus-5-5"
   },
   { headers: { "anthropic-version": "My-Custom-Value" } }
 );
@@ -29927,15 +29422,9 @@ const message = await client.messages.create(
 
 
 
+## Advanced usage
 
-
-
-Advanced usage
-
-
-
-
-Accessing raw Response data (for example, headers)
+### Accessing raw Response data (for example, headers)
 
 The "raw" `Response` returned by `fetch()` can be accessed through the `.asResponse()` method on the `APIPromise` type that all methods return. This method returns as soon as the headers for a successful response are received and does not consume the response body, so you are free to write custom parsing or streaming logic.
 
@@ -29948,7 +29437,7 @@ const response = await client.messages
   .create({
     max_tokens: 1024,
     messages: [{ role: "user", content: "Hello, Claude" }],
-    model: "claude-opus-5"
+    model: "claude-opus-5-5"
   })
   .asResponse();
 console.log(response.headers.get("X-My-Header"));
@@ -29958,7 +29447,7 @@ const { data: message, response: raw } = await client.messages
   .create({
     max_tokens: 1024,
     messages: [{ role: "user", content: "Hello, Claude" }],
-    model: "claude-opus-5"
+    model: "claude-opus-5-5"
   })
   .withResponse();
 console.log(raw.headers.get("X-My-Header"));
@@ -29967,19 +29456,13 @@ console.log(message.content);
 
 
 
-
-
-
-Logging
+### Logging
 
 
 
 All log messages are intended for debugging only. The format and content of log messages may change between releases.
 
-
-
-
-Log levels
+#### Log levels
 
 You can configure the log level in two ways:
 
@@ -30004,10 +29487,7 @@ Available log levels, from most to least verbose:
 
 At the `'debug'` level, all HTTP requests and responses are logged, including headers and bodies. Some authentication-related headers are redacted, but sensitive data in request and response bodies may still be visible.
 
-
-
-
-Custom logger
+#### Custom logger
 
 By default, this library logs to `globalThis.console`. You can also provide a custom logger. Most logging libraries are supported, including [pino](https://www.npmjs.com/package/pino), [winston](https://www.npmjs.com/package/winston), [bunyan](https://www.npmjs.com/package/bunyan), [consola](https://www.npmjs.com/package/consola), [signale](https://www.npmjs.com/package/signale), and [@std/log](https://jsr.io/@std/log). If your logger doesn't work, open an issue.
 
@@ -30026,17 +29506,11 @@ const client = new Anthropic({
 
 
 
-
-
-
-Making custom/undocumented requests
+### Making custom/undocumented requests
 
 This library is typed for convenient access to the documented API. If you need to access undocumented endpoints, params, or response properties, the library can still be used.
 
-
-
-
-Undocumented endpoints
+#### Undocumented endpoints
 
 To make requests to undocumented endpoints, you can use `client.get`, `client.post`, and other HTTP verbs. Options on the client, such as retries, are respected when making these requests.
 
@@ -30049,10 +29523,7 @@ await client.post("/some/path", {
 
 
 
-
-
-
-Undocumented request parameters
+#### Undocumented request parameters
 
 To make requests using undocumented parameters, you may use `// @ts-expect-error` on the undocumented parameter. This library doesn't validate at runtime that the request matches the type, so any extra values you send will be sent as-is.
 
@@ -30070,17 +29541,11 @@ For requests with the `GET` verb, any extra parameters will be in the query; all
 
 If you want to explicitly send an extra argument, you can do so with the `query`, `body`, and `headers` request options.
 
-
-
-
-Undocumented response properties
+#### Undocumented response properties
 
 To access undocumented response properties, you may access the response object with `// @ts-expect-error` on the response object, or cast the response object to the requisite type. Like the request parameters, the SDK does not validate or strip extra properties from the response from the API.
 
-
-
-
-Customizing the fetch client
+### Customizing the fetch client
 
 By default, this library expects a global `fetch` function is defined.
 
@@ -30104,10 +29569,7 @@ const client = new Anthropic({ fetch });
 
 
 
-
-
-
-Fetch options
+### Fetch options
 
 If you want to set custom `fetch` options without overriding the `fetch` function, you can provide a `fetchOptions` object when creating the client or making a request. (Request-specific options override client options.)
 
@@ -30121,22 +29583,13 @@ const client = new Anthropic({
 
 
 
-
-
-
-Configuring proxies
+### Configuring proxies
 
 To modify proxy behavior, you can provide custom `fetchOptions` that add runtime-specific proxy options to requests:
 
 Node.js
 
-Node.js
-
 Bun
-
-Bun
-
-Deno
 
 Deno
 
@@ -30153,56 +29606,42 @@ const client = new Anthropic({
 
 
 
-
-
-
-Beta features
+## Beta features
 
 Beta features are available before general release to get early feedback and test new functionality. You can check the availability of all of Claude's capabilities and tools in the [build with Claude overview](/docs/en/build-with-claude/overview).
 
 You can access most beta API features through the beta property of the client. To enable a particular beta feature, you need to add the appropriate [beta header](/docs/en/api/beta-headers) to the `betas` field when creating a message.
 
-For example, to use the [Files API](/docs/en/build-with-claude/files):
+For example, to enable [context editing](/docs/en/build-with-claude/context-editing):
 
 ```python
 const client = new Anthropic();
 const response = await client.beta.messages.create({
-  model: "claude-opus-5",
+  model: "claude-opus-5-5",
   max_tokens: 1024,
-  messages: [
-    {
-      role: "user",
-      content: [
-        { type: "text", text: "Please summarize this document for me." },
-        {
-          type: "document",
-          source: {
-            type: "file",
-            file_id: "file_abc123"
-          }
-        }
-      ]
-    }
-  ],
-  betas: ["files-api-2025-04-14"]
+  messages: [{ role: "user", content: "Hello, Claude" }],
+  betas: ["context-management-2025-06-27"]
 });
 ```
 
 
 
-
-
-
-Runtime support
+## Runtime support
 
 ### Browser usage
 
+Enabling the `dangerouslyAllowBrowser` option can be dangerous because it exposes your secret API credentials in the client-side code. Web browsers are inherently less secure than server environments, any user with access to the browser can potentially inspect, extract, and misuse these credentials. This could lead to unauthorized access using your credentials and potentially compromise sensitive data or functionality.
 
-
+**When might this not be dangerous?**
 
-Platform integrations
+In certain scenarios where enabling browser support might not pose significant risks:
 
-
+- **Internal tools:** If the application is used solely within a controlled internal environment where the users are trusted, the risk of credential exposure can be mitigated.
+- **Development or debugging purpose:** Enabling this feature temporarily might be acceptable, provided the credentials are short-lived, aren't also used in production environments, or are frequently rotated.
+
+## Platform integrations
+
+
 
 For detailed platform setup guides with code examples, see:
 
@@ -30221,30 +29660,21 @@ The TypeScript SDK supports the following platforms:
 
 Use `AnthropicBedrockMantle` for new projects; `AnthropicBedrock` remains for existing applications using the Bedrock `InvokeModel` API.
 
+## Semantic versioning
 
-
-
-Semantic versioning
-
-This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:
+This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backward-incompatible changes may be released as minor versions:
 
 1.  Changes that only affect static types, without breaking runtime behavior.
 2.  Changes to library internals which are technically public but not intended or documented for external use.
 3.  Changes that aren't expected to impact the vast majority of users in practice.
 
-Backwards-compatibility is taken seriously to ensure you can rely on a smooth upgrade experience.
+Backward-compatibility is taken seriously to ensure you can rely on a smooth upgrade experience.
 
-
-
-
-Frequently asked questions
+## Frequently asked questions
 
 See the [GitHub repository](https://github.com/anthropics/anthropic-sdk-typescript) for FAQs, issues, and community support.
 
-
-
-
-Additional resources
+## Additional resources
 
 - [GitHub repository](https://github.com/anthropics/anthropic-sdk-typescript)
 - [API reference](/docs/en/api/overview)

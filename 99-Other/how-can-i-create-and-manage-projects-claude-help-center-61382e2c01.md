@@ -2,17 +2,19 @@
 title: "How can I create and manage projects? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9519177"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:57Z"
+fetched_at: "2026-09-29T06:32:13Z"
 ---
 
 # How can I create and manage projects?
 
 
+Copy for LLM
+
 Projects are available to all users, including those with free Claude accounts. Free users can create a maximum of five projects.
 
 ## How to create a project
 
-1.  Hover over the left side of your account and click “Projects,” or navigate directly to this section: **[claude.ai/projects](http://claude.ai/projects)**.
+1.  Hover over the left side of your account and click “Projects,” or navigate directly to this section: **[claude.ai/projects](https://claude.ai/projects)**.
 
 2.  Click "+ New Project" in the upper right corner.
 
@@ -54,7 +56,7 @@ You'll find the project knowledge base on the right side of your project's main 
 
 ## Share projects
 
-If you are a member of a Team or Enterprise plan organization, you can share projects with other members of your organization.
+If you're on a Team or Enterprise plan, you can share projects with other users in your organization, unless your admin has turned off project sharing. See **[If you can't share projects](https://support.claude.com/en/articles/9519189-manage-project-visibility-and-sharing#h_d5a68ef397)** for what to expect.
 
 ### To share a project
 
@@ -82,7 +84,7 @@ If you are a member of a Team or Enterprise plan organization, you can share pro
 
 ### Find shared projects
 
-Projects that others have shared with you will appear in the "Shared with me" tab on your **[Projects page](http://claude.ai/projects)**. You'll also receive an email notification when someone shares a project with you.
+Your **[Projects page](https://claude.ai/projects)** has three tabs: "Your projects," "Organization," and "Shared with you." "Your projects" lists the projects you created, and "Organization" lists projects that other members have shared with your organization. If you can't find a project, check all three tabs.
 
 ------------------------------------------------------------------------
 
@@ -119,20 +121,15 @@ Browse or search for the correct project in the **Move chat** modal that appears
 You can also remove chats from projects, or move them between projects, using the same dropdown menu within the chat:
 
 
-You can move chats into projects in bulk from **[Your chat history page](https://claude.ai/recents)**:
-
-
-Select the chats you want to move, then click the icon next to the number of selected chats to move them into your project.
-
 ------------------------------------------------------------------------
 
 ## Move chats to manage Claude’s memory
 
-Memory from chat history is available for users on Pro, Max, Team, and Enterprise plans on the web, Claude Desktop, and Claude Mobile.
+Memory is on by default for Free, Pro, and Max plans on the web, Claude Desktop, and Claude Mobile. On Team and Enterprise plans, memory is available when an owner has enabled it.
 
 For Team and Enterprise plans using Claude’s memory, the ability to move chats into and out of projects allows you to manage what’s included in Claude’s memory. Each project has its own memory, kept separate from your non-project chats. For example, if you accidentally start an unrelated chat in a project and need to remove it from the project-specific memory summary, you can click “Remove from project” so it will be included in Claude’s non-project memory instead.
 
-Refer to our article on chat search and memory for more information: **[What is Claude’s memory?](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context#h_c1c0b33879)**
+Refer to our article on chat search and memory for more information: **[What is Claude’s memory?](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_82126ebcc9)**
 
 ------------------------------------------------------------------------
 
@@ -160,7 +157,7 @@ Here's what you need to know about archiving:
 
 ### How to access archived projects
 
-You can access an archived project in the archived projects tab on the **[Projects page](http://claude.ai/projects)**.
+You can access an archived project in the archived projects tab on the **[Projects page](https://claude.ai/projects)**.
 
 ## How to unarchive a project
 

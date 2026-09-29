@@ -2,12 +2,14 @@
 title: "What are some things I can use Claude for? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/7996845-what-are-some-things-i-can-use-claude-for"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:53Z"
+fetched_at: "2026-09-29T06:32:28Z"
 ---
 
 # What are some things I can use Claude for?
 
 March 16, 2026
+
+Copy for LLM
 
 You can use Claude to:
 

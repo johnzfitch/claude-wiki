@@ -2,7 +2,7 @@
 title: "Vaults - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/vaults"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:40:23Z"
+fetched_at: "2026-09-26T06:38:51Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fvaults)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -66,109 +62,131 @@ Deployment Runs
 Vaults
 
 
-Create Vault
+Create Vault
 
 
-List Vaults
+List Vaults
 
 
-Get Vault
+Get Vault
 
 
-Update Vault
+Update Vault
 
 
-Delete Vault
+Delete Vault
 
 
-Archive Vault
+Archive Vault
 
 Credentials
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -176,59 +194,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -247,65 +225,66 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Vaults
-
+Copy page
 
 
 
 cURL
 
+1.  [API reference](/docs/en/api/http)
+2.  [Beta](/docs/en/api/http/beta)
+
 # Vaults
 
-##### [Create Vault](/docs/en/api/beta/vaults/create)
+##### [Create Vault](/docs/en/api/http/beta/vaults/create)
 
-POST/v1/vaults
+POST/v1/vaults
 
-##### [List Vaults](/docs/en/api/beta/vaults/list)
+##### [List Vaults](/docs/en/api/http/beta/vaults/list)
 
-GET/v1/vaults
+GET/v1/vaults
 
-##### [Get Vault](/docs/en/api/beta/vaults/retrieve)
+##### [Get Vault](/docs/en/api/http/beta/vaults/retrieve)
 
-GET/v1/vaults/{vault_id}
+GET/v1/vaults/{vault_id}
 
-##### [Update Vault](/docs/en/api/beta/vaults/update)
+##### [Update Vault](/docs/en/api/http/beta/vaults/update)
 
-POST/v1/vaults/{vault_id}
+POST/v1/vaults/{vault_id}
 
-##### [Delete Vault](/docs/en/api/beta/vaults/delete)
+##### [Delete Vault](/docs/en/api/http/beta/vaults/delete)
 
-DELETE/v1/vaults/{vault_id}
+DELETE/v1/vaults/{vault_id}
 
-##### [Archive Vault](/docs/en/api/beta/vaults/archive)
+##### [Archive Vault](/docs/en/api/http/beta/vaults/archive)
 
-POST/v1/vaults/{vault_id}/archive
+POST/v1/vaults/{vault_id}/archive
 
-##### ModelsExpand Collapse 
+##### Models
 
 
 
-BetaManagedAgentsDeletedVault object { id, type }
+BetaManagedAgentsDeletedVault object{ type: "vault_deleted", id }
 
 
 
 Confirmation of a deleted vault.
+
+type: "vault_deleted"
+
+
 
 id: string
 
@@ -313,23 +292,17 @@ id: string
 
 Unique identifier of the deleted vault.
 
-[](#beta_managed_agents_deleted_vault.id)
-
-type: "vault_deleted"
-
-
-
-[](#beta_managed_agents_deleted_vault.type)
-
-[](#beta_managed_agents_deleted_vault)
-
 
 
-BetaManagedAgentsVault object { id, archived_at, created_at, 4 more }
+BetaManagedAgentsVault object{ type: "vault", id, archived_at, 4 more }
 
 
 
 A vault that stores credentials for use by agents during sessions.
+
+type: "vault"
+
+
 
 id: string
 
@@ -337,15 +310,17 @@ id: string
 
 Unique identifier for the vault.
 
-[](#beta_managed_agents_vault.id)
+
 
-archived_at: string
+archived_at: string or null
 
 
 
-A timestamp in RFC 3339 format
+When the vault was archived. Null if not archived.
 
-[](#beta_managed_agents_vault.archived_at)
+formatdate-time
+
+
 
 created_at: string
 
@@ -353,7 +328,7 @@ created_at: string
 
 A timestamp in RFC 3339 format
 
-[](#beta_managed_agents_vault.created_at)
+formatdate-time
 
 display_name: string
 
@@ -361,21 +336,13 @@ display_name: string
 
 Human-readable name for the vault.
 
-[](#beta_managed_agents_vault.display_name)
-
 metadata: map\[string\]
 
 
 
 Arbitrary key-value metadata attached to the vault.
 
-[](#beta_managed_agents_vault.metadata)
-
-type: "vault"
-
-
-
-[](#beta_managed_agents_vault.type)
+
 
 updated_at: string
 
@@ -383,36 +350,34 @@ updated_at: string
 
 A timestamp in RFC 3339 format
 
-[](#beta_managed_agents_vault.updated_at)
+formatdate-time
 
-[](#beta_managed_agents_vault)
+#### Vaults[Credentials](/docs/en/api/http/beta/vaults/credentials)
 
-#### VaultsCredentials
+##### [Create Credential](/docs/en/api/http/beta/vaults/credentials/create)
 
-##### [Create Credential](/docs/en/api/beta/vaults/credentials/create)
+POST/v1/vaults/{vault_id}/credentials
 
-POST/v1/vaults/{vault_id}/credentials
+##### [List Credentials](/docs/en/api/http/beta/vaults/credentials/list)
 
-##### [List Credentials](/docs/en/api/beta/vaults/credentials/list)
+GET/v1/vaults/{vault_id}/credentials
 
-GET/v1/vaults/{vault_id}/credentials
+##### [Get Credential](/docs/en/api/http/beta/vaults/credentials/retrieve)
 
-##### [Get Credential](/docs/en/api/beta/vaults/credentials/retrieve)
+GET/v1/vaults/{vault_id}/credentials/{credential_id}
 
-GET/v1/vaults/{vault_id}/credentials/{credential_id}
+##### [Update Credential](/docs/en/api/http/beta/vaults/credentials/update)
 
-##### [Update Credential](/docs/en/api/beta/vaults/credentials/update)
+POST/v1/vaults/{vault_id}/credentials/{credential_id}
 
-POST/v1/vaults/{vault_id}/credentials/{credential_id}
+##### [Delete Credential](/docs/en/api/http/beta/vaults/credentials/delete)
 
-##### [Delete Credential](/docs/en/api/beta/vaults/credentials/delete)
+DELETE/v1/vaults/{vault_id}/credentials/{credential_id}
 
-DELETE/v1/vaults/{vault_id}/credentials/{credential_id}
+##### [Archive Credential](/docs/en/api/http/beta/vaults/credentials/archive)
 
-##### [Archive Credential](/docs/en/api/beta/vaults/credentials/archive)
+POST/v1/vaults/{vault_id}/credentials/{credential_id}/archive
 
-POST/v1/vaults/{vault_id}/credentials/{credential_id}/archive
+##### [Validate Credential](/docs/en/api/http/beta/vaults/credentials/mcp_oauth_validate)
 
-##### [Validate Credential](/docs/en/api/beta/vaults/credentials/mcp_oauth_validate)
-
-POST/v1/vaults/{vault_id}/credentials/{credential_id}/mcp_oauth_validate
+POST/v1/vaults/{vault_id}/credentials/{credential_id}/mcp_oauth_validate

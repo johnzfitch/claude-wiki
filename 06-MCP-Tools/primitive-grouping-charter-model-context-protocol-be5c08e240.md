@@ -2,7 +2,7 @@
 title: "Primitive Grouping Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/interest-groups/primitive-grouping"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:04Z"
+fetched_at: "2026-09-19T06:28:50Z"
 tags: ["mcp"]
 ---
 
@@ -81,7 +81,7 @@ Out of Scope
 Related Groups
 
 - **[Tool Annotations IG](/community/interest-groups/tool-annotations)** - annotation-based filtering and selection of primitives intersects with how primitives are organized and surfaced
-- **[Skills Over MCP WG](/community/working-groups/skills-over-mcp)** - the MCP-and-Skills effort is evaluating how capabilities are discovered and organized, which overlaps with grouping
+- **[Skills Over MCP WG](/community/working-groups/skills-over-mcp)** - maintains the published [Skills extension](/extensions/skills/overview); skill discovery and progressive disclosure overlap with grouping
 - **[Registry WG](/community/working-groups/registry)** - organizing MCP servers (beyond this group’s mandate) is evaluated here
 - **[Security IG](/community/interest-groups/security)** - organizing and disclosing primitives by privilege level is a security concern outside this group’s scope
 
@@ -99,7 +99,7 @@ Flat lists of MCP primitives can be long and cumbersome to work with for several
 **Beyond Scope**
 
 - **Organization for security** - organizing and disclosing primitives to clients based on their privilege level is an important problem but beyond this group’s mandate
-- **Organizing MCP servers** - the MCP Registry and MCP-and-Skills groups are evaluating how different servers should be organized to improve the client experience
+- **Organizing MCP servers** - server discovery and registry schema decisions belong to the [Registry WG](/community/working-groups/registry), with skill-distribution requirements contributed by the Skills Over MCP WG
 
 
 [​](#goals)

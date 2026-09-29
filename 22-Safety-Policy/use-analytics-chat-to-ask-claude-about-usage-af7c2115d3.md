@@ -2,13 +2,14 @@
 title: "Use analytics chat to ask Claude about usage | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14729354-use-analytics-chat-to-ask-claude-about-usage"
 category: "22-Safety-Policy"
-fetched_at: "2026-08-02T05:41:21Z"
+fetched_at: "2026-09-29T06:30:52Z"
 ---
 
 # Use analytics chat to ask Claude about usage
 
 July 1, 2026
 
+Copy for LLM
 
 Analytics chat lets you ask Claude questions about your organization’s usage in plain language. Instead of clicking through dashboard tabs or exporting data, type a question. Claude runs the right query against your organization’s data and responds with a chart and a short summary of what it found.
 

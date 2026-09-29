@@ -2,14 +2,14 @@
 title: "Manage usage credits for Team and seat-based Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:40:53Z"
+fetched_at: "2026-09-29T06:31:22Z"
 tags: ["billing", "enterprise"]
 ---
 
 # Manage usage credits for Team and seat-based Enterprise plans
 
-May 18, 2026
 
+Copy for LLM
 
 This article explains how Team and seat-based Enterprise plan Owners and Primary Owners can purchase usage credits, allowing members to continue using Claude, Claude Cowork, and Claude Code after reaching usage limits for their assigned seat.
 
@@ -122,7 +122,7 @@ Members of seat-based Enterprise plans will see a "Request usage credits" link u
 
 Click this to send a request to organization Admins to either switch you to a Premium seat (if you're currently assigned to a Standard seat) or enable usage credits for your user account. This will change to **Request sent to admin** after clicking it, indicating that you submitted a request for a seat tier increase or usage credits to an organization Admin.
 
-Admins and Owners can review these requests in **[Organization settings \> Usage](https://claude.ai/admin-settings/usage)**. Clicking into "Review requests" will open a modal where each requester is listed, along with their current seat, and the time they asked for more usage. Click "Increase limit" next to each request you want to approve. Admins and above will also receive a daily email including all your organization's outstanding requests.
+Owners, Primary Owners, and custom roles with the Billing permission set to "Can manage" can review these requests in **[Organization settings \> Usage](https://claude.ai/admin-settings/usage)**. Clicking into "Review requests" will open a modal where each requester is listed, along with their current seat, and the time they asked for more usage. Click "Increase limit" next to each request you want to approve. Admins and above will also receive a daily email including all your organization's outstanding requests.
 
 ### Disable usage credit requests
 

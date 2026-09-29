@@ -2,12 +2,15 @@
 title: "HIPAA-ready Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:41:05Z"
+fetched_at: "2026-09-29T06:30:36Z"
 tags: ["api", "billing", "enterprise"]
 ---
 
 # HIPAA-ready Enterprise plans
 
+July 23, 2026
+
+Copy for LLM
 
 This feature is available for Enterprise plans only (both self-serve and sales-assisted).
 

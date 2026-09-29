@@ -1,6 +1,6 @@
 # Prompting Guides
 
-*34 documents*
+*37 documents*
 
 
 - [Best practices for Claude Code - Claude Code Docs](best-practices-for-claude-code-claude-code-docs-9686dc1633.md) - Tips and patterns for getting the most out of Claude Code, from configuring your environment to scaling across parallel sessions.
@@ -9,19 +9,22 @@
 - [Prompt caching - Claude Platform Docs](build-with-claude-prompt-caching-9a3bbc4f63.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Prompt caching](build-with-claude-prompt-caching-bf7c54aa4c.md) - When you send a request with prompt caching enabled:
 - [Prompt caching - Claude API Docs](build-with-claude-prompt-caching.md) - Prompt caching optimizes your API usage by allowing resuming from specific prefixes in your prompts. This significantly reduces processing time and co
-- [Prompt engineering overview - Claude Platform Docs](build-with-claude-prompt-engineering-b0ff1e58f5.md) - 
+- [Prompt engineering overview - Claude Platform Docs](build-with-claude-prompt-engineering-b0ff1e58f5.md) - Copy page
 - [Build With Claude Prompt Engineering Claude 4 Best Practices](build-with-claude-prompt-engineering-claude-4-best-practices.md) - This guide provides specific prompt engineering techniques for Claude 4.x models, with specific guidance for Sonnet 4.5, Haiku 4.5, and Opus 4.5. Thes
 - [Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md) - Comprehensive guide to prompt engineering techniques for Claude's latest models, covering clarity, examples, XML structuring, thinking, and agentic sy
 - [Prompting best practices - Claude Platform Docs](build-with-claude-prompt-engineering-claude-prompting-best-practices-da45de5646.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Prompting best practices - Claude API Docs](build-with-claude-prompt-engineering-claude-prompting-best-practices.md) - Comprehensive guide to prompt engineering techniques for Claude's latest models, covering clarity, examples, XML structuring, thinking, and agentic sy
 - [Prompt engineering overview](build-with-claude-prompt-engineering-overview-1ab62e934b.md)
-- [Prompt engineering overview - Claude Platform Docs](build-with-claude-prompt-engineering-overview-c49db94360.md) - 
+- [Prompt engineering overview - Claude Platform Docs](build-with-claude-prompt-engineering-overview-c49db94360.md) - Copy page
 - [Prompt engineering overview - Claude API Docs](build-with-claude-prompt-engineering-overview.md) - Before prompt engineering
 - [Prompt engineering overview - Claude API Docs](build-with-claude-prompt-engineering-prefill-claudes-response.md) - Before prompt engineering
+- [Prompting Claude Fable 5.1 - Claude Platform Docs](build-with-claude-prompt-engineering-prompting-claude-fable-5-1-557f96ccb3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Prompting Claude Fable 5 - Claude Platform Docs](build-with-claude-prompt-engineering-prompting-claude-fable-5-ad459d218c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Prompting Claude Opus 4.8 - Claude Platform Docs](build-with-claude-prompt-engineering-prompting-claude-opus-4-8-cb3cf15d36.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Prompting Claude Opus 5.5 - Claude Platform Docs](build-with-claude-prompt-engineering-prompting-claude-opus-5-5-72a68f7931.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Prompting Claude Opus 5 - Claude Platform Docs](build-with-claude-prompt-engineering-prompting-claude-opus-5-545654c2e6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Prompting Claude Sonnet 5 - Claude Platform Docs](build-with-claude-prompt-engineering-prompting-claude-sonnet-5-1b5309285f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Prompting Claude Sonnet 5.5 - Claude Platform Docs](build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5-bde4560d5d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Console prompting tools](build-with-claude-prompt-engineering-prompting-tools-91eb182b1e.md) - <Note>
 - [Console prompting tools - Claude API Docs](build-with-claude-prompt-engineering-prompting-tools.md) - The Claude Console offers a suite of tools to help you build and refine prompts. This page walks through them in the order you'll typically use them: 
 - [Prompting best practices - Claude API Docs](build-with-claude-prompt-engineering.md) - Comprehensive guide to prompt engineering techniques for Claude's latest models, covering clarity, examples, XML structuring, thinking, and agentic sy

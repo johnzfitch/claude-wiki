@@ -2,7 +2,7 @@
 title: "Troubleshoot Claude Code installation and authentication | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14552646-troubleshoot-claude-code-installation-and-authentication"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:41:49Z"
+fetched_at: "2026-09-29T06:32:14Z"
 tags: ["api", "authentication", "bedrock", "claude-code", "vertex"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["api", "authentication", "bedrock", "claude-code", "vertex"]
 
 April 15, 2026
 
+Copy for LLM
 
 These ten issues account for the large majority of installation and authentication support tickets related to Claude Code. Each entry includes the most reliable fix.
 

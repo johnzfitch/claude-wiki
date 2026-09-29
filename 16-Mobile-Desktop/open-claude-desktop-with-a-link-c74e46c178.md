@@ -2,7 +2,7 @@
 title: "Open Claude Desktop with a link | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14729294-open-claude-desktop-with-a-link"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-08-02T05:41:50Z"
+fetched_at: "2026-09-29T06:31:51Z"
 tags: ["claude-code", "desktop"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["claude-code", "desktop"]
 
 June 30, 2026
 
+Copy for LLM
 
 Claude for macOS, Windows, and Linux respond to the `claude://` URL scheme, much like a browser responds to the `https://` scheme. You can use these links from a website, a script, or another app to open Claude Desktop and jump straight to a chat, a Cowork session, or a Code session.
 

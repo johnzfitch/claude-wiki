@@ -2,12 +2,14 @@
 title: "Set up Code Review for Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14233555-set-up-code-review-for-claude-code"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:41:10Z"
+fetched_at: "2026-09-29T06:32:12Z"
 tags: ["claude-code"]
 ---
 
 # Set up Code Review for Claude Code
 
+
+Copy for LLM
 
 Code Review analyzes your GitHub pull requests and posts findings as inline comments on the lines of code where it found issues. A fleet of specialized agents examine the code changes in the context of your full codebase, looking for logic errors, security vulnerabilities, broken edge cases, and regressions.
 
@@ -45,7 +47,7 @@ The steps below cover setup for repositories on github.com. If your repositories
 
 Owners and Primary Owners of Team and Enterprise plans can enable Code Review once for the organization and select which repositories to include. In addition to an owner role within your Claude organization, you’ll need permission to install GitHub Apps in your GitHub organization.
 
-1.  Go to **[Organization settings \> Claude Code](http://claude.ai/admin-settings/claude-code)** and find the **Code Review** section.
+1.  Go to **[Organization settings \> Claude Code](https://claude.ai/admin-settings/claude-code)** and find the **Code Review** section.
 
 2.  Click “Configure” to begin the GitHub App installation flow.
 
@@ -157,7 +159,7 @@ If you’ve installed the Claude GitHub App but your repositories don’t appear
 
 1.  Confirm the Claude GitHub App has access to the repositories you expect. Go to your GitHub organization’s settings, find the Claude GitHub App under **Installed GitHub Apps**, and check whether it has access to all repositories or only selected ones.
 
-2.  If your organization uses GitHub Enterprise Cloud with Enterprise Managed Users (EMU), make sure the Claude GitHub OAuth App is authorized at the enterprise level. EMU enterprises can restrict which OAuth apps are approved, and the Claude app must be explicitly allowed.
+2.  If your organization uses GitHub Enterprise Cloud with Enterprise Managed Users (EMU), authorize Claude while you're signed in with your managed account and have an active SSO session. There's no separate enterprise-level approval step.
 
 3.  Try disconnecting and reconnecting your GitHub account in Claude. Go to **[Customize \> Connectors](https://claude.ai/customize/connectors)**, disconnect GitHub, and connect it again. Which repositories the App can access is managed on GitHub's side, covered in step 1.
 

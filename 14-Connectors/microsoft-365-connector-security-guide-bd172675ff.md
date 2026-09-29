@@ -2,12 +2,14 @@
 title: "Microsoft 365 connector security guide | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide"
 category: "14-Connectors"
-fetched_at: "2026-08-02T05:41:39Z"
+fetched_at: "2026-09-29T06:31:29Z"
 tags: ["connectors", "security"]
 ---
 
 # Microsoft 365 connector security guide
 
+
+Copy for LLM
 
 The Microsoft 365 connector is an **Anthropic-hosted integration** that enables Claude to securely access Microsoft 365 services (Outlook, SharePoint, OneDrive, Teams) through user-delegated permissions. Anthropic has completed Microsoft's publisher verification process, associating our verified Microsoft Partner Network account with this application to confirm our organizational identity.
 
@@ -39,17 +41,21 @@ You can selectively disable specific capabilities via Microsoft Entra Admin Cent
 
 Changes take effect immediately for all people in your organization. People can also choose to disable capabilities during a chat by selectively toggling off the connector's tools.
 
-**4. Microsoft conditional access integration**
+**4. Microsoft Conditional Access**
 
-The connector fully supports your existing Entra (Azure AD) policies:
+Your Conditional Access policies apply to the connector, but not always in the way they apply to a user working directly in Microsoft 365. When a user connects, Entra evaluates your policies against their sign-in. Every later request is made by Claude's servers. In our testing, Entra evaluates those requests as coming from Anthropic's IP range (`160.79.104.0/21`), identifying the member and carrying the device recorded when they connected, rather than the member's current device or network. What that means for each kind of policy:
 
-- **Multi-factor authentication (MFA)**: Enforce MFA for connector access
+- **Group-based access**: Supported. Scope your policy to specific security groups, or set **Assignment required** on both Claude applications as described in **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector)**.
 
-- **Device compliance**: Require managed/compliant devices
+- **Multi-factor authentication (MFA)**: Supported. MFA is enforced when the member signs in to connect. If your MFA policy doesn't apply to the connector sign-in, for example because it targets specific applications, or has conditions that can skip MFA there, create a separate policy with no conditions that requires MFA for the two Claude applications.
 
-- **IP restrictions**: Limit Microsoft authentication to corporate network or VPN
+- **Device compliance**: Supported, with a difference in when it's checked. In our testing, the policy is evaluated against the device the member connects from. A device that doesn't meet the policy isn't stopped at the connect screen; its requests fail from the first tool call afterwards. The connection then carries that device record, and ongoing access is checked against the record rather than the device currently in use, until the member next reconnects. Each member's most recent connection is the one that counts. The record is only created if the member's browser can prove the device to Entra, so a compliant device used with a browser profile that isn't signed in to your organization is treated as not compliant. Members who are blocked (`AADSTS53000`) fix it by reconnecting from a device that meets the policy, in a browser signed in to your organization. Keep the policy assigned to the Claude applications; excluding them removes the check.
 
-- **Group-based access**: Restrict to specific security groups
+- **Location and network restrictions**: Not supported. In our testing, the server-side requests always appear to come from Anthropic's IP range, wherever the member is, so a policy that limits sign-ins to your network or VPN blocks the connector for every member. The same applies to sign-in frequency policies. Learn how to exclude Anthropic's IP range in **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector)**.
+
+**Warning:** Don't change a device policy to require a compliant device *or* multi-factor authentication as a workaround. In our testing the MFA proof carries through the stored connection in the same way, so the policy can end up satisfied for every member and the device requirement stops doing anything reliable.
+
+To stop members from connecting a work Microsoft 365 account to a Claude account outside your organization, turn on **[Restrict verified-domain connectors to your enterprise](https://support.claude.com/en/articles/15402193-restrict-verified-domain-connectors-to-your-enterprise)**.
 
 **5. User-level permissions**
 
@@ -61,7 +67,7 @@ The connector fully supports your existing Entra (Azure AD) policies:
 
 - Users cannot bypass SharePoint sharing settings or folder permissions.
 
-- Users cannot access other users' private files or emails. Users can search shared mailboxes they've been granted delegate access to in Microsoft 365, including full access and folder-level delegation. Shared mailbox access remains read-only, via the `Mail.Read.Shared` permission.
+- Users can't access other users' private files or emails. Users can search shared mailboxes they've been granted delegate access to in Microsoft 365, including full access and folder-level delegation. Shared mailbox access remains read-only, via the `Mail.Read.Shared` permission. Email search doesn't reach a user's separate Online Archive (In-Place Archive) mailbox.
 
 - Delegated permissions inherently respect Microsoft 365 data loss prevention (DLP) policies.
 
@@ -119,19 +125,37 @@ The connector provides **read-only** access to:
 
 [TABLE]
 
-**Note:** “Always allow” is not supported for `outlook_send_email`, `outlook_forward_mail`, `outlook_send_draft`, `outlook_create_event`, or `outlook_update_event`.
+**Note:** “Always allow” is not supported for the following tools:
 
-When an organization enables write tools, the connector also exposes write tools for sending and organizing email, managing drafts and calendar events, updating mailbox settings, and creating and updating files in OneDrive and SharePoint. Teams remains read-only.
+- `outlook_send_email`
+
+- `outlook_forward_mail`
+
+- `outlook_send_draft`
+
+- `outlook_create_event`
+
+- `outlook_update_event`
+
+- `teams_send_chat_message`
+
+- `teams_send_channel_message`
+
+- `teams_reply_channel_message`
+
+When an organization enables write tools, the connector also exposes write tools for sending and organizing email, managing drafts and calendar events, updating mailbox settings, creating and updating files in OneDrive and SharePoint, and sending Teams messages. Teams write tools are off by default and are enabled individually in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)** within “Microsoft 365”; the connector-wide "all tools" permission doesn't turn them on. Claude can send messages in Teams but can't change Teams settings, memberships, or permissions.
 
 Write tools include the following built-in safeguards:
 
-- **Attribution:** Emails Claude sends include an attribution header identifying them as agent-initiated. File and calendar writes aren't currently tagged.
+- **Attribution:** Emails Claude sends include an attribution header identifying them as agent-initiated. File writes, calendar writes, and Teams messages aren't currently tagged.
 
 - **Rate limits:** Per-user limits apply to writes, sends, and recipients.
 
 - **Attachment restriction:** Attachments aren't supported in any write tool—sending, forwarding, and drafting all reject messages with attachments.
 
-- **Blocked by default:** Organizations that used the connector before write tools launched have write tools blocked by default until an admin enables them.
+- **Blocked by default:** Organizations that used the connector before write tools launched have write tools blocked by default until an admin enables them. Teams write tools are blocked by default for every organization and must each be enabled individually.
+
+- **Confirmation required:** Sending a Teams chat message and posting or replying in a channel can only be set to Ask, so the user confirms every send.
 
 ## Permissions list
 
@@ -213,11 +237,21 @@ Requested as part of the updated consent set; used only when write tools are ena
 
 - **[MailboxSettings.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite)** - Manage categories, inbox rules, and automatic replies
 
+- **[ChatMessage.Send](https://learn.microsoft.com/en-us/graph/permissions-reference#chatmessagesend)** - Send a Teams chat message on the user's behalf
+
+- **[ChannelMessage.Send](https://learn.microsoft.com/en-us/graph/permissions-reference#channelmessagesend)** - Post or reply in a Teams channel
+
+- **[Chat.Create](https://learn.microsoft.com/en-us/graph/permissions-reference#chatcreate)** - Start a new Teams chat on the user's behalf
+
+- **[People.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#peopleread)**: Find people in the organization to start a chat with
+
 ## Current limitations
 
-- **Teams is read-only**: Claude can't post Teams messages or modify Teams settings. Other write tools require an admin to enable them.
+- **Teams write access is limited to messaging**: Claude can send a chat message, post or reply in a channel, or start a new chat, but can't modify Teams settings, memberships, or permissions. All write tools require an admin to enable them, and Teams write tools are enabled individually.
 
 - **User-level access only**: Access with service principal authentication is not supported.
+
+- **Online Archive mailboxes aren't searched**: email search covers each user's primary mailbox, including its Archive folder, and any shared mailboxes they can access. It doesn't cover the separate Online Archive mailbox (also called the In-Place Archive), so messages that a retention policy has moved there won't appear in results.
 
 ## Frequently asked questions
 

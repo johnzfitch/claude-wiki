@@ -2,13 +2,14 @@
 title: "SSO login | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503613-sso-login"
 category: "21-Account-Support"
-fetched_at: "2026-08-02T05:42:47Z"
+fetched_at: "2026-09-29T06:31:47Z"
 ---
 
 # SSO login
 
 April 10, 2026
 
+Copy for LLM
 
 Claude for Government requires Single Sign-on (SSO) for user authentication. Unlike the commercial Claude Enterprise plan, email based (magic link) login is only available to the Primary Owner during account setup. All other users must authenticate through your organization's identity provider (IdP).
 

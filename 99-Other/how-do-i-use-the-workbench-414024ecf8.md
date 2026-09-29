@@ -1,21 +1,23 @@
 ---
-title: "How do I use the Workbench? | Claude Help Center"
+title: "How do I use the playground? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8606378-how-do-i-use-the-workbench"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:55Z"
-tags: ["prompting"]
+fetched_at: "2026-09-29T06:31:42Z"
 ---
 
-# How do I use the Workbench?
+# How do I use the playground?
 
+August 18, 2026
 
-We’ve recently updated Workbench. The new Workbench enables developers to try out Claude models and API features directly in the Claude Console, but no longer supports saving prompt history or evaluating prompts.
+Copy for LLM
 
-**Workbench (legacy) is no longer available to new users and will be retired for all users on August 17, 2026**. If you're still using the legacy version, see the section below, **[How do I use Workbench (legacy)?](#h_b659fc7faa)**, and if there are prompts, completions, or evals you wish to retain, **consider exporting your data before August 17, 2026.**
+**Workbench is now the playground**. Playground enables developers to try out Claude models and API features directly in the Claude Console, but does not support saving prompt history or evaluating prompts.
 
-## What is Workbench?
+If you have saved data from **Workbench (legacy)** that you wish to export, you can do so until **September 1, 2026** in **[Console settings](https://platform.claude.com/settings/privacy)**. This data will no longer be recoverable after September 1, 2026. See **[How do I export my Workbench data from Console?](#h_ce935c603b)** for more.
 
-Workbench is built directly on the public **[Messages API](https://platform.claude.com/docs/en/build-with-claude/working-with-messages)**, so the request you build in Workbench is the same request you'll send in your code.
+## What is the playground?
+
+The playground is built directly on the public **[Messages API](https://platform.claude.com/docs/en/build-with-claude/working-with-messages)**, so the request you build in the playground is the same request you will send in your code.
 
 Use it to:
 
@@ -27,13 +29,13 @@ Use it to:
 
 - Export your work as a code snippet you can run in your own application
 
-Workbench doesn't store your prompts or conversations on Anthropic's servers. Your current draft stays in your browser, and you can go to the "code" tab to keep a copy of any request.
+Playground doesn't store your prompts or conversations on Anthropic's servers. Your current draft stays in your browser, and you can go to the “code" tab to keep a copy of any request.
 
-## Open Workbench
+## Open the playground
 
 1.  Log in to the **[Claude Console](https://platform.claude.com/)**.
 
-2.  Select "Workbench" in the navigation.
+2.  Select "Playground" in the navigation.
 
 3.  If your organization uses workspaces, choose the workspace you want to work in.
 
@@ -47,104 +49,70 @@ Workbench doesn't store your prompts or conversations on Anthropic's servers. Yo
 
 4.  Edit your prompt and run it again to keep iterating.
 
-Workbench also includes example templates you can load and modify.
+Playground also includes example templates you can load and modify.
 
 ## Choose a model and adjust settings
 
 Use the model selector to switch between Claude models, and open the model settings to adjust parameters like temperature and maximum output tokens.
 
-Running the same prompt with different models or settings is a quick way to see how the response changes. As you think about building your application with the Messages API, use the workbench to understand the power of the models.
+Running the same prompt with different models or settings is a quick way to see how the response changes. As you think about building your application with the Messages API, use the playground to understand the power of the models.
 
 ## Use tools and structured outputs
 
-Add tool definitions to your request to test tool use, and use structured outputs to have Claude return data in a shape you define. Workbench shows tool calls and tool results in the response, so you can see exactly how they're represented in the API.
+Add tool definitions to your request to test tool use, and use structured outputs to have Claude return data in a shape you define. Playground shows tool calls and tool results in the response, so you can see exactly how they're represented in the API.
 
 ## View the raw request and response
 
-Workbench can show the raw API request and response, including the full message structure, stop reason, and usage. This is the same shape your application sends and receives and is a practical way to try out the features of the Messages API.
+Playground can show the raw API request and response, including the full message structure, stop reason, and usage. This is the same shape your application sends and receives and is a practical way to try out the features of the Messages API.
 
 ## Turn your work into code
 
-Click the "code" toggle to export your current request as a code snippet. The snippet reflects exactly what you've tested in the Workbench, so you can paste it into your project and run it with your own API key.
+Click the "code" toggle to export your current request as a code snippet. The snippet reflects exactly what you've tested in the playground, so you can paste it into your project and run it with your own API key.
 
-Code examples in our documentation include an "Open in Workbench" option, which loads the example into Workbench so you can run and modify it.
+Code examples in our documentation include an "Open in Playground" option, which loads the example into the playground so you can run and modify it.
 
 ------------------------------------------------------------------------
 
-## How do I use Workbench (legacy)?
+## How do I export my Workbench data from Console?
 
-**Note: Workbench (legacy) is no longer available to new users and will be retired for all users on August 17, 2026.** After this date, Workbench (legacy) and any saved prompts, prompt versions, and evals stored in it will no longer be accessible. Use the Export option to download your data before then.
+1.  Go to **[Claude Console](https://platform.claude.com/settings/privacy)**.
 
-Workbench (legacy) allows you to create and test prompts within your Claude Console account. You can enter your prompt into the "Human" dialogue box and click "Run" to test Claude's output. Click on the + icon in the upper left to create a new prompt, or click on the bulleted list icon to see prompts you've tested in the past:
+2.  In the **Export Workbench data** dialog, choose what to include alongside your prompts:
 
+    1.  **Model completions** — saved responses from past runs
 
-Workbench (legacy) also allows you to configure several settings when prompting Claude. You can click on the slider icon to review your model settings. This allows you to select the model, temperature, and max tokens to sample:
+    2.  **Uploaded files** — images and PDFs attached to your prompts  
+        ​  
+        ​**Note:** Including either may significantly increase the export size.  
+        ​  
+        Primary Owners or Admins also have the option to export data for their entire organization.
 
+3.  Select "Export." Your data is packaged as JSON, and we'll email you a download link when it's ready.
 
-After crafting your prompt, click on the "Get code" button to generate a sample using our Python and Typescript SDKs:
-
-
-## How can I access my previous work and prompt history in Workbench (legacy)?
-
-You can access your previous Workbench prompts on your Console account by following these steps:
-
-1\. Log in at platform.claude.com.
-
-2\. Navigate to your [Workbench](https://platform.claude.com/workbench).
-
-3\. Click the "List prompts" button on the upper left corner of the page, next to the "+" button to create a new prompt:
-
-
-4\. A list of your previously-saved prompts will appear.
-
-5\. You can use the search bar at the top of the prompt list if you're looking for something specific.
-
-**Important:** When you run a prompt on Workbench (legacy), Claude's response is not saved by default. You need to manually add responses from Claude to your current prompt on the Workbench by clicking "Add to Conversation" at the bottom of the output. If you aren't seeing something in your history that you were expecting, it's possible that it wasn't added to the conversation.
-
-## How do I export my data from Workbench (legacy)?
-
-1.  Open **[Workbench (legacy)](https://platform.claude.com/workbench)** in the Claude Console.
-
-2.  In the banner at the top of the page, select "Export data."
-
-3.  In the **Export Workbench data** dialog, choose what to include alongside your prompts:
-
-    - **Model completions** — saved responses from past runs
-
-    - **Uploaded files** — images and PDFs attached to your prompts  
-      ​  
-      ​**Note:** Including either may significantly increase the export size.
-
-4.  Select "Export." Your data is packaged as JSON, and we'll email you a download link when it's ready.
-
-Export your data before **August 17, 2026**. It will not be accessible after Workbench (legacy) is retired.
+Export your data before **September 1, 2026**. It won't be accessible after this date.
 
 ------------------------------------------------------------------------
 
 ## Frequently asked questions
 
-### What’s changing in Workbench?
+### What happened to Workbench (legacy)?
 
-We’re refreshing Workbench to be a simpler, stateless way to try Claude models and API features in the Console. The main differences are that it now:
+**Workbench (legacy) is now retired.** The playground replaces it for trying Claude models and API features in the Console. It does not support saving prompt history or evaluating prompts.
+
+### What's the difference between Workbench (legacy) and the playground?
+
+The playground is a simpler, stateless way to try Claude models and API features in the Console. The main differences is that it now:
 
 - It doesn't store your work on Anthropic's servers. Your current draft stays in your browser, and you can export any request as code. With Workbench (legacy) you were able to save prompts, prompt history, and run evals.
 
 - It is built directly on the public Messages API and shows the full request and response, so what you see matches what your code sends and receives.
 
-- Saved prompts, prompt versions, evals, and prompt sharing aren't part of the refreshed Workbench. Use the export function in the legacy version to download your data.
-
-### Will Workbench (legacy) keep working for me right now?
-
-**Workbench (legacy) is no longer available to new users and will be retired for all users on August 17, 2026.** If you used Workbench (legacy) prior to **June 16, 2026**, you'll continue to have access until the retirement date and will see a banner in Workbench linking to the legacy version so you can export your data. Accounts that started using Workbench on or after June 16, 2026 do not have access to Workbench (legacy). After August 17, 2026, Workbench (legacy) will no longer be available to anyone.
-
-### What happens to my saved prompts and evals?
-
-They remain in Workbench (legacy) until it is retired on August 17, 2026. Use the Export option in Workbench (legacy) to download them before that date. The refreshed Workbench doesn't include saved prompts or evals, so keep your exported copies in your own tools, such as the repository where your application code lives.
+- Saved prompts, prompt versions, evals, and prompt sharing aren't part of the playground. Use the export function in the legacy version to download your data.
 
 ### How do I get access to my existing data from Workbench (legacy)?
 
-Your saved prompts and completions are available in Workbench (legacy) until August 17, 2026. You'll see an Export option in Workbench (legacy) that lets you download your saved prompts, prompt revisions, and completions. Export your data before the retirement date, as it will not be accessible afterward.
+You can no longer access this data directly in Console. You can export it as JSON in **[Claude Console](https://platform.claude.com/settings/privacy)** until September 1, 2026. After this date, it will no longer be recoverable.
 
-### Can I import my Workbench (legacy) data into refreshed Workbench?
+### Can I import my Workbench data into the playground?
 
-No. The refreshed version of Workbench doesn't save prompts or conversations, so there's nothing to import into. The export gives you a copy of your Workbench data so you can keep it or move it into your own tools.
+No. The playground doesn't save prompts or conversations, so there's nothing to import into. The export gives you a copy of your Workbench data so you can keep it or move it into your own tools.

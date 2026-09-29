@@ -1,14 +1,15 @@
 ---
-title: "Holiday 2025 Usage Promotion | Claude Help Center"
+title: "Holiday 2025 Usage Promotion | Anthropic Help Center"
 source_url: "https://support.claude.com/en/articles/13163666-holiday-2025-usage-promotion"
 category: "22-Safety-Policy"
-fetched_at: "2026-08-02T05:41:14Z"
+fetched_at: "2026-09-04T06:30:44Z"
 ---
 
 # Holiday 2025 Usage Promotion
 
 March 16, 2026
 
+Copy for LLM
 
 We’re giving Pro and Max subscribers a holiday gift—2x usage limits from December 25 through December 31. During this period, your plan’s usage limits will be doubled, giving you more room to explore Claude’s capabilities as you plan for the new year.
 

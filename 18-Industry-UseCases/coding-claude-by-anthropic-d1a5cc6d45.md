@@ -2,7 +2,7 @@
 title: "Coding | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/coding"
 category: "18-Industry-UseCases"
-fetched_at: "2026-08-02T05:43:56Z"
+fetched_at: "2026-09-23T06:29:19Z"
 ---
 
 # The best AI for developers
@@ -23,9 +23,9 @@ Start building
 
 Play video
 
-80.3%
+66.4%
 
-Fable 5 leads on SWE-Bench Pro
+Opus 5.5 on Terminal-Bench 4.0
 
 ## 60x
 
@@ -98,7 +98,7 @@ Learn more
 
 ### Explore agentic coding with Claude Code
 
-Claude Code brings Fable 5 to your terminal, with deep codebase awareness and the ability to edit files and run commands directly in your environment.
+Claude Code brings Fable 5.1 to your terminal, with deep codebase awareness and the ability to edit files and run commands directly in your environment.
 
 Learn more
 
@@ -202,33 +202,61 @@ Remember to be thorough in your analysis and clear in your explanation. Your goa
 
 ## See why companies choose Claude
 
-"On ViBench, our end-to-end vibe-coding benchmark, Claude Fable 5 is the highest-performing model we've tested — nearly saturating our base use cases and building apps in less time with fewer tokens."
+“Even at its lowest effort setting, Claude Opus 5.5 caught 72% of known bugs in our code reviews to Opus 5’s 56% at high effort, with fewer false alarms and a fraction of the output. On US consulting analysis, low thinking effort matched its higher thinking settings on half the output and passed our quality checks. When more lower thinking efforts are deployed in production, that’s client-ready work delivered efficiently.”
 
-Michele Catasta, President & Head of AI
+Carl Bennett, CIO
 
-"Claude Fable 5 is a real step forward for the developers GitHub serves. In our early testing, it took on complex, long-horizon coding tasks with a level of autonomy and reliability that exceeded previous benchmarks. But what excites us most is the direction it points: a future where developers can hand increasingly ambitious work to agents and trust the results across the software lifecycle."
+“Developers want agents that can take on real software work and finish it. In our testing across GitHub Copilot CLI and VS Code, Claude Opus 5.5 used among the fewest tokens and steps we measured. In VS Code, it solved more terminal tasks than Opus 5 in less than half the steps. More than making individual tasks more efficient, it’s making developers’ bigger projects more achievable.”
 
 Mario Rodriguez, Chief Product Officer
 
-“Claude Opus 5 is a clear generational step up from Opus 4.8. Over one weekend I gave it a chief-of-staff role over my dev environments: it built its own monitor, drove each box, and pulled me in only for the judgment calls.”
+“I handed Claude Opus 5.5 a large engineering task across six of our repositories and let it run overnight, unattended. It stayed on task for over 18 hours defining how our services talk to each other and working out how each one should apply that. Compared with Opus 5, it hit milestones faster and required minimal reworking. Its code comments were short and useful instead of long and prose-heavy. I’m struggling to find anything negative to say.”
 
-Cristian Rivera, Staff Software Engineer
+Sean Heintz, Staff Software Developer
 
-“On FrontierCode 1.1, Claude Opus 5 approaches Fable-level performance at half the cost. Within Devin, it also shows particular strength on difficult debugging and root-cause analysis tasks.”
+“For Lovable builders, Opus 5.5 means faster builds with the same quality, whether you’re starting from scratch or working on a live app. It gathers context once, makes fewer and more complete edits, and doesn’t get stuck retrying, finishing in a third to half fewer steps and using significantly fewer tokens along the way.”
 
-Scott Wu, CEO
+Fabian Hedin, CTO & Co-founder
 
-“Claude Opus 5 delivers near Fable 5 intelligence at Opus speed and cost. On CursorBench it’s just under Fable 5 and has many of the same behaviors. We are excited to see how developers use it in Cursor.”
+“With Claude Opus 5.5, we’ve seen a clear improvement in token efficiency across our internal evaluations, as we’ve been able to complete the same tasks both cheaper and faster.”
 
-Sualeh Asif, Co-Founder
+Aleksandar Mitic, Senior Engineer
 
-"These are the strongest results of any Claude model we've had the opportunity to test. Claude Fable 5 is a clear step forward on agentic coding and prototyping."
+“We test models on real engineering and trading-desk work. On our agentic coding tasks, Claude Opus 5.5 matched Opus 5’s quality in about half the turns, time and output tokens, cutting the cost of that workload by 40 to 50%. It posted the highest score we’ve recorded on one desk’s trading-support suite, passing tasks earlier Claude models had failed, and topped all eight models on our analysis task.”
 
-Matt Colyer, Director of Product, Developers
+Noyan Tokgozoglu, Global Head of AI Engineering
 
-"Claude Fable 5 came out \#1 on our evals, winning head-to-head against every model we tested. It was significantly stronger on the hardest tasks in the set — UI design and game coding."
+“We're moving our Opus 5 traffic in Devin to Claude Fable 5.1 on launch day. It matched or edged out Fable 5 in our testing at a lower cost per task, and with the new cache read pricing a Fable-class model is finally economical for the workloads we'd kept on Opus, starting with code review.”
 
-Kay Zhu, Co-founder & CTO
+Walden Yan, Co-founder and CPO
+
+“Claude Fable 5.1 is more comfortable with long, unattended work than Fable 5. I've had workflows run for a long stretch without losing the plot: it keeps its own records, reprioritizes as things change, and picks up where it left off.”
+
+Ben Lafferty, Senior Staff Engineer
+
+“On the hardest problems we work on, Claude Fable 5.1 separates strongly from any other model we've tried. On a grand challenge-tier problem we've used as a testbed for 18 months, it actually produced material progress. Rather than being trapped in stamp collecting, it made clear white-space connections I have yet to see elsewhere. It also optimized a compute kernel that Fable 5 had tapped out on by about 35%.”
+
+Sean Ward, Co-founder and CEO
+
+“We had a change that touched more than eight services across three codebases. Claude Fable 5.1 mapped the whole workflow end to end, in extremely fine detail, from the incoming service call down to the individual function and the database tables and rows, and it was accurate all the way down. We appreciated the opportunity to test the model and provide feedback, helping us prepare for a new frontier where we can increasingly rely on these tools to take on bolder initiatives.”
+
+Aditya Gupta, Staff Software Engineer
+
+“Claude Fable 5.1 is the most capable model we've run on CursorBench 3.2, scoring 73.4% at max effort. We found it especially skilled at verifying its own work, allowing it to take on difficult coding tasks from start to finish.”
+
+Sualeh Asif, Director of ML
+
+“The standout in Claude Fable 5.1 is the writing: more understandable, more meaningful, and it follows our writing guidance better. In blind tests against Fable 5, I preferred its writing and output. And in Canva Code it built a rhythm game with real music and on-beat gameplay matched to the level it generated, something no other model we tested delivered.”
+
+Danny Wu, Head of AI
+
+“We asked Claude Fable 5.1 to review a clinical research project for Rakuten Medical that three other frontier models had signed off on. It found a gap none of them had seen and insisted on testing it further. It then proposed a completely new hypothesis, turning a dataset we had written off into a new research direction in one afternoon. It's the first time a frontier model like Claude has empowered us to explore new research in this way.”
+
+Felix Giovanni Virgo, Principal AI Engineer
+
+“As part of our ongoing evaluation of AI models, Claude Fable 5.1 delivered impressive results in our tests. Using Claude Code, it correctly identified the root cause of every broken build we tested, across all the effort levels. It also communicates more effectively than earlier Anthropic models, with updates that are more concise and easier to follow.”
+
+Josh Boyer, Distinguished Engineer
 
 [Prev](#)
 
@@ -292,112 +320,6 @@ Thank you! Your submission has been received!
 
 Oops! Something went wrong while submitting the form.
 
-Write
-
-[Button Text](#)
-
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
-
 [Anthropic](https://www.anthropic.com/)
 
 Anthropic
@@ -416,11 +338,6 @@ Products
   [Claude Code](/product/claude-code)
   Claude Code
 
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
 - Claude Cowork
 
   [Claude Cowork](/product/cowork)
@@ -430,11 +347,6 @@ Products
 
   [@Claude](/product/tag)
   @Claude
-
-- Claude Design
-
-  [Claude Design](/product/design)
-  Claude Design
 
 - Claude Science
 
@@ -460,22 +372,44 @@ Products
 
   [Log in](https://claude.ai/login)
 
-Features
+Capabilities
 
-- Claude for Chrome
+- Artifacts
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Artifacts](/features/artifacts)
+  Artifacts
 
-- Claude for Microsoft 365
+- Design
 
-  [Claude for Microsoft 365](/claude-for-microsoft-365)
-  Claude for Microsoft 365
+  [Design](/product/design)
+  Design
+
+- Connectors
+
+  [Connectors](/connectors)
+  Connectors
+
+- Plugins
+
+  [Plugins](/plugins)
+  Plugins
 
 - Skills
 
   [Skills](/skills)
   Skills
+
+Extensions
+
+- Claude in Chrome
+
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
+
+- Claude for Microsoft 365
+
+  [Claude for Microsoft 365](/claude-for-microsoft-365)
+  Claude for Microsoft 365
 
 Models
 
@@ -504,7 +438,19 @@ Models
   [Haiku](https://www.anthropic.com/claude/haiku)
   Haiku
 
-Solutions
+Enterprise
+
+- Overview
+
+  [Overview](/solutions/enterprise)
+  Overview
+
+- Claude Code for Enterprise
+
+  [Claude Code for Enterprise](/product/claude-code/enterprise)
+  Claude Code for Enterprise
+
+Use cases
 
 - AI agents
 
@@ -521,6 +467,13 @@ Solutions
   [Coding](/solutions/coding)
   Coding
 
+- Commerce
+
+  [Commerce](/solutions/commerce)
+  Commerce
+
+Departments
+
 - Customer support
 
   [Customer support](/solutions/customer-support)
@@ -531,10 +484,17 @@ Solutions
   [Cybersecurity](/solutions/cybersecurity)
   Cybersecurity
 
-- Enterprise
+- Legal
 
-  [Enterprise](/solutions/enterprise)
-  Enterprise
+  [Legal](/solutions/legal)
+  Legal
+
+- Sales
+
+  [Sales](/solutions/sales)
+  Sales
+
+Industries
 
 - Financial services
 
@@ -561,11 +521,6 @@ Solutions
   [K-12 teachers](/solutions/teachers)
   K-12 teachers
 
-- Legal
-
-  [Legal](/solutions/legal)
-  Legal
-
 - Life sciences
 
   [Life sciences](/solutions/life-sciences)
@@ -581,22 +536,51 @@ Solutions
   [Small business](/solutions/small-business)
   Small business
 
-Claude Platform
+Programs
+
+- Startups
+
+  [Startups](/programs/startups)
+  Startups
+
+- Scientists
+
+  [Scientists](/programs/team-plan-for-scientists)
+  Scientists
+
+Developers
+
+- Developer docs
+
+  [Developer docs](https://code.claude.com/docs/en/overview)
+  Developer docs
+
+- Developer blog
+
+  [Developer blog](https://claude.dev/)
+  Developer blog
+
+- Community
+
+  [Community](/community)
+  Community
+
+- Console
+
+  [Console](https://platform.claude.com/docs/en/home)
+  Console
+
+- Engineering at Anthropic
+
+  [Engineering at Anthropic](https://www.anthropic.com/engineering)
+  Engineering at Anthropic
+
+Platform
 
 - Overview
 
   [Overview](/platform/api)
   Overview
-
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
 
 - Ecosystem
 
@@ -623,16 +607,6 @@ Claude Platform
   [Microsoft Foundry](/partners/microsoft-foundry)
   Microsoft Foundry
 
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](https://platform.claude.com/)
-  Console login
-
 Resources
 
 - Blog
@@ -645,40 +619,20 @@ Resources
   [Claude partner network](/partners)
   Claude partner network
 
-- Community
+- Claude Academy
 
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
+  [Claude Academy](https://academy.claude.com/)
+  Claude Academy
 
 - Customer stories
 
   [Customer stories](/customers)
   Customer stories
 
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
 - Events
 
   [Events](https://www.anthropic.com/events)
   Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
 
 - Powered by Claude
 
@@ -687,18 +641,45 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](#)
   Service partners
 
-- Tutorials
+Help and security
 
-  [Tutorials](/resources/tutorials)
-  Tutorials
+- Availability
 
-- Use cases
+  [Availability](https://www.anthropic.com/supported-countries)
+  Availability
 
-  [Use cases](/resources/use-cases)
-  Use cases
+- Check files
+
+  [Check files](https://claude.com/check-files)
+  Check files
+
+- Regional compliance
+
+  [Regional compliance](/regional-compliance)
+  Regional compliance
+
+- Report abuse
+
+  [Report abuse](https://claude.com/form/anthropic-content-reporting)
+  Report abuse
+
+- Security and compliance
+
+  [Security and compliance](https://trust.anthropic.com/)
+  Security and compliance
+
+- Status
+
+  [Status](https://status.anthropic.com/)
+  Status
+
+- Support center
+
+  [Support center](https://support.claude.com/en/)
+  Support center
 
 Company
 
@@ -717,19 +698,14 @@ Company
   [Policy](https://www.anthropic.com/policy)
   Policy
 
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
 - Research
 
   [Research](https://www.anthropic.com/research)
   Research
 
-- News
+- Anthropic news
 
-  [News](https://www.anthropic.com/news)
-  News
+  [Anthropic news](https://www.anthropic.com/news)
+  Anthropic news
 
 - Policy on the AI Exponential

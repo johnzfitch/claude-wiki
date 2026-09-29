@@ -1,8 +1,8 @@
 ---
-title: "Anthropic acquires Bun as Claude Code reaches $1B milestone \\ Anthropic"
+title: "Anthropic acquires Bun as Claude Code hits $1B \\ Anthropic"
 source_url: "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:41:25Z"
+fetched_at: "2026-09-11T06:29:14Z"
 tags: ["claude-code"]
 ---
 
@@ -31,17 +31,21 @@ If you’re interested in joining Anthropic’s engineering team, visit our [car
 
 ## Related content
 
-### Investigating three real-world incidents in our cybersecurity evaluations
+### Developing Enterprise Frontier Safeguards with our customers
 
-[Read more](/news/investigating-incidents-cybersecurity-evals)
+[Read more](/news/enterprise-frontier-safeguards)
 
-### Our position on open-weights models
+### Improving our alignment and security efforts
 
-[Read more](/news/position-open-weights-models)
+On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
 
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+[Read more](/news/improving-alignment-security-efforts)
 
-[Read more](/news/cognizant-anthropic)
+### Previewing the Model Hardware Standard
+
+We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
+
+[Read more](/news/model-hardware-standard-research-preview)
 
 [](/)
 
@@ -55,7 +59,7 @@ If you’re interested in joining Anthropic’s engineering team, visit our [car
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -75,6 +79,7 @@ If you’re interested in joining Anthropic’s engineering team, visit our [car
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -107,7 +112,7 @@ If you’re interested in joining Anthropic’s engineering team, visit our [car
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -120,7 +125,7 @@ If you’re interested in joining Anthropic’s engineering team, visit our [car
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -132,6 +137,7 @@ If you’re interested in joining Anthropic’s engineering team, visit our [car
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

@@ -2,14 +2,14 @@
 title: "Okta SSO setup | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917894-okta-sso-setup"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:42:45Z"
+fetched_at: "2026-09-29T06:32:09Z"
 tags: ["enterprise"]
 ---
 
 # Okta SSO setup
 
-March 24, 2026
 
+Copy for LLM
 
 This guide covers configuring SSO and SCIM provisioning for Claude with Okta as your identity provider. It applies to Team plans, Enterprise plans, and Console organizations.
 
@@ -21,7 +21,7 @@ This guide covers configuring SSO and SCIM provisioning for Claude with Okta as 
 
 - Okta administrator access
 
-- Your domain verified in Claude's Identity and access settings — see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full setup path including domain verification
+- Your domain verified in Claude's Identity and access settings—see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full setup path including domain verification
 
 ## Where to find your configuration values
 
@@ -48,6 +48,8 @@ Start the SSO setup flow there and keep it open alongside the Okta Admin console
 1.  In the **Configure SAML** tab, enter: **Single sign-on URL (ACS URL)** from the WorkOS setup flow, **Audience URI (Entity ID)** from the WorkOS setup flow, **Name ID format:** EmailAddress, and **Application username:** Email.
 
 2.  Under **Attribute Statements**, add an attribute named email with value user.email.
+
+    1.  If you use group mappings (JIT or SCIM provisioning with **Enable group mappings** turned on), also add a Group Attribute Statement named "groups" with a filter that includes every Okta group you map to a Claude role or seat type. Without it, sign-ins arrive with no group information: users can’t be assigned a mapped role, and under JIT with group mappings, a user whose sign-in includes no mapped group is removed from the organization at their next login. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)**.
 
 3.  Download the **Identity Provider metadata** XML and upload it in the WorkOS setup flow when prompted.
 

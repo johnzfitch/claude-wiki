@@ -1,8 +1,8 @@
 ---
-title: "Anthropic and Teach For All launch global AI training initiative for educators \\ Anthropic"
+title: "Anthropic and Teach For All train educators on AI \\ Anthropic"
 source_url: "https://www.anthropic.com/news/anthropic-teach-for-all"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:41:27Z"
+fetched_at: "2026-09-10T06:46:08Z"
 ---
 
 # Anthropic and Teach For All launch global AI training initiative for educators
@@ -23,9 +23,9 @@ What makes this partnership distinctive is its approach. Teachers are positioned
 
 ## **What teachers are building**
 
-One teacher in Liberia, new to AI, attended the AI LCC's live trainings on AI fluency. Within weeks, he had built an [interactive climate education curriculum](https://claude.ai/redirect/website.v1.2749b69e-3316-4e59-917d-f2103c83ecb6/public/artifacts/5a020adb-ab65-4637-bcf0-79e6d20c58d2) for Liberian schools using Claude Artifacts: interactive tools like apps, games, or visualizations that Claude can build on the spot.
+One teacher in Liberia, new to AI, attended the AI LCC's live trainings on AI fluency. Within weeks, he had built an [interactive climate education curriculum](https://claude.ai/redirect/website.v1.bcda2b3f-6d68-41d8-9586-42dfb45f489e/public/artifacts/5a020adb-ab65-4637-bcf0-79e6d20c58d2) for Liberian schools using Claude Artifacts: interactive tools like apps, games, or visualizations that Claude can build on the spot.
 
-In Bangladesh, a teacher working with Grade 6 and 7 students—over half of whom struggled with basic numeracy—built a [gamified math learning app](https://claude.ai/redirect/website.v1.2749b69e-3316-4e59-917d-f2103c83ecb6/public/artifacts/e94bf439-b3a6-4087-87f2-dee5d8de99d8) complete with boss battles, a leaderboard, and XP rewards.
+In Bangladesh, a teacher working with Grade 6 and 7 students—over half of whom struggled with basic numeracy—built a [gamified math learning app](https://claude.ai/redirect/website.v1.bcda2b3f-6d68-41d8-9586-42dfb45f489e/public/artifacts/e94bf439-b3a6-4087-87f2-dee5d8de99d8) complete with boss battles, a leaderboard, and XP rewards.
 
 The pattern is consistent across the network: teachers who know their students best can now build tools tailored to them.
 
@@ -58,17 +58,21 @@ For more on Anthropic's education initiatives, [see here](https://claude.com/sol
   
 ## Related content
 
-### Investigating three real-world incidents in our cybersecurity evaluations
+### Developing Enterprise Frontier Safeguards with our customers
 
-[Read more](/news/investigating-incidents-cybersecurity-evals)
+[Read more](/news/enterprise-frontier-safeguards)
 
-### Our position on open-weights models
+### Improving our alignment and security efforts
 
-[Read more](/news/position-open-weights-models)
+On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
 
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+[Read more](/news/improving-alignment-security-efforts)
 
-[Read more](/news/cognizant-anthropic)
+### Previewing the Model Hardware Standard
+
+We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
+
+[Read more](/news/model-hardware-standard-research-preview)
 
 [](/)
 
@@ -82,7 +86,7 @@ For more on Anthropic's education initiatives, [see here](https://claude.com/sol
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -102,6 +106,7 @@ For more on Anthropic's education initiatives, [see here](https://claude.com/sol
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -134,7 +139,7 @@ For more on Anthropic's education initiatives, [see here](https://claude.com/sol
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -147,7 +152,7 @@ For more on Anthropic's education initiatives, [see here](https://claude.com/sol
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -159,6 +164,7 @@ For more on Anthropic's education initiatives, [see here](https://claude.com/sol
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

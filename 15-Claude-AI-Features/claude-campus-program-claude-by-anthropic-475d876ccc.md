@@ -2,34 +2,49 @@
 title: "Claude Campus Program | Claude by Anthropic"
 source_url: "https://www.claude.com/programs/campus"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:42:31Z"
+fetched_at: "2026-09-16T06:25:31Z"
 ---
 
-The Spring 2026 Claude Campus program is in session and applications have closed. Stay tuned for news about future updates.
+If you're passionate about bringing AI fluency to your campus, apply to lead a Claude Builder Club.
 
-Claude Builder Clubs
+- Collaborate with Anthropic to set up and lead a club for AI builders on your campus
+- Organize technical and non-technical workshops featuring Anthropic guest speakers
+- Run hackathons and demo nights for student builders
+- Share regular updates, tips and resources (like API credits) with members
+- Receive a USD3,600 cash stipend
 
-If you’re passionate about building student communities, the Claude Builder Club program is for you.
+For grad students
 
-- Collaborate with Anthropic to set up an organization for AI builders on your campus  
-- Organize technical and non-technical workshops featuring Anthropic guest speakers  
-- Run hackathons and demo nights for student builders  
-- Share regular updates, tips and resources (like API credits) with members  
-- Paid program stipend
+If you're a STEM or humanities master’s student passionate about ensuring AI has a positive impact on education and society, apply to lead Claude Campus Conversations.
+
+- Host discussion groups and events with fellow students on the big questions in AI and society
+- Help students build AI fluency by creating spaces for students to showcase and discuss their Claude builds
+- Visit the Anthropic office and connect with the global ambassador community
+- Receive a USD3,600 cash stipend
+
+For PhDs and postdocs
+
+If you're a PhD student or postdoctoral researcher using AI to advance research, apply to lead Claude Science workshops for fellow researchers.
+
+- Lead a community of AI-native PhD scientists and postdocs on your campus
+- Organize Claude for Science workshops and join speaker events with Anthropic's math and science teams
+- Build your expertise on how AI is changing science fields
+- Get to engage with Anthropic scientists on workshops and research
+- Receive a USD3,600 cash stipend
 
 ## Why join a Claude campus program?
 
-### Direct experience with frontier AI research
+### Access AI workshops led by the Anthropic team
 
-Collaborate with Anthropic’s research, product and education teams to help your campus thrive during the AI transformation.
+Gain world-class AI skills while collaborating with Anthropic's teams to bring AI fluency to your campus.
 
 ### Find your people
 
-Connect with students who see AI as a tool for expanding human capability, not replacing it.
+Connect with other students from around the world who see the potential for AI to expand human flourishing.
 
 ### Your feedback shapes what we build
 
-Student needs aren’t hypothetical to us. Your input directly influences Claude’s development.
+Get the chance to engage Anthropic teams on Claude features or product ideas. Your input can influence Claude's development.
 
 ## Meet our ambassadors
 
@@ -48,9 +63,46 @@ Prev
 0/5
 
 
-Applications have closed
+## FAQ
 
-The Spring 2026 Claude Campus program is in session and applications have closed. Stay tuned for news about future updates.
+### Do ambassadors receive a stipend?
+
+Yes. All selected campus ambassadors receive a USD3,600 cash stipend subject to program terms.
+
+### Is this an official program by Anthropic?
+
+Yes. Claude Campus Ambassadors is run by Anthropic, with programmatic support from an external agency.
+
+### Who can apply?
+
+Students anywhere in the world can apply to any of our programs. However, our Grad and PhD programs may select from a smaller pool of schools during the initial pilot period. You’ll need to be 18+ and have work authorization in your country of study to participate in the program.
+
+### What's the application timeline?
+
+Applications open September 1 and close September 12. We’ll be reviewing applications on a rolling basis.
+
+### I was an ambassador last year. Do I need to reapply?
+
+Yes! But let us know on the form if you were an ambassador last year.
+
+### Does it cost anything to participate?
+
+No. It's free to apply and free to participate.
+
+### Do I need prior experience with Claude or AI to apply?
+
+We expect some level of AI fluency and Claude proficiency for this program, but you don’t need to be an expert on all areas. We’re here to help. For the PhD Track, we're looking for scientists who are actively using Claude in their research.
+
+### How long does the program run?
+
+This is a full school year program that runs from September 2026 to June 2027.
+
+[Prev](#)
+
+Prev
+
+
+The program is closed for Fall 2026
 
 [Homepage](https://claude.com)
 
@@ -60,112 +112,6 @@ Homepage
 Thank you! Your submission has been received!
 
 Oops! Something went wrong while submitting the form.
-
-Write
-
-[Button Text](#)
-
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
 
 [Anthropic](https://www.anthropic.com/)
 
@@ -231,10 +177,10 @@ Products
 
 Features
 
-- Claude for Chrome
+- Claude in Chrome
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
 
 - Claude for Microsoft 365
 
@@ -290,6 +236,11 @@ Solutions
   [Coding](/solutions/coding)
   Coding
 
+- Commerce
+
+  [Commerce](/solutions/commerce)
+  Commerce
+
 - Customer support
 
   [Customer support](/solutions/customer-support)
@@ -344,6 +295,11 @@ Solutions
 
   [Nonprofits](/solutions/nonprofits)
   Nonprofits
+
+- Sales
+
+  [Sales](/solutions/sales)
+  Sales
 
 - Small business
 
@@ -421,12 +377,12 @@ Resources
 
 - Connectors
 
-  [Connectors](/connectors)
+  [Connectors](https://claude.com/connectors)
   Connectors
 
 - Courses
 
-  [Courses](https://www.anthropic.com/learn)
+  [Courses](https://academy.claude.com/courses)
   Courses
 
 - Customer stories
@@ -456,17 +412,17 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](#)
   Service partners
 
 - Tutorials
 
-  [Tutorials](/resources/tutorials)
+  [Tutorials](https://academy.claude.com/tutorials)
   Tutorials
 
 - Use cases
 
-  [Use cases](/resources/use-cases)
+  [Use cases](https://academy.claude.com/use-cases)
   Use cases
 
 Company
@@ -502,3 +458,32 @@ Company
   News
 
 - Policy on the AI Exponential
+
+  [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
+  Policy on the AI Exponential
+
+- Responsible Scaling Policy
+
+  [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
+  Responsible Scaling Policy
+
+- Security and compliance
+
+  [Security and compliance](https://trust.anthropic.com/)
+  Security and compliance
+
+- Transparency
+
+  [Transparency](https://anthropic.com/transparency)
+  Transparency
+
+Programs
+
+- Startups
+
+  [Startups](https://claude.com/programs/startups)
+  Startups
+
+- Scientists
+
+  [Scientists](/programs/team-plan-for-scientists)

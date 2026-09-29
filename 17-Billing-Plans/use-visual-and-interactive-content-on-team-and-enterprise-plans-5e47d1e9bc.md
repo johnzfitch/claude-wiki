@@ -2,7 +2,7 @@
 title: "Use visual and interactive content on Team and Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13663666-use-visual-and-interactive-content-on-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:41:45Z"
+fetched_at: "2026-09-29T06:32:05Z"
 tags: ["billing", "enterprise"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["billing", "enterprise"]
 
 March 16, 2026
 
+Copy for LLM
 
 Maps and image search results are enabled by default on Team plans. On Enterprise plans, these features are off by default — an Owner or Primary Owner can enable them in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**.
 

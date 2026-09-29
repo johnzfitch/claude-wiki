@@ -2,7 +2,7 @@
 title: "Creating and managing Workspaces in the Claude Console | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9796807-creating-and-managing-workspaces-in-the-claude-console"
 category: "99-Other"
-fetched_at: "2026-08-02T07:11:55Z"
+fetched_at: "2026-09-29T06:32:16Z"
 tags: ["api"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["api"]
 
 June 30, 2026
 
+Copy for LLM
 
 This guide will walk you through the process of creating, editing, and managing Workspaces in your Claude Console organization.
 

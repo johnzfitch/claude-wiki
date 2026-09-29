@@ -2,11 +2,14 @@
 title: "Adapt to new model personas after deprecations | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12738598-adapting-to-new-model-personas-after-deprecations"
 category: "20-Models"
-fetched_at: "2026-08-02T05:41:01Z"
+fetched_at: "2026-09-29T06:31:08Z"
 ---
 
 # Adapt to new model personas after deprecations
 
+July 10, 2026
+
+Copy for LLM
 
 **[Model deprecations and retirements](https://docs.claude.com/en/docs/about-claude/model-deprecations#model-status)** are routine parts of the model lifecycle. While we would like to keep past models publicly available as we continue to advance the frontier of safety and capabilities, maintenance overhead and capacity constraints do not currently allow this. We nonetheless recognize that losing access to models comes with costs to many users, particularly those who have come to value the unique character or capabilities of a specific model on a personal level. We aim to provide resources, tools, and guidance to such users to minimize these costs and make the transitions between models as smooth and seamless as possible.
 

@@ -2,13 +2,15 @@
 title: "I’m planning to launch a product using the Claude API. What steps should I take to ensure I’m not violating Anthropic’s Usage Policy? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8241216-i-m-planning-to-launch-a-product-using-the-claude-api-what-steps-should-i-take-to-ensure-i-m-not-violating-anthropic-s-usage-policy"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T07:11:54Z"
+fetched_at: "2026-09-29T06:32:05Z"
 tags: ["api", "billing"]
 ---
 
 # I’m planning to launch a product using the Claude API. What steps should I take to ensure I’m not violating Anthropic’s Usage Policy?
 
 March 16, 2026
+
+Copy for LLM
 
 We founded Anthropic to put safety at the frontier of AI research and AI products. Our research informs our commercial products, and our models are some of the most reliably safe and resistant to abuse available today. We are working to improve our safety filters based on user feedback - and we expect our commercial customers will hold us accountable when our safety features are failing.
 
@@ -20,4 +22,4 @@ But we believe safety is a shared responsibility. Our features are not failsafe,
 
 - For sensitive information and decision making, have a qualified professional review content prior to dissemination to consumers.
 
-We encourage you to send us feedback or specific proposals to [\[email protected\]](/cdn-cgi/l/email-protection#f88d8b9d8a8b999e9d8c81b899968c908a9788919bd69b9795). For existing commercial partners, we’d recommend [joining our Discord server](https://discord.com/invite/6PPFFzqPDZ) and exchanging ideas with fellow developers as well.
+We encourage you to send us feedback or specific proposals to [\[email protected\]](/cdn-cgi/l/email-protection#93e6e0f6e1e0f2f5f6e7ead3f2fde7fbe1fce3faf0bdf0fcfe). For existing commercial partners, we’d recommend [joining our Discord server](https://discord.com/invite/6PPFFzqPDZ) and exchanging ideas with fellow developers as well.

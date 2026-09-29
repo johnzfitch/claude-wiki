@@ -2,7 +2,7 @@
 title: "Prompt caching with Claude | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/prompt-caching"
 category: "04-API-Reference"
-fetched_at: "2026-08-02T07:11:58Z"
+fetched_at: "2026-09-29T06:32:21Z"
 tags: ["api", "prompting"]
 ---
 
@@ -19,7 +19,7 @@ Claude caches frequently used context between API calls, reducing costs and late
 - 
 
 
-  Claude Platform
+  [Claude Platform](https://claude.com/platform/api)
 
 - 
 

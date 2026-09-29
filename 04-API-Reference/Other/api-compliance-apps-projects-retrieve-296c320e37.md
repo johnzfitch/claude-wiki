@@ -2,7 +2,7 @@
 title: "Get project details - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/projects/retrieve"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:39:46Z"
+fetched_at: "2026-09-26T06:39:12Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fprojects%2Fretrieve)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -226,13 +204,13 @@ Chats
 Projects
 
 
-List projects
+List projects
 
 
-Get project details
+Get project details
 
 
-Delete project
+Delete project
 
 Attachments
 
@@ -242,45 +220,46 @@ Documents
 
 Artifacts
 
+Sessions
+
 Code
 
 
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
+To enable the Compliance API, see the setup guide.
 
-Retrieve
+[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)
 
+Copy page
 
 
 
-
-
-To enable the Compliance API, see [Set up the Compliance API](/docs/en/manage-claude/compliance-api-access).
+1.  [API reference](/docs/en/api/http)
+2.  [Compliance API](/docs/en/api/http/compliance)
+3.  [Apps](/docs/en/api/http/compliance/apps)
+4.  [Projects](/docs/en/api/http/compliance/apps/projects)
 
 # Get project details
 
-GET/v1/compliance/apps/projects/{project_id}
+GET/v1/compliance/apps/projects/{project_id}
 
 Get detailed information for a specific project.
 
-##### Path ParametersExpand Collapse 
+##### Path parameters
 
 project_id: string
 
@@ -288,17 +267,13 @@ project_id: string
 
 The project ID (tagged ID, e.g., claude_proj_abc123)
 
-[](#retrieve.project_id)
-
-##### Header ParametersExpand Collapse 
+##### Headers
 
 "x-api-key": optional string
 
 
 
-[](#retrieve.x-api-key)
-
-##### ReturnsExpand Collapse 
+##### Returns
 
 id: string
 
@@ -306,15 +281,11 @@ id: string
 
 Project identifier (tagged ID)
 
-[](#project_retrieve_response.id)
-
 attachments_count: number
 
 
 
 Number of attachments contained within this project
-
-[](#project_retrieve_response.attachments_count)
 
 chats_count: number
 
@@ -322,7 +293,7 @@ chats_count: number
 
 Number of chats contained within this project
 
-[](#project_retrieve_response.chats_count)
+
 
 created_at: string
 
@@ -330,15 +301,17 @@ created_at: string
 
 Project creation timestamp
 
-[](#project_retrieve_response.created_at)
+formatdate-time
 
-deleted_at: string
+
+
+deleted_at: string or null
 
 
 
 Timestamp when the project was deleted by an end user, or null otherwise
 
-[](#project_retrieve_response.deleted_at)
+formatdate-time
 
 description: string
 
@@ -346,15 +319,11 @@ description: string
 
 Project description
 
-[](#project_retrieve_response.description)
-
 instructions: string
 
 
 
 Project's custom instructions / prompt
-
-[](#project_retrieve_response.instructions)
 
 is_private: boolean
 
@@ -362,15 +331,11 @@ is_private: boolean
 
 If false, the project is visible to all organization members; if true the project is accessible only to the creator and specified collaborators
 
-[](#project_retrieve_response.is_private)
-
 name: string
 
 
 
 Project name
-
-[](#project_retrieve_response.name)
 
 organization_uuid: string
 
@@ -378,7 +343,7 @@ organization_uuid: string
 
 Organization UUID this project belongs to
 
-[](#project_retrieve_response.organization_uuid)
+
 
 updated_at: string
 
@@ -386,17 +351,15 @@ updated_at: string
 
 Project last update timestamp
 
-[](#project_retrieve_response.updated_at)
+formatdate-time
 
 
 
-user: object { id, email_address }
+user: object{ id, email_address } or null
 
 
 
-The user who created a project or project document.
-
-Fields that reference this type are null when the creator's account has been deleted or the creator is no longer a member of any organization under the parent organization.
+Project creator information, or null if the creator's account has been deleted or the creator is no longer a member of an organization the key may read
 
 id: string
 
@@ -404,17 +367,11 @@ id: string
 
 User identifier (tagged ID)
 
-[](#project_retrieve_response.user.id)
-
 email_address: string
 
 
 
 User's email address
-
-[](#project_retrieve_response.user.email_address)
-
-[](#project_retrieve_response.user)
 
 organization_id: string⁠Deprecated
 
@@ -422,14 +379,15 @@ organization_id: string⁠Deprecated
 
 Organization identifier (tagged ID)
 
-[](#project_retrieve_response.organization_id)
+Get project details
 
-Get project details
+cURL
 
 
 
 ```python
 curl https://api.anthropic.com/v1/compliance/apps/projects/$PROJECT_ID \
+    -H 'anthropic-version: 2023-06-01' \
     -H "Authorization: Bearer $ANTHROPIC_COMPLIANCE_API_KEY"
 ```
 

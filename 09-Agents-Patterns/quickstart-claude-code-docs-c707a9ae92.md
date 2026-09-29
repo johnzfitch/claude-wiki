@@ -2,7 +2,7 @@
 title: "Quickstart - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/quickstart"
 category: "09-Agents-Patterns"
-fetched_at: "2026-08-02T05:36:06Z"
+fetched_at: "2026-09-25T06:28:51Z"
 tags: ["agents", "claude-code"]
 ---
 
@@ -90,7 +90,7 @@ npm install --save-dev tsx
 
 [tsx](https://tsx.hirok.io) runs TypeScript files directly. If your project uses CommonJS, name your agent script `agent.mts` instead of `agent.ts`. The `.mts` extension makes tsx treat the file as an ES module, so top-level `await` works without converting your whole project to ES modules. Use `agent.mts` in place of `agent.ts` in the create and run steps later in this quickstart.
 
-[uv](https://docs.astral.sh/uv/) is a fast Python package manager that handles virtual environments automatically:
+[Install uv](https://docs.astral.sh/uv/), a fast Python package manager that handles virtual environments automatically. Then initialize a project and add the SDK:
 
 ```python
 uv init
@@ -115,7 +115,10 @@ pip install claude-agent-sdk
 
 If PowerShell blocks `Activate.ps1` with an execution policy error, run `Set-ExecutionPolicy -Scope Process RemoteSigned` first.
 
-Both the TypeScript and Python SDKs bundle a native Claude Code binary for your platform, so you don’t need to install Claude Code separately.
+Both the TypeScript and Python SDKs bundle a native Claude Code binary, so most installs need no separate Claude Code install. Some installs have no bundled binary:
+
+- If pip installs the Python SDK’s source distribution instead of a platform wheel, for example on ARM64 Windows, no binary is bundled. [Install Claude Code natively](/docs/en/setup#install-claude-code). The Python SDK finds it on your `PATH`.
+- The TypeScript SDK installs its binary through npm optional dependencies, so an install that skips them, for example `npm ci --omit=optional`, gets no binary even on a supported platform. Reinstall without skipping optional dependencies, or [install Claude Code natively](/docs/en/setup#install-claude-code) and set `pathToClaudeCodeExecutable` to its path.
 
 3
 
@@ -243,7 +246,7 @@ This code has three main parts:
 
 The `async for` loop keeps running as Claude thinks, calls tools, observes results, and decides what to do next. Each iteration yields a message: Claude’s reasoning, a tool call, a tool result, or the final outcome. The SDK handles the orchestration, tool execution, context management, and retries, so you consume the stream. The loop ends when Claude finishes the task or hits an error. The message handling inside the loop filters for human-readable output. Without filtering, you’d see raw message objects including system initialization and internal state, which is useful for debugging but noisy otherwise.
 
-This example uses streaming to show progress in real-time. If you don’t need live output (e.g., for background jobs or CI pipelines), you can collect all messages at once. See [Streaming vs. single-turn mode](/docs/en/agent-sdk/streaming-vs-single-mode) for details.
+This example uses streaming to show progress in real-time. If you don’t need live output (for example, for background jobs or CI pipelines), you can collect all messages at once. See [Streaming vs. single-turn mode](/docs/en/agent-sdk/streaming-vs-single-mode) for details.
 
 
 [​](#run-your-agent)
@@ -282,7 +285,7 @@ As it works, the agent prints its reasoning and each tool it calls, ending with 
 
 This is what makes the Agent SDK different: Claude executes tools directly instead of asking you to implement them.
 
-If you see “API key not found”, make sure you’ve set the `ANTHROPIC_API_KEY` environment variable in the shell where you run your agent. The SDK doesn’t load `.env` files automatically. See the [full troubleshooting guide](/docs/en/troubleshooting) for more help.
+If you see an authentication error such as `Not logged in` or `Invalid API key`, make sure you’ve set the `ANTHROPIC_API_KEY` environment variable in the shell where you run your agent. The SDK doesn’t load `.env` files automatically.For the causes and fixes behind these and other authentication errors, see [Authentication errors](/docs/en/errors#authentication-errors) in the Error reference.
 
 
 [​](#try-other-prompts)
@@ -366,7 +369,7 @@ const _ = {
 };
 ```
 
-With `Bash` enabled, try: `"Write unit tests for utils.py, run them, and fix any failures"`
+With `Bash` enabled, try: `"Write unit tests for utils.py, run them, and fix any failures"` Each of these snippets sets fields on the same options object. For more information, see [Configure your agent](/docs/en/agent-sdk/configuration).
 
 
 [​](#key-concepts)
@@ -381,7 +384,7 @@ Key concepts
 | `Read`, `Edit`, `Glob`                 | Analyze and modify code |
 | `Read`, `Edit`, `Bash`, `Glob`, `Grep` | Full automation         |
 
-**Permission modes** control how much human oversight you want: the mode decides what happens when the agent calls a tool that isn’t already pre-approved by your allow rules. For the full list of modes, their behavior, and when to use each, see [Permission mode in How the agent loop works](/docs/en/agent-sdk/agent-loop#permission-mode).
+**Permission modes** control how much human oversight you want. The SDK evaluates the active mode together with your allow and deny rules in a fixed order, described in [How permissions are evaluated](/docs/en/agent-sdk/permissions#how-permissions-are-evaluated). For the full list of modes, their behavior, and when to use each, see [Permission mode in How the agent loop works](/docs/en/agent-sdk/agent-loop#permission-mode).
 
 
 [​](#next-steps)
@@ -390,9 +393,11 @@ Next steps
 
 Now that you’ve created your first agent, learn how to extend its capabilities and tailor it to your use case:
 
+- **[Configure your agent](/docs/en/agent-sdk/configuration)**: compose the options object and find the page that covers each setting
 - **[Permissions](/docs/en/agent-sdk/permissions)**: control what your agent can do and when it needs approval
 - **[Hooks](/docs/en/agent-sdk/hooks)**: run custom code before or after tool calls
 - **[Sessions](/docs/en/agent-sdk/sessions)**: build multi-turn agents that maintain context
 - **[MCP servers](/docs/en/agent-sdk/mcp)**: connect to databases, browsers, APIs, and other external systems
 - **[Hosting](/docs/en/agent-sdk/hosting)**: deploy agents to Docker, cloud, and CI/CD
 - **[Example agents](https://github.com/anthropics/claude-agent-sdk-demos)**: see complete examples: email assistant, research agent, and more
+- **[Troubleshooting](/docs/en/agent-sdk/troubleshooting)**: fix errors when the CLI fails to start or exits, or a result arrives without structured output

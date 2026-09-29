@@ -2,7 +2,7 @@
 title: "Streaming Input - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/streaming-vs-single-mode"
 category: "09-Agents-Patterns"
-fetched_at: "2026-08-02T05:38:44Z"
+fetched_at: "2026-08-29T06:28:34Z"
 tags: ["agents", "claude-code"]
 ---
 
@@ -10,7 +10,6 @@ tags: ["agents", "claude-code"]
 
 - [Overview](#overview)
 - [Streaming Input Mode (Recommended)](#streaming-input-mode-recommended)
-  - [How It Works](#how-it-works)
   - [Benefits](#benefits)
   - [Implementation Example](#implementation-example)
 - [Single Message Input](#single-message-input)
@@ -35,10 +34,8 @@ Overview
 
 The Claude Agent SDK supports two distinct input modes for interacting with agents:
 
-- **Streaming Input Mode** (Default & Recommended) - A persistent, interactive session
-- **Single Message Input** - One-shot queries that use session state and resuming
-
-This guide explains the differences, benefits, and use cases for each mode to help you choose the right approach for your application.
+- **Streaming Input Mode**: a persistent, interactive session
+- **Single Message Input**: one-shot queries that use session state and resuming
 
 
 [​](#streaming-input-mode-recommended)
@@ -48,34 +45,17 @@ Streaming Input Mode (Recommended)
 Streaming input mode is the **preferred** way to use the Claude Agent SDK. It provides full access to the agent’s capabilities and enables rich, interactive experiences. It allows the agent to operate as a long lived process that takes in user input, handles interruptions, surfaces permission requests, and handles session management.
 
 
-[​](#how-it-works)
-
-How It Works
-
-
 [​](#benefits)
 
 Benefits
 
-## Image Uploads
+In streaming input mode, you work in a persistent session with these capabilities:
 
-Attach images directly to messages for visual analysis and understanding
-
-## Queued Messages
-
-Send multiple messages that process sequentially, with ability to interrupt
-
-## Tool Integration
-
-Full access to all tools and custom MCP servers during the session
-
-## Real-time Feedback
-
-See responses as they’re generated, not just final results
-
-## Context Persistence
-
-Maintain conversation context across multiple turns naturally
+- **Image uploads**: attach images directly to messages for visual analysis and understanding
+- **Queued messages**: send multiple messages that process sequentially, with ability to interrupt
+- **Tool integration**: full access to all tools and custom MCP servers during the session
+- **Real-time feedback**: see responses as they’re generated, not just final results
+- **Context persistence**: maintain conversation context across multiple turns naturally
 
 
 [​](#implementation-example)
@@ -300,7 +280,7 @@ import asyncio
 
 async def single_message_example():
     # Simple one-shot query using query() function
-    # query() raises after an error result, such as error_max_turns
+    # query() raises ResultError after an error result, such as error_max_turns
     try:
         async for message in query(
             prompt="Explain the authentication flow",
@@ -308,7 +288,6 @@ async def single_message_example():
         ):
             if isinstance(message, ResultMessage) and message.subtype == "success":
                 print(message.result)
-    # The SDK raises a plain Exception for error results, so match Exception here
     except Exception as e:
         print(f"Query failed: {e}")
 

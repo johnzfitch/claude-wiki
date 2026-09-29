@@ -2,7 +2,7 @@
 title: "Give Claude context: CLAUDE.md and better prompts | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14553240-give-claude-context-claude-md-and-better-prompts"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:48Z"
+fetched_at: "2026-09-29T06:31:49Z"
 tags: ["claude-code", "prompting"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["claude-code", "prompting"]
 
 April 15, 2026
 
+Copy for LLM
 
 Claude Code works well out of the box, but it becomes noticeably more effective once it knows your project's conventions and once you adopt a few prompting habits. This guide covers both.
 

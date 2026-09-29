@@ -2,7 +2,7 @@
 title: "Week 24 · June 8–12, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w24"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:38:05Z"
+fetched_at: "2026-09-04T06:30:00Z"
 tags: ["claude-code"]
 ---
 
@@ -72,7 +72,7 @@ New `disableBundledSkills` setting and `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` hide
 
 Deny rules accept a glob in the tool-name position, so `”*”` denies all tools, and unknown tool names in deny rules now warn at startup
 
-Cross-session messaging is hardened: messages relayed via `SendMessage` from other sessions no longer carry user authority, and auto mode blocks them
+Agent messaging is hardened: messages relayed via `SendMessage` from other agents no longer carry user authority, and auto mode blocks them
 
 Amazon Bedrock reads the AWS region from `~/.aws` config files when `AWS_REGION` is unset, and `/status` shows where the region came from
 

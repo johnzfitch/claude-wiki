@@ -2,7 +2,7 @@
 title: "Claude for Marketing | Claude by Anthropic"
 source_url: "https://support.claude.com/en/articles/9945697-claude-for-marketing"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:19Z"
+fetched_at: "2026-08-18T06:27:06Z"
 ---
 
 # Claude for Marketing
@@ -255,10 +255,10 @@ Products
 
 Features
 
-- Claude for Chrome
+- Claude in Chrome
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
 
 - Claude for Microsoft 365
 

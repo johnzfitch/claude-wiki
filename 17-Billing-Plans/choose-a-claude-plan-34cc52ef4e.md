@@ -2,13 +2,15 @@
 title: "Choose a Claude plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11049762-choose-a-claude-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:40:58Z"
+fetched_at: "2026-09-16T06:24:25Z"
 tags: ["billing"]
 ---
 
 # Choose a Claude plan
 
 May 19, 2026
+
+Copy for LLM
 
 Use the following guide to determine which plan is right for you.
 

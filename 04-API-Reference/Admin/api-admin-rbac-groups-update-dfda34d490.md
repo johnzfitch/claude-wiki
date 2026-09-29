@@ -2,7 +2,7 @@
 title: "Update RBAC Group - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/rbac_groups/update"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:39:07Z"
+fetched_at: "2026-09-18T06:35:16Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Frbac_groups%2Fupdate)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,127 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+
+List RBAC Groups
+
+
+Get RBAC Group
+
+
+Create RBAC Group
+
+
+Update RBAC Group
+
+
+Delete RBAC Group
+
+Members
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,76 +191,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-
-List RBAC Groups
-
-
-Get RBAC Group
-
-
-Create RBAC Group
-
-
-Update RBAC Group
-
-
-Delete RBAC Group
-
-Members
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -244,37 +222,38 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Update
-
+Copy page
 
 
 
+cURL
+
+1.  [API reference](/docs/en/api/http)
+2.  [Beta](/docs/en/api/http/beta)
+3.  [Organization](/docs/en/api/http/beta/organization)
+4.  [RBAC Groups](/docs/en/api/http/beta/organization/rbac_groups)
+
 # Update RBAC Group
 
-POST/v1/organizations/rbac_groups/{group_id}
+POST/v1/organizations/rbac_groups/{group_id}
 
-Update an RBAC Group's name. Groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API.
+Update an RBAC Group's name. Groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.
 
-The RBAC Groups API is in beta and available to Claude Enterprise organizations only. Requests must send the `ce-user-management-2026-07-13` value in the `anthropic-beta` header.
+The RBAC Groups API is available to Claude Enterprise organizations only.
 
-##### Path ParametersExpand Collapse 
+##### Path parameters
 
 group_id: string
 
@@ -282,39 +261,39 @@ group_id: string
 
 ID of the RBAC Group.
 
-[](#update.group_id)
-
-##### Header ParametersExpand Collapse 
+##### Body
 
 
 
-"anthropic-beta": optional array of string
-
-
-
-Optional header to specify the beta version(s) you want to use.
-
-To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
-
-[](#update.anthropic-beta)
-
-##### Body ParametersJSONExpand Collapse 
-
-name: optional string
+name: optional string or null
 
 
 
 Name of the RBAC Group. Not uniqueness-enforced.
 
-[](#update.name)
+maxLength255
 
-##### ReturnsExpand Collapse 
+minLength1
+
+##### Returns
 
 
 
-RbacGroup object { id, created_at, name, 4 more }
+BetaRBACGroup object{ type: "rbac_group", id, created_at, 4 more }
 
 
+
+
+
+type: "rbac_group"
+
+
+
+Object type.
+
+For RBAC Groups, this is always `"rbac_group"`.
+
+defaultrbac_group
 
 id: string
 
@@ -322,7 +301,7 @@ id: string
 
 ID of the RBAC Group.
 
-[](#rbac_group.id)
+
 
 created_at: string
 
@@ -330,7 +309,7 @@ created_at: string
 
 RFC 3339 timestamp of when the RBAC Group was created.
 
-[](#rbac_group.created_at)
+formatdate-time
 
 name: string
 
@@ -338,15 +317,11 @@ name: string
 
 Name of the RBAC Group. Not uniqueness-enforced.
 
-[](#rbac_group.name)
-
-roles: array of string
+roles: array of string or null
 
 
 
 RBAC Role IDs attached to this RBAC Group. Role attachment is managed in the admin settings and is read-only on this API. `null` means role data was temporarily unavailable — retry to distinguish from an empty list.
-
-[](#rbac_group.roles)
 
 
 
@@ -362,27 +337,11 @@ One of the following:
 
 
 
-[](#rbac_group.source_type%5B0%5D)
-
 "scim"
 
 
 
-[](#rbac_group.source_type%5B1%5D)
-
-[](#rbac_group.source_type)
-
 
-
-type: "rbac_group"
-
-
-
-Object type.
-
-For RBAC Groups, this is always `"rbac_group"`.
-
-[](#rbac_group.type)
 
 updated_at: string
 
@@ -390,11 +349,11 @@ updated_at: string
 
 RFC 3339 timestamp of when the RBAC Group was last updated.
 
-[](#rbac_group.updated_at)
+formatdate-time
 
-[](#rbac_group)
+Update RBAC Group
 
-Update RBAC Group
+cURL
 
 
 
@@ -402,7 +361,7 @@ Update RBAC Group
 curl https://api.anthropic.com/v1/organizations/rbac_groups/$GROUP_ID \
     -H 'Content-Type: application/json' \
     -H 'anthropic-version: 2023-06-01' \
-    -H "Authorization: Bearer $ANTHROPIC_OAUTH_TOKEN" \
+    -H "X-Api-Key: $ANTHROPIC_API_KEY" \
     -d '{
           "name": "Engineering"
         }'

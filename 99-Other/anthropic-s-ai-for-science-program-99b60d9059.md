@@ -2,13 +2,14 @@
 title: "Anthropic&#x27;s AI for Science Program | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11199177-anthropic-s-ai-for-science-program"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:00Z"
+fetched_at: "2026-09-29T06:31:43Z"
 ---
 
 # Anthropic's AI for Science Program
 
 March 16, 2026
 
+Copy for LLM
 
 Our AI for Science Program is specifically designed to support researchers working on high-impact scientific projects, with a particular focus on biology and life sciences applications, by providing free API credits.
 

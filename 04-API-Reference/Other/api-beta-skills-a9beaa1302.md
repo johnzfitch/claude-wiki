@@ -2,7 +2,7 @@
 title: "Skills - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/skills"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:39:16Z"
+fetched_at: "2026-09-26T06:38:51Z"
 tags: ["api", "skills"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api", "skills"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fskills)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -227,332 +205,56 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Skills
-
+Copy page
 
 
 
 cURL
 
+1.  [API reference](/docs/en/api/http)
+2.  [Beta](/docs/en/api/http/beta)
+
 # Skills
 
-##### [Create Skill](/docs/en/api/beta/skills/create)
+##### [Create Skill](/docs/en/api/http/beta/skills/create)
 
-POST/v1/skills
+POST/v1/skills
 
-##### [List Skills](/docs/en/api/beta/skills/list)
+##### [List Skills](/docs/en/api/http/beta/skills/list)
 
-GET/v1/skills
+GET/v1/skills
 
-##### [Get Skill](/docs/en/api/beta/skills/retrieve)
+##### [Get Skill](/docs/en/api/http/beta/skills/retrieve)
 
-GET/v1/skills/{skill_id}
+GET/v1/skills/{skill_id}
 
-##### [Delete Skill](/docs/en/api/beta/skills/delete)
+##### [Delete Skill](/docs/en/api/http/beta/skills/delete)
 
-DELETE/v1/skills/{skill_id}
+DELETE/v1/skills/{skill_id}
 
-##### ModelsExpand Collapse 
-
-
-
-SkillCreateResponse object { id, created_at, display_title, 4 more }
-
-
+##### Models
 
 
 
-id: string
-
-
-
-Unique identifier for the skill.
-
-The format and length of IDs may change over time.
-
-[](#skill_create_response.id)
-
-created_at: string
-
-
-
-ISO 8601 timestamp of when the skill was created.
-
-[](#skill_create_response.created_at)
-
-
-
-display_title: string
-
-
-
-Display title for the skill.
-
-This is a human-readable label that is not included in the prompt sent to the model.
-
-[](#skill_create_response.display_title)
-
-
-
-latest_version: string
-
-
-
-The latest version identifier for the skill.
-
-This represents the most recent version of the skill that has been created.
-
-[](#skill_create_response.latest_version)
-
-
-
-source: string
-
-
-
-Source of the skill.
-
-This may be one of the following values:
-
-- `"custom"`: the skill was created by a user
-- `"anthropic"`: the skill was created by Anthropic
-
-[](#skill_create_response.source)
-
-
-
-type: string
-
-
-
-Object type.
-
-For Skills, this is always `"skill"`.
-
-[](#skill_create_response.type)
-
-updated_at: string
-
-
-
-ISO 8601 timestamp of when the skill was last updated.
-
-[](#skill_create_response.updated_at)
-
-[](#skill_create_response)
-
-
-
-SkillListResponse object { id, created_at, display_title, 4 more }
+BetaDeletedSkill object{ type: "skill_deleted", id }
 
 
 
 
 
-id: string
-
-
-
-Unique identifier for the skill.
-
-The format and length of IDs may change over time.
-
-[](#skill_list_response.id)
-
-created_at: string
-
-
-
-ISO 8601 timestamp of when the skill was created.
-
-[](#skill_list_response.created_at)
-
-
-
-display_title: string
-
-
-
-Display title for the skill.
-
-This is a human-readable label that is not included in the prompt sent to the model.
-
-[](#skill_list_response.display_title)
-
-
-
-latest_version: string
-
-
-
-The latest version identifier for the skill.
-
-This represents the most recent version of the skill that has been created.
-
-[](#skill_list_response.latest_version)
-
-
-
-source: string
-
-
-
-Source of the skill.
-
-This may be one of the following values:
-
-- `"custom"`: the skill was created by a user
-- `"anthropic"`: the skill was created by Anthropic
-
-[](#skill_list_response.source)
-
-
-
-type: string
-
-
-
-Object type.
-
-For Skills, this is always `"skill"`.
-
-[](#skill_list_response.type)
-
-updated_at: string
-
-
-
-ISO 8601 timestamp of when the skill was last updated.
-
-[](#skill_list_response.updated_at)
-
-[](#skill_list_response)
-
-
-
-SkillRetrieveResponse object { id, created_at, display_title, 4 more }
-
-
-
-
-
-id: string
-
-
-
-Unique identifier for the skill.
-
-The format and length of IDs may change over time.
-
-[](#skill_retrieve_response.id)
-
-created_at: string
-
-
-
-ISO 8601 timestamp of when the skill was created.
-
-[](#skill_retrieve_response.created_at)
-
-
-
-display_title: string
-
-
-
-Display title for the skill.
-
-This is a human-readable label that is not included in the prompt sent to the model.
-
-[](#skill_retrieve_response.display_title)
-
-
-
-latest_version: string
-
-
-
-The latest version identifier for the skill.
-
-This represents the most recent version of the skill that has been created.
-
-[](#skill_retrieve_response.latest_version)
-
-
-
-source: string
-
-
-
-Source of the skill.
-
-This may be one of the following values:
-
-- `"custom"`: the skill was created by a user
-- `"anthropic"`: the skill was created by Anthropic
-
-[](#skill_retrieve_response.source)
-
-
-
-type: string
-
-
-
-Object type.
-
-For Skills, this is always `"skill"`.
-
-[](#skill_retrieve_response.type)
-
-updated_at: string
-
-
-
-ISO 8601 timestamp of when the skill was last updated.
-
-[](#skill_retrieve_response.updated_at)
-
-[](#skill_retrieve_response)
-
-
-
-SkillDeleteResponse object { id, type }
-
-
-
-
-
-id: string
-
-
-
-Unique identifier for the skill.
-
-The format and length of IDs may change over time.
-
-[](#skill_delete_response.id)
-
-
-
-type: string
+type: "skill_deleted"
 
 
 
@@ -560,28 +262,83 @@ Deleted object type.
 
 For Skills, this is always `"skill_deleted"`.
 
-[](#skill_delete_response.type)
+defaultskill_deleted
 
-[](#skill_delete_response)
+
 
-#### SkillsVersions
+id: string
 
-##### [Create Skill Version](/docs/en/api/beta/skills/versions/create)
+
 
-POST/v1/skills/{skill_id}/versions
+Unique identifier for the skill.
 
-##### [List Skill Versions](/docs/en/api/beta/skills/versions/list)
+The format and length of IDs may change over time.
 
-GET/v1/skills/{skill_id}/versions
+
 
-##### [Download Skill Version Content](/docs/en/api/beta/skills/versions/download)
+BetaSkill object{ type: "skill", id, created_at, 4 more }
 
-GET/v1/skills/{skill_id}/versions/{version}/content
+
 
-##### [Get Skill Version](/docs/en/api/beta/skills/versions/retrieve)
+
 
-GET/v1/skills/{skill_id}/versions/{version}
+BetaSkillSource object{ type }
 
-##### [Delete Skill Version](/docs/en/api/beta/skills/versions/delete)
+
 
-DELETE/v1/skills/{skill_id}/versions/{version}
+
+
+type: "custom" or "anthropic" or "anthropic_example" or "plugin"
+
+
+
+Where the Skill comes from.
+
+Possible values:
+
+- `"custom"`: authored by the platform user; private to their workspace
+- `"anthropic"`: published by Anthropic; shared and read-only
+- `"anthropic_example"`: Anthropic-published sample Skill
+- `"plugin"`: resolved from an installed plugin
+
+One of the following:
+
+"custom"
+
+
+
+"anthropic"
+
+
+
+"anthropic_example"
+
+
+
+"plugin"
+
+
+
+#### Skills[Versions](/docs/en/api/http/beta/skills/versions)
+
+##### [Create Skill Version](/docs/en/api/http/beta/skills/versions/create)
+
+POST/v1/skills/{skill_id}/versions
+
+##### [List Skill Versions](/docs/en/api/http/beta/skills/versions/list)
+
+GET/v1/skills/{skill_id}/versions
+
+##### [Download Skill Version Content](/docs/en/api/http/beta/skills/versions/download)
+
+GET/v1/skills/{skill_id}/versions/{version}/content
+
+Download a skill version's content as a zip archive.
+
+##### [Get Skill Version](/docs/en/api/http/beta/skills/versions/retrieve)
+
+GET/v1/skills/{skill_id}/versions/{version}
+
+##### [Delete Skill Version](/docs/en/api/http/beta/skills/versions/delete)
+
+DELETE/v1/skills/{skill_id}/versions/{version}

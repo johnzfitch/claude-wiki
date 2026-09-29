@@ -2,11 +2,14 @@
 title: "Export your Claude data | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:17Z"
+fetched_at: "2026-09-29T06:31:48Z"
 ---
 
 # Export your Claude data
 
+July 8, 2026
+
+Copy for LLM
 
 Data exports are available to individual Claude users on Free, Pro, and Max plans. Data exports include conversation data and the user data for your account.
 

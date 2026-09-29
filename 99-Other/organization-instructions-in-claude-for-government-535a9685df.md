@@ -2,13 +2,14 @@
 title: "Organization instructions in Claude for Government | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503675-organization-instructions-in-claude-for-government"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:49Z"
+fetched_at: "2026-09-29T06:32:13Z"
 ---
 
 # Organization instructions in Claude for Government
 
 April 30, 2026
 
+Copy for LLM
 
 Organization instructions allow administrators to define custom instructions that Claude follows in every conversation for all users in the organization. Use this to set compliance guidance, communication standards, formatting requirements, or domain-specific context.
 
@@ -70,4 +71,4 @@ To remove instructions entirely, clear the text area and click "Save."
 
 **Response formatting** — "Prefer concise responses under 300 words. Use bullet points for lists with three or more items."
 
-**Referral guidance** — "When users ask about HR policies, direct them to [\[email protected\]](/cdn-cgi/l/email-protection#513923113429303c213d347f323e3c) rather than providing specific policy advice."
+**Referral guidance** — "When users ask about HR policies, direct them to [\[email protected\]](/cdn-cgi/l/email-protection#d8b0aa98bda0b9b5a8b4bdf6bbb7b5) rather than providing specific policy advice."

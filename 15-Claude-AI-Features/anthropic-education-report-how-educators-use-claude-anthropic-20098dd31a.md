@@ -1,8 +1,8 @@
 ---
-title: "Anthropic education report: How educators use Claude \\ Anthropic"
+title: "Education Report: How educators use Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-education-report-how-educators-use-claude"
-category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T07:11:12Z"
+category: "19-Reference"
+fetched_at: "2026-09-12T06:31:34Z"
 ---
 
 # Anthropic Education Report: How educators use Claude
@@ -171,17 +171,23 @@ Esin Durmus, Alex Tamkin, Miles McCain, Stuart Ritchie, Jennifer Martinez, Ryan 
 
 ## Related content
 
-### Investigating three real-world incidents in our cybersecurity evaluations
+### Measuring tactical intelligence targeting and conventional weapons capabilities of AI models
 
-[Read more](/news/investigating-incidents-cybersecurity-evals)
+Anthropic’s Frontier Red Team developed new evaluations to measure AI capabilities in tactical intelligence targeting and conventional weapons development.
 
-### Our position on open-weights models
+[Read more](/research/intelligence-targeting-conventional-weapons-capabilities)
 
-[Read more](/news/position-open-weights-models)
+### An alignment assessment of recent cybersecurity incidents
 
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
 
-[Read more](/news/cognizant-anthropic)
+[Read more](/research/alignment-assessment-cybersecurity-incidents)
+
+### Formalizing Fermat's Last Theorem
+
+We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language.
+
+[Read more](/research/formalizing-fermats-last-theorem)
 
 [](/)
 
@@ -195,7 +201,7 @@ Esin Durmus, Alex Tamkin, Miles McCain, Stuart Ritchie, Jennifer Martinez, Ryan 
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -215,6 +221,7 @@ Esin Durmus, Alex Tamkin, Miles McCain, Stuart Ritchie, Jennifer Martinez, Ryan 
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -247,7 +254,7 @@ Esin Durmus, Alex Tamkin, Miles McCain, Stuart Ritchie, Jennifer Martinez, Ryan 
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -260,7 +267,7 @@ Esin Durmus, Alex Tamkin, Miles McCain, Stuart Ritchie, Jennifer Martinez, Ryan 
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -272,6 +279,7 @@ Esin Durmus, Alex Tamkin, Miles McCain, Stuart Ritchie, Jennifer Martinez, Ryan 
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

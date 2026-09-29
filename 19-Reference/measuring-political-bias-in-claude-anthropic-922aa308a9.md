@@ -2,7 +2,7 @@
 title: "Measuring political bias in Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/news/political-even-handedness"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:11:58Z"
+fetched_at: "2026-09-11T06:28:59Z"
 ---
 
 # Measuring political bias in Claude
@@ -36,7 +36,7 @@ On our own platforms, we want Claude to take an even-handed approach when it com
 - Claude should adopt neutral terminology over politically-loaded terminology where possible;
 - Claude should engage respectfully with a range of perspectives, and generally avoid unsolicited judgment or persuasion.
 
-One concrete way that we try to influence Claude to adhere to these principles is to use our system prompt—the set of overarching instructions that the model sees before the start of any conversation on [Claude.ai](http://claude.ai/redirect/website.v1.045330d8-a7e5-4b59-915d-36ef64742eda). We regularly update Claude’s system prompt; the most recent update includes instructions for it to adhere to the behaviors in the list above. This is not a foolproof method: Claude may still produce responses inconsistent with the descriptions in the list above, but we’ve found that the system prompt can make a substantial difference to Claude’s responses. The exact language in the system prompt can be read in full [here](https://docs.claude.com/en/release-notes/system-prompts?ref=blog.promptlayer.com).
+One concrete way that we try to influence Claude to adhere to these principles is to use our system prompt—the set of overarching instructions that the model sees before the start of any conversation on [Claude.ai](http://claude.ai/redirect/website.v1.1bb32936-591e-4db7-bf20-d56be42ac67e). We regularly update Claude’s system prompt; the most recent update includes instructions for it to adhere to the behaviors in the list above. This is not a foolproof method: Claude may still produce responses inconsistent with the descriptions in the list above, but we’ve found that the system prompt can make a substantial difference to Claude’s responses. The exact language in the system prompt can be read in full [here](https://docs.claude.com/en/release-notes/system-prompts?ref=blog.promptlayer.com).
 
 ## Training Claude to be even-handed
 
@@ -82,7 +82,7 @@ In this case, instead of human raters, we used Claude Sonnet 4.5 as an automated
 
   
 *Models and evaluation set*  
-We tested our most capable models, Claude Sonnet 4.5 and Claude Opus 4.1. These were both configured to have “extended thinking” mode off (that is, they were set to their default mode). These models included our latest [Claude.ai](http://claude.ai/redirect/website.v1.045330d8-a7e5-4b59-915d-36ef64742eda) system prompt.
+We tested our most capable models, Claude Sonnet 4.5 and Claude Opus 4.1. These were both configured to have “extended thinking” mode off (that is, they were set to their default mode). These models included our latest [Claude.ai](http://claude.ai/redirect/website.v1.1bb32936-591e-4db7-bf20-d56be42ac67e) system prompt.
 
 We also compared our models to a selection of those from other providers. The comparator models were: [GPT-5](https://openai.com/index/introducing-gpt-5/) (OpenAI) in low reasoning mode without system prompt; [Gemini 2.5 Pro](https://deepmind.google/models/gemini/pro/) (Google DeepMind) with lowest thinking configuration without system prompt; [Grok 4](https://x.ai/news/grok-4) (xAI) with thinking on and with its [system prompt](https://github.com/xai-org/grok-prompts/blob/main/grok4_system_turn_prompt_v8.j2); and [Llama 4](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) Maverick (Meta) with its [system prompt](https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/).
 
@@ -153,17 +153,21 @@ November 24, 2025
 
 ## Related content
 
-### Investigating three real-world incidents in our cybersecurity evaluations
+### Developing Enterprise Frontier Safeguards with our customers
 
-[Read more](/news/investigating-incidents-cybersecurity-evals)
+[Read more](/news/enterprise-frontier-safeguards)
 
-### Our position on open-weights models
+### Improving our alignment and security efforts
 
-[Read more](/news/position-open-weights-models)
+On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
 
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+[Read more](/news/improving-alignment-security-efforts)
 
-[Read more](/news/cognizant-anthropic)
+### Previewing the Model Hardware Standard
+
+We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
+
+[Read more](/news/model-hardware-standard-research-preview)
 
 [](/)
 
@@ -177,7 +181,7 @@ November 24, 2025
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -197,6 +201,7 @@ November 24, 2025
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -229,7 +234,7 @@ November 24, 2025
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -242,7 +247,7 @@ November 24, 2025
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -254,6 +259,7 @@ November 24, 2025
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

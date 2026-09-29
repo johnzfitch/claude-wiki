@@ -2,7 +2,7 @@
 title: "Claude can now create and edit files | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/create-files"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:43:07Z"
+fetched_at: "2026-09-29T06:31:23Z"
 ---
 
 # Claude can now create and edit files
@@ -20,7 +20,7 @@ Describe what you need and get back ready-to-use spreadsheets, documents, presen
 
   Claude apps
 
-  Claude Enterprise
+  [Claude Enterprise](https://claude.com/solutions/enterprise)
 
 - 
 

@@ -2,7 +2,7 @@
 title: "List project attachments - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/projects/attachments/list"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:41:36Z"
+fetched_at: "2026-09-26T06:38:57Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fprojects%2Fattachments%2Flist)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -226,18 +204,18 @@ Chats
 Projects
 
 
-List projects
+List projects
 
 
-Get project details
+Get project details
 
 
-Delete project
+Delete project
 
 Attachments
 
 
-List project attachments
+List project attachments
 
 Collaborators
 
@@ -245,41 +223,43 @@ Documents
 
 Artifacts
 
+Sessions
+
 Code
 
 
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
+To enable the Compliance API, see the setup guide.
 
-List
+[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)
 
+Copy page
 
 
 
-
-
-To enable the Compliance API, see [Set up the Compliance API](/docs/en/manage-claude/compliance-api-access).
+1.  [API reference](/docs/en/api/http)
+2.  [Compliance API](/docs/en/api/http/compliance)
+3.  [Apps](/docs/en/api/http/compliance/apps)
+4.  [Projects](/docs/en/api/http/compliance/apps/projects)
+5.  [Attachments](/docs/en/api/http/compliance/apps/projects/attachments)
 
 # List project attachments
 
-GET/v1/compliance/apps/projects/{project_id}/attachments
+GET/v1/compliance/apps/projects/{project_id}/attachments
 
 List files and documents attached to a project.
 
@@ -289,7 +269,7 @@ The raw binary content of attached files can be downloaded using the GET /v1/com
 
 The text content of attached project documents can be fetched using the GET /v1/compliance/apps/projects/documents/{claude_proj_doc_id} endpoint.
 
-##### Path ParametersExpand Collapse 
+##### Path parameters
 
 project_id: string
 
@@ -297,9 +277,9 @@ project_id: string
 
 The project ID (tagged ID, e.g., claude_proj_abc123)
 
-[](#list.project_id)
+##### Query parameters
 
-##### Query ParametersExpand Collapse 
+
 
 limit: optional number
 
@@ -307,7 +287,11 @@ limit: optional number
 
 Maximum results (default: 20, max: 100)
 
-[](#list.limit)
+default20
+
+minimum1
+
+maximum100
 
 page: optional string
 
@@ -315,21 +299,17 @@ page: optional string
 
 Opaque pagination token from a previous response's `next_page` field. Pass this to retrieve the next page of results. Clients should treat this value as an opaque string and not attempt to parse or interpret its contents, as the format may change without notice.
 
-[](#list.page)
-
-##### Header ParametersExpand Collapse 
+##### Headers
 
 "x-api-key": optional string
 
 
 
-[](#list.x-api-key)
-
-##### ReturnsExpand Collapse 
+##### Returns
 
 
 
-data: array of object { id, created_at, filename, 4 more } or object { id, created_at, filename, 3 more }
+data: array of ComplianceProjectFileReference or ComplianceProjectDocReference
 
 
 
@@ -339,59 +319,13 @@ One of the following:
 
 
 
-ComplianceProjectFileReference object { id, created_at, filename, 4 more }
+ComplianceProjectFileReference object{ type: "project_file", id, created_at, 4 more }
 
 
 
 File attachment reference for compliance responses.
 
-id: string
-
-
-
-File identifier (e.g., 'claude_file_abcd')
-
-[](#attachment_list_response%5B0%5D.id)
-
-created_at: string
-
-
-
-Creation timestamp (RFC 3339 format)
-
-[](#attachment_list_response%5B0%5D.created_at)
-
-filename: string
-
-
-
-Display name of the file (e.g., 'document.pdf')
-
-[](#attachment_list_response%5B0%5D.filename)
-
-md5: string
-
-
-
-Lowercase hex MD5 of the file's preferred downloadable variant, when recorded. Null otherwise. Use the per-file `/metadata` endpoint for the authoritative value.
-
-[](#attachment_list_response%5B0%5D.md5)
-
-mime_type: string
-
-
-
-MIME type of the file's preferred downloadable variant when one is recorded, else 'application/octet-stream'. Use the per-file `/metadata` endpoint for the authoritative value.
-
-[](#attachment_list_response%5B0%5D.mime_type)
-
-size_bytes: number
-
-
-
-Size in bytes of the file's preferred downloadable variant, when recorded. Null otherwise. Use the per-file `/metadata` endpoint for the authoritative value.
-
-[](#attachment_list_response%5B0%5D.size_bytes)
+
 
 type: "project_file"
 
@@ -399,25 +333,15 @@ type: "project_file"
 
 Discriminator marking this as a binary file
 
-[](#attachment_list_response%5B0%5D.type)
-
-[](#attachment_list_response%5B0%5D)
-
-
-
-ComplianceProjectDocReference object { id, created_at, filename, 3 more }
-
-
-
-Project document attachment reference for compliance responses.
+defaultproject_file
 
 id: string
 
 
 
-Project document identifier (e.g., 'claude_proj_doc_abcd')
+File identifier (e.g., 'claude_file_abcd')
 
-[](#attachment_list_response%5B1%5D.id)
+
 
 created_at: string
 
@@ -425,23 +349,41 @@ created_at: string
 
 Creation timestamp (RFC 3339 format)
 
-[](#attachment_list_response%5B1%5D.created_at)
+formatdate-time
 
 filename: string
 
 
 
-Display name of the document (e.g., 'document.txt')
+Display name of the file (e.g., 'document.pdf')
 
-[](#attachment_list_response%5B1%5D.filename)
-
-mime_type: "text/plain"
+md5: string or null
 
 
 
-MIME type of the project document, always set to plain text
+Lowercase hex MD5 of the file's preferred downloadable variant, when recorded. Null otherwise. Use the per-file `/metadata` endpoint for the authoritative value.
 
-[](#attachment_list_response%5B1%5D.mime_type)
+mime_type: string
+
+
+
+MIME type of the file's preferred downloadable variant when one is recorded, else 'application/octet-stream'. Use the per-file `/metadata` endpoint for the authoritative value.
+
+size_bytes: number or null
+
+
+
+Size in bytes of the file's preferred downloadable variant, when recorded. Null otherwise. Use the per-file `/metadata` endpoint for the authoritative value.
+
+
+
+ComplianceProjectDocReference object{ type: "project_doc", id, created_at, 3 more }
+
+
+
+Project document attachment reference for compliance responses.
+
+
 
 type: "project_doc"
 
@@ -449,19 +391,49 @@ type: "project_doc"
 
 Discriminator marking this as a plain text document
 
-[](#attachment_list_response%5B1%5D.type)
+defaultproject_doc
 
-updated_at: string
+id: string
+
+
+
+Project document identifier (e.g., 'claude_proj_doc_abcd')
+
+
+
+created_at: string
+
+
+
+Creation timestamp (RFC 3339 format)
+
+formatdate-time
+
+filename: string
+
+
+
+Display name of the document (e.g., 'document.txt')
+
+
+
+mime_type: "text/plain"
+
+
+
+MIME type of the project document, always set to plain text
+
+defaulttext/plain
+
+
+
+updated_at: string or null
 
 
 
 Last-modified timestamp of the document. Reserved for future use — currently always null.
 
-[](#attachment_list_response%5B1%5D.updated_at)
-
-[](#attachment_list_response%5B1%5D)
-
-[](#list)
+formatdate-time
 
 has_more: boolean
 
@@ -469,22 +441,21 @@ has_more: boolean
 
 Whether more records exist beyond the current result set
 
-[](#list)
-
-next_page: string
+next_page: string or null
 
 
 
 To get the next page, use the 'next_page' from the current response as the 'page' in your next request
 
-[](#list)
+List project attachments
 
-List project attachments
+cURL
 
 
 
 ```python
 curl https://api.anthropic.com/v1/compliance/apps/projects/$PROJECT_ID/attachments \
+    -H 'anthropic-version: 2023-06-01' \
     -H "Authorization: Bearer $ANTHROPIC_COMPLIANCE_API_KEY"
 ```
 

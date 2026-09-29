@@ -2,7 +2,7 @@
 title: "Add Session Resource - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions/resources/add"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:39:52Z"
+fetched_at: "2026-09-26T06:38:48Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions%2Fresources%2Fadd)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -60,41 +56,41 @@ Environments
 Sessions
 
 
-Create Session
+Create Session
 
 
-List Sessions
+List Sessions
 
 
-Get Session
+Get Session
 
 
-Update Session
+Update Session
 
 
-Delete Session
+Delete Session
 
 
-Archive Session
+Archive Session
 
 Events
 
 Resources
 
 
-Add Session Resource
+Add Session Resource
 
 
-List Session Resources
+List Session Resources
 
 
-Get Session Resource
+Get Session Resource
 
 
-Update Session Resource
+Update Session Resource
 
 
-Delete Session Resource
+Delete Session Resource
 
 Threads
 
@@ -106,88 +102,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -195,59 +213,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -266,49 +244,46 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Add
-
+Copy page
 
 
 
 cURL
 
+1.  [API reference](/docs/en/api/http)
+2.  [Beta](/docs/en/api/http/beta)
+3.  [Sessions](/docs/en/api/http/beta/sessions)
+4.  [Resources](/docs/en/api/http/beta/sessions/resources)
+
 # Add Session Resource
 
-POST/v1/sessions/{session_id}/resources
+POST/v1/sessions/{session_id}/resources
 
 Add Session Resource
 
-##### Path ParametersExpand Collapse 
+##### Path parameters
 
 session_id: string
 
 
 
-[](#add.session_id)
-
-##### Header ParametersExpand Collapse 
+##### Headers
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](/docs/en/api/beta#anthropic_beta)
+"anthropic-beta": optional array of [AnthropicBeta](/docs/en/api/http/beta#anthropic_beta)
 
 
 
@@ -320,11 +295,9 @@ string
 
 
 
-[](#anthropic_beta%5B0%5D)
-
 
 
-"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 29 more
+"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
 
 
 
@@ -334,199 +307,207 @@ One of the following:
 
 
 
-[](#anthropic_beta%5B1%5D%5B0%5D)
-
 "prompt-caching-2024-07-31"
 
 
-
-[](#anthropic_beta%5B1%5D%5B1%5D)
 
 "computer-use-2024-10-22"
 
 
 
-[](#anthropic_beta%5B1%5D%5B2%5D)
-
 "computer-use-2025-01-24"
 
 
-
-[](#anthropic_beta%5B1%5D%5B3%5D)
 
 "pdfs-2024-09-25"
 
 
 
-[](#anthropic_beta%5B1%5D%5B4%5D)
-
 "token-counting-2024-11-01"
 
 
-
-[](#anthropic_beta%5B1%5D%5B5%5D)
 
 "token-efficient-tools-2025-02-19"
 
 
 
-[](#anthropic_beta%5B1%5D%5B6%5D)
-
 "output-128k-2025-02-19"
 
 
-
-[](#anthropic_beta%5B1%5D%5B7%5D)
 
 "files-api-2025-04-14"
 
 
 
-[](#anthropic_beta%5B1%5D%5B8%5D)
-
 "mcp-client-2025-04-04"
 
 
-
-[](#anthropic_beta%5B1%5D%5B9%5D)
 
 "mcp-client-2025-11-20"
 
 
 
-[](#anthropic_beta%5B1%5D%5B10%5D)
-
 "dev-full-thinking-2025-05-14"
 
 
-
-[](#anthropic_beta%5B1%5D%5B11%5D)
 
 "interleaved-thinking-2025-05-14"
 
 
 
-[](#anthropic_beta%5B1%5D%5B12%5D)
-
 "code-execution-2025-05-22"
 
 
-
-[](#anthropic_beta%5B1%5D%5B13%5D)
 
 "extended-cache-ttl-2025-04-11"
 
 
 
-[](#anthropic_beta%5B1%5D%5B14%5D)
-
 "context-1m-2025-08-07"
 
 
-
-[](#anthropic_beta%5B1%5D%5B15%5D)
 
 "context-management-2025-06-27"
 
 
 
-[](#anthropic_beta%5B1%5D%5B16%5D)
-
 "model-context-window-exceeded-2025-08-26"
 
 
-
-[](#anthropic_beta%5B1%5D%5B17%5D)
 
 "skills-2025-10-02"
 
 
 
-[](#anthropic_beta%5B1%5D%5B18%5D)
-
 "fast-mode-2026-02-01"
 
 
-
-[](#anthropic_beta%5B1%5D%5B19%5D)
 
 "output-300k-2026-03-24"
 
 
 
-[](#anthropic_beta%5B1%5D%5B20%5D)
-
 "user-profiles-2026-03-24"
 
 
 
-[](#anthropic_beta%5B1%5D%5B21%5D)
+"user-profiles-2026-08-18"
+
+
+
+"user-profiles-2026-09-04"
+
+
 
 "advisor-tool-2026-03-01"
 
 
 
-[](#anthropic_beta%5B1%5D%5B22%5D)
-
 "managed-agents-2026-04-01"
 
 
-
-[](#anthropic_beta%5B1%5D%5B23%5D)
 
 "cache-diagnosis-2026-04-07"
 
 
 
-[](#anthropic_beta%5B1%5D%5B24%5D)
-
 "dreaming-2026-04-21"
 
 
-
-[](#anthropic_beta%5B1%5D%5B25%5D)
 
 "thinking-token-count-2026-05-13"
 
 
 
-[](#anthropic_beta%5B1%5D%5B26%5D)
-
 "server-side-fallback-2026-06-01"
 
 
-
-[](#anthropic_beta%5B1%5D%5B27%5D)
 
 "server-side-fallback-2026-07-01"
 
 
 
-[](#anthropic_beta%5B1%5D%5B28%5D)
-
 "fallback-credit-2026-06-01"
 
 
-
-[](#anthropic_beta%5B1%5D%5B29%5D)
 
 "fallback-credit-2026-07-01"
 
 
 
-[](#anthropic_beta%5B1%5D%5B30%5D)
-
 "agent-memory-2026-07-22"
 
 
 
-[](#anthropic_beta%5B1%5D%5B31%5D)
+"mid-conversation-tool-changes-2026-07-01"
 
-[](#anthropic_beta%5B1%5D)
+
 
-[](#add.betas)
+"compact-2026-01-12"
 
-##### Body ParametersJSONExpand Collapse 
+
+
+"computer-use-2025-11-24"
+
+
+
+"mcp-tunnels-2026-06-22"
+
+
+
+"structured-outputs-2025-11-13"
+
+
+
+"task-budgets-2026-03-13"
+
+
+
+"thinking-display-updates-2026-08-18"
+
+
+
+"ce-user-management-2026-07-13"
+
+
+
+"mid-conversation-output-config-2026-07-01"
+
+
+
+"thinking-binding-controls-2026-08-01"
+
+
+
+"mid-conversation-system-clear-at-2026-08-21"
+
+
+
+"compact-2026-09-04"
+
+
+
+"inline-tools-2026-09-15"
+
+
+
+"mcp-client-2026-09-15"
+
+
+
+
+
+"anthropic-workspace-id": optional string
+
+
+
+Optional header to select the Workspace for this request. The value is a Workspace ID (for example, `wrkspc_011CZkZaBF1tNoB5wlCeusgy`).
+
+Only needed for credentials that can act on more than one Workspace. A credential that belongs to a specific Workspace may omit it; if sent, it must match that Workspace.
+
+##### Body
+
+
 
 file_id: string
 
@@ -534,27 +515,35 @@ file_id: string
 
 ID of a previously uploaded file.
 
-[](#add.file_id)
+minLength1
+
+maxLength128
 
 type: "file"
 
 
 
-[](#add.type)
+
 
-mount_path: optional string
+mount_path: optional string or null
 
 
 
 Mount path in the container. Defaults to `/mnt/session/uploads/<file_id>`.
 
-[](#add.mount_path)
+minLength1
 
-##### ReturnsExpand Collapse 
+maxLength4096
+
+##### Returns
 
 
 
-BetaManagedAgentsFileResource object { id, created_at, file_id, 3 more }
+BetaManagedAgentsFileResource object{ type: "file", id, created_at, 3 more }
+
+
+
+type: "file"
 
 
 
@@ -562,7 +551,7 @@ id: string
 
 
 
-[](#beta_managed_agents_file_resource.id)
+
 
 created_at: string
 
@@ -570,25 +559,17 @@ created_at: string
 
 A timestamp in RFC 3339 format
 
-[](#beta_managed_agents_file_resource.created_at)
+formatdate-time
 
 file_id: string
 
 
 
-[](#beta_managed_agents_file_resource.file_id)
-
 mount_path: string
 
 
 
-[](#beta_managed_agents_file_resource.mount_path)
-
-type: "file"
-
-
-
-[](#beta_managed_agents_file_resource.type)
+
 
 updated_at: string
 
@@ -596,11 +577,9 @@ updated_at: string
 
 A timestamp in RFC 3339 format
 
-[](#beta_managed_agents_file_resource.updated_at)
+formatdate-time
 
-[](#beta_managed_agents_file_resource)
-
-Add Session Resource
+Add Session Resource
 
 cURL
 

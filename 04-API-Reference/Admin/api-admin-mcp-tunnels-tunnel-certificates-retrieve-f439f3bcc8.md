@@ -2,7 +2,7 @@
 title: "Get Tunnel Certificate - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/mcp_tunnels/tunnel_certificates/retrieve"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:37:50Z"
+fetched_at: "2026-09-10T06:41:35Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fadmin%2Fmcp_tunnels%2Ftunnel_certificates%2Fretrieve)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,96 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,22 +160,28 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
+Create Enrollment URL
 
 
 Webhooks
+
+
+Unwrap
+
+
+Parse Unverified
 
 
 Admin
@@ -182,9 +192,9 @@ Invites
 
 Users
 
-RBAC Groups
+RBAC Groups
 
-RBAC Roles
+RBAC Roles
 
 Workspaces
 
@@ -211,33 +221,33 @@ Federation Rules
 MCP Tunnels
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 
-Archive Tunnel
+Archive Tunnel
 
 Tunnel Certificates
 
 
-Create Tunnel Certificate
+Create Tunnel Certificate
 
 
-Get Tunnel Certificate
+Get Tunnel Certificate
 
 
-List Tunnel Certificates
+List Tunnel Certificates
 
 
-Archive Tunnel Certificate
+Archive Tunnel Certificate
 
 
 Compliance API
@@ -256,39 +266,38 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Retrieve
-
+Copy page
 
 
+
+1.  [API reference](/docs/en/api/http)
+2.  [Admin](/docs/en/api/http/admin)
+3.  [MCP Tunnels](/docs/en/api/http/admin/mcp_tunnels)
+4.  [Tunnel Certificates](/docs/en/api/http/admin/mcp_tunnels/tunnel_certificates)
 
 # Get Tunnel Certificate
 
 Deprecated
 
-GET/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}
+GET/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](/docs/en/api/beta/tunnels) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
 Retrieve a single certificate registered on a tunnel by ID.
 
-##### Path ParametersExpand Collapse 
+##### Path parameters
 
 tunnel_id: string
 
@@ -296,17 +305,13 @@ tunnel_id: string
 
 ID of the Tunnel.
 
-[](#retrieve.tunnel_id)
-
 certificate_id: string
 
 
 
 ID of the Tunnel Certificate.
 
-[](#retrieve.certificate_id)
-
-##### Header ParametersExpand Collapse 
+##### Headers
 
 "anthropic-beta": array of "mcp-tunnels-2026-05-19"
 
@@ -314,9 +319,7 @@ ID of the Tunnel Certificate.
 
 Required for all Tunnel endpoints.
 
-[](#retrieve.anthropic-beta)
-
-##### ReturnsExpand Collapse 
+##### Returns
 
 id: string
 
@@ -324,15 +327,17 @@ id: string
 
 ID of the Tunnel Certificate.
 
-[](#tunnel_certificate_retrieve_response.id)
+
 
-archived_at: string
+archived_at: string or null
 
 
 
 RFC 3339 datetime string indicating when the certificate was archived, or `null` if it is not archived.
 
-[](#tunnel_certificate_retrieve_response.archived_at)
+formatdate-time
+
+
 
 created_at: string
 
@@ -340,15 +345,17 @@ created_at: string
 
 RFC 3339 datetime string indicating when the certificate was registered.
 
-[](#tunnel_certificate_retrieve_response.created_at)
+formatdate-time
 
-expires_at: string
+
+
+expires_at: string or null
 
 
 
 RFC 3339 datetime string indicating when the certificate expires, or `null` if it does not expire.
 
-[](#tunnel_certificate_retrieve_response.expires_at)
+formatdate-time
 
 fingerprint: string
 
@@ -356,15 +363,13 @@ fingerprint: string
 
 The certificate's SHA-256 fingerprint, as a lowercase hex string.
 
-[](#tunnel_certificate_retrieve_response.fingerprint)
-
 tunnel_id: string
 
 
 
 ID of the Tunnel this certificate is registered against.
 
-[](#tunnel_certificate_retrieve_response.tunnel_id)
+
 
 type: "tunnel_certificate"
 
@@ -372,16 +377,18 @@ type: "tunnel_certificate"
 
 Object type. Always `tunnel_certificate` for Tunnel Certificates.
 
-[](#tunnel_certificate_retrieve_response.type)
+defaulttunnel_certificate
 
-Get Tunnel Certificate
+Get Tunnel Certificate
+
+cURL
 
 
 
 ```python
 curl https://api.anthropic.com/v1/organizations/tunnels/$TUNNEL_ID/certificates/$CERTIFICATE_ID \
     -H 'anthropic-version: 2023-06-01' \
-    -H "Authorization: Bearer $ANTHROPIC_OAUTH_TOKEN"
+    -H "Authorization: Bearer $ANTHROPIC_AUTH_TOKEN"
 ```
 
 Response 200

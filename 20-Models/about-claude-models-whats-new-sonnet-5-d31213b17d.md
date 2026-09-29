@@ -2,7 +2,7 @@
 title: "What's new in Claude Sonnet 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5"
 category: "20-Models"
-fetched_at: "2026-08-02T05:39:03Z"
+fetched_at: "2026-08-17T06:40:21Z"
 ---
 
 - [Managed Agents](/docs/en/managed-agents/overview)
@@ -16,45 +16,38 @@ fetched_at: "2026-08-02T05:39:03Z"
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fmodels%2Fwhats-new-sonnet-5)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Models
 
-[Models overview](/docs/en/about-claude/models/overview)[Model IDs and versioning](/docs/en/about-claude/models/model-ids-and-versions)[Choosing a model](/docs/en/about-claude/models/choosing-a-model)[Introducing Claude Fable 5 and Claude Mythos 5](/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5)[What's new in Claude Sonnet 5](/docs/en/about-claude/models/whats-new-sonnet-5)[What's new in Claude Opus 5](/docs/en/about-claude/models/whats-new-opus-5)[Upgrade between model versions](/docs/en/about-claude/models/migration-guide)[Model deprecations](/docs/en/about-claude/model-deprecations)[Model cards](/docs/en/resources/overview)[System prompts](/docs/en/release-notes/system-prompts)[Pricing](/docs/en/about-claude/pricing)
+[Models overview](/docs/en/about-claude/models/overview)[Model IDs and versioning](/docs/en/about-claude/models/model-ids-and-versions)[Choosing a model](/docs/en/about-claude/models/choosing-a-model)[Optimizing for cost and intelligence](/docs/en/about-claude/models/optimizing-for-cost-and-intelligence)[Introducing Claude Fable 5 and Claude Mythos 5](/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5)[What's new in Claude Sonnet 5](/docs/en/about-claude/models/whats-new-sonnet-5)[What's new in Claude Opus 5](/docs/en/about-claude/models/whats-new-opus-5)[Upgrade between model versions](/docs/en/about-claude/models/migration-guide)[Model deprecations](/docs/en/about-claude/model-deprecations)[Model cards](/docs/en/resources/overview)[System prompts](/docs/en/release-notes/system-prompts)[Pricing](/docs/en/about-claude/pricing)
 
-[](/login)
+[](/)
 
+Console
 
-
-
-Models & pricing
-
-What's new in Claude Sonnet 5
-
-Models & pricing/Models
+[Models & pricing](/docs/en/about-claude/models/overview)Models
 
 # What's new in Claude Sonnet 5
 
+Copy page
 
 
 
 Overview of new features and behavior changes in Claude Sonnet 5.
 
+Copy page
 
 
 
@@ -101,6 +94,18 @@ Manual extended thinking (`thinking: {type: "enabled", budget_tokens: N}`) was d
 
 Python
 
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
 
 
 ```python
@@ -123,14 +128,14 @@ The change affects anything you measure or budget in tokens:
 - **Token counts:** `usage` fields and [token counting](/docs/en/build-with-claude/token-counting) results for the same text are higher than on Claude Sonnet 4.6. Don't reuse counts measured against earlier models; recount against Claude Sonnet 5.
 - **Context window capacity in text terms:** the context window is 1M tokens, but each token covers less text on average, so the same window holds less text than on Claude Sonnet 4.6.
 - **`max_tokens` budgets:** an output limit tuned for Claude Sonnet 4.6 may truncate equivalent output on Claude Sonnet 5. Revisit limits sized close to your expected output length.
-- **Per-request cost:** per-token pricing is unchanged (see [Pricing](#pricing)), but because the same text produces more tokens, the cost of an equivalent request can differ from Claude Sonnet 4.6.
+- **Per-request cost:** per-token pricing is lower than Claude Sonnet 4.6's (see [Pricing](#pricing)), but because the same text produces more tokens, the cost of an equivalent request does not drop in direct proportion.
 
 
 
 
 API constraints inherited from Claude Sonnet 4.6
 
-
+
 
 This constraint is unchanged from Claude Sonnet 4.6. Aside from the three [behavior changes](#behavior-changes) (see [Migration guide](#migration-guide)), code that already runs on Claude Sonnet 4.6 needs no other changes.
 
@@ -146,7 +151,7 @@ Prefilling the assistant message returns a `400` error, unchanged from Claude So
 
 Capability improvements
 
-Claude Sonnet 5 is a capability upgrade over Claude Sonnet 4.6 at the same price. It is also an option for workloads that need more capability than Claude Sonnet 4.6 provides without moving to an Opus-class model.
+Claude Sonnet 5 is a capability upgrade over Claude Sonnet 4.6 at a lower price. It is also an option for workloads that need more capability than Claude Sonnet 4.6 provides without moving to an Opus-class model.
 
 The largest gains over Claude Sonnet 4.6 are in coding and agentic tasks. For benchmark results, see [Anthropic's Transparency Hub](https://www.anthropic.com/transparency).
 
@@ -162,9 +167,7 @@ Claude Sonnet 5 is the first Sonnet-tier model with real-time cybersecurity safe
 
 Pricing
 
-Claude Sonnet 5 is priced at \$3 per million input tokens and \$15 per million output tokens, unchanged from Claude Sonnet 4.6. Because the [new tokenizer](#new-tokenizer) produces approximately 30% more tokens for the same text, the cost of an equivalent request can differ from Claude Sonnet 4.6 even though per-token pricing is unchanged. The exact increase depends on the content and workload shape.
-
-Introductory pricing of \$2/\$10 per million input/output tokens is in effect through August 31, 2026, after which the standard pricing of \$3/\$15 per million input/output tokens will take effect.
+Claude Sonnet 5 is priced at \$2 per million input tokens and \$10 per million output tokens, lower per-token pricing than Claude Sonnet 4.6's \$3/\$15. Because the [new tokenizer](#new-tokenizer) produces approximately 30% more tokens for the same text, the cost of an equivalent request does not drop in direct proportion to the per-token prices when comparing with Claude Sonnet 4.6. The exact difference depends on the content and workload shape.
 
 See [Pricing](/docs/en/about-claude/pricing) for complete pricing, including batch processing and prompt caching rates.
 
@@ -189,12 +192,26 @@ Migration guide
 
 Claude Sonnet 5 is a drop-in replacement for Claude Sonnet 4.6. Update your model ID:
 
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
+
 ```python
 model = "claude-sonnet-4-6"  # Before
 model = "claude-sonnet-5"  # After
 ```
-
-
 
 Then review the following:
 
@@ -209,29 +226,32 @@ See the [Claude Sonnet 5 section of the migration guide](/docs/en/about-claude/m
 
 Next steps
 
-
 
 
-Models overview
+[Models overview](/docs/en/about-claude/models/overview)
 
 Complete specs and pricing for all current Claude models.
 
+
 
-Token counting
+[Token counting](/docs/en/build-with-claude/token-counting)
 
 Measure your prompts under the new tokenizer before you migrate.
 
+
 
-Adaptive thinking
+[Adaptive thinking](/docs/en/build-with-claude/thinking)
 
 The recommended thinking-on mode on Claude Sonnet 5.
 
+
 
-Context windows
+[Context windows](/docs/en/build-with-claude/context-windows)
 
 How the 1M token context window works.
 
+
 
-Pricing
+[Pricing](/docs/en/about-claude/pricing)
 
 Complete pricing, including batch processing and prompt caching rates.

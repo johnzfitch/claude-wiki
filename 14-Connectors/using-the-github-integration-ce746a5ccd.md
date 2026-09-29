@@ -2,7 +2,7 @@
 title: "Using the GitHub integration | Claude by Anthropic"
 source_url: "https://support.claude.com/en/articles/9945670-using-the-github-integration"
 category: "14-Connectors"
-fetched_at: "2026-08-02T05:41:30Z"
+fetched_at: "2026-08-19T06:29:38Z"
 tags: ["connectors", "git", "github"]
 ---
 
@@ -268,10 +268,10 @@ Products
 
 Features
 
-- Claude for Chrome
+- Claude in Chrome
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
 
 - Claude for Microsoft 365
 
@@ -493,7 +493,7 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](#)
   Service partners
 
 - Tutorials

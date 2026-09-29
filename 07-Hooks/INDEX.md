@@ -1,6 +1,6 @@
 # Hooks
 
-*29 documents*
+*30 documents*
 
 
 - [Advanced Hook Use Cases](advanced.md) - This reference covers advanced hook patterns and techniques for sophisticated automation workflows.
@@ -27,6 +27,7 @@
 - [Hooks reference - Claude Code Docs](hooks-reference-claude-code-docs.md) - Reference for Claude Code hook events, configuration schema, JSON input/output formats, exit codes, async hooks, HTTP hooks, prompt hooks, and MCP too
 - [Hooks Summary for Burn Development Team Plugin](hooks-summary-for-burn-plugin.md) - **Date**: 2026-03-15
 - [Claude Code Hooks Documentation](hooks.md) - All hooks are installed in `~/.claude/hooks/` and configured in `~/.claude/settings.json`.
+- [Inference hooks overview | Claude Help Center](inference-hooks-overview-1ed5b928fb.md) - August 5, 2026
 - [Intercept and control agent behavior with hooks - Claude Code Docs](intercept-and-control-agent-behavior-with-hooks-claude-code-docs-057bef75a5.md) - - [How hooks work](#how-hooks-work)
 - [Intercept and control agent behavior with hooks](intercept-hooks.md) - Intercept and customize agent behavior at key execution points with hooks
 - [List Hookify Rules](list.md) - **Load hookify:writing-rules skill first** to understand rule format.

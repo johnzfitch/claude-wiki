@@ -2,16 +2,17 @@
 title: "What happens to a user&#x27;s data when they are removed from a Team or Enterprise organization? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12053672-what-happens-to-a-user-s-data-when-they-are-removed-from-a-team-or-enterprise-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:40:53Z"
-tags: ["enterprise"]
+fetched_at: "2026-09-29T06:31:23Z"
+tags: ["enterprise", "skills"]
 ---
 
 # What happens to a user's data when they are removed from a Team or Enterprise organization?
 
-March 16, 2026
+August 17, 2026
 
+Copy for LLM
 
-This article explains what happens to projects and chats when a member is removed from your Team or Enterprise plan organization.
+This article explains what happens to projects, chats, and skills when a member is removed from your Team or Enterprise plan organization.
 
 ## Deleting individual accounts within an organization
 
@@ -39,8 +40,12 @@ When a user is removed from your Team or Enterprise organization, remaining memb
 
 Note that the removed user’s data will still be included in any **[data exports](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)** run by your organization’s Primary Owner. For Enterprise organizations specifically, the removed user’s data will still be subject to any configured **[custom data retention settings](https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-enterprise-plans)**.
 
+## Will a user's skills still be accessible after removing them?
+
+Removing a user from your Team or Enterprise organization doesn't delete the skills they uploaded to their own account. Skills the user uploaded and never shared stay on their account and remain recoverable. If the user is later added back to the organization with the same email address, those skills will reappear under **[Customize \> Skills](https://claude.ai/new#settings/customize-skills)**, where they can download them.
+
 ## What happens if a member is re-added to an organization?
 
-If a team member is removed and later added back to the same organization using the same email address, previous chats and projects will be restored. The Primary Owner can also always export the member's project data and chats (note that customer data retention settings may impact this).
+If a team member is removed and later added back to the same organization using the same email address, previous chats, projects, and skills will be restored. The Primary Owner can also always export the member's project data and chats (note that customer data retention settings may impact this).
 
 To learn more about Anthropic’s data retention periods see **[here](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)**.

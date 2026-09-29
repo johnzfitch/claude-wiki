@@ -2,7 +2,7 @@
 title: "Work across Microsoft 365 apps | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13892150"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:07Z"
+fetched_at: "2026-08-07T06:37:49Z"
 tags: ["skills"]
 ---
 

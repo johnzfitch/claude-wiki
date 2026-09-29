@@ -2,7 +2,7 @@
 title: "When should I use web search, extended thinking, and research? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11095361"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:30Z"
+fetched_at: "2026-09-29T06:30:15Z"
 tags: ["search"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["search"]
 
 June 2, 2026
 
+Copy for LLM
 
 Claude offers several powerful capabilities to help you find information and solve problems. Understanding when to use each option—web search, extended thinking, and research—can help you get the best results for your specific needs. This guide explains the ideal use cases for each feature and how they can work together to enhance your experience.
 

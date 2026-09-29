@@ -2,7 +2,7 @@
 title: "Get Plugin Usage - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/analytics/plugins/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:39:59Z"
+fetched_at: "2026-09-26T06:38:28Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fplugins%2Flist)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,139 +63,86 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
 
 
-Tunnels
+Organization
 
 
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
+Get Current Organization
 
 API Keys
 
 External Keys
 
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
 Usage Report
 
 Cost Report
 
+MCP Tunnels
+
 Analytics
 
 
-Get Activity Summaries
+Get Activity Summaries
 
 Usage
 
@@ -216,21 +159,56 @@ Chat Projects
 Plugins
 
 
-Get Plugin Usage
+Get Plugin Usage
 
 Artifacts
 
 Spend Limits
 
-Rate Limits
+RBAC Groups
 
-Service Accounts
+RBAC Roles
 
-Federation Issuers
 
-Federation Rules
+Tunnels
 
-MCP Tunnels
+
+Create Tunnel
+
+
+Get Tunnel
+
+
+List Tunnels
+
+
+Archive Tunnel
+
+
+Reveal Tunnel Token
+
+
+Rotate Tunnel Token
+
+Certificates
+
+
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Create Enrollment URL
 
 
 Compliance API
@@ -249,37 +227,41 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-List
-
+Copy page
 
 
 
+cURL
+
+1.  [API reference](/docs/en/api/http)
+2.  [Beta](/docs/en/api/http/beta)
+3.  [Organization](/docs/en/api/http/beta/organization)
+4.  [Analytics](/docs/en/api/http/beta/organization/analytics)
+5.  [Plugins](/docs/en/api/http/beta/organization/analytics/plugins)
+
 # Get Plugin Usage
 
-GET/v1/organizations/analytics/plugins
+GET/v1/organizations/analytics/plugins
 
 Get per-plugin install + invocation usage for a given day, with pagination.
 
-Returns plugin usage metrics for the organization across Cowork and Claude Code, sorted by plugin name. The `plugin_name` value `third-party` is an aggregate bucket, not a plugin: it collects plugin activity, from either surface, for which the reporting client did not provide a plugin name — so an organization's own plugins can contribute both to their own named rows and to this bucket. Requires an API key with the `read:analytics` scope. `starting_date` / `ending_date` select range-rollup mode like /skills.
+Returns plugin usage metrics for the organization across Cowork and Claude Code, sorted by plugin name. The `plugin_name` value `third-party` is an aggregate bucket, not a plugin: it collects plugin activity, from either surface, for which the reporting client did not provide a plugin name — so an organization's own plugins can contribute both to their own named rows and to this bucket. Use `group_by[]` to break usage out per member, per RBAC group, or per product surface (Cowork / Claude Code), and `filter[]` to scope results; the parameter descriptions list the supported dimensions. Requires an API key with the `read:analytics` scope. `starting_date` / `ending_date` select range-rollup mode like `/skills`.
 
-##### Query ParametersExpand Collapse 
+##### Query parameters
+
+
 
 date: optional string
 
@@ -287,33 +269,53 @@ date: optional string
 
 UTC date in YYYY-MM-DD format. The day to get plugin usage for. Data is typically available with a 1-day lag (varies by query; the error for a too-recent date names the latest available day) and may be revised by a few percent over the following days. No earlier than 2026-01-01.
 
-[](#list.date)
+formatdate
+
+
 
 ending_date: optional string
 
 
 
-UTC date in YYYY-MM-DD format. End of the date range (exclusive); only valid with starting_date. Data is typically available with a 1-day lag (varies by query; the error for a too-recent date names the latest available day), so this can be at most today — which is also the default when omitted, resolved once when the first page is served and reused for the rest of the pagination sequence. At most 366 days after starting_date.
+UTC date in YYYY-MM-DD format. End of the date range (exclusive); only valid with `starting_date`. Data is typically available with a 1-day lag (varies by query; the error for a too-recent date names the latest available day), so this can be at most today — which is also the default when omitted, resolved once when the first page is served and reused for the rest of the pagination sequence. At most 366 days after `starting_date`.
 
-[](#list.ending_date)
+formatdate
+
+
 
 filter: optional array of string
 
 
 
-Filters as 'dimension
+Filters as `dimension:value`, e.g. `filter[]=rbac_group_id:{id}`. Repeat the param for OR within a dimension and across dimensions for AND. Supported dimensions on this endpoint: `plugin_name`, `product`, `rbac_group_id`, `user_id`. Value forms: `plugin_name` matches case-insensitively; `product` is `claude_code` or `cowork` (the only surfaces with plugin attribution); `rbac_group_id` takes the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution); `user_id` takes a tagged user id (`user_...`), as emitted in responses. An unsupported dimension returns 400. At most 100 entries.
 
-', e.g. filter\[\]=rbac_group_id:\<id\>. Repeat the param for OR within a dimension and across dimensions for AND. Unsupported dimensions return 400. rbac_group_id accepts the tagged id (rbac_group\_..., as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution). At most 100 entries.
+maxItems100
 
-[](#list.filter)
+
 
-group_by: optional array of string
+group_by: optional array of "product" or "rbac_group_id" or "user_id"
 
 
 
-Dimensions to break results out by, e.g. group_by\[\]=rbac_group_id. Supported dimensions vary by endpoint; an unsupported dimension returns 400. Grouped responses paginate like ungrouped ones via next_page. rbac_group_id attributes a user to every group they held at any point during each covered UTC day, so grouped rows are not an exclusive partition and can sum above org-level totals. At most 100 entries.
+Dimensions to break results out by (e.g. `group_by[]=user_id`). Supported on this endpoint: `product`, `rbac_group_id`, `user_id`. On this endpoint `product` takes the values `claude_code` or `cowork` only (the surfaces with plugin attribution). Grouped rows carry the requested dimension values as additional fields and paginate like ungrouped responses via `next_page`; an unsupported dimension returns 400. `rbac_group_id` attributes a user to every group they held at any point during each covered UTC day, so grouped rows are not an exclusive partition and can sum above org-level totals. At most 100 entries.
 
-[](#list.group_by)
+maxItems100
+
+One of the following:
+
+"product"
+
+
+
+"rbac_group_id"
+
+
+
+"user_id"
+
+
+
+
 
 limit: optional number
 
@@ -321,7 +323,9 @@ limit: optional number
 
 Number of results per page (1-1000, default 100).
 
-[](#list.limit)
+minimum1
+
+maximum1000
 
 
 
@@ -329,7 +333,7 @@ order: optional "asc" or "desc"
 
 
 
-Sort direction: 'asc' or 'desc'. Defaults to 'asc' for the endpoint's sort column and to 'desc' when order_by names a metric (a top-N ranking). Applies to order_by, or to the endpoint's default sort field when order_by is omitted.
+Sort direction: `asc` or `desc`. Defaults to `asc` for the endpoint's sort column and to `desc` when `order_by` names a metric (a top-N ranking). Applies to `order_by`, or to the endpoint's default sort field when `order_by` is omitted.
 
 One of the following:
 
@@ -337,15 +341,9 @@ One of the following:
 
 
 
-[](#list.order%5B0%5D)
-
 "desc"
 
 
-
-[](#list.order%5B1%5D)
-
-[](#list.order)
 
 order_by: optional string
 
@@ -353,168 +351,42 @@ order_by: optional string
 
 Sort field. Restricted to the endpoint's sort column plus its rankable metrics (metrics default to descending; a few metrics rank in date-range mode only, per the endpoint's documented orderable set).
 
-[](#list.order_by)
-
 page: optional string
 
 
 
-Opaque cursor from a previous response's next_page field.
+Opaque cursor from a previous response's `next_page` field.
 
-[](#list.page)
+
 
 starting_date: optional string
 
 
 
-UTC date in YYYY-MM-DD format. Start of a date range (inclusive). Enables rollup mode: one row per entity aggregated over the whole range — addable counters are summed across days, and a distinct count is never summed where summing could double-count (a field's range value is recomputed exactly over the window, approximate via HLL with typical error under 2%, null, or — for the creation-event counts, whose per-day values cannot overlap — a per-day sum that is itself exact; each field's own description says which). Use either date or starting_date, not both. Data is typically available with a 1-day lag (varies by query; the error for a too-recent date names the latest available day) and may be revised by a few percent over the following days. No earlier than 2026-01-01.
+UTC date in YYYY-MM-DD format. Start of a date range (inclusive). Enables rollup mode: one row per entity aggregated over the whole range — addable counters are summed across days, and a distinct count is never summed where summing could double-count (a field's range value is recomputed exactly over the window, approximate via HLL with typical error under 2%, null, or — for the creation-event counts, whose per-day values cannot overlap — a per-day sum that is itself exact; each field's own description says which). Use either `date` or `starting_date`, not both. Data is typically available with a 1-day lag (varies by query; the error for a too-recent date names the latest available day) and may be revised by a few percent over the following days. No earlier than 2026-01-01.
 
-[](#list.starting_date)
+formatdate
 
-##### ReturnsExpand Collapse 
+##### Returns
 
 
 
-PluginUsage object { data, next_page }
+BetaPluginUsage object{ data, next_page }
 
 
 
 Response for GET /v1/organizations/analytics/plugins.
 
-
+Get Plugin Usage
 
-data: array of object { claude_code_metrics, cowork_metrics, distinct_user_count, 8 more }
-
-
-
-
-
-claude_code_metrics: object { distinct_session_plugin_used_count }
-
-
-
-Claude Code activity metrics for a single plugin on a given day.
-
-distinct_session_plugin_used_count: number
-
-
-
-Number of distinct Claude Code sessions in which the plugin was invoked. Null on aggregated rows where a distinct count cannot be computed.
-
-[](#plugin_usage.data.items.claude_code_metrics.distinct_session_plugin_used_count)
-
-[](#plugin_usage.data.items.claude_code_metrics)
-
-
-
-cowork_metrics: object { distinct_session_plugin_used_count }
-
-
-
-Cowork activity metrics for a single plugin on a given day.
-
-distinct_session_plugin_used_count: number
-
-
-
-Number of distinct Cowork sessions in which the plugin was invoked. Null on aggregated rows where a distinct count cannot be computed.
-
-[](#plugin_usage.data.items.cowork_metrics.distinct_session_plugin_used_count)
-
-[](#plugin_usage.data.items.cowork_metrics)
-
-distinct_user_count: number
-
-
-
-Number of distinct users with recorded install or invocation activity for the plugin on the requested day (install-only users count), or, in date-range mode, over the requested window — recomputed as an exact distinct count over the window's per-member daily rows, never a sum of per-day values.
-
-[](#plugin_usage.data.items.distinct_user_count)
-
-install_count: number
-
-
-
-Number of distinct users who installed the plugin on the requested day, or, in date-range mode, over the requested window — recomputed as an exact distinct count over the window's per-member daily rows, never a sum of per-day values.
-
-[](#plugin_usage.data.items.install_count)
-
-invocation_count: number
-
-
-
-Number of plugin invocations on the requested day
-
-[](#plugin_usage.data.items.invocation_count)
-
-plugin_name: string
-
-
-
-Name of the plugin
-
-[](#plugin_usage.data.items.plugin_name)
-
-plugin_id: optional string
-
-
-
-Stable plugin identifier when available (e.g. serena@claude-plugins-official). Null for third-party Claude Code plugins (redacted at the source) and Cowork slash commands that carry only a hashed id.
-
-[](#plugin_usage.data.items.plugin_id)
-
-product: optional string
-
-
-
-Product that produced this row's activity: one of chat, claude_code, cowork, or office_agent (the canonical Cost & Usage product naming; an office_agent row's per-surface breakdown is in its office_metrics). On /plugins only cowork and claude_code occur (the only surfaces with plugin attribution); /artifacts and /apps/chat/projects do not support the product dimension (a product group_by\[\] or filter\[\] there is rejected). Present only when the request grouped by product.
-
-[](#plugin_usage.data.items.product)
-
-rbac_group_id: optional string
-
-
-
-Tagged RBAC group identifier (rbac_group\_...), matching the spend-limits API spelling. Present only when the request grouped by rbac_group_id.
-
-[](#plugin_usage.data.items.rbac_group_id)
-
-rbac_group_name: optional string
-
-
-
-Resolved RBAC group display name, alongside rbac_group_id when name resolution is available. Null if the group has been deleted or its name could not be resolved; rbac_group_id remains the stable key.
-
-[](#plugin_usage.data.items.rbac_group_name)
-
-user_id: optional string
-
-
-
-Tagged user identifier (e.g. user\_...). Present only when the request grouped by user_id.
-
-[](#plugin_usage.data.items.user_id)
-
-[](#plugin_usage.data)
-
-next_page: string
-
-
-
-Opaque cursor for the next page, or null if no more results
-
-[](#plugin_usage.next_page)
-
-[](#plugin_usage)
-
-Get Plugin Usage
+cURL
 
 
 
 ```python
 curl https://api.anthropic.com/v1/organizations/analytics/plugins \
     -H 'anthropic-version: 2023-06-01' \
-    -H "Authorization: Bearer $ANTHROPIC_OAUTH_TOKEN"
+    -H "X-Api-Key: $ANTHROPIC_API_KEY"
 ```
 
 Response 200

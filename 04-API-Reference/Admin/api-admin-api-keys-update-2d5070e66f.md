@@ -2,7 +2,7 @@
 title: "Update API Key - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/api_keys/update"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:40:02Z"
+fetched_at: "2026-09-10T06:42:57Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fadmin%2Fapi_keys%2Fupdate)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,96 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,22 +160,28 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
+Create Enrollment URL
 
 
 Webhooks
+
+
+Unwrap
+
+
+Parse Unverified
 
 
 Admin
@@ -182,22 +192,22 @@ Invites
 
 Users
 
-RBAC Groups
+RBAC Groups
 
-RBAC Roles
+RBAC Roles
 
 Workspaces
 
 API Keys
 
 
-Retrieve API Key (Admin API)
+Retrieve API Key (Admin API)
 
 
-List API Keys
+List API Keys
 
 
-Update API Key
+Update API Key
 
 External Keys
 
@@ -236,39 +246,37 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Update
-
+Copy page
 
 
 
-
+
 
 Looking for your API keys? You can view and create them in [Settings → API keys](/settings/keys) in the Claude Console.
 
+1.  [API reference](/docs/en/api/http)
+2.  [Admin](/docs/en/api/http/admin)
+3.  [API Keys](/docs/en/api/http/admin/api_keys)
+
 # Update API Key
 
-POST/v1/organizations/api_keys/{api_key_id}
+POST/v1/organizations/api_keys/{api_key_id}
 
 Update API Key
 
-##### Path ParametersExpand Collapse 
+##### Path parameters
 
 api_key_id: string
 
@@ -276,21 +284,23 @@ api_key_id: string
 
 ID of the API key.
 
-[](#update.api_key_id)
+##### Body
 
-##### Body ParametersJSONExpand Collapse 
+
 
-name: optional string
+name: optional string or null
 
 
 
 Name of the API key.
 
-[](#update.name)
+maxLength500
+
+minLength1
 
 
 
-status: optional "active" or "archived" or "inactive"
+status: optional "active" or "archived" or "inactive" or null
 
 
 
@@ -302,197 +312,25 @@ One of the following:
 
 
 
-[](#update.status%5B0%5D)
-
 "archived"
 
 
-
-[](#update.status%5B1%5D)
 
 "inactive"
 
 
 
-[](#update.status%5B2%5D)
-
-[](#update.status)
-
-##### ReturnsExpand Collapse 
+##### Returns
 
 
 
-APIKey object { id, created_at, created_by, 7 more }
+APIKey object{ id, created_at, created_by, 8 more }
 
 
 
-id: string
+Update API Key
 
-
-
-ID of the API key.
-
-[](#api_key.id)
-
-created_at: string
-
-
-
-RFC 3339 datetime string indicating when the API Key was created.
-
-[](#api_key.created_at)
-
-
-
-created_by: object { id, type }
-
-
-
-The ID and type of the actor that created the API key.
-
-id: string
-
-
-
-ID of the actor that created the object.
-
-[](#api_key.created_by.id)
-
-type: string
-
-
-
-Type of the actor that created the object.
-
-[](#api_key.created_by.type)
-
-[](#api_key.created_by)
-
-expires_at: string
-
-
-
-RFC 3339 datetime string indicating when the API Key expires, or `null` if it never expires.
-
-[](#api_key.expires_at)
-
-name: string
-
-
-
-Name of the API key.
-
-[](#api_key.name)
-
-partial_key_hint: string
-
-
-
-Partially redacted hint for the API key.
-
-[](#api_key.partial_key_hint)
-
-
-
-principal: object { id, type }
-
-
-
-The ID and type of the principal the API key acts as, or `null` if the key is not bound to a principal.
-
-id: string
-
-
-
-ID of the principal the API key acts as: a User ID (`user_...`) when the type is `user`, or a Service Account ID (`svac_...`) when the type is `service_account`.
-
-[](#api_key.principal.id)
-
-
-
-type: "service_account" or "user"
-
-
-
-Type of the principal the API key acts as.
-
-One of the following:
-
-"service_account"
-
-
-
-[](#api_key.principal.type%5B0%5D)
-
-"user"
-
-
-
-[](#api_key.principal.type%5B1%5D)
-
-[](#api_key.principal.type)
-
-[](#api_key.principal)
-
-
-
-status: "active" or "archived" or "expired" or "inactive"
-
-
-
-Status of the API key.
-
-One of the following:
-
-"active"
-
-
-
-[](#api_key.status%5B0%5D)
-
-"archived"
-
-
-
-[](#api_key.status%5B1%5D)
-
-"expired"
-
-
-
-[](#api_key.status%5B2%5D)
-
-"inactive"
-
-
-
-[](#api_key.status%5B3%5D)
-
-[](#api_key.status)
-
-
-
-type: "api_key"
-
-
-
-Object type.
-
-For API Keys, this is always `"api_key"`.
-
-[](#api_key.type)
-
-workspace_id: string
-
-
-
-ID of the Workspace associated with the API key, or `null` if the API key belongs to the default Workspace.
-
-[](#api_key.workspace_id)
-
-[](#api_key)
-
-Update API Key
+cURL
 
 
 
@@ -500,7 +338,7 @@ Update API Key
 curl https://api.anthropic.com/v1/organizations/api_keys/$API_KEY_ID \
     -H 'Content-Type: application/json' \
     -H 'anthropic-version: 2023-06-01' \
-    -H "Authorization: Bearer $ANTHROPIC_OAUTH_TOKEN" \
+    -H "Authorization: Bearer $ANTHROPIC_AUTH_TOKEN" \
     -d '{}'
 ```
 
@@ -520,8 +358,12 @@ Response 200
   "name": "Developer Key",
   "partial_key_hint": "sk-ant-api03-R2D...igAA",
   "principal": {
-    "id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
-    "type": "user"
+    "type": "user_actor",
+    "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q"
+  },
+  "scope": {
+    "type": "workspace",
+    "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
   },
   "status": "active",
   "type": "api_key",
@@ -547,8 +389,12 @@ Response 200
   "name": "Developer Key",
   "partial_key_hint": "sk-ant-api03-R2D...igAA",
   "principal": {
-    "id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
-    "type": "user"
+    "type": "user_actor",
+    "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q"
+  },
+  "scope": {
+    "type": "workspace",
+    "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
   },
   "status": "active",
   "type": "api_key",

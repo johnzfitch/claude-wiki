@@ -2,7 +2,7 @@
 title: "Get effective organization settings - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/organizations/settings/retrieve"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:41:42Z"
+fetched_at: "2026-09-26T06:39:02Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Forganizations%2Fsettings%2Fretrieve)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -218,7 +196,7 @@ Activities
 Organizations
 
 
-List organizations
+List organizations
 
 Users
 
@@ -227,7 +205,7 @@ Roles
 Settings
 
 
-Get effective organization settings
+Get effective organization settings
 
 Groups
 
@@ -239,43 +217,42 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
+To enable the Compliance API, see the setup guide.
 
-Retrieve
+[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)
 
+Copy page
 
 
 
-
-
-To enable the Compliance API, see [Set up the Compliance API](/docs/en/manage-claude/compliance-api-access).
+1.  [API reference](/docs/en/api/http)
+2.  [Compliance API](/docs/en/api/http/compliance)
+3.  [Organizations](/docs/en/api/http/compliance/organizations)
+4.  [Settings](/docs/en/api/http/compliance/organizations/settings)
 
 # Get effective organization settings
 
-GET/v1/compliance/organizations/{organization_id}/settings
+GET/v1/compliance/organizations/{organization_id}/settings
 
 Retrieve the effective settings for an organization.
 
-Returns the settings currently in force for the given organization — the enforced state after all policies are applied, which may differ from what is configured in the admin console. Settings an organization's administrators cannot change (for example, ones controlled by Anthropic policy or not available to the organization) are omitted from the list.
+Returns the settings currently in force for the given organization — the enforced state after all policies are applied, which may differ from what is configured in the admin console. Settings an organization's administrators cannot change (for example, ones controlled by Anthropic policy or not available to the organization) are omitted from the list. Settings that report a compliance arrangement with Anthropic are the exception: the HIPAA and Access Transparency settings are always included; the API zero data retention setting is reported for Claude Console organizations, and the Claude Code zero data retention and customer-managed encryption keys (CMEK) settings for Claude Enterprise organizations. Each reports whether the arrangement is in place at the organization level; a retention setting on an individual workspace is not reflected.
 
 The organization must belong to the API key's organization hierarchy; unknown organizations and organizations outside the hierarchy return 404.
 
-##### Path ParametersExpand Collapse 
+##### Path parameters
 
 organization_id: string
 
@@ -283,25 +260,37 @@ organization_id: string
 
 The organization's UUID
 
-[](#retrieve.organization_id)
-
-##### Header ParametersExpand Collapse 
+##### Headers
 
 "x-api-key": optional string
 
 
 
-[](#retrieve.x-api-key)
-
-##### ReturnsExpand Collapse 
+##### Returns
 
 
 
-api_keys: array of object { id, created_at, created_by_id, 5 more }
+type: optional "effective_organization_settings"
+
+
+
+defaulteffective_organization_settings
+
+
+
+api_keys: array of object{ type: "compliance_api_key", id, created_at, 5 more }
 
 
 
 Compliance API keys configured for the organization hierarchy, ordered by creation time ascending. Key secret values are never included.
+
+
+
+type: optional "compliance_api_key"
+
+
+
+defaultcompliance_api_key
 
 id: string
 
@@ -309,7 +298,7 @@ id: string
 
 Unique identifier for the API key.
 
-[](#setting_retrieve_response.api_keys.items.id)
+
 
 created_at: string
 
@@ -317,15 +306,13 @@ created_at: string
 
 When the key was created.
 
-[](#setting_retrieve_response.api_keys.items.created_at)
+formatdate-time
 
-created_by_id: string
+created_by_id: string or null
 
 
 
 Identifier of the user who created the key, or null when the key was created by automation or its creator's account no longer exists.
-
-[](#setting_retrieve_response.api_keys.items.created_by_id)
 
 is_active: boolean
 
@@ -333,15 +320,11 @@ is_active: boolean
 
 Whether the key is currently active. A deactivated key is listed for audit visibility but cannot authenticate requests.
 
-[](#setting_retrieve_response.api_keys.items.is_active)
-
 name: string
 
 
 
 The name given to the API key when it was created.
-
-[](#setting_retrieve_response.api_keys.items.name)
 
 scopes: array of string
 
@@ -349,33 +332,23 @@ scopes: array of string
 
 The permission scopes granted to the key.
 
-[](#setting_retrieve_response.api_keys.items.scopes)
+
 
-expires_at: optional string
+expires_at: optional string or null
 
 
 
 When the key will stop authenticating, or null when the key does not expire.
 
-[](#setting_retrieve_response.api_keys.items.expires_at)
-
-type: optional "compliance_api_key"
-
-
-
-[](#setting_retrieve_response.api_keys.items.type)
-
-[](#setting_retrieve_response.api_keys)
+formatdate-time
 
 organization_id: string
 
 
 
-[](#setting_retrieve_response.organization_id)
-
 
 
-settings: array of object { name, value, type } or object { name, value, type } or object { name, value, type } or 3 more
+settings: array of Boolean or Integer or String or 3 more
 
 
 
@@ -383,7 +356,7 @@ One of the following:
 
 
 
-Boolean object { name, value, type }
+Boolean object{ type: "boolean", name, value }
 
 
 
@@ -391,339 +364,311 @@ A setting whose enforced value is a single true/false flag.
 
 
 
-name: "ai_powered_artifacts_enabled" or "api_workbench_feedback_collection_enabled" or "artifact_connectors_enabled" or 43 more
+type: optional "boolean"
+
+
+
+defaultboolean
+
+
+
+name: "access_transparency_enabled" or "ai_powered_artifacts_enabled" or "api_workbench_feedback_collection_enabled" or 59 more
 
 
 
 One of the following:
 
-"ai_powered_artifacts_enabled"
+"access_transparency_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B0%5D)
+"ai_powered_artifacts_enabled"
+
+
 
 "api_workbench_feedback_collection_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B1%5D)
+"api_zero_data_retention_enabled"
+
+
 
 "artifact_connectors_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B2%5D)
-
 "ask_your_org_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B3%5D)
 
 "chat_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B4%5D)
+"claude_academy_inference_enabled"
+
+
 
 "claude_ai_chat_sharing_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B5%5D)
-
 "claude_ai_feedback_collection_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B6%5D)
 
 "claude_ai_integration_sharing_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B7%5D)
-
-"claude_code_desktop_auto_permissions_enabled"
+"claude_ai_skill_plugins_scanning_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B8%5D)
 
 "claude_code_desktop_bypass_permissions_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B9%5D)
-
 "claude_code_desktop_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B10%5D)
 
 "claude_code_fast_mode_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B11%5D)
-
 "claude_code_metrics_logging_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B12%5D)
 
 "claude_code_remote_control_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B13%5D)
-
 "claude_code_review_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B14%5D)
 
 "claude_code_routines_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B15%5D)
-
 "claude_code_security_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B16%5D)
 
 "claude_code_trusted_devices_required"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B17%5D)
-
 "claude_code_web_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B18%5D)
 
 "claude_code_workflows_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B19%5D)
-
 "claude_design_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B20%5D)
+"claude_enterprise_claude_code_zero_data_retention_enabled"
+
+
 
 "claude_in_slack_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B21%5D)
+"claude_science_custom_connectors_enabled"
+
+
+
+"claude_science_custom_skills_enabled"
+
+
+
+"claude_science_enabled"
+
+
+
+"claude_science_managed_network_allowlist_enabled"
+
+
+
+"claude_science_memory_enabled"
+
+
+
+"claude_science_modal_enabled"
+
+
+
+"claude_science_scientific_model_endpoints_enabled"
+
+
+
+"claude_science_ssh_hosts_enabled"
+
+
+
+"cmek_enabled"
+
+
 
 "code_execution_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B22%5D)
-
 "code_execution_network_egress_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B23%5D)
 
 "connector_tools_default_always_allow"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B24%5D)
-
 "content_redaction_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B25%5D)
+"cowork_trusted_devices_required"
+
+
 
 "desktop_extension_allowlist_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B26%5D)
-
 "directory_sync_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B27%5D)
 
 "frontier_data_use_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B28%5D)
+"group_skill_sharing_enabled"
+
+
 
 "hipaa_compliance_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B29%5D)
-
 "inline_visualizations_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B30%5D)
 
 "ip_allowlist_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B31%5D)
-
 "location_metadata_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B32%5D)
 
 "member_usage_dashboard_visible"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B33%5D)
-
 "memory_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B34%5D)
 
 "org_wide_skill_sharing_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B35%5D)
+"project_sharing_enabled"
+
+
 
 "public_projects_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B36%5D)
-
 "skill_sharing_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B37%5D)
 
 "skills_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B38%5D)
-
 "sso_claude_ai_enforced"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B39%5D)
 
 "sso_console_enforced"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B40%5D)
-
 "sso_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B41%5D)
 
 "third_party_interactive_content_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B42%5D)
-
 "user_skill_creation_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B43%5D)
 
 "web_search_enabled"
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B44%5D)
-
 "work_across_apps_enabled"
 
 
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name%5B45%5D)
-
-[](#setting_retrieve_response.settings.items%5B0%5D.name)
 
 value: boolean
 
 
 
-[](#setting_retrieve_response.settings.items%5B0%5D.value)
-
-type: optional "boolean"
-
-
-
-[](#setting_retrieve_response.settings.items%5B0%5D.type)
-
-[](#setting_retrieve_response.settings.items%5B0%5D)
-
 
 
-Integer object { name, value, type }
+Integer object{ type: "integer", name, value }
 
 
 
 A setting whose enforced value is a whole number; null means no limit is in force.
 
-name: "account_session_duration_seconds"
-
-
-
-[](#setting_retrieve_response.settings.items%5B1%5D.name)
-
-value: number
-
-
-
-[](#setting_retrieve_response.settings.items%5B1%5D.value)
+
 
 type: optional "integer"
 
 
 
-[](#setting_retrieve_response.settings.items%5B1%5D.type)
+defaultinteger
 
-[](#setting_retrieve_response.settings.items%5B1%5D)
+name: "account_session_duration_seconds"
+
+
+
+value: number or null
+
+
 
 
 
-String object { name, value, type }
+String object{ type: "string", name, value }
 
 
 
 A setting whose enforced value is a single string; null means no value is configured.
+
+
+
+type: optional "string"
+
+
+
+defaultstring
 
 
 
@@ -737,37 +682,29 @@ One of the following:
 
 
 
-[](#setting_retrieve_response.settings.items%5B2%5D.name%5B0%5D)
-
 "claude_code_default_worker_pool_id"
 
 
 
-[](#setting_retrieve_response.settings.items%5B2%5D.name%5B1%5D)
-
-[](#setting_retrieve_response.settings.items%5B2%5D.name)
-
-value: string
+value: string or null
 
 
-
-[](#setting_retrieve_response.settings.items%5B2%5D.value)
-
-type: optional "string"
-
-
-
-[](#setting_retrieve_response.settings.items%5B2%5D.type)
-
-[](#setting_retrieve_response.settings.items%5B2%5D)
 
 
 
-StringList object { name, value, type }
+StringList object{ type: "string_list", name, value }
 
 
 
 A setting whose enforced value is a list of strings.
+
+
+
+type: optional "string_list"
+
+
+
+defaultstring_list
 
 
 
@@ -781,45 +718,35 @@ One of the following:
 
 
 
-[](#setting_retrieve_response.settings.items%5B3%5D.name%5B0%5D)
-
 "disabled_admin_request_types"
 
 
-
-[](#setting_retrieve_response.settings.items%5B3%5D.name%5B1%5D)
 
 "ip_allowlist_ip_ranges"
 
 
 
-[](#setting_retrieve_response.settings.items%5B3%5D.name%5B2%5D)
-
-[](#setting_retrieve_response.settings.items%5B3%5D.name)
-
 value: array of string
 
 
 
-[](#setting_retrieve_response.settings.items%5B3%5D.value)
-
-type: optional "string_list"
-
-
-
-[](#setting_retrieve_response.settings.items%5B3%5D.type)
-
-[](#setting_retrieve_response.settings.items%5B3%5D)
-
 
 
-ProvisioningMode object { value, name, type }
+ProvisioningMode object{ type: "provisioning_mode", value, name }
 
 
 
 How organization members are provisioned, resolved to the enforced mode.
 
 A configured mode is reported only while the mechanism that enforces it is active: just-in-time modes require single sign-on to be enabled, and SCIM modes require directory sync to be enabled. Otherwise `login_only` is reported, regardless of any stored configuration.
+
+
+
+type: optional "provisioning_mode"
+
+
+
+defaultprovisioning_mode
 
 
 
@@ -835,51 +762,33 @@ One of the following:
 
 
 
-[](#setting_retrieve_response.settings.items%5B4%5D.value%5B0%5D)
-
 "jit_permissive"
 
 
-
-[](#setting_retrieve_response.settings.items%5B4%5D.value%5B1%5D)
 
 "login_only"
 
 
 
-[](#setting_retrieve_response.settings.items%5B4%5D.value%5B2%5D)
-
 "scim_advanced"
 
 
-
-[](#setting_retrieve_response.settings.items%5B4%5D.value%5B3%5D)
 
 "scim_permissive"
 
 
 
-[](#setting_retrieve_response.settings.items%5B4%5D.value%5B4%5D)
-
-[](#setting_retrieve_response.settings.items%5B4%5D.value)
+
 
 name: optional "sso_provisioning_mode"
 
 
 
-[](#setting_retrieve_response.settings.items%5B4%5D.name)
-
-type: optional "provisioning_mode"
-
-
-
-[](#setting_retrieve_response.settings.items%5B4%5D.type)
-
-[](#setting_retrieve_response.settings.items%5B4%5D)
+defaultsso_provisioning_mode
 
 
 
-DataRetention object { value, name, type }
+DataRetention object{ type: "data_retention", value, name }
 
 
 
@@ -889,7 +798,15 @@ A key of `all` covers every data type and is exclusive: when present it is the o
 
 
 
-value: map\[object { duration, timescale, type } or object { type } \]
+type: optional "data_retention"
+
+
+
+defaultdata_retention
+
+
+
+value: map\[Fixed or Indefinite\]
 
 
 
@@ -897,17 +814,23 @@ One of the following:
 
 
 
-Fixed object { duration, timescale, type }
+Fixed object{ type: "fixed", duration, timescale }
 
 
 
 A fixed retention window measured from each item's last activity.
 
-duration: number
+
+
+type: optional "fixed"
 
 
 
-[](#setting_retrieve_response.settings.items%5B5%5D.value.items%5B0%5D.duration)
+defaultfixed
+
+duration: number
+
+
 
 
 
@@ -921,70 +844,43 @@ One of the following:
 
 
 
-[](#setting_retrieve_response.settings.items%5B5%5D.value.items%5B0%5D.timescale%5B0%5D)
-
 "month"
 
 
 
-[](#setting_retrieve_response.settings.items%5B5%5D.value.items%5B0%5D.timescale%5B1%5D)
-
-[](#setting_retrieve_response.settings.items%5B5%5D.value.items%5B0%5D.timescale)
-
-type: optional "fixed"
-
-
-
-[](#setting_retrieve_response.settings.items%5B5%5D.value.items%5B0%5D.type)
-
-[](#setting_retrieve_response.settings.items%5B5%5D.value.items%5B0%5D)
-
 
 
-Indefinite object { type }
+Indefinite object{ type: "indefinite" }
 
 
 
 An indefinite retention period: data is kept with no time limit.
 
+
+
 type: optional "indefinite"
 
 
 
-[](#setting_retrieve_response.settings.items%5B5%5D.value.items%5B1%5D.type)
+defaultindefinite
 
-[](#setting_retrieve_response.settings.items%5B5%5D.value.items%5B1%5D)
-
-[](#setting_retrieve_response.settings.items%5B5%5D.value)
+
 
 name: optional "data_retention_periods"
 
 
 
-[](#setting_retrieve_response.settings.items%5B5%5D.name)
+defaultdata_retention_periods
 
-type: optional "data_retention"
+Get effective organization settings
 
-
-
-[](#setting_retrieve_response.settings.items%5B5%5D.type)
-
-[](#setting_retrieve_response.settings.items%5B5%5D)
-
-[](#setting_retrieve_response.settings)
-
-type: optional "effective_organization_settings"
-
-
-
-[](#setting_retrieve_response.type)
-
-Get effective organization settings
+cURL
 
 
 
 ```python
 curl https://api.anthropic.com/v1/compliance/organizations/$ORGANIZATION_ID/settings \
+    -H 'anthropic-version: 2023-06-01' \
     -H "Authorization: Bearer $ANTHROPIC_COMPLIANCE_API_KEY"
 ```
 
@@ -1011,7 +907,7 @@ Response 200
   "organization_id": "organization_id",
   "settings": [
     {
-      "name": "ai_powered_artifacts_enabled",
+      "name": "access_transparency_enabled",
       "value": true,
       "type": "boolean"
     }
@@ -1045,7 +941,7 @@ Response 200
   "organization_id": "organization_id",
   "settings": [
     {
-      "name": "ai_powered_artifacts_enabled",
+      "name": "access_transparency_enabled",
       "value": true,
       "type": "boolean"
     }

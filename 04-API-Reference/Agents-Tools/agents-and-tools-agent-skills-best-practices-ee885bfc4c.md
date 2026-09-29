@@ -2,8 +2,8 @@
 title: "Skill authoring best practices - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-08-02T05:39:05Z"
-tags: ["api", "authentication", "search"]
+fetched_at: "2026-09-26T06:38:15Z"
+tags: ["api", "authentication", "evaluation", "search", "skills"]
 ---
 
 - [Managed Agents](/docs/en/managed-agents/overview)
@@ -12,31 +12,27 @@ tags: ["api", "authentication", "search"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Fagent-skills%2Fbest-practices)
 
 
 
-Search
+
 
+SearchCtrlK
 
 First steps
 
-[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)
+[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)[Authentication](/docs/en/manage-claude/authentication)
 
 Building with Claude
 
@@ -46,11 +42,11 @@ Model capabilities
 
 [Effort](/docs/en/build-with-claude/effort)[Task budgets (beta)](/docs/en/build-with-claude/task-budgets)[Fast mode (research preview)](/docs/en/build-with-claude/fast-mode)[Structured outputs](/docs/en/build-with-claude/structured-outputs)[Citations](/docs/en/build-with-claude/citations)[Streaming Messages](/docs/en/build-with-claude/streaming)[Batch processing](/docs/en/build-with-claude/batch-processing)[Search results](/docs/en/build-with-claude/search-results)[Streaming refusals](/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals)[Multilingual support](/docs/en/build-with-claude/multilingual-support)[Embeddings](/docs/en/build-with-claude/embeddings)
 
-Thinking
+[Thinking](/docs/en/build-with-claude/thinking)
 
 Tools
 
-[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
+[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Browser use tool](/docs/en/agents-and-tools/tool-use/browser-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
 
 Tool infrastructure
 
@@ -58,13 +54,15 @@ Tool infrastructure
 
 Context management
 
-[Context windows](/docs/en/build-with-claude/context-windows)[Compaction](/docs/en/build-with-claude/compaction)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics (beta)](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+[Context windows](/docs/en/build-with-claude/context-windows)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+
+[Compaction](/docs/en/build-with-claude/compaction)
 
 Working with files
 
 [Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
 
-Images and vision
+[Images and vision](/docs/en/build-with-claude/vision)
 
 Skills
 
@@ -74,30 +72,25 @@ MCP
 
 [Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)[MCP connector](/docs/en/agents-and-tools/mcp-connector)
 
-MCP tunnels
+[MCP tunnels](/docs/en/agents-and-tools/mcp-tunnels/overview)
 
 Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](/docs/en/build-with-claude/claude-in-amazon-bedrock)[Amazon Bedrock (Opus 4.6 and earlier)](/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy)[Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)[Google Cloud](/docs/en/build-with-claude/claude-on-vertex-ai)[Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry)
 
-[](/login)
+[Console](/)
 
-
-
-
-Messages
-
-Best practices
-
-Messages/Skills
+[Messages](/docs/en/intro)Skills
 
 # Skill authoring best practices
 
+Copy page
 
 
 
 Learn how to write effective Skills that Claude can discover and use successfully.
 
+Copy page
 
 
 
@@ -105,15 +98,9 @@ Good Skills are concise, well-structured, and tested with real usage. This guide
 
 For conceptual background on how Skills work, see the [Skills overview](/docs/en/agents-and-tools/agent-skills/overview).
 
+## Core principles
 
-
-
-Core principles
-
-
-
-
-Concise is key
+### Concise is key
 
 The [context window](/docs/en/build-with-claude/context-windows) is a public good. Your Skill shares the context window with everything else Claude needs to know, including:
 
@@ -165,10 +152,7 @@ First, you'll need to install it using pip. Then you can use the code below...
 
 The concise version assumes Claude already has information about PDFs and how libraries work.
 
-
-
-
-Set appropriate degrees of freedom
+### Set appropriate degrees of freedom
 
 Match the level of specificity to the task's fragility and variability.
 
@@ -247,10 +231,7 @@ Do not modify the command or add additional flags.
 - **Narrow bridge with cliffs on both sides:** There's only one safe way forward. Provide specific guardrails and exact instructions (low freedom). Example: database migrations that must run in exact sequence.
 - **Open field with no hazards:** Many paths lead to success. Give general direction and trust Claude to find the best route (high freedom). Example: code reviews where context determines the best approach.
 
-
-
-
-Test with all models you plan to use
+### Test with all models you plan to use
 
 Skills act as additions to models, so effectiveness depends on the underlying model. Test your Skill with all the models you plan to use it with.
 
@@ -262,12 +243,9 @@ Skills act as additions to models, so effectiveness depends on the underlying mo
 
 What works perfectly for Opus might need more detail for Haiku. If you plan to use your Skill across multiple models, aim for instructions that work well with all of them.
 
+## Skill structure
 
-
-
-Skill structure
-
-
+
 
 **YAML Frontmatter:** The SKILL.md frontmatter requires two fields:
 
@@ -287,10 +265,7 @@ Skill structure
 
 For complete Skill structure details, see the [Skills overview](/docs/en/agents-and-tools/agent-skills/overview#skill-structure).
 
-
-
-
-Naming conventions
+### Naming conventions
 
 Use consistent naming patterns to make Skills easier to reference and discuss. Consider using **gerund form** (verb + -ing) for Skill names, as this clearly describes the activity or capability the Skill provides.
 
@@ -323,10 +298,7 @@ Consistent naming makes it easier to:
 - Organize and search through multiple Skills
 - Maintain a professional, cohesive skill library
 
-
-
-
-Writing effective descriptions
+### Writing effective descriptions
 
 The `description` field enables Skill discovery and should include both what the Skill does and when to use it.
 
@@ -388,10 +360,7 @@ description: Does stuff with files
 
 
 
-
-
-
-Progressive disclosure patterns
+### Progressive disclosure patterns
 
 SKILL.md serves as an overview that points Claude to detailed materials as needed, like a table of contents in an onboarding guide. For an explanation of how progressive disclosure works, see [How Skills work](/docs/en/agents-and-tools/agent-skills/overview#how-skills-work) in the overview.
 
@@ -401,10 +370,7 @@ SKILL.md serves as an overview that points Claude to detailed materials as neede
 - Split content into separate files when approaching this limit
 - Use the following patterns to organize instructions, code, and resources effectively
 
-
-
-
-Visual overview: From simple to complex
+#### Visual overview: From simple to complex
 
 A basic Skill starts with just a SKILL.md file containing metadata and instructions:
 
@@ -412,24 +378,17 @@ As your Skill grows, you can bundle additional content that Claude loads only wh
 
 The complete Skill directory structure might look like this:
 
-``` inline-block
-pdf/
-├── SKILL.md              # Main instructions (loaded when triggered)
-├── FORMS.md              # Form-filling guide (loaded as needed)
-├── reference.md          # API reference (loaded as needed)
-├── examples.md           # Usage examples (loaded as needed)
-└── scripts/
-    ├── analyze_form.py   # Utility script (executed, not loaded)
-    ├── fill_form.py      # Form filling script
-    └── validate.py       # Validation script
-```
+- `pdf/`
+  - `SKILL.md`: Main instructions (loaded when triggered)
+  - `FORMS.md`: Form-filling guide (loaded as needed)
+  - `reference.md`: API reference (loaded as needed)
+  - `examples.md`: Usage examples (loaded as needed)
+  - `scripts/`
+    - `analyze_form.py`: Utility script (executed, not loaded)
+    - `fill_form.py`: Form filling script
+    - `validate.py`: Validation script
 
-
-
-
-
-
-Pattern 1: High-level guide with references
+#### Pattern 1: High-level guide with references
 
 ```` shiki
 ---
@@ -459,24 +418,17 @@ with pdfplumber.open("file.pdf") as pdf:
 
 Claude loads FORMS.md, REFERENCE.md, or EXAMPLES.md only when needed.
 
-
-
-
-Pattern 2: Domain-specific organization
+#### Pattern 2: Domain-specific organization
 
 For Skills with multiple domains, organize content by domain to avoid loading irrelevant context. When a user asks about sales metrics, Claude only needs to read sales-related schemas, not finance or marketing data. This keeps token usage low and context focused.
 
-``` inline-block
-bigquery-skill/
-├── SKILL.md (overview and navigation)
-└── reference/
-    ├── finance.md (revenue, billing metrics)
-    ├── sales.md (opportunities, pipeline)
-    ├── product.md (API usage, features)
-    └── marketing.md (campaigns, attribution)
-```
-
-
+- `bigquery-skill/`
+  - `SKILL.md` (overview and navigation)
+  - `reference/`
+    - `finance.md` (revenue, billing metrics)
+    - `sales.md` (opportunities, pipeline)
+    - `product.md` (API usage, features)
+    - `marketing.md` (campaigns, attribution)
 
 SKILL.md
 
@@ -503,10 +455,7 @@ grep -i "api usage" reference/product.md
 ```
 ````
 
-
-
-
-Pattern 3: Conditional details
+#### Pattern 3: Conditional details
 
 Show basic content, link to advanced content:
 
@@ -529,10 +478,7 @@ For simple edits, modify the XML directly.
 
 Claude reads REDLINING.md or OOXML.md only when the user needs those features.
 
-
-
-
-Avoid deeply nested references
+### Avoid deeply nested references
 
 Claude may partially read files when they're referenced from other referenced files. When encountering nested references, Claude might use commands like `head -100` to preview content rather than reading entire files, resulting in incomplete information.
 
@@ -566,10 +512,7 @@ Here's the actual information...
 
 
 
-
-
-
-Structure longer reference files with table of contents
+### Structure longer reference files with table of contents
 
 For reference files longer than 100 lines, include a table of contents at the top. This ensures Claude can see the full scope of available information even when previewing with partial reads.
 
@@ -598,15 +541,9 @@ Claude can then read the complete file or jump to specific sections as needed.
 
 For details on how this filesystem-based architecture enables progressive disclosure, see the [Runtime environment](#runtime-environment) section later in this guide.
 
+## Workflows and feedback loops
 
-
-
-Workflows and feedback loops
-
-
-
-
-Use workflows for complex tasks
+### Use workflows for complex tasks
 
 Break complex operations into clear, sequential steps. For particularly complex workflows, provide a checklist that Claude can copy into its response and check off as it progresses.
 
@@ -701,10 +638,7 @@ If verification fails, return to Step 2.
 
 Clear steps prevent Claude from skipping critical validation. The checklist helps both Claude and you track progress through multistep workflows.
 
-
-
-
-Implement feedback loops
+### Implement feedback loops
 
 **Common pattern:** Run validator → fix errors → repeat
 
@@ -752,15 +686,9 @@ This shows the validation loop pattern using reference documents instead of scri
 
 The validation loop catches errors early.
 
+## Content guidelines
 
-
-
-Content guidelines
-
-
-
-
-Avoid time-sensitive information
+### Avoid time-sensitive information
 
 Don't include information that will become outdated:
 
@@ -795,10 +723,7 @@ This endpoint is no longer supported.
 
 The old patterns section provides historical context without cluttering the main content.
 
-
-
-
-Use consistent terminology
+### Use consistent terminology
 
 Choose one term and use it throughout the Skill:
 
@@ -816,15 +741,9 @@ Choose one term and use it throughout the Skill:
 
 Consistency helps Claude parse and follow instructions.
 
+## Common patterns
 
-
-
-Common patterns
-
-
-
-
-Template pattern
+### Template pattern
 
 Provide templates for output format. Match the level of strictness to your needs.
 
@@ -879,10 +798,7 @@ Adjust sections as needed for the specific analysis type.
 
 
 
-
-
-
-Examples pattern
+### Examples pattern
 
 For Skills where output quality depends on seeing examples, provide input/output pairs just like in regular prompting:
 
@@ -926,10 +842,7 @@ Follow this style: type(scope): brief description, then detailed explanation.
 
 Examples convey the desired style and level of detail to Claude more clearly than descriptions alone.
 
-
-
-
-Conditional workflow pattern
+### Conditional workflow pattern
 
 Guide Claude through decision points:
 
@@ -959,15 +872,9 @@ Guide Claude through decision points:
 
 If workflows become large or complicated with many steps, consider pushing them into separate files and tell Claude to read the appropriate file based on the task at hand.
 
+## Evaluation and iteration
 
-
-
-Evaluation and iteration
-
-
-
-
-Build evaluations first
+### Build evaluations first
 
 **Create evaluations BEFORE writing extensive documentation.** This ensures your Skill solves real problems rather than documenting imagined ones.
 
@@ -998,14 +905,11 @@ This approach ensures you're solving actual problems rather than anticipating re
 
 
 
-
+
 
 This example demonstrates a data-driven evaluation with a simple testing rubric. There is not currently a built-in way to run these evaluations. Users can create their own evaluation system. Evaluations are your source of truth for measuring Skill effectiveness.
 
-
-
-
-Develop Skills iteratively with Claude
+### Develop Skills iteratively with Claude
 
 The most effective Skill development process involves Claude itself. Work with one instance of Claude ("Claude A") to create a Skill that is used by other instances ("Claude B"). Claude A helps you design and refine instructions, while Claude B tests them in real tasks. This works because Claude models understand both how to write effective agent instructions and what information agents need.
 
@@ -1061,10 +965,7 @@ The same hierarchical pattern continues when improving Skills. You alternate bet
 
 **Why this approach works:** Claude A understands agent needs, you provide domain expertise, Claude B reveals gaps through real usage, and iterative refinement improves Skills based on observed behavior rather than assumptions.
 
-
-
-
-Observe how Claude navigates Skills
+### Observe how Claude navigates Skills
 
 As you iterate on Skills, pay attention to how Claude actually uses them in practice. Watch for:
 
@@ -1075,15 +976,9 @@ As you iterate on Skills, pay attention to how Claude actually uses them in prac
 
 Iterate based on these observations rather than assumptions. The 'name' and 'description' in your Skill's metadata are particularly critical. Claude uses these when determining whether to trigger the Skill in response to the current task. Make sure they clearly describe what the Skill does and when it should be used.
 
+## Anti-patterns to avoid
 
-
-
-Anti-patterns to avoid
-
-
-
-
-Avoid Windows-style paths
+### Avoid Windows-style paths
 
 Always use forward slashes in file paths, even on Windows:
 
@@ -1092,10 +987,7 @@ Always use forward slashes in file paths, even on Windows:
 
 Unix-style paths work across all platforms, while Windows-style paths cause errors on Unix systems.
 
-
-
-
-Avoid offering too many options
+### Avoid offering too many options
 
 Don't present multiple approaches unless necessary:
 
@@ -1114,17 +1006,11 @@ For scanned PDFs requiring OCR, use pdf2image with pytesseract instead."
 
 
 
-
-
-
-Advanced: Skills with executable code
+## Advanced: Skills with executable code
 
 The following sections focus on Skills that include executable scripts. If your Skill uses only markdown instructions, skip to [Checklist for effective Skills](#checklist-for-effective-skills).
 
-
-
-
-Solve, don't defer
+### Solve, don't defer
 
 When writing scripts for Skills, handle error conditions rather than deferring to Claude.
 
@@ -1185,10 +1071,7 @@ RETRIES = 5  # Why 5?
 
 
 
-
-
-
-Provide utility scripts
+### Provide utility scripts
 
 Even if Claude could write a script, pre-made scripts offer advantages:
 
@@ -1243,10 +1126,7 @@ python scripts/fill_form.py input.pdf fields.json output.pdf
 
 
 
-
-
-
-Use visual analysis
+### Use visual analysis
 
 When inputs can be rendered as images, have Claude analyze them:
 
@@ -1264,16 +1144,13 @@ When inputs can be rendered as images, have Claude analyze them:
 
 
 
-
+
 
 In this example, you'd need to write the `pdf_to_images.py` script.
 
 Claude's vision capabilities help analyze layouts and structures.
 
-
-
-
-Create verifiable intermediate outputs
+### Create verifiable intermediate outputs
 
 When Claude performs complex, open-ended tasks, it can make mistakes. The "plan-validate-execute" pattern catches errors early by having Claude first create a plan in a structured format, then validate that plan with a script before executing it.
 
@@ -1292,10 +1169,7 @@ When Claude performs complex, open-ended tasks, it can make mistakes. The "plan-
 
 **Implementation tip:** Make validation scripts verbose with specific error messages such as "Field 'signature_date' not found. Available fields: customer_name, order_total, signature_date_signed" to help Claude fix issues.
 
-
-
-
-Package dependencies
+### Package dependencies
 
 Skills run in the code execution environment with platform-specific limitations:
 
@@ -1304,10 +1178,7 @@ Skills run in the code execution environment with platform-specific limitations:
 
 List required packages in your SKILL.md and verify they're available in the [Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool) documentation.
 
-
-
-
-Runtime environment
+### Runtime environment
 
 Skills run in a code execution environment with filesystem access, bash commands, and code execution capabilities. For the conceptual explanation of this architecture, see [The Skills architecture](/docs/en/agents-and-tools/agent-skills/overview#the-skills-architecture) in the overview.
 
@@ -1334,25 +1205,18 @@ Skills run in a code execution environment with filesystem access, bash commands
 
 **Example:**
 
-``` inline-block
-bigquery-skill/
-├── SKILL.md (overview, points to reference files)
-└── reference/
-    ├── finance.md (revenue metrics)
-    ├── sales.md (pipeline data)
-    └── product.md (usage analytics)
-```
-
-
+- `bigquery-skill/`
+  - `SKILL.md` (overview, points to reference files)
+  - `reference/`
+    - `finance.md` (revenue metrics)
+    - `sales.md` (pipeline data)
+    - `product.md` (usage analytics)
 
 When the user asks about revenue, Claude reads SKILL.md, sees the reference to `reference/finance.md`, and calls bash to read just that file. The sales.md and product.md files remain on the filesystem, consuming zero context tokens until needed. This filesystem-based model is what enables progressive disclosure. Claude can navigate and selectively load exactly what each task requires.
 
 For complete details on the technical architecture, see [How Skills work](/docs/en/agents-and-tools/agent-skills/overview#how-skills-work) in the Skills overview.
 
-
-
-
-MCP tool references
+### MCP tool references
 
 If your Skill uses MCP (Model Context Protocol) tools, always use fully qualified tool names to avoid "tool not found" errors.
 
@@ -1374,10 +1238,7 @@ Where:
 
 Without the server prefix, Claude may fail to locate the tool, especially when multiple MCP servers are available.
 
-
-
-
-Avoid assuming tools are installed
+### Avoid assuming tools are installed
 
 Don't assume packages are available:
 
@@ -1397,15 +1258,9 @@ reader = PdfReader("file.pdf")
 
 
 
+## Technical notes
 
-
-
-Technical notes
-
-
-
-
-YAML frontmatter requirements
+### YAML frontmatter requirements
 
 The SKILL.md frontmatter requires `name` and `description` fields with specific validation rules:
 
@@ -1414,24 +1269,15 @@ The SKILL.md frontmatter requires `name` and `description` fields with specific 
 
 See the [Skills overview](/docs/en/agents-and-tools/agent-skills/overview#skill-structure) for complete structure details.
 
-
-
-
-Token budgets
+### Token budgets
 
 Keep SKILL.md body under 500 lines for optimal performance. If your content exceeds this, split it into separate files using the progressive disclosure patterns described earlier. For architectural details, see the [Skills overview](/docs/en/agents-and-tools/agent-skills/overview#how-skills-work).
 
-
-
-
-Checklist for effective Skills
+## Checklist for effective Skills
 
 Before sharing a Skill, verify:
 
-
-
-
-Core quality
+### Core quality
 
 - Description is specific and includes key terms
 - Description includes both what the Skill does and when to use it
@@ -1444,10 +1290,7 @@ Core quality
 - Progressive disclosure used appropriately
 - Workflows have clear steps
 
-
-
-
-Code and scripts
+### Code and scripts
 
 - Scripts solve problems rather than defer to Claude
 - Error handling is explicit and helpful
@@ -1458,36 +1301,27 @@ Code and scripts
 - Validation/verification steps for critical operations
 - Feedback loops included for quality-critical tasks
 
-
-
-
-Testing
+### Testing
 
 - At least three evaluations created
 - Tested with Haiku, Sonnet, and Opus
 - Tested with real usage scenarios
 - Team feedback incorporated (if applicable)
 
+## Next steps
 
-
-
-Next steps
-
-
-Get started with Agent Skills
+[Get started with Agent Skills](/docs/en/agents-and-tools/agent-skills/quickstart)
 
 Create your first Skill
 
+
 
-Use Skills in Claude Code
-
-
+[Use Skills in Claude Code](https://code.claude.com/docs/en/skills)
 
 Create and manage Skills in Claude Code
 
-
 
 
-Use Skills with the API
+[Use Skills with the API](/docs/en/build-with-claude/skills-guide)
 
 Upload and use Skills programmatically

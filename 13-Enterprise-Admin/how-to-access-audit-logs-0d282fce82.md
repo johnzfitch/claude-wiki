@@ -2,7 +2,7 @@
 title: "Access audit logs | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9970975-how-to-access-audit-logs"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:42:57Z"
+fetched_at: "2026-09-29T06:32:44Z"
 tags: ["enterprise"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["enterprise"]
 
 June 15, 2026
 
+Copy for LLM
 
 Audit logs are available for Enterprise organizations only.
 

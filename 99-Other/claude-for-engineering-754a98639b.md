@@ -2,7 +2,7 @@
 title: "Claude for Engineering | Claude by Anthropic"
 source_url: "https://support.claude.com/en/articles/9945689-claude-for-engineering"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:56Z"
+fetched_at: "2026-08-19T06:30:41Z"
 ---
 
 # Claude for Engineering
@@ -267,10 +267,10 @@ Products
 
 Features
 
-- Claude for Chrome
+- Claude in Chrome
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
 
 - Claude for Microsoft 365
 
@@ -492,7 +492,7 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](#)
   Service partners
 
 - Tutorials

@@ -2,7 +2,7 @@
 title: "What&#x27;s new - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:38:04Z"
+fetched_at: "2026-09-16T06:24:15Z"
 tags: ["claude-code"]
 ---
 
@@ -15,6 +15,76 @@ A weekly digest of notable Claude Code features, with code snippets, demos, and 
 Copy pageCopy page
 
 The weekly dev digest highlights the features most likely to change how you work. Each entry includes runnable code, a short demo, and a link to the full docs. For every bug fix and minor improvement, see the [changelog](/docs/en/changelog).
+
+[​](#week-37)
+
+Week 37
+
+v2.1.263–v2.1.269
+
+September 7–11, 2026
+
+**`claude plugin eval`**: run your plugin against a suite of test cases, score the results, and compare against a no-plugin baseline. `claude plugin eval init` drafts the cases and graders for you.Also this week: pop any **Claude Code Desktop pane** out into its own window and dock it back later; the **`maxEffortLevel`** setting caps the effort level on every provider; and a page that **WebFetch** hasn’t finished downloading within five minutes fails instead of hanging.[Read the Week 37 digest →](/docs/en/whats-new/2026-w37)
+
+[​](#week-36)
+
+Week 36
+
+v2.1.251–v2.1.261
+
+August 31 – September 4, 2026
+
+**Claude Fable 5.1**: available in Claude Code with a 1M-token context window.Also this week: on Pro and Max plans, **computer use in the Desktop app** works in the background on macOS while you keep working; in fullscreen rendering, **`/diff`** opens a live panel beside the conversation that refreshes as Claude edits; and **`/skill-doctor`** shows what each of your skills costs in context and how often it gets used.[Read the Week 36 digest →](/docs/en/whats-new/2026-w36)
+
+[​](#week-35)
+
+Week 35
+
+v2.1.240–v2.1.250
+
+August 24–28, 2026
+
+**Resume terminal sessions in the Desktop app**: type `/resume` in the Claude Code Desktop prompt box to pick up any session you started from the CLI, with the full conversation and context intact.Also this week: **Claude-drafted feedback** has Claude write up a feedback report when something goes wrong in a session, which you review and send from `/feedback`; **`--restricted`** starts a session without the command-running tools or your user and project settings, for evaluation harnesses on shared machines; and the **`modelPicker`** setting controls which models the `/model` picker lists.[Read the Week 35 digest →](/docs/en/whats-new/2026-w35)
+
+[​](#week-34)
+
+Week 34
+
+v2.1.234–v2.1.239
+
+August 17–21, 2026
+
+**`/design`**: a research preview that brings Claude Design’s artboard workflow into the CLI and Claude Code Desktop, built on artifacts, so Claude drafts editable artboards for your UI and implements the one you pick.Also this week: the built-in **Concise output style** makes Claude lead with the result and skip preamble; any machine running `claude remote-control` shows up as a **device card** on your phone so you can start a session on it from the Code tab; and **`ANTHROPIC_DEFAULT_MODEL`** sets the model new sessions start on.[Read the Week 34 digest →](/docs/en/whats-new/2026-w34)
+
+[​](#week-33)
+
+Week 33
+
+v2.1.225–v2.1.233
+
+August 10–14, 2026
+
+**Auto-continue after a usage limit on Desktop**: when you hit your session limit in Claude Code Desktop, check **Auto-continue when limits reset** on the limit card and the app retries the interrupted turn once the limit resets.Also this week: **fork mode** is on by default in interactive sessions, so Claude can delegate a side task to a subagent that inherits the full conversation; **GitLab** merge request URLs work with `--worktree` and the `claude agents` view, and marketplaces clone bare `gitlab.com` URLs; and typing **`@`** in the prompt mentions another Claude session by name.[Read the Week 33 digest →](/docs/en/whats-new/2026-w33)
+
+[​](#week-32)
+
+Week 32
+
+v2.1.220–v2.1.224
+
+August 3–7, 2026
+
+**Cross-session messaging**: on macOS and Linux, your Claude Code sessions can now message each other, so Claude passes a finding or a decision from one session to another instead of you re-explaining it.Also this week: **self-hosted environments** run Claude Code cloud sessions on infrastructure your organization operates, in public beta on Team and Enterprise plans; **auto mode** becomes the default permission mode for new sessions on Pro, Max, and Team plans starting August 14; and the **VS Code extension** gets Focus view.[Read the Week 32 digest →](/docs/en/whats-new/2026-w32)
+
+[​](#week-30)
+
+Week 30
+
+v2.1.214–v2.1.219
+
+July 20–24, 2026
+
+**Claude Opus 5**: the new default Opus model in Claude Code, with a 1M-token context window and fast mode at \$10/\$50 per MTok.Also this week: **Claude Code Desktop** opens an iOS Simulator pane in public beta so Claude can run your app and tap through it while you watch; the **Claude Security plugin** runs a multi-agent vulnerability scan of your codebase and turns the findings you pick into patches you apply yourself; and **`/code-review`** runs as a background subagent.[Read the Week 30 digest →](/docs/en/whats-new/2026-w30)
 
 [​](#week-29)
 

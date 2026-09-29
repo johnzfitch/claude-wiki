@@ -2,12 +2,14 @@
 title: "Use the GitHub integration | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10167454-use-the-github-integration"
 category: "14-Connectors"
-fetched_at: "2026-08-02T05:41:27Z"
+fetched_at: "2026-09-29T06:30:47Z"
 tags: ["connectors", "git", "github"]
 ---
 
 # Use the GitHub integration
 
+
+Copy for LLM
 
 For more information on enabling GitHub within your account, see **[Use connectors to extend Claude's capabilities](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)**.
 
@@ -83,7 +85,7 @@ When Claude detects this state, the repository picker shows a banner prompting y
 
 **Important:** Disconnecting and reconnecting GitHub in your Claude settings won't fix this. A fresh connection doesn't automatically authorize organizations that require SSO, so you'll need to complete the authorization steps above.
 
-If your organization uses GitHub Enterprise Cloud with Enterprise Managed Users (EMU), the Claude app must also be approved at the enterprise level. Learn more in **[Set up Code Review for Claude Code](https://support.claude.com/en/articles/14233555-set-up-code-review-for-claude-code#h_49cea7a027)**.
+If your organization uses GitHub Enterprise Cloud with Enterprise Managed Users (EMU), connect GitHub while you're signed in with your managed account and have an active SSO session. An organization owner can check the Claude app under Settings \> Third-party Access \> GitHub Apps in your GitHub organization, and confirm that it has access to the repositories you need and has no pending permission requests.
 
 ------------------------------------------------------------------------
 

@@ -2,17 +2,21 @@
 title: "Schedule recurring tasks in Claude Cowork | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13854387"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:45Z"
+fetched_at: "2026-09-29T06:32:07Z"
 ---
 
 # Schedule recurring tasks in Claude Cowork
 
 
+Copy for LLM
+
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+
 Scheduled tasks allow you to delegate work to Claude Cowork by creating tasks that run automatically on a recurring basis, or on demand. Instead of starting each task from scratch, you describe it once and Claude handles it on your schedule—delivering finished outputs like reports, briefings, and summaries every time.
 
-Scheduled tasks are available in Cowork for all paid plans (Pro, Max, Team, Enterprise).
+Scheduled tasks are available on all paid plans (Pro, Max, Team, Enterprise), in Claude Cowork and in the new Claude experience that's rolling out gradually to Pro and Max plans.
 
-Claude Cowork is in beta on web and mobile, and rolling out over the next several weeks starting with the Max plan, with more plans to follow.
+Claude Cowork is available for paid plans (Pro, Max, Team, Enterprise) on desktop, and in beta on web and mobile for Pro, Max, and Team plans, and Enterprise plans when enabled by an owner.
 
 ## What scheduled tasks can do
 
@@ -44,9 +48,21 @@ For Team and Enterprise organizations, admins control Cowork access through the 
 
 ## Create a scheduled task
 
-There are two ways to create a scheduled task:
+### In the new Claude experience
 
-### Create with Claude
+If you're on a Pro or Max plan and your message box doesn't show "Chat" and "Cowork" options, create a scheduled task from any conversation:
+
+1.  Describe the task and how often it should run, for example, "Every Monday at 9 AM, summarize last week's messages in my team's Slack channels."
+
+2.  Answer any questions Claude asks about the schedule or the task.
+
+3.  Review the task name, schedule, and instructions Claude proposes, then click "Schedule."
+
+### In Claude Cowork
+
+There are two ways to create a scheduled task in Cowork:
+
+**Create with Claude**
 
 1.  Click “Scheduled” in the left sidebar to land on the **Scheduled tasks** page.
 
@@ -58,12 +74,11 @@ There are two ways to create a scheduled task:
 
 5.  Once Claude has all the necessary information, it will output the name of the task it’s creating, the schedule it will follow, and what the task actually does.
 
-6.  You can explicitly confirm you want to schedule the task when prompted by Claude by clicking “Schedule":
-
+6.  You can explicitly confirm you want to schedule the task when prompted by Claude by clicking “Schedule."
 
 7.  Claude will create and schedule your task, and it will be added to the **Scheduled tasks** page.
 
-### Set up manually
+**Set up manually**
 
 1.  Click “Scheduled” in the left sidebar to land on the **Scheduled tasks** page.
 
@@ -79,9 +94,9 @@ There are two ways to create a scheduled task:
 
     4.  How frequently the task will run (hourly, daily, weekly, on weekdays, or manually)
 
-    5.  The model you want to use \[optional\]
+    5.  The model you want to use (optional)
 
-    6.  Which folder Claude should work in \[optional\]
+    6.  Which folder Claude should work in (optional)
 
         1.  **Note:** If a scheduled task requires local files or apps, it will only run locally.
 

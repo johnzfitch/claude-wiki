@@ -2,7 +2,7 @@
 title: "AI agents | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/agents"
 category: "18-Industry-UseCases"
-fetched_at: "2026-08-02T05:43:06Z"
+fetched_at: "2026-09-23T06:28:37Z"
 tags: ["agents"]
 ---
 
@@ -143,17 +143,17 @@ See customer stories
 
 See customer stories
 
-“Claude Opus 5 delivers near Fable 5 intelligence at Opus speed and cost. On CursorBench it’s just under Fable 5 and has many of the same behaviors. We are excited to see how developers use it in Cursor.”
+“Claude Fable 5.1 is the most capable model we've run on CursorBench 3.2, scoring 73.4% at max effort. We found it especially skilled at verifying its own work, allowing it to take on difficult coding tasks from start to finish.”
 
-Sualeh Asif, Co-Founder
+Sualeh Asif, Director of ML
 
-"Claude Fable 5 delivers more capable engineering in fewer turns than prior models—handling the complex multi-agent workflows our employees run daily in Claude Code."
+“As part of our ongoing evaluation of AI models, Claude Fable 5.1 delivered impressive results in our tests. Using Claude Code, it correctly identified the root cause of every broken build we tested, across all the effort levels. It also communicates more effectively than earlier Anthropic models, with updates that are more concise and easier to follow.”
 
-Luke Anderson, CTO
+Josh Boyer, Distinguished Engineer
 
-"Claude Fable 5 is the highest-scoring model on FrontierBench, Cognition's frontier coding eval. It excels at long-horizon reasoning and generalizes to unfamiliar tools out of the box."
+“Developers want agents that can take on real software work and finish it. In our testing across GitHub Copilot CLI and VS Code, Claude Opus 5.5 used among the fewest tokens and steps we measured. In VS Code, it solved more terminal tasks than Opus 5 in less than half the steps. More than making individual tasks more efficient, it’s making developers’ bigger projects more achievable.”
 
-Scott Wu, CEO
+Mario Rodriguez, Chief Product Officer
 
 ## AI agent resources
 
@@ -208,112 +208,6 @@ Thank you! Your submission has been received!
 
 Oops! Something went wrong while submitting the form.
 
-Write
-
-[Button Text](#)
-
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
-
 [Anthropic](https://www.anthropic.com/)
 
 Anthropic
@@ -332,11 +226,6 @@ Products
   [Claude Code](/product/claude-code)
   Claude Code
 
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
 - Claude Cowork
 
   [Claude Cowork](/product/cowork)
@@ -346,11 +235,6 @@ Products
 
   [@Claude](/product/tag)
   @Claude
-
-- Claude Design
-
-  [Claude Design](/product/design)
-  Claude Design
 
 - Claude Science
 
@@ -376,22 +260,44 @@ Products
 
   [Log in](https://claude.ai/login)
 
-Features
+Capabilities
 
-- Claude for Chrome
+- Artifacts
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Artifacts](/features/artifacts)
+  Artifacts
 
-- Claude for Microsoft 365
+- Design
 
-  [Claude for Microsoft 365](/claude-for-microsoft-365)
-  Claude for Microsoft 365
+  [Design](/product/design)
+  Design
+
+- Connectors
+
+  [Connectors](/connectors)
+  Connectors
+
+- Plugins
+
+  [Plugins](/plugins)
+  Plugins
 
 - Skills
 
   [Skills](/skills)
   Skills
+
+Extensions
+
+- Claude in Chrome
+
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
+
+- Claude for Microsoft 365
+
+  [Claude for Microsoft 365](/claude-for-microsoft-365)
+  Claude for Microsoft 365
 
 Models
 
@@ -420,7 +326,19 @@ Models
   [Haiku](https://www.anthropic.com/claude/haiku)
   Haiku
 
-Solutions
+Enterprise
+
+- Overview
+
+  [Overview](/solutions/enterprise)
+  Overview
+
+- Claude Code for Enterprise
+
+  [Claude Code for Enterprise](/product/claude-code/enterprise)
+  Claude Code for Enterprise
+
+Use cases
 
 - AI agents
 
@@ -437,6 +355,13 @@ Solutions
   [Coding](/solutions/coding)
   Coding
 
+- Commerce
+
+  [Commerce](/solutions/commerce)
+  Commerce
+
+Departments
+
 - Customer support
 
   [Customer support](/solutions/customer-support)
@@ -447,10 +372,17 @@ Solutions
   [Cybersecurity](/solutions/cybersecurity)
   Cybersecurity
 
-- Enterprise
+- Legal
 
-  [Enterprise](/solutions/enterprise)
-  Enterprise
+  [Legal](/solutions/legal)
+  Legal
+
+- Sales
+
+  [Sales](/solutions/sales)
+  Sales
+
+Industries
 
 - Financial services
 
@@ -477,11 +409,6 @@ Solutions
   [K-12 teachers](/solutions/teachers)
   K-12 teachers
 
-- Legal
-
-  [Legal](/solutions/legal)
-  Legal
-
 - Life sciences
 
   [Life sciences](/solutions/life-sciences)
@@ -497,22 +424,51 @@ Solutions
   [Small business](/solutions/small-business)
   Small business
 
-Claude Platform
+Programs
+
+- Startups
+
+  [Startups](/programs/startups)
+  Startups
+
+- Scientists
+
+  [Scientists](/programs/team-plan-for-scientists)
+  Scientists
+
+Developers
+
+- Developer docs
+
+  [Developer docs](https://code.claude.com/docs/en/overview)
+  Developer docs
+
+- Developer blog
+
+  [Developer blog](https://claude.dev/)
+  Developer blog
+
+- Community
+
+  [Community](/community)
+  Community
+
+- Console
+
+  [Console](https://platform.claude.com/docs/en/home)
+  Console
+
+- Engineering at Anthropic
+
+  [Engineering at Anthropic](https://www.anthropic.com/engineering)
+  Engineering at Anthropic
+
+Platform
 
 - Overview
 
   [Overview](/platform/api)
   Overview
-
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
 
 - Ecosystem
 
@@ -539,16 +495,6 @@ Claude Platform
   [Microsoft Foundry](/partners/microsoft-foundry)
   Microsoft Foundry
 
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](https://platform.claude.com/)
-  Console login
-
 Resources
 
 - Blog
@@ -561,40 +507,20 @@ Resources
   [Claude partner network](/partners)
   Claude partner network
 
-- Community
+- Claude Academy
 
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
+  [Claude Academy](https://academy.claude.com/)
+  Claude Academy
 
 - Customer stories
 
   [Customer stories](/customers)
   Customer stories
 
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
 - Events
 
   [Events](https://www.anthropic.com/events)
   Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
 
 - Powered by Claude
 
@@ -603,18 +529,45 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](#)
   Service partners
 
-- Tutorials
+Help and security
 
-  [Tutorials](/resources/tutorials)
-  Tutorials
+- Availability
 
-- Use cases
+  [Availability](https://www.anthropic.com/supported-countries)
+  Availability
 
-  [Use cases](/resources/use-cases)
-  Use cases
+- Check files
+
+  [Check files](https://claude.com/check-files)
+  Check files
+
+- Regional compliance
+
+  [Regional compliance](/regional-compliance)
+  Regional compliance
+
+- Report abuse
+
+  [Report abuse](https://claude.com/form/anthropic-content-reporting)
+  Report abuse
+
+- Security and compliance
+
+  [Security and compliance](https://trust.anthropic.com/)
+  Security and compliance
+
+- Status
+
+  [Status](https://status.anthropic.com/)
+  Status
+
+- Support center
+
+  [Support center](https://support.claude.com/en/)
+  Support center
 
 Company
 
@@ -633,19 +586,14 @@ Company
   [Policy](https://www.anthropic.com/policy)
   Policy
 
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
 - Research
 
   [Research](https://www.anthropic.com/research)
   Research
 
-- News
+- Anthropic news
 
-  [News](https://www.anthropic.com/news)
-  News
+  [Anthropic news](https://www.anthropic.com/news)
+  Anthropic news
 
 - Policy on the AI Exponential

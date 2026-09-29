@@ -2,7 +2,7 @@
 title: "Financial Services Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/interest-groups/financial-services"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:06Z"
+fetched_at: "2026-09-23T06:26:51Z"
 tags: ["mcp"]
 ---
 
@@ -116,7 +116,7 @@ Operations
 |-----------------|---------------|----------|-----------------------------------------------------------|
 | Working Session | Every 2 weeks | 60 min   | Use-case review, extension and proposal work, SEP scoping |
 
-Meetings are held 16:00–17:00 London (BST/GMT). An agenda is shared in `#financial-services-ig` ahead of each call, and notes with decisions and action items are published afterwards. Discord: [\#financial-services-ig](https://discord.gg/NzkBHsrGf)
+Meetings are held 16:00–17:00 London (BST/GMT). An agenda is shared in `#financial-services-ig` ahead of each call, and notes with decisions and action items are published afterwards. Discord: [\#financial-services-ig](https://discord.gg/6CSzBmMkjX)
 
 
 [​](#discussion-topics)

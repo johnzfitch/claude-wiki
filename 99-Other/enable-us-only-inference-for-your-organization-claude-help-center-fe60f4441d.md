@@ -2,7 +2,7 @@
 title: "Enable US-only inference for your organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15422948"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:50Z"
+fetched_at: "2026-09-29T06:30:54Z"
 tags: ["billing"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["billing"]
 
 June 15, 2026
 
+Copy for LLM
 
 This article explains what the **US-only inference** setting does, how to turn it on, and how it affects billing for your Enterprise organization.
 

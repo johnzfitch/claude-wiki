@@ -2,7 +2,7 @@
 title: "Claude apps gateway spend limits - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/claude-apps-gateway-spend-limits"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:38:48Z"
+fetched_at: "2026-09-28T06:32:25Z"
 tags: ["claude-code"]
 ---
 
@@ -11,7 +11,9 @@ tags: ["claude-code"]
 - [Set a cap](#set-a-cap)
   - [Authenticate to the admin API](#authenticate-to-the-admin-api)
 - [How enforcement works](#how-enforcement-works)
+  - [How requests are priced](#how-requests-are-priced)
   - [Postgres availability](#postgres-availability)
+  - [Usage warnings in Claude Code](#usage-warnings-in-claude-code)
 - [Admin API reference](#admin-api-reference)
   - [/effective](#%2Feffective)
   - [/audit](#%2Faudit)
@@ -77,20 +79,40 @@ Send one of:
 
 How enforcement works
 
-On each `/v1/messages` request, the gateway resolves the developer’s caps and period-to-date spend in one Postgres query. If they’re over any cap, the request returns `429` with `error.type: billing_error` and the header `x-should-retry: false`. The message is `spend limit reached`, followed by your [`admin.blocked_message`](/docs/en/claude-apps-gateway-config#admin) if set. `/v1/messages/count_tokens` is exempt. Token counting is free, so it runs regardless of cap state. After each response, a usage meter reads token counts off the response as it streams to the client, prices them at USD list price, and increments Postgres counters for all three period buckets. The meter is a single reader on the stream, so the client’s bytes are untouched and a metering failure doesn’t break the response. Spend limits estimate spend from token counts at USD list price; they’re a circuit breaker, not an invoice. For authoritative billing, reconcile against your provider’s own usage reporting, such as the Anthropic Usage & Cost Admin API, invocation logs on Amazon Bedrock, or Cloud Monitoring on Google Cloud. Pricing uses the same table the Claude Code CLI uses for its own cost display, with the same model-ID canonicalization across Anthropic, Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry ID forms, such as Bedrock’s `us.anthropic.…-v1:0` and Agent Platform’s `claude-…@date`. The meter resolves each request’s rate tier in order:
+On each `/v1/messages` request, the gateway looks up the developer’s caps and period-to-date spend in one Postgres query. A developer over any cap gets a `429` with `error.type: billing_error` and header `x-should-retry: false`. The message names the period and reset time, such as `spend limit reached (daily; resets 2026-08-08 00:00 UTC)`, followed by your [`admin.blocked_message`](/docs/en/claude-apps-gateway-config#admin) if set. When a developer exceeds several caps at once, the message names the cap that resets last. The response also carries a `retry-after` header with the seconds remaining until that reset. Before v2.1.225 on the gateway server, the message was `spend limit reached` with no period, reset time, or `retry-after` header. On v2.1.227 or later, the protocol reference at `<public_url>/protocol` also lists the exact usage-limit response headers and `429` body. Caps reset on UTC calendar boundaries: daily at 00:00 UTC, weekly on Monday, and monthly on the first. The gateway never blocks `/v1/messages/count_tokens`, because token counting is free.
 
-1.  Exact rates for the upstream model ID, the model string the gateway sends to the provider. When the table recognizes it, such as `us.anthropic.claude-…`, the meter prices the request by the model that served it.
-2.  Rates for the configured [`models[].id`](/docs/en/claude-apps-gateway-config#models) you mapped to the upstream ID. This step covers upstream strings that carry no model name, such as an Amazon Bedrock application-inference-profile ARN or a Microsoft Foundry deployment name, and requires Claude Code v2.1.218 or later on the gateway server.
-3.  The unknown-model default tier of \$5/\$25 per million input/output tokens. The meter prices an ID that neither the table nor your `models` config can place, including a `models[].id` that is itself a custom alias, at this tier rather than zero, so an unrecognized ID can’t bypass a cap by going unmetered.
 
-The gateway warns at boot and once per ID at runtime when it prices a model at the unknown-model tier. Before v2.1.218, the meter skipped step 2: it priced any upstream ID the table couldn’t place at the unknown-model tier and warned about it even when the configured ID’s rates were known. Client aborts are billed too. The upstream reports output tokens only in the stream’s terminal frame, so an aborted stream doesn’t carry them. The meter keeps a conservative floor estimate from the streamed content size, about four characters per token, and bills it when and only when the terminal usage frame is missing. A complete stream always bills the upstream-reported count. Without this, a capped developer could stream output and abort each request immediately before the end, spending without ever being counted.
+[​](#how-requests-are-priced)
+
+How requests are priced
+
+After each response, a usage meter reads the token counts and adds the cost to the daily, weekly, and monthly counters. It never touches the bytes sent to the client, so a metering failure can’t break a response. The amounts are USD estimates, a circuit breaker rather than an invoice; for billing, reconcile against your provider’s usage reporting. The meter picks each request’s rates in this order:
+
+1.  A matching [`pricing.overrides`](/docs/en/claude-apps-gateway-config#pricing) row for the upstream that served the request. Requires v2.1.227 or later.
+2.  List price for the upstream model ID, the string the gateway sends to the provider, when the Claude Code cost table recognizes it. The table accepts Anthropic, Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry ID forms.
+3.  List price for the [`models[].id`](/docs/en/claude-apps-gateway-config#models) you mapped to that upstream ID, for upstream strings that carry no model name, such as an Amazon Bedrock application-inference-profile ARN or a Microsoft Foundry deployment name. Requires v2.1.218 or later.
+4.  The unknown-model tier of \$5/\$25 per million input/output tokens, so an ID the meter can’t place is never free. The gateway warns at boot and once per ID at runtime when it uses this tier.
+
+Whichever rate applies, the meter then multiplies the amount by [`pricing.multiplier`](/docs/en/claude-apps-gateway-config#pricing), default `1`. Client aborts are billed too. When a stream ends without the upstream’s final usage frame, the meter bills a floor estimate of about four characters per output token for the text already sent to the client, so aborting requests early doesn’t evade a cap.
 
 
 [​](#postgres-availability)
 
 Postgres availability
 
-The pre-check queries Postgres with a two-second timeout. If the store is unreachable or times out, enforcement fails open by default: the request proceeds and the gateway logs a warning. Set [`enforcement.fail_closed_on_error: true`](/docs/en/claude-apps-gateway-config#enforcement) to fail closed instead, which returns the same `429 billing_error` with the message `spend limit unavailable`. Fail-open keeps a store outage from becoming an inference outage; fail-closed guarantees no unmetered spend.
+The pre-check queries Postgres with a two-second timeout. If the store is unreachable or times out, enforcement fails open by default: the request proceeds, the gateway logs a warning, and the response carries no `anthropic-ratelimit-unified-*` headers. Set [`enforcement.fail_closed_on_error: true`](/docs/en/claude-apps-gateway-config#enforcement) to fail closed instead, which returns the same `429 billing_error` but with the message `spend limit unavailable` and no period, reset time, or `retry-after` header. Fail-open keeps a store outage from becoming an inference outage; fail-closed guarantees no unmetered spend. Fail-open only helps while your load balancer or orchestrator still routes traffic to the gateway. See [Outage behavior](/docs/en/claude-apps-gateway-deploy#outage-behavior) for `store.readiness_grace_seconds`, which keeps replicas passing their readiness check through a short outage.
+
+
+[​](#usage-warnings-in-claude-code)
+
+Usage warnings in Claude Code
+
+Claude Code warns a developer as they approach their cap: once utilization passes 75%, and again past 95% of their most-consumed cap. When the gateway blocks a request, Claude Code shows the gateway’s `429` message as is, including your `admin.blocked_message`. The warning works off response headers:
+
+- With v2.1.225 or later on the gateway server, each successful `/v1/messages` response for a developer who has a cap carries their own cap utilization and reset time in the `anthropic-ratelimit-unified-*` headers.
+- With v2.1.225 or later on the developer’s machine as well, Claude Code reads the headers and shows the warning.
+
+The headers always describe the developer’s own cap: the gateway strips the upstream provider’s rate-limit headers, which describe your shared quota, and never forwards them. With v2.1.251 or later on the developer’s machine, Claude Code also reads the same headers to show a **Spend limit** bar in `/usage`, with the percentage of their cap used and when it resets, and to add a `rate_limits.spend_limit` object to the [status line](/docs/en/statusline#rate-limit-usage) input. Claude Code shows both as a percentage rather than a dollar amount, and needs nothing newer than v2.1.225 on the gateway server.
 
 
 [​](#admin-api-reference)
@@ -99,14 +121,14 @@ Admin API reference
 
 The endpoints below are served under `/v1/organizations/spend_limits`.
 
-| Method and path                                | Description                                                  |
-|------------------------------------------------|--------------------------------------------------------------|
-| `GET /v1/organizations/spend_limits`           | List configured caps. Query: `?limit=&after_id=&before_id=`. |
-| `POST /v1/organizations/spend_limits`          | Create or replace a cap for `{scope, period}`.               |
-| `GET /v1/organizations/spend_limits/{id}`      | Fetch one cap by its `spl_`-prefixed ID.                     |
-| `DELETE /v1/organizations/spend_limits/{id}`   | Delete one cap. Returns `{type: "spend_limit_deleted", id}`. |
-| `GET /v1/organizations/spend_limits/effective` | Resolved cap and to-date spend per principal per period.     |
-| `GET /v1/organizations/spend_limits/audit`     | Admin mutation trail, newest-first. Query: `?limit=`.        |
+| Method and path                                | Description                                                                                                                                                  |
+|------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `GET /v1/organizations/spend_limits`           | List configured caps, optionally filtered to one `scope_type` of `organization`, `rbac_group`, or `user`. Query: `?limit=&after_id=&before_id=&scope_type=`. |
+| `POST /v1/organizations/spend_limits`          | Create or replace a cap for `{scope, period}`.                                                                                                               |
+| `GET /v1/organizations/spend_limits/{id}`      | Fetch one cap by its `spl_`-prefixed ID.                                                                                                                     |
+| `DELETE /v1/organizations/spend_limits/{id}`   | Delete one cap. Returns `{type: "spend_limit_deleted", id}`.                                                                                                 |
+| `GET /v1/organizations/spend_limits/effective` | Resolved cap and to-date spend per principal per period.                                                                                                     |
+| `GET /v1/organizations/spend_limits/audit`     | Admin mutation trail, newest-first. Query: `?limit=&after_id=`.                                                                                              |
 
 Conventions mirror Anthropic’s Admin API:
 
@@ -114,7 +136,7 @@ Conventions mirror Anthropic’s Admin API:
 - `spl_`-prefixed IDs
 - Amounts as whole-number strings of USD cents; `POST` rejects any other `currency` with `400`
 - The `{type: "error", error: {type, message}, request_id}` error envelope
-- A `request-id` response header on every admin response, success or error, matching the body’s `request_id`
+- A `request-id` response header on every admin response, success or error; error bodies also carry it as `request_id`
 
 Every mutation writes a before/after row to `admin_audit` in the same transaction, attributed to `admin-key:<id>` or `oidc:<sub>`. The gateway serves the spend-limits endpoints only. Other Admin API surfaces, such as the `spend_limit_increase_requests` queue, aren’t part of the gateway’s admin API.
 
@@ -147,14 +169,14 @@ Group-sourced caps resolve against those last-seen groups with the same `group_l
 
 `/audit`
 
-Returns the spend-limit mutation trail: who changed which cap, before/after snapshots, and the optional reason, newest-first. `has_more` is exact. This endpoint follows the local Admin API conventions rather than a first-party wire shape.
+Returns the spend-limit mutation trail: who changed which cap, with before/after snapshots, newest-first. `has_more` is exact. This endpoint follows the local Admin API conventions rather than a first-party wire shape.
 
 
 [​](#pagination)
 
 Pagination
 
-The raw list pages by `after_id` and `before_id`, which are mutually exclusive `spl_…` IDs; results are ordered by creation and `has_more` reflects the traversal direction. `/effective` pages by the opaque `next_page` token passed back as `?page=`, with principals ordered ascending so pages stay stable while spend is being recorded. `limit` is 1–1000, default 20, on both.
+The raw list pages by `after_id` and `before_id`, which are mutually exclusive `spl_…` IDs; results are ordered by creation and `has_more` reflects the traversal direction. `/effective` pages by the opaque `next_page` token passed back as `?page=`, with principals ordered ascending so pages stay stable while spend is being recorded. `limit` is 1–1000, default 20, on both. `/audit` pages by `after_id`, the numeric `id` of the last event on the previous page, and its `limit` defaults to 100.
 
 
 [​](#data-lifecycle)
@@ -170,7 +192,7 @@ The gateway holds four spend-related tables; an hourly sweep enforces the retent
 | `admin_audit`      | The mutation trail                                                            | [`admin.audit_retention_days`](/docs/en/claude-apps-gateway-config#admin), default 365                       |
 | `principal_emails` | Each principal’s last-seen email, display name, and IdP groups. Contains PII. | [`admin.identity_retention_days`](/docs/en/claude-apps-gateway-config#admin) since last activity, default 90 |
 
-`identity_retention_days` is deliberately shorter than `spend_retention_months`: a deprovisioned identity stops refreshing and ages out, while its anonymous spend counters remain for year-over-year reporting. When a developer leaves, delete any per-user cap via `DELETE /v1/organizations/spend_limits/{id}`; their spend and identity rows age out on the retention windows above. To erase one person immediately, for offboarding or a data subject access request (DSAR), run `DELETE FROM principal_emails WHERE principal = '<sub>'` directly against the gateway database. That removes the only table holding their email, name, and groups. The `spend` and `admin_audit` rows reference the pseudonymous OIDC `sub` only and age out on their own windows.
+When a developer leaves, delete any per-user cap via `DELETE /v1/organizations/spend_limits/{id}`; their spend and identity rows age out on the retention windows above. To erase one person immediately, for offboarding or a data subject access request (DSAR), run `DELETE FROM principal_emails WHERE principal = '<sub>'` directly against the gateway database. That removes the only table holding their email, name, and groups. The `spend` and `admin_audit` rows reference the pseudonymous OIDC `sub` only and age out on their own windows.
 
 
 [​](#related)

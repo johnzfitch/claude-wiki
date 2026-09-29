@@ -2,12 +2,14 @@
 title: "Restrict verified-domain connectors to your Enterprise | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15402193-restrict-verified-domain-connectors-to-your-enterprise"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:41:22Z"
+fetched_at: "2026-09-29T06:31:53Z"
 tags: ["connectors", "enterprise"]
 ---
 
 # Restrict verified-domain connectors to your Enterprise
 
+
+Copy for LLM
 
 This article explains how to prevent Claude accounts outside your Enterprise organization from connecting certain services, like Gmail and Slack, using an email address on your verified domains. Use the **Restrict verified-domain connectors to your enterprise** setting to keep company data from reaching personal Claude accounts through connectors.
 
@@ -50,6 +52,8 @@ This setting applies to the following connectors:
 - Slack
 
 - Smartsheet
+
+- Tableau
 
 You can also view the current list in **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**. Contact **[our support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** to request additional connectors.
 
@@ -100,10 +104,6 @@ If someone tries to make a connection that’s restricted, the connection fails 
 ### How is this different from domain claiming?
 
 Domain claiming moves existing personal Claude accounts on your domain into your Enterprise workspace. This setting leaves Claude accounts where they are, and makes it so that only Claude accounts in your Enterprise organization can connect supported connectors using an email address on your verified domains. Learn more about **[claiming and migrating accounts on your domain](https://support.claude.com/en/articles/14625619-claim-and-migrate-accounts-on-your-domain)**.
-
-### Is this the same as the Claude in Slack setting, "Restrict to your verified domains"?
-
-No. That setting applies only to Claude in Slack. This setting covers the connectors listed in **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**.
 
 ### What should someone do if their connection is blocked?
 

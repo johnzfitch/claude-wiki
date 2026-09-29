@@ -2,7 +2,7 @@
 title: "Claude Code on Console to Enterprise migration | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14128775-claude-code-on-console-to-enterprise-migration"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:42:47Z"
+fetched_at: "2026-09-29T06:30:46Z"
 tags: ["authentication", "claude-code", "enterprise"]
 ---
 
@@ -10,6 +10,9 @@ tags: ["authentication", "claude-code", "enterprise"]
 
 Claude Console (API) → Claude Enterprise
 
+August 26, 2026
+
+Copy for LLM
 
 ## Overview
 

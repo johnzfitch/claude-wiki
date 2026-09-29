@@ -2,13 +2,13 @@
 title: "Get started with Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114491-get-started-with-claude"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:53Z"
+fetched_at: "2026-09-29T06:32:04Z"
 ---
 
 # Get started with Claude
 
-June 2, 2026
 
+Copy for LLM
 
 ## What is Claude?
 
@@ -71,7 +71,7 @@ For more information about usage and length limits, refer to **[How do usage and
 
 ### How do I increase my usage limits?
 
-We also have several paid subscriptions that offer additional usage. For more information, view our guide on **[Choosing a Claude plan](https://support.claude.com/en/articles/11049762-choosing-a-claude-plan)**.
+We also have several paid subscriptions that offer additional usage. For more information, refer to our **[Plans & Pricing page](https://claude.com/pricing)**.
 
 ### Can I import my conversation history from another AI provider?
 
@@ -101,4 +101,4 @@ Once you've started using Claude, you can:
 
 - Learn more about designing effective prompts in our **[prompt engineering documentation](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)**.
 
-- For additional features and more usage, consider **[upgrading to a paid plan](https://support.claude.com/en/articles/11049762-choosing-a-claude-plan)**.
+- For additional features and more usage, consider **[upgrading to a paid plan](https://claude.com/pricing)**.

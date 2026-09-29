@@ -2,7 +2,7 @@
 title: "Bringing memory to teams | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/memory"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T07:10:48Z"
+fetched_at: "2026-09-29T06:31:24Z"
 ---
 
 # Bringing memory to Claude
@@ -16,7 +16,7 @@ fetched_at: "2026-08-02T07:10:48Z"
 - 
 
 
-  Claude Enterprise
+  [Claude Enterprise](https://claude.com/solutions/enterprise)
 
   Claude apps
 

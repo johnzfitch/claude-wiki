@@ -1,16 +1,18 @@
 # Plugins Skills
 
-*102 documents*
+*130 documents*
 
 
 - [Claude Skills for Financial Applications](02-skills-financial-applications.md) - Build real-world financial dashboards, portfolio analytics, and
 - [Building Custom Skills for Claude](03-skills-custom-development.md) - Learn how to create, deploy, and manage custom skills to extend
 - [A Complete Guide To Building Skills For Claude Claude](a-complete-guide-to-building-skills-for-claude-claude.md) - ![](https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/6903d223de65e7dcca8267d8_ea364001be6bf6d2e86b58109ead6a779d5771a7-1000x1000.svg)
+- [Add components to a plugin - Claude Code Docs](add-components-to-a-plugin-claude-code-docs-47d05ea3f9.md) - - [Explore the plugin directory](#explore-the-plugin-directory)
 - [Advanced Plugin Example](advanced-plugin.md) - A complex, enterprise-grade plugin with MCP integration and advanced organization.
 - [Agent SDK Development Plugin](agent-sdk-development-plugin.md) - A comprehensive plugin for creating and verifying Claude Agent SDK applications in Python and TypeScript.
 - [Plugins in the SDK](agent-sdk-plugins-8416c8e5b2.md) - ## Documentation Index
 - [Agent Skills in the SDK](agent-sdk-skills-2d478078db.md) - ## Documentation Index
-- [Agent Skills in the SDK - Claude Code Docs](agent-skills-in-the-sdk-claude-code-docs-4c508540b7.md) - - [Overview](#overview)
+- [Extend agents with skills - Claude Code Docs](agent-skills-in-the-sdk-claude-code-docs-4c508540b7.md) - - [How skills work with the Agent SDK](#how-skills-work-with-the-agent-sdk)
+- [Anthropic&#x27;s marketplaces - Claude Code Docs](anthropic-x27-s-marketplaces-claude-code-docs-969eedb226.md) - - [Anthropic’s marketplaces](#anthropic%E2%80%99s-marketplaces)
 - [Best practices for skill creators - Agent Skills](best-practices-for-skill-creators-agent-skills-a7c579abbd.md) - - [Start from real expertise](#start-from-real-expertise)
 - [SQL Analysis Skill](building-skills-for-claude-code-claude.md) - Your team has built up hard-won knowledge about your data—you know which tables are the source of truth, why certain filters must always apply, and ho
 - [Burn Knowledgebase Architecture — Verified Against Claude Code Source](burn-kb-architecture-verified.md) - **Date**: 2026-03-15
@@ -23,10 +25,13 @@
 - [Client Showcase - Agent Skills](client-showcase-agent-skills-13a0a6247f.md) - Copy pageCopy page
 - [Code Architect](code-architect.md) - You are a senior software architect who delivers comprehensive, actionable architecture blueprints by deeply understanding codebases and making confid
 - [Code Explorer](code-explorer.md) - You are an expert code analyst specializing in tracing and understanding feature implementations across codebases.
+- [Code intelligence plugins - Claude Code Docs](code-intelligence-plugins-claude-code-docs-11a61ad286.md) - - [Install a code intelligence plugin](#install-a-code-intelligence-plugin)
+- [Code Review | Claude by Anthropic](code-review-claude-by-anthropic-6b0b035a0a.md) - Anthropic verified
 - [Code Review Plugin](code-review-plugin.md) - Automated code review for pull requests using multiple specialized agents with confidence-based scoring to filter false positives.
 - [Code Review](code-review.md) - Provide a code review for the given pull request.
 - [Code Reviewer](code-reviewer.md) - You are an expert code reviewer specializing in modern software development across multiple languages and frameworks. Your primary responsibility is t
 - [Code Reviewer2](code-reviewer2.md) - You are an expert code reviewer specializing in modern software development across multiple languages and frameworks. Your primary responsibility is t
+- [Code Simplifier | Claude by Anthropic](code-simplifier-claude-by-anthropic-a01318b7ac.md) - Anthropic verified
 - [Code Simplifier](code-simplifier.md) - You are an expert code simplification specialist focused on enhancing code clarity, consistency, and maintainability while preserving exact functional
 - [Command Development Skill](command-development-skill.md) - Comprehensive guidance on creating Claude Code slash commands, including file format, frontmatter options, dynamic arguments, and best practices.
 - [Comment Analyzer](comment-analyzer.md) - You are a meticulous code comment analyzer with deep expertise in technical documentation and long-term code maintainability. You approach every comme
@@ -34,10 +39,13 @@
 - [Commit Push Pr](commit-push-pr.md) - - Current git status: !`git status`
 - [Commit](commit.md) - - Current git status: !`git status`
 - [The Complete Guide to Building Skills for Claude](complete-guide-to-skills.md) - ![](images/_page_0_Picture_1.jpeg)
+- [Context7 | Claude by Anthropic](context7-claude-by-anthropic-7e194ca6cf.md) - Upstash Context7 MCP server for live docs lookup. Pull version-specific docs and code examples from source repos into LLM context.
 - [Conversation Analyzer](conversation-analyzer.md) - You are a conversation analysis specialist that identifies problematic behaviors in Claude Code sessions that could be prevented with hooks.
+- [Create a Claude Code plugin - Claude Code Docs](create-a-claude-code-plugin-claude-code-docs-dbc9444ab1.md) - - [Decide when to use a plugin](#decide-when-to-use-a-plugin)
+- [Create a marketplace - Claude Code Docs](create-a-marketplace-claude-code-docs-8eda066b32.md) - - [Create a marketplace](#create-a-marketplace)
 - [Create and distribute a plugin marketplace - Claude Code Docs](create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md) - Build and host plugin marketplaces to distribute Claude Code extensions across teams and communities.
 - [Plugin Creation Workflow](create-plugin.md) - Guide the user through creating a complete, high-quality Claude Code plugin from initial concept to tested implementation. Follow a systematic approac
-- [Create plugins - Claude Code Docs](create-plugins-claude-code-docs-fc9dd52a14.md) - - [When to use plugins vs standalone configuration](#when-to-use-plugins-vs-standalone-configuration)
+- [Plugins overview - Claude Code Docs](create-plugins-claude-code-docs-fc9dd52a14.md) - - [Understand what a plugin is](#understand-what-a-plugin-is)
 - [Create plugins - Claude Code Docs](create-plugins-claude-code-docs.md) - Create custom plugins to extend Claude Code with skills, agents, hooks, and MCP servers.
 - [Create Plugin Settings](create-settings-command.md) - This command helps users create a `.claude/my-plugin.local.md` settings file.
 - [Discover and install prebuilt plugins through marketplaces - Claude Code Docs](discover-and-install-prebuilt-plugins-through-marketplaces-claude-code-docs-fe3568ee5c.md) - Find and install plugins from marketplaces to extend Claude Code with new skills, agents, and capabilities.
@@ -48,45 +56,63 @@
 - [Extend Claude with skills - Claude Code Docs](extend-claude-with-skills-claude-code-docs-542f21c108.md) - - [Bundled skills](#bundled-skills)
 - [Extend Claude with skills - Claude Code Docs](extend-claude-with-skills-claude-code-docs.md) - Create, manage, and share skills to extend Claude’s capabilities in Claude Code. Includes custom commands and bundled skills.
 - [Extensions](extensions.md) - Optional extensions to the Model Context Protocol
+- [Feature Dev | Claude by Anthropic](feature-dev-claude-by-anthropic-6a76b49c48.md) - Anthropic verified
 - [Feature Development](feature-dev.md) - You are helping a developer implement a new feature. Follow a systematic approach: understand the codebase deeply, identify and ask about all underspe
 - [Feature Development Plugin](feature-development-plugin.md) - A comprehensive, structured workflow for feature development with specialized agents for codebase exploration, architecture design, and quality review
+- [Frontend Design | Claude by Anthropic](frontend-design-claude-by-anthropic-c9f1548004.md) - Anthropic verified
 - [Frontend Design Plugin](frontend-design-plugin.md) - Generates distinctive, production-grade frontend interfaces that avoid generic AI aesthetics.
 - [Command Frontmatter Reference](frontmatter-reference.md) - Complete reference for YAML frontmatter fields in slash commands.
+- [GitHub | Claude by Anthropic](github-claude-by-anthropic-dd85d56067.md) - Official GitHub MCP server for repo management. Create issues, manage PRs, review code, search repos, and access GitHub's API from Claude Code.
 - [Ralph Wiggum Plugin Help](help2.md) - Please explain the following to the user:
+- [Host and maintain a marketplace - Claude Code Docs](host-and-maintain-a-marketplace-claude-code-docs-7917900530.md) - - [Host your marketplace](#host-your-marketplace)
 - [How to add skills support to your agent - Agent Skills](how-to-add-skills-support-to-your-agent-agent-skills-3ed1034f30.md) - - [The core principle: progressive disclosure](#the-core-principle-progressive-disclosure)
 - [How To Create A Skill With Claude Through Conversation Claude Help Center](how-to-create-a-skill-with-claude-through-conversation-claude-help-center.md) - With Skills, you are able to teach Claude specific workflows, tools, and processes. By creating a skill, you're giving Claude a playbook it can refere
 - [How To Create Custom Skills Claude Help Center](how-to-create-custom-skills-claude-help-center.md) - Custom Skills let you enhance Claude with specialized knowledge and workflows specific to your organization or personal work style. This article expla
 - [DOCX creation, editing, and analysis](how-to-create-skills-for-claude-steps-and-examples-claude.md) - When you create a skill via a [SKILL.md](http://skill.md/) file, you're teaching Claude how to handle specific scenarios more effectively. The power o
 - [How To Use The Single Cell Rna Qc Skill With Claude Claude Help Center](how-to-use-the-single-cell-rna-qc-skill-with-claude-claude-help-center.md) - The single-cell-rna-qc skill gives Claude the ability to perform quality control on single-cell RNA-seq data using scverse best practices with MAD-bas
 - [Improving Frontend Design Through Skills Claude](improving-frontend-design-through-skills-claude.md) - You might notice that when you ask an LLM to build a landing page without guidance, it will almost always conform to Inter fonts, purple gradients on 
+- [Install and manage plugins - Claude Code Docs](install-and-manage-plugins-claude-code-docs-382a56ccd7.md) - - [Install a plugin](#install-a-plugin)
 - [Introducing Agent Skills Claude](introducing-agent-skills-claude.md) - ![](https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/6903d2307f9555d7c1bc46cb_77dd9077412abc790bf2bc6fa3383b37724d6305-1000x1000.svg)
 - [Learning Style Plugin](learning-style-plugin.md) - This plugin combines the unshipped Learning output style with explanatory functionality as a SessionStart hook.
+- [Manage Claude Code plugins for your organization - Claude Code Docs](manage-claude-code-plugins-for-your-organization-claude-code-docs-8bf839cf96.md) - - [Pre-install and require plugins](#pre-install-and-require-plugins)
 - [Plugin Manifest Reference](manifest-reference.md) - Complete reference for `plugin.json` configuration.
 - [Marketplace Considerations for Commands](marketplace-considerations.md) - Guidelines for creating commands designed for distribution and marketplace success.
+- [Marketplace reference - Claude Code Docs](marketplace-reference-claude-code-docs-e334a0d172.md) - - [Marketplace file](#marketplace-file)
+- [Measure plugin cost and usage - Claude Code Docs](measure-plugin-cost-and-usage-claude-code-docs-57d5adf622.md) - - [Measure what a plugin costs](#measure-what-a-plugin-costs)
 - [Minimal Plugin Example](minimal-plugin.md) - A bare-bones plugin with a single command.
 - [New Sdk App](new-sdk-app.md) - You are tasked with helping the user create a new Claude Agent SDK application. Follow these steps carefully:
 - [Optimizing skill descriptions - Agent Skills](optimizing-skill-descriptions-agent-skills-5a76c2d184.md) - - [How skill triggering works](#how-skill-triggering-works)
+- [Playwright | Claude by Anthropic](playwright-claude-by-anthropic-57810e0727.md) - Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, and automa
 - [Plugin Command Examples](plugin-commands.md) - Practical examples of commands designed for Claude Code plugins, demonstrating plugin-specific patterns and features.
+- [Plugin dependencies - Claude Code Docs](plugin-dependencies-claude-code-docs-c020b8e0ad.md) - - [Declare dependencies](#declare-dependencies)
 - [Plugin Development Toolkit](plugin-development-toolkit.md) - A comprehensive toolkit for developing Claude Code plugins with expert guidance on hooks, MCP integration, plugin structure, and marketplace publishin
 - [Plugin-Specific Command Features Reference](plugin-features-reference.md) - This reference covers features and patterns specific to commands bundled in Claude Code plugins.
+- [Plugin loading reference - Claude Code Docs](plugin-loading-reference-claude-code-docs-9b89fced49.md) - - [Check which stage a plugin reached](#check-which-stage-a-plugin-reached)
+- [Plugin manifest reference - Claude Code Docs](plugin-manifest-reference-claude-code-docs-ddf18b1451.md) - - [Manifest file](#manifest-file)
 - [Plugin Marketplace — Complete Architecture Analysis (2.1.74)](plugin-marketplace-complete-analysis.md) - **Date**: 2026-03-13
 - [Plugin Marketplace: What It Actually Is](plugin-marketplace-reality-check.md) - **Date**: 2026-03-13
 - [Create and distribute a plugin marketplace](plugin-marketplaces.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Plugin security and trust - Claude Code Docs](plugin-security-and-trust-claude-code-docs-c434815774.md) - - [Understand what a plugin can do](#understand-what-a-plugin-can-do)
 - [Plugin Structure Skill](plugin-structure-skill.md) - Comprehensive guidance on Claude Code plugin architecture, directory layout, and best practices.
 - [Plugin System + Teammate Architecture Integration](plugin-teammate-integration.md) - **Version**: 2.1.76
 - [Plugin Validator](plugin-validator.md) - You are an expert plugin validator specializing in comprehensive validation of Claude Code plugin structure, configuration, and components.
 - [Create plugins](plugins-47f40108cc.md) - ## Documentation Index
-- [Plugins in the SDK - Claude Code Docs](plugins-in-the-sdk-claude-code-docs-560e507922.md) - - [What are plugins?](#what-are-plugins)
+- [Plugins | Claude Marketplace | Claude by Anthropic](plugins-claude-marketplace-claude-by-anthropic-fe473e0644.md) - Browse plugins that bundle tools, skills, and integrations for one-click installation.
+- [Plugins in the SDK - Claude Code Docs](plugins-in-the-sdk-claude-code-docs-560e507922.md) - - [Loading plugins](#loading-plugins)
+- [Plugins overview - Claude Code Docs](plugins-overview-claude-code-docs-6f5980ecad.md) - - [Understand what a plugin is](#understand-what-a-plugin-is)
 - [Plugins reference](plugins-reference-44aeea7968.md) - ## Documentation Index
-- [Plugins reference - Claude Code Docs](plugins-reference-claude-code-docs-e80a6d455d.md) - - [Plugin components reference](#plugin-components-reference)
+- [Plugin manifest reference - Claude Code Docs](plugins-reference-claude-code-docs-e80a6d455d.md) - - [Manifest file](#manifest-file)
 - [Plugins reference - Claude Code Docs](plugins-reference-claude-code-docs.md) - Complete technical reference for Claude Code plugin system, including schemas, CLI commands, and component specifications.
 - [Plugins reference](plugins-reference.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 - [Create plugins](plugins.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 - [Pr Test Analyzer](pr-test-analyzer.md) - You are an expert test coverage analyst specializing in pull request review. Your primary responsibility is to ensure that PRs have adequate test cove
+- [Publish and distribute a plugin - Claude Code Docs](publish-and-distribute-a-plugin-claude-code-docs-ea9443a70d.md) - - [Choose how to distribute](#choose-how-to-distribute)
 - [Quickstart - Agent Skills](quickstart-agent-skills-c65b6c1280.md) - - [Prerequisites](#prerequisites)
+- [Ralph Loop | Claude by Anthropic](ralph-loop-claude-by-anthropic-90f8e855b1.md) - Anthropic verified
 - [Ralph Loop Command](ralph-loop.md) - Execute the setup script to initialize the Ralph loop:
 - [Ralph Wiggum Plugin](ralph-wiggum-plugin.md) - Implementation of the Ralph Wiggum technique for iterative, self-referential AI development loops in Claude Code.
 - [Real-World Plugin Settings Examples](real-world-examples.md) - Detailed analysis of how production plugins use the `.claude/plugin-name.local.md` pattern.
+- [Recommend plugins for your org - Claude Code Docs](recommend-plugins-for-your-org-claude-code-docs-8f79c08382.md) - - [Understand how plugin relevance works](#understand-how-plugin-relevance-works)
 - [Comprehensive PR Review](review-pr.md) - Run a comprehensive pull request review using multiple specialized agents, each focusing on a different aspect of code quality.
 - [Silent Failure Hunter](silent-failure-hunter.md) - You are an elite error handling auditor with zero tolerance for silent failures and inadequate error handling. Your mission is to protect users from o
 - [Skill Creator](skill-creator-original.md) - This skill provides guidance for creating effective skills.
@@ -100,8 +126,10 @@
 - [Slash Commands in the SDK](slash-commands.md) - Learn how to use slash commands to control Claude Code sessions through the SDK
 - [Specification - Agent Skills](specification-agent-skills-f36ae4007e.md) - - [Directory structure](#directory-structure)
 - [Standard Plugin Example](standard-plugin.md) - A well-structured plugin with commands, agents, and skills.
+- [Superpowers | Claude by Anthropic](superpowers-claude-by-anthropic-11ee8bf98d.md) - Claude learns brainstorming, subagent development with code review, debugging, TDD, and skill authoring through Superpowers.
 - [Teach Claude Your Way Of Working Using Skills Claude Help Center](teach-claude-your-way-of-working-using-skills-claude-help-center.md) - Think about the last time you created something with Claude that turned out really well. Maybe it was a presentation, an analysis, or a report. What m
 - [Claude Code Teammate/Team System Architecture](teammate-architecture.md) - **Version**: 2.1.76
+- [Troubleshoot plugins - Claude Code Docs](troubleshoot-plugins-claude-code-docs-b03944e6ad.md) - - [Find where /plugin runs](#find-where-%2Fplugin-runs)
 - [Type Design Analyzer](type-design-analyzer.md) - You are a type design expert with extensive experience in large-scale software architecture. Your specialty is analyzing and improving type designs to
 - [Using scripts in skills - Agent Skills](using-scripts-in-skills-agent-skills-072dae8aa5.md) - - [One-off commands](#one-off-commands)
 - [Using Skills In Claude Claude Help Center](using-skills-in-claude-claude-help-center.md) - Skills extend Claude's capabilities by giving it access to specialized knowledge and workflows. This guide shows you how to enable, discover, and use 

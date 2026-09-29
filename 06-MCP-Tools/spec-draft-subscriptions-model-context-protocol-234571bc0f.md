@@ -2,7 +2,7 @@
 title: "Subscriptions - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/basic/patterns/subscriptions"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:41Z"
+fetched_at: "2026-09-29T06:30:31Z"
 tags: ["mcp"]
 ---
 
@@ -129,7 +129,7 @@ Cancellation
 A subscription ends when:
 
 - The **client** cancels it — close the SSE stream (HTTP) or send `notifications/cancelled` referencing the `subscriptions/listen` request ID (stdio).
-- The **server** tears it down (e.g., during shutdown) — it **SHOULD** send the empty `subscriptions/listen` response to signal a graceful end (see [Graceful Closure](#graceful-closure)), then close the stream.
+- The **server** tears it down (e.g., during shutdown) — it **SHOULD** send a successful `subscriptions/listen` response to signal a graceful end (see [Graceful Closure](#graceful-closure)), then close the stream.
 - The underlying transport closes (HTTP timeout, TCP disconnect, stdio process exit).
 
 
@@ -137,7 +137,7 @@ A subscription ends when:
 
 Graceful Closure
 
-When the server ends a subscription on its own initiative (for example, during shutdown), it **SHOULD** respond to the original `subscriptions/listen` request with an empty result before closing the stream. This is the JSON-RPC response to the long-lived request, correlated by its `id`, and signals that the subscription ended gracefully — as opposed to an abrupt transport drop, which carries no response.
+When the server ends a subscription on its own initiative (for example, during shutdown), it **SHOULD** respond to the original `subscriptions/listen` request with a completion result before closing the stream. The result carries no method-specific data beyond the standard result fields and subscription metadata. This is the JSON-RPC response to the long-lived request, correlated by its `id`, and signals that the subscription ended gracefully — as opposed to an abrupt transport drop, which carries no response.
 
 ```python
 {

@@ -2,11 +2,78 @@
 title: "Release notes | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12138966-release-notes"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:42:32Z"
+fetched_at: "2026-09-29T06:31:02Z"
 ---
 
 # Release notes
 
+Updated today
+
+Copy for LLM
+
+## September 2026
+
+### September 28, 2026
+
+**Claude Sonnet 5.5 launch**
+
+We just launched Claude Sonnet 5.5, the second model in our Claude 5.5 family. Sonnet 5.5 is a faster, lower-cost complement to Claude Opus 5.5. For more information, see our blog post: **[Introducing Claude Sonnet 5.5](https://www.anthropic.com/claude-sonnet-5-5)**.
+
+### September 25, 2026
+
+**Build plugins for Claude**
+
+You can now submit plugins to the Claude directory through a new developer portal, track them through review, and see usage analytics once they’re live. For more information, see our blog post: **[Build plugins for Claude](https://claude.com/blog/build-plugins-for-claude)**.
+
+### September 22, 2026
+
+**Claude Opus 5.5 launch**
+
+We just launched Claude Opus 5.5, the first model in our new Claude 5.5 family. It performs at the level of Claude Fable 5.1 on most work and costs 40% less to run than Opus 5. For more information, see our blog post: **[Introducing Claude Opus 5.5](https://www.anthropic.com/claude-opus-5-5)**.
+
+### September 16, 2026
+
+**Claude Cowork comes to every conversation**
+
+We're rolling out a new Claude experience that makes everything Claude Cowork does available from any conversation. Ask a quick question or hand Claude a bigger task, like a report, spreadsheet, or presentation, without choosing a mode first. Your chats, Cowork tasks, projects, connectors, and skills carry over. The new experience is rolling out gradually to Pro and Max plans on web, desktop, and mobile. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**.
+
+**Create designs, decks, and docs in any conversation**
+
+You can now ask for a design, deck, or document in any conversation with Claude, including in Claude Code and the **Artifacts** tab, and edit it with Claude or directly as you work. Claude Design works inside your conversations with all of its features, including on-canvas editing and importing your design system. Claude Slides gives presentations their own starting point, and Claude Docs is a new way to write living documents with Claude and your team. Artifacts, including Claude Design, Claude Slides, and Claude Docs, are available on every plan, including Free. On Enterprise plans, Claude Design, Claude Slides, and Claude Docs are in beta and off by default until an owner turns them on. Learn more in **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/17153992)** and **[Get started with Claude Docs](https://support.claude.com/en/articles/16923645)**.
+
+### September 15, 2026
+
+**Launching Salesforce in Claude (beta)**
+
+We've launched Salesforce in Claude, a plugin that brings a seller’s accounts, opportunities, and pipeline into Claude with 37 pre-built sales skills. Prep a call, review a deal, create a pipeline dashboard, and send your forecast all from Claude. It’s now available in beta on all paid plans for organizations Salesforce approves through its beta sign-up. For more information, see our blog post: **[Bringing Salesforce into Claude](http://claude.com/blog/salesforce-in-claude)**.
+
+### September 10, 2026
+
+**Smart reports (beta)**
+
+We’ve launched smart reports, which analyze how a team uses Claude and report on the work getting done, what it costs, where sessions run into friction, and which repeated patterns are worth packaging as shared skills. Smart reports are available in beta on Claude Enterprise plans. Learn more in **[Get started with smart reports](https://support.claude.com/en/articles/16893491-get-started-with-smart-reports)**.
+
+### September 1, 2026
+
+**Claude Fable 5.1 and Claude Mythos 5.1 launch**
+
+We just launched Claude Fable 5.1 and Claude Mythos 5.1, the world’s most advanced models for coding and knowledge work. For more information, see our blog post: **[Claude Fable 5.1 and Mythos 5.1](https://www.anthropic.com/claude-fable-and-mythos-5-1)**.
+
+## August 2026
+
+### August 25, 2026
+
+**Memory in Claude Cowork, editable topics, and a sensitive topics setting**
+
+Memory now works across chat and Cowork in the cloud. Everything Claude remembers is listed under **Topics** in **[Settings \> Memory](https://claude.ai/settings/memory)**, where you can edit or delete any item. Topics such as health or beliefs stay out of memory unless you turn on **Include sensitive topics in memory**. Memory is on by default for Free, Pro, and Max plans and off by default for Team and Enterprise organizations. See **[Use Claude's chat search and memory to build on previous context](https://support.claude.com/en/articles/11817273)**.
+
+### August 6, 2026
+
+**Skill and plugin security scanning (beta)**
+
+Enterprise plans can now turn on skill and plugin security scanning to automatically check third-party skills and plugins for malicious content when someone uploads or edits them. For more information, see **[Get started with skill and plugin scanning](https://support.claude.com/en/articles/15927065)**.
+
+------------------------------------------------------------------------
 
 ## July 2026
 
@@ -243,7 +310,7 @@ We launched our most capable Sonnet model yet, with a full upgrade of the model�
 
 **Analytics API for Enterprise plans**
 
-The Enterprise Analytics API provides programmatic access to usage and engagement data for Claude and Claude Code Remote usage within your organization. Data is aggregated per organization, per day, and each endpoint returns a snapshot for a single date that you specify. For more information, see **[Access usage data with the Analytics API](https://support.claude.com/en/articles/13694757-access-usage-data-with-the-analytics-api)**.
+The Enterprise Analytics API provides programmatic access to usage and engagement data for Claude and Claude Code Remote usage within your organization. Data is aggregated per organization, per day, and each endpoint returns a snapshot for a single date that you specify. For more information, see **[Analytics APIs](https://platform.claude.com/docs/en/manage-claude/analytics-api)**.
 
 ### February 12, 2026
 

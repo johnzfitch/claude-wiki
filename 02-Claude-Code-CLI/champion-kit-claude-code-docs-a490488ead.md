@@ -2,7 +2,7 @@
 title: "Champion kit - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/champion-kit"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:36:16Z"
+fetched_at: "2026-08-29T06:27:57Z"
 tags: ["claude-code"]
 ---
 
@@ -35,7 +35,7 @@ A playbook for engineers advocating Claude Code internally: what to share, how t
 
 Copy pageCopy page
 
-This page is for individual engineers who are already using Claude Code and want to help their team adopt it. It covers what to share, how to answer the questions you will get, a thirty-day playbook, and responses to common concerns. Adoption of a developer tool rarely happens because of a rollout announcement. It happens because someone on the team begins using the tool well, talks about it openly, and makes it easy for others to follow. The work you do as a champion has a disproportionate effect: every example you share shortens the learning curve for the engineers who come after you, and every question you answer in public turns one person’s experience into something the whole team can build on. You are acting as a multiplier for your team, not a help desk, and this guide is structured to keep the role sustainable on those terms.
+This page is for individual engineers who are already using Claude Code and want to help their team adopt it. It covers what to share, how to answer the questions you will get, a thirty-day playbook, and responses to common concerns. Adoption of a developer tool rarely happens because of a rollout announcement. It happens because someone on the team begins using the tool well, talks about it openly, and makes it easy for others to follow. The work you do as a champion has a disproportionate effect: every example you share shortens the learning curve for the engineers who come after you, and every question you answer in public turns one person’s experience into something the whole team can build on.
 
 
 [​](#the-champion-role)
@@ -50,8 +50,6 @@ The role consists of three behaviors that reinforce one another.
 | Be the person people ask | When a colleague asks how you accomplished something, respond with the actual prompt you used so they can apply it directly to their own task.                                           | A concrete, runnable example removes the gap between curiosity and a first successful use, which is where most adoption efforts stall.                                                  |
 | Grow the circle          | Establish a small number of lightweight, recurring habits, such as a dedicated channel or a weekly thread, so that momentum continues even when your attention is elsewhere.             | Adoption that depends on a single person is fragile. Adoption that is carried by shared habits continues to compound on its own.                                                        |
 
-Most of this fits naturally inside the work you are already doing. The difference is a small amount of additional intention about where your discoveries are posted and how your answers travel.
-
 
 [​](#what-this-should-cost-you)
 
@@ -59,12 +57,12 @@ What this should cost you
 
 Set expectations with yourself and with your lead. The activities below are intended to fit inside a normal working week, and the role should remain a multiplier on your existing work rather than an additional support responsibility.
 
-| Activity                                | Time per week    | Guidance                                                                                                                            |
-|-----------------------------------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| Posting wins and prompts                | About 15 minutes | Capture these in the moment with a screenshot and one or two sentences; avoid turning them into formal write-ups.                   |
-| Answering questions in a shared channel | About 20 minutes | Answer publicly once, then link back to that answer when the question recurs.                                                       |
-| Hosting a weekly show-and-tell thread   | About 5 minutes  | You post the opening prompt; the team supplies the content.                                                                         |
-| Optional pairing or walkthroughs        | 0 to 30 minutes  | Reserve this for colleagues who are genuinely blocked, and offer the [Quickstart](/docs/en/quickstart) link before scheduling time. |
+| Activity                                | Time per week    | Guidance                                                                                                                  |
+|-----------------------------------------|------------------|---------------------------------------------------------------------------------------------------------------------------|
+| Posting wins and prompts                | About 15 minutes | Capture these in the moment with a screenshot and one or two sentences; avoid turning them into formal write-ups.         |
+| Answering questions in a shared channel | About 20 minutes | Answer publicly once, then link back to that answer when the question recurs.                                             |
+| Hosting a weekly show-and-tell thread   | About 5 minutes  | You post the opening prompt; the team supplies the content.                                                               |
+| Optional pairing or walkthroughs        | 0 to 30 minutes  | Reserve this for colleagues who are blocked, and offer the [Quickstart](/docs/en/quickstart) link before scheduling time. |
 
 
 [​](#share-what-you-discover)
@@ -129,7 +127,7 @@ intends to touch before changing anything.
 
 Be the person people ask
 
-Once you have shared a few examples, questions will follow. This is where the champion role has the greatest leverage, because a good answer to one person frequently unblocks several others who are watching the same channel.
+Once you have shared a few examples, questions will follow. This is where a champion helps the most, because a good answer to one person frequently unblocks several others who are watching the same channel.
 
 
 [​](#answer-with-a-prompt-rather-than-an-explanation)
@@ -173,7 +171,7 @@ Questions you are likely to hear
 
 Grow the circle
 
-The objective is not to build a program or to own a rollout. It is to establish a small number of lightweight habits that allow momentum to continue after you have stopped actively driving it. When questions in the channel are being answered by people other than you, the role has done its job.
+The objective is to establish a small number of lightweight habits that allow momentum to continue after you have stopped actively driving it. You don’t need to build a program or own a rollout. When questions in the channel are being answered by people other than you, the role has done its job.
 
 
 [​](#patterns-that-tend-to-work)
@@ -225,7 +223,7 @@ Identify a second champion and share a brief summary of what is working and what
 
 When someone wants to go deeper
 
-You are the warm introduction rather than the onboarding program. When a colleague moves past “should I try this” into “how do I become effective with it,” point them to the [Quickstart](/docs/en/quickstart) and [Common workflows](/docs/en/common-workflows) pages. They contain short sections covering the features that are genuinely useful but difficult to discover on your own.
+You are the warm introduction rather than the onboarding program. When a colleague moves past “should I try this” into “how do I become effective with it,” point them to the [Quickstart](/docs/en/quickstart) and [Common workflows](/docs/en/common-workflows) pages. They contain short sections covering the features that are useful but difficult to discover on your own.
 
 
 [​](#respond-to-common-concerns)
@@ -234,13 +232,13 @@ Respond to common concerns
 
 Healthy skepticism is expected; engineers should be cautious about tools that touch their code. The most effective response is rarely to argue the general case. Instead, acknowledge the concern, offer a brief reframe, and propose one concrete demonstration on the person’s own code. Most concerns are resolved by a single successful experience.
 
-| Concern                                       | Suggested response                                                                                                                                                                                 | Evidence to offer                                         |
-|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
-| ”I am faster without it.”                     | That is likely true for code the person writes routinely. Suggest trying it on the work they tend to avoid: legacy files, unfamiliar services, or test scaffolding, where the leverage is highest. | Time one tedious task both ways and compare.              |
-| ”I do not trust AI to touch production code.” | Agree that no change should land unread. Plan mode combined with normal diff review means nothing is applied that the engineer has not inspected, the same standard as any pull request.           | Demonstrate plan mode on a real file.                     |
-| ”It will make junior engineers weaker.”       | Used well, it is an effective explainer. Encourage junior engineers to ask Claude to explain a file and its call sites before asking it to change anything.                                        | Run “Explain @file and where it is called from” together. |
-| ”I tried it once and it hallucinated.”        | This is usually a context problem rather than a model problem. @-mentioning the relevant files, running `/init`, and providing the actual error output typically resolves it.                      | Re-run their original prompt with proper `@`-context.     |
-| ”We do not have time to learn another tool.”  | Claude Code is a terminal command rather than a platform. If it does not return value within the first session, it is reasonable to set it aside.                                                  | A two-minute install followed by one real bug.            |
+| Concern                                       | Suggested response                                                                                                                                                                           | Evidence to offer                                         |
+|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
+| ”I am faster without it.”                     | That is likely true for code the person writes routinely. Suggest trying it on the work they tend to avoid: legacy files, unfamiliar services, or test scaffolding, where it helps the most. | Time one tedious task both ways and compare.              |
+| ”I do not trust AI to touch production code.” | Agree that no change should land unread. Plan mode combined with normal diff review means nothing is applied that the engineer has not inspected, the same standard as any pull request.     | Demonstrate plan mode on a real file.                     |
+| ”It will make junior engineers weaker.”       | Used well, it is an effective explainer. Encourage junior engineers to ask Claude to explain a file and its call sites before asking it to change anything.                                  | Run “Explain @file and where it is called from” together. |
+| ”I tried it once and it hallucinated.”        | This is usually a context problem rather than a model problem. @-mentioning the relevant files, running `/init`, and providing the actual error output typically resolves it.                | Re-run their original prompt with proper `@`-context.     |
+| ”We do not have time to learn another tool.”  | Claude Code is a terminal command rather than a platform. If it does not return value within the first session, it is reasonable to set it aside.                                            | A two-minute install followed by one real bug.            |
 
 
 [​](#quick-reference-sheet)

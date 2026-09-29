@@ -2,7 +2,7 @@
 title: "Claude Code Analytics API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/claude-code-analytics-api"
 category: "20-Models"
-fetched_at: "2026-08-02T05:40:41Z"
+fetched_at: "2026-09-26T06:39:33Z"
 tags: ["api", "claude-code"]
 ---
 
@@ -12,35 +12,31 @@ tags: ["api", "claude-code"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fclaude-code-analytics-api)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Organization
 
-[Admin API](/docs/en/manage-claude/admin-api)[User management (beta)](/docs/en/manage-claude/user-management)[Workspaces](/docs/en/manage-claude/workspaces)
+[Admin API](/docs/en/manage-claude/admin-api)[User management](/docs/en/manage-claude/user-management)[Workspaces](/docs/en/manage-claude/workspaces)
 
 Authentication
 
-[Overview](/docs/en/manage-claude/authentication)[Create an Admin API key](/docs/en/manage-claude/admin-api-keys)[Workload Identity Federation](/docs/en/manage-claude/workload-identity-federation)[Manage WIF via API](/docs/en/manage-claude/wif-admin-api)[WIF reference](/docs/en/manage-claude/wif-reference)
+[Overview](/docs/en/manage-claude/authentication)[Create an Admin API key](/docs/en/manage-claude/admin-api-keys)[App Attest](/docs/en/manage-claude/app-attest)[Workload Identity Federation](/docs/en/manage-claude/workload-identity-federation)[Manage WIF via API](/docs/en/manage-claude/wif-admin-api)[WIF reference](/docs/en/manage-claude/wif-reference)
 
 Identity providers
 
@@ -52,30 +48,27 @@ Data & compliance
 
 [Data residency](/docs/en/manage-claude/data-residency)[API and data retention](/docs/en/manage-claude/api-and-data-retention)[Access Transparency](/docs/en/manage-claude/access-transparency)
 
-Encryption keys
+[Encryption keys](/docs/en/manage-claude/cmek)
+
+[Inference hooks](/docs/en/manage-claude/inference-hooks)
 
 Compliance API
 
-[Overview](/docs/en/manage-claude/compliance-api)[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)[Activity Feed](/docs/en/manage-claude/compliance-activity-feed)[Chats, files, and projects](/docs/en/manage-claude/compliance-content-data)[Organizations, users, roles, groups, and settings](/docs/en/manage-claude/compliance-org-data)[Design your integration](/docs/en/manage-claude/compliance-integration-patterns)[Errors](/docs/en/manage-claude/compliance-errors)[FAQ](/docs/en/manage-claude/compliance-faq)
+[Overview](/docs/en/manage-claude/compliance-api)[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)[Activity Feed](/docs/en/manage-claude/compliance-activity-feed)[Chats, files, and projects](/docs/en/manage-claude/compliance-content-data)[Session transcripts](/docs/en/manage-claude/compliance-sessions)[Organizations, users, roles, groups, and settings](/docs/en/manage-claude/compliance-org-data)[Design your integration](/docs/en/manage-claude/compliance-integration-patterns)[Errors](/docs/en/manage-claude/compliance-errors)[FAQ](/docs/en/manage-claude/compliance-faq)
 
-[](/login)
+[Console](/)
 
-
-
-
-Admin
-
-Claude Code Analytics API
-
-Admin/Monitoring
+[Admin](/docs/en/manage-claude/admin-api)Monitoring
 
 # Claude Code Analytics API
 
+Copy page
 
 
 
 Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
 
+Copy page
 
 
 
@@ -93,22 +86,19 @@ This API enables you to better monitor, analyze, and optimize your Claude Code a
 - **Custom reporting:** Export data to build executive dashboards and reports for management teams
 - **Usage justification:** Provide metrics to justify and expand Claude Code adoption internally
 
-
+
 
-**Admin API key required.** These endpoints require an Admin API key, which is different from a standard Claude API key. See [Create an Admin API key](/docs/en/manage-claude/admin-api-keys) to find where to create one for your organization type and which scopes to select.
+**Admin API credentials required.** These endpoints are part of the Admin API. You can access them using an [Admin API key](/docs/en/manage-claude/admin-api-keys), an OAuth token with the `org:admin` scope, or a personal or service account key that isn't scoped to a workspace; workspace API keys don't work. See [Authentication](/docs/en/manage-claude/admin-api#authentication) for details.
 
-
+
 
 **Claude Platform on AWS:** The Claude Code Analytics API is not currently available. View Claude Code usage on the **Usage** page in the Claude Console instead.
 
-
+
 
 **Claude Enterprise organizations:** Claude Code activity for claude.ai users is reported by the Claude Enterprise Analytics API, which uses an Analytics API key instead of an Admin API key. See [Analytics APIs](/docs/en/manage-claude/analytics-api) to find which API and key type your organization needs.
 
-
-
-
-Quick start
+## Quick start
 
 Get your organization's Claude Code analytics for a specific day:
 
@@ -121,14 +111,14 @@ curl "https://api.anthropic.com/v1/organizations/usage_report/claude_code?\
 starting_at=2025-09-08&\
 limit=20" \
   -H "anthropic-version: 2023-06-01" \
-  -H "x-api-key: $ADMIN_API_KEY"
+  -H "x-api-key: $ANTHROPIC_ADMIN_KEY"
 ```
 
 
 
 **Set a User-Agent header for integrations**
 
-If you're building an integration, set your User-Agent header to help us understand usage patterns:
+If you're building an integration, set your User-Agent header to help Anthropic understand usage patterns:
 
 ``` block
 User-Agent: YourApp/1.0.0 (https://yourapp.com)
@@ -136,17 +126,11 @@ User-Agent: YourApp/1.0.0 (https://yourapp.com)
 
 
 
-
-
-
-Claude Code Analytics API
+## Claude Code Analytics API
 
 Track Claude Code usage, productivity metrics, and developer activity across your organization with the `/v1/organizations/usage_report/claude_code` endpoint.
 
-
-
-
-Key concepts
+### Key concepts
 
 - **Daily aggregation:** Returns metrics for a single day specified by the `starting_at` parameter
 - **User-level data:** Each record represents one user's activity for the specified day
@@ -155,17 +139,11 @@ Key concepts
 - **Cursor-based pagination:** Handle large datasets with stable pagination using opaque cursors
 - **Data freshness:** Metrics are available with up to 1-hour delay for consistency
 
-For complete parameter details and response schemas, see the [Claude Code Analytics API reference](/docs/en/api/admin/usage_report/retrieve_claude_code).
+For complete parameter details and response schemas, see the [Claude Code Analytics API reference](/docs/en/api/beta/organization/usage_report/retrieve_claude_code).
 
+### Basic examples
 
-
-
-Basic examples
-
-
-
-
-Get analytics for a specific day
+#### Get analytics for a specific day
 
 cURL
 
@@ -175,13 +153,10 @@ cURL
 curl "https://api.anthropic.com/v1/organizations/usage_report/claude_code?\
 starting_at=2025-09-08" \
   -H "anthropic-version: 2023-06-01" \
-  -H "x-api-key: $ADMIN_API_KEY"
+  -H "x-api-key: $ANTHROPIC_ADMIN_KEY"
 ```
 
-
-
-
-Get analytics with pagination
+#### Get analytics with pagination
 
 cURL
 
@@ -193,20 +168,17 @@ curl "https://api.anthropic.com/v1/organizations/usage_report/claude_code?\
 starting_at=2025-09-08&\
 limit=20" \
   -H "anthropic-version: 2023-06-01" \
-  -H "x-api-key: $ADMIN_API_KEY"
+  -H "x-api-key: $ANTHROPIC_ADMIN_KEY"
 
 # Subsequent request using cursor from response
 curl "https://api.anthropic.com/v1/organizations/usage_report/claude_code?\
 starting_at=2025-09-08&\
 page=page_MjAyNS0wNS0xNFQwMDowMDowMFo=" \
   -H "anthropic-version: 2023-06-01" \
-  -H "x-api-key: $ADMIN_API_KEY"
+  -H "x-api-key: $ANTHROPIC_ADMIN_KEY"
 ```
 
-
-
-
-Request parameters
+### Request parameters
 
 | Parameter     | Type    | Required | Description                                                             |
 |---------------|---------|----------|-------------------------------------------------------------------------|
@@ -214,17 +186,11 @@ Request parameters
 | `limit`       | integer | No       | Number of records per page (default: 20, max: 1000)                     |
 | `page`        | string  | No       | Opaque cursor token from previous response's `next_page` field          |
 
-
-
-
-Available metrics
+### Available metrics
 
 Each response record contains the following metrics for a single user on a single day:
 
-
-
-
-Dimensions
+#### Dimensions
 
 - **date:** Date in RFC 3339 format (UTC timestamp)
 - **actor:** The user or API key that performed the Claude Code actions (either `user_actor` with `email_address` or `api_actor` with `api_key_name`)
@@ -232,10 +198,7 @@ Dimensions
 - **customer_type:** Type of customer account (`api` for API customers, `subscription` for Pro/Team customers)
 - **terminal_type:** Type of terminal or environment where Claude Code was used (for example, `vscode`, `iTerm.app`, `tmux`)
 
-
-
-
-Core metrics
+#### Core metrics
 
 - **num_sessions:** Number of distinct Claude Code sessions initiated by this actor
 - **lines_of_code.added:** Total number of lines of code added across all files by Claude Code
@@ -243,10 +206,7 @@ Core metrics
 - **commits_by_claude_code:** Number of git commits created through Claude Code's commit functionality
 - **pull_requests_by_claude_code:** Number of pull requests created through Claude Code's PR functionality
 
-
-
-
-Tool action metrics
+#### Tool action metrics
 
 Breakdown of tool action acceptance and rejection rates by tool type:
 
@@ -255,10 +215,7 @@ Breakdown of tool action acceptance and rejection rates by tool type:
 - **write_tool.accepted/rejected:** Number of Write tool proposals that the user accepted/rejected
 - **notebook_edit_tool.accepted/rejected:** Number of NotebookEdit tool proposals that the user accepted/rejected
 
-
-
-
-Model breakdown
+#### Model breakdown
 
 For each Claude model used:
 
@@ -268,10 +225,7 @@ For each Claude model used:
 - **estimated_cost.amount:** Estimated cost in cents USD for this model
 - **estimated_cost.currency:** Currency code for the cost amount (currently always `USD`)
 
-
-
-
-Response structure
+### Response structure
 
 The API returns data in the following format:
 
@@ -282,7 +236,7 @@ The API returns data in the following format:
       "date": "2025-09-08T00:00:00Z",
       "actor": {
         "type": "user_actor",
-        "email_address": "[email protected]"
+        "email_address": "developer@company.com"
       },
       "organization_id": "dc9f6c26-b22c-4831-8d01-0446bada88f1",
       "customer_type": "api",
@@ -316,7 +270,7 @@ The API returns data in the following format:
       },
       "model_breakdown": [
         {
-          "model": "claude-opus-5",
+          "model": "claude-opus-5-5",
           "tokens": {
             "input": 100000,
             "output": 35000,
@@ -325,7 +279,7 @@ The API returns data in the following format:
           },
           "estimated_cost": {
             "currency": "USD",
-            "amount": 141
+            "amount": 113
           }
         }
       ]
@@ -338,10 +292,7 @@ The API returns data in the following format:
 
 
 
-
-
-
-Pagination
+## Pagination
 
 The API supports cursor-based pagination for organizations with large numbers of users:
 
@@ -351,10 +302,7 @@ The API supports cursor-based pagination for organizations with large numbers of
 
 The cursor encodes the position of the last record and ensures stable pagination even as new data arrives. Each pagination session maintains a consistent data boundary to ensure you don't miss or duplicate records.
 
-
-
-
-Common use cases
+## Common use cases
 
 - **Executive dashboards:** Create high-level reports showing Claude Code impact on development velocity
 - **AI tool comparison:** Export metrics to compare Claude Code with other AI coding tools such as Copilot and Cursor
@@ -363,29 +311,17 @@ Common use cases
 - **Adoption monitoring:** Identify which teams and users are getting the most value from Claude Code
 - **ROI justification:** Provide concrete metrics to justify and expand Claude Code adoption internally
 
+## Frequently asked questions
 
-
-
-Frequently asked questions
-
-
-
-
-How fresh is the analytics data?
+### How fresh is the analytics data?
 
 Claude Code analytics data typically appears within 1 hour of user activity completion. To ensure consistent pagination results, only data older than 1 hour is included in responses.
 
-
-
-
-Can I get real-time metrics?
+### Can I get real-time metrics?
 
 No, this API provides daily aggregated metrics only. For real-time monitoring, consider using the [OpenTelemetry integration](https://code.claude.com/docs/en/monitoring-usage).
 
-
-
-
-How are users identified in the data?
+### How are users identified in the data?
 
 Users are identified through the `actor` field in two ways:
 
@@ -394,50 +330,32 @@ Users are identified through the `actor` field in two ways:
 
 The `customer_type` field indicates whether the usage is from `api` customers (pay-as-you-go API) or `subscription` customers (Pro/Team plans).
 
-
-
-
-What's the data retention period?
+### What's the data retention period?
 
 Historical Claude Code analytics data is retained and accessible through the API. There is no specified deletion period for this data.
 
-
-
-
-Which Claude Code deployments are supported?
+### Which Claude Code deployments are supported?
 
 This API only tracks Claude Code usage on the Claude API. Usage through [Claude in Amazon Bedrock](/docs/en/build-with-claude/claude-in-amazon-bedrock), [Claude in Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry), [Claude on Google Cloud](/docs/en/build-with-claude/claude-on-vertex-ai), or [Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws) is not included.
 
-
-
-
-What does it cost to use this API?
+### What does it cost to use this API?
 
 The Claude Code Analytics API is free to use for all organizations with access to the Admin API.
 
-
-
-
-How do I calculate tool acceptance rates?
+### How do I calculate tool acceptance rates?
 
 Tool acceptance rate = `accepted / (accepted + rejected)` for each tool type. For example, if the edit tool shows 45 accepted and 5 rejected, the acceptance rate is 90%.
 
-
-
-
-What time zone is used for the date parameter?
+### What time zone is used for the date parameter?
 
 All dates are in UTC. The `starting_at` parameter should be in YYYY-MM-DD format and represents UTC midnight for that day.
 
-
-
-
-See also
+## See also
 
 The Claude Code Analytics API helps you understand and optimize your team's development workflow. Learn more about related features:
 
 - [Admin API](/docs/en/manage-claude/admin-api)
-- [Admin API reference](/docs/en/api/admin)
+- [Admin API reference](/docs/en/api/beta/organization)
 - [Claude Code Analytics dashboard](/claude-code)
 - [Usage and Cost API](/docs/en/manage-claude/usage-cost-api) - Track API usage across all Anthropic services
 - [Compliance API](/docs/en/manage-claude/compliance-api) - Retrieve audit and activity data

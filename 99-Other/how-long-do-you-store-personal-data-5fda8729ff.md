@@ -2,7 +2,7 @@
 title: "How long do you store my organization’s data? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/7996866-how-long-do-you-store-personal-data"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:53Z"
+fetched_at: "2026-08-04T07:05:59Z"
 ---
 
 # How long do you store my organization’s data?

@@ -2,7 +2,7 @@
 title: "Schedule recurring tasks in Claude Code Desktop - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/desktop-scheduled-tasks"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:38:17Z"
+fetched_at: "2026-09-26T06:38:07Z"
 tags: ["claude-code", "desktop"]
 ---
 
@@ -27,7 +27,7 @@ Set up scheduled tasks in Claude Code Desktop to run Claude automatically on a r
 
 Copy pageCopy page
 
-Scheduled tasks start a new session automatically at a time and frequency you choose. Use them for recurring work like daily code reviews, dependency update checks, or morning briefings that pull from your calendar and inbox. The Desktop app’s **Routines** page lets you create both local scheduled tasks and remote [routines](/docs/en/routines). A local task runs on your machine with direct access to your files and tools, but only fires while the app is open and your computer is awake. A remote routine runs on Anthropic-managed cloud infrastructure even when your computer is off, and can also fire on API calls or GitHub events. This page covers local scheduled tasks; for remote routines and their trigger options, see [Routines](/docs/en/routines).
+Scheduled tasks start a new session automatically at a time and frequency you choose. Use them for recurring work like daily code reviews, dependency update checks, or morning briefings that pull from your calendar and inbox. The Desktop app’s **Routines** page lets you create both local scheduled tasks and remote [routines](/docs/en/routines). A local task runs on your machine with direct access to your files and tools, but only fires while the app is open and your computer is awake. A remote routine runs in the cloud even when your computer is off, and can also fire on API calls or GitHub events. This page covers local scheduled tasks; for remote routines and their trigger options, see [Routines](/docs/en/routines).
 
 
 [​](#compare-scheduling-options)
@@ -36,17 +36,17 @@ Compare scheduling options
 
 Claude Code offers three ways to schedule recurring or one-off work:
 
-|                            | [Cloud](/docs/en/routines)     | [Desktop](/docs/en/desktop-scheduled-tasks) | [`/loop`](/docs/en/scheduled-tasks) |
-|:---------------------------|:-------------------------------|:--------------------------------------------|:------------------------------------|
-| Runs on                    | Anthropic cloud                | Your machine                                | Your machine                        |
-| Requires machine on        | No                             | Yes                                         | Yes                                 |
-| Requires open session      | No                             | No                                          | Yes                                 |
-| Persistent across restarts | Yes                            | Yes                                         | Restored on `--resume` if unexpired |
-| Access to local files      | No (fresh clone)               | Yes                                         | Yes                                 |
-| MCP servers                | Connectors configured per task | [Config files](/docs/en/mcp) and connectors | Inherits from session               |
-| Permission prompts         | No (runs autonomously)         | Configurable per task                       | Inherits from session               |
-| Customizable schedule      | Via `/schedule` in the CLI     | Yes                                         | Yes                                 |
-| Minimum interval           | 1 hour                         | 1 minute                                    | 1 minute                            |
+|                            | [Cloud](/docs/en/routines)          | [Desktop](/docs/en/desktop-scheduled-tasks) | [`/loop`](/docs/en/scheduled-tasks)                                             |
+|:---------------------------|:------------------------------------|:--------------------------------------------|:--------------------------------------------------------------------------------|
+| Runs on                    | Cloud, Anthropic-managed by default | Your machine                                | Your machine                                                                    |
+| Requires machine on        | No                                  | Yes                                         | Yes                                                                             |
+| Requires open session      | No                                  | No                                          | Yes                                                                             |
+| Persistent across restarts | Yes                                 | Yes                                         | Restored on `--resume`, with [exceptions](/docs/en/scheduled-tasks#limitations) |
+| Access to local files      | No (fresh clone)                    | Yes                                         | Yes                                                                             |
+| MCP servers                | Connectors configured per task      | [Config files](/docs/en/mcp) and connectors | Inherits from session                                                           |
+| Permission prompts         | No (runs autonomously)              | Configurable per task                       | Inherits from session                                                           |
+| Customizable schedule      | Via `/schedule` in the CLI          | Yes                                         | Yes                                                                             |
+| Minimum interval           | 1 hour                              | 1 minute                                    | 1 minute                                                                        |
 
 Use **cloud tasks** for work that should run reliably without your machine. Use **Desktop tasks** when you need access to local files and tools. Use **`/loop`** for quick polling during a session.
 
@@ -57,7 +57,7 @@ By default, scheduled tasks run against whatever state your working directory is
 
 Create a scheduled task
 
-Click **Routines** in the sidebar, then click **New routine** and choose **Local**. Configure these fields:
+On Claude Desktop before 1.1.5368, local scheduled tasks aren’t available. In the [**Code** tab](/docs/en/desktop), click **Routines** in the sidebar or in the sidebar’s **More** menu, then click **New routine** and choose **Local**. Configure these fields:
 
 | Field        | Description                                                                                                                                                                                                                                                                    |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -77,7 +77,7 @@ Pick a preset from the Schedule control:
 
 - **Manual**: no schedule, only runs when you click **Run now**. Useful for saving a prompt you trigger on demand
 - **Hourly**: runs every hour
-- **Daily**: shows a time picker, defaults to 9:00 AM local time
+- **Daily**: runs every day at the local time you pick
 - **Weekdays**: same as Daily but skips Saturday and Sunday
 - **Weekly**: shows a time picker and a day picker
 
@@ -88,7 +88,7 @@ For intervals the picker doesn’t offer, such as every 15 minutes, the first of
 
 How scheduled tasks run
 
-Scheduled tasks run on your machine. Desktop checks the schedule every minute while the app is open and starts a fresh session when a task is due, independent of any manual sessions you have open. Each task gets a small delay of a few minutes after the scheduled time to stagger API traffic. The delay is deterministic: the same task always starts at the same offset. When a task fires, you get a desktop notification and a new session appears under a **Scheduled** section in the sidebar. Open it to see what Claude did, review changes, or respond to permission prompts. The session works like any other, except that Claude can’t send or receive [cross-session messages](/docs/en/desktop#work-across-sessions) in a scheduled run: Claude can edit files, run commands, create commits, and open pull requests. Tasks only run while the desktop app is running and your computer is awake. If your computer sleeps through a scheduled time, the run is skipped. To prevent idle-sleep, enable **Keep computer awake** in Settings under **Desktop app → General**. Closing the laptop lid still puts it to sleep. For tasks that need to run even when your computer is off, or that should trigger on an API call or GitHub event, create a remote [routine](/docs/en/routines) instead.
+Scheduled tasks run on your machine. Desktop checks the schedule every minute while the app is open and starts a fresh session when a task is due, independent of any manual sessions you have open. Each task gets a small delay of a few minutes after the scheduled time to stagger API traffic. The delay is deterministic: the same task always starts at the same offset. When a task fires, you get a desktop notification and a new session appears under a **Scheduled** section in the sidebar. Open it to see what Claude did, review changes, or respond to permission prompts. Claude can edit files, run commands, create commits, and open pull requests, the same as in a session you start yourself, but can’t send or receive [messages between your desktop sessions](/docs/en/desktop#work-across-sessions) through the desktop app’s session surface. Tasks only run while the desktop app is running and your computer is awake. If your computer sleeps through a scheduled time, the run is skipped. To prevent idle-sleep, enable **Keep computer awake** in Settings under **Desktop app → General**. Closing the laptop lid still puts it to sleep. For tasks that need to run even when your computer is off, or that should trigger on an API call or GitHub event, create a remote [routine](/docs/en/routines) instead.
 
 
 [​](#missed-runs)
@@ -102,14 +102,14 @@ When the app starts or your computer wakes, Desktop checks whether each task mis
 
 Permissions for scheduled tasks
 
-Each task has its own permission mode, which you set when creating or editing the task. Allow rules from `~/.claude/settings.json` also apply to scheduled task sessions. If a task runs in [Manual mode](/docs/en/desktop#choose-a-permission-mode) and needs to run a tool it doesn’t have permission for, the run stalls until you approve it. The session stays open in the sidebar so you can answer later. To avoid stalls, click **Run now** after creating a task, watch for permission prompts, and select “always allow” for each one. Future runs of that task auto-approve the same tools without prompting. You can review and revoke these approvals from the task’s detail page. Connector tools [your organization set to `ask`](/docs/en/mcp#organization-controls-on-connector-tools) and MCP tools marked [`requiresUserInteraction`](/docs/en/mcp#require-approval-for-a-specific-tool) prompt on every call and don’t offer an always-allow option. Runs that call these tools stall each time.
+Each task has its own permission mode, which you set when creating or editing the task. Allow rules from `~/.claude/settings.json` also apply to scheduled task sessions. If a task runs in [Manual mode](/docs/en/desktop#choose-a-permission-mode) and needs to run a tool it doesn’t have permission for, the run stalls until you approve it. The session stays open in the sidebar so you can answer later. To avoid stalls, click **Run now** after creating a task, watch for permission prompts, and select “always allow” for each one. Future runs of that task auto-approve the same tools without prompting. You can review and revoke these approvals from the task’s detail page. MCP tools marked [`requiresUserInteraction`](/docs/en/mcp#require-approval-for-a-specific-tool) prompt on every call and don’t offer an always-allow option. Runs that call these tools stall each time.
 
 
 [​](#manage-scheduled-tasks)
 
 Manage scheduled tasks
 
-Click a task in the **Routines** list to open its detail page. From here you can:
+In the **Code** tab, click a task in the **Routines** list to open its detail page. From here you can:
 
 - **Run now**: start the task immediately without waiting for the next scheduled time
 - **Status**: toggle between Active and Paused to pause or resume scheduled runs without deleting the task
@@ -125,7 +125,7 @@ You can also list, create, edit, and pause tasks by asking Claude in any Desktop
 
 Related resources
 
-- [Routines](/docs/en/routines): run tasks on Anthropic-managed infrastructure on a schedule, via API call, or in response to GitHub events, even when your computer is off
+- [Routines](/docs/en/routines): run tasks in the cloud on a schedule, via API call, or in response to GitHub events, even when your computer is off
 - [Run prompts on a schedule](/docs/en/scheduled-tasks): session-scoped scheduling with `/loop` in the CLI
 - [Claude Code GitHub Actions](/docs/en/github-actions): run Claude on a schedule in CI instead of on your machine
 - [Use Claude Code Desktop](/docs/en/desktop): the full Desktop app guide

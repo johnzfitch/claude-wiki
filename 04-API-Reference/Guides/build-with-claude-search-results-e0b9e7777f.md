@@ -2,7 +2,7 @@
 title: "Search results - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/search-results"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-08-02T05:41:01Z"
+fetched_at: "2026-09-26T06:39:26Z"
 tags: ["api", "search"]
 ---
 
@@ -12,31 +12,27 @@ tags: ["api", "search"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fsearch-results)
 
 
 
-Search
+
 
+SearchCtrlK
 
 First steps
 
-[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)
+[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)[Authentication](/docs/en/manage-claude/authentication)
 
 Building with Claude
 
@@ -46,11 +42,11 @@ Model capabilities
 
 [Effort](/docs/en/build-with-claude/effort)[Task budgets (beta)](/docs/en/build-with-claude/task-budgets)[Fast mode (research preview)](/docs/en/build-with-claude/fast-mode)[Structured outputs](/docs/en/build-with-claude/structured-outputs)[Citations](/docs/en/build-with-claude/citations)[Streaming Messages](/docs/en/build-with-claude/streaming)[Batch processing](/docs/en/build-with-claude/batch-processing)[Search results](/docs/en/build-with-claude/search-results)[Streaming refusals](/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals)[Multilingual support](/docs/en/build-with-claude/multilingual-support)[Embeddings](/docs/en/build-with-claude/embeddings)
 
-Thinking
+[Thinking](/docs/en/build-with-claude/thinking)
 
 Tools
 
-[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
+[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Browser use tool](/docs/en/agents-and-tools/tool-use/browser-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
 
 Tool infrastructure
 
@@ -58,13 +54,15 @@ Tool infrastructure
 
 Context management
 
-[Context windows](/docs/en/build-with-claude/context-windows)[Compaction](/docs/en/build-with-claude/compaction)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics (beta)](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+[Context windows](/docs/en/build-with-claude/context-windows)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+
+[Compaction](/docs/en/build-with-claude/compaction)
 
 Working with files
 
 [Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
 
-Images and vision
+[Images and vision](/docs/en/build-with-claude/vision)
 
 Skills
 
@@ -74,45 +72,37 @@ MCP
 
 [Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)[MCP connector](/docs/en/agents-and-tools/mcp-connector)
 
-MCP tunnels
+[MCP tunnels](/docs/en/agents-and-tools/mcp-tunnels/overview)
 
 Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](/docs/en/build-with-claude/claude-in-amazon-bedrock)[Amazon Bedrock (Opus 4.6 and earlier)](/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy)[Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)[Google Cloud](/docs/en/build-with-claude/claude-on-vertex-ai)[Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry)
 
-[](/login)
+[Console](/)
 
-
-
-
-Messages
-
-Search results
-
-Messages/Model capabilities
+[Messages](/docs/en/intro)Model capabilities
 
 # Search results
 
+Copy page
 
 
 
 Enable natural citations for RAG applications by providing search results with source attribution
 
+Copy page
 
 
 
-
+
 
-For how zero data retention (ZDR) applies to this feature, see [API and data retention](/docs/en/manage-claude/api-and-data-retention).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](/docs/en/manage-claude/api-and-data-retention).
 
 Search result content blocks let Claude cite your own content the same way it cites web search results: each citation carries the source and title you provided. Use them in RAG (Retrieval-Augmented Generation) applications where Claude needs to attribute answers to your documents.
 
-All [active models](/docs/en/about-claude/models/overview) support search results with citations, with the exception of Claude Haiku 3. No beta header is required: search results are part of the standard Messages API.
+All [active models](/docs/en/models/overview) support search results with citations, with the exception of Claude Haiku 3. No beta header is required: search results are part of the standard Messages API.
 
-
-
-
-How it works
+## How it works
 
 Search results can be provided in two ways:
 
@@ -121,10 +111,7 @@ Search results can be provided in two ways:
 
 In both cases, Claude cites the search results automatically when citations are enabled. No special prompting is needed: ask your question, and citations appear on the text blocks that draw on your content.
 
-
-
-
-Search result schema
+### Search result schema
 
 Search results use the following structure:
 
@@ -149,10 +136,7 @@ Search results use the following structure:
 
 
 
-
-
-
-Required fields
+### Required fields
 
 | Field     | Type   | Description                                                                                                      |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------|
@@ -161,10 +145,7 @@ Required fields
 | `title`   | string | A descriptive title for the search result                                                                        |
 | `content` | array  | An array of text blocks containing the actual content                                                            |
 
-
-
-
-Optional fields
+### Optional fields
 
 | Field           | Type   | Description                                                                                                                                                                                                                                                 |
 |-----------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -178,17 +159,11 @@ Each item in the `content` array must be a text block with:
 
 Search results hold text only. Images and other media are not supported inside the `content` array.
 
-
-
-
-Method 1: Search results from tool calls
+## Method 1: Search results from tool calls
 
 Returning search results from your custom tools enables dynamic RAG applications: tools fetch content at runtime, and Claude cites it in the response. The following example forces the tool call with [`tool_choice`](/docs/en/agents-and-tools/tool-use/define-tools#forcing-tool-use), so the retrieval step runs every time.
 
-
-
-
-Example: Knowledge base tool
+### Example: Knowledge base tool
 
 cURL
 
@@ -308,10 +283,7 @@ if tool_use is not None:
     print(final_response)
 ```
 
-
-
-
-Method 2: Search results as top-level content
+## Method 2: Search results as top-level content
 
 You can also provide search results directly in user messages. This is useful for:
 
@@ -320,10 +292,7 @@ You can also provide search results directly in user messages. This is useful fo
 - Content from external search services
 - Testing and development
 
-
-
-
-Example: Direct search results
+### Example: Direct search results
 
 cURL
 
@@ -352,7 +321,7 @@ client = Anthropic()
 
 # Provide search results directly in the user message
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     messages=[
         MessageParam(
@@ -394,10 +363,7 @@ response = client.messages.create(
 print(response)
 ```
 
-
-
-
-Claude's response with citations
+## Claude's response with citations
 
 Regardless of how search results are provided, Claude automatically includes citations when using information from them:
 
@@ -445,10 +411,7 @@ Regardless of how search results are provided, Claude automatically includes cit
 
 
 
-
-
-
-Citation fields
+### Citation fields
 
 Each citation includes:
 
@@ -464,10 +427,7 @@ Each citation includes:
 
 The block indices identify a slice of the search result's `content` array, and `cited_text` is the full text of that slice. The text block is the minimal citable unit: Claude cites whole blocks, not substrings within a block. To get finer-grained citations, split your search result content into smaller blocks (see [Multiple content blocks](#multiple-content-blocks)).
 
-
-
-
-Multiple content blocks
+## Multiple content blocks
 
 Search results can contain multiple text blocks in the `content` array:
 
@@ -514,15 +474,9 @@ A citation referencing the rate limits block looks like:
 
 When this search result is cited, `start_block_index` and `end_block_index` identify which of these blocks the citation covers, and `cited_text` contains exactly those blocks' text. Splitting content into smaller, focused blocks gives Claude finer citation boundaries; combining content into one block means every citation returns the full text. This is the same model used by [custom content documents](/docs/en/build-with-claude/citations#custom-content-documents) in the Citations feature.
 
+## Advanced usage
 
-
-
-Advanced usage
-
-
-
-
-Combining both methods
+### Combining both methods
 
 You can mix both methods in the same conversation. Claude cites from either source, and `search_result_index` counts all `search_result` blocks in request order, regardless of source.
 
@@ -572,7 +526,7 @@ knowledge_base_tool = {
 # Replay a conversation that provides search results both ways: the first
 # user message carries a pre-fetched result, the tool result returns another
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     tools=[knowledge_base_tool],
     messages=[
@@ -690,19 +644,13 @@ The response cites both sources. The pre-fetched result is `search_result_index:
 
 
 
-
-
-
-Mixing with other content types
+### Mixing with other content types
 
 In user messages, `search_result` blocks can sit alongside any other content block. The Method 2 example pairs search results with a `text` question, and image or document blocks can join them the same way.
 
 Tool results are stricter: if any block in a `tool_result` content array is a `search_result`, all of its blocks must be `search_result`. Mixing search results with other block types in the same tool result returns a validation error. To return supporting text alongside tool-sourced search results, include it as a text block inside one of the search results' `content` arrays, where it also becomes citable.
 
-
-
-
-Cache control
+### Cache control
 
 Add `cache_control` on the search result block to cache it for reuse across requests. It sits alongside `citations` on the same block:
 
@@ -721,10 +669,7 @@ Add `cache_control` on the search result block to cache it for reuse across requ
 
 See [Prompt caching](/docs/en/build-with-claude/prompt-caching) for minimum cacheable lengths and other requirements.
 
-
-
-
-Citation control
+### Citation control
 
 By default, citations are disabled for search results. You can enable citations by explicitly setting the `citations` configuration:
 
@@ -748,33 +693,21 @@ When `citations.enabled` is set to `true`, Claude attaches citation references t
 
 Citations are all-or-nothing: either all search results in a request must have citations enabled, or all must have them disabled. Mixing search results with different citation settings results in an error.
 
+## Best practices
 
-
-
-Best practices
-
-
-
-
-For tool-based search (Method 1)
+### For tool-based search (Method 1)
 
 - **Dynamic content:** Use for real-time searches and dynamic RAG applications
 - **Error handling:** Return appropriate messages when searches fail
 - **Result limits:** Return only the most relevant results to avoid context overflow
 
-
-
-
-For top-level search (Method 2)
+### For top-level search (Method 2)
 
 - **Pre-fetched content:** Use when you already have search results
 - **Batch processing:** Ideal for processing multiple search results at once
 - **Testing:** Great for testing citation behavior with known content
 
-
-
-
-General best practices
+### General best practices
 
 1.  **Structure results effectively:**
 
@@ -790,48 +723,41 @@ General best practices
 
 3.  **Handle errors gracefully:** when a search fails or returns nothing, return a plain text block describing the outcome (for example, `{"type": "text", "text": "No results found."}`) instead of raising an error: Claude explains the empty result to the user, and the conversation continues.
 
-
-
-
-Limitations
+## Limitations
 
 - Search result content blocks are available on Claude API, Amazon Bedrock, and Google Cloud.
 - Only text content is supported within search results (no images or other media).
 - `search_result` blocks can only appear in user messages (including inside tool results). Assistant messages with search results are rejected.
 - When the [web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool) is enabled in the same request, citations must be enabled on all `search_result` blocks.
 
-
-
-
-Next steps
-
+## Next steps
 
 
 
-Streaming refusals
+[Streaming refusals](/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals)
 
 Detect and handle refusal stop reasons in streaming responses, and retry refused requests on a fallback model.
 
-
 
 
-Citations
+[Citations](/docs/en/build-with-claude/citations)
 
 Ground Claude's responses in your source documents. Citations return the exact passages that support each claim, so you can verify answers and surface sources to your users.
 
+
 
-Web search tool
+[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)
 
 Give Claude access to current web content with cited sources, optional dynamic filtering, and domain controls.
 
-
 
 
-Messages API reference
+[Messages API reference](/docs/en/api/messages/create)
 
 See the complete Messages API documentation, including content block types.
 
+
 
-Prompt caching
+[Prompt caching](/docs/en/build-with-claude/prompt-caching)
 
 Cache search results with `cache_control` to reduce cost and latency on repeated requests.

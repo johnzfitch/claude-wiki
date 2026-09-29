@@ -2,7 +2,7 @@
 title: "Overview - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/basic/patterns"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:41Z"
+fetched_at: "2026-09-29T06:30:31Z"
 tags: ["mcp"]
 ---
 

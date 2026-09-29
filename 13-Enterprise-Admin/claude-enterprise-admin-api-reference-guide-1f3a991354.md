@@ -2,7 +2,7 @@
 title: "Claude Enterprise Admin API reference guide | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15330651-claude-enterprise-admin-api-reference-guide"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:42:50Z"
+fetched_at: "2026-09-29T06:31:53Z"
 tags: ["api", "authentication", "enterprise"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["api", "authentication", "enterprise"]
 
 June 24, 2026
 
+Copy for LLM
 
 This guide covers **spend limits** and **spend limit increase requests** for your Claude Enterprise organization using the Claude Enterprise Admin API. Spend limits let you cap each member's usage credit spending over a recurring period, see where each member's limit is inherited from, and review or act on members' requests for a higher limit.
 

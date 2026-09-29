@@ -2,13 +2,14 @@
 title: "I would like to input sensitive data into my chats with Claude. Who can view my conversations? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8325621-i-would-like-to-input-sensitive-data-into-my-chats-with-claude-who-can-view-my-conversations"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:42:53Z"
+fetched_at: "2026-09-29T06:32:07Z"
 ---
 
 # I would like to input sensitive data into my chats with Claude. Who can view my conversations?
 
 May 22, 2026
 
+Copy for LLM
 
 *This article is about our consumer products (e.g. Claude Free, Pro, Max (and when using Claude Code with those accounts)).*
 

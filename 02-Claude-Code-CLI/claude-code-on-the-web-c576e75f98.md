@@ -2,7 +2,7 @@
 title: "Claude Code on the web | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12618689-claude-code-on-the-web"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:42:37Z"
+fetched_at: "2026-09-29T06:31:06Z"
 tags: ["claude-code"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["claude-code"]
 
 March 16, 2026
 
+Copy for LLM
 
 Claude Code on the web runs Claude Code tasks remotely, working with code from your GitHub repositories. This article explains how it works, when to use it instead of running Claude Code in your terminal or IDE, and what workflows it enables.
 

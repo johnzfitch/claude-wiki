@@ -8,6 +8,9 @@ All documentation for Mobile Desktop.
 
 # Access Claude for iOS on your Lock Screen, Control Center, and Action button
 
+July 9, 2026
+
+Copy for LLM
 
 The features described in this guide are available on iOS 18 and above.
 
@@ -63,6 +66,9 @@ You’ll now be able to Hold to Open the **[Action button](https://support.apple
 
 # Access Claude for iOS on your Lock Screen, Control Center, and Action button
 
+July 9, 2026
+
+Copy for LLM
 
 The features described in this guide are available on iOS 18 and above.
 
@@ -177,6 +183,8 @@ You’ll now be able to Hold to Open the [Action Button](https://support.apple.c
 
 April 15, 2026
 
+Copy for LLM
+
 The MCPB and Desktop Extensions build guide has moved to the Claude developer docs.
 
 [View the MCPB build guide →](https://claude.com/docs/connectors/building/mcpb)
@@ -189,6 +197,7 @@ The MCPB and Desktop Extensions build guide has moved to the Claude developer do
 
 March 16, 2026
 
+Copy for LLM
 
 Administrators on Team or Enterprise plans can deploy Claude Desktop automatically to manage installations and updates centrally. Claude Desktop installs to \`/Applications\` and updates automatically when new versions are released, unless disabled via enterprise policies.
 
@@ -234,6 +243,9 @@ For shared machines, disable auto-updates via enterprise policies and manage upd
 
 # Deploy Claude Desktop for Windows
 
+July 13, 2026
+
+Copy for LLM
 
 Administrators on Team or Enterprise plans can deploy Claude Desktop automatically across their organization to manage installations and updates centrally. We offer MSIX packages for Windows deployments via Microsoft Intune, SCCM, Group Policy, or PowerShell.
 
@@ -1402,6 +1414,7 @@ Try creating a new session. If persistent, restart the desktop app.
 
 March 16, 2026
 
+Copy for LLM
 
 The desktop extension allowlist is available for Owners and Primary Owners of Team and Enterprise plans.
 
@@ -1616,8 +1629,8 @@ What’s next
 
 # Getting Started with Local MCP Servers on Claude Desktop
 
-June 30, 2026
 
+Copy for LLM
 
 The Model Context Protocol (MCP) is an open protocol that enables seamless integration between LLM applications and external data sources and tools. With the introduction of desktop extensions, installing and managing local MCP servers has become significantly easier.
 
@@ -1625,7 +1638,7 @@ The Model Context Protocol (MCP) is an open protocol that enables seamless integ
 
 Desktop extensions provide a streamlined way to install and manage local MCP servers through single-click installable packages. Instead of manually configuring JSON files and managing dependencies, you can now install local MCP servers on your computer as easily as browser extensions.
 
-**Note:** We’re building a directory of desktop extensions – if you’re a developer hoping to add an extension you built to the directory, complete our [desktop extensions interest form](https://docs.google.com/forms/d/14_Dmcig4z8NeRMB_e7TOyrKzuZ88-BLYdLvS6LPhiZU/viewform?edit_requested=true) to share more information with us.
+**Note:** If you’re a developer who wants to list a desktop extension (a local MCP server for Claude Desktop) in the directory, submit it through the **[desktop extension submission form](https://clau.de/desktop-extention-submission)**. To submit a plugin or a remote connector instead, use the **[developer portal](https://claude.ai/directory/manage)**. See **[Submitting your plugin](https://claude.com/docs/plugins/submit)** for what each route accepts.
 
 ## Installing desktop extensions from the directory
 
@@ -1921,6 +1934,9 @@ Note that if you have an active Claude Pro subscription and would like to uninst
 
 # Install Claude for Android
 
+July 9, 2026
+
+Copy for LLM
 
 ## Install the Claude for Android app
 
@@ -1956,6 +1972,8 @@ You can install the Claude app onto your device by navigating to the Play Store 
 # How to update Claude for Android
 
 March 16, 2026
+
+Copy for LLM
 
 If you aren’t seeing the latest features on Claude for Android, you may need to [update your mobile app manually by following these instructions from Google](https://support.google.com/googleplay/answer/113412?hl=en):
 
@@ -1994,9 +2012,10 @@ If you aren’t seeing the latest features on Claude for Android, you may need t
 
 # How to update Claude for iOS
 
-March 16, 2026
 
-If you aren’t seeing the latest features on Claude for iOS, you may need to [update your mobile app manually by following these instructions from Apple](https://support.apple.com/en-us/102629):
+Copy for LLM
+
+If you aren’t seeing the latest features on Claude for iOS, you may need to update your mobile app manually by following these **[instructions from Apple](https://support.apple.com/en-us/102629)**:
 
 1.  Open the App Store.
 
@@ -2012,8 +2031,8 @@ If you aren’t seeing the latest features on Claude for iOS, you may need to [u
 
 # Install Claude Desktop
 
-June 30, 2026
 
+Copy for LLM
 
 The Claude desktop apps bring Claude's capabilities directly to your computer, allowing for seamless integration with your workflow.
 
@@ -2033,7 +2052,7 @@ Claude Desktop is available on macOS, Windows, and Linux (beta). What you can do
 
 ## Installation steps for mac OS and Windows
 
-1.  Visit the **[Claude downloads page](http://claude.ai/download)**.
+1.  Visit the **[Claude downloads page](https://claude.ai/download)**.
 
 2.  Select the appropriate version for your operating system:
 
@@ -2075,7 +2094,7 @@ The app doesn't update itself. Updates arrive with your system's regular package
 
 If you can’t install Claude Desktop using apt, you can install it by downloading a .deb file instead:
 
-1.  Visit the **[Claude downloads page](http://claude.ai/download)**.
+1.  Visit the **[Claude downloads page](https://claude.ai/download)**.
 
 2.  Find the .deb for your architecture (x64 or arm64) and click "Download."
 
@@ -2113,7 +2132,7 @@ Desktop extensions transform how you connect Claude to your desktop applications
 
 To explore desktop extensions, navigate to Settings \> Extensions within the Claude Desktop app after installation.
 
-**Note:** We’re building a directory of desktop extensions – if you’re a developer hoping to add an extension you built to the directory, complete our **[desktop extensions interest form](https://docs.google.com/forms/d/14_Dmcig4z8NeRMB_e7TOyrKzuZ88-BLYdLvS6LPhiZU/viewform?edit_requested=true)** to share more information with us.
+**Note:** If you’re a developer who wants to list a desktop extension (a local MCP server for Claude Desktop) in the directory, submit it through the **[desktop extension submission form](https://clau.de/desktop-extention-submission)**. To submit a plugin or a remote connector instead, use the **[developer portal](https://claude.ai/directory/manage)**. See **[Submitting your plugin](https://claude.com/docs/plugins/submit)** for what each route accepts.
 
 Read more about desktop extensions in our **[Getting Started with Local MCP Servers on Claude Desktop](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)** article.
 
@@ -2161,6 +2180,9 @@ Cowork on Linux has its own setup requirements. Cowork runs your tasks in a virt
 
 # Install Claude for Android
 
+July 9, 2026
+
+Copy for LLM
 
 ## Install the Claude for Android app
 
@@ -2186,8 +2208,8 @@ Note that if you have an active paid subscription and would like to uninstall th
 
 # Install Claude for iOS
 
-May 19, 2026
 
+Copy for LLM
 
 ## How do I install the Claude for iOS app?
 
@@ -2199,7 +2221,7 @@ If you’re unable to locate Claude for iOS in your App Store, you may be locate
 
 ## What versions of iOS are supported?
 
-We currently support iOS version 17.0 and above.
+We currently support iOS version 18.0 and above, and iPadOS 18.0 and above.
 
 ## How do I uninstall the Claude for iOS app?
 
@@ -2213,8 +2235,8 @@ Note that if you have an active paid Claude subscription and would like to unins
 
 # Install Claude Desktop
 
-June 30, 2026
 
+Copy for LLM
 
 The Claude desktop apps bring Claude's capabilities directly to your computer, allowing for seamless integration with your workflow.
 
@@ -2234,7 +2256,7 @@ Claude Desktop is available on macOS, Windows, and Linux (beta). What you can do
 
 ## Installation steps for mac OS and Windows
 
-1.  Visit the **[Claude downloads page](http://claude.ai/download)**.
+1.  Visit the **[Claude downloads page](https://claude.ai/download)**.
 
 2.  Select the appropriate version for your operating system:
 
@@ -2276,7 +2298,7 @@ The app doesn't update itself. Updates arrive with your system's regular package
 
 If you can’t install Claude Desktop using apt, you can install it by downloading a .deb file instead:
 
-1.  Visit the **[Claude downloads page](http://claude.ai/download)**.
+1.  Visit the **[Claude downloads page](https://claude.ai/download)**.
 
 2.  Find the .deb for your architecture (x64 or arm64) and click "Download."
 
@@ -2314,7 +2336,7 @@ Desktop extensions transform how you connect Claude to your desktop applications
 
 To explore desktop extensions, navigate to Settings \> Extensions within the Claude Desktop app after installation.
 
-**Note:** We’re building a directory of desktop extensions – if you’re a developer hoping to add an extension you built to the directory, complete our **[desktop extensions interest form](https://docs.google.com/forms/d/14_Dmcig4z8NeRMB_e7TOyrKzuZ88-BLYdLvS6LPhiZU/viewform?edit_requested=true)** to share more information with us.
+**Note:** If you’re a developer who wants to list a desktop extension (a local MCP server for Claude Desktop) in the directory, submit it through the **[desktop extension submission form](https://clau.de/desktop-extention-submission)**. To submit a plugin or a remote connector instead, use the **[developer portal](https://claude.ai/directory/manage)**. See **[Submitting your plugin](https://claude.com/docs/plugins/submit)** for what each route accepts.
 
 Read more about desktop extensions in our **[Getting Started with Local MCP Servers on Claude Desktop](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)** article.
 
@@ -2362,8 +2384,8 @@ Cowork on Linux has its own setup requirements. Cowork runs your tasks in a virt
 
 # Install Claude for iOS
 
-May 19, 2026
 
+Copy for LLM
 
 ## How do I install the Claude for iOS app?
 
@@ -2375,7 +2397,7 @@ If you’re unable to locate Claude for iOS in your App Store, you may be locate
 
 ## What versions of iOS are supported?
 
-We currently support iOS version 17.0 and above.
+We currently support iOS version 18.0 and above, and iPadOS 18.0 and above.
 
 ## How do I uninstall the Claude for iOS app?
 
@@ -2410,12 +2432,203 @@ Note that if you have an active paid Claude subscription and would like to unins
 
 
 ---
+## navigating-the-claude-desktop-app-chat-claude-cowork-claude-code-claude-academy-e2af239bcb.md
+
+# Navigating the Claude desktop app
+
+Learn what changes when you use Claude in the desktop app, and what it can do across your computer and tools.
+
+6 minClaude.ai
+
+[Open Claude](https://claude.ai/new)
+
+The [Claude desktop app(opens in new tab)](https://claude.com/download) puts Claude on your computer. That lets Claude open from any app with a shortcut, work in more of your apps and websites, and directly read, edit, or save files in your folders to carry a task further from start to finish.
+
+Working in code? See the [Claude Code desktop docs(opens in new tab)](https://code.claude.com/docs/en/desktop).
+
+In this guide
+
+1.  [1. Claude is one shortcut awayYou want Claude without switching windows](#1-claude-is-one-shortcut-away)
+2.  [2. Claude can work in your files, apps, and websitesThe work is in your files, an app on your computer, or a website](#2-claude-can-work-in-your-files-apps-and-websites)
+3.  [3. Claude can keep going while you're awayA task takes a while and needs your computer](#3-claude-can-keep-going-while-youre-away)
+4.  [Get startedSet up Claude on a real piece of your work](#get-started)
+
+*Conversations, projects, memory, skills, uploads, voice, and your connectors (email, calendar, Slack, Drive) work the same on the web, your phone, and the desktop app.*
+
+## 1. Claude is one shortcut away[](#1-claude-is-one-shortcut-away)
+
+In the [Claude desktop app(opens in new tab)](https://claude.com/download), quick entry is a small Claude window that opens on top of whatever app you're in and stays in front as you switch apps. Reach it a few ways:
+
+- **Type:** Double-tap Option on a Mac, or use the shortcut you set in [Settings(opens in new tab)](https://claude.ai/desktop/settings/desktop) on Windows or Linux (beta), then type your question.
+- **Speak (Mac):** Press Caps Lock, talk, then press it again (turn it on in Settings).
+- **Menu bar or system tray:** Click the Claude icon in the menu bar (Mac) or system tray (Windows). Turn it on or off with the **Menu bar** or **System tray** setting in [Settings(opens in new tab)](https://claude.ai/desktop/settings/desktop).
+
+On a Mac you can also show your screen. Hover over a window to send a screenshot of it, or drag to capture part of the screen (the first time, choose **Turn on screenshots**). To attach a file, drag it onto the app icon or open it with Claude.
+
+Voice, dictation, and uploads work on the web, your phone, and the desktop app (dictation isn't available on Linux yet); the desktop app lets you reach these features in Claude quickly, from whatever app you're in.
+
+Things to ask:
+
+- *What do these numbers mean, and which one should I keep an eye on?*
+- *Summarize what's on my screen right now.*
+- *Help me word a reply to this message.*
+
+Loading
+
+
+
+Good to know
+
+- Screenshots from quick entry and speaking with Caps Lock are Mac-only. On Windows and Linux, a keyboard shortcut brings up Claude.
+- The Linux app is in beta.
+
+See [Use quick entry on Mac(opens in new tab)](https://support.claude.com/en/articles/12626668-use-quick-entry-with-claude-desktop-on-mac) and [Claude for Linux (beta)(opens in new tab)](https://code.claude.com/docs/en/desktop-linux).
+
+## 2. Claude can work in your files, apps, and websites[](#2-claude-can-work-in-your-files-apps-and-websites)
+
+On the desktop app, Claude can work directly in the files, apps, and websites where your work already is. Instead of carrying material to Claude and results away, you let Claude handle the whole task in place. You choose what Claude can use, and Claude works only with what you share: folders, apps, websites, or your screen.
+
+### Folders[](#folders)
+
+On the web you might upload or drag in files. On the desktop app, Claude can go directly to your folders to read and edit what it needs and save finished work back to them.
+
+To give access:
+
+1.  Under the message box, add a folder.
+2.  Allow Claude to edit the files in it.
+
+With that permission, Claude reads what it needs from the folder and saves finished work back to it.
+
+Once Claude can see a folder, you can ask Claude to:
+
+- *Pull the numbers from a folder of PDF invoices into one spreadsheet.*
+- *Sort a cluttered Downloads folder into clearly named subfolders.*
+- *Each month, add the new invoices to that same spreadsheet, building a running record.*
+
+A task like that can later [run on a schedule(opens in new tab)](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork).
+
+### Apps[](#apps)
+
+[Connectors(opens in new tab)](https://claude.ai/directory) are available wherever you use Claude and connect tools like your email, docs, and CRM. In addition to those, the desktop app lets you add extensions like Apple Notes or Messages on a Mac. Add them from [Extensions in the desktop app(opens in new tab)](https://claude.ai/desktop/settings/desktop/extensions). See the [extensions guide(opens in new tab)](https://support.claude.com/en/collections/17879657-desktop-extensions).
+
+Things to ask:
+
+- *Turn the action items from this thread into a new Apple note.*
+- *Text Sam that I'm running ten minutes late.*
+- *Pull my notes on the Rivera account into a summary I can send.*
+
+### Websites[](#websites)
+
+The built-in browser is a browser panel inside the desktop app, next to your task. Claude can open sites, read pages, click, type, and fill forms in it, and you watch each step as it happens. It has its own tabs and history, separate from your own browser, so your Chrome stays free for you while Claude works in its own window.
+
+1.  In Settings, set the built-in browser as your preferred browser.
+2.  Ask Claude to use a website.
+3.  The first time Claude acts on that site, you choose to allow it once, allow it always for that site, or deny it.
+
+Things to ask:
+
+- *Find the opening hours and phone number on this restaurant's site.*
+- *Fill out this online form using the details in my folder.*
+- *Check whether this part is in stock on the supplier's site.*
+
+Loading
+
+A task in Claude, on the web or the desktop app, can also work in your own Chrome through the [Claude in Chrome(opens in new tab)](https://claude.com/chrome) browser extension. The same extension opens Claude in Chrome next to the page you're on.
+
+
+
+Some pages carry hidden text meant to mislead an AI, and safety checks reduce that risk without removing it. Start with sites you trust, and handle anything sensitive yourself, like bank accounts or health records. See [Use Claude in Chrome safely(opens in new tab)](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely) and [Use the built-in browser(opens in new tab)](https://support.claude.com/en/articles/16607400).
+
+### Your screen, through computer use (beta)[](#your-screen-through-computer-use-beta)
+
+For work that isn't in your files, connected tools, or on the web, computer use lets Claude work in other apps and programs by using your screen, mouse, and keyboard. Claude usually tries a connector first, then the built-in browser, and turns to computer use when neither fits, because clicking through one step at a time is the slowest of the three.
+
+Computer use suits installed software with no connector, like an accounting program, a design tool, or an internal company app, and work that moves between apps, such as taking figures from one program into another.
+
+Once it's turned on in Settings, Claude uses computer use on its own when a task needs it, or when you ask for it directly. While it works, Claude is moving the cursor and typing.
+
+Things to ask:
+
+- *Enter the receipts in this folder into my accounting app.*
+- *Copy the figures from this spreadsheet into our internal ordering system.*
+- *Resize these images in my photo editor and export them to this folder.*
+
+
+
+By default, Claude asks before using an app, and you can stop Claude at any time. Claude can see what's on your screen while it works, so close anything sensitive first. See [Let Claude use your computer(opens in new tab)](https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork).
+
+### Record a skill[](#record-a-skill)
+
+[Skills(opens in new tab)](https://support.claude.com/en/articles/12512176-what-are-skills) are saved instructions that let Claude repeat a workflow the way you do it, whenever that work comes up. Some workflows are easier to show than to write down, so you can record one instead.
+
+1.  Start it from the plus menu in the message box.
+2.  Do the task once, saying what you're doing as you go.
+3.  Choose **Done**, and Claude turns the recording into a skill.
+
+The skill is then available in Claude. While recording, don't type passwords or secrets, or show sensitive information or private conversations.
+
+Things to record:
+
+- *Pull each store's weekly sales from its dashboard into our shared sheet.*
+- *Copy new leads from the form into the CRM the way I do it.*
+- *File each week's reports into the right folders by client.*
+
+Loading
+
+
+
+Good to know
+
+Working in your folders, the built-in browser, computer use, and Record a skill need a paid plan:
+
+- Folders come with every paid plan.
+- The built-in browser is on Pro, Max, and Team, and on Enterprise where your admin allows it.
+- Computer use is in beta on Mac and Windows, for Pro and Max.
+- Record a skill is on Pro, Max, and Team, on Mac.
+
+On Team and Enterprise plans, your admin can limit which extensions are allowed. See [Install Claude Desktop(opens in new tab)](https://support.claude.com/en/articles/10065433-install-claude-desktop).
+
+### All of it together[](#all-of-it-together)
+
+The desktop app lets a single task draw on your local files, your [connectors(opens in new tab)](https://support.claude.com/en/collections/15399129-connectors), and the web together. Uploading and connectors already work everywhere; here they combine with Claude's ability to view, edit, and save files directly on your computer.
+
+Try prompts like:
+
+- *Read my resume in my Downloads folder and my project files in Google Drive, then look through job sites for roles that fit and shortlist the best ones.*
+- *Compare the invoices in my Vendors folder against the bills in Gmail, then check each vendor's website for current pricing.*
+- *Read the deck in my Pitch folder, check my calendar for the client meeting, and look up their latest news on their website.*
+
+## 3. Claude can keep going while you're away[](#3-claude-can-keep-going-while-youre-away)
+
+Start a big task and step away. It keeps going after you close the window, and you can check on it or answer its questions from the web or the mobile app.
+
+When the task is working in a folder, an app, or the browser on your computer, that computer is part of the task, so keep it on and awake with the desktop app open. **Keep computer awake** in Settings stops it from idle-sleeping while the app is open. The display can still turn off, and closing the laptop lid still puts it to sleep.
+
+
+
+Working in code?
+
+If you write software, everything on this page applies to code work too, and the desktop app adds Claude Code, a visual coding workbench. See the [Claude Code desktop guide(opens in new tab)](https://code.claude.com/docs/en/desktop) to get started.
+
+## Get started[](#get-started)
+
+Loading
+
+[Download the desktop app(opens in new tab)](https://claude.com/download) for Mac, Windows, or Linux (beta).
+
+- [1. Claude is one shortcut away](#1-claude-is-one-shortcut-away)
+- [2. Claude can work in your files, apps, and websites](#2-claude-can-work-in-your-files-apps-and-websites)
+- [3. Claude can keep going while you're away](#3-claude-can-keep-going-while-youre-away)
+
+
+---
 ## open-claude-desktop-with-a-link-c74e46c178.md
 
 # Open Claude Desktop with a link
 
 June 30, 2026
 
+Copy for LLM
 
 Claude for macOS, Windows, and Linux respond to the `claude://` URL scheme, much like a browser responds to the `https://` scheme. You can use these links from a website, a script, or another app to open Claude Desktop and jump straight to a chat, a Cowork session, or a Code session.
 
@@ -2504,6 +2717,7 @@ Open a terminal and run:
 
 May 6, 2026
 
+Copy for LLM
 
 The Claude mobile apps for iOS and Android respond to the `claude://` URL scheme. Third-party apps, shortcuts, and web pages can use these links to open the Code tab, jump to an existing session, or prefill the new-session composer. All parameter values must be URL-encoded.
 
@@ -2648,6 +2862,9 @@ Related resources
 
 # Use Claude app intents, shortcuts, and widgets on iOS
 
+July 9, 2026
+
+Copy for LLM
 
 The features described in this guide are available on iOS 18 and above.
 
@@ -3522,27 +3739,37 @@ When filing a bug, include your desktop app version, your operating system, the 
 # Use Claude Cowork on web, desktop, and mobile
 
 
-Claude Cowork is now available on web and mobile in addition to desktop. Cowork runs your sessions remotely (in beta), so your sessions and files live with your Claude account and go where you go, on any device. This article explains how to start a Cowork session and what's available on each surface.
+Copy for LLM
 
-Claude Cowork is in beta on web and mobile, and rolling out over the next several weeks starting with the Max plan, with more plans to follow.
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+
+Claude Cowork is available on desktop, web, mobile, and in the Claude in Chrome side panel. Your sessions and files live with your Claude account and go where you go, on any device. This article explains how to start a Cowork session and what's available on each surface.
+
+Claude Cowork is in beta on web and mobile for Pro, Max, and Team plans, and on Enterprise plans where an admin has enabled it. Cowork is also available in the Claude in Chrome side panel on Max and Team plans, on Pro plans as it rolls out, and on Enterprise plans where an admin has enabled it. See **[Claude in Chrome admin controls](https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls#h_bdb63199e1)** for enablement steps.
 
 ------------------------------------------------------------------------
 
 ## Start a Cowork session
 
-Chat and Cowork share one home, so you start both from the same place. On any surface, find the message box, select "Cowork" in the bottom left corner, then describe your task. To go back to a regular conversation, select "Chat."
+On desktop, web, and mobile, chat and Cowork share one home, so you start both from the same place. Find the message box, select "Cowork" in the bottom left corner, then describe your task. To go back to a regular conversation, select "Chat."
 
-- **Web:** Go to [claude.ai](http://claude.ai) and find the “Home” tab.
+If you have the new Claude experience, there's no "Cowork" option to select. Describe your task in any conversation, and Claude takes it from there.
+
+The Chrome side panel works differently. Opening the side panel starts a Cowork session directly, with no selector to switch between chat and Cowork.
+
+- **Web:** Go to **[claude.ai](https://claude.ai)** and find the “Home” tab.
 
 - **Mobile:** Open the latest version of Claude for iOS or Claude for Android. If you don't see the Cowork option in the message box, update the app.
 
 - **Desktop:** Open the latest version of the Claude Desktop app. If you don't see the Cowork option in the message box, update the app. Desktop is the full Cowork experience, where Claude can also use your local files and browser.
 
+- **Chrome:** Click the Claude icon in your Chrome toolbar to open the side panel. The side panel starts a Cowork session, so there's no need to select "Cowork" first.
+
 ------------------------------------------------------------------------
 
-## How remote sessions work
+## How Cowork in the cloud works
 
-In a remote session, Claude's work runs on Anthropic's servers instead of your computer, and your sessions and files are saved to your Claude account. This changes what Cowork can do:
+When using Cowork in the cloud, Claude's work runs on Anthropic's servers instead of your computer, and your sessions and files are saved to your Claude account. This changes what Cowork can do:
 
 - Work continues in the background. Close your laptop and Claude keeps going.
 
@@ -3550,53 +3777,55 @@ In a remote session, Claude's work runs on Anthropic's servers instead of your c
 
 - The same sessions and files are available on desktop, web, and mobile.
 
-- Sessions run remotely on every surface.
+- Sessions run in the cloud on every surface.
 
-For details on how remote and local sessions are isolated and what each can access, see **[Claude Cowork architecture overview](https://support.claude.com/en/articles/14479288)**. For safety guidance, see **[Use Claude Cowork safely](https://support.claude.com/en/articles/13364135)**.
+For details on how cloud and local sessions are isolated and what each can access, see **[Claude Cowork architecture overview](https://support.claude.com/en/articles/14479288)**. For safety guidance, see **[Use Claude Cowork safely](https://support.claude.com/en/articles/13364135)**.
 
 ------------------------------------------------------------------------
 
 ## What's available on each surface
 
-Remote sessions are in beta, and some features aren’t available yet. Here's what you can use on each surface today:
+Cowork in the cloud is in beta, and some features aren’t available yet. Here's what you can use on each surface today:
 
 [TABLE]
 
 A few notes on the table:
 
-- \*Local file access, local connectors, browser use, and computer use from web and mobile work through the Claude Desktop app. A remote session can read and write files in folders you've connected on your computer only while the desktop app is open on that computer. If the app is closed, the session keeps running but can't reach your local files.
+- \*Local file access, local connectors, browser use, and computer use from web and mobile work through the Claude Desktop app. A cloud session can read and write files in folders you've connected on your computer only while the desktop app is open on that computer and the session was started on desktop. If the app is closed, the session keeps running but can't reach your local files.
 
 - Projects are available on every surface. From a project you can start a chat or a Cowork session, and Claude uses the project's knowledge as context. Projects tied to a local folder support Cowork sessions on desktop only, and Cowork won't change a project's contents, so add anything you want to keep to the project yourself. For more information, see **[Organize your tasks with projects in Claude Cowork](https://support.claude.com/en/articles/14116274)** and **[Use live artifacts in Claude Cowork](https://support.claude.com/en/articles/14729249)**.
 
-- Live artifacts are available on the desktop app only. For more information, see **[Use live artifacts in Claude Cowork](https://support.claude.com/en/articles/14729249)**.
+- Artifacts created on or after August 19, 2026 are available on the desktop app and web. Live artifacts created before that date are available on the desktop app only. For more information, see **[Use artifacts in Claude Cowork](https://support.claude.com/en/articles/14729249)**.
 
 - Local connectors and plugins that include local MCP servers work through the desktop app only.
 
-- Scheduled tasks run remotely, so they no longer need your computer to be awake. For more information, see **[Schedule recurring tasks in Claude Cowork](https://support.claude.com/en/articles/13854387)**.
+- Scheduled tasks run in the cloud, so they no longer need your computer to be awake. For more information, see **[Schedule recurring tasks in Claude Cowork](https://support.claude.com/en/articles/13854387)**.
 
-- Computer use is a research preview for Pro and Max plans. For more information, see **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542)**.
+- Computer use is in beta for Pro and Max plans. For more information, see **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542)**.
 
 ## What requires the desktop app
 
-Some capabilities reach things on your computer, so they need the Claude Desktop app open on your machine, even when your session runs remotely:
+Some capabilities reach things on your computer, so they need the Claude Desktop app open on your machine, even when your session runs in the cloud:
 
-- **Local file access.** Claude reads and writes files in folders you've connected on your computer. A remote session reaches these files only while the desktop app is open, only for folders you've connected, and with the permissions you've already set.
+- **Local file access.** Claude reads and writes files in folders you've connected on your computer. A session in the cloud reaches these files only while the desktop app is open, only for folders you've connected, and with the permissions you've already set.
 
 - **Local connectors.** This includes plugins using those connectors.
 
-- **Browser use.** Claude works in your browser through Claude in Chrome.
+- **Browser use.** On desktop, Claude uses a browser built into the Claude Desktop app by default (rolling out gradually this week), or your own Chrome browser through Claude in Chrome if that's your preferred browser. When the desktop app is online, the built-in browser is also available in Cowork on web or mobile. A session started on desktop can be steered from web or mobile while the desktop app stays open. In the Chrome side panel, Claude can read the tab you're on without the desktop app. Claude driving a browser as part of a task still needs the desktop app open. Learn more in **[Use the built-in browser in Claude Cowork](https://support.claude.com/en/articles/16607400)**.
 
 - **Computer use.** Claude clicks, types, and navigates your screen directly.
 
 ## Move between surfaces
 
-Remote sessions follow your account, so you can switch surfaces mid-task:
+When using Cowork in the cloud, sessions follow your account, so you can switch surfaces mid-task:
 
 1.  Start a task on any surface.
 
 2.  Open the same session from another surface to check progress, answer Claude's questions, or redirect the work.
 
 3.  Pick up the finished output wherever you are.
+
+For example, start a task in the Chrome side panel while you're looking at a dashboard, then pick it up on desktop to work with the downloaded files.
 
 When Claude finishes a task or needs your input, you'll get a notification on your phone. To get started, see **[Get started with Claude Cowork](https://support.claude.com/en/articles/13345190)**.
 
@@ -3606,6 +3835,9 @@ When Claude finishes a task or needs your input, you'll get a notification on yo
 
 # Use Claude with Android apps
 
+August 25, 2026
+
+Copy for LLM
 
 Claude can now connect with your Android device's system apps to help you take action directly from your conversations. When you chat with Claude, it can draft messages, emails, calendar events, set alarms and timers, find locations, and more—all through your everyday apps without copy-paste.
 
@@ -3755,7 +3987,7 @@ With your permission, Claude can read the following types of data from Health Co
 
 - **Nutrition:** Calories consumed, macronutrients, hydration, and micronutrients (if tracked)
 
-**Note:** Our **[memory feature](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context#h_c1c0b33879)** is designed to prevent Claude from using sensitive health information in future conversations.
+**Note:** By default, Claude doesn't save health information to memory. If you turn on **Include sensitive topics in memory**, Claude may remember health-related context from your conversations. Learn more about **[sensitive topics in memory](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_6fe1d0e66f)**.
 
 ### How to use health features
 
@@ -3912,6 +4144,9 @@ Health Connect permissions are managed separately from other app permissions. Wh
 
 # Use Claude with iOS apps
 
+August 25, 2026
+
+Copy for LLM
 
 Claude can now connect with your iOS device's system apps to help you take action directly from your conversations. When you chat with Claude, it can draft messages, emails, or calendar events, find locations, manage reminders, and analyze your health and fitness data — all seamlessly integrated with your mobile apps.
 
@@ -4061,7 +4296,7 @@ With your permission, Claude can read the following types of data from Apple Hea
 
 - **Nutrition:** Calories consumed, macronutrients, water intake, and micronutrients (if tracked).
 
-**Note:** Our **[memory feature](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context#h_c1c0b33879)** is designed to prevent Claude from using sensitive health information in future conversations.
+**Note:** By default, Claude doesn't save health information to memory. If you turn on **Include sensitive topics in memory**, Claude may remember health-related context from your conversations. Learn more about **[sensitive topics in memory](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_6fe1d0e66f)**.
 
 ### How to use health features
 
@@ -4197,6 +4432,9 @@ Claude will only request permissions if needed for specific features, and you ca
 
 # Use dictation on Claude Mobile
 
+July 23, 2026
+
+Copy for LLM
 
 Dictation is available to all Claude users (Free, Pro, Max, Team, and Enterprise plans). Support for languages other than English is in beta.
 
@@ -4274,6 +4512,7 @@ Learn more about our privacy practices by visiting our **[Privacy Policy](https:
 
 March 16, 2026
 
+Copy for LLM
 
 Quick entry is a redesigned experience for Claude Desktop on Mac that lets you access Claude instantly from anywhere on your computer. With quick entry, you can start chats, capture screenshots, share application windows, and use voice dictation to interact with Claude without navigating away from your current task.
 
@@ -4452,6 +4691,9 @@ You can customize the quick access shortcut to use Option + Space or create a cu
 
 # Use the Claude widget on Android
 
+July 9, 2026
+
+Copy for LLM
 
 The Claude Android widget is available on Android 8.0 Oreo and above.
 
@@ -4505,6 +4747,9 @@ Tap the microphone button to start a new chat and begin voice dictation. The fir
 
 # Use Claude app intents, shortcuts, and widgets on iOS
 
+July 9, 2026
+
+Copy for LLM
 
 The features described in this guide are available on iOS 18 and above.
 
@@ -4801,6 +5046,9 @@ You can now quickly access the "Analyze Photo with Claude" control without needi
 
 # Use Claude with Android apps
 
+August 25, 2026
+
+Copy for LLM
 
 Claude can now connect with your Android device's system apps to help you take action directly from your conversations. When you chat with Claude, it can draft messages, emails, calendar events, set alarms and timers, find locations, and more—all through your everyday apps without copy-paste.
 
@@ -4950,7 +5198,7 @@ With your permission, Claude can read the following types of data from Health Co
 
 - **Nutrition:** Calories consumed, macronutrients, hydration, and micronutrients (if tracked)
 
-**Note:** Our **[memory feature](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context#h_c1c0b33879)** is designed to prevent Claude from using sensitive health information in future conversations.
+**Note:** By default, Claude doesn't save health information to memory. If you turn on **Include sensitive topics in memory**, Claude may remember health-related context from your conversations. Learn more about **[sensitive topics in memory](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_6fe1d0e66f)**.
 
 ### How to use health features
 
@@ -5107,6 +5355,9 @@ Health Connect permissions are managed separately from other app permissions. Wh
 
 # Use Claude with iOS apps
 
+August 25, 2026
+
+Copy for LLM
 
 Claude can now connect with your iOS device's system apps to help you take action directly from your conversations. When you chat with Claude, it can draft messages, emails, or calendar events, find locations, manage reminders, and analyze your health and fitness data — all seamlessly integrated with your mobile apps.
 
@@ -5256,7 +5507,7 @@ With your permission, Claude can read the following types of data from Apple Hea
 
 - **Nutrition:** Calories consumed, macronutrients, water intake, and micronutrients (if tracked).
 
-**Note:** Our **[memory feature](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context#h_c1c0b33879)** is designed to prevent Claude from using sensitive health information in future conversations.
+**Note:** By default, Claude doesn't save health information to memory. If you turn on **Include sensitive topics in memory**, Claude may remember health-related context from your conversations. Learn more about **[sensitive topics in memory](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_6fe1d0e66f)**.
 
 ### How to use health features
 
@@ -5392,6 +5643,9 @@ Claude will only request permissions if needed for specific features, and you ca
 
 # Use dictation on Claude Mobile
 
+July 23, 2026
+
+Copy for LLM
 
 Dictation is available to all Claude users (Free, Pro, Max, Team, and Enterprise plans). Support for languages other than English is in beta.
 
@@ -5540,6 +5794,9 @@ Learn more about our privacy practices by visiting our [Privacy Policy](https://
 
 # Use the Claude widget on Android
 
+July 9, 2026
+
+Copy for LLM
 
 The Claude Android widget is available on Android 8.0 Oreo and above.
 
@@ -5646,6 +5903,8 @@ Tap the microphone button to start a new chat and begin voice dictation. The fir
 
 # Use voice mode
 
+
+Copy for LLM
 
 Voice mode allows you to have complete spoken conversations with Claude. Instead of typing a prompt and reading a written response, you can speak to Claude and listen to its responses, making it easier to use when your hands are busy but your mind isn't.
 
@@ -5829,7 +6088,7 @@ To set your voice language, go to **[Settings \> General](https://claude.ai/new#
 
 ### Can I use voice mode with Claude Cowork or Claude Code?
 
-No. While dictation is available in Claude Cowork and Code, voice mode is not. This also means Claude voice mode will not be able to reference the projects and skills you have set up in Cowork.
+In the new Claude experience, voice mode works in any conversation, including ones where Claude is working on a task. In Claude Cowork and Claude Code, dictation is available but voice mode isn't.
 
 ### Can Enterprise Admins disable voice mode for their organizations?
 
@@ -5852,32 +6111,22 @@ We currently support Android 8.0 Oreo and above.
 
 # When to use desktop and web connectors
 
-April 15, 2026
 
-
-[](#h_remote)
-
-[](#h_desktop)
-
-[](#h_plugins)
-
-[](#h_guide)
-
-[](#h_start)
+Copy for LLM
 
 Claude can connect to your tools in two ways: through the web (remote connectors) or through the Claude Desktop app (desktop extensions). Most connectors are remote—they're the default choice and work everywhere you use Claude.
 
-# Use a remote connector when
+## Use a remote connector when
 
 - The tool is a cloud service you sign into (Slack, Notion, Linear, GitHub, your company's SaaS)
 
 - You want the connector available everywhere—web, mobile, Cowork, Desktop, and Claude Code
 
-- You're connecting something from the [Connectors Directory](https://claude.ai/directory)
+- You're connecting something from the **[Connectors Directory](https://claude.ai/directory)**
 
 Remote connectors work across all Claude surfaces. Once connected, they're available everywhere without extra setup.
 
-# Use a desktop extension when
+## Use a desktop extension when
 
 - The tool runs on your computer—local files, a database on localhost, a desktop application
 
@@ -5887,21 +6136,21 @@ Remote connectors work across all Claude surfaces. Once connected, they're avail
 
 Desktop extensions run locally and are only available in Claude Desktop and Claude Code—not on web or mobile.
 
-# Plugins work with both
+## Plugins work with both
 
-A plugin can bundle either remote or local MCP servers (or both). Installing a plugin that references a remote MCP makes it available everywhere; one that references a local MCP works in Desktop and Claude Code.
+A plugin can bundle either remote or local MCP servers (or both). Adding a plugin that references a remote MCP makes it available everywhere. One that references a local MCP works in Cowork and Claude Code, not in chat.
 
-# Quick guide
+## Quick guide
 
 [TABLE]
 
-# Get started
+## Get started
 
-- Browse and add remote connectors: [Settings → Connectors](https://claude.ai/settings/connectors) or the [Connectors Directory](https://claude.ai/directory)
+- Browse and add remote connectors: **[Settings → Connectors](https://claude.ai/settings/connectors)** or the **[Connectors Directory](https://claude.ai/directory)**
 
 - Install a desktop extension: Open Claude Desktop → Settings → Extensions
 
-- Building your own? See the [connector building docs](https://claude.com/docs/connectors/building) for remote connectors or the [MCPB guide](https://claude.com/docs/connectors/building/mcpb) for local ones.
+- Building your own? See the **[connector building docs](https://claude.com/docs/connectors/building)** for remote connectors or the **[MCPB guide](https://claude.com/docs/connectors/building/mcpb)** for local ones.
 
 
 ---

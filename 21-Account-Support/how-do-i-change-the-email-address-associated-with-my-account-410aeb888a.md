@@ -2,12 +2,14 @@
 title: "How do I change the email address associated with my account? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8452276-how-do-i-change-the-email-address-associated-with-my-account"
 category: "21-Account-Support"
-fetched_at: "2026-08-02T05:41:55Z"
+fetched_at: "2026-09-29T06:32:33Z"
 ---
 
 # How do I change the email address associated with my account?
 
 March 16, 2026
+
+Copy for LLM
 
 It's not possible to change the email address associated with your Claude account at this time. When creating an account, please make sure you use an email you'll have long-term access to.
 

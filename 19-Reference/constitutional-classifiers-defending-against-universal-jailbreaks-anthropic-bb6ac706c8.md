@@ -2,7 +2,7 @@
 title: "Constitutional Classifiers: Defending against universal jailbreaks \\ Anthropic"
 source_url: "https://www.anthropic.com/research/constitutional-classifiers"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:12:11Z"
+fetched_at: "2026-08-27T09:26:06Z"
 tags: ["evaluation"]
 ---
 
@@ -58,13 +58,13 @@ The [full paper](https://arxiv.org/abs/2501.18837) contains all the details abou
 
 ## Constitutional Classifiers live demo
 
-Want to try red teaming Claude yourself? We invite you to try out a [demo of our Constitutional-Classifiers-guarded system](https://claude.ai/redirect/website.v1.3b41a8b2-a27a-46a1-a132-0949af4dfa75/constitutional-classifiers) and attempt to jailbreak a version of Claude 3.5 Sonnet that is guarded using our new technique. **\[Edit 10 February 2025: The demo is now complete. See below for details\].**
+Want to try red teaming Claude yourself? We invite you to try out a [demo of our Constitutional-Classifiers-guarded system](https://claude.ai/redirect/website.v1.726fa79a-3363-458d-be5d-0e8d3ff5cda8/constitutional-classifiers) and attempt to jailbreak a version of Claude 3.5 Sonnet that is guarded using our new technique. **\[Edit 10 February 2025: The demo is now complete. See below for details\].**
 
 Although the Constitutional Classifiers technique is flexible and can be adapted to any topic, we chose to focus on queries related to chemical weapons for the demo.
 
 Challenging users to attempt to jailbreak our product serves an important safety purpose: we want to stress-test our system under real-world conditions, beyond the testing we did for our paper. This allows us to gather additional data and improve the robustness of the method prior to deploying this method on our production systems in the future.
 
-The [**demo**](https://claude.ai/redirect/website.v1.3b41a8b2-a27a-46a1-a132-0949af4dfa75/constitutional-classifiers) will be live from **Feb 3, 2025** to **Feb 10, 2025**. It includes a feedback form where you can contact us to report any successful jailbreaks as well as information on our [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy), which we ask that participants follow. We’ll announce any successes and the general results of the demo in an update to this post.
+The [**demo**](https://claude.ai/redirect/website.v1.726fa79a-3363-458d-be5d-0e8d3ff5cda8/constitutional-classifiers) will be live from **Feb 3, 2025** to **Feb 10, 2025**. It includes a feedback form where you can contact us to report any successful jailbreaks as well as information on our [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy), which we ask that participants follow. We’ll announce any successes and the general results of the demo in an update to this post.
 
 ## 13 February 2025 update: Live demo results
 
@@ -151,21 +151,23 @@ If you’re interested in working on problems such as jailbreak robustness or on
 
 ## Related content
 
-### Discovering cryptographic weaknesses with Claude
+### Enabling independent research on how people use Claude
 
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
+Earlier this year, we ran a pilot giving external researchers access to aggregate, real-world Claude usage data. Three research groups designed their own studies for Anthropic Insights, our privacy-preserving analysis tool. In this post, we share high-level results from those studies and what we learned running this pilot.
 
-[Read more](/research/discovering-cryptographic-weaknesses)
+[Read more](/research/enabling-independent-research)
 
-### Project Pilot: Can AI control a drone?
+### How Claude is accelerating protein design and analytical chemistry
 
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
+In this post, we share two results that show how Claude can help life scientists increase the pace of their research.
 
-[Read more](/research/project-pilot)
+[Read more](/research/Claude-accelerates-protein-design)
 
-### How Canada uses Claude: Findings from the Anthropic Economic Index
+### Patterns and problems in emerging multiagent systems
 
-[Read more](/research/how-canada-uses-claude)
+Here, we identify a few examples of behavioral tendencies in current frontier models and show how they can produce unexpected systemic failures, in hopes of starting a conversation about mitigating these risks.
+
+[Read more](/research/multiagent-systems)
 
 [](/)
 
@@ -179,7 +181,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -231,7 +233,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -256,6 +258,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

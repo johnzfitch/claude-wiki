@@ -2,14 +2,15 @@
 title: "Set up SCIM in Claude for Government | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503643-set-up-scim-in-claude-for-government"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:41:11Z"
+fetched_at: "2026-09-29T06:30:48Z"
 tags: ["enterprise"]
 ---
 
 # Set up SCIM in Claude for Government
 
-April 10, 2026
+August 6, 2026
 
+Copy for LLM
 
 System for Cross-domain Identity Management (SCIM) lets your identity provider automatically manage user accounts in Claude for Government. With SCIM, your IdP controls who has access, what role they hold, and what seat tier they're assigned—without manual intervention in the Claude admin console.
 
@@ -54,9 +55,9 @@ With SCIM, login and provisioning are separate. Your IdP tells Anthropic who sho
 
 2.  Enter the following values:
 
-    1.  SCIM endpoint URL: **[https://claude.fedstart.com/v1/scim/v2](https://claude.fedstart.com/v1/scim/v2)**
+    1.  **SCIM endpoint URL:** `https://claude.fedstart.com/v1/scim/v2`
 
-    2.  API key / Bearer token: The key generated in Step 1
+    2.  **API key / Bearer token:** The key generated in Step 1
 
 3.  Configure the user attributes your IdP will sync (typically name and email).
 
@@ -108,4 +109,4 @@ In a multi-org setup:
 
 - Any Owner or Primary Owner in a child organization can manage IdP settings. Restrict these roles to centralized IT staff.
 
-**Note:** Anthropic support will work with you during provisioning to configure parent/child organization relationships. Contact your account representative or **[Anthropic support](https://claude.fedstart.com/support)** if you need to set up a multi-org structure.
+**Note:** Anthropic support will work with you during provisioning to configure parent/child organization relationships. Contact your account representative or **[our Support team](https://support.claude.com/en/articles/13047024)** if you need to set up a multi-org structure.

@@ -2,8 +2,8 @@
 title: "CLI scripting and automation - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/scripting"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:41:05Z"
-tags: ["api", "cli"]
+fetched_at: "2026-09-26T06:39:29Z"
+tags: ["api", "claude-code", "cli"]
 ---
 
 - [Managed Agents](/docs/en/managed-agents/overview)
@@ -12,27 +12,23 @@ tags: ["api", "cli"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fcli%2Fscripting)
 
 
 
-Search
+
 
+SearchCtrlK
 
 CLI, SDKs, and libraries
 
@@ -40,7 +36,7 @@ CLI, SDKs, and libraries
 
 ant CLI
 
-[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)
+[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)[Manage resources as code](/docs/en/cli-sdks-libraries/cli/apply)[Connect to a Managed Agents session](/docs/en/cli-sdks-libraries/cli/sessions-connect)
 
 Client SDKs
 
@@ -50,156 +46,37 @@ Libraries and integrations
 
 [Apple Foundation Models](/docs/en/cli-sdks-libraries/libraries/apple-foundation-models)[OpenAI SDK compatibility](/docs/en/cli-sdks-libraries/libraries/openai-sdk)
 
-[](/login)
+[Console](/)
 
-
-
-
-CLI, SDKs, and libraries
-
-Scripting and automation
-
-CLI, SDKs, and libraries/ant CLI
+[CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)ant CLI
 
 # CLI scripting and automation
 
+Copy page
 
 
 
-Version-control API resources as YAML, chain ant CLI commands in scripts, operate on resources from Claude Code, and authenticate curl calls with CLI credentials.
+Version-control API resources as files with ant apply, chain ant CLI commands in scripts, operate on resources from Claude Code, and authenticate curl calls with CLI credentials.
 
+Copy page
 
 
 
 This page covers task-oriented workflows built on the `ant` CLI. For the underlying flags and output options, see [Using the CLI](/docs/en/cli-sdks-libraries/cli/using).
 
+## Version-controlling API resources
 
-
+To keep agents, environments, and other Claude Managed Agents resources as files in your repository, see [Manage resources as code with ant apply](/docs/en/cli-sdks-libraries/cli/apply).
 
-Version-controlling API resources
+### Run the applied agent from the shell
 
-You can use the CLI to version control API resources such as skills, agents, environments, or deployments as YAML files in your repository and keep them in sync with the Claude API.
-
-
-
-For more information on these resources, see [Managed Agents](/docs/en/managed-agents/overview).
+Once an agent and environment exist, you can drive a session from the shell:
 
 1.  1
 
-    Define your agent
+    ### Start a session
 
-    Write the agent definition to `summarizer.agent.yaml`:
-
-    summarizer.agent.yaml
-
-    
-
-    ``` shiki
-    name: Summarizer
-    model: claude-opus-5
-    system: |
-      You are a helpful assistant that writes concise summaries.
-    tools:
-      - type: agent_toolset_20260401
-    ```
-
-2.  2
-
-    Create the agent
-
-    ``` shiki
-    ant beta:agents create < summarizer.agent.yaml
-    ```
-
-    
-
-    Output
-
-    
-
-    ``` shiki
-    {
-      "id": "agent_011CYm1BLqPXpQRk5khsSXrs",
-      "version": 1,
-      "name": "Summarizer",
-      "model": "claude-opus-5"
-      /* ... */
-    }
-    ```
-
-    Note the `id` from the response. You'll pass it to the session create command in a later step.
-
-    
-
-    Check `summarizer.agent.yaml` into your repository and keep it in sync with the API in your CI pipeline. The update command needs the agent ID and current version as flags:
-
-    CLI
-
-    
-
-    ``` shiki
-    ant beta:agents update --agent-id agent_011CYm1BLqPXpQRk5khsSXrs --version 1 < summarizer.agent.yaml
-    ```
-
-3.  3
-
-    Define the environment
-
-    A session runs in an [environment](/docs/en/api/cli/beta/environments), which defines the sandbox it executes in. Write the environment definition to `summarizer.environment.yaml`:
-
-    summarizer.environment.yaml
-
-    
-
-    ``` shiki
-    name: summarizer-env
-    config:
-      type: cloud
-      networking:
-        type: unrestricted
-    ```
-
-4.  4
-
-    Create the environment
-
-    ``` shiki
-    ant beta:environments create < summarizer.environment.yaml
-    ```
-
-    
-
-    Output
-
-    
-
-    ``` shiki
-    {
-      "id": "env_01595EKxaaTTGwwY3kyXdtbs",
-      "name": "summarizer-env"
-      /* ... */
-    }
-    ```
-
-    Note the `id` from the response. You'll pass it to the session create command in a later step.
-
-    
-
-    Check `summarizer.environment.yaml` into your repository and keep it in sync with the API in your CI pipeline. The update command needs the environment ID as a flag:
-
-    CLI
-
-    
-
-    ``` shiki
-    ant beta:environments update --environment-id env_01595EKxaaTTGwwY3kyXdtbs < summarizer.environment.yaml
-    ```
-
-5.  5
-
-    Start a session
-
-    Paste the agent `id` and environment `id` from the previous outputs into the session create command:
+    Pass the agent and environment IDs to the session create command. After `ant apply`, read them from `claude-lock.json`: each entry under `resources` has an `id`, and for the project in [Manage resources as code with ant apply](/docs/en/cli-sdks-libraries/cli/apply) the entries are `./agents/summarizer.md` and `./environments/cloud.yaml`.
 
     ``` shiki
     ant beta:sessions create \
@@ -222,9 +99,9 @@ For more information on these resources, see [Managed Agents](/docs/en/managed-a
     }
     ```
 
-6.  6
+2.  2
 
-    Send a user message
+    ### Send a user message
 
     Copy the session `id` from the previous output into `--session-id`:
 
@@ -236,16 +113,18 @@ For more information on these resources, see [Managed Agents](/docs/en/managed-a
 
     
 
-7.  7
+3.  3
 
-    Read the conversation
+    ### Read the conversation
 
-    `--transform` runs against each listed event, so this prints the text of every message in order. `--format auto` overrides the interactive explorer that list commands open by default in a terminal:
+    Once the agent has replied, list the events. `--transform` runs against each listed event, so this prints the text of every message in order. `--format auto` overrides the interactive explorer that list commands open by default in a terminal:
 
     ``` shiki
     ant beta:sessions:events list \
       --session-id session_01JZCh78XvmxJjiXVy3oSi7K \
-      --transform 'content.0.text' --format auto --raw-output
+      --transform 'content.0.text' \
+      --raw-output \
+      --format auto
     ```
 
     
@@ -260,26 +139,18 @@ For more information on these resources, see [Managed Agents](/docs/en/managed-a
     ```
 
     
+    To watch a session as it runs, use `ant beta:sessions:events stream --session-id session_01JZCh78XvmxJjiXVy3oSi7K --format jsonl`, which writes each event to stdout as it arrives. Without `--format`, a terminal opens the interactive explorer instead.
 
-    To watch a session as it runs, use `ant beta:sessions:events stream --session-id session_01JZCh78XvmxJjiXVy3oSi7K`. Events are written to stdout as they arrive.
-
-
-
-
-Scripting patterns
+## Scripting patterns
 
 The CLI is designed to compose with standard shell tooling.
 
-
-
-
-Chain list output into a second command
+### Chain list output into a second command
 
 `--transform id --raw-output` on a list endpoint emits one bare ID per line, so standard tools such as `head` and `xargs` apply directly. Capture the first result, then pass it to a follow-up command:
 
 ```python
-FIRST_AGENT=$(ant beta:agents list \
-  --transform id --raw-output | head -1)
+FIRST_AGENT=$(ant beta:agents list --transform id --raw-output | head -1)
 
 ant beta:agents:versions list \
   --agent-id "$FIRST_AGENT" \
@@ -288,10 +159,7 @@ ant beta:agents:versions list \
 
 
 
-
-
-
-Inspect errors
+### Inspect errors
 
 The `--transform-error` and `--format-error` flags apply the same filtering to error responses. `--raw-output` does not apply to errors, so use `--format-error yaml` for an unquoted scalar. Extract only the error message:
 
@@ -311,10 +179,7 @@ GET "https://api.anthropic.com/v1/agents/bogus?beta=true": 404 Not Found
 Agent not found.
 ```
 
-
-
-
-Use the CLI from Claude Code
+## Use the CLI from Claude Code
 
 [Claude Code](https://code.claude.com/docs/en/overview) can use the `ant` CLI out of the box. With the CLI installed and authenticated, you can ask Claude Code to operate on your API resources directly. For example:
 
@@ -324,10 +189,7 @@ Use the CLI from Claude Code
 
 Claude Code shells out to `ant`, parses the structured output, and reasons over the results (no custom integration code required).
 
-
-
-
-Authenticate curl requests with CLI credentials
+## Authenticate curl requests with CLI credentials
 
 Scripts that call the API with `curl` or another HTTP client can use the credentials stored by [`ant auth login`](/docs/en/cli-sdks-libraries/cli/quickstart#authentication) instead of a static API key. The OAuth access token goes in the `Authorization` header as a bearer token; the `x-api-key` header is only for static API keys.
 
@@ -343,13 +205,13 @@ curl https://api.anthropic.com/v1/messages \
   -H "anthropic-version: 2023-06-01" \
   -H "content-type: application/json" \
   -d '{
-    "model": "claude-opus-5",
+    "model": "claude-opus-5-5",
     "max_tokens": 256,
     "messages": [{"role": "user", "content": "hi"}]
   }'
 ```
 
-
+
 
 Keep `ANTHROPIC_API_KEY` and `ANTHROPIC_AUTH_TOKEN` unset when working from a CLI login. Either variable takes precedence over the login for `ant` commands (see [Credential precedence](/docs/en/manage-claude/wif-reference#credential-precedence)) and can silently route them to a different organization or workspace.
 

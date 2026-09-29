@@ -2,12 +2,14 @@
 title: "View usage analytics for Team and Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12883420-view-usage-analytics-for-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:41:02Z"
+fetched_at: "2026-09-29T06:31:30Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
 # View usage analytics for Team and Enterprise plans
 
+
+Copy for LLM
 
 This article explains how to view and export usage analytics for your organization.
 
@@ -15,7 +17,7 @@ Usage analytics are available to Team plan Owners and Primary Owners, and Enterp
 
 Usage analytics help you track team activity, feature adoption, and spend directly from your admin dashboard. You can monitor how your organization uses Claude and export detailed reports for your own analysis.
 
-Primary Owners and Owners can access analytics via dedicated Analytics settings by clicking your initials in the lower left corner and selecting **[Analytics](https://claude.ai/analytics/activity)** from the menu. Additionally, the Chat, Claude Code, Claude Design, and Cowork options offer product-specific analytics.
+Primary Owners and Owners can access analytics via dedicated Analytics settings by clicking your initials in the lower left corner and selecting **[Analytics](https://claude.ai/analytics/overview)** from the menu. Additionally, the Chat, Claude Code, Claude Design, and Cowork options offer product-specific analytics, and the Surveys option lets you ask users directly about their experience.
 
 ------------------------------------------------------------------------
 
@@ -49,9 +51,9 @@ Use the dropdown on the **Active members and assigned seats** chart to filter by
 
 - Product stickiness
 
-- Skills
+- Skills (including cost per use and number of uses)
 
-- Connectors
+- Connectors (including the number of users, plus counts of read and write actions)
 
 - How agentic is their work? (beta)
 
@@ -85,6 +87,8 @@ This section includes the following analytics:
 
 - Spend by model (month-to-date, quarter-to-date, year-to-date, 1 year)
 
+
+**Note:** For a view of how spend limits are affecting your organization, you can also check the **Blocked by a spend limit** section at the top of **[Organization settings \> Usage](https://claude.ai/admin-settings/usage)**. **Blocked by a spend limit** is built for usage-based Enterprise plans. Orgs without usage-based seats only see how many members are blocked or near their limit right now. Learn more about **[monitoring usage and spend on Enterprise plans](https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan#h_ae17ec8236)**.
 
 ## Export a spend report
 
@@ -280,16 +284,22 @@ Navigate to **[Analytics \> Cowork](https://claude.ai/analytics/cowork)** to vie
 
 ------------------------------------------------------------------------
 
+## Surveys
+
+Navigate to **[Analytics \> Surveys](https://claude.ai/analytics/surveys)** to ask users short, in-product questions about what they're getting out of Claude and review the aggregated answers. Surveys appear to users as a small card in Cowork or chat, and results include response rates, a breakdown by surface and group, and a CSV export per survey. Learn more about **[creating surveys for your organization](https://support.claude.com/en/articles/16764057)**.
+
+------------------------------------------------------------------------
+
 ## View your own usage as a member
 
-When your admin turns on individual usage analytics, any member of the organization can see their own usage broken down by product, model, and skill, along with where they stand against any spend limits set for them. Individual usage analytics are available in **[Settings \> Usage](https://claude.ai/settings/usage)**.
+On Enterprise plans with usage-based billing, when your admin turns on individual usage analytics, any member of the organization can see their own usage broken down by product, model, and skill, along with where they stand against any spend limits set for them. Individual usage analytics are available in **[Settings \> Usage](https://claude.ai/settings/usage)**.
 
 
 ------------------------------------------------------------------------
 
 ## Turn individual usage analytics on or off
 
-**Note:** Individual usage analytics is off by default, but will be on by default starting on July 11, 2026. If you want to keep member-level visibility off, change the setting on or after July 11.
+**Note:** Individual usage analytics is available to Enterprise organizations on usage-based billing. The **Member analytics** toggle does not appear for Team plan organizations or for seat-based Enterprise organizations.
 
 Owners and Primary Owners control whether members can see this view. The setting applies to the whole organization.
 
@@ -299,8 +309,12 @@ Owners and Primary Owners control whether members can see this view. The setting
 
 3.  Switch it on or off.
 
+**Note:** Individual usage analytics is default on since July 11, 2026. If you want to keep member-level visibility off, change the setting.
+
 ------------------------------------------------------------------------
 
 ## Access your analytics data programmatically
 
 If you’re on an Enterprise plan and want to pull analytics data into your own dashboards or reporting tools, the Analytics API gives you programmatic access to the same usage and engagement metrics available in the analytics dashboard. To get started, refer to our **[Analytics API docs](https://platform.claude.com/docs/en/manage-claude/analytics-api)**.
+
+**Important**: Only your organization's Primary Owner can enable the Analytics API and create Analytics API keys, from **[Organization settings \> API](https://claude.ai/admin-settings/api-access)**: under **APIs**, turn on Analytics API; under **Keys**, click "+Create key" and select the `read:analytics` scope. Owners and Admins don't see the Analytics API on that page at all. That's expected, not a permissions error—ask your Primary Owner to enable it and create the key. If your organization is linked to a parent organization, the parent organization's Primary Owner does this.

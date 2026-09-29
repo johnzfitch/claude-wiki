@@ -1,8 +1,8 @@
 ---
-title: "Prompting strategies for financial analysis | Claude by Anthropic"
+title: "Prompting strategies for financial analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12220277-prompting-strategies-for-financial-analysis"
 category: "99-Other"
-fetched_at: "2026-08-02T05:40:56Z"
+fetched_at: "2026-09-29T06:31:02Z"
 tags: ["prompting"]
 ---
 
@@ -10,36 +10,13 @@ tags: ["prompting"]
 
 Learn how to write effective prompts for Claude's financial analysis capabilities focusing on clarity, specificity, and data management.
 
-- 
+15 minClaude.ai
 
-
-  Finance
-
-- 
-
-
-  Claude.ai
-
-- 
-
-
-  Watch time
-
-  5
-
-  min
-
-  min
-
-- 
-
-
-  [Copy link](#)
-  https://claude.com/resources/tutorials/prompting-strategies-for-financial-analysis
+[Open Claude](https://claude.ai/new)
 
 Effective prompting helps you use Claude's financial analysis capabilities efficiently and accurately. This guide provides strategies for writing clear, specific prompts that produce the results you need while avoiding common issues that can lead to incomplete or overwhelming outputs.
 
-## Discovering What Data Claude Can Access
+## Discovering What Data Claude Can Access[](#discovering-what-data-claude-can-access)
 
 Before starting any financial analysis, it's essential to understand which data sources Claude has available. Different integrations provide different types of data—Daloopa focuses on SEC filings and fundamentals and Kensho offers comprehensive S&P Global market data and business relationships. Knowing what's accessible prevents wasted time requesting unavailable data.
 
@@ -47,98 +24,117 @@ Start your analysis sessions by confirming data availability:
 
 - "*What S&P Global financial data can you access through Kensho?*"
 
-
 - "*Can you retrieve segment data through Daloopa?*"
 
 This preliminary step prevents requesting analyses that require unavailable data and helps you understand which integration to specify for different types of analysis.
 
-## Core Prompting Principles
+## Core Prompting Principles[](#core-prompting-principles)
 
-### Be Specific and Clear
+### Be Specific and Clear[](#be-specific-and-clear)
 
 Claude has access to vast amounts of financial data through multiple sources. Without specific instructions, you may receive more data than needed or miss critical metrics. Clear specifications ensure you get exactly what your analysis requires, saving time and improving accuracy.
 
 Consider these contrasting examples:
 
-\# Bad prompt
+Bad prompt
 
-`Claude, please Analyze Microsoft`
+Claude, please Analyze Microsoft
 
 This vague request could trigger retrieval of hundreds of data points across multiple years, making it difficult to identify relevant insights. Claude won't know whether you want valuation metrics, operational performance, or competitive positioning.
 
-\# Good prompt
+Good prompt
 
-`Using Daloopa, retrieve Microsoft's (MSFT) revenue, operating margin, and free cash flow for Q1 2023 through Q4 2024, then calculate year-over-year growth rates`
+Using Daloopa, retrieve Microsoft's (MSFT) revenue, operating margin, and free cash flow for Q1 2023 through Q4 2024, then calculate year-over-year growth rates
+
+
+
+Open in Claude
 
 This specific request identifies the data source, company ticker, exact metrics, time period, and desired calculations. Claude knows precisely what to retrieve and how to process it. Your prompts should include company tickers, exact metric names, specific time periods, and the desired output format.
 
-### Request Only Relevant Information
+### Request Only Relevant Information[](#request-only-relevant-information)
 
 Financial integrations can pull extensive datasets covering hundreds of metrics across many years. Requesting everything available wastes time, increases processing complexity, and makes it harder to focus on what matters for your specific analysis. Targeted requests produce cleaner, more actionable results.
 
-\# Bad prompt
+Bad prompt
 
-`Pull all financial data for Tesla, Ford, and GM`
+Pull all financial data for Tesla, Ford, and GM
 
 This request could return thousands of data points including irrelevant metrics, making it difficult to conduct focused analysis.
 
-\# Good prompt
+Good prompt
 
-`For Tesla (TSLA), Ford (F), and GM, retrieve only automotive revenue and gross margins for the last 4 quarters to compare operational efficiency`
+For Tesla (TSLA), Ford (F), and GM, retrieve only automotive revenue and gross margins for the last 4 quarters to compare operational efficiency
+
+
+
+Open in Claude
 
 This focused request retrieves only the metrics needed for operational comparison. When crafting prompts, think about your analytical objective first, then request only the data that directly supports that analysis. This approach produces more manageable outputs and clearer insights.
 
-### Control Data Volume
+### Control Data Volume[](#control-data-volume)
 
 Large data requests can slow down analysis and produce overwhelming outputs that are difficult to interpret. Managing scope ensures Claude can process requests efficiently and present results in digestible formats. This is particularly important when working with multiple companies or extended time periods.
 
-\# Bad prompt
+Bad prompt
 
-`Get all available historical data for the entire S&P 500`
+Get all available historical data for the entire S&P 500
 
 This request is likely to fail or produce unusable results due to the sheer volume of data involved.
 
-\# Good prompt
+Good prompt
 
-`Retrieve the last 8 quarters of revenue and EBITDA margin for these 5 software companies: CRM, NOW, WDAY, TEAM, and ZM`
+Retrieve the last 8 quarters of revenue and EBITDA margin for these 5 software companies: CRM, NOW, WDAY, TEAM, and ZM
+
+
+
+Open in Claude
 
 This manageable request focuses on a specific peer group with defined metrics and a reasonable time frame. As a general guideline, limit requests to 3-5 companies for detailed analysis, request specific line items rather than entire financial statements, and use date ranges that match your analytical needs rather than requesting all available history.
 
-## Structuring Complex Analyses
+## Structuring Complex Analyses[](#structuring-complex-analyses)
 
-### Request Analysis Plans First
+### Request Analysis Plans First[](#request-analysis-plans-first)
 
 Complex financial analyses involve multiple steps, data sources, and assumptions. Having Claude outline the approach first lets you catch potential issues before time is spent on calculations. This is especially valuable for valuations, modeling, or multi-company comparisons where methodology choices significantly impact results. A clear plan also ensures alignment between your expectations and Claude's intended approach.
 
-\# Bad prompt
+Bad prompt
 
-`Do a complete valuation analysis of Netflix`
+Do a complete valuation analysis of Netflix
 
 This open-ended request leaves too many decisions to Claude, potentially resulting in an analysis that doesn't match your requirements or uses inappropriate assumptions.
 
-\# Good prompt
+Good prompt
 
-`Create a plan for valuing Netflix (NFLX) using DCF methodology. List the data you'll need, calculations you'll perform, and assumptions you'll make. Let me review before you proceed.`
+Create a plan for valuing Netflix (NFLX) using DCF methodology. List the data you'll need, calculations you'll perform, and assumptions you'll make. Let me review before you proceed.
+
+
+
+Open in Claude
 
 This approach gives you visibility into the planned methodology before execution begins. You can review the data sources Claude intends to use, verify that key assumptions are reasonable, identify any missing components, and adjust the approach before investing time in detailed calculations. This preliminary review often catches issues that would be costly to fix after the analysis is complete.
 
-### Use Step-by-Step Approaches
+### Use Step-by-Step Approaches[](#use-step-by-step-approaches)
 
 Breaking complex analyses into discrete steps provides transparency into Claude's process and allows for course correction. You can verify data accuracy, check calculations, and adjust methodology between steps rather than discovering issues only in final results. This approach is particularly valuable when working with multiple data sources or when calculations build upon each other.
 
-\# Bad prompt
+Bad prompt
 
-`Compare these 5 companies and tell me which is best`
+Compare these 5 companies and tell me which is best
 
 This request produces a black-box analysis where you can't verify the underlying data or logic.
 
-\# Good prompt
+Good prompt
 
-`Let's analyze these companies step by step. First, pull their P/E ratios. Show me the results before proceeding to the next metric.`
+Let's analyze these companies step by step. First, pull their P/E ratios. Show me the results before proceeding to the next metric.
+
+
+
+Open in Claude
 
 This incremental approach allows you to catch errors early, adjust the analysis based on initial findings, understand Claude's reasoning at each stage, and verify data accuracy before it's used in calculations. Each step becomes a checkpoint where you can ensure the analysis remains on track.
 
-### Build Incrementally
+### Build Incrementally[](#build-incrementally)
 
 Starting with data retrieval before moving to analysis ensures you're working with accurate, complete information. This approach prevents wasted effort on calculations using incomplete data and helps identify data gaps before they affect conclusions. It also allows you to adjust your analysis based on what data is actually available.
 
@@ -146,15 +142,27 @@ A typical incremental workflow might look like this:
 
 First, retrieve Amazon's segment revenue for the last 8 quarters and show me what's available
 
+
+
+Open in Claude
+
 Now calculate the growth rate for AWS specifically
+
+
+
+Open in Claude
 
 Finally, compare AWS growth to Azure's growth over the same period
 
+
+
+Open in Claude
+
 Each step builds on the previous one, ensuring that you have the necessary foundation before proceeding. This method is particularly useful when exploring unfamiliar companies or sectors where you may not know exactly what data is available until you start the analysis.
 
-## Common Issues and Solutions
+## Common Issues and Solutions[](#common-issues-and-solutions)
 
-### Data Availability Challenges
+### Data Availability Challenges[](#data-availability-challenges)
 
 **Issue:** Requesting data that doesn't exist or isn't available through current integrations can derail your analysis.
 
@@ -162,7 +170,7 @@ Each step builds on the previous one, ensuring that you have the necessary found
 
 Different companies report different metrics, and not all historical data may be available. Confirming availability upfront saves time and allows you to adjust your analytical approach based on what data is actually accessible.
 
-### Scope Management
+### Scope Management[](#scope-management)
 
 **Issue:** Requesting analysis of 50+ companies at once can produce overwhelming results or cause the analysis to fail entirely.
 
@@ -170,7 +178,7 @@ Different companies report different metrics, and not all historical data may be
 
 For example, instead of "*Analyze all REITs,*" try being more specific: "*Analyze these 5 industrial REITs first: PLD, DRE, FR, TRNO, STAG.*" After reviewing the initial results, you can proceed with additional groups. This approach ensures each batch receives thorough analysis and allows you to refine your criteria based on initial findings.
 
-### Ambiguous Requests
+### Ambiguous Requests[](#ambiguous-requests)
 
 **Issue:** Terms like "good companies" or "strong performance" mean different things to different analysts and can lead to results that don't match your criteria.
 
@@ -178,17 +186,21 @@ For example, instead of "*Analyze all REITs,*" try being more specific: "*Analyz
 
 Here's an example:
 
-\# Bad prompt
+Bad prompt
 
-`Find me good value stocks`
+Find me good value stocks
 
-\# Good prompt
+Good prompt
 
-`Find companies with P/E below 15, positive free cash flow, and revenue growth above 5%`
+Find companies with P/E below 15, positive free cash flow, and revenue growth above 5%
+
+
+
+Open in Claude
 
 The specific criteria ensure Claude identifies companies that match your investment philosophy and screening parameters. This precision is particularly important when building screens or identifying investment candidates.
 
-## Tips for Efficient Prompting
+## Tips for Efficient Prompting[](#tips-for-efficient-prompting)
 
 - State your end goal upfront so Claude can suggest appropriate approaches.
 - Use consistent terminology throughout your analysis.
@@ -202,503 +214,8 @@ The specific criteria ensure Claude identifies companies that match your investm
 
 These strategies help you get the most value from Claude's financial analysis capabilities while avoiding common pitfalls. As you develop experience with the system, you'll identify prompt patterns that work well for your specific analytical needs.
 
-## Related tutorials
-
-[Install financial services plugins for Claude Cowork](/resources/tutorials/install-financial-services-plugins-for-cowork)
-
-Install financial services plugins for Claude Cowork
-
-Install financial services plugins for Claude Cowork
-
-Tutorial
-
-[Tutorial](/resources/tutorials/install-financial-services-plugins-for-cowork)
-
-Tutorial
-
-[How to build a plugin from scratch in Claude Cowork](/resources/tutorials/how-to-build-a-plugin-from-scratch-in-cowork)
-
-How to build a plugin from scratch in Claude Cowork
-
-How to build a plugin from scratch in Claude Cowork
-
-Tutorial
-
-[Tutorial](/resources/tutorials/how-to-build-a-plugin-from-scratch-in-cowork)
-
-Tutorial
-
-[Getting started with Claude in Excel](/resources/tutorials/getting-started-with-claude-in-excel)
-
-Getting started with Claude in Excel
-
-Getting started with Claude in Excel
-
-Tutorial
-
-[Tutorial](/resources/tutorials/getting-started-with-claude-in-excel)
-
-Tutorial
-
-[How to use Claude in Excel for accounting: Revenue model validation](/resources/tutorials/how-to-use-claude-in-excel-for-accounting-revenue-model-validation)
-
-How to use Claude in Excel for accounting: Revenue model validation
-
-How to use Claude in Excel for accounting: Revenue model validation
-
-Tutorial
-
-[Tutorial](/resources/tutorials/how-to-use-claude-in-excel-for-accounting-revenue-model-validation)
-
-Tutorial
-
-[Homepage](https://claude.com)
-
-Homepage
-
-
-Thank you! Your submission has been received!
-
-Oops! Something went wrong while submitting the form.
-
-Write
-
-[Button Text](#)
-
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
-
-[Anthropic](https://www.anthropic.com/)
-
-Anthropic
-
-© \[year\] Anthropic PBC
-
-Products
-
-- Claude
-
-  [Claude](/product/overview)
-  Claude
-
-- Claude Code
-
-  [Claude Code](/product/claude-code)
-  Claude Code
-
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
-- Claude Cowork
-
-  [Claude Cowork](/product/cowork)
-  Claude Cowork
-
-- @Claude
-
-  [@Claude](/product/tag)
-  @Claude
-
-- Claude Design
-
-  [Claude Design](/product/design)
-  Claude Design
-
-- Claude Science
-
-  [Claude Science](/product/claude-science)
-  Claude Science
-
-- Claude Security
-
-  [Claude Security](/product/claude-security)
-  Claude Security
-
-- Download app
-
-  [Download app](/download)
-  Download app
-
-- Pricing
-
-  [Pricing](/pricing)
-  Pricing
-
-- Log in
-
-  [Log in](https://claude.ai/login)
-
-Features
-
-- Claude for Chrome
-
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
-
-- Claude for Microsoft 365
-
-  [Claude for Microsoft 365](/claude-for-microsoft-365)
-  Claude for Microsoft 365
-
-- Skills
-
-  [Skills](/skills)
-  Skills
-
-Models
-
-- Mythos
-
-  [Mythos](https://www.anthropic.com/claude/mythos)
-  Mythos
-
-- Fable
-
-  [Fable](https://www.anthropic.com/claude/fable)
-  Fable
-
-- Opus
-
-  [Opus](https://www.anthropic.com/claude/opus)
-  Opus
-
-- Sonnet
-
-  [Sonnet](https://www.anthropic.com/claude/sonnet)
-  Sonnet
-
-- Haiku
-
-  [Haiku](https://www.anthropic.com/claude/haiku)
-  Haiku
-
-Solutions
-
-- AI agents
-
-  [AI agents](/solutions/agents)
-  AI agents
-
-- Code modernization
-
-  [Code modernization](/solutions/code-modernization)
-  Code modernization
-
-- Coding
-
-  [Coding](/solutions/coding)
-  Coding
-
-- Customer support
-
-  [Customer support](/solutions/customer-support)
-  Customer support
-
-- Cybersecurity
-
-  [Cybersecurity](/solutions/cybersecurity)
-  Cybersecurity
-
-- Enterprise
-
-  [Enterprise](/solutions/enterprise)
-  Enterprise
-
-- Financial services
-
-  [Financial services](/solutions/financial-services)
-  Financial services
-
-- Government
-
-  [Government](/solutions/government)
-  Government
-
-- Healthcare
-
-  [Healthcare](/solutions/healthcare)
-  Healthcare
-
-- Higher education
-
-  [Higher education](/solutions/education)
-  Higher education
-
-- K-12 teachers
-
-  [K-12 teachers](/solutions/teachers)
-  K-12 teachers
-
-- Legal
-
-  [Legal](/solutions/legal)
-  Legal
-
-- Life sciences
-
-  [Life sciences](/solutions/life-sciences)
-  Life sciences
-
-- Nonprofits
-
-  [Nonprofits](/solutions/nonprofits)
-  Nonprofits
-
-- Small business
-
-  [Small business](/solutions/small-business)
-  Small business
-
-Claude Platform
-
-- Overview
-
-  [Overview](/platform/api)
-  Overview
-
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
-
-- Ecosystem
-
-  [Ecosystem](/ecosystem)
-  Ecosystem
-
-- Marketplace
-
-  [Marketplace](/platform/marketplace)
-  Marketplace
-
-- Claude on AWS
-
-  [Claude on AWS](/partners/claude-on-aws)
-  Claude on AWS
-
-- Google Cloud
-
-  [Google Cloud](/partners/google-cloud)
-  Google Cloud
-
-- Microsoft Foundry
-
-  [Microsoft Foundry](/partners/microsoft-foundry)
-  Microsoft Foundry
-
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](https://platform.claude.com/)
-  Console login
-
-Resources
-
-- Blog
-
-  [Blog](/blog)
-  Blog
-
-- Claude partner network
-
-  [Claude partner network](/partners)
-  Claude partner network
-
-- Community
-
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
-
-- Customer stories
-
-  [Customer stories](/customers)
-  Customer stories
-
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
-- Events
-
-  [Events](https://www.anthropic.com/events)
-  Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
-
-- Powered by Claude
-
-  [Powered by Claude](/partners/powered-by-claude)
-  Powered by Claude
-
-- Service partners
-
-  [Service partners](/partners/services)
-  Service partners
-
-- Tutorials
-
-  [Tutorials](/resources/tutorials)
-  Tutorials
-
-- Use cases
-
-  [Use cases](/resources/use-cases)
-  Use cases
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Policy
-
-  [Policy](https://www.anthropic.com/policy)
-  Policy
-
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
-- Research
-
-  [Research](https://www.anthropic.com/research)
-  Research
-
-- News
-
-  [News](https://www.anthropic.com/news)
-  News
-
-- Policy on the AI Exponential
+- [Discovering What Data Claude Can Access](#discovering-what-data-claude-can-access)
+- [Core Prompting Principles](#core-prompting-principles)
+- [Structuring Complex Analyses](#structuring-complex-analyses)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Tips for Efficient Prompting](#tips-for-efficient-prompting)

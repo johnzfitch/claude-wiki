@@ -2,7 +2,7 @@
 title: "Slash Commands in the SDK - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/slash-commands"
 category: "09-Agents-Patterns"
-fetched_at: "2026-08-02T05:38:05Z"
+fetched_at: "2026-08-13T06:45:41Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -257,8 +257,6 @@ A `compact_boundary` message only arrives when compaction ran. With nothing to s
 
 The `/clear` command resets the conversation to an empty context, so subsequent prompts start with no prior conversation history. The previous conversation remains on disk and can be returned to by passing its session ID to the [`resume` option](/docs/en/agent-sdk/sessions#resume-by-id). This is useful in [streaming input mode](/docs/en/agent-sdk/streaming-vs-single-mode), where you send multiple prompts over a single connection. For one-shot `query()` calls, each call already starts with empty context, so sending `/clear` has no practical effect; start a new `query()` instead.
 
-`/clear` in the SDK requires Claude Code v2.1.117 or later. In earlier versions it is omitted from `slash_commands`.
-
 
 [​](#creating-custom-slash-commands)
 
@@ -266,7 +264,7 @@ Creating Custom Slash Commands
 
 In addition to using built-in slash commands, you can create your own custom commands that are available through the SDK. You define custom commands as markdown files in specific directories, the same way you configure subagents.
 
-The `.claude/commands/` directory is the legacy format. The recommended format is `.claude/skills/<name>/SKILL.md`, which supports the same slash-command invocation (`/name`) plus autonomous invocation by Claude. See [Skills](/docs/en/agent-sdk/skills) for the current format. The CLI continues to support both formats, and the examples below remain accurate for `.claude/commands/`.
+Custom commands have been merged into skills. A file in `.claude/commands/` and a skill at `.claude/skills/<name>/SKILL.md` both create `/name` and work the same way. For new work, prefer skills, which add features like a directory for supporting files; see [Skills](/docs/en/agent-sdk/skills) for SDK usage. The CLI supports both locations, and the examples below remain accurate for `.claude/commands/`.
 
 
 [​](#file-locations)
@@ -275,8 +273,8 @@ File Locations
 
 Save custom slash commands in one of these directories, depending on their scope:
 
-- **Project commands**: `.claude/commands/` - Available only in the current project (legacy; prefer `.claude/skills/`)
-- **Personal commands**: `~/.claude/commands/` - Available across all your projects (legacy; prefer `~/.claude/skills/`)
+- **Project commands**: `.claude/commands/` - Available only in the current project. For new work, prefer `.claude/skills/`.
+- **Personal commands**: `~/.claude/commands/` - Available across all your projects. For new work, prefer `~/.claude/skills/`.
 
 
 [​](#file-format)
@@ -589,63 +587,6 @@ Run tests matching pattern: $ARGUMENTS
 2. Run tests with the provided pattern
 3. If tests fail, analyze and fix them
 4. Re-run to verify fixes
-```
-
-Use these commands through the SDK:
-
-TypeScript
-
-Python
-
-```python
-import { query } from "@anthropic-ai/claude-agent-sdk";
-
-// Run code review
-try {
-  for await (const message of query({
-    prompt: "/review-pr",
-    options: { maxTurns: 3 }
-  })) {
-    // Process review feedback
-  }
-} catch (error) {
-  // A single-shot query() throws after yielding an error result,
-  // so the second query below still runs.
-  console.error(`Session ended with an error: ${error}`);
-}
-
-// Run specific tests
-for await (const message of query({
-  prompt: "/test auth",
-  options: { maxTurns: 5 }
-})) {
-  // Handle test results
-}
-```
-
-```python
-import asyncio
-from claude_agent_sdk import query, ClaudeAgentOptions
-
-
-async def main():
-    # Run code review
-    try:
-        async for message in query(prompt="/review-pr", options=ClaudeAgentOptions(max_turns=3)):
-            # Process review feedback
-            pass
-    except Exception as error:
-        # A single-shot query() raises after yielding an error result,
-        # so the second query below still runs.
-        print(f"Session ended with an error: {error}")
-
-    # Run specific tests
-    async for message in query(prompt="/test auth", options=ClaudeAgentOptions(max_turns=5)):
-        # Handle test results
-        pass
-
-
-asyncio.run(main())
 ```
 
 

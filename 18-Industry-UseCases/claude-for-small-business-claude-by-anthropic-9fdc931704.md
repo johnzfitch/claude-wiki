@@ -2,38 +2,50 @@
 title: "Claude for Small Business | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/small-business"
 category: "18-Industry-UseCases"
-fetched_at: "2026-08-02T05:44:07Z"
+fetched_at: "2026-09-24T06:29:58Z"
 ---
 
 # Claude for small business
 
-Out of the weeds, into the work
+Run and grow your business
 
-Claude for small business gets to work for you on day one. Connect to tools you already use, securely, so your team can focus on what’s next.
+Claude helps you run and grow your business with ready-to-run workflows you sign off on, so you can take on more. Close the books, answer every lead, and get proposals out the door.
 
-Get started
+Install the plugin
 
-[Get started](/pricing)
+[Install the plugin](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin)
 
-Get started
+Install the plugin
 
-Take AI fluency course
+Find a workshop
 
-[Take AI fluency course ](https://anthropic.skilljar.com/ai-fluency-for-small-businesses)
+[Find a workshop](#events)
 
-Take AI fluency course
+Find a workshop
 
-Not only could it problem-solve for me, it also showed me problems I didn't know I had.
+“We got about \$180,000 back in shipping overcharges. There's just no way a person could have done that analysis, even if they were dedicated full time to it.”
 
-Brian Ludviksen, COO, Purity Coffee
+Kirsten Maitland, Co-founder & CEO
 
-It's freeing up things that used to be a lot of very tedious clerical work for more value-add tasks.
+“Cowork has completely changed my business. It's saving me over 21 hours a week. It has turned Claude into an employee and an executive assistant to help me get more done and build a better business.”
 
-Ryan Olson, Technology and Innovation Manager, MidCentral Energy
+Pat Miller, Founder
 
-What we used to think were the constraints are just not constraints anymore. It's empowering. Hours of looking at stuff that doesn't matter are gone. I want an entire organization where everybody is using these tools daily.
+“What used to take me 120 hours now takes me five minutes with Claude Code, and I'm able to really scale.”
 
-Mike Beckham, CEO, Simple Modern
+Pedro Rubio, Founder and CEO
+
+“I've never coded anything in my life. Our design team is more efficient, our buying is better, and the customer is a lot more likely to get what they ordered.”
+
+Cameron Pappas, Owner
+
+“Dashboards that would take weeks or months, we can now build in a day or two. It's allowed me to become the CFO of a growing company and keep pace with it.”
+
+Ashley Wells, CFO
+
+“At Chief of Minds, we treat our partners' time as the most valuable thing they have. Claude helps us protect it. What used to take our team two days… we now turn around in hours, with the same quality our partners expect. That's not replacing people, it's freeing them to do the work only they can do.”
+
+Lakeisha Robichaux, CEO and Founder
 
 [Prev](#)
 
@@ -44,35 +56,25 @@ Prev
 
 ## A big difference for small businesses
 
-### Ready from day one
+### Runs your business
 
-One toggle installs everything. No lengthy setup or help from IT, so you can run your first workflow the same day.
+Claude closes the books, forecasts cash, prepares payroll, creates reports, and has your Monday brief waiting before you ask. You make the calls and sign off.
 
-### Delegate the work, own the decisions
+### Follows through
 
-Not just chat that answers questions: Claude runs end-to-end workflows so you stay focused on results, not busy work.
+Set tasks up once and they run on your schedule: follow-ups, overdue invoices, reorders. Claude keeps track so you don't have to.
+
+### Grows your business
+
+Every lead gets an answer and proposal, even at 9pm. Campaigns get planned, made, and measured. The marketing you know you should be doing, done.
 
 ### Works with your tools
 
-Connect to the tools you use every day: PayPal, QuickBooks, HubSpot, Canva, DocuSign, Google Workspace, Microsoft 365, Slack, and more.
-
-### Built for trust
-
-Security is the foundation, not a feature. We don't train on your data. You approve each step or let it run end-to-end using tools you choose.
-
-Tutorials
-
-Get step-by-step help through each workflow 
-
-Learn more
-
-[Learn more](https://claude.com/resources/tutorials/category/small-business)
-
-Learn more
+Connect Intuit QuickBooks, HubSpot, Shopify, Stripe, Gusto, Canva and 25 more. Not connected yet? Workflows also run from a spreadsheet or forwarded email.
 
 Trust center
 
-Explore security with Claude: your data, your business, what Claude does with it
+Explore security with Claude: your data, your business, what Claude does with it.
 
 Read more
 
@@ -82,326 +84,646 @@ Read more
 
 ## See what Claude can do for your business
 
-Payroll
+Monday brief
 
-Month-end close
+Close books
 
-Morning briefs
+Proposals
 
-Growth
+Leads
+
+Marketing
+
+Build agents
 
 Active
 
-Note
-
-Interact with the data—hover and toggle views to uncover patterns
-
 Prompt
 
-I’m working on April 15 payroll. Pull my cash position from QuickBooks and reconcile it against my PayPal settlements. Rank any overdue invoices that could close the gap and draft a reminder email for each one.
+Every Monday at 6:30 AM, post my business brief to my Slack: cash position, weekend sales by café and online, what's committed this week, anything on the watch-list, and the one thing that needs me today. Keep it to what fits on my phone.
 
 Connectors
 
-Intuit QuickBooks
+Xero
 
 
-PayPal
+Shopify
 
 
-X
-
-April-Payroll-Reconciliation.xlsx - Excel
-
-### Plan payroll with confidence
-
-Claude can rank a list of overdue items, draft reminder emails, get a 30-day forecast, and get your books ready for quarterly taxes. You review and send.
-
-Prompt
-
-Close out March for me. Reconcile my QuickBooks transactions against PayPal settlements, flag anything that doesn't match, and write the P&L narrative as a document I can send straight to my accountant.
-
-Connectors
-
-Intuit QuickBooks
-
-
-PayPal
-
-
-Google Drive
-
-
-## **March 2026 Month-End Close**
-
-*P&L Narrative & PayPal / QuickBooks Reconciliation*
-
-**Period:** March 1 – March 31, 2026
-
-**Prepared:** April 2, 2026
-
-  
-#### **Summary**
-
-March revenue came in at \$48,210, up 7.5% from February (\$44,860). Net income, however, dipped to \$11,840 (from \$13,210) because annual software renewals hit this month — Adobe CC, QuickBooks, and a few smaller tools accounted for ~\$2,040 of one-time spend that won't recur until next March.
-
-Reconciliation between QuickBooks Online and PayPal settlements is complete. 142 of 147 transactions matched cleanly. Five items are flagged below for your review: three are routine timing differences, one is a duplicate refund I've already disputed with PayPal, and one is a \$3.18 FX variance I'm comfortable writing off. None should change the bottom line materially.
-
-Q1 2026 closed at \$135,250 in revenue and \$37,550 in net income — up 14.2% and 20.4% respectively vs. Q1 2025.
-
-#### **Profit & Loss — March 2026**
-
-**Revenue — \$48,210.00**
-
-- **Consulting services:** \$32,400.00
-- **Product sales (digital):** \$12,650.00
-- **Affiliate / referral income:** \$3,160.00
-
-**Cost of Goods Sold — \$2,096.00**
-
-- **Payment processing fees (PayPal + Stripe):** \$1,684.00
-- **Hosting & delivery infrastructure:** \$412.00
-
-**Gross Profit — \$46,114.00 (95.7% margin)**
-
-**Operating Expenses — \$34,274.00**
-
-- **Software & subscriptions:** \$16,250.00 (incl. annual renewals)
-- **Contractor payments (1099):** \$9,800.00
-- **Marketing & advertising:** \$4,120.00
-- **Professional services (legal):** \$1,500.00
-- **Travel & meals:** \$890.00
-- **Insurance:** \$625.00
-- **Bank & merchant fees:** \$370.00
-- **Office & supplies:** \$284.00
-- **Miscellaneous:** \$250.00
-- **Telephone & internet:** \$185.00
-
-**Net Operating Income — \$11,840.00**
-
-Margin commentary: Gross margin of 95.7% is consistent with the trailing average. The OpEx ratio (71.1% of revenue) is elevated this month due to renewals; the trailing 3-month average is 64.3%. Excluding the ~\$2,040 in one-time annual renewals, normalized net income for March would have been ~\$13,880.
-
-#### **PayPal ↔ QuickBooks Reconciliation**
-
-- **QuickBooks transactions in March:** 147 transactions, \$48,210.00 total
-- **PayPal settlements deposited:** 144 deposits, \$48,182.32 total
-- **Auto-matched (exact match on amount + date ±1d):** 142 transactions, \$47,949.14
-- **Manually matched (after FX/timing review):** 0 transactions, \$0.00
-- **Flagged for review:** 5 transactions, \$261.18 (see below)
-
-#### **Flagged Items (5)**
-
-**1. Duplicate refund debit — Order \#PAY-30142**
-
-- **Date:** 2026-03-08
-- **Amount:** -\$129.00 (debited twice)
-- **Status:** Disputed with PayPal 2026-03-12; case \#PP-D-7724891 — still open
-- **Treatment:** Recognized as receivable from PayPal in March; will reverse on resolution. No P&L impact.
-
-**2. Timing difference — March 31 settlement batch**
-
-- **QB deposit recorded:** 2026-03-31, \$1,820.45 (4 transactions)
-- **PayPal settlement:** 2026-04-01, \$1,820.45
-- **Status:** Cleared in April PayPal feed; standard month-end cutoff.
-- **Treatment:** Leave revenue in March (earned in March). No adjustment needed.
-
-**3. FX variance — UK invoice INV-2026-0287**
-
-- **Invoice:** £1,000.00 booked at 1.2700 = \$1,270.00
-- **Settlement (after PayPal FX + fee):** \$1,266.82
-- **Variance:** -\$3.18
-- **Treatment:** Post to FX Gain/Loss. Immaterial.
-
-**4. Unidentified PayPal credit**
-
-- **Date:** 2026-03-19
-- **Amount:** +\$84.50
-- **Description:** "PayPal Promotional Credit" — no matching invoice or known promotion
-- **Status:** Emailed PayPal support 2026-03-22; no response yet.
-- **Treatment:** Held in suspense account (Other Current Liabilities) pending response. Not in revenue.
-
-**5. Chargeback fee not auto-categorized**
-
-- **Date:** 2026-03-26
-- **Amount:** -\$15.00
-- **Reference:** Chargeback on Order \#PAY-29871 (resolved in our favor 2026-03-29; \$148 returned)
-- **Treatment:** Recategorized as Bank & merchant fees. Original \$148 sale stands; only the fee remains.
-
-#### **Notes**
-
-- All March bank statements reconciled. Ending balance per QuickBooks (\$21,470.18) ties to Chase statement.
-- Owner's draw: \$5,000 taken on 2026-03-15.
-- No federal estimated tax payment was made in March. Q1 estimate of \$9,200 scheduled for 2026-04-15 (EFTPS).
-- 1099 contractors: total spend \$9,800 across 3 contractors; no single contractor exceeds \$600 outside what's already on file. No new 1099s triggered.
-- Sales tax: collected \$1,847 (TX only); remitted via TX Comptroller portal on 2026-03-20.
-- Inventory: N/A — services + digital product business.
-- No new fixed assets capitalized this month. No depreciation entries needed beyond the standing schedule.
-
-**Q1 2026 Trend (for context)**
-
-- **January 2026:** Revenue \$42,180.00 / Net Income \$12,500.00 (29.6% margin)
-- **February 2026:** Revenue \$44,860.00 / Net Income \$13,210.00 (29.4% margin)
-- **March 2026:** Revenue \$48,210.00 / Net Income \$11,840.00 (24.6% margin)
-- **Q1 2026 total:** Revenue \$135,250.00 / Net Income \$37,550.00 (27.8% margin)
-- **Q1 2025 total (PY):** Revenue \$118,400.00 / Net Income \$31,200.00 (26.4% margin)
-- **YoY change:** +14.2% revenue / +20.4% net income / +1.4 pts margin
-
-Close the month with fewer errors, faster
-
-Claude reconciles accounts against settlements, flags what doesn't match, and writes the plain-English P&L you forward to your accountant.
-
-Prompt
-
-Help me build a Monday morning brief every week in Slack. Pull my cash position from QuickBooks, incoming settlements from PayPal, pipeline movement from HubSpot, and what's on my calendar this week. Tell me the three things that need my attention today.
-
-Connectors
-
-Intuit QuickBooks
-
-
-Google Calendar
-
-
-Slack
+Gusto
 
 
 Search
 
-Camilla Lee
+Claude
 
 Messages
 
-Jot something down
+Message Claude
 
-*Morning Brief – Monday, May 11*
+*Monday brief — Sep 14*
 
-💰 *Cash:* \$184.3k operating (+\$12.4k WoW) · 38 days runway
+💰 *Cash:* \$212.4k operating (+\$8.1k WoW) · 41 days runway
 
-💸 *PayPal in-flight:* \$13.5k clearing this week
+☕ *Weekend sales:* Main St \$9.2k (+4%) · Riverside \$7.8k (+6%) · Eastside \$5.1k (−11%) · Online \$3.4k (+9%)
 
-📈 *Pipeline:* Northwind → Negotiation (\$42k) · Bright Harbor stalled 14d (\$28k) · Linnea demo Thu
+📅 *This week:* \$38.6k committed — payroll Fri \$24.2k · roaster invoice \$9.1k · rent \$5.3k
 
-📅 *Week:* Mon 2p Northwind legal · Thu 11a Linnea demo · Fri open
+👀 *Watch-list:* Eastside down 2 weekends running · Riverside espresso machine service 12d overdue · online subscription churn up to 6%
 
-🎯 *Today*
+🎯 *Needs you today:* Eastside is the only café down two weekends running; staffing or foot traffic? Kira has the weekend schedules pulled if you want 15 min.
 
-1.  Reply to Bright Harbor before the 2pm
-2.  Approve Northwind redlines by 1pm
-3.  Confirm Thu demo logistics w/ Linnea
+### Get a handle on Monday
 
-Sent using @Claude
-
-### Get a pulse on your business in a morning brief
-
-Pull your cash, pipeline, and your calendar into one brief: see where the money is, what's closing, and the three things that need you today.
+Get a brief highlighting your cash, weekend sales, the week ahead, and the one thing that needs your attention today in Slack at 6:30 every Monday, without you asking.  
 
 Prompt
 
-Find my weakest revenue month from last year and plan a promo to address it. Draft the strategy, generate the campaign assets in Canva, segment my list in HubSpot, and stage the send. Show me everything before anything goes out.
+Close July. Reconcile QuickBooks against my Shopify Payments and Stripe settlements, flag anything uncategorized or duplicated, write the P&L in plain English, and refresh my cash forecast off the closed numbers. I want the packet ready for my accountant by Tuesday.
 
 Connectors
 
 Intuit QuickBooks
+
+
+Stripe
+
+
+Shopify
+
+
+### July 2026 close packet
+
+*Greenleaf Grounds · July 1–31, 2026 · Prepared Aug 3, 2026*
+
+##### Reconciliation
+
+**Shopify Payments:** 31 payouts, \$77,436.15 — matches QuickBooks to the cent.
+
+**Stripe:** 9 settlements, \$31,778.35 — matches QuickBooks to the cent.
+
+**Uncategorized transactions:** 7 → 0, all coded.
+
+**Duplicates:** 1 found, held (see below).
+
+
+##### Flags for review
+
+**Duplicate vendor bill — held, not paid.** Cascade Packaging bill \#4471 (\$1,842.00) was entered twice. The second copy is on hold in QuickBooks; nothing left the bank. Confirm and delete it.
+
+‍**Café labor over target.** Labor ran 34.1% of café sales against a 30% target, about \$1,700 over, mostly street-fair overtime and two new hires in training.
+
+
+##### P&L summary
+
+July brought in **\$112,400**, up 6% from June, led by online orders and wholesale. After \$47,900 of coffee and goods, \$41,200 of payroll, and \$14,800 of everything else, the business kept **\$8,500 — a 7.6% net margin.**That is \$1,100 better than June, mostly because green-coffee costs fell under the new supplier contract.
+
+
+##### Cash forecast
+
+**Covers Aug 15 payroll with \$22K headroom.** \$41.8K cash at close, plus \$36.4K in settlements due by Aug 14, less \$31.8K in rent, bills, and loan payment and \$24.4K in payroll.
+
+
+**Books closed Day 3.**
+
+Close the books
+
+Claude can check your books against Stripe and Shopify, flag anything odd, and explain the month in plain English, so you can share with your accountant.  
+
+Prompt
+
+Here's my voice memo from the Harbor Dental site visit plus photos of their break rooms. Build the wholesale proposal on my template with our standard pricing from past wholesale deals, twelve locations, weekly delivery. Route it for signature when I've approved it.
+
+Connectors
+
+Google Drive
+
+
+Docusign
 
 
 Canva
 
 
-Spring schedule for Sunshine Stays — quick call this week?
+#### Wholesale Supply Proposal
 
-robert.fitch@sunshinestaysgroup.com
+###### Meridian Roasting Co.
 
-Robert,
+*Prepared for Harbor Dental Group · September 1, 2026*
 
-Hope the season is off to a strong start in Destin. Wanted to reach out personally before our spring promo goes wide.
+##### Scope
 
-We're booking spring landscape refreshes and maintenance contracts now through June 12 — and given how many properties Sunshine Stays runs, I think a portfolio-wide maintenance package makes a lot of sense. We'd consolidate visits, lock in a single monthly rate per property, and free your team from coordinating crews unit by unit.
+Following our August 27 site visit, this proposal covers weekly wholesale coffee and break-room supply for all twelve Harbor Dental locations. Each break room is set up for drip service, and the quantities below are sized to roughly 40 cups per location per day.
 
-Promo terms while it's running:
+##### Monthly pricing
 
-- \$500 off any project over \$5,000
-- First month free on annual maintenance contracts
+- **House Blend, whole bean** — 96 five-lb bags at \$38.00 — \$3,648.00
+- **Decaf, whole bean** — 24 five-lb bags at \$41.00 — \$984.00
+- **Assorted tea** — 12 cases at \$29.00 — \$348.00
+- **Creamers, dairy and oat —** 12 locations at \$34.00 — \$408.00
+- **Cups, lids and sleeves** — 24 cases at \$18.50 — \$444.00
+- **Brewer service and filters** — 12 locations at \$25.00 — \$300.00
+- **Weekly delivery, twelve locations** — included
+- **Total monthly:** \$6,132.00
 
-Got 30 minutes Thursday morning to walk through the property list? I've got 9:30 AM open before I head out for the first mulch run of the season.
+‍*Pricing matched to your last three wholesale agreements in QuickBooks.*
 
-— Eli  
-Greenleaf Grounds
+### Win the work
+
+Send Claude a voice memo and photos from your site visit, get back a proposal in your format, priced from your last three deals and ready for signature once you approve.  
+
+Prompt
+
+A wholesale inquiry just came in from Harbor Dental Group asking about coffee service for their offices. Qualify it against my wholesale criteria in HubSpot, draft a reply with two real meeting times from my calendar this week, and log the contact and next step in HubSpot. Don't send anything without me.
+
+Connectors
+
+Gmail
+
+
+Hubspot
+
+
+Apollo.io
+
+
+Re: Coffee service for Harbor Dental Group offices
+
+fatima.davis@harbordentalgroup.com
+
+Hi Fatima,
+
+Thanks for reaching out about coffee service for Harbor Dental's offices. You mentioned four locations and that the pod machines at the front desks aren't keeping up now that patient volume is back to normal — that's a setup we know well, and it's exactly the kind of account we're built for.
+
+Meridian handles wholesale for a handful of multi-site groups in the area. We roast weekly and deliver to each location on a fixed route, keep a standing order per office that your team can adjust with a quick reply, and put everything on one monthly invoice for the group. Brewers, filters, and setup are included, and we'll match roast and volume to what each office actually goes through rather than sending the same box to every door.
+
+I'd like to hear a bit more about how each office runs before I put numbers together. Would either of these work for a 20-minute call? **Wednesday, September 2 at 10:30 AM** or **Thursday, September 3 at 2:00 PM**. If neither fits, send over a couple of windows and I'll make one work.
+
+— Omar  
+Meridian Coffee Roasters
 
 Send
 
-### Run your next campaign to grow your business
+Draft saved 9:02 PM
 
-Dig into your numbers, plan a promotion to get sales up, generate branded assets in Canva, and get your next campaign staged in HubSpot. You decide what goes out and when.
+### Never lose a lead
+
+Claude can work all hours, so a 9pm inquiry will get a reply with two real meeting times that land in your CRM before you wake up. Nothing sends until you say so. 
+
+Prompt
+
+Coffee-club signups have dipped three weeks running. Build me a two-week posting calendar that pushes the subscription, pull the product images and prices from my Shopify store for the graphics, write the captions, and stage everything for my approval. Nothing posts until I say so.
+
+Connectors
+
+Canva
+
+
+Shopify
+
+
+X
+
+Workbook.xlsx - Excel
+
+### Run your marketing
+
+Keep your signups high. Claude can build a two-week posting calendar with product shots from your store complete with written captions, all for your approval.  
+
+Prompt
+
+My roastery runs production on BeanTrack and Claude can't see it. Build me a connection so my Monday brief and month-end close can read roast batches and green-coffee inventory. Read-only for now, and I approve any write later.
+
+Connectors
+
+Zapier
+
+
+\> My roastery runs production on BeanTrack and Claude can't see it. Build me a connection so my Monday brief and month-end close can read roast batches and green-coffee inventory. Read-only for now, and I approve any write later.
+
+
+› Checking for an existing connector for BeanTrack… none found
+
+› Checking for a public API… none. Routing through Zapier
+
+› Creating Zapier bridge: BeanTrack → Claude (triggers: batch completed, inventory updated)
+
+✓ Scoped credentials stored (read-only)
+
+✓ Approval gate: any write action requires owner confirmation
+
+✓ Registered with router as "beantrack" · available to business-pulse, /close-month, inventory-planner
+
+› Test pull: 14 batches this week · Harbor Blend green stock: 220 lb (11 days at current velocity)
+
+✓ Done in 84s.
+
+### Build what we didn’t ship
+
+Run on a system Claude doesn't connect to yet? Tell Claude what the system is and what you need, and it builds the connection so your other workflows can use that data. Read-only to start; any changes wait for your approval.  
+
+## You stay in charge
+
+Claude drafts and prepares. You decide what goes out. Payroll is set up for you to submit, bills wait for your approval before they're paid, and Claude doesn't file anything for you. The permissions you've set in each tool still apply.
+
+Visit trust center
+
+[Visit trust center](https://trust.anthropic.com/)
+
+Visit trust center
+
+### Your data stays yours
+
+By default, we don't train on your business data on Team and Enterprise plans. You own your inputs, outputs, and data.
+
+### Independently audited
+
+Our security controls are audited to the SOC 2 Type II standard.
+
+### Encrypted everywhere
+
+Your data is encrypted in transit and at rest.
+
+### You set the access
+
+Claude only sees what the account you connect to can see.
+
+### Safe to use
+
+Safeguards are built into the product and models to protect you from vulnerabilities to help keep your business and data safe.
 
 ## How it works
 
-Set up Claude the way you run your business in just a few clicks. The Claude for Small Business solution is bundled in a one-click plugin. After installing, ask Claude to help you get started. It all runs in Claude Cowork, only in the desktop app.
+### Connect the tools
 
-Download plugin
+Link your CRM, accounting, email, and payments in one click each. Start with one and add the rest when you're ready.
 
-[Download plugin](https://claude.com/plugins/small-business)
+### Turn on the workflows once
 
-Download plugin
+Install the Small Business plugin and pick what Claude handles. Set when each one runs: every Monday, at month-end, or when a new lead comes in.
 
-Download desktop app
+### Approve what matters
 
-[Download desktop app](/download)
+Claude shows its plan before it acts. By default, nothing sends or pays without your OK, and Claude only sees what your accounts allow.
 
-Download desktop app
+## Works with the apps you already run on
 
-### Connect your tools
-
-Claude works with QuickBooks, PayPal, Hubspot, Docusign, and the rest of your stack. Connecting your tools helps pass context and data to Claude.
+Don't see yours? Every workflow also runs from a spreadsheet or a forwarded email, and Claude can connect more tools as you go.
 
 Explore connectors
 
-[Explore connectors](/connectors)
+[Explore connectors](https://claude.com/connectors)
 
 Explore connectors
-
-[](#send)
-
-### Install the plugin
-
-The Claude for Small Business solution comes with [skills](https://claude.com/skills) and common automations for popular services. To get started:
-
-- Download the Claude for Small Business plugin
-- Navigate to the plugin toggle in Claude Cowork
-- Then turn it on
-- After plug-in install, ask claude to "get me started" and it will help you get set up on the solution
-
-View tutorial
-
-[View tutorial](https://claude.com/resources/tutorials/how-to-install-the-claude-for-small-business-plugin)
-
-View tutorial
-
-Unpacking...
-
-[](#threads)
-
-### Choose the task
-
-Pick the job and Claude gets to work. Your knowledge and expertise drive every decision.
-
-Unpacking...
-
-[](#get-help)
-
-### Run the process
-
-One task ends and another begins, with you in the loop.
-
-Unpacking...
-
-[](#collaborate)
 
 ## Join a free workshop in your city
 
-Learn how to put AI to work at a local event. Can’t make an event? Take the AI Fluency course online.
+Access hands-on sessions in cities across the country. Can't make one? Join one of our partner-led webinars or take the free AI Fluency course.
+
+In-person
+
+Virtual
+
+Active
 
 title
 
 Location
+
+
+MI
+
+Detroit \| Claude SMB Workshop
+
+Detroit, MI
+
+September 29, 2026
+
+Detroit
+
+[Detroit \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-detroit/rta)
+
+Detroit \| Claude SMB Workshop
+
+
+MN
+
+Minneapolis \| Claude SMB Workshop
+
+Minneapolis, MN
+
+October 1, 2026
+
+Minneapolis
+
+[Minneapolis \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-minneapolis/rta)
+
+Minneapolis \| Claude SMB Workshop
+
+
+AZ
+
+Phoenix \| Claude SMB Workshop
+
+Phoenix, AZ
+
+October 8, 2026
+
+Phoenix
+
+[Phoenix \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-phoenix/rta)
+
+Phoenix \| Claude SMB Workshop
+
+
+TN
+
+Memphis \| Claude SMB Workshop
+
+Memphis, TN
+
+October 20, 2026
+
+Memphis
+
+[Memphis \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-memphis/rta)
+
+Memphis \| Claude SMB Workshop
+
+
+GA
+
+Savannah \| Claude SMB Workshop
+
+Savannah, GA
+
+October 22, 2026
+
+Savannah
+
+[Savannah \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-savannah/rta)
+
+Savannah \| Claude SMB Workshop
+
+
+AR
+
+Bentonville \| Claude SMB Workshop
+
+Bentonville, AR
+
+November 4, 2026
+
+Bentonville
+
+[Bentonville \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-bentonville/rta)
+
+Bentonville \| Claude SMB Workshop
+
+
+FL
+
+Tampa \| Claude SMB Workshop
+
+Tampa, FL
+
+November 10, 2026
+
+Tampa
+
+[Tampa \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-tampa/rta)
+
+Tampa \| Claude SMB Workshop
+
+
+NC
+
+Raleigh \| Claude SMB Workshop
+
+Raleigh, NC
+
+November 12, 2026
+
+Raleigh
+
+[Raleigh \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-raleigh/rta)
+
+Raleigh \| Claude SMB Workshop
+
+
+title
+
+Location
+
+
+V
+
+Notion Webinar
+
+Virtual
+
+September 25, 2026
+
+Virtual
+
+[Notion Webinar](https://luma.com/0p7fmc93)
+
+Notion Webinar
+
+
+V
+
+RingCentral Webinar
+
+Virtual
+
+October 1, 2026
+
+Virtual
+
+[RingCentral Webinar](https://events.ringcentral.com/events/ringcentral-anthropic-webinar?code=1VT0iDMhkYRYHvCvKuh7xHS1x)
+
+RingCentral Webinar
+
+
+V
+
+Zoom Webinar
+
+Virtual
+
+October 8, 2026
+
+Virtual
+
+[Zoom Webinar](https://events.zoom.us/ev/AiJIgCaSD_osXZeGeXnc35LGiTBIHdUDmFozuhmTENO1P2oUl3I-~AgAG7IFCoItAIlAIpdM2J7wX0K8l1OTZimYEPk8HrltCwvlqK6sEY7HXfqtWBB5w0i-aA4o-9WIvF50a6y0xYOIbiQ)
+
+Zoom Webinar
+
+
+V
+
+Monday.com Webinar
+
+Virtual
+
+October 12, 2026
+
+Virtual
+
+[Monday.com Webinar](https://monday.zoom.us/webinar/register/WN_WkuWnYDXQ9GQMisrSzJgpg#/registration)
+
+Monday.com Webinar
+
+
+V
+
+Expensify Webinar
+
+Virtual
+
+October 13, 2026
+
+Virtual
+
+[Expensify Webinar](https://use.expensify.com/c4sb-webinar?utm_source=anthropic&utm_medium=partner_blog&utm_campaign=claude_for_small_business_sept_2026)
+
+Expensify Webinar
+
+
+V
+
+Apollo Webinar
+
+Virtual
+
+October 15, 2026
+
+Virtual
+
+[Apollo Webinar](https://events.apollo.io/apollo-claude-growth/)
+
+Apollo Webinar
+
+
+V
+
+Hubspot Webinar
+
+Virtual
+
+October 20, 2026
+
+Virtual
+
+[Hubspot Webinar](https://adminhug.info/claude102026)
+
+Hubspot Webinar
+
+
+V
+
+Gusto Webinar
+
+Virtual
+
+October 21, 2026
+
+Virtual
+
+[Gusto Webinar](https://event.on24.com/wcc/r/5496016/977F305A86D5D6E06F602DE266A993C6)
+
+Gusto Webinar
+
+
+V
+
+Zapier Webinar
+
+Virtual
+
+October 22, 2026
+
+Virtual
+
+[Zapier Webinar](https://zapier.com/resources/events/claude-smb-zapier-with-anthropic)
+
+Zapier Webinar
+
+
+V
+
+Xero Webinar
+
+Virtual
+
+October 27, 2026
+
+Virtual
+
+[Xero Webinar](https://xero.zoom.us/webinar/register/WN_c_4fE7BGRGi35kiIK1OwCA#/registration)
+
+Xero Webinar
+
+
+V
+
+Clay Webinar
+
+Virtual
+
+October 28, 2026
+
+Virtual
+
+[Clay Webinar](https://www.clay.com/livestreams/claude-for-small-business-build-your-growth-engine-with-clay?utm_source=all&utm_medium=influencerpartner&utm_campaign=claude_smb_anthropic)
+
+Clay Webinar
+
+
+V
+
+TikTok Webinar
+
+Virtual
+
+October 29, 2026
+
+Virtual
+
+[TikTok Webinar](https://www.tiktokacademy.com/student/page/3663358-north-american-europe-putting-ai-agents-to-work-powering-growth-with-tiktok-ads-and-claude-for-small-business?utm_source=partner_site&utm_medium=blog&utm_campaign=anthropic_MCP_261022_partner_enablement_na&utm_content=webinar)
+
+TikTok Webinar
+
+
+V
+
+Alignable Webinar
+
+Virtual
+
+November 5, 2026
+
+Virtual
+
+[Alignable Webinar](https://www.alignable.com/groups/invite-only-events/events/how-small-businesses-are-growing-with-ai-nov-2026)
+
+Alignable Webinar
+
+
+V
+
+Atlassian Webinar
+
+Virtual
+
+November 17, 2026
+
+Virtual
+
+[Atlassian Webinar](https://www.linkedin.com/events/run-grow-andenableyourbusinessw7503923852599525376/)
+
+Atlassian Webinar
 
 
 Course
@@ -414,46 +736,105 @@ Enroll now
 
 Enroll now
 
+Claude for Small Business plugin
+
+How to install and use the Claude for Small Business plugin.
+
+Read now
+
+[Read now](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin)
+
+Read now
+
+Need more hands-on help?
+
+We work with several service partners in the Claude Partner Network who specialize in helping small businesses get set up.
+
+See Partner Directory
+
+[See Partner Directory](https://partnerhub.claude.com/directory?filters=1789178865067x436833862108438660)
+
+See Partner Directory
+
 ## FAQ
 
-### Do you train on my business data?
+Getting started
 
-No. We don't train our models on your business data.
+Privacy & security
 
-### Is my data safe? 
+Active
 
-Yes. Claude respects the permissions you've already set in each tool. If an employee can't see something in Gmail or DocuSign today, they can't see it through Claude. You also see which tool Claude is touching before anything runs, and, by default you approve every action. Full details are in the Trust Center.
+### Getting started
 
-### How much does it cost? 
+### Does it run on its own, or do I have to start it each time?
 
-Standard list price: Claude Pro for individuals, Claude Team for your whole business. See claude.com/pricing.
+Once you set it up, it runs on the schedule you choose. Anything that sends or pays still waits for your approval.
 
-### Do I need IT to set this up? 
+### Do I need IT to set this up?
 
 No. Connectors are one click. The setup guide walks you through connecting your first tools and running your first workflow.
 
-### What happens if I get stuck? 
+### What if I can’t connect my tools yet?
 
-Visit the resources section for support, review the [small business tutorial](#), or [file a ticket](#).
+It still works. Every workflow runs from a spreadsheet, a PDF, or a forwarded email, and gets better as you connect tools.
+
+### Does it work if it’s just me?
+
+Yes. Most owners using it run businesses under ten people, many solo.
+
+### Can Claude work with a tool you don’t support?
+
+Usually, yes. Tell Claude which tool and it will connect it, asking your approval for what it can read and change.
+
+### Which plan do I need, and what will it cost each month?
+
+Pro for one person, Team for a business with more than one; both are month to month. See [pricing](https://claude.com/pricing).
+
+### What happens if I get stuck?
+
+Visit the resources section for support, review the [small business tutorial](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin), or [file a ticket](https://support.claude.com/en/articles/9015913-how-to-get-support).
 
 [Prev](#)
 
 Prev
 
 
-Ready to bring Claude to your organization?
+### Privacy & security
 
-Take AI fluency course
+### Is my data safe?
 
-[Take AI fluency course ](https://anthropic.skilljar.com/ai-fluency-for-small-businesses)
+Yes. Claude respects the permissions you've already set in each tool. If an employee can't see something in Gmail or Docusign today, they can't see it through Claude. You also see which tool Claude is touching before anything runs, and, by default you approve every action. Full details are in the [Trust Center](https://trust.anthropic.com).
 
-Take AI fluency course
+### What can Claude see, and what does it keep, when I connect a tool?
 
-Get started
+Only what the account you connect is allowed to see, and only when a workflow you've turned on needs it. Disconnect any time in Settings.
 
-[Get started](/contact-sales)
+### Do you train on my business data?
 
-Get started
+No. We don't train our models on your business data.
+
+### Will Anthropic use my data to compete with my business?
+
+No. We don't sell your data or use what's in your tools to build products that compete with you.
+
+[Prev](#)
+
+Prev
+
+
+## Run and grow your business with Claude
+
+Install the plugin
+
+[Install the plugin](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin)
+
+Install the plugin
+
+Find a workshop
+
+[Find a workshop](#events)
+
+Find a workshop
 
 [Homepage](https://claude.com)
 
@@ -463,112 +844,6 @@ Homepage
 Thank you! Your submission has been received!
 
 Oops! Something went wrong while submitting the form.
-
-Write
-
-[Button Text](#)
-
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
 
 [Anthropic](https://www.anthropic.com/)
 
@@ -588,11 +863,6 @@ Products
   [Claude Code](/product/claude-code)
   Claude Code
 
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
 - Claude Cowork
 
   [Claude Cowork](/product/cowork)
@@ -602,11 +872,6 @@ Products
 
   [@Claude](/product/tag)
   @Claude
-
-- Claude Design
-
-  [Claude Design](/product/design)
-  Claude Design
 
 - Claude Science
 
@@ -632,22 +897,44 @@ Products
 
   [Log in](https://claude.ai/login)
 
-Features
+Capabilities
 
-- Claude for Chrome
+- Artifacts
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Artifacts](/features/artifacts)
+  Artifacts
 
-- Claude for Microsoft 365
+- Design
 
-  [Claude for Microsoft 365](/claude-for-microsoft-365)
-  Claude for Microsoft 365
+  [Design](/product/design)
+  Design
+
+- Connectors
+
+  [Connectors](/marketplace/connectors-plugins)
+  Connectors
+
+- Plugins
+
+  [Plugins](/marketplace/plugins)
+  Plugins
 
 - Skills
 
   [Skills](/skills)
   Skills
+
+Extensions
+
+- Claude in Chrome
+
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
+
+- Claude for Microsoft 365
+
+  [Claude for Microsoft 365](/claude-for-microsoft-365)
+  Claude for Microsoft 365
 
 Models
 
@@ -676,7 +963,19 @@ Models
   [Haiku](https://www.anthropic.com/claude/haiku)
   Haiku
 
-Solutions
+Enterprise
+
+- Overview
+
+  [Overview](/solutions/enterprise)
+  Overview
+
+- Claude Code for Enterprise
+
+  [Claude Code for Enterprise](/product/claude-code/enterprise)
+  Claude Code for Enterprise
+
+Use cases
 
 - AI agents
 
@@ -693,6 +992,13 @@ Solutions
   [Coding](/solutions/coding)
   Coding
 
+- Commerce
+
+  [Commerce](/solutions/commerce)
+  Commerce
+
+Departments
+
 - Customer support
 
   [Customer support](/solutions/customer-support)
@@ -703,10 +1009,17 @@ Solutions
   [Cybersecurity](/solutions/cybersecurity)
   Cybersecurity
 
-- Enterprise
+- Legal
 
-  [Enterprise](/solutions/enterprise)
-  Enterprise
+  [Legal](/solutions/legal)
+  Legal
+
+- Sales
+
+  [Sales](/solutions/sales)
+  Sales
+
+Industries
 
 - Financial services
 
@@ -733,11 +1046,6 @@ Solutions
   [K-12 teachers](/solutions/teachers)
   K-12 teachers
 
-- Legal
-
-  [Legal](/solutions/legal)
-  Legal
-
 - Life sciences
 
   [Life sciences](/solutions/life-sciences)
@@ -753,31 +1061,55 @@ Solutions
   [Small business](/solutions/small-business)
   Small business
 
-Claude Platform
+Programs
+
+- Startups
+
+  [Startups](/programs/startups)
+  Startups
+
+- Scientists
+
+  [Scientists](/programs/team-plan-for-scientists)
+  Scientists
+
+Developers
+
+- Developer docs
+
+  [Developer docs](https://code.claude.com/docs/en/overview)
+  Developer docs
+
+- Developer blog
+
+  [Developer blog](https://claude.dev/)
+  Developer blog
+
+- Community
+
+  [Community](/community)
+  Community
+
+- Console
+
+  [Console](https://platform.claude.com/docs/en/home)
+  Console
+
+- Engineering at Anthropic
+
+  [Engineering at Anthropic](https://www.anthropic.com/engineering)
+  Engineering at Anthropic
+
+Platform
 
 - Overview
 
   [Overview](/platform/api)
   Overview
 
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
-
-- Ecosystem
-
-  [Ecosystem](/ecosystem)
-  Ecosystem
-
 - Marketplace
 
-  [Marketplace](/platform/marketplace)
+  [Marketplace](/marketplace)
   Marketplace
 
 - Claude on AWS
@@ -795,16 +1127,6 @@ Claude Platform
   [Microsoft Foundry](/partners/microsoft-foundry)
   Microsoft Foundry
 
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](https://platform.claude.com/)
-  Console login
-
 Resources
 
 - Blog
@@ -817,40 +1139,20 @@ Resources
   [Claude partner network](/partners)
   Claude partner network
 
-- Community
+- Claude Academy
 
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
+  [Claude Academy](https://academy.claude.com/)
+  Claude Academy
 
 - Customer stories
 
   [Customer stories](/customers)
   Customer stories
 
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
 - Events
 
   [Events](https://www.anthropic.com/events)
   Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
 
 - Powered by Claude
 
@@ -859,18 +1161,45 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](/marketplace/service-partners)
   Service partners
 
-- Tutorials
+Help and security
 
-  [Tutorials](/resources/tutorials)
-  Tutorials
+- Availability
 
-- Use cases
+  [Availability](https://www.anthropic.com/supported-countries)
+  Availability
 
-  [Use cases](/resources/use-cases)
-  Use cases
+- Check files
+
+  [Check files](https://claude.com/check-files)
+  Check files
+
+- Regional compliance
+
+  [Regional compliance](/regional-compliance)
+  Regional compliance
+
+- Report abuse
+
+  [Report abuse](https://claude.com/form/anthropic-content-reporting)
+  Report abuse
+
+- Security and compliance
+
+  [Security and compliance](https://trust.anthropic.com/)
+  Security and compliance
+
+- Status
+
+  [Status](https://status.anthropic.com/)
+  Status
+
+- Support center
+
+  [Support center](https://support.claude.com/en/)
+  Support center
 
 Company
 
@@ -889,19 +1218,14 @@ Company
   [Policy](https://www.anthropic.com/policy)
   Policy
 
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
 - Research
 
   [Research](https://www.anthropic.com/research)
   Research
 
-- News
+- Anthropic news
 
-  [News](https://www.anthropic.com/news)
-  News
+  [Anthropic news](https://www.anthropic.com/news)
+  Anthropic news
 
 - Policy on the AI Exponential

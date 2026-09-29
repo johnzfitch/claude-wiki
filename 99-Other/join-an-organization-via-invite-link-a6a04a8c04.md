@@ -2,13 +2,14 @@
 title: "Join an organization via invite link | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13776697-join-an-organization-via-invite-link"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:45Z"
+fetched_at: "2026-09-29T06:32:05Z"
 ---
 
 # Join an organization via invite link
 
-March 16, 2026
+August 6, 2026
 
+Copy for LLM
 
 Admins on Team and Enterprise plans can share an invite link that lets teammates join the organization directly—without requiring individual email invitations.
 
@@ -22,13 +23,13 @@ Admins and above can generate, copy, disable, and regenerate the invite link for
 
 - **Team plans:** Invite links are enabled by default for new organizations.
 
-- **Enterprise plans (non-SSO):** Invite links are disabled by default. Admins can enable them from **[Organization settings \> Identity and access](http://claude.ai/admin-settings/identity)**.
+- **Enterprise plans (non-SSO):** Invite links are disabled by default. Admins can enable them from **[Organization settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
 
 - **SSO organizations:** Invite links are not available. Member provisioning is managed through your Identity Provider.
 
 ### Find and share your invite link
 
-1.  Navigate to **[Organization settings \> Identity and access](http://claude.ai/admin-settings/identity)**.
+1.  Navigate to **[Organization settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
 
 2.  Find **Invite link** in the **Global access settings** section.
 

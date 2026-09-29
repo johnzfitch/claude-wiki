@@ -2,7 +2,7 @@
 title: "Cloud sandbox reference - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/cloud-sandboxes-reference"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:40:37Z"
+fetched_at: "2026-09-26T06:39:47Z"
 tags: ["api"]
 ---
 
@@ -12,31 +12,27 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fcloud-sandboxes-reference)
 
 
 
-Search
+
 
+SearchCtrlK
 
 First steps
 
-[Overview](/docs/en/managed-agents/overview)[Quickstart](/docs/en/managed-agents/quickstart)[Prototype in Console](/docs/en/managed-agents/onboarding)[Migration](/docs/en/managed-agents/migration)
+[Overview](/docs/en/managed-agents/overview)[Quickstart](/docs/en/managed-agents/quickstart)[Build in Console](/docs/en/managed-agents/onboarding)[Migration](/docs/en/managed-agents/migration)
 
 Define your agent
 
@@ -46,11 +42,11 @@ Configure agent environment
 
 [Cloud environment setup](/docs/en/managed-agents/environments)[Cloud sandbox reference](/docs/en/managed-agents/cloud-sandboxes-reference)
 
-Self-hosted sandboxes
+[Self-hosted sandboxes](/docs/en/managed-agents/self-hosted-sandboxes)
 
 Delegate work to your agent
 
-[Start a session](/docs/en/managed-agents/sessions)[Session operations](/docs/en/managed-agents/session-operations)[Session event stream](/docs/en/managed-agents/events-and-streaming)[Subscribe to webhooks](/docs/en/managed-agents/webhooks)[Define outcomes](/docs/en/managed-agents/define-outcomes)[Authenticate with vaults](/docs/en/managed-agents/vaults)
+[Start a session](/docs/en/managed-agents/sessions)[Session operations](/docs/en/managed-agents/session-operations)[Session event stream](/docs/en/managed-agents/events-and-streaming)[Session budgets](/docs/en/managed-agents/budgets)[Subscribe to webhooks](/docs/en/managed-agents/webhooks)[Define outcomes](/docs/en/managed-agents/define-outcomes)[Authenticate with vaults](/docs/en/managed-agents/vaults)
 
 Manage agent context
 
@@ -70,7 +66,7 @@ Working with files
 
 [Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
 
-Images and vision
+[Images and vision](/docs/en/build-with-claude/vision)
 
 Skills
 
@@ -80,117 +76,107 @@ MCP
 
 [Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)
 
-MCP tunnels
+[MCP tunnels](/docs/en/agents-and-tools/mcp-tunnels/overview)
 
 Claude on cloud platforms
 
 [Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)
 
-[](/login)
+[Console](/)
 
-
-
-
-Managed Agents
-
-Cloud sandbox reference
-
-Managed Agents/Configure agent environment
+[Managed Agents](/docs/en/managed-agents/overview)Configure agent environment
 
 # Cloud sandbox reference
 
+Copy page
 
 
 
 Pre-installed packages, databases, and utilities available in cloud sandboxes.
 
+Copy page
 
 
+
+[Managed Agents](/docs/en/managed-agents/overview)
+
+[Beta](/docs/en/build-with-claude/overview#feature-availability)
+
+[Beta header](/docs/en/api/beta-headers)
+
+managed-agents-2026-04-01
 
 Cloud sandboxes run as isolated Linux containers on Anthropic-managed infrastructure. They come pre-installed with a comprehensive set of programming languages, databases, and utilities. The agent can use these immediately without any installation steps.
 
 These specifications apply to `cloud` environments. Self-hosted sandboxes run on your infrastructure with whatever your worker provides.
 
-
+## Programming languages
 
-Managed Agents API requests require the `managed-agents-2026-04-01` beta header, except memory store endpoints, which use `agent-memory-2026-07-22` instead. The SDK sets the correct beta header automatically. See [Beta headers](/docs/en/api/beta-headers#endpoint-specific-headers).
+| Language | Version                     | Package manager      |
+|----------|-----------------------------|----------------------|
+| Python   | 3.10, 3.11, 3.12, and 3.13  | pip, uv, poetry      |
+| Node.js  | 20, 21, and 22 (default)    | npm, yarn, pnpm, bun |
+| Go       | 1.24 (default) and 1.25     | go modules           |
+| Rust     | Stable toolchain (rustup)   | cargo                |
+| Java     | OpenJDK 21                  | maven, gradle        |
+| Ruby     | 3.1, 3.2, and 3.3 (default) | bundler, gem         |
+| PHP      | 8.3                         | composer             |
+| C/C++    | GCC 13 and Clang            | make, cmake, ninja   |
 
+Common Python data and document libraries, including NumPy, pandas, Matplotlib, openpyxl, python-docx, python-pptx, and pypdf, are installed for the `python3` interpreter.
 
-
+## Databases
 
-Programming languages
+| Database      | Description                                                                   |
+|---------------|-------------------------------------------------------------------------------|
+| PostgreSQL 16 | Server and `psql` client are installed. The server is not running by default. |
+| Redis 7       | Server and `redis-cli` are installed. The server is not running by default.   |
+| SQLite        | Available through language bindings, such as Python's `sqlite3` module.       |
 
-| Language | Version | Package manager |
-|----------|---------|-----------------|
-| Python   | 3.12+   | pip, uv         |
-| Node.js  | 20+     | npm, yarn, pnpm |
-| Go       | 1.22+   | go modules      |
-| Rust     | 1.77+   | cargo           |
-| Java     | 21+     | maven, gradle   |
-| Ruby     | 3.3+    | bundler, gem    |
-| PHP      | 8.3+    | composer        |
-| C/C++    | GCC 13+ | make, cmake     |
+## Utilities
 
-
-
-
-Databases
-
-| Database          | Description                                        |
-|-------------------|----------------------------------------------------|
-| SQLite            | Pre-installed, available immediately               |
-| PostgreSQL client | `psql` client for connecting to external databases |
-| Redis client      | `redis-cli` for connecting to external instances   |
-
-
-
-Database servers (such as PostgreSQL and Redis) are not running in the sandbox by default. The sandbox includes client tools for connecting to external database instances. SQLite is fully available for local use.
-
-
-
-
-Utilities
-
-
-
-
-System tools
+### System tools
 
 - `git` - Version control
 - `curl`, `wget` - HTTP clients
-- `jq` - JSON processing
+- `jq`, `yq` - JSON and YAML processing
 - `tar`, `zip`, `unzip` - Archive tools
-- `ssh`, `scp` - Remote access (requires a networking mode that allows the destination host)
-- `tmux`, `screen` - Terminal multiplexers
+- `tmux` - Terminal multiplexer
 
-
-
-
-Development tools
+### Development tools
 
 - `make`, `cmake` - Build systems
 - `docker` - Container management (limited availability)
 - `ripgrep` (`rg`) - Fast file search
-- `tree` - Directory visualization
-- `htop` - Process monitoring
 
-
-
-
-Text processing
+### Text processing
 
 - `sed`, `awk`, `grep` - Stream editors
 - `vim`, `nano` - Text editors
 - `diff`, `patch` - File comparison
 
+### Document and media processing
 
-
+- `ffmpeg` - Audio and video processing
+- ImageMagick (`convert`, `identify`) - Image manipulation
+- `pandoc` - Document conversion
+- LibreOffice (headless) - Office document conversion
+- Poppler utilities (`pdftotext`, `pdftoppm`) and `qpdf` - PDF processing
+- `tesseract` - Optical character recognition (English language data)
+- TeX Live (`pdflatex`, `xelatex`, `latexmk`) - Typesetting
 
-Sandbox specifications
+### Browser automation
+
+- Playwright (Python and Node.js) - Browser automation library
+- Chromium (`/opt/pw-browsers/chromium`) - Browser used by Playwright, not on `PATH`
+
+The sandbox sets `PLAYWRIGHT_BROWSERS_PATH` to `/opt/pw-browsers`, so the pre-installed Playwright packages find Chromium there without configuration. The Python package is installed for the `python3` interpreter. Use the pre-installed packages rather than installing another Playwright version, which would look for a browser build that is not present. Firefox and WebKit are not installed.
+
+## Sandbox specifications
 
 | Property         | Value                                                                                                                                                                              |
 |------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Operating system | Ubuntu 22.04 LTS                                                                                                                                                                   |
+| Operating system | Ubuntu 24.04 LTS                                                                                                                                                                   |
 | Architecture     | x86_64 (amd64)                                                                                                                                                                     |
 | Memory           | Up to 8 GB                                                                                                                                                                         |
 | Disk space       | Up to 10 GB                                                                                                                                                                        |

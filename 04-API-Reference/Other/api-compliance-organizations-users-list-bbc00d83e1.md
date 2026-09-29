@@ -2,7 +2,7 @@
 title: "List organization users - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/organizations/users/list"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:40:38Z"
+fetched_at: "2026-09-26T06:39:02Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Forganizations%2Fusers%2Flist)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -218,12 +196,12 @@ Activities
 Organizations
 
 
-List organizations
+List organizations
 
 Users
 
 
-List organization users
+List organization users
 
 Roles
 
@@ -239,39 +217,38 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
+To enable the Compliance API, see the setup guide.
 
-List
+[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)
 
+Copy page
 
 
 
-
-
-To enable the Compliance API, see [Set up the Compliance API](/docs/en/manage-claude/compliance-api-access).
+1.  [API reference](/docs/en/api/http)
+2.  [Compliance API](/docs/en/api/http/compliance)
+3.  [Organizations](/docs/en/api/http/compliance/organizations)
+4.  [Users](/docs/en/api/http/compliance/organizations/users)
 
 # List organization users
 
-GET/v1/compliance/organizations/{org_uuid}/users
+GET/v1/compliance/organizations/{org_uuid}/users
 
 List current user members of an organization.
 
-##### Path ParametersExpand Collapse 
+##### Path parameters
 
 org_uuid: string
 
@@ -279,9 +256,9 @@ org_uuid: string
 
 The organization UUID
 
-[](#list.org_uuid)
+##### Query parameters
 
-##### Query ParametersExpand Collapse 
+
 
 limit: optional number
 
@@ -289,7 +266,11 @@ limit: optional number
 
 Maximum results (default: 500, max: 1000)
 
-[](#list.limit)
+default500
+
+minimum1
+
+maximum1000
 
 page: optional string
 
@@ -297,21 +278,17 @@ page: optional string
 
 Opaque pagination token from a previous response's `next_page` field. Pass this to retrieve the next page of results. Clients should treat this value as an opaque string and not attempt to parse or interpret its contents, as the format may change without notice.
 
-[](#list.page)
-
-##### Header ParametersExpand Collapse 
+##### Headers
 
 "x-api-key": optional string
 
 
 
-[](#list.x-api-key)
-
-##### ReturnsExpand Collapse 
+##### Returns
 
 
 
-data: array of object { id, created_at, email, 2 more }
+data: array of object{ id, created_at, email, 2 more }
 
 
 
@@ -323,7 +300,7 @@ id: string
 
 User identifier (tagged ID)
 
-[](#user_list_response.id)
+
 
 created_at: string
 
@@ -331,7 +308,7 @@ created_at: string
 
 User account creation timestamp
 
-[](#user_list_response.created_at)
+formatdate-time
 
 email: string
 
@@ -339,19 +316,15 @@ email: string
 
 User's current email address
 
-[](#user_list_response.email)
-
 full_name: string
 
 
 
 User's current full name
 
-[](#user_list_response.full_name)
-
 
 
-organization_role: "admin" or "billing" or "claude_code_user" or 6 more
+organization_role: "admin" or "billing" or "claude_code_user" or 8 more
 
 
 
@@ -363,59 +336,45 @@ One of the following:
 
 
 
-[](#user_list_response.organization_role%5B0%5D)
-
 "billing"
 
 
-
-[](#user_list_response.organization_role%5B1%5D)
 
 "claude_code_user"
 
 
 
-[](#user_list_response.organization_role%5B2%5D)
-
 "developer"
 
 
-
-[](#user_list_response.organization_role%5B3%5D)
 
 "managed"
 
 
 
-[](#user_list_response.organization_role%5B4%5D)
-
 "membership_admin"
 
 
-
-[](#user_list_response.organization_role%5B5%5D)
 
 "owner"
 
 
 
-[](#user_list_response.organization_role%5B6%5D)
+"parent_org_admin"
+
+
+
+"parent_org_owner"
+
+
 
 "primary_owner"
 
 
 
-[](#user_list_response.organization_role%5B7%5D)
-
 "user"
 
 
-
-[](#user_list_response.organization_role%5B8%5D)
-
-[](#user_list_response.organization_role)
-
-[](#list)
 
 has_more: boolean
 
@@ -423,22 +382,21 @@ has_more: boolean
 
 Whether more records exist beyond the current result set
 
-[](#list)
-
-next_page: string
+next_page: string or null
 
 
 
 Token to retrieve the next page. Use this as the 'page' parameter in your next request
 
-[](#list)
+List organization users
 
-List organization users
+cURL
 
 
 
 ```python
 curl https://api.anthropic.com/v1/compliance/organizations/$ORG_UUID/users \
+    -H 'anthropic-version: 2023-06-01' \
     -H "Authorization: Bearer $ANTHROPIC_COMPLIANCE_API_KEY"
 ```
 

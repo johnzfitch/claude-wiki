@@ -2,7 +2,7 @@
 title: "Use the Claude Agent SDK with your Claude plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:41:12Z"
+fetched_at: "2026-09-29T06:32:18Z"
 tags: ["agents", "billing", "enterprise", "sdk"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["agents", "billing", "enterprise", "sdk"]
 
 June 16, 2026
 
+Copy for LLM
 
 **Update June 15:** We're pausing the changes to Claude Agent SDK usage described below. For now, nothing has changed: Claude Agent SDK, `claude -p`, and third-party app usage still draw from your subscription's usage limits. The previously announced monthly credit, which would have been available to eligible claimants in connection with these changes, isn't available. We’re working to update the plan to better support how users build with Claude subscriptions. When we have an update, we'll share it before anything takes effect.
 

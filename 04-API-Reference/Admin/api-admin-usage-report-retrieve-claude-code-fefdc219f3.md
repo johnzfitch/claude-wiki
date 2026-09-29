@@ -2,7 +2,7 @@
 title: "Get Claude Code Usage Report - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/usage_report/retrieve_claude_code"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:39:39Z"
+fetched_at: "2026-09-18T06:35:17Z"
 tags: ["api", "claude-code"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api", "claude-code"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fusage_report%2Fretrieve_claude_code)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,116 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+
+Get Messages Usage Report
+
+
+Get Claude Code Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,65 +180,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-
-Get Messages Usage Report
-
-
-Get Claude Code Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -233,35 +211,38 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Retrieve claude code
-
+Copy page
 
 
 
+cURL
+
+1.  [API reference](/docs/en/api/http)
+2.  [Beta](/docs/en/api/http/beta)
+3.  [Organization](/docs/en/api/http/beta/organization)
+4.  [Usage Report](/docs/en/api/http/beta/organization/usage_report)
+
 # Get Claude Code Usage Report
 
-GET/v1/organizations/usage_report/claude_code
+GET/v1/organizations/usage_report/claude_code
 
 Retrieve daily aggregated usage metrics for Claude Code users. Enables organizations to analyze developer productivity and build custom dashboards.
 
-##### Query ParametersExpand Collapse 
+##### Query parameters
+
+
 
 starting_at: string
 
@@ -269,7 +250,11 @@ starting_at: string
 
 UTC date in YYYY-MM-DD format. Returns metrics for this single day only.
 
-[](#retrieve_claude_code.starting_at)
+pattern^\d{4}-\d{2}-\d{2}\$
+
+formatdate
+
+
 
 limit: optional number
 
@@ -277,7 +262,11 @@ limit: optional number
 
 Number of records per page (default: 20, max: 1000).
 
-[](#retrieve_claude_code.limit)
+default20
+
+maximum1000
+
+minimum1
 
 page: optional string
 
@@ -285,352 +274,24 @@ page: optional string
 
 Opaque cursor token from previous response's `next_page` field.
 
-[](#retrieve_claude_code.page)
-
-##### ReturnsExpand Collapse 
+##### Returns
 
 
 
-ClaudeCodeUsageReport object { data, has_more, next_page }
+BetaClaudeCodeUsageReport object{ data, has_more, next_page }
 
 
 
-
+Get Claude Code Usage Report
 
-data: array of object { actor, core_metrics, customer_type, 6 more }
-
-
-
-List of Claude Code usage records for the requested date.
-
-
-
-actor: object { email_address, type } or object { api_key_name, type }
-
-
-
-The user or API key that performed the Claude Code actions.
-
-One of the following:
-
-
-
-ClaudeCodeUserActor object { email_address, type }
-
-
-
-email_address: string
-
-
-
-Email address of the user who performed Claude Code actions.
-
-[](#claude_code_usage_report.data.items.actor%5B0%5D.email_address)
-
-type: "user_actor"
-
-
-
-[](#claude_code_usage_report.data.items.actor%5B0%5D.type)
-
-[](#claude_code_usage_report.data.items.actor%5B0%5D)
-
-
-
-ClaudeCodeAPIActor object { api_key_name, type }
-
-
-
-api_key_name: string
-
-
-
-Name of the API key used to perform Claude Code actions.
-
-[](#claude_code_usage_report.data.items.actor%5B1%5D.api_key_name)
-
-type: "api_actor"
-
-
-
-[](#claude_code_usage_report.data.items.actor%5B1%5D.type)
-
-[](#claude_code_usage_report.data.items.actor%5B1%5D)
-
-[](#claude_code_usage_report.data.items.actor)
-
-
-
-core_metrics: object { commits_by_claude_code, lines_of_code, num_sessions, pull_requests_by_claude_code }
-
-
-
-Core productivity metrics measuring Claude Code usage and impact.
-
-commits_by_claude_code: number
-
-
-
-Number of git commits created through Claude Code's commit functionality.
-
-[](#claude_code_usage_report.data.items.core_metrics.commits_by_claude_code)
-
-
-
-lines_of_code: object { added, removed }
-
-
-
-Statistics on code changes made through Claude Code.
-
-added: number
-
-
-
-Total number of lines of code added across all files by Claude Code.
-
-[](#claude_code_usage_report.data.items.core_metrics.lines_of_code.added)
-
-removed: number
-
-
-
-Total number of lines of code removed across all files by Claude Code.
-
-[](#claude_code_usage_report.data.items.core_metrics.lines_of_code.removed)
-
-[](#claude_code_usage_report.data.items.core_metrics.lines_of_code)
-
-num_sessions: number
-
-
-
-Number of distinct Claude Code sessions initiated by this actor.
-
-[](#claude_code_usage_report.data.items.core_metrics.num_sessions)
-
-pull_requests_by_claude_code: number
-
-
-
-Number of pull requests created through Claude Code's PR functionality.
-
-[](#claude_code_usage_report.data.items.core_metrics.pull_requests_by_claude_code)
-
-[](#claude_code_usage_report.data.items.core_metrics)
-
-
-
-customer_type: "api" or "subscription"
-
-
-
-Type of customer account (api for API customers, subscription for Pro/Team customers).
-
-One of the following:
-
-"api"
-
-
-
-[](#claude_code_usage_report.data.items.customer_type%5B0%5D)
-
-"subscription"
-
-
-
-[](#claude_code_usage_report.data.items.customer_type%5B1%5D)
-
-[](#claude_code_usage_report.data.items.customer_type)
-
-date: string
-
-
-
-UTC date for the usage metrics in YYYY-MM-DD format.
-
-[](#claude_code_usage_report.data.items.date)
-
-
-
-model_breakdown: array of object { estimated_cost, model, tokens }
-
-
-
-Token usage and cost breakdown by AI model used.
-
-
-
-estimated_cost: object { amount, currency }
-
-
-
-Estimated cost for using this model
-
-amount: number
-
-
-
-Estimated cost amount in minor currency units (e.g., cents for USD).
-
-[](#claude_code_usage_report.data.items.model_breakdown.items.estimated_cost.amount)
-
-currency: string
-
-
-
-Currency code for the estimated cost (e.g., 'USD').
-
-[](#claude_code_usage_report.data.items.model_breakdown.items.estimated_cost.currency)
-
-[](#claude_code_usage_report.data.items.model_breakdown.items.estimated_cost)
-
-model: string
-
-
-
-Name of the AI model used for Claude Code interactions.
-
-[](#claude_code_usage_report.data.items.model_breakdown.items.model)
-
-
-
-tokens: object { cache_creation, cache_read, input, output }
-
-
-
-Token usage breakdown for this model
-
-cache_creation: number
-
-
-
-Number of cache creation tokens consumed by this model.
-
-[](#claude_code_usage_report.data.items.model_breakdown.items.tokens.cache_creation)
-
-cache_read: number
-
-
-
-Number of cache read tokens consumed by this model.
-
-[](#claude_code_usage_report.data.items.model_breakdown.items.tokens.cache_read)
-
-input: number
-
-
-
-Number of input tokens consumed by this model.
-
-[](#claude_code_usage_report.data.items.model_breakdown.items.tokens.input)
-
-output: number
-
-
-
-Number of output tokens generated by this model.
-
-[](#claude_code_usage_report.data.items.model_breakdown.items.tokens.output)
-
-[](#claude_code_usage_report.data.items.model_breakdown.items.tokens)
-
-[](#claude_code_usage_report.data.items.model_breakdown)
-
-organization_id: string
-
-
-
-ID of the organization that owns the Claude Code usage.
-
-[](#claude_code_usage_report.data.items.organization_id)
-
-terminal_type: string
-
-
-
-Type of terminal or environment where Claude Code was used.
-
-[](#claude_code_usage_report.data.items.terminal_type)
-
-
-
-tool_actions: map\[object { accepted, rejected } \]
-
-
-
-Breakdown of tool action acceptance and rejection rates by tool type.
-
-accepted: number
-
-
-
-Number of tool action proposals that the user accepted.
-
-[](#claude_code_usage_report.data.items.tool_actions.items.accepted)
-
-rejected: number
-
-
-
-Number of tool action proposals that the user rejected.
-
-[](#claude_code_usage_report.data.items.tool_actions.items.rejected)
-
-[](#claude_code_usage_report.data.items.tool_actions)
-
-
-
-subscription_type: optional "enterprise" or "team"
-
-
-
-Subscription tier for subscription customers. `null` for API customers.
-
-One of the following:
-
-"enterprise"
-
-
-
-[](#claude_code_usage_report.data.items.subscription_type%5B0%5D)
-
-"team"
-
-
-
-[](#claude_code_usage_report.data.items.subscription_type%5B1%5D)
-
-[](#claude_code_usage_report.data.items.subscription_type)
-
-[](#claude_code_usage_report.data)
-
-has_more: boolean
-
-
-
-True if there are more records available beyond the current page.
-
-[](#claude_code_usage_report.has_more)
-
-next_page: string
-
-
-
-Opaque cursor token for fetching the next page of results, or null if no more pages are available.
-
-[](#claude_code_usage_report.next_page)
-
-[](#claude_code_usage_report)
-
-Get Claude Code Usage Report
+cURL
 
 
 
 ```python
 curl https://api.anthropic.com/v1/organizations/usage_report/claude_code \
     -H 'anthropic-version: 2023-06-01' \
-    -H "Authorization: Bearer $ANTHROPIC_OAUTH_TOKEN"
+    -H "X-Api-Key: $ANTHROPIC_API_KEY"
 ```
 
 Response 200
@@ -656,13 +317,14 @@ Response 200
       },
       "customer_type": "api",
       "date": "2025-08-08T00:00:00Z",
+      "is_remote": false,
       "model_breakdown": [
         {
           "estimated_cost": {
             "amount": 186,
             "currency": "USD"
           },
-          "model": "claude-sonnet-4-20250514",
+          "model": "claude-opus-5",
           "tokens": {
             "cache_creation": 2340,
             "cache_read": 8790,
@@ -675,7 +337,7 @@ Response 200
             "amount": 42,
             "currency": "USD"
           },
-          "model": "claude-3-5-haiku-20241022",
+          "model": "claude-sonnet-5",
           "tokens": {
             "cache_creation": 890,
             "cache_read": 3420,
@@ -737,13 +399,14 @@ Response 200
       },
       "customer_type": "api",
       "date": "2025-08-08T00:00:00Z",
+      "is_remote": false,
       "model_breakdown": [
         {
           "estimated_cost": {
             "amount": 186,
             "currency": "USD"
           },
-          "model": "claude-sonnet-4-20250514",
+          "model": "claude-opus-5",
           "tokens": {
             "cache_creation": 2340,
             "cache_read": 8790,
@@ -756,7 +419,7 @@ Response 200
             "amount": 42,
             "currency": "USD"
           },
-          "model": "claude-3-5-haiku-20241022",
+          "model": "claude-sonnet-5",
           "tokens": {
             "cache_creation": 890,
             "cache_read": 3420,

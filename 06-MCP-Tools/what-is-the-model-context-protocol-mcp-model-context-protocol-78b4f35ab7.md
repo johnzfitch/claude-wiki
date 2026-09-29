@@ -2,8 +2,8 @@
 title: "What is the Model Context Protocol (MCP)? - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/2025-03-26/getting-started/intro"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:33Z"
-tags: ["cli", "mcp"]
+fetched_at: "2026-09-29T06:29:40Z"
+tags: ["cli", "mcp", "security"]
 ---
 
 ## On this page
@@ -13,6 +13,7 @@ tags: ["cli", "mcp"]
 - [Broad ecosystem support](#broad-ecosystem-support)
 - [Start Building](#start-building)
 - [Learn more](#learn-more)
+- [Community](#community)
 
 Get started
 
@@ -42,8 +43,8 @@ Why does MCP matter?
 Depending on where you sit in the ecosystem, MCP can have a range of benefits.
 
 - **Developers**: MCP reduces development time and complexity when building, or integrating with, an AI application or agent.
-- **AI applications or agents**: MCP provides access to an ecosystem of data sources, tools and apps which will enhance capabilities and improve the end-user experience.
-- **End-users**: MCP results in more capable AI applications or agents which can access your data and take actions on your behalf when necessary.
+- **AI applications or agents**: MCP gives them access to an ecosystem of data sources, tools and apps, which enhances their capabilities and improves the end-user experience.
+- **End-users**: MCP results in more capable AI applications or agents that can access user data and take actions on the user’s behalf when necessary.
 
 
 [​](#broad-ecosystem-support)
@@ -74,6 +75,19 @@ Build interactive apps that run inside AI clients
 
 Learn more
 
-## Understand concepts
+## Architecture
 
 Learn the core concepts and architecture of MCP
+
+## Security
+
+Understand the security considerations and best practices for MCP
+
+
+[​](#community)
+
+Community
+
+## Contributing
+
+Learn how to get involved and contribute to MCP

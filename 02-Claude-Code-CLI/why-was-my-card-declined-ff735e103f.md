@@ -2,12 +2,15 @@
 title: "Why was my card declined? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9402418-why-was-my-card-declined"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:41:57Z"
+fetched_at: "2026-09-29T06:32:13Z"
 tags: ["billing", "claude-code", "cli"]
 ---
 
 # Why was my card declined?
 
+July 10, 2026
+
+Copy for LLM
 
 There are several reasons your card may have been declined when trying to process this transaction. While we don't receive detailed information from issuing banks regarding the specific reasons for a decline, there are several common factors that may contribute to this issue. A few ideas to try are:
 

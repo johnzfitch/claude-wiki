@@ -2,15 +2,15 @@
 title: "What is Claude Tag? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15594475"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:52Z"
+fetched_at: "2026-09-29T06:31:56Z"
 ---
 
 # What is Claude Tag?
 
-June 23, 2026
 
+Copy for LLM
 
-Claude in Slack will be switched over to the new Claude Tag experience on August 3, 2026. To integrate Claude and Slack, use Claude Tag instead.
+**[Claude in Slack](https://claude.com/product/tag)** switched over to the new Claude Tag experience on August 3, 2026. To integrate Claude and Slack, use Claude Tag instead. Learn how to **[set up Claude Tag](https://claude.com/docs/claude-tag/admins/setup-overview)** or **[migrate from the earlier Claude in Slack](https://claude.com/docs/claude-tag/admins/migrate-from-earlier)**.
 
 Claude Tag is a new way to work with Claude: tag @Claude into a conversation and it takes on real work, using your organization's tools and the shared context around it. Claude works under its own identity, builds context by remembering relevant information from the channels it’s in, and can follow up on its own.
 
@@ -40,7 +40,7 @@ After the Claude app is installed, a Primary Owner or Owner sets up Claude Tag: 
 
 ## Control who can use Claude Tag
 
-In **Organization settings \> Claude in Slack**, Member Access has three modes: open to anyone in the Slack workspace, open to any member of your Claude organization, or only members whose role allows it. The third option is role-based access and is available on the Claude Enterprise plan. To restrict by role, set Member Access to "Only members whose role allows it" and grant the "Claude in Slack" capability to a custom role. This setting applies to both channel mentions and direct messages. To set member access, see **[Restrict where Claude Tag operates](https://claude.com/docs/claude-tag/admins/restrict-access)**.
+In **Organization settings \> Claude Tag**, Member Access has three modes: open to anyone in the Slack workspace, open to any member of your Claude organization, or only members whose role allows it. The third option is role-based access and is available on the Claude Enterprise plan. To restrict by role, set Member Access to "Only members whose role allows it" and grant the "Claude Tag in Slack" capability to a custom role. This setting applies to both channel mentions and direct messages. To set member access, see **[Restrict where Claude Tag operates](https://claude.com/docs/claude-tag/admins/restrict-access)**.
 
 # An error occurred.
 
@@ -76,11 +76,15 @@ You decide what Claude Tag can reach by setting credentials and repository acces
 
 To configure access, see **[Claude Tag identity and access](https://claude.com/docs/claude-tag/concepts/agent-identity)**.
 
+### Channels with guests
+
+Channels that include Slack guests have a separate **Allow Claude to respond to guests** setting that controls whether Claude responds there, and what access Claude has when it does. Choose **Restrict** (the default, which blocks Claude from those channels entirely), **Channel only** (Claude replies, but while a guest is present it runs with channel-only access), or **Allow** (Claude replies with the full access configured for it, as in any other channel). For the full guide, see [**Restrict guest channels**](https://claude.com/docs/claude-tag/admins/restrict-access#restrict-guest-channels).
+
 ## Review memory and activity for Claude Tag
 
-Claude Tag keeps context per channel and per workspace. Admins can view, edit, and delete that memory.
+Claude Tag keeps context per channel and per workspace. Owners can view, edit, and delete that memory.
 
-An Audit view in **Organization settings \> Claude Tag \> Audit** lists every scheduled and one-time task across your organization in addition to all network calls made using Agent Identity. Each action is also traceable in the tool where it happened: posts come from the Claude app in Slack, and commits and pull requests show the Claude GitHub App as the author with a link back to the Slack thread that started them. In any channel, you can ask "@Claude what triggers do you have set up here?" to see and turn off standing work.
+An Activity page in **Organization settings \> Claude Tag \> Activity** lists every scheduled and one-time task across your organization in addition to all network calls made using Agent Identity. Only Owners can open this page. Each action is also traceable in the tool where it happened: posts come from the Claude app in Slack, and commits and pull requests show the Claude GitHub App as the author with a link back to the Slack thread that started them. In any channel, you can ask "@Claude what triggers do you have set up here?" to see and turn off standing work.
 
 ------------------------------------------------------------------------
 
@@ -92,7 +96,7 @@ Your Slack conversations with Claude remain separate from your Claude history, k
 
 ### Data visibility
 
-- Conversations initiated in Slack are not visible in **[your Claude chat history](http://claude.ai/recents)**.
+- Conversations initiated in Slack are not visible in **[your Claude chat history](https://claude.ai/recents)**.
 
 - Conversations initiated in the Claude web app are not accessible in Slack.
 

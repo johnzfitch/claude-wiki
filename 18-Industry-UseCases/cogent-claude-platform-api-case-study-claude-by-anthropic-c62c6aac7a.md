@@ -2,33 +2,24 @@
 title: "Cogent Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/cogent"
 category: "18-Industry-UseCases"
-fetched_at: "2026-08-02T05:43:21Z"
-tags: ["agents", "api"]
+fetched_at: "2026-09-29T06:31:32Z"
+tags: ["agents", "api", "enterprise", "security"]
 ---
 
 # Cogent resolves security threats 97% faster with Claude
 
-
 [Try Claude](https://claude.ai)
 
-
-[Contact sales](/contact-sales)
-
-
-Industry:
-
+Industry:  
 Cybersecurity
 
-Company size:
-
+Company size:  
 Startup
 
-Product:
-
+Product:  
 Claude Platform
 
-Location:
-
+Location:  
 North America
 
 97% reduction in time critical vulnerabilities remain open
@@ -46,26 +37,10 @@ Cogent is an applied AI lab building agents to automate critical security tasks 
 - 97% reduction in time that critical vulnerabilities remain open, compressing remediation cycles from days or weeks to minutes
 - Response time to zero-day vulnerabilities reduced to 30 minutes, down from days of manual investigation and coordination
 - 90% reduction in vulnerability noise requiring human review
-- Reduced average investigation time from days to minutes 
+- Reduced average investigation time from days to minutes
 - 40+ hours per month reclaimed from manual reporting per enterprise customer
 
 ## The challenge
-
-Reduction in time that critical vulnerabilities remain open
-
-Read more
-
-[Read more](https://claude.com/customers/cogent)
-
-Read more
-
-
-Reduction in time that critical vulnerabilities remain open
-
-
-97%
-
-Reduction in time that critical vulnerabilities remain open
 
 ## The gap between finding and fixing
 
@@ -73,23 +48,11 @@ Security teams at large enterprises are generally effective at discovering vulne
 
 The work is slow and often inconsistent. High-severity vulnerabilities can sit open for days or weeks. “AI has shifted the balance of power in cybersecurity,” said Geng Sng, Cogent's CTO. “Attackers now automate most of the attack lifecycle, compressing what once took weeks into hours. Meanwhile, defenders still rely on fragmented tools and manual coordination.” Cogent's founders wanted to build a system that could do this work continuously and at machine speed, across the full vulnerability lifecycle.
 
+97%
+
+Reduction in time that critical vulnerabilities remain open
+
 ## The solution
-
-Response time to zero-day vulnerabilities
-
-Read more
-
-[Read more](https://claude.com/customers/cogent)
-
-Read more
-
-
-Response time to zero-day vulnerabilities
-
-
-30 minutes
-
-Response time to zero-day vulnerabilities
 
 ## Cogent selects Claude for agentic reliability
 
@@ -97,16 +60,19 @@ Cogent evaluated multiple model providers using internal security-focused benchm
 
 In vulnerability investigation, an agent needs to follow a chain of evidence across disparate systems without losing the thread: a vulnerability surfaces in a scanner, which points to a specific software version, which maps to a set of assets, which have varying levels of exposure depending on compensating controls. In workflows involving 10-15 sequential tool calls, Claude maintained coherence and instruction-following where alternatives lost context.
 
-That reliability made Claude Opus and Haiku models the clear choice for production deployment in enterprise security environments, where incomplete reasoning has real consequences. 
+That reliability made Claude Opus and Haiku models the clear choice for production deployment in enterprise security environments, where incomplete reasoning has real consequences.
 
 "Claude consistently performed best on complex, agentic workflows, especially multi-step investigations requiring policy adherence and sustained reasoning across multiple tools," said Anirudh Ravula, Cogent's Head of AI.
 
+30 minutes
+
+Response time to zero-day vulnerabilities
 
 ## The outcome
 
 ## How Cogent uses Claude across the vulnerability lifecycle
 
-Fixing a vulnerability requires three things to go right in sequence: understanding what’s actually exploitable, deciding which issues deserve immediate attention, and actually resolving them. Most security teams do all three manually. Cogent automates the full chain by building the end-to-end remediation stack then embedding  Claude as the reasoning layer at each step.
+Fixing a vulnerability requires three things to go right in sequence: understanding what’s actually exploitable, deciding which issues deserve immediate attention, and actually resolving them. Most security teams do all three manually. Cogent automates the full chain by building the end-to-end remediation stack then embedding Claude as the reasoning layer at each step.
 
 **Investigation:** Cogent's platform continuously pulls from scanners, logs, asset inventories, and threat feeds, building the environmental context that doesn't exist anywhere in a customer's environment ready-made. From there, Cogent's investigative agent works autonomously: tracing asset ownership across systems, synthesizing threat intelligence and business context into a risk score, and mapping the remediation processes that apply to each asset. For issues that warrant deeper analysis, security teams can ask questions in plain language and get back clear, explainable findings. Investigations that once took days now happen in minutes.
 
@@ -118,7 +84,7 @@ The results are measurable. Customers have reduced the time critical vulnerabili
 
 One enterprise customer at a large hospitality brand put it simply: "In meetings, I used to say 'I'll get back to you on that' and spend hours in BI tools and Excel. Now I ask Cogent in plain language and generate charts in seconds. Executive questions get answered in real time, not days later."
 
-Claude is also embedded in how Cogent builds its own product. The team developed an AI-driven software development lifecycle, integrating Claude into engineering workflows from specification through implementation and review. Smaller teams can now move faster and maintain the high security standards their enterprise customers require. 
+Claude is also embedded in how Cogent builds its own product. The team developed an AI-driven software development lifecycle, integrating Claude into engineering workflows from specification through implementation and review. Smaller teams can now move faster and maintain the high security standards their enterprise customers require.
 
 ## Looking ahead: Fully autonomous systems
 
@@ -126,509 +92,233 @@ Cogent is working toward two capabilities next: fully autonomous remediation, wh
 
 “We are exploring Claude-powered agents that simulate sophisticated attackers, chaining misconfigurations and privilege escalations to uncover attack paths before adversaries do,” said CTO Geng Sng. “Our goal is fully autonomous systems, reducing millions of exploitable issues toward zero.”
 
-"Claude consistently performed best on complex, agentic workflows, especially multi-step investigations requiring policy adherence and sustained reasoning across multiple tools."
-
-Anirudh Ravula
-
-Head of AI, Cogent
-
 ## Related stories
 
-[Kai delivers preemptive exposure management with Claude ](/customers/kai)
 
-Kai delivers preemptive exposure management with Claude
+### Vega's cyber defense platform returns 67% of analysts' time with Claude
 
-Kai delivers preemptive exposure management with Claude
 
-Customer story
+### Cyera on making Claude Cowork the front door to 40 tools
 
-[Customer story](/customers/kai)
 
-Customer story
+### Cyera scales agentic AI across 1,500 employees with Claude Enterprise
 
-[How Artemis helps security teams cut incident resolution time by 96%](/customers/artemis)
 
-How Artemis helps security teams cut incident resolution time by 96%
+### Kai delivers preemptive exposure management with Claude
 
-How Artemis helps security teams cut incident resolution time by 96%
+[](/)
 
-Customer story
+© 2026 Anthropic PBC
 
-[Customer story](/customers/artemis)
+## Products
 
-Customer story
+- [Claude](/product/overview)
+- [Claude Code](/product/claude-code)
+- [Claude Cowork](/product/cowork)
+- [@Claude](/product/tag)
+- [Claude Science](/product/claude-science)
+- [Claude Security](/product/claude-security)
+- [Download app](/download)
+- [Pricing](/pricing)
+- [Log in](https://claude.ai/login)
 
-[How eSentire runs expert-level threat investigations at scale with Claude](/customers/esentire)
+## Capabilities
 
-How eSentire runs expert-level threat investigations at scale with Claude
+- [Artifacts](/features/artifacts)
+- [Design](/product/design)
+- [Connectors](/marketplace/connectors-plugins)
+- [Plugins](/marketplace/plugins)
+- [Skills](/skills)
 
-How eSentire runs expert-level threat investigations at scale with Claude
+## Extensions
 
-Customer story
+- [Claude in Chrome](/claude-in-chrome)
+- [Claude for Microsoft 365](/claude-for-microsoft-365)
 
-[Customer story](/customers/esentire)
+## Models
 
-Customer story
+- [Mythos](https://www.anthropic.com/claude/mythos)
+- [Fable](https://www.anthropic.com/claude/fable)
+- [Opus](https://www.anthropic.com/claude/opus)
+- [Sonnet](https://www.anthropic.com/claude/sonnet)
+- [Haiku](https://www.anthropic.com/claude/haiku)
 
-[Vanta streamlines compliance remediation with Claude](/customers/vanta)
+## Enterprise
 
-Vanta streamlines compliance remediation with Claude
+- [Overview](/solutions/enterprise)
+- [Claude Code for Enterprise](/product/claude-code/enterprise)
 
-Vanta streamlines compliance remediation with Claude
+## Departments
 
-Customer story
+- [Customer support](/solutions/customer-support)
+- [Cybersecurity](/solutions/cybersecurity)
+- [Legal](/solutions/legal)
+- [Sales](/solutions/sales)
 
-[Customer story](/customers/vanta)
+## Industries
 
-Customer story
+- [Financial services](/solutions/financial-services)
+- [Government](/solutions/government)
+- [Healthcare](/solutions/healthcare)
+- [Higher education](/solutions/education)
+- [K-12 teachers](/solutions/teachers)
+- [Life sciences](/solutions/life-sciences)
+- [Nonprofits](/solutions/nonprofits)
+- [Small business](/solutions/small-business)
 
-[Homepage](https://claude.com)
+## Programs
 
-Homepage
+- [Startups](/programs/startups)
+- [Scientists](/programs/team-plan-for-scientists)
 
+## Developers
 
-Thank you! Your submission has been received!
+- [Developer docs](https://code.claude.com/docs/en/overview)
+- [Developer blog](https://claude.dev)
+- [Community](/community)
+- [Console](https://platform.claude.com/docs/en/home)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
 
-Oops! Something went wrong while submitting the form.
+## Platform
 
-Write
+- [Overview](/platform/api)
+- [Marketplace](/marketplace)
+- [Claude on AWS](/partners/claude-on-aws)
+- [Google Cloud](/partners/google-cloud)
+- [Microsoft Foundry](/partners/microsoft-foundry)
 
-[Button Text](#)
+## Resources
 
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
-
-[Anthropic](https://www.anthropic.com/)
-
-Anthropic
-
-© \[year\] Anthropic PBC
-
-Products
-
-- Claude
-
-  [Claude](/product/overview)
-  Claude
-
-- Claude Code
-
-  [Claude Code](/product/claude-code)
-  Claude Code
-
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
-- Claude Cowork
-
-  [Claude Cowork](/product/cowork)
-  Claude Cowork
-
-- @Claude
-
-  [@Claude](/product/tag)
-  @Claude
-
-- Claude Design
-
-  [Claude Design](/product/design)
-  Claude Design
-
-- Claude Science
-
-  [Claude Science](/product/claude-science)
-  Claude Science
-
-- Claude Security
-
-  [Claude Security](/product/claude-security)
-  Claude Security
-
-- Download app
-
-  [Download app](/download)
-  Download app
-
-- Pricing
-
-  [Pricing](/pricing)
-  Pricing
-
-- Log in
-
-  [Log in](https://claude.ai/login)
-
-Features
-
-- Claude for Chrome
-
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
-
-- Claude for Microsoft 365
-
-  [Claude for Microsoft 365](/claude-for-microsoft-365)
-  Claude for Microsoft 365
-
-- Skills
-
-  [Skills](/skills)
-  Skills
-
-Models
-
-- Mythos
-
-  [Mythos](https://www.anthropic.com/claude/mythos)
-  Mythos
-
-- Fable
-
-  [Fable](https://www.anthropic.com/claude/fable)
-  Fable
-
-- Opus
-
-  [Opus](https://www.anthropic.com/claude/opus)
-  Opus
-
-- Sonnet
-
-  [Sonnet](https://www.anthropic.com/claude/sonnet)
-  Sonnet
-
-- Haiku
-
-  [Haiku](https://www.anthropic.com/claude/haiku)
-  Haiku
-
-Solutions
-
-- AI agents
-
-  [AI agents](/solutions/agents)
-  AI agents
-
-- Code modernization
-
-  [Code modernization](/solutions/code-modernization)
-  Code modernization
-
-- Coding
-
-  [Coding](/solutions/coding)
-  Coding
-
-- Customer support
-
-  [Customer support](/solutions/customer-support)
-  Customer support
-
-- Cybersecurity
-
-  [Cybersecurity](/solutions/cybersecurity)
-  Cybersecurity
-
-- Enterprise
-
-  [Enterprise](/solutions/enterprise)
-  Enterprise
-
-- Financial services
-
-  [Financial services](/solutions/financial-services)
-  Financial services
-
-- Government
-
-  [Government](/solutions/government)
-  Government
-
-- Healthcare
-
-  [Healthcare](/solutions/healthcare)
-  Healthcare
-
-- Higher education
-
-  [Higher education](/solutions/education)
-  Higher education
-
-- K-12 teachers
-
-  [K-12 teachers](/solutions/teachers)
-  K-12 teachers
-
-- Legal
-
-  [Legal](/solutions/legal)
-  Legal
-
-- Life sciences
-
-  [Life sciences](/solutions/life-sciences)
-  Life sciences
-
-- Nonprofits
-
-  [Nonprofits](/solutions/nonprofits)
-  Nonprofits
-
-- Small business
-
-  [Small business](/solutions/small-business)
-  Small business
-
-Claude Platform
-
-- Overview
-
-  [Overview](/platform/api)
-  Overview
-
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
-
-- Ecosystem
-
-  [Ecosystem](/ecosystem)
-  Ecosystem
-
-- Marketplace
-
-  [Marketplace](/platform/marketplace)
-  Marketplace
-
-- Claude on AWS
-
-  [Claude on AWS](/partners/claude-on-aws)
-  Claude on AWS
-
-- Google Cloud
-
-  [Google Cloud](/partners/google-cloud)
-  Google Cloud
-
-- Microsoft Foundry
-
-  [Microsoft Foundry](/partners/microsoft-foundry)
-  Microsoft Foundry
-
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](https://platform.claude.com/)
-  Console login
-
-Resources
-
-- Blog
-
-  [Blog](/blog)
-  Blog
-
-- Claude partner network
-
-  [Claude partner network](/partners)
-  Claude partner network
-
-- Community
-
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
-
-- Customer stories
-
-  [Customer stories](/customers)
-  Customer stories
-
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
-- Events
-
-  [Events](https://www.anthropic.com/events)
-  Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
-
-- Powered by Claude
-
-  [Powered by Claude](/partners/powered-by-claude)
-  Powered by Claude
-
-- Service partners
-
-  [Service partners](/partners/services)
-  Service partners
-
-- Tutorials
-
-  [Tutorials](/resources/tutorials)
-  Tutorials
-
-- Use cases
-
-  [Use cases](/resources/use-cases)
-  Use cases
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Policy
-
-  [Policy](https://www.anthropic.com/policy)
-  Policy
-
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
-- Research
-
-  [Research](https://www.anthropic.com/research)
-  Research
-
-- News
-
-  [News](https://www.anthropic.com/news)
-  News
-
-- Policy on the AI Exponential
+- [Blog](/blog)
+- [Claude partner network](/partners)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](/customers)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](/partners/powered-by-claude)
+- [Service partners](/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](/check-files)
+- [Regional compliance](/regional-compliance)
+- [Report abuse](/form/anthropic-content-reporting)
+- [Security and compliance](https://trust.anthropic.com/)
+- [Status](https://status.anthropic.com/)
+- [Support center](https://support.claude.com/en/)
+
+## Company
+
+- [Anthropic](https://www.anthropic.com/)
+- [Careers](https://www.anthropic.com/careers)
+- [Policy](https://www.anthropic.com/policy)
+- [Research](https://www.anthropic.com/research)
+- [Anthropic news](https://www.anthropic.com/news)
+- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
+- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
+- [Transparency](https://anthropic.com/transparency)
+
+## Terms and policies
+
+- Privacy choices
+- [Privacy policy](https://www.anthropic.com/legal/privacy)
+- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
+- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
+- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
+- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
+- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
+- [Usage Policy](https://www.anthropic.com/legal/aup)
+
+## Products
+
+- [Claude](/product/overview)
+- [Claude Code](/product/claude-code)
+- [Claude Cowork](/product/cowork)
+- [@Claude](/product/tag)
+- [Claude Science](/product/claude-science)
+- [Claude Security](/product/claude-security)
+- [Download app](/download)
+- [Pricing](/pricing)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](/features/artifacts)
+- [Design](/product/design)
+- [Connectors](/marketplace/connectors-plugins)
+- [Plugins](/marketplace/plugins)
+- [Skills](/skills)
+
+## Extensions
+
+- [Claude in Chrome](/claude-in-chrome)
+- [Claude for Microsoft 365](/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](https://www.anthropic.com/claude/mythos)
+- [Fable](https://www.anthropic.com/claude/fable)
+- [Opus](https://www.anthropic.com/claude/opus)
+- [Sonnet](https://www.anthropic.com/claude/sonnet)
+- [Haiku](https://www.anthropic.com/claude/haiku)
+
+## Enterprise
+
+- [Overview](/solutions/enterprise)
+- [Claude Code for Enterprise](/product/claude-code/enterprise)
+
+## Departments
+
+- [Customer support](/solutions/customer-support)
+- [Cybersecurity](/solutions/cybersecurity)
+- [Legal](/solutions/legal)
+- [Sales](/solutions/sales)
+
+## Industries
+
+- [Financial services](/solutions/financial-services)
+- [Government](/solutions/government)
+- [Healthcare](/solutions/healthcare)
+- [Higher education](/solutions/education)
+- [K-12 teachers](/solutions/teachers)
+- [Life sciences](/solutions/life-sciences)
+- [Nonprofits](/solutions/nonprofits)
+- [Small business](/solutions/small-business)
+
+## Programs
+
+- [Startups](/programs/startups)
+- [Scientists](/programs/team-plan-for-scientists)
+
+## Developers
+
+- [Developer docs](https://code.claude.com/docs/en/overview)
+- [Developer blog](https://claude.dev)
+- [Community](/community)
+- [Console](https://platform.claude.com/docs/en/home)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](/platform/api)
+- [Marketplace](/marketplace)
+- [Claude on AWS](/partners/claude-on-aws)
+- [Google Cloud](/partners/google-cloud)
+- [Microsoft Foundry](/partners/microsoft-foundry)
+
+## Resources
+
+- [Blog](/blog)
+- [Claude partner network](/partners)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](/customers)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](/partners/powered-by-claude)
+- [Service partners](/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](/check-files)
+- [Regional compliance](/regional-compliance)
+- [Report abuse](/form/anthropic-content-reporting)

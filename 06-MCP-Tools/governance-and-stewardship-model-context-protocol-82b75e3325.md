@@ -2,7 +2,7 @@
 title: "Governance and Stewardship - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/governance"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:04Z"
+fetched_at: "2026-08-06T07:06:47Z"
 tags: ["mcp"]
 ---
 
@@ -165,7 +165,6 @@ Current Core Maintainers
 - Clare Liguori
 - Paul Carleton
 - Nick Cooper
-- Nick Aldridge
 
 
 [​](#emeritus)
@@ -175,6 +174,7 @@ Emeritus
 - Justin Spahr-Summers (Co-Inventor, Lead Maintainer Emeritus)
 - Basil Hosmer (Core Maintainer Emeritus)
 - Che Liu (Core Maintainer Emeritus)
+- Nick Aldridge (Core Maintainer Emeritus)
 
 
 [​](#current-maintainers-and-working-groups)

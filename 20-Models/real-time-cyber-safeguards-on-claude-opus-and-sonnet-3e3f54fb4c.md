@@ -2,13 +2,16 @@
 title: "Real-time cyber safeguards on Claude Opus and Sonnet | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet"
 category: "20-Models"
-fetched_at: "2026-08-02T05:41:21Z"
+fetched_at: "2026-09-29T06:30:51Z"
 ---
 
 # Real-time cyber safeguards on Claude Opus and Sonnet
 
+Updated today
 
-**Note**: This article applies only to Opus and Sonnet class models.
+Copy for LLM
+
+**Note**: This article applies only to Opus and Sonnet class models, but doesn’t apply to Claude Opus 5.5 or Sonnet 5.5. We'll soon be expanding the Cyber Verification Program to include Opus 5.5, Sonnet 5.5, and Mythos class models.
 
 As part of our ongoing safety commitments, we have real-time cyber safeguards on Claude Opus and Sonnet models. These safeguards are designed to automatically detect and block requests that may indicate prohibited or high-risk cybersecurity usage based on our Usage Policy.
 
@@ -26,17 +29,29 @@ Many cybersecurity practitioners do legitimate work that overlaps with the dual 
 
 If your use case has a legitimate defensive purpose and is being affected by these safeguards, we encourage you to apply for the CVP. See **How to apply** below for the right path based on how you access Claude.
 
-CVP requires data retention to be enabled. If your API organization uses Zero Data Retention (ZDR), you can set up a separate workspace with data retention turned on. If you have a sales-managed Claude Enterprise or Claude Teams account, contact your Anthropic Sales Representative to get started.
+Organizations on Zero Data Retention (ZDR) are not currently eligible to participate in the CVP. If you have a Sales Managed ZDR account, please contact your Anthropic Sales Representative for more information.
 
 ## How to apply
 
-How you apply depends on how you access Claude. Once you submit your application, we aim to send an email notification with our review decision within 2 business days.
+How you apply depends on how you access Claude. Once you submit your application, we aim to send an email notification with our review decision within two business days. To submit an application you will need to verify your identity. Please see **[Identity verification on Claude](https://support.claude.com/en/articles/14328960-identity-verification-on-claude)** for more information.
 
 [TABLE]
 
-[Verification Portal](http://portal.anthropic.com/programs/cvp)
+[Verification Portal](https://portal.anthropic.com/programs/cvp)
 
 **Are you a platform owner?** If you use Claude to power products or services available to your customers and want to learn whether your platform is eligible to participate in the Cyber Verification Program, please **[fill out this Platform CVP Interest Form](https://claude.com/form/platform-cvp-interest)**.
+
+## Enable data retention on Claude on Google Cloud
+
+In order to access the Cyber Verification Program through Claude on Google Cloud, you must consent to and configure data retention.
+
+Consent to the Advanced AI Safety Addendum once per project on the model page. In addition, the calling GCP project must opt in to the correct data retention settings. These are set on Google's **[PublisherModelConfig](https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/rest/v1beta1/projects.locations.endpoints#PublisherModelConfig)**, keyed by project, region, and model.
+
+**Note:** You must update these settings for every project, region, and model combination with which you'd like to use the Cyber Verification Program on Claude on Google Cloud.
+
+[TABLE]
+
+You can find out more about how to set this configuration by reading the **[Google Cloud documentation](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/capabilities/request-response-logging#share-requests-responses-with-maas-partners)**.
 
 ## Appeals
 

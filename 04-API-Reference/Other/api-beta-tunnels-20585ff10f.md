@@ -2,7 +2,7 @@
 title: "Tunnels - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/tunnels"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:41:15Z"
+fetched_at: "2026-09-26T06:38:47Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Ftunnels)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -227,65 +205,78 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Tunnels
-
+Copy page
 
 
 
 cURL
 
+1.  [API reference](/docs/en/api/http)
+2.  [Beta](/docs/en/api/http/beta)
+
 # Tunnels
 
-##### [Create Tunnel](/docs/en/api/beta/tunnels/create)
+##### [Create Tunnel](/docs/en/api/http/beta/tunnels/create)
 
-POST/v1/tunnels
+POST/v1/tunnels
 
-##### [Get Tunnel](/docs/en/api/beta/tunnels/retrieve)
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
-GET/v1/tunnels/{tunnel_id}
+##### [Get Tunnel](/docs/en/api/http/beta/tunnels/retrieve)
 
-##### [List Tunnels](/docs/en/api/beta/tunnels/list)
+GET/v1/tunnels/{tunnel_id}
 
-GET/v1/tunnels
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
-##### [Archive Tunnel](/docs/en/api/beta/tunnels/archive)
+##### [List Tunnels](/docs/en/api/http/beta/tunnels/list)
 
-POST/v1/tunnels/{tunnel_id}/archive
+GET/v1/tunnels
 
-##### [Reveal Tunnel Token](/docs/en/api/beta/tunnels/reveal_token)
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
-POST/v1/tunnels/{tunnel_id}/reveal_token
+##### [Archive Tunnel](/docs/en/api/http/beta/tunnels/archive)
 
-##### [Rotate Tunnel Token](/docs/en/api/beta/tunnels/rotate_token)
+POST/v1/tunnels/{tunnel_id}/archive
 
-POST/v1/tunnels/{tunnel_id}/rotate_token
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
-##### ModelsExpand Collapse 
+##### [Reveal Tunnel Token](/docs/en/api/http/beta/tunnels/reveal_token)
+
+POST/v1/tunnels/{tunnel_id}/reveal_token
+
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
+
+##### [Rotate Tunnel Token](/docs/en/api/http/beta/tunnels/rotate_token)
+
+POST/v1/tunnels/{tunnel_id}/rotate_token
+
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
+
+##### Models
 
 
 
-BetaTunnel object { id, archived_at, created_at, 3 more }
+BetaTunnel object{ type: "tunnel", id, archived_at, 3 more }
 
 
 
 An MCP tunnel.
+
+type: "tunnel"
+
+
 
 id: string
 
@@ -293,31 +284,31 @@ id: string
 
 Unique identifier for the tunnel, prefixed with `tnl_`.
 
-[](#beta_tunnel.id)
+
 
-archived_at: string
+archived_at: string or null
 
 
 
-A timestamp in RFC 3339 format
+RFC 3339 datetime string indicating when the tunnel was archived. Null if it is not archived.
 
-[](#beta_tunnel.archived_at)
+formatdate-time
+
+
 
 created_at: string
 
 
 
-A timestamp in RFC 3339 format
+RFC 3339 datetime string indicating when the tunnel was created.
 
-[](#beta_tunnel.created_at)
+formatdate-time
 
-display_name: string
+display_name: string or null
 
 
 
 Human-readable name for the tunnel (1-255 characters). Null if unset.
-
-[](#beta_tunnel.display_name)
 
 domain: string
 
@@ -325,23 +316,17 @@ domain: string
 
 Anthropic-assigned hostname for the tunnel. MCP server URLs whose host is a subdomain of this value are routed through the tunnel. Globally unique and never reused, even after the tunnel is archived.
 
-[](#beta_tunnel.domain)
-
-type: "tunnel"
-
-
-
-[](#beta_tunnel.type)
-
-[](#beta_tunnel)
-
 
 
-BetaTunnelToken object { id, tunnel_token, type }
+BetaTunnelToken object{ type: "tunnel_token", id, tunnel_token }
 
 
 
 A tunnel's connector token.
+
+type: "tunnel_token"
+
+
 
 id: string
 
@@ -349,38 +334,34 @@ id: string
 
 Stable identifier for the current token value. Changes when the token is rotated.
 
-[](#beta_tunnel_token.id)
-
 tunnel_token: string
 
 
 
 The connector token used to run the tunnel. Treat as a credential.
 
-[](#beta_tunnel_token.tunnel_token)
+#### Tunnels[Certificates](/docs/en/api/http/beta/tunnels/certificates)
 
-type: "tunnel_token"
+##### [Create Tunnel Certificate](/docs/en/api/http/beta/tunnels/certificates/create)
 
-
+POST/v1/tunnels/{tunnel_id}/certificates
 
-[](#beta_tunnel_token.type)
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
-[](#beta_tunnel_token)
+##### [Get Tunnel Certificate](/docs/en/api/http/beta/tunnels/certificates/retrieve)
 
-#### TunnelsCertificates
+GET/v1/tunnels/{tunnel_id}/certificates/{certificate_id}
 
-##### [Create Tunnel Certificate](/docs/en/api/beta/tunnels/certificates/create)
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
-POST/v1/tunnels/{tunnel_id}/certificates
+##### [List Tunnel Certificates](/docs/en/api/http/beta/tunnels/certificates/list)
 
-##### [Get Tunnel Certificate](/docs/en/api/beta/tunnels/certificates/retrieve)
+GET/v1/tunnels/{tunnel_id}/certificates
 
-GET/v1/tunnels/{tunnel_id}/certificates/{certificate_id}
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
-##### [List Tunnel Certificates](/docs/en/api/beta/tunnels/certificates/list)
+##### [Archive Tunnel Certificate](/docs/en/api/http/beta/tunnels/certificates/archive)
 
-GET/v1/tunnels/{tunnel_id}/certificates
+POST/v1/tunnels/{tunnel_id}/certificates/{certificate_id}/archive
 
-##### [Archive Tunnel Certificate](/docs/en/api/beta/tunnels/certificates/archive)
-
-POST/v1/tunnels/{tunnel_id}/certificates/{certificate_id}/archive
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.

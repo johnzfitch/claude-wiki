@@ -2,7 +2,7 @@
 title: "Roles and permissions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9267276-roles-and-permissions"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:27Z"
+fetched_at: "2026-09-29T06:31:46Z"
 tags: ["billing", "enterprise", "security"]
 ---
 
@@ -10,8 +10,8 @@ tags: ["billing", "enterprise", "security"]
 
 Roles and permissions that can be set for members of your plan
 
-June 18, 2026
 
+Copy for LLM
 
 What an individual can see and do in their Team or Enterprise plan account is dictated by their role. Roles are provisioned with the following permissions.
 
@@ -37,34 +37,34 @@ To learn more, refer to the following articles:
 
 [TABLE]
 
-## Chat Controls
+## Chat controls
 
 [TABLE]
 
-## Features and Integrations
+## Features and integrations
 
 [TABLE]
 
-## Membership Management
+## Membership management
 
 [TABLE]
 
-## Prioritized Support Routing (Enterprise plan only)
+## Prioritized support routing (Enterprise plan only)
 
 [TABLE]
 
-## Security and Data Controls (Team and Enterprise plans)
+## Security and data controls (Team and Enterprise plans)
 
 [TABLE]
 
-## Security and Data Controls (Enterprise plan only)
+## Security and data controls (Enterprise plan only)
 
 [TABLE]
 
-## Usage Analytics (Enterprise plans)
+## Usage analytics (Enterprise plans)
 
 [TABLE]
 
-## Usage Analytics (Team plans)
+## Usage analytics (Team plans)
 
 [TABLE]

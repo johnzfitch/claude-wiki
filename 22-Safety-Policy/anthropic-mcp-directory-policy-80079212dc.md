@@ -2,7 +2,7 @@
 title: "Anthropic MCP Directory Policy | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11697096-anthropic-mcp-directory-policy"
 category: "22-Safety-Policy"
-fetched_at: "2026-08-02T05:41:32Z"
+fetched_at: "2026-09-29T06:31:18Z"
 tags: ["mcp"]
 ---
 

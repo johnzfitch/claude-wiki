@@ -2,7 +2,7 @@
 title: "Checkpointing - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/checkpointing"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:36:17Z"
+fetched_at: "2026-09-26T06:37:53Z"
 tags: ["claude-code"]
 ---
 
@@ -18,6 +18,7 @@ tags: ["claude-code"]
   - [Bash command changes not tracked](#bash-command-changes-not-tracked)
   - [Subagent edits not restored](#subagent-edits-not-restored)
   - [External changes not tracked](#external-changes-not-tracked)
+  - [Messages sent mid-turn not checkpointed](#messages-sent-mid-turn-not-checkpointed)
   - [Symlinked and hard-linked paths not restored](#symlinked-and-hard-linked-paths-not-restored)
   - [Not a replacement for version control](#not-a-replacement-for-version-control)
 - [See also](#see-also)
@@ -39,7 +40,7 @@ Claude Code automatically tracks Claude’s file edits as you work, allowing you
 
 How checkpoints work
 
-As you work with Claude, checkpointing automatically captures the state of your code before each user prompt. This safety net lets you pursue ambitious, wide-scale tasks knowing you can always return to a prior code state.
+As you work with Claude, checkpointing automatically captures the state of your code before each prompt you send that starts a turn.
 
 
 [​](#automatic-tracking)
@@ -48,10 +49,10 @@ Automatic tracking
 
 Claude Code tracks all changes made by its file editing tools:
 
-- Every user prompt creates a new checkpoint
-- Claude Code keeps file snapshots for the 100 most recent checkpoints in a session. Discarding an older checkpoint deletes the snapshot files that no remaining checkpoint references, except each file’s first snapshot, which the VS Code extension uses as the baseline for its session diffs. Before v2.1.208, those superseded snapshot files stayed on disk until the session was cleaned up.
+- Every prompt you send that starts a turn creates a new checkpoint
+- Claude Code keeps file snapshots for the 100 most recent checkpoints in a session. Discarding an older checkpoint deletes the snapshot files that no remaining checkpoint references, except each file’s first snapshot, which the VS Code extension uses as the baseline for its session diffs.
 - Claude Code saves checkpoints with the conversation, so you can still run `/rewind` after you resume a session
-- Claude Code deletes checkpoints along with sessions after 30 days; change the period with [`cleanupPeriodDays`](/docs/en/settings#available-settings)
+- Claude Code deletes a session’s file snapshots in the [retention sweep](/docs/en/claude-directory#cleaned-up-automatically), by default about 30 days after the session last saved one. Rewinding to a checkpoint whose snapshots are gone can fail with [`No files were restored`](/docs/en/errors#no-files-were-restored). To keep snapshots longer, set [`cleanupPeriodDays`](/docs/en/settings-reference#cleanupperioddays).
 
 
 [​](#rewind-and-summarize)
@@ -62,7 +63,7 @@ Run `/rewind`, or press `Esc` twice when the prompt input is empty, to open the 
 
 If the prompt input contains text, double `Esc` clears it instead of opening the menu. The cleared text is saved to your input history, so press `Up` to recall it after you finish in the rewind menu.
 
-The rewind menu lists each prompt you sent during the session. Select the point you want to act on, then choose an action:
+The rewind menu lists each prompt you sent during the session, except [messages that joined a running turn](#messages-sent-mid-turn-not-checkpointed). Select the point you want to act on, then choose an action:
 
 - **Restore code and conversation**: revert both code and conversation to that point
 - **Restore conversation**: rewind to that message while keeping current code
@@ -78,7 +79,7 @@ The two code restore options appear only when the selected checkpoint has tracke
 
 Rewind past a cleared conversation
 
-If you ran `/clear` earlier in the same Claude Code process, the rewind menu shows an additional entry at the top of the list labeled `/resume <session-id> (previous session)`. Select it to resume the conversation that was active before `/clear` ran. The entry is available until you exit Claude Code or resume a different session, and requires Claude Code v2.1.191 or later. On earlier versions, run `/resume` and pick the previous session from the list instead.
+If you ran `/clear` earlier in the same Claude Code process, the rewind menu shows an additional entry at the top of the list labeled `/resume <session-id> (previous session)`. Select it to resume the conversation that was active before `/clear` ran. The entry is available until you exit Claude Code or resume a different session.
 
 
 [​](#guide-a-summary)
@@ -111,7 +112,7 @@ Limitations
 
 Bash command changes not tracked
 
-Checkpointing does not track files modified by bash commands. For example, if Claude Code runs:
+Checkpointing does not track files modified by Bash commands. For example, if Claude Code runs:
 
 ```python
 rm file.txt
@@ -126,7 +127,10 @@ These file modifications cannot be undone through rewind. Only direct file edits
 
 Subagent edits not restored
 
-Except for a [skill with `context: fork`](/docs/en/skills#run-skills-in-a-subagent) that runs in the foreground, edits a [subagent](/docs/en/sub-agents) applies land outside your session’s checkpoints, so rewinding doesn’t restore them, even though the subagent makes them with Claude’s file editing tools. This includes a background [`/code-review --fix`](/docs/en/code-review) run and any forked skill that runs in the background. Use git to revert those edits. The foreground fork edits your working tree during your own turn, so rewinding restores its edits as usual. A forked skill runs in the background by default; set `background: false` in its frontmatter to run it in the foreground, where the invoking turn waits for the result. Before v2.1.218, forked skills always ran in the foreground.
+A [subagent](/docs/en/sub-agents) makes edits with Claude’s file editing tools, but Claude Code usually doesn’t capture those edits in your session’s checkpoints. Whether rewinding restores them depends on how the subagent runs:
+
+- **Foreground forked skill**: a [skill with `context: fork`](/docs/en/skills#run-skills-in-a-subagent) that runs in the foreground edits your working tree during your own turn, so rewinding restores its edits as usual. Set `background: false` to run a fork in the foreground; a few situations, [listed on the skills page](/docs/en/skills#run-skills-in-a-subagent), run it there regardless of the setting.
+- **Any other subagent**: rewinding doesn’t restore the edits. Use git to revert them. This includes a forked skill that runs in the background, the default, and a background [`/code-review --fix`](/docs/en/code-review) run.
 
 
 [​](#external-changes-not-tracked)
@@ -136,24 +140,25 @@ External changes not tracked
 Checkpointing only tracks files that have been edited within the current session. Manual changes you make to files outside of Claude Code and edits from other concurrent sessions are normally not captured, unless they happen to modify the same files as the current session.
 
 
+[​](#messages-sent-mid-turn-not-checkpointed)
+
+Messages sent mid-turn not checkpointed
+
+When a message you [queue while Claude works](/docs/en/interactive-mode#queue-messages-while-claude-works) reaches Claude within the running turn, it joins that turn instead of starting a new one. The message appears in the conversation, but Claude Code doesn’t create a checkpoint for it, and the rewind menu doesn’t list it. A queued message that Claude Code sends as part of a new turn gets a checkpoint as usual, including when several queued messages [share that turn](/docs/en/interactive-mode#when-claude-code-sends-what-you-queued). To remove such a message, or undo the edits Claude made after it, rewind to the prompt that started the turn. That rewinds the whole turn, including the work Claude did before your message arrived.
+
+
 [​](#symlinked-and-hard-linked-paths-not-restored)
 
 Symlinked and hard-linked paths not restored
 
 Checkpointing doesn’t rewind symlinked or hard-linked files. When you pick **Restore code** or **Restore code and conversation** from the `/rewind` menu, Claude Code skips any tracked path that is a symlink or hard link and shows a `Restored the code, but skipped N files` warning. The skipped files keep their current contents. To undo the session’s changes to one of them, ask Claude to reverse the edit or edit the file yourself. Config files a dotfile manager symlinks into your project and files pnpm hard-links into place both fall into this category. To see which paths a restore skips, turn on debug logging with `/debug` before you restore: the debug log at `~/.claude/debug/<session-id>.txt` names each skipped path. For every skip reason and the recovery steps, see [the skipped-files entry in the error reference](/docs/en/errors#restored-the-code-but-skipped-files).
 
-Before v2.1.216, `/rewind` wrote and deleted through links at tracked paths without a warning.
-
 
 [​](#not-a-replacement-for-version-control)
 
 Not a replacement for version control
 
-Checkpoints are designed for quick, session-level recovery. For permanent version history and collaboration:
-
-- Continue using version control (ex. Git) for commits, branches, and long-term history
-- Checkpoints complement but don’t replace proper version control
-- Think of checkpoints as “local undo” and Git as “permanent history”
+Checkpoints are designed for quick, session-level recovery. For permanent version history and collaboration, continue using version control, such as Git, for commits, branches, and long-term history.
 
 
 [​](#see-also)

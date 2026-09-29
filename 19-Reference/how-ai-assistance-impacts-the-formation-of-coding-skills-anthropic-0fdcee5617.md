@@ -2,7 +2,7 @@
 title: "How AI assistance impacts the formation of coding skills \\ Anthropic"
 source_url: "https://www.anthropic.com/research/AI-assistance-coding-skills"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:12:08Z"
+fetched_at: "2026-09-10T06:44:04Z"
 tags: ["skills"]
 ---
 
@@ -12,7 +12,7 @@ Jan 29, 2026
 
 [Read the paper ](https://arxiv.org/abs/2601.20245)
 
-Research shows AI helps people do [parts](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4945566) of their job faster. In an observational [study](https://www.anthropic.com/research/estimating-productivity-gains) of [Claude.ai](http://claude.ai/redirect/website.v1.fee6e28b-3788-4e87-818f-9383a337cd3c) data, we found AI can speed up some tasks by 80%. But does this increased productivity come with trade-offs? Other research shows that when people use AI assistance, they become [less engaged with their work](https://www.nature.com/articles/s41598-025-98385-2) and [reduce](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf) the effort they put into doing it—in other words, they offload their thinking to AI.
+Research shows AI helps people do [parts](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4945566) of their job faster. In an observational [study](https://www.anthropic.com/research/estimating-productivity-gains) of [Claude.ai](http://claude.ai/redirect/website.v1.ed7a6123-e3e3-4026-a285-e9535a7c0665) data, we found AI can speed up some tasks by 80%. But does this increased productivity come with trade-offs? Other research shows that when people use AI assistance, they become [less engaged with their work](https://www.nature.com/articles/s41598-025-98385-2) and [reduce](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf) the effort they put into doing it—in other words, they offload their thinking to AI.
 
 It’s unclear whether this cognitive offloading can prevent people from growing their skills on the job, or—in the case of coding—understanding the systems they’re building. Our latest study, a randomized controlled trial with software developers as participants, investigates this potential downside of using AI at work.
 
@@ -114,21 +114,23 @@ Copy
 
 ## Related content
 
-### Discovering cryptographic weaknesses with Claude
+### An alignment assessment of recent cybersecurity incidents
 
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
+We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
 
-[Read more](/research/discovering-cryptographic-weaknesses)
+[Read more](/research/alignment-assessment-cybersecurity-incidents)
 
-### Project Pilot: Can AI control a drone?
+### Formalizing Fermat's Last Theorem
 
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
+We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.
 
-[Read more](/research/project-pilot)
+[Read more](/research/formalizing-fermats-last-theorem)
 
-### How Canada uses Claude: Findings from the Anthropic Economic Index
+### Automated researchers can reliably mitigate alignment failures
 
-[Read more](/research/how-canada-uses-claude)
+We had Claude autonomously train models to improve their performance on several public benchmarks that measure 10 categories of alignment failure. For all 10, Claude found fixes that improved the target benchmarks without degrading capabilities.
+
+[Read more](/research/automated-researchers-mitigate-alignment-failures)
 
 [](/)
 
@@ -142,7 +144,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -162,6 +164,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -194,7 +197,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -207,7 +210,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -219,6 +222,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

@@ -2,7 +2,7 @@
 title: "Build an MCP client - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/draft/develop/build-client"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:24Z"
+fetched_at: "2026-08-10T06:45:51Z"
 tags: ["cli", "mcp"]
 ---
 
@@ -1836,7 +1836,7 @@ cd mcp-client
 bundle init
 
 # Add required dependencies
-bundle add anthropic base64 dotenv mcp
+bundle add anthropic dotenv mcp
 
 # Create our main file
 touch client.rb

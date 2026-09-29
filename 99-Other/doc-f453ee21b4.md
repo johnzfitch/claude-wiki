@@ -2,12 +2,14 @@
 title: "Set up role-based permissions on Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13930458-"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:09Z"
+fetched_at: "2026-09-29T06:31:44Z"
 tags: ["enterprise"]
 ---
 
 # Set up role-based permissions on Enterprise plans
 
+
+Copy for LLM
 
 This guide walks you through setting up role-based permissions for your Enterprise organization. This lets you control which features and connectors specific teams or groups of members can access, and delegate specific admin access like billing or user management, rather than giving everyone the same permissions.
 
@@ -27,7 +29,7 @@ You'll need Owner or Primary Owner access to your Enterprise organization, or a 
 
 **Check which capabilities are enabled at the org level.** Go to **Organization settings** and ensure you know which capabilities members can access currently. For settings managed by RBAC, both the org setting and role setting are required to be on for users to get access.
 
-**Back up your member list.** Export a CSV of your current members from **[Organization settings \> Members](http://claude.ai/admin-settings/members)** before making any changes. If something goes wrong during migration, this gives you a reference to restore access. See **[Manage members on Team and Enterprise plans](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)**.
+**Back up your member list.** Export a CSV of your current members from **[Organization settings \> Members](https://claude.ai/admin-settings/members)** before making any changes. If something goes wrong during migration, this gives you a reference to restore access. See **[Manage members on Team and Enterprise plans](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)**.
 
 **Determine which teams or functions need each capability.** For example, Engineering gets Claude Code + Fast Mode and Marketing gets Cowork + Web Search. From here, define your custom roles.
 
@@ -67,14 +69,13 @@ Create roles that delegate parts of administration without granting the Owner ro
 
 ## Step 1: Audit your current settings
 
-1.  Review which features are currently enabled or disabled at the organization level in **[Organization settings \> Capabilities](http://claude.ai/admin-settings/capabilities)**.
+1.  Review which features are currently enabled or disabled at the organization level in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**.
 
-2.  Go to **[Organization settings \> Members](http://claude.ai/admin-settings/members)** to export or review your member list.
+2.  Go to **[Organization settings \> Members](https://claude.ai/admin-settings/members)** to export or review your member list.
 
 3.  Note each member's current built-in role (User, Admin, or Owner).
 
 4.  For each team or department, decide which features they need access to.
-
 
 Remember: any feature you want to control per-group must be **enabled** at the organization level. If a feature is toggled off at the organization level, no custom role can grant access to it.
 
@@ -90,8 +91,7 @@ Create your custom roles before enabling any features or migrating members. This
 
 2.  Click "Add role."
 
-3.  Name the role and toggle the appropriate capabilities on the **Capabilities** tab, or choose "All capabilities" or "All generally available" to grant everything at once:
-
+3.  Name the role and enable the appropriate capabilities on the **Capabilities** tab, or choose "All capabilities" or "All generally available" to grant everything at once:
 
 4.  On the **Permissions** tab, set admin permissions for the role. See **Step 3**.
 
@@ -99,7 +99,7 @@ Create your custom roles before enabling any features or migrating members. This
 
 6.  On the **Models** tab, set model access and a default model for the role. See **Step 5**.
 
-7.  Click "Save role."
+7.  Click "Save."
 
 8.  Repeat for each role in your plan.
 
@@ -121,10 +121,9 @@ Set admin permissions on each role to delegate access to admin settings, like bi
 
 3.  Select the **Permissions** tab, between **Capabilities** and **Connectors**.
 
+### Set admin permissions
 
-### **Set admin permissions**
-
-The **Permissions** tab lists each admin area: Identity & Access, Billing, Analytics, Privacy, User Management, and Libraries. Set each admin area to one of the following options:
+The **Permissions** tab lists each admin area: Identity & Access, Billing, Analytics, Privacy, User Management, Libraries, and Directory. Set each admin area to one of the following options:
 
 - **No access:** The member doesn't see this area in their organization settings.
 
@@ -136,7 +135,7 @@ Within an area, you grant all of View or all of Manage. You can't grant or restr
 
 **Note:** A role with Identity & Access set to Manage can create and edit groups and roles, including its own role definition. Members with this permission can expand their own access, so reserve it for trusted security and IT administrators.
 
-### **Verify enforcement**
+### Verify enforcement
 
 Verify admin permissions after you’ve migrated members to "Custom" roles (Step 7). See **Step 11: Verify and monitor**.
 
@@ -160,7 +159,6 @@ Set connector permissions on each role to control which connectors, and which to
 
 The default settings for new roles are permissive. When creating or modifying a role, confirm the settings on each tab to avoid granting unintended permissions.
 
-
 ### Set connector-level permissions
 
 The **Connectors** tab lists an **All connectors** row at the top, followed by every connector your organization has added. Each row has a dropdown with four options:
@@ -175,20 +173,31 @@ The **Connectors** tab lists an **All connectors** row at the top, followed by e
 
 Choosing “Always allow,” “Needs approval,” or “Blocked” applies that level to every tool on the connector. The **All connectors** row works the same way one level up: it sets a baseline for every connector at once, including any connector you add later. Use it to set a role’s default, then override individual connectors.
 
+### Set how members connect
+
+The **How members connect** dropdown controls whether the role's members sign in to connectors with their own accounts or connect automatically through your identity provider:
+
+- **Individually:** Members sign in to each connector with their own account.
+
+- **Managed authorization:** Members connect through your identity provider automatically, without signing in themselves.
+
+- **Set per connector:** Choose Individually or Managed authorization separately for each connector, instead of one setting for all of them.
+
+If a connector has both **Individually** and **Managed authorization** turned on, Claude tries managed authorization first. If that fails, members can still sign in individually with their own account, so they're not locked out of the connector while an identity provider issue gets resolved.
+
+Choosing **Individually** or **Managed authorization** in the **All connectors** row sets a baseline for every connector at once, including any connector you add later. Use it to set a role’s default, then override individual connectors.
 
 ### Set per-tool permissions
 
-Set a connector to **Custom** to reveal its tools as individual rows. Each tool has its own dropdown: “Always allow,” “Needs approval,” or “Blocked.”
+Set a connector to **Custom** to reveal its tools as individual rows. You can choose "Always allow," "Needs approval," or "Blocked" for each tool.
 
 Per-tool permissions let a role reach part of a connector. For example, with Jira set to **Custom**, its `search_issues` tool set to “Needs approval,” and every other Jira tool set to “Blocked,” members with the role can search Jira but nothing else. Claude only sees the tools you’ve granted, so asking it to create a ticket returns “I don’t have a tool for that” rather than an error.
-
 
 ### Review cross-role conflicts
 
 Because connector permissions are additive across roles, blocking a connector in one role has no effect on a member who also holds another role that grants it. Each connector row shows a warning when other roles grant the same connector at a different level. The warning names those roles and links to them, and the most permissive grant is the one that applies.
 
 If you have unsaved edits when you open a linked role, you’re asked to discard them first.
-
 
 ### Verify enforcement
 
@@ -216,7 +225,7 @@ For how the model access and default model settings work end to end, see **[Mana
 
 ### Set model access
 
-Under **Model access**, switch each model on or off for this role. Models disabled at the organization level appear but can't be enabled here until you turn them on for the organization in **[Organization settings \> Models](http://claude.ai/admin-settings/models)**. Haiku models are always on and can't be disabled.
+Under **Model access**, turn each model on or off for this role. Models disabled at the organization level appear but can't be enabled here until you turn them on for the organization in **[Organization settings \> Models](https://claude.ai/admin-settings/models)**. Haiku models are always on and can't be disabled.
 
 To cap the effort level a role can select on a model, click the gear icon next to the model and choose a level.
 
@@ -230,17 +239,15 @@ Verify model access after you've migrated members to "Custom" roles. See **Step 
 
 ## Step 6: Create groups and assign roles
 
-1.  Navigate to **[Organization settings \> Groups](http://claude.ai/admin-settings/groups)**.
+1.  Navigate to **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**.
 
 2.  Click “Add group” to create a group for each team or tier in your plan.
 
-3.  Add members to the appropriate groups.
+3.  Assign each group to the custom roles you created in step 2.
 
-4.  Assign each group to the custom roles you created in step 2.
-
+4.  Add members to the appropriate groups.
 
 If you use SCIM directory sync, you can sync groups from your identity provider instead of creating them manually. For details on SCIM group sync, see **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**.
-
 
 **Multiple organizations under the same parent organization:** Groups are managed at the parent organization level and propagate to all child organizations. You may see members from other organizations listed in a group—this doesn't mean they have access to your organization. Custom roles assigned to a group only grant capabilities to members who are part of your specific organization.
 
@@ -254,7 +261,7 @@ If you request to move an organization from one parent to another (this is rare 
 
 Before migrating members to custom roles, confirm that every member you plan to migrate is in at least one group assigned to a custom role. Members who are migrated without group or role coverage will lose access to all governed features.
 
-1.  Navigate to **[Organization settings \> Members](http://claude.ai/admin-settings/members)**.
+1.  Navigate to **[Organization settings \> Members](https://claude.ai/admin-settings/members)**.
 
 2.  Use the Role and Group filters to identify members who aren't assigned to any group.
 
@@ -282,7 +289,6 @@ Use this path only if your organization already enabled group mappings for role 
 
 3.  Save your changes. Members in those IdP groups are migrated to "Custom" roles on the next sync.
 
-
 Members in IdP groups mapped to "Custom" roles follow the permissions of the custom roles assigned to their groups in Claude. Members in IdP groups mapped to User follow the organization-level capability settings. If a member is in groups across both mappings, "Custom" roles take precedence.
 
 ### Path B: Bulk assignment tool
@@ -291,12 +297,17 @@ Use this path if your organization hasn’t enabled group mappings.
 
 **Warning:** If you didn’t already enable group mappings, do not enable it during RBAC setup. Enabling it without first assigning all members to mapped groups can result in members losing access to your organization.
 
-1.  Navigate to **[Organization settings \> Members](http://claude.ai/admin-settings/members)**.
+1.  Navigate to **[Organization settings \> Members](https://claude.ai/admin-settings/members)**.
 
 2.  Use the Role and Group filters to select the members you want to migrate.
 
-3.  Use the bulk assignment tool in the Members table to change the selected members' role to "Custom."
+3.  Click "Update \# selected."
 
+4.  Under **Action**, select "Change role."
+
+5.  Under **Role**, select "Custom."
+
+6.  Click "Update members."
 
 We recommend migrating a pilot group first—one team or department—and verifying their access is correct before expanding to the rest of the organization.
 
@@ -320,18 +331,29 @@ Only enable organization-level features after roles, groups, and member migratio
 
 For any feature you want to control per-group:
 
-1.  Navigate to the feature's settings page in **Organization settings** (for example, **[Organization settings \> Cowork](http://claude.ai/admin-settings/cowork)**).
+1.  Navigate to the feature's settings page in **Organization settings** (for example, **[Organization settings \> Cowork](https://claude.ai/admin-settings/cowork)**).
 
 2.  Enable the feature at the organization level.
 
 Enabling a feature at the organization level doesn't mean everyone gets it—custom role permissions are already in place to control who can use it. Think of the organization-level toggle as making the feature "available for role-based assignment" rather than "on for everyone."
 
+**Note:** This includes the Design, Slides, and Docs settings in Organization settings \> Artifacts. Members outside the roles that grant them can still open, comment on and use artifacts shared with them.
+
 ------------------------------------------------------------------------
 
 ## Step 10: Apply a group spend limit (usage-based orgs only)
 
-Navigate to the “Usage” page to assign a per-user monthly spend limit to any group.
+To assign a per-user monthly spend limit to a group:
 
+1.  Navigate to the **[Organization settings \> Usage](https://claude.ai/admin-settings/usage)**.
+
+2.  Select the "By group/tier" tab under **Spend limits**.
+
+3.  Click "+."
+
+4.  Select a group then add a custom limit.
+
+5.  When you’re done, click "Add spend limit."
 
 Note the following precedence rules:
 
@@ -389,7 +411,7 @@ SCIM connects to your role-based capabilities through two mechanisms that work t
 
 This controls which built-in role a member gets when they're provisioned. Map your IdP groups to "Custom" roles so that new members' access is automatically governed by custom role capabilities.
 
-1.  Navigate to **[Organization settings \> Organization and access](http://claude.ai/admin-settings/organization)**.
+1.  Navigate to **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**.
 
 2.  In the role mappings table, map your IdP groups to "Custom" roles.
 
@@ -397,7 +419,7 @@ This controls which built-in role a member gets when they're provisioned. Map yo
 
 This pulls your IdP groups into Claude so they can be assigned to custom roles.
 
-1.  Navigate to **[Organization settings \> Groups](http://claude.ai/admin-settings/groups)**
+1.  Navigate to **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**
 
 2.  Click “Check for updates” in the **SCIM sync** section.
 
@@ -441,7 +463,7 @@ If you enabled group mappings during setup and lost admin access, follow the rec
 
 ### Do I need to enable a feature at the organization level if I only want some members to have it?
 
-Yes. The organization-level toggle must be on for custom roles to control per-member access. If a feature is off at the organization level, no one can access it regardless of their role. Think of it as a main switch—custom roles control who gets access underneath it.
+Yes. The organization-level toggle must be on for custom roles to control per-member access. If a feature is off at the organization level, no one can access it regardless of their role. Think of it as a main switch—custom roles control who gets access underneath it. This includes the Design, Slides, and Docs settings in **Organization settings \> Artifacts**.
 
 ### What happens if a member whose role is set to "Custom" isn't in any groups?
 
@@ -449,7 +471,7 @@ They have no custom role permissions, so all features that require permissions a
 
 ### A model is missing from a member's model picker.
 
-Either the model is disabled at the organization level (**[Organization settings \> Models](http://claude.ai/admin-settings/models)**) or none of the member's custom roles grant it. Org-level disables affect everyone, including Owners and Admins.
+Either the model is disabled at the organization level (**[Organization settings \> Models](https://claude.ai/admin-settings/models)**) or none of the member's custom roles grant it. Org-level disables affect everyone, including Owners and Admins.
 
 ### What if a custom role doesn't grant chat access?
 
@@ -531,7 +553,7 @@ Organization settings only shows the sections their permissions cover. Sections 
 
 ### How do I audit who has admin access?
 
-**[Organization settings \> Roles](https://Organization%20settings%20%3E%20Roles)** shows the admin permissions each custom role grants, and **[Organization settings \> Groups](http://claude.ai/admin-settings/groups)** shows which groups are assigned to each role and who belongs to them. To check a specific member, look up their groups on **[Organization settings \> Members](http://claude.ai/admin-settings/members)**, then the roles those groups are assigned to.
+**[Organization settings \> Roles](https://claude.ai/admin-settings/roles)** shows the admin permissions each custom role grants, and **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)** shows which groups are assigned to each role and who belongs to them. To check a specific member, look up their groups on **[Organization settings \> Members](https://claude.ai/admin-settings/members)**, then the roles those groups are assigned to.
 
 ### What if someone needs permissions across multiple areas?
 

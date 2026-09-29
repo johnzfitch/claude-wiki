@@ -1,14 +1,16 @@
 ---
-title: "How will I be billed for Claude API use? | Claude Help Center"
+title: "How will I be billed for Claude API use? | Anthropic Help Center"
 source_url: "https://support.claude.com/en/articles/8114526-how-will-i-be-billed-for-claude-api-use"
 category: "04-API-Reference"
-fetched_at: "2026-08-02T05:41:54Z"
+fetched_at: "2026-08-19T06:29:26Z"
 tags: ["api"]
 ---
 
 # How will I be billed for Claude API use?
 
 March 16, 2026
+
+Copy for LLM
 
 **Note:** If you have received access to the Claude Console on or after 2/13/24, you will pay via our prepaid billing process. Refer to this article for more information on prepaid billing: [How do I pay for my Claude API usage?](https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-claude-api-usage)
 

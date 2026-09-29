@@ -2,7 +2,7 @@
 title: "SEP-1577: Sampling With Tools - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps/1577--sampling-with-tools"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:37:01Z"
+fetched_at: "2026-08-03T07:17:27Z"
 tags: ["mcp"]
 ---
 
@@ -323,7 +323,7 @@ Schema changes
 
 Possible Follow ups
 
-Theses are out of scope for this SEP, but care was taken not to preclude them, so where appropriate we give examples of how they could be implemented on top of / after this SEP.
+These are out of scope for this SEP, but care was taken not to preclude them, so where appropriate we give examples of how they could be implemented on top of / after this SEP.
 
 
 [​](#streaming-support)

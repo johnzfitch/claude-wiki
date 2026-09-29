@@ -2,13 +2,14 @@
 title: "Claude Console roles and permissions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10186004-claude-console-roles-and-permissions"
 category: "99-Other"
-fetched_at: "2026-08-02T05:40:47Z"
+fetched_at: "2026-09-29T06:30:48Z"
 ---
 
 # Claude Console roles and permissions
 
-May 20, 2026
+August 18, 2026
 
+Copy for LLM
 
 The Claude Console uses a role-based access system with six distinct roles: User, Claude Code User, Limited Developer, Developer, Billing, and Admin. Each role has specific permissions and capabilities designed to help teams manage their API access securely.
 
@@ -16,7 +17,7 @@ The Claude Console uses a role-based access system with six distinct roles: User
 
 ### User
 
-- Can only use Workbench
+- Can only use the playground
 
 - Can view MCP tunnels
 
@@ -24,7 +25,7 @@ The Claude Console uses a role-based access system with six distinct roles: User
 
 ### Claude Code User
 
-- Can use Workbench and **[Claude Code](https://code.claude.com/docs/en/overview)**
+- Can use the playground and **[Claude Code](https://code.claude.com/docs/en/overview)**
 
 - Can access Claude Code workspace in your org
 
@@ -32,7 +33,7 @@ The Claude Console uses a role-based access system with six distinct roles: User
 
 ### Limited Developer
 
-- Can use Workbench and Claude Code
+- Can use the playground and Claude Code
 
 - Can manage API keys and webhook endpoints
 
@@ -45,7 +46,7 @@ The Claude Console uses a role-based access system with six distinct roles: User
 
 ### Developer
 
-- Can use Workbench and Claude Code
+- Can use the playground and Claude Code
 
 - Can manage API keys and webhook endpoints
 
@@ -61,7 +62,7 @@ The Claude Console uses a role-based access system with six distinct roles: User
 
 ### Billing
 
-- Can use Workbench
+- Can use the playground
 
 - Can manage billing details
 

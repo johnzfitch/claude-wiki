@@ -2,13 +2,13 @@
 title: "Claude in Slack: Tag @Claude in any thread | Claude by Anthropic"
 source_url: "https://www.claude.com/product/tag"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:43:05Z"
-tags: ["slack"]
+fetched_at: "2026-09-25T06:30:58Z"
+tags: ["prompting", "slack"]
 ---
 
 # Tag Claude in Slack
 
-[@Claude](https://anthropic.enterprise.slack.com/team/U08SSLN6TTL) reads threads, understands full context, and reacts in real time so your team moves forward together. Bring Claude into your channel.
+@Claude reads threads, understands full context, and reacts in real time so your team moves forward together. Bring Claude into your channel.
 
 Add to Slack
 
@@ -27,6 +27,14 @@ Available in beta for Claude Enterprise and Team customers in Slack.
 [Play video](#)
 
 Play video
+
+“Rather than using AI on my computer or in my own IDE, I can now do work out in the open in a public Slack channel with my teammates, and we can actually more effectively collaborate on tasks together.”
+
+Micah Stairs, Head of Support Engineering
+
+“Claude Tag solved two problems at once: the interface and the data access piece. My whole team now has Claude as a teammate to ask about our code, docs and support conversations right in Slack, where they already work, and we manage what it can access in one place.”
+
+George Dilthey, Head of Support
 
 “Claude Tag is our first responder for internal bugs. It reads incoming reports, looks at screenshots of failures, and uses access to Datadog, Linear, and GitHub to weed out user errors, trace root cause, and often draft a fix PR. Our engineers’ first reaction was ‘this is amazing.’”
 
@@ -169,6 +177,10 @@ Opened PR [\#1247](#) with the fix. cc @Marcus Nguyen — you own `checkout`, mi
 
 Claude in Slack can share work in the format your team needs, right in the thread.
 
+New
+
+On-call
+
 Catch up
 
 Pull numbers
@@ -177,13 +189,75 @@ Draft PRs
 
 Call prep
 
-Monitor channels
-
 Active
 
 Prompt
 
-@Claude What got decided here and what's still open?
+Can you tell me ...
+
+Attachments
+
+Document
+
+84kb
+
+TXT
+
+Document
+
+105 lines
+
+TXT
+
+Search Workspace
+
+\#prod-alerts
+
+Message \#prod-alerts
+
+@Claude Watch this channel, triage what comes in, and work through the backlog. Tag me only when something needs my call.
+
+On it — watching **\#prod-alerts** now. I’ll triage what comes in and work the backlog, and only tag you when something needs your call.
+
+🚨 `checkout-api` — p99 latency **4,812ms** (threshold 2,000ms)
+
+env: `prod` · 3/12 hosts · started 02:06 UTC · [monitor](#) · [APM trace](#)
+
+On it. Spike lines up with deploy `c4f1a09` (02:04) — new inventory check in `CartService.validate()` is calling `inventory-svc` per line item instead of batched. Only the 3 canary hosts have it.
+
+✓ Paused rollout at 25%  
+✓ Opened revert [\#48231](#) — merging once CI is green (~6m)  
+✱ Watching p99, should recover as canaries drain
+
+Not paging anyone. @Nathan — only flagging because the real fix (batch the inventory call) touches the pricing path you own; revert ships regardless.
+
+[Open session in Claude](#)
+
+### Watch what matters
+
+@Claude can manage work in the channels your team never had bandwidth for: monitoring backlogs, triaging alerts, and surfacing what needs a human to review, so work that keeps getting pushed out can finally be completed.
+
+## Prompt
+
+@Claude Watch this channel, triage what comes in, and work through the backlog. Tag me only when something needs my call.
+
+Prompt
+
+Can you tell me ...
+
+Attachments
+
+Document
+
+84kb
+
+TXT
+
+Document
+
+105 lines
+
+TXT
 
 Search Workspace
 
@@ -223,9 +297,27 @@ todos as of 1:22 PM
 
 Get everything you need from a long thread in seconds. @Claude can surface decisions, open questions, and stakeholders, and you see exactly what's waiting on you.
 
+## Prompt
+
+@Claude What got decided here and what's still open?
+
 Prompt
 
-@Claude Top 20 enterprise accounts by spend, last 7 and 28 days.
+Can you tell me ...
+
+Attachments
+
+Document
+
+84kb
+
+TXT
+
+Document
+
+105 lines
+
+TXT
 
 Search Workspace
 
@@ -277,9 +369,27 @@ The top 5 accounts are ~45% of enterprise spend (**\$2.0M** of **\$4.45M**). Wor
 
 Ask @Claude to query your data and it posts results like metrics, benchmarks, and charts in the channel, so the whole team sees the answer and can keep asking questions right there.
 
+## Prompt
+
+@Claude Top 20 enterprise accounts by spend, last 7 and 28 days.
+
 Prompt
 
-@Claude Fix the bug in this thread and open a draft PR.
+Can you tell me ...
+
+Attachments
+
+Document
+
+84kb
+
+TXT
+
+Document
+
+105 lines
+
+TXT
 
 Search Workspace
 
@@ -301,9 +411,27 @@ Draft PR: [\#48217](#) · CI green · +71 −12
 
 Turn a bug report into a draft PR from the context is in the thread without ever leaving Slack. Get more done without switching tabs.
 
+## Prompt
+
+@Claude Fix the bug in this thread and open a draft PR.
+
 Prompt
 
-@Claude I'm meeting Acme at 2 — what do I need to know?
+Can you tell me ...
+
+Attachments
+
+Document
+
+84kb
+
+TXT
+
+Document
+
+105 lines
+
+TXT
 
 Search Workspace
 
@@ -331,43 +459,15 @@ Reply…
 
 Walk into every meeting with a full briefing. CRM notes, recent threads, and call history pulled together before you think to ask.
 
-Prompt
+## Prompt
 
-@Claude Watch this channel, triage what comes in, and work through the backlog. Tag me only when something needs my call.
-
-Search Workspace
-
-\#prod-alerts
-
-Message \#prod-alerts
-
-@Claude Watch this channel, triage what comes in, and work through the backlog. Tag me only when something needs my call.
-
-On it — watching **\#prod-alerts** now. I’ll triage what comes in and work the backlog, and only tag you when something needs your call.
-
-🚨 `checkout-api` — p99 latency **4,812ms** (threshold 2,000ms)
-
-env: `prod` · 3/12 hosts · started 02:06 UTC · [monitor](#) · [APM trace](#)
-
-On it. Spike lines up with deploy `c4f1a09` (02:04) — new inventory check in `CartService.validate()` is calling `inventory-svc` per line item instead of batched. Only the 3 canary hosts have it.
-
-✓ Paused rollout at 25%  
-✓ Opened revert [\#48231](#) — merging once CI is green (~6m)  
-✱ Watching p99, should recover as canaries drain
-
-Not paging anyone. @Nathan — only flagging because the real fix (batch the inventory call) touches the pricing path you own; revert ships regardless.
-
-[Open session in Claude](#)
-
-### Watch what matters
-
-@Claude can manage work in the channels your team never had bandwidth for: monitoring backlogs, triaging alerts, and surfacing what needs a human to review, so work that keeps getting pushed out can finally be completed.
+@Claude I'm meeting Acme at 2 — what do I need to know?
 
 ## Core capabilities
 
 See what @Claude can do for your team.
 
-### Understands your org
+### **Customizable  identities for granular governance**
 
 The longer Claude works with your team, the more it understands how your organization thinks, how decisions get made, and who owns what.
 
@@ -390,6 +490,52 @@ Shape how Claude works in each channel with skills and instructions. Give it acc
 ### Runs tasks that take days
 
 Hand Claude a complex task and it works while you move on to other projects. It follows up, asks for input, or comes back when it's done.
+
+56%
+
+fewer alerts after Claude Tag began resolving the root causes behind them
+
+Read story
+
+[Read story](https://claude.com/customers/carvana)
+
+Read story
+
+Claude on call:  
+How Claude Tag serves as Anthropic’s first responder for CI/CD failures
+
+An engineer on our Continuous Integration team walks through the agent he built that powers CI incident response at Anthropic.
+
+Read more
+
+[Read more](/blog/ai-ci-cd-on-call)
+
+Read more
+
+How Anthropic deploys Claude Tag for ad-hoc questions
+
+Two data scientists at Anthropic walk through how Claude Tag turns Slack threads into self-service analytics, with the same governed definitions analysts use.
+
+Read more
+
+[Read more](/blog/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions)
+
+Read more
+
+Learn more about how Anthropic employees are using Claude Tag
+
+Producing customer-ready collateral, compiling weekly issue reports, and running legal review, all where the work already happens.
+
+Read more
+
+[Read more](/blog/how-anthropic-employees-use-claude-tag)
+
+Read more
+
+[Prev](#)
+
+Prev
+
 
 ## @Claude connects to your tools
 
@@ -471,112 +617,6 @@ Thank you! Your submission has been received!
 
 Oops! Something went wrong while submitting the form.
 
-Write
-
-[Button Text](#)
-
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
-
 [Anthropic](https://www.anthropic.com/)
 
 Anthropic
@@ -595,11 +635,6 @@ Products
   [Claude Code](/product/claude-code)
   Claude Code
 
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
 - Claude Cowork
 
   [Claude Cowork](/product/cowork)
@@ -609,11 +644,6 @@ Products
 
   [@Claude](/product/tag)
   @Claude
-
-- Claude Design
-
-  [Claude Design](/product/design)
-  Claude Design
 
 - Claude Science
 
@@ -639,22 +669,44 @@ Products
 
   [Log in](https://claude.ai/login)
 
-Features
+Capabilities
 
-- Claude for Chrome
+- Artifacts
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Artifacts](/features/artifacts)
+  Artifacts
 
-- Claude for Microsoft 365
+- Design
 
-  [Claude for Microsoft 365](/claude-for-microsoft-365)
-  Claude for Microsoft 365
+  [Design](/product/design)
+  Design
+
+- Connectors
+
+  [Connectors](/marketplace/connectors-plugins)
+  Connectors
+
+- Plugins
+
+  [Plugins](/marketplace/plugins)
+  Plugins
 
 - Skills
 
   [Skills](/skills)
   Skills
+
+Extensions
+
+- Claude in Chrome
+
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
+
+- Claude for Microsoft 365
+
+  [Claude for Microsoft 365](/claude-for-microsoft-365)
+  Claude for Microsoft 365
 
 Models
 
@@ -683,7 +735,19 @@ Models
   [Haiku](https://www.anthropic.com/claude/haiku)
   Haiku
 
-Solutions
+Enterprise
+
+- Overview
+
+  [Overview](/solutions/enterprise)
+  Overview
+
+- Claude Code for Enterprise
+
+  [Claude Code for Enterprise](/product/claude-code/enterprise)
+  Claude Code for Enterprise
+
+Use cases
 
 - AI agents
 
@@ -700,6 +764,13 @@ Solutions
   [Coding](/solutions/coding)
   Coding
 
+- Commerce
+
+  [Commerce](/solutions/commerce)
+  Commerce
+
+Departments
+
 - Customer support
 
   [Customer support](/solutions/customer-support)
@@ -710,10 +781,17 @@ Solutions
   [Cybersecurity](/solutions/cybersecurity)
   Cybersecurity
 
-- Enterprise
+- Legal
 
-  [Enterprise](/solutions/enterprise)
-  Enterprise
+  [Legal](/solutions/legal)
+  Legal
+
+- Sales
+
+  [Sales](/solutions/sales)
+  Sales
+
+Industries
 
 - Financial services
 
@@ -740,11 +818,6 @@ Solutions
   [K-12 teachers](/solutions/teachers)
   K-12 teachers
 
-- Legal
-
-  [Legal](/solutions/legal)
-  Legal
-
 - Life sciences
 
   [Life sciences](/solutions/life-sciences)
@@ -760,31 +833,55 @@ Solutions
   [Small business](/solutions/small-business)
   Small business
 
-Claude Platform
+Programs
+
+- Startups
+
+  [Startups](/programs/startups)
+  Startups
+
+- Scientists
+
+  [Scientists](/programs/team-plan-for-scientists)
+  Scientists
+
+Developers
+
+- Developer docs
+
+  [Developer docs](https://code.claude.com/docs/en/overview)
+  Developer docs
+
+- Developer blog
+
+  [Developer blog](https://claude.dev/)
+  Developer blog
+
+- Community
+
+  [Community](/community)
+  Community
+
+- Console
+
+  [Console](https://platform.claude.com/docs/en/home)
+  Console
+
+- Engineering at Anthropic
+
+  [Engineering at Anthropic](https://www.anthropic.com/engineering)
+  Engineering at Anthropic
+
+Platform
 
 - Overview
 
   [Overview](/platform/api)
   Overview
 
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
-
-- Ecosystem
-
-  [Ecosystem](/ecosystem)
-  Ecosystem
-
 - Marketplace
 
-  [Marketplace](/platform/marketplace)
+  [Marketplace](/marketplace)
   Marketplace
 
 - Claude on AWS
@@ -802,16 +899,6 @@ Claude Platform
   [Microsoft Foundry](/partners/microsoft-foundry)
   Microsoft Foundry
 
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](https://platform.claude.com/)
-  Console login
-
 Resources
 
 - Blog
@@ -824,40 +911,20 @@ Resources
   [Claude partner network](/partners)
   Claude partner network
 
-- Community
+- Claude Academy
 
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
+  [Claude Academy](https://academy.claude.com/)
+  Claude Academy
 
 - Customer stories
 
   [Customer stories](/customers)
   Customer stories
 
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
 - Events
 
   [Events](https://www.anthropic.com/events)
   Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
 
 - Powered by Claude
 
@@ -866,18 +933,45 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](/marketplace/service-partners)
   Service partners
 
-- Tutorials
+Help and security
 
-  [Tutorials](/resources/tutorials)
-  Tutorials
+- Availability
 
-- Use cases
+  [Availability](https://www.anthropic.com/supported-countries)
+  Availability
 
-  [Use cases](/resources/use-cases)
-  Use cases
+- Check files
+
+  [Check files](https://claude.com/check-files)
+  Check files
+
+- Regional compliance
+
+  [Regional compliance](/regional-compliance)
+  Regional compliance
+
+- Report abuse
+
+  [Report abuse](https://claude.com/form/anthropic-content-reporting)
+  Report abuse
+
+- Security and compliance
+
+  [Security and compliance](https://trust.anthropic.com/)
+  Security and compliance
+
+- Status
+
+  [Status](https://status.anthropic.com/)
+  Status
+
+- Support center
+
+  [Support center](https://support.claude.com/en/)
+  Support center
 
 Company
 
@@ -896,19 +990,14 @@ Company
   [Policy](https://www.anthropic.com/policy)
   Policy
 
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
 - Research
 
   [Research](https://www.anthropic.com/research)
   Research
 
-- News
+- Anthropic news
 
-  [News](https://www.anthropic.com/news)
-  News
+  [Anthropic news](https://www.anthropic.com/news)
+  Anthropic news
 
 - Policy on the AI Exponential

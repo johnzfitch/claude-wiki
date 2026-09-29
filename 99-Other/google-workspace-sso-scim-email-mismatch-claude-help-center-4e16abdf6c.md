@@ -2,13 +2,14 @@
 title: "Google Workspace SSO/SCIM email mismatch | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917817"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:45Z"
+fetched_at: "2026-09-29T06:32:07Z"
 ---
 
 # Google Workspace SSO/SCIM email mismatch
 
 March 24, 2026
 
+Copy for LLM
 
 Claude uses email as the primary identifier to match SSO logins to provisioned seats. In Google Workspace, SCIM auto-provisioning and SAML SSO can send different email values—especially when people have email aliases—causing a mismatch that blocks access.
 

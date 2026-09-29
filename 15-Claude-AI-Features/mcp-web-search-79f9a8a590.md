@@ -2,7 +2,7 @@
 title: "MCP: Web Search | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503775-mcp-web-search"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:41:11Z"
+fetched_at: "2026-09-29T06:30:49Z"
 tags: ["mcp", "search"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["mcp", "search"]
 
 April 9, 2026
 
+Copy for LLM
 
 The Web Search connector gives Claude the ability to search the public internet for real-time information, including verifying facts, pulling recent news, and researching topics outside its training data.
 

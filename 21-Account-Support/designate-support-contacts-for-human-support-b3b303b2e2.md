@@ -2,13 +2,14 @@
 title: "Designate support contacts for human support | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15263885-designate-support-contacts-for-human-support"
 category: "21-Account-Support"
-fetched_at: "2026-08-02T05:42:49Z"
+fetched_at: "2026-09-29T06:31:52Z"
 ---
 
 # Designate support contacts for human support
 
-June 1, 2026
+August 6, 2026
 
+Copy for LLM
 
 Choose which members of your organization can open tickets with Anthropic's human support team by designating support contacts. Users who aren't configured as support contacts get help from AI support, which can answer many common questions instantly.
 
@@ -34,7 +35,7 @@ Before configuring support contacts, make sure the groups you want to designate 
 
 To configure support contacts:
 
-1.  Navigate to **[Organization settings \> Organization and access](http://claude.ai/admin-settings/organization)**.
+1.  Navigate to **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**.
 
 2.  Find the **Support contacts** section and toggle the feature on.
 

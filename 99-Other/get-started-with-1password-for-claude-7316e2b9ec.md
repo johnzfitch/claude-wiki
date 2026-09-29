@@ -2,12 +2,15 @@
 title: "Get started with 1Password for Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15936181-get-started-with-1password-for-claude"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:51Z"
+fetched_at: "2026-09-29T06:31:57Z"
 tags: ["agents"]
 ---
 
 # Get started with 1Password for Claude
 
+July 16, 2026
+
+Copy for LLM
 
 1Password for Claude lets Claude complete browser tasks that require signing in, using logins you've stored in 1Password. 1Password fills the credential directly on the page, so Claude never sees your password or one-time code.
 

@@ -2,13 +2,13 @@
 title: "Set up single sign-on (SSO) | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso"
 category: "21-Account-Support"
-fetched_at: "2026-08-02T05:41:42Z"
+fetched_at: "2026-09-29T06:30:33Z"
 ---
 
 # Set up single sign-on (SSO)
 
-June 24, 2026
 
+Copy for LLM
 
 Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
 
@@ -46,7 +46,7 @@ You can verify multiple domains for a single organization, but all domains must 
 
 **Note:** Verifying your domain by itself will not impact existing users' ability to access our products. End users’ access is only affected once SSO is set up and explicitly enforced.
 
-1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](http://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**) – note this page will only appear on Console if you've worked with Sales to enable SSO or completed a merge proposal.
+1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](https://platform.claude.com/settings/identity)**) – note this page will only appear on Console if you've worked with Sales to enable SSO or completed a merge proposal.
 
 2.  In the **Domains** section, click “Add or edit domains.”
 
@@ -60,7 +60,7 @@ You can verify multiple domains for a single organization, but all domains must 
 6.  Enter your domain in the text box and click “Continue”:
 
 
-7.  The setup screen displays a TXT record. **Copy the full Value using the copy button**—it begins with `anthropic-domain-verification-` and is longer than what's visible in the box. In your DNS provider, add a TXT record with **Host/Name** set to `@` (the root of your domain) and **Value** set to the copied string. Add it alongside any existing TXT records; don't replace them. The value is case-sensitive, so paste it exactly.
+7.  The setup screen displays a TXT record. **Copy the full Value using the copy button**—it begins with `anthropic-domain-verification-` and is longer than what's visible in the box. In your DNS provider, add a TXT record to your domain and **Value** set to the copied string. The domain must match exactly what you entered in the previous step, including any subdomains. Add it alongside any existing TXT records; don't replace them. The value is case-sensitive, so paste it exactly. Please refer to your DNS provider's documentation on this topic.
 
     1.  **Important:** Save the TXT value before leaving the setup screen. Once the domain shows as Pending, the admin console doesn't display the value again. If you lose it, you'll need to remove and re-add the domain, which generates a new value.
 
@@ -91,7 +91,7 @@ If the record is correct and propagated but the status still shows Pending, cont
 
 ## Step 3: Set up SSO with your Identity Provider
 
-1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](http://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**).
+1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](https://platform.claude.com/settings/identity)**).
 
 2.  In the **Authentication** section, click “Setup SSO” (or “Manage SSO”).
 
@@ -158,9 +158,9 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 
 1.  Navigate to your settings:
 
-    - For Team and Enterprise plans: **[claude.ai/admin-settings/organization](http://claude.ai/admin-settings/organization)**
+    - For Team and Enterprise plans: **[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**
 
-    - For Claude Console: **[platform.claude.com/settings/identity](http://platform.claude.com/settings/organization)**
+    - For Claude Console: **[platform.claude.com/settings/identity](https://platform.claude.com/settings/organization)**
 
 2.  In the **Authentication** section, click “Manage SSO.”
 
@@ -170,6 +170,8 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 
 5.  Click "Test sign-in" on the same page to confirm everything is working.
 
+**Important:** If **Require SSO** is turned on and your certificate has already expired, no one in your organization can sign in to update it, because every sign-in option routes through SSO. **[Contact Support](https://support.claude.com/en/articles/9015913)** from an Owner’s or Primary Owner’s email address and we’ll help you regain access so an Owner can update the certificate. To avoid this, note your certificate’s expiry date in your Identity Provider and rotate it ahead of time.
+
 ------------------------------------------------------------------------
 
 ## Turning off SSO
@@ -177,3 +179,7 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 You can toggle **Require SSO for Claude** or **Require SSO for Console** off at any time. This will make SSO optional for all users.
 
 To fully disconnect SSO, click “Manage SSO” then “Reset connection.” This will end all users’ sessions and require them to sign back in via email login link.
+
+## Locked out of admin access?
+
+If none of your Owners or Admins can sign in (for example, after a certificate expiry, an Identity Provider change, or a group mapping that removed your administrators), contact Support from an Owner’s or Primary Owner’s email address. We’ll verify your ownership of the organization and help you regain access so you can correct the configuration.

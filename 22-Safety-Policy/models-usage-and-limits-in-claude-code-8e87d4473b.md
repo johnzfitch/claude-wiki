@@ -2,14 +2,14 @@
 title: "Models, usage, and limits in Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code"
 category: "22-Safety-Policy"
-fetched_at: "2026-08-02T05:41:20Z"
+fetched_at: "2026-09-29T06:31:25Z"
 tags: ["claude-code"]
 ---
 
 # Models, usage, and limits in Claude Code
 
-April 15, 2026
 
+Copy for LLM
 
 This guide explains which model you are using, how usage is metered, and how to keep long sessions within their context and usage limits.
 
@@ -27,11 +27,11 @@ If you signed in with an Enterprise seat, you generally do not need to think abo
 
 ## Choosing a model
 
-Run **`/model`** at any time to see which models are available to your account and to switch between them. As a rough guide:
+Run **`/model`** at any time to see which model you're using, check which models are available to your account, and switch between them. Your default model depends on how you signed in and on your organization's settings. As a rough guide:
 
-- **Sonnet** is the default and is the right choice for the large majority of coding work. It is fast, capable, and cost-efficient.
+- **Sonnet** is the right choice for the large majority of coding work. It is fast, capable, and cost-efficient.
 
-- **Opus** offers deeper reasoning for harder problems such as large cross-cutting refactors, difficult debugging, or architectural decisions. It uses meaningfully more of your quota, so switch to it when you need it rather than leaving it on by default.
+- **Opus** offers deeper reasoning for harder problems such as large cross-cutting refactors, difficult debugging, or architectural decisions. It uses meaningfully more of your quota, so consider switching to Sonnet for routine work.
 
 - **Haiku** is the fastest and cheapest option, well suited to quick lookups, simple edits, or high-volume scripted runs.
 

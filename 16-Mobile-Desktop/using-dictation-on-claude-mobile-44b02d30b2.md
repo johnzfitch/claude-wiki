@@ -2,12 +2,15 @@
 title: "Use dictation on Claude Mobile | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10065434-using-dictation-on-claude-mobile"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-08-02T05:41:27Z"
+fetched_at: "2026-09-29T06:30:47Z"
 tags: ["desktop", "mobile"]
 ---
 
 # Use dictation on Claude Mobile
 
+July 23, 2026
+
+Copy for LLM
 
 Dictation is available to all Claude users (Free, Pro, Max, Team, and Enterprise plans). Support for languages other than English is in beta.
 

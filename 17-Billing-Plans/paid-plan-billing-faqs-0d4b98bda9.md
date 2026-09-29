@@ -2,12 +2,15 @@
 title: "Paid plan billing FAQs | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8325618-paid-plan-billing-faqs"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:41:26Z"
+fetched_at: "2026-09-29T06:31:42Z"
 tags: ["billing"]
 ---
 
 # Paid plan billing FAQs
 
+July 13, 2026
+
+Copy for LLM
 
 This article covers Pro and Max subscriptions purchased on the web. If you subscribed through Claude for iOS or Claude for Android, your payment is handled by the Apple App Store or Google Play, and you'll manage your payment method and receipts through your app store account. To cancel or manage an app store subscription, see **[Cancel your Pro or Max subscription](https://support.claude.com/en/articles/8325617)**.
 

@@ -2,14 +2,15 @@
 title: "Microsoft Entra ID SSO setup | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917889-microsoft-entra-id-sso-setup"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:41:17Z"
+fetched_at: "2026-09-29T06:30:43Z"
 tags: ["enterprise"]
 ---
 
 # Microsoft Entra ID SSO setup
 
-March 24, 2026
+August 4, 2026
 
+Copy for LLM
 
 This guide walks you through configuring single sign-on (SSO) for Claude using Microsoft Entra ID (formerly Azure Active Directory) as your identity provider. It applies to Team plans, Enterprise plans, and Console organizations.
 

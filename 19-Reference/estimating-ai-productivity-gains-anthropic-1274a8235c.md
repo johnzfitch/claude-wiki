@@ -2,7 +2,7 @@
 title: "Estimating AI productivity gains \\ Anthropic"
 source_url: "https://www.anthropic.com/research/estimating-productivity-gains"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:12:03Z"
+fetched_at: "2026-08-26T06:29:26Z"
 ---
 
 # Estimating AI productivity gains from Claude conversations
@@ -13,7 +13,7 @@ Nov 25, 2025
 
 ## Overview
 
-*What do real conversations with Claude tell us about the effects of AI on labor productivity? Using our privacy-preserving [analysis method](https://www.anthropic.com/research/clio), we sample one hundred thousand real conversations from [Claude.ai](http://claude.ai/redirect/website.v1.a6954ffe-33ae-47f0-82bb-b50bc957faf1), estimate how long the tasks in these conversations would take with and without AI assistance, and study the productivity implications across the broader economy. Based on Claude’s estimates, these tasks would take on average about 90 minutes to complete without AI assistance, and Claude speeds up individual tasks by about 80%.*
+*What do real conversations with Claude tell us about the effects of AI on labor productivity? Using our privacy-preserving [analysis method](https://www.anthropic.com/research/clio), we sample one hundred thousand real conversations from [Claude.ai](http://claude.ai/redirect/website.v1.b716bb10-39e9-4995-b18d-adb54fd0713d), estimate how long the tasks in these conversations would take with and without AI assistance, and study the productivity implications across the broader economy. Based on Claude’s estimates, these tasks would take on average about 90 minutes to complete without AI assistance, and Claude speeds up individual tasks by about 80%.*
 
 *Extrapolating these estimates out suggests **current-generation** AI models could increase US labor productivity growth by 1.8% annually over the next decade*—*roughly twice the run rate in recent years. But this isn’t a prediction of the future, since we don’t take into account the rate of adoption or the larger productivity effects that would come from much more capable AI systems.*
 
@@ -22,7 +22,7 @@ Nov 25, 2025
 *Here’s a more detailed summary of our results:*
 
 - **Across one hundred thousand real world conversations, Claude estimates that AI reduces task completion time by 80%.** We use Claude to evaluate anonymized Claude.ai transcripts to estimate the productivity impact of AI. According to Claude’s estimates, people typically use AI for complex tasks that would, on average, take people 1.4 hours to complete. By matching tasks to O\*NET occupations and BLS wage data, we estimate these tasks would otherwise cost \$55 in human labor.
-- **The estimated scope, cost, and time savings of tasks varies widely by occupation.** Based on Claude’s estimates, people use Claude for legal and management tasks that would have taken nearly two hours, but for food preparation tasks that would have taken only 30 minutes. And we find that healthcare assistance tasks can be completed 90% more quickly, whereas hardware issues see time savings of 56%. This doesn’t account for the time that humans might spend on these tasks *beyond* their conversation on [Claude.ai](http://claude.ai/redirect/website.v1.a6954ffe-33ae-47f0-82bb-b50bc957faf1), however, so we think these estimates might overstate current productivity effects to at least some degree.
+- **The estimated scope, cost, and time savings of tasks varies widely by occupation.** Based on Claude’s estimates, people use Claude for legal and management tasks that would have taken nearly two hours, but for food preparation tasks that would have taken only 30 minutes. And we find that healthcare assistance tasks can be completed 90% more quickly, whereas hardware issues see time savings of 56%. This doesn’t account for the time that humans might spend on these tasks *beyond* their conversation on [Claude.ai](http://claude.ai/redirect/website.v1.b716bb10-39e9-4995-b18d-adb54fd0713d), however, so we think these estimates might overstate current productivity effects to at least some degree.
 - **Extrapolating these results to the economy, current generation AI models could increase annual US labor productivity growth by 1.8% over the next decade. This would double the annual growth the US has seen since 2019,** **and places our estimate towards the upper end of [recent estimates](https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/miracle-or-myth-assessing-the-macroeconomic-productivity-gains-from-artificial-intelligence_fde2a597/b524a072-en.pdf).** Taking as given Claude’s estimates of task-level efficiency gains, we use standard methods to calculate a 1.8% implied annual increase in US labor productivity over the next ten years. However, this estimate does not account for future improvements in AI models (or more sophisticated uses of current technology), which could significantly magnify AI’s economic impact.
 - **As AI accelerates some tasks, others may become bottlenecks**: We see large speedups for some tasks and much smaller ones in others, even within the same occupational groups. Where AI makes less of a difference, these tasks might become bottlenecks, potentially acting as a constraint on growth.
 
@@ -146,7 +146,7 @@ Our approach has several limitations that we think warrant further research on t
 - **Structural assumptions:** In our calculations above, we compare the time it would take a professional to complete a given task without AI to the time it took with AI. But this could either *understate* the productivity gains – since it takes additional resources we’re not accounting for to hire an employee and communicate context, and possibly overstate it, if the quality of the AI’s work is worse than a human’s.
 - **Restructuring of organizations:** Historically, the largest productivity gains for individual firms have followed from [restructuring business operations](https://www.jstor.org/stable/2006600) to adopt new technologies. Our model can help predict the *effects* of such a restructuring, but it cannot predict how companies might decide to restructure, or how quickly this process might happen.
 - **The role of innovation:** Technological innovation is [the engine](https://www.jstor.org/stable/1926047) of economic growth. Our model does not capture how AI systems could accelerate or even automate the scientific process, nor the effects that would have on productivity, growth, and the structure of work.
-- **Limited data**: Our dataset is derived from [Claude.ai](http://claude.ai/redirect/website.v1.a6954ffe-33ae-47f0-82bb-b50bc957faf1) conversations only. This sample is not representative of the full spectrum of AI uses, and there’s likely some selection effect where the instances of tasks people use Claude for are the ones they think Claude will be most useful. Additionally, due to our finite sample size, we likely miss some less common AI tasks.
+- **Limited data**: Our dataset is derived from [Claude.ai](http://claude.ai/redirect/website.v1.b716bb10-39e9-4995-b18d-adb54fd0713d) conversations only. This sample is not representative of the full spectrum of AI uses, and there’s likely some selection effect where the instances of tasks people use Claude for are the ones they think Claude will be most useful. Additionally, due to our finite sample size, we likely miss some less common AI tasks.
 
 The measurement infrastructure we develop here enables continuous tracking of the effect of AI on time savings at large scale. As models improve and better methods address these limitations, we can re-estimate these time savings and identify how these capability improvements translate into broader economic impacts. We expect to track these changes in the months and years ahead.
 
@@ -290,21 +290,23 @@ Copy
 
 ## Related content
 
-### Discovering cryptographic weaknesses with Claude
+### How Claude is accelerating protein design and analytical chemistry
 
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
+In this post, we share two results that show how Claude can help life scientists increase the pace of their research.
 
-[Read more](/research/discovering-cryptographic-weaknesses)
+[Read more](/research/Claude-accelerates-protein-design)
 
-### Project Pilot: Can AI control a drone?
+### Patterns and problems in emerging multiagent systems
 
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
+Here, we identify a few examples of behavioral tendencies in current frontier models and show how they can produce unexpected systemic failures, in hopes of starting a conversation about mitigating these risks.
 
-[Read more](/research/project-pilot)
+[Read more](/research/multiagent-systems)
 
-### How Canada uses Claude: Findings from the Anthropic Economic Index
+### Reviewing the evidence on worker retraining programs
 
-[Read more](/research/how-canada-uses-claude)
+We're sharing a review of the evidence on worker retraining programs, coauthored by independent researcher David Roodman and Anthropic's Maxim Massenkoff.
+
+[Read more](/research/reviewing-the-evidence-on-worker-retraining-programs)
 
 [](/)
 
@@ -318,7 +320,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -370,7 +372,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -395,6 +397,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

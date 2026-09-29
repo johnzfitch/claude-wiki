@@ -2,7 +2,7 @@
 title: "How to change your Pro plan from monthly to annual billing | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10185996-how-to-change-your-pro-plan-from-monthly-to-annual-billing"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:42:22Z"
+fetched_at: "2026-09-29T06:30:09Z"
 tags: ["billing"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["billing"]
 
 March 16, 2026
 
+Copy for LLM
 
 Save on your Pro plan subscription by switching from monthly to annual billing. When you upgrade, any remaining time on your current monthly subscription will be credited to your new annual plan invoice.
 

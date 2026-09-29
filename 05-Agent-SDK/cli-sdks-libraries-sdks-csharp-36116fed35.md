@@ -2,8 +2,8 @@
 title: "C# SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/csharp"
 category: "05-Agent-SDK"
-fetched_at: "2026-08-02T05:42:04Z"
-tags: ["agents", "sdk"]
+fetched_at: "2026-09-26T06:39:30Z"
+tags: ["agents", "cli", "sdk"]
 ---
 
 - [Managed Agents](/docs/en/managed-agents/overview)
@@ -12,27 +12,23 @@ tags: ["agents", "sdk"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fcsharp)
 
 
 
-Search
+
 
+SearchCtrlK
 
 CLI, SDKs, and libraries
 
@@ -40,7 +36,7 @@ CLI, SDKs, and libraries
 
 ant CLI
 
-[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)
+[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)[Manage resources as code](/docs/en/cli-sdks-libraries/cli/apply)[Connect to a Managed Agents session](/docs/en/cli-sdks-libraries/cli/sessions-connect)
 
 Client SDKs
 
@@ -50,34 +46,25 @@ Libraries and integrations
 
 [Apple Foundation Models](/docs/en/cli-sdks-libraries/libraries/apple-foundation-models)[OpenAI SDK compatibility](/docs/en/cli-sdks-libraries/libraries/openai-sdk)
 
-[](/login)
+[Console](/)
 
-
-
-
-CLI, SDKs, and libraries
-
-C#
-
-CLI, SDKs, and libraries/Client SDKs
+[CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)Client SDKs
 
 # C# SDK
 
+Copy page
 
 
 
 Install and configure the Anthropic C# SDK for .NET applications with IChatClient integration
 
+Copy page
 
 
 
-The Anthropic C# SDK provides convenient access to the Anthropic REST API from applications written in C#.
+The Anthropic C# SDK provides convenient access to the Claude API from applications written in C#.
 
-
-
-The C# SDK is currently in beta. APIs may change between versions.
-
-
+
 
 For API feature documentation with code examples, see the [API reference](/docs/en/api/overview). This page covers C#-specific SDK features and configuration.
 
@@ -85,10 +72,7 @@ For API feature documentation with code examples, see the [API reference](/docs/
 
 As of version 10+, the `Anthropic` package is now the official Anthropic SDK for C#. Package versions 3.X and below were previously used for the tryAGI community-built SDK, which has moved to [`tryAGI.Anthropic`](https://www.nuget.org/packages/tryagi.Anthropic/). If you need to continue using the former client in your project, update your package reference to `tryAGI.Anthropic`.
 
-
-
-
-Installation
+## Installation
 
 Install the package from [NuGet](https://www.nuget.org/packages/Anthropic):
 
@@ -98,17 +82,11 @@ dotnet add package Anthropic
 
 
 
-
-
-
-Requirements
+## Requirements
 
 This library requires .NET Standard 2.0 or later.
 
-
-
-
-Usage
+## Usage
 
 ```python
 using System;
@@ -128,7 +106,7 @@ MessageCreateParams parameters = new()
             Content = "Hello, Claude",
         },
     ],
-    Model = Model.ClaudeOpus5,
+    Model = Model.ClaudeOpus5_5,
 };
 
 var message = await client.Messages.Create(parameters);
@@ -144,12 +122,9 @@ foreach (var block in message.Content)
 
 
 
-For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication).
+For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication). If your API key is a [personal or service account key](/docs/en/manage-claude/authentication#key-types) with access to multiple workspaces, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](/docs/en/manage-claude/authentication#select-a-workspace) shows the per-request option for this SDK.
 
-
-
-
-Client configuration
+## Client configuration
 
 Configure the client using environment variables:
 
@@ -182,10 +157,7 @@ See this table for the available options:
 | `AuthToken` | `ANTHROPIC_AUTH_TOKEN` | false    | \-                            |
 | `BaseUrl`   | `ANTHROPIC_BASE_URL`   | true     | `"https://api.anthropic.com"` |
 
-
-
-
-Modifying configuration
+### Modifying configuration
 
 To temporarily use a modified client configuration, while reusing the same connection and thread pools, call `WithOptions` on any client or service:
 
@@ -211,10 +183,7 @@ Using a [`with` expression](https://learn.microsoft.com/en-us/dotnet/csharp/lang
 
 The `WithOptions` method does not affect the original client or service.
 
-
-
-
-Streaming
+## Streaming
 
 The SDK defines methods that return response "chunk" streams, where each chunk can be individually processed as soon as it arrives instead of waiting on the full response. Streaming methods generally correspond to [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) or [JSONL](https://jsonlines.org) responses.
 
@@ -237,7 +206,7 @@ MessageCreateParams parameters = new()
             Content = "Hello, Claude",
         },
     ],
-    Model = Model.ClaudeOpus5,
+    Model = Model.ClaudeOpus5_5,
 };
 
 await foreach (var message in client.Messages.CreateStreaming(parameters))
@@ -248,10 +217,7 @@ await foreach (var message in client.Messages.CreateStreaming(parameters))
 
 
 
-
-
-
-Error handling
+## Error handling
 
 The SDK throws custom unchecked exception types:
 
@@ -278,10 +244,7 @@ Additionally, all 4xx errors inherit from `Anthropic4xxException`.
 
 - `AnthropicException`: Base class for all exceptions.
 
-
-
-
-Retries
+## Retries
 
 The SDK automatically retries 2 times by default, with a short exponential backoff between requests.
 
@@ -321,10 +284,7 @@ Console.WriteLine(message);
 
 
 
-
-
-
-Timeouts
+## Timeouts
 
 Requests time out after 10 minutes by default.
 
@@ -355,17 +315,11 @@ Console.WriteLine(message);
 
 
 
-
-
-
-Pagination
+## Pagination
 
 The SDK defines methods that return paginated lists of results. It provides convenient ways to access the results either one page at a time or item-by-item across all pages.
 
-
-
-
-Auto-pagination
+### Auto-pagination
 
 To iterate through all results across all pages, use the `Paginate` method, which automatically fetches more pages as needed. The method returns an [`IAsyncEnumerable`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.iasyncenumerable-1):
 
@@ -381,10 +335,7 @@ await foreach (var item in page.Paginate())
 
 
 
-
-
-
-Manual pagination
+### Manual pagination
 
 To access individual page items and manually request the next page, use the `Items` property, and `HasNext` and `Next` methods:
 
@@ -406,10 +357,7 @@ while (true)
 
 
 
-
-
-
-Response validation
+## Response validation
 
 In rare cases, the API may return a response that doesn't match the expected type. By default, the SDK does not throw an exception in this case. It throws `AnthropicInvalidDataException` only if you directly access the property.
 
@@ -448,10 +396,7 @@ Console.WriteLine(message);
 
 
 
-
-
-
-IChatClient integration
+## IChatClient integration
 
 The SDK provides an implementation of the `IChatClient` interface from the `Microsoft.Extensions.AI.Abstractions` library. This enables `AnthropicClient` (and `Anthropic.Services.IBetaService`) to be used with other libraries that integrate with these core abstractions. For example, tools in the MCP C# SDK (`ModelContextProtocol`) library can be used directly with an `AnthropicClient` exposed through `IChatClient`.
 
@@ -463,7 +408,7 @@ using ModelContextProtocol.Client;
 // Configured using the ANTHROPIC_API_KEY, ANTHROPIC_AUTH_TOKEN and ANTHROPIC_BASE_URL environment variables
 AnthropicClient client = new();
 
-IChatClient chatClient = client.AsIChatClient("claude-opus-5")
+IChatClient chatClient = client.AsIChatClient("claude-opus-5-5")
     .AsBuilder()
     .UseFunctionInvocation()
     .Build();
@@ -479,24 +424,15 @@ Console.WriteLine(await chatClient.GetResponseAsync("Tell me about IChatClient",
 
 
 
-
-
-
-Requests and responses
+## Requests and responses
 
 To send a request to the Claude API, build an instance of a `Params` class and pass it to the corresponding client method. When the response is received, it's deserialized into an instance of a C# class.
 
 For example, `client.Messages.Create` should be called with an instance of `MessageCreateParams`, and it will return an instance of `Task<Message>`.
 
+## Advanced usage
 
-
-
-Advanced usage
-
-
-
-
-Binary responses
+### Binary responses
 
 The SDK defines methods that return binary responses, which are used for API responses that shouldn't necessarily be parsed, like non-JSON data.
 
@@ -504,11 +440,11 @@ These methods return `HttpResponse`:
 
 ```python
 using System;
-using Anthropic.Models.Beta.Files;
+using Anthropic.Models.Files;
 
 FileDownloadParams parameters = new() { FileID = "file_id" };
 
-var response = await client.Beta.Files.Download(parameters);
+var response = await client.Files.Download(parameters);
 
 Console.WriteLine(response);
 ```
@@ -520,7 +456,7 @@ To save the response content to a file, or any [`Stream`](https://learn.microsof
 ```python
 using System.IO;
 
-using var response = await client.Beta.Files.Download(parameters);
+using var response = await client.Files.Download(parameters);
 using var contentStream = await response.ReadAsStream();
 using var fileStream = File.Open(path, FileMode.OpenOrCreate);
 await contentStream.CopyToAsync(fileStream); // Or any other Stream
@@ -528,10 +464,7 @@ await contentStream.CopyToAsync(fileStream); // Or any other Stream
 
 
 
-
-
-
-Raw responses
+### Raw responses
 
 The SDK defines methods that deserialize responses into instances of C# classes. To access response headers, status code, or the raw response body, prefix any HTTP method call on a client or service with `WithRawResponse`:
 
@@ -572,10 +505,7 @@ await foreach (var item in response.Enumerate())
 
 
 
-
-
-
-Logging
+### Logging
 
 
 
@@ -589,19 +519,13 @@ export ANTHROPIC_LOG=debug
 
 
 
-
-
-
-Undocumented API functionality
+### Undocumented API functionality
 
 The SDK is typed for convenient usage of the documented API. However, it also supports working with undocumented or not yet supported parts of the API.
 
+## Platform integrations
 
-
-
-Platform integrations
-
-
+
 
 For detailed platform setup guides with code examples, see:
 
@@ -620,26 +544,16 @@ The C# SDK supports the following platforms through separate NuGet packages:
 
 Use `AnthropicBedrockMantleClient` for new projects; `AnthropicBedrockClient` remains for existing applications using the Bedrock `InvokeModel` API.
 
+## Semantic versioning
 
-
-
-Semantic versioning
-
-
-
-Although this package is versioned as 10+, it's currently in beta. During the beta period, breaking changes may occur in minor or patch releases. Once the library reaches stable release, SemVer conventions will be followed more strictly. Share feedback by [filing an issue](https://github.com/anthropics/anthropic-sdk-csharp/issues/new).
-
-This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:
+This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backward-incompatible changes may be released as minor versions:
 
 1.  Changes to library internals that are technically public but not intended or documented for external use.
 2.  Changes that aren't expected to impact the vast majority of users in practice.
 
-Backwards-compatibility is taken seriously to ensure you can rely on a smooth upgrade experience.
+Backward-compatibility is taken seriously to ensure you can rely on a smooth upgrade experience.
 
-
-
-
-Additional resources
+## Additional resources
 
 - [GitHub repository](https://github.com/anthropics/anthropic-sdk-csharp)
 - [NuGet package](https://www.nuget.org/packages/Anthropic)

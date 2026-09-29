@@ -2,18 +2,24 @@
 title: "Use incognito chats | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12260368"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:04Z"
+fetched_at: "2026-09-29T06:30:25Z"
 tags: ["enterprise"]
 ---
 
 # Use incognito chats
 
 
-Incognito chats are available to all Claude users (Free, Pro, Max, Team, and Enterprise plans).
+Copy for LLM
+
+**Note:** If you have the new Claude experience, incognito chats open in the previous chat experience, so Claude can't create files or run code in them.
 
 ## What are incognito chats?
 
-Incognito chats are temporary conversations that aren't saved to your chat history or to **[Claude’s memory](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)**. These differ from regular chats in several ways:
+Incognito chats are temporary conversations that aren't saved to your chat history or to **[Claude’s memory](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)**.
+
+Incognito chats are available to all Claude users (Free, Pro, Max, Team, and Enterprise plans).
+
+These differ from regular chats in several ways:
 
 - Incognito chats are not used for training. See our Privacy Center for more information:
 

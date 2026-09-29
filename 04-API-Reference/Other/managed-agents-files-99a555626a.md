@@ -2,7 +2,7 @@
 title: "Adding files - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/files"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:41:18Z"
+fetched_at: "2026-09-26T06:39:39Z"
 tags: ["api"]
 ---
 
@@ -12,31 +12,27 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Ffiles)
 
 
 
-Search
+
 
+SearchCtrlK
 
 First steps
 
-[Overview](/docs/en/managed-agents/overview)[Quickstart](/docs/en/managed-agents/quickstart)[Prototype in Console](/docs/en/managed-agents/onboarding)[Migration](/docs/en/managed-agents/migration)
+[Overview](/docs/en/managed-agents/overview)[Quickstart](/docs/en/managed-agents/quickstart)[Build in Console](/docs/en/managed-agents/onboarding)[Migration](/docs/en/managed-agents/migration)
 
 Define your agent
 
@@ -46,11 +42,11 @@ Configure agent environment
 
 [Cloud environment setup](/docs/en/managed-agents/environments)[Cloud sandbox reference](/docs/en/managed-agents/cloud-sandboxes-reference)
 
-Self-hosted sandboxes
+[Self-hosted sandboxes](/docs/en/managed-agents/self-hosted-sandboxes)
 
 Delegate work to your agent
 
-[Start a session](/docs/en/managed-agents/sessions)[Session operations](/docs/en/managed-agents/session-operations)[Session event stream](/docs/en/managed-agents/events-and-streaming)[Subscribe to webhooks](/docs/en/managed-agents/webhooks)[Define outcomes](/docs/en/managed-agents/define-outcomes)[Authenticate with vaults](/docs/en/managed-agents/vaults)
+[Start a session](/docs/en/managed-agents/sessions)[Session operations](/docs/en/managed-agents/session-operations)[Session event stream](/docs/en/managed-agents/events-and-streaming)[Session budgets](/docs/en/managed-agents/budgets)[Subscribe to webhooks](/docs/en/managed-agents/webhooks)[Define outcomes](/docs/en/managed-agents/define-outcomes)[Authenticate with vaults](/docs/en/managed-agents/vaults)
 
 Manage agent context
 
@@ -70,7 +66,7 @@ Working with files
 
 [Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
 
-Images and vision
+[Images and vision](/docs/en/build-with-claude/vision)
 
 Skills
 
@@ -80,47 +76,43 @@ MCP
 
 [Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)
 
-MCP tunnels
+[MCP tunnels](/docs/en/agents-and-tools/mcp-tunnels/overview)
 
 Claude on cloud platforms
 
 [Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)
 
-[](/login)
+[Console](/)
 
-
-
-
-Managed Agents
-
-Attach and download files
-
-Managed Agents/Manage agent context
+[Managed Agents](/docs/en/managed-agents/overview)Manage agent context
 
 # Adding files
 
+Copy page
 
 
 
 Upload files and mount them in your sandbox for reading and processing.
 
+Copy page
 
 
 
+[Managed Agents](/docs/en/managed-agents/overview)
+
+[Beta](/docs/en/build-with-claude/overview#feature-availability)
+
+[Beta header](/docs/en/api/beta-headers)
+
+managed-agents-2026-04-01
+
 You can provide files to your agent by uploading them through the Files API and mounting them in the session's sandbox.
 
-
-
-Managed Agents API requests require the `managed-agents-2026-04-01` beta header, except memory store endpoints, which use `agent-memory-2026-07-22` instead. The SDK sets the correct beta header automatically. See [Beta headers](/docs/en/api/beta-headers#endpoint-specific-headers).
-
-
-
-
-Uploading files
+## Uploading files
 
 First, upload a file using the [Files API](/docs/en/build-with-claude/files):
 
-curl
+cURL
 
 CLI
 
@@ -141,14 +133,11 @@ Ruby
 
 
 ```python
-file = client.beta.files.upload(file=Path("data.csv"))
+file = client.files.upload(file=Path("data.csv"))
 print(f"File ID: {file.id}")
 ```
 
-
-
-
-Mounting files in a session
+## Mounting files in a session
 
 Mount uploaded files into the sandbox by adding them to the `resources` array when creating a session:
 
@@ -156,7 +145,7 @@ Mount uploaded files into the sandbox by adding them to the `resources` array wh
 
 The `mount_path` is optional, but make sure the uploaded file has a descriptive name so the agent can identify it.
 
-curl
+cURL
 
 CLI
 
@@ -194,14 +183,11 @@ With the preceding `mount_path`, the agent reads the file at `/mnt/session/uploa
 
 A new `file_id` is created that references the instance of the file in the session. These copies do not count against your [storage limits](/docs/en/build-with-claude/files).
 
-
-
-
-Multiple files
+## Multiple files
 
 Mount multiple files by adding entries to the `resources` array:
 
-curl
+cURL
 
 CLI
 
@@ -231,14 +217,11 @@ resources = [
 
 A maximum of 500 files is supported per session.
 
-
-
-
-Managing files on a running session
+## Managing files on a running session
 
 You can add or remove files from a session after creation using the session resources API. Each resource has an `id` returned when it is added (or listed), which you use for deletes.
 
-curl
+cURL
 
 CLI
 
@@ -269,7 +252,7 @@ print(resource.id)  # "sesrsc_01ABC..."
 
 List all resources on a session with `resources.list`. To remove a file, call `resources.delete` with the resource ID:
 
-curl
+cURL
 
 CLI
 
@@ -297,14 +280,13 @@ for entry in listed.data:
 client.beta.sessions.resources.delete(resource.id, session_id=session.id)
 ```
 
+## Listing and downloading session files
 
-
+Use the [Files API](/docs/en/build-with-claude/files) to list files scoped to a session and download them. Files the agent writes to `/mnt/session/outputs/` appear in the list shortly after the agent finishes writing them, sometimes a few seconds after the session goes idle. If an output file you expect is missing, list again after a short delay; once it appears in the list, its upload has finished.
 
-Listing and downloading session files
+Filtering by `scope_id` requires the `managed-agents-2026-04-01` beta header, so the list examples use the `beta` files namespace and pass that header explicitly.
 
-Use the [Files API](/docs/en/build-with-claude/files) to list files scoped to a session and download them.
-
-curl
+cURL
 
 CLI
 
@@ -334,14 +316,11 @@ for file in files:
     print(file.id, file.filename)
 
 # Download a file
-content = client.beta.files.download(files.data[0].id)
+content = client.files.download(files.data[0].id)
 content.write_to_file("output.txt")
 ```
 
-
-
-
-Supported file types
+## Supported file types
 
 The agent can work with any file type, including:
 
@@ -351,12 +330,9 @@ The agent can work with any file type, including:
 - Archives (`.zip`, `.tar.gz`) - the agent can extract these using bash
 - Binary files - the agent can process these with appropriate tools
 
+## File paths
 
-
-
-File paths
-
-
+
 
 Files mounted in the sandbox are read-only copies. The agent can read them but cannot modify the original uploaded file. To work with modified versions, the agent writes to new paths within the sandbox.
 
@@ -364,3 +340,4 @@ Files mounted in the sandbox are read-only copies. The agent can read them but c
 - If you omit `mount_path`, the file is placed at `/mnt/session/uploads/<file_id>`
 - Parent directories are created automatically
 - Paths should be absolute (starting with `/`)
+- Files the agent writes to `/mnt/session/outputs/` become available through the Files API, scoped to the session; see [Listing and downloading session files](#listing-and-downloading-session-files)

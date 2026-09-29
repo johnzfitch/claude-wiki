@@ -2,7 +2,7 @@
 title: "Roles - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/organizations/roles"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:40:36Z"
+fetched_at: "2026-09-26T06:39:01Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Forganizations%2Froles)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -218,17 +196,17 @@ Activities
 Organizations
 
 
-List organizations
+List organizations
 
 Users
 
 Roles
 
 
-List Compliance Roles
+List Compliance Roles
 
 
-Get Compliance Role
+Get Compliance Role
 
 Permissions
 
@@ -244,47 +222,45 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
+To enable the Compliance API, see the setup guide.
 
-Roles
+[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)
 
+Copy page
 
 
 
-
-
-To enable the Compliance API, see [Set up the Compliance API](/docs/en/manage-claude/compliance-api-access).
+1.  [API reference](/docs/en/api/http)
+2.  [Compliance API](/docs/en/api/http/compliance)
+3.  [Organizations](/docs/en/api/http/compliance/organizations)
 
 # Roles
 
-##### [List Compliance Roles](/docs/en/api/compliance/organizations/roles/list)
+##### [List Compliance Roles](/docs/en/api/http/compliance/organizations/roles/list)
 
-GET/v1/compliance/organizations/{org_uuid}/roles
+GET/v1/compliance/organizations/{org_uuid}/roles
 
-##### [Get Compliance Role](/docs/en/api/compliance/organizations/roles/retrieve)
+##### [Get Compliance Role](/docs/en/api/http/compliance/organizations/roles/retrieve)
 
-GET/v1/compliance/organizations/{org_uuid}/roles/{role_id}
+GET/v1/compliance/organizations/{org_uuid}/roles/{role_id}
 
-##### ModelsExpand Collapse 
+##### Models
 
 
 
-RoleListResponse object { id, created_at, description, 2 more }
+RoleRetrieveResponse object{ id, created_at, description, 2 more }
 
 
 
@@ -296,15 +272,15 @@ id: string
 
 Role identifier (tagged ID)
 
-[](#role_list_response.id)
+
 
-created_at: string
+created_at: string or null
 
 
 
-Role creation timestamp (ISO 8601)
+Role creation timestamp (RFC 3339)
 
-[](#role_list_response.created_at)
+formatdate-time
 
 description: string
 
@@ -312,29 +288,25 @@ description: string
 
 Role description
 
-[](#role_list_response.description)
-
 name: string
 
 
 
 Role name
 
-[](#role_list_response.name)
+
 
-updated_at: string
+updated_at: string or null
 
 
 
-Role last-updated timestamp (ISO 8601)
+Role last-updated timestamp (RFC 3339)
 
-[](#role_list_response.updated_at)
-
-[](#role_list_response)
+formatdate-time
 
 
 
-RoleRetrieveResponse object { id, created_at, description, 2 more }
+RoleListResponse object{ id, created_at, description, 2 more }
 
 
 
@@ -346,15 +318,15 @@ id: string
 
 Role identifier (tagged ID)
 
-[](#role_retrieve_response.id)
+
 
-created_at: string
+created_at: string or null
 
 
 
-Role creation timestamp (ISO 8601)
+Role creation timestamp (RFC 3339)
 
-[](#role_retrieve_response.created_at)
+formatdate-time
 
 description: string
 
@@ -362,28 +334,24 @@ description: string
 
 Role description
 
-[](#role_retrieve_response.description)
-
 name: string
 
 
 
 Role name
 
-[](#role_retrieve_response.name)
+
 
-updated_at: string
+updated_at: string or null
 
 
 
-Role last-updated timestamp (ISO 8601)
+Role last-updated timestamp (RFC 3339)
 
-[](#role_retrieve_response.updated_at)
+formatdate-time
 
-[](#role_retrieve_response)
+#### Roles[Permissions](/docs/en/api/http/compliance/organizations/roles/permissions)
 
-#### RolesPermissions
+##### [List Compliance Role Permissions](/docs/en/api/http/compliance/organizations/roles/permissions/list)
 
-##### [List Compliance Role Permissions](/docs/en/api/compliance/organizations/roles/permissions/list)
-
-GET/v1/compliance/organizations/{org_uuid}/roles/{role_id}/permissions
+GET/v1/compliance/organizations/{org_uuid}/roles/{role_id}/permissions

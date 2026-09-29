@@ -2,7 +2,7 @@
 title: "Beta - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:38:06Z"
+fetched_at: "2026-09-26T06:38:31Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -227,315 +205,111 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Beta
-
+Copy page
 
 
 
 cURL
 
+1.  [API reference](/docs/en/api/http)
+
 # Beta
 
-##### ModelsExpand Collapse 
+##### Models
 
 
 
-AnthropicBeta = string or "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 29 more
+AnthropicBeta = string or "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
 
 
 
 One of the following:
 
-string
-
-
-
-[](#anthropic_beta%5B0%5D)
-
 
 
-"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 29 more
+BetaAPIError object{ type: "api_error", message }
 
 
-
-One of the following:
-
-"message-batches-2024-09-24"
-
-
-
-[](#anthropic_beta%5B1%5D%5B0%5D)
-
-"prompt-caching-2024-07-31"
-
-
-
-[](#anthropic_beta%5B1%5D%5B1%5D)
-
-"computer-use-2024-10-22"
-
-
-
-[](#anthropic_beta%5B1%5D%5B2%5D)
-
-"computer-use-2025-01-24"
-
-
-
-[](#anthropic_beta%5B1%5D%5B3%5D)
-
-"pdfs-2024-09-25"
-
-
-
-[](#anthropic_beta%5B1%5D%5B4%5D)
-
-"token-counting-2024-11-01"
-
-
-
-[](#anthropic_beta%5B1%5D%5B5%5D)
-
-"token-efficient-tools-2025-02-19"
-
-
-
-[](#anthropic_beta%5B1%5D%5B6%5D)
-
-"output-128k-2025-02-19"
-
-
-
-[](#anthropic_beta%5B1%5D%5B7%5D)
-
-"files-api-2025-04-14"
-
-
-
-[](#anthropic_beta%5B1%5D%5B8%5D)
-
-"mcp-client-2025-04-04"
-
-
-
-[](#anthropic_beta%5B1%5D%5B9%5D)
-
-"mcp-client-2025-11-20"
-
-
-
-[](#anthropic_beta%5B1%5D%5B10%5D)
-
-"dev-full-thinking-2025-05-14"
-
-
-
-[](#anthropic_beta%5B1%5D%5B11%5D)
-
-"interleaved-thinking-2025-05-14"
-
-
-
-[](#anthropic_beta%5B1%5D%5B12%5D)
-
-"code-execution-2025-05-22"
-
-
-
-[](#anthropic_beta%5B1%5D%5B13%5D)
-
-"extended-cache-ttl-2025-04-11"
-
-
-
-[](#anthropic_beta%5B1%5D%5B14%5D)
-
-"context-1m-2025-08-07"
-
-
-
-[](#anthropic_beta%5B1%5D%5B15%5D)
-
-"context-management-2025-06-27"
-
-
-
-[](#anthropic_beta%5B1%5D%5B16%5D)
-
-"model-context-window-exceeded-2025-08-26"
-
-
-
-[](#anthropic_beta%5B1%5D%5B17%5D)
-
-"skills-2025-10-02"
-
-
-
-[](#anthropic_beta%5B1%5D%5B18%5D)
-
-"fast-mode-2026-02-01"
-
-
-
-[](#anthropic_beta%5B1%5D%5B19%5D)
-
-"output-300k-2026-03-24"
-
-
-
-[](#anthropic_beta%5B1%5D%5B20%5D)
-
-"user-profiles-2026-03-24"
-
-
-
-[](#anthropic_beta%5B1%5D%5B21%5D)
-
-"advisor-tool-2026-03-01"
-
-
-
-[](#anthropic_beta%5B1%5D%5B22%5D)
-
-"managed-agents-2026-04-01"
-
-
-
-[](#anthropic_beta%5B1%5D%5B23%5D)
-
-"cache-diagnosis-2026-04-07"
-
-
-
-[](#anthropic_beta%5B1%5D%5B24%5D)
-
-"dreaming-2026-04-21"
-
-
-
-[](#anthropic_beta%5B1%5D%5B25%5D)
-
-"thinking-token-count-2026-05-13"
-
-
-
-[](#anthropic_beta%5B1%5D%5B26%5D)
-
-"server-side-fallback-2026-06-01"
-
-
-
-[](#anthropic_beta%5B1%5D%5B27%5D)
-
-"server-side-fallback-2026-07-01"
-
-
-
-[](#anthropic_beta%5B1%5D%5B28%5D)
-
-"fallback-credit-2026-06-01"
-
-
-
-[](#anthropic_beta%5B1%5D%5B29%5D)
-
-"fallback-credit-2026-07-01"
-
-
-
-[](#anthropic_beta%5B1%5D%5B30%5D)
-
-"agent-memory-2026-07-22"
-
-
-
-[](#anthropic_beta%5B1%5D%5B31%5D)
-
-[](#anthropic_beta%5B1%5D)
-
-[](#anthropic_beta)
 
 
-
-BetaAPIError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_api_error.message)
 
 type: "api_error"
 
 
 
-[](#beta_api_error.type)
-
-[](#beta_api_error)
+defaultapi_error
 
 
-
-BetaAuthenticationError object { message, type }
-
-
 
 message: string
 
 
 
-[](#beta_authentication_error.message)
+defaultInternal server error
+
+
+
+BetaAuthenticationError object{ type: "authentication_error", message }
+
+
+
+
 
 type: "authentication_error"
 
 
 
-[](#beta_authentication_error.type)
-
-[](#beta_authentication_error)
+defaultauthentication_error
 
 
-
-BetaBillingError object { message, type }
-
-
 
 message: string
 
 
 
-[](#beta_billing_error.message)
+defaultAuthentication error
+
+
+
+BetaBillingError object{ type: "billing_error", message }
+
+
+
+
 
 type: "billing_error"
 
 
 
-[](#beta_billing_error.type)
-
-[](#beta_billing_error)
+defaultbilling_error
 
 
 
-BetaError = [BetaInvalidRequestError](/docs/en/api/beta#beta_invalid_request_error) { message, type } or [BetaAuthenticationError](/docs/en/api/beta#beta_authentication_error) { message, type } or [BetaBillingError](/docs/en/api/beta#beta_billing_error) { message, type } or 6 more
+message: string
+
+
+
+defaultBilling error
+
+BetaCurrency = "USD"
+
+
+
+
+
+BetaError = [BetaInvalidRequestError](/docs/en/api/http/beta#beta_invalid_request_error) or [BetaAuthenticationError](/docs/en/api/http/beta#beta_authentication_error) or [BetaBillingError](/docs/en/api/http/beta#beta_billing_error) or 6 more
 
 
 
@@ -543,1094 +317,1448 @@ One of the following:
 
 
 
-BetaInvalidRequestError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_invalid_request_error.message)
-
-type: "invalid_request_error"
-
-
-
-[](#beta_invalid_request_error.type)
-
-[](#beta_invalid_request_error)
-
-
-
-BetaAuthenticationError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_authentication_error.message)
-
-type: "authentication_error"
-
-
-
-[](#beta_authentication_error.type)
-
-[](#beta_authentication_error)
-
-
-
-BetaBillingError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_billing_error.message)
-
-type: "billing_error"
-
-
-
-[](#beta_billing_error.type)
-
-[](#beta_billing_error)
-
-
-
-BetaPermissionError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_permission_error.message)
-
-type: "permission_error"
-
-
-
-[](#beta_permission_error.type)
-
-[](#beta_permission_error)
-
-
-
-BetaNotFoundError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_not_found_error.message)
-
-type: "not_found_error"
-
-
-
-[](#beta_not_found_error.type)
-
-[](#beta_not_found_error)
-
-
-
-BetaRateLimitError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_rate_limit_error.message)
-
-type: "rate_limit_error"
-
-
-
-[](#beta_rate_limit_error.type)
-
-[](#beta_rate_limit_error)
-
-
-
-BetaGatewayTimeoutError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_gateway_timeout_error.message)
-
-type: "timeout_error"
-
-
-
-[](#beta_gateway_timeout_error.type)
-
-[](#beta_gateway_timeout_error)
-
-
-
-BetaAPIError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_api_error.message)
-
-type: "api_error"
-
-
-
-[](#beta_api_error.type)
-
-[](#beta_api_error)
-
-
-
-BetaOverloadedError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_overloaded_error.message)
-
-type: "overloaded_error"
-
-
-
-[](#beta_overloaded_error.type)
-
-[](#beta_overloaded_error)
-
-[](#beta_error)
-
-
-
-BetaErrorResponse object { error, request_id, type }
+BetaErrorResponse object{ type: "error", error, request_id }
 
 
 
 
-
-error: [BetaError](/docs/en/api/beta#beta_error)
-
-
-
-One of the following:
-
-
-
-BetaInvalidRequestError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.message)
-
-type: "invalid_request_error"
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.type)
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta)
-
-
-
-BetaAuthenticationError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.message)
-
-type: "authentication_error"
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.type)
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta)
-
-
-
-BetaBillingError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.message)
-
-type: "billing_error"
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.type)
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta)
-
-
-
-BetaPermissionError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.message)
-
-type: "permission_error"
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.type)
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta)
-
-
-
-BetaNotFoundError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.message)
-
-type: "not_found_error"
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.type)
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta)
-
-
-
-BetaRateLimitError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.message)
-
-type: "rate_limit_error"
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.type)
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta)
-
-
-
-BetaGatewayTimeoutError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.message)
-
-type: "timeout_error"
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.type)
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta)
-
-
-
-BetaAPIError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.message)
-
-type: "api_error"
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.type)
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta)
-
-
-
-BetaOverloadedError object { message, type }
-
-
-
-message: string
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.message)
-
-type: "overloaded_error"
-
-
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta.type)
-
-[](#beta_error_response.error%20%2B%20(resource)%20beta)
-
-[](#beta_error_response.error)
-
-request_id: string
-
-
-
-[](#beta_error_response.request_id)
 
 type: "error"
 
 
 
-[](#beta_error_response.type)
-
-[](#beta_error_response)
+defaulterror
 
 
 
-BetaGatewayTimeoutError object { message, type }
+error: [BetaError](/docs/en/api/http/beta#beta_error)
 
 
 
-message: string
+One of the following:
+
+request_id: string or null
 
 
 
-[](#beta_gateway_timeout_error.message)
+
+
+BetaGatewayTimeoutError object{ type: "timeout_error", message }
+
+
+
+
 
 type: "timeout_error"
 
 
 
-[](#beta_gateway_timeout_error.type)
-
-[](#beta_gateway_timeout_error)
+defaulttimeout_error
 
 
-
-BetaInvalidRequestError object { message, type }
-
-
 
 message: string
 
 
 
-[](#beta_invalid_request_error.message)
+defaultRequest timeout
+
+
+
+BetaInvalidRequestError object{ type: "invalid_request_error", message }
+
+
+
+
 
 type: "invalid_request_error"
 
 
 
-[](#beta_invalid_request_error.type)
-
-[](#beta_invalid_request_error)
+defaultinvalid_request_error
 
 
-
-BetaNotFoundError object { message, type }
-
-
 
 message: string
 
 
 
-[](#beta_not_found_error.message)
+defaultInvalid request
+
+
+
+BetaMonetaryAmount object{ amount, currency }
+
+
+
+A monetary amount in a specific currency.
+
+amount: string
+
+
+
+Amount in minor units of the currency, as an integer decimal string with no leading zeros: "2500" is \$25.00 and "50" is fifty cents. A string rather than a number so no float rounding is ever applied.
+
+currency: [BetaCurrency](/docs/en/api/http/beta#beta_currency)
+
+
+
+Uppercase ISO-4217 currency code. `USD` is the only currency currently supported; the accepted set is closed and grows only when a new currency is priced.
+
+
+
+BetaNotFoundError object{ type: "not_found_error", message }
+
+
+
+
 
 type: "not_found_error"
 
 
 
-[](#beta_not_found_error.type)
-
-[](#beta_not_found_error)
+defaultnot_found_error
 
 
-
-BetaOverloadedError object { message, type }
-
-
 
 message: string
 
 
 
-[](#beta_overloaded_error.message)
+defaultNot found
+
+
+
+BetaOverloadedError object{ type: "overloaded_error", message }
+
+
+
+
 
 type: "overloaded_error"
 
 
 
-[](#beta_overloaded_error.type)
-
-[](#beta_overloaded_error)
+defaultoverloaded_error
 
 
-
-BetaPermissionError object { message, type }
-
-
 
 message: string
 
 
 
-[](#beta_permission_error.message)
+defaultOverloaded
+
+
+
+BetaPermissionError object{ type: "permission_error", message }
+
+
+
+
 
 type: "permission_error"
 
 
 
-[](#beta_permission_error.type)
-
-[](#beta_permission_error)
+defaultpermission_error
 
 
-
-BetaRateLimitError object { message, type }
-
-
 
 message: string
 
 
 
-[](#beta_rate_limit_error.message)
+defaultPermission denied
+
+
+
+BetaRateLimitError object{ type: "rate_limit_error", message }
+
+
+
+
 
 type: "rate_limit_error"
 
 
 
-[](#beta_rate_limit_error.type)
+defaultrate_limit_error
 
-[](#beta_rate_limit_error)
+
 
-#### BetaModels
+message: string
 
-##### [List Models](/docs/en/api/beta/models/list)
+
 
-GET/v1/models
+defaultRate limited
 
-##### [Get a Model](/docs/en/api/beta/models/retrieve)
+#### Beta[Models](/docs/en/api/http/beta/models)
 
-GET/v1/models/{model_id}
+##### [List Models](/docs/en/api/http/beta/models/list)
 
-#### BetaMessages
+GET/v1/models
 
-##### [Create a Message](/docs/en/api/beta/messages/create)
+List available models.
 
-POST/v1/messages
+##### [Get a Model](/docs/en/api/http/beta/models/retrieve)
 
-##### [Count tokens in a Message](/docs/en/api/beta/messages/count_tokens)
+GET/v1/models/{model_id}
 
-POST/v1/messages/count_tokens
+Get a specific model.
 
-#### BetaMessagesBatches
+#### Beta[Messages](/docs/en/api/http/beta/messages)
 
-##### [Create a Message Batch](/docs/en/api/beta/messages/batches/create)
+##### [Create a Message](/docs/en/api/http/beta/messages/create)
 
-POST/v1/messages/batches
+POST/v1/messages
 
-##### [Retrieve a Message Batch](/docs/en/api/beta/messages/batches/retrieve)
+Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.
 
-GET/v1/messages/batches/{message_batch_id}
+##### [Count tokens in a Message](/docs/en/api/http/beta/messages/count_tokens)
 
-##### [List Message Batches](/docs/en/api/beta/messages/batches/list)
+POST/v1/messages/count_tokens
 
-GET/v1/messages/batches
+Count the number of tokens in a Message.
 
-##### [Cancel a Message Batch](/docs/en/api/beta/messages/batches/cancel)
+#### BetaMessages[Batches](/docs/en/api/http/beta/messages/batches)
 
-POST/v1/messages/batches/{message_batch_id}/cancel
+##### [Create a Message Batch](/docs/en/api/http/beta/messages/batches/create)
 
-##### [Delete a Message Batch](/docs/en/api/beta/messages/batches/delete)
+POST/v1/messages/batches
 
-DELETE/v1/messages/batches/{message_batch_id}
+Send a batch of Message creation requests.
 
-##### [Retrieve Message Batch results](/docs/en/api/beta/messages/batches/results)
+##### [Retrieve a Message Batch](/docs/en/api/http/beta/messages/batches/retrieve)
 
-GET/v1/messages/batches/{message_batch_id}/results
+GET/v1/messages/batches/{message_batch_id}
 
-#### BetaAgents
+This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.
 
-##### [Create Agent](/docs/en/api/beta/agents/create)
+##### [List Message Batches](/docs/en/api/http/beta/messages/batches/list)
 
-POST/v1/agents
+GET/v1/messages/batches
 
-##### [List Agents](/docs/en/api/beta/agents/list)
+List all Message Batches within a Workspace. Most recently created batches are returned first.
 
-GET/v1/agents
+##### [Cancel a Message Batch](/docs/en/api/http/beta/messages/batches/cancel)
 
-##### [Get Agent](/docs/en/api/beta/agents/retrieve)
+POST/v1/messages/batches/{message_batch_id}/cancel
 
-GET/v1/agents/{agent_id}
+Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.
 
-##### [Update Agent](/docs/en/api/beta/agents/update)
+##### [Delete a Message Batch](/docs/en/api/http/beta/messages/batches/delete)
 
-POST/v1/agents/{agent_id}
+DELETE/v1/messages/batches/{message_batch_id}
 
-##### [Archive Agent](/docs/en/api/beta/agents/archive)
+##### [Retrieve Message Batch results](/docs/en/api/http/beta/messages/batches/results)
 
-POST/v1/agents/{agent_id}/archive
+GET/v1/messages/batches/{message_batch_id}/results
 
-#### BetaAgentsVersions
+Streams the results of a Message Batch as a `.jsonl` file.
 
-##### [List Agent Versions](/docs/en/api/beta/agents/versions/list)
+#### Beta[Agents](/docs/en/api/http/beta/agents)
 
-GET/v1/agents/{agent_id}/versions
+##### [Create Agent](/docs/en/api/http/beta/agents/create)
 
-#### BetaEnvironments
+POST/v1/agents
 
-##### [Create Environment](/docs/en/api/beta/environments/create)
+##### [List Agents](/docs/en/api/http/beta/agents/list)
 
-POST/v1/environments
+GET/v1/agents
 
-##### [List Environments](/docs/en/api/beta/environments/list)
+##### [Get Agent](/docs/en/api/http/beta/agents/retrieve)
 
-GET/v1/environments
+GET/v1/agents/{agent_id}
 
-##### [Get Environment](/docs/en/api/beta/environments/retrieve)
+##### [Update Agent](/docs/en/api/http/beta/agents/update)
 
-GET/v1/environments/{environment_id}
+POST/v1/agents/{agent_id}
 
-##### [Update Environment](/docs/en/api/beta/environments/update)
+##### [Archive Agent](/docs/en/api/http/beta/agents/archive)
 
-POST/v1/environments/{environment_id}
+POST/v1/agents/{agent_id}/archive
 
-##### [Delete Environment](/docs/en/api/beta/environments/delete)
+#### BetaAgents[Versions](/docs/en/api/http/beta/agents/versions)
 
-DELETE/v1/environments/{environment_id}
+##### [List Agent Versions](/docs/en/api/http/beta/agents/versions/list)
 
-##### [Archive Environment](/docs/en/api/beta/environments/archive)
+GET/v1/agents/{agent_id}/versions
 
-POST/v1/environments/{environment_id}/archive
+#### Beta[Environments](/docs/en/api/http/beta/environments)
 
-#### BetaEnvironmentsWork
+##### [Create Environment](/docs/en/api/http/beta/environments/create)
 
-##### [Get Work Item](/docs/en/api/beta/environments/work/retrieve)
+POST/v1/environments
 
-GET/v1/environments/{environment_id}/work/{work_id}
+Create a new environment with the specified configuration.
 
-##### [Poll for Work](/docs/en/api/beta/environments/work/poll)
+##### [List Environments](/docs/en/api/http/beta/environments/list)
 
-GET/v1/environments/{environment_id}/work/poll
+GET/v1/environments
 
-##### [Acknowledge Work](/docs/en/api/beta/environments/work/ack)
+List environments with pagination support.
 
-POST/v1/environments/{environment_id}/work/{work_id}/ack
+##### [Get Environment](/docs/en/api/http/beta/environments/retrieve)
 
-##### [Record Heartbeat](/docs/en/api/beta/environments/work/heartbeat)
+GET/v1/environments/{environment_id}
 
-POST/v1/environments/{environment_id}/work/{work_id}/heartbeat
+Retrieve a specific environment by ID.
 
-##### [Stop Work](/docs/en/api/beta/environments/work/stop)
+##### [Update Environment](/docs/en/api/http/beta/environments/update)
 
-POST/v1/environments/{environment_id}/work/{work_id}/stop
+POST/v1/environments/{environment_id}
 
-##### [List Work Items](/docs/en/api/beta/environments/work/list)
+Update an existing environment's configuration.
 
-GET/v1/environments/{environment_id}/work
+##### [Delete Environment](/docs/en/api/http/beta/environments/delete)
 
-##### [Update Work Item](/docs/en/api/beta/environments/work/update)
+DELETE/v1/environments/{environment_id}
 
-POST/v1/environments/{environment_id}/work/{work_id}
+Delete an environment by ID. Returns a confirmation of the deletion.
 
-##### [Get Queue Statistics](/docs/en/api/beta/environments/work/stats)
+##### [Archive Environment](/docs/en/api/http/beta/environments/archive)
 
-GET/v1/environments/{environment_id}/work/stats
+POST/v1/environments/{environment_id}/archive
 
-#### BetaSessions
+Archive an environment by ID. Archived environments cannot be used to create new sessions.
 
-##### [Create Session](/docs/en/api/beta/sessions/create)
+#### BetaEnvironments[Work](/docs/en/api/http/beta/environments/work)
 
-POST/v1/sessions
+##### [Get Work Item](/docs/en/api/http/beta/environments/work/retrieve)
 
-##### [List Sessions](/docs/en/api/beta/sessions/list)
+GET/v1/environments/{environment_id}/work/{work_id}
 
-GET/v1/sessions
+Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.
 
-##### [Get Session](/docs/en/api/beta/sessions/retrieve)
+##### [Poll for Work](/docs/en/api/http/beta/environments/work/poll)
 
-GET/v1/sessions/{session_id}
+GET/v1/environments/{environment_id}/work/poll
 
-##### [Update Session](/docs/en/api/beta/sessions/update)
+Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.
 
-POST/v1/sessions/{session_id}
+##### [Acknowledge Work](/docs/en/api/http/beta/environments/work/ack)
 
-##### [Delete Session](/docs/en/api/beta/sessions/delete)
+POST/v1/environments/{environment_id}/work/{work_id}/ack
 
-DELETE/v1/sessions/{session_id}
+Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.
 
-##### [Archive Session](/docs/en/api/beta/sessions/archive)
+##### [Record Heartbeat](/docs/en/api/http/beta/environments/work/heartbeat)
 
-POST/v1/sessions/{session_id}/archive
+POST/v1/environments/{environment_id}/work/{work_id}/heartbeat
 
-#### BetaSessionsEvents
+Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.
 
-##### [List Events](/docs/en/api/beta/sessions/events/list)
+##### [Stop Work](/docs/en/api/http/beta/environments/work/stop)
 
-GET/v1/sessions/{session_id}/events
+POST/v1/environments/{environment_id}/work/{work_id}/stop
 
-##### [Send Events](/docs/en/api/beta/sessions/events/send)
+Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.
 
-POST/v1/sessions/{session_id}/events
+##### [List Work Items](/docs/en/api/http/beta/environments/work/list)
 
-##### [Stream Events](/docs/en/api/beta/sessions/events/stream)
+GET/v1/environments/{environment_id}/work
 
-GET/v1/sessions/{session_id}/events/stream
+Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.
 
-#### BetaSessionsResources
+##### [Update Work Item](/docs/en/api/http/beta/environments/work/update)
 
-##### [Add Session Resource](/docs/en/api/beta/sessions/resources/add)
+POST/v1/environments/{environment_id}/work/{work_id}
 
-POST/v1/sessions/{session_id}/resources
+Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.
 
-##### [List Session Resources](/docs/en/api/beta/sessions/resources/list)
+##### [Get Queue Statistics](/docs/en/api/http/beta/environments/work/stats)
 
-GET/v1/sessions/{session_id}/resources
+GET/v1/environments/{environment_id}/work/stats
 
-##### [Get Session Resource](/docs/en/api/beta/sessions/resources/retrieve)
+Get statistics about the work queue for an environment.
 
-GET/v1/sessions/{session_id}/resources/{resource_id}
+#### Beta[Sessions](/docs/en/api/http/beta/sessions)
 
-##### [Update Session Resource](/docs/en/api/beta/sessions/resources/update)
+##### [Create Session](/docs/en/api/http/beta/sessions/create)
 
-POST/v1/sessions/{session_id}/resources/{resource_id}
+POST/v1/sessions
 
-##### [Delete Session Resource](/docs/en/api/beta/sessions/resources/delete)
+##### [List Sessions](/docs/en/api/http/beta/sessions/list)
 
-DELETE/v1/sessions/{session_id}/resources/{resource_id}
+GET/v1/sessions
 
-#### BetaSessionsThreads
+##### [Get Session](/docs/en/api/http/beta/sessions/retrieve)
 
-##### [List Session Threads](/docs/en/api/beta/sessions/threads/list)
+GET/v1/sessions/{session_id}
 
-GET/v1/sessions/{session_id}/threads
+##### [Update Session](/docs/en/api/http/beta/sessions/update)
 
-##### [Get Session Thread](/docs/en/api/beta/sessions/threads/retrieve)
+POST/v1/sessions/{session_id}
 
-GET/v1/sessions/{session_id}/threads/{thread_id}
+##### [Delete Session](/docs/en/api/http/beta/sessions/delete)
 
-##### [Archive Session Thread](/docs/en/api/beta/sessions/threads/archive)
+DELETE/v1/sessions/{session_id}
 
-POST/v1/sessions/{session_id}/threads/{thread_id}/archive
+##### [Archive Session](/docs/en/api/http/beta/sessions/archive)
 
-#### BetaSessionsThreadsEvents
+POST/v1/sessions/{session_id}/archive
 
-##### [List Session Thread Events](/docs/en/api/beta/sessions/threads/events/list)
+#### BetaSessions[Events](/docs/en/api/http/beta/sessions/events)
 
-GET/v1/sessions/{session_id}/threads/{thread_id}/events
+##### [List Events](/docs/en/api/http/beta/sessions/events/list)
 
-##### [Stream Session Thread Events](/docs/en/api/beta/sessions/threads/events/stream)
+GET/v1/sessions/{session_id}/events
 
-GET/v1/sessions/{session_id}/threads/{thread_id}/stream
+##### [Send Events](/docs/en/api/http/beta/sessions/events/send)
 
-#### BetaDeployments
+POST/v1/sessions/{session_id}/events
 
-##### [Create Deployment](/docs/en/api/beta/deployments/create)
+##### [Stream Events](/docs/en/api/http/beta/sessions/events/stream)
 
-POST/v1/deployments
+GET/v1/sessions/{session_id}/events/stream
 
-##### [List Deployments](/docs/en/api/beta/deployments/list)
+#### BetaSessions[Resources](/docs/en/api/http/beta/sessions/resources)
 
-GET/v1/deployments
+##### [Add Session Resource](/docs/en/api/http/beta/sessions/resources/add)
 
-##### [Get Deployment](/docs/en/api/beta/deployments/retrieve)
+POST/v1/sessions/{session_id}/resources
 
-GET/v1/deployments/{deployment_id}
+##### [List Session Resources](/docs/en/api/http/beta/sessions/resources/list)
 
-##### [Update Deployment](/docs/en/api/beta/deployments/update)
+GET/v1/sessions/{session_id}/resources
 
-POST/v1/deployments/{deployment_id}
+##### [Get Session Resource](/docs/en/api/http/beta/sessions/resources/retrieve)
 
-##### [Archive Deployment](/docs/en/api/beta/deployments/archive)
+GET/v1/sessions/{session_id}/resources/{resource_id}
 
-POST/v1/deployments/{deployment_id}/archive
+##### [Update Session Resource](/docs/en/api/http/beta/sessions/resources/update)
 
-##### [Run Deployment Now](/docs/en/api/beta/deployments/run)
+POST/v1/sessions/{session_id}/resources/{resource_id}
 
-POST/v1/deployments/{deployment_id}/run
+##### [Delete Session Resource](/docs/en/api/http/beta/sessions/resources/delete)
 
-##### [Pause Deployment](/docs/en/api/beta/deployments/pause)
+DELETE/v1/sessions/{session_id}/resources/{resource_id}
 
-POST/v1/deployments/{deployment_id}/pause
+#### BetaSessions[Threads](/docs/en/api/http/beta/sessions/threads)
 
-##### [Unpause Deployment](/docs/en/api/beta/deployments/unpause)
+##### [List Session Threads](/docs/en/api/http/beta/sessions/threads/list)
 
-POST/v1/deployments/{deployment_id}/unpause
+GET/v1/sessions/{session_id}/threads
 
-#### BetaDeployment Runs
+##### [Get Session Thread](/docs/en/api/http/beta/sessions/threads/retrieve)
 
-##### [List Deployment Runs](/docs/en/api/beta/deployment_runs/list)
+GET/v1/sessions/{session_id}/threads/{thread_id}
 
-GET/v1/deployment_runs
+##### [Archive Session Thread](/docs/en/api/http/beta/sessions/threads/archive)
 
-##### [Get Deployment Run](/docs/en/api/beta/deployment_runs/retrieve)
+POST/v1/sessions/{session_id}/threads/{thread_id}/archive
 
-GET/v1/deployment_runs/{deployment_run_id}
+#### BetaSessionsThreads[Events](/docs/en/api/http/beta/sessions/threads/events)
 
-#### BetaVaults
+##### [List Session Thread Events](/docs/en/api/http/beta/sessions/threads/events/list)
 
-##### [Create Vault](/docs/en/api/beta/vaults/create)
+GET/v1/sessions/{session_id}/threads/{thread_id}/events
 
-POST/v1/vaults
+##### [Stream Session Thread Events](/docs/en/api/http/beta/sessions/threads/events/stream)
 
-##### [List Vaults](/docs/en/api/beta/vaults/list)
+GET/v1/sessions/{session_id}/threads/{thread_id}/stream
 
-GET/v1/vaults
+#### Beta[Deployments](/docs/en/api/http/beta/deployments)
 
-##### [Get Vault](/docs/en/api/beta/vaults/retrieve)
+##### [Create Deployment](/docs/en/api/http/beta/deployments/create)
 
-GET/v1/vaults/{vault_id}
+POST/v1/deployments
 
-##### [Update Vault](/docs/en/api/beta/vaults/update)
+##### [List Deployments](/docs/en/api/http/beta/deployments/list)
 
-POST/v1/vaults/{vault_id}
+GET/v1/deployments
 
-##### [Delete Vault](/docs/en/api/beta/vaults/delete)
+##### [Get Deployment](/docs/en/api/http/beta/deployments/retrieve)
 
-DELETE/v1/vaults/{vault_id}
+GET/v1/deployments/{deployment_id}
 
-##### [Archive Vault](/docs/en/api/beta/vaults/archive)
+##### [Update Deployment](/docs/en/api/http/beta/deployments/update)
 
-POST/v1/vaults/{vault_id}/archive
+POST/v1/deployments/{deployment_id}
 
-#### BetaVaultsCredentials
+##### [Archive Deployment](/docs/en/api/http/beta/deployments/archive)
 
-##### [Create Credential](/docs/en/api/beta/vaults/credentials/create)
+POST/v1/deployments/{deployment_id}/archive
 
-POST/v1/vaults/{vault_id}/credentials
+##### [Run Deployment Now](/docs/en/api/http/beta/deployments/run)
 
-##### [List Credentials](/docs/en/api/beta/vaults/credentials/list)
+POST/v1/deployments/{deployment_id}/run
 
-GET/v1/vaults/{vault_id}/credentials
+##### [Pause Deployment](/docs/en/api/http/beta/deployments/pause)
 
-##### [Get Credential](/docs/en/api/beta/vaults/credentials/retrieve)
+POST/v1/deployments/{deployment_id}/pause
 
-GET/v1/vaults/{vault_id}/credentials/{credential_id}
+##### [Unpause Deployment](/docs/en/api/http/beta/deployments/unpause)
 
-##### [Update Credential](/docs/en/api/beta/vaults/credentials/update)
+POST/v1/deployments/{deployment_id}/unpause
 
-POST/v1/vaults/{vault_id}/credentials/{credential_id}
+#### Beta[Deployment Runs](/docs/en/api/http/beta/deployment_runs)
 
-##### [Delete Credential](/docs/en/api/beta/vaults/credentials/delete)
+##### [List Deployment Runs](/docs/en/api/http/beta/deployment_runs/list)
 
-DELETE/v1/vaults/{vault_id}/credentials/{credential_id}
+GET/v1/deployment_runs
 
-##### [Archive Credential](/docs/en/api/beta/vaults/credentials/archive)
+##### [Get Deployment Run](/docs/en/api/http/beta/deployment_runs/retrieve)
 
-POST/v1/vaults/{vault_id}/credentials/{credential_id}/archive
+GET/v1/deployment_runs/{deployment_run_id}
 
-##### [Validate Credential](/docs/en/api/beta/vaults/credentials/mcp_oauth_validate)
+#### Beta[Vaults](/docs/en/api/http/beta/vaults)
 
-POST/v1/vaults/{vault_id}/credentials/{credential_id}/mcp_oauth_validate
+##### [Create Vault](/docs/en/api/http/beta/vaults/create)
 
-#### BetaMemory Stores
+POST/v1/vaults
 
-##### [Create a memory store](/docs/en/api/beta/memory_stores/create)
+##### [List Vaults](/docs/en/api/http/beta/vaults/list)
 
-POST/v1/memory_stores
+GET/v1/vaults
 
-##### [List memory stores](/docs/en/api/beta/memory_stores/list)
+##### [Get Vault](/docs/en/api/http/beta/vaults/retrieve)
 
-GET/v1/memory_stores
+GET/v1/vaults/{vault_id}
 
-##### [Retrieve a memory store](/docs/en/api/beta/memory_stores/retrieve)
+##### [Update Vault](/docs/en/api/http/beta/vaults/update)
 
-GET/v1/memory_stores/{memory_store_id}
+POST/v1/vaults/{vault_id}
 
-##### [Update a memory store](/docs/en/api/beta/memory_stores/update)
+##### [Delete Vault](/docs/en/api/http/beta/vaults/delete)
 
-POST/v1/memory_stores/{memory_store_id}
+DELETE/v1/vaults/{vault_id}
 
-##### [Delete a memory store](/docs/en/api/beta/memory_stores/delete)
+##### [Archive Vault](/docs/en/api/http/beta/vaults/archive)
 
-DELETE/v1/memory_stores/{memory_store_id}
+POST/v1/vaults/{vault_id}/archive
 
-##### [Archive a memory store](/docs/en/api/beta/memory_stores/archive)
+#### BetaVaults[Credentials](/docs/en/api/http/beta/vaults/credentials)
 
-POST/v1/memory_stores/{memory_store_id}/archive
+##### [Create Credential](/docs/en/api/http/beta/vaults/credentials/create)
 
-#### BetaMemory StoresMemories
+POST/v1/vaults/{vault_id}/credentials
 
-##### [Create a memory](/docs/en/api/beta/memory_stores/memories/create)
+##### [List Credentials](/docs/en/api/http/beta/vaults/credentials/list)
 
-POST/v1/memory_stores/{memory_store_id}/memories
+GET/v1/vaults/{vault_id}/credentials
 
-##### [List memories](/docs/en/api/beta/memory_stores/memories/list)
+##### [Get Credential](/docs/en/api/http/beta/vaults/credentials/retrieve)
 
-GET/v1/memory_stores/{memory_store_id}/memories
+GET/v1/vaults/{vault_id}/credentials/{credential_id}
 
-##### [Retrieve a memory](/docs/en/api/beta/memory_stores/memories/retrieve)
+##### [Update Credential](/docs/en/api/http/beta/vaults/credentials/update)
 
-GET/v1/memory_stores/{memory_store_id}/memories/{memory_id}
+POST/v1/vaults/{vault_id}/credentials/{credential_id}
 
-##### [Update a memory](/docs/en/api/beta/memory_stores/memories/update)
+##### [Delete Credential](/docs/en/api/http/beta/vaults/credentials/delete)
 
-POST/v1/memory_stores/{memory_store_id}/memories/{memory_id}
+DELETE/v1/vaults/{vault_id}/credentials/{credential_id}
 
-##### [Delete a memory](/docs/en/api/beta/memory_stores/memories/delete)
+##### [Archive Credential](/docs/en/api/http/beta/vaults/credentials/archive)
 
-DELETE/v1/memory_stores/{memory_store_id}/memories/{memory_id}
+POST/v1/vaults/{vault_id}/credentials/{credential_id}/archive
 
-#### BetaMemory StoresMemory Versions
+##### [Validate Credential](/docs/en/api/http/beta/vaults/credentials/mcp_oauth_validate)
 
-##### [List memory versions](/docs/en/api/beta/memory_stores/memory_versions/list)
+POST/v1/vaults/{vault_id}/credentials/{credential_id}/mcp_oauth_validate
 
-GET/v1/memory_stores/{memory_store_id}/memory_versions
+#### Beta[Memory Stores](/docs/en/api/http/beta/memory_stores)
 
-##### [Retrieve a memory version](/docs/en/api/beta/memory_stores/memory_versions/retrieve)
+##### [Create a memory store](/docs/en/api/http/beta/memory_stores/create)
 
-GET/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}
+POST/v1/memory_stores
 
-##### [Redact a memory version](/docs/en/api/beta/memory_stores/memory_versions/redact)
+##### [List memory stores](/docs/en/api/http/beta/memory_stores/list)
 
-POST/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}/redact
+GET/v1/memory_stores
 
-#### BetaFiles
+##### [Retrieve a memory store](/docs/en/api/http/beta/memory_stores/retrieve)
 
-##### [Upload File](/docs/en/api/beta/files/upload)
+GET/v1/memory_stores/{memory_store_id}
 
-POST/v1/files
+##### [Update a memory store](/docs/en/api/http/beta/memory_stores/update)
 
-##### [List Files](/docs/en/api/beta/files/list)
+POST/v1/memory_stores/{memory_store_id}
 
-GET/v1/files
+##### [Delete a memory store](/docs/en/api/http/beta/memory_stores/delete)
 
-##### [Download File](/docs/en/api/beta/files/download)
+DELETE/v1/memory_stores/{memory_store_id}
 
-GET/v1/files/{file_id}/content
+##### [Archive a memory store](/docs/en/api/http/beta/memory_stores/archive)
 
-##### [Get File Metadata](/docs/en/api/beta/files/retrieve_metadata)
+POST/v1/memory_stores/{memory_store_id}/archive
 
-GET/v1/files/{file_id}
+#### BetaMemory Stores[Memories](/docs/en/api/http/beta/memory_stores/memories)
 
-##### [Delete File](/docs/en/api/beta/files/delete)
+##### [Create a memory](/docs/en/api/http/beta/memory_stores/memories/create)
 
-DELETE/v1/files/{file_id}
+POST/v1/memory_stores/{memory_store_id}/memories
 
-#### BetaSkills
+##### [List memories](/docs/en/api/http/beta/memory_stores/memories/list)
 
-##### [Create Skill](/docs/en/api/beta/skills/create)
+GET/v1/memory_stores/{memory_store_id}/memories
 
-POST/v1/skills
+##### [Retrieve a memory](/docs/en/api/http/beta/memory_stores/memories/retrieve)
 
-##### [List Skills](/docs/en/api/beta/skills/list)
+GET/v1/memory_stores/{memory_store_id}/memories/{memory_id}
 
-GET/v1/skills
+##### [Update a memory](/docs/en/api/http/beta/memory_stores/memories/update)
 
-##### [Get Skill](/docs/en/api/beta/skills/retrieve)
+POST/v1/memory_stores/{memory_store_id}/memories/{memory_id}
 
-GET/v1/skills/{skill_id}
+##### [Delete a memory](/docs/en/api/http/beta/memory_stores/memories/delete)
 
-##### [Delete Skill](/docs/en/api/beta/skills/delete)
+DELETE/v1/memory_stores/{memory_store_id}/memories/{memory_id}
 
-DELETE/v1/skills/{skill_id}
+#### BetaMemory Stores[Memory Versions](/docs/en/api/http/beta/memory_stores/memory_versions)
 
-#### BetaSkillsVersions
+##### [List memory versions](/docs/en/api/http/beta/memory_stores/memory_versions/list)
 
-##### [Create Skill Version](/docs/en/api/beta/skills/versions/create)
+GET/v1/memory_stores/{memory_store_id}/memory_versions
 
-POST/v1/skills/{skill_id}/versions
+##### [Retrieve a memory version](/docs/en/api/http/beta/memory_stores/memory_versions/retrieve)
 
-##### [List Skill Versions](/docs/en/api/beta/skills/versions/list)
+GET/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}
 
-GET/v1/skills/{skill_id}/versions
+##### [Redact a memory version](/docs/en/api/http/beta/memory_stores/memory_versions/redact)
 
-##### [Download Skill Version Content](/docs/en/api/beta/skills/versions/download)
+POST/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}/redact
 
-GET/v1/skills/{skill_id}/versions/{version}/content
+#### Beta[Files](/docs/en/api/http/beta/files)
 
-##### [Get Skill Version](/docs/en/api/beta/skills/versions/retrieve)
+##### [Upload File](/docs/en/api/http/beta/files/upload)
 
-GET/v1/skills/{skill_id}/versions/{version}
+POST/v1/files
 
-##### [Delete Skill Version](/docs/en/api/beta/skills/versions/delete)
+##### [List Files](/docs/en/api/http/beta/files/list)
 
-DELETE/v1/skills/{skill_id}/versions/{version}
+GET/v1/files
 
-#### BetaUser Profiles
+##### [Download File](/docs/en/api/http/beta/files/download)
 
-##### [Create User Profile](/docs/en/api/beta/user_profiles/create)
+GET/v1/files/{file_id}/content
 
-POST/v1/user_profiles
+##### [Get File Metadata](/docs/en/api/http/beta/files/retrieve_metadata)
 
-##### [List User Profiles](/docs/en/api/beta/user_profiles/list)
+GET/v1/files/{file_id}
 
-GET/v1/user_profiles
+##### [Delete File](/docs/en/api/http/beta/files/delete)
 
-##### [Get User Profile](/docs/en/api/beta/user_profiles/retrieve)
+DELETE/v1/files/{file_id}
 
-GET/v1/user_profiles/{user_profile_id}
+#### Beta[Skills](/docs/en/api/http/beta/skills)
 
-##### [Update User Profile](/docs/en/api/beta/user_profiles/update)
+##### [Create Skill](/docs/en/api/http/beta/skills/create)
 
-POST/v1/user_profiles/{user_profile_id}
+POST/v1/skills
 
-##### [Create Enrollment URL](/docs/en/api/beta/user_profiles/create_enrollment_url)
+##### [List Skills](/docs/en/api/http/beta/skills/list)
 
-POST/v1/user_profiles/{user_profile_id}/enrollment_url
+GET/v1/skills
 
-#### BetaDreams
+##### [Get Skill](/docs/en/api/http/beta/skills/retrieve)
 
-##### [Create a Dream](/docs/en/api/beta/dreams/create)
+GET/v1/skills/{skill_id}
 
-POST/v1/dreams
+##### [Delete Skill](/docs/en/api/http/beta/skills/delete)
 
-##### [List Dreams](/docs/en/api/beta/dreams/list)
+DELETE/v1/skills/{skill_id}
 
-GET/v1/dreams
+#### BetaSkills[Versions](/docs/en/api/http/beta/skills/versions)
 
-##### [Get a Dream](/docs/en/api/beta/dreams/retrieve)
+##### [Create Skill Version](/docs/en/api/http/beta/skills/versions/create)
 
-GET/v1/dreams/{dream_id}
+POST/v1/skills/{skill_id}/versions
 
-##### [Cancel a Dream](/docs/en/api/beta/dreams/cancel)
+##### [List Skill Versions](/docs/en/api/http/beta/skills/versions/list)
 
-POST/v1/dreams/{dream_id}/cancel
+GET/v1/skills/{skill_id}/versions
 
-##### [Archive a Dream](/docs/en/api/beta/dreams/archive)
+##### [Download Skill Version Content](/docs/en/api/http/beta/skills/versions/download)
 
-POST/v1/dreams/{dream_id}/archive
+GET/v1/skills/{skill_id}/versions/{version}/content
 
-#### BetaTunnels
+Download a skill version's content as a zip archive.
 
-##### [Create Tunnel](/docs/en/api/beta/tunnels/create)
+##### [Get Skill Version](/docs/en/api/http/beta/skills/versions/retrieve)
 
-POST/v1/tunnels
+GET/v1/skills/{skill_id}/versions/{version}
 
-##### [Get Tunnel](/docs/en/api/beta/tunnels/retrieve)
+##### [Delete Skill Version](/docs/en/api/http/beta/skills/versions/delete)
 
-GET/v1/tunnels/{tunnel_id}
+DELETE/v1/skills/{skill_id}/versions/{version}
 
-##### [List Tunnels](/docs/en/api/beta/tunnels/list)
+#### Beta[User Profiles](/docs/en/api/http/beta/user_profiles)
 
-GET/v1/tunnels
+##### [Create User Profile](/docs/en/api/http/beta/user_profiles/create)
 
-##### [Archive Tunnel](/docs/en/api/beta/tunnels/archive)
+POST/v1/user_profiles
 
-POST/v1/tunnels/{tunnel_id}/archive
+##### [List User Profiles](/docs/en/api/http/beta/user_profiles/list)
 
-##### [Reveal Tunnel Token](/docs/en/api/beta/tunnels/reveal_token)
+GET/v1/user_profiles
 
-POST/v1/tunnels/{tunnel_id}/reveal_token
+##### [Get User Profile](/docs/en/api/http/beta/user_profiles/retrieve)
 
-##### [Rotate Tunnel Token](/docs/en/api/beta/tunnels/rotate_token)
+GET/v1/user_profiles/{user_profile_id}
 
-POST/v1/tunnels/{tunnel_id}/rotate_token
+##### [Update User Profile](/docs/en/api/http/beta/user_profiles/update)
 
-#### BetaTunnelsCertificates
+POST/v1/user_profiles/{user_profile_id}
 
-##### [Create Tunnel Certificate](/docs/en/api/beta/tunnels/certificates/create)
+##### [Create Enrollment URL](/docs/en/api/http/beta/user_profiles/create_enrollment_url)
 
-POST/v1/tunnels/{tunnel_id}/certificates
+POST/v1/user_profiles/{user_profile_id}/enrollment_url
 
-##### [Get Tunnel Certificate](/docs/en/api/beta/tunnels/certificates/retrieve)
+#### Beta[Dreams](/docs/en/api/http/beta/dreams)
 
-GET/v1/tunnels/{tunnel_id}/certificates/{certificate_id}
+##### [Create a Dream](/docs/en/api/http/beta/dreams/create)
 
-##### [List Tunnel Certificates](/docs/en/api/beta/tunnels/certificates/list)
+POST/v1/dreams
 
-GET/v1/tunnels/{tunnel_id}/certificates
+Start an asynchronous job that uses past sessions to produce a reorganized version of a memory store and get back the dream to poll for the result.
 
-##### [Archive Tunnel Certificate](/docs/en/api/beta/tunnels/certificates/archive)
+##### [List Dreams](/docs/en/api/http/beta/dreams/list)
 
-POST/v1/tunnels/{tunnel_id}/certificates/{certificate_id}/archive
+GET/v1/dreams
 
-#### BetaWebhooks
+List the dreams in the workspace, newest first.
 
-Helpers for receiving and verifying webhook events. Use `unwrap` in your SDK to verify signatures and parse payloads; see the [webhooks guide](/docs/en/managed-agents/webhooks) for handler examples.
+##### [Get a Dream](/docs/en/api/http/beta/dreams/retrieve)
 
-Possible `data.type` values:
+GET/v1/dreams/{dream_id}
 
-- `agent.archived`
-- `agent.created`
-- `agent.deleted`
-- `agent.updated`
-- `deployment.archived`
-- `deployment.created`
-- `deployment.deleted`
-- `deployment.paused`
-- `deployment.unpaused`
-- `deployment.updated`
-- `deployment_run.failed`
-- `deployment_run.started`
-- `deployment_run.succeeded`
-- `environment.archived`
-- `environment.created`
-- `environment.deleted`
-- `environment.updated`
-- `memory_store.archived`
-- `memory_store.created`
-- `memory_store.deleted`
-- `session.archived`
-- `session.created`
-- `session.deleted`
-- `session.idled`
-- `session.outcome_evaluation_ended`
-- `session.pending`
-- `session.requires_action`
-- `session.running`
-- `session.status_idled`
-- `session.status_rescheduled`
-- `session.status_run_started`
-- `session.status_terminated`
-- `session.thread_created`
-- `session.thread_idled`
-- `session.thread_terminated`
-- `session.updated`
-- `vault.archived`
-- `vault.created`
-- `vault.deleted`
-- `vault_credential.archived`
-- `vault_credential.created`
-- `vault_credential.deleted`
-- `vault_credential.refresh_failed`
+Get a dream by ID to check its status, output memory store, and token usage.
+
+##### [Cancel a Dream](/docs/en/api/http/beta/dreams/cancel)
+
+POST/v1/dreams/{dream_id}/cancel
+
+Stop a `pending` or `running` dream.
+
+##### [Archive a Dream](/docs/en/api/http/beta/dreams/archive)
+
+POST/v1/dreams/{dream_id}/archive
+
+Hide a `completed`, `failed`, or `canceled` dream from the default list of dreams.
+
+#### Beta[Tunnels](/docs/en/api/http/beta/tunnels)
+
+##### [Create Tunnel](/docs/en/api/http/beta/tunnels/create)
+
+POST/v1/tunnels
+
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
+
+##### [Get Tunnel](/docs/en/api/http/beta/tunnels/retrieve)
+
+GET/v1/tunnels/{tunnel_id}
+
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
+
+##### [List Tunnels](/docs/en/api/http/beta/tunnels/list)
+
+GET/v1/tunnels
+
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
+
+##### [Archive Tunnel](/docs/en/api/http/beta/tunnels/archive)
+
+POST/v1/tunnels/{tunnel_id}/archive
+
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
+
+##### [Reveal Tunnel Token](/docs/en/api/http/beta/tunnels/reveal_token)
+
+POST/v1/tunnels/{tunnel_id}/reveal_token
+
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
+
+##### [Rotate Tunnel Token](/docs/en/api/http/beta/tunnels/rotate_token)
+
+POST/v1/tunnels/{tunnel_id}/rotate_token
+
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
+
+#### BetaTunnels[Certificates](/docs/en/api/http/beta/tunnels/certificates)
+
+##### [Create Tunnel Certificate](/docs/en/api/http/beta/tunnels/certificates/create)
+
+POST/v1/tunnels/{tunnel_id}/certificates
+
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
+
+##### [Get Tunnel Certificate](/docs/en/api/http/beta/tunnels/certificates/retrieve)
+
+GET/v1/tunnels/{tunnel_id}/certificates/{certificate_id}
+
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
+
+##### [List Tunnel Certificates](/docs/en/api/http/beta/tunnels/certificates/list)
+
+GET/v1/tunnels/{tunnel_id}/certificates
+
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
+
+##### [Archive Tunnel Certificate](/docs/en/api/http/beta/tunnels/certificates/archive)
+
+POST/v1/tunnels/{tunnel_id}/certificates/{certificate_id}/archive
+
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
+
+#### Beta[Organization](/docs/en/api/http/beta/organization)
+
+##### [Get Current Organization](/docs/en/api/http/beta/organization/retrieve)
+
+GET/v1/organizations/me
+
+Retrieve information about the organization associated with the authenticated API key.
+
+#### BetaOrganization[API Keys](/docs/en/api/http/beta/organization/api_keys)
+
+##### [List API Keys](/docs/en/api/http/beta/organization/api_keys/list)
+
+GET/v1/organizations/api_keys
+
+##### [Retrieve API Key (Admin API)](/docs/en/api/http/beta/organization/api_keys/retrieve)
+
+GET/v1/organizations/api_keys/{api_key_id}
+
+Retrieve information about a single API key in your organization, looked up by its ID. This Admin API endpoint requires an Admin API key, is intended for programmatic key management, and never returns the key's secret value. To view or create your own API keys, go to [API keys](https://platform.claude.com/settings/keys) in the Claude Console.
+
+##### [Update API Key](/docs/en/api/http/beta/organization/api_keys/update)
+
+POST/v1/organizations/api_keys/{api_key_id}
+
+#### BetaOrganization[External Keys](/docs/en/api/http/beta/organization/external_keys)
+
+##### [Create External Key](/docs/en/api/http/beta/organization/external_keys/create)
+
+POST/v1/organizations/external_keys
+
+Create an external key config owned by the caller's organization.
+
+##### [List External Keys](/docs/en/api/http/beta/organization/external_keys/list)
+
+GET/v1/organizations/external_keys
+
+List external key configs in the caller's organization.
+
+##### [Get External Key](/docs/en/api/http/beta/organization/external_keys/retrieve)
+
+GET/v1/organizations/external_keys/{external_key_id}
+
+Retrieve a single external key config in the caller's organization by ID.
+
+##### [Update External Key](/docs/en/api/http/beta/organization/external_keys/update)
+
+POST/v1/organizations/external_keys/{external_key_id}
+
+Partially update an external key config. Omitted fields are left unchanged.
+
+##### [Delete External Key](/docs/en/api/http/beta/organization/external_keys/delete)
+
+DELETE/v1/organizations/external_keys/{external_key_id}
+
+Delete an external key config.
+
+##### [Validate External Key](/docs/en/api/http/beta/organization/external_keys/validate)
+
+POST/v1/organizations/external_keys/{external_key_id}/validate
+
+Validate an external key config against the customer's KMS.
+
+#### BetaOrganizationFederation[Issuers](/docs/en/api/http/beta/organization/federation/issuers)
+
+##### [Create Federation Issuer](/docs/en/api/http/beta/organization/federation/issuers/create)
+
+POST/v1/organizations/federation_issuers
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [List Federation Issuers](/docs/en/api/http/beta/organization/federation/issuers/list)
+
+GET/v1/organizations/federation_issuers
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [Get Federation Issuer](/docs/en/api/http/beta/organization/federation/issuers/retrieve)
+
+GET/v1/organizations/federation_issuers/{federation_issuer_id}
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [Update Federation Issuer](/docs/en/api/http/beta/organization/federation/issuers/update)
+
+POST/v1/organizations/federation_issuers/{federation_issuer_id}
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [Archive Federation Issuer](/docs/en/api/http/beta/organization/federation/issuers/archive)
+
+POST/v1/organizations/federation_issuers/{federation_issuer_id}/archive
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+#### BetaOrganizationFederation[Rules](/docs/en/api/http/beta/organization/federation/rules)
+
+##### [Create Federation Rule](/docs/en/api/http/beta/organization/federation/rules/create)
+
+POST/v1/organizations/federation_rules
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [List Federation Rules](/docs/en/api/http/beta/organization/federation/rules/list)
+
+GET/v1/organizations/federation_rules
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [Get Federation Rule](/docs/en/api/http/beta/organization/federation/rules/retrieve)
+
+GET/v1/organizations/federation_rules/{federation_rule_id}
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [Update Federation Rule](/docs/en/api/http/beta/organization/federation/rules/update)
+
+POST/v1/organizations/federation_rules/{federation_rule_id}
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [Archive Federation Rule](/docs/en/api/http/beta/organization/federation/rules/archive)
+
+POST/v1/organizations/federation_rules/{federation_rule_id}/archive
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+#### BetaOrganizationFederationRules[Workspaces](/docs/en/api/http/beta/organization/federation/rules/workspaces)
+
+##### [Add Federation Rule Workspace](/docs/en/api/http/beta/organization/federation/rules/workspaces/add)
+
+POST/v1/organizations/federation_rules/{federation_rule_id}/workspaces
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [List Federation Rule Workspaces](/docs/en/api/http/beta/organization/federation/rules/workspaces/list)
+
+GET/v1/organizations/federation_rules/{federation_rule_id}/workspaces
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [Remove Federation Rule Workspace](/docs/en/api/http/beta/organization/federation/rules/workspaces/remove)
+
+DELETE/v1/organizations/federation_rules/{federation_rule_id}/workspaces/{workspace_id}
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+#### BetaOrganization[Invites](/docs/en/api/http/beta/organization/invites)
+
+##### [Create Invite](/docs/en/api/http/beta/organization/invites/create)
+
+POST/v1/organizations/invites
+
+Invite a user to join the organization by email.
+
+##### [List Invites](/docs/en/api/http/beta/organization/invites/list)
+
+GET/v1/organizations/invites
+
+List the organization's invites.
+
+##### [Get Invite](/docs/en/api/http/beta/organization/invites/retrieve)
+
+GET/v1/organizations/invites/{invite_id}
+
+Retrieve an invite by ID.
+
+##### [Delete Invite](/docs/en/api/http/beta/organization/invites/delete)
+
+DELETE/v1/organizations/invites/{invite_id}
+
+Delete a pending invite.
+
+#### BetaOrganization[Service Accounts](/docs/en/api/http/beta/organization/service_accounts)
+
+##### [Create Service Account](/docs/en/api/http/beta/organization/service_accounts/create)
+
+POST/v1/organizations/service_accounts
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [List Service Accounts](/docs/en/api/http/beta/organization/service_accounts/list)
+
+GET/v1/organizations/service_accounts
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [Get Service Account](/docs/en/api/http/beta/organization/service_accounts/retrieve)
+
+GET/v1/organizations/service_accounts/{service_account_id}
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [Update Service Account](/docs/en/api/http/beta/organization/service_accounts/update)
+
+POST/v1/organizations/service_accounts/{service_account_id}
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [Archive Service Account](/docs/en/api/http/beta/organization/service_accounts/archive)
+
+POST/v1/organizations/service_accounts/{service_account_id}/archive
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+#### BetaOrganizationService Accounts[Workspaces](/docs/en/api/http/beta/organization/service_accounts/workspaces)
+
+##### [Add Workspace To Service Account](/docs/en/api/http/beta/organization/service_accounts/workspaces/add)
+
+POST/v1/organizations/service_accounts/{service_account_id}/workspaces
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [List Workspaces For Service Account](/docs/en/api/http/beta/organization/service_accounts/workspaces/list)
+
+GET/v1/organizations/service_accounts/{service_account_id}/workspaces
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [Remove Workspace From Service Account](/docs/en/api/http/beta/organization/service_accounts/workspaces/remove)
+
+DELETE/v1/organizations/service_accounts/{service_account_id}/workspaces/{workspace_id}
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+#### BetaOrganization[Users](/docs/en/api/http/beta/organization/users)
+
+##### [List Users](/docs/en/api/http/beta/organization/users/list)
+
+GET/v1/organizations/users
+
+List the organization's members.
+
+##### [Get User](/docs/en/api/http/beta/organization/users/retrieve)
+
+GET/v1/organizations/users/{user_id}
+
+Retrieve a member of the organization by user ID.
+
+##### [Update User](/docs/en/api/http/beta/organization/users/update)
+
+POST/v1/organizations/users/{user_id}
+
+Update a member's organization role.
+
+##### [Remove User](/docs/en/api/http/beta/organization/users/remove)
+
+DELETE/v1/organizations/users/{user_id}
+
+Remove a member from the organization.
+
+#### BetaOrganization[Workspaces](/docs/en/api/http/beta/organization/workspaces)
+
+##### [List Workspaces](/docs/en/api/http/beta/organization/workspaces/list)
+
+GET/v1/organizations/workspaces
+
+##### [Create Workspace](/docs/en/api/http/beta/organization/workspaces/create)
+
+POST/v1/organizations/workspaces
+
+##### [Get Workspace](/docs/en/api/http/beta/organization/workspaces/retrieve)
+
+GET/v1/organizations/workspaces/{workspace_id}
+
+##### [Update Workspace](/docs/en/api/http/beta/organization/workspaces/update)
+
+POST/v1/organizations/workspaces/{workspace_id}
+
+##### [Archive Workspace](/docs/en/api/http/beta/organization/workspaces/archive)
+
+POST/v1/organizations/workspaces/{workspace_id}/archive
+
+#### BetaOrganizationWorkspaces[Rate Limits](/docs/en/api/http/beta/organization/workspaces/rate_limits)
+
+##### [List Workspace Rate Limits](/docs/en/api/http/beta/organization/workspaces/rate_limits/list)
+
+GET/v1/organizations/workspaces/{workspace_id}/rate_limits
+
+List a workspace's rate limits.
+
+#### BetaOrganizationWorkspaces[Members](/docs/en/api/http/beta/organization/workspaces/members)
+
+##### [List Workspace Members](/docs/en/api/http/beta/organization/workspaces/members/list)
+
+GET/v1/organizations/workspaces/{workspace_id}/members
+
+##### [Create Workspace Member](/docs/en/api/http/beta/organization/workspaces/members/add)
+
+POST/v1/organizations/workspaces/{workspace_id}/members
+
+##### [Get Workspace Member](/docs/en/api/http/beta/organization/workspaces/members/retrieve)
+
+GET/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+
+##### [Update Workspace Member](/docs/en/api/http/beta/organization/workspaces/members/update)
+
+POST/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+
+##### [Delete Workspace Member](/docs/en/api/http/beta/organization/workspaces/members/remove)
+
+DELETE/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+
+#### BetaOrganizationWorkspaces[Service Accounts](/docs/en/api/http/beta/organization/workspaces/service_accounts)
+
+##### [List Service Account Workspace Members](/docs/en/api/http/beta/organization/workspaces/service_accounts/list)
+
+GET/v1/organizations/workspaces/{workspace_id}/service_accounts
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [Create Service Account Workspace Member](/docs/en/api/http/beta/organization/workspaces/service_accounts/add)
+
+POST/v1/organizations/workspaces/{workspace_id}/service_accounts
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [Get Service Account Workspace Member](/docs/en/api/http/beta/organization/workspaces/service_accounts/retrieve)
+
+GET/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [Update Service Account Workspace Member](/docs/en/api/http/beta/organization/workspaces/service_accounts/update)
+
+POST/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+##### [Delete Service Account Workspace Member](/docs/en/api/http/beta/organization/workspaces/service_accounts/remove)
+
+DELETE/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
+
+**Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).
+
+#### BetaOrganization[Rate Limits](/docs/en/api/http/beta/organization/rate_limits)
+
+##### [List Organization Rate Limits](/docs/en/api/http/beta/organization/rate_limits/list)
+
+GET/v1/organizations/rate_limits
+
+List Messages API rate limits for your organization.
+
+#### BetaOrganization[Compliance Settings](/docs/en/api/http/beta/organization/compliance_settings)
+
+##### [Get Compliance Settings](/docs/en/api/http/beta/organization/compliance_settings/retrieve)
+
+GET/v1/organizations/compliance_settings
+
+Retrieve your organization's Compliance Settings.
+
+##### [Update Compliance Settings](/docs/en/api/http/beta/organization/compliance_settings/update)
+
+POST/v1/organizations/compliance_settings
+
+Update your organization's Compliance Settings.
+
+#### BetaOrganization[Usage Report](/docs/en/api/http/beta/organization/usage_report)
+
+##### [Get Messages Usage Report](/docs/en/api/http/beta/organization/usage_report/retrieve_messages)
+
+GET/v1/organizations/usage_report/messages
+
+##### [Get Claude Code Usage Report](/docs/en/api/http/beta/organization/usage_report/retrieve_claude_code)
+
+GET/v1/organizations/usage_report/claude_code
+
+Retrieve daily aggregated usage metrics for Claude Code users. Enables organizations to analyze developer productivity and build custom dashboards.
+
+#### BetaOrganization[Cost Report](/docs/en/api/http/beta/organization/cost_report)
+
+##### [Get Cost Report](/docs/en/api/http/beta/organization/cost_report/retrieve)
+
+GET/v1/organizations/cost_report
+
+#### BetaOrganization[MCP Tunnels](/docs/en/api/http/beta/organization/mcp_tunnels)
+
+##### [List Tunnels](/docs/en/api/http/beta/organization/mcp_tunnels/list)
+
+Deprecated
+
+GET/v1/organizations/tunnels
+
+**Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](/docs/en/api/beta/tunnels) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
+
+##### [Get Tunnel](/docs/en/api/http/beta/organization/mcp_tunnels/retrieve)
+
+Deprecated
+
+GET/v1/organizations/tunnels/{tunnel_id}
+
+**Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](/docs/en/api/beta/tunnels) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
+
+##### [Archive Tunnel](/docs/en/api/http/beta/organization/mcp_tunnels/archive)
+
+Deprecated
+
+POST/v1/organizations/tunnels/{tunnel_id}/archive
+
+**Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](/docs/en/api/beta/tunnels) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
+
+##### [Reveal Tunnel Token](/docs/en/api/http/beta/organization/mcp_tunnels/reveal_token)
+
+Deprecated
+
+POST/v1/organizations/tunnels/{tunnel_id}/reveal_token
+
+**Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](/docs/en/api/beta/tunnels) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
+
+##### [Rotate Tunnel Token](/docs/en/api/http/beta/organization/mcp_tunnels/rotate_token)
+
+Deprecated
+
+POST/v1/organizations/tunnels/{tunnel_id}/rotate_token
+
+**Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](/docs/en/api/beta/tunnels) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
+
+#### BetaOrganizationMCP Tunnels[Tunnel Certificates](/docs/en/api/http/beta/organization/mcp_tunnels/tunnel_certificates)
+
+##### [Create Tunnel Certificate](/docs/en/api/http/beta/organization/mcp_tunnels/tunnel_certificates/create)
+
+Deprecated
+
+POST/v1/organizations/tunnels/{tunnel_id}/certificates
+
+**Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](/docs/en/api/beta/tunnels) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
+
+##### [List Tunnel Certificates](/docs/en/api/http/beta/organization/mcp_tunnels/tunnel_certificates/list)
+
+Deprecated
+
+GET/v1/organizations/tunnels/{tunnel_id}/certificates
+
+**Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](/docs/en/api/beta/tunnels) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
+
+##### [Get Tunnel Certificate](/docs/en/api/http/beta/organization/mcp_tunnels/tunnel_certificates/retrieve)
+
+Deprecated
+
+GET/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}
+
+**Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](/docs/en/api/beta/tunnels) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
+
+##### [Archive Tunnel Certificate](/docs/en/api/http/beta/organization/mcp_tunnels/tunnel_certificates/archive)
+
+Deprecated
+
+POST/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}/archive
+
+**Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](/docs/en/api/beta/tunnels) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
+
+#### BetaOrganization[Analytics](/docs/en/api/http/beta/organization/analytics)
+
+##### [Get Activity Summaries](/docs/en/api/http/beta/organization/analytics/retrieve_summaries)
+
+GET/v1/organizations/analytics/summaries
+
+Get organization-wide activity summaries for a date range.
+
+#### BetaOrganizationAnalytics[Usage](/docs/en/api/http/beta/organization/analytics/usage)
+
+##### [Get Token Usage Over Time](/docs/en/api/http/beta/organization/analytics/usage/list)
+
+GET/v1/organizations/analytics/usage_report
+
+Get token usage over time across a date range.
+
+##### [Get Per-User Token Usage](/docs/en/api/http/beta/organization/analytics/usage/list_by_user)
+
+GET/v1/organizations/analytics/user_usage_report
+
+Get per-user token usage across a date range.
+
+#### BetaOrganizationAnalytics[Cost](/docs/en/api/http/beta/organization/analytics/cost)
+
+##### [Get Cost Over Time](/docs/en/api/http/beta/organization/analytics/cost/list)
+
+GET/v1/organizations/analytics/cost_report
+
+Get cost in USD over time across a date range.
+
+##### [Get Per-User Cost](/docs/en/api/http/beta/organization/analytics/cost/list_by_user)
+
+GET/v1/organizations/analytics/user_cost_report
+
+Get per-user cost in USD across a date range.
+
+#### BetaOrganizationAnalytics[Users](/docs/en/api/http/beta/organization/analytics/users)
+
+##### [List User Activity](/docs/en/api/http/beta/organization/analytics/users/list)
+
+GET/v1/organizations/analytics/users
+
+Get per-user activity for a given day, with cursor-based pagination.
+
+#### BetaOrganizationAnalytics[Skills](/docs/en/api/http/beta/organization/analytics/skills)
+
+##### [Get Skill Usage](/docs/en/api/http/beta/organization/analytics/skills/list)
+
+GET/v1/organizations/analytics/skills
+
+Get per-skill usage for a given day, with cursor-based pagination.
+
+#### BetaOrganizationAnalytics[Connectors](/docs/en/api/http/beta/organization/analytics/connectors)
+
+##### [Get Connector Usage](/docs/en/api/http/beta/organization/analytics/connectors/list)
+
+GET/v1/organizations/analytics/connectors
+
+Get per-connector usage for a given day, with cursor-based pagination.
+
+#### BetaOrganizationAnalytics[Chat Projects](/docs/en/api/http/beta/organization/analytics/chat_projects)
+
+##### [Get Chat Project Usage](/docs/en/api/http/beta/organization/analytics/chat_projects/list)
+
+GET/v1/organizations/analytics/apps/chat/projects
+
+Get per-project activity for a given day, with cursor-based pagination.
+
+#### BetaOrganizationAnalytics[Plugins](/docs/en/api/http/beta/organization/analytics/plugins)
+
+##### [Get Plugin Usage](/docs/en/api/http/beta/organization/analytics/plugins/list)
+
+GET/v1/organizations/analytics/plugins
+
+Get per-plugin install + invocation usage for a given day, with pagination.
+
+#### BetaOrganizationAnalytics[Artifacts](/docs/en/api/http/beta/organization/analytics/artifacts)
+
+##### [Get Artifact Activity](/docs/en/api/http/beta/organization/analytics/artifacts/list)
+
+GET/v1/organizations/analytics/artifacts
+
+Get artifact-creation activity for a given day, broken out by MIME type.
+
+#### BetaOrganization[Spend Limits](/docs/en/api/http/beta/organization/spend_limits)
+
+##### [Set Spend Limit](/docs/en/api/http/beta/organization/spend_limits/create)
+
+POST/v1/organizations/spend_limits
+
+Set a spend limit.
+
+##### [Get Spend Limit](/docs/en/api/http/beta/organization/spend_limits/retrieve)
+
+GET/v1/organizations/spend_limits/{spend_limit_id}
+
+Retrieve a spend limit by ID.
+
+##### [Delete Spend Limit](/docs/en/api/http/beta/organization/spend_limits/delete)
+
+DELETE/v1/organizations/spend_limits/{spend_limit_id}
+
+Delete a spend limit.
+
+##### [List Effective Spend Limits](/docs/en/api/http/beta/organization/spend_limits/list_effective)
+
+GET/v1/organizations/spend_limits/effective
+
+List each member's effective spend limit and period-to-date spend.
+
+#### BetaOrganizationSpend Limits[Increase Requests](/docs/en/api/http/beta/organization/spend_limits/increase_requests)
+
+##### [List Spend Limit Increase Requests](/docs/en/api/http/beta/organization/spend_limits/increase_requests/list)
+
+GET/v1/organizations/spend_limit_increase_requests
+
+List spend limit increase requests, most recent first.
+
+##### [Get Spend Limit Increase Request](/docs/en/api/http/beta/organization/spend_limits/increase_requests/retrieve)
+
+GET/v1/organizations/spend_limit_increase_requests/{spend_limit_increase_request_id}
+
+Retrieve a spend limit increase request.
+
+##### [Approve Spend Limit Increase Request](/docs/en/api/http/beta/organization/spend_limits/increase_requests/approve)
+
+POST/v1/organizations/spend_limit_increase_requests/{spend_limit_increase_request_id}/approve
+
+Approve a pending spend limit increase request.
+
+##### [Deny Spend Limit Increase Request](/docs/en/api/http/beta/organization/spend_limits/increase_requests/deny)
+
+POST/v1/organizations/spend_limit_increase_requests/{spend_limit_increase_request_id}/deny
+
+Deny a pending spend limit increase request.
+
+#### BetaOrganization[RBAC Groups](/docs/en/api/http/beta/organization/rbac_groups)
+
+##### [List RBAC Groups](/docs/en/api/http/beta/organization/rbac_groups/list)
+
+GET/v1/organizations/rbac_groups
+
+List RBAC Groups in the Claude Enterprise tenant.
+
+##### [Get RBAC Group](/docs/en/api/http/beta/organization/rbac_groups/retrieve)
+
+GET/v1/organizations/rbac_groups/{rbac_group_id}
+
+Retrieve an RBAC Group by ID.
+
+##### [Create RBAC Group](/docs/en/api/http/beta/organization/rbac_groups/create)
+
+POST/v1/organizations/rbac_groups
+
+Create an RBAC Group in the Claude Enterprise tenant. Groups created via the API have source type `"direct"`.
+
+##### [Update RBAC Group](/docs/en/api/http/beta/organization/rbac_groups/update)
+
+POST/v1/organizations/rbac_groups/{rbac_group_id}
+
+Update an RBAC Group's name. Groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.
+
+##### [Delete RBAC Group](/docs/en/api/http/beta/organization/rbac_groups/delete)
+
+DELETE/v1/organizations/rbac_groups/{rbac_group_id}
+
+Delete an RBAC Group. Groups provisioned by an identity provider (source type `"scim"`) cannot be deleted via the API while an organization in the tenant uses SCIM provisioning.
+
+#### BetaOrganizationRBAC Groups[Members](/docs/en/api/http/beta/organization/rbac_groups/members)
+
+##### [List RBAC Group Members](/docs/en/api/http/beta/organization/rbac_groups/members/list)
+
+GET/v1/organizations/rbac_groups/{rbac_group_id}/members
+
+List members of an RBAC Group.
+
+##### [Add RBAC Group Member](/docs/en/api/http/beta/organization/rbac_groups/members/create)
+
+POST/v1/organizations/rbac_groups/{rbac_group_id}/members
+
+Add a User to an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.
+
+##### [Remove RBAC Group Member](/docs/en/api/http/beta/organization/rbac_groups/members/delete)
+
+DELETE/v1/organizations/rbac_groups/{rbac_group_id}/members/{user_id}
+
+Remove a User from an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.
+
+#### BetaOrganization[RBAC Roles](/docs/en/api/http/beta/organization/rbac_roles)
+
+##### [List RBAC Roles](/docs/en/api/http/beta/organization/rbac_roles/list)
+
+GET/v1/organizations/rbac_roles
+
+List RBAC Roles in the organization.
+
+##### [Get RBAC Role](/docs/en/api/http/beta/organization/rbac_roles/retrieve)
+
+GET/v1/organizations/rbac_roles/{rbac_role_id}
+
+Retrieve an RBAC Role by ID.
+
+#### BetaOrganizationRBAC Roles[Permissions](/docs/en/api/http/beta/organization/rbac_roles/permissions)
+
+##### [List RBAC Role Permissions](/docs/en/api/http/beta/organization/rbac_roles/permissions/list)
+
+GET/v1/organizations/rbac_roles/{rbac_role_id}/permissions
+
+List the permissions an RBAC Role grants.

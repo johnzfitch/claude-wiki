@@ -2,7 +2,7 @@
 title: "How Claude Code is used in practice \\ Anthropic"
 source_url: "https://www.anthropic.com/research/claude-code-expertise"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:11:13Z"
+fetched_at: "2026-08-26T06:29:18Z"
 tags: ["claude-code"]
 ---
 
@@ -23,7 +23,7 @@ Jun 16, 2026
 
 Agentic coding has taken off. The share of GitHub projects with coding agent activity has more than doubled since late 2025,¹ and Claude Code users now spend an average of 20 hours per week using the tool.² Can people without formal coding experience successfully direct an agent through complex technical work? And what will rapid adoption and improvement of these tools mean for knowledge work broadly? While we don’t have full answers to these questions yet, we look to Claude Code usage data for early signals.
 
-This report provides evidence on how Claude Code is used in practice, based on a [privacy-preserving analysis](https://www.anthropic.com/research/clio) of ~400,000 interactive sessions from ~235,000 people between October 2025 and April 2026. It builds on prior work focused on [measures of autonomy](https://www.anthropic.com/research/measuring-agent-autonomy) in Claude Code sessions, and [how Claude Code is changing work at Anthropic](https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic).³ Here, we introduce a framework for describing interactive AI coding-assistant usage: what kind of work is being done, who is doing it, and whether it succeeds. We focus on Claude Code usage through a command-line interface (CLI), [Claude.ai](http://claude.ai/redirect/website.v1.8b6bc9f8-a959-4c55-bf79-ef4c7ab57d5d), or the Claude Code desktop app.⁴ By tracking how agentic coding usage changes as models get more capable, we can better understand how these tools affect the labor market for coding professionals and knowledge workers.
+This report provides evidence on how Claude Code is used in practice, based on a [privacy-preserving analysis](https://www.anthropic.com/research/clio) of ~400,000 interactive sessions from ~235,000 people between October 2025 and April 2026. It builds on prior work focused on [measures of autonomy](https://www.anthropic.com/research/measuring-agent-autonomy) in Claude Code sessions, and [how Claude Code is changing work at Anthropic](https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic).³ Here, we introduce a framework for describing interactive AI coding-assistant usage: what kind of work is being done, who is doing it, and whether it succeeds. We focus on Claude Code usage through a command-line interface (CLI), [Claude.ai](http://claude.ai/redirect/website.v1.cf2adab8-12a3-4be7-a765-eff678c06a02), or the Claude Code desktop app.⁴ By tracking how agentic coding usage changes as models get more capable, we can better understand how these tools affect the labor market for coding professionals and knowledge workers.
 
 What happens on Claude Code may be a preview of where knowledge work is headed, as agents become embedded in non-coding work. We find that Claude is handling more complex and more valuable tasks. At the same time, there remains a clear division of labor in agentic coding: People decide what to build, and the agent decides how to build it.
 
@@ -153,21 +153,23 @@ With acknowledgements to: Jake Eaton, Sarah Pollack, Hanah Ho, Szymon Sacher, An
   
 ## Related content
 
-### Discovering cryptographic weaknesses with Claude
+### How Claude is accelerating protein design and analytical chemistry
 
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
+In this post, we share two results that show how Claude can help life scientists increase the pace of their research.
 
-[Read more](/research/discovering-cryptographic-weaknesses)
+[Read more](/research/Claude-accelerates-protein-design)
 
-### Project Pilot: Can AI control a drone?
+### Patterns and problems in emerging multiagent systems
 
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
+Here, we identify a few examples of behavioral tendencies in current frontier models and show how they can produce unexpected systemic failures, in hopes of starting a conversation about mitigating these risks.
 
-[Read more](/research/project-pilot)
+[Read more](/research/multiagent-systems)
 
-### How Canada uses Claude: Findings from the Anthropic Economic Index
+### Reviewing the evidence on worker retraining programs
 
-[Read more](/research/how-canada-uses-claude)
+We're sharing a review of the evidence on worker retraining programs, coauthored by independent researcher David Roodman and Anthropic's Maxim Massenkoff.
+
+[Read more](/research/reviewing-the-evidence-on-worker-retraining-programs)
 
 [](/)
 
@@ -181,7 +183,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -233,7 +235,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -258,6 +260,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

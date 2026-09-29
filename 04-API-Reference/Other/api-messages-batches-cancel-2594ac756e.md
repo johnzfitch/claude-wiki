@@ -2,7 +2,7 @@
 title: "Cancel a Message Batch - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/messages/batches/cancel"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:40:18Z"
+fetched_at: "2026-09-26T06:39:14Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmessages%2Fbatches%2Fcancel)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,30 +40,30 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
 
-Create a Message Batch
+Create a Message Batch
 
 
-Retrieve a Message Batch
+Retrieve a Message Batch
 
 
-List Message Batches
+List Message Batches
 
 
-Cancel a Message Batch
+Cancel a Message Batch
 
 
-Delete a Message Batch
+Delete a Message Batch
 
 
-Retrieve Message Batch results
+Retrieve Message Batch results
 
 Managed Agents
 
@@ -85,88 +81,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -174,59 +192,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -245,37 +223,35 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Cancel
-
+Copy page
 
 
 
 cURL
 
-
+
 
-A beta version of this method exists and may have additional functionality. [View the beta version](/docs/en/api/beta/messages/batches/cancel).
+A beta version of this method exists and may have additional functionality. [View the beta version](/docs/en/api/http/beta/messages/batches/cancel).
+
+1.  [API reference](/docs/en/api/http)
+2.  [Messages](/docs/en/api/http/messages)
+3.  [Batches](/docs/en/api/http/messages/batches)
 
 # Cancel a Message Batch
 
-POST/v1/messages/batches/{message_batch_id}/cancel
+POST/v1/messages/batches/{message_batch_id}/cancel
 
 Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.
 
@@ -283,7 +259,7 @@ The number of canceled requests is specified in `request_counts`. To determine w
 
 Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
 
-##### Path ParametersExpand Collapse 
+##### Path parameters
 
 message_batch_id: string
 
@@ -291,199 +267,27 @@ message_batch_id: string
 
 ID of the Message Batch.
 
-[](#cancel.message_batch_id)
-
-##### ReturnsExpand Collapse 
+##### Headers
 
 
 
-MessageBatch object { id, archived_at, cancel_initiated_at, 7 more }
+"anthropic-workspace-id": optional string
 
 
+
+Optional header to select the Workspace for this request. The value is a Workspace ID (for example, `wrkspc_011CZkZaBF1tNoB5wlCeusgy`).
+
+Only needed for credentials that can act on more than one Workspace. A credential that belongs to a specific Workspace may omit it; if sent, it must match that Workspace.
+
+##### Returns
 
 
 
-id: string
+MessageBatch object{ type: "message_batch", id, archived_at, 7 more }
 
 
 
-Unique object identifier.
-
-The format and length of IDs may change over time.
-
-[](#message_batch.id)
-
-archived_at: string
-
-
-
-RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
-
-[](#message_batch.archived_at)
-
-cancel_initiated_at: string
-
-
-
-RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
-
-[](#message_batch.cancel_initiated_at)
-
-created_at: string
-
-
-
-RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-[](#message_batch.created_at)
-
-
-
-ended_at: string
-
-
-
-RFC 3339 datetime string representing the time at which processing for the Message Batch ended. Specified only once processing ends.
-
-Processing ends when every request in a Message Batch has either succeeded, errored, canceled, or expired.
-
-formatdate-time
-
-[](#message_batch.ended_at)
-
-expires_at: string
-
-
-
-RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-[](#message_batch.expires_at)
-
-
-
-processing_status: "in_progress" or "canceling" or "ended"
-
-
-
-Processing status of the Message Batch.
-
-One of the following:
-
-"in_progress"
-
-
-
-[](#message_batch.processing_status%5B0%5D)
-
-"canceling"
-
-
-
-[](#message_batch.processing_status%5B1%5D)
-
-"ended"
-
-
-
-[](#message_batch.processing_status%5B2%5D)
-
-[](#message_batch.processing_status)
-
-
-
-request_counts: [MessageBatchRequestCounts](/docs/en/api/messages/batches#message_batch_request_counts) { canceled, errored, expired, 2 more }
-
-
-
-Tallies requests within the Message Batch, categorized by their status.
-
-Requests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch.
-
-
-
-canceled: number
-
-
-
-Number of requests in the Message Batch that have been canceled.
-
-This is zero until processing of the entire Message Batch has ended.
-
-[](#message_batch.request_counts%20%2B%20(resource)%20messages.batches.canceled)
-
-
-
-errored: number
-
-
-
-Number of requests in the Message Batch that encountered an error.
-
-This is zero until processing of the entire Message Batch has ended.
-
-[](#message_batch.request_counts%20%2B%20(resource)%20messages.batches.errored)
-
-
-
-expired: number
-
-
-
-Number of requests in the Message Batch that have expired.
-
-This is zero until processing of the entire Message Batch has ended.
-
-[](#message_batch.request_counts%20%2B%20(resource)%20messages.batches.expired)
-
-processing: number
-
-
-
-Number of requests in the Message Batch that are processing.
-
-[](#message_batch.request_counts%20%2B%20(resource)%20messages.batches.processing)
-
-
-
-succeeded: number
-
-
-
-Number of requests in the Message Batch that have completed successfully.
-
-This is zero until processing of the entire Message Batch has ended.
-
-[](#message_batch.request_counts%20%2B%20(resource)%20messages.batches.succeeded)
-
-[](#message_batch.request_counts)
-
-
-
-results_url: string
-
-
-
-URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.
-
-Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
-
-[](#message_batch.results_url)
-
-
-
-type: "message_batch"
-
-
-
-Object type.
-
-For Message Batches, this is always `"message_batch"`.
-
-[](#message_batch.type)
-
-[](#message_batch)
-
-Cancel a Message Batch
+Cancel a Message Batch
 
 cURL
 

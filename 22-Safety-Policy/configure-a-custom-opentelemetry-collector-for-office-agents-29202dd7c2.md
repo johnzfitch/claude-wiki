@@ -2,14 +2,15 @@
 title: "Configure a custom OpenTelemetry collector for Office agents | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14447276-configure-a-custom-opentelemetry-collector-for-office-agents"
 category: "22-Safety-Policy"
-fetched_at: "2026-08-02T05:41:48Z"
+fetched_at: "2026-09-29T06:32:12Z"
 tags: ["agents"]
 ---
 
 # Configure a custom OpenTelemetry collector for Office agents
 
-May 15, 2026
+August 5, 2026
 
+Copy for LLM
 
 You can route full audit telemetry from Office agents to your own OpenTelemetry (OTEL) collector. This gives your organization complete control over retention, encryption, and integration with your SIEM or observability platform.
 
@@ -47,7 +48,7 @@ The protocol must be HTTP-based OTLP. gRPC is rejected at configuration time.
 
 For deployments that authenticate against your own model provider rather than Claude.ai, the collector endpoint is supplied through one of three configuration channels. All three use the same two keys.
 
-**Recommended:** Use the **[claude-in-office plugin](https://github.com/anthropics/financial-services-plugins/tree/main/claude-in-office)** for Claude Code. It walks you through generating the manifest, registering Entra extension attributes, and standing up a bootstrap endpoint with `otlp_endpoint` and `otlp_headers` pre-wired. The three channels below are documented for reference and manual setup.
+**Recommended:** Use the **[claude-for-msft-365-install plugin](https://github.com/anthropics/financial-services/tree/main/claude-for-msft-365-install)** for Claude Code. It walks you through generating the manifest, registering Entra extension attributes, and standing up a bootstrap endpoint with `otlp_endpoint` and `otlp_headers` pre-wired. The three channels below are documented for reference and manual setup.
 
 [TABLE]
 
@@ -59,7 +60,7 @@ If `otlp_endpoint` is unset or empty, no custom collector is configured and the 
 
 Append the keys as query string parameters to the taskpane URL in your custom add-in manifest:
 
-[`https://<addin-host>/taskpane.html?otlp_endpoint=https://otel-collector.your-domain.com&otlp_headers=Authorization=Bearer%20<token`](https://%3Caddin-host%3E/taskpane.html?otlp_endpoint=https://otel-collector.your-domain.com&otlp_headers=Authorization=Bearer%20%3Ctoken)`>`
+`https://<addin-host>/taskpane.html?otlp_endpoint=https://otel-collector.your-domain.com&otlp_headers=Authorization=Bearer%20<token>`
 
 URL-encode the values. This applies the configuration to every user who installs the manifest.
 
@@ -88,7 +89,7 @@ The bootstrap endpoint URL itself is configured via `bootstrap_url` in either th
 
 When multiple channels supply a value, later channels override earlier ones: manifest parameters are read first, then Entra claims, then the bootstrap response. The bootstrap response wins.
 
-If you haven't already, the fastest path is the **[claude-in-office plugin](https://github.com/anthropics/financial-services-plugins/tree/main/claude-in-office)**.
+If you haven't already, the fastest path is the **[claude-for-msft-365-install plugin](https://github.com/anthropics/financial-services/tree/main/claude-for-msft-365-install)**.
 
 ------------------------------------------------------------------------
 

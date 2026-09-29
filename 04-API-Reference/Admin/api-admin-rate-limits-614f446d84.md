@@ -2,7 +2,7 @@
 title: "Rate Limits - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/rate_limits"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:40:11Z"
+fetched_at: "2026-09-10T06:43:05Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fadmin%2Frate_limits)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,96 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,22 +160,28 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
+Create Enrollment URL
 
 
 Webhooks
+
+
+Unwrap
+
+
+Parse Unverified
 
 
 Admin
@@ -182,9 +192,9 @@ Invites
 
 Users
 
-RBAC Groups
+RBAC Groups
 
-RBAC Roles
+RBAC Roles
 
 Workspaces
 
@@ -203,7 +213,7 @@ Spend Limits
 Rate Limits
 
 
-List Organization Rate Limits
+List Organization Rate Limits
 
 Service Accounts
 
@@ -230,146 +240,33 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Rate limits
-
+Copy page
 
 
 
+1.  [API reference](/docs/en/api/http)
+2.  [Admin](/docs/en/api/http/admin)
+
 # Rate Limits
 
-##### [List Organization Rate Limits](/docs/en/api/admin/rate_limits/list)
+##### [List Organization Rate Limits](/docs/en/api/http/admin/rate_limits/list)
 
-GET/v1/organizations/rate_limits
+GET/v1/organizations/rate_limits
 
-##### ModelsExpand Collapse 
-
-
-
-RateLimitListResponse object { data, next_page }
-
-
+##### Models
 
 
 
-data: array of object { group_type, limits, models, type }
-
-
-
-Rate-limit entries for the organization, one per group.
-
-
-
-group_type: "batch" or "files" or "model_group" or 3 more
-
-
-
-The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`.
-
-One of the following:
-
-"batch"
-
-
-
-[](#rate_limit_list_response.data.items.group_type%5B0%5D)
-
-"files"
-
-
-
-[](#rate_limit_list_response.data.items.group_type%5B1%5D)
-
-"model_group"
-
-
-
-[](#rate_limit_list_response.data.items.group_type%5B2%5D)
-
-"skills"
-
-
-
-[](#rate_limit_list_response.data.items.group_type%5B3%5D)
-
-"token_count"
-
-
-
-[](#rate_limit_list_response.data.items.group_type%5B4%5D)
-
-"web_search"
-
-
-
-[](#rate_limit_list_response.data.items.group_type%5B5%5D)
-
-[](#rate_limit_list_response.data.items.group_type)
-
-
-
-limits: array of object { type, value }
-
-
-
-The limiter values that apply to this group.
-
-type: string
-
-
-
-The limiter type (for example, `requests_per_minute` or `input_tokens_per_minute`).
-
-[](#rate_limit_list_response.data.items.limits.items.type)
-
-value: number
-
-
-
-The configured limit value for this limiter type.
-
-[](#rate_limit_list_response.data.items.limits.items.value)
-
-[](#rate_limit_list_response.data.items.limits)
-
-models: array of string
-
-
-
-Model names this entry's limits apply to, including aliases. `null` when `group_type` is not `"model_group"`.
-
-[](#rate_limit_list_response.data.items.models)
-
-type: "rate_limit"
-
-
-
-Object type. Always `rate_limit` for organization rate-limit entries.
-
-[](#rate_limit_list_response.data.items.type)
-
-[](#rate_limit_list_response.data)
-
-next_page: string
-
-
-
-Token to provide in as `page` in the subsequent request to retrieve the next page of data.
-
-[](#rate_limit_list_response.next_page)
+RateLimitListResponse object{ id, group_type, limits, 2 more }

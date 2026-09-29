@@ -2,18 +2,18 @@
 title: "Claude Design | Turn Ideas into Design | Claude by Anthropic"
 source_url: "https://www.claude.com/product/design"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:43:54Z"
+fetched_at: "2026-09-17T06:28:51Z"
 ---
 
 # Claude Design
 
-Your idea, designed with Claude
+Design your idea with Claude
 
-Explore more directions than a deadline allows. Describe a prototype, deck, or one-pager, and Claude builds a draft. Refine it yourself, or hand it off to your tools or Claude Code. You're the designer, from start to finish.
+Describe a visual and Claude builds a first version, on brand. Refine, share, or hand off to the tools you use. You're the designer, start to finish.
 
 Start designing
 
-[Start designing](http://claude.ai/login?returnTo=%2Fdesign)
+[Start designing](https://claude.ai/artifacts)
 
 Start designing
 
@@ -21,31 +21,330 @@ Start designing
 
 Play video
 
+Now you can use Claude Design from inside any conversation with Claude.
+
+Learn more
+
+[Learn more](/features/artifacts)
+
+Learn more
+
 ## Frontier intelligence for every type of design work
 
-### Prototypes
+Asset creation
 
-Turn a static mockup into a shareable, interactive prototype you can test with real people. No PRs, no code review.
+One-pagers
 
-### Wireframes and mockups
+Mockups
 
-Sketch a feature flow, then hand it to Claude Code to build or to a designer to refine.
+Active
 
-### Design explorations
+Prompt
 
-Generate a dozen directions in minutes, then narrow down in your primary tool.
+Find my weakest revenue month from last year and plan a promo to address it. Draft the strategy, generate the campaign assets in Canva, segment my list in HubSpot, and stage the send. Show me everything before anything goes out.
 
-### Pitch decks
+Connectors
 
-Go from a rough outline to a finished, on-brand deck. Export to PPTX or send it where you work.
+Intuit QuickBooks
 
-### Marketing collateral
 
-Landing pages, social assets, and campaign visuals, ready for a designer to polish.
+Canva
 
-### Documents
 
-Create a resume or a one-pager and export to PDF.
+Slatebeck
+
+PROOF SHEET — THREE POSTS FOR THE FALL READOUT · OCT 02
+
+Slatebeck
+
+\[ FALL 26 \]
+
+\[ CHECKOUT RECOVERY \]
+
+−38%
+
+ABANDONED CARTS · 60 DAYS
+
+DAY 01DAY 60
+
+1 SQ = 1 DAY
+
+“We stopped guessing which offers worked. The readout just shows us.”
+
+Etta V., founder
+
+MARROW & PINE
+
+Slatebeck
+
+\[ FALL 26 \]
+
+Peak season, measured.
+
+\[ THE FALL READOUT — OCT 02 \]
+
+Every number, one page
+
+@SLATEBECK
+
+Slatebeck
+
+\[ FALL 26 \]
+
+\[ REPEAT ORDERS \]
+
+REPEAT ORDERS — SINCE SWITCHING
+
+“The Monday report used to take my whole morning. Now it’s waiting for me.”
+
+Sam O., operations
+
+JUNIPER TRADE GOODS
+
+\[ 01 — STAT \]
+
+\[ 02 — HEADLINE \]
+
+\[ 03 — TREND \]
+
+Run your next campaign to grow your business
+
+Dig into your numbers in Intuit QuickBooks, plan a promotion to get sales up, generate branded assets in Canva, and get your next campaign staged in HubSpot. You decide what goes out and when.
+
+Prompt
+
+Turn this proposal into a one-pager a prospect will want to open. Pull their details from Salesforce and export it as a PDF.
+
+Connectors
+
+Salesforce - Beta
+
+
+Google Drive
+
+
+Hearthside
+
+Wholesale proposal
+
+PREPARED FOR LARKSPUR HOTELS
+
+The coffee your guests
+
+remember the hotel for.
+
+A wholesale program for Larkspur’s fourteen Pacific Northwest properties: a house blend roasted to your spec, delivered every week, barista training at every opening — one roaster, one invoice.
+
+YOUR PRICE
+
+\$4.12
+
+PER LB
+
+ROAST TO DOOR
+
+48 hr
+
+OR LESS
+
+EST. ANNUAL VOLUME
+
+29,100
+
+LB
+
+Rollout, property by property
+
+The program, per property
+
+HOUSE BLEND
+
+\$4.12/lb
+
+−10%
+
+SINGLE ORIGIN, ROTATING
+
+\$5.40/lb
+
+−8%
+
+DELIVERY & GRINDER SERVICE
+
+Weekly
+
+incl.
+
+PER PROPERTY, PER YEAR
+
+\$8.6K
+
+−10%
+
+Two ways to try it before you sign
+
+01
+
+CUPPING AT THE ROASTERY
+
+02
+
+SIX-WEEK PILOT
+
+Sep 24
+
+2 sites
+
+Turn a proposal into a one-pager
+
+Make something a prospect actually wants to open, without waiting on a design queue, while staying on brand.
+
+Prompt
+
+Turn this rough idea into a clickable flow. Share it so the team can react, then open a ticket in Linear once we agree on it.
+
+Connectors
+
+Linear
+
+
+Triage flow
+
+tap through, then we open the ticket in Linear
+
+01
+
+Queue
+
+02
+
+Assign
+
+03
+
+Ticket
+
+9:41
+
+Inbox
+
+12 open
+
+Search requests
+
+DW
+
+Dana W.
+
+Refund stuck at processing
+
+P1
+
+1
+
+LO
+
+Liam O.
+
+Can’t update card on file
+
+P2
+
+IF
+
+Ines F.
+
+Invoice PDF missing totals
+
+P3
+
+TB
+
+Tom B.
+
+Login loop on mobile
+
+P2
+
+RK
+
+Ravi K.
+
+Exported report is blank
+
+P3
+
+9:41
+
+Request
+
+Refund stuck at processing
+
+P1
+
+Dana W. · Payments
+
+Charge captured twice on order \#4417. Refund shows pending since Tuesday.
+
+Suggested
+
+MC
+
+Maya Chen
+
+Payments · 3 open
+
+AP
+
+Arjun Patel
+
+Billing · 5 open
+
+SR
+
+Sam Ruiz
+
+Support · 2 open
+
+Assign to Maya
+
+2
+
+9:41
+
+Assigned to Maya
+
+Dana’s refund case is now on the Payments board.
+
+REL-214
+
+Linear · Payments
+
+3
+
+View in Linear
+
+MC
+
+Maya Chen
+
+Show my open count in the button so I can see the load before it lands.
+
+NEXT
+
+Tap a row → 02
+
+NEXT
+
+Assign → 03
+
+NEXT
+
+View in Linear → opens the issue
+
+Mock up the flow before it’s a ticket
+
+Turn a rough idea into a clickable flow your team can react to, before anyone writes a spec.
 
 ## How it works
 
@@ -53,7 +352,7 @@ Create a resume or a one-pager and export to PDF.
 
 Tell Claude what you need. It builds a first version you can react to, and you refine until it's yours.
 
-### Build in your design system.
+### Build in your design system
 
 Import from GitHub, design files, or your local codebase so Claude can build with your real components. The output looks like your company, not a template.
 
@@ -68,6 +367,27 @@ Comment on any element, edit text directly, or use the adjustment sliders Claude
 ### From the canvas to the tools you use
 
 Export reliably to PDF and PowerPoint or send your work to the apps you already use—the list of connectors now includes Adobe, Canva and more.
+
+[Prev](#)
+
+Prev
+
+0/5
+
+
+## Yours to share and finish
+
+### Share a link
+
+Every artifact gets a link, private by default until you're ready.
+
+### Export it
+
+Download into common file types, including PowerPoint, PDF, or HTML.
+
+### Pass it on
+
+Send visuals and slides on to the tools you already use and keep going there.
 
 "Adobe’s mission is to empower everyone to create — wherever they choose to work. We're excited to build on our Anthropic collaboration, making it possible for anyone to start their concepts in Claude and use the Adobe for creativity connector to take social posts, presentations, flyers and more from draft to done in Adobe Express. Marketers can also turn an idea from Claude Design into a personalized, on-brand website or email campaign ready to deliver to customers in just a few clicks with Adobe Experience Manager and Adobe Journey Optimizer."
 
@@ -106,42 +426,46 @@ Prev
 
 ## FAQ
 
-### What is Claude Design?
+### How can I access Claude Design?
 
-Claude Design is an Anthropic beta product that lets users collaborate with Claude to create on-brand visual work like designs, decks, and prototypes.It's early, and we're shipping improvements often.
+You can now use Claude Design in any conversation with Claude, including in Claude Code and the Artifacts tab, with Claude Tag coming soon. All of its features, including on-canvas editing, come with it.
 
-### Which plans include it?
+### What can I bring in and where can I send my work?
 
-Claude Design is in beta on Claude Pro, Max, Team, and Enterprise plans and included with your subscription. Start designing at [claude.ai/design](https://claude.ai/design).
-
-### I’m on Enterprise and don’t see it.
-
-It's off by default. An admin can enable it in Organization settings. See the admin guide in the Help Center.
-
-### What can I bring in, and where can I send my work?
-
-Import from your codebase, a web capture, or DOCX, PPTX, and XLSX files. Export to PPTX, PDF, or HTML, share an org-scoped link, hand off to Claude Code, or send to the apps you already use daily. The list of connectors now includes Adobe, Base44, Canva, Gamma, Lovable, Miro, Replit, Vercel and Wix, with more destinations coming soon.
+Import from your codebase, or DOCX, PPTX, and XLSX files. Export to PPTX, PDF, or HTML, hand off to Claude Code, or send to the apps you already use daily. Learn more about available destinations to send to in the [Help Center.](#)
 
 ### Will it match my brand?
 
-Bring in one or several design systems from a GitHub repo, design files, or raw uploads. Claude builds with your components, checks its output against your design system, and makes corrections before you see it. For larger teams, a new admin role can approve one standard system and lock down edits, so the work always matches your company guidelines.
+Bring in one or several design systems from a GitHub repo, design files, or raw uploads. Claude builds with your components, checks its output against your design system, and makes corrections before you see it. For larger teams, an admin role can approve one standard system and lock down edits, so the work always matches your company guidelines.
 
-### What are the usage limits?
+### What services does Claude Design connect with?
 
-Claude Design shares usage limits with chat, Claude Cowork, and Claude Code. See the Help Center for current details.
+Claude Design connects with Adobe, Canva, Gamma, Lovable, Miro, Replit, Vercel, and Wix, so your designs, prototypes, and files move between the tools your team already uses.
+
+### Can admins limit Claude Design to one design system?
+
+Yes. Admins can lock a team to a single approved design system, so every design stays on brand no matter who's building it.
+
+### How do I create designs from Claude Code?
+
+From your Claude Code session on desktop or from the terminal, ask Claude to turn your idea into a design, or use /design to create, edit, and sync design projects.
+
+### How do I bring in my company's design system?
+
+The new, integrated Claude Design has a revamped Design Systems feature, which you can manage in Settings \> Design Systems. To bring an existing design system over, open the Design tab at the bottom of the sidebar and click Migrate team design systems in the banner. Each design system becomes an artifact Claude can use in any conversation, including in Claude Code. Migrated systems aren't perfect, so each one shows a banner: click Let Claude clean it up and Claude tidies the guide, the tokens and the components. You can create a design system using Claude Code, which works best for organizations with existing React design systems, or in any conversation with Claude, which works best for brand design systems with fonts, colors and brand guidelines. [Learn more](#).
+
+### In which plan is Design included?
+
+Claude Design is included in all paid plans. Admins must turn it on in Organization settings.
+
+### What are my usage limits?
+
+Artifacts, including work made with Claude Design, Claude Slides and Claude Docs, count toward your plan's usage limits, like the rest of your work with Claude. Larger requests, like a full deck or design, use more of your limit than a typical message. See the [Help Center](#) for current details.
 
 [Prev](#)
 
 Prev
 
-
-## Start your next design with Claude
-
-Start designing
-
-[Start designing](http://claude.ai/login?returnTo=%2Fdesign)
-
-Start designing
 
 [Homepage](https://claude.com)
 
@@ -151,112 +475,6 @@ Homepage
 Thank you! Your submission has been received!
 
 Oops! Something went wrong while submitting the form.
-
-Write
-
-[Button Text](#)
-
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
 
 [Anthropic](https://www.anthropic.com/)
 
@@ -276,11 +494,6 @@ Products
   [Claude Code](/product/claude-code)
   Claude Code
 
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
 - Claude Cowork
 
   [Claude Cowork](/product/cowork)
@@ -290,11 +503,6 @@ Products
 
   [@Claude](/product/tag)
   @Claude
-
-- Claude Design
-
-  [Claude Design](/product/design)
-  Claude Design
 
 - Claude Science
 
@@ -320,22 +528,44 @@ Products
 
   [Log in](https://claude.ai/login)
 
-Features
+Capabilities
 
-- Claude for Chrome
+- Artifacts
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Artifacts](/features/artifacts)
+  Artifacts
 
-- Claude for Microsoft 365
+- Design
 
-  [Claude for Microsoft 365](/claude-for-microsoft-365)
-  Claude for Microsoft 365
+  [Design](/product/design)
+  Design
+
+- Connectors
+
+  [Connectors](/connectors)
+  Connectors
+
+- Plugins
+
+  [Plugins](/plugins)
+  Plugins
 
 - Skills
 
   [Skills](/skills)
   Skills
+
+Extensions
+
+- Claude in Chrome
+
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
+
+- Claude for Microsoft 365
+
+  [Claude for Microsoft 365](/claude-for-microsoft-365)
+  Claude for Microsoft 365
 
 Models
 
@@ -364,7 +594,19 @@ Models
   [Haiku](https://www.anthropic.com/claude/haiku)
   Haiku
 
-Solutions
+Enterprise
+
+- Overview
+
+  [Overview](/solutions/enterprise)
+  Overview
+
+- Claude Code for Enterprise
+
+  [Claude Code for Enterprise](/product/claude-code/enterprise)
+  Claude Code for Enterprise
+
+Use cases
 
 - AI agents
 
@@ -381,6 +623,13 @@ Solutions
   [Coding](/solutions/coding)
   Coding
 
+- Commerce
+
+  [Commerce](/solutions/commerce)
+  Commerce
+
+Departments
+
 - Customer support
 
   [Customer support](/solutions/customer-support)
@@ -391,10 +640,17 @@ Solutions
   [Cybersecurity](/solutions/cybersecurity)
   Cybersecurity
 
-- Enterprise
+- Legal
 
-  [Enterprise](/solutions/enterprise)
-  Enterprise
+  [Legal](/solutions/legal)
+  Legal
+
+- Sales
+
+  [Sales](/solutions/sales)
+  Sales
+
+Industries
 
 - Financial services
 
@@ -421,11 +677,6 @@ Solutions
   [K-12 teachers](/solutions/teachers)
   K-12 teachers
 
-- Legal
-
-  [Legal](/solutions/legal)
-  Legal
-
 - Life sciences
 
   [Life sciences](/solutions/life-sciences)
@@ -441,22 +692,46 @@ Solutions
   [Small business](/solutions/small-business)
   Small business
 
-Claude Platform
+Programs
+
+- Startups
+
+  [Startups](https://claude.com/programs/startups)
+  Startups
+
+- Scientists
+
+  [Scientists](/programs/team-plan-for-scientists)
+  Scientists
+
+Developers
+
+- Developer docs
+
+  [Developer docs](https://code.claude.com/docs/en/overview)
+  Developer docs
+
+- Community
+
+  [Community](/community)
+  Community
+
+- Console
+
+  [Console](https://platform.claude.com/docs/en/home)
+  Console
+
+- Engineering at Anthropic
+
+  [Engineering at Anthropic](https://www.anthropic.com/engineering)
+  Engineering at Anthropic
+
+Platform
 
 - Overview
 
   [Overview](/platform/api)
   Overview
-
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
 
 - Ecosystem
 
@@ -483,16 +758,6 @@ Claude Platform
   [Microsoft Foundry](/partners/microsoft-foundry)
   Microsoft Foundry
 
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](https://platform.claude.com/)
-  Console login
-
 Resources
 
 - Blog
@@ -505,40 +770,20 @@ Resources
   [Claude partner network](/partners)
   Claude partner network
 
-- Community
+- Claude Academy
 
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
+  [Claude Academy](https://academy.claude.com/)
+  Claude Academy
 
 - Customer stories
 
   [Customer stories](/customers)
   Customer stories
 
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
 - Events
 
   [Events](https://www.anthropic.com/events)
   Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
 
 - Powered by Claude
 
@@ -547,18 +792,45 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](#)
   Service partners
 
-- Tutorials
+Help and security
 
-  [Tutorials](/resources/tutorials)
-  Tutorials
+- Availability
 
-- Use cases
+  [Availability](https://www.anthropic.com/supported-countries)
+  Availability
 
-  [Use cases](/resources/use-cases)
-  Use cases
+- Check files
+
+  [Check files](https://claude.com/check-files)
+  Check files
+
+- Regional compliance
+
+  [Regional compliance](/regional-compliance)
+  Regional compliance
+
+- Report abuse
+
+  [Report abuse](https://claude.com/form/anthropic-content-reporting)
+  Report abuse
+
+- Security and compliance
+
+  [Security and compliance](https://trust.anthropic.com/)
+  Security and compliance
+
+- Status
+
+  [Status](https://status.anthropic.com/)
+  Status
+
+- Support center
+
+  [Support center](https://support.claude.com/en/)
+  Support center
 
 Company
 
@@ -577,19 +849,14 @@ Company
   [Policy](https://www.anthropic.com/policy)
   Policy
 
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
 - Research
 
   [Research](https://www.anthropic.com/research)
   Research
 
-- News
+- Anthropic news
 
-  [News](https://www.anthropic.com/news)
-  News
+  [Anthropic news](https://www.anthropic.com/news)
+  Anthropic news
 
 - Policy on the AI Exponential

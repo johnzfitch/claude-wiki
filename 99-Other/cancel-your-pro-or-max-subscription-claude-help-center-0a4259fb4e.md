@@ -2,12 +2,15 @@
 title: "Cancel your Pro or Max subscription | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8325617"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:53Z"
+fetched_at: "2026-09-29T06:31:41Z"
 tags: ["desktop"]
 ---
 
 # Cancel your Pro or Max subscription
 
+July 9, 2026
+
+Copy for LLM
 
 You may cancel your Pro or Max plan subscription at any time by following the cancellation instructions for the platform you signed up on. Your cancellation will take effect at the end of your current billing period and you can continue using your paid plan until then.
 

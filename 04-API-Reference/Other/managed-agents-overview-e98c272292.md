@@ -2,7 +2,7 @@
 title: "Claude Managed Agents overview - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/overview"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:40:40Z"
+fetched_at: "2026-09-26T06:39:50Z"
 tags: ["agents", "api"]
 ---
 
@@ -12,31 +12,27 @@ tags: ["agents", "api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Foverview)
 
 
 
-Search
+
 
+SearchCtrlK
 
 First steps
 
-[Overview](/docs/en/managed-agents/overview)[Quickstart](/docs/en/managed-agents/quickstart)[Prototype in Console](/docs/en/managed-agents/onboarding)[Migration](/docs/en/managed-agents/migration)
+[Overview](/docs/en/managed-agents/overview)[Quickstart](/docs/en/managed-agents/quickstart)[Build in Console](/docs/en/managed-agents/onboarding)[Migration](/docs/en/managed-agents/migration)
 
 Define your agent
 
@@ -46,11 +42,11 @@ Configure agent environment
 
 [Cloud environment setup](/docs/en/managed-agents/environments)[Cloud sandbox reference](/docs/en/managed-agents/cloud-sandboxes-reference)
 
-Self-hosted sandboxes
+[Self-hosted sandboxes](/docs/en/managed-agents/self-hosted-sandboxes)
 
 Delegate work to your agent
 
-[Start a session](/docs/en/managed-agents/sessions)[Session operations](/docs/en/managed-agents/session-operations)[Session event stream](/docs/en/managed-agents/events-and-streaming)[Subscribe to webhooks](/docs/en/managed-agents/webhooks)[Define outcomes](/docs/en/managed-agents/define-outcomes)[Authenticate with vaults](/docs/en/managed-agents/vaults)
+[Start a session](/docs/en/managed-agents/sessions)[Session operations](/docs/en/managed-agents/session-operations)[Session event stream](/docs/en/managed-agents/events-and-streaming)[Session budgets](/docs/en/managed-agents/budgets)[Subscribe to webhooks](/docs/en/managed-agents/webhooks)[Define outcomes](/docs/en/managed-agents/define-outcomes)[Authenticate with vaults](/docs/en/managed-agents/vaults)
 
 Manage agent context
 
@@ -70,7 +66,7 @@ Working with files
 
 [Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
 
-Images and vision
+[Images and vision](/docs/en/build-with-claude/vision)
 
 Skills
 
@@ -80,72 +76,68 @@ MCP
 
 [Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)
 
-MCP tunnels
+[MCP tunnels](/docs/en/agents-and-tools/mcp-tunnels/overview)
 
 Claude on cloud platforms
 
 [Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)
 
-[](/login)
+[Console](/)
 
-
-
-
-Managed Agents
-
-Overview
-
-Managed Agents/First steps
+Managed AgentsFirst steps
 
 # Claude Managed Agents overview
 
+Copy page
 
 
 
 Pre-built, configurable agent harness that runs in managed infrastructure. Best for long-running tasks and asynchronous work.
 
+Copy page
 
 
 
+Managed Agents
+
+[Beta](/docs/en/build-with-claude/overview#feature-availability)
+
+[Beta header](/docs/en/api/beta-headers)
+
+managed-agents-2026-04-01
+
 Anthropic offers two ways to build with Claude, each suited to different use cases:
 
-|                | Messages API                                                          | Claude Managed Agents                                                     |
-|----------------|-----------------------------------------------------------------------|---------------------------------------------------------------------------|
-| **What it is** | Direct model prompting access                                         | Pre-built, configurable agent harness that runs in managed infrastructure |
-| **Best for**   | Custom agent loops and fine-grained control                           | Long-running tasks and asynchronous work                                  |
-| **Learn more** | [Messages API docs](/docs/en/build-with-claude/working-with-messages) | [Claude Managed Agents docs](/docs/en/managed-agents/overview)            |
+|                | Messages API                                | Claude Managed Agents                                                     |
+|----------------|---------------------------------------------|---------------------------------------------------------------------------|
+| **What it is** | Direct model prompting access               | Pre-built, configurable agent harness that runs in managed infrastructure |
+| **Best for**   | Custom agent loops and fine-grained control | Long-running tasks and asynchronous work                                  |
 
-Claude Managed Agents provides the harness and infrastructure for running Claude as an autonomous agent. Instead of building your own agent loop, tool execution, and runtime, you get a fully managed environment where Claude can read files, run commands, browse the web, and run code securely. The harness supports built-in prompt caching, compaction, and other performance optimizations for high-quality, efficient agent outputs.
+Claude Managed Agents provides the harness and infrastructure for running Claude as an autonomous agent. Instead of building your own agent loop, tool execution, and runtime, you get a fully managed environment where Claude can read files, run commands, browse the web, and run code securely. The harness supports built-in prompt caching, compaction, and other performance optimizations for high-quality, efficient agent outputs. To build your own agent loop with direct model access instead, see [Using the Messages API](/docs/en/build-with-claude/working-with-messages).
 
-
+
 
 Claude Managed Agents is also available on Claude Platform on AWS, with some differences in feature availability and session behavior. See [Claude Managed Agents](/docs/en/build-with-claude/claude-platform-on-aws#claude-managed-agents) in the Claude Platform on AWS guide.
 
-
 
 
-Quickstart
+[Quickstart](/docs/en/managed-agents/quickstart)
 
 Create your first agent session
 
-
 
 
-Start a session
+[Start a session](/docs/en/managed-agents/sessions)
 
 Create a session and send your first event
 
-
 
 
-Reference
+[Reference](/docs/en/managed-agents/reference)
 
 Event types, rate limits, CLI flags, and other lookup tables
 
-
-
-
-Core concepts
+## Core concepts
 
 Claude Managed Agents is built around four concepts:
 
@@ -156,45 +148,39 @@ Claude Managed Agents is built around four concepts:
 | **Session**     | A running agent instance within an environment, performing a specific task and generating outputs                             |
 | **Events**      | Messages exchanged between your application and the agent (user turns, tool results, status updates)                          |
 
-
-
-
-How it works
+## How it works
 
 1.  1
 
-    Create an agent
+    ### Create an agent
 
     Define the model, system prompt, tools, MCP servers, and skills. Create the agent once and reference it by ID across sessions.
 
 2.  2
 
-    Create an environment
+    ### Create an environment
 
     Configure where the agent runs: a cloud sandbox, or a [self-hosted sandbox](/docs/en/managed-agents/self-hosted-sandboxes) on your own infrastructure.
 
 3.  3
 
-    Start a session
+    ### Start a session
 
     Launch a session that references your agent and environment configuration.
 
 4.  4
 
-    Send events and stream responses
+    ### Send events and stream responses
 
     Send user messages as events. Claude autonomously runs tools and streams back results through server-sent events (SSE). Event history is persisted server-side and can be fetched in full.
 
 5.  5
 
-    Steer or interrupt
+    ### Steer or interrupt
 
     Send additional user events to guide the agent mid-execution, or interrupt it to change direction.
 
-
-
-
-When to use Claude Managed Agents
+## When to use Claude Managed Agents
 
 Claude Managed Agents is best for workloads that need:
 
@@ -205,26 +191,20 @@ Claude Managed Agents is best for workloads that need:
 - **Stateful sessions:** Persistent filesystems and conversation history across multiple interactions
 - **Scheduled execution:** Recurring agent runs on a cron schedule through [scheduled deployments](/docs/en/managed-agents/scheduled-deployments)
 
-
-
-
-Supported tools
+## Supported tools
 
 Claude Managed Agents gives Claude access to a set of built-in tools:
 
 - **Bash:** Run shell commands in the sandbox
 - **File operations:** Read, write, edit, glob, and grep files in the sandbox
-- **Web search and fetch:** Search the web and retrieve content from URLs
+- **Web search and fetch:** Search the web and retrieve content from URLs, optionally restricted to an allowlist or blocklist of domains
 - **MCP servers:** Connect to external tool providers
 
 See [Tools](/docs/en/managed-agents/tools) for the full list and configuration options.
 
+## Beta access
 
-
-
-Beta access
-
-
+
 
 Claude Managed Agents is in beta. All Managed Agents endpoints require the `managed-agents-2026-04-01` beta header. The SDK sets the beta header automatically. Behaviors may be refined between releases to improve outputs.
 

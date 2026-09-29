@@ -1,8 +1,8 @@
 ---
-title: "Anthropic opens Bengaluru office and announces new partnerships across India \\ Anthropic"
+title: "Anthropic opens Bengaluru office \\ Anthropic"
 source_url: "https://www.anthropic.com/news/bengaluru-office-partnerships-across-india"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:41:28Z"
+fetched_at: "2026-09-10T06:46:09Z"
 tags: ["enterprise", "git"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["enterprise", "git"]
 
 Feb 16, 2026
 
-India is the second-largest market for [Claude.ai](http://claude.ai/redirect/website.v1.39921575-1f66-4232-a36f-3771e0a64c0e), home to a developer community doing some of the most technically intense AI work we see anywhere. [Nearly half of Claude usage](https://www.anthropic.com/research/india-brief-economic-index) in India comprises computer and mathematical tasks: building applications, modernizing systems, and shipping production software.
+India is the second-largest market for [Claude.ai](http://claude.ai/redirect/website.v1.88309bc6-abe4-4596-9459-939607c77f12), home to a developer community doing some of the most technically intense AI work we see anywhere. [Nearly half of Claude usage](https://www.anthropic.com/research/india-brief-economic-index) in India comprises computer and mathematical tasks: building applications, modernizing systems, and shipping production software.
 
 Today, as we officially open our Bengaluru office, we’re announcing partnerships across enterprise, education, and agriculture that deepen our commitment to India across a range of sectors.
 
@@ -61,17 +61,21 @@ For information about career opportunities at our Bengaluru office, visit our [c
 
 ## Related content
 
-### Investigating three real-world incidents in our cybersecurity evaluations
+### Developing Enterprise Frontier Safeguards with our customers
 
-[Read more](/news/investigating-incidents-cybersecurity-evals)
+[Read more](/news/enterprise-frontier-safeguards)
 
-### Our position on open-weights models
+### Improving our alignment and security efforts
 
-[Read more](/news/position-open-weights-models)
+On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
 
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+[Read more](/news/improving-alignment-security-efforts)
 
-[Read more](/news/cognizant-anthropic)
+### Previewing the Model Hardware Standard
+
+We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
+
+[Read more](/news/model-hardware-standard-research-preview)
 
 [](/)
 
@@ -85,7 +89,7 @@ For information about career opportunities at our Bengaluru office, visit our [c
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -105,6 +109,7 @@ For information about career opportunities at our Bengaluru office, visit our [c
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -137,7 +142,7 @@ For information about career opportunities at our Bengaluru office, visit our [c
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -150,7 +155,7 @@ For information about career opportunities at our Bengaluru office, visit our [c
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -162,6 +167,7 @@ For information about career opportunities at our Bengaluru office, visit our [c
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

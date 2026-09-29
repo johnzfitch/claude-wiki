@@ -2,7 +2,7 @@
 title: "Why am I being asked to verify my payment method? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11818288-why-am-i-being-asked-to-verify-my-payment-method"
 category: "99-Other"
-fetched_at: "2026-08-02T05:40:52Z"
+fetched_at: "2026-09-29T06:30:57Z"
 tags: ["cli"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["cli"]
 
 March 16, 2026
 
+Copy for LLM
 
 If you see the following pop-up when you log in to your Claude account, you’ll need to click the “Verify now” button to verify your payment method:
 

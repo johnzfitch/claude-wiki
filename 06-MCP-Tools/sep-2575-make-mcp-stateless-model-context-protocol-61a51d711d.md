@@ -2,7 +2,7 @@
 title: "SEP-2575: Make MCP Stateless - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps/2575-stateless-mcp"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:45Z"
+fetched_at: "2026-08-03T07:16:59Z"
 tags: ["mcp"]
 ---
 
@@ -56,6 +56,7 @@ tags: ["mcp"]
 - [Open Questions](#open-questions)
   - [What belongs in \_meta vs. as a top-level protocol field?](#what-belongs-in-_meta-vs-as-a-top-level-protocol-field)
   - [Should clientInfo be part of ClientCapabilities?](#should-clientinfo-be-part-of-clientcapabilities)
+- [Changes since SEP became Final](#changes-since-sep-became-final)
 
 Final
 
@@ -679,3 +680,14 @@ This SEP places several previously-handshake-negotiated values (`protocolVersion
 Should `clientInfo` be part of `ClientCapabilities`?
 
 Currently, `clientInfo` (`Implementation` type) and `clientCapabilities` (`ClientCapabilities` type) are separate fields. In a per-request model, having a single field for all client metadata would reduce overhead. However, `clientInfo` serves a different purpose (identity/UI) than capabilities (feature negotiation). Should `clientInfo` be folded into `ClientCapabilities`, remain a separate per-request `_meta` field, or be handled through a different mechanism entirely (e.g., only sent via `subscriptions/listen`)?
+
+
+[​](#changes-since-sep-became-final)
+
+Changes since SEP became Final
+
+This SEP is preserved as a historical record of what was accepted. The list below tracks changes made to the specification after this SEP reached Final status. Refer to the current [specification](https://modelcontextprotocol.io/specification) for the authoritative, up-to-date requirements.
+
+- **Client identity became optional request metadata.** [\#3002](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/3002) made `io.modelcontextprotocol/clientInfo` optional. Clients **SHOULD** include it on every request unless specifically configured not to do so.
+- **Server identity moved to optional result metadata.** [\#3002](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/3002) introduced `io.modelcontextprotocol/serverInfo` in result `_meta` and removed the top-level `DiscoverResult.serverInfo` field to avoid duplicate representations. Servers **SHOULD** include this metadata on every result unless specifically configured not to do so.
+- **Subscriptions gained a graceful completion result.** [\#2953](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2953) defined a `subscriptions/listen` result for server-initiated graceful closure, replacing the SEP’s statement that a subscription has no natural completion result. Servers **SHOULD** send this result before closing the stream.

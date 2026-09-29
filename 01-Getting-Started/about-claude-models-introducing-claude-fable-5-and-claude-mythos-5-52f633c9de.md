@@ -2,7 +2,7 @@
 title: "Introducing Claude Fable 5 and Claude Mythos 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5"
 category: "01-Getting-Started"
-fetched_at: "2026-08-02T05:37:19Z"
+fetched_at: "2026-08-25T06:45:56Z"
 ---
 
 - [Managed Agents](/docs/en/managed-agents/overview)
@@ -11,50 +11,67 @@ fetched_at: "2026-08-02T05:37:19Z"
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Ffable-5%2Fintroducing-claude-fable-5-and-claude-mythos-5)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Models
 
-[Models overview](/docs/en/about-claude/models/overview)[Model IDs and versioning](/docs/en/about-claude/models/model-ids-and-versions)[Choosing a model](/docs/en/about-claude/models/choosing-a-model)[Introducing Claude Fable 5 and Claude Mythos 5](/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5)[What's new in Claude Sonnet 5](/docs/en/about-claude/models/whats-new-sonnet-5)[What's new in Claude Opus 5](/docs/en/about-claude/models/whats-new-opus-5)[Upgrade between model versions](/docs/en/about-claude/models/migration-guide)[Model deprecations](/docs/en/about-claude/model-deprecations)[Model cards](/docs/en/resources/overview)[System prompts](/docs/en/release-notes/system-prompts)[Pricing](/docs/en/about-claude/pricing)
+[Models overview](/docs/en/models/overview)
 
-[](/login)
+[Claude Fable 5](/docs/en/models/fable-5/overview)
 
+[Overview](/docs/en/models/fable-5/overview)[What's new](/docs/en/models/fable-5/introducing-claude-fable-5-and-claude-mythos-5)
 
-
+[Claude Opus 5](/docs/en/models/opus-5/overview)
 
-Models & pricing
+[Claude Sonnet 5](/docs/en/models/sonnet-5/overview)
 
-Introducing Claude Fable 5 and Claude Mythos 5
+[Claude Haiku 4.5](/docs/en/models/haiku-4-5/overview)
 
-Models & pricing/Models
+Specialized models
+
+Legacy models
+
+Guides
+
+[Choosing a model](/docs/en/about-claude/models/choosing-a-model)[Optimizing for cost and intelligence](/docs/en/about-claude/models/optimizing-for-cost-and-intelligence)[Upgrade between model versions](/docs/en/about-claude/models/migration-guide)
+
+Lifecycle and reference
+
+[Model IDs and versioning](/docs/en/about-claude/models/model-ids-and-versions)[Model deprecations](/docs/en/about-claude/model-deprecations)[Model cards](/docs/en/resources/overview)[Pricing](/docs/en/about-claude/pricing)
+
+System prompts
+
+[](/)
+
+Console
+
+[Models & pricing](/docs/en/models/overview)Claude Fable 5
 
 # Introducing Claude Fable 5 and Claude Mythos 5
 
+Copy page
 
 
 
 Claude Fable 5 and Claude Mythos 5 capabilities, API changes, and availability.
 
+Copy page
 
 
 
@@ -81,7 +98,7 @@ Claude Fable 5 and Claude Mythos 5 share the same specs and pricing:
 - **Context window and output:** a [1M token context window](/docs/en/build-with-claude/context-windows) by default, and up to 128k output tokens per request.
 - **Pricing:** \$10 USD per million input tokens and \$50 USD per million output tokens.
 
-For specs across all current models, see the [models overview](/docs/en/about-claude/models/overview).
+For specs across all current models, see the [models overview](/docs/en/models/overview).
 
 
 
@@ -122,8 +139,8 @@ Availability
 
 Claude Fable 5 and Claude Mythos 5 both become available on June 9, 2026:
 
-- **Claude Fable 5** is generally available on the Claude API, [Amazon Bedrock](/docs/en/build-with-claude/claude-in-amazon-bedrock), [Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws), [Google Cloud](/docs/en/build-with-claude/claude-on-vertex-ai), and [Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry).
-- **Claude Mythos 5** is not generally available: it is offered in limited availability to approved customers in [Project Glasswing](https://anthropic.com/glasswing). For access, contact your Anthropic, AWS, or Google Cloud account team. Customers without access to Claude Mythos 5 can use Claude Fable 5, which is generally available and offers the same capabilities.
+- **Claude Fable 5** is available on the Claude API, [Amazon Bedrock](/docs/en/build-with-claude/claude-in-amazon-bedrock), [Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws), [Google Cloud](/docs/en/build-with-claude/claude-on-vertex-ai), and [Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry).
+- **Claude Mythos 5** is offered only to approved customers in [Project Glasswing](https://anthropic.com/glasswing). For access, contact your Anthropic, AWS, or Google Cloud account team. Customers without access to Claude Mythos 5 can use Claude Fable 5, which does not require access approval and offers the same capabilities.
 
 Claude Fable 5 and Claude Mythos 5 carry 30-day data retention and are not available under zero data retention: both are designated [Covered Models](https://support.claude.com/en/articles/15425695). See [Model-specific data retention requirements](/docs/en/manage-claude/api-and-data-retention#model-specific-data-retention-requirements).
 
@@ -194,48 +211,48 @@ Step-by-step instructions live in the migration guide:
 
 Next steps
 
-
 
 
-Migration guide
+[Migration guide](/docs/en/about-claude/models/migration-guide)
 
 Step-by-step upgrade instructions from Claude Opus 4.8 and Claude Mythos Preview.
 
-
 
 
-Models overview
+[Models overview](/docs/en/models/overview)
 
 Specs and comparison for all current Claude models.
 
+
 
-Adaptive thinking
+[Adaptive thinking](/docs/en/build-with-claude/thinking)
 
 The only thinking mode on Claude Fable 5 and Claude Mythos 5.
 
+
 
-Refusals and fallback
+[Refusals and fallback](/docs/en/build-with-claude/refusals-and-fallback)
 
 How Claude Fable 5 declines requests, and how to retry on another model.
 
-
-Fallback credit
+[Fallback credit](/docs/en/build-with-claude/fallback-credit)
 
 Avoid paying the prompt-cache cost twice on a retry.
 
+
 
-Fallback and billing cookbook
-
-
+[Fallback and billing cookbook](https://platform.claude.com/cookbook/fable-5-fallback-billing-guide)
 
 A worked end-to-end example of refusal handling, fallback, and billing.
 
+
 
-Effort
+[Effort](/docs/en/build-with-claude/effort)
 
 Control thinking depth and cost on Claude Fable 5 and Claude Mythos 5.
 
+
 
-Prompting Claude Fable 5
+[Prompting Claude Fable 5](/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5)
 
 Fable-specific prompting techniques.

@@ -2,13 +2,15 @@
 title: "My prompt isn’t giving me a helpful answer. | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/7996857-my-prompt-isn-t-giving-me-a-helpful-answer"
 category: "21-Account-Support"
-fetched_at: "2026-08-02T05:42:52Z"
+fetched_at: "2026-09-29T06:32:02Z"
 tags: ["prompting"]
 ---
 
 # My prompt isn’t giving me a helpful answer.
 
 March 16, 2026
+
+Copy for LLM
 
 Claude works best when you give it clear and specific instructions. When crafting your prompt, keep the following principles in mind:
 

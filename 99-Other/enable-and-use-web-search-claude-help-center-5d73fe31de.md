@@ -2,14 +2,23 @@
 title: "Enable and use web search | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10684626"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:24Z"
+fetched_at: "2026-09-29T06:30:13Z"
 tags: ["search"]
 ---
 
 # Enable and use web search
 
+Updated today
+
+Copy for LLM
 
 You can have Claude search the internet to provide you with up-to-date information and insights when using the following models:
+
+- Sonnet 5.5
+
+- Opus 5.5
+
+- Fable 5.1
 
 - Opus 5
 
@@ -31,20 +40,21 @@ Web search expands Claude's knowledge with real-time data, helping you make bett
 
 **To access this feature on a Team or Enterprise plan account:**
 
-An Owner or Primary Owner must first enable web search for the entire workspace. This can be found in **[Admin settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**:
-
+An Owner or Primary Owner must first enable web search for the entire workspace in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**.
 
 Once this is enabled at the workspace level, any member of the organization can switch it on while starting a chat by clicking the “+” button in the lower left corner of the chat window and selecting “Web search." Users can toggle this off for chats that don’t require web search capabilities.
 
-## How to enable web search in a chat
+**Note:** If you have the new Claude experience, there's no web search toggle. Claude searches the web when it helps.
 
-1.  Click on the slider icon in your chat input interface.
+## Enable web search in a chat
 
-2.  Locate **Web search** in the dropdown.
+1.  Click on the “+” button in the lower left corner of the chat window.
 
-3.  Switch the toggle on.
+2.  Find "Web search” in the dropdown and click on it.
 
-You can disable the feature at any time by following the same steps and turning the toggle off.
+3.  A checkmark will appear next to “Web search” when it’s enabled.
+
+You can disable the feature at any time by clicking “Web search” again.
 
 ## How web search works
 
@@ -70,11 +80,11 @@ When Claude searches the web:
 
 When “Web search” is toggled on, Claude can also retrieve content directly from web pages when provided with specific URLs. This feature, called web fetch, allows Claude to access and analyze the full content of articles, blog posts, and other web pages you want to discuss.
 
-**Important note for free Claude accounts:** When you provide Claude with a direct link to a long article or document and ask it to analyze or summarize the contents, the entire article is retrieved into Claude's context window. This can consume a significant portion of your usage capacity, especially for lengthy content. For example, asking Claude to summarize a 10,000-word article will use substantially more of your context window than a regular web search query.
+**Important note for free Claude accounts:** When you provide Claude with a direct link to a long article or document and ask it to analyze or summarize the contents, the entire article is retrieved into Claude's context window. This can consume a significant portion of your usage limit, especially for lengthy content. For example, asking Claude to summarize a 10,000-word article will use substantially more of your context window than a regular web search query.
 
 ## Image results
 
-When web search is enabled, Claude can also search for and display images directly in your conversation. You don't need to enable a separate setting — image results are part of web search.
+When web search is enabled, Claude can also search for and display images directly in your conversation. You don't need to enable a separate setting—image results are part of web search.
 
 For example, you might ask Claude to:
 
@@ -88,13 +98,13 @@ For example, you might ask Claude to:
 
 Claude selects images from web search results, powered by Bing, and displays them alongside its text response. Each image includes a source link so you can visit the original page for more details.
 
-Image search is powered by Bing ([https://www.microsoft.com/en-us/privacy/privacystatement](https://www.microsoft.com/en-us/privacy/privacystatement)).
+Image search is powered by Bing (**[Microsoft Privacy Statement](https://www.microsoft.com/en-us/privacy/privacystatement)**).
 
 Claude can also display interactive content in search results. For more detailed information, see here: **[Visual and interactive content](https://support.claude.com/en/articles/13641943-visual-responses-and-interactive-widgets)**.
 
-## Managing usage on free Claude accounts
+## Manage usage on free Claude accounts
 
-As a free user, you have daily usage limits for Claude. Since web search and fetch both contribute to these limits, here are some tips to make the most of your capacity:
+As a free user, you have usage limits that reset every five hours. Since web search and fetch both contribute to these limits, here are some tips to make the most of your capacity:
 
 - **Be mindful of direct links:** Before asking Claude to analyze a long article via its URL, consider whether you need the full analysis or just key points.
 
@@ -104,11 +114,11 @@ As a free user, you have daily usage limits for Claude. Since web search and fet
 
 To disable web search and conserve your capacity:
 
-1.  Click on the slider icon in the lower left corner of your chat input.
+1.  Click on the “+” button in the lower left corner of the chat window.
 
-2.  Find **Web search** in the dropdown.
+2.  Find "Web search” in the dropdown and click on it.
 
-3.  Toggle it off.
+3.  The checkmark next to “Web search” will disappear when it’s disabled.
 
 You can re-enable it anytime you need current information.
 
@@ -140,10 +150,10 @@ You can re-enable it anytime you need current information.
 
 - Search times may vary based on query complexity.
 
-- Usage of web search and web fetch counts toward your daily limits.
+- Usage of web search and web fetch counts toward your usage limits.
 
 ## Support
 
 - For web search questions or support, please visit our **[Online Safety Contacts](https://support.claude.com/en/articles/11174660-online-safety-contacts)** page.
 
-- For content removal requests, please visit our **[Blocking and Removing Content from Claude](https://support.claude.com/en/articles/10684638-reporting-blocking-and-removing-content-from-claude)** page.
+- For content removal requests, please visit our **[Report, block, and remove content from Claude](https://support.claude.com/en/articles/10684638)** page.

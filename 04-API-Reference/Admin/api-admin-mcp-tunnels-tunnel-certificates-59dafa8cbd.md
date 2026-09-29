@@ -2,7 +2,7 @@
 title: "Tunnel Certificates - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/mcp_tunnels/tunnel_certificates"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:37:50Z"
+fetched_at: "2026-09-10T06:41:35Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fadmin%2Fmcp_tunnels%2Ftunnel_certificates)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,96 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,22 +160,28 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
+Create Enrollment URL
 
 
 Webhooks
+
+
+Unwrap
+
+
+Parse Unverified
 
 
 Admin
@@ -182,9 +192,9 @@ Invites
 
 Users
 
-RBAC Groups
+RBAC Groups
 
-RBAC Roles
+RBAC Roles
 
 Workspaces
 
@@ -211,33 +221,33 @@ Federation Rules
 MCP Tunnels
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 
-Archive Tunnel
+Archive Tunnel
 
 Tunnel Certificates
 
 
-Create Tunnel Certificate
+Create Tunnel Certificate
 
 
-Get Tunnel Certificate
+Get Tunnel Certificate
 
 
-List Tunnel Certificates
+List Tunnel Certificates
 
 
-Archive Tunnel Certificate
+Archive Tunnel Certificate
 
 
 Compliance API
@@ -256,59 +266,57 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Tunnel certificates
-
+Copy page
 
 
 
+1.  [API reference](/docs/en/api/http)
+2.  [Admin](/docs/en/api/http/admin)
+3.  [MCP Tunnels](/docs/en/api/http/admin/mcp_tunnels)
+
 # Tunnel Certificates
 
-##### [Create Tunnel Certificate](/docs/en/api/admin/mcp_tunnels/tunnel_certificates/create)
+##### [Create Tunnel Certificate](/docs/en/api/http/admin/mcp_tunnels/tunnel_certificates/create)
 
 Deprecated
 
-POST/v1/organizations/tunnels/{tunnel_id}/certificates
+POST/v1/organizations/tunnels/{tunnel_id}/certificates
 
-##### [Get Tunnel Certificate](/docs/en/api/admin/mcp_tunnels/tunnel_certificates/retrieve)
-
-Deprecated
-
-GET/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}
-
-##### [List Tunnel Certificates](/docs/en/api/admin/mcp_tunnels/tunnel_certificates/list)
+##### [Get Tunnel Certificate](/docs/en/api/http/admin/mcp_tunnels/tunnel_certificates/retrieve)
 
 Deprecated
 
-GET/v1/organizations/tunnels/{tunnel_id}/certificates
+GET/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}
 
-##### [Archive Tunnel Certificate](/docs/en/api/admin/mcp_tunnels/tunnel_certificates/archive)
+##### [List Tunnel Certificates](/docs/en/api/http/admin/mcp_tunnels/tunnel_certificates/list)
 
 Deprecated
 
-POST/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}/archive
+GET/v1/organizations/tunnels/{tunnel_id}/certificates
 
-##### ModelsExpand Collapse 
+##### [Archive Tunnel Certificate](/docs/en/api/http/admin/mcp_tunnels/tunnel_certificates/archive)
+
+Deprecated
+
+POST/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}/archive
+
+##### Models
 
 
 
-TunnelCertificateCreateResponse object { id, archived_at, created_at, 4 more }
+TunnelCertificateCreateResponse object{ id, archived_at, created_at, 4 more }
 
 
 
@@ -318,15 +326,17 @@ id: string
 
 ID of the Tunnel Certificate.
 
-[](#tunnel_certificate_create_response.id)
+
 
-archived_at: string
+archived_at: string or null
 
 
 
 RFC 3339 datetime string indicating when the certificate was archived, or `null` if it is not archived.
 
-[](#tunnel_certificate_create_response.archived_at)
+formatdate-time
+
+
 
 created_at: string
 
@@ -334,15 +344,17 @@ created_at: string
 
 RFC 3339 datetime string indicating when the certificate was registered.
 
-[](#tunnel_certificate_create_response.created_at)
+formatdate-time
 
-expires_at: string
+
+
+expires_at: string or null
 
 
 
 RFC 3339 datetime string indicating when the certificate expires, or `null` if it does not expire.
 
-[](#tunnel_certificate_create_response.expires_at)
+formatdate-time
 
 fingerprint: string
 
@@ -350,15 +362,13 @@ fingerprint: string
 
 The certificate's SHA-256 fingerprint, as a lowercase hex string.
 
-[](#tunnel_certificate_create_response.fingerprint)
-
 tunnel_id: string
 
 
 
 ID of the Tunnel this certificate is registered against.
 
-[](#tunnel_certificate_create_response.tunnel_id)
+
 
 type: "tunnel_certificate"
 
@@ -366,13 +376,11 @@ type: "tunnel_certificate"
 
 Object type. Always `tunnel_certificate` for Tunnel Certificates.
 
-[](#tunnel_certificate_create_response.type)
-
-[](#tunnel_certificate_create_response)
+defaulttunnel_certificate
 
 
 
-TunnelCertificateRetrieveResponse object { id, archived_at, created_at, 4 more }
+TunnelCertificateRetrieveResponse object{ id, archived_at, created_at, 4 more }
 
 
 
@@ -382,15 +390,17 @@ id: string
 
 ID of the Tunnel Certificate.
 
-[](#tunnel_certificate_retrieve_response.id)
+
 
-archived_at: string
+archived_at: string or null
 
 
 
 RFC 3339 datetime string indicating when the certificate was archived, or `null` if it is not archived.
 
-[](#tunnel_certificate_retrieve_response.archived_at)
+formatdate-time
+
+
 
 created_at: string
 
@@ -398,15 +408,17 @@ created_at: string
 
 RFC 3339 datetime string indicating when the certificate was registered.
 
-[](#tunnel_certificate_retrieve_response.created_at)
+formatdate-time
 
-expires_at: string
+
+
+expires_at: string or null
 
 
 
 RFC 3339 datetime string indicating when the certificate expires, or `null` if it does not expire.
 
-[](#tunnel_certificate_retrieve_response.expires_at)
+formatdate-time
 
 fingerprint: string
 
@@ -414,15 +426,13 @@ fingerprint: string
 
 The certificate's SHA-256 fingerprint, as a lowercase hex string.
 
-[](#tunnel_certificate_retrieve_response.fingerprint)
-
 tunnel_id: string
 
 
 
 ID of the Tunnel this certificate is registered against.
 
-[](#tunnel_certificate_retrieve_response.tunnel_id)
+
 
 type: "tunnel_certificate"
 
@@ -430,13 +440,11 @@ type: "tunnel_certificate"
 
 Object type. Always `tunnel_certificate` for Tunnel Certificates.
 
-[](#tunnel_certificate_retrieve_response.type)
-
-[](#tunnel_certificate_retrieve_response)
+defaulttunnel_certificate
 
 
 
-TunnelCertificateListResponse object { id, archived_at, created_at, 4 more }
+TunnelCertificateListResponse object{ id, archived_at, created_at, 4 more }
 
 
 
@@ -446,15 +454,17 @@ id: string
 
 ID of the Tunnel Certificate.
 
-[](#tunnel_certificate_list_response.id)
+
 
-archived_at: string
+archived_at: string or null
 
 
 
 RFC 3339 datetime string indicating when the certificate was archived, or `null` if it is not archived.
 
-[](#tunnel_certificate_list_response.archived_at)
+formatdate-time
+
+
 
 created_at: string
 
@@ -462,15 +472,17 @@ created_at: string
 
 RFC 3339 datetime string indicating when the certificate was registered.
 
-[](#tunnel_certificate_list_response.created_at)
+formatdate-time
 
-expires_at: string
+
+
+expires_at: string or null
 
 
 
 RFC 3339 datetime string indicating when the certificate expires, or `null` if it does not expire.
 
-[](#tunnel_certificate_list_response.expires_at)
+formatdate-time
 
 fingerprint: string
 
@@ -478,15 +490,13 @@ fingerprint: string
 
 The certificate's SHA-256 fingerprint, as a lowercase hex string.
 
-[](#tunnel_certificate_list_response.fingerprint)
-
 tunnel_id: string
 
 
 
 ID of the Tunnel this certificate is registered against.
 
-[](#tunnel_certificate_list_response.tunnel_id)
+
 
 type: "tunnel_certificate"
 
@@ -494,13 +504,11 @@ type: "tunnel_certificate"
 
 Object type. Always `tunnel_certificate` for Tunnel Certificates.
 
-[](#tunnel_certificate_list_response.type)
-
-[](#tunnel_certificate_list_response)
+defaulttunnel_certificate
 
 
 
-TunnelCertificateArchiveResponse object { id, archived_at, created_at, 4 more }
+TunnelCertificateArchiveResponse object{ id, archived_at, created_at, 4 more }
 
 
 
@@ -510,15 +518,17 @@ id: string
 
 ID of the Tunnel Certificate.
 
-[](#tunnel_certificate_archive_response.id)
+
 
-archived_at: string
+archived_at: string or null
 
 
 
 RFC 3339 datetime string indicating when the certificate was archived, or `null` if it is not archived.
 
-[](#tunnel_certificate_archive_response.archived_at)
+formatdate-time
+
+
 
 created_at: string
 
@@ -526,15 +536,17 @@ created_at: string
 
 RFC 3339 datetime string indicating when the certificate was registered.
 
-[](#tunnel_certificate_archive_response.created_at)
+formatdate-time
 
-expires_at: string
+
+
+expires_at: string or null
 
 
 
 RFC 3339 datetime string indicating when the certificate expires, or `null` if it does not expire.
 
-[](#tunnel_certificate_archive_response.expires_at)
+formatdate-time
 
 fingerprint: string
 
@@ -542,22 +554,16 @@ fingerprint: string
 
 The certificate's SHA-256 fingerprint, as a lowercase hex string.
 
-[](#tunnel_certificate_archive_response.fingerprint)
-
 tunnel_id: string
 
 
 
 ID of the Tunnel this certificate is registered against.
 
-[](#tunnel_certificate_archive_response.tunnel_id)
+
 
 type: "tunnel_certificate"
 
 
 
 Object type. Always `tunnel_certificate` for Tunnel Certificates.
-
-[](#tunnel_certificate_archive_response.type)
-
-[](#tunnel_certificate_archive_response)

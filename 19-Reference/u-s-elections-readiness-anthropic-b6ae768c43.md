@@ -1,11 +1,11 @@
 ---
-title: "U.S. Elections Readiness \\ Anthropic"
+title: "U.S. elections readiness \\ Anthropic"
 source_url: "https://www.anthropic.com/news/us-elections-readiness"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:11:09Z"
+fetched_at: "2026-08-27T09:25:46Z"
 ---
 
-# U.S. Elections Readiness
+# U.S. elections readiness
 
 Oct 8, 2024
 
@@ -65,17 +65,23 @@ Relevant safety work: 
 
 ## Related content
 
-### Investigating three real-world incidents in our cybersecurity evaluations
+### Funding better evaluations of AI’s impact on wellbeing
 
-[Read more](/news/investigating-incidents-cybersecurity-evals)
+We’re launching a \$5 million grant program to fund independent research into how AI impacts users’ wellbeing.
 
-### Our position on open-weights models
+[Read more](/news/wellbeing-research-grants)
 
-[Read more](/news/position-open-weights-models)
+### How Claude’s text watermark works
 
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+In this article, we share answers to some of the questions we’ve received about how our chosen watermarking method works, whether it affects Claude’s outputs, and why we’re making this change.
 
-[Read more](/news/cognizant-anthropic)
+[Read more](/news/claude-text-watermark)
+
+### Improving Fable 5's biology safeguards
+
+We’re making updates to Claude Fable 5’s biology safeguards in a way that substantially reduces false positives. Fable 5 users will now experience many fewer “fallbacks”—where the system switches to a less capable model after they make a biology-related query.
+
+[Read more](/news/improving-fable-5-s-biology-safeguards)
 
 [](/)
 
@@ -89,7 +95,7 @@ Relevant safety work: 
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -141,7 +147,7 @@ Relevant safety work: 
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -166,6 +172,7 @@ Relevant safety work: 
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

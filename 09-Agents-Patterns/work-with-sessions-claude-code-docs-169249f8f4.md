@@ -2,7 +2,7 @@
 title: "Work with sessions - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/sessions"
 category: "09-Agents-Patterns"
-fetched_at: "2026-08-02T05:38:44Z"
+fetched_at: "2026-08-22T06:28:36Z"
 tags: ["agents", "claude-code"]
 ---
 
@@ -43,14 +43,14 @@ Choose an approach
 
 How much session handling you need depends on your application’s shape. Session management comes into play when you send multiple prompts that should share context. Within a single `query()` call, the agent already takes as many turns as it needs, and permission prompts and `AskUserQuestion` are [handled in-loop](/docs/en/agent-sdk/user-input) (they don’t end the call).
 
-| What you’re building                                                  | What to use                                                                                                                                                           |
-|:----------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| One-shot task: single prompt, no follow-up                            | Nothing extra. One `query()` call handles it.                                                                                                                         |
-| Multi-turn chat in one process                                        | [`ClaudeSDKClient` (Python) or `continue: true` (TypeScript)](#automatic-session-management). The SDK tracks the session for you with no ID handling.                 |
-| Pick up where you left off after a process restart                    | `continue_conversation=True` (Python) / `continue: true` (TypeScript). Resumes the most recent session in the directory, no ID needed.                                |
-| Resume a specific past session (not the most recent)                  | Capture the session ID and pass it to `resume`.                                                                                                                       |
-| Try an alternative approach without losing the original               | Fork the session.                                                                                                                                                     |
-| Stateless task, don’t want anything written to disk (TypeScript only) | Set [`persistSession: false`](/docs/en/agent-sdk/typescript#options). The session exists only in memory for the duration of the call. Python always persists to disk. |
+| What you’re building                                    | What to use                                                                                                                                                                                                                                                                              |
+|:--------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| One-shot task: single prompt, no follow-up              | Nothing extra. One `query()` call handles it.                                                                                                                                                                                                                                            |
+| Multi-turn chat in one process                          | [`ClaudeSDKClient` (Python) or `continue: true` (TypeScript)](#automatic-session-management). The SDK tracks the session for you with no ID handling.                                                                                                                                    |
+| Pick up where you left off after a process restart      | `continue_conversation=True` (Python) / `continue: true` (TypeScript). Resumes the most recent session in the directory, no ID needed.                                                                                                                                                   |
+| Resume a specific past session (not the most recent)    | Capture the session ID and pass it to `resume`.                                                                                                                                                                                                                                          |
+| Try an alternative approach without losing the original | Fork the session.                                                                                                                                                                                                                                                                        |
+| Stateless task, don’t want anything written to disk     | Set [`persistSession: false`](/docs/en/agent-sdk/typescript#options) (TypeScript only). The session exists only in memory for the duration of the call. In Python, set [`CLAUDE_CODE_SKIP_PROMPT_HISTORY`](/docs/en/env-vars) in the `env` option to suppress transcript writes instead. |
 
 
 [​](#continue-resume-and-fork)
@@ -210,7 +210,7 @@ async def main():
     except Exception as error:
         # A single-shot query() raises after yielding an error result. If the
         # failure was an error result, the loop above already captured session_id;
-        # process failures yield no result message, so session_id stays None.
+        # connection or process failures yield no result message, so session_id stays None.
         print(f"Session ended with an error: {error}")
 
     print(f"Session ID: {session_id}")
@@ -240,7 +240,7 @@ try {
 } catch (error) {
   // A single-shot query() throws after yielding an error result. If the
   // failure was an error result, the loop above already captured sessionId;
-  // process failures yield no result message, so sessionId stays undefined.
+  // connection or process failures yield no result message, so sessionId stays undefined.
   console.error(`Session ended with an error: ${error}`);
 }
 
@@ -310,7 +310,12 @@ for await (const message of query({
 
 You should see a response that builds on the earlier analysis instead of starting fresh. That confirms the agent resumed the session with its prior context intact.
 
-If a `resume` call returns a fresh session instead of the expected history, the most common cause is a mismatched `cwd`. Sessions are stored under `~/.claude/projects/<encoded-cwd>/*.jsonl`, or under `$CLAUDE_CONFIG_DIR/projects/<encoded-cwd>/*.jsonl` if you set the `CLAUDE_CONFIG_DIR` environment variable, where `<encoded-cwd>` is the absolute working directory with every non-alphanumeric character replaced by `-` (so `/Users/me/proj` becomes `-Users-me-proj`). If your resume call runs from a different directory, the SDK looks in the wrong place. The session file also needs to exist on the current machine.
+Claude Code stores sessions under `~/.claude/projects/<encoded-cwd>/*.jsonl`. If you set the `CLAUDE_CONFIG_DIR` environment variable, look under `$CLAUDE_CONFIG_DIR/projects/` instead.To find your session’s directory, replace every non-alphanumeric character in the absolute working directory with `-`: `/Users/me/proj` becomes `-Users-me-proj`. For a working directory whose converted name exceeds 200 characters, Claude Code [truncates the name and appends a hash](/docs/en/sessions#where-transcripts-are-stored), so match the first 200 characters of the converted name when you list `projects/`.If you set [`CLAUDE_CODE_PROJECT_DIR_NAME`](/docs/en/sessions#name-the-project-directory-yourself) beside `CLAUDE_CONFIG_DIR`, look under that name in `projects/` instead. Requires TypeScript Agent SDK v0.3.234 or later, or Python Agent SDK v0.2.140 or later.You can resume from any working directory:
+
+- **Cross-directory lookup**: Claude Code searches beyond the current project directory to find the ID; see [Resume a session](/docs/en/sessions#resume-a-session) for the exact lookup order and how duplicate copies are handled.
+- **Same machine only**: the session file still needs to exist on the current machine.
+
+Before v2.1.223, the lookup was scoped to the current project directory and its git worktrees; SDK versions that bundle an older CLI still behave this way.
 
 To resume sessions across machines or in serverless environments, mirror transcripts to shared storage with a [`SessionStore` adapter](/docs/en/agent-sdk/session-storage).
 
@@ -432,9 +437,10 @@ You should see that `forkedId` differs from the original session ID. Resuming th
 
 Resume across hosts
 
-Session files are local to the machine that created them. To resume a session on a different host (CI workers, ephemeral containers, serverless), you have two options:
+Session files are local to the machine that created them. To resume a session on a different host (CI workers, ephemeral containers, serverless), pick the approach that fits:
 
-- **Move the session file.** Persist `~/.claude/projects/<encoded-cwd>/<session-id>.jsonl` from the first run and restore it to the same path on the new host before calling `resume`. The `cwd` must match.
+- **Pass a session store.** Attach a [`sessionStore` / `session_store` adapter](/docs/en/agent-sdk/session-storage) so the SDK mirrors transcripts to your own backend and another host can resume them. The store lookup key derives from the working directory, so resume from a `cwd` matching the original run’s.
+- **Move the session file.** Persist `~/.claude/projects/<encoded-cwd>/<session-id>.jsonl` from the first run and restore it inside any directory under `~/.claude/projects/` on the new host before calling `resume`. Claude Code searches beyond the current project directory to find the ID; see [Resume a session](/docs/en/sessions#resume-a-session) for the exact lookup order and how duplicate copies are handled. Before v2.1.223, the lookup was scoped to the current project directory and its git worktrees; SDK versions that bundle an older CLI still behave this way.
 - **Don’t rely on session resume.** Capture the results you need (analysis output, decisions, file diffs) as application state and pass them into a fresh session’s prompt. This is often more robust than shipping transcript files around.
 
 Both SDKs expose functions for enumerating sessions on disk and reading their messages: [`listSessions()`](/docs/en/agent-sdk/typescript#listsessions) and [`getSessionMessages()`](/docs/en/agent-sdk/typescript#getsessionmessages) in TypeScript, [`list_sessions()`](/docs/en/agent-sdk/python#list_sessions) and [`get_session_messages()`](/docs/en/agent-sdk/python#get_session_messages) in Python. Use them to build custom session pickers, cleanup logic, or transcript viewers. Both SDKs also expose functions for looking up and mutating individual sessions: [`get_session_info()`](/docs/en/agent-sdk/python#get_session_info), [`rename_session()`](/docs/en/agent-sdk/python#rename_session), and [`tag_session()`](/docs/en/agent-sdk/python#tag_session) in Python, and [`getSessionInfo()`](/docs/en/agent-sdk/typescript#getsessioninfo), [`renameSession()`](/docs/en/agent-sdk/typescript#renamesession), and [`tagSession()`](/docs/en/agent-sdk/typescript#tagsession) in TypeScript. Use them to organize sessions by tag or give them human-readable titles.

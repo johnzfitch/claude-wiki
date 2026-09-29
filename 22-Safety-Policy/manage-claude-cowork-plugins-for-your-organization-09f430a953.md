@@ -1,13 +1,15 @@
 ---
-title: "Manage plugins for your organization | Claude Help Center"
+title: "Manage plugins for your organization | Anthropic Help Center"
 source_url: "https://support.claude.com/en/articles/13837433-manage-claude-cowork-plugins-for-your-organization"
 category: "22-Safety-Policy"
-fetched_at: "2026-08-02T05:41:45Z"
+fetched_at: "2026-08-20T06:27:11Z"
 tags: ["plugins"]
 ---
 
 # Manage plugins for your organization
 
+
+Copy for LLM
 
 Plugin marketplaces let Team and Enterprise plan owners distribute curated plugins to everyone in their organization. You create a marketplace, add plugins to it, and control exactly which plugins your team members can see and use. Plugins you distribute appear in both chat (on the web and the Chat tab in Claude Desktop) and Claude Cowork.
 
@@ -244,7 +246,7 @@ Names that impersonate official Anthropic marketplaces are also blocked.
 
 ### Upload rejected
 
-Common causes: the file exceeds 50 MB, it isn't a valid ZIP file, or the marketplace has reached the 100-plugin limit. Check the file size and format, and remove unused plugins if you're at capacity.
+Common causes: the file exceeds 50 MB, it isn't a valid ZIP file, or the marketplace has reached the 100-plugin limit. Check the file size and format, and remove unused plugins if you're at capacity. If skill and plugin scanning is on, a plugin can also be rejected because it was flagged for malicious content. Review the reason, fix the issue, and upload the plugin again.
 
 ### Plugin not appearing for members
 

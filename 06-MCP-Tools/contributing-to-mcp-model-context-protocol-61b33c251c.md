@@ -2,13 +2,14 @@
 title: "Contributing to MCP - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/contributing"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:03Z"
+fetched_at: "2026-09-23T06:26:50Z"
 tags: ["mcp", "python", "sdk", "typescript"]
 ---
 
 ## On this page
 
 - [Before You Begin](#before-you-begin)
+  - [Join the Community](#join-the-community)
   - [Prerequisites](#prerequisites)
   - [Repository Structure](#repository-structure)
   - [Project Roles](#project-roles)
@@ -25,12 +26,11 @@ tags: ["mcp", "python", "sdk", "typescript"]
   - [Schema Changes](#schema-changes)
   - [Documentation Changes](#documentation-changes)
   - [Major Protocol Changes](#major-protocol-changes)
+  - [Finding a Sponsor for SEPs](#finding-a-sponsor-for-seps)
 - [Working with the SDK Repositories](#working-with-the-sdk-repositories)
   - [Before Contributing to an SDK](#before-contributing-to-an-sdk)
   - [SDK Repositories](#sdk-repositories)
 - [Getting Help](#getting-help)
-  - [Communication Channels](#communication-channels)
-  - [Finding a Sponsor for SEPs](#finding-a-sponsor-for-seps)
 - [Troubleshooting](#troubleshooting)
   - [npm run check fails](#npm-run-check-fails)
   - [My PR has been sitting unnoticed for weeks](#my-pr-has-been-sitting-unnoticed-for-weeks)
@@ -57,6 +57,13 @@ The Model Context Protocol (MCP) is an open source project that welcomes contrib
 [​](#before-you-begin)
 
 Before You Begin
+
+
+[​](#join-the-community)
+
+Join the Community
+
+You don’t need to have a change ready to get involved. Join the [MCP Contributor Discord](https://discord.gg/6CSzBmMkjX) to connect with contributors and maintainers, ask questions, and find out where help is needed. See the [Contributor Communication](/community/communication) guide for all channels - including [live calls](https://meet.modelcontextprotocol.io/) and GitHub Discussions - and when to use each one, or jump to [Getting Help](#getting-help) below.
 
 
 [​](#prerequisites)
@@ -432,13 +439,50 @@ Demonstrate practical application of your idea.
 
 Find a sponsor
 
-A maintainer from the [maintainer list](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/MAINTAINERS.md) who will champion your proposal.
+A maintainer from the [maintainer list](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/MAINTAINERS.md) who will champion your proposal. See [Finding a Sponsor for SEPs](#finding-a-sponsor-for-seps) below.
 
 4
 
 Write the SEP
 
 Follow the [SEP Guidelines](/community/sep-guidelines).
+
+
+[​](#finding-a-sponsor-for-seps)
+
+Finding a Sponsor for SEPs
+
+A **sponsor** is a Core Maintainer or Maintainer who champions your SEP through the review process. They provide feedback, help refine your proposal, and present it at Core Maintainer meetings.
+
+Every SEP needs a sponsor to move forward. SEPs that don’t find a sponsor within 6 months are marked as **dormant**. Dormant SEPs aren’t rejected outright - they can be revived later if a sponsor is found or the proposal is re-assessed to be needed.
+
+To find a sponsor:
+
+1
+
+Find relevant maintainers
+
+Look at the [maintainer list](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/MAINTAINERS.md) to find maintainers working in your area.
+
+2
+
+Tag maintainers in your PR
+
+Tag 1-2 relevant maintainers (don’t spam everyone).
+
+3
+
+Share in Discord
+
+Post your PR in the relevant Discord channel to increase visibility.
+
+4
+
+Follow up if needed
+
+If no response after 2 weeks, ask in `#general` or reach out to a Core Maintainer.
+
+Maintainers review open proposals regularly, but response time varies based on complexity and availability.
 
 
 [​](#working-with-the-sdk-repositories)
@@ -510,11 +554,6 @@ SDK Repositories
 
 Getting Help
 
-
-[​](#communication-channels)
-
-Communication Channels
-
 Got questions or need guidance? The MCP community is here to help.
 
 - **[Discord](/community/communication#discord)** - Real-time discussion with contributors and maintainers, focused on MCP contributions (not general MCP support)
@@ -522,43 +561,6 @@ Got questions or need guidance? The MCP community is here to help.
 - **[GitHub Issues](https://github.com/modelcontextprotocol/modelcontextprotocol/issues)** - Actionable work: bug reports with reproducible steps, documentation fixes, and tasks that are well-defined and ready to implement (not feature requests)
 
 This separation helps maintainers focus on work that’s ready for implementation while giving ideas room to develop. If you’re unsure whether something is ready to be an issue, start with a discussion. For a complete guide, see our [Contributor Communication](/community/communication) documentation. For protocol discussions, join [Working Group](/community/working-interest-groups) channels like `#auth-wg` or `#server-identity-wg`. For SDK help, find your language’s channel (e.g., `#typescript-sdk-dev`).
-
-
-[​](#finding-a-sponsor-for-seps)
-
-Finding a Sponsor for SEPs
-
-A **sponsor** is a Core Maintainer or Maintainer who champions your SEP through the review process. They provide feedback, help refine your proposal, and present it at Core Maintainer meetings.
-
-Every SEP needs a sponsor to move forward. SEPs that don’t find a sponsor within 6 months are marked as **dormant**. Dormant SEPs aren’t rejected outright - they can be revived later if a sponsor is found or the proposal is re-assessed to be needed.
-
-To find a sponsor:
-
-1
-
-Find relevant maintainers
-
-Look at the [maintainer list](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/MAINTAINERS.md) to find maintainers working in your area.
-
-2
-
-Tag maintainers in your PR
-
-Tag 1-2 relevant maintainers (don’t spam everyone).
-
-3
-
-Share in Discord
-
-Post your PR in the relevant Discord channel to increase visibility.
-
-4
-
-Follow up if needed
-
-If no response after 2 weeks, ask in `#general` or reach out to a Core Maintainer.
-
-Maintainers review open proposals regularly, but response time varies based on complexity and availability.
 
 
 [​](#troubleshooting)
@@ -597,6 +599,8 @@ I can’t find a sponsor for my SEP
 1.  Make sure your idea has been discussed in Discord or an Interest Group first
 2.  Proposals with demonstrated community interest are more likely to find sponsors
 3.  Consider whether your change might be too large - could it be split into smaller SEPs?
+
+See [Finding a Sponsor for SEPs](#finding-a-sponsor-for-seps) for the full process.
 
 
 [​](#my-sep-was-rejected)

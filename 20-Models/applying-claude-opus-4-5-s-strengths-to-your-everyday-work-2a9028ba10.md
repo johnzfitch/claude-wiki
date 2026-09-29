@@ -2,7 +2,7 @@
 title: "Applying Claude Opus 4.5&#x27;s strengths to your everyday work | Claude by Anthropic"
 source_url: "https://support.claude.com/en/articles/12920969-applying-claude-opus-4-5-s-strengths-to-your-everyday-work"
 category: "20-Models"
-fetched_at: "2026-08-02T05:41:40Z"
+fetched_at: "2026-08-19T06:28:58Z"
 ---
 
 # Applying Claude Opus 4.5's strengths to your everyday work
@@ -128,6 +128,18 @@ Opus 4.5 prioritizes depth and quality over speed. Individual responses take lon
 
 ## Related tutorials
 
+[How to choose between voice mode and dictation](/resources/tutorials/how-to-choose-between-voice-mode-and-dictation)
+
+How to choose between voice mode and dictation
+
+How to choose between voice mode and dictation
+
+Tutorial
+
+[Tutorial](/resources/tutorials/how-to-choose-between-voice-mode-and-dictation)
+
+Tutorial
+
 [Delegating and scheduling tasks in Claude Cowork](/resources/tutorials/delegating-and-scheduling-tasks-in-claude-cowork)
 
 Delegating and scheduling tasks in Claude Cowork
@@ -161,18 +173,6 @@ Best practices for using @Claude
 Tutorial
 
 [Tutorial](/resources/tutorials/best-practices-using-claude-tag)
-
-Tutorial
-
-[Using Claude Cowork for legal: answer fast questions on past decisions](/resources/tutorials/using-claude-cowork-for-legal-question-briefing)
-
-Using Claude Cowork for legal: answer fast questions on past decisions
-
-Using Claude Cowork for legal: answer fast questions on past decisions
-
-Tutorial
-
-[Tutorial](/resources/tutorials/using-claude-cowork-for-legal-question-briefing)
 
 Tutorial
 
@@ -355,10 +355,10 @@ Products
 
 Features
 
-- Claude for Chrome
+- Claude in Chrome
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
 
 - Claude for Microsoft 365
 
@@ -580,7 +580,7 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](#)
   Service partners
 
 - Tutorials

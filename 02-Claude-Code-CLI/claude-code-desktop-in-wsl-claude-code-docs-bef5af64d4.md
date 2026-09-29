@@ -2,7 +2,7 @@
 title: "Claude Code Desktop in WSL - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/desktop-wsl"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:37:52Z"
+fetched_at: "2026-08-21T06:32:28Z"
 tags: ["claude-code", "desktop"]
 ---
 

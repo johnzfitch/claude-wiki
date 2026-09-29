@@ -2,7 +2,7 @@
 title: "Use Claude Code with Chrome - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/chrome"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:38:11Z"
+fetched_at: "2026-09-23T06:26:31Z"
 tags: ["claude-code"]
 ---
 
@@ -43,7 +43,10 @@ Connect Claude Code to your Chrome browser to test web apps, debug with console 
 
 Copy pageCopy page
 
-Claude Code integrates with the [Claude in Chrome browser extension](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn) to give you browser automation capabilities from the CLI or the [VS Code extension](/docs/en/vs-code#automate-browser-tasks-with-chrome). Build your code, then test and debug in the browser without switching contexts. Claude opens new tabs for browser tasks and shares your browser’s login state, so it can access any site you’re already signed into. Browser actions run in a visible Chrome window in real time. When Claude encounters a login page or CAPTCHA, it pauses and asks you to handle it manually.
+Claude Code integrates with the [Claude in Chrome browser extension](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn) to give you browser automation capabilities from the CLI or the [VS Code extension](/docs/en/vs-code#automate-browser-tasks-with-chrome). Build your code, then test and debug in the browser without switching contexts. Claude opens new tabs for browser tasks and shares your browser’s login state, so it can access any site you’re already signed into. Browser actions run in a visible Chrome window in real time. When Claude encounters a login page or CAPTCHA, it pauses and asks you to handle it manually. The extension collects the tabs Claude opens into a Chrome tab group tied to your session. In local sessions, whether Claude Code closes that group when the session ends depends on how it ends:
+
+- When you type `/clear`, Claude Code closes the group, open pages included, unless work that survives the clear is still running
+- When you switch sessions with a command like `/resume`, exit Claude Code, or run a `/clear` while work that survives it is still running, Claude Code closes the group only if it holds nothing but empty new tabs, so pages you may still be reading stay open
 
 Chrome integration works with Google Chrome and Microsoft Edge. Claude Code also detects the extension and sets up the connection in other Chromium-based browsers, including Brave, Arc, Vivaldi, and Opera. Chrome integration isn’t supported in Windows Subsystem for Linux (WSL).
 
@@ -71,7 +74,7 @@ Prerequisites
 Before using Claude Code with Chrome, you need:
 
 - [Google Chrome](https://www.google.com/chrome/), [Microsoft Edge](https://www.microsoft.com/edge), or another Chromium-based browser such as Brave, Arc, Vivaldi, or Opera
-- [Claude in Chrome extension](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn) version 1.0.36 or higher, available in the Chrome Web Store
+- [Claude in Chrome extension](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn) version 1.0.36 or later, available in the Chrome Web Store
 - [Claude Code](/docs/en/quickstart#step-1-install-claude-code)
 - A direct Anthropic plan (Pro, Max, Team, or Enterprise)
 
@@ -107,20 +110,20 @@ Go to code.claude.com/docs, click on the search box,
 type "hooks", and tell me what results appear
 ```
 
-Before Claude’s first browser action, Claude Code asks for permission to use the `claude-in-chrome` skill. Approve it and Claude opens a new tab and starts the task.
+If Claude Code asks for permission before a browser action, approve it. The dialog starts with `Claude in Chrome wants to` and offers an option to allow all actions on that site for the session. Claude opens a new tab and starts the task.
 
-Run `/chrome` at any time to check the connection status, manage permissions, reconnect the extension, or choose which connected browser to use. The integration is working when the status panel shows “Status: Enabled” and “Extension: Installed”. If more than one browser is connected when a browser action starts, Claude prompts you to pick one. For VS Code, see [browser automation in VS Code](/docs/en/vs-code#automate-browser-tasks-with-chrome).
+Run `/chrome` at any time to check the connection status, manage permissions, reconnect the extension, or choose which connected browser to use. The integration is working when the status panel shows “Status: Enabled” and “Extension: Installed”. If more than one browser is connected, you choose which one Claude uses. When a browser action starts before you’ve chosen, Claude prompts you to pick one. To switch browsers later, run `/chrome` and select **Select browser…**. Claude keeps using your choice even when another browser connects. For VS Code, see [browser automation in VS Code](/docs/en/vs-code#automate-browser-tasks-with-chrome).
 
 
 [​](#install-the-extension-when-claude-asks)
 
 Install the extension when Claude asks
 
-When Claude needs your browser for a task in an interactive session and Claude Code doesn’t detect the extension, Claude Code shows an install prompt titled “Claude wants to use your browser”, at most once per session. The prompt requires Claude Code v2.1.206 or later. On Windows, the **Install extension** choice requires v2.1.211 or later; before v2.1.211, choosing it couldn’t open the install page. The prompt offers three choices:
+When Claude needs your browser in an interactive session and Claude Code doesn’t detect the extension, Claude Code shows an install prompt titled “Claude wants to use your browser”. Claude Code asks at most once per session. The prompt offers three choices:
 
-- **Install extension**: opens the extension install page in your browser and starts a guided setup. Claude Code waits for the install, connects the extension, and enables browser tools in the same session. When the connection is ready, select “Continue with browser tools” and Claude resumes the task in your browser. You can leave setup at any point by selecting “Continue without browser tools” and finish later with `/chrome`.
-- **Not now**: continues the task without browser tools. The prompt can appear again in a later session.
-- **Don’t ask again**: stops the prompt in all future sessions. You can still set up the integration anytime with `/chrome`.
+- **Install extension**: opens the extension install page in your browser and starts a guided setup. Claude Code waits for the install, connects the extension, and enables browser tools in the same session. When the connection is ready, select “Continue with browser tools” and Claude resumes the task in your browser. You can leave setup by selecting “Continue without browser tools” and finish later with `/chrome`.
+- **Not now**: continues the task without browser tools. Claude Code can ask again in a later session.
+- **Don’t ask again**: stops the prompt in future sessions. You can still set up the integration anytime with `/chrome`.
 
 If your organization blocks the `claude-in-chrome` MCP server with the [`deniedMcpServers` managed setting](/docs/en/managed-mcp#policy-based-control-with-allowlists-and-denylists), Claude Code doesn’t show the install prompt.
 
@@ -145,12 +148,7 @@ Site-level permissions are inherited from the Chrome extension. Manage permissio
 
 Browser tools in plan mode
 
-In [plan mode](/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode), browser tool calls that only read the page or browser state run without a permission prompt, and calls that change state prompt for approval.
-
-- **Read-only calls**: `read_page`, `get_page_text`, `find`, reading console messages or network requests, and taking a screenshot
-- **State-changing calls**: clicks, typing, navigation, tab and window management, and recording a GIF
-
-As of v2.1.199, an otherwise read-only call that sets a state-changing input flag, such as `createIfEmpty` on `tabs_context_mcp`, `clear` on the console and network readers, or `save_to_disk` on a screenshot, also prompts for approval. A `browser_batch` call runs without a prompt only when every action inside it is read-only.
+In [plan mode](/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode), a permission prompt appears before Claude records a GIF, opens a new tab, or runs a shortcut. If [bypass permissions mode is available](/docs/en/permission-modes#skip-all-checks-with-bypasspermissions-mode) in your session and [feature-flag fetching](/docs/en/env-vars#features-that-need-feature-flag-fetching) is off, these calls run without a prompt. A `tabs_context_mcp` call also prompts when it sets `createIfEmpty`, and so does a `browser_batch` call that includes any of these actions.
 
 
 [​](#example-workflows)
@@ -217,7 +215,7 @@ and attach logs/session.log to it
 
 Three restrictions apply to uploads:
 
-- **Permissions**: Claude can upload a file only when the session is allowed to read it, so [permission rules](/docs/en/settings#permission-settings) that deny `Read` access to a file also block uploading it.
+- **Permissions**: Claude can upload a file only when the session is allowed to read it, so [permission rules](/docs/en/settings-reference#permission-settings) that deny `Read` access to a file also block uploading it.
 - **Size**: a single upload can include up to 10 MB of files in total.
 - **Hard links**: Claude refuses files that have multiple hard links, which is common inside package-manager stores like `node_modules`. Copy the file and upload the copy.
 
@@ -309,7 +307,7 @@ If Claude Code can’t detect the Chrome extension:
 4.  Run `/chrome` and select “Reconnect extension” to re-establish the connection
 5.  If the issue persists, restart both Claude Code and Chrome
 
-The first time you enable Chrome integration, Claude Code installs a native messaging host configuration file. Chrome reads this file on startup, so if the extension isn’t detected on your first attempt, restart Chrome to pick up the new configuration. As of v2.1.199, Claude Code opens a browser tab prompting you to connect the extension only on that first install. Later sessions that rewrite the configuration file, for example after switching Claude Code builds or config directories, don’t reopen it. If the connection still fails, verify the host configuration file exists at: For Chrome:
+The first time you enable Chrome integration, Claude Code installs a native messaging host configuration file. Chrome reads this file on startup, so if the extension isn’t detected on your first attempt, restart Chrome to pick up the new configuration. Claude Code opens a browser tab prompting you to connect the extension only on that first install. Claude Code doesn’t reopen it when a later session rewrites the configuration file, for example after switching builds or config directories. If the connection still fails, verify the host configuration file exists at: For Chrome:
 
 - **macOS**: `~/Library/Application Support/Google/Chrome/NativeMessagingHosts/com.anthropic.claude_code_browser_extension.json`
 - **Linux**: `~/.config/google-chrome/NativeMessagingHosts/com.anthropic.claude_code_browser_extension.json`
@@ -359,12 +357,12 @@ Common error messages
 
 These are the most frequently encountered errors and how to resolve them:
 
-| Error                                       | Cause                                            | Fix                                                             |
-|---------------------------------------------|--------------------------------------------------|-----------------------------------------------------------------|
-| ”Browser extension is not connected”        | Native messaging host cannot reach the extension | Restart Chrome and Claude Code, then run `/chrome` to reconnect |
-| Extension shows “Not detected” in `/chrome` | Chrome extension is not installed or is disabled | Install or enable the extension in `chrome://extensions`        |
-| ”No tab available”                          | Claude tried to act before a tab was ready       | Ask Claude to create a new tab and retry                        |
-| ”Receiving end does not exist”              | Extension service worker went idle               | Run `/chrome` and select “Reconnect extension”                  |
+| Error                                       | Cause                                                                                                                                          | Fix                                                                                                                                                                                                                                                       |
+|---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ”Browser extension is not connected”        | Native messaging host cannot reach the extension, or your organization’s IP allowlist rejects the connection to `bridge.claudeusercontent.com` | Restart Chrome and Claude Code, then run `/chrome` to reconnect. If your organization uses IP allowlisting and the error persists, see [Organization IP allowlists and proxy egress](/docs/en/network-config#organization-ip-allowlists-and-proxy-egress) |
+| Extension shows “Not detected” in `/chrome` | Chrome extension is not installed or is disabled                                                                                               | Install or enable the extension in `chrome://extensions`                                                                                                                                                                                                  |
+| ”No tab available”                          | Claude tried to act before a tab was ready                                                                                                     | Ask Claude to create a new tab and retry                                                                                                                                                                                                                  |
+| ”Receiving end does not exist”              | Extension service worker went idle                                                                                                             | Run `/chrome` and select “Reconnect extension”                                                                                                                                                                                                            |
 
 
 [​](#see-also)

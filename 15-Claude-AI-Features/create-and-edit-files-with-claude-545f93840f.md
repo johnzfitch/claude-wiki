@@ -2,14 +2,15 @@
 title: "Create and edit files with Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:42:31Z"
+fetched_at: "2026-09-29T06:31:00Z"
 tags: ["enterprise", "security"]
 ---
 
 # Create and edit files with Claude
 
-April 29, 2026
+August 6, 2026
 
+Copy for LLM
 
 Claude can execute code to create and work with files directly in your conversations. Prompt Claude using natural language to generate Excel spreadsheets, PowerPoint presentations, Word documents, and PDF files that you can download and use immediately.
 
@@ -51,11 +52,11 @@ These capabilities make it easy to produce professional documents by simply chat
 
 ### Enabling on web and desktop
 
-**Enterprise plans:** This capability is enabled by default at the organization level with **Allow network egress** toggled off for new Enterprise organizations. Owners can adjust this in **[Organization settings \> Capabilities](http://claude.ai/admin-settings/capabilities)** using the **Code execution and file creation** toggle.
+**Enterprise plans:** This capability is enabled by default at the organization level with **Allow network egress** toggled off for new Enterprise organizations. Owners can adjust this in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)** using the **Code execution and file creation** toggle.
 
-**Team plans:** This capability is enabled by default at the organization level with **Allow network egress** toggled on with access to package managers only. An organization owner can manually disable this for the organization in **[Organization settings \> Capabilities](http://claude.ai/admin-settings/capabilities)** if needed.
+**Team plans:** This capability is enabled by default at the organization level with **Allow network egress** toggled on with access to package managers only. An organization owner can manually disable this for the organization in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)** if needed.
 
-**Free, Pro, and Max plans:** Enable file creation from **[Settings \> Capabilities](http://claude.ai/settings/capabilities)** by toggling **Code execution and file creation** on.
+**Free, Pro, and Max plans:** Enable file creation from **[Settings \> Capabilities](https://claude.ai/settings/capabilities)** by toggling **Code execution and file creation** on.
 
 To give Claude access to external data sources, toggle **Allow network egress** on:
 
@@ -68,7 +69,7 @@ To enable or disable this feature on Claude for iOS or Android, tap your initial
 
 ## Configuring network access (Team and Enterprise plans)
 
-Team and Enterprise organization owners can control network access settings in **[Organization settings \> Capabilities](http://claude.ai/admin-settings/capabilities)**. After enabling code execution and file creation, choose from the following options to configure network access for your team:
+Team and Enterprise organization owners can control network access settings in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**. After enabling code execution and file creation, choose from the following options to configure network access for your team:
 
 - **Allow network egress toggled off:** Claude operates with pre-installed packages only, with no internet access. This provides maximum security for sensitive environments.
 
@@ -84,19 +85,17 @@ Team and Enterprise organization owners can control network access settings in *
 
 ## How does disabling network access address security concerns with code execution and file creation?
 
-**Short answer:** Disabling network access prevents data from leaving Claude's sandboxed environment - even if something goes wrong.
+Disabling network access prevents data from leaving Claude's sandboxed environment—even if something goes wrong.
 
 ### How it works
 
 When Claude executes code or creates files, it operates within an isolated, sandboxed container. This means the work happens in a controlled environment separate from your systems. However, if network access is enabled, there's a potential risk: through prompt injection or other attacks, Claude could theoretically be tricked into sending data to external servers.
 
-Disabling network access eliminates this risk entirely. Your team still gets Claude's full code execution and file creation capabilities - building Excel models, creating presentations, analyzing data - but with the assurance that nothing can be transmitted outside the sandbox.
+Disabling network access eliminates this risk entirely. Your team still gets Claude's full code execution and file creation capabilities - building Excel models, creating presentations, analyzing data—but with the assurance that nothing can be transmitted outside the sandbox.
 
 ### A phased approach to network access
 
-Claude is most powerful with network access enabled - it can install new packages and dependencies, pull in real-time data, and interact with web services. For organizations comfortable with that risk profile, enabling access to vetted, trusted domains unlocks the full potential of code execution and file creation.
-
-For those taking a more cautious approach, we recommend starting with network access disabled and adjusting as your team builds confidence:
+Claude is most powerful with network access enabled, allowing it to install new packages and dependencies, pull in real-time data, and interact with web services. For organizations comfortable with that risk profile, enabling access to vetted, trusted domains unlocks the full potential of code execution and file creation. For those taking a more cautious approach, we recommend starting with network access disabled and adjusting as your team builds confidence:
 
 1.  **Start with network access off.** This is the most secure configuration. Claude can execute code and create files, but cannot communicate externally.
 
@@ -104,7 +103,7 @@ For those taking a more cautious approach, we recommend starting with network ac
 
 3.  **Expand network access as needed.** Add specific domains to an allowlist based on business requirements, maintaining visibility into what's permitted.
 
-This approach gives you defense in depth - even if there were vulnerabilities in the sandbox or a successful prompt injection, disabled network access acts as a final barrier preventing data from leaving Anthropic's infrastructure.
+This approach gives you defense in depth—even if there were vulnerabilities in the sandbox or a successful prompt injection, disabled network access acts as a final barrier preventing data from leaving Anthropic's infrastructure.
 
 **Note:** If MCP (Model Context Protocol) integrations are enabled, network communication remains possible through those connections regardless of the network egress setting. Organizations should evaluate MCP configurations separately.
 
@@ -222,25 +221,25 @@ Team and Enterprise owners have full control over this feature, including:
 
 When network access is enabled, Claude can access the following approved domains:
 
-- **Anthropic Services (Explicit):** [api.anthropic.com](http://api.anthropic.com/), [statsig.anthropic.com](http://statsig.anthropic.com/)
+- **Anthropic Services (Explicit):** api.anthropic.com, statsig.anthropic.com
 
-- ​**GitHub:** [github.com](http://github.com/)
+- ​**GitHub:** github.com
 
-- **NPM:** [registry.npmjs.org](http://registry.npmjs.org/), [npmjs.com](http://npmjs.com/), [npmjs.org](http://npmjs.org/)
+- **NPM:** registry.npmjs.org, npmjs.com, npmjs.org
 
-- ​**Python:** [pypi.org](http://pypi.org/), [files.pythonhosted.org](http://files.pythonhosted.org/), [pythonhosted.org](http://pythonhosted.org/)
+- ​**Python:** pypi.org, files.pythonhosted.org, pythonhosted.org
 
-- **Rust:** [crates.io](https://crates.io), [index.crates.io](https://index.crates.io), [static.crates.io](https://static.crates.io)
+- **Rust:** crates.io, index.crates.io, static.crates.io
 
-- **Ubuntu:** [archive.ubuntu.com](https://archive.ubuntu.com), [security.ubuntu.com](https://security.ubuntu.com)
+- **Ubuntu:** archive.ubuntu.com, security.ubuntu.com
 
-- **Yarn:** [yarnpkg.com](http://yarnpkg.com/), [registry.yarnpkg.com](http://registry.yarnpkg.com/)
+- **Yarn:** yarnpkg.com, registry.yarnpkg.com
 
 ------------------------------------------------------------------------
 
 ## Common workflows
 
-**Note:** Refer to **[Create and edit files with Claude to eliminate hours of busy work](https://support.claude.com/en/articles/12143746-create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work)** [](https://support.claude.com/en/articles/12143746-create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work) for use cases and demo videos, and **[Financial Analysis Workflows with Claude](https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude)** for guidelines specific to Claude for Financial Services customers.
+**Note:** Refer to **[Create and edit files with Claude to eliminate hours of busy work](https://support.claude.com/en/articles/12143746-create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work)** [](https://support.claude.com/en/articles/12143746-create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work) for use cases and demo videos, and **[Financial analysis workflows with Claude](https://claude.com/resources/tutorials/financial-analysis-workflows-with-claude)** for guidelines specific to Claude for Financial Services customers.
 
 ### Build a financial model in Excel
 

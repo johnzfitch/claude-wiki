@@ -2,13 +2,14 @@
 title: "Log in to your Claude account | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account"
 category: "21-Account-Support"
-fetched_at: "2026-08-02T05:41:43Z"
+fetched_at: "2026-09-29T06:30:35Z"
 ---
 
 # Log in to your Claude account
 
 May 19, 2026
 
+Copy for LLM
 
 When you open Claude on a web browser ([claude.ai](http://claude.ai)), the desktop app, or a mobile app, you will see two different options for logging in to your Claude account.
 

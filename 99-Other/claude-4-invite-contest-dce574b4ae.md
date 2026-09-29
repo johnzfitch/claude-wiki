@@ -2,13 +2,14 @@
 title: "Claude 4 Invite Contest | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11408405-claude-4-invite-contest"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:26Z"
+fetched_at: "2026-09-29T06:30:55Z"
 ---
 
 # Claude 4 Invite Contest
 
 March 16, 2026
 
+Copy for LLM
 
 The Claude 4 Invite Contest is a chance to win four months of Max plan for Claude by inviting friends and family to try Claude 4, our newest and most powerful AI model.
 

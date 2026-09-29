@@ -2,7 +2,7 @@
 title: "Create professional results across tools with Claude Sonnet 4.5 | Claude by Anthropic"
 source_url: "https://support.claude.com/en/articles/12439380-create-professional-results-across-tools-with-claude-sonnet-4-5"
 category: "20-Models"
-fetched_at: "2026-08-02T05:42:35Z"
+fetched_at: "2026-08-18T06:24:33Z"
 ---
 
 # Create professional results across tools with Claude Sonnet 4.5
@@ -119,6 +119,18 @@ Chat previews don't always show the full picture. Download the file and open it 
 
 ## Related tutorials
 
+[How to choose between voice mode and dictation](/resources/tutorials/how-to-choose-between-voice-mode-and-dictation)
+
+How to choose between voice mode and dictation
+
+How to choose between voice mode and dictation
+
+Tutorial
+
+[Tutorial](/resources/tutorials/how-to-choose-between-voice-mode-and-dictation)
+
+Tutorial
+
 [Delegating and scheduling tasks in Claude Cowork](/resources/tutorials/delegating-and-scheduling-tasks-in-claude-cowork)
 
 Delegating and scheduling tasks in Claude Cowork
@@ -152,18 +164,6 @@ Best practices for using @Claude
 Tutorial
 
 [Tutorial](/resources/tutorials/best-practices-using-claude-tag)
-
-Tutorial
-
-[Using Claude Cowork for legal: answer fast questions on past decisions](/resources/tutorials/using-claude-cowork-for-legal-question-briefing)
-
-Using Claude Cowork for legal: answer fast questions on past decisions
-
-Using Claude Cowork for legal: answer fast questions on past decisions
-
-Tutorial
-
-[Tutorial](/resources/tutorials/using-claude-cowork-for-legal-question-briefing)
 
 Tutorial
 
@@ -346,10 +346,10 @@ Products
 
 Features
 
-- Claude for Chrome
+- Claude in Chrome
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
 
 - Claude for Microsoft 365
 

@@ -1,13 +1,16 @@
 ---
-title: "Claude Fable 5 on your plan | Claude Help Center"
+title: "Claude Fable 5 on your plan | Anthropic Help Center"
 source_url: "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:41:51Z"
+fetched_at: "2026-09-01T06:26:05Z"
 tags: ["billing"]
 ---
 
 # Claude Fable 5 on your plan
 
+July 20, 2026
+
+Copy for LLM
 
 We previously ran a promotion that allowed you to use up to 50% of your weekly subscription limit on Claude Fable 5 at no extra cost. After that promotion ends on July 19, 2026 at 11:59:59 PM PT, Fable 5 will still be available to you, and how you access it will depend on your plan.
 

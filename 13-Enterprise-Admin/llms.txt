@@ -10,6 +10,7 @@ All documentation for Enterprise Admin.
 
 June 15, 2026
 
+Copy for LLM
 
 Audit logs are available for Enterprise organizations only.
 
@@ -492,6 +493,8 @@ This token authenticates with your Claude subscription and requires a Pro, Max, 
 # Business Associate Agreements (BAA) for Commercial Customers
 
 
+Copy for LLM
+
 *This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see **[here](https://privacy.claude.com/en/collections/10663362-consumers)**.*
 
 *For Claude Enterprise features to be covered under a Business Associate Agreement (BAA), the Primary Owner of the organization must activate HIPAA compliance in the HIPAA-ready Claude Enterprise organization settings under “Data and privacy” and accept Anthropic's BAA. Standard Claude Enterprise plans do not include BAA coverage without action from a Primary Owner.*
@@ -500,7 +503,7 @@ Anthropic provides a BAA covering our HIPAA-ready services, such as use of our f
 
 **Important:** To use the 1P API with PHI, your organization’s Primary Owner will need to sign a BAA and then reach out to your Anthropic contact or our [**Sales team**](https://claude.com/contact-sales) to get this turned on.
 
-For clarity, the BAA only covers the single organization that accepted it, and excludes features such as Workbench, Claude Console, Claude Cowork, or features currently in beta such as Claude in Office and Claude Design. As part of the BAA, customers of Anthropic’s HIPAA-ready services are subject to certain configuration requirements and limitations on what features/integrations are available.
+For clarity, the BAA only covers the single organization that accepted it, and excludes features such as Claude Console, Claude Cowork, or features currently in beta such as Claude in Office, Claude Design, Claude Slides, and Claude Docs. As part of the BAA, customers of Anthropic’s HIPAA-ready services are subject to certain configuration requirements and limitations on what features/integrations are available.
 
 Not all API features are covered; see the **[Implementation Guide](https://trust.anthropic.com/resources?s=2zblcrsgb00l3x9l2tpjf&name=%5Banthropic%5D-2025-type-1-hipaa-report-(-1-p-api).pdf)** for the full list of eligible and non-eligible features.
 
@@ -571,6 +574,9 @@ Please see our **[Trust Portal](https://trust.anthropic.com/resources?s=rgirr4qe
 
 Claude Console (API) → Claude Enterprise
 
+August 26, 2026
+
+Copy for LLM
 
 ## Overview
 
@@ -742,8 +748,9 @@ These are the settings most relevant to a Console-to-Enterprise migration. Claud
 
 # Claude Enterprise activation promo for Claude Code and Cowork
 
-June 8, 2026
+August 6, 2026
 
+Copy for LLM
 
 We're issuing \$1,000 in usage credits to every user in a Claude Enterprise organization—up to \$10M per organization—who activates Claude Code or Claude Cowork for the first time. Credits are issued automatically and are scoped to the activating seat.
 
@@ -793,7 +800,7 @@ Once a credit is issued:
 
 ## Track activations in your organization
 
-Admins can see who’s eligible by going to the **[usage page in organization settings](http://claude.ai/admin-settings/usage)** or:
+Admins can see who’s eligible by going to the **[usage page in organization settings](https://claude.ai/admin-settings/usage)** or:
 
 - For Claude Code, go to **[Organization settings \> Claude Code](https://claude.ai/admin-settings/claude-code)**
 
@@ -817,6 +824,7 @@ If we detect abuse, we may put the promotion on hold and hide the promotion admi
 
 June 24, 2026
 
+Copy for LLM
 
 This guide covers **spend limits** and **spend limit increase requests** for your Claude Enterprise organization using the Claude Enterprise Admin API. Spend limits let you cap each member's usage credit spending over a recurring period, see where each member's limit is inherited from, and review or act on members' requests for a higher limit.
 
@@ -1512,9 +1520,11 @@ Returns MCP/connector usage data across both Claude (chat) and Claude Code withi
 # Claude Enterprise consumption guide
 
 
-Claude Enterprise gives your organization access to powerful AI across chat, Claude Code, and Claude Cowork. With that access comes the responsibility of managing consumption effectively—ensuring your team gets maximum value while keeping usage predictable and within budget.
+Copy for LLM
 
-This guide walks Enterprise admins through the key levers available to control and optimize token consumption: setting spend caps, configuring role-based access controls, educating users, and choosing the right model and effort level for the right task.
+Claude Enterprise gives your organization access to powerful AI across chat, Claude Code, Claude Cowork, Claude Design, and Claude in the tools your teams already use, including Microsoft 365, Chrome, and Slack. With that access comes the responsibility of managing consumption effectively—ensuring your team gets maximum value while keeping usage predictable and within budget.
+
+This guide walks Enterprise admins through the key levers available to control and optimize token consumption: setting spend caps, configuring role-based access controls, educating users, choosing the right model and effort level for the right task, and measuring what your spend produces.
 
 ------------------------------------------------------------------------
 
@@ -1530,6 +1540,8 @@ Admins who proactively configure spend limits and educate users can reduce waste
 
 [TABLE]
 
+Other surfaces also draw on your organization's usage and appear as separate products in Analytics, the spend export, and the Analytics API: (a) Claude for M365 (Excel, PowerPoint, Word, Outlook add-ins), subject to the same org, group, and per-user spend limits and model restrictions; (b) Claude Design (beta), which bills from your organization's consumption at standard API rates with org, group, and per-user limits applying; (c) Claude in Chrome, whose side panel runs as a Claude Cowork session, so multi-step browsing tasks consume like other Cowork agentic work (manage under Organization settings \> Cowork); (d) Claude Tag (Claude in Slack, beta), whose channel work bills to the organization's usage balance rather than to individual seats, so per-user and group limits don't cap it; set the Claude Tag spend limit (and optional per-channel limits) at **[claude.ai/admin-settings/usage/claude-tag](https://claude.ai/admin-settings/usage/claude-tag)**. DMs with Claude Tag bill to the sender's own seat.
+
 **Admin tip: Set expectations with your team**
 
 Users running Claude Code or Cowork workflows may not realize how token-intensive their sessions are. A single Cowork task or Claude Code debug session can consume many more tokens than chat. Include this context in any user onboarding you send.
@@ -1544,11 +1556,11 @@ Role-based access controls (RBAC) let you group users and manage their access to
 
 Think about groups in terms of job function and use case, not organizational hierarchy. A few principles:
 
-- Create groups that map to distinct usage patterns, not org chart boxes. "Engineering" and "Sales" are more useful than "North America" and "EMEA" for consumption management.
+- Create groups that map to distinct usage patterns, not org chart boxes. "Engineering" and "Sales" are more useful than "North America" and "EMEA" for consumption management. Functional groups also make smart reports more useful, since reports scoped to a team produce findings specific enough to act on.
 
 - Limit group proliferation. More than 8–10 groups becomes hard to manage. Start with 4–6 and split only if usage patterns clearly diverge.
 
-- Use groups to gate access to high-intensity surfaces. For example: only members of the "Engineering" group can access Claude Code; other users see Chat and Cowork only.
+- Use groups to gate access to high-intensity surfaces. For example: only members of the "Engineering" group can access Claude Code; other users see Chat and Cowork only. Access is granted by the custom roles you assign to each group, and it only takes effect for members whose organization role is set to Custom. Members left on the built-in User role keep everything enabled org-wide. Groups can be created manually or synced from your identity provider. See **[Set up role-based permissions on Enterprise plans](https://support.claude.com/en/articles/13930458-set-up-role-based-permissions-on-enterprise-plans)**.
 
 - Assign group-level spend caps as a starting point, then override at the user level for outliers (e.g., a non-technical PM who needs Claude Code for a specific project).
 
@@ -1558,9 +1570,11 @@ Once groups are configured:
 
 - Review group consumption weekly during initial rollout, monthly thereafter.
 
-- When a group consistently approaches its cap, investigate before automatically raising it—the right response might be model guidance (use Sonnet instead of Opus) rather than more budget.
+- When a group consistently approaches its limit (see Time at limit on the Usage page), investigate before automatically raising it. A smart report scoped to that group shows what the spend is producing, or you can send that group a short survey to ask directly. The right response might be a lower effort cap or clearer model guidance. If the report shows high-value work, raise the limit, because members at their limit are often your top adopters.
 
-- Consider assigning a "group owner" in each department who is responsible for reviewing usage and fielding questions from their team. This distributes the admin burden and puts someone with business context in the loop. Please note, this would entail providing these individuals admin rights, which may not be desired.
+- Consider assigning a "group owner" in each department who is responsible for reviewing usage and fielding questions from their team. This distributes the admin burden and puts someone with business context in the loop. You don't need to make these people Owners or Admins: create a custom role that grants the Analytics (Can view) admin permission—and optionally Billing (Can view) so they can see the Usage page—and assign it to a small 'usage reviewers' group. Admin permissions only apply to members whose role is set to Custom, and Analytics view access is organization-wide rather than limited to their group.
+
+- To give a group owner a view of just their team, you can let them run smart reports scoped to their groups. See **[Let team members run smart reports for specific groups](https://support.claude.com/en/articles/16948886-let-team-members-run-smart-reports-for-specific-groups)**.
 
 **Governance tip: Surface access as a first gate**
 
@@ -1570,7 +1584,7 @@ Before worrying about token-level limits, make sure the right people have access
 
 ## Set spend limits
 
-Spend limits are your primary tool for controlling consumption. Claude Enterprise lets admins set limits at three levels: the organization level, the group level (with RBAC), and the individual user level. **Our recommended approach is to start with RBAC group-level limits and per-user limits**—these give you precise, targeted control without the risk of cutting off your entire org if a limit is hit.
+Spend limits are your primary tool for controlling consumption. Claude Enterprise lets admins set limits at three levels: the organization level, the group level (with RBAC), and the individual user level, plus optional pooled budgets that give a group one shared monthly amount. **Our recommended approach is to start with RBAC group-level limits and per-user limits**—these give you precise, targeted control without the risk of cutting off your entire org if a limit is hit.
 
 ### Org-level spend limits
 
@@ -1590,7 +1604,17 @@ Note the following precedence rules:
 
 - **No limit anywhere = no limit.** If a member has no individual limit and none of their groups have a limit, their spend isn't capped.
 
-**How to configure:** Organization settings → Usage → By group. Set limits to either a specific dollar amount or "Unlimited."
+**How to configure:** Organization settings → Usage → By group/tier. Set limits to either a specific dollar amount or "Unlimited."
+
+### Pooled group budgets (beta)
+
+A group spend cap gives each member the same individual limit. A pooled budget gives the whole group one shared monthly amount that every member draws from. Use it when a team has a fixed budget but uneven usage across members.
+
+Every request counts against both the member's own monthly limit and the group's pool. The member stops at whichever runs out first. Usage can go slightly over a limit before it pauses. Set the per-member limit as a guardrail, not an equal share of the pool. **When the pool runs out, usage pauses for every member of the group** until an admin raises it or it resets the next month. Billing admins get email alerts at 50%, 75%, 95%, and 100% of the pool.
+
+If a member belongs to more than one pooled group, the largest pool is used first. You can set a custom order under **Pooled budget priority**.
+
+**How to configure:** **Organization settings \> Usage \> Spend limits \> By group/tier**. Open the group's menu, choose **Edit limits**, and set a **Pooled monthly budget** and a **Member monthly limit**. The group needs a monthly spend limit first. Owners, Primary Owners, Admins, the Billing role, and custom roles with Billing (Can manage) can set pools. In beta, the Billing permission applies to the whole org, so anyone who can edit one group's pool can edit every group's pool. Pools aren't available through the Admin API yet. See **[Manage pooled group budgets on Enterprise plans](https://support.claude.com/en/articles/17005973-manage-pooled-group-budgets-on-enterprise-plans)**.
 
 ### User-level spend caps
 
@@ -1604,19 +1628,13 @@ User-level caps let you set consumption limits for individual accounts. These ar
 
 - Give power users (engineers, data scientists, researchers) higher or uncapped individual limits, but offset this by ensuring they use the right Claude model for the right task.
 
-- Monitor individual usage reports monthly to identify outliers—both users consistently hitting their cap (may need more) and users consuming very little (may not be activated yet).
-
-**Recommended starting points**
-
-[TABLE]
-
-\**These figures are rough planning estimates. Actual consumption will vary based on your team's size, workflows, and usage patterns.*
+- Check Time at limit on the Usage page monthly to see how often members are reaching their limits. Also watch for users consuming very little, who may not be activated yet.
 
 ------------------------------------------------------------------------
 
 ## Model selection guidance
 
-One of the most impactful things an admin can do is set clear guidance for users on which model to use for which tasks. Model choice has a direct and significant impact on token consumption—Opus can consume several times more tokens than Sonnet for the same task.
+One of the most impactful things an admin can do is set clear guidance for users on which model to use for which tasks. Model choice has a direct and significant impact on spend.
 
 Effort level is a second consumption lever. Users can choose how much thinking Claude applies to each response, and higher effort levels consume more tokens than lower ones. Encourage users to reserve Max effort for only the most demanding tasks and to use lower effort for routine tasks.
 
@@ -1624,7 +1642,7 @@ Effort level is a second consumption lever. Users can choose how much thinking C
 
 [TABLE]
 
-### Set your organization's default model (beta)
+### Set your organization's default model
 
 Beyond guiding users toward the right model, you can set the model that new conversations start with for everyone in your org. This is one of the most direct consumption levers available—the default shapes what the majority of users run day to day.
 
@@ -1632,15 +1650,17 @@ You have two options:
 
 - **Anthropic recommended** — automatically updates as new models ship, so your org always starts on our current recommended general-purpose model with no manual upkeep.
 
-- **Choose your own** — sets a specific model as the org default and holds it there until you change it. Use this when you want to standardize on a known model for consumption predictability (for example, defaulting to Sonnet rather than Opus).
+- **Choose your own** — sets a specific model as the org default and holds it there until you change it. Use this when you want to standardize on a known model for consumption predictability (for example, defaulting to Opus and giving Fable to the roles that do the hardest work).
 
-This setting applies to chat and Cowork only. Claude Code model defaults are managed separately through managed settings.
+This setting applies to new conversations in chat, Claude Cowork, Claude Code (CLI 2.1.199 or later), and Claude for Microsoft 365. If the selected model isn't available in a product, Anthropic's recommended default is used. If you also pin a model for Claude Code through managed settings, that setting takes precedence for the CLI and IDE. See **[Set a default model for your organization](https://support.claude.com/en/articles/15330088-set-a-default-model-for-your-organization)**.
 
-You can also set model defaults by role through Custom Roles, so different groups can start on different models—for example, defaulting your engineering group to one model and the rest of the org to another. This pairs naturally with the RBAC groups you've already configured (see Section 2).
+**Sticky defaults - always start with the default model and effort level (beta).** By default, the model picker is sticky: new conversations start on whatever model a member last used. To change that, turn on **Always start with the default model and effort level** in **Organization settings \> Models**. Every new conversation then starts on the org's default model and default effort level. Members can still change both within a conversation.
 
-**How to configure:** Organization settings → Models.
+Sticky defaults upgrade automatically. When a launch changes the default model, the sticky model moves to the new default, so no one is left on an older model. Roles that set their own default model have the same switch in the role editor. It works in chat, Claude Cowork, Claude Code, Claude for Microsoft 365, Claude Design, and Claude Science. See **[Set a default model for your organization](https://support.claude.com/en/articles/15330088-set-a-default-model-for-your-organization)**.
 
-**Note:** Users' current model selection for new conversations may be cleared, so they'll pick up the org default on their next conversation.
+To follow the recommended configuration above, set defaults by role through Custom Roles. For example, you might make Claude Opus the org default and Claude Fable the default for your research and analysis roles. This builds on the RBAC groups you've already set up (see **Role-based access controls** above).
+
+**How to configure:** **Organization settings \> Models** for the org default. For role defaults, go to **Organization settings \> Roles \> select a role \> Models tab**.
 
 ### Manage model access for your organization
 
@@ -1650,23 +1670,19 @@ Beyond setting a default, you can restrict which models are available at all—a
 
 - **Custom role level:** for members on Custom roles, each role grants access to a *subset* of what's enabled at the org level. A role can't grant a model the org has disabled — the org setting is always the ceiling.
 
-**Note:** Haiku models are always available to every member and can't be disabled, so there's always a fallback model.
-
 If a member belongs to multiple groups with different custom roles, access is **additive** — they get every model any of their roles grants (as long as it's enabled org-wide).
 
 **Capping effort level by role**
 
-Beyond restricting which models a role can use, you can cap the **maximum effort level** members on that role can select per model — a more granular version of the effort guidance already covered above. This only applies to Custom roles, not at the org level. If a member has multiple roles, the highest effort cap across those roles wins.
+Beyond restricting which models a role can use, you can cap the **maximum effort level** members on that role can select per model — a more granular version of the effort guidance already covered above. You can also set an effort cap for the whole organization, which is the highest level any role can allow. If a member has multiple roles, the highest effort cap across those roles wins.
 
-**Admin tip: Pair model + effort restrictions**
-
-If model guidance (the "Sonnet is your default" messaging) isn't landing and you're still seeing heavy Opus consumption, restricting Opus access to specific roles—or capping effort to Medium/High instead of Max for non-power-user roles—is the next lever. Reserve full access for the roles where deep reasoning actually pays off.
+You can also set a **default effort level** for a role's default model, so new conversations start at the level you choose, either Anthropic's recommended default or a specific level. The default can't be higher than the effort cap for that model. See **[Set a default model for your organization](https://support.claude.com/en/articles/15330088-set-a-default-model-for-your-organization?utm_source=it&utm_medium=email&utm_campaign=2026_Q3_PMM_MKTG_EntAdmin_Newsletter_Sept16&utm_term=ent_admins&utm_content=inline_link&campaign=19893371#h_d5373c4106)** to learn more.
 
 **Where this applies**
 
-Model access and effort restrictions are enforced in chat (web, desktop, mobile), Claude Cowork, Office Agents, and Claude Code (CLI 2.1.199+—earlier versions still show restricted options but requests using them are rejected). Claude in Chrome, Claude Design, and Claude Security don't support this yet.
+Model access and effort restrictions are enforced across most Claude products, including chat (web, desktop, mobile), Claude Cowork, and Claude Code (CLI 2.1.199 or later—earlier versions still show restricted options but requests using them are rejected). Claude in Chrome and Claude Security don't support this yet. For the current list of supported products, see **[Manage model access for your organization](https://support.claude.com/en/articles/15694740)**.
 
-**How to configure:** Organization settings → Roles → select a role → Models tab. Set model access, an optional effort cap per model, and an optional role-level default model. To manage configuration across the org, go to **Organization settings → Models**. More details in **[Manage model access for your organization](https://support.claude.com/en/articles/15694740)**.
+**How to configure:** **Organization settings \> Roles \> select a role \> Models tab**. Set model access, an optional effort cap per model, an optional role-level default model, default effort level, and the **Always start with the default model and effort level** switch. To manage configuration across the org, go to **Organization settings \> Models**. More details in **[Manage model access for your organization](https://support.claude.com/en/articles/15694740)**.
 
 ### Admin configuration recommendations
 
@@ -1684,11 +1700,11 @@ Model access and effort restrictions are enforced in chat (web, desktop, mobile)
 
 ------------------------------------------------------------------------
 
-## Using org preferences to shape user behavior
+## Using organization instructions to shape user behavior
 
-Org Preferences let admins inject standing guidance into every Claude conversation across your organization—effectively giving Claude a system prompt that reflects your team's norms, best practices, and guardrails. This is a high-leverage tool for shifting user behavior without adding friction, because the guidance shows up in-product at the moment of use rather than in documentation users have to go find.
+Organization instructions let admins inject standing guidance into every Claude conversation across your organization—effectively giving Claude a system prompt that reflects your team's norms, best practices, and guardrails. This is a high-leverage tool for shifting user behavior without adding friction, because the guidance shows up in-product at the moment of use rather than in documentation users have to go find.
 
-A few ways you can use Org Preferences to manage consumption and usage patterns:
+A few ways you can use organization instructions to manage consumption and usage patterns:
 
 - **Nudge-against token-intensive output formats**. If you've noticed proliferation of a particular artifact type (e.g., HTML dashboards being shared in cross-functional threads where a simpler format would do), you can instruct Claude to confirm with the user before generating one. This adds a lightweight check without removing the capability entirely.
 
@@ -1702,7 +1718,7 @@ A few ways you can use Org Preferences to manage consumption and usage patterns:
 
 ### Analytics page
 
-The Analytics page within the user menu (**claude.ai/analytics**) is the fastest way to get a read on your org. It shows weekly active users, seat utilization, top connectors, total spend (MTD/QTD/YTD), spend by model, and a top-10 users-by-spend leaderboard. Product-specific views for Chat, Claude Code, Claude Design, and Cowork break down activity for each surface. **[Learn more](https://support.claude.com/en/articles/12883420-view-usage-analytics-for-team-and-enterprise-plans)**.
+The Analytics page within the user menu (**claude.ai/analytics**) is the fastest way to get a read on your org. It shows weekly active users, seat utilization, top connectors, total spend (MTD/QTD/YTD), spend by model, and a top-10 users-by-spend leaderboard. Product-specific views for chat, Claude Code, Cowork, and Claude Design break down activity for each surface. **[Learn more](https://support.claude.com/en/articles/12883420-view-usage-analytics-for-team-and-enterprise-plans)**.
 
 ### Skills analytics and per-skill ROI
 
@@ -1720,7 +1736,7 @@ The calculation currently happens outside the product, but the CSV export makes 
 
 ### Spend report CSV export
 
-If you need a one-off detailed breakdown, you can export a per-user, per-model spend report as a CSV from **Analytics → All Activity → Spend → Export Spend**. Choose MTD, last month, last 90 days, or a custom range up to 90 days back. The CSV includes user email, user ID, account UUID, product, model, request count, prompt and completion tokens, and net and gross spend in USD.
+If you need a one-off detailed breakdown, you can export a per-user, per-model spend report as a CSV from the Analytics page: in the spend section ("How much is Claude costing?") on the Overview tab, click "Export spend report" and choose MTD, last month, last 90 days, or a custom range up to 90 days back.
 
 ### Analytics chat
 
@@ -1730,9 +1746,65 @@ Use this when you have a specific question and don't want to navigate the dashbo
 
 ### Analytics API
 
-For programmatic access, use the Claude Enterprise Analytics API. Pull a ranked list of users by tokens used or dollars spent, or look at usage and cost trends over time broken down by product, model, context window, or region. Each request is capped at 31 days wide, starting within the last 365 days, and no earlier than Jan 1, 2026.
+For programmatic access, use the Claude Enterprise Analytics API. Pull a ranked list of users by tokens used or dollars spent, or look at usage and cost trends over time broken down by product, model, RBAC group, context window, region, or service tier (standard vs. fast). Grouping the cost report by RBAC group gives per-department spend for chargeback without exporting per-user rows. Each request is capped at 31 days wide, starting within the last 365 days, and no earlier than January 1, 2026.
 
-Your Primary Owner can generate an admin API key. Data refreshes every four hours; for invoicing-grade totals, query dates 30+ days in the past so late events have time to reconcile. **[Learn more](https://platform.claude.com/docs/en/manage-claude/analytics-api)** and review the **[API reference guide](https://platform.claude.com/docs/en/api/admin/analytics)**.
+Your Primary Owner can create a key with the read:analytics scope under Organization settings \> API. Cost and usage data typically lands within about four hours (occasionally up to 24) and can be revised for up to 30 days, so query dates 30+ days in the past for invoicing-grade totals. Engagement endpoints such as users, skills, plugins, and connectors update daily with roughly a one-day lag. **[Learn more](https://platform.claude.com/docs/en/manage-claude/analytics-api)** and review the **[API reference guide](https://platform.claude.com/docs/en/api/admin/analytics)**.
+
+### Per-user skills, plugin, and connector usage
+
+The Analytics API also breaks skill, plugin, and connector usage down per user. The `skills`, `plugins`, and `connectors` endpoints each support a `group_by[]=user_id` parameter, turning the org-wide totals you see in the dashboard into one row per user per skill (or plugin, or connector)—so you can see exactly who is running a given skill, how often, and which team members have actually invoked a plugin you rolled out. You can also group by RBAC group or product surface, or filter down to a single skill, plugin, or connector by name.
+
+This is useful for the same per-skill ROI questions above, just broken down by individual user instead of exported to a spreadsheet—for example, confirming a plugin rollout actually landed with the team it was distributed to, rather than just checking that it was installed. Learn more in the API reference: **[skills](https://platform.claude.com/docs/en/api/admin/analytics/skills/list)**, **[plugins](https://platform.claude.com/docs/en/api/admin/analytics/plugins/list)**, **[connectors](https://platform.claude.com/docs/en/api/admin/analytics/connectors/list)**.
+
+### Admin API
+
+For organizations managing limits across many groups, the **[Admin API](https://support.claude.com/en/articles/15330651-claude-enterprise-admin-api-reference-guide)** moves cost-control workflows into scripts — automating increase-request reviews, flagging members near their limits, and surfacing rapidly changing usage at scale. The API reads every member's effective limit and month-to-date spend and sets or clears per-user overrides. Group, seat-type, org-level limits, and pooled group budgets are still configured in Organization settings. The Admin API's user-management endpoints (currently in beta for Enterprise organizations) also let you create groups, add or remove members, and read your custom roles programmatically. See **[User management](https://platform.claude.com/docs/en/manage-claude/user-management)**.
+
+### Spend-threshold alerts
+
+Spend-threshold alerts notify admins at 75% and 90% of an org-level spend limit, giving you time to raise the cap before anyone is blocked mid-task. Pooled group budgets send their own alerts to billing admins at 50%, 75%, 95%, and 100% of the pool.
+
+### In-product surveys
+
+The analytics above tell you how much your team uses Claude; surveys tell you what they're doing with it and what's getting in their way. From **[Analytics \> Surveys](https://claude.ai/analytics/surveys)**, admins can send users a short survey that appears in Cowork or chat at a natural break in their work. Pick the audience by group, set a window, and review aggregated results in the console, including response rate, a breakdown by surface and group, and a feed of written answers, with a CSV export per survey. Learn more about **[creating surveys for your organization](https://support.claude.com/en/articles/16764057)**.
+
+### Time at limit (Usage page)
+
+The Usage page in **Organization settings \> Usage** opens with a view of how often members are reaching their spend limits. It shows time at limit per active seat this month, for all members and for your power users (the top 10% by spend), plotted against prior months with a forecast. It also calls out which group or limit type accounts for the most time at limit, so you know where to look first.
+
+Use this view as your check on whether limits fit how people work. Rising time at limit means members are getting blocked mid-task. You can adjust limits from the same page: raise a default, or increase the limits of the members who reached them.
+
+### Smart reports (beta)
+
+Analytics shows how much each team spends. Smart reports show what that spend is producing. Scope a report to a team, a date range, and the products you want to include. Claude reviews a sample of transcripts and breaks spend down by workstream and output type.
+
+For consumption management, focus on these sections:
+
+- **Cost per session by type of output.** See which kinds of work are expensive to produce, and whether that cost matches their value.
+
+- **Most common frictions and inefficiencies.** Rework loops and sessions with no usable output are spend with no return. Repeated friction often points to a connector or setting you can turn on in minutes.
+
+- **Reusable skills and workflows to build.** Packaging repeated work as a shared skill gets the whole team a consistent result faster. Once it's rolled out, track its cost and ROI in the Skills view.
+
+- **Most expensive sessions.** See where spend concentrates.
+
+Smart reports are designed to help you understand adoption and plan investment, not to evaluate individual performance. For availability, setup, and how to create and share reports, see **[Get started with smart reports](https://support.claude.com/en/articles/16893491-get-started-with-smart-reports)**.
+
+### Surveys (beta)
+
+You can run a short survey inside Claude to learn what people use Claude for, what it's worth to them, and where they're stuck. Then compare their answers with your spend data.
+
+Surveys show up as a card between tasks in Claude Cowork, or after a reply in chat, and never interrupt a running task. You can send one to all members or to specific groups, pick Cowork, chat or both, and set start and end dates. Each user sees a survey only once. Results update while the survey is live: response rate, bar charts for multiple-choice questions, and a feed of written answers you can filter by group. You can also export them to CSV.
+
+For consumption management, surveys are useful for:
+
+- **Checking value behind high spend.** When a group is often at its limit, ask what it's using Claude for before you raise or lower the cap.
+
+- **Filling in your ROI numbers.** Ask how much time Claude saves on key workflows, and use the answers as your value-per-run estimates in the Skills ROI analysis.
+
+- **Finding friction.** Ask where Claude isn't helping. Answers often point to a connector, skill, or model setting to change.
+
+**How to configure:** **Analytics \> Surveys \> New survey**. Primary Owners, Owners, Admins, and custom roles with Analytics view access can create surveys and see results. Responses go to your org's admins, and Anthropic accesses them only as needed to run the service. Don't put regulated data such as PHI in responses. Responses aren't anonymous: the export includes each respondent's email. Surveys aren't available yet for organizations using customer-managed encryption keys (CMEK). See **[Create surveys for your organization](https://support.claude.com/en/articles/16764057-create-surveys-for-your-organization)**.
 
 ------------------------------------------------------------------------
 
@@ -1756,19 +1828,27 @@ When you onboard users, share the following:
 
 - Sonnet is the default and handles most tasks well. Use Opus only when Sonnet isn't getting you where you need to go.
 
-- Your org has a default model set for new conversations; you can still switch models mid-conversation when a task needs it.
+- Your org has a default model set for new conversations; you can still pick a different model. Choose it at the start of a task.
 
 - The model selector is visible in the interface—remind users to check it, especially if they're running complex tasks.
 
-- The model selector is sticky, so make it a practice to check that it's the model you want to use.
+- Unless your admin has turned on Always start with the default model, the model selector remembers your last choice, so check it before you start a task.
 
 - The effort level appears next to the model name. Higher effort means more thorough responses but higher token consumption, so match it to the task.
 
 **What happens when they hit a cap**
 
-- If a user hits their individual cap, they can contact their group owner or the IT/admin team to request an increase.
+- Users are notified in-product as they approach their spend limit and, once they hit it, can click "Request more usage" to send an increase request to admins without leaving Claude. Tell users who their approver is and your expected turnaround.
 
-- They won't lose work in progress—Claude will complete the current turn before limiting further usage.
+- Nothing they've already produced is lost. The request that's already in flight completes, but further requests are blocked, so a multi-step Claude Code or Claude Cowork task may pause before it finishes. They can pick the work back up as soon as an admin raises the limit, or when limits reset at 00:00 UTC on the 1st of the month.
+
+- If your group uses a pooled budget, usage can pause for the whole group when the shared pool runs out, even if you haven't reached your own limit.
+
+**Resources to share with users**
+
+- **[Anthropic Academy](https://www.anthropic.com/learn)**
+
+- **[Change the model, effort, and thinking settings](https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings)**
 
 
 ---
@@ -1899,23 +1979,23 @@ Learn more
 
 Single sign-on (SSO/SAML) and domain capture
 
+SOC 2, ISO 27001, GDPR, and CCPA compliance
+
 Usage analytics and reporting
 
 SCIM provisioning
 
 Spend controls
 
-Role-based access control (RBAC)
-
 Data retention controls\*
-
-Audit logs and OpenTelemetry monitoring\*
-
-SOC 2, ISO 27001, GDPR, and CCPA compliance
 
 Compliance API
 
 HIPAA-ready offering
+
+Audit logs and OpenTelemetry monitoring\*
+
+Role-based access control (RBAC)
 
 ## Bring Claude to your enterprise two ways
 
@@ -2260,10 +2340,10 @@ Manager: Priya Shah*
 
 ### Human Resources
 
-- Convert project requirements into technical specifications
-- Design system architecture and component interactions
-- Troubleshoot errors and runtime issues
-- Identify code optimizations and performance improvements
+- Summarize candidate feedback into hiring recommendations
+- Create performance review templates and calibration summaries
+- Develop learning and development programs
+- Interpret headcount and workforce planning metrics
 
 Prompt
 
@@ -2464,9 +2544,15 @@ Active
 
 No. Your inputs and outputs are not used to train our models by default. Review our data practices at the [Trust Center](https://trust.anthropic.com/).
 
-### What security and compliance controls does Claude Enterprise include? 
+### What security and compliance controls does Claude Enterprise include?
 
-Claude Enterprise is built for secure deployment at scale. SSO with domain capture, role-based access, SCIM provisioning, and self-serve seat management for identity; audit logs, data retention controls, the Compliance API, and HIPAA-ready BAAs for compliance; and usage analytics, the Analytics API, and spend controls for visibility. All data is encrypted in transit and at rest. Visit the Trust Center for the full overview, or our regional compliance page for data residency details.
+Enterprise is built for organizations with real compliance obligations:
+
+- **Identity and access** — SSO and domain capture, SCIM and JIT provisioning, and role-based access control. Admins define groups, roles, and capabilities to govern exactly which people can use which products and connectors.
+- **Visibility and logging** — audit logs, a Compliance API for programmatic access to activity logs, chats, files, and projects, OpenTelemetry, and an Analytics API for aggregated adoption and engagement data. Both feed the DLP, SIEM, and monitoring tools your security team already runs.
+- **Data controls** — custom data retention, customer-managed encryption keys, and US-only inference.
+- **Network controls** — IP allowlisting and network-level access control, which prevents access to personal or non-corporate Claude instances from enterprise networks.
+- **Connector governance** — admins approve which connectors are available org-wide and set per-tool permissions. Connectors respect the permissions users already have in the underlying systems.
 
 ### Do you support HIPAA? Can we get a BAA?
 
@@ -2479,9 +2565,37 @@ Prev
 
 ### Products and capabilities
 
-### What's included in the Claude Enterprise plan?
+### What is the Claude Enterprise plan?
 
-Claude Enterprise gives your organization the full Claude experience including Claude Code, Claude Cowork and chat all with enterprise-grade security controls, plus connectors that bring context from your existing tools into Claude. For a full feature breakdown, see [claude.com/pricing](https://claude.com/pricing).
+Claude Enterprise is Anthropic's complete offering for organizations deploying Claude at scale. One seat gives every employee the full suite: Chat for everyday thinking work, Claude Code for engineering, Claude Cowork for delegating multi-step knowledge work, Claude Design for turning a prompt into polished visuals, and Claude in the tools your teams already use including Microsoft 365, Chrome, and Slack.
+
+Underneath all of it sits one identity, one policy, and one set of admin controls. Connectors bring in your organization's data, skills encode how your teams actually work, and enterprise-grade security, governance, and analytics give IT and security teams the visibility they need. Please reference [pricing](https://claude.com/pricing#team-&-enterprise) for a full feature breakdown.
+
+### What’s included in the Enterprise plan?
+
+The Claude Enterprise plan supports deep, cross-functional workflows and provides one seat for every surface:
+
+**One seat, every surface**
+
+- **Chat** — a thinking partner for everyday work, on web, desktop, and mobile
+- **Claude Code** — agentic coding in the terminal, IDE, Slack, and on the web
+- **Claude Cowork** — delegate your tasks such as research, analysis, and documents; get finished deliverables back
+- **Claude Design** — go from prompt to polished visuals, prototypes, and slides
+- **Claude for Microsoft 365** — Work with Claude in Excel, PowerPoint, Word, and Outlook
+- **Claude in Chrome** — Claude navigates, clicks, and fills out forms across your tabs
+
+**Context from your organization**
+
+- Pre-built connectors, plus custom connectors via MCP for internal systems
+- Skills that capture your templates, standards, and workflows so every team runs them the same way
+- Memory across conversations, so Claude carries context forward
+
+**Security, governance, and administration**
+
+- Single sign-on (SSO), domain capture, SCIM and JIT provisioning
+- Role-based access control for fine-grained user, feature, and spend management
+- Audit logs, Compliance API, and Analytics API
+- Custom data retention, customer-managed encryption keys, IP allowlisting, network-level access control
 
 ### What's the difference between Chat, Claude Code, and Claude Cowork?
 
@@ -2490,6 +2604,10 @@ Chat is meant for research, brainstorming, writing, and analysis. Claude Code is
 ### Can we connect Claude to the tools we already use?
 
 Yes. Connectors bring context from Google Drive, Gmail, Slack, Microsoft 365 and many more into Claude. You can also use Claude directly inside Excel, PowerPoint, Outlook, Slack, and Chrome. See the [Enterprise administrator guide](https://claude.com/resources/tutorials/claude-enterprise-administrator-guide) for setup.
+
+### What is Claude for Work?
+
+Claude for Work was the earlier name for our business plans — what are now the Team and Enterprise plans. The name has been retired, but the plans still exist: Team for collaboration across smaller organizations, and Enterprise for organizations operating at scale that need advanced security, compliance, and administrative controls.
 
 [Prev](#)
 
@@ -2505,6 +2623,12 @@ Claude Enterprise is available directly from Anthropic and through AWS Marketpla
 ### Do you support invoice billing on Claude Enterprise?
 
 Yes. Sales-assisted Claude Enterprise plans include invoice billing. Self-serve Enterprise plans accept credit card or ACH bank transfer.
+
+### How can I integrate Claude into my own products or services?
+
+If you're a developer building user-facing experiences or new products with Claude, the Claude Platform is the right starting point. It gives you direct access to our models, the Claude Agent SDK, and the building blocks for production agents.
+
+‍[Explore the developer docs](https://docs.claude.com/en/home) to get started, or [contact our Sales team](https://claude.com/contact-sales) to talk through platform plans and volume commitments.
 
 ### Where do I get an API key for Claude Platform and how does billing work?
 
@@ -2531,17 +2655,17 @@ Tutorial
 
 Tutorial
 
-[Claude Cowork Enterprise admin guide](https://claude.com/resources/tutorials/claude-cowork-enterprise-administrator-guide)
+[Claude Academy](https://academy.claude.com/)
 
-Claude Cowork Enterprise admin guide
+Claude Academy
 
-Claude Cowork Enterprise admin guide
+Claude Academy
 
-Tutorial
+Resource
 
-[Tutorial](https://claude.com/resources/tutorials/claude-cowork-enterprise-administrator-guide)
+[Resource](https://academy.claude.com/)
 
-Tutorial
+Resource
 
 [Zero trust AI agents](https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/6a0521e14a6fed28fe4a3b3b_Claude-eBook-Zero-Trust-for-AI-Agents-05132026.pdf)
 
@@ -2614,112 +2738,6 @@ Thank you! Your submission has been received!
 
 Oops! Something went wrong while submitting the form.
 
-Write
-
-[Button Text](#)
-
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
-
 [Anthropic](https://www.anthropic.com/)
 
 Anthropic
@@ -2738,11 +2756,6 @@ Products
   [Claude Code](/product/claude-code)
   Claude Code
 
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
 - Claude Cowork
 
   [Claude Cowork](/product/cowork)
@@ -2752,11 +2765,6 @@ Products
 
   [@Claude](/product/tag)
   @Claude
-
-- Claude Design
-
-  [Claude Design](/product/design)
-  Claude Design
 
 - Claude Science
 
@@ -2782,22 +2790,44 @@ Products
 
   [Log in](https://claude.ai/login)
 
-Features
+Capabilities
 
-- Claude for Chrome
+- Artifacts
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Artifacts](/features/artifacts)
+  Artifacts
 
-- Claude for Microsoft 365
+- Design
 
-  [Claude for Microsoft 365](/claude-for-microsoft-365)
-  Claude for Microsoft 365
+  [Design](/product/design)
+  Design
+
+- Connectors
+
+  [Connectors](/marketplace/connectors-plugins)
+  Connectors
+
+- Plugins
+
+  [Plugins](/marketplace/plugins)
+  Plugins
 
 - Skills
 
   [Skills](/skills)
   Skills
+
+Extensions
+
+- Claude in Chrome
+
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
+
+- Claude for Microsoft 365
+
+  [Claude for Microsoft 365](/claude-for-microsoft-365)
+  Claude for Microsoft 365
 
 Models
 
@@ -2826,7 +2856,19 @@ Models
   [Haiku](https://www.anthropic.com/claude/haiku)
   Haiku
 
-Solutions
+Enterprise
+
+- Overview
+
+  [Overview](/solutions/enterprise)
+  Overview
+
+- Claude Code for Enterprise
+
+  [Claude Code for Enterprise](/product/claude-code/enterprise)
+  Claude Code for Enterprise
+
+Use cases
 
 - AI agents
 
@@ -2843,6 +2885,13 @@ Solutions
   [Coding](/solutions/coding)
   Coding
 
+- Commerce
+
+  [Commerce](/solutions/commerce)
+  Commerce
+
+Departments
+
 - Customer support
 
   [Customer support](/solutions/customer-support)
@@ -2853,10 +2902,17 @@ Solutions
   [Cybersecurity](/solutions/cybersecurity)
   Cybersecurity
 
-- Enterprise
+- Legal
 
-  [Enterprise](/solutions/enterprise)
-  Enterprise
+  [Legal](/solutions/legal)
+  Legal
+
+- Sales
+
+  [Sales](/solutions/sales)
+  Sales
+
+Industries
 
 - Financial services
 
@@ -2883,11 +2939,6 @@ Solutions
   [K-12 teachers](/solutions/teachers)
   K-12 teachers
 
-- Legal
-
-  [Legal](/solutions/legal)
-  Legal
-
 - Life sciences
 
   [Life sciences](/solutions/life-sciences)
@@ -2903,31 +2954,55 @@ Solutions
   [Small business](/solutions/small-business)
   Small business
 
-Claude Platform
+Programs
+
+- Startups
+
+  [Startups](/programs/startups)
+  Startups
+
+- Scientists
+
+  [Scientists](/programs/team-plan-for-scientists)
+  Scientists
+
+Developers
+
+- Developer docs
+
+  [Developer docs](https://code.claude.com/docs/en/overview)
+  Developer docs
+
+- Developer blog
+
+  [Developer blog](https://claude.dev/)
+  Developer blog
+
+- Community
+
+  [Community](/community)
+  Community
+
+- Console
+
+  [Console](https://platform.claude.com/docs/en/home)
+  Console
+
+- Engineering at Anthropic
+
+  [Engineering at Anthropic](https://www.anthropic.com/engineering)
+  Engineering at Anthropic
+
+Platform
 
 - Overview
 
   [Overview](/platform/api)
   Overview
 
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
-
-- Ecosystem
-
-  [Ecosystem](/ecosystem)
-  Ecosystem
-
 - Marketplace
 
-  [Marketplace](/platform/marketplace)
+  [Marketplace](/marketplace)
   Marketplace
 
 - Claude on AWS
@@ -2945,16 +3020,6 @@ Claude Platform
   [Microsoft Foundry](/partners/microsoft-foundry)
   Microsoft Foundry
 
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](https://platform.claude.com/)
-  Console login
-
 Resources
 
 - Blog
@@ -2967,40 +3032,20 @@ Resources
   [Claude partner network](/partners)
   Claude partner network
 
-- Community
+- Claude Academy
 
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
+  [Claude Academy](https://academy.claude.com/)
+  Claude Academy
 
 - Customer stories
 
   [Customer stories](/customers)
   Customer stories
 
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
 - Events
 
   [Events](https://www.anthropic.com/events)
   Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
 
 - Powered by Claude
 
@@ -3009,18 +3054,45 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](/marketplace/service-partners)
   Service partners
 
-- Tutorials
+Help and security
 
-  [Tutorials](/resources/tutorials)
-  Tutorials
+- Availability
 
-- Use cases
+  [Availability](https://www.anthropic.com/supported-countries)
+  Availability
 
-  [Use cases](/resources/use-cases)
-  Use cases
+- Check files
+
+  [Check files](https://claude.com/check-files)
+  Check files
+
+- Regional compliance
+
+  [Regional compliance](/regional-compliance)
+  Regional compliance
+
+- Report abuse
+
+  [Report abuse](https://claude.com/form/anthropic-content-reporting)
+  Report abuse
+
+- Security and compliance
+
+  [Security and compliance](https://trust.anthropic.com/)
+  Security and compliance
+
+- Status
+
+  [Status](https://status.anthropic.com/)
+  Status
+
+- Support center
+
+  [Support center](https://support.claude.com/en/)
+  Support center
 
 Company
 
@@ -3039,20 +3111,15 @@ Company
   [Policy](https://www.anthropic.com/policy)
   Policy
 
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
 - Research
 
   [Research](https://www.anthropic.com/research)
   Research
 
-- News
+- Anthropic news
 
-  [News](https://www.anthropic.com/news)
-  News
+  [Anthropic news](https://www.anthropic.com/news)
+  Anthropic news
 
 - Policy on the AI Exponential
 
@@ -3062,14 +3129,17 @@ Company
 
 # Claude in Chrome admin controls
 
+Updated today
 
-Claude in Chrome admin controls are available for Team and Enterprise plans.
+Copy for LLM
 
 This article explains how Team and Enterprise owners can manage Claude in Chrome for their organization.
 
+Claude in Chrome admin controls are available for Team and Enterprise plans.
+
 Claude in Chrome is a browser extension that allows Claude to read, click, and navigate websites on behalf of your users. As an owner, you control whether the extension is available for users to install and which sites they can access.
 
-**Important:** Before enabling Claude in Chrome for your organization, review **[Using Claude in Chrome safely](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely)** to understand the risks of browser-based AI, including the prompt injection classifiers, the safeguards in place, and remaining risks.
+**Note:** On Max and Team plans, the side panel runs as a Claude Cowork session, and this is rolling out to Pro plans in the coming weeks. On Enterprise plans, the side panel runs as a Cowork session once you've enabled it for your organization—see **[Enable the Cowork side panel](#h_bdb63199e1)** below. Where the Cowork side panel isn't enabled, users have the classic side panel, and your existing organization settings apply to it unchanged.
 
 ## Access Claude in Chrome settings
 
@@ -3077,29 +3147,47 @@ To manage Claude in Chrome settings for your organization:
 
 1.  Sign in to Claude with your Owner or Primary Owner account.
 
-2.  Navigate to **[Organization settings \> Claude in Chrome](http://claude.ai/admin-settings/browser-extension)**.
+2.  Navigate to **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)**.
 
 ## Enable or disable the extension
 
-Use the toggle to enable or disable Claude in Chrome for your entire organization.
+**Important:** Before enabling Claude in Chrome for your organization, review **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428)** to understand the risks of browser-based AI, including the prompt injection classifiers, the safeguards in place, and remaining risks.
+
+Use the **Enable for your team** toggle to enable or disable Claude in Chrome for your entire organization.
 
 - **Team plans:** The extension is enabled by default. Disable it if you prefer users not to have access.
 
-- **Enterprise plans:** The extension is disabled by default. Enable it when you're ready for users to access the feature.
+- **Enterprise plans:** The extension is disabled by default. Starting September 10, 2026, it turns on by default unless you've already disabled it.
 
-Claude in Chrome and Claude Cowork are managed separately. Enabling Claude in Chrome for your organization lets users use the extension. Whether Claude can use it within Cowork is a separate capability setting, and users' browsers still need the extension deployed or installed. For Cowork admin settings, see **[Use Claude Cowork on Team and Enterprise plans](https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans)**.
+Claude in Chrome and Claude Cowork are managed separately. Enabling Claude in Chrome for your organization lets users use the extension. Whether Claude can use it within Cowork is a separate capability setting, and users' browsers still need the extension deployed or installed. Cowork also has a browser built into the Claude Desktop app that doesn't require the extension; it's off by default on Enterprise plans and managed from **[Organization settings \> Cowork](https://claude.ai/admin-settings/cowork)**. You can enable Claude in Chrome, the built-in browser, both, or neither. For Cowork admin settings, see **[Use Claude Cowork on Team and Enterprise plans](https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans)**.
 
 **Note:** When you enable the extension for an Enterprise organization, users are not automatically notified. You may want to communicate availability through your internal channels.
 
 ## Configure site access
 
-Use allowlists and blocklists to control which websites Claude can access when users are working with the extension.
+Use allowlists and blocklists to control which websites Claude can access when it's working in Claude in Chrome or the Cowork built-in browser. The same list governs both, so there's no separate list to maintain for the built-in browser.
 
-**Allowlist:** Specify which sites Claude is permitted to access by adding them to the allowlist. We recommend starting with a restrictive allowlist, especially during initial rollout.
+**Allowlist:** Specify which sites Claude is permitted to access by adding them to the allowlist.
 
 **Blocklist:** Specify sites Claude should never access, regardless of other settings, by adding them to the blocklist. This adds an extra layer of protection beyond **[Claude's default blocked categories](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely#h_34f8d5ca87)**.
 
 **Recommendation:** Start with a more restrictive allowlist for the security of your organization's data, then expand access over time as you become comfortable with the extension's behavior.
+
+**Note:** The allowlist and blocklist govern what URLs Claude can navigate to and act on. If a user manually types a blocked URL into the built-in browser, the page still loads with a "This site is blocked by your organization's policy" banner and Claude's tools are disabled on that page.
+
+## Enable the Cowork side panel
+
+On Enterprise plans, the Claude in Chrome side panel can run as a Claude Cowork session once it’s enabled for your organization. Side panel sessions are saved to users' history, move with them across surfaces, and support their skills, plugins, and connectors. Until you enable it, users see the classic side panel.
+
+**To turn on the Cowork side panel for your organization:**
+
+1.  Enable Cowork in the cloud for your organization in **[Organization settings \> Cowork](https://claude.ai/admin-settings/cowork)**. See **[Use Claude Cowork on Team and Enterprise plans](https://support.claude.com/en/articles/13455879)**.
+
+2.  Navigate to **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)** and toggle **Enable for your team** on.
+
+3.  Deploy the extension through your Chrome management tools, or have users install it from the **Chrome Web Store**.
+
+If your organization already uses Claude in Chrome, users will see the Cowork side panel automatically once you enable Cowork in the cloud. Users don’t need to reinstall anything.
 
 ## Control password manager access
 
@@ -3117,7 +3205,7 @@ If you want to disable this for members of your organization, you can toggle the
 
 1.  Sign in to Claude with your Owner account.
 
-2.  Navigate to **[Organization settings \> Claude in Chrome](http://claude.ai/admin-settings/browser-extension)**.
+2.  Navigate to **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)**.
 
 3.  Toggle the extension off.
 
@@ -3143,7 +3231,7 @@ To test Claude in Chrome with a subset of users before broader rollout:
 
 3.  Use your IT controls to limit which employees can install the extension.
 
-4.  Share **[Using Claude in Chrome safely](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely)** with pilot users.
+4.  Share **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428)** with pilot users.
 
 5.  Gather feedback and expand access over time.
 
@@ -3162,7 +3250,7 @@ We recommend sharing these resources with users before they start using Claude i
 
 - **[Get started with Claude in Chrome](https://support.claude.com/en/articles/12012173-getting-started-with-claude-for-chrome)**: Installation and core capabilities
 
-- **[Using Claude in Chrome safely](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely)**: Risks and best practices
+- **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428)**: Risks and best practices
 
 - **[Claude in Chrome permissions guide](https://support.claude.com/en/articles/12902446-claude-for-chrome-permissions-guide)**: How users control what Claude can access
 
@@ -3269,43 +3357,20 @@ We recommend sharing these resources with users before they start using Claude i
 
 A phased implementation framework to help nonprofit admins launch, scale, and sustain Claude adoption across their organization.
 
-- 
+4 minClaude.ai
 
-
-  Nonprofits
-
-- 
-
-
-  Claude.ai
-
-- 
-
-
-  Watch time
-
-  5
-
-  min
-
-  min
-
-- 
-
-
-  [Copy link](#)
-  https://claude.com/resources/tutorials/claude-for-nonprofits-partnership-success-guide-for-admins
+[Open Claude](https://claude.ai/new)
 
 Welcome to the Claude for nonprofits community. This guide provides everything you need to successfully launch and scale Claude at your organization.
 
 The framework below is flexible and self-paced. Move through the phases at whatever speed works for your team.
 
-## Phase 1: Foundation (technical setup and access)
+## Phase 1: Foundation (technical setup and access)[](#phase-1-foundation-technical-setup-and-access)
 
 #### Key resources
 
-- [Getting started guides](https://support.claude.com/en/articles/12166798-getting-started-with-claude-for-enterprise) covering SSO, user management, and technical configuration
-- [Driving adoption at your organization](https://anthropic.skilljar.com/driving-enterprise-adoption-of-claude) course with customizable templates for change management
+- [Getting started guides(opens in new tab)](https://support.claude.com/en/articles/12166798-getting-started-with-claude-for-enterprise) covering SSO, user management, and technical configuration
+- [Driving adoption at your organization(opens in new tab)](https://anthropic.skilljar.com/driving-enterprise-adoption-of-claude) course with customizable templates for change management
 
 #### Recommended actions
 
@@ -3319,14 +3384,14 @@ The framework below is flexible and self-paced. Move through the phases at whate
 - Identify an implementation leader to complete adoption training
 - Acknowledge challenges early and maintain open communication
 - Establish Slack or Teams channels and office hours with designated ownership
-- Bookmark the [Claude help center](https://support.claude.com/en/) for technical support
+- Bookmark the [Claude help center(opens in new tab)](https://support.claude.com/en/) for technical support
 
-## Phase 2: Activation (first users and early wins)
+## Phase 2: Activation (first users and early wins)[](#phase-2-activation-first-users-and-early-wins)
 
 #### Key resources
 
-- [On-demand AI fluency courses](https://anthropic.skilljar.com/)
-- [Use case and workflow planning](https://claude.com/resources/use-cases/workflow-improvement-planner)
+- [On-demand AI fluency courses(opens in new tab)](/)
+- [Use case and workflow planning(opens in new tab)](/use-cases/workflow-improvement-planner)
 
 #### Recommended actions
 
@@ -3337,18 +3402,27 @@ The framework below is flexible and self-paced. Move through the phases at whate
 #### Implementation tips
 
 - Launch Slack or Teams channels for ongoing discussion
+
 - Host 30-day retrospectives to capture lessons learned
-- Use Claude itself to facilitate planning. Try a prompt like: `Help me design a 30-day pilot plan for introducing Claude to our fundraising team. Include milestones, success metrics, and potential challenges.`
+
+- Use Claude itself to facilitate planning. Try a prompt like:
+
+  Help me design a 30-day pilot plan for introducing Claude to our fundraising team. Include milestones, success metrics, and potential challenges.
+
+  
+
+  Open in Claude
+
 - Send baseline surveys to track progress and use cases
 
-## Phase 3: Acceleration (scaling and integration)
+## Phase 3: Acceleration (scaling and integration)[](#phase-3-acceleration-scaling-and-integration)
 
 #### Key resources
 
-- [Nonprofit use cases](https://claude.com/resources/use-cases/category/nonprofits)
-- [How to access audit logs](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs)
-- [Claude artifact inspiration gallery](https://claude.ai/artifacts?category=learn)
-- [MCP connector directory](https://claude.com/connectors)
+- [Use case library(opens in new tab)](/all?kind=use-case)
+- [How to access audit logs(opens in new tab)](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs)
+- [Claude artifact inspiration gallery(opens in new tab)](https://claude.ai/artifacts?category=learn)
+- [MCP connector directory(opens in new tab)](https://claude.com/connectors)
 
 #### Recommended actions
 
@@ -3362,12 +3436,12 @@ The framework below is flexible and self-paced. Move through the phases at whate
 - Monitor leading indicators: weekly active users %, users with 10+ chats %, project adoption %
 - Share success stories internally on a regular basis
 
-## Phase 4: Expansion (advanced use cases and impact)
+## Phase 4: Expansion (advanced use cases and impact)[](#phase-4-expansion-advanced-use-cases-and-impact)
 
 #### Key resources
 
-- [Claude train the trainer program](https://anthropic.skilljar.com/enterprise-train-the-trainer) (self-paced course)
-- [Case studies hub](https://claude.com/customers)
+- [Claude train the trainer program(opens in new tab)](https://anthropic.skilljar.com/enterprise-train-the-trainer) (self-paced course)
+- [Case studies hub(opens in new tab)](https://claude.com/customers)
 
 #### Recommended actions
 
@@ -3380,506 +3454,10 @@ Sustainable adoption means building internal expertise. As AI becomes embedded i
 
 *Note: There's no "right" timeline for implementation. Whether you're moving quickly toward organization-wide adoption or taking a measured, department-specific approach, we're here to support your journey.*
 
-## Related tutorials
-
-[Using the Candid connector in Claude](/resources/tutorials/using-the-candid-connector-in-claude)
-
-Using the Candid connector in Claude
-
-Using the Candid connector in Claude
-
-Tutorial
-
-[Tutorial](/resources/tutorials/using-the-candid-connector-in-claude)
-
-Tutorial
-
-[Using the Blackbaud connector in Claude](/resources/tutorials/using-the-blackbaud-connector-in-claude)
-
-Using the Blackbaud connector in Claude
-
-Using the Blackbaud connector in Claude
-
-Tutorial
-
-[Tutorial](/resources/tutorials/using-the-blackbaud-connector-in-claude)
-
-Tutorial
-
-[Using the Benevity connector in Claude](/resources/tutorials/using-the-benevity-connector-in-claude)
-
-Using the Benevity connector in Claude
-
-Using the Benevity connector in Claude
-
-Tutorial
-
-[Tutorial](/resources/tutorials/using-the-benevity-connector-in-claude)
-
-Tutorial
-
-[Claude for nonprofits partnership guide for all users](/resources/tutorials/claude-for-nonprofits-partnership-guide-for-all-users)
-
-Claude for nonprofits partnership guide for all users
-
-Claude for nonprofits partnership guide for all users
-
-Tutorial
-
-[Tutorial](/resources/tutorials/claude-for-nonprofits-partnership-guide-for-all-users)
-
-Tutorial
-
-[Homepage](https://claude.com)
-
-Homepage
-
-
-Thank you! Your submission has been received!
-
-Oops! Something went wrong while submitting the form.
-
-Write
-
-[Button Text](#)
-
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
-
-[Anthropic](https://www.anthropic.com/)
-
-Anthropic
-
-© \[year\] Anthropic PBC
-
-Products
-
-- Claude
-
-  [Claude](/product/overview)
-  Claude
-
-- Claude Code
-
-  [Claude Code](/product/claude-code)
-  Claude Code
-
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
-- Claude Cowork
-
-  [Claude Cowork](/product/cowork)
-  Claude Cowork
-
-- @Claude
-
-  [@Claude](/product/tag)
-  @Claude
-
-- Claude Design
-
-  [Claude Design](/product/design)
-  Claude Design
-
-- Claude Science
-
-  [Claude Science](/product/claude-science)
-  Claude Science
-
-- Claude Security
-
-  [Claude Security](/product/claude-security)
-  Claude Security
-
-- Download app
-
-  [Download app](/download)
-  Download app
-
-- Pricing
-
-  [Pricing](/pricing)
-  Pricing
-
-- Log in
-
-  [Log in](https://claude.ai/login)
-
-Features
-
-- Claude for Chrome
-
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
-
-- Claude for Microsoft 365
-
-  [Claude for Microsoft 365](/claude-for-microsoft-365)
-  Claude for Microsoft 365
-
-- Skills
-
-  [Skills](/skills)
-  Skills
-
-Models
-
-- Mythos
-
-  [Mythos](https://www.anthropic.com/claude/mythos)
-  Mythos
-
-- Fable
-
-  [Fable](https://www.anthropic.com/claude/fable)
-  Fable
-
-- Opus
-
-  [Opus](https://www.anthropic.com/claude/opus)
-  Opus
-
-- Sonnet
-
-  [Sonnet](https://www.anthropic.com/claude/sonnet)
-  Sonnet
-
-- Haiku
-
-  [Haiku](https://www.anthropic.com/claude/haiku)
-  Haiku
-
-Solutions
-
-- AI agents
-
-  [AI agents](/solutions/agents)
-  AI agents
-
-- Code modernization
-
-  [Code modernization](/solutions/code-modernization)
-  Code modernization
-
-- Coding
-
-  [Coding](/solutions/coding)
-  Coding
-
-- Customer support
-
-  [Customer support](/solutions/customer-support)
-  Customer support
-
-- Cybersecurity
-
-  [Cybersecurity](/solutions/cybersecurity)
-  Cybersecurity
-
-- Enterprise
-
-  [Enterprise](/solutions/enterprise)
-  Enterprise
-
-- Financial services
-
-  [Financial services](/solutions/financial-services)
-  Financial services
-
-- Government
-
-  [Government](/solutions/government)
-  Government
-
-- Healthcare
-
-  [Healthcare](/solutions/healthcare)
-  Healthcare
-
-- Higher education
-
-  [Higher education](/solutions/education)
-  Higher education
-
-- K-12 teachers
-
-  [K-12 teachers](/solutions/teachers)
-  K-12 teachers
-
-- Legal
-
-  [Legal](/solutions/legal)
-  Legal
-
-- Life sciences
-
-  [Life sciences](/solutions/life-sciences)
-  Life sciences
-
-- Nonprofits
-
-  [Nonprofits](/solutions/nonprofits)
-  Nonprofits
-
-- Small business
-
-  [Small business](/solutions/small-business)
-  Small business
-
-Claude Platform
-
-- Overview
-
-  [Overview](/platform/api)
-  Overview
-
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
-
-- Ecosystem
-
-  [Ecosystem](/ecosystem)
-  Ecosystem
-
-- Marketplace
-
-  [Marketplace](/platform/marketplace)
-  Marketplace
-
-- Claude on AWS
-
-  [Claude on AWS](/partners/claude-on-aws)
-  Claude on AWS
-
-- Google Cloud
-
-  [Google Cloud](/partners/google-cloud)
-  Google Cloud
-
-- Microsoft Foundry
-
-  [Microsoft Foundry](/partners/microsoft-foundry)
-  Microsoft Foundry
-
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](https://platform.claude.com/)
-  Console login
-
-Resources
-
-- Blog
-
-  [Blog](/blog)
-  Blog
-
-- Claude partner network
-
-  [Claude partner network](/partners)
-  Claude partner network
-
-- Community
-
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
-
-- Customer stories
-
-  [Customer stories](/customers)
-  Customer stories
-
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
-- Events
-
-  [Events](https://www.anthropic.com/events)
-  Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
-
-- Powered by Claude
-
-  [Powered by Claude](/partners/powered-by-claude)
-  Powered by Claude
-
-- Service partners
-
-  [Service partners](/partners/services)
-  Service partners
-
-- Tutorials
-
-  [Tutorials](/resources/tutorials)
-  Tutorials
-
-- Use cases
-
-  [Use cases](/resources/use-cases)
-  Use cases
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Policy
-
-  [Policy](https://www.anthropic.com/policy)
-  Policy
-
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
-- Research
-
-  [Research](https://www.anthropic.com/research)
-  Research
-
-- News
-
-  [News](https://www.anthropic.com/news)
-  News
-
-- Policy on the AI Exponential
+- [Phase 1: Foundation (technical setup and access)](#phase-1-foundation-technical-setup-and-access)
+- [Phase 2: Activation (first users and early wins)](#phase-2-activation-first-users-and-early-wins)
+- [Phase 3: Acceleration (scaling and integration)](#phase-3-acceleration-scaling-and-integration)
+- [Phase 4: Expansion (advanced use cases and impact)](#phase-4-expansion-advanced-use-cases-and-impact)
 
 
 ---
@@ -3887,14 +3465,17 @@ Company
 
 # Claude in Chrome admin controls
 
+Updated today
 
-Claude in Chrome admin controls are available for Team and Enterprise plans.
+Copy for LLM
 
 This article explains how Team and Enterprise owners can manage Claude in Chrome for their organization.
 
+Claude in Chrome admin controls are available for Team and Enterprise plans.
+
 Claude in Chrome is a browser extension that allows Claude to read, click, and navigate websites on behalf of your users. As an owner, you control whether the extension is available for users to install and which sites they can access.
 
-**Important:** Before enabling Claude in Chrome for your organization, review **[Using Claude in Chrome safely](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely)** to understand the risks of browser-based AI, including the prompt injection classifiers, the safeguards in place, and remaining risks.
+**Note:** On Max and Team plans, the side panel runs as a Claude Cowork session, and this is rolling out to Pro plans in the coming weeks. On Enterprise plans, the side panel runs as a Cowork session once you've enabled it for your organization—see **[Enable the Cowork side panel](#h_bdb63199e1)** below. Where the Cowork side panel isn't enabled, users have the classic side panel, and your existing organization settings apply to it unchanged.
 
 ## Access Claude in Chrome settings
 
@@ -3902,29 +3483,47 @@ To manage Claude in Chrome settings for your organization:
 
 1.  Sign in to Claude with your Owner or Primary Owner account.
 
-2.  Navigate to **[Organization settings \> Claude in Chrome](http://claude.ai/admin-settings/browser-extension)**.
+2.  Navigate to **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)**.
 
 ## Enable or disable the extension
 
-Use the toggle to enable or disable Claude in Chrome for your entire organization.
+**Important:** Before enabling Claude in Chrome for your organization, review **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428)** to understand the risks of browser-based AI, including the prompt injection classifiers, the safeguards in place, and remaining risks.
+
+Use the **Enable for your team** toggle to enable or disable Claude in Chrome for your entire organization.
 
 - **Team plans:** The extension is enabled by default. Disable it if you prefer users not to have access.
 
-- **Enterprise plans:** The extension is disabled by default. Enable it when you're ready for users to access the feature.
+- **Enterprise plans:** The extension is disabled by default. Starting September 10, 2026, it turns on by default unless you've already disabled it.
 
-Claude in Chrome and Claude Cowork are managed separately. Enabling Claude in Chrome for your organization lets users use the extension. Whether Claude can use it within Cowork is a separate capability setting, and users' browsers still need the extension deployed or installed. For Cowork admin settings, see **[Use Claude Cowork on Team and Enterprise plans](https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans)**.
+Claude in Chrome and Claude Cowork are managed separately. Enabling Claude in Chrome for your organization lets users use the extension. Whether Claude can use it within Cowork is a separate capability setting, and users' browsers still need the extension deployed or installed. Cowork also has a browser built into the Claude Desktop app that doesn't require the extension; it's off by default on Enterprise plans and managed from **[Organization settings \> Cowork](https://claude.ai/admin-settings/cowork)**. You can enable Claude in Chrome, the built-in browser, both, or neither. For Cowork admin settings, see **[Use Claude Cowork on Team and Enterprise plans](https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans)**.
 
 **Note:** When you enable the extension for an Enterprise organization, users are not automatically notified. You may want to communicate availability through your internal channels.
 
 ## Configure site access
 
-Use allowlists and blocklists to control which websites Claude can access when users are working with the extension.
+Use allowlists and blocklists to control which websites Claude can access when it's working in Claude in Chrome or the Cowork built-in browser. The same list governs both, so there's no separate list to maintain for the built-in browser.
 
-**Allowlist:** Specify which sites Claude is permitted to access by adding them to the allowlist. We recommend starting with a restrictive allowlist, especially during initial rollout.
+**Allowlist:** Specify which sites Claude is permitted to access by adding them to the allowlist.
 
 **Blocklist:** Specify sites Claude should never access, regardless of other settings, by adding them to the blocklist. This adds an extra layer of protection beyond **[Claude's default blocked categories](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely#h_34f8d5ca87)**.
 
 **Recommendation:** Start with a more restrictive allowlist for the security of your organization's data, then expand access over time as you become comfortable with the extension's behavior.
+
+**Note:** The allowlist and blocklist govern what URLs Claude can navigate to and act on. If a user manually types a blocked URL into the built-in browser, the page still loads with a "This site is blocked by your organization's policy" banner and Claude's tools are disabled on that page.
+
+## Enable the Cowork side panel
+
+On Enterprise plans, the Claude in Chrome side panel can run as a Claude Cowork session once it’s enabled for your organization. Side panel sessions are saved to users' history, move with them across surfaces, and support their skills, plugins, and connectors. Until you enable it, users see the classic side panel.
+
+**To turn on the Cowork side panel for your organization:**
+
+1.  Enable Cowork in the cloud for your organization in **[Organization settings \> Cowork](https://claude.ai/admin-settings/cowork)**. See **[Use Claude Cowork on Team and Enterprise plans](https://support.claude.com/en/articles/13455879)**.
+
+2.  Navigate to **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)** and toggle **Enable for your team** on.
+
+3.  Deploy the extension through your Chrome management tools, or have users install it from the **Chrome Web Store**.
+
+If your organization already uses Claude in Chrome, users will see the Cowork side panel automatically once you enable Cowork in the cloud. Users don’t need to reinstall anything.
 
 ## Control password manager access
 
@@ -3942,7 +3541,7 @@ If you want to disable this for members of your organization, you can toggle the
 
 1.  Sign in to Claude with your Owner account.
 
-2.  Navigate to **[Organization settings \> Claude in Chrome](http://claude.ai/admin-settings/browser-extension)**.
+2.  Navigate to **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)**.
 
 3.  Toggle the extension off.
 
@@ -3968,7 +3567,7 @@ To test Claude in Chrome with a subset of users before broader rollout:
 
 3.  Use your IT controls to limit which employees can install the extension.
 
-4.  Share **[Using Claude in Chrome safely](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely)** with pilot users.
+4.  Share **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428)** with pilot users.
 
 5.  Gather feedback and expand access over time.
 
@@ -3987,7 +3586,7 @@ We recommend sharing these resources with users before they start using Claude i
 
 - **[Get started with Claude in Chrome](https://support.claude.com/en/articles/12012173-getting-started-with-claude-for-chrome)**: Installation and core capabilities
 
-- **[Using Claude in Chrome safely](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely)**: Risks and best practices
+- **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428)**: Risks and best practices
 
 - **[Claude in Chrome permissions guide](https://support.claude.com/en/articles/12902446-claude-for-chrome-permissions-guide)**: How users control what Claude can access
 
@@ -4085,6 +3684,103 @@ We recommend sharing these resources with users before they start using Claude i
 - **[Using Claude in Chrome safely](../15-Claude-AI-Features/using-claude-for-chrome-safely.md)**: Risks and best practices
 
 - **[Claude in Chrome permissions guide](../15-Claude-AI-Features/claude-for-chrome-permissions-guide.md)**: How users control what Claude can access
+
+
+---
+## claude-tag-launch-promo-for-claude-team-and-enterprise-aa16fd74a3.md
+
+# Claude Tag launch promo for Claude Team and Enterprise
+
+June 23, 2026
+
+
+With the launch of Claude Tag, we're issuing a one-time Claude Tag usage credit to eligible organizations - \$25000 per Claude Enterprise organization and \$2500 per Claude Team organization with at least 10 paid seats. Credits are issued automatically and are scoped to your organization's Claude Tag usage. The credit applies to Claude Tag usage in Slack channels, which is billed to your organization. It doesn't cover direct messages with Claude, which are billed to individual seats.
+
+All promotional credits expire at 11:59 PM Pacific Time on September 1, 2026.
+
+This article explains who's eligible, how the credit works, and when it expires. Additional offer terms apply and are available here: **[Claude Promotional Credit Offer Terms](https://www.anthropic.com/legal/promotion-credit-terms)**.
+
+## Eligibility
+
+The promo is available to:
+
+- Claude Enterprise organizations, both sales-assisted and self-serve, on any billing type, including legacy contracts and AWS Marketplace / partner billing. Early access program customers are included.
+
+- Claude Team organizations with at least 10 paid seats.
+
+The promo isn't available to:
+
+- Claude Enterprise organizations on a free trial.
+
+- Claude Team organizations with less than 10 paid seats.
+
+Organizations that qualify after launch are still eligible. A new Enterprise organization, or a Team organization that reaches the paid-seat minimum while the promo is running, receives the credit when it qualifies. Credits issued after launch still expire at 11:59 PM Pacific Time on September 1, 2026.
+
+Your organization's subscription must be active and in good standing when the credit is issued and when it's used.
+
+## How the credit works
+
+Eligible organizations receive the credit automatically when the promo launches. There's nothing for admins or users to claim.
+
+- The credit is one shared amount per organization, not per seat.
+
+- What's covered: Claude Tag usage in public and private Slack channels (billed to your organization).
+
+- What's not covered: Direct messages with Claude in Slack (billed to the individual seat), and any non-Claude Tag usage such as Claude Code, Claude Cowork, Claude chat, or the API. For more details about how Claude Tag usage is billed and the difference between channel and DM usage, see **[What is Claude Tag?](https://support.claude.com/en/articles/15594475)**
+
+- Claude Tag usage draws down the credit first. Once the credit is used up, usage is billed to your organization as normal.
+
+- The credit doesn't appear as a line item on your invoice.
+
+## If your organization changes plans
+
+The credit is a single balance whose cap follows your current plan. If a Team organization upgrades to Enterprise, the cap on the same balance increases to \$25000 in total, counting what was already used. If an Enterprise organization moves to Team, the cap drops to \$2500, and any further usage is billed normally.
+
+## Currency
+
+For Team organizations billed in a currency other than US dollars, the credit may be shown in your local currency.
+
+## Track the credit in your organization
+
+Admins can track usage of the promotional credit in Settings.
+
+## When the credit expires
+
+All credits expire at 11:59 PM Pacific Time on September 1, 2026, regardless of when they were issued. Any unused portion is forfeited at expiration.
+
+## Temporary holds on eligibility
+
+If we detect abuse, we may pause an organization's promotional credit while we review the activity.
+
+## Frequently asked questions
+
+### Is the credit per seat?
+
+No. It's one shared credit per organization.
+
+### Do we need to do anything to claim it?
+
+No. The credit is applied automatically to eligible organizations.
+
+### What can the credit be spent on?
+
+Claude Tag usage only. It doesn't apply to Claude Code, Claude Cowork, Claude chat, or the API.
+
+### Does the credit cover all of our Claude Tag usage?
+
+It covers Claude Tag usage billed to your organization, such as usage in shared channels. Usage billed to an individual seat, such as direct messages with Claude, isn't covered.
+
+### We're billed through AWS Marketplace or a reseller. Are we eligible?
+
+Yes. All billing types are in scope, including legacy contracts, AWS Marketplace, and partner/reseller billing.
+
+### Our Team organization doesn't meet the seat minimum yet. Can we qualify later?
+
+Yes. A Team organization that reaches the paid-seat minimum while the promo is running receives the credit at that point. The credit still expires at 11:59 PM Pacific Time on September 1, 2026.
+
+### Where can I get help?
+
+Contact your account team, or reach out to support through the Help Center.
 
 
 ---
@@ -4336,6 +4032,7 @@ You're adding a console.log statement. Please consider:
 
 July 1, 2026
 
+Copy for LLM
 
 This article is for organizations that use Anthropic's HIPAA-ready services under a Business Associate Agreement (BAA). It explains which configurations are Eligible Services under the BAA and whether you can access Covered Models. **Your organization is responsible for ensuring its use of these services complies with applicable legal obligations.** Learn about **[Business Associate Agreements (BAA) for Commercial Customers](https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers)** and **[Covered Models](https://support.claude.com/en/articles/15425695-covered-models)**.
 
@@ -4402,12 +4099,12 @@ Some organizations may consider setting up a separate, non-ZDR organization to a
 
 # Configure custom data retention controls for Enterprise plans
 
-March 16, 2026
 
+Copy for LLM
 
 This feature is available to Enterprise plan customers. To set custom retention periods for your organization, you must have either a Primary Owner or Owner role.
 
-*This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see **[here](https://privacy.claude.com/en/collections/10663362-consumers)**.*
+*This article is about our commercial products, specifically Claude Enterprise. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see **[here](https://privacy.claude.com/en/collections/10663362-consumers)**.*
 
 Custom data retention controls allow organizations to manage how long Claude stores conversation and project data. This article explains how to set up and manage data retention periods for your organization.
 
@@ -4419,7 +4116,7 @@ Data retention is based on the last observed activity:
 
 - **For projects:** Retention period starts from the time the project was last updated (this includes chat creation or project knowledge base modifications).
 
-  - Note that your custom data retention periods set for projects will supersede your custom retention periods for any chats.
+  - Project retention always takes precedence over chat retention for chats inside a project. This applies even if you haven’t set a custom project retention period: by default, projects are retained indefinitely, so chats inside projects are not deleted by your chat retention period.
 
 The minimum retention period is 30 days, and each month is counted as 30 days. For example, a three-month retention period equals 90 days.
 
@@ -4427,7 +4124,7 @@ The minimum retention period is 30 days, and each month is counted as 30 days. F
 
 When data reaches the end of its retention period:
 
-- **For chats:** All chats (including chats within projects) and any artifacts within those chats will be deleted.
+- **For chats:** All standalone chats (chats not inside a project) and any artifacts within those chats will be deleted. Chats inside a project follow the project’s retention period. Moving a chat into a project places it under the project’s retention period; moving a chat out of a project makes it standalone again, and it becomes eligible for deletion under the chat retention period based on its last activity.
 
 - **For projects:** All projects will be deleted, including any chats and artifacts within those projects.
 
@@ -4437,9 +4134,11 @@ When data reaches the end of its retention period:
 
 - By default, data is retained indefinitely unless a custom retention period is set.
 
-- When you modify retention settings, any data that falls outside the new retention period will be deleted immediately upon saving.
+- When you shorten a retention period, any data that falls outside the new period is scheduled for permanent deletion as soon as you save. A daily background process removes it, which can take several days for large amounts of data. Don’t rely on this delay to reverse the change.
 
 - Data past its retention period will be permanently deleted and cannot be recovered.
+
+- If your chat is flagged by our automated trust and safety systems as violating our Usage Policy, we retain inputs and outputs as described here: **[How long do you store my organization’s data?](https://privacy.claude.com/en/articles/7996866)**
 
 ## Setting up data retention
 
@@ -4452,6 +4151,8 @@ When data reaches the end of its retention period:
 3.  Set your desired retention period (minimum 30 days).
 
 4.  Save your changes.
+
+**Important:** Custom retention periods apply to content in chats and projects. They do not apply to **[Claude Design](https://support.claude.com/en/articles/14604416-get-started-with-claude-design)**, **[Claude Tag](https://support.claude.com/en/articles/15594475-what-is-claude-tag)**, **[Claude Managed Agents](https://platform.claude.com/docs/en/managed-agents/overview)**, or any other features built on **[Claude Code on the web](https://support.claude.com/en/articles/12618689-claude-code-on-the-web)**.
 
 ## Example retention calculation
 
@@ -4532,8 +4233,9 @@ All retention-related actions and changes are automatically tracked in **[audit 
 
 # Deploying enterprise-grade MCP servers with desktop extensions
 
-March 16, 2026
+August 5, 2026
 
+Copy for LLM
 
 Desktop extensions are installable packages that run Model Context Protocol (MCP) servers locally on your machine. They provide Claude Desktop with secure access to your local resources, internal systems, and personal tools without the complexity of remote infrastructure.
 
@@ -4555,7 +4257,7 @@ Desktop extensions provide access to local resources that remote connectors cann
 
 ### Instant deployment with minimal infrastructure overhead
 
-One-click installation through Claude Desktop comes with no dependencies to manage. The built-in [Node.js](http://node.js) runtime is included, there’s no cloud infrastructure to provision, and updates are distributed directly through the extension marketplace.
+One-click installation through Claude Desktop comes with no dependencies to manage. The built-in Node.js runtime is included, there’s no cloud infrastructure to provision, and updates are distributed directly through the extension marketplace.
 
 ### Enterprise-grade controls
 
@@ -4630,6 +4332,7 @@ Desktop extensions eliminate the traditional tradeoff between security and usabi
 
 March 16, 2026
 
+Copy for LLM
 
 *This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see* *[here](https://privacy.claude.com/en/collections/10663362-consumers).*
 
@@ -4694,6 +4397,9 @@ For more details on our data practices, please see the:
 
 # Enforce network-level access control with Tenant Restrictions
 
+August 3, 2026
+
+Copy for LLM
 
 Tenant Restrictions are available for members of Enterprise plans and Console organizations.
 
@@ -4806,13 +4512,15 @@ If your proxy sends the headers incorrectly, requests fail with a 400 status and
 
 ## Supported proxy platforms
 
-- Zscaler ZIA (Cloud App Control policies)
+- Cato Networks (Tenant Restriction policy)
+
+- Cloudflare Zero Trust / Gateway (HTTP policy, add custom request headers)
+
+- Netskope (Header Insertion rules)
 
 - Palo Alto Prisma Access (SaaS App Management)
 
-- Cato Networks (Tenant Restriction policy)
-
-- Netskope (Header Insertion rules)
+- Zscaler ZIA (Cloud App Control policies)
 
 - Generic HTTPS proxies with header injection capability
 
@@ -5463,8 +5171,8 @@ All systems work together to provide **enterprise-ready Claude Code** for large 
 
 # Enterprise configuration for Claude Desktop
 
-June 26, 2026
 
+Copy for LLM
 
 Administrators on Team or Enterprise plans can control Claude Desktop through system policies.
 
@@ -5513,8 +5221,8 @@ Deploy configuration settings through your enterprise management solution using 
 
 # Enterprise configuration for Claude Desktop
 
-June 26, 2026
 
+Copy for LLM
 
 Administrators on Team or Enterprise plans can control Claude Desktop through system policies.
 
@@ -5701,6 +5409,9 @@ const modelMap = {
 
 # Find and join a Team or Enterprise organization
 
+July 21, 2026
+
+Copy for LLM
 
 Organization discovery allows you to find and join your company's existing Team or Enterprise plan organization when you start the sign-up flow with a work email address. Instead of creating a separate personal account, you can request to join—or be added automatically—depending on your organization's configuration.
 
@@ -5891,10 +5602,13 @@ If you'd like to enable organization discovery, SSO must be turned off first.
 
 # Get started with Claude for Education at your university (for Owners/Admins)
 
+August 6, 2026
 
-This guide helps Admins, Owners, and Primary Owners set up and manage Claude for Education at universities. Account users can find more information in our [FAQs for student, faculty, and other users](https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university).
+Copy for LLM
 
-**K-12 educator?** Claude for Teachers is built for you. [Get started](https://claude.com/solutions/teachers).
+This guide helps Admins, Owners, and Primary Owners set up and manage Claude for Education at universities. Account users can find more information in our **[FAQs for student](https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university)**[, **faculty**, **and other users**](https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university).
+
+**K-12 educator?** Claude for Teachers is built for you. **[Get started](https://claude.com/solutions/teachers)**.
 
 ------------------------------------------------------------------------
 
@@ -5902,13 +5616,13 @@ This guide helps Admins, Owners, and Primary Owners set up and manage Claude for
 
 Before setting up your Claude for Education account, review these essential resources:
 
-- [Important Considerations Before Enabling Single Sign-On (SSO) and JIT/SCIM Provisioning](https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning)
+- **[Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning](https://support.claude.com/en/articles/10276682)**
 
-- [Setting up Single Sign-On](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
+- **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**
 
-- [Setting up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning)
+- **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195)**
 
-Note the following information from [Important Considerations Before Enabling Single Sign-On (SSO) and JIT/SCIM Provisioning](https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning):
+Note the following information from **[Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning](https://support.claude.com/en/articles/10276682)**:
 
 When enforcing SSO on your Education account, there are two distinct categories to consider for existing users who are using their university email:
 
@@ -5931,41 +5645,41 @@ When enforcing SSO on your Education account, there are two distinct categories 
 
 After getting started with your plan, choose which Education features you’d like use and configure them in your account:
 
-- [Project visibility and sharing](https://support.claude.com/en/articles/9519189-project-visibility-and-sharing)
+- **[Project visibility and sharing](https://support.claude.com/en/articles/9519189-project-visibility-and-sharing)**
 
-- [Setting Up Claude Integrations](https://support.claude.com/en/articles/10168395-setting-up-claude-integrations)
+- **[Use connectors to extend Claude's capabilities](https://support.claude.com/en/articles/11176164)**
 
-- [Enabling and Using Web Search](https://support.claude.com/en/articles/10684626-enabling-and-using-web-search)
+- **[Enable and use web search](https://support.claude.com/en/articles/10684626)**
 
 Familiarize yourself with audit logs, data retention controls, and other administrative features:
 
-- [How to Access Audit Logs](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs)
+- **[How to access audit logs](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs)**
 
-- [Purchasing and managing seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
+- **[Purchase and manage seats on Enterprise plans](https://support.claude.com/en/articles/13393991)**
 
-- [Custom Data Retention Controls](https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-enterprise-plans)
+- **[Configure custom data retention controls](https://support.claude.com/en/articles/10440198)**
 
-- [Managing user feedback settings on Team and Enterprise plans](https://support.claude.com/en/articles/10504844-managing-user-feedback-settings-on-team-and-enterprise-plans)
+- **[Manage user feedback settings](https://support.claude.com/en/articles/10504844)**
 
-- [How can I disable public projects?](https://support.claude.com/en/articles/9927533-how-can-i-disable-public-projects)
+- **[How can I disable public projects?](https://support.claude.com/en/articles/9927533-how-can-i-disable-public-projects)**
 
 ## Set up support paths
 
-Anthropic Support assists Primary Owners and Owners directly. See [How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support) for more information on your support options.
+Anthropic Support assists Primary Owners and Owners directly. See **[How to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)** for more information on your support options.
 
 Individual users should follow one of two paths to receive support:
 
-1.  Self-serve with our [Help Center](https://support.claude.com/en/).
+1.  Self-serve with our **[Help Center](https://support.claude.com/en/)**.
 
 2.  Escalate questions through university support channels.
 
 We recommend setting up a documented support channel for any user escalations prior to going live at your university.
 
-In addition, share the [FAQs on using Claude for Education at your university](https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university) to help users get started successfully.
+In addition, share the **[FAQs on using Claude for Education at your university](https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university)** to help users get started successfully.
 
 ## Privacy and data retention
 
-Visit our [Privacy Center](https://privacy.claude.com/en/collections/10663361-commercial-customers) for comprehensive information about your account's data retention and handling. The Privacy Center includes:
+Visit our **[Privacy Center](https://privacy.claude.com/en/collections/10663361-commercial-customers)** for comprehensive information about your account's data retention and handling. The Privacy Center includes:
 
 - FAQs on Anthropic's policies
 
@@ -5994,7 +5708,7 @@ If you're responsible for rolling out Claude to your organization, you may also 
 
 ## Additional support
 
-Anthropic has services partners (advisory, training, change management, MCP development) available who can help provide additional support. If you'd like to discuss further, please submit [this interest form](https://forms.gle/ubnR5f7q5E71ECR79). For requests to connect with our Sales team, please contact [\[email protected\]](/cdn-cgi/l/email-protection#dba8bab7bea89bbab5afb3a9b4abb2b8f5b8b4b6)
+Anthropic has services partners (advisory, training, change management, MCP development) available who can help provide additional support. If you'd like to discuss further, please submit [this interest form](https://forms.gle/ubnR5f7q5E71ECR79). For requests to connect with our Sales team, please contact [\[email protected\]](/cdn-cgi/l/email-protection#a0d3c1ccc5d3e0c1ced4c8d2cfd0c9c38ec3cfcd)
 
   
 ​
@@ -6031,6 +5745,7 @@ Anthropic has services partners (advisory, training, change management, MCP deve
 
 March 24, 2026
 
+Copy for LLM
 
 Claude uses email as the primary identifier to match SSO logins to provisioned seats. In Google Workspace, SCIM auto-provisioning and SAML SSO can send different email values—especially when people have email aliases—causing a mismatch that blocks access.
 
@@ -6170,8 +5885,9 @@ Contact **[our Support team](https://support.claude.com/en/articles/9015913)** w
 
 # Google Workspace SSO setup
 
-March 24, 2026
+August 6, 2026
 
+Copy for LLM
 
 This guide helps you configure Claude to use Google Workspace as your identity provider for SSO and automated user provisioning. It applies to Team plans, Enterprise plans, and Console organizations.
 
@@ -6183,11 +5899,11 @@ This guide helps you configure Claude to use Google Workspace as your identity p
 
 - Google Workspace Super Admin access
 
-- Your domain verified in Claude's Identity and access settings — see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full setup path including domain verification
+- Your domain verified in Claude's Identity and access settings—see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full setup path including domain verification
 
 ## Where to find your configuration values
 
-The ACS URL, Entity ID, and SCIM credentials referenced below are provided in the WorkOS setup flow within your Identity and access settings — not by contacting Support.
+The ACS URL, Entity ID, and SCIM credentials referenced below are provided in the WorkOS setup flow within your Identity and access settings—not by contacting Support.
 
 - **Team and Enterprise plans:** go to **[claude.ai/admin-settings/identity](https://claude.ai/admin-settings/identity)**
 
@@ -6223,7 +5939,7 @@ Start the SSO setup flow there and keep it open alongside the Google Admin conso
 
 ## Step 4 — Enable auto-provisioning (SCIM)
 
-**Note:** SCIM provisioning is available on Enterprise plans and eligible Console organizations only. If you're on a Team plan, skip this step — you can use JIT provisioning instead. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195)**.
+**Note:** SCIM provisioning is available on Enterprise plans and eligible Console organizations only. If you're on a Team plan, skip this step—you can use JIT provisioning instead. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195)**.
 
 1.  In the app's settings, go to the **Autoprovisioning** section and click "Configure autoprovisioning" (may require enabling in Google Workspace admin settings).
 
@@ -6261,8 +5977,8 @@ See **[Set up single sign-on](https://support.claude.com/en/articles/13132885)**
 
 # How SCIM sync works for Enterprise organizations
 
-July 1, 2026
 
+Copy for LLM
 
 SCIM provisioning keeps your Enterprise organization's membership and groups in sync with your identity provider. This article covers what gets synced, how syncs are triggered, how to preview a sync before it applies, and what to watch for when resyncing.
 
@@ -6352,7 +6068,7 @@ Manual syncs rescan WorkOS for the full list of members and groups to establish 
 
 To check whether your organization's membership and groups are current, you have two options:
 
-- **Export your member list.** Go to **[Organization settings \> Members](http://claude.ai/admin-settings/members)** and click "Export CSV" to download the current view of your membership.
+- **Export your member list.** Go to **[Organization settings \> Members](https://claude.ai/admin-settings/members)** and click "Export CSV" to download the current view of your membership.
 
 - **View the WorkOS integration's record.** Go to **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)** and click "Manage SCIM" to see what WorkOS currently holds for your organization.
 
@@ -6366,7 +6082,7 @@ Before you trigger a manual resync, keep these in mind:
 
 - **Resyncing cascades to child organizations.** If you have multiple organizations with SCIM provisioning under the same **parent organization**, resyncing one triggers resyncing in the others. This includes sandbox organizations sharing the same parent.
 
-- **Incomplete group mappings remove members from the organization.** When enabling group mapping for SCIM, finish assigning all groups before saving. Any member not included in a role group mapping is removed from the organization. If you enable seat tier mapping, any member not in a seat tier group mapping is also removed.
+- **Incomplete role mappings remove members from the organization.** When enabling group mapping for SCIM, finish assigning all groups before saving. Any member not included in a role group mapping is removed from the organization. Seat tier mappings work differently: a member who isn’t in any seat tier group isn’t removed. Existing members keep their current seat type, and newly provisioned members receive the highest seat type that still has an unassigned purchased seat, then the next seat type down, and are added with no seat if none is available.
 
 
 ---
@@ -6376,6 +6092,7 @@ Before you trigger a manual resync, keep these in mind:
 
 June 15, 2026
 
+Copy for LLM
 
 Audit logs are available for Enterprise organizations only.
 
@@ -6692,6 +6409,132 @@ Anthropic manages our security program through HackerOne. [Use this form to repo
 
 
 ---
+## let-team-members-run-smart-reports-for-specific-groups-1320744358.md
+
+# Let team members run smart reports for specific groups
+
+
+Copy for LLM
+
+Smart reports show how your organization uses Claude. By default, only Primary Owners, Owners, Admins, and custom roles with analytics view access can create and view smart reports. With delegated access, you can let team leads or department heads run smart reports without making them admins. They can only report on the groups, departments, or cost centers you choose, and they see only the reports they ran or that others share with them.
+
+Smart reports are available in beta on Claude Enterprise plans and aren’t available for organizations using customer-managed encryption keys (CMEK), HIPAA configurations, or **[Access Transparency](https://platform.claude.com/docs/en/manage-claude/access-transparency)**. Smart reports are also unavailable for Claude Code for Claude Enterprise organizations that use zero data retention.
+
+**Important:** Smart reports help you understand adoption and plan your investment in Claude. They aren't designed and should not be used for evaluating individual performance or making employment decisions.
+
+## Who can manage access for smart reports
+
+To manage access to smart reports, you must be an Owner or Primary Owner, or in a custom role with both the **Analytics** permission and the **Identity & Access** permission. If you don’t have one of these roles, you won’t see the **Manage access** button.
+
+## Before you begin
+
+- Your organization must be on a Claude Enterprise plan with "Smart Reports (beta)" turned on in **Organization settings \> Capabilities \> Analytics**.
+
+- The people you add must be on the **Custom roles** access level, which is set per member in **Organization settings \> Members**.
+
+## Step 1: Open Manage access
+
+Go to **[Analytics \> Smart reports (beta)](https://claude.ai/analytics/insights)** and click "Manage access." The **Who can run reports** screen opens.
+
+The line at the top tells you which roles can run reports. Admins and owners can always run reports.
+
+## Step 2: Add a person
+
+Under **Add people**, type a name or email and pick the person.
+
+Some users appear greyed out with the label **Not on Custom roles**. Change their access level in **[Organization settings \> Members](https://claude.ai/admin-settings/members)**, then close and reopen **Manage access** and add them.
+
+## Step 3: Choose what they can report on
+
+The person appears under **People with access**, with the columns **Person** and **Can run reports on**. Nothing is saved for them until you choose a scope.
+
+1.  If your organization has more than one kind of scope, select **Group**, **Department**, or **Cost center** in the first dropdown menu.
+
+    1.  Groups come from **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**.
+
+    2.  Departments and cost centers are offered only if your identity provider provisions members through SCIM with those attributes.
+
+2.  Select the group, department, or cost center values in the second dropdown menu.
+
+Each change is saved as soon as you make it and will say "Saved."  
+​
+
+If you click "Close" while someone still has no scope, or their last change couldn't be saved, the screen asks "Close without saving?" and explains that their access isn't saved.
+
+Keep in mind:
+
+- You can select up to 50 groups, departments, or cost centers of each kind per person.
+
+- A delegate can only run a report on what you assign here. They never get a whole-organization option.
+
+**Note:** People you give access to aren’t notified. They can view smart reports by clicking on their name in the lower left corner in Claude, then going to **Analytics \> Smart reports (beta)**.
+
+## What happens automatically
+
+The first time you save a delegate, smart reports creates two things in your organization:
+
+- A group named **Smart Reports delegates**
+
+- A custom role named **Smart Reports delegates**, assigned to that group, with the **Smart Reports delegated admin** permission
+
+Every person you add is placed in this group, which is how they get permission to run reports. We recommend that you don’t edit these roles manually.
+
+The following badges can appear on a person's row:
+
+- **Not on Custom roles**: the person's access level changed after you added them. Change it back in **[Organization settings \> Members](https://claude.ai/admin-settings/members)**.
+
+- **Needs the permission**: this person doesn’t have access to any roles that grant permission to run smart reports (for example, they were removed from the smart reports delegates group). Click **Add to the Smart Reports delegates role** on their row to add them back. If the automatic role itself lost the permission, restore it in **[Organization settings \> Roles](https://claude.ai/admin-settings/roles)** first.
+
+## What a delegate sees and can do
+
+- In **Analytics**, delegates see only **Smart Reports**. Their list is titled **Your reports** and contains only the reports they ran.
+
+- When they click "New report," the **People in scope** menu offers only the groups, departments, or cost centers you assigned. All of them are selected to start, and the delegate can narrow the selection.
+
+- Delegates can share their reports with other members of your organization and download them, the same way admins can.
+
+- The attributed view, which shows user emails and session IDs, only appears when your organization's **Allow attribution to individual users** setting is on.
+
+- The same privacy guardrails apply to reports delegates run. Learn more about **[privacy guardrails in smart reports](https://support.claude.com/en/articles/16893491-get-started-with-smart-reports#h_7b22bb48c1)**.
+
+- Reports run by delegates count toward your organization's monthly smart reports limit and share the same limit on reports running at once.
+
+Delegates cannot:
+
+- Run a report on the whole organization, or on anything outside their assigned scope
+
+- See reports other people ran, unless someone shares the report with them
+
+- Rename, archive, or delete reports
+
+- Open **Manage access** or change who can run reports
+
+## Change or remove access
+
+- **To change what someone can report on**, open **Manage access** and change their selections. The new selection replaces their previous scope. Reports they already ran stay available to them.
+
+- **To remove someone**, click the "✕" (**Remove**) button on their row. Their access is removed right away, and you'll see a confirmation that they can no longer run reports. If the smart reports delegates group is used only by the automatic role, they are also taken out of it. Otherwise, remove them from the group in **Organization settings \> Groups**. Once they no longer hold the permission, they can't open smart reports, including the reports they ran. Reports they already downloaded aren't affected.
+
+- **When a user is removed from your organization**, they can no longer run reports. Their saved scope is usually removed at the same time. If your identity provider removes users through SCIM, remove them in **Manage access** first so their old scope isn't kept if they're added back later.
+
+- **When a group is deleted, or a department or cost center value no longer exists**, it disappears from the person's row and from their selections. If a delegate tries to run a report with a selection that no longer exists, the report is refused and they can pick again. You can also open their row and choose new values.
+
+## FAQ
+
+### Can I grant the permission through my own roles instead of the automatic one?
+
+Yes. In **Organization settings \> Roles**, the **Smart Reports delegated admin** permission appears under **Product controls**. Adding it to a role isn't enough on its own: each person still needs a scope. Open **Manage access** on the smart reports page, add each person, and choose what they can report on.
+
+### Why is someone greyed out when I try to add them?
+
+They aren't on the **Custom roles** access level, which custom roles (including the automatic one) require. Change it in **Organization settings \> Members**, or in your identity provider if it sets access levels.
+
+### Can a delegate see individual users' names or emails?
+
+Only if your organization's **Allow attribution to individual users** setting is on. It is off by default.
+
+
+---
 ## llm-gateway-configuration-claude-code-docs-7a1628ac88.md
 
 # LLM gateway configuration
@@ -6904,8 +6747,8 @@ Additional resources
 
 # Provision and manage skills for your organization
 
-May 29, 2026
 
+Copy for LLM
 
 This article explains how organization owners can provision skills for everyone in their organization, and how to scope skills to specific groups using plugins. Provisioning skills lets you distribute approved workflows and capabilities across your organization from one place.
 
@@ -6913,89 +6756,229 @@ Organization-wide skill management is available to Team and Enterprise plans.
 
 ## Prerequisites
 
-Before you can provision skills for your organization, you must navigate to **[Organization settings \> Skills](https://claude.ai/admin-settings/skills)** and enable both **Code execution and file creation** and **Skills** by toggling them on. Skills require code execution to function, so if code execution is disabled, skills will not be available.
+Before you can provision skills for your organization, navigate to **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)**, select the “Policy” tab, and check that both **Cloud code execution and file creation** and **Skills** are toggled on. Skills require code execution to function, so if code execution is disabled, skills will not be available.
 
 ------------------------------------------------------------------------
 
 ## Provision skills for everyone
 
-When you upload a skill through organization settings, it becomes available to everyone in your organization in **[Customize \> Skills](https://claude.ai/customize/skills)**. Individual members no longer need to upload the same skill themselves.
+When you upload a skill through organization settings, it becomes available to everyone in your organization in **[Customize \> Skills](https://claude.ai/customize/skills)**. Individual users no longer need to upload the same skill themselves. Provisioned skills also load in Claude Code for users who sign in with their Claude account. To stop skills from syncing to Claude Code, set `syncClaudeAiSkills` to `false` in Claude Code managed settings.
 
 **To provision a skill:**
 
-1.  Navigate to **[Organization settings \> Skills](https://claude.ai/admin-settings/skills)**.
+1.  Navigate to **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)**.
 
-2.  In the **Organization skills** section, click "+ Add."
+2.  Click "Add” in the upper right corner.
 
-3.  Select a .zip file containing your skill (must include a SKILL.md file).
+3.  Choose “Upload a skill” or “Create a skill.”
 
-4.  The skill is immediately provisioned to all users in your organization.
+4.  If uploading, select a .zip file containing your skill (must include a SKILL.md file).
 
-Admin-provisioned skills are enabled by default for everyone, but members can toggle individual skills off if they choose. This gives your organization consistent, approved workflows while letting members customize their own experience.
+5.  If creating, input the skill name and description in the modal, then click “Create.”
+
+6.  The skill is immediately provisioned to all users in your organization.
+
+Owner-provisioned skills are enabled by default for everyone, but users can toggle individual skills off if they choose. This gives your organization consistent, approved workflows while letting users customize their own experience.
 
 ------------------------------------------------------------------------
 
 ## Provision skills to specific groups
 
-Provisioning a skill through **[Organization settings \> Skills](https://claude.ai/admin-settings/skills)** gives it to everyone. To give a skill to only some members, bundle your skills into a plugin and assign that plugin to a group. The group's members see those skills, and members outside the group don't.
+Provisioning a skill through **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** gives it to everyone. Enterprise plans can give skills to only some users by bundling them into a plugin and assigning that plugin to a group. The group's members see those skills, and members outside the group don't.
 
 For example, if you have 10 skills for your marketing team, add them to a plugin and assign it to the marketing group. Only that group gets those skills.
 
-Skills provisioned this way appear in chat, on the web and the Chat tab in Claude Desktop, as well as in Cowork. Group targeting you've already set up for Cowork carries over to chat with no extra steps.
+Skills provisioned this way appear in chat (on the web and the "Chat" tab in Claude Desktop), in Claude Cowork, and in Claude Code in the terminal for users who sign in with their Claude account. Group targeting you've already set up for Cowork carries over to chat with no extra steps.
 
-To set this up, see **[Manage plugins for your organization](https://support.claude.com/en/articles/13837433-manage-claude-cowork-plugins-for-your-organization)**.
+To set this up, see **[Manage plugins for your organization](https://support.claude.com/en/articles/13837433)**.
 
 ------------------------------------------------------------------------
 
-## Control skill sharing between members
+## Control whether users can create skills
 
-In addition to provisioning skills top-down, you can let members share skills they've built with each other. Two independent toggles control this:
+By default, users can create their own skills in Claude and upload skill files to their personal skills list. If you'd rather users only use skills you've provisioned, you can turn this off for your organization.
 
-- **Skill sharing:** Members can share a skill with specific colleagues. Recipients see the skill in the **Shared with you** section of their skills list.
+To turn off skill creation for users:
 
-- **Share with organization:** Members can publish a skill to the organization directory, where anyone can find and install it.
+1.  Navigate to **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** and click the “Policy” tab.
 
-Both toggles are off by default. You can enable either or both in **[Organization settings \> Skills](http://claude.ai/admin-settings/skills)**.
+2.  Turn off **User-created skills**.
 
-**Note:** Shared skills are view-only. Recipients can enable and use a shared skill but can't edit its contents.
+When **User-created skills** is off:
+
+- Users can't create skills in Claude or upload skill files.
+
+- Skills you've provisioned and Anthropic's built-in skills stay available, and users can still enable and use them.
+
+**Note:** If your organization uses custom roles, a user also needs the **Create skills** capability on their role. The organization setting is the main switch: when it's off, users can't create or upload their own skills, regardless of role, but Owners can still provision skills for the organization. When it's on, Enterprise plan users on custom roles still need the role capability. Learn more about **[managing custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452)**.
+
+------------------------------------------------------------------------
+
+## Let users publish skills and plugins to your organization
+
+Users can submit a skill or plugin they've built to your organization's library so everyone can use it. When your organization requires review, an owner approves each submission before it's published, and every later version goes through the same review.
+
+### Set the publishing policy
+
+1.  Navigate to **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** and select the “Policy” tab.
+
+2.  Under **Publishing**, choose an option:
+
+    - **Requires review:** Users can submit skills and plugins, and an owner must approve each one before it's published.When submitting, the user proposes how the item is offered. You can accept or change that when you approve.
+
+    - **Open:** Skills and plugins that users submit are published to the organization library without review, and are available to everyone in your organization to install. Users can't choose a different offering. On Enterprise plans with **[Skill and plugin security scanning](https://support.claude.com/en/articles/15927065)** on, a new item isn't listed for others until it passes the scan, which usually takes a few minutes.
+
+    - **Off:** Users don't see the "Publish to org" button. Owners can still add skills and plugins to the organization directly.
+
+Your starting setting depends on your plan:
+
+- **Team plans:** Publishing is set to “Open,” unless you already had **Share with organization** turned off, in which case “Off” is the default.
+
+- **Enterprise plans:** Publishing starts off.
+
+  - If your organization already had **Share with organization** turned on, it starts as “Open” instead.
+
+  - If you haven't chosen a setting, it switches to “Requires review” on October 2, 2026. To keep publishing off, or to choose a different setting, select it yourself before then.
+
+Turning **Publishing** off doesn't remove anything that's already published. Published items stay in the library until an owner removes them.
+
+### Review a submission
+
+Owners, and anyone whose role has Libraries set to “Can manage,” can review requests. You can't approve your own.
+
+**To review a submission:**
+
+1.  Navigate to **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** and select the “Requests” tab.
+
+    - Plugin and skillsubmissions appear here, and each request shows who submitted it, whether it's a skill or plugin, its security scan result, and its status. If a submission looks like a skill or plugin your organization already has, a **Possible duplicate** tag appears next to it.
+
+2.  Open a request. You'll see:
+
+    - How the item will be offered
+
+    - The scan result
+
+    - Every file
+
+    - For an update, what changed since the currently published version
+
+    - Up to three possible duplicates, if any, each with a reason and a link
+
+3.  Choose how the item is offered and who gets it: everyone or specific groups. The submitter's proposed offering is preselected, and you can change it. Then click "Approve" to publish it, or click "Request changes" and add a note for the person who submitted it.
+
+Keep these points in mind when reviewing:
+
+- **You review a fixed version.** You see exactly the version that was submitted. The author can keep editing their own copy, but those edits don't reach the organization until they submit a new version and it's approved.
+
+- **Possible duplicate hints are a note, not a block.** Only reviewers see them. They don't stop you from approving a submission, and the person who submitted it doesn't see them. No setup is needed. Duplicate checks don't run for organizations with HIPAA, zero data retention, FERPA, or customer-managed keys.
+
+- **For Enterprise plans, submitted versions are scanned.** For Enterprise plans with **Skill and plugin security scanning** enabled, each version is checked for malicious content automatically. A submission that fails the scan can't be approved until the author fixes it and submits again. Learn more about **[skill and plugin scanning](https://support.claude.com/en/articles/15927065)**.
+
+### Manage published skills and plugins
+
+Every approved item is listed on the “Inventory” tab in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)**. To see only your organization's items, set the **Source** filter to “Your organization."
+
+Click the menu button at the end of a row to:
+
+- View details and files
+
+- View version history
+
+- Choose how the item is offered under Default access (Available to install, Installed by default, Not available, or Required)
+
+- Set access for specific groups under “Group access…”
+
+- Copy a link to share with users
+
+The “Inventory” tab also lists skills and plugins that users created or shared.
+
+When you approve a new version, everyone who uses the item gets the update automatically. Until then, users stay on the currently approved version.
+
+Published items are managed by your organization. If the author leaves, the published item stays in the library.
+
+------------------------------------------------------------------------
+
+## Control skill sharing between users
+
+In addition to provisioning skills top-down, you can let users share skills or plugins they've built with each other. Two independent toggles control this:
+
+- **Skill sharing:** Users can share a skill or plugin with specific colleagues. Recipients see the skill in the **Shared with you** section of their skills list.
+
+- **Share with groups:** Users can share a skill or plugin with an entire group. Recipients see it in the **Shared with you** section of their skills list, the same as items shared with individuals.
+
+To let users add skills and plugins to the organization library, use the **Publishing** setting. Learn more about **[letting users publish skills and plugins to your organization](#h_1abc45a27c)**.
+
+The **Skill sharing** toggle is on by default for Team plans and for Enterprise plans that haven't set a skills preference. For organizations with HIPAA readiness or other regulated configurations, skills and skill sharing are off by default and an admin can enable them in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** in the “Policy” tab. The **Share with groups** toggle is also off by default and can be enabled by an admin.
+
+**Note:** Shared skills and plugins are view-only, and stay off until the recipient chooses to enable them. Recipients can enable and use a shared skill or plugin but can't edit its contents. When the owner saves a new version, everyone it's shared with gets the update automatically at next use. The owner can revoke someone's access at any time, and access is removed automatically if the recipient leaves the organization.
+
+### Share skills with a group
+
+Before you can share with a group, an admin needs to turn on **Share resources with this group** in the group's visibility settings. See **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**.
+
+If you use custom roles, also make sure the **Share skills with groups** capability is enabled for their role. See **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452)**.
+
+Once these settings are on, users can begin sharing skills with groups.
 
 ### How shared skills differ from provisioned skills
 
 [TABLE]
 
-**Important:** There's no approval workflow for org-wide sharing. If you enable **Share with organization**, any member can publish a skill to the directory without review. Consider enabling peer-to-peer sharing only if this is a concern.
+**Important:** When Publishing is set to “Open,” anything a user publishes goes straight to the organization library without review and is available to everyone in your organization Choose “Requires review” if you want an owner to check each skill and plugin first.
 
 ### Monitor sharing activity
 
-Skill sharing events are captured in the audit log and Compliance API as `role_assignment` events. You can see who shared a skill, with whom, and whether it was peer-to-peer or organization-wide.
+Skill sharing events are captured in the audit log and Compliance API as `role_assignment` events. You can see who shared a skill or plugin, with whom, and whether it was peer-to-peer, a group, or (skills only) organization-wide.
 
-The audit log doesn't capture the contents of shared skills—only the share event itself. There's no admin dashboard to browse or inspect the contents of skills shared between members.
+The audit log doesn't capture the contents of shared skills or plugins—only the share event itself. The “Inventory” tab shows metadata, sharing status, and scan status for skills and plugins that users created or shared, but not their contents.
 
 ------------------------------------------------------------------------
 
-## How members see provisioned and shared skills
+## How users see provisioned and shared skills
 
-Skills appear for each member in **[Customize \> Skills](https://claude.ai/customize/skills)**, organized into three sections:
+Skills appear for each user in **[Customize \> Skills](https://claude.ai/customize/skills)**, organized into three sections:
 
-- **Personal skills:** Skills the member has created or uploaded.
+- **Personal skills:** Skills the user has created or uploaded.
 
-- **Shared with you:** Skills colleagues have shared directly with a member. These appear grayed out until enabled.
+- **Shared with you:** Skills colleagues have shared directly with a user. These appear grayed out until enabled.
 
-- **Organization skills:** Skills an owner has provisioned and skills members have shared organization-wide. Members install these from the directory.
+- **Organization skills:** Skills an owner has provisioned and skills published to the organization. Users install these from the directory.
 
-Owner-provisioned skills are marked with a visual indicator so members can distinguish them from other skill types. Members can click on any skill to preview its contents and description.
+Owner-provisioned skills are marked with a visual indicator so users can distinguish them from other skill types. Users can click on any skill to preview its contents and description.
 
-For more on how members browse and install from the directory, see **[Browse skills, connectors, and plugins in one directory](https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory)**.
+For more on how users browse and install from the directory, see **[Browse skills, connectors, and plugins in one directory](https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory)**.
 
 ------------------------------------------------------------------------
 
 ## Manage and remove provisioned skills
 
-The **Organization skills** section in **[Organization settings \> Skills](https://claude.ai/admin-settings/skills)** displays all skills provisioned for your organization. Use search and the section headings to navigate them.
-
-To remove a skill from your organization, locate it in the **Organization skills** list and select the option to remove it. Once removed, the skill will no longer appear in members' skills lists in **[Customize \> Skills](https://claude.ai/customize/skills).**
+The “Inventory” tab in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** lists all skills provisioned for your organization. Set **Source** to “Your organization” and **Type** to “Skills,” or search by name. To remove a skill, click the menu button at the end of its row and select “Remove from library.” Once removed, the skill will no longer appear in users' skills lists in **[Customize \> Skills](https://claude.ai/customize/skills).**
 
 **Note:** Only owners can add or remove organization-wide skills. Individual users cannot delete provisioned skills, though they can toggle them off for their own use.
+
+------------------------------------------------------------------------
+
+## Scan skills and plugins for malicious content
+
+On the Enterprise plan, you can turn on skill scanning for your organization. When it's on, Claude checks each third-party skill and plugin your users upload or edit for malicious content before it can run. Scanning is off by default until October 2, 2026. From that date it's on by default, where available, for Enterprise organizations that haven't set it. Organizations that already turned it on or off keep their choice.
+
+To turn on skill scanning for your organization:
+
+1.  Go to **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** and select the “Policy” tab.
+
+2.  Turn on **Skill and plugin security scanning**.
+
+If you use custom roles, you can further define who scanning applies to by turning on the **Skill and plugin security scanning** capability for roles that should have access to skill scanning.
+
+Here's what your users see:
+
+- A skill or plugin that passes the scan installs normally.
+
+- A skill or plugin that may carry risk stays usable behind a caution banner the user acknowledges.
+
+- A skill or plugin with malicious content is blocked and can't be used.
+
+A blocked skill can't be overridden by the user who uploaded it, and can't be approved for the organization at this time. Scanning isn't available for organizations using customer-managed encryption keys (CMEK), zero data retention (ZDR), or HIPAA configurations. Learn more about **[skill and plugin scanning](https://support.claude.com/en/articles/15927065)**.
 
 ------------------------------------------------------------------------
 
@@ -7003,13 +6986,15 @@ To remove a skill from your organization, locate it in the **Organization skills
 
 - **Test skills before provisioning:** Upload and test skills on your own account first to verify they work as expected before distributing them organization-wide.
 
-- **Scope specialized skills to groups:** When a skill is only relevant to one team, bundle it into a plugin and assign it to that group instead of provisioning it to everyone.**Use descriptive names:** Give skills clear names that help users understand their purpose at a glance.
+- **Scope specialized skills to groups:** When a skill is only relevant to one team, bundle it into a plugin and assign it to that group instead of provisioning it to everyone.
+
+- **Use descriptive names:** Give skills clear names that help users understand their purpose at a glance.
 
 - **Write clear descriptions:** The skill's description helps Claude determine when to use it automatically. Ensure descriptions accurately reflect what the skill does.
 
-- **Consider default status carefully:** Enable skills by default when they're broadly useful to most users.Keep specialized skills disabled by default for the members who don't need them.
+- **Consider default status carefully:** Enable skills by default when they're broadly useful to most users. Keep specialized skills disabled by default for the users who don't need them.
 
-- **Decide on sharing deliberately:** Organization-wide sharing has no approval step. If you want to review skills before they reach everyone, keep organization-wide sharing off and ask members to submit skills to an owner for provisioning instead.
+- **Decide on publishing deliberately:** Set Publishing to “Requires review” if you want an owner to check skills and plugins before they reach everyone.
 
 
 ---
@@ -7019,6 +7004,7 @@ To remove a skill from your organization, locate it in the **Organization skills
 
 March 24, 2026
 
+Copy for LLM
 
 Claude uses email as the primary identifier to match SSO logins to provisioned seats. In Microsoft Entra ID, SCIM provisioning and SSO authentication are configured in *separate places* and can pull email from different user attributes—causing a mismatch that blocks access. This guide walks through how to identify the problem, fix the attribute mapping, and clean up any side effects.
 
@@ -7166,8 +7152,9 @@ Contact **[our Support team](https://support.claude.com/en/articles/9015913)** w
 
 # Microsoft Entra ID SSO setup
 
-March 24, 2026
+August 4, 2026
 
+Copy for LLM
 
 This guide walks you through configuring single sign-on (SSO) for Claude using Microsoft Entra ID (formerly Azure Active Directory) as your identity provider. It applies to Team plans, Enterprise plans, and Console organizations.
 
@@ -7257,8 +7244,8 @@ See **[Set up single sign-on](https://support.claude.com/en/articles/13132885)**
 
 # Migrate your organization from Team to Enterprise
 
-June 29, 2026
 
+Copy for LLM
 
 When upgrading from a Team plan to an Enterprise plan, we recommend you keep the same Team organization and follow the upgrade path to change it to Enterprise. This will allow you to preserve your data (memberships/roles, conversations, and projects) and some of the settings from your Team plan organization. If you create a brand new Enterprise organization, then you'll need to set up everything from scratch.
 
@@ -7320,9 +7307,9 @@ The following capabilities are default-off for Enterprise plans:
 
 - Code execution and file creation
 
-- Interactive content in artifacts
+- Claude Design, Claude Slides, and Claude Docs (in Organization settings \> Artifacts)
 
-- Claude Design
+- Standalone Claude Design at claude.ai/design
 
 - Claude in Chrome
 
@@ -7473,6 +7460,7 @@ On the start date, you'll be provisioned and able to use the new features by the
 
 March 16, 2026
 
+Copy for LLM
 
 This article explains why you may be unable to create a Claude account or sign in to an existing account when using the Claude mobile app.
 
@@ -8645,6 +8633,7 @@ Ensure these URLs are allowlisted in your proxy configuration and firewall rules
 
 March 24, 2026
 
+Copy for LLM
 
 Claude uses email as the primary identifier to match SSO logins to provisioned seats. In Okta, SCIM provisioning and SSO are configured separately and can pull email from different user profile fields. This guide explains how to identify and resolve the mismatch.
 
@@ -8786,8 +8775,8 @@ Contact **[our Support team](https://support.claude.com/en/articles/9015913)** w
 
 # Okta SSO setup
 
-March 24, 2026
 
+Copy for LLM
 
 This guide covers configuring SSO and SCIM provisioning for Claude with Okta as your identity provider. It applies to Team plans, Enterprise plans, and Console organizations.
 
@@ -8799,7 +8788,7 @@ This guide covers configuring SSO and SCIM provisioning for Claude with Okta as 
 
 - Okta administrator access
 
-- Your domain verified in Claude's Identity and access settings — see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full setup path including domain verification
+- Your domain verified in Claude's Identity and access settings—see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full setup path including domain verification
 
 ## Where to find your configuration values
 
@@ -8826,6 +8815,8 @@ Start the SSO setup flow there and keep it open alongside the Okta Admin console
 1.  In the **Configure SAML** tab, enter: **Single sign-on URL (ACS URL)** from the WorkOS setup flow, **Audience URI (Entity ID)** from the WorkOS setup flow, **Name ID format:** EmailAddress, and **Application username:** Email.
 
 2.  Under **Attribute Statements**, add an attribute named email with value user.email.
+
+    1.  If you use group mappings (JIT or SCIM provisioning with **Enable group mappings** turned on), also add a Group Attribute Statement named "groups" with a filter that includes every Okta group you map to a Claude role or seat type. Without it, sign-ins arrive with no group information: users can’t be assigned a mapped role, and under JIT with group mappings, a user whose sign-in includes no mapped group is removed from the organization at their next login. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)**.
 
 3.  Download the **Identity Provider metadata** XML and upload it in the WorkOS setup flow when prompted.
 
@@ -8960,6 +8951,7 @@ If you'd like to enable organization discovery, SSO must be turned off first.
 
 March 24, 2026
 
+Copy for LLM
 
 Claude uses email as the primary identifier to match SSO logins to provisioned seats. Ping Identity products (PingOne and PingFederate) have flexible, layered attribute configuration. When SCIM provisioning and SAML/OIDC SSO pull from different user attributes, a mismatch blocks access.
 
@@ -9113,8 +9105,9 @@ Contact **[our Support team](https://support.claude.com/en/articles/9015913-how-
 
 # Ping Identity SSO setup
 
-March 24, 2026
+August 6, 2026
 
+Copy for LLM
 
 This guide covers configuring Claude with PingOne or PingFederate as your identity provider. It applies to Team plans, Enterprise plans, and Console organizations.
 
@@ -9126,11 +9119,11 @@ This guide covers configuring Claude with PingOne or PingFederate as your identi
 
 - PingOne Environment Admin or PingFederate Admin access
 
-- Your domain verified in Claude's Identity and access settings — see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full setup path including domain verification
+- Your domain verified in Claude's Identity and access settings—see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full setup path including domain verification
 
 ## Where to find your configuration values
 
-The ACS URL, Entity ID, and SCIM credentials referenced below are provided in the WorkOS setup flow within your Identity and access settings — not by contacting Support.
+The ACS URL, Entity ID, and SCIM credentials referenced below are provided in the WorkOS setup flow within your Identity and access settings—not by contacting Support.
 
 - **Team and Enterprise plans:** go to **[claude.ai/admin-settings/identity](https://claude.ai/admin-settings/identity)**
 
@@ -9160,7 +9153,7 @@ Start the SSO setup flow there and keep it open alongside your Ping admin consol
 
 ### Step 3 — Enable SCIM provisioning
 
-**Note:** SCIM provisioning is available on Enterprise plans and eligible Console organizations only. If you're on a Team plan, skip this step — you can use JIT provisioning instead. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195)**.
+**Note:** SCIM provisioning is available on Enterprise plans and eligible Console organizations only. If you're on a Team plan, skip this step—you can use JIT provisioning instead. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195)**.
 
 1.  In the application settings, go to the **Provisioning** tab.
 
@@ -9240,8 +9233,8 @@ Anthropic will periodically audit organizations for compliance with these safegu
 
 # Restrict access to Claude with IP allowlisting
 
-March 16, 2026
 
+Copy for LLM
 
 IP allowlisting is available for Enterprise plans only.
 
@@ -9253,7 +9246,7 @@ IP allowlisting supports CIDR ranges. For example: `10.0.0.0/8, 2001:db8::/32`.
 
 ## How to configure IP allowlisting
 
-If your Enterprise organization is interested in enabling an IP allowlist, please compile a list of all necessary CIDR ranges for your organization, including office locations, VPN exit points, and any other approved access points. Omitting required CIDR ranges could result in users getting locked out of Claude. Then, reach out to your Anthropic Contact or our [Sales team](https://claude.com/contact-sales) to share your list of CIDR ranges. They can add these to your account’s allowlist to enable the feature.
+If your Enterprise organization is interested in enabling an IP allowlist, please compile a list of all necessary CIDR ranges for your organization, including office locations, VPN exit points, and any other approved access points. Omitting required CIDR ranges could result in users getting locked out of Claude. Then, reach out to your Anthropic Contact or our **[Support team](https://support.claude.com/en/articles/9015913)** to share your list of CIDR ranges. They can add these to your account’s allowlist to enable the feature.
 
 When a request originates from an IP address that’s not in your allowlist, access is denied. Users should contact their IT administrator if they believe they're being blocked in error.
 
@@ -9286,6 +9279,8 @@ When a request originates from an IP address that’s not in your allowlist, acc
 
 # Restrict verified-domain connectors to your Enterprise
 
+
+Copy for LLM
 
 This article explains how to prevent Claude accounts outside your Enterprise organization from connecting certain services, like Gmail and Slack, using an email address on your verified domains. Use the **Restrict verified-domain connectors to your enterprise** setting to keep company data from reaching personal Claude accounts through connectors.
 
@@ -9328,6 +9323,8 @@ This setting applies to the following connectors:
 - Slack
 
 - Smartsheet
+
+- Tableau
 
 You can also view the current list in **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**. Contact **[our support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** to request additional connectors.
 
@@ -9378,10 +9375,6 @@ If someone tries to make a connection that’s restricted, the connection fails 
 ### How is this different from domain claiming?
 
 Domain claiming moves existing personal Claude accounts on your domain into your Enterprise workspace. This setting leaves Claude accounts where they are, and makes it so that only Claude accounts in your Enterprise organization can connect supported connectors using an email address on your verified domains. Learn more about **[claiming and migrating accounts on your domain](https://support.claude.com/en/articles/14625619-claim-and-migrate-accounts-on-your-domain)**.
-
-### Is this the same as the Claude in Slack setting, "Restrict to your verified domains"?
-
-No. That setting applies only to Claude in Slack. This setting covers the connectors listed in **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**.
 
 ### What should someone do if their connection is blocked?
 
@@ -9541,8 +9534,8 @@ If you discover a security vulnerability in Claude Code:
 
 # Set up JIT or SCIM provisioning
 
-June 30, 2026
 
+Copy for LLM
 
 This guide covers how to configure user provisioning and role assignment for your Claude or Claude Console organization.
 
@@ -9564,14 +9557,22 @@ Once SSO is configured, you need to decide how users will be provisioned to your
 
 **SCIM directory sync:** Users are automatically provisioned and deprovisioned based on assignments in your IdP, without requiring them to log in first. SCIM is available for Enterprise plans and Console organizations with their own parent organization or joined to an Enterprise parent organization. SCIM is not available for Team plans or Console organizations joined to a Team plan's parent organization.
 
+When SCIM directory sync is on, Claude sends each newly provisioned member a welcome email. To turn this off, Owners and Primary Owners can navigate to **Organization settings \> Organization and access \> User provisioning**, find **SCIM directory sync**, and turn off "Send a welcome email to new members."
+
+**Note:** Claude doesn't send this welcome email to organizations with additional data-handling or compliance requirements such as customer-managed encryption keys (CMEK), HIPAA, or FERPA, so the setting isn't shown for those organizations. Changes apply to members provisioned after you save, and emails already sent stay delivered.
+
 ### Provisioning behavior overview
 
 Use this table to help decide which provisioning mode is right for your organization:
 
 [TABLE]
 
+**Note:** To remove a JIT user permanently, remove them in Claude and unassign them in your IdP. A user you remove only in Claude will be re-added the next time they log in with SSO.
+
 Both JIT and SCIM can be combined with **Enable group mappings** to control role or seat tier assignment based on IdP group membership. If you select either of these options for your provisioning mode, **Enable group mappings** will appear within the **User provisioning** section:
 
+
+**Important:** Group mappings set a user’s role type and seat tier only. Users with the Custom role get their permissions from groups in Claude, and those groups sync from your IdP only when your provisioning mode is SCIM directory sync. With JIT, you need to create groups and add users to them manually in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. If you map an IdP group to the Custom role under JIT without doing this, those users have no permissions when they log in. Learn more about **[managing groups on Enterprise plans](https://support.claude.com/en/articles/13799932)**.
 
 ### Available roles and seat tiers
 
@@ -9587,7 +9588,7 @@ For information on purchasing seats or adjusting your plan's seat allocation, se
 
 If you chose SCIM as your provisioning mode, you need to establish the connection between your Identity Provider and Anthropic before enabling it.
 
-1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](http://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**)
+1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](https://platform.claude.com/settings/identity)**)
 
 2.  In the **User provisioning** section, click “Setup SCIM” (or “Manage SCIM”)next to **SCIM directory sync**.
 
@@ -9654,9 +9655,9 @@ Once your IdP is connected, continue to Step 3.
 
     1.  When using group mappings, you *must* assign all users to a role-based group in order to ensure they’re provisioned an account. Assigning users to seat-tier based groups is optional.
 
-    2.  You can map an IdP group to the “Custom” role. Members assigned this role have no default permissions—their access is determined entirely by the custom roles assigned to their groups in Claude.
+    2.  You can map an IdP group to the “Custom” role. Users assigned this role have no default permissions; their access is determined entirely by the custom roles assigned to their groups in Claude. If you use JIT, add these users to groups manually in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)** before they log in, since JIT doesn't sync group memberships from your IdP.
 
-6.  **For all plans except single-seat Enterprise:** In the **Assign seat tiers to IdP groups** section (optional), click "Add" next to each seat type and select the corresponding group from your IdP. If a user isn't assigned to a seat type group, they will be assigned to the highest available type by default.
+6.  **For all plans except single-seat Enterprise:** In the **Assign seat tiers to IdP groups** section (optional), click "Add" next to each seat type and select the corresponding group from your IdP. Users who aren’t in any seat tier group aren’t removed. Existing users keep their current seat type. New users receive the highest seat type that still has an unassigned purchased seat (for example, Premium while unassigned Premium seats remain, then Standard), and are added with no seat if none is available.
 
     1.  **For single-seat Enterprise:** Seat type mapping does not apply. All provisioned users are automatically assigned an Enterprise seat, provided one is available in your organization.
 
@@ -9701,11 +9702,21 @@ Verify you have enough seats purchased and available to add members to your org.
 4.  **For SCIM:** Click "Sync" to prompt an immediate sync, or wait for the automatic sync cycle:
 
 
+### Users mapped to the Custom role can't access anything after logging in
+
+This happens when your provisioning mode is JIT and an IdP group is mapped to the Custom role. JIT assigns the role type but doesn't sync group memberships from your IdP, so these users aren't in any group with a custom role attached and have no permissions.
+
+To fix this, do one of the following:
+
+1.  Add the affected users to the appropriate groups manually in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. Learn more about **[managing groups on Enterprise plans](https://support.claude.com/en/articles/13799932)**.
+
+2.  Switch your provisioning mode to SCIM directory sync, which syncs groups and their memberships from your IdP. Learn more about **[how SCIM sync works](https://support.claude.com/en/articles/14499648)**.
+
 ### I lost Admin/Owner access after enabling group mappings
 
 This happens when the person configuring group mappings isn't assigned to a group mapped to an Admin or Owner role, causing their permissions to be downgraded to User.
 
-To fix this:
+To fix this, do one of the following:
 
 **Option 1: Have another Admin/Owner reinstate your role**
 
@@ -9902,8 +9913,9 @@ To fix this:
 
 # Set up SCIM in Claude for Government
 
-April 10, 2026
+August 6, 2026
 
+Copy for LLM
 
 System for Cross-domain Identity Management (SCIM) lets your identity provider automatically manage user accounts in Claude for Government. With SCIM, your IdP controls who has access, what role they hold, and what seat tier they're assigned—without manual intervention in the Claude admin console.
 
@@ -9948,9 +9960,9 @@ With SCIM, login and provisioning are separate. Your IdP tells Anthropic who sho
 
 2.  Enter the following values:
 
-    1.  SCIM endpoint URL: **[https://claude.fedstart.com/v1/scim/v2](https://claude.fedstart.com/v1/scim/v2)**
+    1.  **SCIM endpoint URL:** `https://claude.fedstart.com/v1/scim/v2`
 
-    2.  API key / Bearer token: The key generated in Step 1
+    2.  **API key / Bearer token:** The key generated in Step 1
 
 3.  Configure the user attributes your IdP will sync (typically name and email).
 
@@ -10002,7 +10014,7 @@ In a multi-org setup:
 
 - Any Owner or Primary Owner in a child organization can manage IdP settings. Restrict these roles to centralized IT staff.
 
-**Note:** Anthropic support will work with you during provisioning to configure parent/child organization relationships. Contact your account representative or **[Anthropic support](https://claude.fedstart.com/support)** if you need to set up a multi-org structure.
+**Note:** Anthropic support will work with you during provisioning to configure parent/child organization relationships. Contact your account representative or **[our Support team](https://support.claude.com/en/articles/13047024)** if you need to set up a multi-org structure.
 
 
 ---
@@ -10010,8 +10022,8 @@ In a multi-org setup:
 
 # Set up JIT or SCIM provisioning
 
-June 30, 2026
 
+Copy for LLM
 
 This guide covers how to configure user provisioning and role assignment for your Claude or Claude Console organization.
 
@@ -10033,14 +10045,22 @@ Once SSO is configured, you need to decide how users will be provisioned to your
 
 **SCIM directory sync:** Users are automatically provisioned and deprovisioned based on assignments in your IdP, without requiring them to log in first. SCIM is available for Enterprise plans and Console organizations with their own parent organization or joined to an Enterprise parent organization. SCIM is not available for Team plans or Console organizations joined to a Team plan's parent organization.
 
+When SCIM directory sync is on, Claude sends each newly provisioned member a welcome email. To turn this off, Owners and Primary Owners can navigate to **Organization settings \> Organization and access \> User provisioning**, find **SCIM directory sync**, and turn off "Send a welcome email to new members."
+
+**Note:** Claude doesn't send this welcome email to organizations with additional data-handling or compliance requirements such as customer-managed encryption keys (CMEK), HIPAA, or FERPA, so the setting isn't shown for those organizations. Changes apply to members provisioned after you save, and emails already sent stay delivered.
+
 ### Provisioning behavior overview
 
 Use this table to help decide which provisioning mode is right for your organization:
 
 [TABLE]
 
+**Note:** To remove a JIT user permanently, remove them in Claude and unassign them in your IdP. A user you remove only in Claude will be re-added the next time they log in with SSO.
+
 Both JIT and SCIM can be combined with **Enable group mappings** to control role or seat tier assignment based on IdP group membership. If you select either of these options for your provisioning mode, **Enable group mappings** will appear within the **User provisioning** section:
 
+
+**Important:** Group mappings set a user’s role type and seat tier only. Users with the Custom role get their permissions from groups in Claude, and those groups sync from your IdP only when your provisioning mode is SCIM directory sync. With JIT, you need to create groups and add users to them manually in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. If you map an IdP group to the Custom role under JIT without doing this, those users have no permissions when they log in. Learn more about **[managing groups on Enterprise plans](https://support.claude.com/en/articles/13799932)**.
 
 ### Available roles and seat tiers
 
@@ -10056,7 +10076,7 @@ For information on purchasing seats or adjusting your plan's seat allocation, se
 
 If you chose SCIM as your provisioning mode, you need to establish the connection between your Identity Provider and Anthropic before enabling it.
 
-1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](http://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**)
+1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](https://platform.claude.com/settings/identity)**)
 
 2.  In the **User provisioning** section, click “Setup SCIM” (or “Manage SCIM”)next to **SCIM directory sync**.
 
@@ -10123,9 +10143,9 @@ Once your IdP is connected, continue to Step 3.
 
     1.  When using group mappings, you *must* assign all users to a role-based group in order to ensure they’re provisioned an account. Assigning users to seat-tier based groups is optional.
 
-    2.  You can map an IdP group to the “Custom” role. Members assigned this role have no default permissions—their access is determined entirely by the custom roles assigned to their groups in Claude.
+    2.  You can map an IdP group to the “Custom” role. Users assigned this role have no default permissions; their access is determined entirely by the custom roles assigned to their groups in Claude. If you use JIT, add these users to groups manually in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)** before they log in, since JIT doesn't sync group memberships from your IdP.
 
-6.  **For all plans except single-seat Enterprise:** In the **Assign seat tiers to IdP groups** section (optional), click "Add" next to each seat type and select the corresponding group from your IdP. If a user isn't assigned to a seat type group, they will be assigned to the highest available type by default.
+6.  **For all plans except single-seat Enterprise:** In the **Assign seat tiers to IdP groups** section (optional), click "Add" next to each seat type and select the corresponding group from your IdP. Users who aren’t in any seat tier group aren’t removed. Existing users keep their current seat type. New users receive the highest seat type that still has an unassigned purchased seat (for example, Premium while unassigned Premium seats remain, then Standard), and are added with no seat if none is available.
 
     1.  **For single-seat Enterprise:** Seat type mapping does not apply. All provisioned users are automatically assigned an Enterprise seat, provided one is available in your organization.
 
@@ -10170,11 +10190,21 @@ Verify you have enough seats purchased and available to add members to your org.
 4.  **For SCIM:** Click "Sync" to prompt an immediate sync, or wait for the automatic sync cycle:
 
 
+### Users mapped to the Custom role can't access anything after logging in
+
+This happens when your provisioning mode is JIT and an IdP group is mapped to the Custom role. JIT assigns the role type but doesn't sync group memberships from your IdP, so these users aren't in any group with a custom role attached and have no permissions.
+
+To fix this, do one of the following:
+
+1.  Add the affected users to the appropriate groups manually in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. Learn more about **[managing groups on Enterprise plans](https://support.claude.com/en/articles/13799932)**.
+
+2.  Switch your provisioning mode to SCIM directory sync, which syncs groups and their memberships from your IdP. Learn more about **[how SCIM sync works](https://support.claude.com/en/articles/14499648)**.
+
 ### I lost Admin/Owner access after enabling group mappings
 
 This happens when the person configuring group mappings isn't assigned to a group mapped to an Admin or Owner role, causing their permissions to be downgraded to User.
 
-To fix this:
+To fix this, do one of the following:
 
 **Option 1: Have another Admin/Owner reinstate your role**
 
@@ -10622,8 +10652,9 @@ Related resources
 
 # Use enterprise search
 
-April 27, 2026
+August 6, 2026
 
+Copy for LLM
 
 Enterprise search capabilities are available for users on Team and Enterprise plans.
 
@@ -10837,7 +10868,7 @@ Enterprise search is particularly valuable for:
 
 ### Connected tools aren't working
 
-- Revisit **[Settings \> Connectors](http://claude.ai/settings/connectors)** to verify authentication status.
+- Revisit **[Settings \> Connectors](https://claude.ai/settings/connectors)** to verify authentication status.
 
 - Try disconnecting and reconnecting the problematic connector.
 
@@ -10869,7 +10900,7 @@ If a connector fails:
 
 2.  You'll see a notice about the failed connector.
 
-3.  Try reconnecting the tool through **[Settings \> Connectors](http://claude.ai/settings/connectors)**.
+3.  Try reconnecting the tool through **[Settings \> Connectors](https://claude.ai/settings/connectors)**.
 
 4.  Contact an organization owner if the issue persists.
 
@@ -10880,7 +10911,7 @@ If a connector fails:
 
 ### Can I add my own custom connectors to the search project?
 
-Yes. You can add connectors available through **[Settings \> Connectors](http://claude.ai/settings/connectors)**, and you can also add custom connectors if permitted by your organization. The guided onboarding recommends a few connectors, but you're not limited to those.
+Yes. You can add connectors available through **[Settings \> Connectors](https://claude.ai/settings/connectors)**, and you can also add custom connectors if permitted by your organization. The guided onboarding recommends a few connectors, but you're not limited to those.
 
 For more information, refer to **[Get started with custom connectors using remote MCP](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)**.
 
@@ -11264,8 +11295,9 @@ Search results are retained with their associated chats. You can delete search d
 
 # Use enterprise search
 
-April 27, 2026
+August 6, 2026
 
+Copy for LLM
 
 Enterprise search capabilities are available for users on Team and Enterprise plans.
 
@@ -11479,7 +11511,7 @@ Enterprise search is particularly valuable for:
 
 ### Connected tools aren't working
 
-- Revisit **[Settings \> Connectors](http://claude.ai/settings/connectors)** to verify authentication status.
+- Revisit **[Settings \> Connectors](https://claude.ai/settings/connectors)** to verify authentication status.
 
 - Try disconnecting and reconnecting the problematic connector.
 
@@ -11511,7 +11543,7 @@ If a connector fails:
 
 2.  You'll see a notice about the failed connector.
 
-3.  Try reconnecting the tool through **[Settings \> Connectors](http://claude.ai/settings/connectors)**.
+3.  Try reconnecting the tool through **[Settings \> Connectors](https://claude.ai/settings/connectors)**.
 
 4.  Contact an organization owner if the issue persists.
 
@@ -11522,7 +11554,7 @@ If a connector fails:
 
 ### Can I add my own custom connectors to the search project?
 
-Yes. You can add connectors available through **[Settings \> Connectors](http://claude.ai/settings/connectors)**, and you can also add custom connectors if permitted by your organization. The guided onboarding recommends a few connectors, but you're not limited to those.
+Yes. You can add connectors available through **[Settings \> Connectors](https://claude.ai/settings/connectors)**, and you can also add custom connectors if permitted by your organization. The guided onboarding recommends a few connectors, but you're not limited to those.
 
 For more information, refer to **[Get started with custom connectors using remote MCP](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)**.
 
@@ -11906,10 +11938,11 @@ Search results are retained with their associated chats. You can delete search d
 
 # What happens to a user's data when they are removed from a Team or Enterprise organization?
 
-March 16, 2026
+August 17, 2026
 
+Copy for LLM
 
-This article explains what happens to projects and chats when a member is removed from your Team or Enterprise plan organization.
+This article explains what happens to projects, chats, and skills when a member is removed from your Team or Enterprise plan organization.
 
 ## Deleting individual accounts within an organization
 
@@ -11937,9 +11970,13 @@ When a user is removed from your Team or Enterprise organization, remaining memb
 
 Note that the removed user’s data will still be included in any **[data exports](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)** run by your organization’s Primary Owner. For Enterprise organizations specifically, the removed user’s data will still be subject to any configured **[custom data retention settings](https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-enterprise-plans)**.
 
+## Will a user's skills still be accessible after removing them?
+
+Removing a user from your Team or Enterprise organization doesn't delete the skills they uploaded to their own account. Skills the user uploaded and never shared stay on their account and remain recoverable. If the user is later added back to the organization with the same email address, those skills will reappear under **[Customize \> Skills](https://claude.ai/new#settings/customize-skills)**, where they can download them.
+
 ## What happens if a member is re-added to an organization?
 
-If a team member is removed and later added back to the same organization using the same email address, previous chats and projects will be restored. The Primary Owner can also always export the member's project data and chats (note that customer data retention settings may impact this).
+If a team member is removed and later added back to the same organization using the same email address, previous chats, projects, and skills will be restored. The Primary Owner can also always export the member's project data and chats (note that customer data retention settings may impact this).
 
 To learn more about Anthropic’s data retention periods see **[here](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)**.
 
@@ -11994,6 +12031,7 @@ To learn more about Anthropic’s data retention periods see **[here](https://pr
 
 March 16, 2026
 
+Copy for LLM
 
 This article provides important information about your Claude for Work account associated with your organization's Claude for Work plan (Team or Enterprise plans). It includes details about data access and control that were shared with you when your Claude for Work plan account was set up.
 

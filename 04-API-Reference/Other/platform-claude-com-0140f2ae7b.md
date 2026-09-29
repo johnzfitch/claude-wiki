@@ -1,8 +1,8 @@
 ---
-title: "Sign In | Claude Platform"
+title: "Claude Platform"
 source_url: "https://platform.claude.com/"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:39:43Z"
+fetched_at: "2026-09-26T06:38:12Z"
 tags: ["api"]
 ---
 

@@ -2,14 +2,15 @@
 title: "Team plan billing FAQs | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12997503-team-plan-billing-faqs"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:42:40Z"
+fetched_at: "2026-09-29T06:30:32Z"
 tags: ["billing"]
 ---
 
 # Team plan billing FAQs
 
-March 16, 2026
+Updated today
 
+Copy for LLM
 
 ## What payment methods can I use to pay for the Team plan?
 
@@ -32,7 +33,9 @@ If you want to use a name other than the one tied to your payment method, an org
 
 ## When will I be billed?
 
-Your payment method on file will be charged at the beginning of your billing cycle. The amount will be based on the number of members on your team at the beginning of the billing cycle. If you add or remove members from your team during the billing cycle, you will be credited or charged the prorated amount immediately. See **[How is my Team plan bill calculated?](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated)** for more information about Team plan pricing.
+Your payment method on file will be charged at the beginning of your billing cycle. The amount is based on the number of members on your team at the beginning of the billing cycle. If you add members or upgrade seats during the billing cycle, you'll be charged the prorated amount immediately. Removing members doesn't generate a credit or refund. The seat becomes available to assign to someone else.
+
+See **[How is my Team plan bill calculated?](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated)** for more information about Team plan pricing.
 
 ## Where can I find the invoice or receipt for my Team plan payment?
 
@@ -59,3 +62,11 @@ Please click on the message icon in the bottom right of our Help Center to conta
 ## My Team plan access is no longer active and I want to resubscribe.
 
 An organization owner can resubscribe for Team plan access by navigating to **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)**.
+
+## What happens to my Pro or Max subscription when I upgrade to Team?
+
+When you upgrade from Pro or Max to Team in place, your individual subscription is cancelled automatically and you receive a prorated refund for the unused portion of your billing period. The refund is issued about 24 hours after your Team payment goes through, and depending on your bank, it can take several more business days to appear on your statement. Google Play purchases don't have this wait, but the refund can take a few days to appear. Any prepaid usage credits on your individual account are refunded
+
+If you signed up for Pro or Max through the Apple App Store, in-place upgrades work differently. For more information, refer to **[Get started with the Team plan](https://support.claude.com/en/articles/9267247-get-started-with-the-team-plan#h_5d142d3f45)**.
+
+If you'd rather keep your personal subscription active, check the opt-out box (**Keep your personal account separate**) in the team-creation flow when you upgrade.

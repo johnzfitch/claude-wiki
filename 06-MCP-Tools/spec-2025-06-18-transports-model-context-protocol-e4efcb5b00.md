@@ -2,7 +2,7 @@
 title: "Transports - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-06-18/basic/transports"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:34Z"
+fetched_at: "2026-09-29T06:30:24Z"
 tags: ["mcp"]
 ---
 

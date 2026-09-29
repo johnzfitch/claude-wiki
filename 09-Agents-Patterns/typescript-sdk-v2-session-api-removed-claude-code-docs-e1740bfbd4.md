@@ -2,7 +2,7 @@
 title: "TypeScript SDK V2 session API (removed) - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/typescript-v2-preview"
 category: "09-Agents-Patterns"
-fetched_at: "2026-08-02T05:38:06Z"
+fetched_at: "2026-09-16T06:23:59Z"
 tags: ["agents", "api", "claude-code", "sdk", "typescript"]
 ---
 
@@ -35,7 +35,7 @@ Copy pageCopy page
 
 The V2 session API is no longer supported. TypeScript Agent SDK 0.3.142 removes `unstable_v2_createSession`, `unstable_v2_resumeSession`, `unstable_v2_prompt`, and the `SDKSession` and `SDKSessionOptions` types.To migrate, use the [`query()` API](/docs/en/agent-sdk/typescript) and the [session options](/docs/en/agent-sdk/sessions) it accepts. Pass an `AsyncIterable<SDKUserMessage>` for multi-turn conversations, or `options.resume` to continue a saved session. This page is kept for reference if you maintain code on Agent SDK 0.2.x or earlier.
 
-V2 was an experimental session API that removed the need for async generators and yield coordination. Instead of managing generator state across turns, each turn was a separate `send()`/`stream()` cycle. The API surface reduced to three concepts:
+V2 was an experimental session API that removed the need for async generators and yield coordination. Instead of managing generator state across turns, each turn was a separate `send()`/`stream()` cycle. The API surface reduced to creating a session, sending a message, and streaming the response:
 
 - `createSession()` / `resumeSession()`: Start or continue a conversation
 - `session.send()`: Send a message
@@ -52,7 +52,7 @@ Agent SDK 0.2.x is the last version that includes the V2 interface. The package 
 npm install @anthropic-ai/claude-agent-sdk@0.2
 ```
 
-The SDK bundles a native Claude Code binary for your platform as an optional dependency, so you don’t need to install Claude Code separately.
+The SDK bundles a native Claude Code binary for your platform as an optional dependency, so most installs need no separate Claude Code install. See the [quickstart’s install note](/docs/en/agent-sdk/quickstart) for the installs that need one.
 
 
 [​](#quick-start)

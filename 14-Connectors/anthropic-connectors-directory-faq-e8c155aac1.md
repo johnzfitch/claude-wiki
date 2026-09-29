@@ -2,13 +2,15 @@
 title: "Anthropic Connectors Directory FAQ | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq"
 category: "14-Connectors"
-fetched_at: "2026-08-02T05:41:00Z"
+fetched_at: "2026-09-29T06:30:19Z"
 tags: ["connectors"]
 ---
 
 # Anthropic Connectors Directory FAQ
 
-May 7, 2026
+August 6, 2026
+
+Copy for LLM
 
 The Connectors Directory FAQ has moved to the Claude developer docs.
 

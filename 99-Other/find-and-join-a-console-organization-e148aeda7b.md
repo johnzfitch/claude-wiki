@@ -2,13 +2,14 @@
 title: "Find and join a Console organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14793921-find-and-join-a-console-organization"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:50Z"
+fetched_at: "2026-09-29T06:31:51Z"
 ---
 
 # Find and join a Console organization
 
 April 29, 2026
 
+Copy for LLM
 
 Organization discovery lets you find and join your company’s existing Console organization when you start the sign-up flow with a business email address. Instead of creating a personal account, you can request to join—or be added automatically—depending on your organization’s configuration.
 

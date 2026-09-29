@@ -2,7 +2,7 @@
 title: "Use WIF with Okta - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/wif-providers/okta"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:40:46Z"
+fetched_at: "2026-09-26T06:39:37Z"
 tags: ["api"]
 ---
 
@@ -12,35 +12,31 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fwif-providers%2Fokta)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Organization
 
-[Admin API](/docs/en/manage-claude/admin-api)[User management (beta)](/docs/en/manage-claude/user-management)[Workspaces](/docs/en/manage-claude/workspaces)
+[Admin API](/docs/en/manage-claude/admin-api)[User management](/docs/en/manage-claude/user-management)[Workspaces](/docs/en/manage-claude/workspaces)
 
 Authentication
 
-[Overview](/docs/en/manage-claude/authentication)[Create an Admin API key](/docs/en/manage-claude/admin-api-keys)[Workload Identity Federation](/docs/en/manage-claude/workload-identity-federation)[Manage WIF via API](/docs/en/manage-claude/wif-admin-api)[WIF reference](/docs/en/manage-claude/wif-reference)
+[Overview](/docs/en/manage-claude/authentication)[Create an Admin API key](/docs/en/manage-claude/admin-api-keys)[App Attest](/docs/en/manage-claude/app-attest)[Workload Identity Federation](/docs/en/manage-claude/workload-identity-federation)[Manage WIF via API](/docs/en/manage-claude/wif-admin-api)[WIF reference](/docs/en/manage-claude/wif-reference)
 
 Identity providers
 
@@ -54,30 +50,27 @@ Data & compliance
 
 [Data residency](/docs/en/manage-claude/data-residency)[API and data retention](/docs/en/manage-claude/api-and-data-retention)[Access Transparency](/docs/en/manage-claude/access-transparency)
 
-Encryption keys
+[Encryption keys](/docs/en/manage-claude/cmek)
+
+[Inference hooks](/docs/en/manage-claude/inference-hooks)
 
 Compliance API
 
-[Overview](/docs/en/manage-claude/compliance-api)[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)[Activity Feed](/docs/en/manage-claude/compliance-activity-feed)[Chats, files, and projects](/docs/en/manage-claude/compliance-content-data)[Organizations, users, roles, groups, and settings](/docs/en/manage-claude/compliance-org-data)[Design your integration](/docs/en/manage-claude/compliance-integration-patterns)[Errors](/docs/en/manage-claude/compliance-errors)[FAQ](/docs/en/manage-claude/compliance-faq)
+[Overview](/docs/en/manage-claude/compliance-api)[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)[Activity Feed](/docs/en/manage-claude/compliance-activity-feed)[Chats, files, and projects](/docs/en/manage-claude/compliance-content-data)[Session transcripts](/docs/en/manage-claude/compliance-sessions)[Organizations, users, roles, groups, and settings](/docs/en/manage-claude/compliance-org-data)[Design your integration](/docs/en/manage-claude/compliance-integration-patterns)[Errors](/docs/en/manage-claude/compliance-errors)[FAQ](/docs/en/manage-claude/compliance-faq)
 
-[](/login)
+[Console](/)
 
-
-
-
-Admin
-
-Okta
-
-Admin/Identity providers
+[Admin](/docs/en/manage-claude/admin-api)Identity providers
 
 # Use WIF with Okta
 
+Copy page
 
 
 
 Federate Okta service application identities to the Claude API with Workload Identity Federation.
 
+Copy page
 
 
 
@@ -85,26 +78,20 @@ Okta can act as a workload identity provider by issuing OIDC access tokens to a 
 
 The Okta authorization server's issuer URL takes the form `https://<your-domain>.okta.com/oauth2/<auth-server-id>`. If you use the built-in default server, the path is `/oauth2/default`.
 
-
+
 
 You must use an Okta **custom authorization server** (including the `default` one). Tokens issued directly by the Okta org authorization server (the `/oauth2/v1/token` endpoint with no authorization server ID in the path) cannot be validated by external parties because Okta does not publish signing keys for them.
 
 There are many ways to configure and authenticate to Okta that are outside the scope of this documentation. Ensure that your configuration and authentication mechanisms follow your company's guidance and security practices.
 
-
-
-
-Prerequisites
+## Prerequisites
 
 - Familiarity with [WIF concepts](/docs/en/manage-claude/workload-identity-federation#concepts): service accounts, federation issuers, and federation rules.
 - An Okta organization with API Access Management enabled (required for custom authorization servers).
 - Permission to create service accounts, federation issuers, and federation rules in the Claude Console for your Anthropic organization.
 - A workload that can request a token from Okta's `/v1/token` endpoint and reach `api.anthropic.com`.
 
-
-
-
-Configure Okta
+## Configure Okta
 
 At a high level you need to:
 
@@ -122,10 +109,7 @@ The exact navigation depends on your Okta org configuration and admin console ve
 
 For a service app using `client_credentials`, Okta sets the `sub` claim of the issued access token to the application's **Client ID**, and `iss` to the authorization server's issuer URL.
 
-
-
-
-Configure Anthropic
+## Configure Anthropic
 
 In the Claude Console, open **Settings → Workload identity**, click **Connect workload**, and select **Custom OIDC**. The wizard walks you through registering the issuer, creating a service account, and creating a federation rule.
 
@@ -162,10 +146,7 @@ The wizard creates these resources for you. Use the following values whether you
 
 
 
-
-
-
-Acquire a token and call the Claude API
+## Acquire a token and call the Claude API
 
 Unlike platform-native providers (AWS, Google Cloud, Kubernetes), which make a token available inside the workload's runtime (through a projected file or local metadata endpoint), Okta does not. Your workload must call Okta's token endpoint to obtain a JWT, then pass that JWT to the Anthropic SDK as the identity token.
 
@@ -191,13 +172,13 @@ Ruby
 
 ```python
 import os
-import httpx
+import httpx2
 import anthropic
 from anthropic import WorkloadIdentityCredentials
 
 
 def fetch_okta_token() -> str:
-    response = httpx.post(
+    response = httpx2.post(
         f"{os.environ['OKTA_ISSUER']}/v1/token",
         data={
             "grant_type": "client_credentials",
@@ -222,26 +203,20 @@ client = anthropic.Anthropic(
 )
 
 message = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello, Claude"}],
 )
 print(next(block.text for block in message.content if block.type == "text"))
 ```
 
-Each SDK tab shows the callable pattern: the Anthropic SDK calls your identity-token provider again whenever the Anthropic access token approaches expiry, so your Okta fetcher should return a fresh token on each call rather than caching one indefinitely. The `ant` CLI re-reads `ANTHROPIC_IDENTITY_TOKEN_FILE` on each exchange, so refresh that file on a timer for long-running shells.
+Each SDK tab shows the callable pattern: the Anthropic SDK calls the function you passed to `identity_token_provider` each time the Anthropic access token approaches expiry, so your Okta fetcher should return a fresh token on each call rather than caching one indefinitely. The `ant` CLI re-reads `ANTHROPIC_IDENTITY_TOKEN_FILE` on each exchange, so refresh that file on a timer for long-running shells.
 
+## Verify the setup
 
-
+A successful exchange returns an `access_token` beginning with `sk-ant-oat01-` and an `expires_in` value in seconds. If the exchange fails with the opaque `401` `authentication_error` response (message `Authentication failed`), check the [authentication history page](https://platform.claude.com/settings/workload-identity-federation?tab=history) for the deny reason and see [Troubleshoot a failed exchange](/docs/en/manage-claude/wif-reference#troubleshoot-a-failed-exchange); the most common Okta-side cause is an `issuer_url` mismatch (it must include the `/oauth2/<auth-server-id>` path; the Okta org authorization server is not usable).
 
-Verify the setup
-
-A successful exchange returns an `access_token` beginning with `sk-ant-oat01-` and an `expires_in` value in seconds. On `400 invalid_grant`, see [Troubleshoot a failed exchange](/docs/en/manage-claude/wif-reference#troubleshoot-a-failed-exchange); the most common Okta-side cause is an `issuer_url` mismatch (it must include the `/oauth2/<auth-server-id>` path; the Okta org authorization server is not usable).
-
-
-
-
-Scope your rule
+## Scope your rule
 
 
 
@@ -254,10 +229,7 @@ Lock the rule's `match` block to the narrowest scope that fits your use case:
 - **Match on custom claims:** For finer-grained scoping, add claims in the authorization server's **Claims** tab and match them with the rule's `claims` map or a CEL `condition`.
 - **Use one rule per service app:** Create a separate federation rule for each service app rather than sharing one rule across apps.
 
-
-
-
-Next steps
+## Next steps
 
 - Review the [WIF reference](/docs/en/manage-claude/wif-reference) for the full credential resolution order and profile configuration.
 - See the [WIF reference](/docs/en/manage-claude/wif-reference#rule-matching-semantics) to match on custom Okta claims with CEL expressions.

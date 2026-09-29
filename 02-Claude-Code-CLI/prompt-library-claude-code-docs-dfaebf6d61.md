@@ -2,7 +2,7 @@
 title: "Prompt library - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/prompt-library"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:38:23Z"
+fetched_at: "2026-09-26T06:38:06Z"
 tags: ["claude-code", "prompting"]
 ---
 
@@ -35,7 +35,7 @@ The prompts above share a few patterns. Recognizing them helps you adapt any pro
 add rate limiting to the public API and make sure existing tests still pass
 ```
 
-**Give it a way to check its own work.** Ask for run, test, compare, or verify in the same prompt so Claude iterates instead of stopping after one attempt.
+**Give it a way to check its own work.** Ask for run, test, compare, or verify in the same prompt so Claude iterates instead of stopping after one attempt. To check the finished change against the running app, run [`/verify`](/docs/en/skills#run-and-verify-your-app).
 
 ```python
 write the migration, run it against the dev database, and confirm the schema matches
@@ -79,7 +79,7 @@ These prompts are based on patterns from published Anthropic resources. Each car
 - [How Anthropic teams use Claude Code](https://claude.com/blog/how-anthropic-teams-use-claude-code): real workflows from engineering, product, design, and data teams, with deep dives on [legal](https://claude.com/blog/how-anthropic-uses-claude-legal), [marketing](https://claude.com/blog/how-anthropic-uses-claude-marketing), and [cybersecurity](https://claude.com/blog/how-anthropic-uses-claude-cybersecurity)
 - [Scaling agentic coding guide](https://resources.anthropic.com/hubfs/Scaling%20agentic%20coding%20across%20your%20organization.pdf): the enterprise adoption guide
 
-For video walkthroughs of these patterns, see the free [Claude Code in Action](https://anthropic.skilljar.com/claude-code-in-action) course on Anthropic Academy.
+For video walkthroughs of these patterns, see the free [Claude Code in Action](https://academy.claude.com/courses/claude-code-in-action) course on [Claude Academy](https://academy.claude.com/).
 
 
 [​](#related-resources)

@@ -2,12 +2,15 @@
 title: "Deploy Claude Desktop for Windows | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-08-02T05:41:00Z"
+fetched_at: "2026-09-29T06:31:28Z"
 tags: ["desktop"]
 ---
 
 # Deploy Claude Desktop for Windows
 
+July 13, 2026
+
+Copy for LLM
 
 Administrators on Team or Enterprise plans can deploy Claude Desktop automatically across their organization to manage installations and updates centrally. We offer MSIX packages for Windows deployments via Microsoft Intune, SCCM, Group Policy, or PowerShell.
 

@@ -2,18 +2,20 @@
 title: "Set up the Microsoft 365 connector | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector"
 category: "14-Connectors"
-fetched_at: "2026-08-02T05:42:36Z"
+fetched_at: "2026-09-29T06:31:05Z"
 tags: ["connectors", "security"]
 ---
 
 # Set up the Microsoft 365 connector
 
 
-This article walks admins through enabling the Microsoft 365 connector for their organization in Claude—including granting Microsoft Entra consent, restricting access, and managing permissions. Once setup is complete, people in your tenant can connect Microsoft 365 to their own Claude accounts to search across SharePoint, OneDrive, Outlook, and Teams from Claude. You can also enable write tools, which let Claude send email, manage calendar events, and create and update files on a member's behalf.
+Copy for LLM
+
+This article walks admins through enabling the Microsoft 365 connector for their organization in Claude—including granting Microsoft Entra consent, restricting access, and managing permissions. Once setup is complete, people in your tenant can connect Microsoft 365 to their own Claude accounts to search across SharePoint, OneDrive, Outlook, and Teams from Claude. You can also enable write tools, which let Claude send email, manage calendar events, create and update files, and send Teams messages on a member's behalf.
 
 The Microsoft 365 connector is available on all Claude plans: Free, Pro, Max, Team, and Enterprise.
 
-For end-user instructions on connecting and using Microsoft 365 once setup is complete, see **[Connect Claude to Microsoft 365](https://support.claude.com/en/articles/15183774-)**.
+For end-user instructions on connecting and using Microsoft 365 once setup is complete, see **[Connect Claude to Microsoft 365](https://support.claude.com/en/articles/15183774)**.
 
 **Important:** The Microsoft 365 connector requires a Microsoft Entra tenant tied to a Microsoft Business plan. Personal Microsoft accounts (such as @outlook.com or @hotmail.com addresses) can't be used to connect.
 
@@ -29,7 +31,7 @@ Two things need to happen before anyone in your organization can connect Microso
 
 3.  **To enable write tools:** A Microsoft Entra administrator consents to the updated permission set, and you enable write tools for your organization. See **[Enable write tools](#h_a51d877afd)** below.
 
-After completing these steps, members can connect Microsoft 365 to their own Claude accounts following the steps in **[Connect Claude to Microsoft 365](https://support.claude.com/en/articles/15183774-)**.
+After completing these steps, members can connect Microsoft 365 to their own Claude accounts following the steps in **[Connect Claude to Microsoft 365](https://support.claude.com/en/articles/15183774)**.
 
 ## Enable the connector for your organization
 
@@ -51,7 +53,7 @@ A Microsoft Entra Global Administrator in your tenant needs to authorize the int
 
 If your Microsoft Entra Global Administrator has a Claude account, they can grant consent during the standard connection flow:
 
-1.  Navigate to **[Customize \> Connectors](http://claude.ai/customize/connectors)**.
+1.  Navigate to **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
 
 2.  Find **Microsoft 365** and click “Connect.”
 
@@ -99,7 +101,7 @@ When you visit each URL, you'll be prompted to consent to the delegated permissi
 
 - **Team and Enterprise plans:** A Claude organization Owner needs to enable the connector in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**. Then members can connect individually.
 
-- **Free, Pro, and Max plans:** Members can connect by navigating to **[Customize \> Connectors](http://claude.ai/customize/connectors)**, finding **Microsoft 365**, and clicking “Connect.”
+- **Free, Pro, and Max plans:** Members can connect by navigating to **[Customize \> Connectors](https://claude.ai/customize/connectors)**, finding **Microsoft 365**, and clicking “Connect.”
 
 ### Restrict who can use the connector
 
@@ -121,7 +123,7 @@ Both components need to be restricted to the same set of authorized people.
 
 To limit which types of resources the integration can access, selectively revoke permissions from the default set of authorized scopes. This requires Microsoft Entra admin access.
 
-1.  As a Microsoft Entra admin, go to entra.admin.com.
+1.  As a Microsoft Entra admin, go to entra.microsoft.com.
 
 2.  Select “Enterprise Applications.”
 
@@ -145,27 +147,27 @@ To restore a revoked permission, follow the steps to grant admin consent describ
 
 ## Enable write tools
 
-Write tools let Claude send email, manage drafts and calendar events, update mailbox settings, and create and update files in OneDrive and SharePoint. Read and search tools work the same whether or not write tools are enabled.
+Write tools let Claude send email, manage drafts and calendar events, update mailbox settings, and create and update files in OneDrive and SharePoint, and send messages in Microsoft Teams. Read and search tools work the same whether or not write tools are enabled.
 
 **1. Re-consent to the updated permissions**
 
-The connector's permission set now includes additional Microsoft Graph scopes to support write tools. If your tenant consented before write tools launched, a Microsoft Entra Global Administrator needs to review and approve the updated permission set before write tools activate. Review and approve the updated permissions for the connector in your tenant's **Enterprise Applications** consent flow. This is a one-time action per tenant.
+The connector's permission set now includes additional Microsoft Graph scopes to support write tools. If your tenant consented before write tools or the Teams write tools launched, a Microsoft Entra Global Administrator needs to review and approve the updated permission set before write tools activate. Review and approve the updated permissions for the connector in your tenant's **Enterprise Applications** consent flow.
 
 **2. Enable write tools for your organization**
 
-If your organization was using the connector before write tools launched, they will be blocked by default. Enable them for everyone by going to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**, finding “Microsoft 365,” and setting the appropriate permissions. Enterprise plans can enable them for a subset of users through **[custom roles](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans#h_979e558d00)**.
+If your organization was using the connector before write tools launched, they will be blocked by default. Enable them for everyone by going to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**, finding “Microsoft 365,” and setting the appropriate permissions. Enterprise plans can enable them for a subset of users through **[custom roles](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans#h_979e558d00)**. For Microsoft Teams specifically, set each Teams write tool individually: the send, post, and reply tools can be set to Ask or Blocked (members confirm each send), and starting a new chat can also be set to Allow. The connector-wide "all tools" permission on its own doesn't turn these on.
 
 **3. Verify**
 
 Once enabled, ask Claude to perform a low-risk write action, such as "Draft an email to myself, but don't send it," to confirm write tools are active.
 
-**Note:** Emails Claude sends include an attribution header identifying them as agent-initiated. File and calendar writes aren't currently tagged. Attachments aren’t supported in write tools, so sending, forwarding, and drafting all reject messages with attachments. Write tools are also subject to per-user limits on writes, sends, and recipients.
+**Note:** Emails Claude sends include an attribution header identifying them as agent-initiated. File writes, calendar writes, and Teams messages aren't currently tagged. Attachments aren’t supported in write tools, so sending, forwarding, and drafting all reject messages with attachments. Write tools are also subject to per-user limits on writes, sends, and recipients.
 
 ------------------------------------------------------------------------
 
 ## Permissions reference
 
-The Microsoft 365 connector uses **delegated permissions**, meaning Claude acts on behalf of each individual user and can only access data that user already has permission to view in Microsoft 365. Permissions are read-only—Claude can't modify, delete, or create content in your tenant.
+The Microsoft 365 connector uses **delegated permissions**, meaning Claude acts on behalf of each individual user and can only access data that user already has permission to view in Microsoft 365. Permissions are read-only by default. Claude can only send, create, or update content if you enable write tools.
 
 During authentication, the integration requests the following permissions:
 
@@ -189,13 +191,15 @@ During authentication, the integration requests the following permissions:
 
 - `Mail.Read.Shared`: Read emails in mailboxes the user has access to
 
+  - **Note:** Shared mailbox access is included through the `Mail.Read.Shared` permission. Users can search shared mailboxes they have delegate access to in Microsoft 365, including full access and folder-level delegation. No setup is needed beyond standard admin consent and the delegate permissions already configured in Microsoft 365.
+
 - `MailboxFolder.Read`: Read mailbox folder structure
 
 - `MailboxItem.Read`: Read items in mailbox
 
 - `MailboxSettings.Read`: Read mailbox settings, like the user's timezone
 
-**Note:** Shared mailbox access is included through the `Mail.Read.Shared` permission. Members can search shared mailboxes they have delegate access to in Microsoft 365, including full access and folder-level delegation. No setup is needed beyond standard admin consent and the delegate permissions already configured in Microsoft 365.
+**Note:** Email search covers each user's primary mailbox, including its Archive folder, and any shared mailboxes they can access. It doesn't cover the separate Online Archive mailbox (also called the In-Place Archive), so messages that a retention policy has moved there won't appear in results.
 
 **Calendar**
 
@@ -253,6 +257,14 @@ The following permissions support write tools and are included in the updated co
 
 - `MailboxSettings.ReadWrite`: Manage categories, inbox rules, and automatic replies
 
+- `ChatMessage.Send`: Send a Teams chat message on the user's behalf
+
+- `ChannelMessage.Send`**:** Post or reply in a Teams channel
+
+- `Chat.Create`: Start a new chat on the user’s behalf
+
+- `People.Read`: Find people in the organization to start a chat with
+
 **User directory**
 
 - `User.ReadBasic.All`: Read basic profile information for all users in the organization (used for finding meeting availability)
@@ -265,7 +277,7 @@ The Microsoft 365 connector searches SharePoint across the entire tenant using t
 
 - **On-demand access:** Claude only accesses data when a user explicitly asks a question that requires it.
 
-- **Revocable access:** Members can disconnect their own integration through **[Customize \> Connectors](http://claude.ai/customize/connectors)**. Team and Enterprise plan Owners can also remove the connector for the entire organization in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
+- **Revocable access:** Members can disconnect their own integration through **[Customize \> Connectors](https://claude.ai/customize/connectors)**. Team and Enterprise plan Owners can also remove the connector for the entire organization in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
 
 For more detail, see the **[Microsoft 365 connector security guide](https://support.claude.com/en/articles/12684923-)**.
 
@@ -281,7 +293,7 @@ For more detail, see the **[Microsoft 365 connector security guide](https://supp
 
 3.  Confirm admin consent has been granted using Option 1 or Option 2 above.
 
-4.  Check whether organizational policies (such as conditional access) are blocking third-party app authentication.
+4.  Check whether a Conditional Access policy in your tenant is blocking the connection. See below: **[Conditional Access is blocking the connection](#h_c7635fb6e2)**.
 
 ### Members are seeing "Failed to call tool" errors
 
@@ -293,7 +305,57 @@ A permission may have been selectively revoked in Microsoft Entra. Members can t
 
 2.  Confirm write tools are enabled in the Microsoft 365 connector configuration, or that the member is covered by a role-based access policy that grants them.
 
-3.  Have the member disconnect and reconnect Microsoft 365 in **[Customize \> Connectors](http://claude.ai/customize/connectors)**.
+3.  Have the member disconnect and reconnect Microsoft 365 in **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
+
+### Conditional Access is blocking the connection
+
+A Conditional Access block shows up in one of three ways:
+
+- A user sees "Authorization with the MCP server failed" and a reference code starting with `ofid_` when they try to connect. Our Support team can look up that code.
+
+- A member who is already connected gets an error when Claude uses a Microsoft 365 tool. The error includes an `AADSTS` code, a note that the request was blocked by a Conditional Access policy, and the Trace ID and Correlation ID you can search for in Entra.
+
+- Members are asked to reconnect Microsoft 365 on a regular cycle, much more often than the normal 90-day expiry. This usually means a sign-in frequency policy.
+
+Connecting Microsoft 365 involves more than the sign-in the member sees. After the member signs in to Microsoft in their browser, Claude's servers exchange that sign-in for access tokens, and later exchange those tokens for Microsoft 365 access on the member's behalf. In our testing, Entra evaluates your Conditional Access policies against these server-side requests as coming from Anthropic's IP range, `160.79.104.0/21`. They identify the member and carry the device recorded when the member connected, not the member's current device or network. So a policy can pass the member's own sign-in and still block the connection a moment later, or block it days later. Learn more about **[Anthropic's IP addresses](https://platform.claude.com/docs/en/api/ip-addresses)**.
+
+**Find the policy that's blocking the connection**
+
+1.  In the Microsoft Entra admin center, go to **Sign-in logs** and open the **User sign-ins (non-interactive)** tab. The member's own sign-in appears on the interactive tab and usually shows as successful, so the block is rarely there.
+
+2.  Filter by the affected member. The blocked requests can appear under either **M365 MCP Server for Claude** or **M365 MCP Client for Claude**, so filtering by member is more reliable than filtering by application. Don't filter by resource, which hides some of the rows.
+
+3.  Open the failed entry and select the **Conditional Access** tab. It names the policy that blocked the request.
+
+The error code tells you what kind of policy it is:
+
+- `AADSTS70043`: a sign-in frequency policy. See the next section.
+
+- `AADSTS53003`: a policy set to block access. The Conditional Access tab tells you which one. If it's based on location, see the next section.
+
+- `AADSTS50076`: a policy required multi-factor authentication on a server-side request. Disconnecting and reconnecting Microsoft 365 clears it. If it keeps happening, see the **[Microsoft 365 connector security guide](https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide)**.
+
+- `AADSTS53000`: a policy requires a compliant device. The similar code `AADSTS530003` means a policy requires a managed device. In both cases the member needs to reconnect from a device that meets the policy. Learn more in the **[Microsoft 365 connector security guide](https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide)**.
+
+**Exclude Anthropic's IP range from sign-in frequency and location policies**
+
+Because the server-side requests come from Anthropic's IP range, a policy that limits sign-ins to your own network, or that enforces a sign-in frequency, blocks them for every member. Excluding the two Claude applications from the policy isn't enough on its own. We recommend excluding Anthropic's IP range from the policy as well.
+
+**Note:** Don't use this exclusion for a device compliance policy. The server-side requests carry the device recorded when the member connected, so a device policy still applies to them, and excluding Anthropic's IP range would turn the device check off for the connector. Members blocked by a device policy need to reconnect from a device that meets it. Learn more in the **[Microsoft 365 connector security guide](https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide)**.
+
+If the policy that blocked the request is a sign-in frequency or location policy:
+
+1.  In the Microsoft Entra admin center, go to **Conditional Access \> Named locations** and create an IP range location containing `160.79.104.0/21`. Leave **Mark as trusted location** unchecked so the exclusion doesn't affect other policies that use trusted locations.
+
+2.  Open the policy that blocked the request and go to **Conditions \> Locations \> Exclude**.
+
+3.  Add the named location you created. Keep any existing exclusions for the Claude applications in place.
+
+4.  Save the policy and wait a few minutes for the change to apply.
+
+5.  Have an affected member disconnect and reconnect Microsoft 365 in **Customize \> Connectors**.
+
+**Note:** Excluding the range lifts the policy for every request that comes from Anthropic's addresses, which means all Microsoft 365 connector activity for all of your members. For a sign-in frequency policy, this also means the connector's background requests are no longer subject to it, so a connection stays signed in until it expires after 90 days of inactivity. If you'd rather keep the periodic reconnects, leave the policy as it is. Members who are asked to reconnect can sign out of Microsoft in their browser, or use a private browsing window, before reconnecting. If you want to check the effect of a change before making it, clone the policy in report-only mode first.
 
 ------------------------------------------------------------------------
 
@@ -307,6 +369,10 @@ They'll see an error message indicating that an administrator must grant app per
 
 Yes. When enterprise search is enabled, it can query Microsoft 365 alongside other connected services for unified search across Slack, Google Workspace, Microsoft 365, and more.
 
+### What file types can the connector read?
+
+Claude reads Word, Excel, PowerPoint (including older .doc, .xls, and .ppt files), PDF, and plain-text formats such as .txt, .md, and .csv from SharePoint and OneDrive. Other formats, including OneNote, can't be read. For the full list, see **[Connect to Microsoft 365](https://support.claude.com/en/articles/15183774-connect-to-microsoft-365#h_ddeb82923f)**.
+
 ### Can the integration modify Microsoft 365 data?
 
-Only after an Entra admin grants write scopes. With write tools on, Claude can send email, manage drafts and calendar events, update mailbox settings, and create and update files in OneDrive and SharePoint, always within each member's existing Microsoft 365 permissions. Without them, the integration is read-only. Claude can't post Teams messages or change Teams settings or permissions in either case, since there are no tools allowing this.
+Only after an Entra admin grants write scopes. With write tools on, Claude can send email, manage drafts and calendar events, update mailbox settings, create and update files in OneDrive and SharePoint, and send messages in Microsoft Teams (post/reply in a channel, send a chat message, or start a new chat on the user's behalf), always within each member's existing Microsoft 365 permissions. Without them, the integration is read-only. Claude still can't change Teams settings or permissions, only send messages.

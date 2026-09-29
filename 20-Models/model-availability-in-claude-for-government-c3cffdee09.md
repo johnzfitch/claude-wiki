@@ -2,13 +2,14 @@
 title: "Model availability in Claude for Government | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503794-model-availability-in-claude-for-government"
 category: "20-Models"
-fetched_at: "2026-08-02T05:41:49Z"
+fetched_at: "2026-09-29T06:32:14Z"
 ---
 
 # Model availability in Claude for Government
 
 April 10, 2026
 
+Copy for LLM
 
 Claude is a family of state-of-the-art large language models developed by Anthropic. This guide introduces the models available for customers using Claude for Government. For the most up to date information about the model’s general capabilities, please visit our **[Model Overview page](https://platform.claude.com/docs/en/about-claude/models/overview)**.
 

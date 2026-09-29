@@ -2,32 +2,24 @@
 title: "National Domestic Workers Alliance Claude case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/national-domestic-workers-alliance"
 category: "18-Industry-UseCases"
-fetched_at: "2026-08-02T05:43:35Z"
+fetched_at: "2026-09-29T06:33:05Z"
+tags: ["enterprise", "security"]
 ---
 
 # National Domestic Workers Alliance helps domestic workers advocate for better pay with Claude
 
-
 [Try Claude](https://claude.ai)
 
-
-[Contact sales](/contact-sales)
-
-
-Industry:
-
+Industry:  
 Beneficial Deployments
 
-Company size:
-
+Company size:  
 Small
 
-Product:
-
+Product:  
 Claude for Nonprofits
 
-Location:
-
+Location:  
 North America
 
 93% of beta testers took action
@@ -51,55 +43,21 @@ Founded 19 years ago, the [National Domestic Workers Alliance](https://www.domes
 
 ## The challenge
 
-Q&A: National Domestic Workers Alliance
-
-Read the interview with co-founder Ai-jen Poo to see how they use Claude for Nonprofits.
-
-Read more
-
-[Read more](https://claude.com/customers/national-domestic-workers-alliance-qa)
-
-Read more
-
-Q&A: National Domestic Workers Alliance
-
-
-Read the interview with co-founder Ai-jen Poo to see how they use Claude for Nonprofits.
-
-
-Q&A: National Domestic Workers Alliance
-
-Read the interview with co-founder Ai-jen Poo to see how they use Claude for Nonprofits.
-
 ## Advocating alone, behind closed doors
 
 A domestic worker is usually the only worker in their workplace. There is no HR department, no manager to escalate to, and no coworkers to compare notes with. "You're really on your own to negotiate," said Ai-jen Poo, president and co-founder of the National Domestic Workers Alliance. For decades, domestic work sat outside many of the basic labor protections most workers take for granted, like minimum wage and social security. Some of this has changed, but enforcing those protections, or negotiating for anything beyond the legal minimum, still falls to each individual worker.
 
 The stakes are high and personal. "Every time you're asking for something, you are risking potentially losing your job," Poo said, describing a "wild west" with no clear work agreements and little job security. The cost is paid quietly: workers go in sick rather than ask for paid time off, or miss a child's school event rather than risk the conversation. NDWA had spent decades building a response to this: know-your-rights trainings, sample contracts, one-on-one guidance. But that collective wisdom can’t always reach a worker at the moment they need it most, alone and unsure, often late at night.
 
+Q&A: National Domestic Workers Alliance
+
+Read the interview with co-founder Ai-jen Poo to see how they use Claude for Nonprofits.
+
+[Read more](https://claude.com/customers/national-domestic-workers-alliance-qa)
+
 ## The solution
 
-Nonprofits
-
-Turn limited resources into lasting impact. Generate grant proposals, track program outcomes, and free your team to focus on serving your community.
-
-Read more
-
-[Read more](/solutions/nonprofits)
-
-Read more
-
-Nonprofits
-
-
-Turn limited resources into lasting impact. Generate grant proposals, track program outcomes, and free your team to focus on serving your community.
-
-
-Nonprofits
-
-Turn limited resources into lasting impact. Generate grant proposals, track program outcomes, and free your team to focus on serving your community.
-
-## An AI platform chosen by workers 
+## An AI platform chosen by workers
 
 Chief Strategy and Impact Officer Alistair Stephenson says that Ask Aya, "turns the collective wisdom of thousands of domestic workers into something a worker can access and hold in her hand." Getting there started not with technology but with the workers. NDWA asked 1,000 of them what problem to solve, and whether AI should be involved at all. "We weren't even sure it was going to be AI in the beginning," Poo said. In 2024, members from the organization's home care council traveled to San Francisco to meet with technology companies, then brought their findings back to a national assembly that ratified a set of core principles. "One principle was simply: AI must enhance and not degrade the quality of work," Stephenson said. “Human-centered care must be at the heart of everything." The principles also required that the tool protect worker privacy, stay opt-in, and remain worker-governed.
 
@@ -111,16 +69,15 @@ Anthropic's public emphasis on safety, Stephenson said, was "our entryway into t
 
 NDWA used Claude to create privacy-conscious features when designing Ask Aya. This included a zero-data retention agreement with Anthropic and NDWA building systems to anonymize and aggregate conversations, allowing NDWA to track themes while respecting its users’ privacy. For Poo, the tradeoff was obvious. Worker organizations are "one of the last institutions that working people actually do trust," she said, "and so it's worth not having that data, because it's worth more than anything."
 
-Beyond privacy, the team evaluated each candidate model provider continuously for accuracy, for a tone that sounds like NDWA's own organizers, and for cultural fluency across English and Spanish. Ask Aya routes queries, evaluations, and monitoring across Claude Opus, Sonnet, and Haiku depending on the complexity of the question, keeping the architecture model-agnostic while managing cost. 
+Beyond privacy, the team evaluated each candidate model provider continuously for accuracy, for a tone that sounds like NDWA's own organizers, and for cultural fluency across English and Spanish. Ask Aya routes queries, evaluations, and monitoring across Claude Opus, Sonnet, and Haiku depending on the complexity of the question, keeping the architecture model-agnostic while managing cost.
 
 The hardest evaluation work is the tool’s behavior in high-stakes moments. The NDWA team built guardrails so Ask Aya does not stray into the unauthorized practice of law or sensitive immigration questions, referring workers instead to attorneys, local affiliates, or NDWA's fully staffed worker experience team. “Ask Aya knows the nuances of these cases,” Liibbe said. “We are legitimately getting in contact with people based on those referrals.” A tool like this can look simple, she said, but "building a durable digital product that's embedded in an organization, connected to the rest of the human-centered ecosystem, and verifiably providing accurate and helpful information is much harder."
 
-"Almost half of our beta testers came into testing very skeptical of AI, and 50% left feeling more comfortable using Ask Aya than any other chatbot."
+Nonprofits
 
-Laura Liibbe
+Turn limited resources into lasting impact. Generate grant proposals, track program outcomes, and free your team to focus on serving your community.
 
-Senior Director of Product, National Domestic Workers Alliance
-
+[Read more](/solutions/nonprofits)
 
 ## The outcome
 
@@ -128,513 +85,237 @@ Senior Director of Product, National Domestic Workers Alliance
 
 In a beta with 35 English and Spanish-speaking domestic workers, 93% applied the advice Ask Aya gave them and 25% negotiated an increase in their pay. Another 61% said they felt more influence over their pay, and 50% felt more prepared to resolve conflicts with an employer. Workers come to Ask Aya with concrete asks: how to request time off for a daughter's birthday, how to draft a raise request, or how to write a message to an employer in English when their first language is Spanish.
 
-Trust shows up in the numbers too. "Almost half of our beta testers came into testing very skeptical of AI," Liibbe said, "and 50% left feeling more comfortable using Ask Aya than any other chatbot. Out of the participants who expressed low trust in AI, 93% took concrete workplace action after using Ask Aya." Ask Aya launched in March 2026 and now has about 2,200 users, with a larger rollout planned. The goal for NDWA is reaching 10% of the 2.2 million domestic workers with Ask Aya. 
+Trust shows up in the numbers too. "Almost half of our beta testers came into testing very skeptical of AI," Liibbe said, "and 50% left feeling more comfortable using Ask Aya than any other chatbot. Out of the participants who expressed low trust in AI, 93% took concrete workplace action after using Ask Aya." Ask Aya launched in March 2026 and now has about 2,200 users, with a larger rollout planned. The goal for NDWA is reaching 10% of the 2.2 million domestic workers with Ask Aya.
 
-For NDWA, Ask Aya is a door into something larger than any single negotiation. "There is a level of empowerment that can be achieved individually and supported by technology," Poo said. "But there is a different level of impact that can be achieved in community.” According to Poo, “that is the promise of dignity-driven AI: technology built with workers, governed by workers, and connected to the trusted support systems that help some of the most vulnerable workers in our economy build dignity, security, and voice.” 
-
-"That is the promise of dignity-driven AI: technology built with workers, governed by workers, and connected to the trusted support systems that help some of the most vulnerable workers."
-
-Ai-jen Poo
-
-Co-founder and President, National Domestic Workers Alliance
+For NDWA, Ask Aya is a door into something larger than any single negotiation. "There is a level of empowerment that can be achieved individually and supported by technology," Poo said. "But there is a different level of impact that can be achieved in community.” According to Poo, “that is the promise of dignity-driven AI: technology built with workers, governed by workers, and connected to the trusted support systems that help some of the most vulnerable workers in our economy build dignity, security, and voice.”
 
 ## Related stories
 
-[The Epilepsy Foundation turns years of expert content into a personal epilepsy assistant with Claude](/customers/epilepsy-foundation)
 
-The Epilepsy Foundation turns years of expert content into a personal epilepsy assistant with Claude
+### Mercy Corps on what AI makes possible in humanitarian work
 
-The Epilepsy Foundation turns years of expert content into a personal epilepsy assistant with Claude
 
-Customer story
+### Mercy Corps accelerates global humanitarian response to community feedback with Claude
 
-[Customer story](/customers/epilepsy-foundation)
 
-Customer story
+### The Epilepsy Foundation turns years of expert content into a personal epilepsy assistant with Claude
 
-[How the Epilepsy Foundation uses Claude across the organization](/customers/epilepsy-foundation-qa)
 
-How the Epilepsy Foundation uses Claude across the organization
+### How the Epilepsy Foundation uses Claude across the organization
 
-How the Epilepsy Foundation uses Claude across the organization
+[](/)
 
-Customer story
+© 2026 Anthropic PBC
 
-[Customer story](/customers/epilepsy-foundation-qa)
+## Products
 
-Customer story
+- [Claude](/product/overview)
+- [Claude Code](/product/claude-code)
+- [Claude Cowork](/product/cowork)
+- [@Claude](/product/tag)
+- [Claude Science](/product/claude-science)
+- [Claude Security](/product/claude-security)
+- [Download app](/download)
+- [Pricing](/pricing)
+- [Log in](https://claude.ai/login)
 
-[Building dignity-driven AI: A conversation with the National Domestic Workers Alliance](/customers/national-domestic-workers-alliance-qa)
+## Capabilities
 
-Building dignity-driven AI: A conversation with the National Domestic Workers Alliance
+- [Artifacts](/features/artifacts)
+- [Design](/product/design)
+- [Connectors](/marketplace/connectors-plugins)
+- [Plugins](/marketplace/plugins)
+- [Skills](/skills)
 
-Building dignity-driven AI: A conversation with the National Domestic Workers Alliance
+## Extensions
 
-Customer story
+- [Claude in Chrome](/claude-in-chrome)
+- [Claude for Microsoft 365](/claude-for-microsoft-365)
 
-[Customer story](/customers/national-domestic-workers-alliance-qa)
+## Models
 
-Customer story
+- [Mythos](https://www.anthropic.com/claude/mythos)
+- [Fable](https://www.anthropic.com/claude/fable)
+- [Opus](https://www.anthropic.com/claude/opus)
+- [Sonnet](https://www.anthropic.com/claude/sonnet)
+- [Haiku](https://www.anthropic.com/claude/haiku)
 
-[RAINN brings crisis support to encrypted messaging platforms with Claude](/customers/rainn)
+## Enterprise
 
-RAINN brings crisis support to encrypted messaging platforms with Claude
+- [Overview](/solutions/enterprise)
+- [Claude Code for Enterprise](/product/claude-code/enterprise)
 
-RAINN brings crisis support to encrypted messaging platforms with Claude
+## Departments
 
-Customer story
+- [Customer support](/solutions/customer-support)
+- [Cybersecurity](/solutions/cybersecurity)
+- [Legal](/solutions/legal)
+- [Sales](/solutions/sales)
 
-[Customer story](/customers/rainn)
+## Industries
 
-Customer story
+- [Financial services](/solutions/financial-services)
+- [Government](/solutions/government)
+- [Healthcare](/solutions/healthcare)
+- [Higher education](/solutions/education)
+- [K-12 teachers](/solutions/teachers)
+- [Life sciences](/solutions/life-sciences)
+- [Nonprofits](/solutions/nonprofits)
+- [Small business](/solutions/small-business)
 
-[Homepage](https://claude.com)
+## Programs
 
-Homepage
+- [Startups](/programs/startups)
+- [Scientists](/programs/team-plan-for-scientists)
 
+## Developers
 
-Thank you! Your submission has been received!
+- [Developer docs](https://code.claude.com/docs/en/overview)
+- [Developer blog](https://claude.dev)
+- [Community](/community)
+- [Console](https://platform.claude.com/docs/en/home)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
 
-Oops! Something went wrong while submitting the form.
+## Platform
 
-Write
+- [Overview](/platform/api)
+- [Marketplace](/marketplace)
+- [Claude on AWS](/partners/claude-on-aws)
+- [Google Cloud](/partners/google-cloud)
+- [Microsoft Foundry](/partners/microsoft-foundry)
 
-[Button Text](#)
+## Resources
 
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
-
-[Anthropic](https://www.anthropic.com/)
-
-Anthropic
-
-© \[year\] Anthropic PBC
-
-Products
-
-- Claude
-
-  [Claude](/product/overview)
-  Claude
-
-- Claude Code
-
-  [Claude Code](/product/claude-code)
-  Claude Code
-
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
-- Claude Cowork
-
-  [Claude Cowork](/product/cowork)
-  Claude Cowork
-
-- @Claude
-
-  [@Claude](/product/tag)
-  @Claude
-
-- Claude Design
-
-  [Claude Design](/product/design)
-  Claude Design
-
-- Claude Science
-
-  [Claude Science](/product/claude-science)
-  Claude Science
-
-- Claude Security
-
-  [Claude Security](/product/claude-security)
-  Claude Security
-
-- Download app
-
-  [Download app](/download)
-  Download app
-
-- Pricing
-
-  [Pricing](/pricing)
-  Pricing
-
-- Log in
-
-  [Log in](https://claude.ai/login)
-
-Features
-
-- Claude for Chrome
-
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
-
-- Claude for Microsoft 365
-
-  [Claude for Microsoft 365](/claude-for-microsoft-365)
-  Claude for Microsoft 365
-
-- Skills
-
-  [Skills](/skills)
-  Skills
-
-Models
-
-- Mythos
-
-  [Mythos](https://www.anthropic.com/claude/mythos)
-  Mythos
-
-- Fable
-
-  [Fable](https://www.anthropic.com/claude/fable)
-  Fable
-
-- Opus
-
-  [Opus](https://www.anthropic.com/claude/opus)
-  Opus
-
-- Sonnet
-
-  [Sonnet](https://www.anthropic.com/claude/sonnet)
-  Sonnet
-
-- Haiku
-
-  [Haiku](https://www.anthropic.com/claude/haiku)
-  Haiku
-
-Solutions
-
-- AI agents
-
-  [AI agents](/solutions/agents)
-  AI agents
-
-- Code modernization
-
-  [Code modernization](/solutions/code-modernization)
-  Code modernization
-
-- Coding
-
-  [Coding](/solutions/coding)
-  Coding
-
-- Customer support
-
-  [Customer support](/solutions/customer-support)
-  Customer support
-
-- Cybersecurity
-
-  [Cybersecurity](/solutions/cybersecurity)
-  Cybersecurity
-
-- Enterprise
-
-  [Enterprise](/solutions/enterprise)
-  Enterprise
-
-- Financial services
-
-  [Financial services](/solutions/financial-services)
-  Financial services
-
-- Government
-
-  [Government](/solutions/government)
-  Government
-
-- Healthcare
-
-  [Healthcare](/solutions/healthcare)
-  Healthcare
-
-- Higher education
-
-  [Higher education](/solutions/education)
-  Higher education
-
-- K-12 teachers
-
-  [K-12 teachers](/solutions/teachers)
-  K-12 teachers
-
-- Legal
-
-  [Legal](/solutions/legal)
-  Legal
-
-- Life sciences
-
-  [Life sciences](/solutions/life-sciences)
-  Life sciences
-
-- Nonprofits
-
-  [Nonprofits](/solutions/nonprofits)
-  Nonprofits
-
-- Small business
-
-  [Small business](/solutions/small-business)
-  Small business
-
-Claude Platform
-
-- Overview
-
-  [Overview](/platform/api)
-  Overview
-
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
-
-- Ecosystem
-
-  [Ecosystem](/ecosystem)
-  Ecosystem
-
-- Marketplace
-
-  [Marketplace](/platform/marketplace)
-  Marketplace
-
-- Claude on AWS
-
-  [Claude on AWS](/partners/claude-on-aws)
-  Claude on AWS
-
-- Google Cloud
-
-  [Google Cloud](/partners/google-cloud)
-  Google Cloud
-
-- Microsoft Foundry
-
-  [Microsoft Foundry](/partners/microsoft-foundry)
-  Microsoft Foundry
-
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](https://platform.claude.com/)
-  Console login
-
-Resources
-
-- Blog
-
-  [Blog](/blog)
-  Blog
-
-- Claude partner network
-
-  [Claude partner network](/partners)
-  Claude partner network
-
-- Community
-
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
-
-- Customer stories
-
-  [Customer stories](/customers)
-  Customer stories
-
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
-- Events
-
-  [Events](https://www.anthropic.com/events)
-  Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
-
-- Powered by Claude
-
-  [Powered by Claude](/partners/powered-by-claude)
-  Powered by Claude
-
-- Service partners
-
-  [Service partners](/partners/services)
-  Service partners
-
-- Tutorials
-
-  [Tutorials](/resources/tutorials)
-  Tutorials
-
-- Use cases
-
-  [Use cases](/resources/use-cases)
-  Use cases
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Policy
-
-  [Policy](https://www.anthropic.com/policy)
-  Policy
-
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
-- Research
-
-  [Research](https://www.anthropic.com/research)
-  Research
-
-- News
-
-  [News](https://www.anthropic.com/news)
-  News
-
-- Policy on the AI Exponential
+- [Blog](/blog)
+- [Claude partner network](/partners)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](/customers)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](/partners/powered-by-claude)
+- [Service partners](/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](/check-files)
+- [Regional compliance](/regional-compliance)
+- [Report abuse](/form/anthropic-content-reporting)
+- [Security and compliance](https://trust.anthropic.com/)
+- [Status](https://status.anthropic.com/)
+- [Support center](https://support.claude.com/en/)
+
+## Company
+
+- [Anthropic](https://www.anthropic.com/)
+- [Careers](https://www.anthropic.com/careers)
+- [Policy](https://www.anthropic.com/policy)
+- [Research](https://www.anthropic.com/research)
+- [Anthropic news](https://www.anthropic.com/news)
+- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
+- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
+- [Transparency](https://anthropic.com/transparency)
+
+## Terms and policies
+
+- Privacy choices
+- [Privacy policy](https://www.anthropic.com/legal/privacy)
+- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
+- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
+- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
+- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
+- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
+- [Usage Policy](https://www.anthropic.com/legal/aup)
+
+## Products
+
+- [Claude](/product/overview)
+- [Claude Code](/product/claude-code)
+- [Claude Cowork](/product/cowork)
+- [@Claude](/product/tag)
+- [Claude Science](/product/claude-science)
+- [Claude Security](/product/claude-security)
+- [Download app](/download)
+- [Pricing](/pricing)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](/features/artifacts)
+- [Design](/product/design)
+- [Connectors](/marketplace/connectors-plugins)
+- [Plugins](/marketplace/plugins)
+- [Skills](/skills)
+
+## Extensions
+
+- [Claude in Chrome](/claude-in-chrome)
+- [Claude for Microsoft 365](/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](https://www.anthropic.com/claude/mythos)
+- [Fable](https://www.anthropic.com/claude/fable)
+- [Opus](https://www.anthropic.com/claude/opus)
+- [Sonnet](https://www.anthropic.com/claude/sonnet)
+- [Haiku](https://www.anthropic.com/claude/haiku)
+
+## Enterprise
+
+- [Overview](/solutions/enterprise)
+- [Claude Code for Enterprise](/product/claude-code/enterprise)
+
+## Departments
+
+- [Customer support](/solutions/customer-support)
+- [Cybersecurity](/solutions/cybersecurity)
+- [Legal](/solutions/legal)
+- [Sales](/solutions/sales)
+
+## Industries
+
+- [Financial services](/solutions/financial-services)
+- [Government](/solutions/government)
+- [Healthcare](/solutions/healthcare)
+- [Higher education](/solutions/education)
+- [K-12 teachers](/solutions/teachers)
+- [Life sciences](/solutions/life-sciences)
+- [Nonprofits](/solutions/nonprofits)
+- [Small business](/solutions/small-business)
+
+## Programs
+
+- [Startups](/programs/startups)
+- [Scientists](/programs/team-plan-for-scientists)
+
+## Developers
+
+- [Developer docs](https://code.claude.com/docs/en/overview)
+- [Developer blog](https://claude.dev)
+- [Community](/community)
+- [Console](https://platform.claude.com/docs/en/home)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](/platform/api)
+- [Marketplace](/marketplace)
+- [Claude on AWS](/partners/claude-on-aws)
+- [Google Cloud](/partners/google-cloud)
+- [Microsoft Foundry](/partners/microsoft-foundry)
+
+## Resources
+
+- [Blog](/blog)
+- [Claude partner network](/partners)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](/customers)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](/partners/powered-by-claude)
+- [Service partners](/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](/check-files)
+- [Regional compliance](/regional-compliance)
+- [Report abuse](/form/anthropic-content-reporting)

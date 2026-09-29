@@ -2,7 +2,7 @@
 title: "Claude Code FAQ | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12386420-claude-code-faq"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:41:05Z"
+fetched_at: "2026-09-29T06:31:51Z"
 tags: ["agents", "api", "bedrock", "claude-code", "enterprise", "git", "github", "mcp"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["agents", "api", "bedrock", "claude-code", "enterprise", "git", "github",
 
 June 18, 2026
 
+Copy for LLM
 
 This article is a compilation of commonly-asked questions about Claude Code related to authentication, integrations, configuration, and more. If you're interested in learning more about Claude Code, please refer to our Claude Docs here: **[Claude Code overview](https://docs.claude.com/en/docs/claude-code/overview)**.
 

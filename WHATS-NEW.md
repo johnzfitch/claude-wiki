@@ -3,14 +3,15 @@
 Documentation changes from the last 7 days.
 
 
-## 2026-08-02
+## 2026-09-28
 
-### Added (5244)
+### Added (6175)
 
 - `01-Getting-Started/about-claude-models-introducing-claude-fable-5-and-claude-mythos-5-52f633c9de.md`
 - `01-Getting-Started/advanced-setup-claude-code-docs-0526bc1300.md`
 - `01-Getting-Started/claude-api-monitoring-quickstart.md`
 - `01-Getting-Started/claude-code-monitoring-complete.md`
+- `01-Getting-Started/courses-claude-academy-2c0fcd604c.md`
 - `01-Getting-Started/discover-plugins.md`
 - `01-Getting-Started/example-settings.md`
 - `01-Getting-Started/financial-analysis-workflows-with-claude-ac8664c260.md`
@@ -26,6 +27,7 @@ Documentation changes from the last 7 days.
 - `01-Getting-Started/intro-5b59d89469.md`
 - `01-Getting-Started/intro.md`
 - `01-Getting-Started/introduction-to-claude-skills.md`
+- `01-Getting-Started/models-fable-5-introducing-claude-fable-5-and-claude-mythos-5-a7e2538672.md`
 - `01-Getting-Started/overview.md`
 - `01-Getting-Started/quickstart-claude-code-docs-a21b84bdea.md`
 - `01-Getting-Started/quickstart-fc751d9be1.md`
@@ -34,15 +36,18 @@ Documentation changes from the last 7 days.
 - `01-Getting-Started/resources-tutorials-getting-started-with-claude-in-excel.md`
 - `01-Getting-Started/setup.md`
 - `01-Getting-Started/third-party-integrations.md`
+- `01-Getting-Started/visuals-that-appear-as-you-study-with-claude-claude-academy-be7ec1e342.md`
 - `02-Claude-Code-CLI/admin-setup-9ffdbf6b0c.md`
 - `02-Claude-Code-CLI/advanced-setup-claude-code-docs-0526bc1300.md`
 - `02-Claude-Code-CLI/amazon-bedrock-0f0d5f108c.md`
 - `02-Claude-Code-CLI/analytics-5356b88d0a.md`
 - `02-Claude-Code-CLI/authentication-ce6fdcb8aa.md`
 - `02-Claude-Code-CLI/authentication-claude-code-docs-2c6ada8385.md`
+- `02-Claude-Code-CLI/authentication-claude-code-docs-cd0d115668.md`
 - `02-Claude-Code-CLI/authentication-claude-code-docs.md`
 - `02-Claude-Code-CLI/auto-compact-deep-dive.md`
 - `02-Claude-Code-CLI/auto-memory-internals.md`
+- `02-Claude-Code-CLI/auto-mode-classifier-request-charges-claude-code-docs-283192b86c.md`
 - `02-Claude-Code-CLI/auto-mode-config-f0dacf5866.md`
 - `02-Claude-Code-CLI/automate-work-with-routines-claude-code-docs-1c8313d077.md`
 - `02-Claude-Code-CLI/automate-work-with-routines-claude-code-docs-dbf1010e44.md`
@@ -52,8 +57,3 @@ Documentation changes from the last 7 days.
 - `02-Claude-Code-CLI/best-practices-for-claude-code-claude-code-docs-9686dc1633.md`
 - `02-Claude-Code-CLI/best-practices.md`
 - `02-Claude-Code-CLI/built-in-commands-claude-code-docs.md`
-- `02-Claude-Code-CLI/catch-security-issues-as-claude-writes-code-claude-code-docs-6f144bf1df.md`
-- `02-Claude-Code-CLI/champion-kit-claude-code-docs-a490488ead.md`
-- `02-Claude-Code-CLI/changelog-67fadc96e4.md`
-- `02-Claude-Code-CLI/channels-00374ea787.md`
-- `02-Claude-Code-CLI/channels-reference-claude-code-docs-67a0bbe41f.md`

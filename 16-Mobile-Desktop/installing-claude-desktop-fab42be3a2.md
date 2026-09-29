@@ -2,14 +2,14 @@
 title: "Install Claude Desktop | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10065433-installing-claude-desktop"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-08-02T05:42:22Z"
+fetched_at: "2026-09-29T06:30:08Z"
 tags: ["desktop"]
 ---
 
 # Install Claude Desktop
 
-June 30, 2026
 
+Copy for LLM
 
 The Claude desktop apps bring Claude's capabilities directly to your computer, allowing for seamless integration with your workflow.
 
@@ -29,7 +29,7 @@ Claude Desktop is available on macOS, Windows, and Linux (beta). What you can do
 
 ## Installation steps for mac OS and Windows
 
-1.  Visit the **[Claude downloads page](http://claude.ai/download)**.
+1.  Visit the **[Claude downloads page](https://claude.ai/download)**.
 
 2.  Select the appropriate version for your operating system:
 
@@ -71,7 +71,7 @@ The app doesn't update itself. Updates arrive with your system's regular package
 
 If you can’t install Claude Desktop using apt, you can install it by downloading a .deb file instead:
 
-1.  Visit the **[Claude downloads page](http://claude.ai/download)**.
+1.  Visit the **[Claude downloads page](https://claude.ai/download)**.
 
 2.  Find the .deb for your architecture (x64 or arm64) and click "Download."
 
@@ -109,7 +109,7 @@ Desktop extensions transform how you connect Claude to your desktop applications
 
 To explore desktop extensions, navigate to Settings \> Extensions within the Claude Desktop app after installation.
 
-**Note:** We’re building a directory of desktop extensions – if you’re a developer hoping to add an extension you built to the directory, complete our **[desktop extensions interest form](https://docs.google.com/forms/d/14_Dmcig4z8NeRMB_e7TOyrKzuZ88-BLYdLvS6LPhiZU/viewform?edit_requested=true)** to share more information with us.
+**Note:** If you’re a developer who wants to list a desktop extension (a local MCP server for Claude Desktop) in the directory, submit it through the **[desktop extension submission form](https://clau.de/desktop-extention-submission)**. To submit a plugin or a remote connector instead, use the **[developer portal](https://claude.ai/directory/manage)**. See **[Submitting your plugin](https://claude.com/docs/plugins/submit)** for what each route accepts.
 
 Read more about desktop extensions in our **[Getting Started with Local MCP Servers on Claude Desktop](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)** article.
 

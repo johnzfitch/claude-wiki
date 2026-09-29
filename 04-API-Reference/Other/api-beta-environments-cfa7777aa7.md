@@ -2,7 +2,7 @@
 title: "Environments - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/environments"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:38:15Z"
+fetched_at: "2026-09-26T06:38:37Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fenvironments)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -58,22 +54,22 @@ Agents
 Environments
 
 
-Create Environment
+Create Environment
 
 
-List Environments
+List Environments
 
 
-Get Environment
+Get Environment
 
 
-Update Environment
+Update Environment
 
 
-Delete Environment
+Delete Environment
 
 
-Archive Environment
+Archive Environment
 
 Work
 
@@ -87,88 +83,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -176,59 +194,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -247,61 +225,70 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Environments
-
+Copy page
 
 
 
 cURL
 
+1.  [API reference](/docs/en/api/http)
+2.  [Beta](/docs/en/api/http/beta)
+
 # Environments
 
-##### [Create Environment](/docs/en/api/beta/environments/create)
+##### [Create Environment](/docs/en/api/http/beta/environments/create)
 
-POST/v1/environments
+POST/v1/environments
 
-##### [List Environments](/docs/en/api/beta/environments/list)
+Create a new environment with the specified configuration.
 
-GET/v1/environments
+##### [List Environments](/docs/en/api/http/beta/environments/list)
 
-##### [Get Environment](/docs/en/api/beta/environments/retrieve)
+GET/v1/environments
 
-GET/v1/environments/{environment_id}
+List environments with pagination support.
 
-##### [Update Environment](/docs/en/api/beta/environments/update)
+##### [Get Environment](/docs/en/api/http/beta/environments/retrieve)
 
-POST/v1/environments/{environment_id}
+GET/v1/environments/{environment_id}
 
-##### [Delete Environment](/docs/en/api/beta/environments/delete)
+Retrieve a specific environment by ID.
 
-DELETE/v1/environments/{environment_id}
+##### [Update Environment](/docs/en/api/http/beta/environments/update)
 
-##### [Archive Environment](/docs/en/api/beta/environments/archive)
+POST/v1/environments/{environment_id}
 
-POST/v1/environments/{environment_id}/archive
+Update an existing environment's configuration.
 
-##### ModelsExpand Collapse 
+##### [Delete Environment](/docs/en/api/http/beta/environments/delete)
+
+DELETE/v1/environments/{environment_id}
+
+Delete an environment by ID. Returns a confirmation of the deletion.
+
+##### [Archive Environment](/docs/en/api/http/beta/environments/archive)
+
+POST/v1/environments/{environment_id}/archive
+
+Archive an environment by ID. Archived environments cannot be used to create new sessions.
+
+##### Models
 
 
 
-BetaCloudConfig object { networking, packages, type }
+BetaCloudConfig object{ type: "cloud", networking, packages }
 
 
 
@@ -309,155 +296,7 @@ BetaCloudConfig object { networking, packages, type }
 
 
 
-networking: [BetaUnrestrictedNetwork](/docs/en/api/beta/environments#beta_unrestricted_network) { type } or [BetaLimitedNetwork](/docs/en/api/beta/environments#beta_limited_network) { allow_mcp_servers, allow_package_managers, allowed_hosts, type }
-
-
-
-Network configuration policy.
-
-One of the following:
-
-
-
-BetaUnrestrictedNetwork object { type }
-
-
-
-Unrestricted network access.
-
-type: "unrestricted"
-
-
-
-Network policy type
-
-[](#beta_unrestricted_network.type)
-
-[](#beta_unrestricted_network)
-
-
-
-BetaLimitedNetwork object { allow_mcp_servers, allow_package_managers, allowed_hosts, type }
-
-
-
-Limited network access.
-
-allow_mcp_servers: boolean
-
-
-
-Permits outbound access to MCP server endpoints configured on the agent, beyond those listed in the `allowed_hosts` array.
-
-[](#beta_limited_network.allow_mcp_servers)
-
-allow_package_managers: boolean
-
-
-
-Permits outbound access to public package registries (PyPI, npm, etc.) beyond those listed in the `allowed_hosts` array.
-
-[](#beta_limited_network.allow_package_managers)
-
-allowed_hosts: array of string
-
-
-
-Specifies domains the container can reach.
-
-[](#beta_limited_network.allowed_hosts)
-
-type: "limited"
-
-
-
-Network policy type
-
-[](#beta_limited_network.type)
-
-[](#beta_limited_network)
-
-[](#beta_cloud_config.networking)
-
-
-
-packages: [BetaPackages](/docs/en/api/beta/environments#beta_packages) { apt, cargo, gem, 4 more }
-
-
-
-Package manager configuration.
-
-apt: array of string
-
-
-
-Ubuntu/Debian packages to install
-
-[](#beta_cloud_config.packages%20%2B%20(resource)%20beta.environments.apt)
-
-cargo: array of string
-
-
-
-Rust packages to install
-
-[](#beta_cloud_config.packages%20%2B%20(resource)%20beta.environments.cargo)
-
-gem: array of string
-
-
-
-Ruby packages to install
-
-[](#beta_cloud_config.packages%20%2B%20(resource)%20beta.environments.gem)
-
-go: array of string
-
-
-
-Go packages to install
-
-[](#beta_cloud_config.packages%20%2B%20(resource)%20beta.environments.go)
-
-npm: array of string
-
-
-
-Node.js packages to install
-
-[](#beta_cloud_config.packages%20%2B%20(resource)%20beta.environments.npm)
-
-pip: array of string
-
-
-
-Python packages to install
-
-[](#beta_cloud_config.packages%20%2B%20(resource)%20beta.environments.pip)
-
-type: optional "packages"
-
-
-
-Package configuration type
-
-[](#beta_cloud_config.packages%20%2B%20(resource)%20beta.environments.type)
-
-[](#beta_cloud_config.packages)
-
-type: "cloud"
-
-
-
-Environment type
-
-[](#beta_cloud_config.type)
-
-[](#beta_cloud_config)
-
-
-
-BetaCloudConfigParams object { type, networking, packages }
+BetaCloudConfigParams object{ type: "cloud", networking, packages }
 
 
 
@@ -465,457 +304,23 @@ Request params for `cloud` environment configuration.
 
 Fields default to null; on update, omitted fields preserve the existing value.
 
-type: "cloud"
-
-
-
-Environment type
-
-[](#beta_cloud_config_params.type)
-
 
 
-networking: optional [BetaUnrestrictedNetwork](/docs/en/api/beta/environments#beta_unrestricted_network) { type } or [BetaLimitedNetworkParams](/docs/en/api/beta/environments#beta_limited_network_params) { type, allow_mcp_servers, allow_package_managers, allowed_hosts }
-
-
-
-Network configuration policy. Omit on update to preserve the existing value.
-
-One of the following:
-
-
-
-BetaUnrestrictedNetwork object { type }
-
-
-
-Unrestricted network access.
-
-type: "unrestricted"
-
-
-
-Network policy type
-
-[](#beta_unrestricted_network.type)
-
-[](#beta_unrestricted_network)
-
-
-
-BetaLimitedNetworkParams object { type, allow_mcp_servers, allow_package_managers, allowed_hosts }
-
-
-
-Limited network request params.
-
-Fields default to null; on update, omitted fields preserve the existing value.
-
-type: "limited"
-
-
-
-Network policy type
-
-[](#beta_limited_network_params.type)
-
-allow_mcp_servers: optional boolean
-
-
-
-Permits outbound access to MCP server endpoints configured on the agent, beyond those listed in the `allowed_hosts` array. Defaults to `false`.
-
-[](#beta_limited_network_params.allow_mcp_servers)
-
-allow_package_managers: optional boolean
-
-
-
-Permits outbound access to public package registries (PyPI, npm, etc.) beyond those listed in the `allowed_hosts` array. Defaults to `false`.
-
-[](#beta_limited_network_params.allow_package_managers)
-
-allowed_hosts: optional array of string
-
-
-
-Specifies domains the container can reach.
-
-[](#beta_limited_network_params.allowed_hosts)
-
-[](#beta_limited_network_params)
-
-[](#beta_cloud_config_params.networking)
-
-
-
-packages: optional [BetaPackagesParams](/docs/en/api/beta/environments#beta_packages_params) { apt, cargo, gem, 4 more }
-
-
-
-Specify packages (and optionally their versions) available in this environment.
-
-When versioning, use the version semantics relevant for the package manager, e.g. for `pip` use `package==1.0.0`. You are responsible for validating the package and version exist. Unversioned installs the latest.
-
-apt: optional array of string
-
-
-
-Ubuntu/Debian packages to install
-
-[](#beta_cloud_config_params.packages%20%2B%20(resource)%20beta.environments.apt)
-
-cargo: optional array of string
-
-
-
-Rust packages to install
-
-[](#beta_cloud_config_params.packages%20%2B%20(resource)%20beta.environments.cargo)
-
-gem: optional array of string
-
-
-
-Ruby packages to install
-
-[](#beta_cloud_config_params.packages%20%2B%20(resource)%20beta.environments.gem)
-
-go: optional array of string
-
-
-
-Go packages to install
-
-[](#beta_cloud_config_params.packages%20%2B%20(resource)%20beta.environments.go)
-
-npm: optional array of string
-
-
-
-Node.js packages to install
-
-[](#beta_cloud_config_params.packages%20%2B%20(resource)%20beta.environments.npm)
-
-pip: optional array of string
-
-
-
-Python packages to install
-
-[](#beta_cloud_config_params.packages%20%2B%20(resource)%20beta.environments.pip)
-
-type: optional "packages"
-
-
-
-Package configuration type
-
-[](#beta_cloud_config_params.packages%20%2B%20(resource)%20beta.environments.type)
-
-[](#beta_cloud_config_params.packages)
-
-[](#beta_cloud_config_params)
-
-
-
-BetaEnvironment object { id, archived_at, config, 7 more }
+BetaEnvironment object{ type: "environment", id, archived_at, 7 more }
 
 
 
 Unified Environment resource for both cloud and self-hosted environments.
 
-id: string
-
-
-
-Environment identifier (e.g., 'env\_...')
-
-[](#beta_environment.id)
-
-archived_at: string
-
-
-
-RFC 3339 timestamp when environment was archived, or null if not archived
-
-[](#beta_environment.archived_at)
-
 
 
-config: [BetaCloudConfig](/docs/en/api/beta/environments#beta_cloud_config) { networking, packages, type } or [BetaSelfHostedConfig](/docs/en/api/beta/environments#beta_self_hosted_config) { type }
-
-
-
-Environment configuration (either Anthropic Cloud or self-hosted)
-
-One of the following:
-
-
-
-BetaCloudConfig object { networking, packages, type }
-
-
-
-`cloud` environment configuration.
-
-
-
-networking: [BetaUnrestrictedNetwork](/docs/en/api/beta/environments#beta_unrestricted_network) { type } or [BetaLimitedNetwork](/docs/en/api/beta/environments#beta_limited_network) { allow_mcp_servers, allow_package_managers, allowed_hosts, type }
-
-
-
-Network configuration policy.
-
-One of the following:
-
-
-
-BetaUnrestrictedNetwork object { type }
-
-
-
-Unrestricted network access.
-
-type: "unrestricted"
-
-
-
-Network policy type
-
-[](#beta_unrestricted_network.type)
-
-[](#beta_unrestricted_network)
-
-
-
-BetaLimitedNetwork object { allow_mcp_servers, allow_package_managers, allowed_hosts, type }
-
-
-
-Limited network access.
-
-allow_mcp_servers: boolean
-
-
-
-Permits outbound access to MCP server endpoints configured on the agent, beyond those listed in the `allowed_hosts` array.
-
-[](#beta_limited_network.allow_mcp_servers)
-
-allow_package_managers: boolean
-
-
-
-Permits outbound access to public package registries (PyPI, npm, etc.) beyond those listed in the `allowed_hosts` array.
-
-[](#beta_limited_network.allow_package_managers)
-
-allowed_hosts: array of string
-
-
-
-Specifies domains the container can reach.
-
-[](#beta_limited_network.allowed_hosts)
-
-type: "limited"
-
-
-
-Network policy type
-
-[](#beta_limited_network.type)
-
-[](#beta_limited_network)
-
-[](#beta_cloud_config.networking)
-
-
-
-packages: [BetaPackages](/docs/en/api/beta/environments#beta_packages) { apt, cargo, gem, 4 more }
-
-
-
-Package manager configuration.
-
-apt: array of string
-
-
-
-Ubuntu/Debian packages to install
-
-[](#beta_cloud_config.packages%20%2B%20(resource)%20beta.environments.apt)
-
-cargo: array of string
-
-
-
-Rust packages to install
-
-[](#beta_cloud_config.packages%20%2B%20(resource)%20beta.environments.cargo)
-
-gem: array of string
-
-
-
-Ruby packages to install
-
-[](#beta_cloud_config.packages%20%2B%20(resource)%20beta.environments.gem)
-
-go: array of string
-
-
-
-Go packages to install
-
-[](#beta_cloud_config.packages%20%2B%20(resource)%20beta.environments.go)
-
-npm: array of string
-
-
-
-Node.js packages to install
-
-[](#beta_cloud_config.packages%20%2B%20(resource)%20beta.environments.npm)
-
-pip: array of string
-
-
-
-Python packages to install
-
-[](#beta_cloud_config.packages%20%2B%20(resource)%20beta.environments.pip)
-
-type: optional "packages"
-
-
-
-Package configuration type
-
-[](#beta_cloud_config.packages%20%2B%20(resource)%20beta.environments.type)
-
-[](#beta_cloud_config.packages)
-
-type: "cloud"
-
-
-
-Environment type
-
-[](#beta_cloud_config.type)
-
-[](#beta_cloud_config)
-
-
-
-BetaSelfHostedConfig object { type }
-
-
-
-Configuration for self-hosted environments.
-
-type: "self_hosted"
-
-
-
-Environment type
-
-[](#beta_self_hosted_config.type)
-
-[](#beta_self_hosted_config)
-
-[](#beta_environment.config)
-
-created_at: string
-
-
-
-RFC 3339 timestamp when environment was created
-
-[](#beta_environment.created_at)
-
-description: string
-
-
-
-User-provided description for the environment
-
-[](#beta_environment.description)
-
-metadata: map\[string\]
-
-
-
-User-provided metadata key-value pairs
-
-[](#beta_environment.metadata)
-
-name: string
-
-
-
-Human-readable name for the environment
-
-[](#beta_environment.name)
-
-type: "environment"
-
-
-
-The type of object (always 'environment')
-
-[](#beta_environment.type)
-
-updated_at: string
-
-
-
-RFC 3339 timestamp when environment was last updated
-
-[](#beta_environment.updated_at)
-
-
-
-scope: optional "organization" or "account"
-
-
-
-The visibility scope for this environment. 'organization' means visible to all accounts. 'account' means visible only to the owning account.
-
-One of the following:
-
-"organization"
-
-
-
-[](#beta_environment.scope%5B0%5D)
-
-"account"
-
-
-
-[](#beta_environment.scope%5B1%5D)
-
-[](#beta_environment.scope)
-
-[](#beta_environment)
-
-
-
-BetaEnvironmentDeleteResponse object { id, type }
+BetaEnvironmentDeleteResponse object{ type: "environment_deleted", id }
 
 
 
 Response after deleting an environment.
 
-id: string
-
-
-
-Environment identifier
-
-[](#beta_environment_delete_response.id)
+
 
 type: "environment_deleted"
 
@@ -923,41 +328,21 @@ type: "environment_deleted"
 
 The type of response
 
-[](#beta_environment_delete_response.type)
+defaultenvironment_deleted
 
-[](#beta_environment_delete_response)
+id: string
+
+
+
+Environment identifier
 
 
 
-BetaLimitedNetwork object { allow_mcp_servers, allow_package_managers, allowed_hosts, type }
+BetaLimitedNetwork object{ type: "limited", allow_mcp_servers, allow_package_managers, allowed_hosts }
 
 
 
 Limited network access.
-
-allow_mcp_servers: boolean
-
-
-
-Permits outbound access to MCP server endpoints configured on the agent, beyond those listed in the `allowed_hosts` array.
-
-[](#beta_limited_network.allow_mcp_servers)
-
-allow_package_managers: boolean
-
-
-
-Permits outbound access to public package registries (PyPI, npm, etc.) beyond those listed in the `allowed_hosts` array.
-
-[](#beta_limited_network.allow_package_managers)
-
-allowed_hosts: array of string
-
-
-
-Specifies domains the container can reach.
-
-[](#beta_limited_network.allowed_hosts)
 
 type: "limited"
 
@@ -965,13 +350,27 @@ type: "limited"
 
 Network policy type
 
-[](#beta_limited_network.type)
+allow_mcp_servers: boolean
 
-[](#beta_limited_network)
+
+
+Permits outbound access to MCP server endpoints configured on the agent, beyond those listed in the `allowed_hosts` array.
+
+allow_package_managers: boolean
+
+
+
+Permits outbound access to public package registries (PyPI, npm, etc.) beyond those listed in the `allowed_hosts` array.
+
+allowed_hosts: array of string
+
+
+
+Specifies domains the container can reach.
 
 
 
-BetaLimitedNetworkParams object { type, allow_mcp_servers, allow_package_managers, allowed_hosts }
+BetaLimitedNetworkParams object{ type: "limited", allow_mcp_servers, allow_package_managers, allowed_hosts }
 
 
 
@@ -985,41 +384,41 @@ type: "limited"
 
 Network policy type
 
-[](#beta_limited_network_params.type)
-
-allow_mcp_servers: optional boolean
+allow_mcp_servers: optional boolean or null
 
 
 
 Permits outbound access to MCP server endpoints configured on the agent, beyond those listed in the `allowed_hosts` array. Defaults to `false`.
 
-[](#beta_limited_network_params.allow_mcp_servers)
-
-allow_package_managers: optional boolean
+allow_package_managers: optional boolean or null
 
 
 
-Permits outbound access to public package registries (PyPI, npm, etc.) beyond those listed in the `allowed_hosts` array. Defaults to `false`.
+Permits outbound access to public package registries (PyPI, npm, etc.) beyond those listed in the `allowed_hosts` array. Defaults to `false` on creation. Must be `true` when `packages` are specified.
 
-[](#beta_limited_network_params.allow_package_managers)
-
-allowed_hosts: optional array of string
+allowed_hosts: optional array of string or null
 
 
 
 Specifies domains the container can reach.
 
-[](#beta_limited_network_params.allowed_hosts)
-
-[](#beta_limited_network_params)
-
 
 
-BetaPackages object { apt, cargo, gem, 4 more }
+BetaPackages object{ type: "packages", apt, cargo, 4 more }
 
 
 
 Packages (and their versions) available in this environment.
+
+
+
+type: optional "packages"
+
+
+
+Package configuration type
+
+defaultpackages
 
 apt: array of string
 
@@ -1027,15 +426,11 @@ apt: array of string
 
 Ubuntu/Debian packages to install
 
-[](#beta_packages.apt)
-
 cargo: array of string
 
 
 
 Rust packages to install
-
-[](#beta_packages.cargo)
 
 gem: array of string
 
@@ -1043,15 +438,11 @@ gem: array of string
 
 Ruby packages to install
 
-[](#beta_packages.gem)
-
 go: array of string
 
 
 
 Go packages to install
-
-[](#beta_packages.go)
 
 npm: array of string
 
@@ -1059,29 +450,15 @@ npm: array of string
 
 Node.js packages to install
 
-[](#beta_packages.npm)
-
 pip: array of string
 
 
 
 Python packages to install
 
-[](#beta_packages.pip)
-
-type: optional "packages"
-
-
-
-Package configuration type
-
-[](#beta_packages.type)
-
-[](#beta_packages)
-
 
 
-BetaPackagesParams object { apt, cargo, gem, 4 more }
+BetaPackagesParams object{ type: "packages", apt, cargo, 4 more }
 
 
 
@@ -1089,67 +466,11 @@ Specify packages (and optionally their versions) available in this environment.
 
 When versioning, use the version semantics relevant for the package manager, e.g. for `pip` use `package==1.0.0`. You are responsible for validating the package and version exist. Unversioned installs the latest.
 
-apt: optional array of string
-
-
-
-Ubuntu/Debian packages to install
-
-[](#beta_packages_params.apt)
-
-cargo: optional array of string
-
-
-
-Rust packages to install
-
-[](#beta_packages_params.cargo)
-
-gem: optional array of string
-
-
-
-Ruby packages to install
-
-[](#beta_packages_params.gem)
-
-go: optional array of string
-
-
-
-Go packages to install
-
-[](#beta_packages_params.go)
-
-npm: optional array of string
-
-
-
-Node.js packages to install
-
-[](#beta_packages_params.npm)
-
-pip: optional array of string
-
-
-
-Python packages to install
-
-[](#beta_packages_params.pip)
-
-type: optional "packages"
-
-
-
-Package configuration type
-
-[](#beta_packages_params.type)
-
-[](#beta_packages_params)
+Under `limited` networking, requires `networking.allow_package_managers` to be `true`.
 
 
 
-BetaSelfHostedConfig object { type }
+BetaSelfHostedConfig object{ type: "self_hosted" }
 
 
 
@@ -1161,13 +482,9 @@ type: "self_hosted"
 
 Environment type
 
-[](#beta_self_hosted_config.type)
-
-[](#beta_self_hosted_config)
-
 
 
-BetaSelfHostedConfigParams object { type }
+BetaSelfHostedConfigParams object{ type: "self_hosted" }
 
 
 
@@ -1179,13 +496,9 @@ type: "self_hosted"
 
 Environment type
 
-[](#beta_self_hosted_config_params.type)
-
-[](#beta_self_hosted_config_params)
-
 
 
-BetaUnrestrictedNetwork object { type }
+BetaUnrestrictedNetwork object{ type: "unrestricted" }
 
 
 
@@ -1197,40 +510,52 @@ type: "unrestricted"
 
 Network policy type
 
-[](#beta_unrestricted_network.type)
+#### Environments[Work](/docs/en/api/http/beta/environments/work)
 
-[](#beta_unrestricted_network)
+##### [Get Work Item](/docs/en/api/http/beta/environments/work/retrieve)
 
-#### EnvironmentsWork
+GET/v1/environments/{environment_id}/work/{work_id}
 
-##### [Get Work Item](/docs/en/api/beta/environments/work/retrieve)
+Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.
 
-GET/v1/environments/{environment_id}/work/{work_id}
+##### [Poll for Work](/docs/en/api/http/beta/environments/work/poll)
 
-##### [Poll for Work](/docs/en/api/beta/environments/work/poll)
+GET/v1/environments/{environment_id}/work/poll
 
-GET/v1/environments/{environment_id}/work/poll
+Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.
 
-##### [Acknowledge Work](/docs/en/api/beta/environments/work/ack)
+##### [Acknowledge Work](/docs/en/api/http/beta/environments/work/ack)
 
-POST/v1/environments/{environment_id}/work/{work_id}/ack
+POST/v1/environments/{environment_id}/work/{work_id}/ack
 
-##### [Record Heartbeat](/docs/en/api/beta/environments/work/heartbeat)
+Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.
 
-POST/v1/environments/{environment_id}/work/{work_id}/heartbeat
+##### [Record Heartbeat](/docs/en/api/http/beta/environments/work/heartbeat)
 
-##### [Stop Work](/docs/en/api/beta/environments/work/stop)
+POST/v1/environments/{environment_id}/work/{work_id}/heartbeat
 
-POST/v1/environments/{environment_id}/work/{work_id}/stop
+Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.
 
-##### [List Work Items](/docs/en/api/beta/environments/work/list)
+##### [Stop Work](/docs/en/api/http/beta/environments/work/stop)
 
-GET/v1/environments/{environment_id}/work
+POST/v1/environments/{environment_id}/work/{work_id}/stop
 
-##### [Update Work Item](/docs/en/api/beta/environments/work/update)
+Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.
 
-POST/v1/environments/{environment_id}/work/{work_id}
+##### [List Work Items](/docs/en/api/http/beta/environments/work/list)
 
-##### [Get Queue Statistics](/docs/en/api/beta/environments/work/stats)
+GET/v1/environments/{environment_id}/work
 
-GET/v1/environments/{environment_id}/work/stats
+Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.
+
+##### [Update Work Item](/docs/en/api/http/beta/environments/work/update)
+
+POST/v1/environments/{environment_id}/work/{work_id}
+
+Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.
+
+##### [Get Queue Statistics](/docs/en/api/http/beta/environments/work/stats)
+
+GET/v1/environments/{environment_id}/work/stats
+
+Get statistics about the work queue for an environment.

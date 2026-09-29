@@ -2,7 +2,7 @@
 title: "stdio - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:32Z"
+fetched_at: "2026-09-29T06:31:00Z"
 tags: ["mcp"]
 ---
 

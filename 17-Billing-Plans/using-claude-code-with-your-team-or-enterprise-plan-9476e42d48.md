@@ -2,14 +2,14 @@
 title: "Use Claude Code with your Team or Enterprise plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:41:02Z"
+fetched_at: "2026-09-29T06:30:21Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
 # Use Claude Code with your Team or Enterprise plan
 
-June 11, 2026
 
+Copy for LLM
 
 This article applies to members of Team or Enterprise plan organizations using their subscription plans to access Claude Code. If you’re an individual consumer using a Pro or Max plan subscription, see **[Use Claude Code with your Pro or Max plan](https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan)**.
 
@@ -60,6 +60,8 @@ Once you confirm you have access, follow the installation instructions in our **
 4.  Select your Team or Enterprise plan and click “Authorize.”
 
 5.  Your premium seat subscription will be linked to Claude Code.
+
+Once you're signed in, skills and plugins from your Claude account, including those your organization provides, load in Claude Code automatically. This needs Claude Code v2.1.273 or later. Learn more about **[how synced skills behave](https://code.claude.com/docs/en/skills#how-synced-skills-behave)** in the Claude Code docs.
 
 ### Having trouble using your Team or Enterprise account to access Claude Code?
 

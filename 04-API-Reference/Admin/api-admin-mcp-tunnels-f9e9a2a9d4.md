@@ -2,7 +2,7 @@
 title: "MCP Tunnels - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/mcp_tunnels"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:39:03Z"
+fetched_at: "2026-09-10T06:42:40Z"
 tags: ["api", "mcp"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api", "mcp"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fadmin%2Fmcp_tunnels)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,96 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,22 +160,28 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
+Create Enrollment URL
 
 
 Webhooks
+
+
+Unwrap
+
+
+Parse Unverified
 
 
 Admin
@@ -182,9 +192,9 @@ Invites
 
 Users
 
-RBAC Groups
+RBAC Groups
 
-RBAC Roles
+RBAC Roles
 
 Workspaces
 
@@ -211,19 +221,19 @@ Federation Rules
 MCP Tunnels
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 
-Archive Tunnel
+Archive Tunnel
 
 Tunnel Certificates
 
@@ -244,65 +254,62 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Mcp tunnels
-
+Copy page
 
 
 
+1.  [API reference](/docs/en/api/http)
+2.  [Admin](/docs/en/api/http/admin)
+
 # MCP Tunnels
 
-##### [Get Tunnel](/docs/en/api/admin/mcp_tunnels/retrieve)
+##### [Get Tunnel](/docs/en/api/http/admin/mcp_tunnels/retrieve)
 
 Deprecated
 
-GET/v1/organizations/tunnels/{tunnel_id}
+GET/v1/organizations/tunnels/{tunnel_id}
 
-##### [List Tunnels](/docs/en/api/admin/mcp_tunnels/list)
-
-Deprecated
-
-GET/v1/organizations/tunnels
-
-##### [Reveal Tunnel Token](/docs/en/api/admin/mcp_tunnels/reveal_token)
+##### [List Tunnels](/docs/en/api/http/admin/mcp_tunnels/list)
 
 Deprecated
 
-POST/v1/organizations/tunnels/{tunnel_id}/reveal_token
+GET/v1/organizations/tunnels
 
-##### [Rotate Tunnel Token](/docs/en/api/admin/mcp_tunnels/rotate_token)
-
-Deprecated
-
-POST/v1/organizations/tunnels/{tunnel_id}/rotate_token
-
-##### [Archive Tunnel](/docs/en/api/admin/mcp_tunnels/archive)
+##### [Reveal Tunnel Token](/docs/en/api/http/admin/mcp_tunnels/reveal_token)
 
 Deprecated
 
-POST/v1/organizations/tunnels/{tunnel_id}/archive
+POST/v1/organizations/tunnels/{tunnel_id}/reveal_token
 
-##### ModelsExpand Collapse 
+##### [Rotate Tunnel Token](/docs/en/api/http/admin/mcp_tunnels/rotate_token)
+
+Deprecated
+
+POST/v1/organizations/tunnels/{tunnel_id}/rotate_token
+
+##### [Archive Tunnel](/docs/en/api/http/admin/mcp_tunnels/archive)
+
+Deprecated
+
+POST/v1/organizations/tunnels/{tunnel_id}/archive
+
+##### Models
 
 
 
-MCPTunnelRetrieveResponse object { id, archived_at, created_at, 4 more }
+MCPTunnelRetrieveResponse object{ id, archived_at, created_at, 4 more }
 
 
 
@@ -312,15 +319,17 @@ id: string
 
 ID of the Tunnel.
 
-[](#mcp_tunnel_retrieve_response.id)
+
 
-archived_at: string
+archived_at: string or null
 
 
 
 RFC 3339 datetime string indicating when the Tunnel was archived, or `null` if it is not archived.
 
-[](#mcp_tunnel_retrieve_response.archived_at)
+formatdate-time
+
+
 
 created_at: string
 
@@ -328,15 +337,13 @@ created_at: string
 
 RFC 3339 datetime string indicating when the Tunnel was created.
 
-[](#mcp_tunnel_retrieve_response.created_at)
+formatdate-time
 
-display_name: string
+display_name: string or null
 
 
 
 Human-readable name for the Tunnel (1–255 characters), or `null` if unset.
-
-[](#mcp_tunnel_retrieve_response.display_name)
 
 domain: string
 
@@ -344,7 +351,7 @@ domain: string
 
 Anthropic-assigned hostname for the Tunnel. MCP server URLs whose host is a subdomain of this value are routed through the Tunnel. Globally unique and never reused, even after the Tunnel is archived.
 
-[](#mcp_tunnel_retrieve_response.domain)
+
 
 type: "tunnel"
 
@@ -352,21 +359,17 @@ type: "tunnel"
 
 Object type. Always `tunnel` for Tunnels.
 
-[](#mcp_tunnel_retrieve_response.type)
+defaulttunnel
 
-workspace_id: string
+workspace_id: string or null
 
 
 
 ID of the Workspace this Tunnel belongs to, or `null` for the default Workspace. Immutable after creation.
 
-[](#mcp_tunnel_retrieve_response.workspace_id)
-
-[](#mcp_tunnel_retrieve_response)
-
 
 
-MCPTunnelListResponse object { id, archived_at, created_at, 4 more }
+MCPTunnelListResponse object{ id, archived_at, created_at, 4 more }
 
 
 
@@ -376,15 +379,17 @@ id: string
 
 ID of the Tunnel.
 
-[](#mcp_tunnel_list_response.id)
+
 
-archived_at: string
+archived_at: string or null
 
 
 
 RFC 3339 datetime string indicating when the Tunnel was archived, or `null` if it is not archived.
 
-[](#mcp_tunnel_list_response.archived_at)
+formatdate-time
+
+
 
 created_at: string
 
@@ -392,15 +397,13 @@ created_at: string
 
 RFC 3339 datetime string indicating when the Tunnel was created.
 
-[](#mcp_tunnel_list_response.created_at)
+formatdate-time
 
-display_name: string
+display_name: string or null
 
 
 
 Human-readable name for the Tunnel (1–255 characters), or `null` if unset.
-
-[](#mcp_tunnel_list_response.display_name)
 
 domain: string
 
@@ -408,7 +411,7 @@ domain: string
 
 Anthropic-assigned hostname for the Tunnel. MCP server URLs whose host is a subdomain of this value are routed through the Tunnel. Globally unique and never reused, even after the Tunnel is archived.
 
-[](#mcp_tunnel_list_response.domain)
+
 
 type: "tunnel"
 
@@ -416,21 +419,77 @@ type: "tunnel"
 
 Object type. Always `tunnel` for Tunnels.
 
-[](#mcp_tunnel_list_response.type)
+defaulttunnel
 
-workspace_id: string
+workspace_id: string or null
 
 
 
 ID of the Workspace this Tunnel belongs to, or `null` for the default Workspace. Immutable after creation.
 
-[](#mcp_tunnel_list_response.workspace_id)
+
 
-[](#mcp_tunnel_list_response)
+MCPTunnelArchiveResponse object{ id, archived_at, created_at, 4 more }
+
+
+
+id: string
+
+
+
+ID of the Tunnel.
 
 
 
-MCPTunnelRevealTokenResponse object { id, tunnel_token, type }
+archived_at: string or null
+
+
+
+RFC 3339 datetime string indicating when the Tunnel was archived, or `null` if it is not archived.
+
+formatdate-time
+
+
+
+created_at: string
+
+
+
+RFC 3339 datetime string indicating when the Tunnel was created.
+
+formatdate-time
+
+display_name: string or null
+
+
+
+Human-readable name for the Tunnel (1–255 characters), or `null` if unset.
+
+domain: string
+
+
+
+Anthropic-assigned hostname for the Tunnel. MCP server URLs whose host is a subdomain of this value are routed through the Tunnel. Globally unique and never reused, even after the Tunnel is archived.
+
+
+
+type: "tunnel"
+
+
+
+Object type. Always `tunnel` for Tunnels.
+
+defaulttunnel
+
+workspace_id: string or null
+
+
+
+ID of the Workspace this Tunnel belongs to, or `null` for the default Workspace. Immutable after creation.
+
+
+
+MCPTunnelRevealTokenResponse object{ id, tunnel_token, type }
 
 
 
@@ -440,15 +499,13 @@ id: string
 
 Stable identifier for the current token value. Changes when the token is rotated.
 
-[](#mcp_tunnel_reveal_token_response.id)
-
 tunnel_token: string
 
 
 
 The tunnel's connection token.
 
-[](#mcp_tunnel_reveal_token_response.tunnel_token)
+
 
 type: "tunnel_token"
 
@@ -456,13 +513,11 @@ type: "tunnel_token"
 
 Object type. Always `tunnel_token` for Tunnel Tokens.
 
-[](#mcp_tunnel_reveal_token_response.type)
-
-[](#mcp_tunnel_reveal_token_response)
+defaulttunnel_token
 
 
 
-MCPTunnelRotateTokenResponse object { id, tunnel_token, type }
+MCPTunnelRotateTokenResponse object{ id, tunnel_token, type }
 
 
 
@@ -472,15 +527,13 @@ id: string
 
 Stable identifier for the current token value. Changes when the token is rotated.
 
-[](#mcp_tunnel_rotate_token_response.id)
-
 tunnel_token: string
 
 
 
 The tunnel's connection token.
 
-[](#mcp_tunnel_rotate_token_response.tunnel_token)
+
 
 type: "tunnel_token"
 
@@ -488,96 +541,30 @@ type: "tunnel_token"
 
 Object type. Always `tunnel_token` for Tunnel Tokens.
 
-[](#mcp_tunnel_rotate_token_response.type)
+defaulttunnel_token
 
-[](#mcp_tunnel_rotate_token_response)
+#### MCP Tunnels[Tunnel Certificates](/docs/en/api/http/admin/mcp_tunnels/tunnel_certificates)
 
-
-
-MCPTunnelArchiveResponse object { id, archived_at, created_at, 4 more }
-
-
-
-id: string
-
-
-
-ID of the Tunnel.
-
-[](#mcp_tunnel_archive_response.id)
-
-archived_at: string
-
-
-
-RFC 3339 datetime string indicating when the Tunnel was archived, or `null` if it is not archived.
-
-[](#mcp_tunnel_archive_response.archived_at)
-
-created_at: string
-
-
-
-RFC 3339 datetime string indicating when the Tunnel was created.
-
-[](#mcp_tunnel_archive_response.created_at)
-
-display_name: string
-
-
-
-Human-readable name for the Tunnel (1–255 characters), or `null` if unset.
-
-[](#mcp_tunnel_archive_response.display_name)
-
-domain: string
-
-
-
-Anthropic-assigned hostname for the Tunnel. MCP server URLs whose host is a subdomain of this value are routed through the Tunnel. Globally unique and never reused, even after the Tunnel is archived.
-
-[](#mcp_tunnel_archive_response.domain)
-
-type: "tunnel"
-
-
-
-Object type. Always `tunnel` for Tunnels.
-
-[](#mcp_tunnel_archive_response.type)
-
-workspace_id: string
-
-
-
-ID of the Workspace this Tunnel belongs to, or `null` for the default Workspace. Immutable after creation.
-
-[](#mcp_tunnel_archive_response.workspace_id)
-
-[](#mcp_tunnel_archive_response)
-
-#### MCP TunnelsTunnel Certificates
-
-##### [Create Tunnel Certificate](/docs/en/api/admin/mcp_tunnels/tunnel_certificates/create)
+##### [Create Tunnel Certificate](/docs/en/api/http/admin/mcp_tunnels/tunnel_certificates/create)
 
 Deprecated
 
-POST/v1/organizations/tunnels/{tunnel_id}/certificates
+POST/v1/organizations/tunnels/{tunnel_id}/certificates
 
-##### [Get Tunnel Certificate](/docs/en/api/admin/mcp_tunnels/tunnel_certificates/retrieve)
-
-Deprecated
-
-GET/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}
-
-##### [List Tunnel Certificates](/docs/en/api/admin/mcp_tunnels/tunnel_certificates/list)
+##### [Get Tunnel Certificate](/docs/en/api/http/admin/mcp_tunnels/tunnel_certificates/retrieve)
 
 Deprecated
 
-GET/v1/organizations/tunnels/{tunnel_id}/certificates
+GET/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}
 
-##### [Archive Tunnel Certificate](/docs/en/api/admin/mcp_tunnels/tunnel_certificates/archive)
+##### [List Tunnel Certificates](/docs/en/api/http/admin/mcp_tunnels/tunnel_certificates/list)
 
 Deprecated
 
-POST/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}/archive
+GET/v1/organizations/tunnels/{tunnel_id}/certificates
+
+##### [Archive Tunnel Certificate](/docs/en/api/http/admin/mcp_tunnels/tunnel_certificates/archive)
+
+Deprecated
+
+POST/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}/archive

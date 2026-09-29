@@ -2,14 +2,14 @@
 title: "Restrict access to Claude with IP allowlisting | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13200993-restrict-access-to-claude-with-ip-allowlisting"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:42:42Z"
+fetched_at: "2026-09-29T06:31:13Z"
 tags: ["enterprise"]
 ---
 
 # Restrict access to Claude with IP allowlisting
 
-March 16, 2026
 
+Copy for LLM
 
 IP allowlisting is available for Enterprise plans only.
 
@@ -21,6 +21,6 @@ IP allowlisting supports CIDR ranges. For example: `10.0.0.0/8, 2001:db8::/32`.
 
 ## How to configure IP allowlisting
 
-If your Enterprise organization is interested in enabling an IP allowlist, please compile a list of all necessary CIDR ranges for your organization, including office locations, VPN exit points, and any other approved access points. Omitting required CIDR ranges could result in users getting locked out of Claude. Then, reach out to your Anthropic Contact or our [Sales team](https://claude.com/contact-sales) to share your list of CIDR ranges. They can add these to your account’s allowlist to enable the feature.
+If your Enterprise organization is interested in enabling an IP allowlist, please compile a list of all necessary CIDR ranges for your organization, including office locations, VPN exit points, and any other approved access points. Omitting required CIDR ranges could result in users getting locked out of Claude. Then, reach out to your Anthropic Contact or our **[Support team](https://support.claude.com/en/articles/9015913)** to share your list of CIDR ranges. They can add these to your account’s allowlist to enable the feature.
 
 When a request originates from an IP address that’s not in your allowlist, access is denied. Users should contact their IT administrator if they believe they're being blocked in error.

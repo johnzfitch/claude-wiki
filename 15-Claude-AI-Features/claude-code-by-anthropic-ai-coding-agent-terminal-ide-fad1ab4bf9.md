@@ -2,13 +2,15 @@
 title: "Claude Code by Anthropic | AI Coding Agent, Terminal, IDE"
 source_url: "https://www.claude.com/product/claude-code"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:38:02Z"
+fetched_at: "2026-09-29T06:32:52Z"
 tags: ["agents", "claude-code", "slack"]
 ---
 
 # Claude Code
 
-Work with Claude directly in your codebase. Build, debug, and ship from your terminal, IDE, Slack, web, and more.
+Hand Claude a bug fix, test, or multi-day migration. Steer and review from your terminal, IDE, Slack, or web.
+
+Claude Code is included in Claude Pro and Max plans. [See plans](#pricing)
 
 [Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)[Read documentation](https://code.claude.com/docs/en/overview)
 
@@ -26,6 +28,64 @@ Other ways to use Claude Code:
 - [VS Code (opens in new tab)](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code)
 - [JetBrains (opens in new tab)](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-)
 - [Slack (opens in new tab)](https://slack.com/oauth/v2/authorize?client_id=1601185624273.8899143856786&scope=app_mentions:read,assistant:write,channels:history,channels:read,chat:write,files:read,files:write,groups:history,groups:read,im:history,im:read,im:write,mpim:history,reactions:write,users:read,users:read.email,commands,search:read.public&user_scope=bookmarks:read,channels:history,channels:read,chat:write,emoji:read,files:read,groups:history,groups:read,groups:write,im:history,im:read,im:write,links:read,mpim:history,mpim:read,mpim:write,mpim:write.topic,pins:read,reactions:read,reactions:write,remote_files:read,team:read,users:read,users:read.email,search:read.public,search:read.private,search:read.im,search:read.mpim,search:read.files,search:read.users,canvases:read,canvases:write)
+
+Home
+
+Code
+
+New session
+
+Routines
+
+Customize
+
+More
+
+Pinned
+
+Add a dark mode toggle to settings
+
+Scheduled
+
+Weekly dependency audit
+
+Recents
+
+Fix the double-charge bug in checkout
+
+Write tests for the payments module
+
+Explain what this repo does
+
+Layout's broken on mobile
+
+Debug flaky CI tests
+
+Susan Sample
+
+acme-storefront/Fix the double-charge bug in checkout
+
+We're seeing duplicate charges when customers double-click the pay button. Can you find and fix it?
+
+I can reproduce it: the checkout form fires two `POST /charges` requests when the button is clicked twice before the first response lands. Tracing where the idempotency key should be.
+
+just now
+
+Read 3 files, searched the checkout flow
+
+Ran agent · Reproduce the double-submit against a test charge
+
+Root cause: `createCharge()` generates a new idempotency key per call instead of per checkout session, so the gateway treats the second click as a fresh charge. Fixing that and disabling the button while a charge is in flight.
+
+just now
+
+Edited **charges.ts** +9 -3
+
+Auto
+
+Opus
+
+Extra high
 
 Home
 
@@ -220,30 +280,32 @@ Per month
 ## Latest feature announcements
 
 
-### **Dynamic workflows:** Tackle the most challenging tasks by executing across 10s to 100s of parallel subagents, and checking its work before anything reaches you.
+### **Projects:** Group related coding sessions so you can run and easily supervise multiple Claude agents at once. Available on Claude Code Desktop.
 
-BlogMay 28, 2026
-
-
-### **Agent view:** One place to manage all your Claude Code sessions.
-
-BlogMay 11, 2026
+BlogSep 17, 2026
 
 
-### **Routines:** Configure a routine once, and it can run on a schedule, from an API call, or in response to an event.
+### **Auto mode by default:** Claude Code now runs in auto mode by default on Pro, Max, and Team plans, so it can work longer while still catching risky commands.
 
-BlogApr 14, 2026
+BlogAug 7, 2026
 
 
-### **Computer use:** Claude now opens your apps, navigates your browser, and runs your dev tools to complete tasks.
+### **Self-hosted environments:** Run Claude Code sessions on your own infrastructure, inside your network and next to your internal services. Now in public beta.
 
-BlogMar 23, 2026
+BlogAug 6, 2026
+
+
+### **Artifacts:** Preview in-progress work as a live, interactive artifact built from your session context, and share it with your team.
+
+BlogJun 18, 2026
 
 [View changelog](https://code.claude.com/docs/en/changelog)
 
 (opens in new tab)
 
-## What could you do with Claude Code?
+## What Claude Code can take on
+
+Claude Code builds the plan, asks clarifying questions, and handles work that runs for hours or days.
 
 Get Claude Code
 
@@ -263,14 +325,14 @@ Onboarding
 
 Triage issues
 
-Refactor code
+Migrate code
 
 ``` Terminal-module-scss-module__gNncDq__pre
 I'm new to this codebase. Can you explain it to me?
 
-⏺ I'll analyze the Excalidraw codebase structure and provide a high-level overview.
+⏺︎ I'll analyze the Excalidraw codebase structure and provide a high-level overview.
 
-⏺ Analyze(what: "Excalidraw codebase structure and provide a high-level overview of what it is, its main components, and how they're organized. Focus on understanding the project's purpose, architecture, and key features.")
+⏺︎ Analyze(what: "Excalidraw codebase structure and provide a high-level overview of what it is, its main components, and how they're organized. Focus on understanding the project's purpose, architecture, and key features.")
 
 Excalidraw is an open-source virtual whiteboard application with a hand-drawn style. It's designed for creating diagrams, wireframes, and collaborative drawings.
 
@@ -336,11 +398,11 @@ The architecture allows for both using Excalidraw as a component in other applic
 
 - ### Turn issues into PRs
 
-  Stop bouncing between tools. Claude Code integrates with GitHub, GitLab, and your command line tools to handle the entire workflow—reading issues, writing code, running tests, and submitting PRs—all from your terminal.
+  Stop bouncing between tools. Claude Code works with GitHub, GitLab, and your command line tools to read issues, write code, run tests, and open pull requests.
 
-- ### Make powerful edits
+- ### Run multi-hour refactors and migrations
 
-  Claude Code's understanding of your codebase and dependencies enables it to make powerful, multi-file edits that work.
+  Claude Code follows imports across the repo, runs your tests, and keeps going when something breaks.
 
 ## Meets you where you code
 
@@ -434,11 +496,13 @@ Your terminal is where real work happens. Claude Code connects with the tools th
 
 ### How do I get started with Claude?
 
-You can access Claude Code with a Claude Pro or Max plan, a Team or Enterprise plan premium seat, or a Claude Console account. [Download Claude Code](https://code.claude.com/docs/en/overview) and sign in with your respective Claude or Console credentials.
+You can access Claude Code with a Claude Pro or Max plan, a Team or Enterprise plan, or a Claude Console account. [Download Claude Code](https://code.claude.com/docs/en/overview) and sign in with your respective Claude or Console credentials.
 
-### What kinds of tasks can Claude Code handle?
+### What kind of tasks can Claude Code handle?
 
-Claude Code excels at both routine development tasks like bug fixes and testing, as well as transformative work like refactors and feature implementation that require deep codebase understanding.
+Claude Code can handle routine work like bug fixes and testing, and larger jobs like refactors and new features that are long-running and asynchronous.
+
+You set the direction as the architect and orchestrator, and Claude Code does the work. Describe what you want and it plans, writes code, runs tests, and opens pull requests. It can work on several tasks at once, and surface decisions you need to make for it to keep going.
 
 ### How does Claude Code work with my existing tools?
 
@@ -450,7 +514,7 @@ Yes. Claude Code runs locally in your terminal and talks directly to model APIs 
 
 ### What are the system requirements to run Claude Code?
 
-Claude Code works on macOS, Linux, and Windows. [See full system requirements](https://docs.claude.com/en/docs/claude-code/setup#system-requirements).
+Claude Code works on macOS, Linux, and Windows. [See full system requirements](https://code.claude.com/docs/en/setup#system-requirements).
 
 ### How much does Claude Code cost?
 
@@ -462,9 +526,9 @@ Yes. Max, Pro, Team, and Enterprise users can access Claude Code on the [Claude 
 
 ### What is fast mode on Claude Code?
 
-Fast mode is a high-speed configuration for Opus 5, making the model 2.5x faster at a higher cost per token. Fast mode is available:
+Fast mode is a high-speed configuration for Opus 5.5, making the model 2.5x faster at a higher cost per token. Fast mode is available:
 
-- In research preview on Claude Code, and is priced at \$10/\$50 per million tokens.
+- In research preview on Claude Code, and is priced at \$8/\$40 per million tokens.
 - On consumption-based plans.
 - Via usage credits for users on subscription plans.
 
@@ -500,7 +564,7 @@ Blog
 
 Blog
 
-## Create what's exciting. Maintain what's essential.
+## Create what’s exciting. Maintain what’s essential.
 
 Use Claude Code where you work
 

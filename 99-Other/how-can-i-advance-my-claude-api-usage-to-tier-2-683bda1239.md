@@ -2,13 +2,15 @@
 title: "How can I get higher rate limits on the Claude API? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10366389-how-can-i-advance-my-claude-api-usage-to-tier-2"
 category: "99-Other"
-fetched_at: "2026-08-02T05:40:48Z"
+fetched_at: "2026-09-29T06:30:49Z"
 tags: ["api"]
 ---
 
 # How can I get higher rate limits on the Claude API?
 
 June 26, 2026
+
+Copy for LLM
 
 Usage tiers are assigned automatically. There's no deposit or purchase that moves you up, and you don't need to take any action.
 

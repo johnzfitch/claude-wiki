@@ -2,8 +2,8 @@
 title: "SDK middleware - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/middleware"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:41:05Z"
-tags: ["api", "sdk"]
+fetched_at: "2026-09-26T06:39:29Z"
+tags: ["api", "cli", "sdk"]
 ---
 
 - [Managed Agents](/docs/en/managed-agents/overview)
@@ -12,27 +12,23 @@ tags: ["api", "sdk"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fmiddleware)
 
 
 
-Search
+
 
+SearchCtrlK
 
 CLI, SDKs, and libraries
 
@@ -40,7 +36,7 @@ CLI, SDKs, and libraries
 
 ant CLI
 
-[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)
+[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)[Manage resources as code](/docs/en/cli-sdks-libraries/cli/apply)[Connect to a Managed Agents session](/docs/en/cli-sdks-libraries/cli/sessions-connect)
 
 Client SDKs
 
@@ -50,24 +46,19 @@ Libraries and integrations
 
 [Apple Foundation Models](/docs/en/cli-sdks-libraries/libraries/apple-foundation-models)[OpenAI SDK compatibility](/docs/en/cli-sdks-libraries/libraries/openai-sdk)
 
-[](/login)
+[Console](/)
 
-
-
-
-CLI, SDKs, and libraries
-
-Middleware
-
-CLI, SDKs, and libraries/Client SDKs
+[CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)Client SDKs
 
 # SDK middleware
 
+Copy page
 
 
 
 Intercept and modify requests and responses in the Anthropic SDKs.
 
+Copy page
 
 
 
@@ -75,10 +66,7 @@ The Anthropic SDKs provide a middleware (or interceptor) hook that lets you run 
 
 Each middleware can inspect or replace the request before calling `next()`, and the response after `next()` returns.
 
-
-
-
-Registering middleware
+## Registering middleware
 
 Each middleware is a function that receives the outgoing request and a `next` callable. Call `next` to forward the request to the rest of the chain (or directly to the SDK core if this is the last middleware), and return its response. Anything before the `next` call runs on the way out; anything after runs on the way back.
 
@@ -115,25 +103,16 @@ def logging_middleware(request: APIRequest, call_next: CallNext) -> APIResponse[
 client = Anthropic(middleware=[logging_middleware])
 ```
 
-
-
-
-Middleware ordering
+## Middleware ordering
 
 When you register multiple middleware, they apply in the order given: the first middleware's "before" code runs first, and its "after" code runs last. Middleware registered on the client runs before middleware passed as a per-request option.
 
 In the Go SDK, repeated `option.WithMiddleware` calls concatenate (client first, then method). In the other SDKs, pass an array; later entries wrap inner.
 
-
-
-
-Replacing the HTTP client
+## Replacing the HTTP client
 
 Each SDK also accepts a custom HTTP client (for proxy configuration, custom TLS, or connection pooling). Only one HTTP client is used per SDK client; setting it replaces the default. The custom HTTP client receives requests after all middleware has run.
 
-
-
-
-Built-in middleware
+## Built-in middleware
 
 The SDKs ship a refusal-fallback middleware that automatically retries requests Claude Fable 5 declines on a fallback model. See [Detect and retry on a fallback model](/docs/en/build-with-claude/refusals-and-fallback#client-side-fallback) for setup and per-language examples.

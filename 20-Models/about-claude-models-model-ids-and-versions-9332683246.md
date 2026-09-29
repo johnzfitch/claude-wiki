@@ -2,7 +2,7 @@
 title: "Model IDs and versioning - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions"
 category: "20-Models"
-fetched_at: "2026-08-02T05:38:40Z"
+fetched_at: "2026-09-26T06:38:09Z"
 ---
 
 - [Managed Agents](/docs/en/managed-agents/overview)
@@ -11,66 +11,73 @@ fetched_at: "2026-08-02T05:38:40Z"
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fmodels%2Fmodel-ids-and-versions)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Models
 
-[Models overview](/docs/en/about-claude/models/overview)[Model IDs and versioning](/docs/en/about-claude/models/model-ids-and-versions)[Choosing a model](/docs/en/about-claude/models/choosing-a-model)[Introducing Claude Fable 5 and Claude Mythos 5](/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5)[What's new in Claude Sonnet 5](/docs/en/about-claude/models/whats-new-sonnet-5)[What's new in Claude Opus 5](/docs/en/about-claude/models/whats-new-opus-5)[Upgrade between model versions](/docs/en/about-claude/models/migration-guide)[Model deprecations](/docs/en/about-claude/model-deprecations)[Model cards](/docs/en/resources/overview)[System prompts](/docs/en/release-notes/system-prompts)[Pricing](/docs/en/about-claude/pricing)
+[Models overview](/docs/en/models/overview)
 
-[](/login)
+[Claude Fable 5.1](/docs/en/models/fable-5-1/overview)
 
+[Claude Opus 5.5](/docs/en/models/opus-5-5/overview)
 
-
+[Claude Sonnet 5](/docs/en/models/sonnet-5/overview)
 
-Models & pricing
+[Claude Haiku 4.5](/docs/en/models/haiku-4-5/overview)
 
-Model IDs and versioning
+Specialized models
 
-Models & pricing/Models
+Legacy models
+
+Guides
+
+[Choosing a model](/docs/en/about-claude/models/choosing-a-model)[Optimizing for cost and intelligence](/docs/en/about-claude/models/optimizing-for-cost-and-intelligence)[Upgrade between model versions](/docs/en/about-claude/models/migration-guide)
+
+Lifecycle and reference
+
+[Model IDs and versioning](/docs/en/about-claude/models/model-ids-and-versions)[Model deprecations](/docs/en/about-claude/model-deprecations)[Model cards](/docs/en/resources/overview)[Pricing](/docs/en/about-claude/pricing)
+
+[System prompts](/docs/en/release-notes/system-prompts/overview)
+
+[Console](/)
+
+[Models & pricing](/docs/en/models/overview)Lifecycle and reference
 
 # Model IDs and versioning
 
+Copy page
 
 
 
 How Claude model IDs are structured and versioned, including the dateless format introduced with the Claude 4.6 generation and what it means for stability.
 
+Copy page
 
 
 
 Each Claude model ID identifies a pinned version of the model. When you use a model ID in an API request, the underlying model remains constant for the lifetime of that ID. This guarantee covers model IDs, not the convenience aliases that the Claude API accepts for some earlier models (see [Before the 4.6 generation](#before-the-4-6-generation)).
 
-
-
-
-Model ID format
+## Model ID format
 
 Claude model IDs follow a versioned naming scheme.
 
-
-
-
-The 4.6 generation and later
+### The 4.6 generation and later
 
 Starting with the Claude 4.6 generation, model IDs use a dateless format:
 
@@ -98,10 +105,7 @@ Claude Opus 4.6 is the last Bedrock model ID to include the `-v1` suffix (`anthr
 
 On Google Cloud, the format matches the Claude API.
 
-
-
-
-Before the 4.6 generation
+### Before the 4.6 generation
 
 Models before the 4.6 generation include a snapshot date in the ID:
 
@@ -135,10 +139,7 @@ For example: `claude-haiku-4-5@20251001`
 
 On the Claude API, these models also have shorter aliases (for example, `claude-sonnet-4-5`) that point to the most recent dated snapshot for that minor version.
 
-
-
-
-Dateless IDs are pinned snapshots
+## Dateless IDs are pinned snapshots
 
 A common misconception is that dateless model IDs such as `claude-sonnet-4-6` behave as evergreen pointers that route to the latest or best-performing version. That is not the case.
 
@@ -148,18 +149,12 @@ This differs from the dateless aliases that exist on the Claude API for earlier 
 
 Every model ID, whether dated or dateless, has its own distinct deprecation and retirement schedule.
 
-
-
-
-Model weights versus serving infrastructure
+## Model weights versus serving infrastructure
 
 Model weights are fixed for a given ID, but the serving infrastructure around the model can change over time. This infrastructure includes components such as the request router, safety classifiers, and sampling logic.
 
 Occasionally, infrastructure updates produce minor differences in observable behavior even when the model ID and weights have not changed. If you notice unexpected behavioral differences on a previously stable model ID, an infrastructure update is the most likely cause.
 
+## Current model IDs
 
-
-
-Current model IDs
-
-For the full list of current model IDs and their Amazon Bedrock and Google Cloud equivalents, see [Models overview](/docs/en/about-claude/models/overview).
+For the full list of current model IDs and their Amazon Bedrock and Google Cloud equivalents, see [Models overview](/docs/en/models/overview).

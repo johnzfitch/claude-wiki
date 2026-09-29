@@ -2,8 +2,8 @@
 title: "Get started with Claude Managed Agents - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/quickstart"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:40:51Z"
-tags: ["agents", "api"]
+fetched_at: "2026-09-26T06:39:42Z"
+tags: ["agents", "api", "cli", "sdk"]
 ---
 
 - [Managed Agents](/docs/en/managed-agents/overview)
@@ -12,31 +12,27 @@ tags: ["agents", "api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fquickstart)
 
 
 
-Search
+
 
+SearchCtrlK
 
 First steps
 
-[Overview](/docs/en/managed-agents/overview)[Quickstart](/docs/en/managed-agents/quickstart)[Prototype in Console](/docs/en/managed-agents/onboarding)[Migration](/docs/en/managed-agents/migration)
+[Overview](/docs/en/managed-agents/overview)[Quickstart](/docs/en/managed-agents/quickstart)[Build in Console](/docs/en/managed-agents/onboarding)[Migration](/docs/en/managed-agents/migration)
 
 Define your agent
 
@@ -46,11 +42,11 @@ Configure agent environment
 
 [Cloud environment setup](/docs/en/managed-agents/environments)[Cloud sandbox reference](/docs/en/managed-agents/cloud-sandboxes-reference)
 
-Self-hosted sandboxes
+[Self-hosted sandboxes](/docs/en/managed-agents/self-hosted-sandboxes)
 
 Delegate work to your agent
 
-[Start a session](/docs/en/managed-agents/sessions)[Session operations](/docs/en/managed-agents/session-operations)[Session event stream](/docs/en/managed-agents/events-and-streaming)[Subscribe to webhooks](/docs/en/managed-agents/webhooks)[Define outcomes](/docs/en/managed-agents/define-outcomes)[Authenticate with vaults](/docs/en/managed-agents/vaults)
+[Start a session](/docs/en/managed-agents/sessions)[Session operations](/docs/en/managed-agents/session-operations)[Session event stream](/docs/en/managed-agents/events-and-streaming)[Session budgets](/docs/en/managed-agents/budgets)[Subscribe to webhooks](/docs/en/managed-agents/webhooks)[Define outcomes](/docs/en/managed-agents/define-outcomes)[Authenticate with vaults](/docs/en/managed-agents/vaults)
 
 Manage agent context
 
@@ -70,7 +66,7 @@ Working with files
 
 [Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
 
-Images and vision
+[Images and vision](/docs/en/build-with-claude/vision)
 
 Skills
 
@@ -80,32 +76,35 @@ MCP
 
 [Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)
 
-MCP tunnels
+[MCP tunnels](/docs/en/agents-and-tools/mcp-tunnels/overview)
 
 Claude on cloud platforms
 
 [Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)
 
-[](/login)
+[Console](/)
 
-
-
-
-Managed Agents
-
-Quickstart
-
-Managed Agents/First steps
+[Managed Agents](/docs/en/managed-agents/overview)First steps
 
 # Get started with Claude Managed Agents
 
+Copy page
 
 
 
 Create your first autonomous agent.
 
+Copy page
 
 
+
+[Managed Agents](/docs/en/managed-agents/overview)
+
+[Beta](/docs/en/build-with-claude/overview#feature-availability)
+
+[Beta header](/docs/en/api/beta-headers)
+
+managed-agents-2026-04-01
 
 This guide walks you through creating an agent, setting up an environment, starting a session, and streaming agent responses.
 
@@ -113,10 +112,7 @@ This guide walks you through creating an agent, setting up an environment, start
 
 **Prefer an interactive walkthrough?** Run `/claude-api managed-agents-onboard` in the latest version of [Claude Code](https://claude.com/product/claude-code) for a guided setup and interactive question-answering.
 
-
-
-
-Core concepts
+## Core concepts
 
 | Concept         | Description                                                                                                                   |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------------|
@@ -125,28 +121,16 @@ Core concepts
 | **Session**     | A running agent instance within an environment, performing a specific task and generating outputs                             |
 | **Events**      | Messages exchanged between your application and the agent (user turns, tool results, status updates)                          |
 
-
-
-
-Prerequisites
+## Prerequisites
 
 - A [Claude Console account](https://platform.claude.com)
 - An [API key](/settings/keys)
 
-
-
-
-Install the CLI
-
-Homebrew (macOS)
+## Install the CLI
 
 Homebrew (macOS)
 
 curl (Linux/WSL)
-
-curl (Linux/WSL)
-
-Go
 
 Go
 
@@ -164,36 +148,19 @@ ant --version
 
 
 
-
-
-
-Install the SDK
-
-Python
+## Install the SDK
 
 Python
 
 TypeScript
 
-TypeScript
-
 Java
-
-Java
-
-Go
 
 Go
 
 C#
 
-C#
-
 Ruby
-
-Ruby
-
-PHP
 
 PHP
 
@@ -211,22 +178,15 @@ export ANTHROPIC_API_KEY="your-api-key-here"
 
 
 
-
-
-
-Create your first session
-
-
-
-Managed Agents API requests require the `managed-agents-2026-04-01` beta header, except memory store endpoints, which use `agent-memory-2026-07-22` instead. The SDK sets the correct beta header automatically. See [Beta headers](/docs/en/api/beta-headers#endpoint-specific-headers).
+## Create your first session
 
 1.  1
 
-    Create an agent
+    ### Create an agent
 
     Create an agent that defines the model, system prompt, and available tools.
 
-    curl
+    cURL
     CLI
     Python
     TypeScript
@@ -239,24 +199,35 @@ Managed Agents API requests require the `managed-agents-2026-04-01` beta header,
     
 
     ``` shiki
-    ant beta:agents create \
-      --name "Coding Assistant" \
-      --model '{id: claude-opus-5}' \
-      --system "You are a helpful coding assistant. Write clean, well-documented code." \
-      --tool '{type: agent_toolset_20260401}'
+    ant apply coding-assistant.md
     ```
+
+    coding-assistant.md
+    
+    
+
+    ``` shiki
+    ---
+    name: Coding Assistant
+    model: claude-opus-5-5
+    tools:
+      - type: agent_toolset_20260401
+    ---
+
+    You are a helpful coding assistant. Write clean, well-documented code.
+    ```
+
+    [`ant apply`](/docs/en/cli-sdks-libraries/cli/apply) prints the agent's ID and records it in `claude-lock.json`. You'll reference it in every session you create.
 
     The `agent_toolset_20260401` tool type enables the full set of pre-built agent tools (bash, file operations, web search, and more). See [Tools](/docs/en/managed-agents/tools) for the complete list and per-tool configuration options.
 
-    Save the returned `agent.id`. You'll reference it in every session you create.
-
 2.  2
 
-    Create an environment
+    ### Create an environment
 
     An environment defines the sandbox where your agent runs.
 
-    curl
+    cURL
     CLI
     Python
     TypeScript
@@ -269,24 +240,35 @@ Managed Agents API requests require the `managed-agents-2026-04-01` beta header,
     
 
     ``` shiki
-    ant beta:environments create \
-      --name "quickstart-env" \
-      --config '{type: cloud, networking: {type: unrestricted}}'
+    ant apply environment.yaml
     ```
 
-    Save the returned `environment.id`. You'll reference it in every session you create.
+    environment.yaml
+    
+    
+
+    ``` shiki
+    # yaml-language-server: $schema=https://platform.claude.com/schemas/ant/beta/environment.json
+    name: quickstart-env
+    config:
+      type: cloud
+      networking:
+        type: unrestricted
+    ```
+
+    [`ant apply`](/docs/en/cli-sdks-libraries/cli/apply) records the environment's ID in `claude-lock.json` too. To create the agent and the environment with one command, pass both files: `ant apply coding-assistant.md environment.yaml`.
 
     
-
     To run the sandbox on your own infrastructure instead of a cloud sandbox, see [Self-hosted sandboxes](/docs/en/managed-agents/self-hosted-sandboxes).
 
 3.  3
 
-    Start a session
+    ### Start a session
 
     Create a session that references your agent and environment.
 
-    curl
+    cURL
+    CLI
     Python
     TypeScript
     C#
@@ -309,11 +291,12 @@ Managed Agents API requests require the `managed-agents-2026-04-01` beta header,
 
 4.  4
 
-    Send a message and stream the response
+    ### Send a message and stream the response
 
     Open a stream, send a user event, then process events as they arrive:
 
-    curl
+    cURL
+    CLI
     Python
     TypeScript
     C#
@@ -347,7 +330,8 @@ Managed Agents API requests require the `managed-agents-2026-04-01` beta header,
             match event.type:
                 case "agent.message":
                     for block in event.content:
-                        print(block.text, end="")
+                        if block.type == "text":
+                            print(block.text, end="")
                 case "agent.tool_use":
                     print(f"\n[Using tool: {event.name}]")
                 case "session.status_idle":
@@ -355,7 +339,7 @@ Managed Agents API requests require the `managed-agents-2026-04-01` beta header,
                     break
     ```
 
-    The agent writes a Python script, executes it in the sandbox, and verifies the output file was created. Your output looks similar to this:
+    The agent writes a Python script, runs it in the sandbox, and verifies the output file was created. Your output looks similar to this:
 
     ``` block
     I'll create a Python script that generates the first 20 Fibonacci numbers and saves them to a file.
@@ -370,51 +354,64 @@ Managed Agents API requests require the `managed-agents-2026-04-01` beta header,
 
     
 
-
-
-
-What's happening
+## What's happening
 
 When you send a user event, Claude Managed Agents:
 
 1.  **Provisions a sandbox:** Your environment configuration determines how it's built.
 2.  **Runs the agent loop:** Claude determines which tools to use based on your message.
-3.  **Executes tools:** File writes, bash commands, and other tool calls run inside the sandbox.
+3.  **Runs tools:** File writes, bash commands, and other tool calls run inside the sandbox.
 4.  **Streams events:** You receive real-time updates as the agent works.
 5.  **Goes idle:** The agent emits a `session.status_idle` event when it has nothing more to do.
 
+## Build a complete app
 
-
+Each of these quickstarts pairs Claude Managed Agents with a popular chat framework to make a complete, runnable application. In each one, the framework renders the chat surface while a managed session runs the agent loop server-side: the session holds the transcript, runs tools in a sandbox, and streams events that the front end renders.
 
-Next steps
+[Chat SDK](https://github.com/anthropics/claude-quickstarts/tree/main/managed-agents/chat-sdk)
 
+A research analyst in a browser chat built with Vercel's Chat SDK. Each conversation is one persistent session that streams its reply while a live feed shows the tool calls. Swapping the Chat SDK adapter moves the same handler to Slack, Teams, Discord, or WhatsApp.
 
-Define your agent
+[assistant-ui](https://github.com/anthropics/claude-quickstarts/tree/main/managed-agents/assistant-ui)
+
+A spreadsheet analyst in a chat built from assistant-ui primitives. Sessions are the thread list, one reducer turns the session event log into messages and tool cards, and each bash command renders an inline Allow/Deny gate before it runs.
+
+[CopilotKit (AG-UI)](https://github.com/anthropics/claude-quickstarts/tree/main/managed-agents/copilot-kit-ag-ui)
+
+A personal finance assistant in a CopilotKit chat. The AG-UI adapter for Claude Managed Agents maps each chat thread to a managed session and streams replies token by token, and custom tools render interactive charts inline in the conversation.
+
+## Next steps
+
+
+
+[Define your agent](/docs/en/managed-agents/agent-setup)
 
 Create reusable, versioned agent configurations
 
-
 
 
-Configure environments
+[Configure environments](/docs/en/managed-agents/environments)
 
 Customize networking and sandbox settings
 
-
 
 
-Agent tools
+[Agent tools](/docs/en/managed-agents/tools)
 
 Enable specific tools for your agent
 
-
 
 
-Session event stream
+[Session event stream](/docs/en/managed-agents/events-and-streaming)
 
 Handle events and steer the agent mid-execution
 
+
 
-Scheduled deployments
+[Scheduled deployments](/docs/en/managed-agents/scheduled-deployments)
 
 Run your agent on a recurring cron schedule
+
+[Knowledge wiki quickstart](https://github.com/anthropics/claude-quickstarts/tree/main/managed-agents/knowledge-wiki)
+
+Distill a document corpus once into a knowledge wiki, then answer repeated questions from it at a fraction of the cost

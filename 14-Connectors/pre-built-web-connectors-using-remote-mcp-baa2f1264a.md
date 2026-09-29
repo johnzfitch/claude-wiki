@@ -2,12 +2,15 @@
 title: "Use connectors to extend Claude&#x27;s capabilities | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp"
 category: "14-Connectors"
-fetched_at: "2026-08-02T05:40:50Z"
+fetched_at: "2026-09-29T06:31:16Z"
 tags: ["connectors", "enterprise", "security"]
 ---
 
 # Use connectors to extend Claude's capabilities
 
+August 20, 2026
+
+Copy for LLM
 
 This guide explains how to enable and use connectors with Claude to enhance its capabilities.
 
@@ -17,7 +20,7 @@ Web connectors are available for all users on Claude, Cowork, Claude Desktop, an
 
 Connectors let Claude access your apps and services, retrieve your data, and take actions within connected services. Claude inherits each person's permissions from the connected service. If someone can't access a specific file, channel, or record in the source system, the connector can't reach it from Claude either.
 
-For example, you can connect Claude to Linear to create issues, to Slack to send messages, or to Google Drive to search your files. Connectors work across Claude, Claude Desktop, Claude Code, and the API (via the **[MCP Connector](https://platform.claude.com/docs/en/agents-and-tools/mcp-connector)**).
+For example, you can connect Claude to Linear to create issues, to Slack to send messages, or to Google Drive to search your files. Connectors work across Claude, Claude Desktop, Claude Code, and the API (via the **[MCP Connector](https://platform.claude.com/docs/en/agents-and-tools/mcp-connector)**). Setup details for individual pre-built connectors are in **[Claude Docs: Connectors](https://claude.com/docs/connectors/overview)**.
 
 You can find available connectors in the **[Connectors Directory](https://claude.ai/connectors)**, where each connector has a page detailing its use cases, read/write capabilities, and availability. You can also add custom connectors or connect to any service that supports MCP.
 
@@ -45,7 +48,7 @@ You can browse the directory from two areas:
 
 **From settings**
 
-1.  Navigate to **[Customize \> Connectors](http://claude.ai/customize/connectors)**.
+1.  Navigate to **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
 
 2.  Click the “+” button next to **Connectors**.
 
@@ -103,7 +106,7 @@ Common use cases:
 
 To configure action restrictions:
 
-1.  Navigate to **[Customize \> Connectors](http://claude.ai/customize/connectors).**
+1.  Navigate to **[Customize \> Connectors](https://claude.ai/customize/connectors).**
 
 2.  Select the connector to see **Tool permissions**.
 
@@ -147,7 +150,7 @@ Learn more about tool access modes: **[Manage Claude's tool access](https://supp
 
 To manage your connected services:
 
-1.  Navigate to **[Customize \> Connectors](http://claude.ai/customize/connectors)**.
+1.  Navigate to **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
 
 2.  View all your connected services in the **Connectors** section.
 
@@ -161,7 +164,7 @@ Custom connectors using remote MCP are available on Claude, Cowork, and Claude D
 
 In addition to directory connectors, you can add custom connectors:
 
-1.  Navigate to **[Customize \> Connectors](http://claude.ai/customize/connectors)**.
+1.  Navigate to **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
 
 2.  Click the “+” button next to **Connectors**.
 
@@ -207,7 +210,9 @@ If you're having trouble connecting to a service, try these steps:
 
 3.  Review any permissions or account type requirements for the service.
 
-4.  If authentication fails, try disconnecting and reconnecting from **[Customize \> Connectors](http://claude.ai/customize/connectors)**.
+4.  If authentication fails, try disconnecting and reconnecting from **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
+
+5.  For connector-specific requirements and known issues (Slack, GitHub, Google Drive, Gmail, Google Calendar, Microsoft 365), see the connector's page in **[Claude Docs: Connectors](https://claude.com/docs/connectors/overview)**.
 
 ### See a message that says, "This corporate identity belongs to an Enterprise that manages access through their own Claude account"?
 

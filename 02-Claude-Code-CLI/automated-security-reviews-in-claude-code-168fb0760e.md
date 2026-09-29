@@ -2,7 +2,7 @@
 title: "Automated Security Reviews in Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:42:30Z"
+fetched_at: "2026-09-29T06:31:46Z"
 tags: ["claude-code", "git", "github", "security"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["claude-code", "git", "github", "security"]
 
 March 16, 2026
 
+Copy for LLM
 
 Claude Code now includes automated security review features to help you identify and fix vulnerabilities in your code. This guide explains how to use the /security-review command and GitHub Actions to improve your code security.
 

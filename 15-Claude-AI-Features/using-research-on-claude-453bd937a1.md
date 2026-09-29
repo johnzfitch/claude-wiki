@@ -2,7 +2,7 @@
 title: "Use research on Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11088861-using-research-on-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:40:49Z"
+fetched_at: "2026-09-29T06:31:14Z"
 tags: ["search"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["search"]
 
 June 2, 2026
 
+Copy for LLM
 
 Research is available for users with paid Claude plans (Pro, Max, Team, or Enterprise) using Claude on the web, Claude Desktop, or Claude Mobile.
 

@@ -2,13 +2,15 @@
 title: "Our approach to rate limits for the Claude API | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8243635-our-approach-to-rate-limits-for-the-claude-api"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:41:25Z"
+fetched_at: "2026-09-29T06:32:32Z"
 tags: ["api"]
 ---
 
 # Our approach to rate limits for the Claude API
 
 June 26, 2026
+
+Copy for LLM
 
 Your rate limit depends on your usage tier, and is currently measured in three key metrics:
 

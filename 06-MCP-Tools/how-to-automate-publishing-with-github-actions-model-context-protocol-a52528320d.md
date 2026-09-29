@@ -2,7 +2,7 @@
 title: "How to Automate Publishing with GitHub Actions - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/github-actions"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:27Z"
+fetched_at: "2026-09-29T06:30:51Z"
 tags: ["git", "github", "mcp"]
 ---
 

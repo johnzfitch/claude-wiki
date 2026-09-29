@@ -2,14 +2,14 @@
 title: "Enterprise configuration for Claude Desktop | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12622667-enterprise-configuration"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:41:08Z"
+fetched_at: "2026-09-29T06:31:54Z"
 tags: ["desktop", "enterprise"]
 ---
 
 # Enterprise configuration for Claude Desktop
 
-June 26, 2026
 
+Copy for LLM
 
 Administrators on Team or Enterprise plans can control Claude Desktop through system policies.
 

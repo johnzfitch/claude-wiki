@@ -2,14 +2,15 @@
 title: "Claude Enterprise activation promo for Claude Code and Cowork | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15282265-claude-enterprise-activation-promo-for-claude-code-and-cowork"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:41:13Z"
+fetched_at: "2026-09-29T06:30:53Z"
 tags: ["claude-code", "enterprise"]
 ---
 
 # Claude Enterprise activation promo for Claude Code and Cowork
 
-June 8, 2026
+August 6, 2026
 
+Copy for LLM
 
 We're issuing \$1,000 in usage credits to every user in a Claude Enterprise organization—up to \$10M per organization—who activates Claude Code or Claude Cowork for the first time. Credits are issued automatically and are scoped to the activating seat.
 
@@ -59,7 +60,7 @@ Once a credit is issued:
 
 ## Track activations in your organization
 
-Admins can see who’s eligible by going to the **[usage page in organization settings](http://claude.ai/admin-settings/usage)** or:
+Admins can see who’s eligible by going to the **[usage page in organization settings](https://claude.ai/admin-settings/usage)** or:
 
 - For Claude Code, go to **[Organization settings \> Claude Code](https://claude.ai/admin-settings/claude-code)**
 

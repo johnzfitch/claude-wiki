@@ -2,7 +2,7 @@
 title: "Claude takes research to new places | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/research"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:11:57Z"
+fetched_at: "2026-09-01T06:26:32Z"
 tags: ["search"]
 ---
 

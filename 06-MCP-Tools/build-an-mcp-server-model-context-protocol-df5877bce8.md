@@ -2,7 +2,7 @@
 title: "Build an MCP server - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/2026-07-28/develop/build-server"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:36:53Z"
+fetched_at: "2026-09-29T06:30:35Z"
 tags: ["agents", "cli", "mcp", "skills"]
 ---
 
@@ -320,13 +320,17 @@ Your server is complete! Run `uv run weather.py` to start the MCP server, which 
 
 Testing your server with Claude for Desktop
 
-Claude for Desktop is not yet available on Linux. Linux users can proceed to the [Building a client](/docs/2026-07-28/develop/build-client) tutorial to build an MCP client that connects to the server we just built.
-
 First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it’s updated to the latest version.**We’ll need to configure Claude for Desktop for whichever MCP servers you want to use. To do this, open your Claude for Desktop App configuration at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor. Make sure to create the file if it doesn’t exist.For example, if you have [VS Code](https://code.visualstudio.com/) installed:
 
-macOS/Linux
+Linux
+
+macOS
 
 Windows
+
+```python
+code ~/.config/Claude/claude_desktop_config.json
+```
 
 ```python
 code ~/Library/Application\ Support/Claude/claude_desktop_config.json
@@ -813,13 +817,17 @@ Make sure to run `npm run build` to build your server! This is a very important 
 
 Testing your server with Claude for Desktop
 
-Claude for Desktop is not yet available on Linux. Linux users can proceed to the [Building a client](/docs/2026-07-28/develop/build-client) tutorial to build an MCP client that connects to the server we just built.
-
 First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it’s updated to the latest version.**We’ll need to configure Claude for Desktop for whichever MCP servers you want to use. To do this, open your Claude for Desktop App configuration at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor. Make sure to create the file if it doesn’t exist.For example, if you have [VS Code](https://code.visualstudio.com/) installed:
 
-macOS/Linux
+Linux
+
+macOS
 
 Windows
+
+```python
+code ~/.config/Claude/claude_desktop_config.json
+```
 
 ```python
 code ~/Library/Application\ Support/Claude/claude_desktop_config.json
@@ -1040,13 +1048,17 @@ This will generate an `mcp-weather-stdio-server-0.0.1-SNAPSHOT.jar` file within 
 
 Testing your server with Claude for Desktop
 
-Claude for Desktop is not yet available on Linux.
-
 First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it’s updated to the latest version.**We’ll need to configure Claude for Desktop for whichever MCP servers you want to use. To do this, open your Claude for Desktop App configuration at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor. Make sure to create the file if it doesn’t exist.For example, if you have [VS Code](https://code.visualstudio.com/) installed:
 
-macOS/Linux
+Linux
+
+macOS
 
 Windows
+
+```python
+code ~/.config/Claude/claude_desktop_config.json
+```
 
 ```python
 code ~/Library/Application\ Support/Claude/claude_desktop_config.json
@@ -1156,7 +1168,7 @@ and set the `spring.ai.mcp.client.stdio.servers-configuration` property to point
 spring.ai.mcp.client.stdio.servers-configuration=file:PATH/TO/claude_desktop_config.json
 ```
 
-When you start your client application, the auto-configuration will automatically create MCP clients from the claude_desktop_config.json.For more information, see the [MCP Client Boot Starters](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-client-docs.html) reference documentation.
+When you start your client application, the auto-configuration will automatically create MCP clients from the claude_desktop_config.json.For more information, see the [MCP Client Boot Starters](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-client-boot-starter-docs.html) reference documentation.
 
 
 [​](#more-java-mcp-server-examples)
@@ -1495,13 +1507,17 @@ Let’s now test your server from an existing MCP host, Claude for Desktop.
 
 Testing your server with Claude for Desktop
 
-Claude for Desktop is not yet available on Linux. Linux users can proceed to the [Building a client](/docs/2026-07-28/develop/build-client) tutorial to build an MCP client that connects to the server we just built.
-
 First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it’s updated to the latest version.**We’ll need to configure Claude for Desktop for whichever MCP servers you want to use. To do this, open your Claude for Desktop App configuration at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor. Make sure to create the file if it doesn’t exist.For example, if you have [VS Code](https://code.visualstudio.com/) installed:
 
-macOS/Linux
+Linux
+
+macOS
 
 Windows
+
+```python
+code ~/.config/Claude/claude_desktop_config.json
+```
 
 ```python
 code ~/Library/Application\ Support/Claude/claude_desktop_config.json
@@ -1768,13 +1784,17 @@ This will start the server and listen for incoming requests on standard input/ou
 
 Testing your server with Claude for Desktop
 
-Claude for Desktop is not yet available on Linux. Linux users can proceed to the [Building a client](/docs/2026-07-28/develop/build-client) tutorial to build an MCP client that connects to the server we just built.
-
 First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it’s updated to the latest version.** We’ll need to configure Claude for Desktop for whichever MCP servers you want to use. To do this, open your Claude for Desktop App configuration at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor. Make sure to create the file if it doesn’t exist. For example, if you have [VS Code](https://code.visualstudio.com/) installed:
 
-macOS/Linux
+Linux
+
+macOS
 
 Windows
+
+```python
+code ~/.config/Claude/claude_desktop_config.json
+```
 
 ```python
 code ~/Library/Application\ Support/Claude/claude_desktop_config.json
@@ -2095,13 +2115,17 @@ Your server is complete! Run `bundle exec ruby weather.rb` to start the MCP serv
 
 Testing your server with Claude for Desktop
 
-Claude for Desktop is not yet available on Linux. Linux users can proceed to the [Building a client](/docs/2026-07-28/develop/build-client) tutorial to build an MCP client that connects to the server we just built.
-
 First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it’s updated to the latest version.**We’ll need to configure Claude for Desktop for whichever MCP servers you want to use. To do this, open your Claude for Desktop App configuration at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor. Make sure to create the file if it doesn’t exist.For example, if you have [VS Code](https://code.visualstudio.com/) installed:
 
-macOS/Linux
+Linux
+
+macOS
 
 Windows
+
+```python
+code ~/.config/Claude/claude_desktop_config.json
+```
 
 ```python
 code ~/Library/Application\ Support/Claude/claude_desktop_config.json
@@ -2553,13 +2577,17 @@ The compiled binary will be in `target/release/weather`.Let’s now test your se
 
 Testing your server with Claude for Desktop
 
-Claude for Desktop is not yet available on Linux. Linux users can proceed to the [Building a client](/docs/2026-07-28/develop/build-client) tutorial to build an MCP client that connects to the server we just built.
-
 First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it’s updated to the latest version.**We’ll need to configure Claude for Desktop for whichever MCP servers you want to use. To do this, open your Claude for Desktop App configuration at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor. Make sure to create the file if it doesn’t exist.For example, if you have [VS Code](https://code.visualstudio.com/) installed:
 
-macOS/Linux
+Linux
+
+macOS
 
 Windows
+
+```python
+code ~/.config/Claude/claude_desktop_config.json
+```
 
 ```python
 code ~/Library/Application\ Support/Claude/claude_desktop_config.json
@@ -3011,13 +3039,17 @@ The compiled binary will be in `./weather`.Let’s now test your server from an 
 
 Testing your server with Claude for Desktop
 
-Claude for Desktop is not yet available on Linux. Linux users can proceed to the [Building a client](/docs/2026-07-28/develop/build-client) tutorial to build an MCP client that connects to the server we just built.
-
 First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it’s updated to the latest version.**We’ll need to configure Claude for Desktop for whichever MCP servers you want to use. To do this, open your Claude for Desktop App configuration at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor. Make sure to create the file if it doesn’t exist.For example, if you have [VS Code](https://code.visualstudio.com/) installed:
 
-macOS/Linux
+Linux
+
+macOS
 
 Windows
+
+```python
+code ~/.config/Claude/claude_desktop_config.json
+```
 
 ```python
 code ~/Library/Application\ Support/Claude/claude_desktop_config.json
@@ -3099,16 +3131,25 @@ Troubleshooting
 
 Claude for Desktop Integration Issues
 
-**Getting logs from Claude for Desktop**Claude.app logging related to MCP is written to log files in `~/Library/Logs/Claude`:
+**Getting logs from Claude for Desktop**Claude.app logging related to MCP is written to log files in `~/Library/Logs/Claude` (macOS) or `~/.config/Claude/logs/` (Linux):
 
 - `mcp.log` will contain general logging about MCP connections and connection failures.
 - Files named `mcp-server-SERVERNAME.log` will contain the stderr output from the named server. Stdio servers may use stderr for all their logging, so these files are not limited to errors.
 
 You can run the following command to list recent logs and follow along with any new ones:
 
+macOS
+
 ```python
 # Check Claude's logs for errors
 tail -n 20 -f ~/Library/Logs/Claude/mcp*.log
+```
+
+Linux
+
+```python
+# Check Claude's logs for errors
+tail -n 20 -f ~/.config/Claude/logs/mcp*.log
 ```
 
 **Server not showing up in Claude**
@@ -3121,6 +3162,7 @@ To properly restart Claude for Desktop, you must fully quit the application:
 
 - **Windows**: Right-click the Claude icon in the system tray (which may be hidden in the “hidden icons” menu) and select “Quit” or “Exit”.
 - **macOS**: Use Cmd+Q or select “Quit Claude” from the menu bar.
+- **Linux**: Right-click the Claude icon in the system tray and select “Quit”, or run `pkill -f claude-desktop` from a terminal.
 
 Simply closing the window does not fully quit the application, and your MCP server configuration changes will not take effect.
 

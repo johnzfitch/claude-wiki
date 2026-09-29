@@ -2,13 +2,14 @@
 title: "Visual and interactive content | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13641943-visual-responses-and-interactive-widgets"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:06Z"
+fetched_at: "2026-09-29T06:30:40Z"
 ---
 
 # Visual and interactive content
 
 March 16, 2026
 
+Copy for LLM
 
 Claude can respond with visual content when it’s clearer than plain text. Some visuals display real-world data—like weather and recipes. Others are custom-built by Claude for your specific question, like a diagram or an interactive chart. Claude can also ask you structured questions using interactive inputs instead of asking you to type.
 

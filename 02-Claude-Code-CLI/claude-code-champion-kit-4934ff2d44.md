@@ -2,7 +2,7 @@
 title: "Claude Code champion kit | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14555399-claude-code-champion-kit"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:41:11Z"
+fetched_at: "2026-09-29T06:30:50Z"
 tags: ["claude-code"]
 ---
 
@@ -12,6 +12,7 @@ A guide for internal champions driving adoption
 
 April 15, 2026
 
+Copy for LLM
 
 Adoption of a new developer tool rarely happens just because of a rollout announcement. It happens because someone on the team begins using the tool well, talks about it openly, and makes it easy for others to follow. This kit is designed to support that effort without turning it into a second job. It gives shape to things you are likely already doing and provides material you can hand directly to colleagues.
 

@@ -2,7 +2,7 @@
 title: "Use quick entry with Claude Desktop on Mac | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12626668-use-quick-entry-with-claude-desktop-on-mac"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-08-02T07:10:46Z"
+fetched_at: "2026-09-29T06:30:29Z"
 tags: ["desktop"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["desktop"]
 
 March 16, 2026
 
+Copy for LLM
 
 Quick entry is a redesigned experience for Claude Desktop on Mac that lets you access Claude instantly from anywhere on your computer. With quick entry, you can start chats, capture screenshots, share application windows, and use voice dictation to interact with Claude without navigating away from your current task.
 

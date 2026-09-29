@@ -1,15 +1,16 @@
 ---
-title: "Sharing Prompts in the Claude Console | Claude Help Center"
+title: "Sharing Prompts in the Claude Console | Anthropic Help Center"
 source_url: "https://support.claude.com/en/articles/10722177-sharing-prompts-in-the-claude-console"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:40:49Z"
+fetched_at: "2026-08-18T06:24:16Z"
 tags: ["prompting"]
 ---
 
 # Sharing Prompts in the Claude Console
 
-March 16, 2026
+Updated today
 
+Copy for LLM
 
 The prompt sharing feature enables teams to collaborate on prompt development within the Claude Console. This feature allows workspace members to share, edit, and iterate on prompts together, maintaining a clear revision history attributed to the specific contributors.
 

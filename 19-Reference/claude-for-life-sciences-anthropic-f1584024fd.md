@@ -2,7 +2,7 @@
 title: "Claude for Life Sciences \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-for-life-sciences"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:41:30Z"
+fetched_at: "2026-08-28T09:23:09Z"
 tags: ["search", "skills"]
 ---
 
@@ -26,7 +26,7 @@ To make Claude more useful for scientific work, we’re now adding several [new 
 
 ## Connecting Claude to scientific tools
 
-[**Connectors**](https://claude.ai/redirect/website.v1.8c78bfd3-9a6e-4623-bf96-ee0bc172da53/settings/connectors) allow Claude to access other platforms and tools directly. We’re adding several new connectors that are designed to make it easier to use Claude for scientific discovery:
+[**Connectors**](https://claude.ai/redirect/website.v1.bd9ffd4a-36b1-44b4-a428-f9aac5bf307a/settings/connectors) allow Claude to access other platforms and tools directly. We’re adding several new connectors that are designed to make it easier to use Claude for scientific discovery:
 
 - **Benchling** gives Claude the ability to respond to scientists’ questions with links back to source experiments, notebooks, and records;
 - **BioRender** connects Claude to its extensive library of vetted scientific figures, icons, and templates;
@@ -163,17 +163,23 @@ To learn more about Claude for Life Sciences or set up a demo with our team, see
 
 ## Related content
 
-### Investigating three real-world incidents in our cybersecurity evaluations
+### Previewing the Model Hardware Standard
 
-[Read more](/news/investigating-incidents-cybersecurity-evals)
+We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
 
-### Our position on open-weights models
+[Read more](/news/model-hardware-standard-research-preview)
 
-[Read more](/news/position-open-weights-models)
+### Expanding our support for scientists
 
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+Starting today, 10,000 scientists around the world can get Claude at no cost to start. Verified principal investigators qualify for a Claude Team subscription plan and then add their research team to Standard seats for free, or Premium seats for \$15 per month, for up to a year.
 
-[Read more](/news/cognizant-anthropic)
+[Read more](/news/expanding-support-for-scientists)
+
+### Funding better evaluations of AI’s impact on wellbeing
+
+We’re launching a \$5 million grant program to fund independent research into how AI impacts users’ wellbeing.
+
+[Read more](/news/wellbeing-research-grants)
 
 [](/)
 
@@ -187,7 +193,7 @@ To learn more about Claude for Life Sciences or set up a demo with our team, see
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -239,7 +245,7 @@ To learn more about Claude for Life Sciences or set up a demo with our team, see
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -264,6 +270,7 @@ To learn more about Claude for Life Sciences or set up a demo with our team, see
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

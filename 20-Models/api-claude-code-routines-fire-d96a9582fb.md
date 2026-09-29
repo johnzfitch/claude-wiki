@@ -2,8 +2,8 @@
 title: "Trigger a routine through the API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/claude-code/routines-fire"
 category: "20-Models"
-fetched_at: "2026-08-02T05:40:26Z"
-tags: ["api"]
+fetched_at: "2026-09-26T06:38:54Z"
+tags: ["api", "authentication", "sdk"]
 ---
 
 - [Managed Agents](/docs/en/managed-agents/overview)
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fclaude-code%2Froutines-fire)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -227,40 +205,35 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Trigger a routine
-
-API reference/Claude Code
+[API reference](/docs/en/api/overview)Claude Code
 
 # Trigger a routine through the API
 
+Copy page
 
 
 
 Start a Claude Code routine session on demand by sending an authenticated POST request.
 
+Copy page
 
 
 
 
 
-This is an experimental API. Request and response shapes, rate limits, and token semantics might change. Breaking changes ship behind new dated beta header versions, and the two previous header versions continue to work so that callers have time to migrate.
+This is an experimental API. Request and response shapes, rate limits, and token semantics might change.
 
 [Claude Code](https://code.claude.com/docs) is Anthropic's agentic coding tool. [Claude Code on the web](https://code.claude.com/docs/en/claude-code-on-the-web) runs Claude Code sessions on Anthropic-managed cloud infrastructure at claude.ai/code, and a [routine](https://code.claude.com/docs/en/routines) is a saved configuration there: a prompt, one or more repositories, and connectors, packaged so it can run unattended on a schedule, in response to GitHub events, or when called over HTTP.
 
@@ -268,26 +241,20 @@ This endpoint is the HTTP entry point. POSTing to it starts a new run of an exis
 
 Calling this endpoint requires a claude.ai account on a Pro, Max, Team, or Enterprise plan with [Claude Code on the web](https://code.claude.com/docs/en/claude-code-on-the-web) enabled. Authenticate with a per-routine bearer token created in the Claude Code web UI rather than a Claude API key.
 
-
-
-
-Differences from the Claude Platform
+## Differences from the Claude Platform
 
 The routine fire endpoint belongs to the Claude Code product surface, which differs from the Claude Platform APIs and SDKs in a few ways:
 
 | Aspect         | This endpoint                                                                                                                               | Claude Platform APIs                                                 |
-|----------------|---------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+|:---------------|:--------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------|
 | Authentication | `Authorization: Bearer` with a per-routine token (`sk-ant-oat01-...`) created at [claude.ai/code/routines](https://claude.ai/code/routines) | `x-api-key` with a Claude API key from Claude Console                |
 | Token scope    | One routine only; no read access                                                                                                            | Workspace-level                                                      |
 | SDK support    | None                                                                                                                                        | Available in all [client SDKs](/docs/en/cli-sdks-libraries/overview) |
 | Billing        | Claude Code subscription usage on claude.ai                                                                                                 | Claude Platform usage                                                |
 | Path namespace | `/v1/claude_code/...`                                                                                                                       | `/v1/...`                                                            |
-| Stability      | Experimental; requires `anthropic-beta: experimental-cc-routine-2026-04-01`                                                                 | Stable or standard beta                                              |
+| Stability      | Experimental                                                                                                                                | Stable or standard beta                                              |
 
-
-
-
-Before you begin
+## Before you begin
 
 To call this endpoint, you need:
 
@@ -296,18 +263,13 @@ To call this endpoint, you need:
 
 See [Add an API trigger](https://code.claude.com/docs/en/routines#add-an-api-trigger) in the Claude Code documentation for the full setup walkthrough.
 
-
-
-
-Trigger a routine
+## Trigger a routine
 
 ```python
 POST https://api.anthropic.com/v1/claude_code/routines/{routine_id}/fire
 ```
 
 
-
-Every request must include the `anthropic-beta: experimental-cc-routine-2026-04-01` header. Requests without it return `400 invalid_request_error`.
 
 The Claude Code web UI provides the full URL alongside the token when you add an API trigger, so most integrations store both as secrets and call the endpoint directly. The following examples show a shell call and a GitHub Actions step that triggers the routine on CI failure.
 
@@ -319,7 +281,6 @@ cURL
 curl -X POST https://api.anthropic.com/v1/claude_code/routines/$ROUTINE_ID/fire \
   -H "Authorization: Bearer $ROUTINE_TOKEN" \
   -H "anthropic-version: 2023-06-01" \
-  -H "anthropic-beta: experimental-cc-routine-2026-04-01" \
   -H "Content-Type: application/json" \
   -d '{"text": "Sentry alert SEN-4521 fired in prod. Stack trace attached."}'
 ```
@@ -336,49 +297,37 @@ curl -X POST https://api.anthropic.com/v1/claude_code/routines/$ROUTINE_ID/fire 
     curl -X POST "$ROUTINE_FIRE_URL" \
       -H "Authorization: Bearer $ROUTINE_FIRE_TOKEN" \
       -H "anthropic-version: 2023-06-01" \
-      -H "anthropic-beta: experimental-cc-routine-2026-04-01" \
       -H "Content-Type: application/json" \
       -d "{\"text\": \"CI failed: $GITHUB_WORKFLOW run $GITHUB_RUN_ID on $GITHUB_REF\"}"
 ```
 
 The request returns once the session is created. It does not stream session output or wait for the session to complete.
 
-
-
-
-Headers
+### Headers
 
 | Name                | Required             | Description                                                                                          |
-|---------------------|----------------------|------------------------------------------------------------------------------------------------------|
+|:--------------------|:---------------------|:-----------------------------------------------------------------------------------------------------|
 | `Authorization`     | Yes                  | `Bearer <token>`. The per-routine token created in the Claude Code web UI, prefixed `sk-ant-oat01-`. |
-| `anthropic-beta`    | Yes                  | Must include `experimental-cc-routine-2026-04-01`.                                                   |
-| `anthropic-version` | Yes                  | The [API version](/docs/en/api/versioning), for example `2023-06-01`.                                |
+| `anthropic-version` | Yes                  | The [API version](/docs/en/api/versioning). `2023-06-01` is the only accepted value.                 |
 | `Content-Type`      | When body is present | `application/json`.                                                                                  |
 
+Older integrations that send an `anthropic-beta: experimental-cc-routine-2026-04-01` header are unaffected: the endpoint accepts requests with and without it.
 
-
-
-Path parameters
+### Path parameters
 
 | Name         | Type   | Description                                                                                                                                                                         |
-|--------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|:-------------|:-------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `routine_id` | string | The routine's identifier. Despite the parameter name, the value is prefixed `trig_` rather than `routine_`. Included in the URL the modal window shows when you add an API trigger. |
 
-
-
-
-Request body
+### Request body
 
 | Field  | Type   | Required | Description                                                                                                                                                                                                                                                                                                     |
-|--------|--------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|:-------|:-------|:---------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `text` | string | No       | Initial context for this run, such as an alert body, a failing log line, or a git diff. The value is freeform text and is not parsed; if you send JSON or another structured payload, the routine receives it as a literal string. Passed to the routine alongside its saved prompt. Maximum 65,536 characters. |
 
 The body is optional. Unknown fields in the body are ignored.
 
-
-
-
-Response
+### Response
 
 A successful request returns `200 OK` with the new session details:
 
@@ -393,15 +342,12 @@ A successful request returns `200 OK` with the new session details:
 
 
 | Field                     | Type   | Description                                                                                                              |
-|---------------------------|--------|--------------------------------------------------------------------------------------------------------------------------|
+|:--------------------------|:-------|:-------------------------------------------------------------------------------------------------------------------------|
 | `type`                    | string | Always `routine_fire`.                                                                                                   |
 | `claude_code_session_id`  | string | The ID of the Claude Code session created for this run.                                                                  |
 | `claude_code_session_url` | string | A link to the session on claude.ai. Open it in a browser to watch the run, review changes, or continue the conversation. |
 
-
-
-
-Errors
+### Errors
 
 Errors use the standard Anthropic [error envelope](/docs/en/api/errors):
 
@@ -417,53 +363,37 @@ Errors use the standard Anthropic [error envelope](/docs/en/api/errors):
 
 
 
-| HTTP status | Error type              | Cause                                                                                                                                                                                                         |
-|-------------|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 400         | `invalid_request_error` | Missing or invalid `anthropic-beta` header, `text` exceeds 65,536 characters, or the routine is paused (see [Edit and control routines](https://code.claude.com/docs/en/routines#edit-and-control-routines)). |
-| 401         | `authentication_error`  | No bearer token in the `Authorization` header, or the token does not match this routine.                                                                                                                      |
-| 403         | `permission_error`      | The account or organization does not have access to this endpoint.                                                                                                                                            |
-| 404         | `not_found_error`       | The routine does not exist.                                                                                                                                                                                   |
-| 429         | `rate_limit_error`      | The account's routine run limit or usage limit has been reached. The response includes a `Retry-After` header indicating when the window resets.                                                              |
-| 500         | `api_error`             | An unexpected server error. Retry with exponential backoff; if the error persists, contact support with the request ID.                                                                                       |
-| 503         | `overloaded_error`      | The service is temporarily overloaded. Retry after a short delay. The Claude Platform returns 529 for this error type; this endpoint returns 503.                                                             |
+| HTTP status | Error type              | Cause                                                                                                                                                                                                                |
+|:------------|:------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 400         | `invalid_request_error` | Missing or unsupported `anthropic-version` header, `text` exceeds 65,536 characters, or the routine is paused (see [Edit and control routines](https://code.claude.com/docs/en/routines#edit-and-control-routines)). |
+| 401         | `authentication_error`  | No bearer token in the `Authorization` header, or the token does not match this routine.                                                                                                                             |
+| 403         | `permission_error`      | The account or organization does not have access to this endpoint.                                                                                                                                                   |
+| 404         | `not_found_error`       | The routine does not exist.                                                                                                                                                                                          |
+| 429         | `rate_limit_error`      | An hourly fire limit for the routine or the account has been reached. The response includes a `Retry-After` header indicating when the window resets.                                                                |
+| 500         | `api_error`             | An unexpected server error. Retry with exponential backoff; if the error persists, contact support with the request ID.                                                                                              |
+| 503         | `overloaded_error`      | The service is temporarily overloaded. Retry after a short delay. The Claude Platform returns 529 for this error type; this endpoint returns 503.                                                                    |
 
-
-
-
-Authentication
+## Authentication
 
 The bearer token is scoped to a single routine. A compromised token can only trigger that routine; it grants no read access, no access to other routines, and no access to account data.
 
 Generate and revoke tokens from the routine's API trigger settings at [claude.ai/code/routines](https://claude.ai/code/routines). There is no public API for token management. Generating a new token revokes the previous one.
 
-
-
-
-Idempotency
+## Idempotency
 
 Each successful request creates a new session. There is no idempotency key. If a webhook caller retries, the endpoint creates multiple sessions.
 
+## Rate limits
 
-
+API fires are limited per hour: each routine accepts up to 30 fires per hour (shared across API fires, the **Run now** button in the web UI, and one-shot re-arms), and each account can make up to 100 API fires per hour across all routines. The resulting sessions draw down the same Claude Code subscription usage as interactive sessions. When a limit is reached, the endpoint returns `429 rate_limit_error` with a `Retry-After` header.
 
-Rate limits
+To learn how routine usage interacts with subscription limits and extra usage billing, see [Usage and limits](https://code.claude.com/docs/en/routines#usage-and-limits) in the Claude Code documentation.
 
-Routine runs count against a per-account daily allowance that varies by plan, and the resulting sessions draw down the same Claude Code subscription usage as interactive sessions. When either limit is reached, the endpoint returns `429 rate_limit_error` with a `Retry-After` header. Organizations with extra usage enabled continue past the included allowance on metered overage.
-
-View your remaining daily runs at [claude.ai/code/routines](https://claude.ai/code/routines). For how routine usage interacts with subscription limits and extra usage billing, see [Usage and limits](https://code.claude.com/docs/en/routines#usage-and-limits) in the Claude Code documentation.
-
-
-
-
-SDK support
+## SDK support
 
 This endpoint is not in the Anthropic SDKs. Its token model differs from API key authentication, and typical callers such as CI jobs and alerting webhooks send the request directly.
 
-
-
-
-See also
+## See also
 
 - [Automate work with routines](https://code.claude.com/docs/en/routines) in the Claude Code documentation
-- [Beta headers](/docs/en/api/beta-headers)
 - [Errors](/docs/en/api/errors)

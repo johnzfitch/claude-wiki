@@ -2,7 +2,7 @@
 title: "Track team usage with analytics - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/analytics"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:38:45Z"
+fetched_at: "2026-09-11T06:27:43Z"
 tags: ["claude-code"]
 ---
 
@@ -17,7 +17,6 @@ tags: ["claude-code"]
   - [View pull requests breakdown](#view-pull-requests-breakdown)
   - [Find top contributors](#find-top-contributors)
   - [PR attribution](#pr-attribution)
-  - [Tagging criteria](#tagging-criteria)
   - [Attribution process](#attribution-process)
   - [Time window](#time-window)
   - [Excluded files](#excluded-files)
@@ -178,13 +177,6 @@ Click **Export all users** to download complete contribution data for all users 
 PR attribution
 
 When contribution metrics are enabled, Claude Code analyzes merged pull requests to determine which code was written with Claude Code assistance. This is done by matching Claude Code session activity against the code in each PR.
-
-
-[​](#tagging-criteria)
-
-Tagging criteria
-
-PRs are tagged as “with Claude Code” if they contain at least one line of code written during a Claude Code session. The system uses conservative matching: only code where there is high confidence in Claude Code’s involvement is counted as assisted.
 
 
 [​](#attribution-process)

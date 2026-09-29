@@ -2,7 +2,7 @@
 title: "Certificates - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/tunnels/certificates"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:40:19Z"
+fetched_at: "2026-09-26T06:38:48Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Ftunnels%2Fcertificates)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,160 +63,142 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
 
 
-Tunnels
+Organization
 
 
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-Create Tunnel Certificate
-
-
-Get Tunnel Certificate
-
-
-List Tunnel Certificates
-
-
-Archive Tunnel Certificate
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
+Get Current Organization
 
 API Keys
 
 External Keys
 
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
 Usage Report
 
 Cost Report
+
+MCP Tunnels
 
 Analytics
 
 Spend Limits
 
-Rate Limits
+RBAC Groups
 
-Service Accounts
+RBAC Roles
 
-Federation Issuers
 
-Federation Rules
+Tunnels
 
-MCP Tunnels
+
+Create Tunnel
+
+
+Get Tunnel
+
+
+List Tunnels
+
+
+Archive Tunnel
+
+
+Reveal Tunnel Token
+
+
+Rotate Tunnel Token
+
+Certificates
+
+
+Create Tunnel Certificate
+
+
+Get Tunnel Certificate
+
+
+List Tunnel Certificates
+
+
+Archive Tunnel Certificate
+
+
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Create Enrollment URL
 
 
 Compliance API
@@ -239,57 +217,67 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Certificates
-
+Copy page
 
 
 
 cURL
 
+1.  [API reference](/docs/en/api/http)
+2.  [Beta](/docs/en/api/http/beta)
+3.  [Tunnels](/docs/en/api/http/beta/tunnels)
+
 # Certificates
 
-##### [Create Tunnel Certificate](/docs/en/api/beta/tunnels/certificates/create)
+##### [Create Tunnel Certificate](/docs/en/api/http/beta/tunnels/certificates/create)
 
-POST/v1/tunnels/{tunnel_id}/certificates
+POST/v1/tunnels/{tunnel_id}/certificates
 
-##### [Get Tunnel Certificate](/docs/en/api/beta/tunnels/certificates/retrieve)
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
-GET/v1/tunnels/{tunnel_id}/certificates/{certificate_id}
+##### [Get Tunnel Certificate](/docs/en/api/http/beta/tunnels/certificates/retrieve)
 
-##### [List Tunnel Certificates](/docs/en/api/beta/tunnels/certificates/list)
+GET/v1/tunnels/{tunnel_id}/certificates/{certificate_id}
 
-GET/v1/tunnels/{tunnel_id}/certificates
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
-##### [Archive Tunnel Certificate](/docs/en/api/beta/tunnels/certificates/archive)
+##### [List Tunnel Certificates](/docs/en/api/http/beta/tunnels/certificates/list)
 
-POST/v1/tunnels/{tunnel_id}/certificates/{certificate_id}/archive
+GET/v1/tunnels/{tunnel_id}/certificates
 
-##### ModelsExpand Collapse 
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
+
+##### [Archive Tunnel Certificate](/docs/en/api/http/beta/tunnels/certificates/archive)
+
+POST/v1/tunnels/{tunnel_id}/certificates/{certificate_id}/archive
+
+The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
+
+##### Models
 
 
 
-BetaTunnelCertificate object { id, archived_at, created_at, 4 more }
+BetaTunnelCertificate object{ type: "tunnel_certificate", id, archived_at, 4 more }
 
 
 
 A CA certificate attached to a tunnel.
+
+type: "tunnel_certificate"
+
+
 
 id: string
 
@@ -297,31 +285,35 @@ id: string
 
 Unique identifier for the certificate, prefixed with `tcrt_`.
 
-[](#beta_tunnel_certificate.id)
+
 
-archived_at: string
+archived_at: string or null
 
 
 
-A timestamp in RFC 3339 format
+RFC 3339 datetime string indicating when the certificate was archived. Null if it is still in the trusted set.
 
-[](#beta_tunnel_certificate.archived_at)
+formatdate-time
+
+
 
 created_at: string
 
 
 
-A timestamp in RFC 3339 format
+RFC 3339 datetime string indicating when the certificate was registered.
 
-[](#beta_tunnel_certificate.created_at)
+formatdate-time
 
-expires_at: string
+
+
+expires_at: string or null
 
 
 
-A timestamp in RFC 3339 format
+RFC 3339 datetime string indicating when the certificate expires, or `null` if it does not expire.
 
-[](#beta_tunnel_certificate.expires_at)
+formatdate-time
 
 fingerprint: string
 
@@ -329,18 +321,8 @@ fingerprint: string
 
 Lowercase hex SHA-256 fingerprint of the certificate's DER encoding.
 
-[](#beta_tunnel_certificate.fingerprint)
-
 tunnel_id: string
 
 
 
 ID of the tunnel the certificate is registered against.
-
-[](#beta_tunnel_certificate.tunnel_id)
-
-type: "tunnel_certificate"
-
-
-
-[](#beta_tunnel_certificate.type)

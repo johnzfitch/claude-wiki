@@ -2,13 +2,15 @@
 title: "MCP Memory Server"
 source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/memory/README.md"
 category: "06-MCP-Tools"
-fetched_at: "2026-05-19T21:39:56Z"
+fetched_at: "2026-09-03T06:26:48Z"
 tags: ["api", "mcp"]
 ---
 
 # Knowledge Graph Memory Server
 
 A basic implementation of persistent memory using a local knowledge graph. This lets Claude remember information about the user across chats.
+
+Published on npm as [`@modelcontextprotocol/server-memory`](https://www.npmjs.com/package/@modelcontextprotocol/server-memory).
 
 ## Core Concepts
 
@@ -78,6 +80,7 @@ Example:
       - `to` (string): Target entity name
       - `relationType` (string): Relationship type in active voice
   - Skips duplicate relations
+  - Fails if either the source or target entity doesn't exist
 
 - **add_observations**
   - Add new observations to existing entities
@@ -92,7 +95,7 @@ Example:
   - Remove entities and their relations
   - Input: `entityNames` (string[])
   - Cascading deletion of associated relations
-  - Silent operation if entity doesn't exist
+  - No error if an entity doesn't exist; the response reports which names were not found
 
 - **delete_observations**
   - Remove specific observations from entities
@@ -100,7 +103,7 @@ Example:
     - Each object contains:
       - `entityName` (string): Target entity
       - `observations` (string[]): Observations to remove
-  - Silent operation if observation doesn't exist
+  - No error if an observation doesn't exist; the response reports how many were deleted
 
 - **delete_relations**
   - Remove specific relations from the graph
@@ -109,7 +112,7 @@ Example:
       - `from` (string): Source entity name
       - `to` (string): Target entity name
       - `relationType` (string): Relationship type
-  - Silent operation if relation doesn't exist
+  - No error if a relation doesn't exist; the response reports how many were deleted
 
 - **read_graph**
   - Read the entire knowledge graph
@@ -132,6 +135,14 @@ Example:
     - Requested entities
     - Relations between requested entities
   - Silently skips non-existent nodes
+
+### Resources
+
+- **knowledge-graph** (`memory://knowledge-graph`)
+  - The full knowledge graph as a readable MCP Resource
+  - MIME type: `application/json`
+  - Returns the same shape as `read_graph` (entities and relations)
+  - Mutation tools (`create_entities`, `create_relations`, `add_observations`, `delete_entities`, `delete_observations`, `delete_relations`) emit `notifications/resources/updated` for this URI, so subscribed clients see live changes
 
 # Usage with Claude Desktop
 
@@ -305,7 +316,7 @@ On Windows, use:
 
 The prompt for utilizing memory depends on the use case. Changing the prompt will help the model determine the frequency and types of memories created.
 
-Here is an example prompt for chat personalization. You could use this prompt in the "Custom Instructions" field of a [Claude.ai Project](../19-Reference/collaborate-with-claude-on-projects-anthropic.md). 
+Here is an example prompt for chat personalization. You could use this prompt in the "Custom Instructions" field of a [Claude.ai Project](https://www.anthropic.com/news/projects). 
 
 ```
 Follow these steps for each interaction:

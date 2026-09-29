@@ -2,13 +2,15 @@
 title: "How can I check connectivity to the Claude API? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13403291-how-can-i-check-connectivity-to-the-claude-api"
 category: "04-API-Reference"
-fetched_at: "2026-08-02T05:41:15Z"
+fetched_at: "2026-09-29T06:31:37Z"
 tags: ["api"]
 ---
 
 # How can I check connectivity to the Claude API?
 
 March 16, 2026
+
+Copy for LLM
 
 You can programmatically verify your connection to the Claude API by following these steps:
 

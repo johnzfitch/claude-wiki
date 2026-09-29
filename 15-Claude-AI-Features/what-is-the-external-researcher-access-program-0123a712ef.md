@@ -2,7 +2,7 @@
 title: "What is the External Researcher Access Program? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:41:16Z"
+fetched_at: "2026-09-29T06:31:11Z"
 tags: ["search"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["search"]
 
 March 16, 2026
 
+Copy for LLM
 
 Our External Researcher Access Program is specifically designed to support and lower the barrier to entry for researchers working on AI safety and alignment topics that we consider high priority by providing free API credits.
 
@@ -41,7 +42,7 @@ Please complete the following application form with details about your team and 
 
 3.  **Please note that given the substantial number of applications we receive (sometimes thousands in a single week), we regret that we cannot provide individual responses to unapproved submissions.** In addition, we reserve the right to reject submissions for any reason and will not be able to provide explanations for each individual applicant. However, we appreciate the time and effort put into each submission and will carefully review all entries. Thank you for your understanding.
 
-If you are having an issue that requires a response urgently (e.g., you’ve suddenly run out of your credits before a major conference), please email [\[email protected\]](/cdn-cgi/l/email-protection#196b7c6a7c786b7a717c6b787a7a7c6a6a5978776d716b7669707a377a7674). However, please note that we will not be able to respond if your question is already addressed by the following FAQ.
+If you are having an issue that requires a response urgently (e.g., you’ve suddenly run out of your credits before a major conference), please email [\[email protected\]](/cdn-cgi/l/email-protection#a1d3c4d2c4c0d3c2c9c4d3c0c2c2c4d2d2e1c0cfd5c9d3ced1c8c28fc2cecc). However, please note that we will not be able to respond if your question is already addressed by the following FAQ.
 
 ------------------------------------------------------------------------
 

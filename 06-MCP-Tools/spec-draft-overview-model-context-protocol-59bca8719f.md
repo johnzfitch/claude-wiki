@@ -2,7 +2,7 @@
 title: "Overview - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/basic"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:36Z"
+fetched_at: "2026-09-29T06:31:04Z"
 tags: ["mcp"]
 ---
 
@@ -402,7 +402,7 @@ The `icons` property provides a standardized way for servers to expose visual id
 - `src`: A URI pointing to the icon resource (required). This can be:
   - An HTTP/HTTPS URL pointing to an image file
   - A data URI with base64-encoded image data
-- `mimeType`: Optional MIME type if the server’s type is missing or generic
+- `mimeType`: Optional MIME type override if the source MIME type is missing or generic
 - `sizes`: Optional array of size specifications (e.g., `["48x48"]`, `["any"]` for scalable formats like SVG, or `["48x48", "96x96"]` for multiple sizes)
 - `theme`: Optional theme preference (`light` or `dark`) for the icon background
 

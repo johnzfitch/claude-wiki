@@ -2,7 +2,7 @@
 title: "MCP: Individual connectors | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503703-mcp-individual-connectors"
 category: "14-Connectors"
-fetched_at: "2026-08-02T05:42:47Z"
+fetched_at: "2026-09-29T06:31:48Z"
 tags: ["connectors", "mcp"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["connectors", "mcp"]
 
 April 9, 2026
 
+Copy for LLM
 
 Your organization can register its own MCP servers in Claude for Government, letting Claude connect to internal systems, custom tools, or third-party services you've approved for your environment.
 

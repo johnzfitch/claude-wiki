@@ -2,7 +2,7 @@
 title: "Overview - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/server"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:37Z"
+fetched_at: "2026-09-29T06:31:06Z"
 tags: ["mcp", "prompting"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Messages - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2024-11-05/basic/messages"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:46Z"
+fetched_at: "2026-09-29T06:29:45Z"
 tags: ["mcp"]
 ---
 

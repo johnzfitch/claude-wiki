@@ -2,7 +2,7 @@
 title: "SEP-2260: Require Server requests to be associated with a Client request. - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps/2260-Require-Server-requests-to-be-associated-with-Client-requests"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:30Z"
+fetched_at: "2026-08-03T07:18:12Z"
 tags: ["cli", "mcp"]
 ---
 
@@ -313,7 +313,7 @@ When an MCP Server initiates a “nested” request inside a client request, the
 
 For Client Implementers
 
-**No changes required** - Clients should already handle sampling/elicitation requests in the context of their own outbound requests. Potential to simplify implementations if out-of-band is currently supported. Clients recieving server-to-client requests with no associated outbound request **SHOULD** respond with a `-32602` (Invalid Params) error.
+**No changes required** - Clients should already handle sampling/elicitation requests in the context of their own outbound requests. Potential to simplify implementations if out-of-band is currently supported. Clients receiving server-to-client requests with no associated outbound request **SHOULD** respond with a `-32602` (Invalid Params) error.
 
 
 [​](#for-transport-implementers)

@@ -2,17 +2,23 @@
 title: "Assign tasks from anywhere in Claude Cowork | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13947068-assign-tasks-to-claude-from-anywhere-in-cowork"
 category: "21-Account-Support"
-fetched_at: "2026-08-02T05:41:47Z"
+fetched_at: "2026-09-29T06:32:10Z"
 ---
 
 # Assign tasks from anywhere in Claude Cowork
 
 
+Copy for LLM
+
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+
 Claude Cowork gives you one continuous conversation with Claude that you can reach from your phone or your desktop. With Dispatch, you can message Claude from your phone and have it work on your desktop computer, using your local files, connectors, plugins, and apps, then come back to the finished work.
+
+**Note:** Dispatch isn't available to new users. If you already use Dispatch, you can keep using it for now, and this article still applies.
 
 Dispatch runs your tasks on your desktop, so your computer needs to be awake and the Claude Desktop app open while Claude works. This is different from a cloud session, which runs on Anthropic's servers and keeps working even when your computer is off. For where Cowork runs on each surface, see **[Use Claude Cowork on web, desktop, and mobile](https://support.claude.com/en/articles/15520349)**.
 
-This capability is available in beta for Pro and Max plans on Claude Cowork. It requires both the Claude Desktop app and the Claude mobile app.
+This capability is in limited beta for Pro and Max plans on Claude Cowork, and it requires both the Claude Desktop app and the Claude mobile app. Dispatch is only available for some Pro and Max plans, so if you don't see Dispatch in the Cowork side panel, you should **[use Cowork in the cloud](https://support.claude.com/en/articles/15520349)** instead of the pairing flow described here.
 
 ------------------------------------------------------------------------
 

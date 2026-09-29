@@ -2,11 +2,13 @@
 title: "How do usage and length limits work? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits"
 category: "22-Safety-Policy"
-fetched_at: "2026-08-02T05:41:32Z"
+fetched_at: "2026-09-29T06:31:18Z"
 ---
 
 # How do usage and length limits work?
 
+
+Copy for LLM
 
 When working with Claude, you may encounter two different types of limits that work in distinct ways: **usage limits** and **length limits**. Understanding the difference between these can help you use Claude more effectively.
 
@@ -64,7 +66,7 @@ While you can't increase the fixed context window size for your plan, you can us
 
 - **Lower the effort level:** Choose a lower effort level for routine tasks that don't need Claude's most thorough responses. Higher effort uses more tokens.
 
-- **Temporarily disable non-critical tools and connectors:** Disable web search, Research, and MCP connectors from your "Search and tools" settings when they're not needed for specific conversations.
+- **Turn off tools you don't need:** Turn off apps you've connected when a conversation doesn't need them, and ask Claude not to search the web when you don't need current information.
 
 **Note:** Tools and connectors are token-intensive, so managing them helps both maximize your available context window and optimize your usage limits.
 

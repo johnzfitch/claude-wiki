@@ -2,12 +2,14 @@
 title: "Purchase and manage seats on Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:41:44Z"
+fetched_at: "2026-09-29T06:31:15Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
 # Purchase and manage seats on Enterprise plans
 
+
+Copy for LLM
 
 This article covers how to add seats, manage your seat allocation, and handle member access on Enterprise plans. For pricing and billing details, see **[How am I billed for my Enterprise plan?](https://support.claude.com/en/articles/11526368-usage-based-enterprise-plans)**
 
@@ -85,7 +87,7 @@ To unassign a member:
 
 To restore their access, repeat the process and select “Enterprise seat.”
 
-**Note:** Members with no seat assigned remain part of your organization but can't use Claude until you reassign them a seat.
+**Note:** Members with no seat assigned remain part of your organization but can't use Claude until you reassign them a seat. They do not count toward your organization's seat limit. Pending invitations do count. If "Add member" is unavailable even though seats show as available, revoke pending invitations that won't be accepted, or purchase additional seats.
 
 ------------------------------------------------------------------------
 

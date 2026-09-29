@@ -2,7 +2,7 @@
 title: "Securely deploying AI agents - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/secure-deployment"
 category: "09-Agents-Patterns"
-fetched_at: "2026-08-02T05:38:05Z"
+fetched_at: "2026-08-29T06:27:35Z"
 tags: ["agents", "claude-code"]
 ---
 
@@ -42,7 +42,7 @@ A guide to securing Claude Code and Agent SDK deployments with isolation, creden
 
 Copy pageCopy page
 
-Claude Code and the Agent SDK are powerful tools that can execute code, access files, and interact with external services on your behalf. Like any tool with these capabilities, deploying them thoughtfully ensures you get the benefits while maintaining appropriate controls. Unlike traditional software that follows predetermined code paths, these tools generate their actions dynamically based on context and goals. This flexibility is what makes them useful, but it also means their behavior can be influenced by the content they process: files, webpages, or user input. This is sometimes called prompt injection. For example, if a repository’s README contains unusual instructions, Claude Code might incorporate those into its actions in ways the operator didn’t anticipate. This guide covers practical ways to reduce this risk. The good news is that securing an agent deployment doesn’t require exotic infrastructure. The same principles that apply to running any semi-trusted code apply here: isolation, least privilege, and defense in depth. Claude Code includes several security features that help with common concerns, and this guide walks through these along with additional hardening options for those who need them. Not every deployment needs maximum security. A developer running Claude Code on their laptop has different requirements than a company processing customer data in a multi-tenant environment. This guide presents options ranging from Claude Code’s built-in security features to hardened production architectures, so you can choose what fits your situation.
+Claude Code and the Agent SDK can execute code, access files, and interact with external services on your behalf. Unlike traditional software that follows predetermined code paths, these tools generate their actions dynamically based on context and goals. This flexibility is what makes them useful, but it also means their behavior can be influenced by the content they process: files, webpages, or user input. This is sometimes called prompt injection. For example, if a repository’s README contains unusual instructions, Claude Code might incorporate those into its actions in ways the operator didn’t anticipate. This guide covers practical ways to reduce this risk. Not every deployment needs maximum security. A developer running Claude Code on their laptop has different requirements than a company processing customer data in a multi-tenant environment. This guide presents options ranging from Claude Code’s built-in security features to hardened production architectures, so you can choose what fits your situation.
 
 
 [​](#threat-model)
@@ -59,7 +59,7 @@ Built-in security features
 Claude Code includes several security features that address common concerns. See the [security documentation](/docs/en/security) for full details.
 
 - **Permissions system**: Every tool and bash command can be configured to allow, block, or prompt the user for approval. Use glob patterns to create rules like “allow all npm commands” or “block any command with sudo”. Organizations can set policies that apply across all users. See [permissions](/docs/en/permissions).
-- **Command parsing for permissions**: Before executing bash commands, Claude Code parses them into an AST and matches the result against your permission rules. Commands that cannot be parsed cleanly, or that do not match an allow rule, require explicit approval. A small set of constructs such as `eval` always require approval regardless of allow rules. This is a permission gate, not a sandbox; it does not infer whether a command is dangerous from its target path or effects.
+- **Command parsing for permissions**: Before executing bash commands, Claude Code parses them into an AST and matches the result against your permission rules. Commands that cannot be parsed cleanly, or that do not match an allow rule, require explicit approval. A small set of constructs such as `eval` always require approval regardless of allow rules. This is a permission gate, not a sandbox; apart from built-in safety checks such as the [critical-path check](/docs/en/permission-modes#critical-paths) on `rm` and `rmdir` and the [protected paths](/docs/en/permission-modes#protected-paths) list, it does not infer whether a command is dangerous from its target path or effects.
 - **Web search summarization**: Search results are summarized rather than passing raw content directly into the context, reducing the risk of prompt injection from malicious web content.
 - **Sandbox mode**: Bash commands can run in a sandboxed environment that restricts filesystem and network access. See the [sandboxing documentation](/docs/en/sandboxing) for details.
 
@@ -126,7 +126,7 @@ In all of these configurations, Claude Code (or your Agent SDK application) runs
 
 Sandbox runtime
 
-For lightweight isolation without containers, [sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime) enforces filesystem and network restrictions at the OS level. The main advantage is simplicity: no Docker configuration, container images, or networking setup required. The proxy and filesystem restrictions are built in. You provide a settings file specifying allowed domains and paths. **How it works:**
+For lightweight isolation without containers, [sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime) enforces filesystem and network restrictions at the OS level. The main advantage is simplicity: no Docker configuration, container images, or networking setup required. The proxy and filesystem restrictions are built in. **How it works:**
 
 - **Filesystem**: Uses OS primitives (`bubblewrap` on Linux, `sandbox-exec` on macOS) to restrict read/write access to configured paths
 - **Network**: Removes network namespace (Linux) or uses Seatbelt profiles (macOS) to route network traffic through a built-in proxy

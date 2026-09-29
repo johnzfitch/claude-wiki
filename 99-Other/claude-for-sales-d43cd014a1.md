@@ -2,7 +2,7 @@
 title: "Claude for Sales | Claude by Anthropic"
 source_url: "https://support.claude.com/en/articles/9945703-claude-for-sales"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:59Z"
+fetched_at: "2026-08-19T06:28:55Z"
 ---
 
 # Claude for Sales
@@ -255,10 +255,10 @@ Products
 
 Features
 
-- Claude for Chrome
+- Claude in Chrome
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
 
 - Claude for Microsoft 365
 
@@ -480,7 +480,7 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](#)
   Service partners
 
 - Tutorials

@@ -2,13 +2,14 @@
 title: "Switching to a different Identity Provider (IdP) | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13443687-switching-to-a-different-identity-provider-idp"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:43Z"
+fetched_at: "2026-09-29T06:30:38Z"
 ---
 
 # Switching to a different Identity Provider (IdP)
 
 April 10, 2026
 
+Copy for LLM
 
 This guide walks you through the process of migrating your Claude or Console organization from one identity provider to another while preserving user access and avoiding disruption.
 

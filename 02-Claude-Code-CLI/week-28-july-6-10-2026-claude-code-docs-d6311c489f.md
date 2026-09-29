@@ -2,7 +2,7 @@
 title: "Week 28 · July 6–10, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w28"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:38:05Z"
+fetched_at: "2026-09-04T06:30:01Z"
 tags: ["claude-code"]
 ---
 

@@ -2,13 +2,14 @@
 title: "Share and unshare chats | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10593882-share-and-unshare-chats"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:41:29Z"
+fetched_at: "2026-09-29T06:30:51Z"
 ---
 
 # Share and unshare chats
 
 June 15, 2026
 
+Copy for LLM
 
 Learn how to create shareable links to your chats with Claude. While chats are always private by default, you can easily create snapshots of your conversations to share via direct link. This guide walks you through the process of sharing and unsharing chats.
 

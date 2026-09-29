@@ -2,13 +2,14 @@
 title: "OneLogin SSO/SCIM email mismatch | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917861-onelogin-sso-scim-email-mismatch"
 category: "21-Account-Support"
-fetched_at: "2026-08-02T05:41:17Z"
+fetched_at: "2026-09-29T06:30:43Z"
 ---
 
 # OneLogin SSO/SCIM email mismatch
 
 March 24, 2026
 
+Copy for LLM
 
 Claude uses email as the primary identifier to match SSO logins to provisioned seats. In OneLogin, SCIM provisioning and SAML SSO are configured in separate tabs of the app and can reference different user profile fields, causing a mismatch that blocks access.
 

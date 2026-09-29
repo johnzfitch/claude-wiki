@@ -2,7 +2,7 @@
 title: "Week 22 · May 25–29, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w22"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:36:34Z"
+fetched_at: "2026-09-04T06:29:54Z"
 tags: ["claude-code"]
 ---
 

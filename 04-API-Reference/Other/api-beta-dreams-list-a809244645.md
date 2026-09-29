@@ -2,7 +2,7 @@
 title: "List Dreams - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/dreams/list"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:39:28Z"
+fetched_at: "2026-09-26T06:38:34Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fdreams%2Flist)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,125 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Create a Dream
+
+
+List Dreams
+
+
+Get a Dream
+
+
+Cancel a Dream
+
+
+Archive a Dream
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +189,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -227,125 +220,149 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-List
-
+Copy page
 
 
 
 cURL
 
+1.  [API reference](/docs/en/api/http)
+2.  [Beta](/docs/en/api/http/beta)
+3.  [Dreams](/docs/en/api/http/beta/dreams)
+
 # List Dreams
 
-GET/v1/dreams
+GET/v1/dreams
 
-List Dreams
+List the dreams in the workspace, newest first.
 
-##### Query ParametersExpand Collapse 
+Archived dreams are left out unless `include_archived` is `true`.
+
+See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#list-dreams) for how to page through dreams.
+
+##### Query parameters
+
+
 
 "created_at\[gt\]": optional string
 
 
 
-Return dreams with `created_at` strictly after this timestamp (exclusive lower bound, RFC 3339). Unset applies no lower bound.
+Return only dreams created after this time (exclusive), in RFC 3339.
 
-[](#list.created_at%5Bgt%5D)
+formatdate-time
+
+
 
 "created_at\[lt\]": optional string
 
 
 
-Return dreams with `created_at` strictly before this timestamp (exclusive upper bound, RFC 3339). Unset applies no upper bound.
+Return only dreams created before this time (exclusive), in RFC 3339.
 
-[](#list.created_at%5Blt%5D)
+formatdate-time
 
 include_archived: optional boolean
 
 
 
-Query parameter for include_archived
+Whether to include archived dreams. Defaults to `false`.
 
-[](#list.include_archived)
+
 
 limit: optional number
 
 
 
-Query parameter for limit
+The maximum number of dreams to return, from 1 to 100. Defaults to 20.
 
-[](#list.limit)
+formatint32
+
+
 
 page: optional string
 
 
 
-Query parameter for page
+The cursor for the page to return, taken from `next_page` in a previous response.
 
-[](#list.page)
+Leave it out to get the first page.
 
 
 
-statuses: optional array of [BetaDreamStatus](/docs/en/api/beta/dreams#beta_dream_status)
+statuses: optional array of [BetaDreamStatus](/docs/en/api/http/beta/dreams#beta_dream_status)
 
 
 
-Filter by lifecycle status. Repeat the parameter to match any of multiple statuses. Empty applies no status filter.
+Return only dreams that have one of these statuses.
+
+Repeat the parameter to give more than one status. Leave it out to return dreams of every status.
 
 One of the following:
+
+
 
 "pending"
 
 
 
-[](#beta_dream_status%5B0%5D)
+The dream is waiting to start and hasn't read its inputs yet.
+
+`outputs` is empty and every `usage` count is zero.
+
+
 
 "running"
 
 
 
-[](#beta_dream_status%5B1%5D)
+The dream is reading its inputs and writing its result.
+
+`usage` updates while the dream has this status.
 
 "completed"
 
 
 
-[](#beta_dream_status%5B2%5D)
+The dream finished and its output memory store holds the complete result.
+
+
 
 "failed"
 
 
 
-[](#beta_dream_status%5B3%5D)
+The dream stopped with an error, which `error` describes.
+
+If `outputs` references a memory store, that memory store keeps what the dream wrote before it stopped.
+
+
 
 "canceled"
 
 
 
-[](#beta_dream_status%5B4%5D)
+A cancel request stopped the dream before it reached `completed` or `failed`.
 
-[](#list.statuses)
+If `outputs` references a memory store, that memory store keeps what the dream wrote. `usage` can keep changing after the cancel.
 
-##### Header ParametersExpand Collapse 
+##### Headers
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](/docs/en/api/beta#anthropic_beta)
+"anthropic-beta": optional array of [AnthropicBeta](/docs/en/api/http/beta#anthropic_beta)
 
 
 
@@ -357,11 +374,9 @@ string
 
 
 
-[](#anthropic_beta%5B0%5D)
-
 
 
-"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 29 more
+"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
 
 
 
@@ -371,203 +386,215 @@ One of the following:
 
 
 
-[](#anthropic_beta%5B1%5D%5B0%5D)
-
 "prompt-caching-2024-07-31"
 
 
-
-[](#anthropic_beta%5B1%5D%5B1%5D)
 
 "computer-use-2024-10-22"
 
 
 
-[](#anthropic_beta%5B1%5D%5B2%5D)
-
 "computer-use-2025-01-24"
 
 
-
-[](#anthropic_beta%5B1%5D%5B3%5D)
 
 "pdfs-2024-09-25"
 
 
 
-[](#anthropic_beta%5B1%5D%5B4%5D)
-
 "token-counting-2024-11-01"
 
 
-
-[](#anthropic_beta%5B1%5D%5B5%5D)
 
 "token-efficient-tools-2025-02-19"
 
 
 
-[](#anthropic_beta%5B1%5D%5B6%5D)
-
 "output-128k-2025-02-19"
 
 
-
-[](#anthropic_beta%5B1%5D%5B7%5D)
 
 "files-api-2025-04-14"
 
 
 
-[](#anthropic_beta%5B1%5D%5B8%5D)
-
 "mcp-client-2025-04-04"
 
 
-
-[](#anthropic_beta%5B1%5D%5B9%5D)
 
 "mcp-client-2025-11-20"
 
 
 
-[](#anthropic_beta%5B1%5D%5B10%5D)
-
 "dev-full-thinking-2025-05-14"
 
 
-
-[](#anthropic_beta%5B1%5D%5B11%5D)
 
 "interleaved-thinking-2025-05-14"
 
 
 
-[](#anthropic_beta%5B1%5D%5B12%5D)
-
 "code-execution-2025-05-22"
 
 
-
-[](#anthropic_beta%5B1%5D%5B13%5D)
 
 "extended-cache-ttl-2025-04-11"
 
 
 
-[](#anthropic_beta%5B1%5D%5B14%5D)
-
 "context-1m-2025-08-07"
 
 
-
-[](#anthropic_beta%5B1%5D%5B15%5D)
 
 "context-management-2025-06-27"
 
 
 
-[](#anthropic_beta%5B1%5D%5B16%5D)
-
 "model-context-window-exceeded-2025-08-26"
 
 
-
-[](#anthropic_beta%5B1%5D%5B17%5D)
 
 "skills-2025-10-02"
 
 
 
-[](#anthropic_beta%5B1%5D%5B18%5D)
-
 "fast-mode-2026-02-01"
 
 
-
-[](#anthropic_beta%5B1%5D%5B19%5D)
 
 "output-300k-2026-03-24"
 
 
 
-[](#anthropic_beta%5B1%5D%5B20%5D)
-
 "user-profiles-2026-03-24"
 
 
 
-[](#anthropic_beta%5B1%5D%5B21%5D)
+"user-profiles-2026-08-18"
+
+
+
+"user-profiles-2026-09-04"
+
+
 
 "advisor-tool-2026-03-01"
 
 
 
-[](#anthropic_beta%5B1%5D%5B22%5D)
-
 "managed-agents-2026-04-01"
 
 
-
-[](#anthropic_beta%5B1%5D%5B23%5D)
 
 "cache-diagnosis-2026-04-07"
 
 
 
-[](#anthropic_beta%5B1%5D%5B24%5D)
-
 "dreaming-2026-04-21"
 
 
-
-[](#anthropic_beta%5B1%5D%5B25%5D)
 
 "thinking-token-count-2026-05-13"
 
 
 
-[](#anthropic_beta%5B1%5D%5B26%5D)
-
 "server-side-fallback-2026-06-01"
 
 
-
-[](#anthropic_beta%5B1%5D%5B27%5D)
 
 "server-side-fallback-2026-07-01"
 
 
 
-[](#anthropic_beta%5B1%5D%5B28%5D)
-
 "fallback-credit-2026-06-01"
 
 
-
-[](#anthropic_beta%5B1%5D%5B29%5D)
 
 "fallback-credit-2026-07-01"
 
 
 
-[](#anthropic_beta%5B1%5D%5B30%5D)
-
 "agent-memory-2026-07-22"
 
 
 
-[](#anthropic_beta%5B1%5D%5B31%5D)
+"mid-conversation-tool-changes-2026-07-01"
 
-[](#anthropic_beta%5B1%5D)
+
 
-[](#list.betas)
+"compact-2026-01-12"
 
-##### ReturnsExpand Collapse 
+
+
+"computer-use-2025-11-24"
+
+
+
+"mcp-tunnels-2026-06-22"
+
+
+
+"structured-outputs-2025-11-13"
+
+
+
+"task-budgets-2026-03-13"
+
+
+
+"thinking-display-updates-2026-08-18"
+
+
+
+"ce-user-management-2026-07-13"
+
+
+
+"mid-conversation-output-config-2026-07-01"
+
+
+
+"thinking-binding-controls-2026-08-01"
+
+
+
+"mid-conversation-system-clear-at-2026-08-21"
+
+
+
+"compact-2026-09-04"
+
+
+
+"inline-tools-2026-09-15"
+
+
+
+"mcp-client-2026-09-15"
+
+
 
 
 
-data: array of [BetaDream](/docs/en/api/beta/dreams#beta_dream) { id, archived_at, created_at, 10 more }
+"anthropic-workspace-id": optional string
+
+
+
+Optional header to select the Workspace for this request. The value is a Workspace ID (for example, `wrkspc_011CZkZaBF1tNoB5wlCeusgy`).
+
+Only needed for credentials that can act on more than one Workspace. A credential that belongs to a specific Workspace may omit it; if sent, it must match that Workspace.
+
+##### Returns
+
+
+
+data: array of [BetaDream](/docs/en/api/http/beta/dreams#beta_dream) { type: "dream", id, archived_at, 11 more }
+
+
+
+The dreams on this page, newest first.
+
+type: "dream"
 
 
 
@@ -575,129 +602,151 @@ id: string
 
 
 
-[](#beta_dream.id)
+The unique ID of the dream (`drm_...`).
 
-archived_at: string
+
+
+archived_at: string or null
 
 
 
-A timestamp in RFC 3339 format
+When the dream was archived, in RFC 3339, or `null` if it hasn't been archived.
 
-[](#beta_dream.archived_at)
+formatdate-time
+
+
 
 created_at: string
 
 
 
-A timestamp in RFC 3339 format
+When the dream was created, in RFC 3339.
 
-[](#beta_dream.created_at)
+Lists of dreams are sorted by this time, newest first.
 
-ended_at: string
-
-
-
-A timestamp in RFC 3339 format
-
-[](#beta_dream.ended_at)
+formatdate-time
 
 
 
-error: [BetaDreamError](/docs/en/api/beta/dreams#beta_dream_error) { message, type }
+ended_at: string or null
 
 
 
-Failure detail for a Dream whose `status` is `failed`.
+When the dream reached `completed`, `failed`, or `canceled`, in RFC 3339, or `null` if it is still `pending` or `running`.
 
-message: string
+formatdate-time
+
+
+
+error: [BetaDreamError](/docs/en/api/http/beta/dreams#beta_dream_error) { type, message } or null
 
 
 
-[](#beta_dream.error%20%2B%20(resource)%20beta.dreams.message)
+Why the dream failed, or `null` if `status` isn't `failed`.
+
+
 
 type: string
 
 
 
-[](#beta_dream.error%20%2B%20(resource)%20beta.dreams.type)
+A code for why the dream failed, such as `timeout` or `internal_error`.
 
-[](#beta_dream.error)
+The [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#errors) lists common error codes and when they occur.
+
+message: string
+
+
+
+A human-readable explanation of why the dream failed.
 
 
 
-inputs: array of [BetaDreamInput](/docs/en/api/beta/dreams#beta_dream_input)
+inputs: array of [BetaDreamInput](/docs/en/api/http/beta/dreams#beta_dream_input)
 
 
+
+The sources that the dream reads, from the request that created it.
 
 One of the following:
 
 
 
-BetaDreamMemoryStoreInput object { memory_store_id, type }
+BetaDreamMemoryStoreInput object{ type: "memory_store", memory_store_id }
 
 
 
-An input memory store the dream reads from. The dream never mutates this store.
+The memory store that a dream reads, given as an entry in `inputs`.
 
-memory_store_id: string
-
-
-
-[](#beta_dream_memory_store_input.memory_store_id)
+With `output_behavior` set to `update_existing`, the dream writes its result into this memory store. Otherwise the dream doesn't change it.
 
 type: "memory_store"
 
 
 
-[](#beta_dream_memory_store_input.type)
+
 
-[](#beta_dream_memory_store_input)
+memory_store_id: string
+
+
+
+The ID of the memory store for the dream to read (`memstore_...`).
+
+The memory store must be in the same workspace as the dream and must not be archived.
+
+minLength1
 
 
 
-BetaDreamSessionsInput object { session_ids, type }
+BetaDreamSessionsInput object{ type: "sessions", session_ids }
 
 
 
-Input session transcripts the dream reads.
-
-session_ids: array of string
-
-
-
-[](#beta_dream_sessions_input.session_ids)
+The sessions that a dream reads, given as an entry in `inputs`.
 
 type: "sessions"
 
 
 
-[](#beta_dream_sessions_input.type)
+
 
-[](#beta_dream_sessions_input)
-
-[](#beta_dream.inputs)
-
-instructions: string
+session_ids: array of string
 
 
 
-[](#beta_dream.instructions)
+The IDs of the sessions whose transcripts the dream reads (`sesn_...`).
+
+Give 1 to 100 IDs, with no duplicates. Each session must be in the same workspace as the dream. Responses list the IDs in sorted order.
+
+The [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists all the limits on a dream.
+
+instructions: string or null
+
+
+
+The guidance given when the dream was created, or `null` if none was given.
 
 
 
-model: [BetaDreamModelConfig](/docs/en/api/beta/dreams#beta_dream_model_config) { id, speed }
+model: [BetaDreamModelConfig](/docs/en/api/http/beta/dreams#beta_dream_model_config) { id, speed }
 
 
 
-Model identifier and configuration applied to every pipeline stage. Same wire shape as the Agents API ModelConfig.
+The model that runs a dream, from the request that created it.
+
+The dream uses this model for all of its work. The response always gives the model as an object, even if the request gave only a model ID.
+
+
 
 id: string
 
 
 
-Model identifier, e.g. "claude-opus-4-7". 1-256 characters.
+The ID of the model that runs the dream, as given in the request that created it.
 
-[](#beta_dream.model%20%2B%20(resource)%20beta.dreams.id)
+minLength1
+
+maxLength256
 
 
 
@@ -705,7 +754,7 @@ speed: optional "standard" or "fast"
 
 
 
-Inference speed mode. `fast` provides significantly faster output token generation at premium pricing. Not all models support `fast`; invalid combinations are rejected at create time.
+How fast the model generates output for the dream. Always `standard`.
 
 One of the following:
 
@@ -713,143 +762,215 @@ One of the following:
 
 
 
-[](#beta_dream.model%20%2B%20(resource)%20beta.dreams.speed%5B0%5D)
-
 "fast"
 
 
 
-[](#beta_dream.model%20%2B%20(resource)%20beta.dreams.speed%5B1%5D)
+
 
-[](#beta_dream.model%20%2B%20(resource)%20beta.dreams.speed)
+output_behavior: [BetaOutputBehavior](/docs/en/api/http/beta/dreams#beta_output_behavior)
 
-[](#beta_dream.model)
+
+
+Where the dream writes its result, as set in the request that created the dream. If that request left out `output_behavior`, the dream used the `create_new` behavior.
+
+One of the following:
 
 
 
-outputs: array of [BetaDreamOutput](/docs/en/api/beta/dreams#beta_dream_output) { memory_store_id, type }
+BetaOutputBehaviorCreateNew object{ type: "create_new" }
 
 
+
+Write the result to a new memory store that starts as a copy of the input memory store. This is the default.
+
+The new memory store is in the same workspace as the dream. The dream doesn't change the input memory store.
+
+type: "create_new"
+
+
+
+
+
+BetaOutputBehaviorUpdateExisting object{ type: "update_existing", memory_store_id }
+
+
+
+Write the result into the input memory store instead of a new memory store.
+
+The credential must be allowed to write memory stores, or the request returns a 403 error. While another `update_existing` dream on the same memory store hasn't fully stopped, the request returns a 409 error.
+
+type: "update_existing"
+
+
+
+
 
 memory_store_id: string
 
 
 
-[](#beta_dream_output.memory_store_id)
+The ID of the memory store for the dream to write its result to (`memstore_...`). It must be the memory store in the `memory_store` entry of `inputs`.
+
+minLength1
+
+
+
+outputs: array of [BetaDreamOutput](/docs/en/api/http/beta/dreams#beta_dream_output) { type: "memory_store", memory_store_id }
+
+
+
+The memory store that holds the dream's result, as a one-item array, or an empty array until the dream records that memory store.
+
+The array is empty while the dream is `pending` and for a short time after it starts `running`. It can stay empty if the dream fails or is canceled before then. The memory store holds the complete result only once `status` is `completed`.
+
+See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#use-the-output) for how to review and use the result.
 
 type: "memory_store"
 
 
 
-[](#beta_dream_output.type)
+
 
-[](#beta_dream.outputs)
-
-session_id: string
+memory_store_id: string
 
 
 
-[](#beta_dream.session_id)
+The ID of the memory store that the dream writes its result to (`memstore_...`).
+
+With `output_behavior` set to `create_new`, this is a new memory store. With `update_existing`, it is the input memory store.
 
 
 
-status: [BetaDreamStatus](/docs/en/api/beta/dreams#beta_dream_status)
+session_id: string or null
 
 
 
-Lifecycle status of a Dream.
+The ID of the session that runs the dream (`sesn_...`), or `null` if that session hasn't started.
+
+Stream that session's events to follow what the dream reads and writes.
+
+See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#watch-the-pipeline-run) for how to watch a running dream.
+
+
+
+status: [BetaDreamStatus](/docs/en/api/http/beta/dreams#beta_dream_status)
+
+
+
+Where a dream is in its lifecycle.
+
+`completed`, `failed`, and `canceled` are final: once a dream has one of these statuses, its status doesn't change again.
+
+See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#lifecycle) for what each status means.
 
 One of the following:
+
+
 
 "pending"
 
 
 
-[](#beta_dream.status%20%2B%20(resource)%20beta.dreams%5B0%5D)
+The dream is waiting to start and hasn't read its inputs yet.
+
+`outputs` is empty and every `usage` count is zero.
+
+
 
 "running"
 
 
 
-[](#beta_dream.status%20%2B%20(resource)%20beta.dreams%5B1%5D)
+The dream is reading its inputs and writing its result.
+
+`usage` updates while the dream has this status.
 
 "completed"
 
 
 
-[](#beta_dream.status%20%2B%20(resource)%20beta.dreams%5B2%5D)
+The dream finished and its output memory store holds the complete result.
+
+
 
 "failed"
 
 
 
-[](#beta_dream.status%20%2B%20(resource)%20beta.dreams%5B3%5D)
+The dream stopped with an error, which `error` describes.
+
+If `outputs` references a memory store, that memory store keeps what the dream wrote before it stopped.
+
+
 
 "canceled"
 
 
 
-[](#beta_dream.status%20%2B%20(resource)%20beta.dreams%5B4%5D)
+A cancel request stopped the dream before it reached `completed` or `failed`.
 
-[](#beta_dream.status)
-
-type: "dream"
-
-
-
-[](#beta_dream.type)
+If `outputs` references a memory store, that memory store keeps what the dream wrote. `usage` can keep changing after the cancel.
 
 
 
-usage: [BetaDreamUsage](/docs/en/api/beta/dreams#beta_dream_usage) { cache_creation_input_tokens, cache_read_input_tokens, input_tokens, output_tokens }
+usage: [BetaDreamUsage](/docs/en/api/http/beta/dreams#beta_dream_usage) { cache_creation_input_tokens, cache_read_input_tokens, input_tokens, output_tokens }
 
 
 
-Cumulative token usage for the dream across every pipeline stage.
+The dream's token counts, which stop changing once its `status` is `completed` or `failed`. After a cancel, they can keep changing.
+
+
 
 cache_creation_input_tokens: number
 
 
 
-Total tokens used to create prompt-cache entries (sum of all TTL tiers).
+The dream's input tokens that were written to the prompt cache, for both the 5-minute and 1-hour cache durations.
 
-[](#beta_dream.usage%20%2B%20(resource)%20beta.dreams.cache_creation_input_tokens)
+formatint32
+
+
 
 cache_read_input_tokens: number
 
 
 
-Total tokens read from prompt cache.
+The dream's input tokens that were read from the prompt cache.
 
-[](#beta_dream.usage%20%2B%20(resource)%20beta.dreams.cache_read_input_tokens)
+formatint32
+
+
 
 input_tokens: number
 
 
 
-Total uncached input tokens consumed across every pipeline stage.
+The dream's input tokens that weren't read from or written to the prompt cache.
 
-[](#beta_dream.usage%20%2B%20(resource)%20beta.dreams.input_tokens)
+formatint32
+
+
 
 output_tokens: number
 
 
 
-Total output tokens generated across every pipeline stage.
+The tokens that the model generated for the dream.
 
-[](#beta_dream.usage%20%2B%20(resource)%20beta.dreams.output_tokens)
+formatint32
 
-[](#beta_dream.usage)
+
 
-[](#list)
-
-next_page: string
+next_page: string or null
 
 
 
-[](#list)
+The cursor for the next page, or `null` if this is the last page.
 
-List Dreams
+Pass it as `page` to get the next page.
+
+List Dreams
 
 cURL
 
@@ -888,6 +1009,9 @@ Response 200
       "model": {
         "id": "x",
         "speed": "standard"
+      },
+      "output_behavior": {
+        "type": "create_new"
       },
       "outputs": [
         {
@@ -938,6 +1062,9 @@ Response 200
       "model": {
         "id": "x",
         "speed": "standard"
+      },
+      "output_behavior": {
+        "type": "create_new"
       },
       "outputs": [
         {

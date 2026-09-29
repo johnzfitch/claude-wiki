@@ -2,7 +2,7 @@
 title: "Service Accounts - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/service_accounts"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:39:43Z"
+fetched_at: "2026-09-10T06:42:15Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fadmin%2Fworkspaces%2Fservice_accounts)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,96 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,22 +160,28 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
+Create Enrollment URL
 
 
 Webhooks
+
+
+Unwrap
+
+
+Parse Unverified
 
 
 Admin
@@ -182,26 +192,26 @@ Invites
 
 Users
 
-RBAC Groups
+RBAC Groups
 
-RBAC Roles
+RBAC Roles
 
 Workspaces
 
 
-Create Workspace
+Create Workspace
 
 
-Get Workspace
+Get Workspace
 
 
-List Workspaces
+List Workspaces
 
 
-Update Workspace
+Update Workspace
 
 
-Archive Workspace
+Archive Workspace
 
 Members
 
@@ -210,19 +220,19 @@ Rate Limits
 Service Accounts
 
 
-Create Service Account Workspace Member
+Create Service Account Workspace Member
 
 
-Get Service Account Workspace Member
+Get Service Account Workspace Member
 
 
-List Service Account Workspace Members
+List Service Account Workspace Members
 
 
-Update Service Account Workspace Member
+Update Service Account Workspace Member
 
 
-Delete Service Account Workspace Member
+Delete Service Account Workspace Member
 
 API Keys
 
@@ -263,73 +273,67 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Service accounts
-
+Copy page
 
 
 
+1.  [API reference](/docs/en/api/http)
+2.  [Admin](/docs/en/api/http/admin)
+3.  [Workspaces](/docs/en/api/http/admin/workspaces)
+
 # Service Accounts
 
-##### [Create Service Account Workspace Member](/docs/en/api/admin/workspaces/service_accounts/create)
+##### [Create Service Account Workspace Member](/docs/en/api/http/admin/workspaces/service_accounts/create)
 
-POST/v1/organizations/workspaces/{workspace_id}/service_accounts
+POST/v1/organizations/workspaces/{workspace_id}/service_accounts
 
-##### [Get Service Account Workspace Member](/docs/en/api/admin/workspaces/service_accounts/retrieve)
+##### [Get Service Account Workspace Member](/docs/en/api/http/admin/workspaces/service_accounts/retrieve)
 
-GET/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
+GET/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
 
-##### [List Service Account Workspace Members](/docs/en/api/admin/workspaces/service_accounts/list)
+##### [List Service Account Workspace Members](/docs/en/api/http/admin/workspaces/service_accounts/list)
 
-GET/v1/organizations/workspaces/{workspace_id}/service_accounts
+GET/v1/organizations/workspaces/{workspace_id}/service_accounts
 
-##### [Update Service Account Workspace Member](/docs/en/api/admin/workspaces/service_accounts/update)
+##### [Update Service Account Workspace Member](/docs/en/api/http/admin/workspaces/service_accounts/update)
 
-POST/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
+POST/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
 
-##### [Delete Service Account Workspace Member](/docs/en/api/admin/workspaces/service_accounts/delete)
+##### [Delete Service Account Workspace Member](/docs/en/api/http/admin/workspaces/service_accounts/delete)
 
-DELETE/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
+DELETE/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
 
-##### ModelsExpand Collapse 
+##### Models
 
 
 
-ServiceAccountCreateResponse object { created_by_actor_id, implicit, service_account_id, 3 more }
+ServiceAccountCreateResponse object{ created_by_actor_id, implicit, service_account_id, 3 more }
 
 
 
-created_by_actor_id: string
+created_by_actor_id: string or null
 
 
 
 Tagged ID (`user_...`/`svac_...`) of the actor who created this membership.
 
-[](#service_account_create_response.created_by_actor_id)
-
-implicit: boolean
+implicit: boolean or null
 
 
 
-True when this is the implicit default-workspace membership every service account has when no explicit membership exists. Implicit memberships have role workspace_user and cannot be removed.
-
-[](#service_account_create_response.implicit)
+True when this is the implicit default-workspace membership every service account has when no explicit membership exists. Implicit memberships have role `workspace_user` and cannot be removed.
 
 service_account_id: string
 
@@ -337,21 +341,19 @@ service_account_id: string
 
 Tagged service account ID (`svac_...`).
 
-[](#service_account_create_response.service_account_id)
+
 
 type: "service_account_workspace_member"
 
 
 
-[](#service_account_create_response.type)
+defaultservice_account_workspace_member
 
 workspace_id: string
 
 
 
 Tagged workspace ID (`wrkspc_...`).
-
-[](#service_account_create_response.workspace_id)
 
 
 
@@ -367,57 +369,45 @@ One of the following:
 
 
 
-[](#service_account_create_response.workspace_role%5B0%5D)
-
 "workspace_billing"
 
 
-
-[](#service_account_create_response.workspace_role%5B1%5D)
 
 "workspace_developer"
 
 
 
-[](#service_account_create_response.workspace_role%5B2%5D)
-
 "workspace_restricted_developer"
 
 
-
-[](#service_account_create_response.workspace_role%5B3%5D)
 
 "workspace_user"
 
 
 
-[](#service_account_create_response.workspace_role%5B4%5D)
-
-[](#service_account_create_response.workspace_role)
-
-[](#service_account_create_response)
-
 
 
-ServiceAccountRetrieveResponse object { created_by_actor_id, implicit, service_account_id, 3 more }
+ServiceAccountRetrieveResponse object{ created_by_actor_id, implicit, service_account_id, 3 more }
 
 
 
-created_by_actor_id: string
+
+
+ServiceAccountUpdateResponse object{ created_by_actor_id, implicit, service_account_id, 3 more }
+
+
+
+created_by_actor_id: string or null
 
 
 
 Tagged ID (`user_...`/`svac_...`) of the actor who created this membership.
 
-[](#service_account_retrieve_response.created_by_actor_id)
-
-implicit: boolean
+implicit: boolean or null
 
 
 
-True when this is the implicit default-workspace membership every service account has when no explicit membership exists. Implicit memberships have role workspace_user and cannot be removed.
-
-[](#service_account_retrieve_response.implicit)
+True when this is the implicit default-workspace membership every service account has when no explicit membership exists. Implicit memberships have role `workspace_user` and cannot be removed.
 
 service_account_id: string
 
@@ -425,21 +415,19 @@ service_account_id: string
 
 Tagged service account ID (`svac_...`).
 
-[](#service_account_retrieve_response.service_account_id)
+
 
 type: "service_account_workspace_member"
 
 
 
-[](#service_account_retrieve_response.type)
+defaultservice_account_workspace_member
 
 workspace_id: string
 
 
 
 Tagged workspace ID (`wrkspc_...`).
-
-[](#service_account_retrieve_response.workspace_id)
 
 
 
@@ -455,57 +443,39 @@ One of the following:
 
 
 
-[](#service_account_retrieve_response.workspace_role%5B0%5D)
-
 "workspace_billing"
 
 
-
-[](#service_account_retrieve_response.workspace_role%5B1%5D)
 
 "workspace_developer"
 
 
 
-[](#service_account_retrieve_response.workspace_role%5B2%5D)
-
 "workspace_restricted_developer"
 
 
-
-[](#service_account_retrieve_response.workspace_role%5B3%5D)
 
 "workspace_user"
 
 
 
-[](#service_account_retrieve_response.workspace_role%5B4%5D)
-
-[](#service_account_retrieve_response.workspace_role)
-
-[](#service_account_retrieve_response)
-
 
 
-ServiceAccountListResponse object { created_by_actor_id, implicit, service_account_id, 3 more }
+ServiceAccountListResponse object{ created_by_actor_id, implicit, service_account_id, 3 more }
 
 
 
-created_by_actor_id: string
+created_by_actor_id: string or null
 
 
 
 Tagged ID (`user_...`/`svac_...`) of the actor who created this membership.
 
-[](#service_account_list_response.created_by_actor_id)
-
-implicit: boolean
+implicit: boolean or null
 
 
 
-True when this is the implicit default-workspace membership every service account has when no explicit membership exists. Implicit memberships have role workspace_user and cannot be removed.
-
-[](#service_account_list_response.implicit)
+True when this is the implicit default-workspace membership every service account has when no explicit membership exists. Implicit memberships have role `workspace_user` and cannot be removed.
 
 service_account_id: string
 
@@ -513,21 +483,19 @@ service_account_id: string
 
 Tagged service account ID (`svac_...`).
 
-[](#service_account_list_response.service_account_id)
+
 
 type: "service_account_workspace_member"
 
 
 
-[](#service_account_list_response.type)
+defaultservice_account_workspace_member
 
 workspace_id: string
 
 
 
 Tagged workspace ID (`wrkspc_...`).
-
-[](#service_account_list_response.workspace_id)
 
 
 
@@ -543,127 +511,25 @@ One of the following:
 
 
 
-[](#service_account_list_response.workspace_role%5B0%5D)
-
 "workspace_billing"
 
 
-
-[](#service_account_list_response.workspace_role%5B1%5D)
 
 "workspace_developer"
 
 
 
-[](#service_account_list_response.workspace_role%5B2%5D)
-
 "workspace_restricted_developer"
 
 
-
-[](#service_account_list_response.workspace_role%5B3%5D)
 
 "workspace_user"
 
 
 
-[](#service_account_list_response.workspace_role%5B4%5D)
-
-[](#service_account_list_response.workspace_role)
-
-[](#service_account_list_response)
-
 
 
-ServiceAccountUpdateResponse object { created_by_actor_id, implicit, service_account_id, 3 more }
-
-
-
-created_by_actor_id: string
-
-
-
-Tagged ID (`user_...`/`svac_...`) of the actor who created this membership.
-
-[](#service_account_update_response.created_by_actor_id)
-
-implicit: boolean
-
-
-
-True when this is the implicit default-workspace membership every service account has when no explicit membership exists. Implicit memberships have role workspace_user and cannot be removed.
-
-[](#service_account_update_response.implicit)
-
-service_account_id: string
-
-
-
-Tagged service account ID (`svac_...`).
-
-[](#service_account_update_response.service_account_id)
-
-type: "service_account_workspace_member"
-
-
-
-[](#service_account_update_response.type)
-
-workspace_id: string
-
-
-
-Tagged workspace ID (`wrkspc_...`).
-
-[](#service_account_update_response.workspace_id)
-
-
-
-workspace_role: "workspace_admin" or "workspace_billing" or "workspace_developer" or 2 more
-
-
-
-Role of the service account in this workspace. Service accounts cannot hold the `workspace_billing` role.
-
-One of the following:
-
-"workspace_admin"
-
-
-
-[](#service_account_update_response.workspace_role%5B0%5D)
-
-"workspace_billing"
-
-
-
-[](#service_account_update_response.workspace_role%5B1%5D)
-
-"workspace_developer"
-
-
-
-[](#service_account_update_response.workspace_role%5B2%5D)
-
-"workspace_restricted_developer"
-
-
-
-[](#service_account_update_response.workspace_role%5B3%5D)
-
-"workspace_user"
-
-
-
-[](#service_account_update_response.workspace_role%5B4%5D)
-
-[](#service_account_update_response.workspace_role)
-
-[](#service_account_update_response)
-
-
-
-ServiceAccountDeleteResponse object { service_account_id, type, workspace_id }
+ServiceAccountDeleteResponse object{ service_account_id, type, workspace_id }
 
 
 
@@ -673,20 +539,16 @@ service_account_id: string
 
 Tagged service account ID (`svac_...`) named in the delete request. Removal is idempotent; see the endpoint description for the implicit-membership no-op.
 
-[](#service_account_delete_response.service_account_id)
+
 
 type: "service_account_workspace_member_deleted"
 
 
 
-[](#service_account_delete_response.type)
+defaultservice_account_workspace_member_deleted
 
 workspace_id: string
 
 
 
 Tagged workspace ID (`wrkspc_...`) named in the delete request.
-
-[](#service_account_delete_response.workspace_id)
-
-[](#service_account_delete_response)

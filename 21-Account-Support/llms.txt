@@ -8,8 +8,9 @@ All documentation for Account Support.
 
 # Account management FAQs
 
-March 16, 2026
+August 6, 2026
 
+Copy for LLM
 
 ## How do I change my team name?
 
@@ -21,7 +22,7 @@ It's not possible to change another user's name on their behalf, but a user can 
 
 1.  Log in to your Claude account.
 
-2.  Navigate to **[Settings \> General](http://claude.ai/settings/general)**.
+2.  Navigate to **[Settings \> General](https://claude.ai/settings/general)**.
 
 3.  Make edits to the "Full name" field and click "Save changes."
 
@@ -43,7 +44,7 @@ Admins and Owners can view a list of all members on a team by navigating to **[O
 
 The email domain that was used to create your Team or Enterprise plan organization is the allowed email domain for your team members. After the account is created, Owners of organizations that are not using domain capture can add additional domains by following these steps:
 
-1.  Navigate to **[Organization](https://claude.ai/admin-settings/organization)** **[settings \> Identity and access](https://claude.ai/admin-settings/identity).**
+1.  Navigate to **[Organization](https://claude.ai/admin-settings/organization) [settings \> Identity and access](https://claude.ai/admin-settings/identity).**
 
 2.  Click "Add or edit domains" under **Domains**.
 
@@ -155,8 +156,9 @@ If you need to add or update your tax or VAT ID after you've already created a C
 
 # Add or update your paid Claude account’s tax or VAT ID
 
-March 16, 2026
+August 6, 2026
 
+Copy for LLM
 
 ## Add your tax or VAT ID during signup
 
@@ -170,7 +172,7 @@ When you sign up for a Pro or Max subscription, you may have the option to enter
 
 4.  If the ID is entered correctly, you'll be able to proceed with your signup.
 
-**Important:** If you're signing up for an individual paid account as a business, and want to use a name other than the one tied to your payment method, check the "Use a different name on invoices" box when adding or updating your payment method in [Settings \> Billing](http://claude.ai/settings/billing). Then, enter your company name in the "Bill to" field to ensure it is reflected correctly on your invoice.
+**Important:** If you're signing up for an individual paid account as a business, and want to use a name other than the one tied to your payment method, check the "Use a different name on invoices" box when adding or updating your payment method in **[Settings \> Billing](https://claude.ai/settings/billing)**. Then, enter your company name in the "Bill to" field to ensure it is reflected correctly on your invoice.
 
 ## Update your tax or VAT ID after signup
 
@@ -182,7 +184,7 @@ If you need to add or update your Tax or VAT ID after you've already signed up, 
 
 2.  Click on your initials or name in the lower left corner and select “Settings” from the menu.
 
-3.  Navigate to [Settings \> Billing](http://claude.ai/settings/billing).
+3.  Navigate to **[Settings \> Billing](https://claude.ai/settings/billing)**.
 
 4.  Click the "Update" button next to your payment method.
 
@@ -192,7 +194,7 @@ If you need to add or update your Tax or VAT ID after you've already signed up, 
 
 7.  Save your changes.
 
-**Note:** Your billing address determines your tax jurisdiction. See [Understanding your billing address and tax calculation](https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation) for details on how to view or update your billing address.
+**Note:** Your billing address determines your tax jurisdiction. See **[Understanding your billing address and tax calculation](https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation)** for details on how to view or update your billing address.
 
 
 ---
@@ -241,16 +243,77 @@ If you need to add or update your Tax or VAT ID after you've already signed up, 
 
 
 ---
+## assign-a-program-to-workspaces-in-claude-console-d6333251d9.md
+
+# Assign a program to workspaces in Claude Console
+
+
+Copy for LLM
+
+Anthropic offers several verification programs, such as the Cyber Verification Program, or access to models that might not be generally available. In order to gain access to these programs, go to our **[Verification Portal](https://portal.anthropic.com/)** to see what programs are available to you, and apply.
+
+Once you’ve applied and been approved for a program, Anthropic issues a “program” to your organization. In order for it to be used, you must assign it to a group of people within the organization. In the Claude Console, a program applies to workspaces, either automatically (for programs like the Cyber Verification Program) or by assignment.
+
+This article covers how to enable programs for the Console.
+
+## Before you start
+
+- Your organization must already have a grant. Grants appear only after Anthropic issues one to your organization. To apply to a specific program, go to our **[Verification Portal](https://portal.anthropic.com/)** to see what programs are available.
+
+- In the Console, you need to be an organization Admin. Other roles cannot view or manage grants.
+
+## Give a Console workspace access
+
+In the Console, programs are issued to your organization and apply to workspaces. Some programs, such as the Cyber Verification Program, apply automatically to every workspace that meets their requirements. Others need workspaces assigned. A program only applies to API traffic from workspaces that meet its requirements.
+
+**Follow these steps:**
+
+1.  **[Sign in to the Console](https://platform.claude.com/)** as an organization Admin. Go to **[Organization settings \> Programs](https://platform.claude.com/settings/organization/programs)**. The program card shows whether it applies automatically or needs workspaces assigned.
+
+
+2.  Select the program to open its page. The **Workspaces** table shows each workspace's status. A workspace marked with an issue does not meet a requirement yet.
+
+
+    Hover over the issue to see which requirement is not met.
+
+
+3.  To give a workspace access, make it meet the requirements. Open the workspace, select "Manage," then "Programs," and check the **Qualifications** panel.
+
+
+4.  Fix the requirement. For the Cyber Verification Program, turn on data retention under Manage, then Privacy controls. Then select "Rerun."
+
+
+5.  The program shows **Active** for the workspace.
+
+
+## Troubleshooting
+
+- **The Grants page is missing.** Your organization does not have a grant yet, or you are not an organization Admin. Contact your Anthropic account team or your admin.
+
+- **The workspace shows as inactive.** Open the workspace, select "Manage," then "Programs," and check the **Qualifications** panel for an unmet requirement. Fix each unmet requirement and try again.
+
+- **The grant is over its seat limit.** Some programs have a seat cap. Assigned workspaces lose access until your organization is back under the limit. Reduce the number of members counted toward the grant, then check again.
+
+- **You are trying to use the default Console workspace.** Some programs don't allow the program to be assigned to the default workspace. If the default workspace isn’t working, assign a different workspace or create a new one.
+
+
+---
 ## assign-tasks-from-anywhere-in-claude-cowork-7d0db733ce.md
 
 # Assign tasks from anywhere in Claude Cowork
 
 
+Copy for LLM
+
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+
 Claude Cowork gives you one continuous conversation with Claude that you can reach from your phone or your desktop. With Dispatch, you can message Claude from your phone and have it work on your desktop computer, using your local files, connectors, plugins, and apps, then come back to the finished work.
+
+**Note:** Dispatch isn't available to new users. If you already use Dispatch, you can keep using it for now, and this article still applies.
 
 Dispatch runs your tasks on your desktop, so your computer needs to be awake and the Claude Desktop app open while Claude works. This is different from a cloud session, which runs on Anthropic's servers and keeps working even when your computer is off. For where Cowork runs on each surface, see **[Use Claude Cowork on web, desktop, and mobile](https://support.claude.com/en/articles/15520349)**.
 
-This capability is available in beta for Pro and Max plans on Claude Cowork. It requires both the Claude Desktop app and the Claude mobile app.
+This capability is in limited beta for Pro and Max plans on Claude Cowork, and it requires both the Claude Desktop app and the Claude mobile app. Dispatch is only available for some Pro and Max plans, so if you don't see Dispatch in the Cowork side panel, you should **[use Cowork in the cloud](https://support.claude.com/en/articles/15520349)** instead of the pairing flow described here.
 
 ------------------------------------------------------------------------
 
@@ -385,11 +448,17 @@ The following limitations apply:
 # Assign tasks from anywhere in Claude Cowork
 
 
+Copy for LLM
+
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+
 Claude Cowork gives you one continuous conversation with Claude that you can reach from your phone or your desktop. With Dispatch, you can message Claude from your phone and have it work on your desktop computer, using your local files, connectors, plugins, and apps, then come back to the finished work.
+
+**Note:** Dispatch isn't available to new users. If you already use Dispatch, you can keep using it for now, and this article still applies.
 
 Dispatch runs your tasks on your desktop, so your computer needs to be awake and the Claude Desktop app open while Claude works. This is different from a cloud session, which runs on Anthropic's servers and keeps working even when your computer is off. For where Cowork runs on each surface, see **[Use Claude Cowork on web, desktop, and mobile](https://support.claude.com/en/articles/15520349)**.
 
-This capability is available in beta for Pro and Max plans on Claude Cowork. It requires both the Claude Desktop app and the Claude mobile app.
+This capability is in limited beta for Pro and Max plans on Claude Cowork, and it requires both the Claude Desktop app and the Claude mobile app. Dispatch is only available for some Pro and Max plans, so if you don't see Dispatch in the Cowork side panel, you should **[use Cowork in the cloud](https://support.claude.com/en/articles/15520349)** instead of the pairing flow described here.
 
 ------------------------------------------------------------------------
 
@@ -644,6 +713,8 @@ This is a research preview with the following limitations:
 
 March 16, 2026
 
+Copy for LLM
+
 Yes. You can have a Claude account (free, Pro, Max, Team, or Enterprise) and a Console account (to access the Claude API) with the same email address. These two accounts will operate independently.
 
 
@@ -700,6 +771,8 @@ See **[Setting up Single Sign-on (SSO)](setting-up-single-sign-on-sso.md#h_5ee91
 # Claim and migrate accounts on your domain
 
 
+Copy for LLM
+
 Domain claiming lets Enterprise admins discover, claim, and migrate existing personal Claude accounts (Free, Pro, and Max) on a verified company domain into their Enterprise workspace. This gives your organization a clean path to consolidate accounts on day one of an Enterprise deployment, and allows people using Claude on personal accounts to keep their work. Domain claiming is available for Enterprise plans, whether purchased directly through Anthropic or through the AWS Marketplace, and works the same in both cases.
 
 Domain claiming is supported on Claude Enterprise plans only.
@@ -734,7 +807,7 @@ Use this view to understand the scope of migration before initiating a claim. Ch
 
 ### Enable domain capture
 
-Navigate to **[Organization settings \> Organization and access](http://claude.ai/admin-settings/organization)**, scroll down to **Security** and toggle **Migrate accounts using your domain** on to enable domain capture. This is an organization-level setting that enforces a policy: no non-Enterprise accounts can exist on your verified domain.
+Navigate to **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**, scroll down to **Security** and toggle **Migrate accounts using your domain** on to enable domain capture. This is an organization-level setting that enforces a policy: no non-Enterprise accounts can exist on your verified domain.
 
 **Warning:** Domain capture is a one-way door. Once enabled, it can’t be reversed. The admin UI will display a prominent confirmation before you proceed. Make sure your prerequisites are fully in place and you’ve reviewed the affected accounts before enabling.
 
@@ -752,7 +825,7 @@ Once confirmed, all affected accounts receive notification immediately—both by
 
 ### The 30-day migration window
 
-The migration deadline is a single org-wide date, not a rolling per-user timer. All affected accounts share the same deadline.
+The migration deadline is a single date for the claim, not a rolling per-user timer. Every account covered by the claim shares that deadline. If you claim an additional domain later, that claim gets its own 30-day window (see **[Add a domain after you've started a claim](#h_d7ccebb0ac)** below).
 
 During this window, each person on the domain can sign in and choose how to migrate:
 
@@ -772,7 +845,23 @@ During this window, each person on the domain can sign in and choose how to migr
 
 New accounts created on the domain after domain capture is enabled go directly through SSO and your Enterprise workspace—no personal account is created.
 
+### Add a domain after you've started a claim
+
+Each claim covers the domains that were verified on your organization at the moment you initiated it. A domain you verify after starting a claim won't be added to the claim in progress, and accounts associated with that domain aren't notified or migrated as part of it.
+
+To migrate accounts on a domain you verified later:
+
+1.  Wait for the current claim's 30-day window to end. Only one claim can be in progress at a time.
+
+2.  Verify the new domain if you haven't already. See **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**.
+
+3.  Review the accounts on the new domain, then initiate a new claim. This claim has its own 30-day window, and the accounts on the new domain receive the same email and in-product notifications.
+
+**Note:** If you're onboarding several domains in phases, verify all of them before you initiate a claim when possible. That way, one claim and one deadline cover every account. Otherwise, each phase needs its own claim, and each claim has to finish its 30-day window before the next one can start.
+
 ## What’s not supported
+
+- Migrating data into organizations with HIPAA readiness or customer-managed encryption keys (CMEK) turned on. You can still claim your domain, and people on it are notified as usual, but they can only join fresh. Nothing from their personal accounts moves over. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
 - Claiming Team plan accounts. Only individual accounts (Free, Pro, Max) can be claimed.
 
@@ -807,24 +896,37 @@ If you purchased your Enterprise plan through the AWS Marketplace, migrated user
 # Claude Design admin guide for Team and Enterprise plans
 
 
-Claude Design lets your team create on-brand designs, prototypes, presentations, and interactive microsites through conversation with Claude.
+Copy for LLM
 
-Claude Design is available in beta to Pro, Max, Team, and Enterprise plans. This capability is default off for Enterprise plans.
+Claude Design lets your team create on-brand designs, prototypes, and interactive microsites through conversation with Claude. Presentations now have their own tool, Claude Slides.
+
+Claude Design is available in beta on Pro, Max, Team, and Enterprise plans. It's on by default on Team plans. On Enterprise plans, it's off by default until an owner turns it on.
+
+**Note:** Settings for artifacts, templates (including **Design**), design systems, and sharing live in one place now. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751)**. This guide covers standalone Claude Design at **claude.ai/design** and how to roll out Claude Design with a design system in place.
 
 Claude Design works best when a **design system** is set up for your organization first. This ensures every project your team creates stays true to your brand, typography, color palette, and component patterns. This guide walks you through enabling Claude Design, setting up the right foundation, and rolling it out to your team.
 
-## Enable Claude Design for your organization
+**[Create an artifact with Claude](https://claude.ai/artifacts)**
 
-Claude Design is available via a toggle in organization settings, and can be **[controlled using custom roles](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**.
+------------------------------------------------------------------------
 
-Before you enable broad access, read through the rollout approach below. Turning on Claude Design without a design system in place means your team will get functional but generic output.
+## Turn on Claude Design for your organization
 
-Team and Enterprise plan admins can enable this organization-wide by following these steps:
+Your team can use Claude Design in two places, and each has its own setting. Turning one on doesn't turn on the other.
 
-1.  Go to **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**.
+### Claude Design in conversations and the Artifacts tab
 
-2.  Find the **Claude Design** toggle under **Anthropic Labs** and switch it on.
+To turn on the **Design** template, see the instructions in **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751)**.
 
+### Standalone Claude Design at claude.ai/design
+
+1.  Go to **[Organization settings \> Claude Design](https://claude.ai/admin-settings/claude-design)**.
+
+2.  Find the **Enable for your organization** toggle under **Claude Design \[standalone\]** and switch it on.
+
+On Enterprise plans, you can control access to standalone Claude Design with **[custom roles](https://support.claude.com/en/articles/13930452)**.
+
+Before you turn on broad access, read through the rollout approach below. Turning on Claude Design without a design system in place means your team gets functional but generic output.
 
 ------------------------------------------------------------------------
 
@@ -852,59 +954,15 @@ Any member with Claude Design access can create and edit design systems. On the 
 
 ------------------------------------------------------------------------
 
-## Restrict who can manage design systems
-
-The **Claude Design Admin** permission is available on the Enterprise plan through custom roles.
-
-By default, any member with access to Claude Design can publish a design system, set the organization default, and delete design systems. The **Claude Design Admin** permission lets you reserve these actions for specific members, giving your organization a single source of truth for its design systems.
-
-### What the permission controls
-
-Members with the permission set to "Can manage" can:
-
-- **Publish a design system:** Make it available across your organization so anyone can attach it to a project.
-
-- **Set the organization default:** Choose the design system new projects use automatically.
-
-- **Delete a design system:** Permanently remove it from your organization.
-
-Everyone else can still create, edit, and use any published design system. If a member without the permission tries to publish, set the default, or delete, they'll see a note directing them to contact their administrator.
-
-**Note:** If you don't assign this permission to anyone, nothing changes. All members keep the same access to design systems as before.
-
-### Grant the permission
-
-You'll need Owner access to configure roles.
-
-1.  Go to **[Organization settings \> Roles](https://claude.ai/admin-settings/roles)** and create or edit a custom role.
-
-2.  In the **Permissions** tab, find **Claude Design Admin** under **In-app admin** and set it to **Can manage**.
-
-3.  Assign the role to a group. Members of that group inherit the permission.
-
-4.  Set each member's role to **Custom roles**.
-
-Permissions are additive. A member in multiple groups gets the union of what those groups' roles grant. Learn more about **[managing custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**.
-
-### Verify access
-
-Permission changes can take up to 15 minutes to apply, and members may need to refresh their browser. There are two ways to confirm:
-
-- **Ask the member to check.** In admin settings, they'll see only the sections their permissions cover.
-
-- **Review as an Owner.** Check the member's groups on the **Members** page, then review those groups' roles on the **Roles** page.
-
-------------------------------------------------------------------------
-
 ## Recommended rollout phases
 
-A phased rollout lets you validate your design system and build internal expertise before broad adoption. You can control access to Claude Design in accordance with each rollout phase using **[custom roles](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**.
+A phased rollout lets you validate your design system and build internal expertise before broad adoption. On Enterprise plans, you can phase access to standalone Claude Design using **[custom roles](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**. You can phase access to Claude Design in conversations and the Artifacts tab the same way, with the Design capability (under **Artifacts**).
 
 ### Phase 1: Design system setup
 
 - **Who:** 2–4 trusted designers and design leads across brand and product design.
 
-- **Goal:** Create and validate your organization’s design system, including product and slide deck templates everyone can use as a starting point.
+- **Goal:** Create and validate your organization’s design system, including product templates everyone can use as a starting point.
 
 - **Checkpoint:** Review generated output for brand consistency before proceeding.
 
@@ -950,7 +1008,7 @@ Once set up, your team can use Claude Design to:
 
 - **Create prototypes and mockups:** Describe a UI and get a working interactive prototype.
 
-- **Build presentations and slide decks:** Generate on-brand decks through conversation, presentable as HTML, PDF, and PPTX.
+- **Build presentations with Claude Slides:** Make on-brand decks from notes, reports, or an existing conversation, and export them to PowerPoint or PDF. Claude Slides has its own setting in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**.
 
 - **Design microsites and landing pages:** Create polished single-page sites.
 
@@ -958,53 +1016,13 @@ Once set up, your team can use Claude Design to:
 
 - **Hand off to engineering:** Export design intent for use with Claude Code or your existing development workflow.
 
-We have more tutorials available here:
-
-- **[Using Claude Design for prototypes and UX](http://claude.com/resources/tutorials/using-claude-design-for-prototypes-and-ux)**
-
-- **[Using Claude Design for presentations and slide decks](http://claude.com/resources/tutorials/using-claude-design-for-presentations-and-slide-decks)**
-
 ------------------------------------------------------------------------
 
-## Monitor usage
-
-Track Claude Design adoption from the analytics dashboard. Navigate to **[Analytics \> Claude Design](https://claude.ai/analytics/claude-design)** to view daily, weekly, and monthly active users for your organization. Claude Design is also available as a product filter on the Overview tab. Learn more about **[viewing usage analytics for Team and Enterprise plans](https://support.claude.com/en/articles/12883420-view-usage-analytics-for-team-and-enterprise-plans)**.
-
-Claude Design doesn't support audit logs yet.
-
-We also recommend supplementing analytics with qualitative check-ins during your rollout: gather feedback from each group as they onboard, and sample a few projects periodically to assess design system compliance.
-
-## Data handling and privacy
-
-When your team uses Claude Design, they may upload design assets, brand guidelines, screenshots, and other materials. Understanding how these are handled is important for organizations with data governance requirements.
-
-- Uploaded assets are stored persistently, and fall under the same **[data retention and deletion policies](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)** as other Anthropic enterprise products.
-
-- Claude Design doesn’t currently support data residency requirements.
-
-### Preview sandbox isolation
+## Preview sandbox isolation
 
 Claude Design project previews run inside a sandboxed iframe on a separate content domain that Anthropic operates. These sandboxed iframes help each project preview stay in its own space, separate from others. The code in a preview can't reach your Claude account, your login, or the editor.  
 ​  
 Access to a preview is controlled by signed tokens—short-lived passes that prove someone's allowed in. Claude re-checks these tokens against your sharing permissions every time someone opens the preview, so when you remove someone's access, they're locked out right away.
-
-------------------------------------------------------------------------
-
-## Third-party platform availability
-
-Claude Design is currently available only through the web interface at claude.ai/design.
-
-If your organization requires Claude Design through your existing cloud provider agreements, reach out to your Anthropic contact or our **[Sales team](https://claude.com/contact-sales)**.
-
-------------------------------------------------------------------------
-
-## Usage and billing
-
-Claude Design usage counts toward each member's existing usage limits, shared with chat, Claude Code, and Cowork. There's no separate Claude Design allowance to provision or manage.
-
-- **Team and seat-based Enterprise plans:** Claude Design draws from each member's seat usage limits, including both session and weekly limits. Admins can purchase **[usage credits](https://support.claude.com/en/articles/12005970-manage-extra-usage-for-team-and-seat-based-enterprise-plans)** for members who need more capacity.
-
-- **Usage-based Enterprise plans:** Claude Design usage bills from your organization's consumption at standard API rates, like every other surface. Organization, group, and per-user spend limits apply.
 
 ------------------------------------------------------------------------
 
@@ -1022,21 +1040,13 @@ Yes. Organizations can have multiple design systems.
 
 They’ll get functional designs, but the designs won’t reflect your brand. We strongly recommend completing design system setup first for the best team experience.
 
-### Who can publish, set the default, or delete design systems?
-
-If you haven't assigned the **Claude Design Admin** permission to anyone, any member with Claude Design access can take these actions. On the Enterprise plan, you can reserve these actions for specific members. See **[Restrict who can manage design systems](#h_e24c8ef395)** above.
-
-### Can I restrict Claude Design to specific departments?
-
-Yes. Enterprise plans can use custom roles to grant access to specific groups or departments rather than enabling it for the whole organization.
-
 ### How many users can we onboard at once?
 
 There are no strict limits, but we recommend the phased approach outlined above to ensure quality and successful adoption across your organization.
 
 ### Can we export or archive generated designs?
 
-Claude Design currently supports export to HTML bundles, PPTX, PDF, and hand-off to Claude Code or the following partners: Adobe, Base44, Canva, Gamma, Lovable, Miro, Replit, Vercel, or Wix. Reach out to your Anthropic Contact or our **[Sales team](https://claude.com/contact-sales)** if there’s a specific format or destination you need.
+Claude Design currently supports export to HTML bundles, PPTX, and PDF, hand-off to Claude Code, and sending designs to the partner tools listed in **[Get started with Claude Design](https://support.claude.com/en/articles/14604416)**.
 
 
 ---
@@ -1045,6 +1055,8 @@ Claude Design currently supports export to HTML bundles, PPTX, PDF, and hand-off
 # Creating a new account after deletion
 
 March 16, 2026
+
+Copy for LLM
 
 If you receive the following message, "The email you used is either associated with an existing account or an account that was active within the last 30 days," this is due to having a deleted account with multiple attempts to create new accounts with the same email address.
 
@@ -1221,12 +1233,83 @@ Every organization has a default Workspace that cannot be renamed, archived, or 
 
 
 ---
+## delete-your-claude-account-b6ab085412.md
+
+# Delete your Claude account
+
+August 19, 2026
+
+Copy for LLM
+
+This article shows you how to permanently delete your account on the web and in the Claude mobile apps, and explains what happens to your data when you do.
+
+**Important:** Deleting your account is permanent. You'll lose access to your conversations, projects, and other saved data, and you can't recover the account afterward. If you want to keep your data, export it on web or desktop before you delete. Learn more about **[exporting your Claude data](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)**.
+
+## Before you delete a paid account
+
+If you're on a Pro or Max plan:
+
+1.  Cancel your subscription from your **[Billing settings](https://claude.ai/settings/billing)**.
+
+2.  Wait until the end of your current subscription period.
+
+3.  Once the subscription lapses, delete your account using the steps below.
+
+For detailed cancellation instructions, including for Claude for iOS and Android, see **[Cancel your Pro or Max subscription](https://support.claude.com/en/articles/8325617)**.
+
+## Delete your account on the web
+
+1.  Go to **[claude.ai](https://claude.ai/)** and click your initials or name in the lower left corner.
+
+2.  Select "Settings," or navigate directly to **[Settings \> Account](https://claude.ai/settings/account)**.
+
+3.  Click "Delete account" and follow the prompts.
+
+## Delete your account on Claude for iOS
+
+These steps apply to Claude for iOS, listed on the App Store as Claude by Anthropic.
+
+1.  Open the Claude app and tap "Settings."
+
+2.  Find the **Account** section and tap "Profile."
+
+3.  Tap "Delete account."
+
+4.  Tap "Delete" to confirm.
+
+## Delete your account on Claude for Android
+
+These steps apply to Claude for Android, listed on Google Play as Claude by Anthropic.
+
+1.  Open the Claude app and tap the menu button in the upper left corner.
+
+2.  Tap your initials in the lower left corner.
+
+3.  Tap "Profile."
+
+4.  Under **Account Actions**, tap "Delete Account."
+
+5.  Tap "I Understand" to confirm.
+
+## What happens when you delete your account
+
+When you delete your account, you’ll no longer have access to your conversations, projects, and account information. Learn more about **[how long Anthropic stores your data](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**.
+
+## When you need to contact support
+
+In some scenarios you'll need to contact our team to delete your account. If this applies to you, it'll be noted in your account settings. Learn more about **[how to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+
+If you have multiple accounts associated with the same email address, you'll need to specify which accounts you want to delete when you contact us.
+
+
+---
 ## designate-support-contacts-for-human-support-b3b303b2e2.md
 
 # Designate support contacts for human support
 
-June 1, 2026
+August 6, 2026
 
+Copy for LLM
 
 Choose which members of your organization can open tickets with Anthropic's human support team by designating support contacts. Users who aren't configured as support contacts get help from AI support, which can answer many common questions instantly.
 
@@ -1252,7 +1335,7 @@ Before configuring support contacts, make sure the groups you want to designate 
 
 To configure support contacts:
 
-1.  Navigate to **[Organization settings \> Organization and access](http://claude.ai/admin-settings/organization)**.
+1.  Navigate to **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**.
 
 2.  Find the **Support contacts** section and toggle the feature on.
 
@@ -1278,6 +1361,7 @@ On June 8, 2026, this setting will take effect for all Enterprise plan organizat
 
 May 26, 2026
 
+Copy for LLM
 
 Users in the EU can open a support inquiry from this page via the chat tool, which serves as our single point of contact for EU users under the DSA.
 
@@ -1318,6 +1402,8 @@ Anthropic will continue to monitor the number of average monthly active recipien
 
 # Use Claude for Education at your university
 
+
+Copy for LLM
 
 This guide helps you use Claude for Education through your university-sponsored account. Find resources and answers to frequently asked questions about getting started, optimizing usage, and troubleshooting issues.
 
@@ -1427,7 +1513,7 @@ You can access Claude through multiple platforms to suit your needs:
 
 ### Mobile applications
 
-- **iOS**: **[Download from the App Store](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684)** (requires iOS 17.0 or later).
+- **iOS**: **[Download from the App Store](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684)** (requires iOS 18.0 or later).
 
 - **Android**: **[Download from Google Play Store](https://play.google.com/store/apps/details?id=com.anthropic.claude)** (requires Android 8.0 Oreo or later).
 
@@ -1515,24 +1601,38 @@ Review these resources and visit the **[Privacy Center](https://privacy.claude.c
 
 # Get started with Claude Design
 
-June 30, 2026
 
+Copy for LLM
 
-**[Claude Design](http://claude.ai/design)** lets you create designs, interactive prototypes, presentations, and more by having a conversation with Claude. This guide walks you through creating your first project, iterating on designs, and getting the most out of the tool.
+**[Claude Design](https://claude.com/product/design)** lets you create designs, interactive prototypes, one-pagers, and other visual work by chatting with Claude. It's one of the templates you can start an artifact from, so you can use it in any chat, in Claude Code, and from the **Artifacts** tab, with on-canvas editing and your design system included. This guide walks you through creating your first design, iterating on it, and getting the most out of it. Learn more about **[what artifacts are and how to use them](https://support.claude.com/en/articles/9487310)**.
 
-Claude Design is now available in beta to Pro, Max, Team, and Enterprise plans. This capability is default off for Enterprise plans. You can use it on the web at claude.ai/design or from the sidebar in Claude Desktop.
+Claude Design is available in beta on Pro, Max, Team, and Enterprise plans. It's on by default on Pro, Max, and Team plans. On Enterprise plans, it's off by default until an owner turns it on in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**. The standalone Claude Design experience at claude.ai/design keeps working and has its own separate setting.
 
 This guide assumes your organization’s design system has already been set up, so everything you create will automatically use your brand’s colors, typography, and component patterns. If you’re a design lead who needs to set up or modify the design system itself, see **[Set up your design system in Claude Design](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design)**.
+
+**[Create an artifact with Claude](https://claude.ai/artifacts)**
+
+## Where you can use Claude Design
+
+- **In a conversation:** Ask Claude for a design, like "Make a one-pager from this proposal" or "Mock up the onboarding flow we just discussed." Claude builds it beside your conversation, and you refine it there. You can also select **Output** \> **Design** in the message box.
+
+- **In the Artifacts tab:** Go to the **Artifacts** tab and pick a Design template.
+
+- **In Claude Code:** Ask Claude to turn your idea into a design, or use /design to create, edit, and sync designs, on desktop or in the terminal.
+
+- **In the Claude app for iOS and Android:** Ask for a design in any conversation and check back later for the result, then view it full screen in the **Artifacts** tab. To start from a template, edit on the canvas, or change sharing settings, use Claude on web or desktop.
+
+- **At claude.ai/design:** The standalone experience keeps working, and your existing projects stay where they are.
 
 ------------------------------------------------------------------------
 
 ## How Claude Design works
 
-Claude Design has two main areas: a chat interface on the left and a canvas on the right. You describe what you want in the chat, and Claude generates a working design on the canvas. From there, you iterate—refining through conversation, inline comments, and directly on the canvas until it’s right.
+Claude Design pairs a conversation with a canvas. You describe what you want, and Claude generates a working design on the canvas beside the conversation. From there, you iterate—refining through conversation, inline comments, and directly on the canvas until it’s right.
 
 The typical flow is:
 
-1.  Create a project.
+1.  Start a design from a conversation, the Artifacts tab, or claude.ai/design.
 
 2.  Attach or import the design system you want Claude to build with.
 
@@ -1548,16 +1648,9 @@ The typical flow is:
 
 ### Move between Claude Design and Claude Code
 
-You can move between working in Claude Design and Claude Code while keeping your work synced. Use `/design-sync` to pull in your design system, so everything you build in Claude Design starts from your existing components. When a design is ready to become software, you can hand it off to Claude Code, which continues from your existing work instead of starting over from a screenshot.
+You can move between working in Claude Design and Claude Code while keeping your work synced. Use /design-sync to pull in your design system, so everything you build in Claude Design starts from your existing components. When a design is ready to become software, you can hand it off to Claude Code, which continues from your existing work instead of starting over from a screenshot.
 
-If you prefer to work from Claude Code, connect the Claude Design MCP server to create and edit designs without leaving your terminal:
-
-1.  Add the server:  
-    ​`claude mcp add --scope user --transport http claude-design https://api.anthropic.com/v1/design/mcp`
-
-2\. Run `/design-login` to sign in.
-
-Once you're connected, you can import a design into your codebase, export your code as a live prototype, or let Claude build the whole thing from start to finish.
+From Claude Code, use /design to import a design into your codebase, export your code as a live prototype, or let Claude build the whole thing from start to finish.
 
 ------------------------------------------------------------------------
 
@@ -1567,9 +1660,13 @@ When you create a project, it automatically inherits your organization’s desig
 
 ### Attach or import your design system
 
-Bring in one or several design systems from a GitHub repo, design files, raw uploads, or your local codebase using the `/design-sync` command in Claude Code. Claude builds with your real design system components, checks its own output against your design system, and makes corrections before you see them.
+Bring in one or several design systems from a GitHub repo, design files, raw uploads, or your local codebase using the /design-sync command in Claude Code. Claude builds with your real design system components, checks its own output against your design system, and makes corrections before you see them.
 
-For larger teams, the Claude Design Admin custom role lets an admin approve a standard system and lock down edits, so the work always matches your company guidelines.
+On Enterprise plans, admins can reserve publishing, setting the default, and deleting design systems for specific users. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751)**.
+
+### Bring over a design system from claude.ai/design
+
+Design systems you made at claude.ai/design can move over, so Claude can use them in any chat, including in Claude Code. Learn more about **[setting up your design system](https://support.claude.com/en/articles/14604397)**.
 
 ### Add context to your project
 
@@ -1659,11 +1756,11 @@ Use the “Export” button in the upper right corner when viewing your project 
 
 - Export as PPTX
 
-- Send to Canva
+- Export to Google Slides (available only at claude.ai/design)
 
 - Export as standalone HTML
 
-- Send to the tools you already use, including Adobe, Base44, Canva, Gamma, Lovable, Miro, Replit, Vercel, and Wix, with more destinations coming soon.
+- Send to the tools you already use: Adobe Experience Manager, Adobe for Creativity, Adobe Journey Optimizer, Base44, Canva, Gamma, HubSpot, Hyperframes, Lovable, Miro, Netlify, Replit, v0, Vercel, and Wix
 
 - Handoff to Claude Code
 
@@ -1671,14 +1768,13 @@ Use the “Export” button in the upper right corner when viewing your project 
 
   - Send to Claude Code Web
 
-
-You can also share projects within your organization using a shareable link. Sharing options include view-only, comment, and edit access.
+Designs start private to you. To share one, click "Share" and choose who can open it and what they can do. People you share a design with can view, comment on, or edit it. Learn more about **[sharing artifacts](https://support.claude.com/en/articles/9547008)**.
 
 ------------------------------------------------------------------------
 
 ## Usage and pricing
 
-Claude Design counts toward the same usage limits as the rest of Claude. Design activity draws from the shared pool you use for chat, Claude Code, and Cowork, so there's no separate Claude Design allowance to track. Complex projects with large codebases or many iterations consume more usage.
+Claude Design counts toward the same usage limits as the rest of Claude. Design activity draws from the same pool as the rest of your work with Claude, including Claude Code, so there's no separate Claude Design allowance to track. Complex projects with large codebases or many iterations consume more usage.
 
 If you reach your usage limits, Claude Design is unavailable until your limits reset. If you've enabled usage credits, you can keep working after reaching your included limits. Learn more about **[how usage and length limits work](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work)**.
 
@@ -1710,15 +1806,17 @@ Claude Design is now available in beta. A few things to be aware of:
 
 - **Comment persistence:** Inline comments occasionally don't appear on the page, but you can still see them by opening the comments view.
 
-- **Large codebases:** Consider linking very large repositories from Claude Code to avoid lag or browser issues. To sync a design system, use `/design-sync` from Claude Code.
+- **Large codebases:** Consider linking very large repositories from Claude Code to avoid lag or browser issues. To sync a design system, use /design-sync from Claude Code.
 
 - **Chat errors:** If you hit a "chat upstream error," try starting a new chat tab within the same project.
 
-- **Availability:** Claude Design is available on web and desktop only.
+- **Mobile:** In the Claude app for iOS and Android, you can ask for a design and view it in the Artifacts tab. Editing on the canvas and changing sharing settings need Claude on web or desktop.
 
 - **Multi-person editing:** Two or more people editing a design project at the same time is still basic and may not work reliably.
 
 - **Design system import:** Design system import is only as good as its source. A messy codebase or an incomplete file will show up in the output.
+
+- **Version history:** Claude Design doesn't have version history yet.
 
 
 ---
@@ -1727,6 +1825,8 @@ Claude Design is now available in beta. A few things to be aware of:
 # How can I access the personal information that Anthropic has on my account?
 
 March 16, 2026
+
+Copy for LLM
 
 Please refer to our [Privacy Center](https://privacy.anthropic.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team) for more information about this.
 
@@ -1740,6 +1840,201 @@ Please refer to our [Privacy Center](https://privacy.anthropic.com/en/articles/9
 
 
 Please refer to our [Privacy Center](https://privacy.anthropic.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team) for more information about this.
+
+
+---
+## how-can-i-contact-support-7f984d641d.md
+
+# How to get support
+
+
+Copy for LLM
+
+This guide explains how to get support for your Claude or Console account. Different support options are available depending on your plan. Support is provided in writing through the support messenger and email. We don't offer phone support.
+
+## Pro and Max plans, Team and Enterprise plan owners, and Console Admins
+
+You have full access to:
+
+- All help documentation
+
+- Fin, our AI support bot
+
+- Further assistance from our Product Support team
+
+While we don't offer phone or live chat support, our Product Support team will gladly assist you through our support messenger.
+
+**Note for Enterprise admins:** Primary Owners and Owners can configure which members of their organization reach human support by designating support contacts. By default, Admins and Owners keep human support access. For configuration details, see **[Designate support contacts for human support](https://support.claude.com/en/articles/15263885)**.
+
+### Seeking support for Claude
+
+1.  Log in to your Claude account.
+
+2.  Click your initials or name in the lower left corner and select “Get help” from the menu.
+
+3.  In the support messenger:
+
+    - Search help resources
+
+    - Chat with Fin, our AI support bot
+
+4.  Click “Send us a message” to start chatting with Fin.
+
+5.  Click "Accept," then select your issue from the available options.
+
+6.  Depending on the selected issue, provide additional details when prompted.
+
+7.  If your issue requires additional investigation or input from our Product Support team, Fin will pass your inquiry along. The team's reply appears in this same conversation. You'll see it in the messenger and receive a copy by email at the address on your Claude account, so you don't need to keep this window open.
+
+### Seeking support for the Claude API or Console
+
+1.  Log in to your **[Console account](https://platform.claude.com)**.
+
+2.  Click your initials or name in the lower left corner of the Console and select “Get help” from the menu.
+
+3.  This will open a support messenger in the lower right corner of the Console.
+
+4.  In the support messenger:
+
+    - Search help resources
+
+    - Chat with Fin, our AI support bot
+
+5.  Click “Send us a message” to start chatting with Fin.
+
+6.  Click "Accept," then select your issue from the available options.
+
+7.  Depending on the selected issue, provide additional details when prompted.
+
+8.  If your issue requires additional investigation or input from our Product Support team, Fin will pass your inquiry along. The team's reply appears in this same conversation. You'll see it in the messenger and receive a copy by email at the address on your Claude account, so you don't need to keep this window open.
+
+### Seeking support for any account type from the Help Center
+
+Users who are logged in to their Claude or Console accounts will be able to click the icon in the lower right corner of any Help Center page to open the support messenger and start chatting with Fin.
+
+## What happens after you message us
+
+Support is asynchronous. After your request reaches our team, a specialist investigates and replies in the same conversation. Response times vary by plan and by the severity of the issue.
+
+### Chat and email are the same conversation
+
+- Every reply we send appears in the support messenger and is emailed to the address on your Claude account (the account you were signed in with when you started the conversation).
+
+- Replying to that email continues the same conversation. You don't need to return to the chat, and you can close the chat window at any time without missing our reply.
+
+- Keep one conversation per issue. Opening a second request for the same problem creates a duplicate that has to be re-triaged, which usually slows the answer down. If you haven't heard back, reply in your existing conversation instead.
+
+### Keep colleagues in the loop
+
+- A conversation started in the messenger includes only you. To bring in a colleague, such as the affected user or your IT admin, reply to the conversation from the email thread and cc them. Their replies join the same conversation.
+
+- If you're reporting an issue on behalf of someone else, include their work email address, any error messages or screenshots, and when the issue started in your first message. This avoids an extra round of questions.
+
+- Enterprise organizations can also **[designate support contacts](https://support.claude.com/en/articles/15263885)**.
+
+## Team and Enterprise plan non-owners, and Console non-Admins
+
+You’ll chat with Fin, an AI support agent, to help answer your questions.
+
+### Team plans and Console organizations
+
+Human specialist support is not directly available for your account seat type. If Fin can't find a resolution and you need to escalate to our human team of specialists, your account's Primary Owner, Owner, or Console Admin can reach out on your behalf.
+
+### Enterprise plans
+
+Primary Owners and Owners can designate support contacts: members who can reach human support without holding an Owner role. If you're a designated support contact, you'll have the option to wait for a human when chatting with Fin. Otherwise, Fin will handle your conversation, and if escalation is needed, your account's Primary Owner, Owner, or a designated support contact can reach out on your behalf.
+
+For configuration details, see **[Designate support contacts for human support](https://support.claude.com/en/articles/15263885)**.
+
+## Free Claude users
+
+Free Claude users have access to:
+
+- All help documentation
+
+- Fin, our AI support bot
+
+- **[Account deletion](https://support.claude.com/en/articles/9028421)** support in cases where self-serve is unavailable
+
+To get support:
+
+1.  Log in to your Claude.ai account.
+
+2.  Click your initials or name in the lower left corner.
+
+3.  Select "Get help."
+
+4.  Use the support messenger to:
+
+    - Search help resources.
+
+    - Chat with Fin, our AI support bot.
+
+## Unable to log in?
+
+If you can't access your account, we can still help with:
+
+1.  Account deletion
+
+2.  Data exports
+
+3.  Subscription support
+
+To request assistance:
+
+1.  Click the message icon in the lower right corner of the Help Center.
+
+2.  Start a conversation.
+
+3.  Select "I can't login."
+
+## About subscription support
+
+If you're a paid subscriber having trouble accessing your account, our team can:
+
+- Help locate login information
+
+- Process subscription cancellations
+
+- Check refund eligibility
+
+**Note:** In order to assist with these tasks, we will need to validate details about your account and the payment method used.
+
+## Designated point of contact for users in the EU
+
+Users in the EU can find instructions on how to find the single point of contact for users in the EU under the DSA here: **[Designated point of contact for users in the EU](https://support.claude.com/en/articles/11595103-)**.
+
+## Report compliance concerns - UK and Australian users
+
+- Users in the UK can find instructions to report non-compliance with UK OSA duties here: **[Report a concern](https://docs.google.com/forms/d/e/1FAIpQLSfdo76veqg3pHZTh_nI14j1DyRO8coz6ocTa9mEuF5DcYgxuA/viewform)**. This includes reporting related to illegal content safety duties, content reporting obligations, freedom of expression and privacy, or the use of proactive technology by Anthropic in breach of Anthropic’s Terms of Service.
+
+- Users in Australia can find instructions to report non-compliance with the DIS Standard and information about the role and functions of the eSafety Commissioner here: **[Report a Concern: Australian DIS Standard compliance](https://support.claude.com/en/articles/12335811-report-a-concern-australian-dis-standard-compliance)**.
+
+------------------------------------------------------------------------
+
+## Frequently asked questions
+
+### Do you offer phone or video support?
+
+No. Support is provided in writing through the messenger and email. Enterprise customers who need a live working session can arrange one through their Anthropic account team.
+
+###  Can I close the chat window while I wait?
+
+Yes. Replies are delivered to the messenger and to your account email, so you won't miss one.
+
+### Which email address will you use to reply?
+
+The email address on the Claude account you were signed in with when you started the conversation.  
+​
+
+### I haven't heard back. Should I open another request?
+
+No. Reply in your existing conversation, in the messenger or by email, and it moves back into the queue with its history intact.  
+​
+
+### I have a business-critical outage. Is there a faster path?
+
+Organization owners and admins on qualifying Enterprise plans have prioritized options in the messenger. Platform status is always available on **[our status page](https://status.claude.com)**.
 
 
 ---
@@ -1888,29 +2183,71 @@ Users in the EU can find instructions on how to find the single point of contact
 ---
 ## how-can-i-delete-my-claude-account-71ba175b00.md
 
-# How can I delete my Claude account?
+# Delete your Claude account
 
-April 14, 2026
+August 19, 2026
 
+Copy for LLM
 
-Once you are logged in, click your initials or name in the lower left corner and select "Settings." Navigate to **[Settings \> Account](https://claude.ai/settings/account)** and click the "Delete account" button:
+This article shows you how to permanently delete your account on the web and in the Claude mobile apps, and explains what happens to your data when you do.
 
+**Important:** Deleting your account is permanent. You'll lose access to your conversations, projects, and other saved data, and you can't recover the account afterward. If you want to keep your data, export it on web or desktop before you delete. Learn more about **[exporting your Claude data](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)**.
 
-## Considerations for paid Claude accounts
+## Before you delete a paid account
 
-Before deleting Claude accounts with paid subscriptions (Pro or Max plans):
+If you're on a Pro or Max plan:
 
 1.  Cancel your subscription from your **[Billing settings](https://claude.ai/settings/billing)**.
 
 2.  Wait until the end of your current subscription period.
 
-3.  Once the subscription lapses, proceed with account deletion.
+3.  Once the subscription lapses, delete your account using the steps below.
 
-Click "Delete account" and follow the prompts. **Please note that deleting your account is permanent** and you will no longer have access to saved chats. If you wish to keep your data, we recommend exporting it before deletion by following the steps listed here: **[How can I export my Claude data?](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)**
+For detailed cancellation instructions, including for Claude for iOS and Android, see **[Cancel your Pro or Max subscription](https://support.claude.com/en/articles/8325617)**.
 
-If you have multiple accounts associated with the same email address, you'll need to specify which accounts you want to delete when making your request.
+## Delete your account on the web
 
-There are some scenarios where you will need to **[contact our team](https://support.claude.com/en/articles/9015913-how-to-get-support)** to delete your account. If this is the case, it will be noted in your account:
+1.  Go to **[claude.ai](https://claude.ai/)** and click your initials or name in the lower left corner.
+
+2.  Select "Settings," or navigate directly to **[Settings \> Account](https://claude.ai/settings/account)**.
+
+3.  Click "Delete account" and follow the prompts.
+
+## Delete your account on Claude for iOS
+
+These steps apply to Claude for iOS, listed on the App Store as Claude by Anthropic.
+
+1.  Open the Claude app and tap "Settings."
+
+2.  Find the **Account** section and tap "Profile."
+
+3.  Tap "Delete account."
+
+4.  Tap "Delete" to confirm.
+
+## Delete your account on Claude for Android
+
+These steps apply to Claude for Android, listed on Google Play as Claude by Anthropic.
+
+1.  Open the Claude app and tap the menu button in the upper left corner.
+
+2.  Tap your initials in the lower left corner.
+
+3.  Tap "Profile."
+
+4.  Under **Account Actions**, tap "Delete Account."
+
+5.  Tap "I Understand" to confirm.
+
+## What happens when you delete your account
+
+When you delete your account, you’ll no longer have access to your conversations, projects, and account information. Learn more about **[how long Anthropic stores your data](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**.
+
+## When you need to contact support
+
+In some scenarios you'll need to contact our team to delete your account. If this applies to you, it'll be noted in your account settings. Learn more about **[how to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+
+If you have multiple accounts associated with the same email address, you'll need to specify which accounts you want to delete when you contact us.
 
 
 ---
@@ -1946,6 +2283,7 @@ There are some scenarios where you will need to [contact our team](https://suppo
 
 March 16, 2026
 
+Copy for LLM
 
 Only Console Admins can request deletion. See [Claude Console Roles and Permissions](https://support.claude.com/en/articles/10186004-claude-console-roles-and-permissions) for a full overview of your role's capabilities.
 
@@ -2095,6 +2433,8 @@ We do not support migrating data between separate accounts at this time.
 
 March 16, 2026
 
+Copy for LLM
+
 It's not possible to change the email address associated with your Claude account at this time. When creating an account, please make sure you use an email you'll have long-term access to.
 
 If you need to use Claude with a different email address, do the following:
@@ -2174,6 +2514,8 @@ If you see "Contact support" instead of a "Delete account" button, you'll need t
 
 March 16, 2026
 
+Copy for LLM
+
 To sign up for Claude Pro using the Claude app for Android, open the app on your device and click on your initials in the upper right corner. From your settings page, click on “Upgrade to Pro” and follow the payment instructions to complete your in-app purchase.
 
 
@@ -2195,6 +2537,8 @@ To sign up for Claude Pro using the Claude app for Android, open the app on your
 
 March 16, 2026
 
+Copy for LLM
+
 To sign up for Claude Pro using the Claude app for iOS, open the app on your device and click on your initials in the upper right corner. From your settings page, click on “Upgrade to Pro” and follow the payment instructions to complete your in-app purchase.
 
 
@@ -2214,6 +2558,9 @@ To sign up for Claude Pro using the Claude app for iOS, open the app on your dev
 
 # How do I sign up for the Max plan?
 
+July 13, 2026
+
+Copy for LLM
 
 This article applies to individual consumers signing up for paid Max plans. If you're part of an organization looking to use Claude with your team, refer to **[Team and Enterprise plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)**.
 
@@ -2330,14 +2677,15 @@ After subscribing for a Max plan, your subscription will be set to automatically
 
 # How do I sign up for the Pro plan?
 
-March 16, 2026
+August 6, 2026
 
+Copy for LLM
 
-This article applies to individual consumers signing up for paid Pro plans. If you're part of an organization looking to use Claude with your team, refer to [Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans).
+This article applies to individual consumers signing up for paid Pro plans. If you're part of an organization looking to use Claude with your team, refer to **[Team and Enterprise plans](https://support.claude.com/en/collections/9387370)**.
 
 ## Instructions for new users
 
-1.  Navigate to Claude ([claude.ai](http://claude.ai)) in a web browser.
+1.  Navigate to Claude (**[claude.ai](https://claude.ai)**) in a web browser.
 
 2.  Enter your email address and click “Continue with email” or click “Continue with Google” if applicable.
 
@@ -2345,9 +2693,9 @@ This article applies to individual consumers signing up for paid Pro plans. If y
 
 4.  Click on your initials or name in the lower left corner and select “Settings” from the menu.
 
-5.  Navigate to [Settings \> Billing](http://claude.ai/settings/billing) and click the “Upgrade plan” button.
+5.  Navigate to **[Settings \> Billing](https://claude.ai/settings/billing)** and click the “Upgrade plan” button.
 
-6.  After landing on [the upgrade page](https://claude.ai/upgrade), click “Get Pro plan.”
+6.  After landing on **[the upgrade page](https://claude.ai/upgrade)**, click “Get Pro plan.”
 
 7.  Choose between monthly and annual billing periods.
 
@@ -2359,9 +2707,9 @@ This article applies to individual consumers signing up for paid Pro plans. If y
 
 2.  Click on your initials or name in the lower left corner and select “Settings” from the menu.
 
-3.  Navigate to [Settings \> Billing](http://claude.ai/settings/billing) and click the “Upgrade plan” button.
+3.  Navigate to **[Settings \> Billing](https://claude.ai/settings/billing)** and click the “Upgrade plan” button.
 
-4.  After landing on [the upgrade page](https://claude.ai/upgrade), click “Get Pro plan.”
+4.  After landing on **[the upgrade page](https://claude.ai/upgrade)**, click “Get Pro plan.”
 
 5.  Choose between monthly and annual billing periods.
 
@@ -2369,15 +2717,15 @@ This article applies to individual consumers signing up for paid Pro plans. If y
 
 ## How does subscription renewal work for Pro plans?
 
-After subscribing for a Pro plan, your subscription will be set to automatically renew at the end of each billing period (monthly or annual) by default. This ensures uninterrupted access to Pro features. However, you have the flexibility to [cancel your paid plan](https://support.claude.com/en/articles/8325617-how-do-i-cancel-my-paid-claude-subscription) at any time if you choose not to continue.
+After subscribing for a Pro plan, your subscription will be set to automatically renew at the end of each billing period (monthly or annual) by default. This ensures uninterrupted access to Pro features. However, you have the flexibility to **[cancel your paid plan](https://support.claude.com/en/articles/8325617-how-do-i-cancel-my-paid-claude-subscription)** at any time if you choose not to continue.
 
 ## I am outside of your supported locations; can I subscribe to the Pro plan?
 
-No. Paid plans are only available for users physically located in one of our [supported locations](https://support.claude.com/en/articles/8461763-where-can-i-access-claude), and we require a phone number from a supported location to create an account.
+No. Paid plans are only available for users physically located in one of our **[supported locations](https://support.claude.com/en/articles/8461763-where-can-i-access-claude)**, and we require a phone number from a supported location to create an account.
 
 ## Is there still a free version of Claude?
 
-Yes. You can still access the free version of Claude without subscribing for a paid plan. Note that like Pro, the free version of Claude is only available to customers physically located in one of our [supported regions](https://support.claude.com/en/articles/8461763-where-can-i-access-claude).
+Yes. You can still access the free version of Claude without subscribing for a paid plan. Note that like Pro, the free version of Claude is only available to customers physically located in one of our **[supported regions](https://support.claude.com/en/articles/8461763-where-can-i-access-claude)**.
 
 
 ---
@@ -2440,6 +2788,8 @@ Yes. You can still access the free version of Claude without subscribing for a p
 
 March 16, 2026
 
+Copy for LLM
+
 *This article is about our commercial products (e.g. Claude for Work, Claude API). For our consumer products (e.g. Claude Free, Claude Pro), see [here](https://privacy.claude.com/en/collections/10663362-consumers).*
 
 Anthropic’s DPA with Standard Contractual Clauses (SCCs) is automatically incorporated into our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms), and can be viewed [here](https://www.anthropic.com/legal/data-processing-addendum). When you accept Anthropic’s Commercial Terms of Service, you also accept our DPA.
@@ -2467,12 +2817,12 @@ Anthropic’s DPA with Standard Contractual Clauses (SCCs) is automatically inco
 
 # How to get support
 
-June 1, 2026
 
+Copy for LLM
 
-This guide explains how to get support for your Claude or Console account. Different support options are available depending on your plan.
+This guide explains how to get support for your Claude or Console account. Different support options are available depending on your plan. Support is provided in writing through the support messenger and email. We don't offer phone support.
 
-## Pro and Max plans, Team and Enterprise plan Owners, and Console Admins
+## Pro and Max plans, Team and Enterprise plan owners, and Console Admins
 
 You have full access to:
 
@@ -2484,7 +2834,7 @@ You have full access to:
 
 While we don't offer phone or live chat support, our Product Support team will gladly assist you through our support messenger.
 
-**Note for Enterprise admins:** Primary Owners and Owners can configure which members of their organization reach human support by designating support contacts. By default, Admins and Owners keep human support access. For configuration details, see **[Designate support contacts for human support](https://support.claude.com/en/articles/15263885-)**.
+**Note for Enterprise admins:** Primary Owners and Owners can configure which members of their organization reach human support by designating support contacts. By default, Admins and Owners keep human support access. For configuration details, see **[Designate support contacts for human support](https://support.claude.com/en/articles/15263885)**.
 
 ### Seeking support for Claude
 
@@ -2504,11 +2854,11 @@ While we don't offer phone or live chat support, our Product Support team will g
 
 6.  Depending on the selected issue, provide additional details when prompted.
 
-7.  If your issue requires additional investigation or input from our Product Support team, Fin will pass your inquiry along and someone will respond via email.
+7.  If your issue requires additional investigation or input from our Product Support team, Fin will pass your inquiry along. The team's reply appears in this same conversation. You'll see it in the messenger and receive a copy by email at the address on your Claude account, so you don't need to keep this window open.
 
 ### Seeking support for the Claude API or Console
 
-1.  Log in to your Console account ([platform.claude.com](http://platform.claude.com)).
+1.  Log in to your **[Console account](https://platform.claude.com)**.
 
 2.  Click your initials or name in the lower left corner of the Console and select “Get help” from the menu.
 
@@ -2526,13 +2876,33 @@ While we don't offer phone or live chat support, our Product Support team will g
 
 7.  Depending on the selected issue, provide additional details when prompted.
 
-8.  If your issue requires additional investigation or input from our Product Support team, Fin will pass your inquiry along and someone will respond via email.
+8.  If your issue requires additional investigation or input from our Product Support team, Fin will pass your inquiry along. The team's reply appears in this same conversation. You'll see it in the messenger and receive a copy by email at the address on your Claude account, so you don't need to keep this window open.
 
 ### Seeking support for any account type from the Help Center
 
 Users who are logged in to their Claude or Console accounts will be able to click the icon in the lower right corner of any Help Center page to open the support messenger and start chatting with Fin.
 
-## Team and Enterprise plan non-Owners, and Console non-Admins
+## What happens after you message us
+
+Support is asynchronous. After your request reaches our team, a specialist investigates and replies in the same conversation. Response times vary by plan and by the severity of the issue.
+
+### Chat and email are the same conversation
+
+- Every reply we send appears in the support messenger and is emailed to the address on your Claude account (the account you were signed in with when you started the conversation).
+
+- Replying to that email continues the same conversation. You don't need to return to the chat, and you can close the chat window at any time without missing our reply.
+
+- Keep one conversation per issue. Opening a second request for the same problem creates a duplicate that has to be re-triaged, which usually slows the answer down. If you haven't heard back, reply in your existing conversation instead.
+
+### Keep colleagues in the loop
+
+- A conversation started in the messenger includes only you. To bring in a colleague, such as the affected user or your IT admin, reply to the conversation from the email thread and cc them. Their replies join the same conversation.
+
+- If you're reporting an issue on behalf of someone else, include their work email address, any error messages or screenshots, and when the issue started in your first message. This avoids an extra round of questions.
+
+- Enterprise organizations can also **[designate support contacts](https://support.claude.com/en/articles/15263885)**.
+
+## Team and Enterprise plan non-owners, and Console non-Admins
 
 You’ll chat with Fin, an AI support agent, to help answer your questions.
 
@@ -2544,17 +2914,17 @@ Human specialist support is not directly available for your account seat type. I
 
 Primary Owners and Owners can designate support contacts: members who can reach human support without holding an Owner role. If you're a designated support contact, you'll have the option to wait for a human when chatting with Fin. Otherwise, Fin will handle your conversation, and if escalation is needed, your account's Primary Owner, Owner, or a designated support contact can reach out on your behalf.
 
-For configuration details, see **[Designate support contacts for human support](https://support.claude.com/en/articles/15263885-)**.
+For configuration details, see **[Designate support contacts for human support](https://support.claude.com/en/articles/15263885)**.
 
 ## Free Claude users
 
-Free Claude.ai users have access to:
+Free Claude users have access to:
 
 - All help documentation
 
 - Fin, our AI support bot
 
-- [Account deletion](https://support.claude.com/en/articles/9028421-how-can-i-delete-my-claude-account) support in cases where self-serve is unavailable
+- **[Account deletion](https://support.claude.com/en/articles/9028421)** support in cases where self-serve is unavailable
 
 To get support:
 
@@ -2610,28 +2980,50 @@ Users in the EU can find instructions on how to find the single point of contact
 
 - Users in Australia can find instructions to report non-compliance with the DIS Standard and information about the role and functions of the eSafety Commissioner here: **[Report a Concern: Australian DIS Standard compliance](https://support.claude.com/en/articles/12335811-report-a-concern-australian-dis-standard-compliance)**.
 
+------------------------------------------------------------------------
+
+## Frequently asked questions
+
+### Do you offer phone or video support?
+
+No. Support is provided in writing through the messenger and email. Enterprise customers who need a live working session can arrange one through their Anthropic account team.
+
+###  Can I close the chat window while I wait?
+
+Yes. Replies are delivered to the messenger and to your account email, so you won't miss one.
+
+### Which email address will you use to reply?
+
+The email address on the Claude account you were signed in with when you started the conversation.  
+​
+
+### I haven't heard back. Should I open another request?
+
+No. Reply in your existing conversation, in the messenger or by email, and it moves back into the queue with its history intact.  
+​
+
+### I have a business-critical outage. Is there a faster path?
+
+Organization owners and admins on qualifying Enterprise plans have prioritized options in the messenger. Platform status is always available on **[our status page](https://status.claude.com)**.
+
 
 ---
 ## how-to-get-support-for-claude-for-government-cb7c5e780a.md
 
 # How to get support for Claude for Government
 
-March 16, 2026
 
+Copy for LLM
 
-**Please note:** This page is hosted outside of Claude for Government's FedRAMP boundary.
+**Please note:** This page is hosted outside of Claude for Government's FedRAMP boundary. Don't share sensitive information with our AI support bot.
 
-This article explains how Claude for Government Owners and Primary Owners can contact Anthropic Support. We've designed a specialized process to ensure your sensitive information remains secure while providing you with the help you need.
+This article explains how Claude for Government Admins can contact Anthropic Support. We've designed a specialized process to ensure your sensitive information remains secure while providing you with the help you need.
 
-## How to Get Started
+## How to get started
 
-1.  Log in to your Owner or Primary Owner Claude for Government account.
+Claude for Government Desktop Org Admins or Tenant Admins can click "Support" at the bottom of the Claude for Government admin portal. This will open a help center article with a messenger icon in the lower right corner. Click "Send us a message" to initiate the support process.
 
-2.  Click your initials or name in the lower left corner and select “Get help” from the menu.
-
-3.  You will be directed to a page describing additional guidelines for our specialized support process.
-
-4.  Follow the guidelines described on that page to submit a support inquiry.
+**Note:** Only Claude for Government Desktop Org Admins and Tenant Admins can access this prioritized support path. If you have a different role and need to contact Support, please have an Org Admin or Tenant Admin submit the request on your behalf.
 
 
 ---
@@ -2662,8 +3054,9 @@ This article explains how Claude for Government Owners and Primary Owners can co
 
 # Add or update your paid Claude account’s tax or VAT ID
 
-March 16, 2026
+August 6, 2026
 
+Copy for LLM
 
 ## Add your tax or VAT ID during signup
 
@@ -2677,7 +3070,7 @@ When you sign up for a Pro or Max subscription, you may have the option to enter
 
 4.  If the ID is entered correctly, you'll be able to proceed with your signup.
 
-**Important:** If you're signing up for an individual paid account as a business, and want to use a name other than the one tied to your payment method, check the "Use a different name on invoices" box when adding or updating your payment method in [Settings \> Billing](http://claude.ai/settings/billing). Then, enter your company name in the "Bill to" field to ensure it is reflected correctly on your invoice.
+**Important:** If you're signing up for an individual paid account as a business, and want to use a name other than the one tied to your payment method, check the "Use a different name on invoices" box when adding or updating your payment method in **[Settings \> Billing](https://claude.ai/settings/billing)**. Then, enter your company name in the "Bill to" field to ensure it is reflected correctly on your invoice.
 
 ## Update your tax or VAT ID after signup
 
@@ -2689,7 +3082,7 @@ If you need to add or update your Tax or VAT ID after you've already signed up, 
 
 2.  Click on your initials or name in the lower left corner and select “Settings” from the menu.
 
-3.  Navigate to [Settings \> Billing](http://claude.ai/settings/billing).
+3.  Navigate to **[Settings \> Billing](https://claude.ai/settings/billing)**.
 
 4.  Click the "Update" button next to your payment method.
 
@@ -2699,7 +3092,7 @@ If you need to add or update your Tax or VAT ID after you've already signed up, 
 
 7.  Save your changes.
 
-**Note:** Your billing address determines your tax jurisdiction. See [Understanding your billing address and tax calculation](https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation) for details on how to view or update your billing address.
+**Note:** Your billing address determines your tax jurisdiction. See **[Understanding your billing address and tax calculation](https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation)** for details on how to view or update your billing address.
 
 
 ---
@@ -2752,8 +3145,9 @@ If you need to add or update your Tax or VAT ID after you've already signed up, 
 
 # Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
-June 25, 2026
+August 4, 2026
 
+Copy for LLM
 
 Before setting up SSO for your Claude or Claude Console organization, review this guide to understand key concepts, plan your approach, and complete any prerequisite steps.
 
@@ -2815,13 +3209,17 @@ Team or Enterprise organizations can invite other organizations to join an exist
 
 4.  Review the member count and click "Invite."
 
-5.  The merge proposal will be sent to the invited organization's Admins/Owners, with the email subject “*Parent Organization Update: New Member Organization Proposed*,” and must be approved within 14 days.
+5.  The merge proposal will be sent to the invited organization's Admins/Owners, with the email subject "Parent Organization Update: New Member Organization Proposed," and must be approved within 14 days.
 
 **Note:** If the person initiating the merge is also an Admin/Owner in the invited organization, only one approval is required.
 
 ### To approve a merge proposal
 
-An organization Owner or Primary Owner needs to go to **[claude.ai/settings/join-proposal](https://claude.ai/settings/join-proposal)** to accept the merge.
+Approving a merge takes two steps, one on each side, and completes only after both are done:
+
+1.  **Invited organization:** An organization Owner or Primary Owner needs to go to **[claude.ai/settings/join-proposal](https://claude.ai/settings/join-proposal)** to accept.
+
+2.  **Parent organization:** An Owner or Admin of an organization already under the parent approves from Organization settings \> Organization and access \> Pending Organizations, or from the link in the "Parent Organization Update: New Member Organization Proposed" email.
 
 Once a Console organization is merged, it gains access to the **[Identity and access page](http://platform.claude.com/settings/identity)**, in the Organization settings, to configure SSO and provisioning settings.
 
@@ -3073,6 +3471,8 @@ Once you've reviewed these considerations and completed any necessary prerequisi
 
 March 16, 2026
 
+Copy for LLM
+
 Claude is trained to be a helpful, honest, and harmless assistant. It is used to “speaking” conversationally and you can instruct it in English. Think of Claude as a newly-hired contractor. It doesn’t have any context about you, your task, or your organization. Give it very specific instructions about exactly what you’d like it to do.
 
 For more information on effective prompt design, refer to our **[Claude API Docs](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)**.
@@ -3096,6 +3496,7 @@ For more information on effective prompt design, refer to our **[Claude API Docs
 
 May 19, 2026
 
+Copy for LLM
 
 When you open Claude on a web browser ([claude.ai](http://claude.ai)), the desktop app, or a mobile app, you will see two different options for logging in to your Claude account.
 
@@ -3208,12 +3609,98 @@ If you are already logged in to Claude for iOS, you can see the email address yo
 
 
 ---
+## log-in-to-your-console-account-363b800d03.md
+
+# Log in to your Console account
+
+August 18, 2026
+
+Copy for LLM
+
+When you navigate to the **[Claude Console](https://platform.claude.com)**, you will see two different options for logging in to your Console account.
+
+
+## Continue with Google
+
+Click "Continue with Google" if you want to use your Google account credentials to log in to the Console. This opens a modal where you can enter your Google email address and password. After entering your credentials and clicking "Next," you will be authenticated into your Console account.
+
+## Continue with email
+
+If you'd prefer to use your email address to log in, enter it in the field pictured above, and click "Continue with email." This will send you an email with the subject line *"Secure link to log in to Claude Console"* and a login link.
+
+### Clicking the link on the same device
+
+If you requested the login email and clicked the link using the same device, you'll be automatically redirected to your logged-in Console account.
+
+### Clicking the link on another device
+
+If you requested the login email and clicked the link using a different device (requesting from a web browser and clicking the email link on a phone, for example), then you will still see a "Sign in to Claude Console" button in the email, but clicking it will generate a verification code. You should enter this code on the original device where you requested the login email to authenticate.
+
+## Troubleshooting
+
+### I entered my email address but I haven't received my login email.
+
+If you requested a login email but you haven't received it yet, do the following:
+
+- Check your spam and junk folders for emails from @mail.anthropic.com.
+
+- Check your server's quarantined emails.
+
+- Whitelist @mail.anthropic.com in your email settings.
+
+- Try logging in again after a few minutes.
+
+**Note:** Business, government, or .edu email users may need to contact their IT department to adjust email security settings.
+
+### I received the email but I'm still having trouble logging in.
+
+If you received the login email but can't log in with the link or code, take note of the error message you're seeing. Visit the [Claude status page](https://status.claude.com/) to check if there are any known service disruptions or maintenance activities. If the status page shows an ongoing system-wide incident, it's best to wait for service restoration before attempting further troubleshooting.
+
+## Frequently Asked Questions
+
+### How can I set a password for my Console account?
+
+It's not possible to create a dedicated password for your Console account at this time.
+
+### Does my organization use Single Sign-On (SSO)?
+
+If you're a member of an organization that has configured single sign-on for the Console, you'll be redirected to your SSO provider when you attempt to log in. For information about setting up SSO for your organization, see **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**.
+
+### I have multiple Console accounts – how can I switch between them?
+
+If you're a member of multiple Console organizations tied to the same email address, follow these steps to switch to your other account:
+
+1.  Click your initials in the bottom left corner to open a menu showing all the accounts tied to your logged-in email address.
+
+2.  Select the desired account.
+
+3.  Look for the check mark indicating the active account.
+
+### I don't want to use "Continue with Google" to log in anymore; how can I revoke access to my Google account?
+
+If you've previously authenticated using Google, you can follow these steps to unlink your Google account from the Console and use only the emailed login link moving forward:
+
+1.  Visit **[https://myaccount.google.com/connections](https://myaccount.google.com/connections)**.
+
+2.  Locate "Claude by Anthropic" in the list and click on it.
+
+3.  Click "See details."
+
+4.  Click the "Stop using Sign in with Google" button.
+
+### Can I have both a Claude account and a Console account?
+
+Yes, you can have both a Claude account (for using Claude at claude.ai) and a Console account (for accessing the playground and Claude API). These are separate accounts, though you can use the same email address for both. Learn more in **[Can I have a Claude account and a Console account?](https://support.claude.com/en/articles/8987223-can-i-have-a-claude-account-and-a-console-account)**
+
+
+---
 ## logging-in-to-your-claude-account-2c1d42f1ab.md
 
 # Log in to your Claude account
 
 May 19, 2026
 
+Copy for LLM
 
 When you open Claude on a web browser ([claude.ai](http://claude.ai)), the desktop app, or a mobile app, you will see two different options for logging in to your Claude account.
 
@@ -3430,12 +3917,13 @@ If you are already logged in to Claude for iOS, you can see the email address yo
 ---
 ## logging-in-to-your-console-account-23a06981d3.md
 
-# Logging in to your Console account
+# Log in to your Console account
 
-March 18, 2026
+August 18, 2026
 
+Copy for LLM
 
-When you navigate to the [Claude Console](https://platform.claude.com), you will see two different options for logging in to your Console account.
+When you navigate to the **[Claude Console](https://platform.claude.com)**, you will see two different options for logging in to your Console account.
 
 
 ## Continue with Google
@@ -3482,7 +3970,7 @@ It's not possible to create a dedicated password for your Console account at thi
 
 ### Does my organization use Single Sign-On (SSO)?
 
-If you're a member of an organization that has configured single sign-on for the Console, you'll be redirected to your SSO provider when you attempt to log in. For information about setting up SSO for your organization, see [Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso).
+If you're a member of an organization that has configured single sign-on for the Console, you'll be redirected to your SSO provider when you attempt to log in. For information about setting up SSO for your organization, see **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**.
 
 ### I have multiple Console accounts – how can I switch between them?
 
@@ -3498,7 +3986,7 @@ If you're a member of multiple Console organizations tied to the same email addr
 
 If you've previously authenticated using Google, you can follow these steps to unlink your Google account from the Console and use only the emailed login link moving forward:
 
-1.  Visit [https://myaccount.google.com/connections](https://myaccount.google.com/connections).
+1.  Visit **[https://myaccount.google.com/connections](https://myaccount.google.com/connections)**.
 
 2.  Locate "Claude by Anthropic" in the list and click on it.
 
@@ -3508,7 +3996,7 @@ If you've previously authenticated using Google, you can follow these steps to u
 
 ### Can I have both a Claude account and a Console account?
 
-Yes, you can have both a Claude account (for using Claude at claude.ai) and a Console account (for accessing the Workbench and Claude API). These are separate accounts, though you can use the same email address for both. Learn more in [Can I have a Claude account and a Console account?](https://support.claude.com/en/articles/8987223-can-i-have-a-claude-account-and-a-console-account)
+Yes, you can have both a Claude account (for using Claude at claude.ai) and a Console account (for accessing the playground and Claude API). These are separate accounts, though you can use the same email address for both. Learn more in **[Can I have a Claude account and a Console account?](https://support.claude.com/en/articles/8987223-can-i-have-a-claude-account-and-a-console-account)**
 
 
 ---
@@ -3598,8 +4086,13 @@ Yes, you can have both a Claude account (for using Claude at claude.ai) and a Co
 
 # Move your personal Claude account to a Team or Enterprise organization
 
+Updated today
+
+Copy for LLM
 
 If you're using Claude with a personal account (Free, Pro, or Max) tied to your work email, you may be able to move that account into your organization's Team or Enterprise workspace. There are two paths: you can start a migration yourself (Team and Enterprise) or your admin can claim accounts on your domain (Enterprise only).
+
+**Note:** Enterprise organizations that have turned on HIPAA readiness or customer-managed encryption keys (CMEK) can't receive data from a personal account. If your organization uses either, you won't be offered the option to bring your data with you, and a domain claim won't offer to merge your account. You can export your data first if you want a copy. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
 ------------------------------------------------------------------------
 
@@ -3613,17 +4106,17 @@ Both paths move the same content for each person.
 
 - Artifacts within chats
 
-- Projects, project instructions, and files, including projects created through or used with Cowork.
+- Projects, project instructions, and files, including projects created through or used with Cowork
 
 - Uploaded files and attachments
-
-- Tasks
 
 - Project sync configurations (which Drive folders and repositories a project syncs)
 
 - Claude's memory from chats and projects, unless your organization has memory turned off
 
 - Claude Code memory and personal settings such as tool settings, notification preferences, and consents, unless your organization account already has its own values set
+
+- Claude Design systems and projects migrated since 14 August 2026
 
 ### What doesn't move
 
@@ -3639,13 +4132,13 @@ Both paths move the same content for each person.
 
 - Pending share invites
 
-- Cowork tasks and session history
+- Cowork sessions in the desktop app. Desktop sessions and the folders you've connected are stored locally, not in the cloud, so they stay on your computer. Copy anything you want to keep after you migrate.
 
-- Anything Cowork stored on your computer. Local session data and the folders you've connected stay on your machine. Copy anything you want to keep after you migrate.
+- Cowork cloud sessions (web and mobile). Download any files or outputs you want to keep before you migrate.
 
 - Claude Code cloud sessions (web, scheduled tasks, and mobile)
 
-- Claude Design systems and projects
+- Claude Design systems and projects migrated before 14 August 2026
 
 ### Before you migrate
 
@@ -3656,6 +4149,8 @@ Both paths move the same content for each person.
 3.  Share any content you've sent out as a public link another way, because those links will break.
 
 4.  Make a note of the apps you've connected so you can reconnect them.
+
+**Note:** After a migration, your chat list can take a little while to fill in. Searching by chat title works right away. The first time Claude searches your past chats in your new organization, it rebuilds its search index, so Claude might not find everything at first. If chats still seem to be missing, sign out, sign back in, and search again.
 
 ------------------------------------------------------------------------
 
@@ -3673,13 +4168,15 @@ If you have a personal Claude account on the same email address as your organiza
 
   - **Delete your data:** Your personal account closes (with a prorated refund if you had a paid subscription), but no content moves into the organization. You start with a clean account. You can choose to download your account data before deleting it.
 
+If your organization has turned on HIPAA readiness or CMEK, **Bring your data with you** isn't offered.
+
 ### How do refunds work for migrated accounts?
 
 What happens to your Pro or Max plan after migrating depends on where you bought it:
 
-- **Directly (not through a mobile app):** Your Pro or Max subscription is canceled automatically when your personal account closes, and you receive a prorated refund for unused time.
+- **Directly (not through a mobile app):** Your Pro or Max subscription is canceled automatically as part of the move, and you receive a prorated refund for unused time. The refund is issued about 24 hours after your plan is canceled, and depending on your bank, it can take several more business days to appear on your statement.
 
-- **Google Play Store:** Your Pro or Max subscription is canceled automatically, but it runs to the end of your current billing period. There's no prorated refund. To avoid paying for time you can't use, cancel through Google Play before you migrate.
+- **Google Play Store:** Your Pro or Max subscription is canceled automatically as part of the move, and you receive a prorated refund for unused time. Refunds for Google Play purchases can take a few days to appear.
 
 - **Apple App Store:** Your Pro or Max subscription isn't canceled. Apple doesn't allow third-party cancellation, so you'll need to cancel it yourself through your Apple ID settings. If you don't, Apple keeps charging you after your personal account closes.
 
@@ -3709,7 +4206,7 @@ If you subscribed to the Pro or Max plan through the Apple App Store, **Keep bot
 
 Domain claiming is supported on Claude Enterprise plans only.
 
-Enterprise admins can claim all existing personal accounts on their organization's verified domain and move them into the Enterprise workspace. If your admin initiates a domain claim, you'll receive an email and in-product notification with a deadline (at least 30 days out) to choose between merging your data into a new Enterprise account or starting fresh.
+Enterprise admins can claim all existing personal accounts on their organization's verified domain and move them into the Enterprise workspace. If your admin initiates a domain claim, you'll receive an email and in-product notification with a deadline (at least 30 days out) to choose between merging your data into a new Enterprise account or starting fresh. If your organization has turned on HIPAA readiness or CMEK, you'll still get the notification and deadline, but merging isn't offered. Export anything you want to keep before the deadline, then start fresh.
 
 For the full walkthrough of your options, deadlines, and what happens to your subscription, see **[Respond to an Enterprise domain claim on your Claude account](https://support.claude.com/en/articles/14625626-respond-to-an-enterprise-domain-claim-on-your-claude-account)**.
 
@@ -3742,6 +4239,8 @@ If you want to close your personal account without moving any of your work into 
 
 March 16, 2026
 
+Copy for LLM
+
 Claude works best when you give it clear and specific instructions. When crafting your prompt, keep the following principles in mind:
 
 - Explain your ask simply and clearly.
@@ -3760,6 +4259,7 @@ Claude works best when you give it clear and specific instructions. When craftin
 
 March 24, 2026
 
+Copy for LLM
 
 Claude uses email as the primary identifier to match SSO logins to provisioned seats. In OneLogin, SCIM provisioning and SAML SSO are configured in separate tabs of the app and can reference different user profile fields, causing a mismatch that blocks access.
 
@@ -3897,8 +4397,9 @@ Contact **[our Support team](https://support.claude.com/en/articles/9015913)** w
 
 # OneLogin SSO setup
 
-March 24, 2026
+August 6, 2026
 
+Copy for LLM
 
 This guide walks through configuring SSO and SCIM for Claude with OneLogin as your identity provider. It applies to Team plans, Enterprise plans, and Console organizations.
 
@@ -3910,11 +4411,11 @@ This guide walks through configuring SSO and SCIM for Claude with OneLogin as yo
 
 - OneLogin Super User access
 
-- Your domain verified in Claude's Identity and access settings — see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full setup path including domain verification
+- Your domain verified in Claude's Identity and access settings—see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full setup path including domain verification
 
 ## Where to find your configuration values
 
-The Audience (Entity ID), ACS URL, and SCIM credentials referenced below are provided in the WorkOS setup flow within your Identity and access settings — not by contacting Support.
+The Audience (Entity ID), ACS URL, and SCIM credentials referenced below are provided in the WorkOS setup flow within your Identity and access settings—not by contacting Support.
 
 - **Team and Enterprise plans:** go to **[claude.ai/admin-settings/identity](https://claude.ai/admin-settings/identity)**
 
@@ -3950,7 +4451,7 @@ Start the SSO setup flow there and keep it open alongside the OneLogin Admin por
 
 ## Step 4 — Enable SCIM provisioning
 
-**Note:** SCIM provisioning is available on Enterprise plans and eligible Console organizations only. If you're on a Team plan, skip this step — you can use JIT provisioning instead. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195)**.
+**Note:** SCIM provisioning is available on Enterprise plans and eligible Console organizations only. If you're on a Team plan, skip this step—you can use JIT provisioning instead. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195)**.
 
 1.  In the **Provisioning** tab, enable **Enable provisioning**.
 
@@ -3988,6 +4489,7 @@ See **[Set up single sign-on](https://support.claude.com/en/articles/13132885)**
 
 March 25, 2026
 
+Copy for LLM
 
 ## 1. Products and features
 
@@ -4243,6 +4745,9 @@ Learn more here: **[Offering expanded Claude access across all three branches of
 
 # Respond to an Enterprise domain claim on your Claude account
 
+August 17, 2026
+
+Copy for LLM
 
 If your organization has set up Claude Enterprise, they may claim your existing personal Claude account (Free, Pro, or Max) and move it into their workspace. This article explains what to expect and what your options are.
 
@@ -4255,6 +4760,8 @@ Your organization’s admin has initiated a process called domain claiming. This
 You’ll receive an email and an in-product notification letting you know that your account has been claimed, along with a deadline to choose what happens to your data. This deadline is at least 30 days from the date your admin initiates the claim.
 
 ## Your two options
+
+**Note:** If your organization has turned on HIPAA readiness or customer-managed encryption keys (CMEK), the merge and join option isn't available. Your only option is to join fresh. Export your data before the deadline if you want a copy. Your subscription is still canceled and refunded as described below. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
 ### Merge and join
 
@@ -4276,7 +4783,7 @@ Sign in before the deadline to make your choice.
 
 ## What happens to your paid subscription
 
-If you have a Pro or Max subscription, it will be automatically canceled when you migrate or when the deadline passes. You’ll receive a prorated refund for any unused time and usage credits.
+If you have a Pro or Max subscription, it will be automatically canceled when you migrate or when the deadline passes. You’ll receive a prorated refund for any unused time.
 
 **Apple App Store subscriptions:** If you purchased your Pro or Max plan through the Apple App Store, we can’t cancel or refund it directly. You’ll need to cancel it yourself through your Apple ID settings:
 
@@ -4330,8 +4837,8 @@ You can migrate your personal account to an existing Enterprise account; data fr
 
 # Set up single sign-on (SSO)
 
-June 24, 2026
 
+Copy for LLM
 
 Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
 
@@ -4369,7 +4876,7 @@ You can verify multiple domains for a single organization, but all domains must 
 
 **Note:** Verifying your domain by itself will not impact existing users' ability to access our products. End users’ access is only affected once SSO is set up and explicitly enforced.
 
-1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](http://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**) – note this page will only appear on Console if you've worked with Sales to enable SSO or completed a merge proposal.
+1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](https://platform.claude.com/settings/identity)**) – note this page will only appear on Console if you've worked with Sales to enable SSO or completed a merge proposal.
 
 2.  In the **Domains** section, click “Add or edit domains.”
 
@@ -4383,7 +4890,7 @@ You can verify multiple domains for a single organization, but all domains must 
 6.  Enter your domain in the text box and click “Continue”:
 
 
-7.  The setup screen displays a TXT record. **Copy the full Value using the copy button**—it begins with `anthropic-domain-verification-` and is longer than what's visible in the box. In your DNS provider, add a TXT record with **Host/Name** set to `@` (the root of your domain) and **Value** set to the copied string. Add it alongside any existing TXT records; don't replace them. The value is case-sensitive, so paste it exactly.
+7.  The setup screen displays a TXT record. **Copy the full Value using the copy button**—it begins with `anthropic-domain-verification-` and is longer than what's visible in the box. In your DNS provider, add a TXT record to your domain and **Value** set to the copied string. The domain must match exactly what you entered in the previous step, including any subdomains. Add it alongside any existing TXT records; don't replace them. The value is case-sensitive, so paste it exactly. Please refer to your DNS provider's documentation on this topic.
 
     1.  **Important:** Save the TXT value before leaving the setup screen. Once the domain shows as Pending, the admin console doesn't display the value again. If you lose it, you'll need to remove and re-add the domain, which generates a new value.
 
@@ -4414,7 +4921,7 @@ If the record is correct and propagated but the status still shows Pending, cont
 
 ## Step 3: Set up SSO with your Identity Provider
 
-1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](http://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**).
+1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](https://platform.claude.com/settings/identity)**).
 
 2.  In the **Authentication** section, click “Setup SSO” (or “Manage SSO”).
 
@@ -4481,9 +4988,9 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 
 1.  Navigate to your settings:
 
-    - For Team and Enterprise plans: **[claude.ai/admin-settings/organization](http://claude.ai/admin-settings/organization)**
+    - For Team and Enterprise plans: **[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**
 
-    - For Claude Console: **[platform.claude.com/settings/identity](http://platform.claude.com/settings/organization)**
+    - For Claude Console: **[platform.claude.com/settings/identity](https://platform.claude.com/settings/organization)**
 
 2.  In the **Authentication** section, click “Manage SSO.”
 
@@ -4493,6 +5000,8 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 
 5.  Click "Test sign-in" on the same page to confirm everything is working.
 
+**Important:** If **Require SSO** is turned on and your certificate has already expired, no one in your organization can sign in to update it, because every sign-in option routes through SSO. **[Contact Support](https://support.claude.com/en/articles/9015913)** from an Owner’s or Primary Owner’s email address and we’ll help you regain access so an Owner can update the certificate. To avoid this, note your certificate’s expiry date in your Identity Provider and rotate it ahead of time.
+
 ------------------------------------------------------------------------
 
 ## Turning off SSO
@@ -4500,6 +5009,10 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 You can toggle **Require SSO for Claude** or **Require SSO for Console** off at any time. This will make SSO optional for all users.
 
 To fully disconnect SSO, click “Manage SSO” then “Reset connection.” This will end all users’ sessions and require them to sign back in via email login link.
+
+## Locked out of admin access?
+
+If none of your Owners or Admins can sign in (for example, after a certificate expiry, an Identity Provider change, or a group mapping that removed your administrators), contact Support from an Owner’s or Primary Owner’s email address. We’ll verify your ownership of the organization and help you regain access so you can correct the configuration.
 
 
 ---
@@ -4672,20 +5185,20 @@ To fully disconnect SSO, click “Manage SSO” then “Reset.” This will end 
 
 # Set up your design system in Claude Design
 
-June 17, 2026
 
+Copy for LLM
 
-Creating a design system allows Claude Design to produce outputs that fit your specifications. It extracts reusable components, colors, typography, and patterns from the assets you provide—codebases, slide decks, or other design references—and uses them as the foundation for every project created within your account.
+A design system captures your colors, typography, components, and layout patterns, so Claude applies them to every new design and deck. Claude extracts them from the assets you provide, like codebases, slide decks, or other design references.
 
-Claude Design is now available in beta to Pro, Max, Team, and Enterprise plans. This capability is default off for Enterprise plans.
+Design systems are available in beta on Pro, Max, Team, and Enterprise plans. They're on by default on Pro, Max, and Team plans. On Enterprise plans, they're off until an owner turns on **Design systems** in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**. Standalone Claude Design at claude.ai/design has its own separate setting.
 
-This guide is for the designer or brand owner who will set up the design system. You only need to do this once; after setup, all team members’ projects automatically use it (for Team and Enterprise plans).
+This guide is for the designer or brand owner who will set up the design system. On Team and Enterprise plans, you only need to do this once, and everyone's work picks it up after that.
 
-## Prerequisites
+## Before you start
 
-- Permissions granted by your organization admin for design system setup.
+- On Team and Enterprise plans, **Design systems** needs to be on for your organization, and an owner may limit who can publish or set the default.
 
-- At least one of the following as source material:
+- You’ll need at least one of the following as source material:
 
   - A codebase with your design system or component library
 
@@ -4695,25 +5208,49 @@ This guide is for the designer or brand owner who will set up the design system.
 
 ------------------------------------------------------------------------
 
-## Step 1: Create or switch to your organization
+## Create a design system
 
-To set up your organization’s design system:
+### From a chat
 
-1.  Open **[Claude Design](http://claude.ai/design)**.
+Ask Claude to build a design system from your connected apps, uploaded files, Figma files, decks, logos, and fonts. This works best for brand design systems with fonts, colors, and guidelines.
 
-2.  In the lower-left corner of the project picker, click the current organization name.
+### From Claude Code
+
+If your design system already exists as React components, run /design-sync in Claude Code. It reads your tokens and components directly, and works best for product design systems in code.
+
+### Bring over a design system from claude.ai/design
+
+1.  Open the "Design" tab at the bottom of the sidebar.
+
+2.  Click "Migrate team design systems" in the banner.
+
+Each design system becomes an artifact Claude can use in any chat, including in Claude Code. Migrated design systems may need some cleanup, so each one shows a banner where you can click "Let Claude clean it up," and Claude tidies its guide, tokens, and components.
+
+## Manage your design systems
+
+Manage your design systems in **[Settings \> Design systems](https://claude.ai/settings/design-systems)**. On Enterprise plans, admins can reserve publishing, setting the organization default, and deleting design systems for specific users. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751)**.
+
+------------------------------------------------------------------------
+
+## Set up a design system at claude.ai/design
+
+These steps use standalone Claude Design.
+
+### Create or switch to your organization
+
+1.  Open **[Claude Design](https://claude.ai/design)**.
+
+2.  In the lower left corner of the project picker, click the current organization name.
 
 3.  Select your organization, or create a new one.
 
-4.  You’ll be redirected to the onboarding flow. Complete it.
+4.  Complete the onboarding flow you're redirected to.
 
-## Step 2: Upload your brand and product assets
+### Upload your brand and product assets
 
-During onboarding (or afterward from your organization settings), upload the assets that define your brand and product. Claude will analyze them and extract a reusable design system.
+During onboarding, or afterward from your organization settings, upload the assets that define your brand and product. Claude analyzes them and extracts a reusable design system.
 
-**What to upload:**
-
-- **Codebases:** If your design system lives in code (for example, a React component library), you can link or upload the repository. Claude will read the components and styles.
+- **Codebases:** If your design system lives in code, like a React component library, link or upload the repository. Claude reads the components and styles.
 
 - **Prototypes:** Screenshots, web flows, and existing design files.
 
@@ -4721,11 +5258,11 @@ During onboarding (or afterward from your organization settings), upload the ass
 
 - **Individual assets:** Logos, color palette files, typography specimens.
 
-You only need one source to get started, but providing multiple gives Claude more to work with.
+You only need one source to get started, but more sources give Claude more to work with.
 
-## Step 3: Review the generated design system
+### Review the generated design system
 
-After uploading, Claude generates a design system (UI kit) for your organization. This typically includes:
+After uploading, Claude generates a design system for your organization. This typically includes:
 
 - **Color palette:** Primary, secondary, and accent colors extracted from your assets.
 
@@ -4735,18 +5272,21 @@ After uploading, Claude generates a design system (UI kit) for your organization
 
 - **Layout patterns:** Spacing, grid systems, and page structures.
 
-To validate your design system, create a test project and see if the output matches your brand expectations. Try prompts like:
+To validate it, create a test project and check whether the output matches your brand. Try prompts like:
 
-- “Create a landing page for \[your product\].”
+- "Create a landing page for \[your product\]."
 
-- “Design a dashboard showing \[relevant metrics\].”
+- "Design a dashboard showing \[relevant metrics\]."
 
-- “Make a presentation about \[a topic your team commonly presents on\].”
+- "Make a one-pager about \[a topic your team commonly presents on\]."
 
-## Step 4: Make it available to your team
+### Make it available to your team
 
-Once you’re satisfied with the design system quality, make sure the “Published” toggle is switched on. After publishing, any projects created from the Claude Design homescreen while in your organization will use your design system instead of the default.
+When you're happy with the design system, turn on the "Published" toggle. After publishing, projects created from the Claude Design home screen in your organization use your design system instead of the default.
 
+## Update your design system
+
+When your design system changes, you can update it within Claude Design. From your Claude Design organization settings, click the “Open” button next to the design system you want to edit. Click the “Remix” button in the upper right corner to open the chat interface on the left side of the window. From here, you can work with Claude to change your design system.
 
 ------------------------------------------------------------------------
 
@@ -4756,18 +5296,14 @@ Once you’re satisfied with the design system quality, make sure the “Publish
 
 - **Iterate.** If the first extraction doesn’t capture your brand well, try uploading additional or different assets.
 
-## Updating your design system
-
-Brands evolve. When your design system changes, you can update it within Claude Design. From your Claude Design organization settings, click the “Open” button next to the design system you want to edit. Click the “Remix” button in the upper right corner to open the chat interface on the left side of the window. From here, you can work with Claude to change your design system.
-
 
 ---
 ## setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterp-f973043c5a.md
 
 # Set up JIT or SCIM provisioning
 
-June 30, 2026
 
+Copy for LLM
 
 This guide covers how to configure user provisioning and role assignment for your Claude or Claude Console organization.
 
@@ -4789,14 +5325,22 @@ Once SSO is configured, you need to decide how users will be provisioned to your
 
 **SCIM directory sync:** Users are automatically provisioned and deprovisioned based on assignments in your IdP, without requiring them to log in first. SCIM is available for Enterprise plans and Console organizations with their own parent organization or joined to an Enterprise parent organization. SCIM is not available for Team plans or Console organizations joined to a Team plan's parent organization.
 
+When SCIM directory sync is on, Claude sends each newly provisioned member a welcome email. To turn this off, Owners and Primary Owners can navigate to **Organization settings \> Organization and access \> User provisioning**, find **SCIM directory sync**, and turn off "Send a welcome email to new members."
+
+**Note:** Claude doesn't send this welcome email to organizations with additional data-handling or compliance requirements such as customer-managed encryption keys (CMEK), HIPAA, or FERPA, so the setting isn't shown for those organizations. Changes apply to members provisioned after you save, and emails already sent stay delivered.
+
 ### Provisioning behavior overview
 
 Use this table to help decide which provisioning mode is right for your organization:
 
 [TABLE]
 
+**Note:** To remove a JIT user permanently, remove them in Claude and unassign them in your IdP. A user you remove only in Claude will be re-added the next time they log in with SSO.
+
 Both JIT and SCIM can be combined with **Enable group mappings** to control role or seat tier assignment based on IdP group membership. If you select either of these options for your provisioning mode, **Enable group mappings** will appear within the **User provisioning** section:
 
+
+**Important:** Group mappings set a user’s role type and seat tier only. Users with the Custom role get their permissions from groups in Claude, and those groups sync from your IdP only when your provisioning mode is SCIM directory sync. With JIT, you need to create groups and add users to them manually in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. If you map an IdP group to the Custom role under JIT without doing this, those users have no permissions when they log in. Learn more about **[managing groups on Enterprise plans](https://support.claude.com/en/articles/13799932)**.
 
 ### Available roles and seat tiers
 
@@ -4812,7 +5356,7 @@ For information on purchasing seats or adjusting your plan's seat allocation, se
 
 If you chose SCIM as your provisioning mode, you need to establish the connection between your Identity Provider and Anthropic before enabling it.
 
-1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](http://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**)
+1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](https://platform.claude.com/settings/identity)**)
 
 2.  In the **User provisioning** section, click “Setup SCIM” (or “Manage SCIM”)next to **SCIM directory sync**.
 
@@ -4879,9 +5423,9 @@ Once your IdP is connected, continue to Step 3.
 
     1.  When using group mappings, you *must* assign all users to a role-based group in order to ensure they’re provisioned an account. Assigning users to seat-tier based groups is optional.
 
-    2.  You can map an IdP group to the “Custom” role. Members assigned this role have no default permissions—their access is determined entirely by the custom roles assigned to their groups in Claude.
+    2.  You can map an IdP group to the “Custom” role. Users assigned this role have no default permissions; their access is determined entirely by the custom roles assigned to their groups in Claude. If you use JIT, add these users to groups manually in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)** before they log in, since JIT doesn't sync group memberships from your IdP.
 
-6.  **For all plans except single-seat Enterprise:** In the **Assign seat tiers to IdP groups** section (optional), click "Add" next to each seat type and select the corresponding group from your IdP. If a user isn't assigned to a seat type group, they will be assigned to the highest available type by default.
+6.  **For all plans except single-seat Enterprise:** In the **Assign seat tiers to IdP groups** section (optional), click "Add" next to each seat type and select the corresponding group from your IdP. Users who aren’t in any seat tier group aren’t removed. Existing users keep their current seat type. New users receive the highest seat type that still has an unassigned purchased seat (for example, Premium while unassigned Premium seats remain, then Standard), and are added with no seat if none is available.
 
     1.  **For single-seat Enterprise:** Seat type mapping does not apply. All provisioned users are automatically assigned an Enterprise seat, provided one is available in your organization.
 
@@ -4926,11 +5470,21 @@ Verify you have enough seats purchased and available to add members to your org.
 4.  **For SCIM:** Click "Sync" to prompt an immediate sync, or wait for the automatic sync cycle:
 
 
+### Users mapped to the Custom role can't access anything after logging in
+
+This happens when your provisioning mode is JIT and an IdP group is mapped to the Custom role. JIT assigns the role type but doesn't sync group memberships from your IdP, so these users aren't in any group with a custom role attached and have no permissions.
+
+To fix this, do one of the following:
+
+1.  Add the affected users to the appropriate groups manually in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. Learn more about **[managing groups on Enterprise plans](https://support.claude.com/en/articles/13799932)**.
+
+2.  Switch your provisioning mode to SCIM directory sync, which syncs groups and their memberships from your IdP. Learn more about **[how SCIM sync works](https://support.claude.com/en/articles/14499648)**.
+
 ### I lost Admin/Owner access after enabling group mappings
 
 This happens when the person configuring group mappings isn't assigned to a group mapped to an Admin or Owner role, causing their permissions to be downgraded to User.
 
-To fix this:
+To fix this, do one of the following:
 
 **Option 1: Have another Admin/Owner reinstate your role**
 
@@ -5139,8 +5693,8 @@ Try searching for your answer or just send us a message.
 
 # Set up single sign-on (SSO)
 
-June 24, 2026
 
+Copy for LLM
 
 Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
 
@@ -5178,7 +5732,7 @@ You can verify multiple domains for a single organization, but all domains must 
 
 **Note:** Verifying your domain by itself will not impact existing users' ability to access our products. End users’ access is only affected once SSO is set up and explicitly enforced.
 
-1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](http://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**) – note this page will only appear on Console if you've worked with Sales to enable SSO or completed a merge proposal.
+1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](https://platform.claude.com/settings/identity)**) – note this page will only appear on Console if you've worked with Sales to enable SSO or completed a merge proposal.
 
 2.  In the **Domains** section, click “Add or edit domains.”
 
@@ -5192,7 +5746,7 @@ You can verify multiple domains for a single organization, but all domains must 
 6.  Enter your domain in the text box and click “Continue”:
 
 
-7.  The setup screen displays a TXT record. **Copy the full Value using the copy button**—it begins with `anthropic-domain-verification-` and is longer than what's visible in the box. In your DNS provider, add a TXT record with **Host/Name** set to `@` (the root of your domain) and **Value** set to the copied string. Add it alongside any existing TXT records; don't replace them. The value is case-sensitive, so paste it exactly.
+7.  The setup screen displays a TXT record. **Copy the full Value using the copy button**—it begins with `anthropic-domain-verification-` and is longer than what's visible in the box. In your DNS provider, add a TXT record to your domain and **Value** set to the copied string. The domain must match exactly what you entered in the previous step, including any subdomains. Add it alongside any existing TXT records; don't replace them. The value is case-sensitive, so paste it exactly. Please refer to your DNS provider's documentation on this topic.
 
     1.  **Important:** Save the TXT value before leaving the setup screen. Once the domain shows as Pending, the admin console doesn't display the value again. If you lose it, you'll need to remove and re-add the domain, which generates a new value.
 
@@ -5223,7 +5777,7 @@ If the record is correct and propagated but the status still shows Pending, cont
 
 ## Step 3: Set up SSO with your Identity Provider
 
-1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](http://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**).
+1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](https://platform.claude.com/settings/identity)**).
 
 2.  In the **Authentication** section, click “Setup SSO” (or “Manage SSO”).
 
@@ -5290,9 +5844,9 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 
 1.  Navigate to your settings:
 
-    - For Team and Enterprise plans: **[claude.ai/admin-settings/organization](http://claude.ai/admin-settings/organization)**
+    - For Team and Enterprise plans: **[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**
 
-    - For Claude Console: **[platform.claude.com/settings/identity](http://platform.claude.com/settings/organization)**
+    - For Claude Console: **[platform.claude.com/settings/identity](https://platform.claude.com/settings/organization)**
 
 2.  In the **Authentication** section, click “Manage SSO.”
 
@@ -5302,6 +5856,8 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 
 5.  Click "Test sign-in" on the same page to confirm everything is working.
 
+**Important:** If **Require SSO** is turned on and your certificate has already expired, no one in your organization can sign in to update it, because every sign-in option routes through SSO. **[Contact Support](https://support.claude.com/en/articles/9015913)** from an Owner’s or Primary Owner’s email address and we’ll help you regain access so an Owner can update the certificate. To avoid this, note your certificate’s expiry date in your Identity Provider and rotate it ahead of time.
+
 ------------------------------------------------------------------------
 
 ## Turning off SSO
@@ -5309,6 +5865,10 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 You can toggle **Require SSO for Claude** or **Require SSO for Console** off at any time. This will make SSO optional for all users.
 
 To fully disconnect SSO, click “Manage SSO” then “Reset connection.” This will end all users’ sessions and require them to sign back in via email login link.
+
+## Locked out of admin access?
+
+If none of your Owners or Admins can sign in (for example, after a certificate expiry, an Identity Provider change, or a group mapping that removed your administrators), contact Support from an Owner’s or Primary Owner’s email address. We’ll verify your ownership of the organization and help you regain access so you can correct the configuration.
 
 
 ---
@@ -5316,8 +5876,8 @@ To fully disconnect SSO, click “Manage SSO” then “Reset connection.” Thi
 
 # Set up single sign-on (SSO)
 
-June 24, 2026
 
+Copy for LLM
 
 Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
 
@@ -5355,7 +5915,7 @@ You can verify multiple domains for a single organization, but all domains must 
 
 **Note:** Verifying your domain by itself will not impact existing users' ability to access our products. End users’ access is only affected once SSO is set up and explicitly enforced.
 
-1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](http://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**) – note this page will only appear on Console if you've worked with Sales to enable SSO or completed a merge proposal.
+1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](https://platform.claude.com/settings/identity)**) – note this page will only appear on Console if you've worked with Sales to enable SSO or completed a merge proposal.
 
 2.  In the **Domains** section, click “Add or edit domains.”
 
@@ -5369,7 +5929,7 @@ You can verify multiple domains for a single organization, but all domains must 
 6.  Enter your domain in the text box and click “Continue”:
 
 
-7.  The setup screen displays a TXT record. **Copy the full Value using the copy button**—it begins with `anthropic-domain-verification-` and is longer than what's visible in the box. In your DNS provider, add a TXT record with **Host/Name** set to `@` (the root of your domain) and **Value** set to the copied string. Add it alongside any existing TXT records; don't replace them. The value is case-sensitive, so paste it exactly.
+7.  The setup screen displays a TXT record. **Copy the full Value using the copy button**—it begins with `anthropic-domain-verification-` and is longer than what's visible in the box. In your DNS provider, add a TXT record to your domain and **Value** set to the copied string. The domain must match exactly what you entered in the previous step, including any subdomains. Add it alongside any existing TXT records; don't replace them. The value is case-sensitive, so paste it exactly. Please refer to your DNS provider's documentation on this topic.
 
     1.  **Important:** Save the TXT value before leaving the setup screen. Once the domain shows as Pending, the admin console doesn't display the value again. If you lose it, you'll need to remove and re-add the domain, which generates a new value.
 
@@ -5400,7 +5960,7 @@ If the record is correct and propagated but the status still shows Pending, cont
 
 ## Step 3: Set up SSO with your Identity Provider
 
-1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](http://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**).
+1.  Navigate to your **Organization and access** settings in Claude (**[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**) or your **Identity and access** settings in Console (**[platform.claude.com/settings/identity](https://platform.claude.com/settings/identity)**).
 
 2.  In the **Authentication** section, click “Setup SSO” (or “Manage SSO”).
 
@@ -5467,9 +6027,9 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 
 1.  Navigate to your settings:
 
-    - For Team and Enterprise plans: **[claude.ai/admin-settings/organization](http://claude.ai/admin-settings/organization)**
+    - For Team and Enterprise plans: **[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**
 
-    - For Claude Console: **[platform.claude.com/settings/identity](http://platform.claude.com/settings/organization)**
+    - For Claude Console: **[platform.claude.com/settings/identity](https://platform.claude.com/settings/organization)**
 
 2.  In the **Authentication** section, click “Manage SSO.”
 
@@ -5479,6 +6039,8 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 
 5.  Click "Test sign-in" on the same page to confirm everything is working.
 
+**Important:** If **Require SSO** is turned on and your certificate has already expired, no one in your organization can sign in to update it, because every sign-in option routes through SSO. **[Contact Support](https://support.claude.com/en/articles/9015913)** from an Owner’s or Primary Owner’s email address and we’ll help you regain access so an Owner can update the certificate. To avoid this, note your certificate’s expiry date in your Identity Provider and rotate it ahead of time.
+
 ------------------------------------------------------------------------
 
 ## Turning off SSO
@@ -5486,6 +6048,10 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 You can toggle **Require SSO for Claude** or **Require SSO for Console** off at any time. This will make SSO optional for all users.
 
 To fully disconnect SSO, click “Manage SSO” then “Reset connection.” This will end all users’ sessions and require them to sign back in via email login link.
+
+## Locked out of admin access?
+
+If none of your Owners or Admins can sign in (for example, after a certificate expiry, an Identity Provider change, or a group mapping that removed your administrators), contact Support from an Owner’s or Primary Owner’s email address. We’ll verify your ownership of the organization and help you regain access so you can correct the configuration.
 
 
 ---
@@ -5825,6 +6391,7 @@ To fully disconnect SSO, click “Manage SSO” then “Reset.” This will end 
 
 April 10, 2026
 
+Copy for LLM
 
 Claude for Government requires Single Sign-on (SSO) for user authentication. Unlike the commercial Claude Enterprise plan, email based (magic link) login is only available to the Primary Owner during account setup. All other users must authenticate through your organization's identity provider (IdP).
 
@@ -6420,6 +6987,7 @@ You can access Claude in the following locations:
 
 March 16, 2026
 
+Copy for LLM
 
 This article provides important information about your Claude for Education account associated with your university’s Claude for Education partnership. It includes details about data access and control that were shared with you when your Claude for Education account was set up.
 
@@ -6511,6 +7079,8 @@ If you have any questions about your Claude for Education plan account, we encou
 # Why is a coupon or promotion not available for my account?
 
 March 16, 2026
+
+Copy for LLM
 
 Coupons and promotions are generally only available to users trying out a paid plan for the first time.
 

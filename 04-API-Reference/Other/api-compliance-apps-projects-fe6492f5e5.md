@@ -2,7 +2,7 @@
 title: "Projects - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/projects"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:40:31Z"
+fetched_at: "2026-09-26T06:38:57Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fprojects)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -226,13 +204,13 @@ Chats
 Projects
 
 
-List projects
+List projects
 
 
-Get project details
+Get project details
 
 
-Delete project
+Delete project
 
 Attachments
 
@@ -242,305 +220,85 @@ Documents
 
 Artifacts
 
+Sessions
+
 Code
 
 
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
+To enable the Compliance API, see the setup guide.
 
-Projects
+[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)
 
+Copy page
 
 
 
-
-
-To enable the Compliance API, see [Set up the Compliance API](/docs/en/manage-claude/compliance-api-access).
+1.  [API reference](/docs/en/api/http)
+2.  [Compliance API](/docs/en/api/http/compliance)
+3.  [Apps](/docs/en/api/http/compliance/apps)
 
 # Projects
 
-##### [List projects](/docs/en/api/compliance/apps/projects/list)
+##### [List projects](/docs/en/api/http/compliance/apps/projects/list)
 
-GET/v1/compliance/apps/projects
+GET/v1/compliance/apps/projects
 
-##### [Get project details](/docs/en/api/compliance/apps/projects/retrieve)
+Lists project metadata with filtering capabilities. Results are sorted chronologically (time ascending) by created_at.
 
-GET/v1/compliance/apps/projects/{project_id}
+##### [Get project details](/docs/en/api/http/compliance/apps/projects/retrieve)
 
-##### [Delete project](/docs/en/api/compliance/apps/projects/delete)
+GET/v1/compliance/apps/projects/{project_id}
 
-DELETE/v1/compliance/apps/projects/{project_id}
+Get detailed information for a specific project.
 
-##### ModelsExpand Collapse 
+##### [Delete project](/docs/en/api/http/compliance/apps/projects/delete)
 
-
+DELETE/v1/compliance/apps/projects/{project_id}
 
-ProjectListResponse object { id, created_at, deleted_at, 6 more }
+Delete a project for compliance purposes.
 
-
-
-Project information for compliance responses.
-
-id: string
-
-
-
-Project identifier (tagged ID)
-
-[](#project_list_response.id)
-
-created_at: string
-
-
-
-Project creation timestamp
-
-[](#project_list_response.created_at)
-
-deleted_at: string
-
-
-
-Timestamp when the project was deleted by an end user, or null otherwise
-
-[](#project_list_response.deleted_at)
-
-is_private: boolean
-
-
-
-If false, the project is visible to all organization members; if true the project is accessible only to the creator and specified collaborators
-
-[](#project_list_response.is_private)
-
-name: string
-
-
-
-Project name
-
-[](#project_list_response.name)
-
-organization_uuid: string
-
-
-
-Organization UUID this project belongs to
-
-[](#project_list_response.organization_uuid)
-
-updated_at: string
-
-
-
-Project last update timestamp
-
-[](#project_list_response.updated_at)
+##### Models
 
 
 
-user: object { id, email_address }
-
-
-
-The user who created a project or project document.
-
-Fields that reference this type are null when the creator's account has been deleted or the creator is no longer a member of any organization under the parent organization.
-
-id: string
-
-
-
-User identifier (tagged ID)
-
-[](#project_list_response.user.id)
-
-email_address: string
-
-
-
-User's email address
-
-[](#project_list_response.user.email_address)
-
-[](#project_list_response.user)
-
-organization_id: string⁠Deprecated
-
-
-
-Organization identifier (tagged ID)
-
-[](#project_list_response.organization_id)
-
-[](#project_list_response)
-
-
-
-ProjectRetrieveResponse object { id, attachments_count, chats_count, 10 more }
+ProjectRetrieveResponse object{ id, attachments_count, chats_count, 10 more }
 
 
 
 Detailed project information for compliance responses.
 
-id: string
+
+
+ProjectListResponse object{ id, created_at, deleted_at, 6 more }
 
 
 
-Project identifier (tagged ID)
-
-[](#project_retrieve_response.id)
-
-attachments_count: number
-
-
-
-Number of attachments contained within this project
-
-[](#project_retrieve_response.attachments_count)
-
-chats_count: number
-
-
-
-Number of chats contained within this project
-
-[](#project_retrieve_response.chats_count)
-
-created_at: string
-
-
-
-Project creation timestamp
-
-[](#project_retrieve_response.created_at)
-
-deleted_at: string
-
-
-
-Timestamp when the project was deleted by an end user, or null otherwise
-
-[](#project_retrieve_response.deleted_at)
-
-description: string
-
-
-
-Project description
-
-[](#project_retrieve_response.description)
-
-instructions: string
-
-
-
-Project's custom instructions / prompt
-
-[](#project_retrieve_response.instructions)
-
-is_private: boolean
-
-
-
-If false, the project is visible to all organization members; if true the project is accessible only to the creator and specified collaborators
-
-[](#project_retrieve_response.is_private)
-
-name: string
-
-
-
-Project name
-
-[](#project_retrieve_response.name)
-
-organization_uuid: string
-
-
-
-Organization UUID this project belongs to
-
-[](#project_retrieve_response.organization_uuid)
-
-updated_at: string
-
-
-
-Project last update timestamp
-
-[](#project_retrieve_response.updated_at)
+Project information for compliance responses.
 
 
 
-user: object { id, email_address }
-
-
-
-The user who created a project or project document.
-
-Fields that reference this type are null when the creator's account has been deleted or the creator is no longer a member of any organization under the parent organization.
-
-id: string
-
-
-
-User identifier (tagged ID)
-
-[](#project_retrieve_response.user.id)
-
-email_address: string
-
-
-
-User's email address
-
-[](#project_retrieve_response.user.email_address)
-
-[](#project_retrieve_response.user)
-
-organization_id: string⁠Deprecated
-
-
-
-Organization identifier (tagged ID)
-
-[](#project_retrieve_response.organization_id)
-
-[](#project_retrieve_response)
-
-
-
-ProjectDeleteResponse object { id, type }
+ProjectDeleteResponse object{ type: "claude_project_deleted", id }
 
 
 
 Response for deleting a Claude project.
 
-id: string
-
-
-
-The ID of the Claude project that was deleted
-
-[](#project_delete_response.id)
+
 
 type: optional "claude_project_deleted"
 
@@ -548,32 +306,46 @@ type: optional "claude_project_deleted"
 
 Constant string confirming deletion.
 
-[](#project_delete_response.type)
+defaultclaude_project_deleted
 
-[](#project_delete_response)
+id: string
 
-#### ProjectsAttachments
+
 
-##### [List project attachments](/docs/en/api/compliance/apps/projects/attachments/list)
+The ID of the Claude project that was deleted
 
-GET/v1/compliance/apps/projects/{project_id}/attachments
+#### Projects[Attachments](/docs/en/api/http/compliance/apps/projects/attachments)
 
-#### ProjectsCollaborators
+##### [List project attachments](/docs/en/api/http/compliance/apps/projects/attachments/list)
 
-##### [List project collaborators](/docs/en/api/compliance/apps/projects/collaborators/list)
+GET/v1/compliance/apps/projects/{project_id}/attachments
 
-GET/v1/compliance/apps/projects/{project_id}/collaborators
+List files and documents attached to a project.
 
-#### ProjectsDocuments
+#### Projects[Collaborators](/docs/en/api/http/compliance/apps/projects/collaborators)
 
-##### [Get project document content](/docs/en/api/compliance/apps/projects/documents/retrieve)
+##### [List project collaborators](/docs/en/api/http/compliance/apps/projects/collaborators/list)
 
-GET/v1/compliance/apps/projects/documents/{document_id}
+GET/v1/compliance/apps/projects/{project_id}/collaborators
 
-##### [Get project document metadata](/docs/en/api/compliance/apps/projects/documents/metadata)
+List the users, groups, and organization-wide grants on a project.
 
-GET/v1/compliance/apps/projects/documents/{document_id}/metadata
+#### Projects[Documents](/docs/en/api/http/compliance/apps/projects/documents)
 
-##### [Delete project document](/docs/en/api/compliance/apps/projects/documents/delete)
+##### [Get project document content](/docs/en/api/http/compliance/apps/projects/documents/retrieve)
 
-DELETE/v1/compliance/apps/projects/documents/{document_id}
+GET/v1/compliance/apps/projects/documents/{document_id}
+
+Get detailed information for a specific project document.
+
+##### [Get project document metadata](/docs/en/api/http/compliance/apps/projects/documents/metadata)
+
+GET/v1/compliance/apps/projects/documents/{document_id}/metadata
+
+Returns metadata for a project document, without the content body.
+
+##### [Delete project document](/docs/en/api/http/compliance/apps/projects/documents/delete)
+
+DELETE/v1/compliance/apps/projects/documents/{document_id}
+
+Delete a project document for compliance purposes.

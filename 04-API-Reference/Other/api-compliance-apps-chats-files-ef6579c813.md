@@ -2,7 +2,7 @@
 title: "Files - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/chats/files"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:41:33Z"
+fetched_at: "2026-09-26T06:38:56Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fchats%2Ffiles)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -224,23 +202,23 @@ Apps
 Chats
 
 
-List chats
+List chats
 
 
-Delete chat
+Delete chat
 
 Messages
 
 Files
 
 
-Get file metadata
+Get file metadata
 
 
-Delete file
+Delete file
 
 
-Download file content
+Download file content
 
 Generated Files
 
@@ -248,57 +226,64 @@ Projects
 
 Artifacts
 
+Sessions
+
 Code
 
 
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
+To enable the Compliance API, see the setup guide.
 
-Files
+[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)
 
+Copy page
 
 
 
-
-
-To enable the Compliance API, see [Set up the Compliance API](/docs/en/manage-claude/compliance-api-access).
+1.  [API reference](/docs/en/api/http)
+2.  [Compliance API](/docs/en/api/http/compliance)
+3.  [Apps](/docs/en/api/http/compliance/apps)
+4.  [Chats](/docs/en/api/http/compliance/apps/chats)
 
 # Files
 
-##### [Get file metadata](/docs/en/api/compliance/apps/chats/files/retrieve)
+##### [Get file metadata](/docs/en/api/http/compliance/apps/chats/files/retrieve)
 
-GET/v1/compliance/apps/chats/files/{claude_file_id}
+GET/v1/compliance/apps/chats/files/{claude_file_id}
 
-##### [Delete file](/docs/en/api/compliance/apps/chats/files/delete)
+Retrieves metadata for a file referenced in chat messages, without downloading the file content. Use the sibling `/content` endpoint to download the bytes.
 
-DELETE/v1/compliance/apps/chats/files/{claude_file_id}
+##### [Delete file](/docs/en/api/http/compliance/apps/chats/files/delete)
 
-##### [Download file content](/docs/en/api/compliance/apps/chats/files/download)
+DELETE/v1/compliance/apps/chats/files/{claude_file_id}
 
-GET/v1/compliance/apps/chats/files/{claude_file_id}/content
+Permanently deletes a specific file. This is a destructive operation that cannot be undone.
 
-##### ModelsExpand Collapse 
+##### [Download file content](/docs/en/api/http/compliance/apps/chats/files/download)
+
+GET/v1/compliance/apps/chats/files/{claude_file_id}/content
+
+Downloads the binary content of a file referenced in chat messages.
+
+##### Models
 
 
 
-FileRetrieveResponse object { id, claude_chat_ids, created_at, 5 more }
+FileRetrieveResponse object{ id, claude_chat_ids, created_at, 5 more }
 
 
 
@@ -312,15 +297,13 @@ id: string
 
 File ID
 
-[](#file_retrieve_response.id)
-
 claude_chat_ids: array of string
 
 
 
 Chats this file is attached to. A file can be referenced by messages across multiple chats.
 
-[](#file_retrieve_response.claude_chat_ids)
+
 
 created_at: string
 
@@ -328,23 +311,19 @@ created_at: string
 
 File creation timestamp
 
-[](#file_retrieve_response.created_at)
+formatdate-time
 
-filename: string
+filename: string or null
 
 
 
 Display name of the file, if set
 
-[](#file_retrieve_response.filename)
-
-md5: string
+md5: string or null
 
 
 
 Lowercase hex MD5 of the file's preferred downloadable variant, as recorded at upload time. Null when no stored hash is available. The sibling `/content` endpoint also sets a `Content-MD5` header (base64 per RFC 1864) computed over the exact served bytes; when the two disagree, the header is authoritative.
-
-[](#file_retrieve_response.md5)
 
 message_ids: array of string
 
@@ -352,41 +331,27 @@ message_ids: array of string
 
 Chat message IDs this file is attached to. A file can be referenced by multiple messages.
 
-[](#file_retrieve_response.message_ids)
-
-mime_type: string
+mime_type: string or null
 
 
 
 MIME type of the file's preferred downloadable variant (e.g. 'application/pdf'). May be null for files with no downloadable content (e.g. code-interpreter outputs).
 
-[](#file_retrieve_response.mime_type)
-
-size_bytes: number
+size_bytes: number or null
 
 
 
 Size in bytes of the file's preferred downloadable variant, if known
 
-[](#file_retrieve_response.size_bytes)
-
-[](#file_retrieve_response)
-
 
 
-FileDeleteResponse object { id, type }
+FileDeleteResponse object{ type: "claude_file_deleted", id }
 
 
 
 Response for deleting a compliance file.
 
-id: string
-
-
-
-The ID of the file that was deleted
-
-[](#file_delete_response.id)
+
 
 type: optional "claude_file_deleted"
 
@@ -394,4 +359,10 @@ type: optional "claude_file_deleted"
 
 Constant string confirming deletion
 
-[](#file_delete_response.type)
+defaultclaude_file_deleted
+
+id: string
+
+
+
+The ID of the file that was deleted

@@ -2,7 +2,7 @@
 title: "Customer Stories | Claude by Anthropic"
 source_url: "https://www.claude.com/customers?fcdaa149_page=2"
 category: "18-Industry-UseCases"
-fetched_at: "2026-08-02T05:43:51Z"
+fetched_at: "2026-09-18T06:37:13Z"
 ---
 
 # Meet the teams building what’s next
@@ -25,6 +25,8 @@ Sort by
 Sort byNewestAlphabetically (A to Z)Alphabetically (Z to A)
 
 Industry
+
+Automotive
 
 Beneficial Deployments
 
@@ -67,6 +69,10 @@ Telecommunications
 Transportation
 
 
+Claude Tag
+
+Claude Managed Agents on the Claude Platform
+
 Claude for Nonprofits
 
 Claude Agent SDK
@@ -93,6 +99,10 @@ Startup
 
 Partner
 
+Artefact
+
+Blank Metal
+
 Tenex
 
 Accenture
@@ -106,6 +116,8 @@ Geography
 Africa
 
 Asia Pacific
+
+Australia
 
 EMEA
 
@@ -133,165 +145,135 @@ Grid
 
 List
 
-[View story](/customers/kai)
+[View story](/customers/doordash-boris-office-hours)
 
 View story
 
-Kai delivers preemptive exposure management with Claude
+Office Hours: Building the case for leaders who ship with DoorDash
 
-Kai
+Doordash Boris Office Hours
 
-Startup
-
-AWS
+Large
 
 North America
 
-June 25, 2026
+August 12, 2026
+
+Software
+
+Claude Code
+
+[View story](/customers/spotify-boris-office-hours)
+
+View story
+
+Office Hours: Asynchronous coding and the end of the IDE with Spotify
+
+Spotify Boris Office Hours
+
+Large
+
+North America
+
+August 12, 2026
+
+Software
+
+Claude Code
+
+[View story](/customers/ramp-boris-office-hours)
+
+View story
+
+Office Hours: Building for the model that doesn't exist yet
+
+Ramp Boris Office Hours
+
+Large
+
+North America
+
+August 12, 2026
+
+Software
+
+Claude Code
+
+[View story](/customers/miro-qa)
+
+View story
+
+How Miro's champions run their week with Claude Cowork
+
+Miro Q&A
+
+Large
+
+North America
+
+August 10, 2026
+
+Claude Cowork
+
+Claude Enterprise
+
+Software
+
+Claude Cowork
+
+[View story](/customers/cyera-qa)
+
+View story
+
+Cyera on making Claude Cowork the front door to 40 tools
+
+Cyera Q&A
+
+Large
+
+North America
+
+August 7, 2026
+
+Claude Cowork
+
+Claude Enterprise
 
 Cybersecurity
 
-Claude Platform
+Claude Cowork
 
-[View story](/customers/vercel-qa)
+[View story](/customers/cyera)
 
 View story
 
-How Vercel built an ecosystem on the open skills standard
+Cyera scales agentic AI across 1,500 employees with Claude Enterprise
 
-Vercel Q&A
+Cyera
 
 Large
+
+AWS
 
 North America
 
-June 24, 2026
+August 7, 2026
 
 Claude Enterprise
-
-Claude Code
-
-Software
-
-Claude Enterprise
-
-[View story](/customers/box)
-
-View story
-
-Box builds document creation into its AI agent with Claude
-
-Box
-
-Large
-
-North America
-
-June 23, 2026
-
-Claude Platform
-
-Software
-
-Claude Platform
-
-[View story](/customers/quantium-qa)
-
-View story
-
-Quantium scales Claude across Australia's largest enterprises
-
-Quantium Q&A
-
-Large
-
-Asia Pacific
-
-June 22, 2026
-
-Claude Enterprise
-
-Claude Code
 
 Claude Cowork
 
-Professional services
+Cybersecurity
 
 Claude Enterprise
 
-[View story](/customers/juno)
+[View story](/customers/wondr-health)
 
 View story
 
-Juno helps people with chronic illness find patterns in their symptoms with Claude
+Wondr Health scales trusted health coaching with Claude
 
-Juno
-
-Startup
-
-North America
-
-June 16, 2026
-
-Claude Platform
-
-Claude Code
-
-Claude Cowork
-
-Software
-
-Claude Platform
-
-[View story](/customers/cursor-qa)
-
-View story
-
-A conversation with Cursor on building coding agents for professional developers
-
-Cursor Q&A
-
-Large
-
-North America
-
-June 10, 2026
-
-Claude Code
-
-Software
-
-Claude Platform
-
-[View story](/customers/garvan-institute-qa)
-
-View story
-
-How the Garvan Institute is changing the way it does science with Claude
-
-Garvan Institute
-
-Large
-
-Asia Pacific
-
-June 5, 2026
-
-Claude Code
-
-Beneficial Deployments
-
-Life sciences
-
-Claude Enterprise
-
-[View story](/customers/delightai-qa)
-
-View story
-
-Inside Delight.ai’s AI/ML team: Building internal tools with Claude Code
-
-delight.ai
+Wondr Health
 
 Startup
 
@@ -299,143 +281,187 @@ AWS
 
 North America
 
-June 5, 2026
+August 7, 2026
 
-Claude Code
+Claude Platform
 
 Software
 
 Claude Platform
 
-[View story](/customers/lovable)
+[View story](/customers/mercy-corps-qa)
 
 View story
 
-Lovable helps anyone create software 20x faster with Claude
+Mercy Corps on what AI makes possible in humanitarian work
 
-Lovable
-
-Startup
-
-EMEA
-
-June 4, 2026
-
-Software
-
-Claude Platform
-
-[View story](/customers/replit)
-
-View story
-
-Replit democratizes software development with Claude on Google Cloud
-
-Replit
-
-Small
-
-Google
-
-North America
-
-June 3, 2026
-
-Software
-
-Claude Platform
-
-[View story](/customers/warp)
-
-View story
-
-Warp rebuilds the terminal for AI coding with Claude
-
-Warp
-
-Startup
-
-North America
-
-May 29, 2026
-
-Software
-
-Claude Platform
-
-[View story](/customers/jakala)
-
-View story
-
-JAKALA brings production AI agents to enterprise clients across Europe with Claude
-
-Jakala
+Mercy Corps Q&A
 
 Large
 
-EMEA
+North America
 
-May 29, 2026
+August 4, 2026
 
-Claude Agent SDK
+Claude Enterprise
+
+Claude for Nonprofits
+
+Beneficial Deployments
+
+Claude Enterprise
+
+[View story](/customers/mercy-corps)
+
+View story
+
+Mercy Corps accelerates global humanitarian response to community feedback with Claude
+
+Mercy Corps
+
+Large
+
+North America
+
+August 4, 2026
+
+Claude for Nonprofits
+
+Claude Enterprise
+
+Beneficial Deployments
+
+Claude Enterprise
+
+[View story](/customers/notability)
+
+View story
+
+How Notability built a study tool that improves with every Claude release
+
+Notability
+
+Startup
+
+North America
+
+August 3, 2026
+
+Claude Platform
+
+Software
+
+Claude Platform
+
+[View story](/customers/caylent)
+
+View story
+
+Caylent turns months of migration work into days with Claude Agent SDK
+
+Caylent
+
+Medium
+
+AWS
+
+North America
+
+July 17, 2026
 
 Professional services
 
-Claude Agent SDK
+Claude Platform
 
-[View story](/customers/hubspot-qa)
+[View story](/customers/epilepsy-foundation)
 
 View story
 
-HubSpot product and marketing leaders on scaling Claude Cowork
+The Epilepsy Foundation turns years of expert content into a personal epilepsy assistant with Claude
 
-Hubspot
+Epilepsy Foundation case study
 
-Large
+Medium
+
+AWS
 
 North America
 
-May 26, 2026
+July 17, 2026
 
-Software
+Claude Platform
 
-Claude Cowork
+Beneficial Deployments
 
-[View story](/customers/twilio-qa)
+Claude Platform
+
+[View story](/customers/epilepsy-foundation-qa)
 
 View story
 
-A Twilio PM on building a self-learning development platform with Claude Code
+How the Epilepsy Foundation uses Claude across the organization
 
-Twilio
+Epilepsy Foundation Q&A
 
-Large
+Medium
+
+AWS
 
 North America
 
-May 26, 2026
+July 17, 2026
 
-Software
+Claude Platform
 
-Claude Code
+Claude for Nonprofits
 
-[View story](/customers/chatplace)
+Beneficial Deployments
+
+Claude Platform
+
+[View story](/customers/eve-legal)
 
 View story
 
-ChatPlace gives solo creators an AI marketing team with Claude
+Eve Legal helps plaintiff law firms settle cases 60 days faster with Claude
 
-ChatPlace
+Eve Legal
 
 Startup
 
-EMEA
+North America
 
-May 22, 2026
-
-Software
+July 17, 2026
 
 Claude Platform
+
+Claude Code
+
+Legal
+
+Claude Platform
+
+[View story](/customers/national-domestic-workers-alliance-qa)
+
+View story
+
+Building dignity-driven AI: A conversation with the National Domestic Workers Alliance
+
+National Domestic Workers Alliance Q&A
+
+Small
+
+North America
+
+July 17, 2026
+
+Claude for Nonprofits
+
+Claude Platform
+
+Beneficial Deployments
+
+Claude for Nonprofits
 
 [](?fcdaa149_page=1)
 
@@ -444,7 +470,7 @@ Claude Platform
 
 View more
 
-2 / 18
+2 / 19
 
 Industry
 
@@ -455,20 +481,26 @@ Location
 
 Partner
 
-[View story](/customers/caylent)
+[View story](/customers/impel)
 
 View story
 
-### Caylent
+### Impel
 
 Industry
 
-Professional services
+Automotive
 
 Company size
 
 Medium
 
+
+Claude Platform
+
+Claude Enterprise
+
+Claude Code
 
 Claude Platform
 
@@ -478,25 +510,23 @@ North America
 
 Partner
 
-AWS
-
-July 17, 2026
+September 16, 2026
 
 Read customer story
 
-[Read customer story](/customers/caylent)
+[Read customer story](/customers/impel)
 
 Read customer story
 
-[View story](/customers/epilepsy-foundation)
+[View story](/customers/qonto)
 
 View story
 
-### Epilepsy Foundation case study
+### Qonto
 
 Industry
 
-Beneficial Deployments
+Financial services
 
 Company size
 
@@ -509,38 +539,143 @@ Claude Platform
 
 Location
 
-North America
+EMEA
 
 Partner
 
 AWS
 
-July 17, 2026
+September 3, 2026
 
 Read customer story
 
-[Read customer story](/customers/epilepsy-foundation)
+[Read customer story](/customers/qonto)
 
 Read customer story
 
-[View story](/customers/epilepsy-foundation-qa)
+[View story](/customers/carvana)
 
 View story
 
-### Epilepsy Foundation Q&A
+### Carvana
 
 Industry
 
-Beneficial Deployments
+Retail Services
 
 Company size
 
-Medium
+Large
+
+
+Claude Tag
+
+Claude Tag
+
+Location
+
+North America
+
+Partner
+
+September 4, 2026
+
+Read customer story
+
+[Read customer story](/customers/carvana)
+
+Read customer story
+
+[View story](/customers/pictet)
+
+View story
+
+### Pictet
+
+Industry
+
+Financial services
+
+Company size
+
+Large
+
+
+Claude Code
+
+Claude Cowork
+
+Claude Code
+
+Location
+
+EMEA
+
+Partner
+
+Artefact
+
+September 2, 2026
+
+Read customer story
+
+[Read customer story](/customers/pictet)
+
+Read customer story
+
+[View story](/customers/atlassian)
+
+View story
+
+### Atlassian
+
+Industry
+
+Software
+
+Company size
+
+Large
 
 
 Claude Platform
 
-Claude for Nonprofits
+Claude Code
+
+Claude Platform
+
+Location
+
+Australia
+
+Partner
+
+Google
+
+August 28, 2026
+
+Read customer story
+
+[Read customer story](/customers/atlassian)
+
+Read customer story
+
+[View story](/customers/dxc)
+
+View story
+
+### DXC
+
+Industry
+
+Insurance
+
+Company size
+
+Large
+
+
+Claude Platform
 
 Claude Platform
 
@@ -550,21 +685,54 @@ North America
 
 Partner
 
-AWS
-
-July 17, 2026
+September 1, 2026
 
 Read customer story
 
-[Read customer story](/customers/epilepsy-foundation-qa)
+[Read customer story](/customers/dxc)
 
 Read customer story
 
-[View story](/customers/eve-legal)
+[View story](/customers/spellbook)
 
 View story
 
-### Eve Legal
+### Spellbook
+
+Industry
+
+Legal
+
+Company size
+
+Medium
+
+
+Claude Platform
+
+Claude Code
+
+Claude Platform
+
+Location
+
+North America
+
+Partner
+
+August 27, 2026
+
+Read customer story
+
+[Read customer story](/customers/spellbook)
+
+Read customer story
+
+[View story](/customers/evenup)
+
+View story
+
+### EvenUp
 
 Industry
 
@@ -577,316 +745,70 @@ Startup
 
 Claude Platform
 
-Claude Code
-
-Claude Platform
-
-Location
-
-North America
-
-Partner
-
-July 17, 2026
-
-Read customer story
-
-[Read customer story](/customers/eve-legal)
-
-Read customer story
-
-[View story](/customers/rainn)
-
-View story
-
-### RAINN
-
-Industry
-
-Beneficial Deployments
-
-Company size
-
-Small
-
-
-Claude for Nonprofits
-
-Claude Code
-
 Claude Enterprise
 
-Claude for Nonprofits
-
-Location
-
-North America
-
-Partner
-
-July 15, 2026
-
-Read customer story
-
-[Read customer story](/customers/rainn)
-
-Read customer story
-
-[View story](/customers/national-domestic-workers-alliance-qa)
-
-View story
-
-### National Domestic Workers Alliance Q&A
-
-Industry
-
-Beneficial Deployments
-
-Company size
-
-Small
-
-
-Claude for Nonprofits
+Claude Code
 
 Claude Platform
 
-Claude for Nonprofits
-
 Location
 
 North America
 
 Partner
 
-July 17, 2026
+August 26, 2026
 
 Read customer story
 
-[Read customer story](/customers/national-domestic-workers-alliance-qa)
+[Read customer story](/customers/evenup)
 
 Read customer story
 
-[View story](/customers/national-domestic-workers-alliance)
+[View story](/customers/rocket-money-qa)
 
 View story
 
-### National Domestic Workers Alliance
+### Rocket Money Q&A
 
 Industry
 
-Beneficial Deployments
-
-Company size
-
-Small
-
-
-Claude for Nonprofits
-
-Location
-
-North America
-
-Partner
-
-July 17, 2026
-
-Read customer story
-
-[Read customer story](/customers/national-domestic-workers-alliance)
-
-Read customer story
-
-[View story](/customers/lg-cns)
-
-View story
-
-### LG CNS
-
-Industry
-
-Professional services
+Software
 
 Company size
 
 Large
 
 
-Claude Code
+Claude Platform
 
-Claude Code
+Claude Platform
 
 Location
 
-Asia Pacific
+North America
 
 Partner
 
 AWS
 
-July 9, 2026
+August 26, 2026
 
 Read customer story
 
-[Read customer story](/customers/lg-cns)
+[Read customer story](/customers/rocket-money-qa)
 
 Read customer story
 
-[View story](/customers/advantage-solutions)
+[View story](/customers/rocket-money)
 
 View story
 
-### Advantage Solutions
+### Rocket Money
 
 Industry
 
-Retail Services
-
-Company size
-
-Large
-
-
-Claude Enterprise
-
-Claude Code
-
-Claude Cowork
-
-Claude Enterprise
-
-Location
-
-North America
-
-Partner
-
-Tenex
-
-July 8, 2026
-
-Read customer story
-
-[Read customer story](/customers/advantage-solutions)
-
-Read customer story
-
-[View story](/customers/pacific-community-ventures-qa)
-
-View story
-
-### Pacific Community Ventures Q&A
-
-Industry
-
-
-Company size
-
-Small
-
-
-Claude Platform
-
-Claude for Nonprofits
-
-Claude Platform
-
-Location
-
-North America
-
-Partner
-
-July 8, 2026
-
-Read customer story
-
-[Read customer story](/customers/pacific-community-ventures-qa)
-
-Read customer story
-
-[View story](/customers/pacific-community-ventures)
-
-View story
-
-### Pacific Community Ventures
-
-Industry
-
-Beneficial Deployments
-
-Company size
-
-Small
-
-
-Claude Platform
-
-Claude for Nonprofits
-
-Claude Platform
-
-Location
-
-North America
-
-Partner
-
-July 8, 2026
-
-Read customer story
-
-[Read customer story](/customers/pacific-community-ventures)
-
-Read customer story
-
-[View story](/customers/blank-metal-qa)
-
-View story
-
-### Blank Metal
-
-Industry
-
-Professional services
-
-Company size
-
-Small
-
-
-Claude Cowork
-
-Claude Code
-
-Claude Enterprise
-
-Claude Cowork
-
-Location
-
-North America
-
-Partner
-
-June 29, 2026
-
-Read customer story
-
-[Read customer story](/customers/blank-metal-qa)
-
-Read customer story
-
-[View story](/customers/cox-and-accenture)
-
-View story
-
-### Cox x Accenture
-
-Industry
-
-Telecommunications
+Software
 
 Company size
 
@@ -897,8 +819,6 @@ Claude Platform
 
 Claude Code
 
-Claude Cowork
-
 Claude Platform
 
 Location
@@ -907,34 +827,67 @@ North America
 
 Partner
 
-Accenture
+AWS
 
-June 29, 2026
-
-Read customer story
-
-[Read customer story](/customers/cox-and-accenture)
+August 26, 2026
 
 Read customer story
 
-[View story](/customers/cox-communications-qa)
+[Read customer story](/customers/rocket-money)
+
+Read customer story
+
+[View story](/customers/league-qa)
 
 View story
 
-### Cox Communications
+### League Q&A
 
 Industry
 
-Telecommunications
+Healthcare
 
 Company size
 
-Large
+Medium
 
+
+Claude Enterprise
 
 Claude Code
 
-Claude Cowork
+Claude Enterprise
+
+Location
+
+North America
+
+Partner
+
+August 24, 2026
+
+Read customer story
+
+[Read customer story](/customers/league-qa)
+
+Read customer story
+
+[View story](/customers/deepgram)
+
+View story
+
+### Deepgram
+
+Industry
+
+Software
+
+Company size
+
+Startup
+
+
+Claude Code
 
 Claude Enterprise
 
@@ -946,21 +899,54 @@ North America
 
 Partner
 
-Accenture
-
-June 25, 2026
+August 20, 2026
 
 Read customer story
 
-[Read customer story](/customers/cox-communications-qa)
+[Read customer story](/customers/deepgram)
 
 Read customer story
 
-[View story](/customers/kai)
+[View story](/customers/league)
 
 View story
 
-### Kai
+### League
+
+Industry
+
+Healthcare
+
+Company size
+
+Medium
+
+
+Claude Enterprise
+
+Claude Code
+
+Claude Enterprise
+
+Location
+
+North America
+
+Partner
+
+August 14, 2026
+
+Read customer story
+
+[Read customer story](/customers/league)
+
+Read customer story
+
+[View story](/customers/vega)
+
+View story
+
+### Vega
 
 Industry
 
@@ -971,7 +957,11 @@ Company size
 Startup
 
 
+Claude Agent SDK
+
 Claude Platform
+
+Claude Agent SDK
 
 Location
 
@@ -981,19 +971,19 @@ Partner
 
 AWS
 
-June 25, 2026
+August 12, 2026
 
 Read customer story
 
-[Read customer story](/customers/kai)
+[Read customer story](/customers/vega)
 
 Read customer story
 
-[View story](/customers/vercel-qa)
+[View story](/customers/doordash-boris-office-hours)
 
 View story
 
-### Vercel Q&A
+### Doordash Boris Office Hours
 
 Industry
 
@@ -1004,11 +994,7 @@ Company size
 Large
 
 
-Claude Enterprise
-
 Claude Code
-
-Claude Enterprise
 
 Location
 
@@ -1016,19 +1002,19 @@ North America
 
 Partner
 
-June 24, 2026
+August 12, 2026
 
 Read customer story
 
-[Read customer story](/customers/vercel-qa)
+[Read customer story](/customers/doordash-boris-office-hours)
 
 Read customer story
 
-[View story](/customers/box)
+[View story](/customers/spotify-boris-office-hours)
 
 View story
 
-### Box
+### Spotify Boris Office Hours
 
 Industry
 
@@ -1039,9 +1025,7 @@ Company size
 Large
 
 
-Claude Platform
-
-Claude Platform
+Claude Code
 
 Location
 
@@ -1049,23 +1033,124 @@ North America
 
 Partner
 
-June 23, 2026
+August 12, 2026
 
 Read customer story
 
-[Read customer story](/customers/box)
+[Read customer story](/customers/spotify-boris-office-hours)
 
 Read customer story
 
-[View story](/customers/quantium-qa)
+[View story](/customers/ramp-boris-office-hours)
 
 View story
 
-### Quantium Q&A
+### Ramp Boris Office Hours
 
 Industry
 
-Professional services
+Software
+
+Company size
+
+Large
+
+
+Claude Code
+
+Location
+
+North America
+
+Partner
+
+August 12, 2026
+
+Read customer story
+
+[Read customer story](/customers/ramp-boris-office-hours)
+
+Read customer story
+
+[View story](/customers/miro-qa)
+
+View story
+
+### Miro Q&A
+
+Industry
+
+Software
+
+Company size
+
+Large
+
+
+Claude Cowork
+
+Claude Enterprise
+
+Claude Cowork
+
+Location
+
+North America
+
+Partner
+
+August 10, 2026
+
+Read customer story
+
+[Read customer story](/customers/miro-qa)
+
+Read customer story
+
+[View story](/customers/cyera-qa)
+
+View story
+
+### Cyera Q&A
+
+Industry
+
+Cybersecurity
+
+Company size
+
+Large
+
+
+Claude Cowork
+
+Claude Enterprise
+
+Claude Cowork
+
+Location
+
+North America
+
+Partner
+
+August 7, 2026
+
+Read customer story
+
+[Read customer story](/customers/cyera-qa)
+
+Read customer story
+
+[View story](/customers/cyera)
+
+View story
+
+### Cyera
+
+Industry
+
+Cybersecurity
 
 Company size
 
@@ -1073,8 +1158,6 @@ Large
 
 
 Claude Enterprise
-
-Claude Code
 
 Claude Cowork
 
@@ -1082,85 +1165,17 @@ Claude Enterprise
 
 Location
 
-Asia Pacific
-
-Partner
-
-June 22, 2026
-
-Read customer story
-
-[Read customer story](/customers/quantium-qa)
-
-Read customer story
-
-[View story](/customers/juno)
-
-View story
-
-### Juno
-
-Industry
-
-Software
-
-Company size
-
-Startup
-
-
-Claude Platform
-
-Claude Code
-
-Claude Cowork
-
-Claude Platform
-
-Location
-
 North America
 
 Partner
 
-June 16, 2026
+AWS
+
+August 7, 2026
 
 Read customer story
 
-[Read customer story](/customers/juno)
-
-Read customer story
-
-[View story](/customers/cursor-qa)
-
-View story
-
-### Cursor Q&A
-
-Industry
-
-Software
-
-Company size
-
-Large
-
-
-Claude Code
-
-Claude Platform
-
-Location
-
-North America
-
-Partner
-
-June 10, 2026
-
-Read customer story
-
-[Read customer story](/customers/cursor-qa)
+[Read customer story](/customers/cyera)
 
 Read customer story
 
@@ -1168,7 +1183,7 @@ Read customer story
 
 See more
 
-1 / 13
+1 / 14
 
 No stories for those filters
 

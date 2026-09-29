@@ -2,27 +2,22 @@
 title: "Plugins in the SDK - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/plugins"
 category: "08-Plugins-Skills"
-fetched_at: "2026-08-02T05:37:44Z"
+fetched_at: "2026-09-26T06:37:59Z"
 tags: ["claude-code", "plugins", "sdk"]
 ---
 
 ## On this page
 
-- [What are plugins?](#what-are-plugins)
 - [Loading plugins](#loading-plugins)
   - [Path specifications](#path-specifications)
 - [Verifying plugin installation](#verifying-plugin-installation)
-- [Using plugin skills](#using-plugin-skills)
+- [Use plugin skills](#use-plugin-skills)
 - [Complete example](#complete-example)
 - [Plugin structure reference](#plugin-structure-reference)
-- [Common use cases](#common-use-cases)
-  - [Development and testing](#development-and-testing)
-  - [Project-specific extensions](#project-specific-extensions)
-  - [Multiple plugin sources](#multiple-plugin-sources)
+- [Multiple plugin sources](#multiple-plugin-sources)
 - [Troubleshooting](#troubleshooting)
   - [Plugin not loading](#plugin-not-loading)
   - [Skills not appearing](#skills-not-appearing)
-  - [Path resolution issues](#path-resolution-issues)
 - [See also](#see-also)
 
 Customize behavior
@@ -35,30 +30,21 @@ Load custom plugins to extend Claude Code with skills, agents, hooks, and MCP se
 
 Copy pageCopy page
 
-Plugins allow you to extend Claude Code with custom functionality that can be shared across projects. Through the Agent SDK, you can programmatically load plugins from local directories to add skills, agents, hooks, and MCP servers to your agent sessions.
+Plugins let you extend Claude Code with custom functionality that can be shared across projects. Through the Agent SDK, you can programmatically load plugins from local directories to add capabilities to your agent sessions. A plugin can include:
 
+- **Skills**: capabilities Claude invokes autonomously when relevant. You can also invoke a plugin skill directly with `/plugin-name:skill-name`.
+- **Agents**: specialized subagents for specific tasks
+- **Hooks**: event handlers that respond to tool use and other events
+- **MCP servers**: external tool integrations via Model Context Protocol
 
-[​](#what-are-plugins)
-
-What are plugins?
-
-Plugins are packages of Claude Code extensions that can include:
-
-- **Skills**: Model-invoked capabilities that Claude uses autonomously (can also be invoked with `/skill-name`)
-- **Agents**: Specialized subagents for specific tasks
-- **Hooks**: Event handlers that respond to tool use and other events
-- **MCP servers**: External tool integrations via Model Context Protocol
-
-The `commands/` directory is a legacy format. Use `skills/` for new plugins. Claude Code continues to support both formats for backward compatibility.
-
-For complete information on plugin structure and how to create plugins, see [Plugins](/docs/en/plugins).
+For complete information on plugin structure and how to create plugins, see [Plugins](/docs/en/plugins/overview).
 
 
 [​](#loading-plugins)
 
 Loading plugins
 
-Load plugins by providing their local file system paths in your options configuration. The `type` field must be `"local"`, the only value the SDK accepts. The SDK supports loading multiple plugins from different locations. To use a plugin distributed through a [marketplace](/docs/en/plugin-marketplaces) or remote repository, download it first and provide the local directory path. For the directory layout a plugin needs, see the [Plugin structure reference](#plugin-structure-reference) below.
+Load plugins by providing their local file system paths in your options configuration. The `type` field must be `"local"`, the only value the SDK accepts. The SDK supports loading multiple plugins from different locations. To use a plugin distributed through a [marketplace](/docs/en/plugins/overview) or remote repository, download it first and provide the local directory path. For the directory layout a plugin needs, see the [Plugin structure reference](#plugin-structure-reference) below.
 
 TypeScript
 
@@ -109,10 +95,10 @@ Path specifications
 
 Plugin paths can be:
 
-- **Relative paths**: Resolved relative to your current working directory (for example, `"./plugins/my-plugin"`)
-- **Absolute paths**: Full file system paths (for example, `"/home/user/plugins/my-plugin"`)
+- **Relative paths**: resolved relative to the `cwd` option (for example, `"./plugins/my-plugin"`)
+- **Absolute paths**: full file system paths (for example, `"/home/user/plugins/my-plugin"`)
 
-The path should point to the plugin’s root directory: the parent of `skills/`, `agents/`, `hooks/`, `commands/` (legacy), or `.claude-plugin/`, not a subdirectory.
+The path should point to the plugin’s root directory: the parent of `skills/`, `agents/`, `hooks/`, `commands/`, or `.claude-plugin/`.
 
 
 [​](#verifying-plugin-installation)
@@ -180,9 +166,9 @@ asyncio.run(main())
 ```
 
 
-[​](#using-plugin-skills)
+[​](#use-plugin-skills)
 
-Using plugin skills
+Use plugin skills
 
 Skills from plugins are automatically namespaced with the plugin name to avoid conflicts. To invoke one directly, send `/plugin-name:skill-name` as the prompt.
 
@@ -330,10 +316,10 @@ A plugin directory typically contains a `.claude-plugin/plugin.json` manifest fi
 my-plugin/
 ├── .claude-plugin/
 │   └── plugin.json          # Plugin manifest (optional, components auto-discovered without it)
-├── skills/                   # Agent Skills (invoked autonomously or via /skill-name)
+├── skills/                   # Agent Skills (invoked autonomously or via /plugin-name:skill-name)
 │   └── my-skill/
 │       └── SKILL.md
-├── commands/                 # Legacy: use skills/ instead
+├── commands/                 # Skills as flat .md files
 │   └── custom-cmd.md
 ├── agents/                   # Custom agents
 │   └── specialist.md
@@ -342,37 +328,7 @@ my-plugin/
 └── .mcp.json                # MCP server definitions
 ```
 
-For detailed information on creating plugins, see:
-
-- [Plugins](/docs/en/plugins) - Complete plugin development guide
-- [Plugins reference](/docs/en/plugins-reference) - Technical specifications and schemas
-
-
-[​](#common-use-cases)
-
-Common use cases
-
-
-[​](#development-and-testing)
-
-Development and testing
-
-Load plugins during development without installing them globally:
-
-```python
-plugins: [{ type: "local", path: "./dev-plugins/my-plugin" }];
-```
-
-
-[​](#project-specific-extensions)
-
-Project-specific extensions
-
-Include plugins in your project repository for team-wide consistency:
-
-```python
-plugins: [{ type: "local", path: "./project-plugins/team-workflows" }];
-```
+The `commands/` directory holds skills as flat Markdown files. Use `skills/` for new plugins. Claude Code supports both locations.
 
 
 [​](#multiple-plugin-sources)
@@ -406,9 +362,9 @@ Troubleshooting
 
 Plugin not loading
 
-If your plugin doesn’t appear in the init message:
+If your plugin doesn’t appear in the init message’s `plugins` list, check its [`plugin_errors`](/docs/en/agent-sdk/typescript#sdksystemmessage) field for the reason, then work through these checks:
 
-1.  **Check the path**: ensure the path points to the plugin root directory, the parent of `skills/`, `agents/`, `hooks/`, `commands/` (legacy), or `.claude-plugin/`
+1.  **Check the path**: ensure the path points to the plugin root directory, the parent of `skills/`, `agents/`, `hooks/`, `commands/`, or `.claude-plugin/`
 2.  **Validate plugin.json**: if your plugin includes a manifest, ensure it has valid JSON syntax
 3.  **Check file permissions**: ensure the plugin directory is readable
 4.  **Confirm the directory exists**: the SDK skips a nonexistent path, and the plugin doesn’t appear in the init message’s `plugins` list
@@ -425,23 +381,12 @@ If plugin skills don’t work:
 3.  **Validate skill files**: ensure each skill has a `SKILL.md` file in its own subdirectory under `skills/`, for example `skills/my-skill/SKILL.md`
 
 
-[​](#path-resolution-issues)
-
-Path resolution issues
-
-If relative paths don’t work:
-
-1.  **Check working directory**: Relative paths are resolved from your current working directory
-2.  **Use absolute paths**: For reliability, consider using absolute paths
-3.  **Normalize paths**: Use path utilities to construct paths correctly
-
-
 [​](#see-also)
 
 See also
 
-- [Plugins](/docs/en/plugins) - Complete plugin development guide
-- [Plugins reference](/docs/en/plugins-reference) - Technical specifications
-- [Commands](/docs/en/agent-sdk/slash-commands) - Using commands in the SDK
+- [Plugins](/docs/en/plugins/overview) - Complete plugin development guide
+- [Plugins reference](/docs/en/plugins/manifest-reference) - Technical specifications
+- [Commands](/docs/en/agent-sdk/skills#dispatch-commands-by-name) - Dispatching commands in the SDK
 - [Subagents](/docs/en/agent-sdk/subagents) - Working with specialized agents
 - [Skills](/docs/en/agent-sdk/skills) - Using Agent Skills

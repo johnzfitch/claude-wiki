@@ -2,7 +2,7 @@
 title: "Week 18 · April 27 – May 1, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w18"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:36:33Z"
+fetched_at: "2026-09-04T06:29:54Z"
 tags: ["claude-code"]
 ---
 

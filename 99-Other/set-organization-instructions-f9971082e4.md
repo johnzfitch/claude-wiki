@@ -2,21 +2,21 @@
 title: "Set organization instructions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14546867-set-organization-instructions"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:48Z"
+fetched_at: "2026-09-29T06:31:48Z"
 ---
 
 # Set organization instructions
 
-April 30, 2026
 
+Copy for LLM
 
-Organization instructions let Admins and above on Team and Enterprise plans set custom instructions that Claude follows in every conversation across your organization. Use them to apply communication standards, formatting requirements, compliance guidance, or domain-specific context that should show up everywhere your team works with Claude.
+Organization instructions let owners of Team and Enterprise plans set custom instructions that Claude follows in every conversation across your organization. Use them to apply communication standards, formatting requirements, compliance guidance, or domain-specific context that should show up everywhere your team works with Claude.
 
-Organization instructions are available to Admins, Owners, and Primary Owners on Team and Enterprise plans.
+Organization instructions are available to Owners and Primary Owners on Team and Enterprise plans.
 
 ## How organization and user instructions interact
 
-Claude supports two levels of instructions. Understanding how they interact helps admins and the people on your team get the most out of both.
+Claude supports two levels of instructions. Understanding how they interact helps owners and the people on your team get the most out of both.
 
 [TABLE]
 
@@ -28,19 +28,19 @@ Individual instructions still apply for anything the organization instructions d
 
 ## Set up organization instructions
 
-You need at least an Admin role to configure organization instructions.
+You need at least an Owner role to configure organization instructions.
 
-1.  Go to **[Organization settings \> Organization and access](http://claude.ai/admin-settings/organization)**.
+1.  Go to **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**.
 
 2.  Find the **Organization instructions** section.
 
 3.  Enter your instructions in the text area. The maximum length is 3,000 characters.
 
-4.  Click “Save.”
+4.  Click “Save changes.”
 
 5.  Changes may take up to an hour to take effect across Claude products.
 
-To remove instructions entirely, clear the text area and click “Save.”
+To remove instructions entirely, clear the text area and click “Save changes.”
 
 ------------------------------------------------------------------------
 
@@ -72,6 +72,6 @@ To remove instructions entirely, clear the text area and click “Save.”
 
 **Domain context.** “Our team works in healthcare claims processing. When users mention ‘claims,’ they’re referring to insurance claims, not legal claims.”
 
-**Referral guidance.** “When users ask about HR policies, direct them to **[\[email protected\]](/cdn-cgi/l/email-protection#b6dec4f6d7d5dbd398d5d9db)** rather than giving specific policy advice.”
+**Referral guidance.** “When users ask about HR policies, direct them to [\[email protected\]](/cdn-cgi/l/email-protection#aac2d8eacbc9c7cf84c9c5c7) rather than giving specific policy advice.”
 
 **Data handling reminders.** “Don’t include customer names, account numbers, or other personally identifiable information in responses or generated artifacts.”

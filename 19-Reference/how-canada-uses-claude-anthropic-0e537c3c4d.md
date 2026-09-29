@@ -2,7 +2,7 @@
 title: "How Canada uses Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/research/how-canada-uses-claude"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:10:58Z"
+fetched_at: "2026-08-26T06:28:53Z"
 ---
 
 # How Canada uses Claude: Findings from the Anthropic Economic Index
@@ -124,21 +124,23 @@ Copy
 
 ## Related content
 
-### Discovering cryptographic weaknesses with Claude
+### How Claude is accelerating protein design and analytical chemistry
 
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
+In this post, we share two results that show how Claude can help life scientists increase the pace of their research.
 
-[Read more](/research/discovering-cryptographic-weaknesses)
+[Read more](/research/Claude-accelerates-protein-design)
 
-### Project Pilot: Can AI control a drone?
+### Patterns and problems in emerging multiagent systems
 
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
+Here, we identify a few examples of behavioral tendencies in current frontier models and show how they can produce unexpected systemic failures, in hopes of starting a conversation about mitigating these risks.
 
-[Read more](/research/project-pilot)
+[Read more](/research/multiagent-systems)
 
-### Claude’s values across models and languages
+### Reviewing the evidence on worker retraining programs
 
-[Read more](/research/claude-values-models-languages)
+We're sharing a review of the evidence on worker retraining programs, coauthored by independent researcher David Roodman and Anthropic's Maxim Massenkoff.
+
+[Read more](/research/reviewing-the-evidence-on-worker-retraining-programs)
 
 [](/)
 
@@ -152,7 +154,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -204,7 +206,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -229,6 +231,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

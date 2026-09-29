@@ -2,13 +2,14 @@
 title: "Managing your active sessions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13124001-managing-your-active-sessions"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:13Z"
+fetched_at: "2026-09-29T06:31:58Z"
 ---
 
 # Managing your active sessions
 
 March 16, 2026
 
+Copy for LLM
 
 Claude lets you view and manage all the devices and browsers where you're currently logged in. This helps you stay in control of your account security — if you notice a session you don't recognize, or you want to log out of a device you no longer use, you can terminate that session directly.
 

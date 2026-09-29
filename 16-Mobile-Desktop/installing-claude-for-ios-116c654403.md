@@ -2,14 +2,14 @@
 title: "Install Claude for iOS | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9266462-installing-claude-for-ios"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-08-02T05:41:56Z"
+fetched_at: "2026-09-29T06:32:37Z"
 tags: ["desktop"]
 ---
 
 # Install Claude for iOS
 
-May 19, 2026
 
+Copy for LLM
 
 ## How do I install the Claude for iOS app?
 
@@ -21,7 +21,7 @@ If you’re unable to locate Claude for iOS in your App Store, you may be locate
 
 ## What versions of iOS are supported?
 
-We currently support iOS version 17.0 and above.
+We currently support iOS version 18.0 and above, and iPadOS 18.0 and above.
 
 ## How do I uninstall the Claude for iOS app?
 

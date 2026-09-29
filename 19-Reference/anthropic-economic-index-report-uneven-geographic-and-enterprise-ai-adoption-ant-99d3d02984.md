@@ -1,8 +1,8 @@
 ---
-title: "Anthropic Economic Index report: Uneven geographic and enterprise AI adoption \\ Anthropic"
+title: "Economic Index: Uneven AI adoption \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-economic-index-september-2025-report"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:10:54Z"
+fetched_at: "2026-09-11T06:29:20Z"
 tags: ["api", "enterprise"]
 ---
 
@@ -267,7 +267,7 @@ The geographic patterns of AI adoption—where it is used, for which tasks, and 
 
 Whether frontier AI capabilities make us more productive, reshape labor markets, and accelerate growth will depend on when and how firms choose to deploy AI. Even when businesses recognize the potential of AI, profitably adopting it may require costly restructuring of production processes, training new workers, and other sunk-cost investments to facilitate effective deployment.^(**1**)
 
-To understand business adoption patterns of AI, we turn to a new data source: Anthropic's first-party (1P) API customers—again relying on [privacy-preserving methods](https://www.anthropic.com/research/clio).^(**2**) Our API allows customers to integrate Claude directly into their own products and applications, and charges by the token used, rather than a flat subscription fee. This represents a fundamentally different product experience to [Claude.ai](http://claude.ai/redirect/website.v1.045330d8-a7e5-4b59-915d-36ef64742eda), which we focused on in the previous two chapters.
+To understand business adoption patterns of AI, we turn to a new data source: Anthropic's first-party (1P) API customers—again relying on [privacy-preserving methods](https://www.anthropic.com/research/clio).^(**2**) Our API allows customers to integrate Claude directly into their own products and applications, and charges by the token used, rather than a flat subscription fee. This represents a fundamentally different product experience to [Claude.ai](http://claude.ai/redirect/website.v1.6a0ce887-8c71-48d9-8d18-ff998070f92c), which we focused on in the previous two chapters.
 
 Institutional inertia, alongside fixed costs of adoption, suggests that early examples of enterprise use of AI is likely to be concentrated among specialized tasks where deployment is easy, capabilities are robust, and the economic benefits from adoption are high.
 
@@ -449,21 +449,23 @@ Copy
   
 ## Related content
 
-### Discovering cryptographic weaknesses with Claude
+### Measuring tactical intelligence targeting and conventional weapons capabilities of AI models
 
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
+Anthropic’s Frontier Red Team developed new evaluations to measure AI capabilities in tactical intelligence targeting and conventional weapons development.
 
-[Read more](/research/discovering-cryptographic-weaknesses)
+[Read more](/research/intelligence-targeting-conventional-weapons-capabilities)
 
-### Project Pilot: Can AI control a drone?
+### An alignment assessment of recent cybersecurity incidents
 
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
+We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
 
-[Read more](/research/project-pilot)
+[Read more](/research/alignment-assessment-cybersecurity-incidents)
 
-### How Canada uses Claude: Findings from the Anthropic Economic Index
+### Formalizing Fermat's Last Theorem
 
-[Read more](/research/how-canada-uses-claude)
+We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language.
+
+[Read more](/research/formalizing-fermats-last-theorem)
 
 [](/)
 
@@ -477,7 +479,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -497,6 +499,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -529,7 +532,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -542,7 +545,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -554,6 +557,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

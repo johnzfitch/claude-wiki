@@ -2,7 +2,7 @@
 title: "Claude can now connect to your world | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/integrations"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:43:11Z"
+fetched_at: "2026-09-01T06:26:31Z"
 ---
 
 # Claude can now connect to your world

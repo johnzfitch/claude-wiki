@@ -2,13 +2,15 @@
 title: "Connect to Microsoft 365 | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15183774"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:49Z"
+fetched_at: "2026-09-29T06:30:53Z"
 ---
 
 # Connect to Microsoft 365
 
 
-Connecting Microsoft 365 lets Claude search and analyze content across SharePoint, OneDrive, Outlook, and Teams in your work account. If your admin has enabled write tools, Claude can also draft and send emails, manage calendar events, and create and update files. Ask Claude for what you need, and it pulls the right information or takes the action.
+Copy for LLM
+
+Connecting Microsoft 365 lets Claude search and analyze content across SharePoint, OneDrive, Outlook, and Teams in your work account. If your admin has enabled write tools, Claude can also draft and send emails, manage calendar events, create and update files, and send Teams messages. Ask Claude for what you need, and it pulls the right information or takes the action.
 
 The Microsoft 365 connector is available on all Claude plans: Free, Pro, Max, Team, and Enterprise.
 
@@ -22,7 +24,7 @@ You'll need a work Microsoft 365 account tied to a Microsoft Entra tenant. Perso
 
 Once your admin has finished setup:
 
-1.  Navigate to **[Customize \> Connectors](http://claude.ai/customize/connectors)**.
+1.  Navigate to **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
 
 2.  Find **Microsoft 365** in the list and click “Connect.”
 
@@ -47,6 +49,8 @@ Ask Claude a question that needs information from your Microsoft 365 data. Claud
 - "Draft a reply to the latest email from the vendor, but don't send it."
 
 - "Schedule a 30-minute sync with the design team next Tuesday."
+
+- "Post a summary of this thread in the \#project-updates channel in Teams."
 
 ### What Claude can do
 
@@ -88,9 +92,27 @@ If your admin has enabled write tools for your organization, Claude can also:
 
 - Create and update files in OneDrive and SharePoint.
 
-When Claude sends an email, it includes a message header identifying it as agent-initiated in your mail and file history. Write tools are subject to per-user limits.
+- Send a Teams chat message, post or reply in a channel, or start a new chat.
+
+When Claude sends an email, it includes a message header identifying it as agent-initiated. Teams messages, file writes, and calendar writes aren't currently tagged. Write tools are subject to per-user limits.
 
 **Note:** Attachments aren't currently supported in write tools—Claude can't send, forward, or draft emails with attachments.
+
+**Note:** Your admin turns on each Teams write tool separately. Sending a chat message and posting or replying in a channel always ask you to confirm before Claude sends anything.
+
+## Supported file types
+
+When reading files from SharePoint and OneDrive, Claude can open these formats:
+
+- **Word, Excel, and PowerPoint**, including older .doc, .xls, and .ppt files
+
+- **PDF**
+
+- **Plain-text files**: .txt, .md, .csv, .tsv, .json, .xml, .html, .htm, and .log
+
+Files in any other format can't be read. They still appear in search results because they're ordinary files in your libraries, but when Claude tries to open one, you'll see a "mime type '...' is not allowed" error.
+
+**Note:** OneNote isn't supported. Notebooks show up in search results, but read attempts return a "mime type 'application/msonenote' is not allowed" error. To bring OneNote content into Claude, export pages or sections to Word or PDF in the same library.
 
 ## Manage your connection
 
@@ -98,7 +120,7 @@ When Claude sends an email, it includes a message header identifying it as agent
 
 You can selectively turn off specific tools within Microsoft 365—for example, you might keep document search on but turn off email access. To do this:
 
-1.  Navigate to **[Customize \> Connectors](http://claude.ai/customize/connectors)**.
+1.  Navigate to **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
 
 2.  Click on “Microsoft 365.”
 
@@ -118,7 +140,7 @@ You can also enable or disable Microsoft 365 in a specific conversation.
 
 Disconnecting removes Claude's access to your Microsoft 365 data. Reconnecting later doesn't require admin reapproval as long as your admin's consent is still active.
 
-1.  Navigate to **[Customize \> Connectors](http://claude.ai/customize/connectors)**.
+1.  Navigate to **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
 
 2.  Find Microsoft 365 in your connected services.
 
@@ -132,7 +154,7 @@ Microsoft 365 stays under your control once connected. A few things to keep in m
 
 - **On-demand only.** Claude only accesses Microsoft 365 when you ask a question that needs it. It doesn't run background searches.
 
-- **Write tools are admin-controlled.** Claude can always search and analyze your data. Whether Claude can also take actions like sending email, updating your calendar, or creating files depends on what your admin has enabled. Claude can't post Teams messages or change Teams settings.
+- **Write tools are admin-controlled.** Claude can always search and analyze your data. Whether Claude can also take actions like sending email, updating your calendar, creating files, or sending Teams messages depends on what your admin has enabled. Claude can't change Teams settings or permissions.
 
 - **You can disconnect any time.** Use the steps above to remove Claude's access.
 
@@ -186,7 +208,7 @@ For the full list of permissions the integration requests, see **[Set up the Mic
 
 ### Can Claude modify my Microsoft 365 data?
 
-Only if your admin has enabled write tools. When they're enabled, Claude can draft and send emails, manage calendar events, and create and update files, always within your existing Microsoft 365 permissions. When they're not enabled, the integration is read-only. Either way, Claude can't post Teams messages or change Teams settings or permissions. Attachments also aren’t supported in write tools, so Claude can’t send, forward, or draft emails with attachments.
+Only if your admin has enabled write tools. When they're enabled, Claude can draft and send emails, manage calendar events, create and update files, and send Teams messages (a chat message, a post or reply in a channel, or a new chat), always within your existing Microsoft 365 permissions. When they're not enabled, the integration is read-only. Either way, Claude can't change Teams settings or permissions. Attachments also aren't supported in write tools, so Claude can't send, forward, or draft emails with attachments.
 
 ### Does Claude search shared drives and team sites?
 
@@ -208,13 +230,17 @@ Be specific in your prompts:
 
 No, `Sites.Selected` is not supported, so you can't scope the Microsoft 365 connector to an allowlist of specific SharePoint sites. The connector searches across all SharePoint content you already have permission to access.
 
+### Why can't Claude read OneNote notebooks?
+
+OneNote isn't currently a supported file type. Notebooks show up in SharePoint search results because they're ordinary files in your libraries, but Claude can't open them, so read attempts return a "mime type 'application/msonenote' is not allowed" error. To work with OneNote content in Claude, export pages or sections to Word or PDF. For the full list of formats Claude can read, see **[Supported file types](#h_ddeb82923f)** above.
+
 ### Can Claude search shared mailboxes?
 
 Yes. Claude can search shared mailboxes you have delegate access to in Microsoft 365. This includes full access shared mailboxes and folder-level delegation, such as when you can see only the inbox of another mailbox. Search access follows your existing Microsoft 365 permissions: if you can open a shared mailbox in Outlook, Claude can search it.
 
 ### Can Claude search archived emails?
 
-Yes. Claude can search any email you have access to in Outlook, including archived messages.
+Yes, but only if they're in your primary mailbox. Claude can search every folder in your primary Outlook mailbox, including its Archive folder. Claude doesn't search the separate Online Archive mailbox (also called the In-Place Archive), so messages that a retention policy has moved there won't appear in results. To work with one of those messages, move it back into a folder in your primary mailbox, or open it in Outlook and paste the content into your chat.
 
 ### Can Claude summarize long email threads?
 
@@ -223,6 +249,10 @@ Yes. Try a prompt like *"Summarize the email thread about the vendor selection p
 ### Why don't I see write tools?
 
 Write tools require extra setup on the admin side: a Microsoft Entra administrator needs to consent to updated permissions, and your organization needs to enable write tools for your account. If you connected before write tools launched, ask your admin to complete both steps. For details, see **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951)**.
+
+### Why does Claude ask me to confirm before sending a Teams message?
+
+Sending a chat message and posting or replying in a channel always require your confirmation. Your admin can't set these to send automatically. Starting a new chat can be set to run without confirmation if your admin allows it.
 
 ### Can Claude access private Teams channels?
 

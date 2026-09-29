@@ -2,13 +2,14 @@
 title: "Add or update your Claude Console organization&#x27;s tax or VAT ID | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9889428-i-need-to-add-or-update-my-claude-console-organization-s-tax-or-vat-id"
 category: "99-Other"
-fetched_at: "2026-08-02T07:11:56Z"
+fetched_at: "2026-09-29T06:31:18Z"
 ---
 
 # Add or update your Claude Console organization's tax or VAT ID
 
 March 16, 2026
 
+Copy for LLM
 
 ## Add your tax or VAT ID during sign-up
 

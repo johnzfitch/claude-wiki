@@ -2,12 +2,14 @@
 title: "Get started with Claude Compliance API integrations | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15167101-get-started-with-claude-compliance-api-integrations"
 category: "14-Connectors"
-fetched_at: "2026-08-02T05:41:50Z"
+fetched_at: "2026-09-29T06:31:28Z"
 tags: ["api", "connectors"]
 ---
 
 # Get started with Claude Compliance API integrations
 
+
+Copy for LLM
 
 Security and compliance platforms have built integrations on top of the Claude Compliance API, so your team can monitor Claude activity within the tools you already use. Integrations are available from security and compliance providers across the categories enterprises rely on, spanning DLP, SASE, data security, SIEM and security operations, identity, eDiscovery, AI security posture management, and AI observability and telemetry infrastructure.
 
@@ -23,6 +25,10 @@ The Compliance API provides access to different data depending on the product:
 
   - **Conversation content** including chats, uploaded files, and projects
 
+  - **Session content from Cowork (via Claude, Claude Desktop, and Claude Mobile) and Claude Code (via CLI and Claude Desktop).** Includes prompts and responses, tool calls content, and skills and artifacts content captured as transcript text.
+
+  - **Session content from the Claude for Microsoft 365 add-ins (Excel, Word, PowerPoint, and Outlook) and Claude Science**, in beta. Includes prompts and responses, plus drafted emails, formulas, and document text from the Microsoft 365 add-ins.
+
   - **Activity feed events** covering user logins, admin actions, and configuration changes
 
 - **Claude Platform:**
@@ -35,11 +41,13 @@ The Compliance API provides access to different data depending on the product:
 
 For Claude Enterprise customers, using an integration is straightforward:
 
-1.  Enable the Compliance API in your organization settings. Learn how to **[access the Compliance API](https://support.claude.com/en/articles/13015708-access-the-compliance-api)**.
+1.  Ask your organization's Primary Owner to enable the Compliance API (only the Primary Owner can do this), then create an access key—Owners can create keys limited to their own organization. Learn how to **[access the Compliance API](https://support.claude.com/en/articles/13015708-access-the-compliance-api)**.
 
 2.  Connect your instance to a supported security platform. Setup guides are available in the **[Available integrations section](#h_7ff9e34f8e)**.
 
 Claude activity will flow into the same dashboards and workflows your team uses for every other application.
+
+**Important**: For Claude Enterprise organizations, only your organization's Primary Owner can enable the Compliance API, from **[Organization settings \> API](https://claude.ai/admin-settings/api-access)**. You can create a key on the same page by clicking "+Create key" under **Keys**: the Primary Owner can create a key covering every linked organization, and Owners can create keys limited to their own organization. Owners see this page but not the **Compliance API** toggle—only the Primary Owner can turn the API on or off. Admins don't see the page at all. If your organization is linked to a parent organization, the parent organization's Primary Owner enables it and the setting applies to every linked organization.
 
 For Claude Platform, contact your Anthropic sales team. Review **[Compliance API documentation](https://platform.claude.com/docs/en/manage-claude/compliance-api)** on Claude API Docs.
 
@@ -125,7 +133,7 @@ For Claude Platform, contact your Anthropic sales team. Review **[Compliance API
 
 - **Harmonic Security:** Harmonic Security uses the Anthropic Compliance API to govern Claude use across every surface (Desktop, Web, Mobile, Claude Code, Cowork), classifying every interaction with proprietary detection models to surface sensitive-data exposure, prompt injection, and AI usage and adoption insights broken down by team, department, and location. To set up this integration, see the **[Harmonic Security setup guide](https://docs.harmonicsecurity.app/integration-guides/configure-anthropic-compliance-api-connector)**.
 
-- **IBM Guardium (coming soon):** IBM Guardium helps organizations monitor data access and usage by agentic AI systems and help ensure autonomous activities remain within approved security boundaries. With ready-to-use templates, customizable policies, continuous audit workflows, and compliance reporting aligned to frameworks such as EU AI Act, AIDA, PCI, SOX, HIPAA, GDPR, and CPRA, Guardium helps security and compliance teams confidently demonstrate oversight of AI-driven activity. Learn more about **[IBM Guardium](https://www.ibm.com/products/guardium)**.
+- **IBM Guardium:** IBM Guardium helps organizations monitor data access and usage by agentic AI systems and help ensure autonomous activities remain within approved security boundaries. With ready-to-use templates, customizable policies, continuous audit workflows, and compliance reporting aligned to frameworks such as EU AI Act, AIDA, PCI, SOX, HIPAA, GDPR, and CPRA, Guardium helps security and compliance teams confidently demonstrate oversight of AI-driven activity. Learn more about **[IBM Guardium](https://www.ibm.com/products/guardium)**.
 
 - **Island:** Island's Claude Compliance API integration gives security and compliance teams visibility into every Claude session—user-driven or autonomous—covering conversation topics, tool/model/skill usage, and continuously enriched detection of sensitive-data exposure and policy violations for posture assessment and anomaly detection. Learn more about **[Island's integration with the Claude Compliance API](https://www.island.io/blog/island-integrates-with-the-claude-compliance-api)**.
 
@@ -207,7 +215,7 @@ For Claude Platform, contact your Anthropic sales team. Review **[Compliance API
 
 - **Trellix:** The Trellix Claude Compliance API integration checks all chat content, artifacts, and responses against customer-defined privacy policies using their Data Security Engine and creates detection and audit events in Trellix Helix. This includes customer-specific patterns and policies that are defined for their endpoint, server, and collaboration software and applies it to Claude as well. To set up this integration, see the **[Trellix setup guide](https://www.trellix.com/platform/data-security/)**.
 
-- **TrendAI:** Trend Micro's integration with the Claude Compliance API automatically collects and monitors Claude chat activity across your organization, scans for prompt injection, harmful content, and sensitive-data leakage, and correlates findings with your broader security signals through SIEM and XDR for investigation and audit-ready compliance and governance. To set up this integration, see the **[TrendAI setup guide](https://www.trendmicro.com/en_us/research/26/f/governing-claude-enterprise.html)**.
+- **TrendAI:** TrendAI's integration with the Claude Compliance API automatically collects and monitors Claude chat activity across your organization, scans for prompt injection, harmful content, and sensitive-data leakage, and correlates findings with your broader security signals through SIEM and XDR for investigation and audit-ready compliance and governance. To set up this integration, see the **[TrendAI setup guide](https://www.trendmicro.com/en_us/research/26/f/governing-claude-enterprise.html)**.
 
 - **Valence Security:** Valence integrates with the Compliance API to give security teams visibility into how Claude Enterprise and Claude Platform are used, including users, agents, MCP servers, connectors, and tools. Valence correlates this activity with identities and configurations across the rest of the environment, helping teams detect risky behavior and remediate exposure. To set up this integration, see the **[Valence Security setup guide](https://www.valencesecurity.com/resources/blogs/securing-agentic-identities-in-claude-the-valence-integration-with-the-compliance-api)**.
 

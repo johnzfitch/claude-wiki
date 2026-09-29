@@ -2,14 +2,14 @@
 title: "Claude Code power user tips | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:41:20Z"
+fetched_at: "2026-09-29T06:31:26Z"
 tags: ["agents", "claude-code", "hooks", "mcp", "mobile", "prompting", "sdk", "skills"]
 ---
 
 # Claude Code power user tips
 
-June 25, 2026
 
+Copy for LLM
 
 This article collects workflow tips from the Claude Code team at Anthropic. These practices cover parallel execution, planning, automation, verification, and customization—the patterns the team uses every day to ship code faster. Everyone’s setup is different, so experiment to see what works for you.
 
@@ -23,7 +23,7 @@ These are power-user patterns collected from individual engineers on the Claude 
 
 - The iMessage plugin ships in the official claude-plugins-official marketplace. Community plugins (for example the “ralph-wiggum” plugin) are not reviewed or sanctioned by Anthropic — check with your administrator before installing third-party plugins in a managed environment.
 
-- Some capabilities—auto mode, sandboxing, remote control, scheduled cloud jobs, voice—are **off by default** and may be disabled by your organization's policy. If a command or flag here returns "not available," your admin has likely not enabled it for your workspace.
+- Some capabilities—sandboxing, remote control, scheduled cloud jobs, voice—are **off by default** and may be disabled by your organization's policy. If a command or flag here returns "not available," your admin has likely not enabled it for your workspace.
 
 Everything else in this guide works on a stock Claude Code install. When in doubt, run `/help` to see what is actually available in your session.
 
@@ -64,7 +64,7 @@ Then prompt naturally: *“Migrate all sync IO to async. Batch the changes and l
 
 The `/batch` command interviews you about a migration, then fans the work out to as many worktree agents as needed — dozens, hundreds, or more. Each agent works in isolation, tests its own changes, and creates a PR independently.
 
-    > /batch migrate src/ from Solid to React
+    > /batch migrate src/ from JavaScript to TypeScript
 
 ------------------------------------------------------------------------
 
@@ -90,7 +90,7 @@ Claude Code team’s reasoning: *“It’s the best coding model I’ve ever use
 
 ### Effort level
 
-Run /effort to choose your effort level. The available levels are **low** (fewer tokens, faster), **medium**, **high** (more tokens, more intelligence), **xhigh**, **max**, and **auto** (Claude chooses per request). The default is **high** on Team, Enterprise, and direct API access, and **medium** on other plans. The Claude Code team uses high for everything. For complex coding and agentic work, switch to xhigh for deeper reasoning than high without the full token cost of max. Switch to max for hard debugging or architecture decisions where you want Claude to reason for as long as it needs. Max burns through usage limits faster, so activate it per session.
+Run /effort to choose your effort level. The available levels are **low** (fewer tokens, faster), **medium**, **high** (more tokens, more intelligence), **xhigh**, **max**, and **auto** (Claude chooses per request). For complex coding and agentic work, switch to xhigh for deeper reasoning than high without the full token cost of max. Switch to max for hard debugging or architecture decisions where you want Claude to reason for as long as it needs. Max burns through usage limits faster, so activate it per session.
 
 ------------------------------------------------------------------------
 
@@ -253,7 +253,7 @@ Claude Code’s permission system layers prompt-injection detection, static anal
 
 ### Auto mode
 
-Auto mode lets Claude make permission decisions on your behalf. Classifiers evaluate each action before it runs — safe operations get auto-approved, risky ones still get flagged. Enable it with `claude --enable-auto-mode`; once enabled, **Shift+Tab** cycles `default → acceptEdits → plan → auto` during a session. Without that flag, the cycle is `default → acceptEdits → plan`.
+Auto mode lets Claude make permission decisions on your behalf. Classifiers evaluate each action before it runs — safe operations get auto-approved, risky ones still get flagged. You can switch permission modes at any time during a session using **Shift+Tab**.
 
 ### Sandboxing
 

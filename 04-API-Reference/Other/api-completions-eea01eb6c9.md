@@ -2,7 +2,7 @@
 title: "Completions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/completions"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:39:30Z"
+fetched_at: "2026-09-26T06:39:01Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompletions)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -227,248 +205,41 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Completions
-
+Copy page
 
 
 
 cURL
 
+1.  [API reference](/docs/en/api/http)
+
 # Completions
 
-##### [Create a Text Completion](/docs/en/api/completions/create)
+##### [Create a Text Completion](/docs/en/api/http/completions/create)
 
-POST/v1/complete
+POST/v1/complete
 
-##### ModelsExpand Collapse 
+\[Legacy\] Create a Text Completion.
 
-
-
-Completion object { id, completion, model, 2 more }
-
-
+##### Models
 
 
 
-id: string
+Completion object{ type: "completion", id, completion, 2 more }
 
 
-
-Unique object identifier.
-
-The format and length of IDs may change over time.
-
-[](#completion.id)
-
-completion: string
-
-
-
-The resulting completion up to and excluding the stop sequences.
-
-[](#completion.completion)
-
-
-
-model: [Model](/docs/en/api/messages#model)
-
-
-
-The model that will complete your prompt.
-
-See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
-
-One of the following:
-
-
-
-"claude-sonnet-5" or "claude-fable-5" or "claude-mythos-5" or 14 more
-
-
-
-The model that will complete your prompt.
-
-See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
-
-One of the following:
-
-"claude-sonnet-5"
-
-
-
-High-performance model for coding and agents
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B0%5D)
-
-"claude-fable-5"
-
-
-
-Next generation of intelligence for the hardest knowledge work and coding problems
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B1%5D)
-
-"claude-mythos-5"
-
-
-
-Most capable model for cybersecurity and biology research
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B2%5D)
-
-"claude-opus-5"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B3%5D)
-
-"claude-opus-4-8"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B4%5D)
-
-"claude-opus-4-7"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B5%5D)
-
-"claude-mythos-preview"
-
-
-
-New class of intelligence, strongest in coding and cybersecurity
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B6%5D)
-
-"claude-opus-4-6"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B7%5D)
-
-"claude-sonnet-4-6"
-
-
-
-Best combination of speed and intelligence
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B8%5D)
-
-"claude-haiku-4-5"
-
-
-
-Fastest model with near-frontier intelligence
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B9%5D)
-
-"claude-haiku-4-5-20251001"
-
-
-
-Fastest model with near-frontier intelligence
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B10%5D)
-
-"claude-opus-4-5"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B11%5D)
-
-"claude-opus-4-5-20251101"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B12%5D)
-
-"claude-sonnet-4-5"
-
-
-
-High-performance model for agents and coding
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B13%5D)
-
-"claude-sonnet-4-5-20250929"
-
-
-
-High-performance model for agents and coding
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B14%5D)
-
-"claude-opus-4-1"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B15%5D)
-
-"claude-opus-4-1-20250805"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D%5B16%5D)
-
-[](#completion.model%20%2B%20(resource)%20messages%5B0%5D)
-
-string
-
-
-
-[](#completion.model%20%2B%20(resource)%20messages%5B1%5D)
-
-[](#completion.model)
-
-
-
-stop_reason: string
-
-
-
-The reason that we stopped.
-
-This may be one the following values:
-
-- `"stop_sequence"`: we reached a stop sequence — either provided by you via the `stop_sequences` parameter, or a stop sequence built into the model
-- `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum
-
-[](#completion.stop_reason)
 
 
 
@@ -480,4 +251,45 @@ Object type.
 
 For Text Completions, this is always `"completion"`.
 
-[](#completion.type)
+defaultcompletion
+
+
+
+id: string
+
+
+
+Unique object identifier.
+
+The format and length of IDs may change over time.
+
+completion: string
+
+
+
+The resulting completion up to and excluding the stop sequences.
+
+
+
+model: [Model](/docs/en/api/http/messages#model)
+
+
+
+The model that will complete your prompt.
+
+See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+One of the following:
+
+
+
+stop_reason: string or null
+
+
+
+The reason that we stopped.
+
+This may be one the following values:
+
+- `"stop_sequence"`: we reached a stop sequence — either provided by you via the `stop_sequences` parameter, or a stop sequence built into the model
+- `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum

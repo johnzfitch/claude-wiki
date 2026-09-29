@@ -2,7 +2,7 @@
 title: "Design your compliance integration - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-integration-patterns"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:41:13Z"
+fetched_at: "2026-09-26T06:39:43Z"
 tags: ["api"]
 ---
 
@@ -12,35 +12,31 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcompliance-integration-patterns)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Organization
 
-[Admin API](/docs/en/manage-claude/admin-api)[User management (beta)](/docs/en/manage-claude/user-management)[Workspaces](/docs/en/manage-claude/workspaces)
+[Admin API](/docs/en/manage-claude/admin-api)[User management](/docs/en/manage-claude/user-management)[Workspaces](/docs/en/manage-claude/workspaces)
 
 Authentication
 
-[Overview](/docs/en/manage-claude/authentication)[Create an Admin API key](/docs/en/manage-claude/admin-api-keys)[Workload Identity Federation](/docs/en/manage-claude/workload-identity-federation)[Manage WIF via API](/docs/en/manage-claude/wif-admin-api)[WIF reference](/docs/en/manage-claude/wif-reference)
+[Overview](/docs/en/manage-claude/authentication)[Create an Admin API key](/docs/en/manage-claude/admin-api-keys)[App Attest](/docs/en/manage-claude/app-attest)[Workload Identity Federation](/docs/en/manage-claude/workload-identity-federation)[Manage WIF via API](/docs/en/manage-claude/wif-admin-api)[WIF reference](/docs/en/manage-claude/wif-reference)
 
 Identity providers
 
@@ -52,68 +48,63 @@ Data & compliance
 
 [Data residency](/docs/en/manage-claude/data-residency)[API and data retention](/docs/en/manage-claude/api-and-data-retention)[Access Transparency](/docs/en/manage-claude/access-transparency)
 
-Encryption keys
+[Encryption keys](/docs/en/manage-claude/cmek)
+
+[Inference hooks](/docs/en/manage-claude/inference-hooks)
 
 Compliance API
 
-[Overview](/docs/en/manage-claude/compliance-api)[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)[Activity Feed](/docs/en/manage-claude/compliance-activity-feed)[Chats, files, and projects](/docs/en/manage-claude/compliance-content-data)[Organizations, users, roles, groups, and settings](/docs/en/manage-claude/compliance-org-data)[Design your integration](/docs/en/manage-claude/compliance-integration-patterns)[Errors](/docs/en/manage-claude/compliance-errors)[FAQ](/docs/en/manage-claude/compliance-faq)
+[Overview](/docs/en/manage-claude/compliance-api)[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)[Activity Feed](/docs/en/manage-claude/compliance-activity-feed)[Chats, files, and projects](/docs/en/manage-claude/compliance-content-data)[Session transcripts](/docs/en/manage-claude/compliance-sessions)[Organizations, users, roles, groups, and settings](/docs/en/manage-claude/compliance-org-data)[Design your integration](/docs/en/manage-claude/compliance-integration-patterns)[Errors](/docs/en/manage-claude/compliance-errors)[FAQ](/docs/en/manage-claude/compliance-faq)
 
-[](/login)
+[Console](/)
 
-
-
-
-Admin
-
-Design your integration
-
-Admin/Compliance API
+[Admin](/docs/en/manage-claude/admin-api)Compliance API
 
 # Design your compliance integration
 
+Copy page
 
 
 
 Choose between polling and cursor-driven Activity Feed consumption, correlate Compliance API events with your SIEM, and plan retention.
 
+Copy page
 
 
 
-
+
 
 To enable the Compliance API, see [Set up the Compliance API](/docs/en/manage-claude/compliance-api-access).
 
-
+
 
 **Required scope:** `read:compliance_activities` on the Compliance Access Key or Admin API key.
 
 A production Compliance API integration makes three design choices: how it consumes the Activity Feed, how its output correlates with your security information and event management (SIEM) system, and where long-term copies of activity and content live. These choices are independent of the endpoints themselves; this page helps you evaluate the tradeoffs.
 
-This page assumes you have read [Query the Activity Feed](/docs/en/manage-claude/compliance-activity-feed), which defines the parameters and pagination contract referenced throughout, and [Retrieve and delete chats, files, and projects](/docs/en/manage-claude/compliance-content-data), which defines the content endpoints and `deleted_at` semantics referenced in [Plan content retention](#plan-content-retention).
+This page assumes you have read the following pages:
 
+- [Query the Activity Feed](/docs/en/manage-claude/compliance-activity-feed), which defines the parameters and pagination contract referenced throughout.
+- [Retrieve and delete chats, files, and projects](/docs/en/manage-claude/compliance-content-data), which defines the chat, file, and project endpoints and the `deleted_at` semantics referenced in [Plan content retention](#plan-content-retention).
+- [Retrieve session transcripts](/docs/en/manage-claude/compliance-sessions), which defines the local and remote session endpoints.
 
-
-
-Choose a feed-consumption pattern
+## Choose a feed-consumption pattern
 
 The Activity Feed supports two consumption patterns: periodic window polling bounded by `created_at.gte` and `created_at.lt`, and cursor-driven incremental reads that persist a cursor from one response and pass it on the next request. Both return identical `Activity` objects; the difference is the state your client persists between calls.
 
 Both patterns share these constraints:
 
-- Activities are queryable within 1 minute of occurring and retained for 6 years.
+- Activities are queryable within 1 minute of occurring and retained for 6 years. Recording is not retroactive: it begins when the Compliance API is first enabled for your organization, and activity from before enablement is not backfilled.
 - The maximum `limit` for each page is 5,000.
 - Cursor values are opaque strings that you must not parse.
-- Requests are limited to 600 per minute per [parent organization](/docs/en/manage-claude/compliance-api#how-the-compliance-api-works), shared across every key, every linked organization, and every `/v1/compliance/*` endpoint; see [429 Too Many Requests](/docs/en/manage-claude/compliance-errors#429-too-many-requests) for the response headers and retry contract.
+- Requests are limited to 600 per minute per [parent organization](/docs/en/manage-claude/compliance-api#how-the-compliance-api-works), shared across every key, every linked organization, and every `/v1/compliance/*` endpoint; unlike the local session endpoints, the remote session endpoints carry a second request budget on top. See [429 Too Many Requests](/docs/en/manage-claude/compliance-errors#429-too-many-requests) for the response headers and retry contract.
 
 | Pattern                         | Choose when                                                                                                                                                                                                     |
-|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|:--------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Window polling                  | Your pipeline runs on a fixed schedule, you prefer stateless workers, and you can tolerate replaying or overlapping windows                                                                                     |
 | Cursor-driven incremental reads | You want the lowest latency between an activity occurring and your pipeline ingesting it, you want to avoid re-reading pages you already drained, and you have a durable place to persist a cursor between runs |
 
-
-
-
-Window polling
+### Window polling
 
 Set `created_at.lt` at least 1 minute in the past so that every activity in the window is already queryable. Use `created_at.gte` for the lower bound and `created_at.lt` for the upper bound so that consecutive windows tile without gaps or overlap; reuse the previous window's `lt` value as the next window's `gte`.
 
@@ -125,6 +116,7 @@ cURL
 curl --fail-with-body -sS -G \
   "https://api.anthropic.com/v1/compliance/activities" \
   --header "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
+  --header "anthropic-version: 2023-06-01" \
   --data-urlencode "created_at.gte=2026-04-20T07:00:00Z" \
   --data-urlencode "created_at.lt=2026-04-20T08:00:00Z" \
   --data-urlencode "limit=5000"
@@ -138,10 +130,7 @@ Even with clean tiling, an activity that indexes after its window has closed nev
 
 A `created_at.lt` bound too close to the present silently and permanently drops late-indexed activities: once `created_at.gte` advances past them, no later window can recover them. Treat the 1-minute queryability figure as the documented indexing lag, not a soft recommendation.
 
-
-
-
-Cursor-driven incremental reads
+### Cursor-driven incremental reads
 
 cURL
 
@@ -153,6 +142,7 @@ first_id="activity_01XyDMpzjS89pFZXqSFUBDr6"  # first_id from a previous respons
 curl --fail-with-body -sS -G \
   "https://api.anthropic.com/v1/compliance/activities" \
   --header "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
+  --header "anthropic-version: 2023-06-01" \
   --data-urlencode "limit=5000" \
   --data-urlencode "before_id=$first_id"
 ```
@@ -180,51 +170,46 @@ Cursors survive key rotation; see [Manage and rotate keys](/docs/en/manage-claud
 
 Each page is adjacent to the cursor you pass: the loop walks forward toward the present, one page at a time. Do not treat a single response as caught up while `has_more` is `true`. Persist the cursor only after `has_more` is `false`; the unfetched pages are the newer ones between this response's `first_id` and the present, and they stay unread until you finish the loop or run again.
 
-
-
-
-Correlate with your SIEM
+## Correlate with your SIEM
 
 Each `Activity` carries fields you can join against events already in your SIEM (Splunk, Datadog, Microsoft Sentinel, Cribl, or similar):
 
-| Compliance API field  | Join target                                     |
-|-----------------------|-------------------------------------------------|
-| `actor.user_id`       | Your identity provider's stable user identifier |
-| `actor.email_address` | Directory email when a stable ID is unavailable |
-| `actor.ip_address`    | Network, VPN, and endpoint logs                 |
-| `created_at`          | Time-window correlation across any source       |
+| Compliance API field  | Join target                                                             |
+|:----------------------|:------------------------------------------------------------------------|
+| `actor.user_id`       | Your identity provider's stable user identifier                         |
+| `actor.email_address` | Directory email when a stable ID is unavailable                         |
+| `actor.ip_address`    | Network, VPN, and endpoint logs                                         |
+| `actor.user_agent`    | Endpoint and device inventory, and the client app that made the request |
+| `created_at`          | Time-window correlation across any source                               |
 
-`actor.user_id` and `actor.email_address` are present when `actor.type` is `user_actor`; check the discriminator before reading them. `user_id` is a stable, opaque identifier for the user account: it is consistent across every Compliance API endpoint and activity payload, and it does not change when the user's email or display name changes. Use `user_id`, not `email_address`, as the primary join key.
+`actor.user_id` and `actor.email_address` are present when `actor.type` is `user_actor`. `actor.ip_address` and `actor.user_agent` are absent on some actor types, such as `anthropic_actor` and `scim_directory_sync_actor`. Check the discriminator before reading any of these fields. `user_id` is a stable, opaque identifier for the user account: it is consistent across every Compliance API endpoint and activity payload, and it does not change when the user's email or display name changes. Use `user_id`, not `email_address`, as the primary join key.
 
 Calls to the Compliance API itself emit `compliance_api_accessed` activities. Ingest these alongside other activity types so your SIEM records who queried compliance data, and when. Pass `activity_types[]=compliance_api_accessed` to scope the query, then in your client, read `actor.api_key_id` from each activity whose `actor.type` is `api_actor` to attribute the access to a specific Compliance Access Key or Admin API key.
 
+## Plan content retention
 
-
+Five retention horizons govern what you can retrieve later:
 
-Plan content retention
+| Data                                                    | Retained for                                                                                             | Controlled by                                                        |
+|:--------------------------------------------------------|:---------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------|
+| Activity Feed records                                   | 6 years                                                                                                  | Anthropic                                                            |
+| Chat, file, and project content                         | Your organization's claude.ai retention policy, unless a user deletes it sooner                          | Your organization                                                    |
+| Local session transcripts (sessions on users' machines) | 6 years by default, or your organization's custom conversation retention period when a finite one is set | Anthropic by default; your organization when it sets a custom period |
+| Remote session transcripts (sessions in the cloud)      | 6 years, unless a user deletes the session sooner                                                        | Anthropic                                                            |
+| Content hard-deleted through the Compliance API         | Not retained; deletion is immediate and permanent                                                        | The caller of the `DELETE` endpoint                                  |
 
-Three retention horizons govern what you can retrieve later:
-
-| Data                                            | Retained for                                      | Controlled by                       |
-|-------------------------------------------------|---------------------------------------------------|-------------------------------------|
-| Activity Feed records                           | 6 years                                           | Anthropic                           |
-| Chat, file, and project content                 | Your organization's claude.ai retention policy    | Your organization                   |
-| Content hard-deleted through the Compliance API | Not retained; deletion is immediate and permanent | The caller of the `DELETE` endpoint |
-
-For how the rest of the Claude Platform handles retention, see [API and data retention](/docs/en/manage-claude/api-and-data-retention).
+To learn how the rest of the Claude Platform handles retention, see [API and data retention](/docs/en/manage-claude/api-and-data-retention).
 
 Decide between export-and-archive and on-demand API retrieval as follows:
 
-- If your legal-hold or audit horizon exceeds 6 years for activity metadata, export Activity Feed pages to your own archive as you ingest them.
-- If your content-retention policy is shorter than your eDiscovery horizon, export chat and file content before the retention window expires; the Compliance API cannot return content that retention has already removed.
-- If a workflow might issue a Compliance API hard-delete (for example, DLP enforcement), retrieve and archive the target content first. There is no recovery window after a hard-delete; soft-deletes from claude.ai remain retrievable with `deleted_at` populated, but Compliance API deletes do not.
+- If your legal-hold or audit horizon exceeds 6 years for activity metadata or session transcripts, export Activity Feed pages and session transcripts to your own archive as you ingest them.
+- If your content-retention policy is shorter than your eDiscovery horizon, export chat and file content before the retention window expires; the Compliance API cannot return content that retention has already removed. The same applies to local session transcripts, which follow your organization's custom conversation retention period when a finite one is set, even when that period is shorter than 6 years. The local session endpoints stop returning messages older than your organization's current period as soon as the setting changes, and lengthening the period later does not restore transcripts that have already expired, so export any transcript you must keep beyond it.
+- If you must retain chat content or remote session transcripts after users delete them in claude.ai (for example, under a legal hold), export chat, file, artifact, and remote session content to your own archive as you ingest it; the Compliance API cannot return content that a user has already deleted.
+- If a workflow might issue a Compliance API hard-delete (for example, DLP enforcement), retrieve and archive the target content first. There is no recovery window after a hard-delete.
 
 In every other case, rely on direct API retrieval and avoid maintaining a parallel copy.
 
-
-
-
-Delivery guarantees and completeness
+### Delivery guarantees and completeness
 
 Treat the Activity Feed as **at-least-once**: a correctly paginated traversal returns every activity at least once, but a retry after a partial failure can re-deliver activities you already stored. Deduplicate on the activity `id` field.
 
@@ -234,27 +219,38 @@ The list endpoints do not return a `total_count` field or a checksum. To attest 
 - The number of records exported.
 - The run timestamp and the `request-id` of the final page.
 
-The content endpoints (chats, files, projects, and project attachments) serve claude.ai data only; the Activity Feed surfaces administrative and resource events organization-wide. The Compliance API does not include:
+Activity volume is not a completeness check. The `claude_*_viewed` activity types, such as `claude_chat_viewed`, follow each app's loading pattern (see [Understand the Activity object](/docs/en/manage-claude/compliance-activity-feed#understand-the-activity-object)). A period with chat messages but no `claude_chat_viewed` activities does not on its own indicate missing data. Rely on the traversal and the overlap or reconciliation pass described in [Window polling](#window-polling) instead.
 
-- Prompt text or model responses from Claude Console or Claude API workloads.
+The content endpoints (chats, files, projects, project attachments, and local and remote session transcripts) serve Claude Enterprise data only. The Activity Feed surfaces administrative and resource events organization-wide. The Compliance API does not include:
+
+- Prompt text or model responses from Claude Console, or from Claude API workloads authenticated with an API key.
+- On-device activity in local sessions that is never sent to Anthropic, such as local files that Claude did not read.
+- Claude Code usage authenticated with a Claude Console API key, run through a third-party cloud platform (Amazon Bedrock, Google Cloud, or Microsoft Foundry), or run in a [Claude Code cloud session](https://code.claude.com/docs/en/claude-code-on-the-web), which runs on cloud infrastructure instead of the user's machine.
+- Local sessions from organizations with [HIPAA readiness](/docs/en/manage-claude/api-and-data-retention#hipaa-readiness) enabled, and local sessions for which [zero data retention](/docs/en/manage-claude/api-and-data-retention#zero-data-retention-zdr-scope) is in effect.
+- Thinking blocks, and images or other binary content, inside session transcripts (transcripts carry user prompts, assistant responses, and tool activity only; local session transcripts show a placeholder `text` block where binary content was omitted).
+- The original file for a chat attachment that claude.ai stored as extracted text, such as some Word, PowerPoint, and PDF uploads (the file content endpoint returns the extracted text; see [Retrieve files and artifacts](/docs/en/manage-claude/compliance-content-data#retrieve-files-and-artifacts)).
+- The system prompt of local sessions (a marker message stands in for it).
+- Tool definitions and MCP server configuration in session transcripts (local or remote), and citation metadata on `text` blocks in local session transcripts.
+- Local session transcript content in an organization whose [customer-managed encryption key](/docs/en/manage-claude/cmek) cannot currently be used. Those requests return [503 Service Unavailable](/docs/en/manage-claude/compliance-errors#local-sessions-temporarily-unavailable), and session metadata is still listed.
 - Content removed by your organization's retention policy.
+- Content of chats that users delete in claude.ai (the chats are still listed, with `deleted_at` populated).
+- Remote sessions that users delete (deleted sessions are no longer listed, and the messages endpoint returns 404 for them).
 - Content hard-deleted through the Compliance API.
 
 See the [Compliance API FAQ](/docs/en/manage-claude/compliance-faq#data-coverage-and-retention) for more on what the Compliance API does and does not capture.
 
 For chain of custody, store the exported records with provenance metadata: source endpoint, query parameters, run timestamp, and a content hash of each record.
 
+## Next steps
 
-
-
-Next steps
-
-
-Query the Activity Feed
+[Query the Activity Feed](/docs/en/manage-claude/compliance-activity-feed)
 
 Filter parameters, pagination, and the `Activity` object schema.
 
+[Retrieve and delete chats, files, and projects](/docs/en/manage-claude/compliance-content-data)
 
-Retrieve and delete chats, files, and projects
+The chat, file, and project endpoints, including hard delete.
 
-The content and hard-delete endpoints.
+[Retrieve session transcripts](/docs/en/manage-claude/compliance-sessions)
+
+List the sessions your users run in Claude apps and agents, such as Cowork and Claude Code, and retrieve their transcripts.

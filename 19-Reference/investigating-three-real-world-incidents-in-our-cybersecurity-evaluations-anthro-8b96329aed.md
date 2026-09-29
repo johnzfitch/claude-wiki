@@ -1,8 +1,8 @@
 ---
-title: "Investigating three real-world incidents in our cybersecurity evaluations \\ Anthropic"
+title: "Investigating three incidents in our cybersecurity evaluations \\ Anthropic"
 source_url: "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:11:56Z"
+fetched_at: "2026-09-10T06:46:13Z"
 tags: ["evaluation", "security"]
 ---
 
@@ -117,33 +117,33 @@ We began this review after OpenAI disclosed that its models had escaped an isola
 - While there is not a perfectly sharp distinction between the two, we believe these incidents to be closer to a harness and operational failure than a model alignment failure. Our models were told they had no internet access and to capture the flag, while in fact being misconfigured to have internet access. This led them to believe—arguably reasonably—that the real environments they encountered were simulations.
 - Notably, our most recent model, on realizing that it was working in a real environment, stopped its pursuit of the evaluation goal.
 
-These facts give us cautious optimism that with tighter monitoring and controls around evaluation infrastructure, as well as continued investment in alignment, this type of risk can be overcome. 
+These facts give us cautious optimism that with tighter monitoring and controls around evaluation infrastructure, as well as continued investment in alignment, this type of risk can be overcome.   
+  
+*Updated Aug 3:* Corrected the name of the evaluation in which the OpenAI/Hugging Face incident occurred.
 
 #### Footnotes
 
 1.  We routinely test internal research prototypes like this one. It is not planned for general release.
-2.  We generally store traces for benchmark evaluations. We have carefully audited these two benchmarks in particular for signs of harm because the OpenAI/Hugging Face incident occurred during an evaluation of CyberGym.
+2.  We generally store traces for benchmark evaluations. We have carefully audited these two benchmarks in particular for signs of harm because the OpenAI/Hugging Face incident occurred during an evaluation of ExploitGym.
 
   
 ## Related content
 
-### Our position on open-weights models
+### Developing Enterprise Frontier Safeguards with our customers
 
-[Read more](/news/position-open-weights-models)
+[Read more](/news/enterprise-frontier-safeguards)
 
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+### Improving our alignment and security efforts
 
-[Read more](/news/cognizant-anthropic)
+On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
 
-### Introducing Claude Opus 5
+[Read more](/news/improving-alignment-security-efforts)
 
-Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.
+### Previewing the Model Hardware Standard
 
-[Read more](/news/claude-opus-5)
+We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
 
-## Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.
+[Read more](/news/model-hardware-standard-research-preview)
 
 [](/)
 
@@ -157,7 +157,7 @@ Get updates on our latest red-teaming research and findings.
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -177,6 +177,7 @@ Get updates on our latest red-teaming research and findings.
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -209,7 +210,7 @@ Get updates on our latest red-teaming research and findings.
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -222,7 +223,7 @@ Get updates on our latest red-teaming research and findings.
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -234,6 +235,7 @@ Get updates on our latest red-teaming research and findings.
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

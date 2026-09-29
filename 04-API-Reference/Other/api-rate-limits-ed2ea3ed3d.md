@@ -2,7 +2,7 @@
 title: "Rate limits - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/rate-limits"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:40:22Z"
+fetched_at: "2026-09-26T06:39:16Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Frate-limits)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -227,40 +205,35 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Rate limits
-
-API reference/Support & configuration
+[API reference](/docs/en/api/overview)Support & configuration
 
 # Rate limits
 
+Copy page
 
 
 
 To mitigate misuse and manage capacity on the API, limits are in place on how much an organization can use the Claude API.
 
+Copy page
 
 
 
-
+
 
-**[Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws):** The rate limits on this page apply to Claude Platform on AWS, but billing and limit management differ. Billing is through AWS Marketplace (not Anthropic credit purchases). Organizations on Claude Platform on AWS are placed on the Start tier and do not move between usage tiers automatically. To request higher limits, contact your Anthropic account representative or [Anthropic support](https://support.claude.com); the **Request rate limit increase** flow is not available. Spend limits are set in [Settings \> Billing](/settings/billing) rather than **Settings \> Limits**. Per-workspace rate limit configuration and [fast mode](/docs/en/build-with-claude/fast-mode) are not available on Claude Platform on AWS. For details, see [Rate limits and quotas on Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws#rate-limits-and-quotas).
+**[Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws):** The rate limits on this page apply to Claude Platform on AWS, but billing and limit management differ. Billing is through AWS Marketplace (not Anthropic credit purchases). Organizations on Claude Platform on AWS are placed on the Start tier and can move to a higher tier automatically as they build a history of paid AWS Marketplace invoices. To request higher limits, contact your Anthropic account representative or [Anthropic support](https://support.claude.com); the **Request rate limit increase** flow is not available. Per-workspace rate limit configuration and [fast mode](/docs/en/build-with-claude/fast-mode) are not available on Claude Platform on AWS. For details, see [Rate limits and quotas on Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws#rate-limits-and-quotas).
 
 There are two types of limits:
 
@@ -269,30 +242,24 @@ There are two types of limits:
 
 The API enforces service-configured limits at the organization level, but you may also set user-configurable limits for your organization's workspaces.
 
-
-
-
-About rate limits
+## About rate limits
 
 - Limits are designed to prevent API abuse, while minimizing impact on common customer usage patterns.
 - Limits are defined by **usage tier**. Organizations are placed on a tier automatically based on usage history and account standing and can move to a higher tier over time as they use the API.
-- New organizations and organizations with limited usage history may start with limits below the standard limits shown on this page while account history is established. These starting limits are part of how Anthropic prevents fraud and abuse, and they increase automatically as your organization builds usage history.
-- Limits are set at the organization level. You can see your organization's tier and current limits on the [Limits](/settings/limits) page in the [Claude Console](/).
+- New organizations and organizations with limited usage history may start in the Evaluation tier, with limits below the standard limits shown on this page while account history is established. These starting limits are part of how Anthropic prevents fraud and abuse, and they increase automatically as your organization builds usage history.
+- Limits are set at the organization level. You can see your organization's tier and current limits on the [Rate limits](/settings/limits) page in the [Claude Console](/).
 - You might hit rate limits over shorter time intervals. For instance, a rate of 60 requests per minute (RPM) might be enforced as 1 request per second. Short bursts of requests can exceed the limit and trigger rate limit errors.
 - The following limits are the standard limits for each tier. If you need higher limits, see [Requesting higher limits](#requesting-higher-limits).
 - The API uses the [token bucket algorithm](https://en.wikipedia.org/wiki/Token_bucket) to do rate limiting. This means that your capacity is continuously replenished up to your maximum limit, rather than being reset at fixed intervals.
 - All limits described here represent maximum allowed usage, not guaranteed minimums. These limits are intended to reduce unintentional overspend and ensure fair distribution of resources among users.
 
+## Spend limits
 
-
+
 
-Spend limits
+**[Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws):** The same monthly spend caps apply, and requests stop at the cap in the same way. Billing and tier increases work differently; see [Spend limits on Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws#spend-limits).
 
-
-
-**[Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws):** Spend limits work differently on Claude Platform on AWS. Set spend limits in [Settings \> Billing](/settings/billing) instead of **Settings \> Limits**. See [Spend limits on Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws#spend-limits) for how spend caps and self-set spend limits apply to your organization.
-
-Each of the Start, Build, and Scale tiers carries a monthly spend cap, which is the maximum your organization can spend on the API each calendar month. Once you reach your tier's spend cap, API usage pauses until the next month unless you request a higher limit. You can view your organization's monthly spend cap on the [Limits](/settings/limits) page.
+Each of the Start, Build, and Scale tiers carries a monthly spend cap, which is the maximum your organization can spend on the API each calendar month. You can view your organization's monthly spend cap and set your own limit on the [Billing](/settings/billing) page.
 
 | Usage tier | Monthly spend cap |
 |------------|-------------------|
@@ -302,41 +269,63 @@ Each of the Start, Build, and Scale tiers carries a monthly spend cap, which is 
 
 Organizations on the Custom tier have no monthly spend cap; limits are arranged with their account team.
 
+### Reaching your spend cap
+
+Once you reach your tier's spend cap, API usage pauses until 00:00 UTC on the first day of the next month, unless you request a higher limit sooner. While usage is paused, API requests return HTTP 429:
+
+```python
+{
+  "type": "error",
+  "error": {
+    "type": "rate_limit_error",
+    "message": "You have reached your API usage limits: your organization has crossed its monthly API usage threshold, set based on your organization's API tier. You will regain access on 2026-09-01 at 00:00 UTC.",
+    "details": { "error_code": "enforced_spend_limit_reached" }
+  },
+  "request_id": "req_018EeWyXxfu5pfWkrYcMdjWG"
+}
+```
+
+
+
+- The error type is `rate_limit_error`, the same as for a rate limit, but the response has no `retry-after` header. Retrying, including the SDKs' automatic retries, fails until access resumes.
+- On the Messages API, `error.details.error_code` is `enforced_spend_limit_reached`. Use it to tell this response apart from a rate limit.
+- Moving to a higher tier restores access; see [Requesting higher limits](#requesting-higher-limits).
+
+### Setting your own spend limit
+
 You can also set your own spend limit below your tier's cap to control costs:
 
 1.  1
 
-    Navigate to the Limits page
+    ### Navigate to the Billing page
 
-    Go to [Settings \> Limits](/settings/limits) in the Claude Console.
+    Go to [Settings \> Billing](/settings/billing) in the Claude Console.
 
 2.  2
 
-    Open the spend limit editor
+    ### Open the spend limit editor
 
-    In the **Spend limits** section, click **Change Limit** (or **Set spend limit** if no limit is currently set).
+    In the **Spend limits** section, click **Adjust limit** (or **Set limit** if no limit is currently set).
 
 3.  3
 
-    Adjust your spend limit
+    ### Adjust your spend limit
 
     Enter a new value. Your spend limit cannot exceed your current tier's cap.
 
+When usage reaches a spend limit you set, requests return HTTP 400 with error type `invalid_request_error`. The message begins `You have reached your specified API usage limits`, or `You have reached your specified workspace API usage limits` for a workspace limit, and states when access resumes. Raise or remove the limit to restore access sooner.
 
-
+Limits on the [Claude Code workspace](/docs/en/manage-claude/workspaces#claude-code-workspace) are checked separately: Claude Code requests over that workspace's limit can instead receive a 429 that carries a `retry-after` header.
 
-Rate limits
+## Rate limits
 
 The rate limits for the Messages API are measured in requests per minute (RPM), input tokens per minute (ITPM), and output tokens per minute (OTPM) for each model class. If you exceed any of the rate limits you will get a [429 error](/docs/en/api/errors) describing which rate limit was exceeded, along with a `retry-after` header indicating how long to wait.
 
-
+
 
 You might also encounter 429 errors because of acceleration limits on the API if your organization has a sharp increase in usage. To avoid hitting acceleration limits, ramp up your traffic gradually and maintain consistent usage patterns.
 
-
-
-
-Cache-aware ITPM
+### Cache-aware ITPM
 
 Many API providers use a combined "tokens per minute" (TPM) limit that may include all tokens, both cached and uncached, input and output. **For most Claude models, only uncached input tokens count toward your ITPM rate limits.** This is a key advantage that makes the rate limits effectively higher than they might initially appear.
 
@@ -348,7 +337,7 @@ Here's what counts toward ITPM:
 - `cache_creation_input_tokens` (tokens being written to cache) ✓ **Count toward ITPM**
 - `cache_read_input_tokens` (tokens read from cache) ✗ **Do NOT count toward ITPM** for most models
 
-
+
 
 The `input_tokens` field only represents tokens that appear **after your last cache breakpoint**, not all input tokens in your request. To calculate total input tokens:
 
@@ -364,85 +353,58 @@ For rate limit purposes on most models, only `input_tokens` + `cache_creation_in
 
 **Example:** With a 2,000,000 ITPM limit and an 80% cache hit rate, you could effectively process 10,000,000 total input tokens per minute (2M uncached + 8M cached), because cached tokens don't count toward your rate limit.
 
-
+
 
-Claude Haiku 3.5 (marked with † in the following rate limit tables) also counts `cache_read_input_tokens` toward ITPM rate limits.
+Claude Haiku 3.5 (marked with footnote 4 in the following rate limit tables) also counts `cache_read_input_tokens` toward ITPM rate limits.
 
-For all models without the † marker, cached input tokens do not count toward rate limits and are billed at a reduced rate (10% of base input token price). This means you can achieve significantly higher effective throughput by using [prompt caching](/docs/en/build-with-claude/prompt-caching).
+For all other models, cached input tokens do not count toward rate limits and are billed at the [cache read rate](/docs/en/build-with-claude/prompt-caching#pricing), a fraction of the base input price. This means you can achieve significantly higher effective throughput by using [prompt caching](/docs/en/build-with-claude/prompt-caching).
 
-
-
-**Maximize your rate limits with prompt caching**
-
-See [prompt caching](/docs/en/build-with-claude/prompt-caching) for guidance on increasing effective throughput by caching repeated content such as:
-
-- System instructions and prompts
-- Large context documents
-- Tool definitions
-- Conversation history
-
-With effective caching, you can dramatically increase your actual throughput without increasing your rate limits. Monitor your cache hit rate on the [Usage page](/usage) to optimize your caching strategy.
+To make the most of your rate limits, cache repeated content such as system instructions and prompts, large context documents, tool definitions, and conversation history; see [prompt caching](/docs/en/build-with-claude/prompt-caching) for guidance. With effective caching, you can substantially increase your actual throughput without raising your rate limits. Monitor your cache hit rate on the [Usage page](/usage) to tune your caching strategy.
 
 OTPM rate limits are evaluated in real time as output tokens are produced, counting only the actual tokens generated. The `max_tokens` parameter does not factor into OTPM rate limit calculations, so there is no rate limit downside to setting a higher `max_tokens` value.
 
-Rate limits are applied separately for each model; therefore you can use different models up to their respective limits simultaneously. You can check your current rate limits and behavior on the [Limits](/settings/limits) page in the Claude Console, or read the configured limits programmatically with the [Rate Limits API](/docs/en/manage-claude/rate-limits-api).
+Rate limits are applied separately for each model; therefore you can use different models up to their respective limits simultaneously. You can check your current rate limits and behavior on the [Rate limits](/settings/limits) page in the Claude Console, or read the configured limits programmatically with the [Rate Limits API](/docs/en/manage-claude/rate-limits-api).
 
-
+
 
 Rate limits are currently shared across all `inference_geo` values. Requests with `inference_geo: "us"` and `inference_geo: "global"` draw from the same rate limit pool.
 
 Start tier
 
-Start tier
-
-Build tier
-
 Build tier
 
 Scale tier
-
-Scale tier
-
-Custom tier
 
 Custom tier
 
 | Model                                                                                                      | Maximum requests per minute (RPM) | Maximum input tokens per minute (ITPM) | Maximum output tokens per minute (OTPM) |
 |------------------------------------------------------------------------------------------------------------|-----------------------------------|----------------------------------------|-----------------------------------------|
-| Claude Fable 5                                                                                             | 1,000                             | 500,000                                | 100,000                                 |
+| Claude Fable 5.x¹                                                                                          | 1,000                             | 500,000                                | 100,000                                 |
+| Claude Opus 5.5                                                                                            | 1,000                             | 2,000,000                              | 400,000                                 |
 | Claude Opus 5                                                                                              | 1,000                             | 2,000,000                              | 400,000                                 |
-| Claude Opus 4.x^(\*)                                                                                       | 1,000                             | 2,000,000                              | 400,000                                 |
+| Claude Opus 4.x²                                                                                           | 1,000                             | 2,000,000                              | 400,000                                 |
 | Claude Sonnet 5                                                                                            | 1,000                             | 2,000,000                              | 400,000                                 |
-| Claude Sonnet 4.x^(\*\*)                                                                                   | 1,000                             | 2,000,000                              | 400,000                                 |
+| Claude Sonnet 4.x³                                                                                         | 1,000                             | 2,000,000                              | 400,000                                 |
 | Claude Haiku 4.5                                                                                           | 1,000                             | 2,000,000                              | 400,000                                 |
-| Claude Haiku 3.5 ([retired, except on Bedrock and Google Cloud](/docs/en/about-claude/model-deprecations)) | 1,000                             | 100,000^(†)                            | 20,000                                  |
+| Claude Haiku 3.5 ([retired, except on Bedrock and Google Cloud](/docs/en/about-claude/model-deprecations)) | 1,000                             | 100,000⁴                               | 20,000                                  |
 
-*^(\* Opus rate limit is a total limit that applies to combined traffic across Claude Opus 4.8, Opus 4.7, Opus 4.6, and Opus 4.5. Claude Opus 5 has a separate rate limit and is not part of this combined bucket.)*
+*^(1 Fable rate limit is a total limit that applies to combined traffic across Claude Fable 5.1 and Claude Fable 5. Claude Mythos 5.1 and Claude Mythos 5 share a separate combined limit on the same terms.)*
 
-*^(\*\* Sonnet 4.x rate limit is a total limit that applies to combined traffic across Sonnet 4.6 and Sonnet 4.5. Claude Sonnet 5 has a separate rate limit and is not part of this combined bucket.)*
+*^(2 Opus rate limit is a total limit that applies to combined traffic across Claude Opus 4.8, Opus 4.7, Opus 4.6, and Opus 4.5. Claude Opus 5.5 and Claude Opus 5 each have a separate rate limit and are not part of this combined bucket.)*
 
-*^(† Limit counts `cache_read_input_tokens` toward ITPM usage.)*
+*^(3 Sonnet 4.x rate limit is a total limit that applies to combined traffic across Sonnet 4.6 and Sonnet 4.5. Claude Sonnet 5 has a separate rate limit and is not part of this combined bucket.)*
 
+*^(4 Limit counts `cache_read_input_tokens` toward ITPM usage.)*
 
-
-
-Message Batches API
+### Message Batches API
 
 The Message Batches API has its own set of rate limits which are shared across all models. These include a requests per minute (RPM) limit to all API endpoints and a limit on the number of batch requests that can be in the processing queue at the same time. A "batch request" here refers to part of a Message Batch. You may create a Message Batch containing thousands of batch requests, each of which count toward this limit. A batch request is considered part of the processing queue when it has yet to be successfully processed by the model.
 
 Start tier
 
-Start tier
-
-Build tier
-
 Build tier
 
 Scale tier
-
-Scale tier
-
-Custom tier
 
 Custom tier
 
@@ -450,10 +412,7 @@ Custom tier
 |-----------------------------------|--------------------------------------------|----------------------------------|
 | 1,000                             | 200,000                                    | 100,000                          |
 
-
-
-
-Managed Agents
+### Managed Agents
 
 [Claude Managed Agents](/docs/en/managed-agents/overview) endpoints are rate-limited per organization. These limits are separate from the Messages API rate limits above.
 
@@ -462,19 +421,17 @@ Managed Agents
 | Create endpoints (for example, agents, sessions, and environments) | 300 requests per minute   |
 | Read endpoints (for example, retrieve, list, and stream)           | 1,200 requests per minute |
 
+### Files API
 
-
+[Files API](/docs/en/build-with-claude/files) requests have their own per-organization limit, shared across upload, list, retrieve, download, and delete operations and separate from the Messages API limits described earlier on this page. See [Files API rate limits](/docs/en/build-with-claude/files#rate-limits) for the current value.
 
-Fast mode rate limits
+### Fast mode rate limits
 
-When using [fast mode](/docs/en/build-with-claude/fast-mode) (research preview) with `speed: "fast"` on Claude Opus 5 or Opus 4.8, dedicated rate limits apply that are separate from standard Opus rate limits. When fast mode rate limits are exceeded, the API returns a `429` error with a `retry-after` header. Fast mode is not available on Claude Opus 4.7 (requests return an error) or Claude Opus 4.6 (requests to `claude-opus-4-6` with `speed: "fast"` run at standard speed). See [Fast mode](/docs/en/build-with-claude/fast-mode#supported-models).
+When using [fast mode](/docs/en/build-with-claude/fast-mode) (research preview) with `speed: "fast"` on Claude Opus 5.5, Claude Opus 5, or Opus 4.8, dedicated rate limits apply that are separate from standard Opus rate limits. When fast mode rate limits are exceeded, the API returns a `429` error with a `retry-after` header. Fast mode is not available on Claude Opus 4.7 (requests return an error) or Claude Opus 4.6 (requests to `claude-opus-4-6` with `speed: "fast"` run at standard speed). See [Fast mode](/docs/en/build-with-claude/fast-mode#supported-models).
 
 The response includes `anthropic-fast-*` headers that indicate your fast mode rate limit status. See [Fast mode rate limits](/docs/en/build-with-claude/fast-mode#rate-limits) for details on these headers.
 
-
-
-
-Monitoring your rate limits in the Console
+### Monitoring your rate limits in the Console
 
 You can monitor your rate limit usage on the [Usage](/usage) page of the [Claude Console](/).
 
@@ -488,25 +445,15 @@ In addition to providing token and request charts, the Usage page provides two s
   - Hourly maximum output tokens per minute
   - Your current output tokens per minute rate limit
 
+## Requesting higher limits
 
-
+To request higher rate limits or a higher monthly spend cap, use **Request rate limit increase** on the [Rate limits](/settings/limits) page. Anthropic support can also raise limits; for urgent needs, contact [Anthropic support](https://support.claude.com).
 
-Requesting higher limits
-
-To request higher rate limits or a higher monthly spend cap, use **Request rate limit increase** on the [Limits](/settings/limits) page.
-
-
-
-Support can also raise limits. For urgent needs, contact [Anthropic support](https://support.claude.com).
-
-
+
 
 **[Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws):** The **Request rate limit increase** flow is not available. Contact your Anthropic account representative or [Anthropic support](https://support.claude.com), and include the models you need raised, your peak input and output tokens per minute for each model, and roughly what share of your input is cached or repeated context. See [Rate limits and quotas on Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws#rate-limits-and-quotas).
 
-
-
-
-Setting lower limits for Workspaces
+## Setting lower limits for Workspaces
 
 For more about workspaces, see [Workspaces](/docs/en/manage-claude/workspaces).
 
@@ -523,35 +470,32 @@ Note:
 
 To read your current organization and workspace rate limits programmatically, use the [Rate Limits API](/docs/en/manage-claude/rate-limits-api).
 
-
-
-
-Response headers
+## Response headers
 
 The API response includes headers that show you the rate limit enforced, current usage, and when the limit will be reset.
 
 The following headers are returned:
 
-| Header                                        | Description                                                                                                                           |
-|-----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| `retry-after`                                 | The number of seconds to wait until you can retry the request. Earlier retries will fail.                                             |
-| `anthropic-ratelimit-requests-limit`          | The maximum number of requests allowed within any rate limit period.                                                                  |
-| `anthropic-ratelimit-requests-remaining`      | The number of requests remaining before being rate limited.                                                                           |
-| `anthropic-ratelimit-requests-reset`          | The time when the request rate limit will be fully replenished, provided in RFC 3339 format.                                          |
-| `anthropic-ratelimit-tokens-limit`            | The maximum number of tokens allowed within any rate limit period.                                                                    |
-| `anthropic-ratelimit-tokens-remaining`        | The number of tokens remaining (rounded to the nearest thousand) before being rate limited.                                           |
-| `anthropic-ratelimit-tokens-reset`            | The time when the token rate limit will be fully replenished, provided in RFC 3339 format.                                            |
-| `anthropic-ratelimit-input-tokens-limit`      | The maximum number of input tokens allowed within any rate limit period.                                                              |
-| `anthropic-ratelimit-input-tokens-remaining`  | The number of input tokens remaining (rounded to the nearest thousand) before being rate limited.                                     |
-| `anthropic-ratelimit-input-tokens-reset`      | The time when the input token rate limit will be fully replenished, provided in RFC 3339 format.                                      |
-| `anthropic-ratelimit-output-tokens-limit`     | The maximum number of output tokens allowed within any rate limit period.                                                             |
-| `anthropic-ratelimit-output-tokens-remaining` | The number of output tokens remaining (rounded to the nearest thousand) before being rate limited.                                    |
-| `anthropic-ratelimit-output-tokens-reset`     | The time when the output token rate limit will be fully replenished, provided in RFC 3339 format.                                     |
-| `anthropic-priority-input-tokens-limit`       | The maximum number of Priority Tier input tokens allowed within any rate limit period. (Priority Tier only)                           |
-| `anthropic-priority-input-tokens-remaining`   | The number of Priority Tier input tokens remaining (rounded to the nearest thousand) before being rate limited. (Priority Tier only)  |
-| `anthropic-priority-input-tokens-reset`       | The time when the Priority Tier input token rate limit will be fully replenished, provided in RFC 3339 format. (Priority Tier only)   |
-| `anthropic-priority-output-tokens-limit`      | The maximum number of Priority Tier output tokens allowed within any rate limit period. (Priority Tier only)                          |
-| `anthropic-priority-output-tokens-remaining`  | The number of Priority Tier output tokens remaining (rounded to the nearest thousand) before being rate limited. (Priority Tier only) |
-| `anthropic-priority-output-tokens-reset`      | The time when the Priority Tier output token rate limit will be fully replenished, provided in RFC 3339 format. (Priority Tier only)  |
+| Header                                        | Description                                                                                                                                                                          |
+|-----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `retry-after`                                 | The number of seconds to wait until you can retry the request. Earlier retries will fail. Not sent with the spend-cap 429 (see [Reaching your spend cap](#reaching-your-spend-cap)). |
+| `anthropic-ratelimit-requests-limit`          | The maximum number of requests allowed within any rate limit period.                                                                                                                 |
+| `anthropic-ratelimit-requests-remaining`      | The number of requests remaining before being rate limited.                                                                                                                          |
+| `anthropic-ratelimit-requests-reset`          | The time when the request rate limit will be fully replenished, provided in RFC 3339 format.                                                                                         |
+| `anthropic-ratelimit-tokens-limit`            | The maximum number of tokens allowed within any rate limit period.                                                                                                                   |
+| `anthropic-ratelimit-tokens-remaining`        | The number of tokens remaining (rounded to the nearest thousand) before being rate limited.                                                                                          |
+| `anthropic-ratelimit-tokens-reset`            | The time when the token rate limit will be fully replenished, provided in RFC 3339 format.                                                                                           |
+| `anthropic-ratelimit-input-tokens-limit`      | The maximum number of input tokens allowed within any rate limit period.                                                                                                             |
+| `anthropic-ratelimit-input-tokens-remaining`  | The number of input tokens remaining (rounded to the nearest thousand) before being rate limited.                                                                                    |
+| `anthropic-ratelimit-input-tokens-reset`      | The time when the input token rate limit will be fully replenished, provided in RFC 3339 format.                                                                                     |
+| `anthropic-ratelimit-output-tokens-limit`     | The maximum number of output tokens allowed within any rate limit period.                                                                                                            |
+| `anthropic-ratelimit-output-tokens-remaining` | The number of output tokens remaining (rounded to the nearest thousand) before being rate limited.                                                                                   |
+| `anthropic-ratelimit-output-tokens-reset`     | The time when the output token rate limit will be fully replenished, provided in RFC 3339 format.                                                                                    |
+| `anthropic-priority-input-tokens-limit`       | The maximum number of Priority Tier input tokens allowed within any rate limit period. (Priority Tier only)                                                                          |
+| `anthropic-priority-input-tokens-remaining`   | The number of Priority Tier input tokens remaining (rounded to the nearest thousand) before being rate limited. (Priority Tier only)                                                 |
+| `anthropic-priority-input-tokens-reset`       | The time when the Priority Tier input token rate limit will be fully replenished, provided in RFC 3339 format. (Priority Tier only)                                                  |
+| `anthropic-priority-output-tokens-limit`      | The maximum number of Priority Tier output tokens allowed within any rate limit period. (Priority Tier only)                                                                         |
+| `anthropic-priority-output-tokens-remaining`  | The number of Priority Tier output tokens remaining (rounded to the nearest thousand) before being rate limited. (Priority Tier only)                                                |
+| `anthropic-priority-output-tokens-reset`      | The time when the Priority Tier output token rate limit will be fully replenished, provided in RFC 3339 format. (Priority Tier only)                                                 |
 
-The `anthropic-ratelimit-tokens-*` headers display the values for the most restrictive limit currently in effect. For instance, if you have exceeded the Workspace per-minute token limit, the headers will contain the Workspace per-minute token rate limit values. If Workspace limits do not apply, the headers will return the total tokens remaining, where total is the sum of input and output tokens. This approach ensures that you have visibility into the most relevant constraint on your current API usage.
+The `anthropic-ratelimit-tokens-*` headers display the values for the most restrictive limit currently in effect. For instance, if you have exceeded the Workspace per-minute token limit, the headers will contain the Workspace per-minute token rate limit values. If Workspace limits do not apply, the headers will return the total tokens remaining, where total is the sum of input and output tokens. This approach ensures that you have visibility into the most relevant constraint on your current API usage. To see which Workspace a request counted against, read the `anthropic-workspace-id` [response header](/docs/en/api/overview#response-headers), which carries the ID of the Workspace that your API key or access token resolved to.

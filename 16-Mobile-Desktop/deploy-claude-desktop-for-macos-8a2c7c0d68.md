@@ -2,7 +2,7 @@
 title: "Deploy Claude Desktop for macOS | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12611117-deploy-claude-desktop-for-macos"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-08-02T05:42:36Z"
+fetched_at: "2026-09-29T06:31:06Z"
 tags: ["desktop"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["desktop"]
 
 March 16, 2026
 
+Copy for LLM
 
 Administrators on Team or Enterprise plans can deploy Claude Desktop automatically to manage installations and updates centrally. Claude Desktop installs to \`/Applications\` and updates automatically when new versions are released, unless disabled via enterprise policies.
 

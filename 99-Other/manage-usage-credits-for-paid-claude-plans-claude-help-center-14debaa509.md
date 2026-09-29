@@ -2,13 +2,13 @@
 title: "Manage usage credits for paid Claude plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12429409"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:34Z"
+fetched_at: "2026-09-29T06:31:03Z"
 ---
 
 # Manage usage credits for paid Claude plans
 
-May 18, 2026
 
+Copy for LLM
 
 This article explains how usage credits work on your paid Claude plan (Pro, Max 5x, or Max 20x), allowing you to continue working with Claude after reaching your plan's usage limits by switching to pay-as-you-go pricing.
 
@@ -36,7 +36,7 @@ When you reach your plan’s usage limit with usage credits enabled:
 
 ------------------------------------------------------------------------
 
-## Enabling usage credits
+## Enable usage credits
 
 To enable usage credits on your paid Claude plan:
 
@@ -81,9 +81,9 @@ Price and plans are subject to change at Anthropic's discretion.
 
 ------------------------------------------------------------------------
 
-## Managing your usage credits
+## Manage your usage credits
 
-### Monitoring usage and costs
+### Monitor usage and costs
 
 Track your usage credits through:
 
@@ -146,3 +146,7 @@ Yes, the usage dashboard clearly distinguishes between your included plan usage 
 ### Will I get a warning before switching to usage credits?
 
 Yes, you’ll see a clear notification when approaching and reaching your included usage limits, with a confirmation that you’ll continue with usage credits.
+
+### Do usage credits expire?
+
+In most cases, usage credits do not expire. However, in certain jurisdictions such as Japan, usage credits expire six months after purchase starting September 10, 2026. You'll receive an email notification seven days before your credits expire, and you can view expiration dates on the Usage page in Settings.

@@ -2,13 +2,14 @@
 title: "Designated point of contact for users in the EU | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11595103-designated-point-of-contact-for-users-in-the-eu"
 category: "21-Account-Support"
-fetched_at: "2026-08-02T05:41:31Z"
+fetched_at: "2026-09-29T06:31:18Z"
 ---
 
 # Designated point of contact for users in the EU
 
 May 26, 2026
 
+Copy for LLM
 
 Users in the EU can open a support inquiry from this page via the chat tool, which serves as our single point of contact for EU users under the DSA.
 

@@ -2,7 +2,7 @@
 title: "Managing context on the Claude Developer Platform | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/context-management"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:43:07Z"
+fetched_at: "2026-09-29T06:31:22Z"
 tags: ["agents"]
 ---
 
@@ -19,7 +19,7 @@ Introducing context editing and the memory tool to help developers build more ef
 - 
 
 
-  Claude Platform
+  [Claude Platform](https://claude.com/platform/api)
 
 - 
 

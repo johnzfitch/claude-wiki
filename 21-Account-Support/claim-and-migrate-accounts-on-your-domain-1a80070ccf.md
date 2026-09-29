@@ -2,11 +2,13 @@
 title: "Claim and migrate accounts on your domain | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14625619-claim-and-migrate-accounts-on-your-domain"
 category: "21-Account-Support"
-fetched_at: "2026-08-02T05:42:48Z"
+fetched_at: "2026-09-29T06:32:16Z"
 ---
 
 # Claim and migrate accounts on your domain
 
+
+Copy for LLM
 
 Domain claiming lets Enterprise admins discover, claim, and migrate existing personal Claude accounts (Free, Pro, and Max) on a verified company domain into their Enterprise workspace. This gives your organization a clean path to consolidate accounts on day one of an Enterprise deployment, and allows people using Claude on personal accounts to keep their work. Domain claiming is available for Enterprise plans, whether purchased directly through Anthropic or through the AWS Marketplace, and works the same in both cases.
 
@@ -42,7 +44,7 @@ Use this view to understand the scope of migration before initiating a claim. Ch
 
 ### Enable domain capture
 
-Navigate to **[Organization settings \> Organization and access](http://claude.ai/admin-settings/organization)**, scroll down to **Security** and toggle **Migrate accounts using your domain** on to enable domain capture. This is an organization-level setting that enforces a policy: no non-Enterprise accounts can exist on your verified domain.
+Navigate to **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**, scroll down to **Security** and toggle **Migrate accounts using your domain** on to enable domain capture. This is an organization-level setting that enforces a policy: no non-Enterprise accounts can exist on your verified domain.
 
 **Warning:** Domain capture is a one-way door. Once enabled, it can’t be reversed. The admin UI will display a prominent confirmation before you proceed. Make sure your prerequisites are fully in place and you’ve reviewed the affected accounts before enabling.
 
@@ -60,7 +62,7 @@ Once confirmed, all affected accounts receive notification immediately—both by
 
 ### The 30-day migration window
 
-The migration deadline is a single org-wide date, not a rolling per-user timer. All affected accounts share the same deadline.
+The migration deadline is a single date for the claim, not a rolling per-user timer. Every account covered by the claim shares that deadline. If you claim an additional domain later, that claim gets its own 30-day window (see **[Add a domain after you've started a claim](#h_d7ccebb0ac)** below).
 
 During this window, each person on the domain can sign in and choose how to migrate:
 
@@ -80,7 +82,23 @@ During this window, each person on the domain can sign in and choose how to migr
 
 New accounts created on the domain after domain capture is enabled go directly through SSO and your Enterprise workspace—no personal account is created.
 
+### Add a domain after you've started a claim
+
+Each claim covers the domains that were verified on your organization at the moment you initiated it. A domain you verify after starting a claim won't be added to the claim in progress, and accounts associated with that domain aren't notified or migrated as part of it.
+
+To migrate accounts on a domain you verified later:
+
+1.  Wait for the current claim's 30-day window to end. Only one claim can be in progress at a time.
+
+2.  Verify the new domain if you haven't already. See **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**.
+
+3.  Review the accounts on the new domain, then initiate a new claim. This claim has its own 30-day window, and the accounts on the new domain receive the same email and in-product notifications.
+
+**Note:** If you're onboarding several domains in phases, verify all of them before you initiate a claim when possible. That way, one claim and one deadline cover every account. Otherwise, each phase needs its own claim, and each claim has to finish its 30-day window before the next one can start.
+
 ## What’s not supported
+
+- Migrating data into organizations with HIPAA readiness or customer-managed encryption keys (CMEK) turned on. You can still claim your domain, and people on it are notified as usual, but they can only join fresh. Nothing from their personal accounts moves over. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
 - Claiming Team plan accounts. Only individual accounts (Free, Pro, Max) can be claimed.
 

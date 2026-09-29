@@ -1,8 +1,8 @@
 ---
-title: "Anthropic and NEC partner to build AI-native engineering at scale in Japan \\ Anthropic"
+title: "Anthropic and NEC build AI engineering in Japan \\ Anthropic"
 source_url: "https://www.anthropic.com/news/anthropic-nec"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:41:38Z"
+fetched_at: "2026-09-10T06:45:02Z"
 ---
 
 # Anthropic and NEC collaborate to build Japan’s largest AI engineering workforce
@@ -17,15 +17,13 @@ As part of this strategic collaboration, NEC will become Anthropic’s first Jap
 
 ### **Claude for NEC’s customers**
 
-NEC and Anthropic will jointly develop secure, domain-specific AI products for Japanese customers in sectors like finance, manufacturing, and cybersecurity.
-
-In addition, NEC is already integrating Claude into its Security Operations Center services to help defend customers against increasingly sophisticated cybersecurity threats. Claude will also be integrated into the next-generation cybersecurity service NEC is currently providing.
+NEC and Anthropic will jointly develop secure, domain-specific AI products for Japanese customers in sectors like finance, manufacturing, and cybersecurity. In addition, NEC is already integrating Claude into its Security Operations Center services to help defend customers against increasingly sophisticated cybersecurity threats. Claude will also be integrated into the next-generation cybersecurity service NEC is currently providing.
 
 Claude, including Claude Opus 4.7, and [Claude Code](https://www.anthropic.com/claude-code) will be incorporated into [NEC BluStellar Scenario](https://www.nec.com/en/global/necblustellar/index.html), a program that provides consulting, AI tools, security, and digital infrastructure to businesses, starting with its offerings for data-driven management and customer experience, and gradually expanding to others.
 
 ### **How NEC will use Claude internally**
 
-Internally, NEC will establish a Center of Excellence to develop a highly skilled, AI-enabled engineering organization, supported by technical enablement and training from Anthropic. NEC aims to build one of Japan’s largest AI-native engineering teams, who will use Claude Code in their work.
+Internally, NEC will establish a Center of Excellence to develop a highly skilled, AI-enabled engineering organization, supported by technical enablement and training from Anthropic. NEC aims to build one of Japan’s largest AI-native engineering teams, which will use Claude Code in their work.
 
 As part of its long-running Client Zero initiative, in which NEC serves as its own first customer before offering its technology to clients, NEC will also expand its use of [Claude Cowork](https://www.anthropic.com/claude) across its internal business operations.
 
@@ -38,17 +36,21 @@ Claude is now being deployed to NEC Group employees around the world, and our jo
 
 ## Related content
 
-### Investigating three real-world incidents in our cybersecurity evaluations
+### Developing Enterprise Frontier Safeguards with our customers
 
-[Read more](/news/investigating-incidents-cybersecurity-evals)
+[Read more](/news/enterprise-frontier-safeguards)
 
-### Our position on open-weights models
+### Improving our alignment and security efforts
 
-[Read more](/news/position-open-weights-models)
+On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
 
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+[Read more](/news/improving-alignment-security-efforts)
 
-[Read more](/news/cognizant-anthropic)
+### Previewing the Model Hardware Standard
+
+We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
+
+[Read more](/news/model-hardware-standard-research-preview)
 
 [](/)
 
@@ -62,7 +64,7 @@ Claude is now being deployed to NEC Group employees around the world, and our jo
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -82,6 +84,7 @@ Claude is now being deployed to NEC Group employees around the world, and our jo
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -114,7 +117,7 @@ Claude is now being deployed to NEC Group employees around the world, and our jo
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -127,7 +130,7 @@ Claude is now being deployed to NEC Group employees around the world, and our jo
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -139,6 +142,7 @@ Claude is now being deployed to NEC Group employees around the world, and our jo
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

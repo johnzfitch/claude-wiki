@@ -2,7 +2,7 @@
 title: "PHP SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/php"
 category: "05-Agent-SDK"
-fetched_at: "2026-08-02T05:40:38Z"
+fetched_at: "2026-09-26T06:39:40Z"
 tags: ["agents", "sdk"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["agents", "sdk"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fphp)
 
 
 
-Search
+
 
+SearchCtrlK
 
 CLI, SDKs, and libraries
 
@@ -40,7 +36,7 @@ CLI, SDKs, and libraries
 
 ant CLI
 
-[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)
+[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)[Manage resources as code](/docs/en/cli-sdks-libraries/cli/apply)[Connect to a Managed Agents session](/docs/en/cli-sdks-libraries/cli/sessions-connect)
 
 Client SDKs
 
@@ -50,41 +46,33 @@ Libraries and integrations
 
 [Apple Foundation Models](/docs/en/cli-sdks-libraries/libraries/apple-foundation-models)[OpenAI SDK compatibility](/docs/en/cli-sdks-libraries/libraries/openai-sdk)
 
-[](/login)
+[Console](/)
 
-
-
-
-CLI, SDKs, and libraries
-
-PHP
-
-CLI, SDKs, and libraries/Client SDKs
+[CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)Client SDKs
 
 # PHP SDK
 
+Copy page
 
 
 
 Install and configure the Anthropic PHP SDK with value objects and builder patterns
 
+Copy page
 
 
 
-The Anthropic PHP library provides convenient access to the Anthropic REST API from any PHP 8.1.0+ application.
+The Anthropic PHP library provides convenient access to the Claude API from any PHP 8.1.0+ application.
 
-
+
 
 The PHP SDK is currently in beta. APIs might change between versions.
 
-
+
 
 For API feature documentation with code examples, see the [API reference](/docs/en/api/overview). This page covers PHP-specific SDK features and configuration.
 
-
-
-
-Installation
+## Installation
 
 The SDK uses [PSR-18](https://www.php-fig.org/psr/psr-18/) for HTTP and discovers any installed PSR-18 client automatically. [Guzzle](https://docs.guzzlephp.org/) is recommended because the SDK configures it for streaming with no additional setup:
 
@@ -94,17 +82,11 @@ composer require "anthropic-ai/sdk" "guzzlehttp/guzzle:^7"
 
 
 
-
-
-
-Requirements
+## Requirements
 
 PHP 8.1.0 or higher.
 
-
-
-
-Usage
+## Usage
 
 This library uses named parameters to specify optional arguments. Parameters with a default value must be set by name.
 
@@ -114,7 +96,7 @@ $client = new Client();
 $message = $client->messages->create(
   maxTokens: 1024,
   messages: [['role' => 'user', 'content' => 'Hello, Claude']],
-  model: 'claude-opus-5',
+  model: 'claude-opus-5-5',
 );
 
 $textBlock = array_find($message->content, static fn ($block): bool => $block->type === 'text');
@@ -123,21 +105,15 @@ echo $textBlock->text;
 
 
 
-For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication).
+For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication). If your API key is a [personal or service account key](/docs/en/manage-claude/authentication#key-types) with access to multiple workspaces, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](/docs/en/manage-claude/authentication#select-a-workspace) shows the per-request option for this SDK.
 
-
-
-
-Value objects
+## Value objects
 
 It is recommended to use the static `with` constructor `Base64ImageSource::with(data: "U3RhaW5sZXNzIHJvY2tz", ...)` and named parameters to initialize value objects.
 
 However, builders are also provided `(new Base64ImageSource)->withData("U3RhaW5sZXNzIHJvY2tz")`.
 
-
-
-
-Streaming
+## Streaming
 
 The SDK provides support for streaming responses using Server-Sent Events (SSE).
 
@@ -147,7 +123,7 @@ $client = new Client();
 $stream = $client->messages->createStream(
   maxTokens: 1024,
   messages: [['role' => 'user', 'content' => 'Hello, Claude']],
-  model: 'claude-opus-5',
+  model: 'claude-opus-5-5',
 );
 
 foreach ($stream as $event) {
@@ -167,10 +143,7 @@ $client = new Anthropic\Client(
 
 
 
-
-
-
-Error handling
+## Error handling
 
 When the library is unable to connect to the API, or if the API returns a non-success status code (that is, a 4xx or 5xx response), a subclass of `Anthropic\Core\Exceptions\APIException` is thrown:
 
@@ -185,7 +158,7 @@ try {
   $message = $client->messages->create(
     maxTokens: 1024,
     messages: [['role' => 'user', 'content' => 'Hello, Claude']],
-    model: 'claude-opus-5',
+    model: 'claude-opus-5-5',
   );
 } catch (APIConnectionException $e) {
   echo "The server could not be reached", PHP_EOL;
@@ -216,10 +189,7 @@ Error codes are as follows:
 | Timeout          | `APITimeoutException`          |
 | Network error    | `APIConnectionException`       |
 
-
-
-
-Retries
+## Retries
 
 Certain errors are automatically retried two times by default, with a short exponential backoff.
 
@@ -237,17 +207,14 @@ $client = new Client(requestOptions: RequestOptions::with(maxRetries: 0));
 $result = $client->messages->create(
   maxTokens: 1024,
   messages: [['role' => 'user', 'content' => 'Hello, Claude']],
-  model: 'claude-opus-5',
+  model: 'claude-opus-5-5',
   requestOptions: RequestOptions::with(maxRetries: 5),
 );
 ```
 
 
 
-
-
-
-Pagination
+## Pagination
 
 List methods in the Claude API are paginated.
 
@@ -270,19 +237,13 @@ foreach ($page->pagingEachItem() as $item) {
 
 
 
+## Advanced usage
 
-
-
-Advanced usage
-
-
-
-
-Undocumented properties
+### Undocumented properties
 
 You can send undocumented parameters to any endpoint, and read undocumented response properties, as follows:
 
-
+
 
 The `extra*` parameters of the same name override the documented parameters.
 
@@ -294,7 +255,7 @@ use Anthropic\RequestOptions;
 $message = $client->messages->create(
   maxTokens: 1024,
   messages: [['role' => 'user', 'content' => 'Hello, Claude']],
-  model: 'claude-opus-5',
+  model: 'claude-opus-5-5',
   requestOptions: RequestOptions::with(
     extraQueryParams: ['my_query_parameter' => 'value'],
     extraBodyParams: ['my_body_parameter' => 'value'],
@@ -305,17 +266,11 @@ $message = $client->messages->create(
 
 
 
-
-
-
-Undocumented request parameters
+### Undocumented request parameters
 
 If you want to explicitly send an extra parameter, you can do so with the `extraQueryParams`, `extraBodyParams`, and `extraHeaders` options under `RequestOptions::with()` when making a request, as seen in the preceding example.
 
-
-
-
-Undocumented endpoints
+### Undocumented endpoints
 
 To make requests to undocumented endpoints while retaining the benefit of authentication, retries, and other client features, you can make requests using `client->request`, as follows:
 
@@ -333,12 +288,9 @@ $response = $client->request(
 
 
 
+## Platform integrations
 
-
-
-Platform integrations
-
-
+
 
 For detailed platform setup guides with code examples, see:
 
@@ -358,19 +310,13 @@ The PHP SDK supports the following platforms:
 
 Use `MantleClient` for new projects; `Anthropic\Bedrock\Client` remains for existing applications using the Bedrock `InvokeModel` API.
 
-
-
-
-Semantic versioning
+## Semantic versioning
 
 This package follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions. As the library is in initial development and has a major version of `0`, APIs might change at any time.
 
 This package considers improvements to the (non-runtime) PHPDoc type definitions to be non-breaking changes.
 
-
-
-
-Additional resources
+## Additional resources
 
 - [GitHub repository](https://github.com/anthropics/anthropic-sdk-php)
 - [Packagist](https://packagist.org/packages/anthropic-ai/sdk)

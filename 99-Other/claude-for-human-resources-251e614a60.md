@@ -2,7 +2,7 @@
 title: "Claude for Human Resources | Claude by Anthropic"
 source_url: "https://support.claude.com/en/articles/9998942-claude-for-human-resources"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:20Z"
+fetched_at: "2026-08-18T06:27:07Z"
 ---
 
 # Claude for Human Resources
@@ -231,10 +231,10 @@ Products
 
 Features
 
-- Claude for Chrome
+- Claude in Chrome
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
 
 - Claude for Microsoft 365
 

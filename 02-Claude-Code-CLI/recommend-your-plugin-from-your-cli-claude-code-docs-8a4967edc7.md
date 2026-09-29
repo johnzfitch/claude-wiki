@@ -2,7 +2,7 @@
 title: "Recommend your plugin from your CLI - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugin-hints"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:38:57Z"
+fetched_at: "2026-09-11T06:28:06Z"
 tags: ["claude-code", "cli"]
 ---
 
@@ -27,7 +27,7 @@ Emit a one-line marker from your CLI so Claude Code prompts users to install you
 
 Copy pageCopy page
 
-If you maintain a CLI or SDK and have a plugin in the official Anthropic marketplace, your tool can prompt Claude Code users to install that plugin. Your CLI writes a one-line marker to stderr when it detects it is running inside Claude Code. Claude Code reads the marker, strips it from the output, and shows the user a one-time install prompt. Claude Code strips the hint line from the command output before sending it to the model, so the marker never appears in the conversation and is not counted toward token usage. The protocol requires no extra commands and does not change what your CLI prints for users outside Claude Code. This page is for CLI and SDK maintainers. If you are looking to install plugins, see [Discover and install plugins](/docs/en/discover-plugins).
+If you maintain a CLI or SDK and have a plugin in the official Anthropic marketplace, your tool can prompt Claude Code users to install that plugin. Your CLI writes a one-line marker to stderr when it detects it is running inside Claude Code. Claude Code reads the marker, strips it from the output, and shows the user a one-time install prompt. The protocol requires no extra commands and does not change what your CLI prints for users outside Claude Code. This page is for CLI and SDK maintainers. If you are looking to install plugins, see [Discover and install plugins](/docs/en/discover-plugins).
 
 
 [​](#how-it-works)
@@ -51,7 +51,7 @@ Emit the hint
 Hint prompts only fire for plugins listed in the official Anthropic marketplace. See [Get your plugin into the official marketplace](#get-your-plugin-into-the-official-marketplace) before you ship the integration. Gate emission on an environment variable so the marker is unlikely to appear when a human runs your CLI directly, then write the tag to stderr on its own line. Choose which variable to check:
 
 - `CLAUDECODE`: set on every Claude Code version, so it reaches the most sessions. It is also set in tmux sessions and stdio MCP server subprocesses that Claude Code starts. IDE extensions also set it in their integrated terminals, where a human may be running your CLI directly.
-- `CLAUDE_CODE_CHILD_SESSION`: set only in subprocesses Claude Code itself spawns, such as tool calls, hook commands, and [status line](/docs/en/statusline) commands, so the tag does not normally reach a human terminal. A long-lived process that was started inside a session, such as a tmux server, captures the variable, so shells later launched from that process still show the raw tag. Requires Claude Code v2.1.172 or later, so sessions on older versions miss the hint.
+- `CLAUDE_CODE_CHILD_SESSION`: set only in subprocesses Claude Code itself spawns, such as tool calls, hook commands, and [status line](/docs/en/statusline) commands, so the tag does not normally reach a human terminal. A long-lived process that was started inside a session, such as a tmux server, captures the variable, so shells later launched from that process still show the raw tag.
 
 The following examples gate on `CLAUDECODE` for maximum reach and emit a hint for a plugin named `example-cli` in the official marketplace:
 
@@ -139,6 +139,7 @@ The prompt names the command that produced the hint so users can spot a mismatch
 
 - **Once per plugin**: after the prompt is shown, Claude Code records the plugin and never prompts for it again, regardless of the user’s answer.
 - **Once per session**: across all CLIs on the machine, at most one hint prompt appears per Claude Code session.
+- **Main interactive session only**: Claude Code shows the prompt only in the terminal session the user is typing into. Claude Code never prompts for a command that a [subagent](/docs/en/sub-agents) runs, and never prompts when the user runs Claude Code in [non-interactive mode](/docs/en/headless) with the `-p` flag or through the [Agent SDK](/docs/en/agent-sdk/overview). Claude Code still strips the hint line from the command output in all of these cases.
 - **Telemetry opt-outs**: sessions where analytics are disabled never show hint prompts. This includes sessions with `DISABLE_TELEMETRY` or `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` set, and sessions on third-party providers such as Amazon Bedrock or Google Cloud’s Agent Platform where the [automatic telemetry opt-out](/docs/en/data-usage#default-behaviors-by-api-provider) applies.
 
 Selecting **Yes** installs the plugin to user scope. Selecting **No, and don’t show plugin installation hints again** disables all future hint prompts for the user.

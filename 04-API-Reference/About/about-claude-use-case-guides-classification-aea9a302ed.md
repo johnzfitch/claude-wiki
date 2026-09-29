@@ -2,7 +2,7 @@
 title: "Classification - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/classification"
 category: "04-API-Reference/About"
-fetched_at: "2026-08-02T05:39:46Z"
+fetched_at: "2026-08-09T06:45:55Z"
 tags: ["api"]
 ---
 

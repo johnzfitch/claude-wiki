@@ -2,11 +2,13 @@
 title: "Use voice mode | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11101966-use-voice-mode"
 category: "99-Other"
-fetched_at: "2026-08-02T05:40:49Z"
+fetched_at: "2026-09-29T06:31:14Z"
 ---
 
 # Use voice mode
 
+
+Copy for LLM
 
 Voice mode allows you to have complete spoken conversations with Claude. Instead of typing a prompt and reading a written response, you can speak to Claude and listen to its responses, making it easier to use when your hands are busy but your mind isn't.
 
@@ -190,7 +192,7 @@ To set your voice language, go to **[Settings \> General](https://claude.ai/new#
 
 ### Can I use voice mode with Claude Cowork or Claude Code?
 
-No. While dictation is available in Claude Cowork and Code, voice mode is not. This also means Claude voice mode will not be able to reference the projects and skills you have set up in Cowork.
+In the new Claude experience, voice mode works in any conversation, including ones where Claude is working on a task. In Claude Cowork and Claude Code, dictation is available but voice mode isn't.
 
 ### Can Enterprise Admins disable voice mode for their organizations?
 

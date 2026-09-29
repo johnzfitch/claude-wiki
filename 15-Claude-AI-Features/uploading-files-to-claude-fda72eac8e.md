@@ -2,11 +2,14 @@
 title: "Upload files to Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8241126-uploading-files-to-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:41:25Z"
+fetched_at: "2026-09-29T06:32:31Z"
 ---
 
 # Upload files to Claude
 
+July 23, 2026
+
+Copy for LLM
 
 This article explains how to upload documents and images to Claude, including supported file types, size limits, and how to get started.
 

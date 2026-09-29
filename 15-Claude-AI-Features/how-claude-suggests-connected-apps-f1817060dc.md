@@ -2,13 +2,14 @@
 title: "How Claude suggests connected apps | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14730684-how-claude-suggests-connected-apps"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:42:49Z"
+fetched_at: "2026-09-29T06:32:17Z"
 ---
 
 # How Claude suggests connected apps
 
 April 23, 2026
 
+Copy for LLM
 
 When you connect an app like Spotify or Instacart to Claude, you don’t have to ask for it by name every time. Claude can bring up a connected app on its own when it fits what you’re doing. This article covers when that happens, how Claude picks between apps, and how you stay in control.
 

@@ -2,7 +2,7 @@
 title: "Challenges in evaluating AI systems \\ Anthropic"
 source_url: "https://www.anthropic.com/news/evaluating-ai-systems"
 category: "12-Eval-Testing"
-fetched_at: "2026-08-02T05:41:33Z"
+fetched_at: "2026-09-29T06:31:54Z"
 ---
 
 # Challenges in evaluating AI systems
@@ -169,21 +169,23 @@ url = {[https://www.anthropic.com/index/evaluating-ai-systems](/research/evaluat
 
 ## Related content
 
-### Discovering cryptographic weaknesses with Claude
+### Yes, Claude can do Nine Loops
 
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
+Guest writer and physicist Matt von Hippel shares what happened when he issued a challenge to AI companies to solve a problem in his former subfield of theoretical physics.
 
-[Read more](/research/discovering-cryptographic-weaknesses)
+[Read more](/research/yes-claude-can-do-nine-loops)
 
-### Project Pilot: Can AI control a drone?
+### Project Swap: What happens when agents trade for us?
 
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
+To see what works and what breaks when agents are sent into a market, we made a miniature market of Claudes.
 
-[Read more](/research/project-pilot)
+[Read more](/research/project-swap)
 
-### How Canada uses Claude: Findings from the Anthropic Economic Index
+### How Claude is uplifting biomolecular modeling
 
-[Read more](/research/how-canada-uses-claude)
+Claude made the open-source models that scientists use to predict and design biomolecules faster and more memory-efficient. Claude optimized more than 30 of these models in just under four weeks, speeding them up roughly 4x on average. It also created a low-memory mode that enables the accurate prediction of biomolecular systems larger than 10,000 tokens (amino acids, nucleotides, and atoms from small molecules and ions) on a single NVIDIA GPU node.
+
+[Read more](/research/claude-uplifts-biomolecular-modeling)
 
 [](/)
 
@@ -197,7 +199,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -217,6 +219,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -228,6 +231,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Legal](https://claude.com/solutions/legal)
 - [Life sciences](https://claude.com/solutions/life-sciences)
 - [Nonprofits](https://claude.com/solutions/nonprofits)
+- [Sales](https://claude.com/solutions/sales)
 - [Small business](https://claude.com/solutions/small-business)
 
 ### Claude Platform
@@ -249,8 +253,9 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
+- [Developer blog](https://claude.dev)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
 - [Plugins](https://claude.com/plugins)
@@ -262,7 +267,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -274,6 +279,7 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

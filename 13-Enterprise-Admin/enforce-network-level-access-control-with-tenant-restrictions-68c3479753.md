@@ -2,12 +2,15 @@
 title: "Enforce network-level access control with Tenant Restrictions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13198485-enforce-network-level-access-control-with-tenant-restrictions"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:41:14Z"
+fetched_at: "2026-09-29T06:32:00Z"
 tags: ["enterprise", "security"]
 ---
 
 # Enforce network-level access control with Tenant Restrictions
 
+August 3, 2026
+
+Copy for LLM
 
 Tenant Restrictions are available for members of Enterprise plans and Console organizations.
 
@@ -120,13 +123,15 @@ If your proxy sends the headers incorrectly, requests fail with a 400 status and
 
 ## Supported proxy platforms
 
-- Zscaler ZIA (Cloud App Control policies)
+- Cato Networks (Tenant Restriction policy)
+
+- Cloudflare Zero Trust / Gateway (HTTP policy, add custom request headers)
+
+- Netskope (Header Insertion rules)
 
 - Palo Alto Prisma Access (SaaS App Management)
 
-- Cato Networks (Tenant Restriction policy)
-
-- Netskope (Header Insertion rules)
+- Zscaler ZIA (Cloud App Control policies)
 
 - Generic HTTPS proxies with header injection capability
 

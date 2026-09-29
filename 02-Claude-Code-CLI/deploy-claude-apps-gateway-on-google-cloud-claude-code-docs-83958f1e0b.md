@@ -2,7 +2,7 @@
 title: "Deploy Claude apps gateway on Google Cloud - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/claude-apps-gateway-on-gcp"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:37:49Z"
+fetched_at: "2026-09-28T06:33:06Z"
 tags: ["claude-code"]
 ---
 
@@ -34,14 +34,14 @@ This example provisions Claude apps gateway on Google Cloud with Google Cloud’
 
 What you’ll build
 
-The reference configuration provisions:
+The deployment consists of:
 
 - **Cloud Run** service or **GKE** Deployment running the gateway container
 - **Artifact Registry** repository for the gateway image
 - **Cloud SQL for PostgreSQL** instance, private IP only, for the gateway’s [store](/docs/en/claude-apps-gateway-config#store)
 - **Secret Manager** secrets for `gateway.yaml`, the JWT signing key, the OIDC client secret, and the Postgres URL
 - **Service account** with `roles/aiplatform.user`, attached directly on Cloud Run or bound via Workload Identity on GKE
-- **Internal Application Load Balancer** on Cloud Run, or an internal **GKE Ingress** of class `gce-internal` on GKE, for HTTPS
+- **HTTPS front end** that you provide: an internal Application Load Balancer in front of Cloud Run, which this walkthrough configures the gateway for but doesn’t create, or an internal **GKE Ingress** of class `gce-internal` on GKE
 
 
 [​](#prerequisites)
@@ -167,9 +167,9 @@ The Cloud Run or GKE runtime must be on, or routed into, this VPC.
 
 Write gateway.yaml
 
-The `upstreams` block points at Google Cloud’s Agent Platform with `auth: {}`, so the gateway authenticates via Application Default Credentials from the runtime service account. See the [configuration reference](/docs/en/claude-apps-gateway-config) for every field.Two `listen` fields depend on what fronts the gateway:
+The `upstreams` block points at Google Cloud’s Agent Platform with `auth: {}`, so the gateway authenticates via Application Default Credentials from the runtime service account. See the [configuration reference](/docs/en/claude-apps-gateway-config) for every field.Two `listen` fields describe what fronts the gateway:
 
-- `public_url`: required behind Cloud Run or a GKE Ingress. The gateway builds the IdP `redirect_uri` and its discovery document only from this value, never from `X-Forwarded-*` headers.
+- `public_url`: the external `https://` origin, required for any non-loopback bind; see the [`listen` reference](/docs/en/claude-apps-gateway-config#listen). The gateway builds the IdP `redirect_uri` and its discovery document only from this value, never from `X-Forwarded-*` headers.
 - `trusted_proxies`: the front end’s source ranges. The gateway honors `X-Forwarded-For` only when the TCP peer is in this list, then walks the chain past trusted hops, so per-IP sign-in rate limits and audit events record developer IPs instead of the load balancer’s.
 
 Set `trusted_proxies` to match your front end. An external GKE Ingress of class `gce` isn’t listed: it provisions a public forwarding-rule address, which the `/login` [private-network check](/docs/en/claude-apps-gateway#prerequisites) rejects.
@@ -205,6 +205,8 @@ session:
 
 store:
   postgres_url: ${GATEWAY_POSTGRES_URL}          # GKE: ${file:/secrets/postgres-url}
+  # readiness_grace_seconds: 300                 # keep passing the readiness probe
+                                                 # through a Cloud SQL failover
 
 upstreams:
   - provider: vertex
@@ -249,22 +251,23 @@ gcloud run deploy claude-gateway \
   --region="$REGION" \
   --service-account="claude-gateway@${PROJECT_ID}.iam.gserviceaccount.com" \
   --min-instances=1 \
+  --max-instances=8 \
   --timeout=3600 \
-  --ingress=internal-and-cloud-load-balancing \
+  --ingress=internal \
   --network="$VPC" --subnet=cc-gateway-subnet --vpc-egress=private-ranges-only \
   --set-secrets=/etc/claude/gateway.yaml=gateway-config:latest,GATEWAY_JWT_SECRET=gateway-jwt-secret:latest,OIDC_CLIENT_SECRET=gateway-oidc-client-secret:latest,GATEWAY_POSTGRES_URL=gateway-postgres-url:latest \
   --no-invoker-iam-check
 ```
 
-Direct VPC egress, via `--network`, `--subnet`, and `--vpc-egress=private-ranges-only`, lets the service reach the Cloud SQL private IP directly. Public egress to Google Cloud’s Agent Platform endpoints and `accounts.google.com` goes directly to the internet rather than through the VPC, so no Cloud NAT is needed.The invoker IAM check must be open or disabled. The gateway runs its own OIDC and its clients carry no GCP token, so Cloud Run’s invoker check has to admit unauthenticated requests. The gateway’s OIDC sign-in authenticates the request once it reaches the container, with `allowed_email_domains` gating which domains may sign in.Two flags admit unauthenticated requests:
+Direct VPC egress, via `--network`, `--subnet`, and `--vpc-egress=private-ranges-only`, lets the service reach the Cloud SQL private IP directly. Each instance holds up to [`store.max_connections`](/docs/en/claude-apps-gateway-config#store) Postgres connections, five by default, so keep maximum instances × `store.max_connections` below your Cloud SQL tier’s connection limit; the [reference assets](#terraform-reference) cap instances at 8 for the `db-g1-small` tier for this reason. Public egress to Google Cloud’s Agent Platform endpoints and `accounts.google.com` goes directly to the internet rather than through the VPC, so no Cloud NAT is needed.The invoker IAM check must be open or disabled. The gateway runs its own OIDC and its clients carry no GCP token, so Cloud Run’s invoker check has to admit unauthenticated requests. The gateway’s OIDC sign-in authenticates the request once it reaches the container, with `allowed_email_domains` gating which domains may sign in.Two flags admit unauthenticated requests:
 
 - `--no-invoker-iam-check`: disables the check with no `allUsers` binding to manage, and works under Domain Restricted Sharing
 - `--allow-unauthenticated`: grants `allUsers` the `run.invoker` role; use it if your organization doesn’t allow `--no-invoker-iam-check`
 
 Ingress restriction via `--ingress` is a separate, independent layer from the invoker check; keep it set to limit the service to your corporate network.By default the Cloud Run `*.run.app` URL resolves to a public address, which the `/login` [private-network check](/docs/en/claude-apps-gateway#prerequisites) rejects. Two topologies give developers a privately resolvable hostname, and Cloud Run provisions neither for you:
 
-- **Internal Application Load Balancer**, the topology the deploy command above assumes: deploy with `--ingress=internal-and-cloud-load-balancing`, provision an internal Application Load Balancer in front of the service with an internal DNS name and certificate, and set `listen.public_url` to that hostname.
-- **Internal-only ingress with no load balancer**: deploy with `--ingress=internal` and leave `listen.public_url` as the `*.run.app` URL, the default in the [reference assets](#terraform-reference) below. For `*.run.app` to resolve privately, your network team must already operate a Private Service Connect endpoint for Google APIs, a Cloud DNS private zone resolving `*.run.app` to it, and on-premises routing to that endpoint.
+- **Internal Application Load Balancer**, the topology this page’s `gateway.yaml` assumes: provision an internal Application Load Balancer in front of the service with an internal DNS name and certificate, and set `listen.public_url` to that hostname. The `internal` ingress setting already admits traffic from internal Application Load Balancers; `internal-and-cloud-load-balancing` additionally admits external Application Load Balancers, whose public addresses the `/login` private-network check rejects, so no topology on this page needs it.
+- **Internal-only ingress with no load balancer**: keep the deploy command as is and leave `listen.public_url` as the `*.run.app` URL, the default in the [reference assets](#terraform-reference) below. For `*.run.app` to resolve privately, your network team must already operate a Private Service Connect endpoint for Google APIs, a Cloud DNS private zone resolving `*.run.app` to it, and on-premises routing to that endpoint.
 
 Google’s [private networking guide for Cloud Run](https://cloud.google.com/run/docs/securing/private-networking) covers the infrastructure both options need. Verify sign-in once the gateway is serving on a private hostname; until then, confirm the container booted from its logs in Cloud Run.Update the OAuth client’s authorized redirect URI to `<public_url>/oauth/callback` before the first sign-in. Redeploy after changing `public_url`, because the gateway builds its public origin only from that setting and ignores `X-Forwarded-Host` and `X-Forwarded-Proto`. `X-Forwarded-For` is honored for client IPs only when `listen.trusted_proxies` is set.
 
@@ -315,7 +318,7 @@ The [reference deployment assets](https://github.com/anthropics/claude-code/tree
 - `terraform/`: the same deployment as infrastructure-as-code, for a greenfield deploy: a targeted apply to create the Artifact Registry repo, then build and push the image, then a full apply
 - `gateway.yaml.example` and a `Dockerfile` for the distroless runtime image
 
-The artifacts default Cloud Run ingress to `internal`, so no load balancer is required. To match this page’s production-behind-an-ALB deployment, run `setup.sh` with `INGRESS=internal-and-cloud-load-balancing`, or set the Terraform variable `ingress` to `INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER`. The artifacts also default the invoker layer to an `allUsers` `run.invoker` grant rather than `--no-invoker-iam-check`, the inverse of this page’s walkthrough; either works, and the choice depends on your organization’s policy constraints. The assets are provided as working examples, not as a supported production artifact; review and adapt them to your environment.
+The artifacts default Cloud Run ingress to `internal`, matching the deploy command on this page; that setting works with or without an internal Application Load Balancer in front of the service, and the artifacts don’t create the load balancer either. The artifacts also default the invoker layer to an `allUsers` `run.invoker` grant rather than `--no-invoker-iam-check`, the inverse of this page’s walkthrough; either works, and the choice depends on your organization’s policy constraints. The assets are provided as working examples, not as a supported production artifact; review and adapt them to your environment.
 
 
 [​](#troubleshooting)
@@ -329,7 +332,7 @@ For gateway boot and login errors, see the platform-agnostic [troubleshooting ta
 | Cloud Run returns `403 Forbidden` before reaching the container                          | The invoker IAM check is still enabled                                                                                              | Deploy with `--no-invoker-iam-check`, or grant `allUsers` the `run.invoker` role with `--allow-unauthenticated`                                                                                                             |
 | `--no-invoker-iam-check` rejected with `invoker_iam_disabled is not currently available` | Blocked by `constraints/run.managed.requireInvokerIam`                                                                              | Use `--allow-unauthenticated`. If Domain Restricted Sharing via `constraints/iam.allowedPolicyMemberDomains` blocks that too, use the GKE track, which exposes the gateway at the network layer with no `allUsers` binding. |
 | `Container manifest type … must support amd64/linux` at deploy                           | Image was built on a non-amd64 host, or buildx emitted an OCI image index                                                           | Build with `--platform=linux/amd64 --provenance=false`                                                                                                                                                                      |
-| Gateway boot exits with a Postgres connection-timeout error on Cloud Run                 | Service isn’t attached to the VPC, or Cloud SQL has no private IP on that VPC; the store stops waiting after 5 seconds              | Deploy with `--network` and `--subnet` for Direct VPC egress, and create the Cloud SQL instance with `--no-assign-ip` and `--network` pointing at the same VPC                                                              |
+| Gateway boot exits with a Postgres connection-timeout error on Cloud Run                 | Service isn’t attached to the VPC, or Cloud SQL has no private IP on that VPC                                                       | Deploy with `--network` and `--subnet` for Direct VPC egress, and create the Cloud SQL instance with `--no-assign-ip` and `--network` pointing at the same VPC                                                              |
 | Google Cloud’s Agent Platform requests return `403 PERMISSION_DENIED`                    | Runtime isn’t using the `claude-gateway` service account, or the model isn’t enabled in Model Garden for the project                | Set `--service-account` on Cloud Run or bind Workload Identity on GKE, and enable each Claude model in Model Garden for the target region                                                                                   |
 | Streaming responses cut off after a fixed duration                                       | Front-end request timeout: the load balancer backend service behind GKE Ingress defaults to 30 seconds and Cloud Run to 300 seconds | Attach a BackendConfig with a raised `timeoutSec` on GKE, or deploy with `--timeout=3600` on Cloud Run                                                                                                                      |
 

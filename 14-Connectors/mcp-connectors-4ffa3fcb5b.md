@@ -2,7 +2,7 @@
 title: "MCP connectors | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503689-mcp-connectors"
 category: "14-Connectors"
-fetched_at: "2026-08-02T05:41:20Z"
+fetched_at: "2026-09-29T06:31:24Z"
 tags: ["connectors", "mcp", "security"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["connectors", "mcp", "security"]
 
 April 10, 2026
 
+Copy for LLM
 
 MCP connectors let Claude connect to your organization’s tools, data sources, and services. Claude can search your documents, read your email, or call external APIs on your behalf, all without leaving the chat.
 

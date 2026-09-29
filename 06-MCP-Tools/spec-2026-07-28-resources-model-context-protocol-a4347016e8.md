@@ -2,7 +2,7 @@
 title: "Resources - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2026-07-28/server/resources"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:35Z"
+fetched_at: "2026-09-29T06:31:04Z"
 tags: ["mcp"]
 ---
 
@@ -79,7 +79,7 @@ The capability supports two optional features:
 - `listChanged`: whether the server will emit notifications when the list of available resources changes.
 - `subscribe` : whether the server supports resource-specific update notifications for resources requested through subscriptions/listen using the resourceSubscriptions filter.
 
-Servers may advertise either feature independently, together or neither. Serves that support neither `listChanged` or `subscribe` may omit it:
+Servers may advertise either feature independently, together or neither. Servers that support neither `listChanged` nor `subscribe` may omit it:
 
 ```python
 {

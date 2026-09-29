@@ -2,12 +2,14 @@
 title: "What is the Enterprise plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:41:18Z"
+fetched_at: "2026-09-29T06:31:17Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
 # What is the Enterprise plan?
 
+
+Copy for LLM
 
 The **[Enterprise plan](https://claude.com/solutions/enterprise)** is designed for organizations that need advanced security, compliance controls, and scalable AI across their teams. It includes everything in the **[Team plan](https://support.claude.com/en/articles/9266767-what-is-the-team-plan)**, plus additional security and compliance features. Enterprise plan pricing works differently than Team plans: the seat fee covers access only, and all usage is billed separately at API rates.
 
@@ -89,7 +91,7 @@ Both self-serve and sales-assisted Enterprise plans include the same features an
 
 \*New self-serve Enterprise organizations can choose ACH bank transfer, credit card, or debit card at signup. Organizations upgrading from a Team plan start on credit card and can switch to ACH bank transfer afterward in **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)**.
 
-†For sales-assisted invoices of \$50,000 or more, only bank transfer (ACH or wire) is available. Reach out to your Anthropic Contact to request a card-payment exception.
+†For sales-assisted invoices of \$50,000 or more, only bank transfer (ACH or wire) is available.
 
 **When to contact Sales:** If your organization needs invoicing, dedicated customer success management, or to pay with a currency other than USD, reach out to our **[Sales team](https://claude.com/contact-sales)** to set up a sales-assisted Enterprise plan.
 
@@ -99,7 +101,7 @@ Both self-serve and sales-assisted Enterprise plans include the same features an
 
 ### Self-serve Enterprise plans
 
-Visit **[claude.ai/create/enterprise](http://claude.ai/create/enterprise)** to purchase an Enterprise plan directly. You can pay with a credit card or ACH bank transfer (USD only).
+Visit **[claude.ai/create/enterprise](https://claude.ai/create/enterprise)** to purchase an Enterprise plan directly. You can pay with a credit card or ACH bank transfer (USD only).
 
 **About ACH bank transfers**
 

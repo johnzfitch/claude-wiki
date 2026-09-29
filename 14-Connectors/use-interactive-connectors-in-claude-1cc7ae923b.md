@@ -2,14 +2,15 @@
 title: "Use interactive connectors in Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13454812-use-interactive-connectors-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-08-02T05:41:44Z"
+fetched_at: "2026-09-29T06:31:16Z"
 tags: ["connectors", "enterprise", "mcp", "security"]
 ---
 
 # Use interactive connectors in Claude
 
-March 25, 2026
+August 11, 2026
 
+Copy for LLM
 
 Interactive connectors are available for all users on Claude, Cowork, Claude Desktop, and Claude for iOS/Android.
 
@@ -131,4 +132,4 @@ No. Purchases through third-party interactive connectors are not supported.
 
 ## I'm a developer. Where can I learn about building MCP Apps?
 
-MCP Apps is the open-source extension to the Model Context Protocol that powers interactive apps. If you are building your own interactive connector, note that it must meet additional design, security, and testing requirements. See the **[Remote MCP Server Submission Guide](https://support.claude.com/en/articles/12922490)** for details.
+MCP Apps is the open-source extension to the Model Context Protocol that powers interactive apps. If you are building your own interactive connector, note that it must meet additional design, security, and testing requirements. For details, see **[Submitting to the Connectors Directory](https://claude.com/docs/connectors/building/submission)** on Claude Docs.

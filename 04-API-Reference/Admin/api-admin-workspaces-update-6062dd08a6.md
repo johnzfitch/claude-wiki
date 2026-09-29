@@ -2,7 +2,7 @@
 title: "Update Workspace - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/update"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:40:23Z"
+fetched_at: "2026-09-10T06:43:15Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fadmin%2Fworkspaces%2Fupdate)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,96 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,22 +160,28 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
+Create Enrollment URL
 
 
 Webhooks
+
+
+Unwrap
+
+
+Parse Unverified
 
 
 Admin
@@ -182,26 +192,26 @@ Invites
 
 Users
 
-RBAC Groups
+RBAC Groups
 
-RBAC Roles
+RBAC Roles
 
 Workspaces
 
 
-Create Workspace
+Create Workspace
 
 
-Get Workspace
+Get Workspace
 
 
-List Workspaces
+List Workspaces
 
 
-Update Workspace
+Update Workspace
 
 
-Archive Workspace
+Archive Workspace
 
 Members
 
@@ -248,47 +258,43 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Update
-
+Copy page
 
 
 
+1.  [API reference](/docs/en/api/http)
+2.  [Admin](/docs/en/api/http/admin)
+3.  [Workspaces](/docs/en/api/http/admin/workspaces)
+
 # Update Workspace
 
-POST/v1/organizations/workspaces/{workspace_id}
+POST/v1/organizations/workspaces/{workspace_id}
 
 Update Workspace
 
-##### Path ParametersExpand Collapse 
+##### Path parameters
 
 workspace_id: string
 
 
 
-[](#update.workspace_id)
-
-##### Body ParametersJSONExpand Collapse 
+##### Body
 
 
 
-data_residency: optional object { allowed_inference_geos, default_inference_geo }
+data_residency: optional object{ allowed_inference_geos, default_inference_geo } or null
 
 
 
@@ -296,7 +302,7 @@ Data residency configuration for the workspace.
 
 
 
-allowed_inference_geos: optional array of string or "unrestricted"
+allowed_inference_geos: optional array of "global" or "us" or "unrestricted" or null
 
 
 
@@ -304,37 +310,63 @@ Permitted inference geo values. Use 'unrestricted' to allow all geos, or a list 
 
 One of the following:
 
-array of string
+
+
+array of "global" or "us"
 
 
 
-[](#update.data_residency.allowed_inference_geos%5B0%5D)
+One of the following:
+
+"global"
+
+
+
+"us"
+
+
 
 "unrestricted"
 
 
 
-[](#update.data_residency.allowed_inference_geos%5B1%5D)
+
 
-[](#update.data_residency.allowed_inference_geos)
-
-default_inference_geo: optional string
+default_inference_geo: optional "global" or "us" or null
 
 
 
-Default inference geo applied when requests omit the parameter. Must be a member of allowed_inference_geos unless allowed_inference_geos is `"unrestricted"`.
+Default inference geo applied when requests omit the parameter. Must be a member of `allowed_inference_geos` unless `allowed_inference_geos` is `"unrestricted"`.
 
-[](#update.data_residency.default_inference_geo)
+One of the following:
 
-[](#update.data_residency)
+"global"
+
+
+
+"us"
+
+
+
+
+
+display_color: optional string
+
+
+
+Hex color code representing the Workspace in the Anthropic Console.
+
+maxLength7
+
+pattern^#\[0-9A-Fa-f\]{6}\$
 
 external_key_id: optional string
 
 
 
-ID of the customer-managed encryption key (CMEK) configuration to use for this Workspace. Setting this field requires CMEK to be enabled for your organization. When set, data stored for this Workspace is encrypted with the referenced key. Create key configurations with the External Keys API. This field is write-once: once a key is attached to a Workspace it cannot be detached or replaced. To rotate key material, rotate the underlying key on your cloud KMS; the `external_key_id` stays the same.
+ID of the customer-managed encryption key (CMEK) configuration to use for this Workspace. Setting this field requires CMEK to be enabled for your organization. When set, data stored for this Workspace is encrypted with the referenced key. Create key configurations with the External Keys API. On Claude Platform on AWS the value is the AWS KMS key ARN, and the key must be a single-Region key in the same AWS account and Region as the Workspace. On that platform the key is validated against this Workspace when it is attached, so a key-policy problem is reported as an error on this request. This field is write-once: once a key is attached to a Workspace it cannot be detached or replaced. To rotate key material, rotate the underlying key on your cloud KMS; the `external_key_id` stays the same.
 
-[](#update.external_key_id)
+
 
 name: optional string
 
@@ -342,153 +374,27 @@ name: optional string
 
 Name of the Workspace.
 
-[](#update.name)
+maxLength40
 
-tags: optional map\[string\]
+minLength1
 
-
-
-User-defined tags as string key-value pairs. Keys may not begin with `anthropic`.
-
-[](#update.tags)
-
-##### ReturnsExpand Collapse 
-
-
-
-Workspace object { id, archived_at, compartment_id, 7 more }
-
-
-
-id: string
-
-
-
-ID of the Workspace.
-
-[](#workspace.id)
-
-archived_at: string
-
-
-
-RFC 3339 datetime string indicating when the Workspace was archived, or `null` if the Workspace is not archived.
-
-[](#workspace.archived_at)
-
-compartment_id: string
-
-
-
-Identifier for this Workspace's encryption compartment. When you configure a customer-managed encryption key (CMEK) on AWS, reference this value in your KMS key-policy condition so the key is scoped to this compartment. On GCP and Azure, Anthropic enforces the compartment binding automatically; you do not need to reference this value in your key configuration. See the CMEK integration guide for the required key configuration, including the value used during key validation.
-
-[](#workspace.compartment_id)
-
-created_at: string
-
-
-
-RFC 3339 datetime string indicating when the Workspace was created.
-
-[](#workspace.created_at)
-
-
-
-data_residency: object { allowed_inference_geos, default_inference_geo, workspace_geo }
-
-
-
-Data residency configuration.
-
-
-
-allowed_inference_geos: array of string or "unrestricted"
-
-
-
-Permitted inference geo values. 'unrestricted' means all geos are allowed.
-
-One of the following:
-
-array of string
-
-
-
-[](#workspace.data_residency.allowed_inference_geos%5B0%5D)
-
-"unrestricted"
-
-
-
-[](#workspace.data_residency.allowed_inference_geos%5B1%5D)
-
-[](#workspace.data_residency.allowed_inference_geos)
-
-default_inference_geo: string
-
-
-
-Default inference geo applied when requests omit the parameter.
-
-[](#workspace.data_residency.default_inference_geo)
-
-workspace_geo: string
-
-
-
-Geographic region for workspace data storage. Immutable after creation.
-
-[](#workspace.data_residency.workspace_geo)
-
-[](#workspace.data_residency)
-
-display_color: string
-
-
-
-Hex color code representing the Workspace in the Anthropic Console.
-
-[](#workspace.display_color)
-
-external_key_id: string
-
-
-
-ID of the customer-managed encryption key (CMEK) configuration to use for this Workspace. Setting this field requires CMEK to be enabled for your organization. When set, data stored for this Workspace is encrypted with the referenced key. Create key configurations with the External Keys API. This field is write-once: once a key is attached to a Workspace it cannot be detached or replaced. To rotate key material, rotate the underlying key on your cloud KMS; the `external_key_id` stays the same.
-
-[](#workspace.external_key_id)
-
-name: string
-
-
-
-Name of the Workspace.
-
-[](#workspace.name)
-
-tags: map\[string\]
+tags: optional map\[string\] or null
 
 
 
 User-defined tags as string key-value pairs. Keys may not begin with `anthropic`.
 
-[](#workspace.tags)
+##### Returns
 
 
 
-type: "workspace"
+Workspace object{ id, archived_at, compartment_id, 7 more }
 
 
 
-Object type.
+Update Workspace
 
-For Workspaces, this is always `"workspace"`.
-
-[](#workspace.type)
-
-[](#workspace)
-
-Update Workspace
+cURL
 
 
 
@@ -496,8 +402,9 @@ Update Workspace
 curl https://api.anthropic.com/v1/organizations/workspaces/$WORKSPACE_ID \
     -H 'Content-Type: application/json' \
     -H 'anthropic-version: 2023-06-01' \
-    -H "Authorization: Bearer $ANTHROPIC_OAUTH_TOKEN" \
+    -H "Authorization: Bearer $ANTHROPIC_AUTH_TOKEN" \
     -d '{
+          "display_color": "#6C5BB9",
           "external_key_id": "ekey_01SDCCSbTxrXDpWc1phhtcfK",
           "tags": {
             "env": "prod",

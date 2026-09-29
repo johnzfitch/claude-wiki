@@ -2,7 +2,7 @@
 title: "Workspaces - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/workspaces"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:38:01Z"
+fetched_at: "2026-09-10T06:41:42Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fadmin%2Fworkspaces)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,96 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,22 +160,28 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
+Create Enrollment URL
 
 
 Webhooks
+
+
+Unwrap
+
+
+Parse Unverified
 
 
 Admin
@@ -182,26 +192,26 @@ Invites
 
 Users
 
-RBAC Groups
+RBAC Groups
 
-RBAC Roles
+RBAC Roles
 
 Workspaces
 
 
-Create Workspace
+Create Workspace
 
 
-Get Workspace
+Get Workspace
 
 
-List Workspaces
+List Workspaces
 
 
-Update Workspace
+Update Workspace
 
 
-Archive Workspace
+Archive Workspace
 
 Members
 
@@ -248,96 +258,93 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Workspaces
-
+Copy page
 
 
 
+1.  [API reference](/docs/en/api/http)
+2.  [Admin](/docs/en/api/http/admin)
+
 # Workspaces
 
-##### [Create Workspace](/docs/en/api/admin/workspaces/create)
+##### [Create Workspace](/docs/en/api/http/admin/workspaces/create)
 
-POST/v1/organizations/workspaces
+POST/v1/organizations/workspaces
 
-##### [Get Workspace](/docs/en/api/admin/workspaces/retrieve)
+##### [Get Workspace](/docs/en/api/http/admin/workspaces/retrieve)
 
-GET/v1/organizations/workspaces/{workspace_id}
+GET/v1/organizations/workspaces/{workspace_id}
 
-##### [List Workspaces](/docs/en/api/admin/workspaces/list)
+##### [List Workspaces](/docs/en/api/http/admin/workspaces/list)
 
-GET/v1/organizations/workspaces
+GET/v1/organizations/workspaces
 
-##### [Update Workspace](/docs/en/api/admin/workspaces/update)
+##### [Update Workspace](/docs/en/api/http/admin/workspaces/update)
 
-POST/v1/organizations/workspaces/{workspace_id}
+POST/v1/organizations/workspaces/{workspace_id}
 
-##### [Archive Workspace](/docs/en/api/admin/workspaces/archive)
+##### [Archive Workspace](/docs/en/api/http/admin/workspaces/archive)
 
-POST/v1/organizations/workspaces/{workspace_id}/archive
+POST/v1/organizations/workspaces/{workspace_id}/archive
 
-#### WorkspacesMembers
+#### Workspaces[Members](/docs/en/api/http/admin/workspaces/members)
 
-##### [Create Workspace Member](/docs/en/api/admin/workspaces/members/create)
+##### [Create Workspace Member](/docs/en/api/http/admin/workspaces/members/create)
 
-POST/v1/organizations/workspaces/{workspace_id}/members
+POST/v1/organizations/workspaces/{workspace_id}/members
 
-##### [Get Workspace Member](/docs/en/api/admin/workspaces/members/retrieve)
+##### [Get Workspace Member](/docs/en/api/http/admin/workspaces/members/retrieve)
 
-GET/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+GET/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
-##### [List Workspace Members](/docs/en/api/admin/workspaces/members/list)
+##### [List Workspace Members](/docs/en/api/http/admin/workspaces/members/list)
 
-GET/v1/organizations/workspaces/{workspace_id}/members
+GET/v1/organizations/workspaces/{workspace_id}/members
 
-##### [Update Workspace Member](/docs/en/api/admin/workspaces/members/update)
+##### [Update Workspace Member](/docs/en/api/http/admin/workspaces/members/update)
 
-POST/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+POST/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
-##### [Delete Workspace Member](/docs/en/api/admin/workspaces/members/delete)
+##### [Delete Workspace Member](/docs/en/api/http/admin/workspaces/members/delete)
 
-DELETE/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+DELETE/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
-#### WorkspacesRate Limits
+#### Workspaces[Rate Limits](/docs/en/api/http/admin/workspaces/rate_limits)
 
-##### [List Workspace Rate Limits](/docs/en/api/admin/workspaces/rate_limits/list)
+##### [List Workspace Rate Limits](/docs/en/api/http/admin/workspaces/rate_limits/list)
 
-GET/v1/organizations/workspaces/{workspace_id}/rate_limits
+GET/v1/organizations/workspaces/{workspace_id}/rate_limits
 
-#### WorkspacesService Accounts
+#### Workspaces[Service Accounts](/docs/en/api/http/admin/workspaces/service_accounts)
 
-##### [Create Service Account Workspace Member](/docs/en/api/admin/workspaces/service_accounts/create)
+##### [Create Service Account Workspace Member](/docs/en/api/http/admin/workspaces/service_accounts/create)
 
-POST/v1/organizations/workspaces/{workspace_id}/service_accounts
+POST/v1/organizations/workspaces/{workspace_id}/service_accounts
 
-##### [Get Service Account Workspace Member](/docs/en/api/admin/workspaces/service_accounts/retrieve)
+##### [Get Service Account Workspace Member](/docs/en/api/http/admin/workspaces/service_accounts/retrieve)
 
-GET/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
+GET/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
 
-##### [List Service Account Workspace Members](/docs/en/api/admin/workspaces/service_accounts/list)
+##### [List Service Account Workspace Members](/docs/en/api/http/admin/workspaces/service_accounts/list)
 
-GET/v1/organizations/workspaces/{workspace_id}/service_accounts
+GET/v1/organizations/workspaces/{workspace_id}/service_accounts
 
-##### [Update Service Account Workspace Member](/docs/en/api/admin/workspaces/service_accounts/update)
+##### [Update Service Account Workspace Member](/docs/en/api/http/admin/workspaces/service_accounts/update)
 
-POST/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
+POST/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
 
-##### [Delete Service Account Workspace Member](/docs/en/api/admin/workspaces/service_accounts/delete)
+##### [Delete Service Account Workspace Member](/docs/en/api/http/admin/workspaces/service_accounts/delete)
 
-DELETE/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
+DELETE/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}

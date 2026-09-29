@@ -2,7 +2,7 @@
 title: "Recommend plugins for your org - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugin-relevance"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:38:22Z"
+fetched_at: "2026-09-18T06:36:28Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -28,7 +28,7 @@ Add a relevance block to marketplace plugin entries so Claude Code suggests them
 
 Copy pageCopy page
 
-If you operate a plugin marketplace for your organization, you can have Claude Code suggest specific plugins to users based on what they are working on. Add a `relevance` block to a plugin’s entry in `marketplace.json`, then allowlist the marketplace in managed settings. When a user’s session matches one of the declared signals, Claude Code surfaces an install suggestion for that plugin. Marketplace-declared suggestions are opt-in per marketplace through [managed settings](/docs/en/settings#settings-files). No marketplace’s `relevance` declarations produce suggestions until an administrator adds it to the allowlist, including the official Anthropic marketplace. Claude Code also includes one built-in suggestion that is independent of this allowlist; that tip and all marketplace-declared tips are disabled when [`spinnerTipsEnabled`](/docs/en/settings#available-settings) is set to `false`. This feature requires Claude Code v2.1.152 or later. Older clients ignore the `relevance` field. This page is for marketplace operators and enterprise administrators. If you are looking to install plugins, see [Discover and install plugins](/docs/en/discover-plugins).
+If you operate a plugin marketplace for your organization, you can have Claude Code suggest specific plugins to users based on what they are working on. Add a `relevance` block to a plugin’s entry in `marketplace.json`, then allowlist the marketplace in managed settings. When a user’s session matches one of the declared signals, Claude Code surfaces an install suggestion for that plugin. Marketplace-declared suggestions are opt-in per marketplace through [managed settings](/docs/en/managed-settings). No marketplace’s `relevance` declarations produce suggestions until an administrator adds it to the allowlist, including the official Anthropic marketplace. Claude Code also includes one built-in suggestion that is independent of this allowlist; that tip and all marketplace-declared tips are disabled when [`spinnerTipsEnabled`](/docs/en/settings-reference#spinnertipsenabled) is set to `false`. This page is for marketplace operators and enterprise administrators. If you are looking to install plugins, see [Discover and install plugins](/docs/en/discover-plugins).
 
 
 [​](#how-it-works)
@@ -38,10 +38,10 @@ How it works
 Each plugin entry in `marketplace.json` can carry a `relevance` object. The object names a topic and one or more signals. A signal is a pattern that Claude Code tests against the current session, such as the working directory or files Claude has read. Signal matching happens locally on the user’s machine. The matching adds no network traffic and does not report which signals matched, or their values, to Anthropic or to the marketplace operator. When a signal matches and the plugin is not already installed, Claude Code shows the plugin in three places:
 
 - **Spinner tip**: a “Working with *topic*? Install the *plugin* plugin” message with the `/plugin install` command appears below the spinner while Claude is responding.
-- **Session-start suggestion**: if the `cwd` signal matches the working directory, a one-line `plugin suggestion: <name>@<marketplace> · /plugin` notification appears before the first turn. This surface requires Claude Code v2.1.153 or later.
-- **`/plugin` Discover tab**: the plugin is pinned to the top of the Discover list with an annotation such as “suggested for this directory” or “suggested for stripe commands”. This surface requires Claude Code v2.1.154 or later.
+- **Session-start suggestion**: if the `cwd` signal matches the working directory, a one-line `plugin suggestion: <name>@<marketplace> · /plugin` notification appears before the first turn.
+- **`/plugin` Discover tab**: the plugin is pinned to the top of the Discover list with an annotation such as “suggested for this directory” or “suggested for stripe commands”.
 
-The spinner tip and the session-start notification are part of the spinner-tips system. Both are disabled when the user or project sets `spinnerTipsEnabled` to `false`, or when a custom `spinnerTipsOverride` is configured with `excludeDefault`. The Discover-tab pin is independent of tip settings. Claude Code never installs a plugin automatically. The user always confirms.
+The spinner tip and the session-start notification are part of the spinner-tips system. Claude Code disables both when `spinnerTipsEnabled` resolves to `false` across your settings files, or when `excludeDefault` resolves to `true` across the [`spinnerTipsOverride`](/docs/en/settings-reference#spinnertipsoverride) keys in user, `--settings`, and managed settings and those keys configure at least one tip or a `tipsFile`. The Discover-tab pin is independent of tip settings. Claude Code never installs a plugin automatically. The user always confirms.
 
 
 [​](#add-relevance-to-a-plugin-entry)
@@ -101,7 +101,7 @@ Field reference
 | `filesRead`    | array of strings | Glob patterns matched against the paths of files Claude has read this session, for example `["**/*.tf"]`. Forward-slash normalized and case-insensitive. Maximum 10 patterns of 256 characters each.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `manifestDeps` | array of objects | Dependencies declared in package manifests Claude has read this session. Each entry is `{ "file": "...", "pattern": "..." }`, where `file` is a regular expression matched against the manifest file’s path as recorded in session state, typically an absolute path, and `pattern` is a regular expression matched against that file’s contents. Anchor `file` at the end, for example `[/\\\\]package\\.json$` in JSON-escaped form, because a start-anchored pattern never matches an absolute path. Paths are not separator-normalized for this signal, so Windows paths use backslashes. Manifest files larger than 512 KB are skipped. Both values are JavaScript `RegExp` source strings of at most 256 characters. `file` matches case-insensitively. `pattern` is case-sensitive. Maximum 10 entries. |
 
-The `cli`, `hosts`, `filesRead`, and `manifestDeps` signals need session history, so they can only match on the spinner tip and the Discover tab. Only `cwd` can match at session start. The `filesRead` and `manifestDeps` signals test the session’s recorded file state, which also includes files Claude has written or edited and auto-loaded `CLAUDE.md` memory files. The following example uses `manifestDeps` to suggest a Stripe plugin once Claude has read a `package.json` that depends on `stripe`. The `file` pattern uses `[/\\\\]` so it matches both forward-slash and backslash path separators, and `\\.` so the dot is literal. In JSON, each backslash in the regular expression is written twice.
+The `cli`, `hosts`, `filesRead`, and `manifestDeps` signals need session history, so they can only match on the spinner tip and the Discover tab. The `filesRead` and `manifestDeps` signals test the session’s recorded file state, which also includes files Claude has written or edited and auto-loaded `CLAUDE.md` memory files. For these two signals, Claude Code skips paths under its own [configuration directory](/docs/en/claude-directory) and its temporary directories. The following example uses `manifestDeps` to suggest a Stripe plugin once Claude has read a `package.json` that depends on `stripe`. The `file` pattern uses `[/\\\\]` so it matches both forward-slash and backslash path separators, and `\\.` so the dot is literal. In JSON, each backslash in the regular expression is written twice.
 
 ```python
 {
@@ -121,14 +121,14 @@ The `cli`, `hosts`, `filesRead`, and `manifestDeps` signals need session history
 }
 ```
 
-Claude Code ignores unknown fields under `relevance` and `relevance.signals` at load time, so older clients continue to load your marketplace. Run `claude plugin validate` against your marketplace directory, for example `claude plugin validate ./my-marketplace`, to surface them as warnings.
+Claude Code ignores unknown fields under `relevance` and `relevance.signals` at load time, so older clients continue to load your marketplace.
 
 
 [​](#enable-suggestions-in-managed-settings)
 
 Enable suggestions in managed settings
 
-Declaring `relevance` in `marketplace.json` is not enough on its own. An administrator must allowlist the marketplace in [managed settings](/docs/en/settings#settings-files) before its suggestions appear to users. Add the marketplace name to `pluginSuggestionMarketplaces`. For any marketplace other than the official Anthropic marketplace, also declare the marketplace source in the same managed settings, either as that name’s entry in `extraKnownMarketplaces` or as an entry in `strictKnownMarketplaces`. The allowlisted name is ignored if the marketplace registered on the machine came from a different source. This prevents an unrelated source from registering under an allowlisted name to have its plugins suggested across your org. The following `managed-settings.json` registers an org marketplace from a GitHub repository and enables its suggestions:
+Declaring `relevance` in `marketplace.json` is not enough on its own. An administrator must allowlist the marketplace in [managed settings](/docs/en/managed-settings) before its suggestions appear to users. Add the marketplace name to `pluginSuggestionMarketplaces`. For any marketplace other than the official Anthropic marketplace, also declare the marketplace source in the same managed settings, either as that name’s entry in `extraKnownMarketplaces` or as an entry in `strictKnownMarketplaces`. The allowlisted name is ignored if the marketplace registered on the machine came from a different source. This prevents an unrelated source from registering under an allowlisted name to have its plugins suggested across your org. The following `managed-settings.json` registers an org marketplace from a GitHub repository and enables its suggestions:
 
 ```python
 {
@@ -152,8 +152,6 @@ The official marketplace is exempt from the source-declaration requirement becau
 }
 ```
 
-See the [settings reference](/docs/en/settings) for `pluginSuggestionMarketplaces` and [`extraKnownMarketplaces`](/docs/en/settings#extraknownmarketplaces) for full configuration details.
-
 
 [​](#what-the-user-sees)
 
@@ -172,7 +170,7 @@ At session start, a matching `cwd` signal surfaces the one-line notification:
 plugin suggestion: terraform-helpers@acme-corp-plugins · /plugin
 ```
 
-A given plugin’s suggestion appears at most once every three sessions across the spinner tip and the session-start notification combined, and neither repeats once the plugin is installed. The session-start notification additionally stops appearing after the suggestion has been shown twice. In the `/plugin` Discover tab, the plugin is pinned above the other results with an annotation that names the matching signal, such as `suggested for this directory` or `suggested for terraform commands`. The Discover tab pins a given plugin once; later visits list it in normal order. The Discover-tab pin requires Claude Code v2.1.154 or later. On v2.1.152 only the spinner tip appears; the session-start notification is added in v2.1.153.
+A given plugin’s suggestion appears at most once every three sessions across the spinner tip and the session-start notification combined, and neither repeats once the plugin is installed. The session-start notification additionally stops appearing after the suggestion has been shown twice. In the `/plugin` Discover tab, the plugin is pinned above the other results with an annotation that names the matching signal, such as `suggested for this directory` or `suggested for terraform commands`. The Discover tab pins a given plugin once; later visits list it in normal order.
 
 
 [​](#validate-your-marketplace)
@@ -194,4 +192,4 @@ See also
 
 - [Create and distribute a plugin marketplace](/docs/en/plugin-marketplaces): build the marketplace that hosts your plugins
 - [Recommend your plugin from your CLI](/docs/en/plugin-hints): prompt users from your own CLI instead of from Claude Code’s session signals
-- [Settings](/docs/en/settings): full reference for `pluginSuggestionMarketplaces` and `extraKnownMarketplaces`
+- [All settings](/docs/en/settings-reference#pluginsuggestionmarketplaces): `pluginSuggestionMarketplaces` and `extraKnownMarketplaces`

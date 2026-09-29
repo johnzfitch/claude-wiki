@@ -2,13 +2,14 @@
 title: "Age assurance on Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15171100-age-assurance-on-claude"
 category: "22-Safety-Policy"
-fetched_at: "2026-08-02T05:41:22Z"
+fetched_at: "2026-09-29T06:31:52Z"
 ---
 
 # Age assurance on Claude
 
 May 18, 2026
 
+Copy for LLM
 
 Claude, our consumer product, is only available to people over 18 years. You’ll need to confirm you’re 18 or over while setting up an account. When we detect signals that you may be under 18, we'll ask you to verify your age before you can continue using Claude.
 

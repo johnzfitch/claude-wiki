@@ -2,7 +2,7 @@
 title: "Rewind file changes with checkpointing - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/file-checkpointing"
 category: "09-Agents-Patterns"
-fetched_at: "2026-08-02T05:38:03Z"
+fetched_at: "2026-09-28T06:32:56Z"
 tags: ["agents", "claude-code"]
 ---
 
@@ -18,7 +18,7 @@ tags: ["agents", "claude-code"]
 - [Troubleshooting](#troubleshooting)
   - [Checkpointing options not recognized](#checkpointing-options-not-recognized)
   - [User messages don’t have UUIDs](#user-messages-don%E2%80%99t-have-uuids)
-  - [”No file checkpoint found for message” error](#%E2%80%9Dno-file-checkpoint-found-for-message%E2%80%9D-error)
+  - [”No file checkpoint found for this message” error](#%E2%80%9Dno-file-checkpoint-found-for-this-message%E2%80%9D-error)
   - [”File rewinding is not enabled” error](#%E2%80%9Dfile-rewinding-is-not-enabled%E2%80%9D-error)
   - [”ProcessTransport is not ready for writing” error](#%E2%80%9Dprocesstransport-is-not-ready-for-writing%E2%80%9D-error)
 - [Next steps](#next-steps)
@@ -46,21 +46,9 @@ Only changes made through the Write, Edit, and NotebookEdit tools are tracked. C
 
 How checkpointing works
 
-When you enable file checkpointing, the SDK creates backups of files before modifying them through the Write, Edit, or NotebookEdit tools. User messages in the response stream include a checkpoint UUID that you can use as a restore point. Checkpoint works with these built-in tools that the agent uses to modify files:
-
-| Tool         | Description                                                        |
-|--------------|--------------------------------------------------------------------|
-| Write        | Creates a new file or overwrites an existing file with new content |
-| Edit         | Makes targeted edits to specific parts of an existing file         |
-| NotebookEdit | Modifies cells in Jupyter notebooks (`.ipynb` files)               |
+When you enable file checkpointing, the SDK creates backups of files before modifying them through the Write, Edit, or NotebookEdit tools. User messages in the response stream include a checkpoint UUID that you can use as a restore point.
 
 File rewinding restores files on disk to a previous state. It does not rewind the conversation itself. The conversation history and context remain intact after calling `rewindFiles()` (TypeScript) or `rewind_files()` (Python).
-
-The checkpoint system tracks:
-
-- Files created during the session
-- Files modified during the session
-- The original content of modified files
 
 When you rewind to a checkpoint, Claude Code deletes the files it created and restores the files it modified to their content at that point. Claude Code skips a tracked path that is a symlink, hard link, or other non-regular file. It also skips a tracked file whose parent directory no longer resolves to its checkpoint-time location, or whose backup it can’t read safely. [`RewindFilesResult`](/docs/en/agent-sdk/typescript#rewindfilesresult) counts every skipped path in its `skippedLinks` field. Skipping requires Claude Code v2.1.216 or later; before v2.1.216, a rewind wrote and deleted through links at tracked paths.
 
@@ -220,7 +208,7 @@ const response = query({
 
 Capture checkpoint UUID and session ID
 
-With the `replay-user-messages` option set (shown above), each user message in the response stream has a UUID that serves as a checkpoint.For most use cases, capture the first user message UUID (`message.uuid`); rewinding to it restores the tracked files to their original state. To store multiple checkpoints and rewind to intermediate states, see [Multiple restore points](#multiple-restore-points).Capturing the session ID (`message.session_id`) is optional; you only need it if you want to rewind later, after the stream completes. If you’re calling `rewindFiles()` immediately while still processing messages (as the example in [Checkpoint before risky operations](#checkpoint-before-risky-operations) does), you can skip capturing the session ID.
+With the `replay-user-messages` option set, each user message in the response stream has a UUID that serves as a checkpoint.For most use cases, capture the first user message UUID (`message.uuid`); rewinding to it restores the tracked files to their original state. To store multiple checkpoints and rewind to intermediate states, see [Multiple restore points](#multiple-restore-points).Capturing the session ID (`message.session_id`) is optional; you only need it if you want to rewind later, after the stream completes. If you’re calling `rewindFiles()` immediately while still processing messages (as the example in [Checkpoint before risky operations](#checkpoint-before-risky-operations) does), you can skip capturing the session ID.
 
 Python
 
@@ -290,13 +278,13 @@ for await (const msg of rewindQuery) {
 }
 ```
 
-If you capture the session ID and checkpoint ID, you can also rewind from the CLI. This command requires the `claude` executable, which comes from [installing Claude Code](/docs/en/setup) and is not installed by the SDK package. The SDK enables checkpointing for you, but when you run `claude -p` directly you must set the `CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING` environment variable:
+If you capture the session ID and checkpoint ID, you can also rewind from the CLI. This command requires the `claude` executable, which comes from [installing Claude Code](/docs/en/setup). The SDK enables checkpointing for you, but when you run `claude -p` directly you must set the `CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING` environment variable:
 
 ```python
 CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING=true claude -p --resume <session-id> --rewind-files <checkpoint-uuid>
 ```
 
-The `--rewind-files` flag does not appear in `claude --help` output, but the CLI accepts it as shown.
+The `--rewind-files` flag doesn’t appear in `claude --help` output, but the CLI accepts it as shown. When the rewind succeeds, the command prints `Files rewound to state at message <checkpoint-uuid>` and exits without sending a prompt.
 
 
 [​](#common-patterns)
@@ -734,13 +722,6 @@ async function main() {
 main();
 ```
 
-This example demonstrates the complete checkpointing workflow:
-
-1.  **Enable checkpointing**: configure the SDK with `enable_file_checkpointing=True` and `permission_mode="acceptEdits"` to auto-approve file edits
-2.  **Capture checkpoint data**: as the agent runs, store the first user message UUID (your restore point) and the session ID
-3.  **Prompt for rewind**: after the agent finishes, check your utility file to see the doc comments, then decide if you want to undo the changes
-4.  **Resume and rewind**: if yes, resume the session with an empty prompt and call `rewind_files()` to restore the original file
-
 3
 
 Run the example
@@ -801,9 +782,9 @@ User messages don’t have UUIDs
 If `message.uuid` is `undefined` or missing, you’re not receiving checkpoint UUIDs. **Cause**: The `replay-user-messages` option isn’t set. **Solution**: Add `extra_args={"replay-user-messages": None}` (Python) or `extraArgs: { 'replay-user-messages': null }` (TypeScript) to your options.
 
 
-[​](#”no-file-checkpoint-found-for-message”-error)
+[​](#”no-file-checkpoint-found-for-this-message”-error)
 
-”No file checkpoint found for message” error
+”No file checkpoint found for this message” error
 
 This error occurs when the checkpoint data doesn’t exist for the specified user message UUID. **Common causes**:
 

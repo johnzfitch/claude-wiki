@@ -2,7 +2,7 @@
 title: "MCP tunnels quickstart - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/quickstart"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-08-02T05:39:49Z"
+fetched_at: "2026-09-26T06:38:12Z"
 tags: ["api", "mcp"]
 ---
 
@@ -12,31 +12,27 @@ tags: ["api", "mcp"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Fmcp-tunnels%2Fquickstart)
 
 
 
-Search
+
 
+SearchCtrlK
 
 First steps
 
-[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)
+[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)[Authentication](/docs/en/manage-claude/authentication)
 
 Building with Claude
 
@@ -46,11 +42,11 @@ Model capabilities
 
 [Effort](/docs/en/build-with-claude/effort)[Task budgets (beta)](/docs/en/build-with-claude/task-budgets)[Fast mode (research preview)](/docs/en/build-with-claude/fast-mode)[Structured outputs](/docs/en/build-with-claude/structured-outputs)[Citations](/docs/en/build-with-claude/citations)[Streaming Messages](/docs/en/build-with-claude/streaming)[Batch processing](/docs/en/build-with-claude/batch-processing)[Search results](/docs/en/build-with-claude/search-results)[Streaming refusals](/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals)[Multilingual support](/docs/en/build-with-claude/multilingual-support)[Embeddings](/docs/en/build-with-claude/embeddings)
 
-Thinking
+[Thinking](/docs/en/build-with-claude/thinking)
 
 Tools
 
-[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
+[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Browser use tool](/docs/en/agents-and-tools/tool-use/browser-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
 
 Tool infrastructure
 
@@ -58,13 +54,15 @@ Tool infrastructure
 
 Context management
 
-[Context windows](/docs/en/build-with-claude/context-windows)[Compaction](/docs/en/build-with-claude/compaction)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics (beta)](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+[Context windows](/docs/en/build-with-claude/context-windows)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+
+[Compaction](/docs/en/build-with-claude/compaction)
 
 Working with files
 
 [Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
 
-Images and vision
+[Images and vision](/docs/en/build-with-claude/vision)
 
 Skills
 
@@ -74,7 +72,7 @@ MCP
 
 [Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)[MCP connector](/docs/en/agents-and-tools/mcp-connector)
 
-MCP tunnels
+[MCP tunnels](/docs/en/agents-and-tools/mcp-tunnels/overview)
 
 [Overview](/docs/en/agents-and-tools/mcp-tunnels/overview)[Architecture and components](/docs/en/agents-and-tools/mcp-tunnels/concepts)[Quickstart](/docs/en/agents-and-tools/mcp-tunnels/quickstart)[Manage in the Console](/docs/en/agents-and-tools/mcp-tunnels/console)[Deploy with Helm](/docs/en/agents-and-tools/mcp-tunnels/deploy-helm)[Deploy with Docker Compose](/docs/en/agents-and-tools/mcp-tunnels/deploy-compose)[Security](/docs/en/agents-and-tools/mcp-tunnels/security)[Troubleshooting](/docs/en/agents-and-tools/mcp-tunnels/troubleshooting)[Reference](/docs/en/agents-and-tools/mcp-tunnels/reference)
 
@@ -82,44 +80,33 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](/docs/en/build-with-claude/claude-in-amazon-bedrock)[Amazon Bedrock (Opus 4.6 and earlier)](/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy)[Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)[Google Cloud](/docs/en/build-with-claude/claude-on-vertex-ai)[Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry)
 
-[](/login)
+[Console](/)
 
-
-
-
-Messages
-
-Quickstart
-
-Messages/MCP tunnels
+[Messages](/docs/en/intro)MCP tunnels
 
 # MCP tunnels quickstart
 
+Copy page
 
 
 
 Connect Claude to a private MCP server using a local Docker Compose deployment.
 
+Copy page
 
 
 
-
+
 
-MCP tunnels are in research preview. [Request access](https://claude.com/form/claude-managed-agents) to try them.
+MCP tunnels are in research preview. [Request access](https://claude.com/form/mcp-tunnels) to try them.
 
 This quickstart takes you from zero to Claude calling a private MCP server through a tunnel. It uses Docker Compose with [manual](/docs/en/agents-and-tools/mcp-tunnels/concepts#credential-provisioning) credential provisioning, which is the shortest path for local testing. For production deployments, see [Deploy with Helm](/docs/en/agents-and-tools/mcp-tunnels/deploy-helm) or [Deploy with Docker Compose](/docs/en/agents-and-tools/mcp-tunnels/deploy-compose).
 
-
-
-
-What you'll build
+## What you'll build
 
 A two-container [tunnel stack](/docs/en/agents-and-tools/mcp-tunnels/concepts#components) (the [proxy](/docs/en/agents-and-tools/mcp-tunnels/concepts#components) and [cloudflared](/docs/en/agents-and-tools/mcp-tunnels/concepts#components)) plus a sample MCP server running alongside it. When everything is running, the sample server is reachable from Claude at `https://echo.<your-tunnel-domain>/mcp` even though nothing is listening on a public port.
 
-
-
-
-What you need
+## What you need
 
 - [Docker and Docker Compose](https://docs.docker.com/get-docker/) on a machine with outbound internet access.
 - A role in the [Claude Console](https://platform.claude.com) that can manage MCP tunnels. See the [Console guide prerequisites](/docs/en/agents-and-tools/mcp-tunnels/console#prerequisites).
@@ -127,7 +114,7 @@ What you need
 
 1.  1
 
-    Create a tunnel
+    ### Create a tunnel
 
     In the Claude Console sidebar, go to **Manage \> MCP tunnels** and click **New tunnel**. Give it a name. Leave **Set up programmatic access** off; this quickstart uses manual credential provisioning.
 
@@ -138,14 +125,9 @@ What you need
 
 2.  2
 
-    Set up the deployment directory
+    ### Set up the deployment directory
 
     macOS / Linux
-
-    macOS / Linux
-
-    Windows (PowerShell)
-
     Windows (PowerShell)
 
     ``` shiki
@@ -159,16 +141,11 @@ What you need
 
 3.  3
 
-    Generate a CA and server certificate
+    ### Generate a CA and server certificate
 
     The proxy terminates [inner TLS](/docs/en/agents-and-tools/mcp-tunnels/concepts#components) using a certificate signed by a CA you control. Generate both:
 
     macOS / Linux
-
-    macOS / Linux
-
-    Windows (PowerShell)
-
     Windows (PowerShell)
 
     ``` shiki
@@ -201,14 +178,9 @@ What you need
 
 4.  4
 
-    Write the sample MCP server
+    ### Write the sample MCP server
 
     macOS / Linux
-
-    macOS / Linux
-
-    Windows (PowerShell)
-
     Windows (PowerShell)
 
     ``` shiki
@@ -233,14 +205,9 @@ What you need
 
 5.  5
 
-    Write the proxy config and compose file
+    ### Write the proxy config and compose file
 
     macOS / Linux
-
-    macOS / Linux
-
-    Windows (PowerShell)
-
     Windows (PowerShell)
 
     ``` shiki
@@ -285,14 +252,9 @@ What you need
 
 6.  6
 
-    Start it
+    ### Start it
 
     macOS / Linux
-
-    macOS / Linux
-
-    Windows (PowerShell)
-
     Windows (PowerShell)
 
     ``` shiki
@@ -307,7 +269,7 @@ What you need
 
 7.  7
 
-    Call it from Claude
+    ### Call it from Claude
 
     In the Console, go to **Managed Agents \> Sessions** and create a session. In the agent picker choose **Create new agent**, give the agent a name, and keep the pre-filled model. Click **+ MCP Server**, select your tunnel, set **Subdomain** to `echo` and **Path** to `mcp`. Then ask:
 
@@ -315,21 +277,20 @@ What you need
 
     You should see a tool call followed by its result.
 
-
-
-
-Next steps
+## Next steps
 
 The tunnel is verified end to end. To swap in your own MCP server, add it to `docker-compose.yaml` (or run it on the same Docker network), add a route for it in `config/mcp-proxy.yaml`, then restart the proxy (`docker compose restart mcp-proxy`).
 
 For production deployments:
 
+
 
-Deploy with Docker Compose
+[Deploy with Docker Compose](/docs/en/agents-and-tools/mcp-tunnels/deploy-compose)
 
 Hardened single-host deployment, with or without programmatic access.
 
+
 
-Deploy with Helm
+[Deploy with Helm](/docs/en/agents-and-tools/mcp-tunnels/deploy-helm)
 
 Kubernetes deployment with automatic credential management.

@@ -2,14 +2,14 @@
 title: "Migrate your organization from Team to Enterprise | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13779868-migrate-your-organization-from-team-to-enterprise"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:41:16Z"
+fetched_at: "2026-09-29T06:31:17Z"
 tags: ["enterprise"]
 ---
 
 # Migrate your organization from Team to Enterprise
 
-June 29, 2026
 
+Copy for LLM
 
 When upgrading from a Team plan to an Enterprise plan, we recommend you keep the same Team organization and follow the upgrade path to change it to Enterprise. This will allow you to preserve your data (memberships/roles, conversations, and projects) and some of the settings from your Team plan organization. If you create a brand new Enterprise organization, then you'll need to set up everything from scratch.
 
@@ -71,9 +71,9 @@ The following capabilities are default-off for Enterprise plans:
 
 - Code execution and file creation
 
-- Interactive content in artifacts
+- Claude Design, Claude Slides, and Claude Docs (in Organization settings \> Artifacts)
 
-- Claude Design
+- Standalone Claude Design at claude.ai/design
 
 - Claude in Chrome
 

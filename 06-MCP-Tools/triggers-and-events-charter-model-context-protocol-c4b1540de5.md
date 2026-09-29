@@ -2,7 +2,7 @@
 title: "Triggers and Events Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-groups/triggers-events"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:36:37Z"
+fetched_at: "2026-08-26T06:27:51Z"
 tags: ["mcp"]
 ---
 
@@ -76,7 +76,7 @@ Out of Scope
 
 Related Groups
 
-- **Transports WG** — delivery and ordering guarantees depend on transport capabilities; callback semantics must be coherent across stdio, Streamable HTTP, and future transports.
+- **[Transports WG](/community/working-groups/transports)** — delivery and ordering guarantees depend on transport capabilities; callback semantics must be coherent across stdio, Streamable HTTP, and future transports.
 - **Agents WG** — [SEP-1686 (Tasks)](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1686) identifies webhook-style task completion notifications as a future consideration; this WG owns that mechanism.
 
 

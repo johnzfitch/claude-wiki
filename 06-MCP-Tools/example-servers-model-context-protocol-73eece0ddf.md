@@ -2,7 +2,7 @@
 title: "Example Servers - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/examples"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:26Z"
+fetched_at: "2026-09-29T06:29:43Z"
 tags: ["mcp"]
 ---
 
@@ -136,4 +136,4 @@ To use an MCP server with Claude, add it to your configuration:
 
 Additional resources
 
-Visit the [MCP Servers Repository (Resources section)](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-resources) for a collection of other resources and projects related to MCP. Visit our [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions) to engage with the MCP community.
+Visit the [MCP Servers Repository (Resources section)](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-resources) for a collection of other resources and projects related to MCP. Visit our [GitHub Discussions](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions) to engage with the MCP community.

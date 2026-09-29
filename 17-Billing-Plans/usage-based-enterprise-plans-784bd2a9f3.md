@@ -2,12 +2,14 @@
 title: "How am I billed for my Enterprise plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11526368-usage-based-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:42:26Z"
+fetched_at: "2026-09-29T06:31:43Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
 # How am I billed for my Enterprise plan?
 
+
+Copy for LLM
 
 Enterprise plan billing has two parts: a fixed seat fee and separate usage charges. The seat fee covers platform access. Usage is billed on top of that, based on what your team actually consumes.
 
@@ -71,7 +73,7 @@ Usage is **billed monthly in arrears** based on your organization's actual consu
 
 **Payment methods**
 
-Sales-assisted Enterprise organizations can pay by bank transfer (ACH or wire) or, for smaller invoices, by credit card. Invoices of \$50,000 or more can only be paid by bank transfer (ACH or wire). The credit card option won't appear on the payment page for invoices at or above this amount. To pay a specific invoice by card, reach out to your Anthropic Contact to request an exception.
+Sales-assisted Enterprise organizations can pay by bank transfer (ACH or wire) or, for smaller invoices, by credit card. Invoices of \$50,000 or more can only be paid by bank transfer (ACH or wire). The credit card option won't appear on the payment page for invoices at or above this amount.
 
 ------------------------------------------------------------------------
 
@@ -117,11 +119,33 @@ On **sales-assisted plans**, spend limits prevent usage from continuing past the
 
 You can track your organization's usage and spending in a few places:
 
-- **Organization** **settings \> Usage:** View month-to-date spending for each member, current spend limit status, and credit balance (self-serve plans).
+### Organization settings \> Usage
 
-- **Monthly invoices:** Detailed usage per user for the billing period (sales-assisted plans).
+View month-to-date spending for each member, current spend limit status, and credit balance (self-serve plans).
 
-- **Spend limit notifications:** Alerts when users or your organization approach configured spending thresholds.
+At the top of this page is a section called **Blocked by a spend limit** with a view of how often members reach their spend limits. **Blocked by a spend limit** is built for usage-based Enterprise plans. Orgs without usage-based seats only see how many members are blocked or near their limit right now.
+
+You'll see three metrics at the top:
+
+- **Blocked right now:** the number of users currently locked out because they've reached a spend limit. Click this to see who they are.
+
+- **Near their limit:** the number of users approaching their spend limit.
+
+- **Member-days lost this month:** total days of blocked usage across your organization this month, compared to the same day last month.
+
+Below this, a chart shows the time at limit per active seat this month, for all members and your power users (top 10% by spend), plotted against prior months with a forecast of where this month is headed. It also calls out which group or limit type accounts for the most time at limit, so you can quickly see where limits are working as intended and where your most engaged users may need more headroom.
+
+You can adjust limits from the same page, including raising a seat type's default or increasing the limits of the members who reached it.
+
+**Note:** If a user’s extra-usage spend limit is set to \$0, extra usage is turned off for them entirely. They can appear in the "Blocked right now" count, but their time isn't counted as time lost to a spend limit. The member-days figure and the chart include only members whose limit is above \$0 and who reached their limit.
+
+### Monthly invoices
+
+See detailed usage per user for the billing period (sales-assisted plans).
+
+### Spend limit notifications
+
+Get alerts when users or your organization approach configured spending thresholds.
 
 ------------------------------------------------------------------------
 
@@ -145,7 +169,7 @@ Seat fees are billed annually. Usage billing works the same way as described in 
 
 ### Transition to the single Enterprise seat
 
-At your next contract renewal, your plan will automatically transition to the single Enterprise seat model. When that happens, all users — regardless of their current seat type — will move to the **Enterprise seat**. This seat includes Claude Code, Cowork, Chat and more.
+At your next contract renewal, your plan will automatically transition to the single Enterprise seat model. When that happens, all users—regardless of their current seat type—will move to the **Enterprise seat**. This seat includes Claude Code, Cowork, Chat and more.
 
 If you have questions about your upcoming renewal, reach out to your Anthropic Contact or **[our Sales team](https://claude.com/contact-sales)**.
 

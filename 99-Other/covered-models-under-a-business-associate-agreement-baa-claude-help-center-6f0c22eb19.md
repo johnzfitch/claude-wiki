@@ -2,7 +2,7 @@
 title: "Covered Models under a Business Associate Agreement (BAA) | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15455031"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:14Z"
+fetched_at: "2026-09-29T06:32:20Z"
 tags: ["rag"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["rag"]
 
 July 1, 2026
 
+Copy for LLM
 
 This article is for organizations that use Anthropic's HIPAA-ready services under a Business Associate Agreement (BAA). It explains which configurations are Eligible Services under the BAA and whether you can access Covered Models. **Your organization is responsible for ensuring its use of these services complies with applicable legal obligations.** Learn about **[Business Associate Agreements (BAA) for Commercial Customers](https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers)** and **[Covered Models](https://support.claude.com/en/articles/15425695-covered-models)**.
 

@@ -2,7 +2,7 @@
 title: "Advancing Claude in healthcare and the life sciences \\ Anthropic"
 source_url: "https://www.anthropic.com/news/healthcare-life-sciences"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:43:10Z"
+fetched_at: "2026-08-28T09:23:08Z"
 ---
 
 # Advancing Claude in healthcare and the life sciences
@@ -31,7 +31,7 @@ With these model improvements and our new tools, Claude is now dramatically more
 
 #### **What’s new**
 
-[Connectors](https://claude.ai/redirect/website.v1.8b6bc9f8-a959-4c55-bf79-ef4c7ab57d5d/settings/connectors) are tools that allow users to give Claude access to other platforms directly. For payers and providers, we’ve added several connectors that make healthcare information easier to find, access, and understand. These allow Claude to pull information from industry-standard systems and databases, meaning that clinicians and administrators can save significant time finding the data and generating the reports they need.
+[Connectors](https://claude.ai/redirect/website.v1.3201368d-62fc-4866-9c9e-fae917c2da68/settings/connectors) are tools that allow users to give Claude access to other platforms directly. For payers and providers, we’ve added several connectors that make healthcare information easier to find, access, and understand. These allow Claude to pull information from industry-standard systems and databases, meaning that clinicians and administrators can save significant time finding the data and generating the reports they need.
 
 Claude can now connect to:
 
@@ -208,17 +208,23 @@ February 7, 2026: *Edited the introductory paragraph to clarify that HIPAA-ready
 
 ## Related content
 
-### Investigating three real-world incidents in our cybersecurity evaluations
+### Previewing the Model Hardware Standard
 
-[Read more](/news/investigating-incidents-cybersecurity-evals)
+We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
 
-### Our position on open-weights models
+[Read more](/news/model-hardware-standard-research-preview)
 
-[Read more](/news/position-open-weights-models)
+### Expanding our support for scientists
 
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+Starting today, 10,000 scientists around the world can get Claude at no cost to start. Verified principal investigators qualify for a Claude Team subscription plan and then add their research team to Standard seats for free, or Premium seats for \$15 per month, for up to a year.
 
-[Read more](/news/cognizant-anthropic)
+[Read more](/news/expanding-support-for-scientists)
+
+### Funding better evaluations of AI’s impact on wellbeing
+
+We’re launching a \$5 million grant program to fund independent research into how AI impacts users’ wellbeing.
+
+[Read more](/news/wellbeing-research-grants)
 
 [](/)
 
@@ -232,7 +238,7 @@ February 7, 2026: *Edited the introductory paragraph to clarify that HIPAA-ready
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -284,7 +290,7 @@ February 7, 2026: *Edited the introductory paragraph to clarify that HIPAA-ready
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -309,6 +315,7 @@ February 7, 2026: *Edited the introductory paragraph to clarify that HIPAA-ready
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

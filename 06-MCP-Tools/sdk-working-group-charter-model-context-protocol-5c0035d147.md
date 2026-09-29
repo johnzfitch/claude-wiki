@@ -2,7 +2,7 @@
 title: "SDK Working Group Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-groups/sdk"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:31Z"
+fetched_at: "2026-08-26T06:27:51Z"
 tags: ["mcp", "sdk"]
 ---
 
@@ -79,7 +79,7 @@ Out of Scope
 
 Related Groups
 
-- **Transports WG**: Transport implementations are a substantial part of every SDK. The SDK WG coordinates with the Transports WG on rollout sequencing when transport SEPs land.
+- **[Transports WG](/community/working-groups/transports)**: Transport implementations are a substantial part of every SDK. The SDK WG coordinates with the Transports WG on rollout sequencing when transport SEPs land.
 - **Conformance Testing**: Tier assignments depend on conformance scores. The SDK WG consumes conformance results and feeds back gaps in test coverage.
 - **All specification-producing WGs**: The SDK WG is a downstream consumer of accepted SEPs and coordinates reference-implementation timing with the originating group.
 

@@ -2,7 +2,7 @@
 title: "Claude web search now available globally on all plans | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/web-search"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T07:11:09Z"
+fetched_at: "2026-09-29T06:32:47Z"
 tags: ["search"]
 ---
 
@@ -19,7 +19,7 @@ Claude can now search the web to deliver up-to-date, cited information in conver
 - 
 
 
-  Claude Platform
+  [Claude Platform](https://claude.com/platform/api)
 
 - 
 

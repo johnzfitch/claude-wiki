@@ -2,7 +2,7 @@
 title: "SEP-1330: Elicitation Enum Schema Improvements and Standards Compliance - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps/1330-elicitation-enum-schema-improvements-and-standards"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:28Z"
+fetched_at: "2026-09-23T06:26:54Z"
 tags: ["mcp"]
 ---
 
@@ -246,8 +246,8 @@ Legacy Single Select With Titles
   "title": "Color Selection",
   "description": "Choose your favorite color",
   "enum": ["#FF0000", "#00FF00", "#0000FF"],
-  “enumNames”: ["Red", "Green", "Blue"],
-  "default": "Green"
+  "enumNames": ["Red", "Green", "Blue"],
+  "default": "#00FF00"
 }
 ```
 

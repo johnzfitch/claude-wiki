@@ -2,7 +2,7 @@
 title: "Week 20 · May 11–15, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w20"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:38:05Z"
+fetched_at: "2026-09-16T06:24:15Z"
 tags: ["claude-code"]
 ---
 
@@ -70,7 +70,7 @@ New `terminalSequence` field in hook JSON output lets hooks emit desktop notific
 
 The Rewind menu added “Summarize up to here” to compress earlier context while keeping recent turns intact
 
-Remote Control, `/schedule`, Claude.ai MCP connectors, and notification preferences are now disabled when `ANTHROPIC_API_KEY`, `apiKeyHelper`, or `ANTHROPIC_AUTH_TOKEN` is set, even alongside a Claude.ai login; unset the API key to use these features
+Remote Control, `/schedule`, claude.ai MCP connectors, and notification preferences are now disabled when `ANTHROPIC_API_KEY`, `apiKeyHelper`, or `ANTHROPIC_AUTH_TOKEN` is set, even alongside a claude.ai login; unset the API key to use these features
 
 MCP stdio servers now receive `CLAUDE_PROJECT_DIR` in their environment, matching hooks, and plugin configs can reference `$CLAUDE_PROJECT_DIR` in commands
 

@@ -2,7 +2,7 @@
 title: "Quickstart - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/quickstart"
 category: "01-Getting-Started"
-fetched_at: "2026-08-02T05:37:59Z"
+fetched_at: "2026-09-29T06:30:16Z"
 tags: ["claude-code"]
 ---
 
@@ -44,7 +44,7 @@ Make sure you have:
 - A terminal or command prompt open
   - If you’ve never used the terminal before, check out the [terminal guide](/docs/en/terminal-guide)
 - A code project to work with
-- A [Claude subscription](https://claude.com/pricing?utm_source=claude_code&utm_medium=docs&utm_content=quickstart_prereq) (Pro, Max, Team, or Enterprise), [Claude Console](https://console.anthropic.com/) account, or access through a [supported cloud provider](/docs/en/third-party-integrations)
+- A [Claude subscription](https://claude.com/pricing?utm_source=claude_code&utm_medium=docs&utm_content=quickstart_prereq) (Pro, Max, Team, or Enterprise), [Claude Console](https://platform.claude.com/) account, or access through a [supported cloud provider](/docs/en/third-party-integrations)
 
 This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](/docs/en/desktop), in [VS Code](/docs/en/vs-code) and [JetBrains IDEs](/docs/en/jetbrains), in [Slack](/docs/en/slack), and in CI/CD with [GitHub Actions](/docs/en/github-actions) and [GitLab](/docs/en/gitlab-ci-cd). See [all interfaces](/docs/en/overview#use-claude-code-everywhere).
 
@@ -53,7 +53,7 @@ This guide covers the terminal CLI. Claude Code is also available on the [web](h
 
 Step 1: Install Claude Code
 
-To install Claude Code, use one of the following methods:
+To install Claude Code, open a terminal and run the command for your system. If you haven’t used a terminal before, the [terminal guide](/docs/en/terminal-guide) shows how to open one and paste the command.
 
 - Native Install (Recommended)
 
@@ -79,7 +79,7 @@ irm https://claude.ai/install.ps1 | iex
 curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
-If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.If the install command fails with `syntax error near unexpected token '<'`, a `403`, or another curl error, see [Troubleshoot installation](/docs/en/troubleshoot-install#find-your-error) to match the error to a fix and for alternative install methods.[Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead. WSL setups do not need Git for Windows.
+When the installer finishes, open a new terminal window and run `claude --version`. A working installation prints a version number. If your shell says `claude` isn’t found or isn’t recognized, the install directory isn’t on your PATH yet: see [Fix your PATH](/docs/en/troubleshoot-install#command-not-found-claude-after-installation).If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.If the install command fails with `syntax error near unexpected token '<'`, a `403`, or another curl error, see [Troubleshoot installation](/docs/en/troubleshoot-install#find-your-error) to match the error to a fix and for alternative install methods.[Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead. WSL setups do not need Git for Windows.
 
 Native installations automatically update in the background to keep you on the latest version.
 
@@ -125,11 +125,11 @@ For Claude subscription or Console accounts, follow the prompts to complete auth
 You can log in using any of these account types:
 
 - [Claude Pro, Max, Team, or Enterprise](https://claude.com/pricing?utm_source=claude_code&utm_medium=docs&utm_content=quickstart_login) (recommended)
-- [Claude Console](https://console.anthropic.com/) (API access with pre-paid credits). On first login, a “Claude Code” workspace is automatically created in the Console for centralized cost tracking.
+- [Claude Console](https://platform.claude.com/) (API access with pre-paid credits). On first login, a “Claude Code” workspace is automatically created in the Console for centralized cost tracking.
 - [Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry](/docs/en/third-party-integrations) (enterprise cloud providers)
 - A self-hosted [Claude apps gateway](/docs/en/claude-apps-gateway), if your organization runs one: your admin pre-configures the gateway URL, and `/login` opens directly on the **Cloud gateway** screen for you to sign in with corporate SSO
 
-Once logged in, your credentials are stored and you won’t need to log in again.
+Once logged in, your credentials are stored and you won’t need to log in again. Learn more in [Credential Management](/docs/en/authentication#credential-management).
 
 
 [​](#step-3-start-your-first-session)
@@ -144,8 +144,6 @@ claude
 ```
 
 Replace `/path/to/your/project` with the path to the project you want to work on. You’ll see the Claude Code prompt with the version, current model, and working directory shown above it. Type `/help` for available commands or `/resume` to continue a previous conversation.
-
-After logging in (Step 2), your credentials are stored on your system. Learn more in [Credential Management](/docs/en/authentication#credential-management).
 
 
 [​](#step-4-ask-your-first-question)
@@ -199,14 +197,9 @@ Now let’s make Claude Code do some actual coding. Try a simple task:
 add a hello world function to the main file
 ```
 
-Claude Code will:
+Claude Code finds the appropriate file and shows you the change. If it asks before making the change, select **Yes** to approve. With Claude Code v2.1.283 or later, auto mode is the [built-in starting permission mode](/docs/en/permission-modes#eliminate-prompts-with-auto-mode) for interactive terminal sessions: a classifier reviews actions instead of you, and Claude edits most files and runs most commands without asking you. On earlier versions, auto mode is the built-in starting permission mode only on Pro, Max, and Team plans. For the session you start right after installing, see [First session after an install or upgrade](/docs/en/env-vars#first-session-after-an-install-or-upgrade).
 
-1.  Find the appropriate file
-2.  Show you the proposed changes
-3.  Ask for your approval before changing files, depending on your permission mode
-4.  Make the edit
-
-Whether Claude Code asks before changing files depends on your [permission mode](/docs/en/permission-modes). In default mode, Claude asks for approval before each change. Press `Shift+Tab` to cycle through modes: `acceptEdits` auto-approves file edits, and `plan` lets Claude propose changes without editing. Some accounts also have an `auto` mode that runs a background safety check and blocks risky actions, returning to prompts only after repeated blocks.
+Your settings or your organization can set a different starting permission mode. [Which permission mode a session starts in](/docs/en/permission-modes#which-mode-a-session-starts-in) lists what does. Press `Shift+Tab` at any time to switch the permission mode of the session you’re in.
 
 
 [​](#step-6-use-git-with-claude-code)
@@ -302,7 +295,7 @@ Here are the most important commands for daily use. Shell commands run from your
 | Command             | What it does                                           | Example                             |
 |---------------------|--------------------------------------------------------|-------------------------------------|
 | `claude`            | Start interactive mode                                 | `claude`                            |
-| `claude "task"`     | Run a one-time task                                    | `claude "fix the build error"`      |
+| `claude "task"`     | Start interactive mode with an initial prompt          | `claude "fix the build error"`      |
 | `claude -p "query"` | Run one-off query, then exit                           | `claude -p "explain this function"` |
 | `claude -c`         | Continue most recent conversation in current directory | `claude -c`                         |
 | `claude -r`         | Resume a previous conversation                         | `claude -r`                         |
@@ -352,7 +345,7 @@ build a dashboard showing products that are most frequently returned by our UK c
 
 Save time with shortcuts
 
-- Type `/` to see all commands and skills
+- Type `/` to see the commands and skills available to you
 - Use Tab for command completion
 - Press ↑ for command history
 - Press `Shift+Tab` to cycle permission modes
@@ -385,6 +378,7 @@ Customize with CLAUDE.md, skills, hooks, MCP, and more
 
 Getting help
 
-- **In Claude Code**: Type `/help` or ask “how do I…”
+- **In Claude Code**: Type `/help` or ask a “how do I” question
 - **Documentation**: You’re here! Browse other guides
+- **Courses**: Take [Claude Code 101](https://academy.claude.com/courses/claude-code-101) and other free self-paced courses on [Claude Academy](https://academy.claude.com/)
 - **Community**: Join our [Discord](https://www.anthropic.com/discord) for tips and support

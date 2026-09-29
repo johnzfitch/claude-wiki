@@ -2,13 +2,14 @@
 title: "About the Development Partner Program | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11174108-about-the-development-partner-program"
 category: "99-Other"
-fetched_at: "2026-08-02T05:40:50Z"
+fetched_at: "2026-09-29T06:31:15Z"
 ---
 
 # About the Development Partner Program
 
 May 22, 2026
 
+Copy for LLM
 
 The Development Partner Program is an optional, transparent way for organizations to help shape the future of Claude while maintaining control over their data.
 

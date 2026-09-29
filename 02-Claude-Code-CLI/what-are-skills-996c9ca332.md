@@ -2,16 +2,18 @@
 title: "What are skills? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12512176-what-are-skills"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:42:35Z"
+fetched_at: "2026-09-29T06:31:52Z"
 tags: ["agents", "claude-code", "skills"]
 ---
 
 # What are skills?
 
 
+Copy for LLM
+
 Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. Skills teach Claude how to complete specific tasks in a repeatable way, whether that's creating documents with your company's brand guidelines, analyzing data using your organization's specific workflows, or automating personal tasks.
 
-Skills are available for users on Free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190)**. Skills are also available in beta for Claude Code users and for all API users using the code execution tool.
+Skills are available for users on Free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190)**. Skills are also available in Claude Code, and in beta for all API users using the code execution tool.
 
 ------------------------------------------------------------------------
 
@@ -100,5 +102,7 @@ MCP connects Claude to external services and data sources. Skills provide proced
 ## Learn more about skills
 
 To discover available skills, check out the directory by clicking "Customize" in your account and navigating to "Skills." You can click "+" then "Browse skills" to open the directory. For more information, see **[Browse skills, connectors, and plugins in one directory](https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory)**.
+
+On the Enterprise plan, organizations can turn on skill scanning to check uploaded skills and plugins for malicious content. Learn more about **[skill and plugin scanning](https://support.claude.com/en/articles/15927065)**.
 
 For more details about how skills work, see **[Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)** in our Claude Docs.

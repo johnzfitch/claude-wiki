@@ -2,195 +2,157 @@
 title: "MCP Inspector - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/draft/tools/inspector"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:36:58Z"
-tags: ["mcp"]
+fetched_at: "2026-08-03T07:16:58Z"
+tags: ["authorization", "cli", "mcp"]
 ---
 
 ## On this page
 
-- [Getting started](#getting-started)
-  - [Installation and basic usage](#installation-and-basic-usage)
-  - [Inspecting servers from npm or PyPI](#inspecting-servers-from-npm-or-pypi)
-  - [Inspecting locally developed servers](#inspecting-locally-developed-servers)
-- [Feature overview](#feature-overview)
-  - [Server connection pane](#server-connection-pane)
-  - [Resources tab](#resources-tab)
-  - [Prompts tab](#prompts-tab)
-  - [Tools tab](#tools-tab)
-  - [Notifications pane](#notifications-pane)
-- [Best practices](#best-practices)
-  - [Development workflow](#development-workflow)
-- [Next steps](#next-steps)
+- [Quickstart](#quickstart)
+  - [Inspecting published servers](#inspecting-published-servers)
+- [Launcher flags vs. client flags](#launcher-flags-vs-client-flags)
+- [Where to go next](#where-to-go-next)
 
-Developer tools
+Inspector
 
 # MCP Inspector
 
 Copy pageCopy page
 
-In-depth guide to using the MCP Inspector for testing and debugging Model Context Protocol servers
+Interactive developer tooling for testing and debugging MCP servers, in the browser, on the command line, and in the terminal
 
 Copy pageCopy page
 
-The [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is an interactive developer tool for testing and debugging MCP servers. While the [Debugging Guide](/docs/draft/tools/debugging) covers the Inspector as part of the overall debugging toolkit, this document provides a detailed exploration of the Inspector’s features and capabilities.
+The [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is the reference developer tool for testing and debugging [MCP servers](/docs/draft/learn/server-concepts). It ships as a single package, `@modelcontextprotocol/inspector`, providing **three clients behind one binary**:
+
+| Client  | Invocation                                  | What it’s for                                                                     |
+|---------|---------------------------------------------|-----------------------------------------------------------------------------------|
+| **Web** | `npx @modelcontextprotocol/inspector`       | A full graphical inspector in the browser. The default, and the richest surface.  |
+| **CLI** | `npx @modelcontextprotocol/inspector --cli` | A scriptable, machine-readable client for CI, shell pipelines, and coding agents. |
+| **TUI** | `npx @modelcontextprotocol/inspector --tui` | An interactive terminal UI, for when a browser isn’t available or wanted.         |
+
+All three are built on the same shared core, so a connection behaves identically across them: the same transports, the same configuration files, the same OAuth state on disk, and the same [protocol-era](/docs/draft/tools/inspector/protocol-eras) negotiation (legacy vs. modern 2026-07-28).
 
 
-[​](#getting-started)
+[​](#quickstart)
 
-Getting started
+Quickstart
 
+The Inspector requires **Node 22.19.0 or newer** and runs directly through `npx`. No installation is required:
 
-[​](#installation-and-basic-usage)
+- Web
 
-Installation and basic usage
+- CLI
 
-The Inspector runs directly through `npx` without requiring installation:
+- TUI
 
 ```python
-npx @modelcontextprotocol/inspector <command>
+# Launch the web UI and connect to a local stdio server
+npx @modelcontextprotocol/inspector node path/to/server/index.js
+
+# Or launch with no target and add servers from the UI
+npx @modelcontextprotocol/inspector
 ```
+
+The command prints a URL containing a one-time session token; open it in your browser. See [Web client](/docs/draft/tools/inspector/web).
 
 ```python
-npx @modelcontextprotocol/inspector <command> <arg1> <arg2>
+# List a server's tools and exit
+npx @modelcontextprotocol/inspector --cli node path/to/server/index.js --method tools/list
+
+# Call a tool and pipe the result into jq
+npx @modelcontextprotocol/inspector --cli https://api.example.com/mcp --transport http \
+  --method tools/call --tool-name get_weather --tool-arg city=Boston --format json | jq .result
 ```
 
+See [CLI client](/docs/draft/tools/inspector/cli).
 
-[​](#inspecting-servers-from-npm-or-pypi)
+```python
+npx @modelcontextprotocol/inspector --tui node path/to/server/index.js
+```
 
-Inspecting servers from npm or PyPI
+See [TUI client](/docs/draft/tools/inspector/tui).
 
-A common way to start server packages from [npm](https://npmjs.com) or [PyPI](https://pypi.org).
+
+[​](#inspecting-published-servers)
+
+Inspecting published servers
+
+Pass the command that launches the server as the Inspector’s arguments, or point it at a remote server with `--server-url`:
 
 - npm package
 
 - PyPI package
 
+- Remote HTTP server
+
 ```python
-npx -y @modelcontextprotocol/inspector npx <package-name> <args>
-# For example
-npx -y @modelcontextprotocol/inspector npx @modelcontextprotocol/server-filesystem /Users/username/Desktop
+npx -y @modelcontextprotocol/inspector npx @modelcontextprotocol/server-filesystem ~/Desktop
 ```
 
 ```python
-npx @modelcontextprotocol/inspector uvx <package-name> <args>
-# For example
 npx @modelcontextprotocol/inspector uvx mcp-server-git --repository ~/code/mcp/servers.git
 ```
 
-
-[​](#inspecting-locally-developed-servers)
-
-Inspecting locally developed servers
-
-To inspect servers locally developed or downloaded as a repository, the most common way is:
-
-- TypeScript
-
-- Python
-
 ```python
-npx @modelcontextprotocol/inspector node path/to/server/index.js args...
+npx @modelcontextprotocol/inspector --server-url https://api.example.com/mcp --transport http
 ```
 
+Always read a server’s own README first, since every server requires different commands and arguments.
+
+
+[​](#launcher-flags-vs-client-flags)
+
+Launcher flags vs. client flags
+
+`mcp-inspector`, the binary that `npx @modelcontextprotocol/inspector` runs, is a thin launcher. It owns only two things:
+
+1.  **The mode flag:** `--web` (default), `--cli`, or `--tui`. At most one; passing two errors with `Specify at most one of --web, --cli, or --tui.`
+2.  **`-h` / `--help`.**
+
+Everything else (`--catalog`, `--config`, `--server-url`, `--transport`, `--method`, the OAuth flags) is defined by the *client*, not the launcher, and the clients do not all define the same set. The [Configuration and flags](/docs/draft/tools/inspector/configuration) page is organized that way, by owner.
+
+Mode flags are recognized only at the front of the command line: the first token that isn’t `--web` / `--cli` / `--tui` ends launcher parsing, and everything after it is forwarded to the client unchanged. That’s what lets a literal `--cli` appear later as one of your server’s own arguments:
+
 ```python
-npx @modelcontextprotocol/inspector \
-  uv \
-  --directory path/to/server \
-  run \
-  package-name \
-  args...
+mcp-inspector --cli node server.js --cli   # mode is CLI; the trailing --cli goes to server.js
 ```
 
-Please carefully read any attached README for the most accurate instructions.
+`--help` behaves differently with and without a mode flag. Bare `mcp-inspector --help` prints the launcher’s help and exits. With a mode flag it is forwarded, so `mcp-inspector --cli --help` prints the CLI’s full flag reference instead.
 
 
-[​](#feature-overview)
+[​](#where-to-go-next)
 
-Feature overview
+Where to go next
 
-The Inspector provides several features for interacting with your MCP server:
+## Web client
 
+A tab-by-tab walkthrough of the graphical inspector.
 
-[​](#server-connection-pane)
+## CLI client
 
-Server connection pane
+Method reference, output formats, exit codes, and CI recipes.
 
-- Allows selecting the [transport](/specification/latest/basic/transports) for connecting to the server
-- For local servers, supports customizing the command-line arguments and environment
+## TUI client
 
+Terminal navigation and keyboard reference.
 
-[​](#resources-tab)
+## Configuration and flags
 
-Resources tab
+Catalog vs. config files, the full per-client flag reference, and environment variables.
 
-- Lists all available resources
-- Shows resource metadata (MIME types, descriptions)
-- Allows resource content inspection
-- Supports subscription testing
+## Authorization
 
+The OAuth flow end to end, mid-session re-authorization, and loopback callbacks.
 
-[​](#prompts-tab)
+## Protocol eras
 
-Prompts tab
+Legacy vs. modern (2026-07-28) operation, and how every tab changes between protocol eras.
 
-- Displays available prompt templates
-- Shows prompt arguments and descriptions
-- Enables prompt testing with custom arguments
-- Previews generated messages
+## Recipes
 
+Importing client configs, reviewing MCP Apps, Docker, and network hosting.
 
-[​](#tools-tab)
+## Debugging guide
 
-Tools tab
-
-- Lists available tools
-- Shows tool schemas and descriptions
-- Enables tool testing with custom inputs
-- Displays tool execution results
-
-
-[​](#notifications-pane)
-
-Notifications pane
-
-- Presents all logs recorded from the server
-- Shows notifications received from the server
-
-
-[​](#best-practices)
-
-Best practices
-
-
-[​](#development-workflow)
-
-Development workflow
-
-1.  Start Development
-    - Launch Inspector with your server
-    - Verify basic connectivity
-    - Check capability negotiation
-2.  Iterative testing
-    - Make server changes
-    - Rebuild the server
-    - Reconnect the Inspector
-    - Test affected features
-    - Monitor messages
-3.  Test edge cases
-    - Invalid inputs
-    - Missing prompt arguments
-    - Concurrent operations
-    - Verify error handling and error responses
-
-
-[​](#next-steps)
-
-Next steps
-
-## Inspector Repository
-
-Check out the MCP Inspector source code
-
-## Debugging Guide
-
-Learn about broader debugging strategies
+Broader debugging strategies beyond the Inspector.

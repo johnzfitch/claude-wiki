@@ -1,8 +1,8 @@
 ---
-title: "Anthropic and Infosys collaborate to build AI agents for telecommunications and other regulated industries \\ Anthropic"
+title: "Anthropic and Infosys build AI agents \\ Anthropic"
 source_url: "https://www.anthropic.com/news/anthropic-infosys"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:42:11Z"
+fetched_at: "2026-09-28T06:34:31Z"
 tags: ["agents"]
 ---
 
@@ -41,17 +41,21 @@ Learn more about Anthropic’s expanded presence in India [here](https://www.ant
 
 ## Related content
 
-### Investigating three real-world incidents in our cybersecurity evaluations
+### Claude discovers a novel enzyme system with CRISPR-like repeats
 
-[Read more](/news/investigating-incidents-cybersecurity-evals)
+We’re announcing a new life sciences research group and laboratory at Anthropic. This post introduces the team behind this work and shares early results in which Claude discovered a novel enzyme system with properties reminiscent of CRISPR, with only high-level direction from our scientists.
 
-### Our position on open-weights models
+[Read more](/news/claude-discovers-novel-enzyme-system)
 
-[Read more](/news/position-open-weights-models)
+### Partnering with Accenture on embedded evaluation
 
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+[Read more](/news/accenture-embedded-evaluation)
 
-[Read more](/news/cognizant-anthropic)
+### Introducing the Life Sciences Verification Program
+
+The Life Sciences Verification Program (LSVP) gives life science professionals access to Claude Mythos, Opus, and Sonnet models with a refined set of safeguards more permissive for biology-related work.
+
+[Read more](/news/life-sciences-verification-program)
 
 [](/)
 
@@ -65,7 +69,7 @@ Learn more about Anthropic’s expanded presence in India [here](https://www.ant
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -85,6 +89,7 @@ Learn more about Anthropic’s expanded presence in India [here](https://www.ant
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -96,6 +101,7 @@ Learn more about Anthropic’s expanded presence in India [here](https://www.ant
 - [Legal](https://claude.com/solutions/legal)
 - [Life sciences](https://claude.com/solutions/life-sciences)
 - [Nonprofits](https://claude.com/solutions/nonprofits)
+- [Sales](https://claude.com/solutions/sales)
 - [Small business](https://claude.com/solutions/small-business)
 
 ### Claude Platform
@@ -117,8 +123,9 @@ Learn more about Anthropic’s expanded presence in India [here](https://www.ant
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
+- [Developer blog](https://claude.dev)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
 - [Plugins](https://claude.com/plugins)
@@ -130,7 +137,7 @@ Learn more about Anthropic’s expanded presence in India [here](https://www.ant
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -142,6 +149,7 @@ Learn more about Anthropic’s expanded presence in India [here](https://www.ant
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

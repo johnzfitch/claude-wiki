@@ -2,7 +2,7 @@
 title: "MCP Apps - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/extensions/apps/overview"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:41Z"
+fetched_at: "2026-09-03T06:26:56Z"
 tags: ["mcp"]
 ---
 

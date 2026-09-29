@@ -2,7 +2,7 @@
 title: "Update External Key - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/external_keys/update"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:40:04Z"
+fetched_at: "2026-09-10T06:42:59Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fadmin%2Fexternal_keys%2Fupdate)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,96 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,22 +160,28 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
+Create Enrollment URL
 
 
 Webhooks
+
+
+Unwrap
+
+
+Parse Unverified
 
 
 Admin
@@ -182,9 +192,9 @@ Invites
 
 Users
 
-RBAC Groups
+RBAC Groups
 
-RBAC Roles
+RBAC Roles
 
 Workspaces
 
@@ -193,22 +203,22 @@ API Keys
 External Keys
 
 
-Create External Key
+Create External Key
 
 
-List External Keys
+List External Keys
 
 
-Get External Key
+Get External Key
 
 
-Update External Key
+Update External Key
 
 
-Delete External Key
+Delete External Key
 
 
-Validate External Key
+Validate External Key
 
 Usage Report
 
@@ -245,37 +255,37 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Update
-
+Copy page
 
 
 
+1.  [API reference](/docs/en/api/http)
+2.  [Admin](/docs/en/api/http/admin)
+3.  [External Keys](/docs/en/api/http/admin/external_keys)
+
 # Update External Key
 
-POST/v1/organizations/external_keys/{external_key_id}
+POST/v1/organizations/external_keys/{external_key_id}
 
 Partially update an external key config. Omitted fields are left unchanged.
 
 `display_name` is always editable. `geo` and `provider_config` cannot be changed once any workspace references this config, because previously encrypted data requires the original key identity to decrypt.
 
-##### Path ParametersExpand Collapse 
+##### Path parameters
+
+
 
 external_key_id: string
 
@@ -283,29 +293,31 @@ external_key_id: string
 
 ID of the External Key.
 
-[](#update.external_key_id)
+maxLength2048
 
-##### Body ParametersJSONExpand Collapse 
+##### Body
 
-display_name: optional string
+
+
+display_name: optional string or null
 
 
 
 Human-friendly display name.
 
-[](#update.display_name)
+maxLength255
 
-geo: optional "us"
+minLength1
+
+geo: optional "us" or null
 
 
 
 Data residency geo. Only `us` is supported.
 
-[](#update.geo)
-
 
 
-provider_config: optional object { kms_arn, type, region, role_arn } or object { key_name, type } or object { key_name, tenant_id, type, 2 more }
+provider_config: optional object{ kms_arn, type, region, role_arn } or object{ key_name, type } or object{ key_name, tenant_id, type, 2 more } or null
 
 
 
@@ -315,45 +327,39 @@ One of the following:
 
 
 
-Aws object { kms_arn, type, region, role_arn }
+Aws object{ kms_arn, type, region, role_arn }
 
 
+
+
 
 kms_arn: string
 
 
 
-Full ARN of the AWS KMS key.
+Full ARN of the AWS KMS key. On Claude Platform on AWS the key must be a single-Region key in your organization's own AWS account; cross-account keys, multi-Region keys, and alias ARNs are rejected.
 
-[](#update.provider_config%5B0%5D.kms_arn)
+maxLength2048
 
 type: "aws"
 
 
 
-[](#update.provider_config%5B0%5D.type)
-
-region: optional string
+region: optional string or null
 
 
 
-AWS region. Derived from kms_arn if omitted.
+AWS region. Derived from `kms_arn` if omitted.
 
-[](#update.provider_config%5B0%5D.region)
-
-role_arn: optional string⁠Deprecated
+role_arn: optional string or null⁠Deprecated
 
 
 
-IAM role ARN. Deprecated — Anthropic reaches the KMS key via a managed intermediate role; this field is ignored.
-
-[](#update.provider_config%5B0%5D.role_arn)
-
-[](#update.provider_config%5B0%5D)
+IAM role ARN. Deprecated — Anthropic reaches the KMS key through its own intermediate role (or, on Claude Platform on AWS, with credentials AWS issues for the Workspace); this field is ignored.
 
 
 
-Gcp object { key_name, type }
+Gcp object{ key_name, type }
 
 
 
@@ -363,19 +369,13 @@ key_name: string
 
 Full resource name of the Cloud KMS key.
 
-[](#update.provider_config%5B1%5D.key_name)
-
 type: "gcp"
 
 
 
-[](#update.provider_config%5B1%5D.type)
-
-[](#update.provider_config%5B1%5D)
-
 
 
-Azure object { key_name, tenant_id, type, 2 more }
+Azure object{ key_name, tenant_id, type, 2 more }
 
 
 
@@ -387,43 +387,29 @@ key_name: string
 
 Name of the key within the vault.
 
-[](#update.provider_config%5B2%5D.key_name)
-
 tenant_id: string
 
 
 
 Azure AD tenant ID.
 
-[](#update.provider_config%5B2%5D.tenant_id)
-
 type: "azure"
 
 
-
-[](#update.provider_config%5B2%5D.type)
 
 vault_uri: string
 
 
 
-Key Vault data-plane URI — https://\<vault-name\>.vault.azure.net or https://\<hsm-name\>.managedhsm.azure.net.
+Key Vault data-plane URI — `https://{vault-name}.vault.azure.net` or `https://{hsm-name}.managedhsm.azure.net`.
 
-[](#update.provider_config%5B2%5D.vault_uri)
-
-client_id: optional string
+client_id: optional string or null
 
 
 
 Azure AD application (client) ID. Omit to use Anthropic's multitenant app. Provide only if using a single-tenant app registration in the customer's directory.
 
-[](#update.provider_config%5B2%5D.client_id)
-
-[](#update.provider_config%5B2%5D)
-
-[](#update.provider_config)
-
-##### ReturnsExpand Collapse 
+##### Returns
 
 id: string
 
@@ -431,21 +417,57 @@ id: string
 
 Identifier of the external key config. A tagged ID prefixed `ekey_`, or — for organizations on the Claude Platform on AWS — the AWS KMS key ARN.
 
-[](#external_key_update_response.id)
+
+
+attachment: object{ type } or object{ type }
+
+
+
+Whether any workspace uses this config to encrypt its data — counting live and archived workspaces (an archived workspace's data remains encrypted under the config), excluding deleted ones. Only an attached config is used by the encryption path; an `unattached` config is inert and can be deleted.
+
+One of the following:
+
+
+
+Attached object{ type }
+
+
+
+
+
+type: "attached"
+
+
+
+defaultattached
+
+
+
+Unattached object{ type }
+
+
+
+
+
+type: "unattached"
+
+
+
+defaultunattached
+
+
 
 created_at: string
 
 
 
-[](#external_key_update_response.created_at)
+formatdate-time
 
-display_name: string
+display_name: string or null
 
 
 
 Human-friendly display name. Null if none was set.
-
-[](#external_key_update_response.display_name)
 
 geo: string
 
@@ -453,11 +475,9 @@ geo: string
 
 Data residency geo. Selects which regional validator handles this key's encrypt/decrypt roundtrips.
 
-[](#external_key_update_response.geo)
-
 
 
-provider_config: object { kms_arn, type, region, role_arn } or object { key_name, type } or object { key_name, tenant_id, type, 2 more }
+provider_config: object{ kms_arn, type, region, role_arn } or object{ key_name, type } or object{ key_name, tenant_id, type, 2 more }
 
 
 
@@ -467,45 +487,39 @@ One of the following:
 
 
 
-Aws object { kms_arn, type, region, role_arn }
+Aws object{ kms_arn, type, region, role_arn }
 
 
+
+
 
 kms_arn: string
 
 
 
-Full ARN of the AWS KMS key.
+Full ARN of the AWS KMS key. On Claude Platform on AWS the key must be a single-Region key in your organization's own AWS account; cross-account keys, multi-Region keys, and alias ARNs are rejected.
 
-[](#external_key_update_response.provider_config%5B0%5D.kms_arn)
+maxLength2048
 
 type: "aws"
 
 
 
-[](#external_key_update_response.provider_config%5B0%5D.type)
-
-region: optional string
+region: optional string or null
 
 
 
-AWS region. Derived from kms_arn if omitted.
+AWS region. Derived from `kms_arn` if omitted.
 
-[](#external_key_update_response.provider_config%5B0%5D.region)
-
-role_arn: optional string⁠Deprecated
+role_arn: optional string or null⁠Deprecated
 
 
 
-IAM role ARN. Deprecated — Anthropic reaches the KMS key via a managed intermediate role; this field is ignored.
-
-[](#external_key_update_response.provider_config%5B0%5D.role_arn)
-
-[](#external_key_update_response.provider_config%5B0%5D)
+IAM role ARN. Deprecated — Anthropic reaches the KMS key through its own intermediate role (or, on Claude Platform on AWS, with credentials AWS issues for the Workspace); this field is ignored.
 
 
 
-Gcp object { key_name, type }
+Gcp object{ key_name, type }
 
 
 
@@ -515,19 +529,13 @@ key_name: string
 
 Full resource name of the Cloud KMS key.
 
-[](#external_key_update_response.provider_config%5B1%5D.key_name)
-
 type: "gcp"
 
 
 
-[](#external_key_update_response.provider_config%5B1%5D.type)
-
-[](#external_key_update_response.provider_config%5B1%5D)
-
 
 
-Azure object { key_name, tenant_id, type, 2 more }
+Azure object{ key_name, tenant_id, type, 2 more }
 
 
 
@@ -537,55 +545,47 @@ key_name: string
 
 Name of the key within the vault.
 
-[](#external_key_update_response.provider_config%5B2%5D.key_name)
-
 tenant_id: string
 
 
 
 Azure AD tenant ID.
 
-[](#external_key_update_response.provider_config%5B2%5D.tenant_id)
-
 type: "azure"
 
 
-
-[](#external_key_update_response.provider_config%5B2%5D.type)
 
 vault_uri: string
 
 
 
-Key Vault data-plane URI — https://\<vault-name\>.vault.azure.net or https://\<hsm-name\>.managedhsm.azure.net.
+Key Vault data-plane URI — `https://{vault-name}.vault.azure.net` or `https://{hsm-name}.managedhsm.azure.net`.
 
-[](#external_key_update_response.provider_config%5B2%5D.vault_uri)
-
-client_id: optional string
+client_id: optional string or null
 
 
 
 Azure AD application (client) ID. Omit to use Anthropic's multitenant app. Provide only if using a single-tenant app registration in the customer's directory.
 
-[](#external_key_update_response.provider_config%5B2%5D.client_id)
-
-[](#external_key_update_response.provider_config%5B2%5D)
-
-[](#external_key_update_response.provider_config)
+
 
 type: "external_key"
 
 
 
-[](#external_key_update_response.type)
+defaultexternal_key
+
+
 
 updated_at: string
 
 
 
-[](#external_key_update_response.updated_at)
+formatdate-time
 
-Update External Key
+Update External Key
+
+cURL
 
 
 
@@ -593,7 +593,7 @@ Update External Key
 curl https://api.anthropic.com/v1/organizations/external_keys/$EXTERNAL_KEY_ID \
     -H 'Content-Type: application/json' \
     -H 'anthropic-version: 2023-06-01' \
-    -H "Authorization: Bearer $ANTHROPIC_OAUTH_TOKEN" \
+    -H "Authorization: Bearer $ANTHROPIC_AUTH_TOKEN" \
     -d '{}'
 ```
 
@@ -604,6 +604,9 @@ Response 200
 ```python
 {
   "id": "ekey_01SDCCSbTxrXDpWc1phhtcfK",
+  "attachment": {
+    "type": "attached"
+  },
   "created_at": "2024-10-30T23:58:27.427722Z",
   "display_name": "prod-us-key",
   "geo": "us",
@@ -627,6 +630,9 @@ Response 200
 ```python
 {
   "id": "ekey_01SDCCSbTxrXDpWc1phhtcfK",
+  "attachment": {
+    "type": "attached"
+  },
   "created_at": "2024-10-30T23:58:27.427722Z",
   "display_name": "prod-us-key",
   "geo": "us",

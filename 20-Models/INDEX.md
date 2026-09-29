@@ -1,16 +1,17 @@
 # Models
 
-*219 documents*
+*279 documents*
 
 
 - [Choosing the right model - Claude Platform Docs](about-claude-models-choosing-a-model-38ebff0fff.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Choosing the right model](about-claude-models-choosing-a-model-84da495643.md) - Selecting the optimal Claude model for your application involves balancing three key considerations: capabilities, speed, and cost. This guide helps y
 - [Choosing the right model - Claude API Docs](about-claude-models-choosing-a-model.md) - Selecting the optimal Claude model for your application involves balancing three key considerations: capabilities, speed, and cost. This guide helps y
 - [Before (Claude Sonnet 3.7)](about-claude-models-migrating-to-claude-4.md) - This guide covers two key migration paths to Claude 4.5 models:
-- [Migration guide - Claude Platform Docs](about-claude-models-migration-guide-4311c39782.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Migration guides - Claude Platform Docs](about-claude-models-migration-guide-4311c39782.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Migration guide](about-claude-models-migration-guide-6c790f7501.md) - Guide for migrating to Claude Opus 4.7 and Claude 4.6 models from previous Claude versions
 - [Migration guide - Claude API Docs](about-claude-models-migration-guide.md) - Guide for migrating to Claude 4.6 models from previous Claude versions
 - [Model IDs and versioning - Claude Platform Docs](about-claude-models-model-ids-and-versions-9332683246.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Optimizing for cost and intelligence - Claude Platform Docs](about-claude-models-optimizing-for-cost-and-intelligence-5492096e7c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Models overview - Claude Platform Docs](about-claude-models-overview-2536dd9f05.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Models overview](about-claude-models-overview-2bbf09ff82.md) - Claude is a family of state-of-the-art large language models developed by Anthropic. This guide introduces the available models and compares their per
 - [Models overview - Claude Platform Docs](about-claude-models-overview-a06a84876f.md) - - [Managed Agents](/docs/en/managed-agents/overview)
@@ -20,8 +21,8 @@
 - [What's new in Claude Opus 4.7](about-claude-models-whats-new-claude-4-7-3e4989177d.md) - Overview of new features, breaking changes, and behavior changes in Claude Opus 4.7.
 - [What's new in Claude Opus 5 - Claude Platform Docs](about-claude-models-whats-new-opus-5-855446aa29.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [What's new in Claude Sonnet 5 - Claude Platform Docs](about-claude-models-whats-new-sonnet-5-d31213b17d.md) - - [Managed Agents](/docs/en/managed-agents/overview)
-- [Adapt to new model personas after deprecations | Claude Help Center](adapt-to-new-model-personas-after-deprecations-e76aacc6b0.md) - **[Model deprecations and retirements](https://docs.claude.com/en/docs/about-claude/model-deprecations#model-status)** are routine parts of the model 
-- [Adapt to new model personas after deprecations | Claude Help Center](adapting-to-new-model-personas-after-deprecations-24851bca6e.md) - **[Model deprecations and retirements](https://docs.claude.com/en/docs/about-claude/model-deprecations#model-status)** are routine parts of the model 
+- [Adapt to new model personas after deprecations | Claude Help Center](adapt-to-new-model-personas-after-deprecations-e76aacc6b0.md) - July 10, 2026
+- [Adapt to new model personas after deprecations | Claude Help Center](adapting-to-new-model-personas-after-deprecations-24851bca6e.md) - July 10, 2026
 - [Adapting to new model personas after deprecations | Claude Help Center](adapting-to-new-model-personas-after-deprecations.md) - 4.  Adapting to new model personas after deprecations
 - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill-195bd9fb41.md) - An open-source Agent Skill that provides Claude with up-to-date API reference material, SDK documentation, and best practices for building application
 - [Claude API skill - Claude Platform Docs](agents-and-tools-agent-skills-claude-api-skill-a5f702dd17.md) - - [Managed Agents](/docs/en/managed-agents/overview)
@@ -76,6 +77,9 @@
 - [Api Go Models Retrieve 313338Efb3](api-go-models-retrieve-313338efb3.md) - `client.Models.Get(ctx, modelID, query) (*ModelInfo, error)`
 - [Get a Model - Claude API Reference](api-go-models-retrieve.md) - client.Models.Get(ctx, modelID, query) (\*[ModelInfo](/docs/en/api/models#model_info), error)
 - [Models - Claude API Reference](api-go-models.md) - client.Models.List(ctx, params) (\*Page\[[ModelInfo](/docs/en/api/models#model_info)\], error)
+- [Models - Claude API Reference](api-http-beta-models-634c8759da.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [List Models - Claude API Reference](api-http-beta-models-list-388647d0ba.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Get a Model - Claude API Reference](api-http-beta-models-retrieve-637442e047.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Models](api-java-beta-models-64a1025640.md) - `ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
 - [Api Java Beta Models List 814D420B34](api-java-beta-models-list-814d420b34.md) - `ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
 - [List Models - Claude API Reference](api-java-beta-models-list.md) - ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
@@ -166,6 +170,7 @@
 - [Applying Claude Opus 4.5&#x27;s strengths to your everyday work | Claude by Anthropic](applying-claude-opus-4-5-s-strengths-to-your-everyday-work-2a9028ba10.md) - Learn how Claude Opus 4.5 excels at complex multi-step work including long conversations, polished document creation, and sophisticated coding.
 - [Applying Claude Opus 4.5&#x27;s strengths to your everyday work | Claude](applying-claude-opus-4-5-s-strengths-to-your-everyday-work.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
 - [Bd2A28D2535Bfb0494Cc8E2A3Bf135D2E7523226 Model Card Claude 2 Pdf 48080Cce0D](bd2a28d2535bfb0494cc8e2a3bf135d2e7523226-model-card-claude-2-pdf-48080cce0d.md) - Model Card and Evaluations for Claude Models
+- [Claude Code Analytics API - Claude Platform Docs](build-with-claude-claude-code-analytics-api-ad04ca4f32.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Claude Code Analytics API](build-with-claude-claude-code-analytics-api-f78828c053.md) - Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
 - [Claude Code Analytics API - Claude API Docs](build-with-claude-claude-code-analytics-api.md) - Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
 - [Claude in Amazon Bedrock (Opus 4.7 and later) - Claude Platform Docs](build-with-claude-claude-in-amazon-bedrock-f34fd90d33.md) - - [Managed Agents](/docs/en/managed-agents/overview)
@@ -183,42 +188,97 @@
 - [Can I use my Outputs to train an AI model? | Claude Help Center](can-i-use-my-outputs-to-train-an-ai-model-4a7108e3bc.md) - March 16, 2026
 - [Can I use my Outputs to train an AI model? | Claude Help Center](can-i-use-my-outputs-to-train-an-ai-model.md) - 3.  Can I use my Outputs to train an AI model?
 - [Change Breakdown: 2.1.42 vs 2.1.41](change-breakdown-2.1.42-vs-2.1.41.md) - - Most differences are minifier/symbol churn.
-- [Claude Code model configuration | Claude Help Center](claude-code-model-configuration-2eca096d89.md) - This guide shows you three ways to change which Claude model you're using with Claude Code: the quick `/model` command for instant changes, the `--mod
+- [Claude Code usage | Claude Platform](claude-code-49a7f965aa.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
+- [Claude Code model configuration | Claude Help Center](claude-code-model-configuration-2eca096d89.md) - Updated today
 - [Claude Code model configuration | Claude Help Center](claude-code-model-configuration.md) - This guide shows you three ways to change which Claude model you're using with Claude Code: the quick `/model` command for instant changes, the `--mod
 - [Claude Code on Amazon Bedrock - Claude Code Docs](claude-code-on-amazon-bedrock-claude-code-docs-435e92efd0.md) - Learn about configuring Claude Code through Amazon Bedrock, including setup, IAM configuration, and troubleshooting.
 - [Claude Code on Google Vertex AI - Claude Code Docs](claude-code-on-google-vertex-ai-claude-code-docs-2acd050a7a.md) - Learn about configuring Claude Code through Google Vertex AI, including setup, IAM configuration, and troubleshooting.
 - [Claude Code on Microsoft Foundry - Claude Code Docs](claude-code-on-microsoft-foundry-claude-code-docs-ee35d755a6.md) - Learn about configuring Claude Code through Microsoft Foundry, including setup, configuration, and troubleshooting.
+- [Managed settings | Claude Code | Claude Platform](claude-code-settings-7c217351f0.md) - Create agents and applications with frontier Claude models and managed agent infrastructure.
 - [Claude Code Binary Diff: 2.1.42 → 2.1.50](claude-diff-2142-vs-2150.md) - **Method:** ELF section analysis + Bun SFE bundle string extraction
 - [Claude Mythos Preview](claude-mythos-preview.md) - Claude Mythos Preview is a new general-purpose language model announced April 7, 2026, that is strikingly capable at computer security tasks. It is no
 - [Claude Binary Reverse Engineering Diff Report](claude-pyghidra-diff-2.1.50-2.1.55-2.1.59.md) - Scope: `/home/zack/.local/share/claude/versions/2.1.50` -> `/home/zack/.local/share/claude/versions/2.1.55` -> `/home/zack/.local/share/claude/version
-- [Covered Models | Claude Help Center](covered-models-9b5d036943.md) - July 1, 2026
+- [Covered Models | Claude Help Center](covered-models-9b5d036943.md) - Copy for LLM
 - [Create professional results across tools with Claude Sonnet 4.5 | Claude by Anthropic](create-professional-results-across-tools-with-claude-sonnet-4-5-5a84b3acfa.md) - Use Claude Sonnet 4.5's code execution and file creation to build professional presentations, spreadsheets, and documents efficiently.
 - [Create professional results across tools with Claude Sonnet 4.5 | Claude](create-professional-results-across-tools-with-claude-sonnet-4-5.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Data retention practices for Covered Models | Claude Help Center](data-retention-practices-for-covered-models-98f93eb2a2.md) - To ensure we’re responsibly deploying covered models, **we are requiring limited data retention and review as part of our safety work. Prompts submitt
-- [Data retention practices for Covered Models | Claude Help Center](data-retention-practices-for-mythos-class-models-1ff23ce16e.md) - To ensure we’re responsibly deploying covered models, **we are requiring limited data retention and review as part of our safety work. Prompts submitt
+- [Data retention practices for Covered Models | Claude Help Center](data-retention-practices-for-covered-models-98f93eb2a2.md) - Copy for LLM
+- [Data retention practices for Covered Models | Claude Help Center](data-retention-practices-for-mythos-class-models-1ff23ce16e.md) - Copy for LLM
 - [De8Ba9B01C9Ab7Cbabf5C33B80B7Bbc618857627 Model Card Claude 3 Pdf 1B2Bfa31A5](de8ba9b01c9ab7cbabf5c33b80b7bbc618857627-model-card-claude-3-pdf-1b2bfa31a5.md) - The Claude 3 Model Family: Opus, Sonnet, Haiku
 - [DELTA: Claude Code 2.1.59 → 2.1.70](delta.md) - **Analysis date:** 2026-03-06
+- [Fed9Cc193A14B84131812372D8D5857F8F304C52 Modelcard Claudeopus4 Pdf E9Ed793Fc4](fed9cc193a14b84131812372d8d5857f8f304c52-modelcard-claudeopus4-pdf-e9ed793fc4.md) - This addendum to our Claude 3 Model Card describes Claude 3.5 Sonnet, a new model which outperforms
 - [Finetuning Claude 3 Haiku on Bedrock](finetuning-on-bedrock.md) - In this notebook, we\'ll walk you through the process of finetuning
 - [Getting the most out of Sonnet 4.5 in Claude.ai | Claude by Anthropic](getting-the-most-out-of-sonnet-4-5-in-claude-ai-fc1a455125.md) - Maximize Claude Sonnet 4.5's capabilities for creating professional documents, writing code, conducting research, and completing complex tasks.
 - [Getting the most out of Sonnet 4.5 in Claude.ai | Claude](getting-the-most-out-of-sonnet-4-5-in-claude-ai.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
 - [Claude Code on Google Vertex AI](google-vertex-ai.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-- [Change the model, effort, and thinking settings | Claude Help Center](how-can-i-change-the-model-version-that-i-m-chatting-with-41d8bba7a6.md) - The model menu next to the send button controls three settings: which Claude model you're chatting with, how much effort it puts into each response, a
+- [Change the model, effort, and thinking settings | Claude Help Center](how-can-i-change-the-model-version-that-i-m-chatting-with-41d8bba7a6.md) - Updated today
 - [LLM gateway configuration](llm-gateway.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 - [Claude Code Analytics API - Claude Platform Docs](manage-claude-claude-code-analytics-api-f4b723bc91.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Claude Code on Microsoft Foundry](microsoft-foundry.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 - [Model availability in Claude for Government | Claude Help Center](model-availability-in-claude-for-government-c3cffdee09.md) - April 10, 2026
 - [Model configuration](model-config.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 - [Model deprecations](model-deprecations.md)
+- [Migrating to Claude Fable 5.1 and Claude Mythos 5.1 - Claude Platform Docs](models-fable-5-1-migration-guide-c7c8c40275.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Fable 5.1 - Claude Platform Docs](models-fable-5-1-overview-ad9aa6f1b8.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [What's new in Claude Fable 5.1 - Claude Platform Docs](models-fable-5-1-whats-new-fable-5-1-c7eceee3e7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Migrating to Claude Mythos 5 and Claude Fable 5 - Claude Platform Docs](models-fable-5-migration-guide-10364cb284.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Fable 5 - Claude Platform Docs](models-fable-5-overview-8872f2abd0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Migrating to Claude Haiku 4.5 - Claude Platform Docs](models-haiku-4-5-migration-guide-3254a8c4a9.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Haiku 4.5 - Claude Platform Docs](models-haiku-4-5-overview-e1910c5126.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Mythos 5.1 - Claude Platform Docs](models-mythos-5-1-overview-f4e22e5864.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Mythos 5 - Claude Platform Docs](models-mythos-5-overview-c4974ae533.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Opus 4.5 - Claude Platform Docs](models-opus-4-5-overview-7e389b0b8a.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Opus 4.6 - Claude Platform Docs](models-opus-4-6-overview-aa021366c2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Opus 4.7 - Claude Platform Docs](models-opus-4-7-overview-bcdb1dab53.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Opus 4.8 - Claude Platform Docs](models-opus-4-8-overview-6082558954.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Migrating to Claude Opus 5.5 - Claude Platform Docs](models-opus-5-5-migration-guide-b5430c116c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Opus 5.5 - Claude Platform Docs](models-opus-5-5-overview-4d070c5c8c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [What's new in Claude Opus 5.5 - Claude Platform Docs](models-opus-5-5-whats-new-opus-5-5-71b2a432a3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Migrating to Claude Opus 5 - Claude Platform Docs](models-opus-5-migration-guide-28359efd97.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Opus 5 - Claude Platform Docs](models-opus-5-overview-8644e982e7.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [What's new in Claude Opus 5 - Claude Platform Docs](models-opus-5-whats-new-opus-5-4d6cfe8346.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Models overview - Claude Platform Docs](models-overview-f3655eaf14.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Sonnet 4.5 - Claude Platform Docs](models-sonnet-4-5-overview-cc2cddad67.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Sonnet 4.6 - Claude Platform Docs](models-sonnet-4-6-overview-cbaf022d46.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Migrating to Claude Sonnet 5.5 - Claude Platform Docs](models-sonnet-5-5-migration-guide-51113b1418.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Sonnet 5.5 - Claude Platform Docs](models-sonnet-5-5-overview-752375ff0c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [What's new in Claude Sonnet 5.5 - Claude Platform Docs](models-sonnet-5-5-whats-new-sonnet-5-5-a84a4ae6e3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Migrating to Claude Sonnet 5 - Claude Platform Docs](models-sonnet-5-migration-guide-6953741a40.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Sonnet 5 - Claude Platform Docs](models-sonnet-5-overview-b09669c7cc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [What's new in Claude Sonnet 5 - Claude Platform Docs](models-sonnet-5-whats-new-sonnet-5-75a11d1965.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Opus 1M Context Migration — Implementation Details](opus-1m-migration.md) - **Feature Flag**: `tengu_cobalt_compass`
 - [Parallel tool calls on Claude 3.7 Sonnet {#parallel-tool-calls-on-claude-37-sonnet}](parallel-tools.md) - :::
 - [Prompt / Env / Model Change Report](prompt-env-model-changes-2.1.50-2.1.55-2.1.59.md) - Scope: `2.1.50 -> 2.1.55 -> 2.1.59`
 - [Summarizing Web Page Content with Claude 3 Haiku](read-web-pages-with-haiku.md) - In this recipe, we\'ll learn how to fetch the content of a web page
-- [Real-time cyber safeguards on Claude Opus and Sonnet | Claude Help Center](real-time-cyber-safeguards-on-claude-opus-and-sonnet-3e3f54fb4c.md) - **Note**: This article applies only to Opus and Sonnet class models.
+- [Real-time cyber safeguards on Claude Opus and Sonnet | Claude Help Center](real-time-cyber-safeguards-on-claude-opus-and-sonnet-3e3f54fb4c.md) - Updated today
+- [Claude Fable 5.1 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-fable-5-1-b08f5506b2.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Fable 5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-fable-5-d044576b42.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Haiku 3 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-haiku-3-38c8ef3485.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Haiku 3.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-haiku-3-5-d1f461f470.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Haiku 4.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-haiku-4-5-39a47c5388.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Opus 3 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-3-c862b1ffd6.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Opus 4.1 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-1-f85803be64.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Opus 4 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-30feefb979.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Opus 4.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-5-3f2ab83d1c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Opus 4.6 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-6-70b9556df0.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Opus 4.7 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-7-09368196d3.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Opus 4.8 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-8-70056ecf74.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Opus 5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-5-11cb43f7b5.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Opus 5.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-5-5-3e045f5252.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Sonnet 3.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-3-5-f493d61046.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Sonnet 3.7 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-3-7-ff147a2308.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Sonnet 4 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-4-1c949476fd.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Sonnet 4.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-4-5-610402ea32.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Sonnet 4.6 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-4-6-a840e2344c.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Sonnet 5.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-5-5-d005db5abc.md) - - [Managed Agents](/docs/en/managed-agents/overview)
+- [Claude Sonnet 5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-5-77a6f8b786.md) - - [Managed Agents](/docs/en/managed-agents/overview)
 - [Responsible Use of Anthropic&#x27;s Models: Guidelines for Organizations Serving Minors | Claude Help Center](responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minor-758a9593b9.md) - March 16, 2026
-- [Set a default model for your organization | Claude Help Center](set-a-default-model-for-your-organization-98e8ab7944.md) - This guide explains how to choose the Claude model that new conversations start on across your organization. You can set one default for your whole or
+- [Set a default model for your organization | Claude Help Center](set-a-default-model-for-your-organization-98e8ab7944.md) - Copy for LLM
 - [Keep Claude in character with role prompting and prefilling - Claude API Docs](test-and-evaluate-strengthen-guardrails-keep-claude-in-character.md) - This guide provides actionable tips to keep Claude in character, even during long, complex interactions.
 - [Claude Help Center](using-claude-for-financial-services-for-analysis-and-modeling.md) - Search for articles...
 - [What AWS Regions are Claude models available in Amazon Bedrock? | Claude Help Center](what-aws-regions-are-claude-models-available-in-amazon-bedrock-ff32dc1fab.md) - March 16, 2026
 - [What AWS Regions are Claude models available in Amazon Bedrock? | Claude Help Center](what-aws-regions-are-claude-models-available-in-amazon-bedrock.md) - 3.  What AWS Regions are Claude models available in Amazon Bedrock?
-- [Why Claude switched models in your conversation with Fable 5 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-fable-5-2d51d90ee2.md) - July 1, 2026
-- [Why Claude switched models in your conversation with Opus 5 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-opus-5-f79cee93bc.md) - This article explains why a request might fallback on Claude Opus 5, what happens when your conversation switches to another model, and how to manage 
+- [Why Claude switched models in your conversation with Fable 5 or Fable 5.1 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-fable-5-2d51d90ee2.md) - Copy for LLM
+- [Why Claude switched models in your conversation with Fable 5 or Fable 5.1 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1-1ebc705736.md) - Copy for LLM
+- [Why Claude switched models in your conversation with Opus 5 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-opus-5-f79cee93bc.md) - August 6, 2026
+- [Why Claude switched models in your conversation with Opus 5 or Opus 5.5 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5-ee0f076a8d.md) - Copy for LLM
+- [Why Claude switched models in your conversation with Sonnet 5.5 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-sonnet-5-5-5cc41f0b88.md) - Updated today

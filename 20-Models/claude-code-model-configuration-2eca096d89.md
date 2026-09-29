@@ -2,12 +2,15 @@
 title: "Claude Code model configuration | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11940350-claude-code-model-configuration"
 category: "20-Models"
-fetched_at: "2026-08-02T05:41:33Z"
+fetched_at: "2026-09-29T06:31:21Z"
 tags: ["claude-code"]
 ---
 
 # Claude Code model configuration
 
+Updated today
+
+Copy for LLM
 
 This guide shows you three ways to change which Claude model you're using with Claude Code: the quick `/model` command for instant changes, the `--model` flag for one-time session changes, and environment variables to set your preferred model as the permanent default.
 
@@ -24,6 +27,12 @@ The simplest way to change models is to use the /model command directly within C
 **Note:** You can check your current model anytime by running `/status` in Claude Code.
 
 ## Supported models
+
+- Sonnet 5.5, `claude-sonnet-5-5`
+
+- Opus 5.5, `claude-opus-5-5`
+
+- Fable 5.1, `claude-fable-5-1`
 
 - Opus 5, `claude-opus-5`
 
@@ -52,6 +61,12 @@ Use the `--model` flag when starting Claude Code.
 1.  Start a fresh Terminal session.
 
 2.  Enter the following commands (depending on the model you’d like to use for that session):
+
+    - **For Sonnet 5.5**: `claude --model claude-sonnet-5-5`
+
+    - **For Opus 5.5**: `claude --model claude-opus-5-5`
+
+    - **For Fable 5.1**: `claude --model claude-fable-5-1`
 
     - **For Opus 5**: `claude --model claude-opus-5`
 
@@ -85,6 +100,12 @@ Use the `--model` flag when starting Claude Code.
 
 ### For ZSH users (macOS)
 
+- Sonnet 5.5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-5-5"' >> ~/.zshrc`
+
+- Opus 5.5: `echo 'export ANTHROPIC_MODEL="claude-opus-5-5"' >> ~/.zshrc`
+
+- Fable 5.1: `echo 'export ANTHROPIC_MODEL="claude-fable-5-1"' >> ~/.zshrc`
+
 - Opus 5: `echo 'export ANTHROPIC_MODEL="claude-opus-5"' >> ~/.zshrc`
 
 - Sonnet 5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-5"' >> ~/.zshrc`
@@ -106,6 +127,12 @@ Use the `--model` flag when starting Claude Code.
 - Sonnet 4.5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-5-20250929"' >> ~/.zshrc`
 
 ### For BASH users (Linux)
+
+- Sonnet 5.5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-5-5"' >> ~/.bashrc`
+
+- Opus 5.5: `echo 'export ANTHROPIC_MODEL="claude-opus-5-5"' >> ~/.bashrc`
+
+- Fable 5.1: `echo 'export ANTHROPIC_MODEL="claude-fable-5-1"' >> ~/.bashrc`
 
 - Opus 5: `echo 'export ANTHROPIC_MODEL="claude-opus-5"' >> ~/.bashrc`
 

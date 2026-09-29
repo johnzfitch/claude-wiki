@@ -2,13 +2,14 @@
 title: "Microsoft Entra ID SSO/SCIM email mismatch | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917829"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:46Z"
+fetched_at: "2026-09-29T06:31:42Z"
 ---
 
 # Microsoft Entra ID SSO/SCIM email mismatch
 
 March 24, 2026
 
+Copy for LLM
 
 Claude uses email as the primary identifier to match SSO logins to provisioned seats. In Microsoft Entra ID, SCIM provisioning and SSO authentication are configured in *separate places* and can pull email from different user attributes—causing a mismatch that blocks access. This guide walks through how to identify the problem, fix the attribute mapping, and clean up any side effects.
 

@@ -2,8 +2,8 @@
 title: "Extensions Overview - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/extensions/overview"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:18Z"
-tags: ["mcp"]
+fetched_at: "2026-09-14T06:26:24Z"
+tags: ["mcp", "skills"]
 ---
 
 ## On this page
@@ -13,6 +13,7 @@ tags: ["mcp"]
   - [MCP Authorization Extensions](#mcp-authorization-extensions)
   - [MCP Apps](#mcp-apps)
   - [MCP Tasks](#mcp-tasks)
+  - [Skills over MCP](#skills-over-mcp)
 - [Experimental Extensions](#experimental-extensions)
   - [Ground Rules](#ground-rules)
   - [Graduation to Official Status](#graduation-to-official-status)
@@ -86,6 +87,21 @@ MCP Tasks
 | Extension                               | Description                                                                                                   |
 |-----------------------------------------|---------------------------------------------------------------------------------------------------------------|
 | [MCP Tasks](/extensions/tasks/overview) | Asynchronous task execution for long-running operations, with polling, mid-flight input, and durable handles. |
+
+
+[​](#skills-over-mcp)
+
+Skills over MCP
+
+## modelcontextprotocol/ext-skills
+
+Discover and read Agent Skills from MCP servers.
+
+| Extension                                      | Description                                                                     |
+|------------------------------------------------|---------------------------------------------------------------------------------|
+| [Skills over MCP](/extensions/skills/overview) | Discover workflow instructions and read supporting files through MCP resources. |
+
+See the [Skills overview](/extensions/skills/overview) to get started and the [client matrix](/extensions/client-matrix) for implementation support.
 
 
 [​](#experimental-extensions)

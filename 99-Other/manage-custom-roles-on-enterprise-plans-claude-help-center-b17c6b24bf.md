@@ -2,12 +2,14 @@
 title: "Manage custom roles on Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13930452"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:18Z"
+fetched_at: "2026-09-29T06:30:44Z"
 tags: ["enterprise"]
 ---
 
 # Manage custom roles on Enterprise plans
 
+
+Copy for LLM
 
 Custom roles are available for Enterprise plan organizations. Owners, Primary Owners, and custom roles with the **Identity & Access** permission set to "Can manage" can go to **[Organization settings \> Roles](https://claude.ai/admin-settings/roles)** to manage custom roles.
 
@@ -18,6 +20,8 @@ Custom roles let you define which features your members can access. Each custom 
 Custom roles work alongside groups. The typical workflow is: create custom roles, assign them to groups, and then set members' roles to “Custom” so their access is governed entirely by the custom roles assigned to their groups.
 
 **Note:** Custom roles only affect members whose role is set to “Custom.” Members with the User, Admin, or Owner roles get their permissions from those roles directly, not from custom roles.
+
+**Note:** With SCIM directory sync and group mappings enabled, each member’s role is owned by the sync. A member whose role was set to “Custom” before group mappings were enabled reverts to their mapped role on the next full sync unless they’re in an IdP group mapped to “Custom.” See **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans#h_05cb172230)**.
 
 ------------------------------------------------------------------------
 
@@ -83,7 +87,7 @@ Roles set to either option pick up new capabilities automatically as they launch
 
 7.  Configure connectors. You can choose Always allow, Needs approval, or Blocked for all connectors, or customize per connector or connector tool.
 
-8.  Configure models. Select which models this role can use, optionally set a maximum effort level per model, and optionally choose a default model for the role.
+8.  Configure models. Select which models this role can use, optionally set a maximum effort level per model, and optionally choose a default model and default effort level for the role.
 
 9.  Click “Save role.”
 
@@ -117,7 +121,7 @@ Custom roles are assigned to groups, not directly to individual members. To assi
 
 4.  Click "Save role."
 
-You can also assign custom roles when creating or editing a group in **[Organization settings \> Groups](http://claude.ai/admin-settings/groups)**. See **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**.
+You can also assign custom roles when creating or editing a group in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. See **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**.
 
 ------------------------------------------------------------------------
 
@@ -175,7 +179,7 @@ Within an area, you grant all of View or all of Manage. You can't grant or restr
 
 ### Available admin permissions
 
-There are seven admin permission areas:
+There are eight admin permission areas:
 
 [TABLE]
 
@@ -263,7 +267,7 @@ Members can’t tell which layer restricted a tool. The message is the same whet
 
 ## Model access
 
-Custom roles also control which Claude models a role can use and the maximum effort level members can select on each one. You set these on the **Models** tab of the role editor, alongside the role's default model.
+Custom roles also control which Claude models a role can use and the maximum effort level members can select on each one. You set these on the **Models** tab of the role editor, alongside the role's default model and default effort level.
 
 The organization-level model setting is the ceiling. A role can't grant a model that's disabled at the organization level. Across a member's roles, model access is additive and effort limits take the highest cap any role allows. Haiku models are always available and can't be disabled.
 

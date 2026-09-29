@@ -2,7 +2,7 @@
 title: "SEP Guidelines - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/sep-guidelines"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:36:36Z"
+fetched_at: "2026-09-29T06:30:22Z"
 tags: ["mcp"]
 ---
 
@@ -33,7 +33,7 @@ tags: ["mcp"]
 - [Transferring SEP Ownership](#transferring-sep-ownership)
 - [Copyright](#copyright)
 
-Propose Changes
+Shaping the Protocol
 
 # SEP Guidelines
 
@@ -93,24 +93,23 @@ SEP Workflow
 
 Step-by-Step Process
 
-To improve your chances of a SEP being accepted:
+**Prior discussion is required.** SEP authors must discuss the idea with the relevant [working or interest group](/community/working-interest-groups) in [Discord](/community/communication#discord) before opening the SEP pull request, and the PR description must link to that discussion (a Discord thread, WG/IG meeting notes, or a GitHub Discussion). A SEP without a linked prior discussion is not accepted. If no relevant group exists, start a conversation in [GitHub Discussions](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions) or the `#general` channel in [Discord](/community/communication#discord) instead. If there is enough interest, it may be worth [creating a new IG or WG](/community/working-interest-groups#creating-an-interest-group). The effort involved in finding sponsors and facilitators is a good signal of whether the idea has sufficient traction.
 
-- **Discuss your idea with the relevant [working or interest group](/community/working-interest-groups) in [Discord](/community/communication#discord) first.** This is the single best way to refine your proposal and build early support.
-- **If no relevant group exists, start a conversation in [GitHub Discussions](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions) or the `#general` channel in [Discord](/community/communication#discord).** If there is enough interest, it may be worth [creating a new IG or WG](/community/working-interest-groups#creating-an-interest-group) — the effort involved in finding sponsors and facilitators is a good signal of whether the idea has sufficient traction, and is still preferable to a cold submission.
-- **Check alignment with [Core Maintainer](/community/governance#roles) priorities and [design principles](/community/design-principles).** Priorities are generally reflected in the [project roadmap](/development/roadmap). Proposals outside current priorities or that conflict with design principles are more likely to face delays or additional friction in the review process.
+To improve your chances of a SEP being accepted, check alignment with [Core Maintainer](/community/governance#roles) priorities and [design principles](/community/design-principles). Priorities are generally reflected in the [project roadmap](/development/roadmap). Proposals outside current priorities or that conflict with design principles are more likely to face delays or additional friction in the review process.
 
-1.  **Draft your SEP** as a markdown file named `0000-your-feature-title.md`, using `0000` as a placeholder. Follow the [SEP format](#sep-format) below.
-2.  **Create a pull request** adding your SEP file to the `seps/` directory in the [specification repository](https://github.com/modelcontextprotocol/modelcontextprotocol).
-3.  **Update the SEP number**: Once your PR is created, rename the file using the PR number (e.g., PR \#1850 becomes `1850-your-feature-title.md`) and update the SEP header.
-4.  **Find a Sponsor**: Tag a Core Maintainer or Maintainer from [the maintainer list](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/MAINTAINERS.md). Choose someone whose area relates to your proposal. Tips:
+1.  **Discuss with the relevant group**: Bring your idea to the matching [working or interest group](/community/working-interest-groups) and refine it there. Keep a link to the discussion (a Discord thread, meeting notes, or a GitHub Discussion) so you can include it in the PR description.
+2.  **Draft your SEP** as a markdown file named `0000-your-feature-title.md`, using `0000` as a placeholder. Follow the [SEP format](#sep-format) below.
+3.  **Create a pull request** adding your SEP file to the `seps/` directory in the [specification repository](https://github.com/modelcontextprotocol/modelcontextprotocol). The repository accepts pull requests from collaborators only.
+4.  **Update the SEP number**: Once your PR is created, rename the file using the PR number (e.g., PR \#1850 becomes `1850-your-feature-title.md`) and update the SEP header.
+5.  **Find a Sponsor**: Tag a Core Maintainer or Maintainer from [the maintainer list](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/MAINTAINERS.md). Choose someone whose area relates to your proposal. Tips:
     - Tag 1-2 relevant maintainers, not everyone
     - Share your PR in the relevant Discord channel
     - If no response after 2 weeks, ask in `#general`
-5.  **Sponsor assigns themselves**: When a sponsor agrees, they assign themselves to the PR and update the SEP status to `draft`.
-6.  **Informal review**: The sponsor reviews the proposal and may request changes. Discussion happens in PR comments.
-7.  **Formal review**: When ready, the sponsor updates the status to `in-review`. The SEP enters formal review by Core Maintainers (meetings every two weeks).
-8.  **Resolution**: The SEP may be `accepted`, `rejected`, or returned for revision. The sponsor updates the status.
-9.  **Finalization**: Once accepted, the reference implementation must be completed. For Standards Track SEPs with observable protocol behavior, a [conformance test](#conformance-test-requirement) must also be merged. When complete and incorporated into the specification, the sponsor updates the status to `final`.
+6.  **Sponsor assigns themselves**: When a sponsor agrees, they assign themselves to the PR and update the SEP status to `draft`.
+7.  **Informal review**: The sponsor reviews the proposal and may request changes. Discussion happens in PR comments.
+8.  **Formal review**: When ready, the sponsor updates the status to `in-review`. Before doing so, the sponsor confirms that the group discussion happened and is linked in the PR description. The SEP enters formal review by Core Maintainers (meetings every two weeks).
+9.  **Resolution**: The SEP may be `accepted`, `rejected`, or returned for revision. The sponsor updates the status.
+10. **Finalization**: Once accepted, the reference implementation must be completed. For Standards Track SEPs with observable protocol behavior, a [conformance test](#conformance-test-requirement) must also be merged. The author adds the specification changes (schema changes, specification text, and a changelog entry) to the SEP’s pull request. SDK implementations are not required for a SEP to become `final`. When this work is complete, the sponsor updates the status to `final` and the SEP’s PR can be merged. Merged SEPs are published in the [SEP index](/seps/index), and each one is reachable by number at `modelcontextprotocol.io/seps/<number>` (for example, [/seps/1850](/seps/1850)).
 
 
 [​](#sep-statuses)
@@ -259,7 +258,7 @@ SEPs are reviewed by the MCP Core Maintainers team every two weeks. For a SEP to
 - Clear benefit to the MCP ecosystem
 - Community support and consensus
 
-Once a SEP has been accepted, the reference implementation must be completed. When complete and incorporated into the main repository, the status changes to “Final”.
+Once a SEP has been accepted, the author adds the specification changes (schema changes, specification text, and a changelog entry) to the SEP’s pull request. The reference implementation must be completed, along with any required [conformance test](#conformance-test-requirement). SDK implementations are not required. When this work is complete, the status changes to “Final” and the PR can be merged.
 
 
 [​](#conformance-test-requirement)

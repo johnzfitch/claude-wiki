@@ -2,7 +2,7 @@
 title: "Working and Interest Groups - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-interest-groups"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:31Z"
+fetched_at: "2026-09-29T06:29:39Z"
 tags: ["mcp"]
 ---
 
@@ -294,15 +294,14 @@ Lifecycle
 **Working Group Formation:**
 
 - There must be a widely acknowledged concern requiring coordination
-- PR for creation of WG into `docs/community/working-groups/<name>/overview.mdx`, gated by CODEOWNERS requiring approval by Maintainers
-- PR for charter into `docs/community/working-groups/<name>.mdx`, gated by CODEOWNERS requiring approval from Core Maintainers
+- PR adding the WG charter as `docs/community/working-groups/<name>.mdx`, written from the [Group Charter Template](/community/charter-template) and including the corresponding navigation entry in `docs/docs.json`, gated by CODEOWNERS requiring approval from Core Maintainers
 - Initial member list approved by WG Lead
 
 **Interest Group Formation:**
 
 - Fill out the creation template in the `#wg-ig-group-creation` channel on [Discord](https://discord.gg/6CSzBmMkjX)
 - A Core Maintainer reviews the proposal; the IG and its Facilitator(s) must be sponsored by at least two Core Maintainers or one Lead Maintainer
-- Once sponsored, the Facilitator(s) organize the IG and create a charter
+- Once sponsored, the Facilitator(s) organize the IG and create a charter via a PR adding `docs/community/interest-groups/<name>.mdx`, written from the same template and including the corresponding navigation entry in `docs/docs.json`, gated by CODEOWNERS requiring approval from Core Maintainers
 
 **Retirement:**
 
@@ -361,7 +360,7 @@ No. IG participation can help validate ideas and build support, but it’s not r
 
 Do I need to be in a WG to submit a SEP?
 
-No. Anyone can submit a SEP. However, WG collaboration can strengthen your proposal and help it find a sponsor.
+No. Anyone can submit a SEP, and group membership is not required. The proposal must still be brought to the relevant group’s Discord channel before the SEP pull request is opened, as described in the [SEP guidelines](/community/sep-guidelines#step-by-step-process). Beyond that requirement, closer WG collaboration can strengthen your proposal and help it find a sponsor.
 
 
 [​](#what-if-my-ig-discussion-leads-to-a-concrete-solution)

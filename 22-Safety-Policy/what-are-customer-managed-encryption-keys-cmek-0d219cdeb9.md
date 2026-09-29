@@ -2,12 +2,14 @@
 title: "What are customer-managed encryption keys (CMEK)? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15505325-what-are-customer-managed-encryption-keys-cmek"
 category: "22-Safety-Policy"
-fetched_at: "2026-08-02T05:41:23Z"
+fetched_at: "2026-09-29T06:30:56Z"
 ---
 
 # What are customer-managed encryption keys (CMEK)?
 
 June 15, 2026
+
+Copy for LLM
 
 Customer-managed encryption keys are available to eligible organizations on Enterprise plans and the Claude Platform.
 

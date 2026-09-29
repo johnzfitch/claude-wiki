@@ -2,7 +2,7 @@
 title: "Let Claude use your computer from the CLI - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/computer-use"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:37:51Z"
+fetched_at: "2026-09-14T06:26:19Z"
 tags: ["claude-code", "cli"]
 ---
 
@@ -67,7 +67,7 @@ Claude has several ways to interact with an app or service. Computer use is the 
 - If the task is browser work and you have [Claude in Chrome](/docs/en/chrome) set up, Claude uses that.
 - If none of those apply, Claude uses computer use.
 
-Screen control is reserved for things nothing else can reach: native apps, simulators, and tools without an API. In the Desktop app, running or testing an iOS app opens the dedicated [iOS Simulator pane](/docs/en/desktop-ios-simulator) rather than screen control; from the CLI, computer use is how Claude reaches the iOS Simulator.
+Screen control is reserved for things nothing else can reach: native apps, simulators such as the iOS Simulator, and tools without an API.
 
 
 [​](#enable-computer-use)
@@ -131,7 +131,7 @@ Choose **Allow for this session** or **Deny**. Approvals last for the current se
 | Can read or write any file | Finder                                                       |
 | Can change system settings | System Settings                                              |
 
-These apps aren’t blocked. The warning lets you decide whether the task warrants that level of access. Claude’s level of control also varies by app category: browsers and trading platforms are view-only, terminals and IDEs are click-only, and everything else gets full control. See [app permissions in Desktop](/docs/en/desktop#app-permissions) for the complete tier breakdown.
+These apps aren’t blocked. The warning lets you decide whether the task warrants that level of access. Approve Finder to let Claude click the desktop, the Dock, or a Finder window. Claude’s level of control also varies by app category: browsers and trading platforms are view-only, terminals and IDEs are click-only, and everything else gets full control. See [app permissions in Desktop](/docs/en/desktop#app-permissions) for the complete tier breakdown.
 
 
 [​](#how-claude-works-on-your-screen)
@@ -145,7 +145,7 @@ Understanding the flow helps you anticipate what Claude will do and how to inter
 
 One session at a time
 
-Computer use holds a machine-wide lock from the first computer use action until the session that took it exits. As of v2.1.195, finishing the task doesn’t release the lock; only exiting the session does. If another Claude Code session is already using your computer, new attempts fail with a message telling you which session holds the lock. Exit that session first.
+Only one session at a time can use your computer. A session takes a lock at its first computer use action and releases it when the session exits, not when the task finishes. A second session’s computer use fails with an error naming the session that holds the lock. Exit that session first.
 
 
 [​](#apps-are-hidden-while-claude-works)
@@ -166,7 +166,7 @@ Claude Code downscales every screenshot before sending it to the model. You don�
 
 Stop at any time
 
-When Claude acquires the lock, a macOS notification appears: “Claude is using your computer · press Esc to stop.” Press `Esc` anywhere to abort the current action immediately, or press `Ctrl+C` in the terminal. Either way, Claude stops, unhides your apps, and returns control to you. The session keeps the [computer use lock](#one-session-at-a-time) until it exits. A second notification appears when Claude is done.
+The first time Claude uses your computer in each turn, a macOS notification appears: “Claude is using your computer · press Esc to stop.” Press `Esc` anywhere to abort the current action immediately, or press `Ctrl+C` in the terminal. Either way, Claude stops, unhides your apps, and returns control to you. The session keeps the [computer use lock](#one-session-at-a-time) until it exits. A second notification appears when Claude is done.
 
 
 [​](#safety-and-the-trust-boundary)

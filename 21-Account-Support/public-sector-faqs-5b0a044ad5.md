@@ -2,13 +2,14 @@
 title: "Public Sector FAQs | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13756069-public-sector-faqs"
 category: "21-Account-Support"
-fetched_at: "2026-08-02T05:41:07Z"
+fetched_at: "2026-09-29T06:30:40Z"
 ---
 
 # Public Sector FAQs
 
 March 25, 2026
 
+Copy for LLM
 
 ## 1. Products and features
 

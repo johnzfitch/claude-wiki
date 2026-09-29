@@ -2,16 +2,20 @@
 title: "Monitor Claude Cowork activity with OpenTelemetry | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14477985-monitor-claude-cowork-activity-with-opentelemetry"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:42:47Z"
+fetched_at: "2026-09-29T06:31:46Z"
 tags: ["api", "security"]
 ---
 
 # Monitor Claude Cowork activity with OpenTelemetry
 
 
+Copy for LLM
+
+**Note:** Claude Cowork and chat are now one Claude, rolling out gradually to Pro and Max plans. Ask for what you need, and Claude decides whether that's a quick answer or a task. Team and Enterprise organizations keep chat and Claude Cowork as they are today, so everything in this article still applies. Learn more in our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+
 This article explains how to use OpenTelemetry (OTel) to monitor Claude Cowork activity across your organization. With OTel, your security and operations teams can stream Cowork events into the observability tools you already use to track usage, investigate incidents, and analyze performance.
 
-OpenTelemetry monitoring for Claude Cowork is available on Team and Enterprise plans. It requires Claude Desktop version 1.1.4173 or later.
+OpenTelemetry monitoring for Claude Cowork is available on Team and Enterprise plans. It covers Cowork sessions that run in the cloud (on desktop, web, and mobile) as well as local desktop sessions. Monitoring sessions in the cloud requires Claude Desktop version 1.22209.3 or later, and monitoring local desktop sessions requires Claude Desktop version 1.1.4173 or later.
 
 ------------------------------------------------------------------------
 
@@ -33,7 +37,7 @@ When you connect Claude Cowork to an OpenTelemetry collector, Cowork streams eve
 
 A shared `prompt.id` attribute links every event triggered by a single user prompt, so you can reconstruct everything Claude did in response to one input.
 
-For the full list of event types and attributes, see the **[Cowork monitoring reference](https://claude.com/docs/cowork/monitoring#events)** in our Claude Docs.
+For the full list of event types and attributes, see the **[Cowork monitoring reference](https://claude.com/docs/cowork/monitoring#events)** on **claude.com/docs**.
 
 ------------------------------------------------------------------------
 
@@ -61,7 +65,7 @@ You can route events to multiple destinations at once by configuring your collec
 
 To configure Cowork to export events to your collector:
 
-1.  Open Claude Desktop and navigate to **Organization settings \> Cowork**.
+1.  Go to **Organization settings \> Cowork**.
 
 2.  Enter your **OTLP endpoint** (your OpenTelemetry collector URL).
 
@@ -91,4 +95,4 @@ A few things to be aware of before you turn on OpenTelemetry export:
 
 ## Joining OpenTelemetry data with the Compliance API
 
-While Cowork activity is **not captured** in the **[Compliance API](https://support.claude.com/en/articles/13015708-access-the-compliance-api)** at this time, each Cowork OTel event includes a shared user account identifier you can use to correlate events with records from the Compliance API. This lets you build a unified view that combines real-time telemetry from OTel with longer-term records from Compliance API queries.
+The Compliance API covers Cowork (via Claude, Claude Desktop, and Claude Mobile) and Claude Code (via CLI and Claude Desktop) alongside Claude chats, giving you one audit trail with every session attributable to an individual user. Organizations already using OpenTelemetry can run both in parallel, and OTel coverage includes Cowork on web and mobile too. Learn more about **[retrieving remote sessions in the Compliance API](https://platform.claude.com/docs/en/manage-claude/compliance-content-data)**.

@@ -2,12 +2,15 @@
 title: "Use Claude with iOS apps | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11869619-using-claude-with-ios-apps"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-08-02T05:40:52Z"
+fetched_at: "2026-09-29T06:30:58Z"
 tags: ["desktop"]
 ---
 
 # Use Claude with iOS apps
 
+August 25, 2026
+
+Copy for LLM
 
 Claude can now connect with your iOS device's system apps to help you take action directly from your conversations. When you chat with Claude, it can draft messages, emails, or calendar events, find locations, manage reminders, and analyze your health and fitness data — all seamlessly integrated with your mobile apps.
 
@@ -157,7 +160,7 @@ With your permission, Claude can read the following types of data from Apple Hea
 
 - **Nutrition:** Calories consumed, macronutrients, water intake, and micronutrients (if tracked).
 
-**Note:** Our **[memory feature](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context#h_c1c0b33879)** is designed to prevent Claude from using sensitive health information in future conversations.
+**Note:** By default, Claude doesn't save health information to memory. If you turn on **Include sensitive topics in memory**, Claude may remember health-related context from your conversations. Learn more about **[sensitive topics in memory](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_6fe1d0e66f)**.
 
 ### How to use health features
 

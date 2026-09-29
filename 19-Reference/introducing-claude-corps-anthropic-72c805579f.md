@@ -2,7 +2,7 @@
 title: "Introducing Claude Corps \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-corps"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:43:04Z"
+fetched_at: "2026-09-11T06:28:38Z"
 ---
 
 # Introducing Claude Corps
@@ -125,7 +125,7 @@ You can hear more from our hosts below:
 
 ## Applications and timeline
 
-[Fellowship applications](https://anthropic.com/claude-corps/fellow) are open today, and will close on July 17th for the first cohort of 100, which begins in October 2026. Applications are open on a rolling basis for the next two cohorts, which begin in January 2027 and August 2027. Anyone over 18 with under two years of full-time work experience is welcome to apply, regardless of educational background. The only requirements are that you’re authorized to work in the US, are comfortable working with Claude, and are willing to relocate if necessary. (Relocation support is available as needed.)
+[Fellowship applications](https://anthropic.com/claude-corps/fellow) are open today, and will close on July 17th for the first cohort of 100, which begins in October 2026. Applications are open on a rolling basis for the next two cohorts, which begin in February 2027 and August 2027. Anyone over 18 with under two years of full-time work experience is welcome to apply, regardless of educational background. The only requirements are that you’re authorized to work in the US, are comfortable working with Claude, and are willing to relocate if necessary. (Relocation support is available as needed.)
 
 [Host organization applications](https://anthropic.com/claude-corps/host) are also open today for all cohort start dates. For more information about criteria for hosting and what’s involved, see the [Claude Corps website](https://anthropic.com/claude-corps).
 
@@ -136,17 +136,21 @@ Our ambition is for this program to scale far beyond 1,000 fellows, as we’ve o
 
 ## Related content
 
-### Investigating three real-world incidents in our cybersecurity evaluations
+### Developing Enterprise Frontier Safeguards with our customers
 
-[Read more](/news/investigating-incidents-cybersecurity-evals)
+[Read more](/news/enterprise-frontier-safeguards)
 
-### Our position on open-weights models
+### Improving our alignment and security efforts
 
-[Read more](/news/position-open-weights-models)
+On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
 
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+[Read more](/news/improving-alignment-security-efforts)
 
-[Read more](/news/cognizant-anthropic)
+### Previewing the Model Hardware Standard
+
+We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
+
+[Read more](/news/model-hardware-standard-research-preview)
 
 [](/)
 
@@ -160,7 +164,7 @@ Our ambition is for this program to scale far beyond 1,000 fellows, as we’ve o
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -180,6 +184,7 @@ Our ambition is for this program to scale far beyond 1,000 fellows, as we’ve o
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -212,7 +217,7 @@ Our ambition is for this program to scale far beyond 1,000 fellows, as we’ve o
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -225,7 +230,7 @@ Our ambition is for this program to scale far beyond 1,000 fellows, as we’ve o
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -237,6 +242,7 @@ Our ambition is for this program to scale far beyond 1,000 fellows, as we’ve o
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

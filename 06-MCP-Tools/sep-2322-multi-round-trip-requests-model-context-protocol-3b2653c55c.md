@@ -2,7 +2,7 @@
 title: "SEP-2322: Multi Round-Trip Requests - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps/2322-MRTR"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:37:03Z"
+fetched_at: "2026-08-03T07:17:28Z"
 tags: ["mcp"]
 ---
 
@@ -452,7 +452,7 @@ This section provides implementation guidance for error handling in scenarios wh
 }
 ```
 
-2.  The Server responds wit an incomplete response, indicating that the client needs to provide missing information for the request to succeed.
+2.  The Server responds with an incomplete response, indicating that the client needs to provide missing information for the request to succeed.
 
 In the persistent workflow, this would look like the following: Step 7 from above: **Client Request** The client mistakenly or maliciously sends unexpected, but well-formed data to the server in response to the input request.
 
@@ -479,7 +479,7 @@ In the persistent workflow, this would look like the following: Step 7 from abov
 }
 ```
 
-Step 8 from above. **Server Response** Server acknowledges the receipt of the response by sending a `JSONRPCResultResponse`. However, since the response is missing required information, the server does not proceed with processing the taks and leaves the Task status as `input_required`. The next time the client calls `tasks/result`, the server responds with a new `inputRequest` requesting the necessary information again.
+Step 8 from above. **Server Response** Server acknowledges the receipt of the response by sending a `JSONRPCResultResponse`. However, since the response is missing required information, the server does not proceed with processing the task and leaves the Task status as `input_required`. The next time the client calls `tasks/result`, the server responds with a new `inputRequest` requesting the necessary information again.
 
 ```python
 {

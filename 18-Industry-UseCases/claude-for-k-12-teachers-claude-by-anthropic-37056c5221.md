@@ -2,14 +2,14 @@
 title: "Claude for K-12 Teachers | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/teachers"
 category: "18-Industry-UseCases"
-fetched_at: "2026-08-02T05:42:46Z"
+fetched_at: "2026-09-16T06:25:40Z"
 ---
 
 # Claude for K-12 teachers
 
 # Get back to why you started teaching
 
-Focus on students instead of paperwork. US K-12 educators get free access to premium Claude features, like teaching skills and a connection to evidence-based curricula, aligned to state standards.
+US K-12 educators and districts get free access to premium Claude features, like teaching skills and a connection to evidence-based curricula, aligned to state standards. Schools and district leaders can bring Claude for Teachers into one workspace with enterprise-level features like role-based access controls and SSO, all at no cost.
 
 Get verified
 
@@ -32,6 +32,10 @@ You can connect to Learning Commons, which gives Claude access to academic stand
 ### Built to protect student data
 
 No model training on your content by default and student data stays protected.
+
+### Ready for your school or district
+
+Schools and district leaders can give every educator Claude for Teachers under accounts they manage, with enterprise-level features like role-based access controls, SSO and K-12 Terms.
 
 Use current teaching tools
 
@@ -198,7 +202,7 @@ Create new lesson plans, or update existing files on your desktop using Cowork. 
 
 Prompt
 
-Make a spreadsheet analysis on how my 4th grade ELA students are performing on grade-level standards. Then put everyone into small groups (reteach, on-level, and extension) for tomorrow’s lesson on main ideas and supporting details.
+Make a spreadsheet analysis on how my 4th grade ELA students are performing on grade-level standards, using the de-identified reading data I've attached. Then put everyone into small groups (reteach, on-level, and extension) for tomorrow's lesson on main ideas and supporting details.
 
 Attachments
 
@@ -208,7 +212,7 @@ Attachments
 
 PDF
 
-class-reading-levels
+class-reading-levels-deidentified
 
 100 kb
 
@@ -225,7 +229,7 @@ Grade 4 ELA Standards Analysis
 
 ### Differentiate for every student in the room
 
-Give Claude context about your class, like reading levels, English language learner status, and specific accommodations. It produces varied materials for students working below, at, and above grade level.
+Give Claude context about your classroom — like de-identified reading levels — to produce differentiated materials for students working below, at, and above grade level.
 
 Whether and how educational data may be used in Claude for Teachers is determined by your district and state policies. You can read more about our K-12 data privacy standards for Claude for Teachers [here](https://support.claude.com/en/articles/15926041).
 
@@ -549,7 +553,7 @@ Training is off by default for every verified educator account. Your conversatio
 
 ### Built with FERPA in mind
 
-Educator accounts include FERPA-aligned terms and a defined SLA for deleting conversations that contain student data.
+Educator accounts include FERPA-aligned terms. District accounts include school or district-wide K-12 terms and data privacy agreement.
 
 ### Informed by the AFT Gold Standard
 
@@ -581,13 +585,13 @@ Learn more
 
 Learn more
 
-### Claude for Chrome
+### Claude in Chrome
 
 Research anything without copying and pasting: Claude reads pages on the web in Chrome, pulls the information you need, and compiles it while you work on something else.
 
 Learn more
 
-[Learn more](/claude-for-chrome)
+[Learn more](/claude-in-chrome)
 
 Learn more
 
@@ -600,21 +604,6 @@ Learn more
 [Learn more](/skills)
 
 Learn more
-
-Build performance plans
-
-[Play video](#)
-
-Play video
-
-Analyze and plan with a holistic view of student performance.
-
-Learn more
-
-[Learn more](https://claude.com/resources/tutorials/claude-for-teachers-in-action)
-
-Learn more
-
 
 How can I help?
 
@@ -651,15 +640,11 @@ Ask Claude
 Prev
 
 
-“Claude surprised me when it broke down my lesson by grade-level standards, suggested accommodations for IEP students, and effectively surfaced interdisciplinary connections!”
-
-Sara, Science Teacher
-
-“As a 9th grade educator seeking tools to reinforce humanist learning, Claude has demonstrated a keen eye towards identifying learning strategies. From classroom simulations, to IEP meeting notes, to the intricacies of lesson planning, strategic application of Claude’s educational tools lets teachers stay in command of the classroom and across systems!”
+“As a 9th grade educator seeking tools to reinforce humanist learning, Claude has demonstrated a keen eye towards identifying learning strategies. From classroom simulations to the intricacies of lesson planning, strategic application of Claude's educational tools lets teachers stay in command of the classroom and across systems!”
 
 Justin, Learning Specialist
 
-“Claude sparked my interest even more when it used the student assessment data I inputted to help me create goals that my upcoming students should focus on over the summer.”
+“Claude sparked my interest even more when it used the de-identified student assessment data I inputted to help me create goals that my upcoming students should focus on over the summer.”
 
 S. Campbell, K-12 Teacher
 
@@ -685,19 +670,36 @@ Serving verified teachers across US school systems
 
 Free
 
-- Free account with access to premium Claude features
-- Skills for teaching workflows
-- Connectors to evidence-based curriculum (including Learning Commons)
-- Models are never trained on your conversations
-
 Verify now
 
 [Verify now](https://claude.ai/teachers)
 
 Verify now
 
-Sign up by June 30, 2027 for your full year of free access. Claude for Teachers is for individual educators—a dedicated offering for schools and districts is coming soon. In the meantime, K-12 schools and districts interested in Claude can continue using [Claude for Nonprofits](https://claude.com/solutions/nonprofits) as they do today.  
-\*Extra usage limits apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic’s discretion. 
+- Free account with access to premium Claude features
+- Skills for teaching workflows
+- Connectors to evidence-based curriculum (including Learning Commons)
+- Models are never trained on your conversations
+
+### For US K-12 schools and districts
+
+Bring Claude for Teachers to every educator
+
+Free
+
+Get started
+
+[Get started](https://claude.ai/k12districts)
+
+Get started
+
+- Claude for Teachers for every educator on your school or district domain
+- Centrally managed accounts with enterprise-level features like role-based access controls and single sign-on
+- K-12 terms and student data privacy agreement
+- Models are never trained on your conversations
+
+Sign up by June 30, 2027 for your full year of free access.  
+\*Extra usage limits apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic’s discretion.
 
 [Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
 
@@ -768,112 +770,6 @@ Thank you! Your submission has been received!
 
 Oops! Something went wrong while submitting the form.
 
-Write
-
-[Button Text](#)
-
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
-
 [Anthropic](https://www.anthropic.com/)
 
 Anthropic
@@ -938,10 +834,10 @@ Products
 
 Features
 
-- Claude for Chrome
+- Claude in Chrome
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
 
 - Claude for Microsoft 365
 
@@ -997,6 +893,11 @@ Solutions
   [Coding](/solutions/coding)
   Coding
 
+- Commerce
+
+  [Commerce](/solutions/commerce)
+  Commerce
+
 - Customer support
 
   [Customer support](/solutions/customer-support)
@@ -1051,6 +952,11 @@ Solutions
 
   [Nonprofits](/solutions/nonprofits)
   Nonprofits
+
+- Sales
+
+  [Sales](/solutions/sales)
+  Sales
 
 - Small business
 
@@ -1128,12 +1034,12 @@ Resources
 
 - Connectors
 
-  [Connectors](/connectors)
+  [Connectors](https://claude.com/connectors)
   Connectors
 
 - Courses
 
-  [Courses](https://www.anthropic.com/learn)
+  [Courses](https://academy.claude.com/courses)
   Courses
 
 - Customer stories
@@ -1163,17 +1069,17 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](#)
   Service partners
 
 - Tutorials
 
-  [Tutorials](/resources/tutorials)
+  [Tutorials](https://academy.claude.com/tutorials)
   Tutorials
 
 - Use cases
 
-  [Use cases](/resources/use-cases)
+  [Use cases](https://academy.claude.com/use-cases)
   Use cases
 
 Company
@@ -1209,3 +1115,32 @@ Company
   News
 
 - Policy on the AI Exponential
+
+  [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
+  Policy on the AI Exponential
+
+- Responsible Scaling Policy
+
+  [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
+  Responsible Scaling Policy
+
+- Security and compliance
+
+  [Security and compliance](https://trust.anthropic.com/)
+  Security and compliance
+
+- Transparency
+
+  [Transparency](https://anthropic.com/transparency)
+  Transparency
+
+Programs
+
+- Startups
+
+  [Startups](https://claude.com/programs/startups)
+  Startups
+
+- Scientists
+
+  [Scientists](/programs/team-plan-for-scientists)

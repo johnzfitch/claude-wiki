@@ -2,7 +2,7 @@
 title: "Claude Code: Common developer use cases | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14553517-claude-code-common-developer-use-cases"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:41:49Z"
+fetched_at: "2026-09-29T06:32:15Z"
 tags: ["claude-code"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["claude-code"]
 
 April 15, 2026
 
+Copy for LLM
 
 Claude Code is a command-line agent that runs in your terminal, reads your repository, edits files, executes commands, and requests confirmation before performing potentially destructive actions. It is designed to assist at every stage of the software development lifecycle—from exploring an unfamiliar codebase to shipping and maintaining production code.
 

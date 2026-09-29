@@ -2,13 +2,15 @@
 title: "Where can I go for Claude API support and assistance? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114535-where-can-i-go-for-claude-api-support-and-assistance"
 category: "04-API-Reference"
-fetched_at: "2026-08-02T05:41:54Z"
+fetched_at: "2026-09-29T06:32:04Z"
 tags: ["api"]
 ---
 
 # Where can I go for Claude API support and assistance?
 
 March 16, 2026
+
+Copy for LLM
 
 For our API users, we currently maintain three main resources:
 

@@ -2,7 +2,7 @@
 title: "Security Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/interest-groups/security"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:36:36Z"
+fetched_at: "2026-08-26T06:27:45Z"
 tags: ["mcp", "security"]
 ---
 
@@ -84,7 +84,7 @@ Related Groups
 - **[Tool Annotations IG](/community/interest-groups/tool-annotations)**: trust and sensitivity annotations ([SEP-1913](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1913)) span both groups
 - **[Interceptors WG](/community/working-groups/interceptors)**: interceptors are the primary enforcement point for runtime security decisions surfaced here
 - **[Server Card WG](/community/working-groups/server-card) / [Registry WG](/community/working-groups/registry)**: server identity, provenance, and discovery metadata intersect with admission and supply-chain concerns
-- **Transports WG**: stdio process isolation and unauthenticated method surface
+- **[Transports WG](/community/working-groups/transports)**: stdio process isolation and unauthenticated method surface
 - **SDK Maintainers**: coordinated handling of SDK security advisories and cross-SDK security defaults
 
 

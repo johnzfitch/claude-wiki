@@ -2,8 +2,8 @@
 title: "Reference - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/reference"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:42:17Z"
-tags: ["api"]
+fetched_at: "2026-09-26T06:39:41Z"
+tags: ["api", "mcp"]
 ---
 
 - [Managed Agents](/docs/en/managed-agents/overview)
@@ -12,31 +12,27 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Freference)
 
 
 
-Search
+
 
+SearchCtrlK
 
 First steps
 
-[Overview](/docs/en/managed-agents/overview)[Quickstart](/docs/en/managed-agents/quickstart)[Prototype in Console](/docs/en/managed-agents/onboarding)[Migration](/docs/en/managed-agents/migration)
+[Overview](/docs/en/managed-agents/overview)[Quickstart](/docs/en/managed-agents/quickstart)[Build in Console](/docs/en/managed-agents/onboarding)[Migration](/docs/en/managed-agents/migration)
 
 Define your agent
 
@@ -46,11 +42,11 @@ Configure agent environment
 
 [Cloud environment setup](/docs/en/managed-agents/environments)[Cloud sandbox reference](/docs/en/managed-agents/cloud-sandboxes-reference)
 
-Self-hosted sandboxes
+[Self-hosted sandboxes](/docs/en/managed-agents/self-hosted-sandboxes)
 
 Delegate work to your agent
 
-[Start a session](/docs/en/managed-agents/sessions)[Session operations](/docs/en/managed-agents/session-operations)[Session event stream](/docs/en/managed-agents/events-and-streaming)[Subscribe to webhooks](/docs/en/managed-agents/webhooks)[Define outcomes](/docs/en/managed-agents/define-outcomes)[Authenticate with vaults](/docs/en/managed-agents/vaults)
+[Start a session](/docs/en/managed-agents/sessions)[Session operations](/docs/en/managed-agents/session-operations)[Session event stream](/docs/en/managed-agents/events-and-streaming)[Session budgets](/docs/en/managed-agents/budgets)[Subscribe to webhooks](/docs/en/managed-agents/webhooks)[Define outcomes](/docs/en/managed-agents/define-outcomes)[Authenticate with vaults](/docs/en/managed-agents/vaults)
 
 Manage agent context
 
@@ -70,7 +66,7 @@ Working with files
 
 [Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
 
-Images and vision
+[Images and vision](/docs/en/build-with-claude/vision)
 
 Skills
 
@@ -80,67 +76,51 @@ MCP
 
 [Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)
 
-MCP tunnels
+[MCP tunnels](/docs/en/agents-and-tools/mcp-tunnels/overview)
 
 Claude on cloud platforms
 
 [Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)
 
-[](/login)
+[Console](/)
 
-
-
-
-Managed Agents
-
-Managed Agents reference
-
-Managed Agents/Reference
+[Managed Agents](/docs/en/managed-agents/overview)Reference
 
 # Reference
 
+Copy page
 
 
 
 Event types, self-hosted worker CLI flags, supported MCP server types, rate limits, and branding guidelines for Claude Managed Agents.
 
+Copy page
 
 
 
+[Managed Agents](/docs/en/managed-agents/overview)
+
+[Beta](/docs/en/build-with-claude/overview#feature-availability)
+
+[Beta header](/docs/en/api/beta-headers)
+
+managed-agents-2026-04-01
+
 This page collects reference material for Claude Managed Agents. For task-oriented guides, follow the links in each section. For the operations on the session resource, see [Session operations](/docs/en/managed-agents/session-operations).
 
-
+## Event types
 
-Managed Agents API requests require the `managed-agents-2026-04-01` beta header, except memory store endpoints, which use `agent-memory-2026-07-22` instead. The SDK sets the correct beta header automatically. See [Beta headers](/docs/en/api/beta-headers#endpoint-specific-headers).
-
-
-
-
-Event types
-
-Persisted event type strings follow a `{domain}.{action}` naming convention; the stream-only event deltas (see the Event deltas tab) are the exception. See [Session event stream](/docs/en/managed-agents/events-and-streaming) for sending, streaming, and listing events.
-
-User events
+Persisted event type strings follow a `{domain}.{action}` naming convention; the stream-only event deltas (see the Event deltas tab) are the exception. See [Session event stream](/docs/en/managed-agents/events-and-streaming) for sending, streaming, and listing events. Webhook event types are listed separately in [Subscribe to webhooks](/docs/en/managed-agents/webhooks#supported-event-types), and some of their names differ from the stream's (for example, `session.status_idled` rather than `session.status_idle`).
 
 User events
 
 Agent events
 
-Agent events
-
-Session events
-
 Session events
 
 Span events
 
-Span events
-
 System events
-
-System events
-
-Event deltas
 
 Event deltas
 
@@ -153,36 +133,29 @@ Event deltas
 | `user.define_outcome`     | Define an [outcome](/docs/en/managed-agents/define-outcomes) for the agent to work toward.                                                                                                                                |
 | `user.tool_result`        | For sessions with `self_hosted` [environments](/docs/en/managed-agents/self-hosted-sandboxes) only, your integration is responsible for providing `agent_toolset` results. The SDK helpers and CLI do this automatically. |
 
-
-
-
-Self-hosted worker
+## Self-hosted worker
 
 These are the `ant beta:worker` CLI flags for the pre-built worker that drives a `self_hosted` environment. See [Self-hosted sandboxes](/docs/en/managed-agents/self-hosted-sandboxes) for setting up the environment, running a worker, and the SDK helper options.
 
-| Flag                   | Description                                                                                                                                                            |
-|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `--environment-id`     | The environment to poll for work. Also reads from `ANTHROPIC_ENVIRONMENT_ID`.                                                                                          |
-| `--environment-key`    | Authenticates the worker with this environment. Also reads from `ANTHROPIC_ENVIRONMENT_KEY`.                                                                           |
-| `--workdir`            | Directory where skills are downloaded and tools read and write files. Defaults to `.` (the current directory); the system default working directory is `/workspace`.   |
-| `--on-work`            | Script to call for each claimed work item instead of running tools in-process. Receives session details as environment variables.                                      |
-| `--unrestricted-paths` | Allow the file tools to read and write paths outside `--workdir`. The workdir check is a guardrail for the file tools only, not a sandbox; it does not constrain bash. |
-| `--max-idle`           | How long to wait after the session goes idle with an `end_turn` [stop reason](/docs/en/api/handling-stop-reasons) before shutting down. Defaults to `60s`.             |
-| `--log-format`         | Log output format. Use `json` for structured log ingestion. Defaults to `text`.                                                                                        |
+| Flag                   | Description                                                                                                                                                              |
+|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `--environment-id`     | The environment to poll for work. Also reads from `ANTHROPIC_ENVIRONMENT_ID`.                                                                                            |
+| `--environment-key`    | Authenticates the worker with this environment. Also reads from `ANTHROPIC_ENVIRONMENT_KEY`.                                                                             |
+| `--workdir`            | Directory where skills are downloaded and tools read and write files. Defaults to `.` (the current directory); the system default working directory is `/workspace`.     |
+| `--on-work`            | Script to call for each claimed work item instead of running tools in-process. Receives session details as environment variables.                                        |
+| `--unrestricted-paths` | Allow the file tools to read and write paths outside `--workdir`. The workdir check is a guardrail for the file tools only, not a sandbox; it does not constrain bash.   |
+| `--max-idle`           | How long to wait after the session goes idle with an `end_turn` [stop reason](/docs/en/build-with-claude/handling-stop-reasons) before shutting down. Defaults to `60s`. |
+| `--log-format`         | Log output format. Use `json` for structured log ingestion. Defaults to `text`.                                                                                          |
 
+The CLI worker does not mount [memory stores](/docs/en/managed-agents/memory): a session that attaches one still runs, but the agent finds nothing at the store's `mount_path` and no changes sync back to the store. To use memory stores in sessions on a self-hosted environment, run the SDK worker instead; see [Use memory stores](/docs/en/managed-agents/self-hosted-sandboxes#use-memory-stores).
 
-
-
-Supported MCP server types
+## Supported MCP server types
 
 Claude Managed Agents connects to [remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers) that expose an HTTP endpoint, or to private MCP servers through [MCP tunnels](/docs/en/agents-and-tools/mcp-tunnels/overview). The server should support the MCP protocol's streamable HTTP transport; servers that only support the deprecated SSE transport still work through an automatic fallback. See [MCP connector](/docs/en/managed-agents/mcp-connector) for declaring servers on an agent.
 
 For more information on MCP and building MCP servers, see the [MCP documentation](https://modelcontextprotocol.io).
 
-
-
-
-Rate limits
+## Rate limits
 
 Managed Agents endpoints are rate-limited per organization:
 
@@ -193,10 +166,7 @@ Managed Agents endpoints are rate-limited per organization:
 
 Organization-level [spend limits and usage-tier rate limits](/docs/en/api/rate-limits) also apply.
 
-
-
-
-Branding guidelines
+## Branding guidelines
 
 For partners integrating Claude Managed Agents, use of Claude branding is optional. When referencing Claude in your product:
 

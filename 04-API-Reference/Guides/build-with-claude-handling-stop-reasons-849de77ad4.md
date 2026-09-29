@@ -2,7 +2,7 @@
 title: "Stop reasons and fallback - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-08-02T05:40:29Z"
+fetched_at: "2026-09-26T06:39:23Z"
 tags: ["api"]
 ---
 
@@ -12,31 +12,27 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fhandling-stop-reasons)
 
 
 
-Search
+
 
+SearchCtrlK
 
 First steps
 
-[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)
+[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)[Authentication](/docs/en/manage-claude/authentication)
 
 Building with Claude
 
@@ -46,11 +42,11 @@ Model capabilities
 
 [Effort](/docs/en/build-with-claude/effort)[Task budgets (beta)](/docs/en/build-with-claude/task-budgets)[Fast mode (research preview)](/docs/en/build-with-claude/fast-mode)[Structured outputs](/docs/en/build-with-claude/structured-outputs)[Citations](/docs/en/build-with-claude/citations)[Streaming Messages](/docs/en/build-with-claude/streaming)[Batch processing](/docs/en/build-with-claude/batch-processing)[Search results](/docs/en/build-with-claude/search-results)[Streaming refusals](/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals)[Multilingual support](/docs/en/build-with-claude/multilingual-support)[Embeddings](/docs/en/build-with-claude/embeddings)
 
-Thinking
+[Thinking](/docs/en/build-with-claude/thinking)
 
 Tools
 
-[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
+[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Browser use tool](/docs/en/agents-and-tools/tool-use/browser-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
 
 Tool infrastructure
 
@@ -58,13 +54,15 @@ Tool infrastructure
 
 Context management
 
-[Context windows](/docs/en/build-with-claude/context-windows)[Compaction](/docs/en/build-with-claude/compaction)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics (beta)](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+[Context windows](/docs/en/build-with-claude/context-windows)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+
+[Compaction](/docs/en/build-with-claude/compaction)
 
 Working with files
 
 [Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
 
-Images and vision
+[Images and vision](/docs/en/build-with-claude/vision)
 
 Skills
 
@@ -74,30 +72,25 @@ MCP
 
 [Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)[MCP connector](/docs/en/agents-and-tools/mcp-connector)
 
-MCP tunnels
+[MCP tunnels](/docs/en/agents-and-tools/mcp-tunnels/overview)
 
 Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](/docs/en/build-with-claude/claude-in-amazon-bedrock)[Amazon Bedrock (Opus 4.6 and earlier)](/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy)[Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)[Google Cloud](/docs/en/build-with-claude/claude-on-vertex-ai)[Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry)
 
-[](/login)
+[Console](/)
 
-
-
-
-Messages
-
-Stop reasons and fallback
-
-Messages/Building with Claude
+[Messages](/docs/en/intro)Building with Claude
 
 # Stop reasons and fallback
 
+Copy page
 
 
 
 Learn what each stop_reason value means and how to handle truncation, tool use, paused turns, and refusals in your application.
 
+Copy page
 
 
 
@@ -105,10 +98,7 @@ Every Messages API response includes a `stop_reason` field that tells you why Cl
 
 For the full response schema, see the [Messages API reference](/docs/en/api/messages/create).
 
-
-
-
-Quick reference
+## Quick reference
 
 | Value                                                             | When it occurs                                  | What to do                                                                                                           |
 |-------------------------------------------------------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
@@ -120,10 +110,7 @@ Quick reference
 | [`refusal`](#refusal)                                             | Claude declined to respond.                     | Read `stop_details` and [retry on a fallback model](/docs/en/build-with-claude/refusals-and-fallback).               |
 | [`model_context_window_exceeded`](#model-context-window-exceeded) | The response filled the model's context window. | Treat the response as truncated.                                                                                     |
 
-
-
-
-The stop_reason field
+## The stop_reason field
 
 The `stop_reason` field is part of every successful Messages API response. Unlike errors, which indicate failures in processing your request, `stop_reason` tells you why Claude completed its response generation.
 
@@ -152,15 +139,9 @@ Example response
 }
 ```
 
+## Stop reason values
 
-
-
-Stop reason values
-
-
-
-
-end_turn
+### end_turn
 
 The most common stop reason. Indicates Claude finished its response naturally.
 
@@ -188,7 +169,7 @@ Ruby
 client = anthropic.Anthropic()
 
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello!"}],
 )
@@ -201,10 +182,127 @@ if response.stop_reason == "end_turn":
 
 ### Empty responses with end_turn
 
+Sometimes Claude returns an empty response (exactly 2–3 tokens with no content) with `stop_reason: "end_turn"`. This typically occurs when Claude interprets that the assistant turn is complete, particularly after tool results.
 
-
+**Common causes:**
 
-max_tokens
+- Adding text blocks immediately after tool results (Claude learns to expect the user to always insert text after tool results, so it ends its turn to follow the pattern)
+- Sending Claude's completed response back without adding anything (Claude already determined it's done, so it will remain done)
+
+**How to prevent empty responses:**
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
+
+```python
+# INCORRECT: Adding text immediately after tool_result
+messages = [
+    {"role": "user", "content": "Calculate the sum of 1234 and 5678"},
+    {
+        "role": "assistant",
+        "content": [
+            {
+                "type": "tool_use",
+                "id": "toolu_123",
+                "name": "calculator",
+                "input": {"operation": "add", "a": 1234, "b": 5678},
+            }
+        ],
+    },
+    {
+        "role": "user",
+        "content": [
+            {"type": "tool_result", "tool_use_id": "toolu_123", "content": "6912"},
+            {
+                "type": "text",
+                "text": "Here's the result",  # Don't add text after tool_result
+            },
+        ],
+    },
+]
+
+# CORRECT: Send tool results directly without additional text
+messages = [
+    {"role": "user", "content": "Calculate the sum of 1234 and 5678"},
+    {
+        "role": "assistant",
+        "content": [
+            {
+                "type": "tool_use",
+                "id": "toolu_123",
+                "name": "calculator",
+                "input": {"operation": "add", "a": 1234, "b": 5678},
+            }
+        ],
+    },
+    {
+        "role": "user",
+        "content": [
+            {"type": "tool_result", "tool_use_id": "toolu_123", "content": "6912"}
+        ],
+    },  # Just the tool_result, no additional text
+]
+```
+
+If you still get empty responses after fixing the message structure, add a continuation prompt in a new user message rather than retrying with the empty response:
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
+
+```python
+def handle_empty_response(client, messages):
+    response = client.messages.create(
+        model="claude-opus-5-5", max_tokens=1024, messages=messages
+    )
+
+    # Check if response is empty
+    if response.stop_reason == "end_turn" and not response.content:
+        # INCORRECT: Don't just retry with the empty response
+        # This won't work because Claude already decided it's done
+
+        # CORRECT: Add a continuation prompt in a NEW user message
+        messages.append({"role": "user", "content": "Please continue"})
+
+        response = client.messages.create(
+            model="claude-opus-5-5", max_tokens=1024, messages=messages
+        )
+
+    return response
+```
+
+**Best practices:**
+
+1.  **Never add text blocks immediately after tool results:** This teaches Claude to expect user input after every tool use.
+2.  **Don't retry empty responses without modification:** Sending the empty response back won't help.
+3.  **Use continuation prompts as a last resort:** Only if these fixes don't resolve the issue.
+
+### max_tokens
 
 Claude stopped because it reached the `max_tokens` limit specified in your request.
 
@@ -232,7 +330,7 @@ Ruby
 client = anthropic.Anthropic()
 # Request with limited tokens
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=10,
     messages=[{"role": "user", "content": "Explain quantum physics"}],
 )
@@ -245,10 +343,42 @@ if response.stop_reason == "max_tokens":
 
 ### Incomplete tool use blocks
 
+If Claude's response is cut off because it hit the `max_tokens` limit, and the truncated response contains an incomplete tool use block, you'll need to retry the request with a higher `max_tokens` value to get the full tool use.
 
-
+CLI
 
-stop_sequence
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
+
+```python
+# Check if response was truncated during tool use
+if response.stop_reason == "max_tokens":
+    # Check if the last content block is an incomplete tool_use
+    last_block = response.content[-1]
+    if last_block.type == "tool_use":
+        # Send the request with higher max_tokens
+        response = client.messages.create(
+            model="claude-opus-5-5",
+            max_tokens=4096,  # Increased limit
+            messages=messages,
+            tools=tools,
+        )
+```
+
+### stop_sequence
 
 Claude encountered one of your custom stop sequences.
 
@@ -275,7 +405,7 @@ Ruby
 ```python
 client = anthropic.Anthropic()
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     stop_sequences=["END", "STOP"],
     messages=[{"role": "user", "content": "Generate text until you say END"}],
@@ -285,14 +415,11 @@ if response.stop_reason == "stop_sequence":
     print(f"Stopped at sequence: {response.stop_sequence}")
 ```
 
-
-
-
-tool_use
+### tool_use
 
 Claude is calling a tool and expects you to run it.
 
-
+
 
 For most tool use implementations, use the [tool runner](/docs/en/agents-and-tools/tool-use/tool-runner), which automatically handles tool execution, result formatting, and conversation management.
 
@@ -337,7 +464,7 @@ def execute_tool(name, tool_input):
 
 
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     tools=[weather_tool],
     messages=[{"role": "user", "content": "What is the weather in San Francisco?"}],
@@ -353,7 +480,7 @@ if response.stop_reason == "tool_use":
 
 A `tool_use` response can also contain a `server_tool_use` block whose `id` has no matching result block. That server tool call is not finished, and this response does not carry its result. In the common case, Claude calls a [server tool](/docs/en/agents-and-tools/tool-use/server-tools) and one of your client tools in the same group of parallel tool calls: the API returns without running the server tool so that you can run the client tools first. There is no other marker for the state; detect it by checking each `server_tool_use` or `mcp_tool_use` block's `id` for a matching result block.
 
-
+
 
 With [programmatic tool calling](/docs/en/agents-and-tools/tool-use/programmatic-tool-calling), the same response shape means something different. The client `tool_use` block comes from code that is running in the `code_execution` tool rather than from Claude directly, and its `caller` field names the `code_execution` block that called it. That code has already started: it is paused waiting for your `tool_result` blocks, and sending them resumes the execution instead of starting a deferred tool. The `code_execution` block's own result block arrives once the code finishes, which can take more than one round of tool results. The follow-up user message itself is the same in both cases; with programmatic tool calling, also pass back the `id` from the response's `container` field, as that page shows.
 
@@ -410,10 +537,7 @@ Adding anything after the `tool_result` blocks in that user message, such as tex
 
 Leaving out a `tool_result`, or putting one after other content, fails earlier with the standard `tool_use ids were found without tool_result blocks immediately after` error instead. To give Claude more input, send it as a separate user message after the turn completes.
 
-
-
-
-pause_turn
+### pause_turn
 
 Returned when the server-side sampling loop reaches its iteration limit while executing [server tools](/docs/en/agents-and-tools/tool-use/server-tools) such as web search. The default limit is 10 iterations per request.
 
@@ -441,7 +565,7 @@ Ruby
 
 ```python
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     tools=[{"type": "web_search_20250305", "name": "web_search"}],
     messages=[{"role": "user", "content": "Search for latest AI news"}],
@@ -454,21 +578,18 @@ if response.stop_reason == "pause_turn":
         {"role": "assistant", "content": response.content},
     ]
     continuation = client.messages.create(
-        model="claude-opus-5",
+        model="claude-opus-5-5",
         max_tokens=4096,
         messages=messages,
         tools=[{"type": "web_search_20250305", "name": "web_search"}],
     )
 ```
 
-
+
 
 Your application should handle `pause_turn` in any agent loop that uses server tools. Add the assistant's response to your messages array and make another API request to let Claude continue.
 
-
-
-
-refusal
+### refusal
 
 Claude declined to generate a response. Safety classifiers return this stop reason as a normal HTTP 200 response, not an error.
 
@@ -495,7 +616,7 @@ Ruby
 ```python
 client = anthropic.Anthropic()
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     messages=[{"role": "user", "content": "[Unsafe request]"}],
 )
@@ -508,20 +629,17 @@ if response.stop_reason == "refusal":
 
 
 
-If you encounter `refusal` stop reasons frequently while using Claude Sonnet 4.5 or Opus 4.1 (deprecated; see [Model deprecations](/docs/en/about-claude/model-deprecations)), you can try updating your API calls to use Haiku 4.5 (`claude-haiku-4-5-20251001`), which has different usage restrictions. Learn more about [understanding Sonnet 4.5's API safety filters](https://support.claude.com/en/articles/12449294-understanding-sonnet-4-5-s-api-safety-filters).
+If you encounter `refusal` stop reasons frequently while using Claude Sonnet 4.5 or Claude Opus 4.1 (the latter [retired, except on Bedrock and Google Cloud](/docs/en/about-claude/model-deprecations)), you can try updating your API calls to use Haiku 4.5 (`claude-haiku-4-5-20251001`), which has different usage restrictions. Learn more about [understanding Sonnet 4.5's API safety filters](https://support.claude.com/en/articles/12449294-understanding-sonnet-4-5-s-api-safety-filters).
 
 On a refusal, the `stop_details` object identifies the policy category that triggered it. The categories and the full refusal response shape are covered on [Refusals and fallback](/docs/en/build-with-claude/refusals-and-fallback#refusal-response). `stop_details` is `null` for all stop reasons other than `refusal`.
 
-A refused request on Claude Fable 5 or Claude Opus 5 can usually be served by retrying on another Claude model, and [Refusals and fallback](/docs/en/build-with-claude/refusals-and-fallback) shows how to set up that retry, server-side or in your client. [Fallback credit](/docs/en/build-with-claude/fallback-credit) covers how to avoid paying the prompt-cache cost twice when you build the retry yourself.
+A refused request on Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, or Claude Opus 5 can usually be served by retrying on another Claude model. [Refusals and fallback](/docs/en/build-with-claude/refusals-and-fallback) shows how to set up that retry, server-side or in your client. If you build the retry yourself from Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, or Claude Opus 5, [fallback credit](/docs/en/build-with-claude/fallback-credit) covers how to avoid paying the prompt-cache cost twice.
 
-
-
-
-model_context_window_exceeded
+### model_context_window_exceeded
 
 Claude stopped because it reached the model's context window limit. This lets you request the maximum possible tokens without knowing the exact input size.
 
-
+
 
 This stop reason is currently typed only in the SDKs' `beta` namespace, so the following examples call `client.beta.messages` and use the `Beta`-prefixed types. On Sonnet 4.5 and newer models the API returns this value without a beta header. For earlier models, add the `model-context-window-exceeded-2025-08-26` beta header to enable it.
 
@@ -548,7 +666,7 @@ Ruby
 ```python
 # Request with maximum tokens to get as much as possible
 response = client.beta.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=20000,  # Python SDK requires streaming for max_tokens above ~21k
     messages=[
         {"role": "user", "content": "Large input that uses most of context window..."}
@@ -561,15 +679,9 @@ if response.stop_reason == "model_context_window_exceeded":
     # The response is still valid but was limited by context window
 ```
 
+## Best practices for handling stop reasons
 
-
-
-Best practices for handling stop reasons
-
-
-
-
-Always check stop_reason
+### Always check stop_reason
 
 Make it a habit to check the `stop_reason` in your response handling logic:
 
@@ -591,27 +703,26 @@ Ruby
 
 ```python
 def handle_response(response):
-    if response.stop_reason == "tool_use":
-        return handle_tool_use(response)
-    elif response.stop_reason == "max_tokens":
-        return handle_truncation(response)
-    elif response.stop_reason == "model_context_window_exceeded":
-        return handle_context_limit(response)
-    elif response.stop_reason == "pause_turn":
-        return handle_pause(response)
-    elif response.stop_reason == "refusal":
-        return handle_refusal(response)
-    else:
-        # Handle end_turn and other cases
-        return next(
-            (block.text for block in response.content if block.type == "text"), ""
-        )
+    match response.stop_reason:
+        case "tool_use":
+            return handle_tool_use(response)
+        case "max_tokens":
+            return handle_truncation(response)
+        case "model_context_window_exceeded":
+            return handle_context_limit(response)
+        case "pause_turn":
+            return handle_pause(response)
+        case "refusal":
+            return handle_refusal(response)
+        case _:
+            # Handle end_turn and other cases
+            return next(
+                (block.text for block in response.content if block.type == "text"),
+                "",
+            )
 ```
 
-
-
-
-Handle truncated responses gracefully
+### Handle truncated responses gracefully
 
 When a response is truncated because of token limits or the context window, append a notice so the reader knows the output is incomplete. To continue generating from where the response left off instead, see [Ensuring complete responses](#ensuring-complete-responses).
 
@@ -643,10 +754,7 @@ def handle_truncated_response(response):
     return text
 ```
 
-
-
-
-Implement retry logic for pause_turn
+### Implement retry logic for pause_turn
 
 When using [server tools](/docs/en/agents-and-tools/tool-use/server-tools), the API may return `pause_turn` if the server-side sampling loop reaches its iteration limit (default 10). Handle this by continuing the conversation:
 
@@ -679,7 +787,10 @@ def handle_server_tool_conversation(client, user_query, tools, max_continuations
 
     for _ in range(max_continuations):
         response = client.messages.create(
-            model="claude-opus-5", max_tokens=4096, messages=messages, tools=tools
+            model="claude-opus-5-5",
+            max_tokens=4096,
+            messages=messages,
+            tools=tools,
         )
 
         if response.stop_reason != "pause_turn":
@@ -696,26 +807,17 @@ def handle_server_tool_conversation(client, user_query, tools, max_continuations
     return response
 ```
 
-
-
-
-Stop reasons vs. errors
+## Stop reasons vs. errors
 
 It's important to distinguish between `stop_reason` values and actual errors:
 
-
-
-
-Stop reasons (successful responses)
+### Stop reasons (successful responses)
 
 - Part of the response body
 - Indicate why generation stopped normally
 - Response contains valid content
 
-
-
-
-Errors (failed requests)
+### Errors (failed requests)
 
 - HTTP status codes 4xx or 5xx
 - Indicate request processing failures
@@ -746,7 +848,7 @@ client = anthropic.Anthropic()
 
 try:
     response = client.messages.create(
-        model="claude-opus-5",
+        model="claude-opus-5-5",
         max_tokens=1024,
         messages=[{"role": "user", "content": "Hello!"}],
     )
@@ -757,16 +859,14 @@ try:
 
 except anthropic.APIStatusError as e:
     # Handle actual errors
-    if e.status_code == 429:
-        print("Rate limit exceeded")
-    elif e.status_code == 500:
-        print("Server error")
+    match e.status_code:
+        case 429:
+            print("Rate limit exceeded")
+        case 500:
+            print("Server error")
 ```
 
-
-
-
-Streaming considerations
+## Streaming considerations
 
 When using streaming, `stop_reason` is:
 
@@ -798,7 +898,7 @@ Ruby
 client = anthropic.Anthropic()
 
 with client.messages.stream(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello!"}],
 ) as stream:
@@ -809,15 +909,9 @@ with client.messages.stream(
                 print(f"Stream ended with: {stop_reason}")
 ```
 
+## Common patterns
 
-
-
-Common patterns
-
-
-
-
-Handling tool use workflows
+### Handling tool use workflows
 
 
 
@@ -845,7 +939,10 @@ def complete_tool_workflow(client, user_query, tools):
 
     while True:
         response = client.messages.create(
-            model="claude-opus-5", max_tokens=1024, messages=messages, tools=tools
+            model="claude-opus-5-5",
+            max_tokens=1024,
+            messages=messages,
+            tools=tools,
         )
 
         if response.stop_reason == "tool_use":
@@ -858,10 +955,7 @@ def complete_tool_workflow(client, user_query, tools):
             return response
 ```
 
-
-
-
-Ensuring complete responses
+### Ensuring complete responses
 
 Python
 
@@ -886,7 +980,7 @@ def get_complete_response(client, prompt, max_attempts=3):
 
     for _ in range(max_attempts):
         response = client.messages.create(
-            model="claude-opus-5", messages=messages, max_tokens=4096
+            model="claude-opus-5-5", messages=messages, max_tokens=4096
         )
 
         full_response += next(
@@ -906,10 +1000,7 @@ def get_complete_response(client, prompt, max_attempts=3):
     return full_response
 ```
 
-
-
-
-Getting maximum tokens without knowing input size
+### Getting maximum tokens without knowing input size
 
 With the `model_context_window_exceeded` stop reason, you can request the maximum possible tokens without calculating input size:
 
@@ -936,53 +1027,53 @@ def get_max_possible_tokens(client, prompt):
     without needing to calculate input token count
     """
     response = client.beta.messages.create(
-        model="claude-opus-5",
+        model="claude-opus-5-5",
         messages=[{"role": "user", "content": prompt}],
         max_tokens=20000,  # Python SDK requires streaming for max_tokens above ~21k
     )
 
-    if response.stop_reason == "model_context_window_exceeded":
-        # Got the maximum possible tokens given input size
-        print(
-            f"Generated {response.usage.output_tokens} tokens (context limit reached)"
-        )
-    elif response.stop_reason == "max_tokens":
-        # Got exactly the requested tokens
-        print(f"Generated {response.usage.output_tokens} tokens (max_tokens reached)")
-    else:
-        # Natural completion
-        print(f"Generated {response.usage.output_tokens} tokens (natural completion)")
+    match response.stop_reason:
+        case "model_context_window_exceeded":
+            # Got the maximum possible tokens given input size
+            print(
+                f"Generated {response.usage.output_tokens} tokens (context limit reached)"
+            )
+        case "max_tokens":
+            # Got exactly the requested tokens
+            print(
+                f"Generated {response.usage.output_tokens} tokens (max_tokens reached)"
+            )
+        case _:
+            # Natural completion
+            print(
+                f"Generated {response.usage.output_tokens} tokens (natural completion)"
+            )
 
     return next((block.text for block in response.content if block.type == "text"), "")
 ```
 
+## Next steps
 
-
+
 
-Next steps
-
-
-Refusals and fallback
+[Refusals and fallback](/docs/en/build-with-claude/refusals-and-fallback)
 
 Retry refused requests on a fallback model, server-side or in your client.
 
-
 
 
-Tool Runner (SDK)
+[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)
 
 Let the SDK manage the `tool_use` loop, result formatting, and retries for you.
 
-
 
 
-Streaming messages
+[Streaming messages](/docs/en/build-with-claude/streaming)
 
 Read `stop_reason` from the `message_delta` event when streaming.
 
-
 
 
-Errors
+[Errors](/docs/en/api/errors)
 
 Handle 4xx and 5xx HTTP errors, which are distinct from stop reasons.

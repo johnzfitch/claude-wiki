@@ -2,18 +2,16 @@
 title: "Claude Tag launch promo for Claude Team and Enterprise | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15575654"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:51Z"
+fetched_at: "2026-09-29T06:32:21Z"
 tags: ["enterprise"]
 ---
 
 # Claude Tag launch promo for Claude Team and Enterprise
 
-June 23, 2026
 
+With the launch of Claude Tag, we're issuing a one-time Claude Tag usage credit to eligible organizations—\$25000 per Claude Enterprise organization and \$2500 per Claude Team organization. Credits are issued automatically and are scoped to your organization's Claude Tag usage. The credit applies to Claude Tag usage in Slack channels, which is billed to your organization. It doesn't cover direct messages with Claude, which are billed to individual seats.
 
-With the launch of Claude Tag, we're issuing a one-time Claude Tag usage credit to eligible organizations - \$25000 per Claude Enterprise organization and \$2500 per Claude Team organization with at least 10 paid seats. Credits are issued automatically and are scoped to your organization's Claude Tag usage. The credit applies to Claude Tag usage in Slack channels, which is billed to your organization. It doesn't cover direct messages with Claude, which are billed to individual seats.
-
-All promotional credits expire at 11:59 PM Pacific Time on September 1, 2026.
+**Update: this promo has been extended.** All promotional credits now expire at 11:59 PM Pacific Time on October 1, 2026. Starting September 2, 2026, organizations must connect Claude Tag to GitHub to receive the credit.
 
 This article explains who's eligible, how the credit works, and when it expires. Additional offer terms apply and are available here: **[Claude Promotional Credit Offer Terms](https://www.anthropic.com/legal/promotion-credit-terms)**.
 
@@ -23,21 +21,17 @@ The promo is available to:
 
 - Claude Enterprise organizations, both sales-assisted and self-serve, on any billing type, including legacy contracts and AWS Marketplace / partner billing. Early access program customers are included.
 
-- Claude Team organizations with at least 10 paid seats.
+- Claude Team organizations
 
-The promo isn't available to:
+The promo isn't available to Claude Enterprise organizations on a free trial.
 
-- Claude Enterprise organizations on a free trial.
+From September 2, 2026, the credit is issued once an admin connects Claude Tag to GitHub. Organizations that received the credit before September 2 keep it with no additional steps.
 
-- Claude Team organizations with less than 10 paid seats.
-
-Organizations that qualify after launch are still eligible. A new Enterprise organization, or a Team organization that reaches the paid-seat minimum while the promo is running, receives the credit when it qualifies. Credits issued after launch still expire at 11:59 PM Pacific Time on September 1, 2026.
-
-Your organization's subscription must be active and in good standing when the credit is issued and when it's used.
+All credits expire at 11:59 PM Pacific Time on October 1, 2026. Your organization's subscription must be active and in good standing when the credit is issued and when it's used.
 
 ## How the credit works
 
-Eligible organizations receive the credit automatically when the promo launches. There's nothing for admins or users to claim.
+Eligible organizations receive the credit automatically. From September 2, 2026, the credit is issued when your organization connects Claude Tag to GitHub. There's nothing else for admins or users to claim.
 
 - The credit is one shared amount per organization, not per seat.
 
@@ -63,7 +57,7 @@ Admins can track usage of the promotional credit in Settings.
 
 ## When the credit expires
 
-All credits expire at 11:59 PM Pacific Time on September 1, 2026, regardless of when they were issued. Any unused portion is forfeited at expiration.
+All credits expire at 11:59 PM Pacific Time on October 1, 2026, regardless of when they were issued. Any unused portion is forfeited at expiration.
 
 ## Temporary holds on eligibility
 
@@ -77,7 +71,7 @@ No. It's one shared credit per organization.
 
 ### Do we need to do anything to claim it?
 
-No. The credit is applied automatically to eligible organizations.
+If your organization received the credit before September 2, 2026, no. If your organization qualifies on or after September 2, an admin needs to connect Claude Tag to GitHub, and the credit is issued once the connection is complete.
 
 ### What can the credit be spent on?
 
@@ -91,10 +85,6 @@ It covers Claude Tag usage billed to your organization, such as usage in shared 
 
 Yes. All billing types are in scope, including legacy contracts, AWS Marketplace, and partner/reseller billing.
 
-### Our Team organization doesn't meet the seat minimum yet. Can we qualify later?
-
-Yes. A Team organization that reaches the paid-seat minimum while the promo is running receives the credit at that point. The credit still expires at 11:59 PM Pacific Time on September 1, 2026.
-
 ### Where can I get help?
 
-Contact your account team, or reach out to support through the Help Center.
+Contact your account team, or **[reach out to Support](https://support.claude.com/en/articles/9015913)**.

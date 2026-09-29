@@ -2,7 +2,7 @@
 title: "Week 15 · April 6–10, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w15"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:38:28Z"
+fetched_at: "2026-09-04T06:29:56Z"
 tags: ["claude-code"]
 ---
 

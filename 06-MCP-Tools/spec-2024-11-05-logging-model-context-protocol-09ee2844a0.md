@@ -2,7 +2,7 @@
 title: "Logging - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2024-11-05/server/utilities/logging"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:47Z"
+fetched_at: "2026-09-29T06:29:46Z"
 tags: ["mcp"]
 ---
 

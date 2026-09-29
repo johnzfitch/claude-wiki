@@ -1,132 +1,169 @@
 ---
-title: "Work across Microsoft 365 apps | Claude Help Center"
+title: "Work across M365 apps - Claude.ai Documentation"
 source_url: "https://support.claude.com/en/articles/13892150-work-across-apps-with-cowork"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:41:46Z"
-tags: ["skills"]
+fetched_at: "2026-09-29T06:30:42Z"
 ---
 
-# Work across Microsoft 365 apps
+## On this page
 
-May 7, 2026
+- [Requirements](#requirements)
+- [Enable cross-app mode](#enable-cross-app-mode)
+- [How it works](#how-it-works)
+- [What you can do](#what-you-can-do)
+  - [Read and write across open apps](#read-and-write-across-open-apps)
+  - [Pass context between apps](#pass-context-between-apps)
+- [Skills work across apps](#skills-work-across-apps)
+- [Manage access as an admin](#manage-access-as-an-admin)
+- [Data handling](#data-handling)
+- [Current limitations](#current-limitations)
+- [Troubleshooting](#troubleshooting)
+  - [Claude doesn’t see my open file](#claude-doesn%E2%80%99t-see-my-open-file)
+  - [Changes aren’t appearing in the other app](#changes-aren%E2%80%99t-appearing-in-the-other-app)
 
+Features
 
-Claude can now work across Microsoft 365 apps to coordinate between the Excel, PowerPoint, Word, and Outlook add-ins. Instead of switching between apps and providing context each time, Claude can read from one app and make changes in another. For example, you can ask Claude to analyze data in an Excel workbook, then create a presentation in PowerPoint using those results, without copying and pasting between apps.
+# Work across M365 apps
 
-## Requirements
+Copy pageCopy page
 
-- A paid Claude plan (Pro, Max, Team, or Enterprise)
+Let Claude read from one Microsoft 365 app and make changes in another in a single conversation.
 
-- The Claude for Excel add-in installed from the Microsoft Marketplace
+Copy pageCopy page
 
-- The Claude for PowerPoint add-in installed from the Microsoft Marketplace
+Claude can coordinate between the Excel, PowerPoint, Word, and Outlook add-ins in your Microsoft 365 suite. Instead of switching between apps and re-providing context each time, Claude can read from one app and make changes in another.
 
-- The Claude for Word add-in installed from the Microsoft Marketplace
-
-- The Claude for Outlook add-in installed from the Microsoft Marketplace
-
-------------------------------------------------------------------------
-
-## Let Claude work across apps
-
-### 1. Install the add-ins
-
-Get the add-ins from the Microsoft Marketplace:
-
-- **[Claude for Microsoft 365 (Excel, PowerPoint, and Word)](https://marketplace.microsoft.com/en-us/product/office/WA200010725?tab=Overview)**
-
-- **[Claude for Outlook](https://marketplace.microsoft.com/en-us/product/office/WA200010724?tab=Overview)**
-
-Open each app and activate the add-in at least once before using the cross-app features.
-
-### 2. Toggle the setting on
-
-**Note:** If you're a member of a Team or Enterprise plan, an organization owner needs to go to **[Organization settings \> Office agents](https://claude.ai/admin-settings/office-agents)** and toggle the **Let Claude work across apps** setting on before you can enable this capability individually.
-
-Go to **Settings** in each of the add-ins and toggle **Let Claude work across files** on:
+Working across apps is available when you sign in with your Claude account directly. It is not supported when connecting through Amazon Bedrock, Google Cloud Vertex AI, Azure AI Foundry, or an LLM gateway.
 
 
-**Note:** This setting is default on for Pro and Max plans and default off for Team and Enterprise plans.
+[​](#requirements)
 
-You'll see connected file indicators when Excel, PowerPoint, Word, or Outlook files are linked to your session:
+Requirements
+
+Install each Claude for M365 add-in and confirm your plan before turning on cross-app mode.
+
+- A paid Claude plan: Pro, Max, Team, or Enterprise.
+- [Claude for Excel](/docs/office-agents/excel) installed from the Microsoft AppSource.
+- [Claude for PowerPoint](/docs/office-agents/powerpoint) installed from the Microsoft AppSource.
+- [Claude for Word](/docs/office-agents/word) installed from the Microsoft AppSource.
+- [Claude for Outlook](/docs/office-agents/outlook) installed from the Microsoft AppSource.
 
 
-------------------------------------------------------------------------
+[​](#enable-cross-app-mode)
 
-## How it works
+Enable cross-app mode
 
-When you describe a task that involves multiple files or apps, Claude coordinates behind the scenes:
+1
 
-- Claude uses the Excel, PowerPoint, Word, and Outlook add-ins to read from and write to open files.
+Install each add-in
 
-- Context transfers between apps automatically, so you don't need to copy and paste information manually.
+Install Claude for Excel, PowerPoint, Word, and Outlook from the Microsoft AppSource. Open each app and activate the add-in at least once before using cross-app features.
 
-- You stay in one place while Claude does the switching.
+2
 
-## What you can do
+Enable per add-in
 
-### Read and write across open files
+Open Settings in each add-in and turn on “Let Claude work across files”. Pro and Max plans have this on by default; Team and Enterprise plans default to off. The toggle is per-device, so enable it in every host you want to coordinate from.
 
-Claude can read data from an open Excel workbook, PowerPoint presentation, Word document, or Outlook email, and make changes to them directly. For example:
+Once enabled, connected-app indicators appear in the sidebar when other Excel, PowerPoint, Word, or Outlook sessions are linked.
+
+
+[​](#how-it-works)
+
+How it works
+
+When you describe a task that involves multiple files or apps, Claude coordinates automatically:
+
+- Claude uses the Excel, PowerPoint, Word, and Outlook add-ins to read from and write to open files and email threads.
+- Context transfers between apps automatically, so you don’t need to copy and paste information manually.
+
+You stay in one place while Claude does the switching.
+
+
+[​](#what-you-can-do)
+
+What you can do
+
+
+[​](#read-and-write-across-open-apps)
+
+Read and write across open apps
+
+Claude can read data from an open Excel workbook, PowerPoint presentation, Word document, or Outlook email thread, and make changes to them directly. For example:
 
 - Pull numbers from an Excel model into a PowerPoint slide or a Word memo.
-
 - Update a chart in PowerPoint with the latest figures from Excel.
-
 - Read content from a presentation and use it to populate a spreadsheet.
-
 - Summarize a Word document into PowerPoint slides.
-
 - Draft a Word memo using data from an Excel workbook.
+- Open an attached letter of intent in Word with the Outlook thread already loaded as context.
+- Pull figures from an email thread into an open Excel model.
 
-- Open your Outlook emails and full thread history, including attachments.
 
-### Pass context between apps
+[​](#pass-context-between-apps)
 
-When Claude works across multiple files in Excel, PowerPoint, Word, and Outlook, it carries relevant context forward. If you've been building a financial model in Excel and ask Claude to create a summary deck or draft an investment memo, Claude already understands the model's structure and key outputs, so you don't need to re-explain.
+Pass context between apps
 
-------------------------------------------------------------------------
+Claude carries relevant context forward when working across multiple files. If you’ve been building a financial model in Excel and ask Claude to create a summary deck or draft an investment memo, Claude already understands the model’s structure and key outputs, so you don’t need to re-explain.
 
-## Skills work across apps too
 
-Skills you've enabled in your Claude settings apply when Claude is working in Excel, PowerPoint, Word, or Outlook during a cross-app task. If you have a Skill that enforces your team's modeling conventions in Excel and another that matches your slide template in PowerPoint, Claude uses each one in the right app as it moves through the workflow.
+[​](#skills-work-across-apps)
 
-For more on how Skills work, see **[Use Skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude).**
+Skills work across apps
 
-------------------------------------------------------------------------
+Skills you’ve enabled in your Claude settings apply when Claude is working in Excel, PowerPoint, Word, or Outlook during a cross-app task. If you have a Skill that enforces your team’s modeling conventions in Excel and another that matches your slide template in PowerPoint, Claude uses each one in the right app as it moves through the workflow. For more on Skills, see [Use Skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
 
-## Data handling
 
-Inputs and outputs are automatically deleted from Anthropic's backend within 30 days of receipt or generation, except in cases outlined in **[How long do you store my organization's data?](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)** The Claude for Excel, Claude for PowerPoint, Claude for Word, and Claude for Outlook add-ins do not inherit custom data retention settings your organization may have set, and activity is not currently included in Enterprise audit logs, the Compliance API, or data exports.
+[​](#manage-access-as-an-admin)
 
-### For admins who want to manage access
+Manage access as an admin
 
-Team and Enterprise organization owners can control whether team members can access this capability:
+Team and Enterprise organization owners can control whether team members can access this capability.
 
-1.  Go to **[Organization settings \> Office agents](https://claude.ai/admin-settings/office-agents)**
+1
 
-2.  Toggle **Let Claude work across apps** on or off.
+Open organization settings
 
-Admins can also manage member access to the Claude for Excel, PowerPoint, Word, and Outlook add-ins through the **[Microsoft 365 Admin Center](https://admin.microsoft.com)**.
+Go to Organization settings, Office agents.
 
-------------------------------------------------------------------------
+2
 
-## Current limitations
+Toggle the setting
 
-- Claude can only read from and write to files that are currently open in Excel, PowerPoint, Word, or Outlook.
+Turn “Let Claude work across apps” on or off.
 
-- Claude cannot create, open, close, or switch files directly from the add-ins—the files and add-ins must be open with the feature turned on.
+Admins can also manage member access to the Claude for Excel, PowerPoint, Word, and Outlook add-ins through the Microsoft 365 Admin Center.
 
-- Chat history for cross-app sessions is not saved between sessions.
 
-------------------------------------------------------------------------
+[​](#data-handling)
 
-## Troubleshooting
+Data handling
 
-### Claude doesn't see my open file
+Inputs and outputs are deleted from Anthropic’s backend within 30 days of receipt or generation, except in cases outlined in [How long do you store my organization’s data?](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data). The Claude for M365 add-ins do not inherit custom data retention settings your organization may have set, and activity is not included in Enterprise audit logs or data exports. For Enterprise organizations with the [Compliance API](https://platform.claude.com/docs/en/manage-claude/compliance-api) enabled, add-in sessions are included in the Compliance API. This coverage is in public beta and requires no additional setup: the same Compliance Access Keys apply. Chat history is stored locally in your browser, not on Anthropic’s servers, and can be cleared from Settings at any time.
 
-Make sure the add-in is activated in the app (**Tools \> Add-ins** on Mac or **Home \> Add-ins** on Windows) and that working across apps is turned on in Claude Desktop settings.
 
-### Changes aren't appearing in the other app
+[​](#current-limitations)
+
+Current limitations
+
+- Claude can only read from and write to files that are currently open in Excel, PowerPoint, or Word, and the email or event currently open in Outlook.
+- Claude cannot create, open, close, or switch files directly. The files and add-ins must be open with the feature turned on.
+
+
+[​](#troubleshooting)
+
+Troubleshooting
+
+
+[​](#claude-doesn’t-see-my-open-file)
+
+Claude doesn’t see my open file
+
+Make sure the add-in is activated in the app (Tools, Add-ins on Mac or Home, Add-ins on Windows) and that working across apps is turned on in the add-in settings.
+
+
+[​](#changes-aren’t-appearing-in-the-other-app)
+
+Changes aren’t appearing in the other app
 
 Claude works on open files in sequence. Wait for Claude to finish its current action, then check the target file. You may need to ask Claude to refresh or re-read the file.

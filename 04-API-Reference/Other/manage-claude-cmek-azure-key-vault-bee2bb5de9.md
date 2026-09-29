@@ -2,7 +2,7 @@
 title: "Configure Azure Key Vault for CMEK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/cmek-azure-key-vault"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:41:11Z"
+fetched_at: "2026-09-26T06:39:42Z"
 tags: ["api"]
 ---
 
@@ -12,35 +12,31 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcmek-azure-key-vault)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Organization
 
-[Admin API](/docs/en/manage-claude/admin-api)[User management (beta)](/docs/en/manage-claude/user-management)[Workspaces](/docs/en/manage-claude/workspaces)
+[Admin API](/docs/en/manage-claude/admin-api)[User management](/docs/en/manage-claude/user-management)[Workspaces](/docs/en/manage-claude/workspaces)
 
 Authentication
 
-[Overview](/docs/en/manage-claude/authentication)[Create an Admin API key](/docs/en/manage-claude/admin-api-keys)[Workload Identity Federation](/docs/en/manage-claude/workload-identity-federation)[Manage WIF via API](/docs/en/manage-claude/wif-admin-api)[WIF reference](/docs/en/manage-claude/wif-reference)
+[Overview](/docs/en/manage-claude/authentication)[Create an Admin API key](/docs/en/manage-claude/admin-api-keys)[App Attest](/docs/en/manage-claude/app-attest)[Workload Identity Federation](/docs/en/manage-claude/workload-identity-federation)[Manage WIF via API](/docs/en/manage-claude/wif-admin-api)[WIF reference](/docs/en/manage-claude/wif-reference)
 
 Identity providers
 
@@ -52,32 +48,29 @@ Data & compliance
 
 [Data residency](/docs/en/manage-claude/data-residency)[API and data retention](/docs/en/manage-claude/api-and-data-retention)[Access Transparency](/docs/en/manage-claude/access-transparency)
 
-Encryption keys
+[Encryption keys](/docs/en/manage-claude/cmek)
 
 [Overview](/docs/en/manage-claude/cmek)[AWS KMS](/docs/en/manage-claude/cmek-aws-kms)[Google Cloud KMS](/docs/en/manage-claude/cmek-google-cloud-kms)[Azure Key Vault](/docs/en/manage-claude/cmek-azure-key-vault)
 
+[Inference hooks](/docs/en/manage-claude/inference-hooks)
+
 Compliance API
 
-[Overview](/docs/en/manage-claude/compliance-api)[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)[Activity Feed](/docs/en/manage-claude/compliance-activity-feed)[Chats, files, and projects](/docs/en/manage-claude/compliance-content-data)[Organizations, users, roles, groups, and settings](/docs/en/manage-claude/compliance-org-data)[Design your integration](/docs/en/manage-claude/compliance-integration-patterns)[Errors](/docs/en/manage-claude/compliance-errors)[FAQ](/docs/en/manage-claude/compliance-faq)
+[Overview](/docs/en/manage-claude/compliance-api)[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)[Activity Feed](/docs/en/manage-claude/compliance-activity-feed)[Chats, files, and projects](/docs/en/manage-claude/compliance-content-data)[Session transcripts](/docs/en/manage-claude/compliance-sessions)[Organizations, users, roles, groups, and settings](/docs/en/manage-claude/compliance-org-data)[Design your integration](/docs/en/manage-claude/compliance-integration-patterns)[Errors](/docs/en/manage-claude/compliance-errors)[FAQ](/docs/en/manage-claude/compliance-faq)
 
-[](/login)
+[Console](/)
 
-
-
-
-Admin
-
-Azure Key Vault
-
-Admin/Encryption keys
+[Admin](/docs/en/manage-claude/admin-api)Encryption keys
 
 # Configure Azure Key Vault for CMEK
 
+Copy page
 
 
 
 Use Azure Key Vault to provide an encryption key for your organization.
 
+Copy page
 
 
 
@@ -95,10 +88,7 @@ This guide walks through configuring an Azure Key Vault key as a [customer-manag
 
 Enabling CMEK is permanent. If your Key Vault key is deleted or disabled, Anthropic cannot recover the data encrypted under it. Review the [warnings and limitations](/docs/en/manage-claude/cmek) before you start.
 
-
-
-
-Prerequisites
+## Prerequisites
 
 - An Azure Key Vault with **RBAC authorization enabled** (`enableRbacAuthorization: true`) and **public network access allowed**. Anthropic calls your vault over the public data-plane endpoint; private endpoints are not supported.
 - **Purge protection enabled** (`enablePurgeProtection: true`) on the vault. Without it, a deleted key can be permanently purged during the soft-delete retention window, causing irreversible loss of your CMEK-protected data. Purge protection cannot be disabled once enabled.
@@ -108,15 +98,12 @@ Prerequisites
 - The [`az` CLI](https://learn.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) installed and authenticated.
 - **Diagnostic Settings** configured on the vault to route the `AuditEvent` log category to Log Analytics, a storage account, or an event hub. Azure Key Vault does not emit data-plane audit logs (such as `KeyWrap`, `KeyUnwrap`, and `KeyGet`) by default, so without this you get no audit trail for Anthropic's key operations.
 
-
-
-
-Anthropic app information
+## Anthropic app information
 
 To have Anthropic use your encryption key, you must configure an Anthropic multitenant application ID and display name. Those values are:
 
 | Field                          | Value                                  |
-|--------------------------------|----------------------------------------|
+|:-------------------------------|:---------------------------------------|
 | Multitenant app client ID (US) | `8635ae1a-3e5d-44e8-a4ed-e0f614466f87` |
 | App display name               | `anthropic-cmek-client-us`             |
 
@@ -124,14 +111,11 @@ To have Anthropic use your encryption key, you must configure an Anthropic multi
 
 Use only this published client ID and display name. Never trust an identifier provided over email, chat, or any onboarding channel.
 
-
-
-
-Encryption key setup
+## Encryption key setup
 
 1.  1
 
-    Consent to the Anthropic multitenant application
+    ### Consent to the Anthropic multitenant application
 
     This creates a service principal in your Entra tenant for Anthropic's CMEK client application. The application requests no Microsoft Graph permissions; it exists solely as a federation target for Key Vault data-plane access.
 
@@ -165,16 +149,22 @@ Encryption key setup
 
 2.  2
 
-    Create an RSA key in your vault
+    ### Create an RSA key in your vault
 
     Azure Key Vault does not support symmetric key wrapping, so the key must be RSA (3072-bit or larger) with `wrapKey` and `unwrapKey` in its allowed operations.
 
+    The `--tags` option adds the organization tag, `anthropic-org-<ORGANIZATION_UUID>` with the value `true`, where `<ORGANIZATION_UUID>` is your Anthropic organization ID in lowercase. The tag is required for Anthropic to validate the key.
+
+    
+    **Finding your organization ID:** Copy the **Organization ID** field under **Settings \> Organization** in the Claude Console, or under **Organization settings \> Organization** in claude.ai, or read the `id` field from the [Organization Info](/docs/en/api/beta/organization/retrieve) endpoint. Use the bare UUID, not the `org_`-prefixed ID.
+
     ``` shiki
     az keyvault key create \
-      --vault-name <your-vault-name> \
-      --name <your-key-name> \
+      --vault-name <VAULT_NAME> \
+      --name <KEY_NAME> \
       --kty RSA --size 3072 \
-      --ops wrapKey unwrapKey
+      --ops wrapKey unwrapKey \
+      --tags anthropic-org-<ORGANIZATION_UUID>=true
     ```
 
     
@@ -183,9 +173,16 @@ Encryption key setup
 
     From the Portal, open your Key Vault, select **Keys**, then **Generate/Import**. Set the key type to RSA and the size to 3072 or larger. To restrict the key to wrap and unwrap only, open the key version, scroll to **Permitted operations**, and uncheck everything except **Wrap Key** and **Unwrap Key**.
 
+    On the **Create a key** page, also add the organization tag under **Tags**.
+
+    To share one key among several Anthropic organizations, add one such tag for each organization. A key version can carry at most 15 tags, including your own.
+
+    
+    To add the tag to a key you already have, open the key's current version in the Portal, select the link next to **Tags**, add the tag, and click **Save**. With the Azure CLI, run `az keyvault key set-attributes --vault-name <VAULT_NAME> --name <KEY_NAME> --tags anthropic-org-<ORGANIZATION_UUID>=true`. Its `--tags` option replaces the version's tags, so also put each tag the version already has in `--tags`, as `name=value`. For a key in a Managed HSM, use `--hsm-name <HSM_NAME>` instead of `--vault-name`.
+
 3.  3
 
-    Grant the Anthropic service principal access to your key
+    ### Grant the Anthropic service principal access to your key
 
     Assign the `Key Vault Crypto User` role to the service principal from the first step, scoped to the **individual key** rather than the whole vault.
 
@@ -205,13 +202,12 @@ Encryption key setup
 
     From the Portal, open the **key** (not the vault), select its **Access control (IAM)** tab, click **Add \> Add role assignment**, select **Key Vault Crypto User**, and assign it to the `anthropic-cmek-client-us` service principal.
 
-    
-
+    
     **Dedicated vault alternative:** Microsoft recommends a dedicated vault per application with roles assigned at the vault scope. If you provision a vault that holds only this Anthropic CMEK key, you can assign the role at the vault scope instead and the effect is identical. Scope to the individual key when the key lives in a shared vault.
 
 4.  4
 
-    Verify your vault configuration
+    ### Verify your vault configuration
 
     ``` shiki
     az keyvault show --name <your-vault-name> \
@@ -229,108 +225,40 @@ Encryption key setup
     - `uri` is the vault URI you use when you register the key.
     - `tenantId` is the tenant that governs the vault. Use this value as `tenant_id` when you register the key, not the tenant of your currently-active subscription (the two can differ in cross-tenant setups).
 
-
-
-
-Register the key with Anthropic
+## Register the key with Anthropic
 
 How you register the key depends on which product you use.
 
 Claude Platform
 
-Claude Platform
-
 Claude Enterprise
 
-Claude Enterprise
+You can set up the key in the Claude Console or through the Admin API, with the same result.
+
+Claude Console
+
+API
 
 1.  1
 
-    Register the key with Anthropic
+    ### Register the key with Anthropic
 
-    Create an external key configuration through the Admin API.
+    In the Claude Console, open **Settings \> Encryption keys** and click **Add key**. Enter a display name, choose **Azure Key Vault**, and click **Continue**. Fill in **Vault URI**, **Key name**, and **Tenant ID**, and click **Add**.
 
-    ``` shiki
-    curl -sS https://api.anthropic.com/v1/organizations/external_keys \
-      -H "x-api-key: <anthropic-admin-api-key>" \
-      -H "anthropic-version: 2023-06-01" \
-      -H "content-type: application/json" \
-      -d '{
-        "display_name": "<friendly-name>",
-        "geo": "us",
-        "provider_config": {
-          "type": "azure",
-          "vault_uri": "https://<your-vault-name>.vault.azure.net/",
-          "key_name": "<your-key-name>",
-          "tenant_id": "<your-tenant-id>"
-        }
-      }'
-    ```
-
-    
-
-    The response contains the external key ID:
-
-    ``` shiki
-    {
-      "type": "external_key",
-      "id": "ekey_<id>",
-      "display_name": "<friendly-name>"
-    }
-    ```
-
-    
+    The key details step shows the organization tag. Add it to the key, as [the create step](#organization-tag) describes, before you click **Add**.
 
 2.  2
 
-    Validate the key
+    ### Validate the key
 
-    Trigger an encrypt and decrypt round-trip against your key. This confirms that Anthropic can authenticate to your tenant and perform wrap and unwrap operations.
-
-    ``` shiki
-    curl -sS -X POST https://api.anthropic.com/v1/organizations/external_keys/ekey_<id>/validate \
-      -H "x-api-key: <anthropic-admin-api-key>" \
-      -H "anthropic-version: 2023-06-01" \
-      -H "content-type: application/json" -d '{}'
-    ```
-
-    
-
-    A successful response looks like this:
-
-    ``` shiki
-    { "type": "external_key_validation", "status": "success", "error": null }
-    ```
-
-    
-
-    If validation fails, the `error` field describes the problem. Common causes are:
-
-    - **RBAC propagation delay:** role assignments can take a few minutes to take effect. Wait and retry.
-    - **Network ACLs blocking Anthropic:** confirm public network access and `ipRules` as described in the verification step.
-    - **Conditional access policies on workload identities:** if your tenant has conditional access policies that target service principals, exclude the Anthropic service principal or add Anthropic's egress ranges to the policy's named locations.
+    On the **Encryption keys** page, click **Verify** next to the key. **Connected** appears when the check passes. If it fails, a message gives the reason.
 
 3.  3
 
-    Attach the key to a workspace
+    ### Attach the key to a workspace
 
-    Once the key is validated, attach it to a workspace to enable CMEK for that workspace's data.
+    In the Claude Console, go to [Manage \> Security](/settings/workspaces/default/security-compliance) and select the workspace in the workspace picker at the top of the sidebar. Under **Encryption key**, select the key, click **Save**, and confirm. Attaching a key can't be undone. For a workspace that already receives requests, the key can take [up to a day to take effect](/docs/en/manage-claude/cmek#how-it-works).
 
-    ``` shiki
-    curl -sS -X POST https://api.anthropic.com/v1/organizations/workspaces/<workspace-id> \
-      -H "x-api-key: <anthropic-admin-api-key>" \
-      -H "anthropic-version: 2023-06-01" \
-      -H "content-type: application/json" \
-      -d '{
-        "external_key_id": "ekey_<id>"
-      }'
-    ```
-
-    
-
-
-
-
-Terraform
+## Terraform
 
 For infrastructure-as-code deployments, the same steps map to the `azurerm` and `azuread` providers.

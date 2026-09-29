@@ -2,7 +2,7 @@
 title: "Publishing Remote Servers - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/remote-servers"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:36:59Z"
+fetched_at: "2026-09-29T06:30:21Z"
 tags: ["mcp"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Your first day in Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14552382-your-first-day-in-claude-code"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:41:11Z"
+fetched_at: "2026-09-29T06:30:49Z"
 tags: ["claude-code"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["claude-code"]
 
 April 15, 2026
 
+Copy for LLM
 
 **Goal:** In about 15 minutes, you will install Claude Code, sign in, and complete your first AI-assisted change. This guide covers only what is needed on day one; links to deeper material appear at the end.
 

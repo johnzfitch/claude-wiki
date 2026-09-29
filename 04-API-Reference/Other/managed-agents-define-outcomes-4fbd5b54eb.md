@@ -2,7 +2,7 @@
 title: "Define outcomes - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/define-outcomes"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:41:18Z"
+fetched_at: "2026-09-26T06:39:39Z"
 tags: ["api"]
 ---
 
@@ -12,31 +12,27 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fdefine-outcomes)
 
 
 
-Search
+
 
+SearchCtrlK
 
 First steps
 
-[Overview](/docs/en/managed-agents/overview)[Quickstart](/docs/en/managed-agents/quickstart)[Prototype in Console](/docs/en/managed-agents/onboarding)[Migration](/docs/en/managed-agents/migration)
+[Overview](/docs/en/managed-agents/overview)[Quickstart](/docs/en/managed-agents/quickstart)[Build in Console](/docs/en/managed-agents/onboarding)[Migration](/docs/en/managed-agents/migration)
 
 Define your agent
 
@@ -46,11 +42,11 @@ Configure agent environment
 
 [Cloud environment setup](/docs/en/managed-agents/environments)[Cloud sandbox reference](/docs/en/managed-agents/cloud-sandboxes-reference)
 
-Self-hosted sandboxes
+[Self-hosted sandboxes](/docs/en/managed-agents/self-hosted-sandboxes)
 
 Delegate work to your agent
 
-[Start a session](/docs/en/managed-agents/sessions)[Session operations](/docs/en/managed-agents/session-operations)[Session event stream](/docs/en/managed-agents/events-and-streaming)[Subscribe to webhooks](/docs/en/managed-agents/webhooks)[Define outcomes](/docs/en/managed-agents/define-outcomes)[Authenticate with vaults](/docs/en/managed-agents/vaults)
+[Start a session](/docs/en/managed-agents/sessions)[Session operations](/docs/en/managed-agents/session-operations)[Session event stream](/docs/en/managed-agents/events-and-streaming)[Session budgets](/docs/en/managed-agents/budgets)[Subscribe to webhooks](/docs/en/managed-agents/webhooks)[Define outcomes](/docs/en/managed-agents/define-outcomes)[Authenticate with vaults](/docs/en/managed-agents/vaults)
 
 Manage agent context
 
@@ -70,7 +66,7 @@ Working with files
 
 [Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
 
-Images and vision
+[Images and vision](/docs/en/build-with-claude/vision)
 
 Skills
 
@@ -80,32 +76,35 @@ MCP
 
 [Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)
 
-MCP tunnels
+[MCP tunnels](/docs/en/agents-and-tools/mcp-tunnels/overview)
 
 Claude on cloud platforms
 
 [Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)
 
-[](/login)
+[Console](/)
 
-
-
-
-Managed Agents
-
-Define outcomes
-
-Managed Agents/Delegate work to your agent
+[Managed Agents](/docs/en/managed-agents/overview)Delegate work to your agent
 
 # Define outcomes
 
+Copy page
 
 
 
 Tell the agent what 'done' looks like, and let it iterate until it gets there.
 
+Copy page
 
 
+
+[Managed Agents](/docs/en/managed-agents/overview)
+
+[Beta](/docs/en/build-with-claude/overview#feature-availability)
+
+[Beta header](/docs/en/api/beta-headers)
+
+managed-agents-2026-04-01
 
 An outcome tells the session what the end result should look like and how to measure its quality. The agent works toward that target, self-evaluating and iterating until the outcome is met.
 
@@ -113,18 +112,15 @@ When you define an outcome, the harness automatically provisions a *grader* to e
 
 The grader returns an explanation summarizing which criteria passed or failed, or confirming that the artifact satisfies the rubric. That feedback is handed back to the agent for the next iteration.
 
-
-
-Managed Agents API requests require the `managed-agents-2026-04-01` beta header, except memory store endpoints, which use `agent-memory-2026-07-22` instead. The SDK sets the correct beta header automatically. See [Beta headers](/docs/en/api/beta-headers#endpoint-specific-headers).
-
-
-
-
-Create a rubric
+## Create a rubric
 
 A rubric is a markdown document describing per-criterion scoring. The rubric is required.
 
 ### Tips for writing effective rubrics
+
+Structure the rubric as explicit, gradeable criteria, such as "The CSV contains a price column with numeric values" rather than "The data looks good." The grader scores each criterion independently, so vague criteria produce noisy evaluations.
+
+If you don't have a rubric on hand, try giving Claude an example of a known-good artifact and asking it to analyze what makes that content good, then turn that analysis into a rubric. This middle-ground approach often produces better results than writing criteria from scratch.
 
 Example rubric:
 
@@ -158,11 +154,7 @@ Example rubric:
 
 Pass the rubric as inline text on `user.define_outcome` (see [Create a session with an outcome](#create-a-session-with-an-outcome)), or upload it through the Files API for reuse across sessions.
 
-
-
-Uploading through the Files API requires a beta header that grants Files API access. Your Managed Agents beta header grants this on its own, so you don't need to send `files-api-2025-04-14` alongside it. The curl example passes its headers explicitly.
-
-curl
+cURL
 
 CLI
 
@@ -201,18 +193,15 @@ RUBRIC = """# DCF Model Rubric
 """
 Path("/tmp/rubric.md").write_text(RUBRIC)
 
-rubric = client.beta.files.upload(file=Path("/tmp/rubric.md"))
+rubric = client.files.upload(file=Path("/tmp/rubric.md"))
 print(f"Uploaded rubric: {rubric.id}")
 ```
 
-
-
-
-Create a session with an outcome
+## Create a session with an outcome
 
 The following examples create a [session](/docs/en/managed-agents/sessions) for an existing [agent](/docs/en/managed-agents/agent-setup) and [environment](/docs/en/managed-agents/environments) (both created separately), then send a `user.define_outcome` event. The agent begins work immediately. No additional user message event is required.
 
-curl
+cURL
 
 CLI
 
@@ -255,14 +244,11 @@ client.beta.sessions.events.send(
 )
 ```
 
-
+
 
 You can also define the outcome in the create request itself: pass a single `user.define_outcome` event in [`initial_events`](/docs/en/managed-agents/sessions#seed-the-session-with-initial-events) to create the session and start work toward the outcome in one call.
 
-
-
-
-Outcome events
+## Outcome events
 
 Progress on an outcome-oriented session is surfaced on the events [stream](/docs/en/managed-agents/events-and-streaming).
 
@@ -272,12 +258,9 @@ Progress on an outcome-oriented session is surfaced on the events [stream](/docs
 - A `user.interrupt` event pauses work on the current outcome and marks the `span.outcome_evaluation_end.result` as `interrupted`, allowing you to kick off a new outcome.
 - After the final outcome evaluation, the session can be continued as a conversational session, or a new outcome can be started. The session retains history of the prior outcome.
 
+### Define outcome user event
 
-
-
-Define outcome user event
-
-
+
 
 Only one outcome is supported at a time, but you may chain outcomes in sequence. To do this, send a new `user.define_outcome` event after the terminal `span.outcome_evaluation_end` event of the previous outcome.
 
@@ -294,10 +277,7 @@ This is the event you send to initiate an outcome. It is echoed back on receipt,
 
 
 
-
-
-
-Outcome evaluation start
+### Outcome evaluation start
 
 Emitted once the grader starts an evaluation over one iteration loop. The `iteration` field is a 0-indexed revision counter: `0` is the first evaluation, `1` is the re-evaluation after the first revision, and so on.
 
@@ -313,10 +293,7 @@ Emitted once the grader starts an evaluation over one iteration loop. The `itera
 
 
 
-
-
-
-Outcome evaluation ongoing
+### Outcome evaluation ongoing
 
 Heartbeat emitted while the grader runs. The grader's internal reasoning is opaque: you see that it's working, not what it's thinking.
 
@@ -332,10 +309,7 @@ Heartbeat emitted while the grader runs. The grader's internal reasoning is opaq
 
 
 
-
-
-
-Outcome evaluation end
+### Outcome evaluation end
 
 Emitted when an outcome evaluation cycle ends: after the grader finishes evaluating one iteration, or when the session is interrupted while an outcome is active. The `result` field indicates what happens next.
 
@@ -368,14 +342,11 @@ Emitted when an outcome evaluation cycle ends: after the grader finishes evaluat
 
 
 
-
-
-
-Check outcome status
+## Check outcome status
 
 You can either listen on the [event stream](/docs/en/managed-agents/events-and-streaming) for `span.outcome_evaluation_end`, or poll `GET /v1/sessions/{session_id}` and read `outcome_evaluations[].result`. Until an evaluation completes, `result` reports `pending`, `running`, or `evaluating`:
 
-curl
+cURL
 
 CLI
 
@@ -403,18 +374,11 @@ for outcome in session.outcome_evaluations:
     # outc_01a...: satisfied
 ```
 
+## Retrieve deliverables
 
-
+The agent writes output files to `/mnt/session/outputs/` inside the sandbox. To retrieve them, list files through the [Files API](/docs/en/build-with-claude/files) with the session ID as the `scope_id`, then download them by ID. Filtering by `scope_id` requires the `managed-agents-2026-04-01` beta header on the list request, so the SDK and CLI examples make that call through the `beta` namespace and pass the header explicitly. Files appear in the list shortly after the agent finishes writing them, sometimes a few seconds after the session goes idle. If a file you expect is not listed yet, list again after a short delay; once it appears in the list, its upload has finished.
 
-Retrieve deliverables
-
-The agent writes output files to `/mnt/session/outputs/` inside the sandbox. Once the session is idle, fetch them through the [Files API](/docs/en/build-with-claude/files) scoped to the session.
-
-
-
-Filtering by `scope_id` requires the `managed-agents-2026-04-01` beta header on the files request. The SDK files methods send only the files beta automatically, so the examples pass it explicitly.
-
-curl
+cURL
 
 CLI
 
@@ -443,30 +407,24 @@ for file in files:
 
 # Download a file
 if files.data:
-    content = client.beta.files.download(files.data[0].id)
+    content = client.files.download(files.data[0].id)
     content.write_to_file("/tmp/output.txt")
 ```
 
+## Next steps
 
-
-
-Next steps
-
-
-Authenticate with vaults
+[Authenticate with vaults](/docs/en/managed-agents/vaults)
 
 Register per-user credentials when creating sessions.
 
-
 
 
-Session event stream
+[Session event stream](/docs/en/managed-agents/events-and-streaming)
 
 Send events, stream responses, and interrupt or redirect your session mid-execution.
 
-
 
 
-Adding files
+[Adding files](/docs/en/managed-agents/files)
 
 Upload files and mount them in your sandbox for reading and processing.

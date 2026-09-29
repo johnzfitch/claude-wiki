@@ -2,7 +2,7 @@
 title: "Claude Corps hosts FAQ \\ Anthropic"
 source_url: "https://www.anthropic.com/claude-corps/host"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:42:05Z"
+fetched_at: "2026-09-11T06:29:12Z"
 ---
 
 # Prospective Hosts: Put AI to work for your mission
@@ -10,6 +10,10 @@ fetched_at: "2026-08-02T05:42:05Z"
 Claude Corps is a fully funded, 12-month paid fellowship that places early-career talent inside mission-driven nonprofits. Fellows tackle your organization’s operational challenges and strengthen your programs, giving your team hands-on AI support to advance your mission. Anthropic funds and manages the program, CodePath employs and trains the fellows, and Social Finance supports learning and measurement.
 
 [Apply to host](https://form.typeform.com/to/X0apETWF)[Watch informational webinar](https://www.anthropic.com/webinars/claude-corps-how-to-become-a-host-organization)
+
+## Review process
+
+All acceptance and deferral emails were sent from <hosts@claudecorps.org>. If you applied and haven't heard from us, check your spam or quarantine folder and ask your IT team to allow mail from [claudecorps.org](http://claudecorps.org). Still nothing? Email <hosts@claudecorps.org> and we'll resend it
 
 ## About Claude Corps
 
@@ -30,7 +34,7 @@ Our goals are twofold: to equip host organizations with valuable tools and syste
   
 ### How big is the program?
 
-Cohort 1 places approximately 100 fellows at host organizations across the United States starting in October 2026. The full program places 1,000 fellows across three cohorts, with the remaining 900 fellows starting in cohorts that begin in January 2027 and August 2027.
+Cohort 1 places approximately 100 fellows at host organizations across the United States starting in October 2026. The full program places 1,000 fellows across three cohorts, with the remaining 900 fellows starting in cohorts that begin in February 2027 and August 2027.
 
 ## Program overview
 
@@ -73,7 +77,7 @@ Cohort 1 places approximately 100 fellows at host organizations across the Unite
 ### How do we apply, and by when?
 
 - **One application.** [Apply here](https://form.typeform.com/to/X0apETWF). The application takes about 30 minutes to complete. You’ll provide details about your organization, sponsor, and supervisor, and answer a few short questions about why you want to participate and what you’d want a fellow to work on. [Download the full application as a PDF](https://www-cdn.anthropic.com/files/4zrzovbb/website/9cd661ef6fd3ceeaba4ad289f897443792444615.pdf) to coordinate internally first if you’d like.
-- **Deadlines.** Applications are rolling across all three cohort start dates (October 2026, January 2027, and August 2027). To be considered for Cohort 1 (fellows start October 19, 2026), apply by 11:59 pm PT on Friday, July 17, 2026.
+- **Deadlines.** Applications are rolling across all three cohort start dates (October 2026, February 2027, and August 2027). To be considered for Cohort 1 (fellows start October 19, 2026), apply by 11:59 pm PT on Friday, July 17, 2026.
 - **Want to learn more first?** [Watch our information host organization webinar here](https://www.anthropic.com/webinars/claude-corps-how-to-become-a-host-organization).
 
 ## The fellows
@@ -154,7 +158,7 @@ We’ll notify host organizations in late August if they have been selected as a
 
 ### If an organization is not selected for Cohort 1, can they apply for Cohort 2?
 
-Yes. If we can’t place a host organization in Cohort 1, we’ll automatically consider that application for Cohort 2, which starts in January 2027. Host organizations will be informed and will not need to reapply.
+Yes. If we can’t place a host organization in Cohort 1, we’ll automatically consider that application for Cohort 2, which starts in February 2027. Host organizations will be informed and will not need to reapply.
 
 ### How are fellows matched to host organizations? Do hosts interview them?
 
@@ -248,6 +252,8 @@ We’ll send all three agreements after a host organization has been selected fo
 
 This FAQ will be updated throughout 2026-2027 to reflect the latest details.  
 
+Hosts can [submit questions](https://form.typeform.com/to/GieGX8Yc) that are specific to your organization's needs.
+
 [](/)
 
 ### Products
@@ -260,7 +266,7 @@ This FAQ will be updated throughout 2026-2027 to reflect the latest details.
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -280,6 +286,7 @@ This FAQ will be updated throughout 2026-2027 to reflect the latest details.
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -312,7 +319,7 @@ This FAQ will be updated throughout 2026-2027 to reflect the latest details.
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -325,7 +332,7 @@ This FAQ will be updated throughout 2026-2027 to reflect the latest details.
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -337,6 +344,7 @@ This FAQ will be updated throughout 2026-2027 to reflect the latest details.
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

@@ -2,14 +2,14 @@
 title: "How SCIM sync works for Enterprise organizations | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14499648-how-scim-sync-works-for-enterprise-organizations"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:41:10Z"
+fetched_at: "2026-09-29T06:30:48Z"
 tags: ["enterprise"]
 ---
 
 # How SCIM sync works for Enterprise organizations
 
-July 1, 2026
 
+Copy for LLM
 
 SCIM provisioning keeps your Enterprise organization's membership and groups in sync with your identity provider. This article covers what gets synced, how syncs are triggered, how to preview a sync before it applies, and what to watch for when resyncing.
 
@@ -99,7 +99,7 @@ Manual syncs rescan WorkOS for the full list of members and groups to establish 
 
 To check whether your organization's membership and groups are current, you have two options:
 
-- **Export your member list.** Go to **[Organization settings \> Members](http://claude.ai/admin-settings/members)** and click "Export CSV" to download the current view of your membership.
+- **Export your member list.** Go to **[Organization settings \> Members](https://claude.ai/admin-settings/members)** and click "Export CSV" to download the current view of your membership.
 
 - **View the WorkOS integration's record.** Go to **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)** and click "Manage SCIM" to see what WorkOS currently holds for your organization.
 
@@ -113,4 +113,4 @@ Before you trigger a manual resync, keep these in mind:
 
 - **Resyncing cascades to child organizations.** If you have multiple organizations with SCIM provisioning under the same **parent organization**, resyncing one triggers resyncing in the others. This includes sandbox organizations sharing the same parent.
 
-- **Incomplete group mappings remove members from the organization.** When enabling group mapping for SCIM, finish assigning all groups before saving. Any member not included in a role group mapping is removed from the organization. If you enable seat tier mapping, any member not in a seat tier group mapping is also removed.
+- **Incomplete role mappings remove members from the organization.** When enabling group mapping for SCIM, finish assigning all groups before saving. Any member not included in a role group mapping is removed from the organization. Seat tier mappings work differently: a member who isn’t in any seat tier group isn’t removed. Existing members keep their current seat type, and newly provisioned members receive the highest seat type that still has an unassigned purchased seat, then the next seat type down, and are added with no seat if none is available.

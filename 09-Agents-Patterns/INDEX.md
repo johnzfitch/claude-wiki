@@ -1,6 +1,6 @@
 # Agents Patterns
 
-*98 documents*
+*101 documents*
 
 
 - [Building a One-Liner Research Agent](00-the-one-liner-research-agent.md) - Research tasks consume hours of expert time: market analysts manually
@@ -50,10 +50,12 @@
 - [Complete Agent Examples](complete-agent-examples.md) - Full, production-ready agent examples for common use cases. Use these as templates for your own agents.
 - [Component Organization Patterns](component-patterns.md) - Advanced patterns for organizing plugin components effectively.
 - [Configure permissions - Claude Code Docs](configure-permissions-claude-code-docs-8a6dfe2519.md) - - [How permissions are evaluated](#how-permissions-are-evaluated)
+- [Configure your agent - Claude Code Docs](configure-your-agent-claude-code-docs-a644a8f5a7.md) - - [Pass options to a session](#pass-options-to-a-session)
 - [Create custom subagents - Claude Code Docs](create-custom-subagents-claude-code-docs-7dc93e85c0.md) - - [Built-in subagents](#built-in-subagents)
 - [Creating a Customer Service Agent with Client-Side Tools](customer-service-agent.md) - In this recipe, we\'ll demonstrate how to create a customer service
 - [Command Documentation Patterns](documentation-patterns.md) - Strategies for creating self-documenting, maintainable commands with excellent user experience.
 - [Building Effective Agents](engineering-building-effective-agents.md) - <!-- Source: https://www.anthropic.com/engineering/building-effective-agents -->
+- [Examples - Claude Code Docs](examples-claude-code-docs-a8a4bce3ad.md) - - [Run a minimal agent first](#run-a-minimal-agent-first)
 - [Chief of Staff Agent Architecture](flow-diagram.md) - graph TD
 - [Get structured output from agents - Claude Code Docs](get-structured-output-from-agents-claude-code-docs-3b82938145.md) - - [Why structured outputs?](#why-structured-outputs)
 - [Give Claude custom tools - Claude Code Docs](give-claude-custom-tools-claude-code-docs-1ff2a59e92.md) - - [Quick reference](#quick-reference)
@@ -94,9 +96,10 @@
 - [Subagents in the SDK - Claude Code Docs](subagents-in-the-sdk-claude-code-docs-1ce8b25cb8.md) - - [Overview](#overview)
 - [Subagents in the SDK](subagents.md) - Define and invoke subagents to isolate context, run tasks in parallel, and apply specialized instructions in your Claude Agent SDK applications.
 - [System Prompt Design Patterns](system-prompt-design.md) - Complete guide to writing effective agent system prompts that enable autonomous, high-quality operation.
-- [Todo Lists - Claude Code Docs](todo-lists-claude-code-docs-234161e91e.md) - - [Todo Lifecycle](#todo-lifecycle)
+- [Track todos - Claude Code Docs](todo-lists-claude-code-docs-234161e91e.md) - - [Model availability](#model-availability)
 - [Track cost and usage - Claude Code Docs](track-cost-and-usage-claude-code-docs-44a053f9f1.md) - - [Understand token usage](#understand-token-usage)
 - [Agent Triggering Examples: Best Practices](triggering-examples.md) - Complete guide to writing effective `<example>` blocks in agent descriptions for reliable triggering.
+- [Troubleshoot the Agent SDK - Claude Code Docs](troubleshooting-claude-code-docs-c19a58f9b8.md) - - [CLI startup](#cli-startup)
 - [TypeScript SDK V2 session API (removed) - Claude Code Docs](typescript-sdk-v2-session-api-removed-claude-code-docs-e1740bfbd4.md) - - [Installation](#installation)
 - [Use Claude Code features in the SDK - Claude Code Docs](use-claude-code-features-in-the-sdk-claude-code-docs-394eedd2c4.md) - - [Control filesystem settings with settingSources](#control-filesystem-settings-with-settingsources)
 - [Using Haiku as a sub-agent](using-sub-agents.md) - In this recipe, we\'ll demonstrate how to analyze Apple\'s 2023

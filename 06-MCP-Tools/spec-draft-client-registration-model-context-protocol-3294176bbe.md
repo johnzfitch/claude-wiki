@@ -2,7 +2,7 @@
 title: "Client Registration - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/basic/authorization/client-registration"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:56Z"
+fetched_at: "2026-09-29T06:29:55Z"
 tags: ["cli", "mcp"]
 ---
 
@@ -81,7 +81,7 @@ Example Metadata Document
   "logo_uri": "https://app.example.com/logo.png",
   "redirect_uris": [
     "http://127.0.0.1:3000/callback",
-    "http://localhost:3000/callback"
+    "http://[::1]:3000/callback"
   ],
   "grant_types": ["authorization_code"],
   "response_types": ["code"],

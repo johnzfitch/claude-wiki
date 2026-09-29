@@ -2,7 +2,7 @@
 title: "Persist sessions to external storage - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/session-storage"
 category: "09-Agents-Patterns"
-fetched_at: "2026-08-02T05:37:45Z"
+fetched_at: "2026-09-16T06:24:21Z"
 tags: ["agents", "claude-code", "rag"]
 ---
 
@@ -15,6 +15,7 @@ tags: ["agents", "claude-code", "rag"]
   - [Validate your adapter](#validate-your-adapter)
 - [Behavior notes](#behavior-notes)
   - [Dual-write architecture](#dual-write-architecture)
+  - [Resume from the store](#resume-from-the-store)
   - [Mirror writes are best-effort](#mirror-writes-are-best-effort)
   - [getSessionMessages returns the post-compaction chain](#getsessionmessages-returns-the-post-compaction-chain)
   - [forkSession is not a byte copy](#forksession-is-not-a-byte-copy)
@@ -29,14 +30,14 @@ Core concepts
 
 Copy pageCopy page
 
-Mirror session transcripts to S3, Redis, or your own backend so any host can resume them.
+Mirror Agent SDK session transcripts to your own object store, key-value store, or database so other hosts can resume your sessions.
 
 Copy pageCopy page
 
-By default, the SDK writes session transcripts to JSONL files under `~/.claude/projects/` on the local filesystem. A `SessionStore` adapter lets you mirror those transcripts to your own backend, such as S3, Redis, or a database, so a session created on one host can be resumed on another. Common reasons to use a session store:
+By default, the SDK writes session transcripts to JSONL files under `~/.claude/projects/` on the local filesystem. A `SessionStore` adapter lets you mirror those transcripts to your own backend, such as an object store, a key-value store, or a database, so a session created on one host can be resumed on another host running from a matching working directory. Common reasons to use a session store:
 
-- **Multi-host deployments.** Serverless functions, autoscaled workers, and CI runners don’t share a filesystem. A shared store lets any replica resume any session.
-- **Durability.** Local containers are ephemeral. A store backed by S3 or a database survives restarts and redeploys.
+- **Multi-host deployments.** Serverless functions, autoscaled workers, and CI runners don’t share a filesystem. A shared store lets replicas resume each other’s sessions.
+- **Durability.** Local containers are ephemeral. An external store survives restarts and redeploys.
 - **Compliance and audit.** Keep transcripts in storage you already govern, with your own retention rules, encryption, and access controls.
 
 
@@ -116,18 +117,18 @@ class SessionSummaryEntry(TypedDict):
     data: dict[str, Any]
 ```
 
-`SessionKey` addresses one transcript. `projectKey` is a stable, filesystem-safe encoding of the working directory, `sessionId` is the session UUID, and `subpath` is set when the entry belongs to a subagent transcript or sidecar file rather than the main conversation. Treat `subpath` as an opaque key suffix; it follows the on-disk layout, for example `subagents/agent-<id>`. When `subpath` is undefined the key refers to the main transcript.
+`SessionKey` addresses one transcript. `projectKey` is a stable, filesystem-safe encoding of the working directory, `sessionId` is the session UUID, and `subpath` is set when the entry belongs to a subagent transcript or sidecar file rather than the main conversation. Because `projectKey` encodes the working directory, resume or continue from the store from a working directory matching the original run’s. In TypeScript, if you set [`CLAUDE_CODE_PROJECT_DIR_NAME`](/docs/en/sessions#name-the-project-directory-yourself) beside `CLAUDE_CONFIG_DIR` in a query’s [`env` option](/docs/en/agent-sdk/typescript#options), the SDK keys that query’s entries, and its `resume` and `continue` lookups, by that name instead. Because standalone helpers such as `listSessions` and `deleteSession` take no `env` and read the process environment, set `CLAUDE_CONFIG_DIR` and the same name in the host process environment too. Requires Agent SDK v0.3.234 or later. Treat `subpath` as an opaque key suffix; it follows the on-disk layout, for example `subagents/agent-<id>`. When `subpath` is undefined the key refers to the main transcript.
 
 | Method                 | Required | Called when                                                                                                                                                                                                                                                                                               |
 |:-----------------------|:---------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `append`               | Yes      | After each batch of transcript entries is written locally. Entries are JSON-safe objects, one per line in the local JSONL.                                                                                                                                                                                |
-| `load`                 | Yes      | Before the subprocess spawns when `resume` is set, and once per session when listing falls back from `listSessionSummaries`. Return `null` if the session is unknown.                                                                                                                                     |
+| `load`                 | Yes      | Before the subprocess spawns when `resume` is set or `continue: true` resolves the newest store session, and once per session when listing falls back from `listSessionSummaries`. Return `null` if the session is unknown.                                                                               |
 | `listSessions`         | No       | By `listSessions({ sessionStore })` and by `query()`/`startup()` with `continue: true`. If undefined, `continue: true` throws, and `listSessions({ sessionStore })` throws unless `listSessionSummaries` is implemented.                                                                                  |
 | `listSessionSummaries` | No       | By `listSessions({ sessionStore })` to read metadata for all sessions in one call. Maintain the summaries inside `append`. If undefined, listing falls back to `listSessions` plus a per-session `load`.                                                                                                  |
 | `delete`               | No       | By `deleteSession({ sessionStore })`. Deleting the main key (no `subpath`) must cascade to all subkeys for that session and also remove the session’s summary entry, so a deleted session stops appearing in `listSessionSummaries`. If undefined, deletion is a no-op, which suits append-only backends. |
 | `listSubkeys`          | No       | During resume, to discover subagent transcripts. If undefined, only the main transcript is restored.                                                                                                                                                                                                      |
 
-In a `SessionSummaryEntry`, `mtime` is the sidecar’s storage write time and must share a clock source with the `mtime` values `listSessions` returns. `data` is opaque SDK-owned state; persist it verbatim without interpreting it. Build the entries by calling the exported `foldSessionSummary` helper, `fold_session_summary` in Python, on each batch inside `append`. Skip batches whose key has a `subpath`; subagent transcripts must not contribute to the main session’s summary. The fold never sets `mtime`: stamp it at persist time, through the `options.mtime` argument in TypeScript or by overwriting the field on the returned entry in Python. Concurrent `append` calls for the same session can race on the sidecar, so serialize the read-fold-write with a transaction, a compare-and-swap, or a per-session lock; the fold itself is pure.
+In a `SessionSummaryEntry`, `mtime` is the sidecar’s storage write time and must share a clock source with the `mtime` values `listSessions` returns. `data` is opaque SDK-owned state; persist it verbatim without interpreting it. Build the entries by calling the exported `foldSessionSummary` helper, `fold_session_summary` in Python, on each batch inside `append`. Skip batches whose key has a `subpath`; subagent transcripts must not contribute to the main session’s summary. The fold never sets `mtime`: stamp it at persist time, through the `options.mtime` argument in TypeScript or by overwriting the field on the returned entry in Python. Concurrent `append` calls for the same session can race on the sidecar, so serialize the read-fold-write with a transaction, a compare-and-swap, or a per-session lock; the fold itself is pure. For what the SDK does with the transcript `load` returns, see [Resume from the store](#resume-from-the-store).
 
 
 [​](#quick-start)
@@ -219,22 +220,22 @@ The second query prints a summary of the files from the first query, which shows
 
 Write your own adapter
 
-Implement `append` and `load` against your backend. Add `listSessions`, `listSessionSummaries`, `delete`, and `listSubkeys` if you want `listSessions()`, one-call metadata reads, `deleteSession()`, and subagent resume to work against the store. Entries passed to `append` are typed as `SessionStoreEntry` (a `{ type: string; ... }` object). Treat them as opaque JSON-safe values: persist them in order and return them from `load` in the same order. `load` must return entries that are deep-equal to what was appended; byte-equal serialization is not required, so backends like Postgres `jsonb` that reorder object keys are fine.
+Implement `append` and `load` against your backend. Add `listSessions`, `listSessionSummaries`, `delete`, and `listSubkeys` if you want `listSessions()`, one-call metadata reads, `deleteSession()`, and subagent resume to work against the store. Entries passed to `append` are typed as `SessionStoreEntry` (a `{ type: string; ... }` object). Treat them as opaque JSON-safe values: persist them in order and return them from `load` in the same order. `load` must return entries that are deep-equal to what was appended; byte-equal serialization is not required, so a backend that reorders object keys, such as a binary JSON column type, is fine.
 
 
 [​](#reference-implementations)
 
 Reference implementations
 
-The TypeScript SDK repository includes runnable reference adapters for S3, Redis, and Postgres under [`examples/session-stores/`](https://github.com/anthropics/claude-agent-sdk-typescript/tree/main/examples/session-stores). They are not published to npm; copy the `src/` file you need into your project and install the corresponding backend client.
+Both SDK repositories include runnable reference adapters under [`examples/session-stores/`](https://github.com/anthropics/claude-agent-sdk-typescript/tree/main/examples/session-stores) in TypeScript and [`examples/session_stores/`](https://github.com/anthropics/claude-agent-sdk-python/tree/main/examples/session_stores) in Python. There is one adapter per storage type, and each shows how `append` and `load` map onto that kind of backend. They are not published as packages; copy the adapter for the type closest to your backend into your project, install your backend’s client, and adapt it.
 
-| Adapter                                                                                                                        | Backend client       | Storage model                                                                |
-|:-------------------------------------------------------------------------------------------------------------------------------|:---------------------|:-----------------------------------------------------------------------------|
-| [`S3SessionStore`](https://github.com/anthropics/claude-agent-sdk-typescript/tree/main/examples/session-stores/s3)             | `@aws-sdk/client-s3` | One JSONL part file per `append()`; `load()` lists, sorts, and concatenates. |
-| [`RedisSessionStore`](https://github.com/anthropics/claude-agent-sdk-typescript/tree/main/examples/session-stores/redis)       | `ioredis`            | `RPUSH`/`LRANGE` list per transcript, plus a sorted-set session index.       |
-| [`PostgresSessionStore`](https://github.com/anthropics/claude-agent-sdk-typescript/tree/main/examples/session-stores/postgres) | `pg`                 | One row per entry in a `jsonb` table, ordered by `BIGSERIAL`.                |
+| Storage type                          | Storage model                                                                                                   | Example adapter                                                                                                                                                                                                                                            |
+|:--------------------------------------|:----------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Object store                          | One part file per `append()`; `load()` lists the parts, sorts them, and concatenates.                           | S3 ([TypeScript](https://github.com/anthropics/claude-agent-sdk-typescript/tree/main/examples/session-stores/s3), [Python](https://github.com/anthropics/claude-agent-sdk-python/blob/main/examples/session_stores/s3_session_store.py))                   |
+| Key-value store                       | One list per transcript that `append()` pushes to and `load()` reads in range, plus a sorted index of sessions. | Redis ([TypeScript](https://github.com/anthropics/claude-agent-sdk-typescript/tree/main/examples/session-stores/redis), [Python](https://github.com/anthropics/claude-agent-sdk-python/blob/main/examples/session_stores/redis_session_store.py))          |
+| Relational database or document store | One row or document per entry, stored as JSON and ordered by a key assigned on insert.                          | Postgres ([TypeScript](https://github.com/anthropics/claude-agent-sdk-typescript/tree/main/examples/session-stores/postgres), [Python](https://github.com/anthropics/claude-agent-sdk-python/blob/main/examples/session_stores/postgres_session_store.py)) |
 
-Each adapter takes a pre-configured client instance, so you control credentials, TLS, region, and pooling. For example, with S3:
+Each adapter takes a pre-configured client instance, so you control credentials, TLS, region, and pooling. The following example wires the object-store adapter into `query()` and then resumes from it on another host:
 
 TypeScript
 
@@ -304,14 +305,43 @@ Behavior notes
 
 Dual-write architecture
 
-The store is a mirror, not a replacement. The Claude Code subprocess always writes to local disk first; the SDK then forwards each batch to `append()`. If you want the local copy to be ephemeral, point `CLAUDE_CONFIG_DIR` at a temp directory in `options.env`. Because the mirror depends on local writes, the TypeScript SDK throws if you combine `sessionStore` with `persistSession: false`. Both SDKs also throw if you combine the store with file checkpointing, `enableFileCheckpointing` in TypeScript or `enable_file_checkpointing` in Python, since file-history backup blobs are written directly to local disk and are not mirrored to the store.
+The Claude Code subprocess always writes each batch of transcript entries to local disk first, and the SDK then forwards the same batch to your store’s `append()`, so the store is a mirror of the local transcript rather than a replacement for it. Which copy outlives the run depends on how the run started:
+
+- **Fresh session, or a resume when the store has nothing for the session**: the local transcript under your config directory outlives the run, and the store receives a copy.
+- **Run [resumed from the store](#resume-from-the-store)**: the local copy is deleted at run end, so the store holds the only durable copy.
+
+If you don’t want a fresh session to leave a transcript on local disk, set `CLAUDE_CONFIG_DIR` to a temp directory in `options.env`. A run resumed from the store already deletes its local copy, so it needs no such setting. In TypeScript, spread `process.env` into `env` as well, since the [`env` option](/docs/en/agent-sdk/typescript#options) replaces the subprocess environment. If your app signs in through files in the config directory, such as OAuth credentials or an `apiKeyHelper` in your user `settings.json`, copy those files into the temp directory first, or set `ANTHROPIC_API_KEY` in `env` instead. Otherwise the run fails with `Not logged in`. Two options conflict with the mirror, and the SDK throws at startup if you combine either with a store:
+
+- **`persistSession: false`** in TypeScript: turns off the local writes the mirror is built from. The Python SDK has no equivalent option.
+- **File checkpointing**, `enableFileCheckpointing` in TypeScript or `enable_file_checkpointing` in Python: writes its file backups straight to local disk, and the SDK doesn’t mirror them to the store.
+
+
+[​](#resume-from-the-store)
+
+Resume from the store
+
+When you pass `resume`, or `continue: true` in TypeScript or `continue_conversation=True` in Python, together with a store, the SDK asks the store for a transcript before it spawns the subprocess:
+
+- **`resume`**: the SDK asks for the session whose ID you passed.
+- **`continue: true`** or **`continue_conversation=True`**: the SDK asks for the store’s newest session.
+
+When the store returns the transcript, the SDK writes it into a temporary config directory, runs the subprocess with `CLAUDE_CONFIG_DIR` pointing there, and deletes the directory when the run ends. The local transcript that run writes is deleted with it, which is why the store holds the only durable copy on this path. The SDK also seeds the temporary directory with files from your real config directory. What it copies differs by language:
+
+- **TypeScript**: credentials, `.claude.json`, and your user `settings.json`. From `settings.json` it strips the keys that misbehave under a temporary config directory: `enabledPlugins`, `extraKnownMarketplaces`, its [`additionalMarketplaces`](/docs/en/settings-reference#extraknownmarketplaces) alias, and any `CLAUDE_CONFIG_DIR` in the file’s `env` block. Before Agent SDK v0.3.232, the SDK didn’t strip the alias. Auth configured in settings, such as [`apiKeyHelper`](/docs/en/settings-reference#apikeyhelper), works when you resume from the store. Before Agent SDK v0.3.222, the TypeScript SDK copied only credentials and `.claude.json`.
+- **Python**: credentials and `.claude.json` only, so an app that authenticates through `apiKeyHelper` in your user `settings.json` fails with `Not logged in` when resuming from a store. An `apiKeyHelper` in managed or project settings still works, because Claude Code reads those files from locations that `CLAUDE_CONFIG_DIR` doesn’t affect.
+
+When the store has nothing for the session, the SDK runs under your real config directory instead, and the outcome depends on which option you passed:
+
+- **`resume`**: both SDKs pass the ID through to the subprocess, which resumes the local transcript exactly as `resume` does without a store.
+- **`continue: true`** in TypeScript: the SDK starts a fresh session.
+- **`continue_conversation=True`** in Python: the SDK continues from the newest local session.
 
 
 [​](#mirror-writes-are-best-effort)
 
 Mirror writes are best-effort
 
-If `append()` rejects, the SDK retries the batch up to two more times with a short backoff, for at most three attempts in total. A call that times out isn’t retried, since the original call may still land. If the batch still fails, the error is logged, a `{ type: "system", subtype: "mirror_error" }` message is emitted into the iterator, the batch is dropped, and the query continues. The local transcript is already durable on disk, so a store outage doesn’t interrupt the agent or lose data locally. Monitor for `mirror_error` if you need to detect store data loss. Because a retried batch can re-deliver entries that already landed, deduplicate by `entry.uuid` in your `append()` implementation.
+If `append()` rejects, the SDK retries the batch up to two more times with a short backoff, for at most three attempts in total. A call that times out isn’t retried, since the original call may still land. If the batch still fails, the SDK logs the error, emits a `{ type: "system", subtype: "mirror_error" }` message into the iterator, drops the batch, and continues the query. Because a retried batch can re-deliver entries that already landed, deduplicate by `entry.uuid` in your `append()` implementation. A store outage doesn’t interrupt the agent, since the subprocess writes locally first. Monitor for `mirror_error` if you need to detect store data loss. On a run [resumed from the store](#resume-from-the-store), a dropped batch has no surviving copy once the run ends.
 
 
 [​](#getsessionmessages-returns-the-post-compaction-chain)
@@ -339,7 +369,7 @@ Subagent transcripts are mirrored under `subpath: "subagents/agent-<id>"`. `list
 
 Retention
 
-The SDK never deletes from your store on its own. Retention is the adapter’s responsibility: implement TTLs, S3 lifecycle policies, or scheduled cleanup according to your compliance requirements. Local transcripts under `CLAUDE_CONFIG_DIR` are swept independently by the `cleanupPeriodDays` setting.
+The SDK never deletes from your store on its own. Retention is the adapter’s responsibility: use your backend’s expiry or lifecycle mechanism, or run scheduled cleanup, according to your compliance requirements. Local transcripts under `CLAUDE_CONFIG_DIR` are swept independently by the `cleanupPeriodDays` setting, following the [retention sweep rules](/docs/en/claude-directory#cleaned-up-automatically). A run [resumed from the store](#resume-from-the-store) leaves no local transcript, so for those runs your store’s retention is the only retention there is.
 
 
 [​](#supported-on)
@@ -370,4 +400,4 @@ Related resources
 - [Work with sessions](/docs/en/agent-sdk/sessions): Continue, resume, and fork without a custom store
 - [Host the SDK](/docs/en/agent-sdk/hosting): Deployment patterns for multi-host environments
 - [TypeScript `Options`](/docs/en/agent-sdk/typescript#options): Full option reference
-- [`examples/session-stores/`](https://github.com/anthropics/claude-agent-sdk-typescript/tree/main/examples/session-stores): Runnable S3, Redis, and Postgres reference adapters
+- [Reference implementations](#reference-implementations): Runnable example adapters for an object store, a key-value store, and a database, in both SDK repositories

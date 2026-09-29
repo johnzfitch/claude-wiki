@@ -2,12 +2,14 @@
 title: "Export your organization&#x27;s data | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13346720-how-can-i-export-my-organization-s-data"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:43Z"
+fetched_at: "2026-09-29T06:32:02Z"
 ---
 
 # Export your organization's data
 
 June 12, 2026
+
+Copy for LLM
 
 Organization data exports are only available to Team and Enterprise plan Primary Owners. Data exports include conversation data and the user data for your account. Individual members of Team and Enterprise organizations do not have a self-serve export option.
 

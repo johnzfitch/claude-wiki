@@ -2,7 +2,7 @@
 title: "Text editor tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/text-editor-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-08-02T05:37:33Z"
+fetched_at: "2026-09-26T06:38:22Z"
 tags: ["api"]
 ---
 
@@ -12,31 +12,27 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Ftext-editor-tool)
 
 
 
-Search
+
 
+SearchCtrlK
 
 First steps
 
-[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)
+[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)[Authentication](/docs/en/manage-claude/authentication)
 
 Building with Claude
 
@@ -46,11 +42,11 @@ Model capabilities
 
 [Effort](/docs/en/build-with-claude/effort)[Task budgets (beta)](/docs/en/build-with-claude/task-budgets)[Fast mode (research preview)](/docs/en/build-with-claude/fast-mode)[Structured outputs](/docs/en/build-with-claude/structured-outputs)[Citations](/docs/en/build-with-claude/citations)[Streaming Messages](/docs/en/build-with-claude/streaming)[Batch processing](/docs/en/build-with-claude/batch-processing)[Search results](/docs/en/build-with-claude/search-results)[Streaming refusals](/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals)[Multilingual support](/docs/en/build-with-claude/multilingual-support)[Embeddings](/docs/en/build-with-claude/embeddings)
 
-Thinking
+[Thinking](/docs/en/build-with-claude/thinking)
 
 Tools
 
-[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
+[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Browser use tool](/docs/en/agents-and-tools/tool-use/browser-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
 
 Tool infrastructure
 
@@ -58,13 +54,15 @@ Tool infrastructure
 
 Context management
 
-[Context windows](/docs/en/build-with-claude/context-windows)[Compaction](/docs/en/build-with-claude/compaction)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics (beta)](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+[Context windows](/docs/en/build-with-claude/context-windows)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+
+[Compaction](/docs/en/build-with-claude/compaction)
 
 Working with files
 
 [Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
 
-Images and vision
+[Images and vision](/docs/en/build-with-claude/vision)
 
 Skills
 
@@ -74,45 +72,37 @@ MCP
 
 [Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)[MCP connector](/docs/en/agents-and-tools/mcp-connector)
 
-MCP tunnels
+[MCP tunnels](/docs/en/agents-and-tools/mcp-tunnels/overview)
 
 Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](/docs/en/build-with-claude/claude-in-amazon-bedrock)[Amazon Bedrock (Opus 4.6 and earlier)](/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy)[Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)[Google Cloud](/docs/en/build-with-claude/claude-on-vertex-ai)[Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry)
 
-[](/login)
+[Console](/)
 
-
-
-
-Messages
-
-Text editor tool
-
-Messages/Tools
+[Messages](/docs/en/intro)Tools
 
 # Text editor tool
 
+Copy page
 
 
 
 Give Claude the Anthropic-defined text editor tool to view, create, and edit files, and handle its view, str_replace, create, and insert commands.
 
+Copy page
 
 
 
-
+
 
-For how zero data retention (ZDR) applies to this feature, see [API and data retention](/docs/en/manage-claude/api-and-data-retention).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](/docs/en/manage-claude/api-and-data-retention).
 
 Claude can use an Anthropic-schema text editor tool to view and modify text files, helping you debug, fix, and improve your code or other text documents. This allows Claude to directly interact with your files, providing hands-on assistance rather than just suggesting changes.
 
 For model support, see the [Tool reference](/docs/en/agents-and-tools/tool-use/tool-reference).
 
-
-
-
-When to use the text editor tool
+## When to use the text editor tool
 
 Some examples of when to use the text editor tool are:
 
@@ -121,16 +111,13 @@ Some examples of when to use the text editor tool are:
 - **Documentation generation:** Ask Claude to add docstrings, comments, or README files to your code base.
 - **Test creation:** Have Claude create unit tests for your code based on its analysis of the implementation.
 
-
-
-
-Use the text editor tool
+## Use the text editor tool
 
 Provide the text editor tool (named `str_replace_based_edit_tool`) to Claude using the Messages API.
 
 You can optionally specify a `max_characters` parameter to control truncation when viewing large files.
 
-
+
 
 `max_characters` is only compatible with `text_editor_20250728` and later versions of the text editor tool.
 
@@ -158,7 +145,7 @@ Ruby
 client = anthropic.Anthropic()
 
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     tools=[
         {
@@ -182,21 +169,21 @@ Use the text editor tool in the following way:
 
 1.  1
 
-    Provide Claude with the text editor tool and a user prompt
+    ### Provide Claude with the text editor tool and a user prompt
 
     - Include the text editor tool in your API request
     - Provide a user prompt that may require examining or modifying files, such as "Can you fix the syntax error in my code?"
 
 2.  2
 
-    Claude uses the tool to examine files or directories
+    ### Claude uses the tool to examine files or directories
 
     - Claude assesses what it needs to look at and uses the `view` command to examine file contents or list directory contents
     - The API response will contain a `tool_use` content block with the `view` command
 
 3.  3
 
-    Execute the view command and return results
+    ### Execute the view command and return results
 
     - Extract the file or directory path from Claude's tool use request
     - Read the file's contents or list the directory contents
@@ -205,14 +192,14 @@ Use the text editor tool in the following way:
 
 4.  4
 
-    Claude uses the tool to modify files
+    ### Claude uses the tool to modify files
 
     - After examining the file or directory, Claude may use a command such as `str_replace` to make changes or `insert` to add text at a specific line number.
     - If Claude uses the `str_replace` command, Claude constructs a properly formatted tool use request with the old text and new text to replace it with
 
 5.  5
 
-    Execute the edit and return results
+    ### Execute the edit and return results
 
     - Extract the file path, old text, and new text from Claude's tool use request
     - Perform the text replacement in the file
@@ -220,21 +207,15 @@ Use the text editor tool in the following way:
 
 6.  6
 
-    Claude provides its analysis and explanation
+    ### Claude provides its analysis and explanation
 
     - After examining and possibly editing the files, Claude provides a complete explanation of what it found and what changes it made
 
-
-
-
-Text editor tool commands
+### Text editor tool commands
 
 The text editor tool supports several commands for viewing and modifying files:
 
-
-
-
-view
+#### view
 
 The `view` command allows Claude to examine the contents of a file or list the contents of a directory. It can read the entire file or a specific range of lines.
 
@@ -246,10 +227,39 @@ Parameters:
 
 ### Example view commands
 
+Example for viewing a file:
 
-
+```python
+{
+  "type": "tool_use",
+  "id": "toolu_01A09q90qw90lq917835lq9",
+  "name": "str_replace_based_edit_tool",
+  "input": {
+    "command": "view",
+    "path": "primes.py"
+  }
+}
+```
 
-str_replace
+
+
+Example for viewing a directory:
+
+```python
+{
+  "type": "tool_use",
+  "id": "toolu_02B19r91rw91mr917835mr9",
+  "name": "str_replace_based_edit_tool",
+  "input": {
+    "command": "view",
+    "path": "src/"
+  }
+}
+```
+
+
+
+#### str_replace
 
 The `str_replace` command allows Claude to replace a specific string in a file with a new string. This is used for making precise edits.
 
@@ -262,10 +272,23 @@ Parameters:
 
 ### Example str_replace command
 
+```python
+{
+  "type": "tool_use",
+  "id": "toolu_01A09q90qw90lq917835lq9",
+  "name": "str_replace_based_edit_tool",
+  "input": {
+    "command": "str_replace",
+    "path": "primes.py",
+    "old_str": "for num in range(2, limit + 1)",
+    "new_str": "for num in range(2, limit + 1):"
+  }
+}
+```
 
-
+
 
-create
+#### create
 
 The `create` command allows Claude to create a new file with specified content.
 
@@ -277,10 +300,22 @@ Parameters:
 
 ### Example create command
 
+```python
+{
+  "type": "tool_use",
+  "id": "toolu_01A09q90qw90lq917835lq9",
+  "name": "str_replace_based_edit_tool",
+  "input": {
+    "command": "create",
+    "path": "test_primes.py",
+    "file_text": "import unittest\nimport primes\n\nclass TestPrimes(unittest.TestCase):\n    def test_is_prime(self):\n        self.assertTrue(primes.is_prime(2))\n        self.assertTrue(primes.is_prime(3))\n        self.assertFalse(primes.is_prime(4))\n\nif __name__ == '__main__':\n    unittest.main()"
+  }
+}
+```
 
-
+
 
-insert
+#### insert
 
 The `insert` command allows Claude to insert text at a specific location in a file.
 
@@ -293,10 +328,23 @@ Parameters:
 
 ### Example insert command
 
+```python
+{
+  "type": "tool_use",
+  "id": "toolu_01A09q90qw90lq917835lq9",
+  "name": "str_replace_based_edit_tool",
+  "input": {
+    "command": "insert",
+    "path": "primes.py",
+    "insert_line": 0,
+    "insert_text": "\"\"\"Module for working with prime numbers.\n\nThis module provides functions to check if a number is prime\nand to generate a list of prime numbers up to a given limit.\n\"\"\"\n"
+  }
+}
+```
 
-
+
 
-Example: Fixing a syntax error with the text editor tool
+### Example: Fixing a syntax error with the text editor tool
 
 This example demonstrates how Claude uses the text editor tool to fix a syntax error in a Python file.
 
@@ -326,7 +374,7 @@ Ruby
 client = anthropic.Anthropic()
 
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     tools=[{"type": "text_editor_20250728", "name": "str_replace_based_edit_tool"}],
     messages=[
@@ -349,7 +397,7 @@ Output
 ```python
 {
   "id": "msg_01XAbCDeFgHiJkLmNoPQrStU",
-  "model": "claude-opus-5",
+  "model": "claude-opus-5-5",
   "stop_reason": "tool_use",
   "role": "assistant",
   "content": [
@@ -394,7 +442,7 @@ Ruby
 
 ```python
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     tools=[{"type": "text_editor_20250728", "name": "str_replace_based_edit_tool"}],
     messages=[
@@ -448,7 +496,7 @@ Output
 ```python
 {
   "id": "msg_01VwXyZAbCdEfGhIjKlMnO",
-  "model": "claude-opus-5",
+  "model": "claude-opus-5-5",
   "stop_reason": "tool_use",
   "role": "assistant",
   "content": [
@@ -495,7 +543,7 @@ Ruby
 
 ```python
 response = client.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=1024,
     tools=[{"type": "text_editor_20250728", "name": "str_replace_based_edit_tool"}],
     messages=[
@@ -545,7 +593,7 @@ Output
 ```python
 {
   "id": "msg_01IjKlMnOpQrStUvWxYzAb",
-  "model": "claude-opus-5",
+  "model": "claude-opus-5-5",
   "stop_reason": "end_turn",
   "role": "assistant",
   "content": [
@@ -557,10 +605,7 @@ Output
 }
 ```
 
-
-
-
-Implement the text editor tool
+## Implement the text editor tool
 
 The text editor tool is implemented as a schema-less tool. When using this tool, you don't need to provide an input schema as with other tools; the schema is built into Claude's model and can't be modified.
 
@@ -568,13 +613,13 @@ The tool type is `type: "text_editor_20250728"` for Claude 4 and later models.
 
 1.  1
 
-    Initialize your editor implementation
+    ### Initialize your editor implementation
 
     Create helper functions to handle file operations like reading, writing, and modifying files. Consider implementing backup functionality to recover from mistakes.
 
 2.  2
 
-    Handle editor tool calls
+    ### Handle editor tool calls
 
     Create a function that processes tool calls from Claude based on the command type:
 
@@ -594,23 +639,24 @@ The tool type is `type: "text_editor_20250728"` for Claude 4 and later models.
         command = input_params.get("command", "")
         file_path = input_params.get("path", "")
 
-        if command == "view":
-            # Read and return file contents
-            pass
-        elif command == "str_replace":
-            # Replace text in file
-            pass
-        elif command == "create":
-            # Create new file
-            pass
-        elif command == "insert":
-            # Insert text at location
-            pass
+        match command:
+            case "view":
+                # Read and return file contents
+                pass
+            case "str_replace":
+                # Replace text in file
+                pass
+            case "create":
+                # Create new file
+                pass
+            case "insert":
+                # Insert text at location
+                pass
     ```
 
 3.  3
 
-    Implement security measures
+    ### Implement security measures
 
     Add validation and security checks:
 
@@ -621,7 +667,7 @@ The tool type is `type: "text_editor_20250728"` for Claude 4 and later models.
 
 4.  4
 
-    Process Claude's responses
+    ### Process Claude's responses
 
     Extract and handle tool calls from Claude's responses:
 
@@ -659,42 +705,213 @@ When implementing the text editor tool, keep in mind:
 3.  **Validation:** Validate all inputs to prevent unintended changes.
 4.  **Unique matching:** Make sure replacements match exactly one location to avoid unintended edits.
 
-
-
-
-Handle errors
+### Handle errors
 
 When using the text editor tool, various errors may occur. Here is guidance on how to handle them:
 
 ### File not found
 
+If Claude tries to view or modify a file that doesn't exist, return an appropriate error message in the `tool_result`:
+
+```python
+{
+  "role": "user",
+  "content": [
+    {
+      "type": "tool_result",
+      "tool_use_id": "toolu_01A09q90qw90lq917835lq9",
+      "content": "Error: File not found",
+      "is_error": true
+    }
+  ]
+}
+```
+
+
+
 ### Multiple matches for replacement
+
+If Claude's `str_replace` command matches multiple locations in the file, return an appropriate error message:
+
+```python
+{
+  "role": "user",
+  "content": [
+    {
+      "type": "tool_result",
+      "tool_use_id": "toolu_01A09q90qw90lq917835lq9",
+      "content": "Error: Found 3 matches for replacement text. Please provide more context to make a unique match.",
+      "is_error": true
+    }
+  ]
+}
+```
+
+
 
 ### No matches for replacement
 
+If Claude's `str_replace` command doesn't match any text in the file, return an appropriate error message:
+
+```python
+{
+  "role": "user",
+  "content": [
+    {
+      "type": "tool_result",
+      "tool_use_id": "toolu_01A09q90qw90lq917835lq9",
+      "content": "Error: No match found for replacement. Please check your text and try again.",
+      "is_error": true
+    }
+  ]
+}
+```
+
+
+
 ### Permission errors
 
+If there are permission issues with creating, reading, or modifying files, return an appropriate error message:
 
-
+```python
+{
+  "role": "user",
+  "content": [
+    {
+      "type": "tool_result",
+      "tool_use_id": "toolu_01A09q90qw90lq917835lq9",
+      "content": "Error: Permission denied. Cannot write to file.",
+      "is_error": true
+    }
+  ]
+}
+```
 
-Follow implementation best practices
+
+
+### Follow implementation best practices
 
 ### Provide clear context
 
+When asking Claude to fix or modify code, be specific about what files need to be examined or what issues need to be addressed. Clear context helps Claude identify the right files and make appropriate changes.
+
+**Less helpful prompt:** "Can you fix my code?"
+
+**Better prompt:** "There's a syntax error in my primes.py file that prevents it from running. Can you fix it?"
+
 ### Be explicit about file paths
+
+Specify file paths clearly when needed, especially if you're working with multiple files or files in different directories.
+
+**Less helpful prompt:** "Review my helper file"
+
+**Better prompt:** "Can you check my utils/helpers.py file for any performance issues?"
 
 ### Create backups before editing
 
+Implement a backup system in your application that creates copies of files before allowing Claude to edit them, especially for important or production code.
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
+
+```python
+def backup_file(file_path):
+    """Create a backup of a file before editing."""
+    backup_path = f"{file_path}.backup"
+    if os.path.exists(file_path):
+        with open(file_path, "r") as src, open(backup_path, "w") as dst:
+            dst.write(src.read())
+```
+
 ### Handle unique text replacement carefully
+
+The `str_replace` command requires an exact match for the text to be replaced. Your application should ensure that there is exactly one match for the old text or provide appropriate error messages.
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
+
+```python
+def safe_replace(file_path, old_text, new_text):
+    """Replace text only if there's exactly one match."""
+    with open(file_path, "r") as f:
+        content = f.read()
+
+    count = content.count(old_text)
+    if count == 0:
+        return "Error: No match found"
+    elif count > 1:
+        return f"Error: Found {count} matches"
+    else:
+        new_content = content.replace(old_text, new_text)
+        with open(file_path, "w") as f:
+            f.write(new_content)
+        return "Successfully replaced text"
+```
 
 ### Verify changes
 
+After Claude makes changes to a file, verify the changes by running tests or checking that the code still works as expected.
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
+
+```python
+def verify_changes(file_path):
+    """Run tests or checks after making changes."""
+    try:
+        # For Python files, check for syntax errors
+        if file_path.endswith(".py"):
+            import ast
+
+            with open(file_path, "r") as f:
+                ast.parse(f.read())
+            return "Syntax check passed"
+    except Exception as e:
+        return f"Verification failed: {str(e)}"
+```
+
 ------------------------------------------------------------------------
 
-
-
-
-Pricing and token usage
+## Pricing and token usage
 
 The text editor tool uses the same pricing structure as other tools used with Claude. It follows the standard input and output token pricing based on the Claude model you're using.
 
@@ -706,20 +923,14 @@ In addition to the base tokens, the following additional input tokens are needed
 
 For more detailed information about tool pricing, see [Tool use pricing](/docs/en/agents-and-tools/tool-use/overview#pricing).
 
-
-
-
-Integrate the text editor tool with other tools
+## Integrate the text editor tool with other tools
 
 You can use the text editor tool alongside other Claude tools. When combining tools, ensure you:
 
 - Match the tool version with the model you're using
 - Account for the additional token usage for all tools included in your request
 
-
-
-
-Change log
+## Change log
 
 | Date             | Version                | Changes                                                                                                                                                                                                                                                                                       |
 |------------------|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -728,10 +939,7 @@ Change log
 | March 13, 2025   | `text_editor_20250124` | Introduction of standalone text editor tool documentation. This version is optimized for Claude Sonnet 3.7 but has identical capabilities to the previous version.                                                                                                                            |
 | October 22, 2024 | `text_editor_20241022` | Initial release of the text editor tool with Claude Sonnet 3.5 (retired; see [Model deprecations](/docs/en/about-claude/model-deprecations)). Provides capabilities for viewing, creating, and editing files through the `view`, `create`, `str_replace`, `insert`, and `undo_edit` commands. |
 
-
-
-
-Next steps
+## Next steps
 
 Here are some ideas for how to use the text editor tool in more convenient and powerful ways:
 
@@ -743,14 +951,14 @@ Here are some ideas for how to use the text editor tool in more convenient and p
 
 The text editor tool enables Claude to work directly with your code base, supporting workflows from debugging to automated documentation.
 
-
 
 
-Tool use overview
+[Tool use overview](/docs/en/agents-and-tools/tool-use/overview)
 
 Learn how to implement tool workflows for use with Claude.
 
+
 
-Bash tool
+[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)
 
 Execute shell commands with Claude.

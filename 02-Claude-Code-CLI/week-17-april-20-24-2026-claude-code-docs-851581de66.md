@@ -2,7 +2,7 @@
 title: "Week 17 · April 20–24, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w17"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:39:02Z"
+fetched_at: "2026-09-25T06:29:08Z"
 tags: ["claude-code"]
 ---
 
@@ -92,7 +92,7 @@ Native macOS and Linux builds replace the `Glob` and `Grep` tools with embedded 
 
 Auto mode: include `“$defaults”` in [`autoMode.allow`, `soft_deny`, or `environment`](/docs/en/auto-mode-config) to add custom rules alongside the built-in list instead of replacing it
 
-New [`claude plugin tag`](/docs/en/plugin-dependencies#tag-plugin-releases-for-version-resolution) command creates release git tags for plugins with version validation
+New [`claude plugin tag`](/docs/en/plugins/dependencies#tag-plugin-releases-for-version-resolution) command creates release git tags for plugins with version validation
 
 Opus 4.7 sessions now compute against the model’s native 1M context window, fixing inflated `/context` percentages and premature autocompaction
 

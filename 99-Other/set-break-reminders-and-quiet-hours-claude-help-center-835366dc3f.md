@@ -2,11 +2,14 @@
 title: "Set break reminders and quiet hours | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15672868"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:52Z"
+fetched_at: "2026-09-29T06:31:56Z"
 ---
 
 # Set break reminders and quiet hours
 
+July 9, 2026
+
+Copy for LLM
 
 Break reminders and quiet hours are optional controls you can enable in your Claude settings. A break reminder gives you a gentle nudge after you’ve spent a set amount of time with Claude in a day. Quiet hours add light friction during windows you’ve set aside for something else. Neither is a hard lock, so you can always continue past them.
 

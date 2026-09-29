@@ -2,7 +2,7 @@
 title: "List RBAC Roles - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/rbac_roles/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:37:54Z"
+fetched_at: "2026-09-18T06:36:39Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Frbac_roles%2Flist)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,118 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
+
+
+List RBAC Roles
+
+
+Get RBAC Role
+
+Permissions
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,67 +182,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-
-List RBAC Roles
-
-
-Get RBAC Role
-
-Permissions
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -235,37 +213,38 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-List
-
+Copy page
 
 
 
+cURL
+
+1.  [API reference](/docs/en/api/http)
+2.  [Beta](/docs/en/api/http/beta)
+3.  [Organization](/docs/en/api/http/beta/organization)
+4.  [RBAC Roles](/docs/en/api/http/beta/organization/rbac_roles)
+
 # List RBAC Roles
 
-GET/v1/organizations/rbac_roles
+GET/v1/organizations/rbac_roles
 
 List RBAC Roles in the organization.
 
-The RBAC Roles API is in beta and available to Claude Enterprise organizations only. Requests must send the `ce-user-management-2026-07-13` value in the `anthropic-beta` header.
+The RBAC Roles API is available to Claude Enterprise organizations only.
 
-##### Query ParametersExpand Collapse 
+##### Query parameters
 
 
 
@@ -277,11 +256,11 @@ Number of items to return per page.
 
 Defaults to `20`. Ranges from `1` to `1000`.
 
+default20
+
 maximum1000
 
 minimum1
-
-[](#list.limit)
 
 page: optional string
 
@@ -289,53 +268,13 @@ page: optional string
 
 Optionally set to the `next_page` token from the previous response.
 
-[](#list.page)
-
-##### Header ParametersExpand Collapse 
+##### Returns
 
 
 
-"anthropic-beta": optional array of string
+data: array of [BetaRBACRole](/docs/en/api/http/beta/organization/rbac_roles#beta_rbac_role) { type: "rbac_role", id, created_at, 2 more }
 
 
-
-Optional header to specify the beta version(s) you want to use.
-
-To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
-
-[](#list.anthropic-beta)
-
-##### ReturnsExpand Collapse 
-
-
-
-data: array of [RbacRole](/docs/en/api/admin/rbac_roles#rbac_role) { id, created_at, name, 2 more }
-
-
-
-id: string
-
-
-
-ID of the RBAC Role.
-
-[](#rbac_role.id)
-
-created_at: string
-
-
-
-RFC 3339 datetime string indicating when the RBAC Role was created.
-
-[](#rbac_role.created_at)
-
-name: string
-
-
-
-Name of the RBAC Role.
-
-[](#rbac_role.name)
 
 
 
@@ -347,7 +286,31 @@ Object type.
 
 For RBAC Roles, this is always `"rbac_role"`.
 
-[](#rbac_role.type)
+defaultrbac_role
+
+id: string
+
+
+
+ID of the RBAC Role.
+
+
+
+created_at: string
+
+
+
+RFC 3339 datetime string indicating when the RBAC Role was created.
+
+formatdate-time
+
+name: string
+
+
+
+Name of the RBAC Role.
+
+
 
 updated_at: string
 
@@ -355,9 +318,7 @@ updated_at: string
 
 RFC 3339 datetime string indicating when the RBAC Role was last updated.
 
-[](#rbac_role.updated_at)
-
-[](#list)
+formatdate-time
 
 has_more: boolean
 
@@ -365,24 +326,22 @@ has_more: boolean
 
 Indicates whether there are more results beyond this page.
 
-[](#list)
-
-next_page: string
+next_page: string or null
 
 
 
 Opaque cursor for the next page. Pass as the `page` parameter on the next request.
 
-[](#list)
+List RBAC Roles
 
-List RBAC Roles
+cURL
 
 
 
 ```python
 curl https://api.anthropic.com/v1/organizations/rbac_roles \
     -H 'anthropic-version: 2023-06-01' \
-    -H "Authorization: Bearer $ANTHROPIC_OAUTH_TOKEN"
+    -H "X-Api-Key: $ANTHROPIC_API_KEY"
 ```
 
 Response 200

@@ -2,7 +2,7 @@
 title: "Week 14 · March 30 – April 3, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w14"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:36:33Z"
+fetched_at: "2026-09-25T06:29:10Z"
 tags: ["claude-code"]
 ---
 
@@ -89,7 +89,7 @@ my-plugin/
     └── my-tool
 ```
 
-[Plugins reference](/docs/en/plugins-reference#file-locations-reference)
+[Plugins reference](/docs/en/plugins/manifest-reference#standard-layout)
 
 Other wins
 
@@ -99,7 +99,7 @@ New `defer` value for `permissionDecision` in `PreToolUse` hooks: `-p` sessions 
 
 `/buddy`: hatch a small creature that watches you code. An April Fools’ joke, no longer available
 
-`disableSkillShellExecution` setting blocks inline shell from skills, slash commands, and plugin commands
+`disableSkillShellExecution` setting blocks inline shell from skills, custom commands, and plugin commands
 
 Edit tool now works on files viewed via `cat` or `sed -n` without a separate Read
 

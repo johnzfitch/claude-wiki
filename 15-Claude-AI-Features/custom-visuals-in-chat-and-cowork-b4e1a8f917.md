@@ -2,13 +2,14 @@
 title: "Custom visuals in chat and Cowork | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13979539-custom-visuals-in-chat-and-cowork"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:42:46Z"
+fetched_at: "2026-09-29T06:30:46Z"
 ---
 
 # Custom visuals in chat and Cowork
 
 April 22, 2026
 
+Copy for LLM
 
 Claude can generate custom diagrams, charts, and interactive visuals directly in your conversation. When a visual would explain something better than text, Claude builds one from scratch—shaped to your specific question, rendered inline as part of the response.
 

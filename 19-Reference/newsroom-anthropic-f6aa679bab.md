@@ -2,12 +2,12 @@
 title: "Newsroom \\ Anthropic"
 source_url: "https://www.anthropic.com/news"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:43:00Z"
+fetched_at: "2026-08-05T07:05:57Z"
 ---
 
 # Newsroom
 
-- Press inquires[press@anthropic.com](mailto:press@anthropic.com)
+- Press inquiries[press@anthropic.com](mailto:press@anthropic.com)
 - Non-media inquiries[How to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)
 - Media assets[Download press kit](https://anthropic.com/press-kit)
 
@@ -52,7 +52,10 @@ Search
 
 DateCategoryTitle
 
-  Jul 30, 2026Frontier Red Team
+  Aug 4, 2026Announcements
+
+  Mariano-Florentino (Tino) Cuéllar to join Anthropic as Chief Global Affairs Officer
+  Jul 30, 2026
 
   Investigating three real-world incidents in our cybersecurity evaluations
   Jul 27, 2026Announcements
@@ -79,9 +82,6 @@ DateCategoryTitle
   Jul 14, 2026Product
 
   Introducing Claude for Teachers
-  Jul 14, 2026Announcements
-
-  Anthropic commits \$10 million to Canadian AI research
 
 [See more](#)
 

@@ -2,7 +2,7 @@
 title: "Using Agent Skills with the API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/skills-guide"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-08-02T05:40:33Z"
+fetched_at: "2026-09-26T06:39:26Z"
 tags: ["agents", "api", "skills"]
 ---
 
@@ -12,31 +12,27 @@ tags: ["agents", "api", "skills"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fskills-guide)
 
 
 
-Search
+
 
+SearchCtrlK
 
 First steps
 
-[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)
+[Intro to Claude](/docs/en/intro)[Get your API key](/docs/en/get-api-key)[Quickstart](/docs/en/get-started)[Authentication](/docs/en/manage-claude/authentication)
 
 Building with Claude
 
@@ -46,11 +42,11 @@ Model capabilities
 
 [Effort](/docs/en/build-with-claude/effort)[Task budgets (beta)](/docs/en/build-with-claude/task-budgets)[Fast mode (research preview)](/docs/en/build-with-claude/fast-mode)[Structured outputs](/docs/en/build-with-claude/structured-outputs)[Citations](/docs/en/build-with-claude/citations)[Streaming Messages](/docs/en/build-with-claude/streaming)[Batch processing](/docs/en/build-with-claude/batch-processing)[Search results](/docs/en/build-with-claude/search-results)[Streaming refusals](/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals)[Multilingual support](/docs/en/build-with-claude/multilingual-support)[Embeddings](/docs/en/build-with-claude/embeddings)
 
-Thinking
+[Thinking](/docs/en/build-with-claude/thinking)
 
 Tools
 
-[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
+[Overview](/docs/en/agents-and-tools/tool-use/overview)[How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works)[Tutorial: Build a tool-using agent](/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent)[Define tools](/docs/en/agents-and-tools/tool-use/define-tools)[Handle tool calls](/docs/en/agents-and-tools/tool-use/handle-tool-calls)[Parallel tool use](/docs/en/agents-and-tools/tool-use/parallel-tool-use)[Tool Runner (SDK)](/docs/en/agents-and-tools/tool-use/tool-runner)[Strict tool use](/docs/en/agents-and-tools/tool-use/strict-tool-use)[Server tools](/docs/en/agents-and-tools/tool-use/server-tools)[Web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool)[Web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool)[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)[Advisor tool](/docs/en/agents-and-tools/tool-use/advisor-tool)[Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)[Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)[Bash tool](/docs/en/agents-and-tools/tool-use/bash-tool)[Text editor tool](/docs/en/agents-and-tools/tool-use/text-editor-tool)[Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool)[Browser use tool](/docs/en/agents-and-tools/tool-use/browser-use-tool)[Troubleshooting](/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
 
 Tool infrastructure
 
@@ -58,13 +54,15 @@ Tool infrastructure
 
 Context management
 
-[Context windows](/docs/en/build-with-claude/context-windows)[Compaction](/docs/en/build-with-claude/compaction)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics (beta)](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+[Context windows](/docs/en/build-with-claude/context-windows)[Context editing](/docs/en/build-with-claude/context-editing)[Prompt caching](/docs/en/build-with-claude/prompt-caching)[Mid-conversation system messages and tool changes](/docs/en/build-with-claude/mid-conversation-system-messages)[Build an orchestration mode](/docs/en/build-with-claude/mid-conversation-effort-example)[Cache diagnostics](/docs/en/build-with-claude/cache-diagnostics)[Token counting](/docs/en/build-with-claude/token-counting)
+
+[Compaction](/docs/en/build-with-claude/compaction)
 
 Working with files
 
 [Files API](/docs/en/build-with-claude/files)[PDF support](/docs/en/build-with-claude/pdf-support)
 
-Images and vision
+[Images and vision](/docs/en/build-with-claude/vision)
 
 Skills
 
@@ -74,118 +72,93 @@ MCP
 
 [Remote MCP servers](/docs/en/agents-and-tools/remote-mcp-servers)[MCP connector](/docs/en/agents-and-tools/mcp-connector)
 
-MCP tunnels
+[MCP tunnels](/docs/en/agents-and-tools/mcp-tunnels/overview)
 
 Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](/docs/en/build-with-claude/claude-in-amazon-bedrock)[Amazon Bedrock (Opus 4.6 and earlier)](/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy)[Claude Platform on AWS](/docs/en/build-with-claude/claude-platform-on-aws)[Google Cloud](/docs/en/build-with-claude/claude-on-vertex-ai)[Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry)
 
-[](/login)
+[Console](/)
 
-
-
-
-Messages
-
-Skills in the API
-
-Messages/Skills
+[Messages](/docs/en/intro)Skills
 
 # Using Agent Skills with the API
 
+Copy page
 
 
 
 Learn how to use Agent Skills to extend Claude's capabilities through the API.
 
+Copy page
 
 
 
 Agent Skills extend Claude's capabilities through organized folders of instructions, scripts, and resources. This guide shows you how to use both pre-built and custom Skills with the Claude API.
 
-
+
 
 For complete API reference including request/response schemas and all parameters, see:
 
-- [Skill Management API Reference](/docs/en/api/beta/skills/list) - CRUD operations for Skills
-- [Skill Versions API Reference](/docs/en/api/beta/skills/versions/list) - Version management
+- [Skill Management API Reference](/docs/en/api/skills/list) - CRUD operations for Skills
+- [Skill Versions API Reference](/docs/en/api/skills/versions/list) - Version management
 
-
+
 
-For how zero data retention (ZDR) applies to this feature, see [API and data retention](/docs/en/manage-claude/api-and-data-retention).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](/docs/en/manage-claude/api-and-data-retention).
 
+## Quick links
 
-
+[Get started with Agent Skills in the API](/docs/en/agents-and-tools/agent-skills/quickstart)
 
-Quick links
+Learn how to use Agent Skills to create documents with the Claude API in under 10 minutes.
 
+
 
-Get started with Agent Skills
+[Skill authoring best practices](/docs/en/agents-and-tools/agent-skills/best-practices)
 
-Create your first Skill
+Learn how to write effective Skills that Claude can discover and use successfully.
 
+## Overview
 
-Create custom Skills
-
-Best practices for authoring Skills
-
-
-
-
-Overview
-
-
+
 
 For a detailed look at the architecture and real-world applications of Agent Skills, read the engineering blog post: [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills).
 
 Skills integrate with the Messages API through the [code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool). Whether using pre-built Skills managed by Anthropic or custom Skills you've uploaded, the integration shape is identical: both require code execution and use the same `container` structure.
 
+### Using Skills
 
-
+Skills integrate identically in the Messages API regardless of source. You specify Skills in the `container` parameter with a `skill_id`, `type`, and optional `version`, and they run in the code execution environment.
 
-Using Skills
+You can use Skills from two sources:
 
-Skills integrate identically in the Messages API regardless of source. You specify Skills in the `container` parameter with a `skill_id`, `type`, and optional `version`, and they execute in the code execution environment.
+| Aspect             | Anthropic Skills                           | Custom Skills                                                          |
+|--------------------|--------------------------------------------|------------------------------------------------------------------------|
+| **Type value**     | `anthropic`                                | `custom`                                                               |
+| **Skill IDs**      | Short names: `pptx`, `xlsx`, `docx`, `pdf` | Generated: `skill_01AbCdEfGhIjKlMnOpQrStUv`                            |
+| **Version format** | Date-based: `20251013` or `latest`         | Version ID: `skver_01AbCdEfGhIjKlMnOpQrStUv` or `latest`               |
+| **Management**     | Pre-built and maintained by Anthropic      | Upload and manage through the [Skills API](/docs/en/api/skills/create) |
+| **Availability**   | Available to all users                     | Private to your workspace                                              |
 
-**You can use Skills from two sources:**
+Both skill sources are returned by the [List Skills endpoint](/docs/en/api/skills/list) (use the `source` parameter to filter). The integration shape and execution environment are identical. The only difference is where the Skills come from and how they're managed.
 
-| Aspect             | Anthropic Skills                           | Custom Skills                                                               |
-|--------------------|--------------------------------------------|-----------------------------------------------------------------------------|
-| **Type value**     | `anthropic`                                | `custom`                                                                    |
-| **Skill IDs**      | Short names: `pptx`, `xlsx`, `docx`, `pdf` | Generated: `skill_01AbCdEfGhIjKlMnOpQrStUv`                                 |
-| **Version format** | Date-based: `20251013` or `latest`         | Epoch timestamp: `1759178010641129` or `latest`                             |
-| **Management**     | Pre-built and maintained by Anthropic      | Upload and manage through the [Skills API](/docs/en/api/beta/skills/create) |
-| **Availability**   | Available to all users                     | Private to your workspace                                                   |
-
-Both skill sources are returned by the [List Skills endpoint](/docs/en/api/beta/skills/list) (use the `source` parameter to filter). The integration shape and execution environment are identical. The only difference is where the Skills come from and how they're managed.
-
-
-
-
-Prerequisites
+### Prerequisites
 
 To use Skills, you need:
 
 1.  **Claude API key** from the [Claude Console](/settings/keys)
-2.  **Beta headers:**
-    - `code-execution-2025-08-25` - Enables code execution (required for Skills)
-    - `skills-2025-10-02` - Enables Skills API
-    - `files-api-2025-04-14` - For uploading/downloading files to/from container
-3.  **[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)** enabled in your requests
+2.  **[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)** enabled in your requests
+
+Skills require the code execution tool, so use a model from its [model compatibility list](/docs/en/agents-and-tools/tool-use/code-execution-tool#compatibility).
 
 ------------------------------------------------------------------------
 
+## Using Skills in Messages
 
-
+### Container parameter
 
-Using Skills in Messages
-
-
-
-
-Container parameter
-
-Skills are specified using the `container` parameter in the Messages API. You can include up to 8 Skills for each request.
+Skills are specified using the `container` parameter in the Messages API. You can include up to 20 Skills for each request.
 
 The structure is identical for both Anthropic and custom Skills. Specify the required `type` and `skill_id`, and optionally include `version` to pin to a specific version:
 
@@ -212,10 +185,9 @@ Ruby
 ```python
 client = anthropic.Anthropic()
 
-response = client.beta.messages.create(
-    model="claude-opus-5",
+response = client.messages.create(
+    model="claude-opus-5-5",
     max_tokens=4096,
-    betas=["code-execution-2025-08-25", "skills-2025-10-02"],
     container={
         "skills": [{"type": "anthropic", "skill_id": "pptx", "version": "latest"}]
     },
@@ -226,21 +198,20 @@ response = client.beta.messages.create(
 )
 ```
 
-
-
-
-Downloading generated files
+### Downloading generated files
 
 When Skills create documents (Excel, PowerPoint, PDF, Word), they return `file_id` attributes in the response. You must use the Files API to download these files.
 
 **How it works:**
 
 1.  Skills create files during code execution.
-2.  Response includes `file_id` for each created file.
+2.  The response includes a `file_id` for each created file, inside code-execution tool result blocks (see [Response format](/docs/en/agents-and-tools/tool-use/code-execution-tool#response-format)).
 3.  Use the Files API to download the actual file content.
 4.  Save locally or process as needed.
 
-**Example: Creating and downloading an Excel file**
+To provide input files for Skills to work on, [upload them with the Files API](/docs/en/build-with-claude/files#uploading-a-file) and reference them in your request with a [container upload block](/docs/en/build-with-claude/files#container-upload-blocks).
+
+**Example: creating and downloading an Excel file**
 
 cURL
 
@@ -266,10 +237,9 @@ Ruby
 client = anthropic.Anthropic()
 
 # Step 1: Use a Skill to create a file
-response = client.beta.messages.create(
-    model="claude-opus-5",
+response = client.messages.create(
+    model="claude-opus-5-5",
     max_tokens=4096,
-    betas=["code-execution-2025-08-25", "skills-2025-10-02"],
     container={
         "skills": [{"type": "anthropic", "skill_id": "xlsx", "version": "latest"}]
     },
@@ -298,8 +268,8 @@ def extract_file_ids(response):
 
 # Step 3: Download the file using Files API
 for file_id in extract_file_ids(response):
-    file_metadata = client.beta.files.retrieve_metadata(file_id=file_id)
-    file_content = client.beta.files.download(file_id=file_id)
+    file_metadata = client.files.retrieve_metadata(file_id=file_id)
+    file_content = client.files.download(file_id=file_id)
 
     # Step 4: Save to disk
     file_content.write_to_file(file_metadata.filename)
@@ -332,27 +302,24 @@ Ruby
 client = anthropic.Anthropic()
 file_id = "file_011CNha8iCJcU1wXNR6q4V8w"
 # Get file metadata
-file_info = client.beta.files.retrieve_metadata(file_id=file_id)
+file_info = client.files.retrieve_metadata(file_id=file_id)
 print(f"Filename: {file_info.filename}, Size: {file_info.size_bytes} bytes")
 
 # List all files
-for file in client.beta.files.list():
+for file in client.files.list():
     print(f"{file.filename} - {file.created_at}")
 
 # Delete a file
-client.beta.files.delete(file_id=file_id)
+client.files.delete(file_id=file_id)
 ```
 
-
+
 
-For complete details on the Files API, see the [Files API](/docs/en/api/beta/files/download) documentation.
+For complete details, see [Files API](/docs/en/build-with-claude/files).
 
+### Multi-turn conversations
 
-
-
-Multi-turn conversations
-
-Reuse the same container across multiple messages by specifying the container ID:
+The response's `container` object carries the container's `id` and `expires_at` timestamp (see [Container reuse](/docs/en/agents-and-tools/tool-use/code-execution-tool#container-reuse) for lifetime details). Reuse the same container across multiple messages by specifying the container ID:
 
 cURL
 
@@ -378,10 +345,9 @@ Ruby
 client = anthropic.Anthropic()
 
 # First request creates container
-response1 = client.beta.messages.create(
-    model="claude-opus-5",
+response1 = client.messages.create(
+    model="claude-opus-5-5",
     max_tokens=4096,
-    betas=["code-execution-2025-08-25", "skills-2025-10-02"],
     container={
         "skills": [{"type": "anthropic", "skill_id": "xlsx", "version": "latest"}]
     },
@@ -404,10 +370,9 @@ messages = [
     {"role": "user", "content": "What was the total revenue?"},
 ]
 
-response2 = client.beta.messages.create(
-    model="claude-opus-5",
+response2 = client.messages.create(
+    model="claude-opus-5-5",
     max_tokens=4096,
-    betas=["code-execution-2025-08-25", "skills-2025-10-02"],
     container={
         "id": response1.container.id,  # Reuse container
         "skills": [{"type": "anthropic", "skill_id": "xlsx", "version": "latest"}],
@@ -417,10 +382,7 @@ response2 = client.beta.messages.create(
 )
 ```
 
-
-
-
-Long-running operations
+### Long-running operations
 
 Skills may perform operations that require multiple turns. Handle `pause_turn` stop reasons:
 
@@ -450,10 +412,9 @@ client = anthropic.Anthropic()
 messages = [{"role": "user", "content": "Generate and process a large sample dataset"}]
 max_retries = 10
 
-response = client.beta.messages.create(
-    model="claude-opus-5",
+response = client.messages.create(
+    model="claude-opus-5-5",
     max_tokens=4096,
-    betas=["code-execution-2025-08-25", "skills-2025-10-02"],
     container={
         "skills": [
             {
@@ -473,10 +434,9 @@ for _ in range(max_retries):
         break
 
     messages.append({"role": "assistant", "content": response.content})
-    response = client.beta.messages.create(
-        model="claude-opus-5",
+    response = client.messages.create(
+        model="claude-opus-5-5",
         max_tokens=4096,
-        betas=["code-execution-2025-08-25", "skills-2025-10-02"],
         container={
             "id": response.container.id,
             "skills": [
@@ -492,14 +452,11 @@ for _ in range(max_retries):
     )
 ```
 
-
+
 
 The response may include a `pause_turn` stop reason, which indicates that the API paused a long-running Skill operation. You can provide the response back as-is in a subsequent request to let Claude continue its turn, or modify the content if you want to interrupt the conversation and provide additional guidance.
 
-
-
-
-Using multiple Skills
+### Using multiple Skills
 
 Combine multiple Skills in a single request to handle complex workflows:
 
@@ -526,10 +483,9 @@ Ruby
 ```python
 client = anthropic.Anthropic()
 
-response = client.beta.messages.create(
-    model="claude-opus-5",
+response = client.messages.create(
+    model="claude-opus-5-5",
     max_tokens=4096,
-    betas=["code-execution-2025-08-25", "skills-2025-10-02"],
     container={
         "skills": [
             {"type": "anthropic", "skill_id": "xlsx", "version": "latest"},
@@ -550,21 +506,21 @@ response = client.beta.messages.create(
 
 ------------------------------------------------------------------------
 
+## Managing custom Skills
 
-
+
 
-Managing custom Skills
+**Custom Skills are accessible to your entire workspace, not scoped to an end user, conversation, or session.** Any API key with access to a workspace can read, invoke, and delete every custom Skill uploaded to that workspace. Every service account, and every user whose organization role allows API access, can use the Default Workspace in addition to any workspace you add them to, so keep Skills that must stay separate in their own [workspace](/docs/en/manage-claude/workspaces#api-keys-and-resource-scoping) and access them only with keys scoped to that workspace.
 
+If you are building a multi-tenant platform on the Skills API, create a separate [workspace](/docs/en/manage-claude/workspaces) for each tenant. The workspace is the isolation boundary for custom Skills, so a workspace per tenant gives each tenant's Skills hard isolation from every other tenant. Each organization can have up to 100 workspaces by default (see [How workspaces work](/docs/en/manage-claude/workspaces#how-workspaces-work)); if you need more for tenant isolation, contact your account team.
 
-
-
-Creating a Skill
+### Creating a Skill
 
 A Skill bundle is a directory containing a `SKILL.md` file at the top level with `name` and `description` YAML frontmatter, plus any supporting scripts or resources. See [Get started with Agent Skills in the API](/docs/en/agents-and-tools/agent-skills/quickstart) to author one, and the **Requirements** list following the examples for the full constraints.
 
-Upload your custom Skill to make it available in your workspace. You can upload a zip archive or individual file objects; the Python SDK additionally provides a `files_from_dir` helper that accepts a directory path.
+Upload your custom Skill to make it available in your workspace. You can upload a zip archive or individual file objects. The Python SDK also provides a `files_from_dir` helper that accepts a directory path, and the CLI's `ant apply` uploads the directory itself.
 
-Files are identified by the filename you attach. Per-file uploads must keep a common top-level directory in their paths (the `;filename=` suffix in the cURL example and the filename arguments in the SDK examples), and a zip archive must contain the skill directory as its single top-level entry.
+Files are identified by the filename you attach (the `;filename=` suffix in the cURL example and the filename arguments in the SDK examples). For the walkthrough's skill, create a zip with `zip -r financial_skill.zip financial_skill/` and substitute it for the `example_skill.zip` placeholder in the zip-upload options.
 
 cURL
 
@@ -587,31 +543,44 @@ Ruby
 
 
 ```python
-ant beta:skills create \
-  --file example_skill.zip \
-  --beta skills-2025-10-02
+ant apply financial_skill
+```
 
-# Per-file upload requires path-qualified filenames, which the CLI
-# can't currently set. Upload a zip archive instead.
+financial_skill/SKILL.md
+
+
+
+
+
+```python
+---
+name: financial-skill
+description: Docs example skill.
+---
+```
+
+financial_skill/analyze.py
+
+
+
+
+
+```python
+print("financial analysis helper")
 ```
 
 **Requirements:**
 
-- Must include a SKILL.md file at the top level
-- All files must specify a common root directory in their paths
-- The top-level directory name must match the `name` in SKILL.md frontmatter (case and underscore insensitive: `Financial_Skill` matches `financial-skill`)
-- `display_title` is optional: when omitted, it derives from the SKILL.md `name`; an explicit value must be unique among the custom skills in your workspace
-- Total upload size must be under 30 MB
+- Must include a `SKILL.md` file at the upload root (or at the top of a single enclosing folder)
+- `display_name` is optional: when omitted, it derives from the `SKILL.md` `name`; an explicit value may be up to 255 characters and does not need to be unique within the workspace
+- Total upload size must be under 30 MB (uncompressed)
 - YAML frontmatter requirements:
   - `name`: Maximum 64 characters, lowercase letters/numbers/hyphens only, no XML tags, no reserved words ("anthropic", "claude")
   - `description`: Maximum 1024 characters, non-empty, no XML tags
 
-For complete request/response schemas, see the [Create Skill API reference](/docs/en/api/beta/skills/create).
+For complete request/response schemas, see the [Create Skill API reference](/docs/en/api/skills/create).
 
-
-
-
-Listing Skills
+### Listing Skills
 
 Retrieve all Skills available to your workspace, including both Anthropic pre-built Skills and your custom Skills. Use the `source` parameter to filter by skill type:
 
@@ -636,19 +605,19 @@ Ruby
 
 
 ```python
+client = anthropic.Anthropic()
+
 # List all Skills
-ant beta:skills list
+for skill in client.skills.list():
+    print(f"{skill.id}: {skill.display_name} (source: {skill.source.type})")
 
 # List only custom Skills
-ant beta:skills list --source custom
+custom_skills = client.skills.list(source="custom")
 ```
 
-See the [List Skills API reference](/docs/en/api/beta/skills/list) for pagination and filtering options.
+See the [List Skills API reference](/docs/en/api/skills/list) for pagination and filtering options.
 
-
-
-
-Retrieving a Skill
+### Retrieving a Skill
 
 Get details about a specific Skill:
 
@@ -673,16 +642,18 @@ Ruby
 
 
 ```python
-ant beta:skills retrieve \
-  --skill-id skill_01AbCdEfGhIjKlMnOpQrStUv
+client = anthropic.Anthropic()
+
+skill = client.skills.retrieve(skill_id="skill_01AbCdEfGhIjKlMnOpQrStUv")
+
+print(f"Skill: {skill.display_name}")
+print(f"Latest version: {skill.latest_version_id}")
+print(f"Created: {skill.created_at}")
 ```
 
+### Deleting a Skill
 
-
-
-Deleting a Skill
-
-To delete a Skill, you must first delete all its versions:
+Deleting a Skill also removes all of its versions.
 
 cURL
 
@@ -705,27 +676,12 @@ Ruby
 
 
 ```python
-# Step 1: List the versions, then delete each one
-ant beta:skills:versions list \
-  --skill-id skill_01AbCdEfGhIjKlMnOpQrStUv \
-  --transform version --raw-output
+client = anthropic.Anthropic()
 
-# Repeat for each version id the list returned
-ant beta:skills:versions delete \
-  --skill-id skill_01AbCdEfGhIjKlMnOpQrStUv \
-  --version 1759178010641129 >/dev/null
-
-# Step 2: Delete the Skill
-ant beta:skills delete \
-  --skill-id skill_01AbCdEfGhIjKlMnOpQrStUv >/dev/null
+client.skills.delete(skill_id="skill_01AbCdEfGhIjKlMnOpQrStUv")
 ```
 
-Attempting to delete a Skill with existing versions returns a 400 error.
-
-
-
-
-Versioning
+### Versioning
 
 Skills support versioning to manage updates safely:
 
@@ -737,151 +693,11 @@ Skills support versioning to manage updates safely:
 
 **Custom Skills:**
 
-- Auto-generated epoch timestamps: `1759178010641129`
+- Auto-generated version IDs: `skver_01AbCdEfGhIjKlMnOpQrStUv`
 - Use `"latest"` to always get the most recent version
 - Create new versions when updating Skill files
 
-cURL
-
-CLI
-
-Python
-
-TypeScript
-
-C#
-
-Go
-
-Java
-
-PHP
-
-Ruby
-
-
-
-```python
-# Create a new version
-VERSION_NUMBER=$(ant beta:skills:versions create \
-  --skill-id skill_01AbCdEfGhIjKlMnOpQrStUv \
-  --file updated_skill.zip \
-  --transform version --raw-output)
-
-# Use specific version
-ant beta:messages create \
-  --beta code-execution-2025-08-25,skills-2025-10-02 <<YAML
-model: claude-opus-5
-max_tokens: 4096
-container:
-  skills:
-    - type: custom
-      skill_id: skill_01AbCdEfGhIjKlMnOpQrStUv
-      version: $VERSION_NUMBER
-messages:
-  - role: user
-    content: Use updated Skill
-tools:
-  - type: code_execution_20250825
-    name: code_execution
-YAML
-
-# Use latest version
-ant beta:messages create \
-  --beta code-execution-2025-08-25,skills-2025-10-02 <<'YAML'
-model: claude-opus-5
-max_tokens: 4096
-container:
-  skills:
-    - type: custom
-      skill_id: skill_01AbCdEfGhIjKlMnOpQrStUv
-      version: latest
-messages:
-  - role: user
-    content: Use latest Skill version
-tools:
-  - type: code_execution_20250825
-    name: code_execution
-YAML
-```
-
-See the [Create Skill Version API reference](/docs/en/api/beta/skills/versions/create) for complete details.
-
-------------------------------------------------------------------------
-
-
-
-
-How Skills are loaded
-
-When you specify Skills in a container:
-
-1.  **Metadata discovery:** Claude sees metadata for each Skill (name, description) in the system prompt.
-2.  **File loading:** Skill files are copied into the container at `/skills/{directory}/`.
-3.  **Automatic use:** Claude automatically loads and uses Skills when relevant to your request.
-4.  **Composition:** Multiple Skills compose together for complex workflows.
-
-The progressive disclosure architecture ensures efficient context usage: Claude only loads full Skill instructions when needed.
-
-------------------------------------------------------------------------
-
-
-
-
-Use cases
-
-
-
-
-Organizational Skills
-
-**Brand & Communications**
-
-- Apply company-specific formatting (colors, fonts, layouts) to documents
-- Generate communications following organizational templates
-- Ensure consistent brand guidelines across all outputs
-
-**Project Management**
-
-- Structure notes with company-specific formats (OKRs, decision logs)
-- Generate tasks following team conventions
-- Create standardized meeting recaps and status updates
-
-**Business Operations**
-
-- Create company-standard reports, proposals, and analyses
-- Execute company-specific analytical procedures
-- Generate financial models following organizational templates
-
-
-
-
-Personal Skills
-
-**Content Creation**
-
-- Custom document templates
-- Specialized formatting and styling
-- Domain-specific content generation
-
-**Data Analysis**
-
-- Custom data processing pipelines
-- Specialized visualization templates
-- Industry-specific analytical methods
-
-**Development & Automation**
-
-- Code generation templates
-- Testing frameworks
-- Deployment workflows
-
-
-
-
-Example: financial modeling
-
-Combine Excel and custom DCF analysis Skills:
+A new version is a complete snapshot, not a delta: upload the Skill's full file set each time. Files you omit are not carried over, and the `name` in the new version's `SKILL.md` must match the Skill's existing name. The following examples re-upload the complete `financial_skill/` bundle from [Creating a Skill](#creating-a-skill).
 
 cURL
 
@@ -908,134 +724,98 @@ from anthropic.lib import files_from_dir
 
 client = anthropic.Anthropic()
 
-# Create custom DCF analysis Skill
+# Create a new version
 
-dcf_skill = client.beta.skills.create(
-    files=files_from_dir("/path/to/dcf_skill"),
+new_version = client.skills.versions.create(
+    skill_id="skill_01AbCdEfGhIjKlMnOpQrStUv",
+    files=files_from_dir("financial_skill"),
 )
 
-# Use with Excel to create financial model
-response = client.beta.messages.create(
-    model="claude-opus-5",
+# Use specific version
+response = client.messages.create(
+    model="claude-opus-5-5",
     max_tokens=4096,
-    betas=["code-execution-2025-08-25", "skills-2025-10-02"],
     container={
         "skills": [
-            {"type": "anthropic", "skill_id": "xlsx", "version": "latest"},
-            {"type": "custom", "skill_id": dcf_skill.id, "version": "latest"},
+            {
+                "type": "custom",
+                "skill_id": "skill_01AbCdEfGhIjKlMnOpQrStUv",
+                "version": new_version.id,
+            }
         ]
     },
-    messages=[
-        {
-            "role": "user",
-            "content": "Build a DCF valuation model for a SaaS company",
-        }
-    ],
+    messages=[{"role": "user", "content": "Use updated Skill"}],
     tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
 )
-print(response)
+
+# Use latest version
+response = client.messages.create(
+    model="claude-opus-5-5",
+    max_tokens=4096,
+    container={
+        "skills": [
+            {
+                "type": "custom",
+                "skill_id": "skill_01AbCdEfGhIjKlMnOpQrStUv",
+                "version": "latest",
+            }
+        ]
+    },
+    messages=[{"role": "user", "content": "Use latest Skill version"}],
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
+)
 ```
+
+See the [Create Skill Version API reference](/docs/en/api/skills/versions/create) for complete details.
 
 ------------------------------------------------------------------------
 
+## How Skills are loaded
 
-
+When you specify Skills in a container:
 
-Limits and constraints
+1.  **Metadata discovery:** Claude sees metadata for each Skill (name, description) in the system prompt.
+2.  **File loading:** Skill files are copied into the container at `/skills/{skill-name}/`. The directory is the Skill's name (`pptx` for an Anthropic Skill, the `SKILL.md` `name` for a custom Skill), not its `skill_01...` ID.
+3.  **Automatic use:** Claude automatically loads and uses Skills when relevant to your request.
+4.  **Composition:** Multiple Skills compose together for complex workflows.
 
-
-
-
-Request limits
-
-- **Maximum Skills per request:** 8
-- **Maximum Skill upload size:** 30 MB (all files combined)
-- **YAML frontmatter requirements:**
-  - `name`: Maximum 64 characters, lowercase letters/numbers/hyphens only, no XML tags, no reserved words ("anthropic", "claude")
-  - `description`: Maximum 1024 characters, non-empty, no XML tags
-
-
-
-
-Environment constraints
-
-Skills run in the code execution container with these limitations:
-
-- **No network access:** Cannot make external API calls
-- **No runtime package installation:** Only pre-installed packages available
-- **Isolated environment:** Containers are isolated; a fresh container is created unless you specify an existing container ID
-
-See [Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool) for available packages.
+Claude loads full Skill instructions only when needed.
 
 ------------------------------------------------------------------------
 
+## Use cases
 
-
+Skills fit both organizational and personal work. Organizations use them to apply brand formatting to documents, structure notes and reports around company templates, and run company-specific analytical procedures. Individuals use them for custom document templates, specialized data pipelines, and code generation or deployment conventions.
 
-Best practices
+### Example: financial modeling
 
+Combine Excel and custom DCF analysis Skills. First, create the custom DCF analysis Skill:
 
-
+cURL
 
-When to use multiple Skills
+CLI
 
-Combine Skills when tasks involve multiple document types or domains:
+Python
 
-**Good use cases:**
+TypeScript
 
-- Data analysis (Excel) + presentation creation (PowerPoint)
-- Report generation (Word) + export to PDF
-- Custom domain logic + document generation
+C#
 
-**Avoid:**
+Go
 
-- Including unused Skills (impacts performance)
+Java
 
+PHP
 
-
-
-Version management strategy
-
-**For production:**
-
-```python
-# Pin to specific versions for stability
-container = {
-    "skills": [
-        {
-            "type": "custom",
-            "skill_id": "skill_01AbCdEfGhIjKlMnOpQrStUv",
-            "version": "1759178010641129",  # Specific version
-        }
-    ]
-}
-```
+Ruby
 
 
 
-**For development:**
-
 ```python
-# Use latest for active development
-container = {
-    "skills": [
-        {
-            "type": "custom",
-            "skill_id": "skill_01AbCdEfGhIjKlMnOpQrStUv",
-            "version": "latest",  # Always get newest
-        }
-    ]
-}
+ant apply dcf_skill
 ```
 
-
-
-
-
-
-Prompt caching considerations
-
-When using prompt caching, note that changing the Skills list in your container breaks the cache:
+Then use it with the Excel Skill to create a financial model. Pass the ID of the Skill you created as the custom Skill's `skill_id`:
 
 cURL
 
@@ -1060,14 +840,175 @@ Ruby
 ```python
 client = anthropic.Anthropic()
 
-# First request creates cache
-response1 = client.beta.messages.create(
-    model="claude-opus-5",
+# Custom DCF analysis Skill (ID obtained from Skills API create response)
+dcf_skill_id = "skill_01AbCdEfGhIjKlMnOpQrStUv"
+
+# Use with Excel to create financial model
+response = client.messages.create(
+    model="claude-opus-5-5",
     max_tokens=4096,
-    betas=[
-        "code-execution-2025-08-25",
-        "skills-2025-10-02",
+    container={
+        "skills": [
+            {"type": "anthropic", "skill_id": "xlsx", "version": "latest"},
+            {"type": "custom", "skill_id": dcf_skill_id, "version": "latest"},
+        ]
+    },
+    messages=[
+        {
+            "role": "user",
+            "content": "Build a DCF valuation model for a SaaS company",
+        }
     ],
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
+)
+print(response)
+```
+
+------------------------------------------------------------------------
+
+## Limits and constraints
+
+### Request limits
+
+- **Maximum Skills per request:** 20
+- **Maximum Skill upload size:** 30 MB (all files combined, uncompressed)
+- **YAML frontmatter requirements:**
+  - `name`: Maximum 64 characters, lowercase letters/numbers/hyphens only, no XML tags, no reserved words ("anthropic", "claude")
+  - `description`: Maximum 1024 characters, non-empty, no XML tags
+
+### Environment constraints
+
+Skills run in the code execution container with these limitations:
+
+- **No network access:** Cannot make external API calls
+- **No runtime package installation:** Only pre-installed packages available
+- **Isolated environment:** A fresh container is created unless you specify an existing container ID
+
+See [Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool) for available packages.
+
+------------------------------------------------------------------------
+
+## Best practices
+
+### When to use multiple Skills
+
+Combine Skills when tasks involve multiple document types or domains:
+
+**Good use cases:**
+
+- Data analysis (Excel) + presentation creation (PowerPoint)
+- Report generation (Word) + export to PDF
+- Custom domain logic + document generation
+
+**Avoid:**
+
+- Including unused Skills (impacts performance)
+
+### Version management strategy
+
+The SDK tabs in this section show the `container` value to include in a Messages request. The cURL and CLI tabs show the full request.
+
+**For production:** pin a specific version, so Skill updates never change your deployed behavior. If you omit `version` or set it to `"latest"`, requests use the newest version of the Skill, so a version uploaded by anyone in the [workspace](#workspace-scoped-access) immediately changes what your production agents run. The version ID comes from the create-version response in [Versioning](#versioning) or from the [List Skill Versions API](/docs/en/api/skills/versions/list). The ID is always a string, so quote it in JSON or YAML even when it looks numeric.
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
+
+```python
+# Pin to specific versions for stability
+container = {
+    "skills": [
+        {
+            "type": "custom",
+            "skill_id": "skill_01AbCdEfGhIjKlMnOpQrStUv",
+            "version": "skver_01AbCdEfGhIjKlMnOpQrStUv",
+        }
+    ]
+}
+```
+
+**For development:** use `latest` to pick up the newest version automatically as you iterate.
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
+
+```python
+# Use latest for active development
+container = {
+    "skills": [
+        {
+            "type": "custom",
+            "skill_id": "skill_01AbCdEfGhIjKlMnOpQrStUv",
+            "version": "latest",
+        }
+    ]
+}
+```
+
+### Prompt caching considerations
+
+If you use [Prompt caching](/docs/en/build-with-claude/prompt-caching), changing the Skills list in your container breaks the cache. Skills render into the system prompt in a fixed order, so the same list produces the same cacheable prefix:
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
+
+```python
+client = anthropic.Anthropic()
+
+# Skills render into the system prompt in a fixed, cache-friendly order
+response1 = client.messages.create(
+    model="claude-opus-5-5",
+    max_tokens=4096,
     container={
         "skills": [{"type": "anthropic", "skill_id": "xlsx", "version": "latest"}]
     },
@@ -1075,14 +1016,10 @@ response1 = client.beta.messages.create(
     tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
 )
 
-# Adding/removing Skills breaks cache
-response2 = client.beta.messages.create(
-    model="claude-opus-5",
+# Changing the Skills list ([xlsx] vs [xlsx, pptx]) changes the prefix: a cache miss, while an identical list is a cache hit
+response2 = client.messages.create(
+    model="claude-opus-5-5",
     max_tokens=4096,
-    betas=[
-        "code-execution-2025-08-25",
-        "skills-2025-10-02",
-    ],
     container={
         "skills": [
             {"type": "anthropic", "skill_id": "xlsx", "version": "latest"},
@@ -1090,7 +1027,7 @@ response2 = client.beta.messages.create(
                 "type": "anthropic",
                 "skill_id": "pptx",
                 "version": "latest",
-            },  # Cache miss
+            },  # prefix change: cache miss
         ]
     },
     messages=[{"role": "user", "content": "Create a presentation"}],
@@ -1098,12 +1035,9 @@ response2 = client.beta.messages.create(
 )
 ```
 
-For best caching performance, keep your Skills list consistent across requests.
+For best caching performance, keep your Skills list, including its order, consistent across requests. Pinning custom Skill versions also helps: with `"latest"`, publishing a new version can invalidate the cached prefix if it changes the Skill's description.
 
-
-
-
-Error handling
+### Error handling
 
 Handle Skill-related errors gracefully:
 
@@ -1131,10 +1065,9 @@ Ruby
 client = anthropic.Anthropic()
 
 try:
-    response = client.beta.messages.create(
-        model="claude-opus-5",
+    response = client.messages.create(
+        model="claude-opus-5-5",
         max_tokens=4096,
-        betas=["code-execution-2025-08-25", "skills-2025-10-02"],
         container={
             "skills": [
                 {
@@ -1157,35 +1090,67 @@ except anthropic.BadRequestError as e:
 
 ------------------------------------------------------------------------
 
+## Migrate from `skills-2025-10-02`
 
-
+The Skills API is out of beta and needs no beta header. Migrating off `skills-2025-10-02` is optional: requests that still send it keep working and keep returning the beta response shapes, so an existing integration keeps working until you change it. Removing the header switches those requests to the shapes documented on this page:
 
-Data retention
+|                                 | With `skills-2025-10-02`                                                        | Without the header                                                                                                                                |
+|---------------------------------|---------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| Skill label                     | `display_title` (up to 64 characters, unique per workspace)                     | `display_name` (up to 255 characters, not unique); derived from the `SKILL.md` `name` when omitted                                                |
+| Newest version pointer          | `latest_version`, an epoch-microsecond string such as `"1759178010641129"`      | `latest_version_id`, a version ID such as `"skver_01AbCdEfGhIjKlMnOpQrStUv"`; `GET /v1/skills/{skill_id}/versions/latest` resolves it in one call |
+| Version identifier in URLs      | Epoch-microsecond string                                                        | Version ID (`skver_...`). IDs captured under the beta with the `skill_version_` prefix are accepted as input.                                     |
+| Version object                  | Includes `directory` (always equal to the Skill `name`)                         | No `directory` field                                                                                                                              |
+| `source`                        | A string, `"custom"` or `"anthropic"`                                           | An object, for example `{"type": "custom"}`; the example catalog value is `"anthropic_example"`                                                   |
+| List responses                  | `{ data, has_more, next_page }`                                                 | `{ data, next_page }`; `limit` from 1 to 1,000 (default 20)                                                                                       |
+| Versions list order             | Oldest first                                                                    | Newest first, default `limit` 20. Page cursors from one shape are not valid on the other.                                                         |
+| Deleting a Skill                | Returns a 400 error while any version exists                                    | Deletes the Skill and all of its versions                                                                                                         |
+| Deleting a Skill's only version | Allowed, leaving a Skill with no versions                                       | Returns a 400 error; upload a replacement version first, or delete the Skill                                                                      |
+| Upload layout                   | Files must sit inside a top-level directory whose name matches the Skill `name` | `SKILL.md` may sit at the root of the upload; stored paths are the same either way                                                                |
+| Response types                  | `CreateSkillResponse`, `GetSkillResponse`, and one type per operation           | `Skill`, `SkillVersion`, `DeletedSkill`, `DeletedSkillVersion`                                                                                    |
+
+To migrate:
+
+1.  **Remove the beta header.** Drop `anthropic-beta: skills-2025-10-02` from your requests. In the SDKs, call `client.skills` instead of `client.beta.skills`; keeping `client.beta.skills` works only on the [SDK releases that no longer send the header](#sdk-beta-namespace). Earlier releases send it from `client.beta.skills` even with no `betas` argument.
+2.  **Rename fields** in your code: `display_title` to `display_name`, `latest_version` to `latest_version_id`, and read `source.type` instead of comparing `source` to a string.
+3.  **Use version IDs.** Wherever you stored an epoch-microsecond version, store the version's `id` instead, or use `latest`. Skill references in Messages requests accept a version ID, `latest`, or (for Anthropic Skills) the catalog version.
+4.  **Review delete calls.** `DELETE /v1/skills/{skill_id}` now removes every version with the Skill. If you relied on the beta's refusal as a safeguard, add your own check.
+
+
+
+After migrating, `client.skills.delete(skill_id)` and `client.beta.skills.delete(skill_id)` delete the Skill together with all of its versions in one call.
+
+A Skill whose versions were all deleted under the beta has no current version to return: `GET /v1/skills/{skill_id}` returns a 400 error and the Skill is omitted from list responses until you upload a version to it. You can still delete it.
+
+### SDK beta namespace
+
+Starting with Python SDK 1.2.0, TypeScript SDK 0.122.0, Go SDK 1.68.0, Java SDK 2.59.0, Ruby SDK 1.67.0, and C# SDK 12.44.0, `client.beta.skills` no longer sends `skills-2025-10-02` and returns the same shapes as `client.skills`, with `Beta`-prefixed type names (`BetaSkill`, `BetaSkillVersion`, `BetaDeletedSkill`, `BetaDeletedSkillVersion`). It accepts a `betas` argument for Skills features that are still in beta. In the beta Messages types, the container Skill reference type is renamed from `BetaSkill` to `BetaContainerSkill` (same fields: `type`, `skill_id`, `version`); `BetaSkill` now names the Skill resource, matching `Skill` and `ContainerSkill` in the non-beta types. Earlier SDK releases are typed to the beta shapes; if you depend on those types, stay on an earlier release until you migrate.
+
+## Data retention
 
 Agent Skills are not covered by ZDR arrangements. Skill definitions and execution data are retained according to Anthropic's standard data retention policy.
 
 For ZDR eligibility across all features, see [API and data retention](/docs/en/manage-claude/api-and-data-retention).
 
+## Audit logging
 
-
+If your organization has the [Compliance API](/docs/en/manage-claude/compliance-api) enabled, its [Activity Feed](/docs/en/manage-claude/compliance-activity-feed) records the creation and deletion of Skills and Skill versions made with a Claude API key or from the Claude Console. Operations that occur while the Compliance API is off are not recorded and cannot be recovered later, so [set up the Compliance API](/docs/en/manage-claude/compliance-api-access) before you rely on this audit trail.
 
-Next steps
-
+## Next steps
 
 
 
-API reference
+[API reference](/docs/en/api/skills/create)
 
 Complete API reference with all endpoints
 
-
 
 
-Skill authoring best practices
+[Skill authoring best practices](/docs/en/agents-and-tools/agent-skills/best-practices)
 
-Learn how to write effective Skills that Claude can discover and use successfully
+Learn how to write effective Skills that Claude can discover and use successfully.
 
+
 
-Code execution tool
+[Code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool)
 
-Run Python and bash code in a sandboxed container to analyze data, generate files, and iterate on solutions
+Run Python and bash code in a sandboxed container to analyze data, generate files, and iterate on solutions.

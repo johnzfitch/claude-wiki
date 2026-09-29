@@ -1,251 +1,152 @@
 ---
-title: "Use Claude in Slack | Claude Help Center"
+title: "Work with Claude Tag - Claude.ai Documentation"
 source_url: "https://support.claude.com/en/articles/12461605-using-claude-in-slack"
 category: "14-Connectors"
-fetched_at: "2026-08-02T07:10:46Z"
-tags: ["claude-code", "connectors", "slack"]
+fetched_at: "2026-09-29T06:31:26Z"
+tags: ["connectors"]
 ---
 
-# Use Claude in Slack
+# Work with Claude Tag
 
-June 23, 2026
+Copy pageCopy page
 
+Claude Tag puts Claude in your Slack channels with admin-governed access. See what to hand it, how setup works, and where to start as an admin or end user.
 
-Claude in Slack will be switched over to the new Claude Tag experience on August 3, 2026. To integrate Claude and Slack, use Claude Tag instead. Learn more **[about Claude Tag](https://support.claude.com/en/articles/15594475)**.
+Copy pageCopy page
 
-Claude in Slack gives you AI assistance right where your team collaborates. This article covers how to interact with Claude in Slack, which features are available, and tips for getting the most out of the integration.
+Public Beta
 
-## Send a direct message to Claude
+Tag @Claude in. Get results back in the thread.
 
-1.  Search for "@Claude" anywhere in Slack.
+Anyone in a Slack channel can tag Claude into a problem and hand it work: reproduce a bug and open a pull request, turn a decision thread into a doc, assemble the state of a project. It posts a checklist in the thread as it goes, and the whole exchange stays visible to the channel.
 
-2.  Click on Claude, then the "Chat" tab at the top to open a direct message.
+[I’m setting it up →](/docs/claude-tag/admins/setup-overview)[Use it in your channel ↓](#put-claude-tag-to-work)
 
-3.  You'll see a welcome message with suggested prompts.
+\# platform-eng38 members
 
-4.  Type your question or request and press Enter.
+D
 
-## Use the AI assistant panel
+Dana2:14 PM
 
-1.  Click the Claude icon in the AI assistant header (if available in your workspace).
+checkout has felt slow all morning — anyone else seeing it?
 
-2.  The Claude panel will open on the right side of your Slack window.
+L
 
-3.  Type your message and press Enter.
+Leo2:15 PM
 
-4.  Claude will respond in the panel.
+same. @Claude can you investigate? Compare latency against this morning’s deploy and find what’s causing it.
 
-5.  When you close the AI assistant panel, the conversation moves to your history.
+ClaudeAPP2:15 PM
 
-6.  Access previous conversations by clicking the clock icon.
+On it. I’ll compare latency before and after the deploy, track down the cause, and report back here.
 
+Done: Pulled p99 latency from DatadogDone: Diffed deploy 4f2c1 against mainDone: Reproduced the slow query locallyIn progress: Opening a pull request with the fix…
 
-## Mention @Claude in a thread or channel
 
-1.  Mention @Claude in any thread or channel where you want Claude's help.
+[​](#plans-that-include-claude-tag)
 
-2.  Claude will reply directly in the thread based on the recent conversation context.
+Plans that include Claude Tag
 
-3.  The response will be visible to anyone with access to that thread or channel.
+Claude Tag is available on Team and Enterprise plans, on Anthropic’s first-party service. It isn’t available on individual plans (Free, Pro, or Max), or for third-party deployments. To use it, your organization pairs its Slack workspace with its Claude organization; see [the setup overview](/docs/claude-tag/admins/setup-overview) for the full prerequisites. If you’re choosing between Claude products for Slack-shaped work, [how Claude Tag differs from Cowork and Claude Code](/docs/claude-tag/concepts/how-it-works#how-claude-tag-differs-from-cowork-and-claude-code) compares them directly: team work in shared channels is Claude Tag; personal work on your own files is Cowork or Claude Code.
 
-If Claude posts something you didn't intend to share, you can delete its message from the thread.
 
-### What context from the thread or channel is included when using @Claude?
+[​](#who-needs-a-claude-seat)
 
-When mentioned in a channel, Claude will have access to the last 20 messages in that channel, including any files shared within those messages. When using @Claude in a thread, it will have access to the last 50 messages in that thread.
+Who needs a Claude seat
 
-## Forward a thread directly to Claude
+Slack users don’t each need a Claude seat to work with Claude in channels.
 
-You can also select “Forward message…” on a message within any Slack thread to send it directly to Claude. When shared in this way, Claude will have access to the last 100 messages in the thread.
+- **In channels**: by default, anyone in the paired Slack workspace can tag `@Claude` in a channel, and an Owner can [restrict who can use Claude](/docs/claude-tag/admins/restrict-access#restrict-who-can-use-claude) to people in your Claude organization or, on Enterprise, to specific roles. Channel work bills by usage to your organization’s usage balance, under a [spend limit](/docs/claude-tag/admins/set-spend-limit) an Owner sets.
+- **In DMs**: a DM from a member who has connected a Claude account runs on that account and bills to that person’s seat. The seat must include Claude Code, or, on the Enterprise plan, be a **Standard** or **Usage-Based Chat** seat held by someone who also has Cowork. A [DM from a member who hasn’t connected a Claude account](/docs/claude-tag/admins/restrict-access#direct-messages-from-members-without-a-claude-account) can bill to your organization for a limited time.
 
-## Route coding tasks to Claude Code (beta)
 
-**Note:** This feature is currently available in beta as a research preview for Team and Enterprise plan users who have access to Claude Code on the web.
+[​](#where-claude-tag-runs)
 
-You can delegate coding tasks to Claude Code directly from Slack. When you mention @Claude for a coding-related request, Claude automatically detects the coding intent and spins up a Claude Code session on the web using context from your Slack conversation.
+Where Claude Tag runs
 
-### How it works
+Claude Tag works in Slack. You interact with it by writing in a Slack channel, thread, or direct message, and it replies there. Mention `@Claude` in a channel to guarantee it picks the message up. When Claude works on a task, it runs in an ephemeral sandbox, not on your computer. The sandbox is created when a conversation starts, holds any code or files Claude is working with, and is discarded when the conversation goes idle. See [how Claude Tag works](/docs/claude-tag/concepts/how-it-works) for the full lifecycle. You extend what Claude can reach, like your repositories, ticketing systems, data warehouses, and custom tools, through [connections](/docs/claude-tag/admins/add-connections), [plugins, and skills](/docs/claude-tag/admins/customize). An Owner configures these per scope (a channel, a workspace, or the whole organization). Members’ own claude.ai connectors are separate from that configuration; Claude can use them in a channel for the member’s own requests, as [personal connectors in channels](/docs/claude-tag/concepts/personal-connectors) describes.
 
-1.  Mention @Claude in a channel or thread with a coding task.
+[For administratorsSet up Claude Tag](/docs/claude-tag/admins/setup-overview)
 
-2.  Claude reviews your message to determine if it's a coding request.
+[Where do I start?Pair your Slack workspace, connect the services Claude will work in, launch, and test that it works](/docs/claude-tag/admins/setup-overview)[What can Claude Tag access?How admins set access per channel, and where credentials are stored](/docs/claude-tag/concepts/agent-identity)[How do I connect each service?Credential types, allowed hosts, and what each connection lets Claude reach](/docs/claude-tag/admins/add-connections)
 
-3.  If it is, Claude gathers context from recent messages and creates a new Claude Code session.
+[For end usersPut Claude Tag to work](#put-claude-tag-to-work)
 
-4.  Claude posts status updates back to your Slack thread as the session progresses.
+[How do I hand Claude Tag a task?Mention Claude in any channel it’s in, with nothing to install](/docs/claude-tag/users/getting-started)[What is Claude Tag good at?Use cases for coding, data, incidents, and go-to-market](/docs/claude-tag/users/use-cases)[How do I get good results?Good habits for scoping and reviewing work](/docs/claude-tag/users/good-habits)[What does Claude Tag remember?Channel memory, what’s shared across the workspace, and who can see what](/docs/claude-tag/users/memory)[Can Claude Tag run tasks on a schedule?Scheduled jobs, channel watching, and triggers](/docs/claude-tag/users/proactivity)
 
-5.  Once complete, Claude provides a link to the full session where you can review changes and open a pull request.
 
-You can also manually tell Claude to handle a request as a coding task if it isn't automatically detected.
+[​](#billing-and-spend-limits)
 
-### Use cases for Claude Code in Slack
+Billing and spend limits
 
-- **Bug investigation and fixes**: Ask Claude to investigate and fix bugs as soon as they're reported in Slack.
+Adding Claude to Slack doesn’t add a per-seat charge. Channel and thread work is billed by usage instead: it draws from a **usage balance**, an amount in your organization’s billing currency that an Owner funds. A [spend limit](/docs/claude-tag/admins/set-spend-limit) caps how much of that balance Claude Tag can use each billing period. Direct messages from members who have connected a Claude account don’t draw from this balance. Such a DM runs on the sender’s own claude.ai account and follows that seat’s usual usage limits, so the organization spend limit doesn’t apply to it. A [DM from a member who hasn’t connected a Claude account](/docs/claude-tag/admins/restrict-access#direct-messages-from-members-without-a-claude-account) can draw from this balance. To learn what your team’s usage costs, run a pilot with a spend limit set and watch the per-channel breakdown on the [usage page in your admin settings](https://claude.ai/admin-settings/usage/claude-tag). Your organization may already have a [launch usage credit](https://support.claude.com/en/articles/15575654-claude-tag-launch-promo-for-claude-team-and-enterprise) to run that pilot against before it funds the balance itself. The usage page doesn’t count usage that a credit covers, so that usage shows as \$0.00 there. While the credit covers your pilot, watch the **List price** column of the **Spend by channel** table at [`claude.ai/analytics/claude-tag`](https://claude.ai/analytics/claude-tag) instead. That column shows each channel’s list-price spend for the current month, including covered usage. [Set a spend limit](/docs/claude-tag/admins/set-spend-limit) covers how to fund the balance on each plan, set the limit, and what happens when usage reaches it.
 
-- **Quick code reviews and modifications**: Have Claude implement small features or refactor code based on team feedback.
+For end users
 
-- **Collaborative debugging**: When team discussion provides crucial context—like error reproductions or user reports—Claude uses that information to inform its debugging approach.
 
-### Requirements
+[​](#put-claude-tag-to-work)
 
-To use Claude Code in Slack:
+Put Claude Tag to work
 
-- The Claude app must be installed in your Slack workspace via the [Slack App Marketplace](https://slack.com/marketplace/A08SF47R6P4).
+If Claude Tag is in your channel, you can use it now. (If it isn’t there yet, an Owner in your Claude organization runs setup: see [Set up Claude Tag](/docs/claude-tag/admins/setup-overview).) Anyone in the channel can hand it work, and channel work bills to the organization, not to you. What it can reach starts with the channel you’re in. The fastest way to find out is to ask it: `@Claude what can you access from this channel?` Or, if you’re signed in to your Claude organization, click **Configure** in the footer of a Claude reply in the channel to see its [connections](/docs/claude-tag/concepts/glossary#connection), the external services an admin has connected for that channel. Replies in org-shared channels have no Configure link. For your own requests, Claude can also [use the connectors on your claude.ai account](/docs/claude-tag/concepts/personal-connectors), after you allow it. The one exception is a DM, where it runs on your own claude.ai account instead of the channel’s setup. Owners can disable DMs organization-wide; see [Allow or disable direct messages](/docs/claude-tag/admins/restrict-access#allow-or-disable-direct-messages).
 
-- A Claude Owner or Primary Owner must enable Claude Code on the web by navigating to [Admin settings \> Claude Code](http://claude.ai/admin-settings/claude-code).
 
-- You must have access to Claude Code on the web.
+[​](#common-uses)
 
-Claude automatically chooses which repository to run the task on based on the repositories you've authenticated to Claude Code on the web.
+Common uses
 
-------------------------------------------------------------------------
+The list below covers common ways teams use Claude Tag. Each link opens a guide with the prompts to paste and the connections the task needs.
 
-## Features and capabilities
+- [Watch monitors and alerts](/docs/claude-tag/users/use-cases/watch-monitors): scheduled dashboard checks, and alerts investigated as they arrive. Needs a monitoring connection like Datadog, Sentry, or PagerDuty.
+- [Triage requests](/docs/claude-tag/users/use-cases/triage-requests): an intake channel where Claude answers what it can, flags duplicates, and routes the rest. Works on Slack content alone.
+- [Find answers in your docs](/docs/claude-tag/users/use-cases/find-answers): policy and runbook questions answered with the source. Needs a docs connection like Google Drive, Notion, or Confluence.
+- [Answer data questions](/docs/claude-tag/users/use-cases/answer-data-questions): a plain-language question becomes a warehouse query and a chart. Needs a data warehouse connection.
+- [Track projects and chase approvals](/docs/claude-tag/users/use-cases/track-projects): standing status digests and follow-ups that run until an approval lands
+- [Turn threads into docs and tickets](/docs/claude-tag/users/use-cases/create-artifacts): a settled discussion becomes the decision doc, the customer reply, or the filed tickets
+- [Fix bugs](/docs/claude-tag/users/use-cases/fix-bugs): a bug reported in the channel comes back as a draft pull request. Needs GitHub.
+- [Work from your own channel](/docs/claude-tag/users/use-cases/your-own-channel): scratch questions, digests of channels you don’t follow, and follow-ups on what you said you’d do
 
-### Available features
+[Get started](/docs/claude-tag/users/getting-started) covers your first message, what you see while Claude works, and how to shape Claude’s behavior in your channel.
 
-Claude in Slack supports many of the capabilities offered by the Claude web app, including:
+For administrators
 
-- **Web search**: Get up-to-date information from the internet.
 
-- **Integrations**: Access connected services like Google Docs, Gmail, and Google Calendar.
+[​](#set-claude-tag-up-once-for-everyone)
 
-- **File uploads**: Attach files directly in your Slack conversation for Claude to analyze.
+Set Claude Tag up once for everyone
 
-- **Document analysis**: Upload PDFs, text files, images, and more.
+You set up Claude Tag once, at [`claude.ai/admin-settings/claude-tag`](https://claude.ai/admin-settings/claude-tag), and you must be an Owner in your Claude organization to do it. The setup page at that URL walks you through it:
 
-### How integrations work
+- **Pair your Slack workspace**: send `@Claude connect` in Slack to get a pairing code, then enter it on the setup page.
+- **Connect the services Claude will work in**: for each one, such as your issue tracker or data warehouse, create an account for Claude and enter its credential.
+- **Grant repositories**: choose which repositories the Claude GitHub App can reach.
+- **Set a monthly spend limit and launch**.
 
-If you've connected integrations in Claude (like Google Workspace), they work in Slack too:
+Claude Tag starts with no access to your external systems. The services you connect during setup form an [Access bundle](/docs/claude-tag/concepts/glossary#access-bundle), the set of tools Claude can reach, attached to the workspace or channels you paired. Once you launch, everyone in a channel Claude is in can use Claude Tag immediately, with no per-user setup. [Set up Claude Tag](/docs/claude-tag/admins/setup-overview) walks through those steps with what to have ready, what each choice means, and how to verify Claude Tag works once you launch.
 
-1.  Share a Google Doc link in your message to Claude.
+Security review
 
-2.  Claude will automatically access and analyze the document based on your permissions.
+[Security and data handling](/docs/claude-tag/concepts/security-and-data)
 
-3.  You can reference emails from Gmail or events from Google Calendar the same way.
+The security model, what admins can and can’t restrict, audit trails, and network requirements.
 
-You cannot manage or connect new integrations from within Slack—set these up in your Claude settings first.
 
-### Feature limitations
+[​](#where-to-start-with-claude-tag)
 
-The following features are not available when using Claude in Slack:
+Where to start with Claude Tag
 
-- Research
+## Set up Claude Tag
 
-- Extended thinking
+Admins: pair your Slack workspace, connect the services Claude will work in, and launch
 
-- Creating new integration connections (you can only use integrations you’ve already connected in your Claude settings)
+## Hand Claude Tag your first task
 
-------------------------------------------------------------------------
+It’s already in your channel: send your first message
 
-## Use integrations across multiple Slack workspaces
+## How Claude Tag works
 
-If you use Claude across more than one Slack workspace, it's important to understand that your integrations (like the Slack connector) are tied to your **Claude account**, not to a specific Slack workspace.  
-​  
-​**To avoid unexpected results:**
+The session model, what it can read, and how memory follows places
 
-- Disconnect the Slack connector from your Claude account before using Claude in a different workspace (**Settings \> Connectors \> Slack \> Disconnect**), then reconnect it when needed.
+## Use case library
 
-- If you regularly use Claude in simultaneous workspaces, consider using separate Claude accounts, each configured for its respective workspace.
-
-------------------------------------------------------------------------
-
-## Common use cases
-
-### Code assistance
-
-Share code snippets with Claude to get implementation suggestions, or help debugging errors, optimizing functions, and understanding legacy code. For more complex coding tasks, Claude can automatically route your request to Claude Code on the web (see **[Route coding tasks to Claude Code](#h_adda66b697)**).
-
-### Content creation
-
-Transform team discussions into formalized documentation, draft emails and proposals in your direct message with Claude, then share the results in relevant Slack channels.
-
-### Document analysis
-
-Upload files directly to Claude for data analysis, key point extraction/summarization, and translation. Supported file types include: PDF, TXT, DOC, DOCX, images (PNG, JPG), CSV, and more. For more information, see **[Uploading files to Claude](https://support.claude.com/en/articles/8241126-uploading-files-to-claude)**.
-
-### Meeting preparation
-
-Before joining a call, ask Claude to summarize key topics from shared documents, analyze relevant files, review meeting agendas, and prepare talking points.
-
-### Onboarding support
-
-Granting new team members access to channel history and shared documents in Slack helps them ramp up faster.
-
-### Quick research
-
-Get instant answers during team discussions. Ask Claude about industry trends, technical concepts, or company information while staying in your conversation.
-
-------------------------------------------------------------------------
-
-## Best practices
-
-### Optimize your workflow
-
-- **Keep Claude DMs organized**: Use them for draft work before sharing in channels.
-
-- **Leverage context**: Claude maintains conversation context within each session.
-
-- **Use clear prompts**: Be specific about what you need to get the best results.
-
-- **Request web search**: Add "search the web" to your prompt when you need current information.
-
-### Manage conversations
-
-- Each Claude DM maintains full chat history.
-
-- In the AI assistant panel, conversations move to history when you close the panel.
-
-- Start fresh conversations when switching topics for better results.
-
-### File handling
-
-- Upload files directly in your Slack message to Claude.
-
-- Claude processes files using the same system as the Claude web app.
-
-- You can upload multiple files in a single message.
-
-## Message editing and deletion
-
-- **Editing messages**: Claude won't see edits to previous messages.
-
-- **Deleting messages**: Deleted messages remain in Claude's context but are removed from the Slack interface.
-
-- **Threading**: Threading is disabled in Claude DMs to maintain conversation flow.
-
-## Channel restrictions
-
-Claude works in direct messages and threads where you explicitly mention @Claude, and you control when Claude participates in conversations.
-
-------------------------------------------------------------------------
-
-## Troubleshooting
-
-### "Usage limit reached"
-
-This message appears when you've hit your Claude account usage limits. Try again later or consider **[upgrading your Claude plan](https://claude.ai/upgrade)**.
-
-### "I'm unable to generate a response at this time"
-
-This generic error message can appear for various reasons:
-
-- API failures or temporary service issues
-
-- Empty responses from Claude
-
-- Network connectivity problems
-
-Try sending your message again. If the problem persists, you can **[contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
-
-### "I don't have access to our previous conversation history"
-
-This message appears when you try to continue a conversation in Slack that has already been deleted from Claude. This can happen if:
-
-- You disconnected your Claude in Slack app.
-
-- Your organization’s retention policy deleted the conversation.
-
-- You manually deleted the conversation from the Claude web app.
-
-Start a new conversation to continue.
+Prompts to paste, by team and connection

@@ -2,7 +2,7 @@
 title: "Dreams - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/dreams"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:39:27Z"
+fetched_at: "2026-09-26T06:38:33Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fdreams)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,125 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Create a Dream
+
+
+List Dreams
+
+
+Get a Dream
+
+
+Cancel a Dream
+
+
+Archive a Dream
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +189,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -227,471 +220,228 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-Dreams
-
+Copy page
 
 
 
 cURL
 
+1.  [API reference](/docs/en/api/http)
+2.  [Beta](/docs/en/api/http/beta)
+
 # Dreams
 
-##### [Create a Dream](/docs/en/api/beta/dreams/create)
+##### [Create a Dream](/docs/en/api/http/beta/dreams/create)
 
-POST/v1/dreams
+POST/v1/dreams
 
-##### [List Dreams](/docs/en/api/beta/dreams/list)
+Start an asynchronous job that uses past sessions to produce a reorganized version of a memory store and get back the dream to poll for the result.
 
-GET/v1/dreams
+##### [List Dreams](/docs/en/api/http/beta/dreams/list)
 
-##### [Get a Dream](/docs/en/api/beta/dreams/retrieve)
+GET/v1/dreams
 
-GET/v1/dreams/{dream_id}
+List the dreams in the workspace, newest first.
 
-##### [Cancel a Dream](/docs/en/api/beta/dreams/cancel)
+##### [Get a Dream](/docs/en/api/http/beta/dreams/retrieve)
 
-POST/v1/dreams/{dream_id}/cancel
+GET/v1/dreams/{dream_id}
 
-##### [Archive a Dream](/docs/en/api/beta/dreams/archive)
+Get a dream by ID to check its status, output memory store, and token usage.
 
-POST/v1/dreams/{dream_id}/archive
+##### [Cancel a Dream](/docs/en/api/http/beta/dreams/cancel)
 
-##### ModelsExpand Collapse 
+POST/v1/dreams/{dream_id}/cancel
 
-
+Stop a `pending` or `running` dream.
 
-BetaDream object { id, archived_at, created_at, 10 more }
+##### [Archive a Dream](/docs/en/api/http/beta/dreams/archive)
 
-
+POST/v1/dreams/{dream_id}/archive
 
-An asynchronous memory-consolidation job that reads a memory store plus a set of session transcripts and writes consolidated memories into a new output memory store. The Dreams API is in research preview: the request and response shapes are volatile and may change without the deprecation period that applies to generally-available endpoints.
+Hide a `completed`, `failed`, or `canceled` dream from the default list of dreams.
 
-id: string
-
-
-
-[](#beta_dream.id)
-
-archived_at: string
-
-
-
-A timestamp in RFC 3339 format
-
-[](#beta_dream.archived_at)
-
-created_at: string
-
-
-
-A timestamp in RFC 3339 format
-
-[](#beta_dream.created_at)
-
-ended_at: string
-
-
-
-A timestamp in RFC 3339 format
-
-[](#beta_dream.ended_at)
+##### Models
 
 
 
-error: [BetaDreamError](/docs/en/api/beta/dreams#beta_dream_error) { message, type }
+BetaDream object{ type: "dream", id, archived_at, 11 more }
+
+
+
+An asynchronous job that reads a memory store and past sessions, then writes a reorganized version of that memory store.
+
+By default the dream writes its result to a new memory store and doesn't change the input memory store. With `output_behavior` set to `update_existing`, it writes its result into the input memory store instead.
+
+The Dreams API is in research preview: the request and response shapes are volatile and may change without the deprecation period that applies to generally-available endpoints.
+
+See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#how-it-works) for what a dream reads and produces.
+
+
+
+BetaDreamError object{ type, message }
 
 
 
 Failure detail for a Dream whose `status` is `failed`.
 
-message: string
-
-
-
-[](#beta_dream.error%20%2B%20(resource)%20beta.dreams.message)
+
 
 type: string
 
 
 
-[](#beta_dream.error%20%2B%20(resource)%20beta.dreams.type)
+A code for why the dream failed, such as `timeout` or `internal_error`.
 
-[](#beta_dream.error)
-
-
-
-inputs: array of [BetaDreamInput](/docs/en/api/beta/dreams#beta_dream_input)
-
-
-
-One of the following:
-
-
-
-BetaDreamMemoryStoreInput object { memory_store_id, type }
-
-
-
-An input memory store the dream reads from. The dream never mutates this store.
-
-memory_store_id: string
-
-
-
-[](#beta_dream_memory_store_input.memory_store_id)
-
-type: "memory_store"
-
-
-
-[](#beta_dream_memory_store_input.type)
-
-[](#beta_dream_memory_store_input)
-
-
-
-BetaDreamSessionsInput object { session_ids, type }
-
-
-
-Input session transcripts the dream reads.
-
-session_ids: array of string
-
-
-
-[](#beta_dream_sessions_input.session_ids)
-
-type: "sessions"
-
-
-
-[](#beta_dream_sessions_input.type)
-
-[](#beta_dream_sessions_input)
-
-[](#beta_dream.inputs)
-
-instructions: string
-
-
-
-[](#beta_dream.instructions)
-
-
-
-model: [BetaDreamModelConfig](/docs/en/api/beta/dreams#beta_dream_model_config) { id, speed }
-
-
-
-Model identifier and configuration applied to every pipeline stage. Same wire shape as the Agents API ModelConfig.
-
-id: string
-
-
-
-Model identifier, e.g. "claude-opus-4-7". 1-256 characters.
-
-[](#beta_dream.model%20%2B%20(resource)%20beta.dreams.id)
-
-
-
-speed: optional "standard" or "fast"
-
-
-
-Inference speed mode. `fast` provides significantly faster output token generation at premium pricing. Not all models support `fast`; invalid combinations are rejected at create time.
-
-One of the following:
-
-"standard"
-
-
-
-[](#beta_dream.model%20%2B%20(resource)%20beta.dreams.speed%5B0%5D)
-
-"fast"
-
-
-
-[](#beta_dream.model%20%2B%20(resource)%20beta.dreams.speed%5B1%5D)
-
-[](#beta_dream.model%20%2B%20(resource)%20beta.dreams.speed)
-
-[](#beta_dream.model)
-
-
-
-outputs: array of [BetaDreamOutput](/docs/en/api/beta/dreams#beta_dream_output) { memory_store_id, type }
-
-
-
-memory_store_id: string
-
-
-
-[](#beta_dream_output.memory_store_id)
-
-type: "memory_store"
-
-
-
-[](#beta_dream_output.type)
-
-[](#beta_dream.outputs)
-
-session_id: string
-
-
-
-[](#beta_dream.session_id)
-
-
-
-status: [BetaDreamStatus](/docs/en/api/beta/dreams#beta_dream_status)
-
-
-
-Lifecycle status of a Dream.
-
-One of the following:
-
-"pending"
-
-
-
-[](#beta_dream.status%20%2B%20(resource)%20beta.dreams%5B0%5D)
-
-"running"
-
-
-
-[](#beta_dream.status%20%2B%20(resource)%20beta.dreams%5B1%5D)
-
-"completed"
-
-
-
-[](#beta_dream.status%20%2B%20(resource)%20beta.dreams%5B2%5D)
-
-"failed"
-
-
-
-[](#beta_dream.status%20%2B%20(resource)%20beta.dreams%5B3%5D)
-
-"canceled"
-
-
-
-[](#beta_dream.status%20%2B%20(resource)%20beta.dreams%5B4%5D)
-
-[](#beta_dream.status)
-
-type: "dream"
-
-
-
-[](#beta_dream.type)
-
-
-
-usage: [BetaDreamUsage](/docs/en/api/beta/dreams#beta_dream_usage) { cache_creation_input_tokens, cache_read_input_tokens, input_tokens, output_tokens }
-
-
-
-Cumulative token usage for the dream across every pipeline stage.
-
-cache_creation_input_tokens: number
-
-
-
-Total tokens used to create prompt-cache entries (sum of all TTL tiers).
-
-[](#beta_dream.usage%20%2B%20(resource)%20beta.dreams.cache_creation_input_tokens)
-
-cache_read_input_tokens: number
-
-
-
-Total tokens read from prompt cache.
-
-[](#beta_dream.usage%20%2B%20(resource)%20beta.dreams.cache_read_input_tokens)
-
-input_tokens: number
-
-
-
-Total uncached input tokens consumed across every pipeline stage.
-
-[](#beta_dream.usage%20%2B%20(resource)%20beta.dreams.input_tokens)
-
-output_tokens: number
-
-
-
-Total output tokens generated across every pipeline stage.
-
-[](#beta_dream.usage%20%2B%20(resource)%20beta.dreams.output_tokens)
-
-[](#beta_dream.usage)
-
-[](#beta_dream)
-
-
-
-BetaDreamError object { message, type }
-
-
-
-Failure detail for a Dream whose `status` is `failed`.
+The [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#errors) lists common error codes and when they occur.
 
 message: string
 
 
 
-[](#beta_dream_error.message)
-
-type: string
-
-
-
-[](#beta_dream_error.type)
-
-[](#beta_dream_error)
+A human-readable explanation of why the dream failed.
 
 
 
-BetaDreamInput = [BetaDreamMemoryStoreInput](/docs/en/api/beta/dreams#beta_dream_memory_store_input) { memory_store_id, type } or [BetaDreamSessionsInput](/docs/en/api/beta/dreams#beta_dream_sessions_input) { session_ids, type }
+BetaDreamInput = [BetaDreamMemoryStoreInput](/docs/en/api/http/beta/dreams#beta_dream_memory_store_input) or [BetaDreamSessionsInput](/docs/en/api/http/beta/dreams#beta_dream_sessions_input)
 
 
 
-An input memory store the dream reads from. The dream never mutates this store.
+A source that a dream reads, such as a memory store or a set of sessions.
 
 One of the following:
 
 
 
-BetaDreamMemoryStoreInput object { memory_store_id, type }
+BetaDreamMemoryStoreInput object{ type: "memory_store", memory_store_id }
 
 
 
-An input memory store the dream reads from. The dream never mutates this store.
+The memory store that a dream reads, given as an entry in `inputs`.
 
-memory_store_id: string
-
-
-
-[](#beta_dream_memory_store_input.memory_store_id)
+With `output_behavior` set to `update_existing`, the dream writes its result into this memory store. Otherwise the dream doesn't change it.
 
 type: "memory_store"
 
 
 
-[](#beta_dream_memory_store_input.type)
+
 
-[](#beta_dream_memory_store_input)
+memory_store_id: string
+
+
+
+The ID of the memory store for the dream to read (`memstore_...`).
+
+The memory store must be in the same workspace as the dream and must not be archived.
+
+minLength1
 
 
 
-BetaDreamSessionsInput object { session_ids, type }
+BetaDreamSessionsInput object{ type: "sessions", session_ids }
 
 
 
-Input session transcripts the dream reads.
-
-session_ids: array of string
-
-
-
-[](#beta_dream_sessions_input.session_ids)
+The sessions that a dream reads, given as an entry in `inputs`.
 
 type: "sessions"
 
 
 
-[](#beta_dream_sessions_input.type)
+
 
-[](#beta_dream_sessions_input)
+session_ids: array of string
 
-[](#beta_dream_input)
+
+
+The IDs of the sessions whose transcripts the dream reads (`sesn_...`).
+
+Give 1 to 100 IDs, with no duplicates. Each session must be in the same workspace as the dream. Responses list the IDs in sorted order.
+
+The [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists all the limits on a dream.
 
 
 
-BetaDreamMemoryStoreInput object { memory_store_id, type }
+BetaDreamMemoryStoreInput object{ type: "memory_store", memory_store_id }
 
 
 
-An input memory store the dream reads from. The dream never mutates this store.
+The memory store that a dream reads, given as an entry in `inputs`.
 
-memory_store_id: string
-
-
-
-[](#beta_dream_memory_store_input.memory_store_id)
+With `output_behavior` set to `update_existing`, the dream writes its result into this memory store. Otherwise the dream doesn't change it.
 
 type: "memory_store"
 
 
 
-[](#beta_dream_memory_store_input.type)
-
-[](#beta_dream_memory_store_input)
-
 
-
-BetaDreamMemoryStoreOutput object { memory_store_id, type }
-
-
-
-An output memory store the dream writes consolidated memories into.
 
 memory_store_id: string
 
 
 
-[](#beta_dream_memory_store_output.memory_store_id)
+The ID of the memory store for the dream to read (`memstore_...`).
+
+The memory store must be in the same workspace as the dream and must not be archived.
+
+minLength1
+
+
+
+BetaDreamMemoryStoreOutput object{ type: "memory_store", memory_store_id }
+
+
+
+The memory store that holds a dream's result, as an entry in `outputs`.
 
 type: "memory_store"
 
 
 
-[](#beta_dream_memory_store_output.type)
-
-[](#beta_dream_memory_store_output)
-
 
 
-BetaDreamModelConfig object { id, speed }
+memory_store_id: string
 
 
 
-Model identifier and configuration applied to every pipeline stage. Same wire shape as the Agents API ModelConfig.
+The ID of the memory store that the dream writes its result to (`memstore_...`).
+
+With `output_behavior` set to `create_new`, this is a new memory store. With `update_existing`, it is the input memory store.
+
+
+
+BetaDreamModelConfig object{ id, speed }
+
+
+
+The model that runs a dream, from the request that created it.
+
+The dream uses this model for all of its work. The response always gives the model as an object, even if the request gave only a model ID.
+
+
 
 id: string
 
 
 
-Model identifier, e.g. "claude-opus-4-7". 1-256 characters.
+The ID of the model that runs the dream, as given in the request that created it.
 
-[](#beta_dream_model_config.id)
+minLength1
+
+maxLength256
 
 
 
@@ -699,7 +449,7 @@ speed: optional "standard" or "fast"
 
 
 
-Inference speed mode. `fast` provides significantly faster output token generation at premium pricing. Not all models support `fast`; invalid combinations are rejected at create time.
+How fast the model generates output for the dream. Always `standard`.
 
 One of the following:
 
@@ -707,41 +457,43 @@ One of the following:
 
 
 
-[](#beta_dream_model_config.speed%5B0%5D)
-
 "fast"
 
 
 
-[](#beta_dream_model_config.speed%5B1%5D)
-
-[](#beta_dream_model_config.speed)
-
-[](#beta_dream_model_config)
-
 
 
-BetaDreamModelConfigParam object { id, speed }
+BetaDreamModelConfigParam object{ id, speed }
 
 
 
-Model identifier and configuration applied to every pipeline stage.
+The object form of `model` in a request to create a dream.
+
+
 
 id: string
 
 
 
-Model identifier, e.g. "claude-opus-4-7". 1-256 characters.
+The ID of the model to run the dream with.
 
-[](#beta_dream_model_config_param.id)
+The ID can be 1 to 256 characters long.
+
+The [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists the supported models.
+
+minLength1
+
+maxLength256
 
 
 
-speed: optional "standard" or "fast"
+speed: optional "standard" or "fast" or null
 
 
 
-Inference speed mode. `fast` provides significantly faster output token generation at premium pricing. Not all models support `fast`; invalid combinations are rejected at create time.
+How fast the model generates output for the dream. Defaults to `standard`.
+
+Dreams accept only `standard`.
 
 One of the following:
 
@@ -749,61 +501,55 @@ One of the following:
 
 
 
-[](#beta_dream_model_config_param.speed%5B0%5D)
-
 "fast"
 
 
 
-[](#beta_dream_model_config_param.speed%5B1%5D)
-
-[](#beta_dream_model_config_param.speed)
-
-[](#beta_dream_model_config_param)
-
 
 
-BetaDreamOutput object { memory_store_id, type }
+BetaDreamOutput object{ type: "memory_store", memory_store_id }
 
 
 
-An output memory store the dream writes consolidated memories into.
-
-memory_store_id: string
-
-
-
-[](#beta_dream_output.memory_store_id)
+An entry in a dream's `outputs` that references the memory store holding its result.
 
 type: "memory_store"
 
 
 
-[](#beta_dream_output.type)
+
 
-[](#beta_dream_output)
+memory_store_id: string
+
+
+
+The ID of the memory store that the dream writes its result to (`memstore_...`).
+
+With `output_behavior` set to `create_new`, this is a new memory store. With `update_existing`, it is the input memory store.
 
 
 
-BetaDreamSessionsInput object { session_ids, type }
+BetaDreamSessionsInput object{ type: "sessions", session_ids }
 
 
 
-Input session transcripts the dream reads.
-
-session_ids: array of string
-
-
-
-[](#beta_dream_sessions_input.session_ids)
+The sessions that a dream reads, given as an entry in `inputs`.
 
 type: "sessions"
 
 
 
-[](#beta_dream_sessions_input.type)
+
 
-[](#beta_dream_sessions_input)
+session_ids: array of string
+
+
+
+The IDs of the sessions whose transcripts the dream reads (`sesn_...`).
+
+Give 1 to 100 IDs, with no duplicates. Each session must be in the same workspace as the dream. Responses list the IDs in sorted order.
+
+The [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists all the limits on a dream.
 
 
 
@@ -811,78 +557,222 @@ BetaDreamStatus = "pending" or "running" or "completed" or 2 more
 
 
 
-Lifecycle status of a Dream.
+Where a dream is in its lifecycle.
+
+`completed`, `failed`, and `canceled` are final: once a dream has one of these statuses, its status doesn't change again.
+
+See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#lifecycle) for what each status means.
 
 One of the following:
+
+
 
 "pending"
 
 
 
-[](#beta_dream_status%5B0%5D)
+The dream is waiting to start and hasn't read its inputs yet.
+
+`outputs` is empty and every `usage` count is zero.
+
+
 
 "running"
 
 
 
-[](#beta_dream_status%5B1%5D)
+The dream is reading its inputs and writing its result.
+
+`usage` updates while the dream has this status.
 
 "completed"
 
 
 
-[](#beta_dream_status%5B2%5D)
+The dream finished and its output memory store holds the complete result.
+
+
 
 "failed"
 
 
 
-[](#beta_dream_status%5B3%5D)
+The dream stopped with an error, which `error` describes.
+
+If `outputs` references a memory store, that memory store keeps what the dream wrote before it stopped.
+
+
 
 "canceled"
 
 
 
-[](#beta_dream_status%5B4%5D)
+A cancel request stopped the dream before it reached `completed` or `failed`.
 
-[](#beta_dream_status)
+If `outputs` references a memory store, that memory store keeps what the dream wrote. `usage` can keep changing after the cancel.
 
 
 
-BetaDreamUsage object { cache_creation_input_tokens, cache_read_input_tokens, input_tokens, output_tokens }
+BetaDreamUsage object{ cache_creation_input_tokens, cache_read_input_tokens, input_tokens, output_tokens }
 
 
 
-Cumulative token usage for the dream across every pipeline stage.
+The tokens that a dream has used so far.
+
+The counts are zero while the dream is `pending` and update while it is `running`. They can keep changing after a cancel.
+
+See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#billing) for how dreams are billed. See the [prompt caching guide](https://platform.claude.com/docs/en/build-with-claude/prompt-caching#tracking-cache-performance) for how the input token counts add up.
+
+
 
 cache_creation_input_tokens: number
 
 
 
-Total tokens used to create prompt-cache entries (sum of all TTL tiers).
+The dream's input tokens that were written to the prompt cache, for both the 5-minute and 1-hour cache durations.
 
-[](#beta_dream_usage.cache_creation_input_tokens)
+formatint32
+
+
 
 cache_read_input_tokens: number
 
 
 
-Total tokens read from prompt cache.
+The dream's input tokens that were read from the prompt cache.
 
-[](#beta_dream_usage.cache_read_input_tokens)
+formatint32
+
+
 
 input_tokens: number
 
 
 
-Total uncached input tokens consumed across every pipeline stage.
+The dream's input tokens that weren't read from or written to the prompt cache.
 
-[](#beta_dream_usage.input_tokens)
+formatint32
+
+
 
 output_tokens: number
 
 
 
-Total output tokens generated across every pipeline stage.
+The tokens that the model generated for the dream.
 
-[](#beta_dream_usage.output_tokens)
+formatint32
+
+
+
+BetaDreamingError = [BetaInvalidRequestError](/docs/en/api/http/beta#beta_invalid_request_error) or [BetaAuthenticationError](/docs/en/api/http/beta#beta_authentication_error) or [BetaBillingError](/docs/en/api/http/beta#beta_billing_error) or 7 more
+
+
+
+One of the following:
+
+
+
+BetaOutputBehavior = [BetaOutputBehaviorCreateNew](/docs/en/api/http/beta/dreams#beta_output_behavior_create_new) or [BetaOutputBehaviorUpdateExisting](/docs/en/api/http/beta/dreams#beta_output_behavior_update_existing)
+
+
+
+Which memory store a dream writes its result to. Defaults to `create_new` when left out of a create request.
+
+One of the following:
+
+
+
+BetaOutputBehaviorCreateNew object{ type: "create_new" }
+
+
+
+Write the result to a new memory store that starts as a copy of the input memory store. This is the default.
+
+The new memory store is in the same workspace as the dream. The dream doesn't change the input memory store.
+
+type: "create_new"
+
+
+
+
+
+BetaOutputBehaviorUpdateExisting object{ type: "update_existing", memory_store_id }
+
+
+
+Write the result into the input memory store instead of a new memory store.
+
+The credential must be allowed to write memory stores, or the request returns a 403 error. While another `update_existing` dream on the same memory store hasn't fully stopped, the request returns a 409 error.
+
+type: "update_existing"
+
+
+
+
+
+memory_store_id: string
+
+
+
+The ID of the memory store for the dream to write its result to (`memstore_...`). It must be the memory store in the `memory_store` entry of `inputs`.
+
+minLength1
+
+
+
+BetaOutputBehaviorCreateNew object{ type: "create_new" }
+
+
+
+Write the result to a new memory store that starts as a copy of the input memory store. This is the default.
+
+The new memory store is in the same workspace as the dream. The dream doesn't change the input memory store.
+
+type: "create_new"
+
+
+
+
+
+BetaOutputBehaviorUpdateExisting object{ type: "update_existing", memory_store_id }
+
+
+
+Write the result into the input memory store instead of a new memory store.
+
+The credential must be allowed to write memory stores, or the request returns a 403 error. While another `update_existing` dream on the same memory store hasn't fully stopped, the request returns a 409 error.
+
+type: "update_existing"
+
+
+
+
+
+memory_store_id: string
+
+
+
+The ID of the memory store for the dream to write its result to (`memstore_...`). It must be the memory store in the `memory_store` entry of `inputs`.
+
+minLength1
+
+
+
+BetaTargetStoreHeldError object{ type: "conflict_error", message }
+
+
+
+Returned with status 409 when a request to create a dream sets `output_behavior` to `update_existing` and another dream that writes into the same memory store hasn't fully stopped.
+
+The other dream is `pending` or `running`, or it has just stopped and is still finishing its last writes. `message` gives the ID of the other dream when the server can identify it. If that dream has already reached `completed`, `failed`, or `canceled`, retry after a short wait. Otherwise, wait for the other dream to end or cancel it, then retry. The response sets the `x-should-retry` header to `false`.
+
+type: "conflict_error"
+
+
+
+message: optional string
+
+
+
+A human-readable explanation of why the memory store can't be used yet, with the ID of the dream that is using it when the server can identify it.

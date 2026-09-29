@@ -2,14 +2,15 @@
 title: "Use Claude Code with your Pro or Max plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:40:59Z"
+fetched_at: "2026-09-29T06:31:41Z"
 tags: ["billing", "claude-code"]
 ---
 
 # Use Claude Code with your Pro or Max plan
 
-June 11, 2026
+August 19, 2026
 
+Copy for LLM
 
 This article applies to individual consumers using Pro or Max plan subscriptions to access Claude Code. If you’re a member of a Team or Enterprise plan organization, see **[Use Claude Code with your Team or Enterprise plan](https://support.claude.com/en/articles/11845131)**.
 
@@ -81,7 +82,7 @@ When you reach your usage limits, you can select from a few options based on you
 
 - **[Enable usage credits](https://support.claude.com/en/articles/12429409-)** to continue using Claude with your Pro plan after hitting the included usage limit.
 
-- You will have the flexibility to switch to **[pay-as-you-go usage](https://support.claude.com/en/articles/8114526-how-will-i-be-billed-for-claude-api-use)** with a Claude Console account for intensive coding sprints.
+- Switch to a Claude Console account and **[purchase API usage credits](https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-claude-api-usage)** for intensive coding sprints.
 
 - Wait until your usage limits reset.
 
@@ -91,7 +92,7 @@ When you reach your usage limits, you can select from a few options based on you
 
 - **[Enable usage credits](https://support.claude.com/en/articles/12429409-)** to continue using Claude with your Max plan after hitting the included usage limit.
 
-- You will have the flexibility to switch to **[pay-as-you-go usage](https://support.claude.com/en/articles/8114526-how-will-i-be-billed-for-claude-api-use)** with a Claude Console account for intensive coding sprints.
+- Switch to a Claude Console account and **[purchase API usage credits](https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-claude-api-usage)** for intensive coding sprints.
 
 - Wait until your usage limits reset.
 

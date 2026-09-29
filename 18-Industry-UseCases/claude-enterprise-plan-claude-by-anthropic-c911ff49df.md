@@ -2,7 +2,7 @@
 title: "Claude Enterprise Plan | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/enterprise"
 category: "18-Industry-UseCases"
-fetched_at: "2026-08-02T05:43:58Z"
+fetched_at: "2026-09-19T06:30:30Z"
 tags: ["enterprise"]
 ---
 
@@ -131,23 +131,23 @@ Learn more
 
 Single sign-on (SSO/SAML) and domain capture
 
+SOC 2, ISO 27001, GDPR, and CCPA compliance
+
 Usage analytics and reporting
 
 SCIM provisioning
 
 Spend controls
 
-Role-based access control (RBAC)
-
 Data retention controls\*
-
-Audit logs and OpenTelemetry monitoring\*
-
-SOC 2, ISO 27001, GDPR, and CCPA compliance
 
 Compliance API
 
 HIPAA-ready offering
+
+Audit logs and OpenTelemetry monitoring\*
+
+Role-based access control (RBAC)
 
 ## Bring Claude to your enterprise two ways
 
@@ -492,10 +492,10 @@ Manager: Priya Shah*
 
 ### Human Resources
 
-- Convert project requirements into technical specifications
-- Design system architecture and component interactions
-- Troubleshoot errors and runtime issues
-- Identify code optimizations and performance improvements
+- Summarize candidate feedback into hiring recommendations
+- Create performance review templates and calibration summaries
+- Develop learning and development programs
+- Interpret headcount and workforce planning metrics
 
 Prompt
 
@@ -696,9 +696,15 @@ Active
 
 No. Your inputs and outputs are not used to train our models by default. Review our data practices at the [Trust Center](https://trust.anthropic.com/).
 
-### What security and compliance controls does Claude Enterprise include? 
+### What security and compliance controls does Claude Enterprise include?
 
-Claude Enterprise is built for secure deployment at scale. SSO with domain capture, role-based access, SCIM provisioning, and self-serve seat management for identity; audit logs, data retention controls, the Compliance API, and HIPAA-ready BAAs for compliance; and usage analytics, the Analytics API, and spend controls for visibility. All data is encrypted in transit and at rest. Visit the Trust Center for the full overview, or our regional compliance page for data residency details.
+Enterprise is built for organizations with real compliance obligations:
+
+- **Identity and access** — SSO and domain capture, SCIM and JIT provisioning, and role-based access control. Admins define groups, roles, and capabilities to govern exactly which people can use which products and connectors.
+- **Visibility and logging** — audit logs, a Compliance API for programmatic access to activity logs, chats, files, and projects, OpenTelemetry, and an Analytics API for aggregated adoption and engagement data. Both feed the DLP, SIEM, and monitoring tools your security team already runs.
+- **Data controls** — custom data retention, customer-managed encryption keys, and US-only inference.
+- **Network controls** — IP allowlisting and network-level access control, which prevents access to personal or non-corporate Claude instances from enterprise networks.
+- **Connector governance** — admins approve which connectors are available org-wide and set per-tool permissions. Connectors respect the permissions users already have in the underlying systems.
 
 ### Do you support HIPAA? Can we get a BAA?
 
@@ -711,9 +717,37 @@ Prev
 
 ### Products and capabilities
 
-### What's included in the Claude Enterprise plan?
+### What is the Claude Enterprise plan?
 
-Claude Enterprise gives your organization the full Claude experience including Claude Code, Claude Cowork and chat all with enterprise-grade security controls, plus connectors that bring context from your existing tools into Claude. For a full feature breakdown, see [claude.com/pricing](https://claude.com/pricing).
+Claude Enterprise is Anthropic's complete offering for organizations deploying Claude at scale. One seat gives every employee the full suite: Chat for everyday thinking work, Claude Code for engineering, Claude Cowork for delegating multi-step knowledge work, Claude Design for turning a prompt into polished visuals, and Claude in the tools your teams already use including Microsoft 365, Chrome, and Slack.
+
+Underneath all of it sits one identity, one policy, and one set of admin controls. Connectors bring in your organization's data, skills encode how your teams actually work, and enterprise-grade security, governance, and analytics give IT and security teams the visibility they need. Please reference [pricing](https://claude.com/pricing#team-&-enterprise) for a full feature breakdown.
+
+### What’s included in the Enterprise plan?
+
+The Claude Enterprise plan supports deep, cross-functional workflows and provides one seat for every surface:
+
+**One seat, every surface**
+
+- **Chat** — a thinking partner for everyday work, on web, desktop, and mobile
+- **Claude Code** — agentic coding in the terminal, IDE, Slack, and on the web
+- **Claude Cowork** — delegate your tasks such as research, analysis, and documents; get finished deliverables back
+- **Claude Design** — go from prompt to polished visuals, prototypes, and slides
+- **Claude for Microsoft 365** — Work with Claude in Excel, PowerPoint, Word, and Outlook
+- **Claude in Chrome** — Claude navigates, clicks, and fills out forms across your tabs
+
+**Context from your organization**
+
+- Pre-built connectors, plus custom connectors via MCP for internal systems
+- Skills that capture your templates, standards, and workflows so every team runs them the same way
+- Memory across conversations, so Claude carries context forward
+
+**Security, governance, and administration**
+
+- Single sign-on (SSO), domain capture, SCIM and JIT provisioning
+- Role-based access control for fine-grained user, feature, and spend management
+- Audit logs, Compliance API, and Analytics API
+- Custom data retention, customer-managed encryption keys, IP allowlisting, network-level access control
 
 ### What's the difference between Chat, Claude Code, and Claude Cowork?
 
@@ -722,6 +756,10 @@ Chat is meant for research, brainstorming, writing, and analysis. Claude Code is
 ### Can we connect Claude to the tools we already use?
 
 Yes. Connectors bring context from Google Drive, Gmail, Slack, Microsoft 365 and many more into Claude. You can also use Claude directly inside Excel, PowerPoint, Outlook, Slack, and Chrome. See the [Enterprise administrator guide](https://claude.com/resources/tutorials/claude-enterprise-administrator-guide) for setup.
+
+### What is Claude for Work?
+
+Claude for Work was the earlier name for our business plans — what are now the Team and Enterprise plans. The name has been retired, but the plans still exist: Team for collaboration across smaller organizations, and Enterprise for organizations operating at scale that need advanced security, compliance, and administrative controls.
 
 [Prev](#)
 
@@ -737,6 +775,12 @@ Claude Enterprise is available directly from Anthropic and through AWS Marketpla
 ### Do you support invoice billing on Claude Enterprise?
 
 Yes. Sales-assisted Claude Enterprise plans include invoice billing. Self-serve Enterprise plans accept credit card or ACH bank transfer.
+
+### How can I integrate Claude into my own products or services?
+
+If you're a developer building user-facing experiences or new products with Claude, the Claude Platform is the right starting point. It gives you direct access to our models, the Claude Agent SDK, and the building blocks for production agents.
+
+‍[Explore the developer docs](https://docs.claude.com/en/home) to get started, or [contact our Sales team](https://claude.com/contact-sales) to talk through platform plans and volume commitments.
 
 ### Where do I get an API key for Claude Platform and how does billing work?
 
@@ -763,17 +807,17 @@ Tutorial
 
 Tutorial
 
-[Claude Cowork Enterprise admin guide](https://claude.com/resources/tutorials/claude-cowork-enterprise-administrator-guide)
+[Claude Academy](https://academy.claude.com/)
 
-Claude Cowork Enterprise admin guide
+Claude Academy
 
-Claude Cowork Enterprise admin guide
+Claude Academy
 
-Tutorial
+Resource
 
-[Tutorial](https://claude.com/resources/tutorials/claude-cowork-enterprise-administrator-guide)
+[Resource](https://academy.claude.com/)
 
-Tutorial
+Resource
 
 [Zero trust AI agents](https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/6a0521e14a6fed28fe4a3b3b_Claude-eBook-Zero-Trust-for-AI-Agents-05132026.pdf)
 
@@ -846,112 +890,6 @@ Thank you! Your submission has been received!
 
 Oops! Something went wrong while submitting the form.
 
-Write
-
-[Button Text](#)
-
-Button Text
-
-Learn
-
-[Button Text](#)
-
-Button Text
-
-Code
-
-[Button Text](#)
-
-Button Text
-
-Write
-
-- Help me develop a unique voice for an audience
-
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
-
 [Anthropic](https://www.anthropic.com/)
 
 Anthropic
@@ -970,11 +908,6 @@ Products
   [Claude Code](/product/claude-code)
   Claude Code
 
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
 - Claude Cowork
 
   [Claude Cowork](/product/cowork)
@@ -984,11 +917,6 @@ Products
 
   [@Claude](/product/tag)
   @Claude
-
-- Claude Design
-
-  [Claude Design](/product/design)
-  Claude Design
 
 - Claude Science
 
@@ -1014,22 +942,44 @@ Products
 
   [Log in](https://claude.ai/login)
 
-Features
+Capabilities
 
-- Claude for Chrome
+- Artifacts
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Artifacts](/features/artifacts)
+  Artifacts
 
-- Claude for Microsoft 365
+- Design
 
-  [Claude for Microsoft 365](/claude-for-microsoft-365)
-  Claude for Microsoft 365
+  [Design](/product/design)
+  Design
+
+- Connectors
+
+  [Connectors](/connectors)
+  Connectors
+
+- Plugins
+
+  [Plugins](/plugins)
+  Plugins
 
 - Skills
 
   [Skills](/skills)
   Skills
+
+Extensions
+
+- Claude in Chrome
+
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
+
+- Claude for Microsoft 365
+
+  [Claude for Microsoft 365](/claude-for-microsoft-365)
+  Claude for Microsoft 365
 
 Models
 
@@ -1058,7 +1008,19 @@ Models
   [Haiku](https://www.anthropic.com/claude/haiku)
   Haiku
 
-Solutions
+Enterprise
+
+- Overview
+
+  [Overview](/solutions/enterprise)
+  Overview
+
+- Claude Code for Enterprise
+
+  [Claude Code for Enterprise](/product/claude-code/enterprise)
+  Claude Code for Enterprise
+
+Use cases
 
 - AI agents
 
@@ -1075,6 +1037,13 @@ Solutions
   [Coding](/solutions/coding)
   Coding
 
+- Commerce
+
+  [Commerce](/solutions/commerce)
+  Commerce
+
+Departments
+
 - Customer support
 
   [Customer support](/solutions/customer-support)
@@ -1085,10 +1054,17 @@ Solutions
   [Cybersecurity](/solutions/cybersecurity)
   Cybersecurity
 
-- Enterprise
+- Legal
 
-  [Enterprise](/solutions/enterprise)
-  Enterprise
+  [Legal](/solutions/legal)
+  Legal
+
+- Sales
+
+  [Sales](/solutions/sales)
+  Sales
+
+Industries
 
 - Financial services
 
@@ -1115,11 +1091,6 @@ Solutions
   [K-12 teachers](/solutions/teachers)
   K-12 teachers
 
-- Legal
-
-  [Legal](/solutions/legal)
-  Legal
-
 - Life sciences
 
   [Life sciences](/solutions/life-sciences)
@@ -1135,22 +1106,46 @@ Solutions
   [Small business](/solutions/small-business)
   Small business
 
-Claude Platform
+Programs
+
+- Startups
+
+  [Startups](/programs/startups)
+  Startups
+
+- Scientists
+
+  [Scientists](/programs/team-plan-for-scientists)
+  Scientists
+
+Developers
+
+- Developer docs
+
+  [Developer docs](https://code.claude.com/docs/en/overview)
+  Developer docs
+
+- Community
+
+  [Community](/community)
+  Community
+
+- Console
+
+  [Console](https://platform.claude.com/docs/en/home)
+  Console
+
+- Engineering at Anthropic
+
+  [Engineering at Anthropic](https://www.anthropic.com/engineering)
+  Engineering at Anthropic
+
+Platform
 
 - Overview
 
   [Overview](/platform/api)
   Overview
-
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
 
 - Ecosystem
 
@@ -1177,16 +1172,6 @@ Claude Platform
   [Microsoft Foundry](/partners/microsoft-foundry)
   Microsoft Foundry
 
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](https://platform.claude.com/)
-  Console login
-
 Resources
 
 - Blog
@@ -1199,40 +1184,20 @@ Resources
   [Claude partner network](/partners)
   Claude partner network
 
-- Community
+- Claude Academy
 
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
+  [Claude Academy](https://academy.claude.com/)
+  Claude Academy
 
 - Customer stories
 
   [Customer stories](/customers)
   Customer stories
 
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
 - Events
 
   [Events](https://www.anthropic.com/events)
   Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
 
 - Powered by Claude
 
@@ -1241,18 +1206,45 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](#)
   Service partners
 
-- Tutorials
+Help and security
 
-  [Tutorials](/resources/tutorials)
-  Tutorials
+- Availability
 
-- Use cases
+  [Availability](https://www.anthropic.com/supported-countries)
+  Availability
 
-  [Use cases](/resources/use-cases)
-  Use cases
+- Check files
+
+  [Check files](https://claude.com/check-files)
+  Check files
+
+- Regional compliance
+
+  [Regional compliance](/regional-compliance)
+  Regional compliance
+
+- Report abuse
+
+  [Report abuse](https://claude.com/form/anthropic-content-reporting)
+  Report abuse
+
+- Security and compliance
+
+  [Security and compliance](https://trust.anthropic.com/)
+  Security and compliance
+
+- Status
+
+  [Status](https://status.anthropic.com/)
+  Status
+
+- Support center
+
+  [Support center](https://support.claude.com/en/)
+  Support center
 
 Company
 
@@ -1271,19 +1263,14 @@ Company
   [Policy](https://www.anthropic.com/policy)
   Policy
 
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
 - Research
 
   [Research](https://www.anthropic.com/research)
   Research
 
-- News
+- Anthropic news
 
-  [News](https://www.anthropic.com/news)
-  News
+  [Anthropic news](https://www.anthropic.com/news)
+  Anthropic news
 
 - Policy on the AI Exponential

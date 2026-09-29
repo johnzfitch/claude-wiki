@@ -2,7 +2,7 @@
 title: "Prompts - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2026-07-28/server/prompts"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:38:55Z"
+fetched_at: "2026-09-29T06:29:54Z"
 tags: ["mcp", "prompting"]
 ---
 
@@ -44,7 +44,9 @@ For brevity, the request examples on this page omit the `_meta` request metadata
 
 User Interaction Model
 
-Prompts are designed to be **user-controlled**, meaning they are exposed from servers to clients with the intention of the user being able to explicitly select them for use. This refers to who decides when the prompt is used, not who authors its content. Prompt content is defined by the server. Typically, prompts would be triggered through user-initiated commands in the user interface, which allows users to naturally discover and invoke available prompts. For example, as slash commands: However, implementors are free to expose prompts through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
+Prompts are designed to be **user-controlled**, meaning they are exposed from servers to clients with the intention of the user being able to explicitly select them for use. This refers to who decides when the prompt is used, not who authors its content. Prompt content is defined by the server. Typically, prompts would be triggered through user-initiated commands in the user interface, which allows users to naturally discover and invoke available prompts. For example, as slash commands:
+
+However, implementors are free to expose prompts through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
 
 
 [​](#capabilities)

@@ -2,7 +2,7 @@
 title: "Claude Corps \\ Anthropic"
 source_url: "https://www.anthropic.com/claude-corps"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:42:57Z"
+fetched_at: "2026-09-29T06:32:45Z"
 ---
 
 Program overview[For fellows](#how-it-works)[For hosts](#host-info)[FAQ](#faq)
@@ -55,7 +55,7 @@ Apply, get matched, and spend the next year building.
 
 [Read the FAQ for interested fellows](/claude-corps/fellow)
 
-1. ApplyApplications are open to anyone over the age of 18 with under two years of full-time work experience. There is no education requirement. Fellows are selected based on their experience with AI, communication skills, and motivation to work on societal challenges.
+1. ApplyApplications are open to anyone 18 or older by their cohort’s start date who is at the start of their career. There is no education requirement. Fellows are selected based on their experience with AI, communication skills, and motivation to work on societal challenges.
 
 2. MatchFellows interview with host organizations based on project fit, geographic proximity, and mutual interest.
 
@@ -187,7 +187,7 @@ Our partners
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -207,6 +207,7 @@ Our partners
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -218,6 +219,7 @@ Our partners
 - [Legal](https://claude.com/solutions/legal)
 - [Life sciences](https://claude.com/solutions/life-sciences)
 - [Nonprofits](https://claude.com/solutions/nonprofits)
+- [Sales](https://claude.com/solutions/sales)
 - [Small business](https://claude.com/solutions/small-business)
 
 ### Claude Platform
@@ -239,8 +241,9 @@ Our partners
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
+- [Developer blog](https://claude.dev)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
 - [Plugins](https://claude.com/plugins)
@@ -252,7 +255,7 @@ Our partners
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -264,6 +267,7 @@ Our partners
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

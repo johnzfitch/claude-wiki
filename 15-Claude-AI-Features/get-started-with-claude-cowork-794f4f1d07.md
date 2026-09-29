@@ -2,30 +2,36 @@
 title: "Get started with Claude Cowork | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:42:42Z"
+fetched_at: "2026-09-29T06:31:36Z"
 tags: ["plugins", "security"]
 ---
 
 # Get started with Claude Cowork
 
 
+Copy for LLM
+
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+
 This article explains how to use **[Claude Cowork](https://claude.com/product/cowork)**, which brings Claude Code's agentic capabilities to knowledge work beyond coding.
 
 ## Availability
 
-Claude Cowork is available for paid plans (Pro, Max, Team, Enterprise) on:
+Claude Cowork is available on paid plans (Pro, Max, Team, Enterprise). Availability varies by surface:
 
-- **Claude Desktop for macOS** — **[Click here](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)** to download
+- **Claude Desktop for macOS** — Available on all paid plans. **[Click here](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)** to download.
 
-- **Claude Desktop for Windows** — Cowork requires the latest version of Claude for Windows. Download or update at **[claude.com/download](http://claude.com/download)**.
+- **Claude Desktop for Windows** — Available on all paid plans. Cowork requires the latest version of Claude for Windows. Download or update at **[claude.com/download](http://claude.com/download)**.
 
-- **Web**, at claude.ai
+- **Web**, at claude.ai — Available on Pro, Max, and Team plans. On Enterprise plans, available where an admin has enabled it.
 
-- **Claude Mobile**, in the latest version of Claude for iOS and Claude for Android
+- **Claude Mobile** — Available on Pro, Max, and Team plans, in the latest version of Claude for iOS and Claude for Android. On Enterprise plans, available where an admin has enabled it.
 
-Chat and Cowork share one home, so you start both from the same place. On any surface, find the message box and select "Cowork," then describe your task. To go back to a regular conversation, select "Chat."
+- **Claude in Chrome side panel** — Available on Max and Team plans, and rolling out to Pro plans. On Enterprise plans, available where an admin has enabled it. See **[Get started with Claude in Chrome](https://support.claude.com/en/articles/12012173-get-started-with-claude-in-chrome)** for more information.
 
-Claude Cowork is in beta on web and mobile, and rolling out over the next several weeks starting with the Max plan, with more plans to follow.
+On desktop, web, and mobile, chat and Cowork share one home, so you start both from the same place. Find the message box and select "Cowork," then describe your task. To go back to a regular conversation, select "Chat." In the Chrome side panel, opening the panel starts a Cowork session directly.
+
+If you have the new Claude experience, there's no "Cowork" option to select. Describe your task in any conversation, and Claude takes it from there. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**.
 
 ------------------------------------------------------------------------
 
@@ -33,7 +39,7 @@ Claude Cowork is in beta on web and mobile, and rolling out over the next severa
 
 Claude Cowork uses the same agentic architecture that powers Claude Code, with no terminal required. Instead of responding to prompts one at a time, Claude can take on complex, multi-step tasks and execute them on your behalf.
 
-With Cowork, you can describe an outcome, step away, and come back to finished work—formatted documents, organized files, synthesized research, and more. Cowork runs your sessions remotely (in beta), so your sessions and files live with your Claude account and follow you across desktop, web, and mobile. Chat and Cowork now share one home, so handing Claude a task starts from the same message box as a conversation. With scheduled tasks, Claude can complete work for you automatically. With projects, you can organize related tasks into persistent, self-contained workspaces with their own files, links, instructions, and memory.
+With Cowork, you can describe an outcome, step away, and come back to finished work—formatted documents, organized files, synthesized research, and more. Cowork runs your sessions remotely in the cloud (in beta), so your sessions and files live with your Claude account and follow you across desktop, web, and mobile. Chat and Cowork now share one home, so handing Claude a task starts from the same message box as a conversation. With scheduled tasks, Claude can complete work for you automatically. With projects, you can organize related tasks into persistent, self-contained workspaces with their own files, links, instructions, and memory.
 
 **Important:**
 
@@ -43,23 +49,21 @@ With Cowork, you can describe an outcome, step away, and come back to finished w
 
   - **Important:** Network egress permissions don't apply to the web fetch or **[web search](https://support.claude.com/en/articles/10684626-enabling-and-using-web-search)** tools or MCPs, including Claude in Chrome. Web fetch runs server-side and is limited to search results and URLs you've shared.
 
-  - Team or Enterprise plan owners can turn off web search for Cowork and Chat in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**, or Claude in Chrome via **[Organization settings \> Claude in Chrome](http://claude.ai/admin-settings/browser-extension).**
+  - Team or Enterprise plan owners can turn off web search for Cowork and Chat in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**, or Claude in Chrome via **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension).**
 
 - You control your Cowork tasks and can delete a task at any time using the "Delete" option (click "⋮" next to the task, or select tasks from your Tasks list and click the trash icon). Your Cowork task will be removed from your task history immediately, and deleted from our backend storage systems within 30 days, in accordance with our **[data retention periods](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**.
 
-- Cowork activity is not captured in the Compliance API at this time.
-
-- If you're a Team or Enterprise plan admin, you can **[use OpenTelemetry (OTel) to monitor Claude Cowork activity](https://support.claude.com/en/articles/14477985-monitor-claude-cowork-activity-with-opentelemetry)** across your organization.
-
-- Please review **[Use Cowork safely](https://support.claude.com/en/articles/13364135-using-cowork-safely)** for more information.
+- For more information, review **[Use Cowork safely](https://support.claude.com/en/articles/13364135-using-cowork-safely)**.
 
 For important limitations and considerations for Team and Enterprise organizations using Cowork, see **[Cowork for Team and Enterprise plans](https://support.claude.com/en/articles/13455879-cowork-for-team-and-enterprise-plans)**.
 
 ### Key capabilities
 
-- **Work from anywhere:** Remote sessions follow your Claude account. Start a task on one surface, steer it from another, and pick up the finished output wherever you are. See **[Use Claude Cowork on web, desktop, and mobile](https://support.claude.com/en/articles/15520349)**.
+- **Work from anywhere:** Sessions in the cloud follow your Claude account. Start a task on one surface, steer it from another, and pick up the finished output wherever you are. See **[Use Claude Cowork on web, desktop, and mobile](https://support.claude.com/en/articles/15520349)**.
 
-- **Work that continues without you:** In remote sessions, Claude keeps working when you close your laptop or step away.
+- **Work that continues without you:** In sessions in the cloud, Claude keeps working when you close your laptop or step away.
+
+- **Shared memory with chat:** In sessions in the cloud, Claude starts from what it already remembers from your chats, and what comes up in a Cowork task carries back to chat. Learn more about **[Claude's memory](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_82126ebcc9)**.
 
 - **Direct local file access:** On desktop, Claude can read from and write to your local files without manual uploads or downloads.
 
@@ -71,19 +75,19 @@ For important limitations and considerations for Team and Enterprise organizatio
 
 - **Long-running tasks:** Work on complex tasks for extended periods without conversation timeouts or context limits interrupting your progress.
 
-- **Scheduled tasks:** Create and save tasks that you can have Claude run on-demand or automatically on a cadence of your choosing. Scheduled tasks run remotely, with no device online.
+- **Scheduled tasks:** Create and save tasks that you can have Claude run on-demand or automatically on a cadence of your choosing. Scheduled tasks run in the cloud, with no device online.
 
 - **Spreadsheets and presentations:** Cowork can produce spreadsheets and slides that can be further edited with Claude for Excel and Powerpoint.
 
-- **Projects:** Group related tasks into separate workspaces with their own files, context, instructions, and memory. See **[Organize your tasks with projects in Cowork](https://support.claude.com/en/articles/14116274-organize-your-tasks-with-projects-in-cowork).**
+- **Projects:** Group related tasks into separate workspaces with their own files, context, instructions, and memory. See **[Organize your tasks with projects in Cowork](https://support.claude.com/en/articles/14116274-organize-your-tasks-with-projects-in-cowork)**.
 
-- **Browser actions:** Claude can open Chrome and work on websites—clicking, typing, navigating, and filling forms—for tasks that touch websites. See **[Get started with Claude in Chrome](https://support.claude.com/en/articles/12012173-get-started-with-claude-in-chrome)**.
+- **Browser actions:** For tasks that touch websites, Claude can open sites, read pages, click, type, and fill forms. On desktop, Claude uses a browser built into the Claude Desktop app by default, with nothing to install. The built-in browser is rolling out gradually this week. If you already use Claude in Chrome, Claude works in your own browser instead, and you can change your preferred browser anytime in **[Settings \> Cowork](https://claude.ai/settings/cowork)**. On Max and Team plans, Pro plans as it rolls out, and Enterprise plans where an admin has enabled it, you can also run a Cowork session directly in the Chrome side panel. Learn more in **[Use the built-in browser in Claude Cowork](https://support.claude.com/en/articles/16607400)** and **[Get started with Claude in Chrome](https://support.claude.com/en/articles/12012173-get-started-with-claude-in-chrome)**.
 
 ------------------------------------------------------------------------
 
 ## How Claude Cowork runs your tasks
 
-Cowork runs your tasks remotely (in beta). Claude's work runs on Anthropic's servers, in an isolated environment, and your sessions and files are saved to your Claude account. Work continues if you close your laptop, and you can open the same session from any surface.
+Cowork runs your tasks in the cloud (in beta). Claude's work runs on Anthropic's servers, in an isolated environment, and your sessions and files are saved to your Claude account. Work continues if you close your laptop, and you can open the same session from any surface.
 
 When a task needs something on your computer, like a local file or your browser, Claude reaches it through the Claude Desktop app on that computer. When you start a task in Cowork, Claude:
 
@@ -107,11 +111,13 @@ You maintain visibility into what Claude is planning and doing throughout the pr
 
 - **Paid Claude subscription:** Cowork is available to paid Claude plans (Pro, Max, Team, Enterprise) only.
 
-- **For local file access, browser use, and computer use:** The **[Claude Desktop app](https://support.claude.com/en/articles/10065433-installing-claude-desktop)** for macOS or Windows, open and connected. These capabilities reach things on your computer, so they need the app even though your session runs remotely.
+- **For local file access, browser use, and computer use:** The **[Claude Desktop app](https://support.claude.com/en/articles/10065433-installing-claude-desktop)** for macOS or Windows, open and connected. These capabilities reach things on your computer, so they need the app even though your session runs in the cloud.
 
 - **Active internet connection:** Required throughout the session.
 
 ## Start a Cowork session
+
+**Note:** If you're on a Pro or Max plan and your message box doesn't show "Chat" and "Cowork" options, you have the new Claude experience. Skip step 2, since every conversation can take on a Cowork task.
 
 Chat and Cowork share one home. To start a session on any surface:
 
@@ -149,11 +155,13 @@ Tasks can run for extended periods depending on complexity. You can monitor prog
 
 Cowork has three modes that control when Claude asks your permission before taking an action, like using your connectors. You can change the mode at any time from the mode selector in the chat box.
 
+**Note:** If you have the new Claude experience, the permission setting in the message box offers **Auto** and **Manual** (default).
+
 [TABLE]
 
-As a reminder, you control which connectors Claude can use via the + menu in the chat box or the **[Customize \> Connectors](https://claude.ai/customize/connectors)** page.
+As a reminder, you control which connectors Claude can use via the "+" menu in the chat box or the **[Customize \> Connectors](https://claude.ai/customize/connectors)** page.
 
-**Note:** On Team and Enterprise plans, your organization may require per-task approval for write-capable connector tools, so "Always allow" preferences may not apply. See **[Use Claude Cowork on Team and Enterprise plans](https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans#h_1bd1fa754d)**.
+**Note:** On Team and Enterprise plans, your admin controls whether "Automatically approve" is available to your organization. It's available by default, and if your admin turns it off, the mode doesn't appear in your mode selector. Your organization may also require per-task approval for write-capable connector tools, so "Always allow" preferences may not apply. See **[Use Claude Cowork on Team and Enterprise plans](https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans#h_1bd1fa754d)**.
 
 **Manually approve (Manual)**, formerly "Ask before acting." Claude pauses and asks for approval for actions. You review each request and choose Allow or Deny.
 
@@ -161,7 +169,7 @@ As a reminder, you control which connectors Claude can use via the + menu in the
 
 We tested Claude's safety check extensively before releasing it, including working with outside security experts who tried to sneak dangerous actions past it. It gives you the speed of letting Claude work without interruptions, with a layer of protection that "Skip all approvals" doesn't have: every action still gets reviewed before it happens. *Of course, no defense is perfect and no mode replaces your judgment. For work with real consequences—money, messages sent as you, important files—stay close and review what Claude does or consider switching back to "Manually approve."*
 
-Auto mode applies to all of your existing connectors, plugins, Claude in Chrome, and some Cowork actions like fetching websites. Auto mode won't approve certain sensitive actions like allowing Cowork to access additional folders on your computer, allowing Cowork to delete files in a given folder it has access to, creating scheduled tasks, and others. Because Claude does this extra checking for you, **auto mode consumes more of your usage limit than the other modes**.
+Auto mode applies to all of your existing connectors, plugins, the built-in browser, Claude in Chrome, and some Cowork actions like fetching websites. Because Claude does this extra checking for you, **auto mode consumes more of your usage limit than the other modes**.
 
 **Skip all approvals (Skip)**, formerly "Act without asking." Claude doesn't pause to ask and nothing checks its actions automatically. Only use this when you completely trust every action, connector, file, app, etc. involved in the task.
 
@@ -172,6 +180,8 @@ Auto mode applies to all of your existing connectors, plugins, Claude in Chrome,
 ### Global instructions
 
 You can give Claude standing instructions that apply to every Cowork session. Use this to specify your preferred tone, output format, or background on your role.
+
+**Note:** In the new Claude experience, **Global instructions** are part of **Instructions for Claude** in **[Settings \> General](https://claude.ai/settings/general)**, and they apply to every conversation.
 
 To set global instructions:
 
@@ -190,7 +200,7 @@ Folder instructions add project-specific context to Cowork when you select a loc
 
 ## Claude Cowork plugins
 
-Plugins customize how Claude works for your role, team, and company in Cowork. Each one bundles skills, connectors, and sub-agents into a single package. For details on finding, installing, and customizing plugins, see **[Use plugins in Cowork](https://support.claude.com/en/articles/13837440-use-plugins-in-cowork)**.
+Plugins customize how Claude works for your role, team, and company. Each one bundles skills, connectors, and sub-agents into a single package. A plugin you add is saved to your account, so it works in chat and Claude Code as well as Cowork. For details on finding, adding, and customizing plugins, see [**Use plugins in Claude**](https://support.claude.com/en/articles/13837440-use-plugins-in-cowork).
 
 ------------------------------------------------------------------------
 
@@ -198,7 +208,7 @@ Plugins customize how Claude works for your role, team, and company in Cowork. E
 
 You can set up tasks that Claude runs automatically or on demand. To schedule a task, type `/schedule` in any Cowork task. You can also click "Scheduled" in the left sidebar to view, create, and manage your scheduled tasks.
 
-Scheduled tasks run remotely, so they don't need your computer to be awake or the desktop app open.
+Scheduled tasks run in the cloud, so they don't need your computer to be awake or the desktop app open.
 
 For more in-depth details, see **[Schedule recurring tasks in Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork)**.
 
@@ -206,17 +216,19 @@ For more in-depth details, see **[Schedule recurring tasks in Cowork](https://su
 
 ## Usage limits
 
-Working on tasks with Cowork consumes more of your usage allocation than chatting with Claude. This is because complex, multi-step tasks are compute-intensive and require more tokens to execute.
+Multi-step tasks, like ones that run code, create files, or use your connected apps and browser, use more of your usage than a quick question. Each step Claude takes uses tokens.
 
-If you find yourself hitting usage limits frequently when using Cowork, consider:
+If you're hitting usage limits often, try:
 
-- Batching related work into single sessions.
+- Grouping related work into one task instead of several.
 
-- Using standard chat for simpler tasks that don't require file access or extended execution.
+- Starting a new conversation for unrelated work, so Claude isn't carrying extra context.
 
-- Monitoring your individual usage in **[Settings \> Usage](http://claude.ai/settings/usage)**.
+- Telling Claude when you only need a quick answer, not a file or finished deliverable.
 
-See **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)** for more information.
+- Checking your usage in **[Settings \> Usage](https://claude.ai/settings/usage)**.
+
+For more information, see **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
 
 ------------------------------------------------------------------------
 
@@ -284,13 +296,11 @@ For more detailed examples, see our **[use cases](https://claude.com/resources/u
 
 Some Cowork capabilities are not yet available:
 
-- **Memory:** What Claude remembers about you in chat doesn't carry into Cowork sessions yet. Within Cowork, memory is supported in projects only**.**
+- **No session sharing:** Sessions can't be shared with others, but you can share individual artifacts you create during a session. Learn more about **[using artifacts in Claude Cowork](https://support.claude.com/en/articles/14729249)**.
 
-- **No session sharing:** Sessions can't be shared with others. On Team and Enterprise plans, you can share live artifacts within your organization. Learn more about **[using live artifacts in Claude Cowork](https://support.claude.com/en/articles/14729249)**.
+- **Some features are desktop-only:** Live artifacts created before August 19, 2026 and plugins that include local MCP servers work through the desktop app only.
 
-- **Some features are desktop-only:** Live artifacts and plugins that include local MCP servers work through the desktop app only.
-
-We're iterating on Cowork based on feedback. If you encounter issues or have suggestions, use the feedback button in the app to share feedback with our team.
+We're iterating on Cowork based on feedback. To share feedback on Free, Pro, and Max plans, use the feedback button in the app. If you're on a Team or Enterprise plan, you won't see a feedback button in the app, so you should contact your organization admin or your Anthropic Contact if you have suggestions.
 
 ------------------------------------------------------------------------
 
@@ -300,17 +310,13 @@ We're iterating on Cowork based on feedback. If you encounter issues or have sug
 
 This message is expected and indicates that Cowork is updating to the most recent version to apply any fixes and improvements.
 
-### I don't see Cowork on web or mobile
-
-Cowork on web and mobile is rolling out gradually across paid plans. Make sure you're on an eligible plan and, on mobile, that you've updated to the latest version of the app.
-
 ### Claude stopped working on my task
 
-For local sessions, ensure the Claude Desktop app was open throughout the entire task. If the app was closed or your computer went to sleep, the session may have ended. Remote sessions keep running in the background; open the session from any surface to check its progress.
+For local sessions, ensure the Claude Desktop app was open throughout the entire task. If the app was closed or your computer went to sleep, the session may have ended. Sessions in the cloud keep running in the background; open the session from any surface to check its progress.
 
 ### I'm hitting usage limits quickly
 
-Cowork consumes more usage than standard chat. Try using standard chat for simpler tasks and reserve Cowork for complex, multi-step work that benefits from file access.
+Multi-step tasks use more of your usage than quick questions. Group related work into one task, start a new conversation for unrelated work, and check your usage in **[Settings \> Usage](https://claude.ai/settings/usage)**. Learn more in **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
 
 ### Files aren't appearing where expected
 

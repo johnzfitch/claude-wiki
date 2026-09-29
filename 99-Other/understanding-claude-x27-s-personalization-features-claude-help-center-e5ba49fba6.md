@@ -2,14 +2,16 @@
 title: "Understanding Claude&#x27;s personalization features | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10185728"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:27Z"
+fetched_at: "2026-09-29T06:30:48Z"
 tags: ["skills"]
 ---
 
 # Understanding Claude's personalization features
 
 
-Claude offers several ways to personalize your experience: profile instructions, project instructions, and styles. Each serves a different purpose in helping Claude better understand and meet your needs.
+Copy for LLM
+
+Claude offers several ways to personalize your experience. Each serves a different purpose in helping Claude better understand and meet your needs.
 
 ## Instructions for Claude
 
@@ -32,6 +34,8 @@ To set your instructions:
     - General communication instructions
 
 Any instructions you add here will be applied to all of your conversations with Claude.
+
+If you used **Global instructions** in Claude Cowork, they're part of **Instructions for Claude** once you have the new Claude experience. Check this setting to make sure your instructions are what you want.
 
 ------------------------------------------------------------------------
 
@@ -79,6 +83,6 @@ For more information, see **[What are skills?](https://support.claude.com/en/art
 
 - Use project instructions when you need specific guidance or context for a particular project (paid plans only).
 
-- Use styles when you want to customize how Claude formats and delivers its responses.
+- Use skills when you want to customize how Claude formats and delivers its responses.
 
 You can use these features independently or in combination to create the most effective experience for your needs.

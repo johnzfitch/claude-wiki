@@ -2,7 +2,7 @@
 title: "Local Falcon Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/local-falcon"
 category: "18-Industry-UseCases"
-fetched_at: "2026-08-02T05:43:32Z"
+fetched_at: "2026-08-19T06:29:22Z"
 tags: ["api", "search"]
 ---
 
@@ -350,10 +350,10 @@ Products
 
 Features
 
-- Claude for Chrome
+- Claude in Chrome
 
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
+  [Claude in Chrome](/claude-in-chrome)
+  Claude in Chrome
 
 - Claude for Microsoft 365
 
@@ -575,7 +575,7 @@ Resources
 
 - Service partners
 
-  [Service partners](/partners/services)
+  [Service partners](#)
   Service partners
 
 - Tutorials

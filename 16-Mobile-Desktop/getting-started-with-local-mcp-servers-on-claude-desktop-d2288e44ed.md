@@ -2,14 +2,14 @@
 title: "Getting Started with Local MCP Servers on Claude Desktop | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-08-02T05:42:24Z"
+fetched_at: "2026-09-29T06:30:52Z"
 tags: ["desktop", "enterprise", "mcp"]
 ---
 
 # Getting Started with Local MCP Servers on Claude Desktop
 
-June 30, 2026
 
+Copy for LLM
 
 The Model Context Protocol (MCP) is an open protocol that enables seamless integration between LLM applications and external data sources and tools. With the introduction of desktop extensions, installing and managing local MCP servers has become significantly easier.
 
@@ -17,7 +17,7 @@ The Model Context Protocol (MCP) is an open protocol that enables seamless integ
 
 Desktop extensions provide a streamlined way to install and manage local MCP servers through single-click installable packages. Instead of manually configuring JSON files and managing dependencies, you can now install local MCP servers on your computer as easily as browser extensions.
 
-**Note:** We’re building a directory of desktop extensions – if you’re a developer hoping to add an extension you built to the directory, complete our [desktop extensions interest form](https://docs.google.com/forms/d/14_Dmcig4z8NeRMB_e7TOyrKzuZ88-BLYdLvS6LPhiZU/viewform?edit_requested=true) to share more information with us.
+**Note:** If you’re a developer who wants to list a desktop extension (a local MCP server for Claude Desktop) in the directory, submit it through the **[desktop extension submission form](https://clau.de/desktop-extention-submission)**. To submit a plugin or a remote connector instead, use the **[developer portal](https://claude.ai/directory/manage)**. See **[Submitting your plugin](https://claude.com/docs/plugins/submit)** for what each route accepts.
 
 ## Installing desktop extensions from the directory
 

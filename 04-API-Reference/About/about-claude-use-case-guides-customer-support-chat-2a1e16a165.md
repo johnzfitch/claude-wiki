@@ -2,7 +2,7 @@
 title: "Customer support agent - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/customer-support-chat"
 category: "04-API-Reference/About"
-fetched_at: "2026-08-02T05:39:04Z"
+fetched_at: "2026-09-26T06:38:14Z"
 tags: ["agents", "api"]
 ---
 
@@ -12,35 +12,31 @@ tags: ["agents", "api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fcustomer-support-chat)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Use cases
 
-[Overview](/docs/en/about-claude/use-case-guides/overview)[Ticket routing](/docs/en/about-claude/use-case-guides/ticket-routing)[Customer support agent](/docs/en/about-claude/use-case-guides/customer-support-chat)[Content moderation](/docs/en/about-claude/use-case-guides/content-moderation)[Legal summarization](/docs/en/about-claude/use-case-guides/legal-summarization)
+[Overview](/docs/en/about-claude/use-case-guides/overview)[Ticket routing](/docs/en/about-claude/use-case-guides/ticket-routing)[Customer support agent](/docs/en/about-claude/use-case-guides/customer-support-chat)[Content moderation](/docs/en/about-claude/use-case-guides/content-moderation)[Legal summarization](/docs/en/about-claude/use-case-guides/legal-summarization)[Commerce agent](/docs/en/about-claude/use-case-guides/commerce-agents)
 
 Prompt engineering
 
-[Overview](/docs/en/build-with-claude/prompt-engineering/overview)[Prompting best practices](/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)[Prompting Claude Fable 5](/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5)[Prompting Claude Opus 5](/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5)[Prompting Claude Opus 4.8](/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-4-8)[Prompting Claude Sonnet 5](/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5)
+[Overview](/docs/en/build-with-claude/prompt-engineering/overview)[Prompting best practices](/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)[Prompting Claude Fable 5.1](/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-1)[Prompting Claude Fable 5](/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5)[Prompting Claude Opus 5.5](/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5)[Prompting Claude Opus 5](/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5)[Prompting Claude Opus 4.8](/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-4-8)[Prompting Claude Sonnet 5](/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5)
 
 Test and evaluate
 
@@ -52,38 +48,30 @@ Strengthen guardrails
 
 Reference
 
-[Glossary](/docs/en/about-claude/glossary)
+[Glossary](/docs/en/about-claude/glossary)[Additional resources](/docs/en/about-claude/additional-resources)
 
-[](/login)
+[Console](/)
 
-
-
-
-Best practices
-
-Customer support agent
-
-Best practices/Use cases
+[Best practices](/docs/en/about-claude/use-case-guides/overview)Use cases
 
 # Customer support agent
 
+Copy page
 
 
 
 Build a customer support chatbot with Claude that answers product questions, stays on topic, and generates quotes through tool use.
 
+Copy page
 
 
 
-
-
-
-Prerequisites
+## Prerequisites
 
 To follow this guide, you need:
 
 - A Claude API key (set as the `ANTHROPIC_API_KEY` environment variable)
-- Python 3.9 or later
+- Python 3.10 or later
 
 Install the required packages:
 
@@ -93,27 +81,31 @@ pip install anthropic streamlit python-dotenv
 
 
 
+## Before building with Claude
 
-
-
-Before building with Claude
-
-
-
-
-Decide whether to use Claude for support chat
+### Decide whether to use Claude for support chat
 
 Here are some key indicators that you should employ an LLM like Claude to automate portions of your customer support process:
 
 ### High volume of repetitive queries
 
+Claude excels at handling a large number of similar questions efficiently, freeing up human agents for more complex issues.
+
 ### Need for quick information synthesis
+
+Claude can quickly retrieve, process, and combine information from vast knowledge bases, while human agents may need time to research or consult multiple sources.
 
 ### 24/7 availability requirement
 
+Claude can provide round-the-clock support without fatigue, whereas staffing human agents for continuous coverage can be costly and challenging.
+
 ### Rapid scaling during peak periods
 
+Claude can handle sudden increases in query volume without the need for hiring and training additional staff.
+
 ### Consistent brand voice
+
+You can instruct Claude to consistently represent your brand's tone and values, whereas human agents may vary in their communication styles.
 
 Some considerations for choosing Claude over other LLMs:
 
@@ -121,10 +113,7 @@ Some considerations for choosing Claude over other LLMs:
 - You often receive complex and open-ended queries: Claude can handle a wide range of topics and inquiries without generating canned responses or requiring extensive programming of permutations of user utterances.
 - You need scalable multilingual support: Claude's multilingual capabilities allow it to engage in conversations in over 200 languages without the need for separate chatbots or extensive translation processes for each supported language.
 
-
-
-
-Define your ideal chat interaction
+### Define your ideal chat interaction
 
 Outline an ideal customer interaction to define how and when you expect the customer to interact with Claude. This outline will help to determine the technical requirements of your solution.
 
@@ -150,10 +139,7 @@ Here is an example chat interaction for car insurance customer support:
 
 In the real example that you write for your own use case, you might find it useful to write out the actual words in this interaction so that you can also get a sense of the ideal tone, response length, and level of detail you want Claude to have.
 
-
-
-
-Break the interaction into unique tasks
+### Break the interaction into unique tasks
 
 Customer support chat is a collection of multiple different tasks, from question answering to information retrieval to taking action on requests, wrapped up in a single customer interaction. Before you start building, break down your ideal customer interaction into every task you want Claude to be able to perform. This ensures you can prompt and evaluate Claude for every task, and gives you a good sense of the range of interactions you need to account for when writing test cases.
 
@@ -171,8 +157,7 @@ Here are the key tasks associated with the example insurance interaction:
 2.  Product information
 
     - Provide information about electric vehicle coverage
-      
-
+      
       This will require that Claude have the necessary information in its context, and might imply that a [RAG integration](https://platform.claude.com/cookbook/capabilities-retrieval-augmented-generation-guide) is necessary.
     - Answer questions related to unique electric vehicle insurance needs
     - Answer follow-up questions about the quote or insurance details
@@ -190,10 +175,7 @@ Here are the key tasks associated with the example insurance interaction:
     - Submit collected information to quote generation API
     - Present the provided quote to the customer
 
-
-
-
-Establish success criteria
+### Establish success criteria
 
 Work with your support team to [define success criteria and write detailed evaluations](/docs/en/test-and-evaluate/develop-tests) with measurable benchmarks and goals.
 
@@ -201,46 +183,59 @@ Here are criteria and benchmarks that can be used to evaluate how successfully C
 
 ### Query comprehension accuracy
 
+This metric evaluates how accurately Claude understands customer inquiries across various topics. Measure this by reviewing a sample of conversations and assessing whether Claude has the correct interpretation of customer intent, critical next steps, what successful resolution looks like, and more. Aim for a comprehension accuracy of 95% or higher.
+
 ### Response relevance
+
+This assesses how well Claude's response addresses the customer's specific question or issue. Evaluate a set of conversations and rate the relevance of each response (using LLM-based grading for scale). Target a relevance score of 90% or above.
 
 ### Response accuracy
 
+Assess the correctness of general company and product information provided to the user, based on the information provided to Claude in context. Target 100% accuracy in this introductory information.
+
 ### Citation provision relevance
+
+Track the frequency and relevance of links or sources offered. Target providing relevant sources in 80% of interactions where additional information could be beneficial.
 
 ### Topic adherence
 
+Measure how well Claude stays on topic, such as the topic of car insurance in the example implementation. Aim for 95% of responses to be directly related to car insurance or the customer's specific query.
+
 ### Content generation effectiveness
 
+Measure how successful Claude is at determining when to generate informational content and how relevant that content is. For example, in this implementation, you would be determining how well Claude understands when to generate a quote and how accurate that quote is. Target 100% accuracy, as this is vital information for a successful customer interaction.
+
 ### Escalation efficiency
+
+This measures Claude's ability to recognize when a query needs human intervention and escalate appropriately. Track the percentage of correctly escalated conversations versus those that should have been escalated but weren't. Aim for an escalation accuracy of 95% or higher.
 
 Here are criteria and benchmarks that can be used to evaluate the business impact of employing Claude for support:
 
 ### Sentiment maintenance
 
+This assesses Claude's ability to maintain or improve customer sentiment throughout the conversation. Use sentiment analysis tools to measure sentiment at the beginning and end of each conversation. Aim for maintained or improved sentiment in 90% of interactions.
+
 ### Deflection rate
+
+The percentage of customer inquiries successfully handled by the chatbot without human intervention. Typically aim for 70-80% deflection rate, depending on the complexity of inquiries.
 
 ### Customer satisfaction score
 
+A measure of how satisfied customers are with their chatbot interaction. Usually done through post-interaction surveys. Aim for a CSAT score of 4 out of 5 or higher.
+
 ### Average handle time
 
+The average time it takes for the chatbot to resolve an inquiry. This varies widely based on the complexity of issues, but generally, aim for a lower AHT compared to human agents.
 
-
+## How to implement Claude as a customer service agent
 
-How to implement Claude as a customer service agent
-
-
-
-
-Choose the right Claude model
+### Choose the right Claude model
 
 The choice of model depends on the trade-offs between cost, accuracy, and response time.
 
 For customer support chat, Claude Opus 5 is well suited to balance intelligence, latency, and cost, including the most complex support scenarios that require deep reasoning across long, multi-step conversations. However, for instances where you have conversation flow with multiple prompts including RAG, tool use, or long-context prompts, Claude Haiku 4.5 may be more suitable to optimize for latency.
 
-
-
-
-Build a strong prompt
+### Build a strong prompt
 
 Using Claude for customer support requires Claude having enough direction and context to respond appropriately, while having enough flexibility to handle a wide range of customer inquiries.
 
@@ -329,7 +324,7 @@ that gives you the confidence to enjoy every electron-powered mile.
 
 
 
-Now that you have your static content, add at least 4-5 sample "good" interactions to guide Claude's responses. These examples should be representative of your ideal customer interaction and can include guardrails, tool calls, etc.
+Now that you have your static content, add at least 4-5 sample "good" interactions to guide Claude's responses. These examples should be representative of your ideal customer interaction and can include elements such as guardrails and tool calls.
 
 ```python
 EXAMPLES = """
@@ -432,10 +427,7 @@ TASK_SPECIFIC_INSTRUCTIONS = " ".join(
 
 
 
-
-
-
-Add dynamic and agentic capabilities with tool use
+### Add dynamic and agentic capabilities with tool use
 
 Claude is capable of taking actions and retrieving information dynamically using client-side tool use functionality. Start by listing any external tools or APIs the prompt should use.
 
@@ -450,7 +442,7 @@ Add the model name, the tool definition, and a stub implementation to `config.py
 ```python
 import time
 
-MODEL = "claude-opus-5"
+MODEL = "claude-opus-5-5"
 
 TOOLS = [
     {
@@ -490,10 +482,7 @@ def get_quote(make, model, year, mileage, driver_age):
 
 
 
-
-
-
-Deploy your prompts
+### Deploy your prompts
 
 It's hard to know how well your prompt works without deploying it in a test production setting and [running evaluations](/docs/en/test-and-evaluate/develop-tests). Build a small application using the prompt, the Anthropic SDK, and Streamlit for a user interface.
 
@@ -621,10 +610,7 @@ class ChatBot:
         raise Exception("An unexpected tool was used")
 ```
 
-
-
-
-Build your user interface
+### Build your user interface
 
 Test deploying this code with Streamlit using a main method. This `main()` function sets up a Streamlit-based chat interface. Streamlit is a Python framework, so this part of the walkthrough is shown in Python only; the ChatBot class above is the piece you can port to any language.
 
@@ -678,24 +664,15 @@ streamlit run app.py
 
 
 
+### Evaluate your prompts
 
-
+Prompting often requires testing and optimization for it to be production ready. To determine the readiness of your solution, evaluate the chatbot performance using a systematic process combining quantitative and qualitative methods. Creating a [strong empirical evaluation](/docs/en/test-and-evaluate/develop-tests#build-evaluations) based on your defined success criteria will allow you to optimize your prompts.
 
-Evaluate your prompts
-
-Prompting often requires testing and optimization for it to be production ready. To determine the readiness of your solution, evaluate the chatbot performance using a systematic process combining quantitative and qualitative methods. Creating a [strong empirical evaluation](/docs/en/test-and-evaluate/develop-tests#building-evals-and-test-cases) based on your defined success criteria will allow you to optimize your prompts.
-
-
-
-
-Improve performance
+### Improve performance
 
 In complex scenarios, it may be helpful to consider additional strategies to improve performance beyond standard [prompt engineering techniques](/docs/en/build-with-claude/prompt-engineering/overview) & [guardrail implementation strategies](/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations). Here are some common scenarios:
 
-
-
-
-Reduce long context latency with RAG
+#### Reduce long context latency with RAG
 
 When dealing with large amounts of static and dynamic context, including all information in the prompt can lead to high costs, slower response times, and reaching context window limits. In this scenario, implementing Retrieval Augmented Generation (RAG) techniques can improve performance and efficiency.
 
@@ -703,19 +680,13 @@ By using [embedding models like Voyage](/docs/en/build-with-claude/embeddings) t
 
 Implementing RAG for support use cases has been shown to increase accuracy, reduce response times, and reduce API costs in systems with extensive context requirements. See the [RAG recipe](https://platform.claude.com/cookbook/capabilities-retrieval-augmented-generation-guide) for a worked example.
 
-
-
-
-Integrate real-time data with tool use
+#### Integrate real-time data with tool use
 
 When dealing with queries that require real-time information, such as account balances or policy details, embedding-based RAG approaches are not sufficient. Instead, tool use can enhance your chatbot's ability to provide accurate, real-time responses. For example, you can use tool use to look up customer information, retrieve order details, and cancel orders on behalf of the customer.
 
 This approach, [outlined in the tool use: customer service agent recipe](https://platform.claude.com/cookbook/tool-use-customer-service-agent), lets you integrate live data into Claude's responses and provide a more personalized and efficient customer experience.
 
-
-
-
-Strengthen input and output guardrails
+#### Strengthen input and output guardrails
 
 When deploying a chatbot, especially in customer service scenarios, it's important to prevent risks associated with misuse, out-of-scope queries, and inappropriate responses. While Claude is inherently resilient to such scenarios, here are additional steps to strengthen your chatbot guardrails:
 
@@ -727,10 +698,7 @@ When deploying a chatbot, especially in customer service scenarios, it's importa
 - [Increase output consistency](/docs/en/test-and-evaluate/strengthen-guardrails/increase-consistency): Prevent Claude from changing style or going out of character, even during long, complex interactions.
 - Remove Personally Identifiable Information (PII): Unless explicitly required and authorized, strip out any PII from responses.
 
-
-
-
-Reduce perceived response time with streaming
+#### Reduce perceived response time with streaming
 
 When dealing with potentially lengthy responses, implementing streaming can improve user engagement and satisfaction. In this scenario, users receive the answer progressively instead of waiting for the entire response to be generated.
 
@@ -743,10 +711,7 @@ Here is how to implement streaming:
 
 In some cases, streaming enables the use of more advanced models with higher base latencies, as the progressive display mitigates the impact of longer processing times.
 
-
-
-
-Scale your chatbot
+#### Scale your chatbot
 
 As the complexity of your chatbot grows, your application architecture can evolve to match. Before you add further layers to your architecture, consider the following less exhaustive options:
 
@@ -755,10 +720,7 @@ As the complexity of your chatbot grows, your application architecture can evolv
 
 If your chatbot handles incredibly varied tasks, you may want to consider adding a [separate intent classifier](https://platform.claude.com/cookbook/capabilities-classification-guide) to route the initial customer query. For the existing application, this would involve creating a decision tree that would route customer queries through the classifier and then to specialized conversations (with their own set of tools and system prompts). Note, this method requires an additional call to Claude that can increase latency.
 
-
-
-
-Integrate Claude into your support workflow
+### Integrate Claude into your support workflow
 
 While these examples have focused on Python functions callable within a Streamlit environment, deploying Claude for real-time support chatbot requires an API service.
 
@@ -772,33 +734,28 @@ Here's how you can approach this:
 
 2.  Build a web interface: Implement a user-friendly web UI for interacting with the Claude-powered agent.
 
-
-
-
-Next steps
-
+## Next steps
 
 
 
-Tool use
+[Tool use](/docs/en/agents-and-tools/tool-use/overview)
 
 Give Claude access to your APIs so it can take action on behalf of customers.
 
-
 
 
-Develop tests
+[Develop tests](/docs/en/test-and-evaluate/develop-tests)
 
 Build evaluations to measure your support agent against the success criteria you defined.
 
-
 
 
-Streaming
+[Streaming](/docs/en/build-with-claude/streaming)
 
 Stream responses so customers see answers as they generate.
 
+
 
-Prompt engineering
+[Prompt engineering](/docs/en/build-with-claude/prompt-engineering/overview)
 
 Refine your system prompt and examples for better task performance.

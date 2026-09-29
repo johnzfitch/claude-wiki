@@ -2,12 +2,14 @@
 title: "Where can I access Claude? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8461763-where-can-i-access-claude"
 category: "99-Other"
-fetched_at: "2026-08-02T05:42:53Z"
+fetched_at: "2026-09-29T06:32:07Z"
 ---
 
 # Where can I access Claude?
 
 March 16, 2026
+
+Copy for LLM
 
 You can access Claude in the following locations:
 

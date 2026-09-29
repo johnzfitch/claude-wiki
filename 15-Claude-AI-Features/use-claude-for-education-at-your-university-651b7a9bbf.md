@@ -2,11 +2,13 @@
 title: "Use Claude for Education at your university | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11139144-use-claude-for-education-at-your-university"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:42:25Z"
+fetched_at: "2026-09-29T06:30:53Z"
 ---
 
 # Use Claude for Education at your university
 
+
+Copy for LLM
 
 This guide helps you use Claude for Education through your university-sponsored account. Find resources and answers to frequently asked questions about getting started, optimizing usage, and troubleshooting issues.
 
@@ -116,7 +118,7 @@ You can access Claude through multiple platforms to suit your needs:
 
 ### Mobile applications
 
-- **iOS**: **[Download from the App Store](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684)** (requires iOS 17.0 or later).
+- **iOS**: **[Download from the App Store](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684)** (requires iOS 18.0 or later).
 
 - **Android**: **[Download from Google Play Store](https://play.google.com/store/apps/details?id=com.anthropic.claude)** (requires Android 8.0 Oreo or later).
 

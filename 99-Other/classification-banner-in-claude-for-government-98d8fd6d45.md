@@ -2,13 +2,14 @@
 title: "Classification banner in Claude for Government | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503804-classification-banner-in-claude-for-government"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:20Z"
+fetched_at: "2026-09-29T06:31:25Z"
 ---
 
 # Classification banner in Claude for Government
 
 April 30, 2026
 
+Copy for LLM
 
 The classification banner displays a persistent marking at the top of every page for every user in your organization. Use it to communicate the classification level of data approved for your Claude for Government environment or any custom handling instruction your agency requires.
 

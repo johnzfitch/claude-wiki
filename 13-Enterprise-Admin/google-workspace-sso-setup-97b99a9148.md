@@ -2,14 +2,15 @@
 title: "Google Workspace SSO setup | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917884-google-workspace-sso-setup"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-02T05:41:46Z"
+fetched_at: "2026-09-29T06:31:43Z"
 tags: ["enterprise"]
 ---
 
 # Google Workspace SSO setup
 
-March 24, 2026
+August 6, 2026
 
+Copy for LLM
 
 This guide helps you configure Claude to use Google Workspace as your identity provider for SSO and automated user provisioning. It applies to Team plans, Enterprise plans, and Console organizations.
 
@@ -21,11 +22,11 @@ This guide helps you configure Claude to use Google Workspace as your identity p
 
 - Google Workspace Super Admin access
 
-- Your domain verified in Claude's Identity and access settings — see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full setup path including domain verification
+- Your domain verified in Claude's Identity and access settings—see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full setup path including domain verification
 
 ## Where to find your configuration values
 
-The ACS URL, Entity ID, and SCIM credentials referenced below are provided in the WorkOS setup flow within your Identity and access settings — not by contacting Support.
+The ACS URL, Entity ID, and SCIM credentials referenced below are provided in the WorkOS setup flow within your Identity and access settings—not by contacting Support.
 
 - **Team and Enterprise plans:** go to **[claude.ai/admin-settings/identity](https://claude.ai/admin-settings/identity)**
 
@@ -61,7 +62,7 @@ Start the SSO setup flow there and keep it open alongside the Google Admin conso
 
 ## Step 4 — Enable auto-provisioning (SCIM)
 
-**Note:** SCIM provisioning is available on Enterprise plans and eligible Console organizations only. If you're on a Team plan, skip this step — you can use JIT provisioning instead. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195)**.
+**Note:** SCIM provisioning is available on Enterprise plans and eligible Console organizations only. If you're on a Team plan, skip this step—you can use JIT provisioning instead. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195)**.
 
 1.  In the app's settings, go to the **Autoprovisioning** section and click "Configure autoprovisioning" (may require enabling in Google Workspace admin settings).
 

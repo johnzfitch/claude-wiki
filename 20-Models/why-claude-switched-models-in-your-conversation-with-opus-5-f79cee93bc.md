@@ -2,11 +2,14 @@
 title: "Why Claude switched models in your conversation with Opus 5 | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16049681-why-claude-switched-models-in-your-conversation-with-opus-5"
 category: "20-Models"
-fetched_at: "2026-08-02T05:41:15Z"
+fetched_at: "2026-09-22T06:31:22Z"
 ---
 
 # Why Claude switched models in your conversation with Opus 5
 
+August 6, 2026
+
+Copy for LLM
 
 This article explains why a request might fallback on Claude Opus 5, what happens when your conversation switches to another model, and how to manage automatic switching.
 
@@ -52,7 +55,7 @@ Opus 4.8 has its own safety systems. If your request is also blocked on Opus 4.8
 
 Automatic switching is enabled by default the first time you select Claude Opus 5. It stays on by default, and you can turn it off anytime:
 
-1.  Go to **[Settings \> Capabilities](http://claude.ai/settings/capabilities)** (or **Config \> MODEL & OUTPUT** in Claude Code).
+1.  Go to **[Settings \> Capabilities](https://claude.ai/settings/capabilities)** (or **Config \> MODEL & OUTPUT** in Claude Code).
 
 2.  Toggle **Switch models when a message is flagged** off.
 

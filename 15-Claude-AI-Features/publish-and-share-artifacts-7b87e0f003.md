@@ -1,151 +1,229 @@
 ---
-title: "Publish and share artifacts | Claude Help Center"
+title: "Share artifacts | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9547008-publish-and-share-artifacts"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:42:56Z"
+fetched_at: "2026-09-29T06:32:41Z"
 ---
 
-# Publish and share artifacts
+# Share artifacts
 
 
-Artifacts are a powerful way to create content within Claude. You can take your creations further by sharing them so others can view and interact with them. If you see a published artifact you like, you can copy the code into a chat of your own and build on it from there. This article covers how to publish artifacts publicly and share them within your organization.
+Copy for LLM
 
-**Important:** We no longer support artifacts without **Code execution and file creation** enabled in **[Settings \> Capabilities](https://claude.ai/settings/capabilities)** (Free, Pro, Max) or **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)** (Team, Enterprise).
+This article explains how to share an artifact, who can open it, and what people see when they do. It covers every plan and every place you make artifacts: in a chat, from a template, and in Claude Code.
 
-------------------------------------------------------------------------
+Artifacts start private to you. Nothing is shared until you share it.
 
-## Publishing vs. sharing
+[TABLE]
 
-Claude uses different terms depending on your plan:
+On Team and Enterprise plans, artifacts stay inside your organization by default. An owner decides whether users can share outside it. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans#h_fd0c095985)**.
 
-- **Publishing** (Free, Pro, Max): Makes your artifact publicly available. Anyone with the link can view and interact with it.
+**Note:** Live artifacts, which are Cowork artifacts made before August 19, 2026, have their own sharing rules. Learn more about **[using live artifacts in Claude Cowork](https://support.claude.com/en/articles/14729249)**.
 
-- **Sharing** (Team, Enterprise): Makes your artifact available within your organization only. Viewers must be logged into your Team or Enterprise account to access it.
-
-**Note:** Live artifacts created in Claude Cowork follow different rules. They can be shared on Team and Enterprise plans only, within your organization, and can't be published publicly on any plan. Learn more about **[using live artifacts in Claude Cowork](https://support.claude.com/en/articles/14729249-use-live-artifacts-in-claude-cowork)**.
+**Note:** Legacy artifacts show "Publish" or "Share & copy link" instead of "Share." To share those, see **[Publish or share a legacy artifact](#h_a5750b9176)**.
 
 ------------------------------------------------------------------------
 
-## Publish artifacts
+## Share an artifact
 
-Publishing is available on Free, Pro, and Max plans.
+1.  Open the artifact and click "Share."
 
-**To publish an artifact:**
+2.  On Team and Enterprise plans, add people from your organization, and choose each one's access level. Enterprise plans can also add groups.
 
-1.  Navigate to the artifact you want to publish.
+3.  Under **Who has access**, choose who else can open the artifact.
 
-2.  Ensure you're on the correct artifact version.
+4.  Copy the link and send it.
 
-3.  Click the “Publish” button.
+**Note:** You can't change sharing settings in Claude for iOS or Claude for Android. Use Claude on the web or Claude Desktop.
 
-4.  Copy the public link to share with others.
+### Choose who has access
 
-Publishing also adds the artifact to the **[Artifacts](https://claude.ai/artifacts)** section in your sidebar so you can find it again outside the original conversation.
+- **Pro and Max plans:** "Only you" or "Anyone with the link." To give specific people access, invite them by email.
 
-### Who can access published artifacts
+- **Team and Enterprise plans:** "Only people invited," "Anyone at \[your organization's name\]," or "Anyone with the link." "Only you" shows when you haven't added anyone. "Anyone with the link" is available only when an Owner has turned on **External sharing** or has allowed that artifact individually. If it's grayed out, ask an Owner or Primary Owner.
 
-**Non-users:**
+### Choose an access level
 
-- View and interact with any published artifact without signing up.
+[TABLE]
 
-- Try all basic functionality without a Claude account.
-
-- Prompted to sign up only for advanced features like using AI-powered capabilities.
-
-**Claude users (Free, Pro, Max):**
-
-- Full access to view, interact with, and copy any published artifact.
-
-- Can use AI-powered features within their usage limits.
-
-- Can save and organize artifacts they discover.
-
-### Embed artifacts
-
-After publishing, you'll see a “Get embed code” button.
-
-
-Click it to open a modal with automatically generated code you can copy and paste to embed your artifact on another website.
-
-
-You must specify which websites can embed your artifact by entering URLs in the **Allowed domains** field, separated by commas.
-
-### Unpublish artifacts
-
-After publishing an artifact, an “Unpublish” button appears, giving you the option to revoke access.
-
-**Important:** Once you unpublish an artifact, you cannot publish that same artifact again. You'll need to create a new artifact if you want to publish it later. Unpublishing also permanently deletes all associated storage data (both personal and shared) if the artifact used persistent storage.
+The levels you can choose depend on the artifact. **Can view** or **Can edit**. Every other type of artifact offers all three levels.
 
 ------------------------------------------------------------------------
 
-## Build on a published artifact
+## Invite people by email
 
-Building on a published artifact is available on Free, Pro, and Max plans.
+Available in beta on Pro, Max, Team, and Enterprise plans.
 
-If someone publishes an artifact you like, you can use it as a starting point for your own version. Copy the code into a new chat and ask Claude to make the changes you want. Your version is separate from the original, so nothing you do affects the artifact you started from.
+You can invite specific people by email to access an artifact. They sign in to Claude with the email address you used and open the artifact with the access you give them. Unlike "Anyone with the link," an invitation works only for the person you invite.
 
-**Note:** The "Remix" button is no longer available. Copying the code into a new chat replaces it.
+### Before you invite someone
 
-**Important:** Only do this with artifacts from people you trust. You're bringing someone else's code and content into your own conversation, so treat it the way you'd treat a file from an unknown sender. If you aren't sure about the source, don't use it.
+- **Who can invite:** The artifact's owner. On Team and Enterprise plans, anyone in your organization who can edit the artifact can also invite people. The owner gets an email when someone else sends an invitation.
 
-**To build on a published artifact**
+- **Team and Enterprise plans:** **Email invitations outside your organization** needs to be on in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**. It's on by default on Team plans and off on Enterprise plans. If you don't see the option, ask an Owner or Primary Owner.
 
-1.  Open the published artifact and click “Copy” to copy the code to your clipboard.
+- **The invitee needs a Claude account** with the email address you invited. If they don't have one, they need to create one with that address before they can open the artifact. Claude doesn't tell you whether or not they have an account.
 
-2.  Start a new chat, paste the code, and describe the changes you want. For example: "Here's the code for a quiz game. Can you change the questions to be about movies and add a timer?"
+- **Some artifacts can't be shared this way.** The "Share" menu tells you when this applies:
 
-3.  Claude creates a new artifact with your changes. Refine it from there the same way you would any artifact you made yourself.
+  - Documents made with Claude Docs
 
-**What happens when you build on an artifact**
+  - Artifacts that connect to other websites
 
-- The code you paste becomes the starting point for a new artifact in your own chat.
+  - Artifacts with an uploaded file that's still being checked or didn't pass the check
 
-- You can modify it, expand on it, or use it as inspiration.
+### Send an invitation
 
-- Your changes don't affect the original. You're working on your own copy.
+1.  Open the artifact and click "Share."
+
+2.  In the field at the top of the **Share** menu (**Add people**, or **Invite people by email** on Pro and Max plans), type the person's email address.
+
+3.  Select the **Invite** option that shows their address.
+
+4.  Under **Their access**, choose "Can view," "Commenter," or "Can edit."
+
+5.  Click "Invite."
+
+On Team and Enterprise plans, if you type the address of someone in your organization, they're added to the artifact directly instead of getting an invitation.
+
+### What people you invite can do
+
+People you invite from outside your organization can't invite others or change sharing settings. Parts of the artifact that use Claude or your connectors don't work for them. People with “Can edit” access can't delete the artifact, and they can upload only images and videos to it.
+
+People you invite with “Commenter” or “Can edit” access can comment, but they can't mention people or ask Claude in a comment, and they don't get email notifications about comments. They can't comment on an artifact that's also shared with "Anyone with the link."
+
+If the artifact is also shared with "Anyone with the link," the people you invited have the same access as anyone with the link, whatever level you gave them.
+
+### Manage people you've invited
+
+In the artifact's **Share** menu, people you've invited appear under **Invited from outside your organization**, and pending invitations show when they expire. From there, you can change someone's access or remove them. Removing someone takes away their access right away.
+
+If someone didn't get an invitation email because they didn't have a Claude account yet, ask them to create one with that address. Then remove the invitation and invite them again.
+
+### When access changes
+
+- **Pending invitations expire after 30 days.** Accepted invitations don't expire.
+
+- **If you change who can open the artifact to "Only you":** On Team and Enterprise plans, everyone you invited from outside your organization loses access, and their invitations are removed. On Pro and Max plans, people you invited keep their access.
+
+- **If you delete the artifact:** Everyone you invited loses access.
+
+- **If the person who sent an invitation leaves your organization or loses edit access:** Their pending invitations stop working. People who already accepted keep access until someone removes them.
+
+- **If an owner turns off email invitations:** People you invited can't open the artifact until the setting is turned back on. Accepted invitations aren't deleted, and pending ones still expire 30 days after they were sent.
+
+### Limits
+
+- You can invite up to 50 people from outside your organization per artifact, counting pending and accepted invitations.
+
+- Invitation emails are in English.
 
 ------------------------------------------------------------------------
 
-## Share artifacts within your organization
+## Who can open a shared artifact
 
-Internal sharing is available on Team and Enterprise plans.
+- **Everyone needs a Claude account.** People without one can't open a shared artifact, even with the link. The only exception is a legacy artifact published from a chat.
 
-Artifacts created on Team or Enterprise accounts can only be shared within your organization—they cannot be published publicly.
+- **Everyone in your organization:** Only people signed in to your organization can open it.
 
-**To share an artifact:**
+- **Anyone with the link:** Anyone signed in to Claude who has the link can open it. On Team and Enterprise plans, if an owner turns off **External sharing**, these links stop working until it's turned back on, unless an owner has allowed that artifact individually.
 
-1.  Navigate to the artifact you want to share.
+### Artifacts that can't be shared outside your organization
 
-2.  Ensure you're on the correct artifact version.
+- **By link:** Artifacts that connect to your apps or use Claude can't use "Anyone with the link." On Team and Enterprise plans, docs can't use it yet either.
 
-3.  Click the “Share” button.
+- **By email invitation:** See the list in **[Before you invite someone](#h_4abce57435)**.
 
-4.  Click “Share & copy link” to make this version shareable.
+### What people see when they open your artifact
 
+- **Viewers use their own access.** An **[artifact that pulls from connected apps](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them#h_1a161da210)** uses the viewer's connections, not yours. If a viewer can't access a data source, that part of the artifact shows an error instead of your data.
 
-### Who can access shared artifacts
+- **Stored information can be shared.** Some artifacts save information that everyone who opens them can see, like items in a shared tracker. Before you enter sensitive information, check whether the **[artifact uses shared storage](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them#h_135477d2e6)**.
 
-- Only members of your Team or Enterprise organization.
+**Important:** Only open shared artifacts from people you trust. Treat someone else's artifact the way you'd treat a file from an unknown sender.
 
-- Viewers must authenticate with their Team or Enterprise account.
+------------------------------------------------------------------------
 
-- If the artifact was created from a project, viewers must also have access to that project.
+## Stop sharing an artifact
 
-### Share artifacts with attachments
+To stop sharing an artifact, open it, click "Share," and under **Who has access**, choose "Only you" (Pro and Max) or "Only people invited" (Team and Enterprise). To remove someone you added, open their access level and select "Remove."
 
-When you share an artifact, viewers also gain access to any attachments and files in the conversation that created it. Consider this before sharing artifacts from conversations containing sensitive documents.
+On Team and Enterprise plans, owners can also remove outside access to individual artifacts. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans#h_929aa51571)**.
 
-### Unshare artifacts
+------------------------------------------------------------------------
 
-**To unshare an artifact:**
+## Open an artifact you were invited to
 
-1.  Click the “Share” button in the upper right corner of the artifact.
+1.  Open the email from Claude ([\[email protected\]](/cdn-cgi/l/email-protection#2f4140025d4a5f4356024c434e5a4b4a6f424e4643014e415b475d405f464c014c4042)). It shows the email address of the person who invited you and what access you'll have.
 
-2.  In the **Artifact shared** modal, click “Unshare.”
+2.  Click "View invitation" and sign in to Claude in a web browser with the address the invitation was sent to.
 
+3.  Click "Accept and open."
+
+To come back to the artifact later, open the link in the invitation email again or bookmark the artifact.
+
+### Report an invitation you didn't expect
+
+Click "Report this invitation" in the email, or "Didn't expect this? Report this invitation" on the invitation page. Reporting declines the invitation, and the person who sent it isn't notified. After you report an invitation, that person can't invite you by email again.
+
+------------------------------------------------------------------------
+
+## Publish or share a legacy artifact
+
+Legacy artifacts show "Publish" (Free, Pro, and Max plans) or "Share & copy link" (Team and Enterprise plans) instead of "Share." Use the steps in this section for those artifacts.
+
+### Publish a legacy artifact on Free, Pro, and Max plans
+
+1.  Open the artifact you want to publish.
+
+2.  Click "Publish."
+
+3.  Copy the public link and send it.
+
+Publishing adds the artifact to **[Artifacts](https://claude.ai/artifacts)** in your sidebar, so you can find it again outside the original chat.
+
+**Who can open a published chat artifact:**
+
+- Anyone with the link can view and use it without a Claude account. They're asked to sign up only for features that use Claude.
+
+- People signed in on Free, Pro, or Max plans can also copy and save it. Features that use Claude count toward their own usage limits.
+
+### Embed a published chat artifact
+
+After you publish, click "Get embed code" to get code you can paste into another website. In the **Allowed domains** field, enter the websites that can embed your artifact, separated by commas.
+
+### Unpublish a chat artifact
+
+Click "Unpublish" to revoke access to a published artifact.
+
+**Important:** You can't publish an artifact again after you unpublish it. To share it later, you'll need to create a new artifact. Unpublishing also permanently deletes any personal and shared storage data the artifact used.
+
+### Share a chat artifact on Team and Enterprise plans
+
+1.  Open the artifact you want to share.
+
+2.  Click "Share."
+
+3.  Click "Share & copy link."
+
+**Who can open it:**
+
+- Users in your organization, signed in with their Team or Enterprise account.
+
+- Anyone with the link, if an owner has turned on **External sharing** and you chose "Anyone with the link." They need a Claude account.
+
+- If the artifact was made in a project, viewers also need access to that project.
+
+**Important:** When you share an artifact made in a chat, viewers also get access to the attachments and files in that chat. Check for sensitive documents before you share.
+
+**To unshare a chat artifact:**
+
+1.  Click "Share" in the upper right corner of the artifact.
+
+2.  In the **Artifact shared** modal, click "Unshare."
 
 ------------------------------------------------------------------------
 
 ## Learn more
 
-For information about creating artifacts, AI-powered capabilities, MCP integration, and persistent storage, see **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them)**
+Learn more about **[creating and working with artifacts](https://support.claude.com/en/articles/9487310)**. For organization settings that control sharing, see the **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751)**. For Claude Code, see the **[artifacts documentation on Claude Code Docs](https://code.claude.com/docs/en/artifacts)**.

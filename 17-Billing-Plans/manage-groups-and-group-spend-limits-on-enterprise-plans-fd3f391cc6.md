@@ -2,34 +2,36 @@
 title: "Manage groups and group spend limits on Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-08-02T05:42:44Z"
+fetched_at: "2026-09-29T06:30:41Z"
 tags: ["billing", "enterprise"]
 ---
 
 # Manage groups and group spend limits on Enterprise plans
 
 
-Groups and group spend limits are available for Enterprise plan organizations. Owners, Primary Owners, and custom roles with the **Identity & Access** permission set to "Can manage" can go to **[Organization settings \> Groups](http://claude.ai/admin-settings/groups)** to manage groups. Owners, Primary Owners, and custom roles with the **Billing** permission set to "Can manage" can go to **[Organization settings \> Usage](https://claude.ai/admin-settings/usage)** to manage group spend limits. Group visibility settings are currently in beta.
+Copy for LLM
+
+Groups and group spend limits are available for Enterprise plan organizations. Owners, Primary Owners, and custom roles with the **Identity & Access** permission set to "Can manage" can go to **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)** to manage groups. Owners, Primary Owners, and custom roles with the **Billing** permission set to "Can manage" can go to **[Organization settings \> Usage](https://claude.ai/admin-settings/usage)** to manage group spend limits.
 
 ## What are groups?
 
 Groups let you organize members into logical collections—by team, department, or any other grouping that fits your organization. Once groups are set up, you can:
 
-- **Set spend limits for groups**, so all members of a group share a per-user spend limit.
+- **Set spend limits for groups**, so all members of a group share a per-user spend limit, and optionally give the group one shared monthly budget (beta).
 
 - **Control member access through group memberships and custom roles**, so their capabilities and permissions are determined entirely by the groups they belong to. For additional details, see **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**.
 
-- **Let members share projects with a group**, so a project shared with the group is available to everyone in it, and access follows membership as it changes. For details, see [**Manage project visibility and sharing**](https://support.claude.com/en/articles/9519189-manage-project-visibility-and-sharing).
+- **Let members share resources with a group**, so a project, skill, or plugin shared with the group is available to everyone in it, and access follows membership as it changes. For details, see **[Manage project visibility and sharing](https://support.claude.com/en/articles/9519189-manage-project-visibility-and-sharing)** and **[Provision and manage skills for your organization](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization)**.
 
-Groups can be created manually or synced automatically from your identity provider via SCIM. Each organization can have up to 100 groups. There's no limit on how many groups a member can belong to, though belonging to more than 250 can slow performance.
+Groups can be created manually or synced automatically from your identity provider via SCIM. Each organization can have up to 1000 groups. There's no limit on how many groups a member can belong to, though belonging to more than 250 can slow performance.
 
-In addition to spend limits, Enterprise admins can use groups to control plugin access in Cowork. Each plugin in your organization's marketplace can have group-level overrides that determine whether it's available, pre-installed, required, or hidden for members of a specific group. For details, see **[Manage Cowork plugins for your organization](https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization)**.
+In addition to spend limits, Enterprise admins can use groups to control plugin access in chat, Cowork, and Claude Code. Each plugin in your organization's marketplace can have group-level overrides that set it to "Available to install," "Installed by default," "Required," or "Not available" for members of a specific group. For details, see **[Manage plugins for your organization](https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization)**.
 
 ------------------------------------------------------------------------
 
 ## Create a group
 
-1.  Navigate to **[Organization settings \> Groups](http://claude.ai/admin-settings/groups)**.
+1.  Navigate to **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**.
 
 2.  Click "Add group."
 
@@ -75,15 +77,13 @@ To manually trigger a sync, click “SCIM Sync."
 
 ## Group visibility
 
-Group visibility settings are currently in beta.
-
-By default, groups appear only on admin surfaces. Visibility settings let you make a group discoverable to members so they can share resources (like projects) with it. You set them in the **Visibility settings** section when creating or editing a group.
+By default, groups appear only on admin surfaces. Visibility settings let you make a group discoverable to members so they can share resources (like projects, skills, or plugins) with it. You set them in the **Visibility settings** section when creating or editing a group.
 
 There are three settings:
 
 - **Discover this group:** Members can find the group by name. This doesn't expose group members, spend limits, or role assignments.
 
-- **Share projects with this group:** Members can share resources, such as projects, with the group.
+- **Share resources with this group:** Members can share resources, such as projects, skills, and plugins, with the group.
 
 - **See group members:** Members can see who belongs to the group, by name and email address.
 
@@ -95,9 +95,9 @@ The **Visibility** column in the groups list shows each group's current state. N
 
 **Important:** Visibility settings are configured per organization. Groups, group membership, and SCIM sync are managed at the parent organization level and shared across child organizations, but visibility settings aren't. An admin changing visibility settings in one organization doesn't affect any other organization.
 
-### Remove a group's access to shared projects
+### Remove a group's access to shared projects, skills, and plugins
 
-Turning off **Share projects with this group** blocks new shares. It doesn't revoke projects already shared with the group. To revoke those:
+Turning off **Share resources with this group** blocks new shares. It doesn't revoke projects already shared with the group. To revoke those:
 
 1.  Open the group's edit form.
 
@@ -105,7 +105,7 @@ Turning off **Share projects with this group** blocks new shares. It doesn't rev
 
 3.  Save the group.
 
-This revokes existing shares only. It doesn't block future sharing, so turn off **Share projects with this group** as well if you want both.
+This revokes existing shares only. It doesn't block future sharing, so turn off **Share resources with this group** as well if you want both.
 
 **Note:** Removing a group's access runs in the background. For groups with more than 1000 shared projects, it can take several minutes or longer.
 
@@ -117,7 +117,7 @@ You can control individual members' feature access entirely through groups and c
 
 ### Set a member's role to Custom
 
-1.  Navigate to **[Organization settings \> Members](http://claude.ai/admin-settings/members)**.
+1.  Navigate to **[Organization settings \> Members](https://claude.ai/admin-settings/members)**.
 
 2.  Find the member and click their role dropdown.
 
@@ -125,11 +125,15 @@ You can control individual members' feature access entirely through groups and c
 
 Owners, Primary Owners, and custom roles with the **User Management** permission set to "Can manage" can change member roles. You can also assign “Custom” at scale by mapping an IdP group using **[group mappings](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)**.
 
+**Important:** If your provisioning mode is SCIM directory sync and group mappings are enabled, each member’s role is set by your IdP group-to-role mapping and managed by the sync, not by the **Members** page. A role that was set to “Custom” before you enabled group mappings (or set another way) is recalculated on the next full sync and reverts to the mapped role. It works until that sync runs, and the reversion isn’t recorded in the audit log, so it can look like custom role permissions stopped applying for no reason.
+
+To keep a member on “Custom,” add them to an IdP group that’s mapped to the “Custom” role in **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**, then run a sync. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)** and **[How SCIM sync works for Enterprise organizations](https://support.claude.com/en/articles/14499648-how-scim-sync-works-for-enterprise-organizations)**.
+
 ### Recommended setup
 
-1.  Create custom roles with the desired permissions in **[Organization settings \> Roles](http://claude.ai/admin-settings/roles)**. For details, see **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452)**.
+1.  Create custom roles with the desired permissions in **[Organization settings \> Roles](https://claude.ai/admin-settings/roles)**. For details, see **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452)**.
 
-2.  Create groups in **[Organization settings \> Groups](http://claude.ai/admin-settings/groups)** (or sync them from your identity provider).
+2.  Create groups in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)** (or sync them from your identity provider).
 
 3.  Assign custom roles to groups.
 
@@ -157,33 +161,35 @@ Group spend limits let you control spending across your organization by assignin
 
 Group spend limits work alongside individual spend limits. If a member has an individual spend limit set, their individual limit takes precedence over any group limit.
 
-## Set a group spend limit
+A pooled budget only starts counting spend after it is created and resets each month.
+
+### Set a group spend limit
 
 1.  Navigate to **[Organization settings \> Usage](https://claude.ai/admin-settings/usage)**.
 
-2.  Select the “By group” tab.
+2.  Select the "By group/tier" tab.
 
-3.  Find the group and click the menu button to the right, then “Edit limit”
+3.  Find the group and click the menu button to the right, then "Edit limits."
 
-4.  Select “Unlimited,” or “Set dollar amount” and enter a dollar amount for the spend limit.
+4.  Select "No member limit" or "Member limit" and enter an amount.
 
-5.  Click "Set limit."
+5.  Click "Save."
 
 The spend limit applies to all members of the group. Members who also have an individual spend limit set are governed by their individual limit instead.
 
-## Choose how multi-group spend limits resolve
+### Choose how multi-group spend limits resolve
 
 If a member belongs to more than one group with a spend limit, the **Multi-group spend limit** setting controls which limit applies.
 
 1.  Navigate to **[Organization settings \> Usage](https://claude.ai/admin-settings/usage)**.
 
-2.  Find **Multi-group spend limit** in the **Spending defaults** section.
+2.  Find **Member limit** from groups in the **Spending defaults** section.
 
 3.  Select "Higher group limit" or "Lower group limit" from the dropdown.
 
 Select "Lower group limit" to set a broad limit on a large group and create subgroups with tighter budgets. Select "Higher group limit" to set a conservative baseline on a large group and grant more headroom to specific teams.
 
-## How spend limits are resolved
+### How spend limits are resolved
 
 When determining a member's effective spend limit, the system evaluates in this order:
 
@@ -192,3 +198,5 @@ When determining a member's effective spend limit, the system evaluates in this 
 2.  **Group limit**—if the member has no individual limit, the system checks their group memberships. If the member belongs to multiple groups with spend limits, your **Multi-group spend limit** setting determines whether the higher or lower limit applies.
 
 3.  **No limit**—if the member has no individual limit and belongs to no groups with spend limits, no spend limit is applied.
+
+For a view of how spend limits are affecting your organization, see the **Blocked by a spend limit** section at the top of **[Organization settings \> Usage](https://claude.ai/admin-settings/usage)**. **Blocked by a spend limit** is built for usage-based Enterprise plans. Orgs without usage-based seats only see how many members are blocked or near their limit right now. Learn more about **[monitoring usage and spend on Enterprise plans](https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan#h_ae17ec8236)**.

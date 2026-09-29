@@ -2,7 +2,7 @@
 title: "SEP-991: Enable URL-based Client Registration using OAuth Client ID Metadata Documents - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps/991-enable-url-based-client-registration-using-oauth-c"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:39:31Z"
+fetched_at: "2026-08-03T07:18:12Z"
 tags: ["cli", "mcp", "oauth"]
 ---
 
@@ -25,7 +25,7 @@ tags: ["cli", "mcp", "oauth"]
   - [Risk: Server Side Request Forgery (SSRF)](#risk-server-side-request-forgery-ssrf)
   - [Risk: Distributed Denial of Service (DDoS)](#risk-distributed-denial-of-service-ddos)
   - [Risk: Maturity of referenced specification](#risk-maturity-of-referenced-specification)
-  - [Risk: Client implementation burden, espcially local clients](#risk-client-implementation-burden-espcially-local-clients)
+  - [Risk: Client implementation burden, especially local clients](#risk-client-implementation-burden-especially-local-clients)
   - [Risk: Fragmentation of authorization approaches](#risk-fragmentation-of-authorization-approaches)
 - [Alternatives Considered](#alternatives-considered)
 - [Backward Compatibility](#backward-compatibility)
@@ -251,12 +251,12 @@ Similarly, an attacker could try to leverage a pool of authorization servers to 
 
 Risk: Maturity of referenced specification
 
-The RFC for Client ID Metadata documents is still a draft. It has been implemented by the platform Bluesky, but has not been ratified or very widely adopted outside of that, and may evolve over time. Our intention is to evolve and align with subsequent drafts and any final standard, while minimizing disruption and breakage with existing implementations. This approach has the risk that there are implementation challenges or flaws in the protocol that have not surfaced yet. However, even though DCR has been ratified, and it also has a number of implementation challenges that developers are facing when trying to use it in an open ecosystem context like MCP. Those challenges are the motiviation behind this proposal.
+The RFC for Client ID Metadata documents is still a draft. It has been implemented by the platform Bluesky, but has not been ratified or very widely adopted outside of that, and may evolve over time. Our intention is to evolve and align with subsequent drafts and any final standard, while minimizing disruption and breakage with existing implementations. This approach has the risk that there are implementation challenges or flaws in the protocol that have not surfaced yet. However, even though DCR has been ratified, and it also has a number of implementation challenges that developers are facing when trying to use it in an open ecosystem context like MCP. Those challenges are the motivation behind this proposal.
 
 
-[​](#risk-client-implementation-burden-espcially-local-clients)
+[​](#risk-client-implementation-burden-especially-local-clients)
 
-Risk: Client implementation burden, espcially local clients
+Risk: Client implementation burden, especially local clients
 
 This specification requires an additional piece of infrastructure for clients, since they need to host a metadata file behind an HTTPS url. Without this specification, a client could be strictly a desktop application for example. The burden of hosting this endpoint is expected to be low as hosting a static JSON file is fairly straightforward and most known clients have a webpage advertising their client or providing download links.
 

@@ -2,7 +2,7 @@
 title: "Claude 2 \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-2"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:43:03Z"
+fetched_at: "2026-09-10T06:45:54Z"
 ---
 
 # Claude 2
@@ -11,9 +11,9 @@ Jul 11, 2023
 
 [Talk to Claude](https://claude.ai)
 
-We are pleased to announce [Claude 2](https://www-cdn.anthropic.com/bd2a28d2535bfb0494cc8e2a3bf135d2e7523226/Model-Card-Claude-2.pdf), our new model. Claude 2 has improved performance, longer responses, and can be accessed via API as well as a new public-facing beta website, [claude.ai](https://claude.ai/redirect/website.v1.39921575-1f66-4232-a36f-3771e0a64c0e). We have heard from our users that Claude is easy to converse with, clearly explains its thinking, is less likely to produce harmful outputs, and has a longer memory. We have made improvements from our previous models on coding, math, and reasoning. For example, our latest model scored **76.5%** on the multiple choice section of the Bar exam, up from 73.0% with Claude 1.3. When compared to college students applying to graduate school, Claude 2 scores above the 90th percentile on the GRE reading and writing exams, and similarly to the median applicant on quantitative reasoning.
+We are pleased to announce [Claude 2](https://www-cdn.anthropic.com/bd2a28d2535bfb0494cc8e2a3bf135d2e7523226/Model-Card-Claude-2.pdf), our new model. Claude 2 has improved performance, longer responses, and can be accessed via API as well as a new public-facing beta website, [claude.ai](https://claude.ai/redirect/website.v1.35c9cbf4-fac3-4ebd-a617-f3b5d8336cf0). We have heard from our users that Claude is easy to converse with, clearly explains its thinking, is less likely to produce harmful outputs, and has a longer memory. We have made improvements from our previous models on coding, math, and reasoning. For example, our latest model scored **76.5%** on the multiple choice section of the Bar exam, up from 73.0% with Claude 1.3. When compared to college students applying to graduate school, Claude 2 scores above the 90th percentile on the GRE reading and writing exams, and similarly to the median applicant on quantitative reasoning.
 
-Think of Claude as a friendly, enthusiastic colleague or personal assistant who can be instructed in natural language to help you with many tasks. The Claude 2 API for businesses is being offered for the same price as Claude 1.3. Additionally, anyone in the US and UK can start using our [beta chat experience](https://claude.ai/redirect/website.v1.39921575-1f66-4232-a36f-3771e0a64c0e) today.
+Think of Claude as a friendly, enthusiastic colleague or personal assistant who can be instructed in natural language to help you with many tasks. The Claude 2 API for businesses is being offered for the same price as Claude 1.3. Additionally, anyone in the US and UK can start using our [beta chat experience](https://claude.ai/redirect/website.v1.35c9cbf4-fac3-4ebd-a617-f3b5d8336cf0) today.
 
 As we work to improve both the performance and safety of our models, we have increased the length of Claude’s input and output. Users can input up to [100K tokens](/news/100k-context-windows) in each prompt, which means that Claude can work over hundreds of pages of technical documentation or even a book. Claude can now also write longer documents - from memos to letters to stories up to a few thousand tokens - all in one go.
 
@@ -23,7 +23,7 @@ In addition, our latest model has greatly improved coding skills. Claude 2 score
   
 We've been iterating to improve the underlying safety of Claude 2, so that it is more harmless and harder to prompt to produce offensive or dangerous output. We have an internal red-teaming evaluation that scores our models on a large representative set of harmful prompts, using an automated test while we also regularly check the results manually. In this evaluation, Claude 2 was **2x better** at giving harmless responses compared to Claude 1.3. Although no model is immune from jailbreaks, we’ve used a variety of safety techniques (which you can read about [here](/research/constitutional-ai-harmlessness-from-ai-feedback) and [here](/research/the-capacity-for-moral-self-correction-in-large-language-models)), as well as [extensive red-teaming](/research/red-teaming-language-models-to-reduce-harms-methods-scaling-behaviors-and-lessons-learned), to improve its outputs.
 
-Claude 2 powers our chat experience, and is generally available in the US and UK. We are working to make Claude more globally available in the coming months. You can now [create an account](https://claude.ai/redirect/website.v1.39921575-1f66-4232-a36f-3771e0a64c0e) and start talking to Claude in natural language, asking it for help with any tasks that you like. Talking to an AI assistant can take some trial and error, so [read up on our tips](https://console.anthropic.com/docs/prompt-design) to get the most out of Claude.
+Claude 2 powers our chat experience, and is generally available in the US and UK. We are working to make Claude more globally available in the coming months. You can now [create an account](https://claude.ai/redirect/website.v1.35c9cbf4-fac3-4ebd-a617-f3b5d8336cf0) and start talking to Claude in natural language, asking it for help with any tasks that you like. Talking to an AI assistant can take some trial and error, so [read up on our tips](https://console.anthropic.com/docs/prompt-design) to get the most out of Claude.
 
 We are also currently working with thousands of businesses who are using the Claude API. One of our partners is **Jasper**, a generative AI platform that enables individuals and teams to scale their content strategies. They found that Claude 2 was able to go head to head with other state of the art models for a wide variety of use cases, but has particular strength for long form low latency uses. "We are really happy to be among the first to offer Claude 2 to our customers, bringing enhanced semantics, up-to-date knowledge training, improved reasoning for complex prompts, and the ability to effortlessly remix existing content with a 3X larger context window," said Greg Larson, VP of Engineering at Jasper. "We are proud to help our customers stay ahead of the curve through partnerships like this one with Anthropic."
 
@@ -34,17 +34,21 @@ We welcome your feedback as we work to responsibly deploy our products more broa
 
 ## Related content
 
-### Investigating three real-world incidents in our cybersecurity evaluations
+### Developing Enterprise Frontier Safeguards with our customers
 
-[Read more](/news/investigating-incidents-cybersecurity-evals)
+[Read more](/news/enterprise-frontier-safeguards)
 
-### Our position on open-weights models
+### Improving our alignment and security efforts
 
-[Read more](/news/position-open-weights-models)
+On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
 
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
+[Read more](/news/improving-alignment-security-efforts)
 
-[Read more](/news/cognizant-anthropic)
+### Previewing the Model Hardware Standard
+
+We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
+
+[Read more](/news/model-hardware-standard-research-preview)
 
 [](/)
 
@@ -58,7 +62,7 @@ We welcome your feedback as we work to responsibly deploy our products more broa
 - [Claude Design](https://claude.com/product/design)
 - [Claude Science](https://claude.com/product/claude-science)
 - [Claude Security](https://claude.com/product/claude-security)
-- [Claude for Chrome](https://claude.com/chrome)
+- [Claude in Chrome](https://claude.com/claude-in-chrome)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -78,6 +82,7 @@ We welcome your feedback as we work to responsibly deploy our products more broa
 - [AI agents](https://claude.com/solutions/agents)
 - [Code modernization](https://claude.com/solutions/code-modernization)
 - [Coding](https://claude.com/solutions/coding)
+- [Commerce](https://claude.com/solutions/commerce)
 - [Customer support](https://claude.com/solutions/customer-support)
 - [Cybersecurity](https://claude.com/solutions/cybersecurity)
 - [Enterprise](https://claude.com/solutions/enterprise)
@@ -110,7 +115,7 @@ We welcome your feedback as we work to responsibly deploy our products more broa
 - [Claude partner network](https://claude.com/partners)
 - [Community](https://claude.com/community)
 - [Connectors](https://claude.com/connectors)
-- [Courses](/learn)
+- [Courses](https://academy.claude.com)
 - [Customer stories](https://claude.com/customers)
 - [Engineering at Anthropic](/engineering)
 - [Events](/events)
@@ -123,7 +128,7 @@ We welcome your feedback as we work to responsibly deploy our products more broa
 ### Programs
 
 - [Startups](https://claude.com/programs/startups)
-- [Research Labs](https://claude.com/programs/claude-team-plan-for-research-labs)
+- [Scientists](https://claude.com/programs/team-plan-for-scientists)
 
 ### Help and security
 
@@ -135,6 +140,7 @@ We welcome your feedback as we work to responsibly deploy our products more broa
 
 - [Anthropic](/company)
 - [Careers](/careers)
+- [Leadership](/company/leadership)
 - [Policy](/policy)
 - [Economic Futures](/economic-futures)
 - [Research](/research)

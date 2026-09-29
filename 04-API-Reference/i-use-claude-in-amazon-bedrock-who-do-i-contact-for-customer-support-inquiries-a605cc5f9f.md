@@ -2,7 +2,7 @@
 title: "I use Claude in Amazon Bedrock. Who do I contact for customer support inquiries? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/7996921-i-use-claude-in-amazon-bedrock-who-do-i-contact-for-customer-support-inquiries"
 category: "04-API-Reference"
-fetched_at: "2026-08-02T05:41:53Z"
+fetched_at: "2026-09-29T06:32:03Z"
 tags: ["api", "bedrock"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["api", "bedrock"]
 
 March 16, 2026
 
+Copy for LLM
 
 [Contact AWS Support](https://aws.amazon.com/contact-us/) for Claude in Amazon Bedrock support inquiries or reach out to your AWS account manager. For community-based support, visit [AWS re:Post](https://repost.aws/).
 

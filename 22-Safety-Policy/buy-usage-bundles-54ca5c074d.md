@@ -2,13 +2,14 @@
 title: "Buy usage bundles | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14246112-buy-usage-bundles"
 category: "22-Safety-Policy"
-fetched_at: "2026-08-02T05:41:48Z"
+fetched_at: "2026-09-29T06:31:23Z"
 ---
 
 # Buy usage bundles
 
 May 18, 2026
 
+Copy for LLM
 
 You can pre-purchase usage credits in bundles and save up to 30% compared to standard usage credit rates. Larger bundles come with bigger discounts, and your balance works across Claude, Claude Code, Claude Cowork, and third-party products.
 

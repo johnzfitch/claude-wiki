@@ -2,13 +2,14 @@
 title: "Anthropic Software Directory Policy | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy"
 category: "22-Safety-Policy"
-fetched_at: "2026-08-02T05:42:41Z"
+fetched_at: "2026-09-29T06:31:12Z"
 ---
 
 # Anthropic Software Directory Policy
 
 April 15, 2026
 
+Copy for LLM
 
 Anthropic allows users to discover high-quality Model Context Protocol servers, Skill folders, plugins, apps, and other software, containers, or data (“Software”) that work seamlessly within Claude through directories, repositories, surfaces, or similar offerings (collectively, “Directories”). We review submissions to our Directories to ensure they meet our standards for safety, security, and compatibility with Anthropic Services and other Software. We conduct both initial and ongoing reviews of Software, and may require developers to address compliance issues to continue being included in our Directories. All Software must maintain compliance with these requirements, including any future changes, to remain in our Directories.
 

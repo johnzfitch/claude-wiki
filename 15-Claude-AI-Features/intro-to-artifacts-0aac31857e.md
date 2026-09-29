@@ -1,540 +1,166 @@
 ---
-title: "Intro to Artifacts | Claude by Anthropic"
+title: "Creating with artifacts · Claude 101 · Claude Academy"
 source_url: "https://support.claude.com/en/articles/9945615-intro-to-artifacts"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:41:19Z"
+fetched_at: "2026-09-25T06:30:20Z"
 ---
 
-# Intro to Artifacts
+Lesson 6 of 13 · Claude 101Creating with artifacts
 
-Learn how Artifacts can enrich your interactions with Claude for more dynamic and interactive conversations.
+1.  [Academy](/)
+2.  /[Courses](/courses)
+3.  /[Claude 101](/courses/claude-101)
 
-- 
+[Claude 101](/courses/claude-101)
 
+# Creating with artifacts
 
-  Professional
+Lesson 610 min
 
-- 
+In this lessonBy the end, you’ll be able to
 
+- Explain what artifacts are and where your outputs live
+- Create designs, decks, and living documents as artifacts (on paid plans)
+- Edit an artifact directly, with a comment, or by asking in the conversation
+- Share an artifact and control who can see and edit it
 
-  Claude.ai
+## What are artifacts?[](#what-are-artifacts)
 
-- 
+[Artifacts(opens in new tab)](https://claude.com/features/artifacts) are the outputs you create with Claude: a document, a deck, a design, a dashboard, a prototype. Instead of getting a long block of code or text buried in the chat, you see the real thing take shape in a dedicated window alongside your conversation, ready to use and refine.
 
+Claude creates an artifact when you ask for something that stands on its own — something you'll want to edit, reuse, or share rather than just read once. If you want to ensure Claude creates an artifact, just say so: "Create this as an artifact."
 
-  Watch time
+On paid plans, an artifact isn't tied to the conversation that created it: everything you make is saved in the Artifacts tab, so you can come back to it later, keep editing it, and share it with others. Think of the conversation as where you create, and the Artifacts tab as where your outputs live. (On the Free plan, an artifact stays with the conversation that created it.)
 
-  5
+## Designs, decks, and living documents[](#designs-decks-and-living-documents)
 
-  min
+Claude has a dedicated way to make each of the most common work deliverables:
 
-  5
+- **Claude Design** creates visual work — landing pages, one-pagers, product mockups, interface prototypes. You can bring in your design system so drafts come back in your brand, and edit directly on the canvas: drag, resize, and align anything.
+- **Claude Slides** creates presentations. Share the notes, report, or conversation you already have, and Claude outlines, writes, and lays out every slide. You can edit any slide directly, add your own images, and present without leaving Claude — or export to PowerPoint or PDF when you're ready.
+- **Claude Docs** creates living documents — rich-text pages you and Claude write together. Claude drafts in front of you, asks clarifying questions, and explains its choices in comments. You and your colleagues can edit the same doc at the same time, and changes save as you go. Claude can also pull data from your connected tools into charts and diagrams right in the page — a snapshot, not a live feed; ask Claude to refresh it when you need the latest. Export to Google Docs or as a .docx file anytime.
 
-  min
+These work together in one conversation, and you can ask for one from another: "turn this doc into a deck," or "make a one-pager from this deck."
 
-- 
+
 
+Plan availability
 
-  [Copy link](#)
-  https://claude.com/resources/tutorials/intro-to-artifacts
+Claude Design, Claude Slides, and Claude Docs are in beta and available on paid plans (Pro, Max, Team, and Enterprise). On Pro and Max they're on by default, and you can turn each one off in Settings \> Capabilities. On Team they're on by default, and an admin can turn them off. On Enterprise they're off by default until an admin turns them on in Organization settings \> Artifacts. If you don't see them, ask your admin, who also controls whether artifacts are on for your organization.
 
-## Related tutorials
+## Artifacts on every plan[](#artifacts-on-every-plan)
 
-[Delegating and scheduling tasks in Claude Cowork](/resources/tutorials/delegating-and-scheduling-tasks-in-claude-cowork)
+Not everything needs Claude Design, Claude Slides, or Claude Docs. Ask for a dashboard of your team's numbers, a tracker you update each week, a flowchart of your onboarding process, an interactive page, or working code, and Claude builds it as an artifact right in the conversation — on every plan, including Free.
 
-Delegating and scheduling tasks in Claude Cowork
+Artifacts are different from Claude's file creation, which produces downloadable Word documents, Excel spreadsheets, PowerPoint presentations, and PDF files. The practical difference: an artifact opens and updates right in Claude and is shared by link, while file creation hands you a file to download and open in other apps.
 
-Delegating and scheduling tasks in Claude Cowork
+## Creating your first artifact[](#creating-your-first-artifact)
 
-Tutorial
+Creating an artifact is as simple as having a conversation. Describe what you want in any conversation with Claude (the composer's Output menu lets you pick a design, slides, or a doc), or start from the Artifacts tab, where you can pick a design, a deck, or a doc and describe what you need.
 
-[Tutorial](/resources/tutorials/delegating-and-scheduling-tasks-in-claude-cowork)
+For example, you might say (the first three assume your plan — and on Team and Enterprise, your admin — has the design, deck, and doc experiences turned on):
 
-Tutorial
+- “Turn these meeting notes into a five-slide deck for my team meeting”Creates a deck you can edit slide by slide and present.
+  
+  
+- “Draft a one-page project brief for the onboarding revamp as a doc I can share with the team”Creates a living doc your team can edit with you.
+  
+  
+- “Design a landing page for a productivity app with a hero section and feature list”Creates a design on an editable canvas.
+  
+  
+- “Build an interactive dashboard that lets me input monthly expenses and see a breakdown”Creates an interactive dashboard — available on any plan.
+  
+  
 
-[Tasks to try with @Claude in your workspace](/resources/tutorials/tasks-to-try-with-claude-tag-in-your-workspace)
+When the artifact appears, you can copy it or download it — and keep going: everything stays editable.
 
-Tasks to try with @Claude in your workspace
+Whatever you ask for, Claude uses the context it already has — the files you've shared, the conversation so far, your project knowledge, and your connected tools — so you don't have to feed it everything. If you've just worked through an analysis together, the deck starts from that thinking.
 
-Tasks to try with @Claude in your workspace
+## Working on an artifact[](#working-on-an-artifact)
 
-Tutorial
+Once an artifact exists, you have three ways to change it — and you can mix them freely (editing directly and commenting are part of the design, deck, and doc experiences):
 
-[Tutorial](/resources/tutorials/tasks-to-try-with-claude-tag-in-your-workspace)
+- **Edit it directly.** Type straight into a doc, edit any slide, or drag and resize elements on a design canvas. Your edits and Claude's can land side by side.
+- **Comment for Claude.** Leave a comment on the exact element, slide, or passage you want changed, and Claude makes the change there. In a doc, @-mention Claude in a comment and it replies explaining what it changed and why.
+- **Just ask.** Keep talking in the conversation and Claude takes the next pass on the artifact, showing you every change it makes.
 
-Tutorial
+Fixing a typo or nudging a logo yourself means you don't have to describe the change and wait for a rewrite. One note on where this happens: editing directly, commenting, and changing sharing happen on desktop or web — on mobile, you can ask for an artifact in any conversation and open it full screen in the Artifacts tab.
 
-[Best practices for using @Claude](/resources/tutorials/best-practices-using-claude-tag)
+## Sharing your work[](#sharing-your-work)
 
-Best practices for using @Claude
+Your artifacts are private until you share them. For designs, decks, and docs, add people by name or email and choose what each person can do — view, comment, or edit (docs offer view and edit) — or share a link with everyone in your organization. Anyone you share with needs a Claude account to open the artifact.
 
-Best practices for using @Claude
+- **On Pro and Max plans**, you choose between keeping an artifact to yourself or sharing it with anyone who has the link — and you can publish a design or a deck as a public artifact. Only the artifact becomes public — your conversation stays private.
+- **On Team and Enterprise plans**, links stay inside your organization by default. Sharing outside the organization ("anyone with the link") is available only after an Owner or Primary Owner turns on External sharing in Organization settings \> Artifacts.
+- **On the Free plan**, you can copy your work, download it, or publish it so anyone with the link can view it.
 
-Tutorial
+When the work needs to leave Claude, export it. Artifacts export to files that match what you've made: a deck to .pptx or .pdf, a design to .pptx, .pdf, or .html, a doc to Google Docs or .docx. You can also copy or download any artifact directly from the artifact window.
 
-[Tutorial](/resources/tutorials/best-practices-using-claude-tag)
+## Tips for getting the most from artifacts[](#tips-for-getting-the-most-from-artifacts)
 
-Tutorial
+**Ask for the deliverable, not just the content.** "Summarize our Q3 results" gets you a chat reply; "turn our Q3 results into a one-page doc for the leadership team" gets you an artifact you can share and keep working on.
 
-[Using Claude Cowork for legal: answer fast questions on past decisions](/resources/tutorials/using-claude-cowork-for-legal-question-briefing)
+**Be specific about what you want.** "Build a budget tracker" is good, but "Build a monthly budget tracker where I can input expenses by category, see a pie chart breakdown, and get a warning when I'm over budget" is better.
 
-Using Claude Cowork for legal: answer fast questions on past decisions
+**Describe the end user.** Telling Claude who will use the artifact helps it make appropriate design choices. "This flowchart is for new employees" leads to different results than "This flowchart is for the engineering team."
 
-Using Claude Cowork for legal: answer fast questions on past decisions
+**Build on work you've already done.** The best artifacts come at the end of a conversation, when Claude already understands the problem.
 
-Tutorial
+**Refresh data when you need it current.** Charts and diagrams embedded in a doc don't update on their own — when you want the latest numbers, ask Claude to pull fresh data from your connected tools and update the chart.
 
-[Tutorial](/resources/tutorials/using-claude-cowork-for-legal-question-briefing)
+## Lesson reflection[](#lesson-reflection)
 
-Tutorial
+Before moving on, consider:
 
-[Homepage](https://claude.com)
+- What's the deliverable you most often build by hand — a status doc, a team deck, a one-pager — that could start as an artifact instead?
+- What recurring work could benefit from having an interactive artifact you can reuse?
+- Who would you share your next piece of work with, and what should they be able to do — view it, comment on it, or edit it with you?
 
-Homepage
+## What's next[](#whats-next)
 
+In the next lesson, you'll learn about Skills — reusable instruction sets that teach Claude specialized workflows.
 
-Thank you! Your submission has been received!
+[Previous lessonIntroduction to projects](/courses/claude-101/introduction-to-projects)[Next lessonWorking with skills](/courses/claude-101/working-with-skills)
 
-Oops! Something went wrong while submitting the form.
+Lesson 6 of 13 · Claude 101Creating with artifacts
 
-Write
+Meet Claude
 
-[Button Text](#)
+- [What is Claude?](/courses/claude-101/what-is-claude)
+- [Your first conversation with Claude](/courses/claude-101/your-first-conversation-with-claude)
+- [Getting better results](/courses/claude-101/getting-better-results)
+- [How you'll work with Claude on your desktop](/courses/claude-101/claude-desktop-app-chat-cowork-code)
 
-Button Text
+Organizing your work and knowledge
 
-Learn
+- [Introduction to projects](/courses/claude-101/introduction-to-projects)
+- [Creating with artifacts](/courses/claude-101/creating-with-artifacts)
+- [Working with skills](/courses/claude-101/working-with-skills)
 
-[Button Text](#)
+Expanding Claude's reach
 
-Button Text
+- [Connecting your tools](/courses/claude-101/connecting-your-tools)
+- [Enterprise search](/courses/claude-101/enterprise-search)
+- [Research for deep dives](/courses/claude-101/research-mode-for-deep-dives)
 
-Code
+Putting it all together
 
-[Button Text](#)
+- [Claude in action: use-cases by role](/courses/claude-101/claude-in-action-use-cases-by-role)
+- [Other ways to work with Claude](/courses/claude-101/other-ways-to-work-with-claude)
 
-Button Text
+Conclusion & badge
 
-Write
+- [What's next?](/courses/claude-101/what-s-next)
+- [Course quizQuiz](/courses/claude-101/certificate-of-completion)
 
-- Help me develop a unique voice for an audience
+- [Completion badge](/courses/claude-101/badge)
 
-
-  Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Improve my writing style
-
-
-  Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Brainstorm creative ideas
-
-
-  Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Learn
-
-- Explain a complex topic simply
-
-
-  Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Help me make sense of these ideas
-
-
-  Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Prepare for an exam or interview
-
-
-  Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-Code
-
-- Explain a programming concept
-
-
-  Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Look over my code and give me tips
-
-
-  Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Vibe code with me
-
-
-  Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-More
-
-- Write case studies
-
-
-  This is another test
-
-- Write grant proposals
-
-
-  Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.  
-    
-  Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!
-
-- Write video scripts
-
-
-  this is a test
-
-[Anthropic](https://www.anthropic.com/)
-
-Anthropic
-
-© \[year\] Anthropic PBC
-
-Products
-
-- Claude
-
-  [Claude](/product/overview)
-  Claude
-
-- Claude Code
-
-  [Claude Code](/product/claude-code)
-  Claude Code
-
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](/product/claude-code/enterprise)
-  Claude Code for Enterprise
-
-- Claude Cowork
-
-  [Claude Cowork](/product/cowork)
-  Claude Cowork
-
-- @Claude
-
-  [@Claude](/product/tag)
-  @Claude
-
-- Claude Design
-
-  [Claude Design](/product/design)
-  Claude Design
-
-- Claude Science
-
-  [Claude Science](/product/claude-science)
-  Claude Science
-
-- Claude Security
-
-  [Claude Security](/product/claude-security)
-  Claude Security
-
-- Download app
-
-  [Download app](/download)
-  Download app
-
-- Pricing
-
-  [Pricing](/pricing)
-  Pricing
-
-- Log in
-
-  [Log in](https://claude.ai/login)
-
-Features
-
-- Claude for Chrome
-
-  [Claude for Chrome](/claude-for-chrome)
-  Claude for Chrome
-
-- Claude for Microsoft 365
-
-  [Claude for Microsoft 365](/claude-for-microsoft-365)
-  Claude for Microsoft 365
-
-- Skills
-
-  [Skills](/skills)
-  Skills
-
-Models
-
-- Mythos
-
-  [Mythos](https://www.anthropic.com/claude/mythos)
-  Mythos
-
-- Fable
-
-  [Fable](https://www.anthropic.com/claude/fable)
-  Fable
-
-- Opus
-
-  [Opus](https://www.anthropic.com/claude/opus)
-  Opus
-
-- Sonnet
-
-  [Sonnet](https://www.anthropic.com/claude/sonnet)
-  Sonnet
-
-- Haiku
-
-  [Haiku](https://www.anthropic.com/claude/haiku)
-  Haiku
-
-Solutions
-
-- AI agents
-
-  [AI agents](/solutions/agents)
-  AI agents
-
-- Code modernization
-
-  [Code modernization](/solutions/code-modernization)
-  Code modernization
-
-- Coding
-
-  [Coding](/solutions/coding)
-  Coding
-
-- Customer support
-
-  [Customer support](/solutions/customer-support)
-  Customer support
-
-- Cybersecurity
-
-  [Cybersecurity](/solutions/cybersecurity)
-  Cybersecurity
-
-- Enterprise
-
-  [Enterprise](/solutions/enterprise)
-  Enterprise
-
-- Financial services
-
-  [Financial services](/solutions/financial-services)
-  Financial services
-
-- Government
-
-  [Government](/solutions/government)
-  Government
-
-- Healthcare
-
-  [Healthcare](/solutions/healthcare)
-  Healthcare
-
-- Higher education
-
-  [Higher education](/solutions/education)
-  Higher education
-
-- K-12 teachers
-
-  [K-12 teachers](/solutions/teachers)
-  K-12 teachers
-
-- Legal
-
-  [Legal](/solutions/legal)
-  Legal
-
-- Life sciences
-
-  [Life sciences](/solutions/life-sciences)
-  Life sciences
-
-- Nonprofits
-
-  [Nonprofits](/solutions/nonprofits)
-  Nonprofits
-
-- Small business
-
-  [Small business](/solutions/small-business)
-  Small business
-
-Claude Platform
-
-- Overview
-
-  [Overview](/platform/api)
-  Overview
-
-- Developer docs
-
-  [Developer docs](https://platform.claude.com/docs)
-  Developer docs
-
-- Pricing
-
-  [Pricing](https://claude.com/pricing#api)
-  Pricing
-
-- Ecosystem
-
-  [Ecosystem](/ecosystem)
-  Ecosystem
-
-- Marketplace
-
-  [Marketplace](/platform/marketplace)
-  Marketplace
-
-- Claude on AWS
-
-  [Claude on AWS](/partners/claude-on-aws)
-  Claude on AWS
-
-- Google Cloud
-
-  [Google Cloud](/partners/google-cloud)
-  Google Cloud
-
-- Microsoft Foundry
-
-  [Microsoft Foundry](/partners/microsoft-foundry)
-  Microsoft Foundry
-
-- Regional compliance
-
-  [Regional compliance](/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](https://platform.claude.com/)
-  Console login
-
-Resources
-
-- Blog
-
-  [Blog](/blog)
-  Blog
-
-- Claude partner network
-
-  [Claude partner network](/partners)
-  Claude partner network
-
-- Community
-
-  [Community](/community)
-  Community
-
-- Connectors
-
-  [Connectors](/connectors)
-  Connectors
-
-- Courses
-
-  [Courses](https://www.anthropic.com/learn)
-  Courses
-
-- Customer stories
-
-  [Customer stories](/customers)
-  Customer stories
-
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
-- Events
-
-  [Events](https://www.anthropic.com/events)
-  Events
-
-- Plugins
-
-  [Plugins](/plugins)
-  Plugins
-
-- Powered by Claude
-
-  [Powered by Claude](/partners/powered-by-claude)
-  Powered by Claude
-
-- Service partners
-
-  [Service partners](/partners/services)
-  Service partners
-
-- Tutorials
-
-  [Tutorials](/resources/tutorials)
-  Tutorials
-
-- Use cases
-
-  [Use cases](/resources/use-cases)
-  Use cases
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Policy
-
-  [Policy](https://www.anthropic.com/policy)
-  Policy
-
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
-- Research
-
-  [Research](https://www.anthropic.com/research)
-  Research
-
-- News
-
-  [News](https://www.anthropic.com/news)
-  News
-
-- Policy on the AI Exponential
+- [What are artifacts?](#what-are-artifacts)
+- [Designs, decks, and living documents](#designs-decks-and-living-documents)
+- [Artifacts on every plan](#artifacts-on-every-plan)
+- [Creating your first artifact](#creating-your-first-artifact)
+- [Working on an artifact](#working-on-an-artifact)
+- [Sharing your work](#sharing-your-work)
+- [Tips for getting the most from artifacts](#tips-for-getting-the-most-from-artifacts)
+- [Lesson reflection](#lesson-reflection)

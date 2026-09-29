@@ -2,8 +2,8 @@
 title: "Java SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/java"
 category: "05-Agent-SDK"
-fetched_at: "2026-08-02T05:41:07Z"
-tags: ["agents", "sdk"]
+fetched_at: "2026-09-26T06:39:30Z"
+tags: ["agents", "cli", "sdk"]
 ---
 
 - [Managed Agents](/docs/en/managed-agents/overview)
@@ -12,27 +12,23 @@ tags: ["agents", "sdk"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fjava)
 
 
 
-Search
+
 
+SearchCtrlK
 
 CLI, SDKs, and libraries
 
@@ -40,7 +36,7 @@ CLI, SDKs, and libraries
 
 ant CLI
 
-[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)
+[Quickstart](/docs/en/cli-sdks-libraries/cli/quickstart)[Authentication options](/docs/en/cli-sdks-libraries/cli/authentication)[Using the CLI](/docs/en/cli-sdks-libraries/cli/using)[Scripting and automation](/docs/en/cli-sdks-libraries/cli/scripting)[Manage resources as code](/docs/en/cli-sdks-libraries/cli/apply)[Connect to a Managed Agents session](/docs/en/cli-sdks-libraries/cli/sessions-connect)
 
 Client SDKs
 
@@ -50,67 +46,49 @@ Libraries and integrations
 
 [Apple Foundation Models](/docs/en/cli-sdks-libraries/libraries/apple-foundation-models)[OpenAI SDK compatibility](/docs/en/cli-sdks-libraries/libraries/openai-sdk)
 
-[](/login)
+[Console](/)
 
-
-
-
-CLI, SDKs, and libraries
-
-Java
-
-CLI, SDKs, and libraries/Client SDKs
+[CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)Client SDKs
 
 # Java SDK
 
+Copy page
 
 
 
 Install and configure the Anthropic Java SDK with builder patterns and async support
 
+Copy page
 
 
 
-The Anthropic Java SDK provides convenient access to the Anthropic REST API from applications written in Java. It uses the builder pattern for creating requests and supports both synchronous and asynchronous operations.
+The Anthropic Java SDK provides convenient access to the Claude API from applications written in Java. It uses the builder pattern for creating requests and supports both synchronous and asynchronous operations.
 
-
+
 
 For API feature documentation with code examples, see the [API reference](/docs/en/api/overview). This page covers Java-specific SDK features and configuration.
 
-
-
-
-Installation
+## Installation
 
 Gradle
-
-Gradle
-
-Maven
 
 Maven
 
 ```python
-implementation("com.anthropic:anthropic-java:2.52.0")
+implementation("com.anthropic:anthropic-java:2.65.0")
 ```
 
 
 
-
-
-
-Requirements
+## Requirements
 
 This library requires Java 8 or later.
 
-
+
 
 The SDK supports Java 8 and later. Code examples in this documentation are written as [JDK 25 compact source files](https://openjdk.org/jeps/512), using a bare `void main()` entry point and `IO.println()` for output. The API calls themselves are identical on every supported JDK; to compile an example on an earlier version, replace `IO.println(...)` with `System.out.println(...)` and place the body inside `public static void main(String[] args)` within a class.
 
-
-
-
-Quick start
+## Quick start
 
 ```python
 import com.anthropic.client.AnthropicClient;
@@ -126,7 +104,7 @@ AnthropicClient client = AnthropicOkHttpClient.fromEnv();
 MessageCreateParams params = MessageCreateParams.builder()
   .maxTokens(1024L)
   .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .build();
 
 Message message = client.messages().create(params);
@@ -134,15 +112,9 @@ Message message = client.messages().create(params);
 
 
 
+## Client configuration
 
-
-
-Client configuration
-
-
-
-
-API key setup
+### API key setup
 
 Configure the client using system properties or environment variables:
 
@@ -185,12 +157,9 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
 
 
 
-For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication).
+For authentication options including Workload Identity Federation, see [Authentication](/docs/en/manage-claude/authentication). If your API key is a [personal or service account key](/docs/en/manage-claude/authentication#key-types) with access to multiple workspaces, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](/docs/en/manage-claude/authentication#select-a-workspace) shows the per-request option for this SDK.
 
-
-
-
-Configuration options
+### Configuration options
 
 | Setter      | System property       | Environment variable   | Required | Default value                 |
 |-------------|-----------------------|------------------------|----------|-------------------------------|
@@ -204,10 +173,7 @@ System properties take precedence over environment variables.
 
 Don't create more than one client in the same application. Each client has a connection pool and thread pools, which are more efficient to share between requests.
 
-
-
-
-Modifying configuration
+### Modifying configuration
 
 To temporarily use a modified client configuration while reusing the same connection and thread pools, call `withOptions()` on any client or service:
 
@@ -224,10 +190,7 @@ AnthropicClient clientWithOptions = client.withOptions(optionsBuilder -> {
 
 The `withOptions()` method does not affect the original client or service.
 
-
-
-
-Async usage
+## Async usage
 
 The default client is synchronous. To switch to asynchronous execution, call the `async()` method:
 
@@ -243,7 +206,7 @@ AnthropicClient client = AnthropicOkHttpClient.fromEnv();
 MessageCreateParams params = MessageCreateParams.builder()
   .maxTokens(1024L)
   .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .build();
 
 CompletableFuture<Message> message = client.async().messages().create(params);
@@ -265,7 +228,7 @@ AnthropicClientAsync client = AnthropicOkHttpClientAsync.fromEnv();
 MessageCreateParams params = MessageCreateParams.builder()
   .maxTokens(1024L)
   .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .build();
 
 CompletableFuture<Message> message = client.messages().create(params);
@@ -275,17 +238,11 @@ CompletableFuture<Message> message = client.messages().create(params);
 
 The asynchronous client supports the same options as the synchronous one, except most methods return `CompletableFuture`s.
 
-
-
-
-Streaming
+## Streaming
 
 The SDK defines methods that return response "chunk" streams, where each chunk can be individually processed as soon as it arrives instead of waiting on the full response.
 
-
-
-
-Synchronous streaming
+### Synchronous streaming
 
 These streaming methods return `StreamResponse` for synchronous clients:
 
@@ -303,10 +260,7 @@ try (StreamResponse<RawMessageStreamEvent> streamResponse = client.messages().cr
 
 
 
-
-
-
-Asynchronous streaming
+### Asynchronous streaming
 
 For asynchronous clients, the method returns `AsyncStreamResponse`:
 
@@ -379,10 +333,7 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
 
 
 
-
-
-
-Streaming with message accumulator
+### Streaming with message accumulator
 
 A `MessageAccumulator` can record the stream of events in the response as they are processed and accumulate a `Message` object similar to what would have been returned by the non-streaming API.
 
@@ -433,17 +384,11 @@ Message message = messageAccumulator.message();
 
 A `BetaMessageAccumulator` is also available for the accumulation of a `BetaMessage` object. It is used in the same manner as the `MessageAccumulator`.
 
-
-
-
-Structured outputs
+## Structured outputs
 
 For complete structured outputs documentation including Java examples, see [Structured outputs](/docs/en/build-with-claude/structured-outputs).
 
-
-
-
-Tool use
+## Tool use
 
 [Tool use with Claude](/docs/en/agents-and-tools/tool-use/overview) lets you integrate external tools and functions directly into the AI model's responses. Instead of producing plain text, the model can output instructions (with parameters) for calling a tool or function when appropriate. You define JSON schemas for tools, and the model uses the schemas to determine when and how to use these tools.
 
@@ -451,14 +396,11 @@ The tool use feature supports a "strict" mode that guarantees that the JSON outp
 
 The SDK can derive a tool and its parameters automatically from the structure of an arbitrary Java class: the class's name (converted to snake case) provides the tool name, and the class's fields define the tool's parameters.
 
-
+
 
 Declare your tool classes as top-level classes or `static` nested classes. This requirement comes from the Jackson Databind library (`com.fasterxml.jackson.databind`), which the SDK uses to deserialize tool inputs into your class instances and cannot instantiate non-static inner classes.
 
-
-
-
-Defining tools with annotations
+### Defining tools with annotations
 
 ```python
 import com.fasterxml.jackson.annotation.JsonClassDescription;
@@ -515,10 +457,7 @@ static class Weather {
 
 
 
-
-
-
-Calling tools
+### Calling tools
 
 When your tool classes are defined, add them to the message parameters using `MessageCreateParams.Builder.addTool(Class<T>)` and then call them if requested to do so in the AI model's response. `BetaToolUseBlock.input(Class<T>)` can be used to parse a tool's parameters in JSON form to an instance of your tool-defining class.
 
@@ -533,7 +472,7 @@ import com.anthropic.models.messages.Model;
 AnthropicClient client = AnthropicOkHttpClient.fromEnv();
 
 MessageCreateParams.Builder createParamsBuilder = MessageCreateParams.builder()
-        .model(Model.CLAUDE_OPUS_5)
+        .model(Model.CLAUDE_OPUS_5_5)
         .maxTokens(2048)
         .addTool(GetWeather.class)
         .addUserMessage("What's the temperature in New York?");
@@ -571,23 +510,17 @@ private static Object callTool(BetaToolUseBlock toolUseBlock) {
 
 
 
-
-
-
-Tool name conversion
+### Tool name conversion
 
 Tool names are derived from the camel case tool class names (for example, `GetWeather`) and converted to snake case (for example, `get_weather`). Word boundaries begin where the current character is not the first character, is upper-case, and either the preceding character is lower-case, or the following character is lower-case. For example, `MyJSONParser` becomes `my_json_parser` and `ParseJSON` becomes `parse_json`. This conversion can be overridden using the `@JsonTypeName` annotation.
 
-
-
-
-Local tool JSON schema validation
+### Local tool JSON schema validation
 
 You can perform local validation to check that the JSON schema derived from your tool class respects Anthropic's restrictions. Local validation is enabled by default, but it can be disabled:
 
 ```python
 MessageCreateParams.Builder createParamsBuilder = MessageCreateParams.builder()
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .maxTokens(2048)
   .addTool(GetWeather.class, JsonSchemaLocalValidation.NO)
   .addUserMessage("What's the temperature in New York?");
@@ -595,10 +528,7 @@ MessageCreateParams.Builder createParamsBuilder = MessageCreateParams.builder()
 
 
 
-
-
-
-Annotating tool classes
+### Annotating tool classes
 
 You can use annotations to add further information about tools to the JSON schemas:
 
@@ -608,24 +538,18 @@ You can use annotations to add further information about tools to the JSON schem
 - `@JsonIgnore` - Exclude a `public` field or getter method from the generated JSON schema for a tool's parameters.
 - `@JsonProperty` - Include a non-`public` field or getter method in the generated JSON schema for a tool's parameters.
 
-
-
-
-Message batches
+## Message batches
 
 The SDK provides support for [Batch processing](/docs/en/build-with-claude/batch-processing) under the `client.messages().batches()` namespace. See [Pagination](#pagination) for how to list and paginate through batches.
 
-
-
-
-File uploads
+## File uploads
 
 The SDK defines methods that accept files through the `MultipartField` class:
 
 ```python
 import com.anthropic.core.MultipartField;
-import com.anthropic.models.beta.files.FileMetadata;
-import com.anthropic.models.beta.files.FileUploadParams;
+import com.anthropic.models.files.FileMetadata;
+import com.anthropic.models.files.FileUploadParams;
 
 FileUploadParams params = FileUploadParams.builder()
   .file(
@@ -636,7 +560,7 @@ FileUploadParams params = FileUploadParams.builder()
   )
   .build();
 
-FileMetadata fileMetadata = client.beta().files().upload(params);
+FileMetadata fileMetadata = client.files().upload(params);
 ```
 
 
@@ -645,8 +569,8 @@ Or from an `InputStream`:
 
 ```python
 import com.anthropic.core.MultipartField;
-import com.anthropic.models.beta.files.FileMetadata;
-import com.anthropic.models.beta.files.FileUploadParams;
+import com.anthropic.models.files.FileMetadata;
+import com.anthropic.models.files.FileUploadParams;
 
 FileUploadParams params = FileUploadParams.builder()
   .file(
@@ -658,7 +582,7 @@ FileUploadParams params = FileUploadParams.builder()
   )
   .build();
 
-FileMetadata fileMetadata = client.beta().files().upload(params);
+FileMetadata fileMetadata = client.files().upload(params);
 ```
 
 
@@ -667,8 +591,8 @@ Or from in-memory bytes:
 
 ```python
 import com.anthropic.core.MultipartField;
-import com.anthropic.models.beta.files.FileMetadata;
-import com.anthropic.models.beta.files.FileUploadParams;
+import com.anthropic.models.files.FileMetadata;
+import com.anthropic.models.files.FileUploadParams;
 
 FileUploadParams params = FileUploadParams.builder()
   .file(
@@ -680,22 +604,19 @@ FileUploadParams params = FileUploadParams.builder()
   )
   .build();
 
-FileMetadata fileMetadata = client.beta().files().upload(params);
+FileMetadata fileMetadata = client.files().upload(params);
 ```
 
 
 
-
-
-
-Binary responses
+### Binary responses
 
 The SDK defines methods that return binary responses for API responses that aren't necessarily parsed as JSON:
 
 ```python
 import com.anthropic.core.http.HttpResponse;
 
-HttpResponse response = client.beta().files().download("file_abc123");
+HttpResponse response = client.files().download("file_abc123");
 ```
 
 
@@ -705,7 +626,7 @@ To save the response content to a file:
 ```python
 import com.anthropic.core.http.HttpResponse;
 
-try (HttpResponse response = client.beta().files().download(params)) {
+try (HttpResponse response = client.files().download(params)) {
     Files.copy(
         response.body(),
         Paths.get(path),
@@ -724,7 +645,7 @@ Or transfer the response content to any `OutputStream`:
 ```python
 import com.anthropic.core.http.HttpResponse;
 
-try (HttpResponse response = client.beta().files().download(params)) {
+try (HttpResponse response = client.files().download(params)) {
     response.body().transferTo(Files.newOutputStream(Paths.get(path)));
 } catch (Exception e) {
     IO.println("Something went wrong!");
@@ -734,10 +655,7 @@ try (HttpResponse response = client.beta().files().download(params)) {
 
 
 
-
-
-
-Error handling
+## Error handling
 
 The SDK throws custom unchecked exception types:
 
@@ -747,10 +665,7 @@ The SDK throws custom unchecked exception types:
 - `AnthropicInvalidDataException` - Failure to interpret successfully parsed data (for example, when accessing a property that's supposed to be required, but the API unexpectedly omitted it).
 - `AnthropicException` - Base class for all exceptions.
 
-
-
-
-Status code mapping
+### Status code mapping
 
 | Status | Exception                       |
 |--------|---------------------------------|
@@ -783,10 +698,7 @@ try {
 
 
 
-
-
-
-Request IDs
+## Request IDs
 
 When using [raw responses](#raw-response-access), you can access the `request-id` response header using the `requestId()` method:
 
@@ -803,10 +715,7 @@ Optional<String> requestId = message.requestId();
 
 This can be used to quickly log failing requests and report them back to Anthropic. For more information on debugging requests, see [Request ID](/docs/en/api/errors#request-id).
 
-
-
-
-Retries
+## Retries
 
 The SDK automatically retries 2 times by default, with a short exponential backoff between requests.
 
@@ -831,10 +740,7 @@ AnthropicClient client = AnthropicOkHttpClient.builder().fromEnv().maxRetries(4)
 
 
 
-
-
-
-Timeouts
+## Timeouts
 
 Requests time out after 10 minutes by default.
 
@@ -884,10 +790,7 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
 
 
 
-
-
-
-Long requests
+## Long requests
 
 
 
@@ -897,17 +800,11 @@ Avoid setting a large `maxTokens` value without using streaming. Some networks m
 
 The SDK throws an error if a non-streaming request is expected to take longer than 10 minutes. Using a [streaming method](#streaming) or [overriding the timeout](#timeouts) at the client or request level disables the error.
 
-
-
-
-Pagination
+## Pagination
 
 The SDK provides convenient ways to access paginated results either one page at a time or item-by-item across all pages.
 
-
-
-
-Auto-pagination
+### Auto-pagination
 
 To iterate through all results across all pages, use the `autoPager()` method, which automatically fetches more pages as needed.
 
@@ -980,10 +877,7 @@ pageFuture.thenAccept(page -> page.autoPager()
 
 
 
-
-
-
-Manual pagination
+### Manual pagination
 
 To access individual page items and manually request the next page:
 
@@ -1007,15 +901,9 @@ while (true) {
 
 
 
+## Type system
 
-
-
-Type system
-
-
-
-
-Immutability and builders
+### Immutability and builders
 
 Each class in the SDK has an associated builder for constructing it. Each class is immutable once constructed. If the class has an associated builder, then it has a `toBuilder()` method, which can be used to convert it back to a builder for making a modified copy.
 
@@ -1023,7 +911,7 @@ Each class in the SDK has an associated builder for constructing it. Each class 
 MessageCreateParams params = MessageCreateParams.builder()
   .maxTokens(1024L)
   .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .build();
 
 // Create a modified copy using toBuilder()
@@ -1034,19 +922,13 @@ MessageCreateParams modified = params.toBuilder().maxTokens(2048L).build();
 
 Because each class is immutable, builder modification never affects already built class instances.
 
-
-
-
-Requests and responses
+### Requests and responses
 
 To send a request to the Claude API, build an instance of some `Params` class and pass it to the corresponding client method. When the response is received, it is deserialized into an instance of a Java class.
 
 For example, `client.messages().create(...)` should be called with an instance of `MessageCreateParams`, and it returns an instance of `Message`.
 
-
-
-
-Undocumented parameters
+### Undocumented parameters
 
 To set undocumented parameters, call the `putAdditionalHeader`, `putAdditionalQueryParam`, or `putAdditionalBodyProperty` methods on any `Params` class:
 
@@ -1097,16 +979,13 @@ import com.anthropic.models.messages.Model;
 MessageCreateParams params = MessageCreateParams.builder()
   .maxTokens(JsonValue.from(3.14))
   .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .build();
 ```
 
 
 
-
-
-
-JsonValue creation
+### JsonValue creation
 
 The most straightforward way to create a `JsonValue` is using its `from(...)` method:
 
@@ -1135,10 +1014,7 @@ JsonValue complexValue = JsonValue.from(Map.of("a", List.of(1, 2), "b", List.of(
 
 
 
-
-
-
-Forcibly omitting required parameters
+### Forcibly omitting required parameters
 
 Normally a `Builder` class's `build` method will throw `IllegalStateException` if any required parameter or property is unset. To forcibly omit a required parameter or property, pass `JsonMissing`:
 
@@ -1149,17 +1025,14 @@ import com.anthropic.models.messages.Model;
 
 MessageCreateParams params = MessageCreateParams.builder()
   .addUserMessage("Hello, world")
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .maxTokens(JsonMissing.of())
   .build();
 ```
 
 
 
-
-
-
-Response properties
+### Response properties
 
 To access undocumented response properties, call the `_additionalProperties()` method:
 
@@ -1221,10 +1094,7 @@ if (stopReason.isMissing()) {
 
 
 
-
-
-
-Response validation
+### Response validation
 
 By default, the SDK does not throw an exception when the API returns a response that doesn't match the expected type. It throws `AnthropicInvalidDataException` only if you directly access the property.
 
@@ -1264,15 +1134,9 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
 
 
 
+## HTTP client customization
 
-
-
-HTTP client customization
-
-
-
-
-Proxy configuration
+### Proxy configuration
 
 ```python
 import com.anthropic.client.AnthropicClient;
@@ -1287,12 +1151,9 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
 
 
 
+### HTTPS / SSL configuration
 
-
-
-HTTPS / SSL configuration
-
-
+
 
 Most applications should not call these methods, and instead use the system defaults. The defaults include special optimizations that can be lost if the implementations are modified.
 
@@ -1310,10 +1171,7 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
 
 
 
-
-
-
-Custom HTTP client
+### Custom HTTP client
 
 The SDK consists of three artifacts:
 
@@ -1323,10 +1181,7 @@ The SDK consists of three artifacts:
 
 This structure allows replacing the SDK's default HTTP client without pulling in unnecessary dependencies.
 
-
-
-
-Customized OkHttpClient
+#### Customized OkHttpClient
 
 
 
@@ -1338,10 +1193,7 @@ To use a customized `OkHttpClient`:
 2.  Copy `anthropic-java-client-okhttp`'s `OkHttpClient` class into your code and customize it.
 3.  Construct `AnthropicClientImpl` or `AnthropicClientAsyncImpl` using your customized client.
 
-
-
-
-Completely custom HTTP client
+#### Completely custom HTTP client
 
 To use a completely custom HTTP client:
 
@@ -1349,12 +1201,9 @@ To use a completely custom HTTP client:
 2.  Write a class that implements the `HttpClient` interface.
 3.  Construct `AnthropicClientImpl` or `AnthropicClientAsyncImpl` using your new client class.
 
+## Platform integrations
 
-
-
-Platform integrations
-
-
+
 
 For detailed platform setup guides with code examples, see:
 
@@ -1373,17 +1222,11 @@ The Java SDK supports the following platforms through separate dependencies that
 
 Use `BedrockMantleBackend` for new projects; `BedrockBackend` remains for existing applications using the Bedrock `InvokeModel` API.
 
-Each `Backend` implementation is passed to the client with `.backend()` on `AnthropicOkHttpClient.builder()`. Each cloud backend pulls in its respective cloud-platform SDK classes as transitive dependencies.
+The platform artifacts are add-ons to the base `com.anthropic:anthropic-java` dependency, which provides `AnthropicOkHttpClient`, so install both. Each `Backend` implementation is passed to the client with `.backend()` on `AnthropicOkHttpClient.builder()`. Each cloud backend pulls in its respective cloud-platform SDK classes as transitive dependencies.
 
+## Advanced usage
 
-
-
-Advanced usage
-
-
-
-
-Raw response access
+### Raw response access
 
 To access HTTP headers, status codes, and the raw response body, prefix any HTTP method call with `withRawResponse()`:
 
@@ -1397,7 +1240,7 @@ import com.anthropic.models.messages.Model;
 MessageCreateParams params = MessageCreateParams.builder()
   .maxTokens(1024L)
   .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_5)
+  .model(Model.CLAUDE_OPUS_5_5)
   .build();
 
 HttpResponseFor<Message> message = client.messages().withRawResponse().create(params);
@@ -1419,10 +1262,7 @@ Message parsedMessage = message.parse();
 
 
 
-
-
-
-Logging
+### Logging
 
 The SDK uses the standard OkHttp logging interceptor.
 
@@ -1444,33 +1284,37 @@ export ANTHROPIC_LOG=debug
 
 ### Jackson compatibility
 
+The SDK depends on Jackson for JSON serialization/deserialization. It is compatible with version 2.13.4 or higher, but depends on version 2.19.4 by default.
+
+The SDK throws an exception if it detects an incompatible Jackson version at runtime (for example, if the default version was overridden in your Maven or Gradle config).
+
+If the SDK threw an exception, but you're certain the version is compatible, then disable the version check using `checkJacksonVersionCompatibility` on `AnthropicOkHttpClient` or `AnthropicOkHttpClientAsync`.
+
+
+
+There is no guarantee that the SDK works correctly when the Jackson version check is disabled.
+
+There are also bugs in older Jackson versions that can affect the SDK. The SDK doesn't work around all Jackson bugs and expects users to upgrade Jackson for those instead.
+
 ### ProGuard/R8 configuration
 
+Although the SDK uses reflection, it is still usable with ProGuard and R8 because `anthropic-java-core` is published with a configuration file containing keep rules.
 
-
+ProGuard and R8 should automatically detect and use the published rules, but you can also manually copy the keep rules if necessary.
 
-Undocumented API functionality
+### Undocumented API functionality
 
 The SDK is typed for convenient usage of the documented API. However, it also supports working with undocumented or not yet supported parts of the API.
 
-
-
-
-Undocumented request parameters
+#### Undocumented request parameters
 
 To set undocumented request parameters, use the `putAdditionalHeader`, `putAdditionalQueryParam`, or `putAdditionalBodyProperty` methods as described in [Undocumented parameters](#undocumented-parameters).
 
-
-
-
-Undocumented response properties
+#### Undocumented response properties
 
 To access undocumented response properties, use the `_additionalProperties()` method as described in [Response properties](#response-properties).
 
-
-
-
-New or unreleased enum values
+#### New or unreleased enum values
 
 Enum-like classes in the SDK, such as `Model` and `AnthropicBeta`, are not closed Java `enum` types. Each one provides an `of(String)` factory method that accepts any string, so you can use values that have not been added to the SDK yet, such as a model or beta header released after your SDK version:
 
@@ -1500,23 +1344,17 @@ MessageCreateParams params = MessageCreateParams.builder()
 
 Prefer the well-typed constants (for example, `Model.CLAUDE_OPUS_5`) so you get autocomplete and deprecation warnings. The `String` overloads and `of(...)` are primarily for setting the field to an undocumented or not yet supported value while waiting for an SDK release that includes it.
 
-
-
-
-Beta features
+## Beta features
 
 Beta features are available before general release to get early feedback and test new functionality. You can check the availability of all of Claude's capabilities and tools in the [build with Claude overview](/docs/en/build-with-claude/overview).
 
 You can access most beta API features through the `beta()` method on the client. To enable a particular beta feature, add the appropriate [beta header](/docs/en/api/beta-headers) with `.addBeta()` when building the message params.
 
-For example, to use the [Files API](/docs/en/build-with-claude/files):
+For example, to enable [context editing](/docs/en/build-with-claude/context-editing):
 
 ```python
 import com.anthropic.models.beta.AnthropicBeta;
-import com.anthropic.models.beta.messages.BetaContentBlockParam;
 import com.anthropic.models.beta.messages.BetaMessage;
-import com.anthropic.models.beta.messages.BetaRequestDocumentBlock;
-import com.anthropic.models.beta.messages.BetaTextBlockParam;
 import com.anthropic.models.beta.messages.MessageCreateParams;
 // ...
 void main() {
@@ -1524,51 +1362,55 @@ void main() {
 
     BetaMessage message = client.beta().messages().create(
         MessageCreateParams.builder()
-            .model(Model.CLAUDE_OPUS_5)
+            .model(Model.CLAUDE_OPUS_5_5)
             .maxTokens(1024L)
-            .addBeta(AnthropicBeta.FILES_API_2025_04_14)
-            .addUserMessageOfBetaContentBlockParams(List.of(
-                BetaContentBlockParam.ofText(
-                    BetaTextBlockParam.builder()
-                        .text("Please summarize this document for me.")
-                        .build()),
-                BetaContentBlockParam.ofDocument(
-                    BetaRequestDocumentBlock.builder()
-                        .fileSource("file_abc123")
-                        .build())))
+            .addBeta(AnthropicBeta.CONTEXT_MANAGEMENT_2025_06_27)
+            .addUserMessage("Hello, Claude")
             .build());
 }
 ```
 
 
 
-
-
-
-Frequently asked questions
+## Frequently asked questions
 
 ### Why doesn't the SDK use plain enum classes?
 
+Java `enum` classes are not trivially forward compatible. Using them in the SDK could cause runtime exceptions if the API is updated to respond with a new enum value.
+
+Because these classes are open, you can also construct them with any string value through their `of(String)` factory method. See [New or unreleased enum values](#new-or-unreleased-enum-values) if you need to use a value that isn't in your SDK version yet.
+
 ### Why are fields represented using JsonField\<T\> instead of just plain T?
+
+Using `JsonField<T>` enables a few features:
+
+- Allowing usage of undocumented API functionality
+- Lazily validating the API response against the expected shape
+- Representing absent vs explicitly null values
 
 ### Why doesn't the SDK use data classes?
 
+It is not backwards compatible to add new fields to a data class, and the SDK avoids introducing a breaking change every time a field is added to a class.
+
 ### Why doesn't the SDK use checked exceptions?
 
+Checked exceptions are widely considered a mistake in the Java programming language. In fact, they were omitted from Kotlin for this reason.
 
-
+Checked exceptions:
 
-Semantic versioning
+- Are verbose to handle
+- Encourage error handling at the wrong level of abstraction, where nothing can be done about the error
+- Are tedious to propagate because of the function coloring problem
+- Don't play well with lambdas (also because of the function coloring problem)
 
-This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:
+## Semantic versioning
+
+This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backward-incompatible changes may be released as minor versions:
 
 1.  Changes to library internals which are technically public but not intended or documented for external use.
 2.  Changes that aren't expected to impact the vast majority of users in practice.
 
-
-
-
-Additional resources
+## Additional resources
 
 - [GitHub repository](https://github.com/anthropics/anthropic-sdk-java)
 - [Javadocs](https://javadoc.io/doc/com.anthropic/anthropic-java)

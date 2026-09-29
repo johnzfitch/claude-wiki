@@ -2,7 +2,7 @@
 title: "What's new in Claude Opus 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5"
 category: "20-Models"
-fetched_at: "2026-08-02T05:37:20Z"
+fetched_at: "2026-08-17T06:40:35Z"
 ---
 
 - [Managed Agents](/docs/en/managed-agents/overview)
@@ -16,45 +16,38 @@ fetched_at: "2026-08-02T05:37:20Z"
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fmodels%2Fwhats-new-opus-5)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Models
 
-[Models overview](/docs/en/about-claude/models/overview)[Model IDs and versioning](/docs/en/about-claude/models/model-ids-and-versions)[Choosing a model](/docs/en/about-claude/models/choosing-a-model)[Introducing Claude Fable 5 and Claude Mythos 5](/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5)[What's new in Claude Sonnet 5](/docs/en/about-claude/models/whats-new-sonnet-5)[What's new in Claude Opus 5](/docs/en/about-claude/models/whats-new-opus-5)[Upgrade between model versions](/docs/en/about-claude/models/migration-guide)[Model deprecations](/docs/en/about-claude/model-deprecations)[Model cards](/docs/en/resources/overview)[System prompts](/docs/en/release-notes/system-prompts)[Pricing](/docs/en/about-claude/pricing)
+[Models overview](/docs/en/about-claude/models/overview)[Model IDs and versioning](/docs/en/about-claude/models/model-ids-and-versions)[Choosing a model](/docs/en/about-claude/models/choosing-a-model)[Optimizing for cost and intelligence](/docs/en/about-claude/models/optimizing-for-cost-and-intelligence)[Introducing Claude Fable 5 and Claude Mythos 5](/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5)[What's new in Claude Sonnet 5](/docs/en/about-claude/models/whats-new-sonnet-5)[What's new in Claude Opus 5](/docs/en/about-claude/models/whats-new-opus-5)[Upgrade between model versions](/docs/en/about-claude/models/migration-guide)[Model deprecations](/docs/en/about-claude/model-deprecations)[Model cards](/docs/en/resources/overview)[System prompts](/docs/en/release-notes/system-prompts)[Pricing](/docs/en/about-claude/pricing)
 
-[](/login)
+[](/)
 
+Console
 
-
-
-Models & pricing
-
-What's new in Claude Opus 5
-
-Models & pricing/Models
+[Models & pricing](/docs/en/about-claude/models/overview)Models
 
 # What's new in Claude Opus 5
 
+Copy page
 
 
 
 Overview of new features and behavior changes in Claude Opus 5.
 
+Copy page
 
 
 
@@ -104,7 +97,7 @@ The minimum cacheable prompt length on Claude Opus 5 is 512 tokens, down from 1,
 
 Fast mode
 
-[Fast mode](/docs/en/build-with-claude/fast-mode) (research preview) is available for Claude Opus 5 on the Claude API only; it is not currently available on Amazon Bedrock, Google Cloud, or Microsoft Foundry. Fast mode for Claude Opus 5 is priced at \$10 per million input tokens and \$50 per million output tokens. See [Fast mode](/docs/en/build-with-claude/fast-mode) for access, supported models, and pricing.
+[Fast mode](/docs/en/build-with-claude/fast-mode) (research preview) is available for Claude Opus 5 on the Claude API only; it is not currently available on Amazon Bedrock, Google Cloud, or Microsoft Foundry. Fast mode for Claude Opus 5 is priced at \$10 USD per million input tokens and \$50 USD per million output tokens. See [Fast mode](/docs/en/build-with-claude/fast-mode) for access, supported models, and pricing.
 
 
 
@@ -212,7 +205,7 @@ For the prompting patterns that get the most out of these capabilities, see [Pro
 
 Pricing
 
-Claude Opus 5 is priced at \$5 per million input tokens and \$25 per million output tokens, unchanged from Claude Opus 4.8.
+Claude Opus 5 is priced at \$5 USD per million input tokens and \$25 USD per million output tokens, unchanged from Claude Opus 4.8.
 
 See [Pricing](/docs/en/about-claude/pricing) for complete pricing, including batch processing, prompt caching, and fast mode rates.
 
@@ -265,43 +258,44 @@ Then review the two [behavior changes](#behavior-changes): thinking is on by def
 
 Next steps
 
-
 
 
-Models overview
+[Models overview](/docs/en/about-claude/models/overview)
 
 Complete specs and pricing for all current Claude models.
 
+
 
-Prompting Claude Opus 5
+[Prompting Claude Opus 5](/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5)
 
 Behavioral differences and prompting patterns specific to Claude Opus 5.
 
+
 
-Effort
+[Effort](/docs/en/build-with-claude/effort)
 
 Control how many tokens Claude uses when responding, from low to max.
 
+
 
-Thinking
+[Thinking](/docs/en/build-with-claude/thinking)
 
 How thinking works when it's on by default, and when it can be disabled.
 
+
 
-Task budgets
+[Task budgets](/docs/en/build-with-claude/task-budgets)
 
 Give Claude an advisory token budget to pace its work against.
 
-
 
 
-Migration guide
+[Migration guide](/docs/en/about-claude/models/migration-guide)
 
 Guide for migrating to the latest Claude models from previous Claude versions.
 
-
 
 
-Fast mode
+[Fast mode](/docs/en/build-with-claude/fast-mode)
 
 Get higher output tokens per second from Claude Opus models at premium pricing.

@@ -2,7 +2,7 @@
 title: "Advanced setup - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/setup"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-08-02T05:38:01Z"
+fetched_at: "2026-09-26T06:38:06Z"
 tags: ["claude-code"]
 ---
 
@@ -78,9 +78,9 @@ Additional dependencies
 
 Install Claude Code
 
-Prefer a graphical interface? The [Desktop app](/docs/en/desktop-quickstart) lets you use Claude Code without the terminal. Download it for [macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect?utm_source=claude_code&utm_medium=docs), [Windows](https://claude.com/download?utm_source=claude_code&utm_medium=docs), or [Linux](/docs/en/desktop-linux).New to the terminal? See the [terminal guide](/docs/en/terminal-guide) for step-by-step instructions.
+Prefer a graphical interface? The [Desktop app](/docs/en/desktop-quickstart) lets you use Claude Code without the terminal. Download it for [macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect?utm_source=claude_code&utm_medium=docs), [Windows](https://claude.com/download?utm_source=claude_code&utm_medium=docs), or [Linux](/docs/en/desktop-linux).
 
-To install Claude Code, use one of the following methods:
+To install Claude Code, open a terminal and run the command for your system. If you haven’t used a terminal before, the [terminal guide](/docs/en/terminal-guide) shows how to open one and paste the command.
 
 - Native Install (Recommended)
 
@@ -106,7 +106,7 @@ irm https://claude.ai/install.ps1 | iex
 curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
-If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.If the install command fails with `syntax error near unexpected token '<'`, a `403`, or another curl error, see [Troubleshoot installation](/docs/en/troubleshoot-install#find-your-error) to match the error to a fix and for alternative install methods.[Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead. WSL setups do not need Git for Windows.
+When the installer finishes, open a new terminal window and run `claude --version`. A working installation prints a version number. If your shell says `claude` isn’t found or isn’t recognized, the install directory isn’t on your PATH yet: see [Fix your PATH](/docs/en/troubleshoot-install#command-not-found-claude-after-installation).If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.If the install command fails with `syntax error near unexpected token '<'`, a `403`, or another curl error, see [Troubleshoot installation](/docs/en/troubleshoot-install#find-your-error) to match the error to a fix and for alternative install methods.[Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead. WSL setups do not need Git for Windows.
 
 Native installations automatically update in the background to keep you on the latest version.
 
@@ -158,7 +158,7 @@ You can run Claude Code natively on Windows or inside WSL. Pick based on where y
   }
   ```
 
-When Git for Windows is installed, the PowerShell tool is rolling out progressively as an additional option alongside Bash. Set `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` to opt in or `0` to opt out. See [PowerShell tool](/docs/en/tools-reference#powershell-tool) for setup and limitations. **Option 2: WSL** Open your WSL distribution and run the Linux installer from the [install instructions](#install-claude-code) above. You install and launch `claude` inside the WSL terminal, not from PowerShell or CMD.
+When Git for Windows is installed, the PowerShell tool is available alongside Bash: on by default for claude.ai and Console accounts, and enabled with `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` in Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry sessions. Set it to `0` to turn the tool off. See [PowerShell tool](/docs/en/tools-reference#powershell-tool) for setup and limitations. **Option 2: WSL** Open your WSL distribution and run the Linux installer from the [install instructions](#install-claude-code) above. You install and launch `claude` inside the WSL terminal, not from PowerShell or CMD.
 
 
 [​](#alpine-linux-and-musl-based-distributions)
@@ -177,7 +177,7 @@ On Alpine, `ripgrep` is in the community repository. If `apk` reports that the p
 echo "https://dl-cdn.alpinelinux.org/alpine/v3.22/community" >> /etc/apk/repositories
 ```
 
-Run `apk update` to refresh the package index, and retry the `apk add` command. Then set `USE_BUILTIN_RIPGREP` to `0` in your [`settings.json`](/docs/en/settings#available-settings) file:
+Run `apk update` to refresh the package index, and retry the `apk add` command. Then set `USE_BUILTIN_RIPGREP` to `0` in your [`settings.json`](/docs/en/settings-reference#all-settings) file:
 
 ```python
 {
@@ -211,7 +211,7 @@ claude doctor
 
 Authenticate
 
-Claude Code requires a Pro, Max, Team, Enterprise, or Console account. The free Claude.ai plan does not include Claude Code access. You can also use Claude Code with a third-party API provider like [Amazon Bedrock](/docs/en/amazon-bedrock), [Google Cloud’s Agent Platform](/docs/en/google-vertex-ai), or [Microsoft Foundry](/docs/en/microsoft-foundry). After installing, log in by running `claude` and following the browser prompts. If the `ANTHROPIC_API_KEY` environment variable is set, Claude Code prompts you once to approve the key instead of opening a browser. See [Authentication](/docs/en/authentication) for all account types and team setup options.
+Claude Code requires a Pro, Max, Team, Enterprise, or Console account. The free claude.ai plan does not include Claude Code access. You can also use Claude Code with a third-party API provider like [Amazon Bedrock](/docs/en/amazon-bedrock), [Google Cloud’s Agent Platform](/docs/en/google-vertex-ai), or [Microsoft Foundry](/docs/en/microsoft-foundry). After installing, log in by running `claude` and following the browser prompts. If the `ANTHROPIC_API_KEY` environment variable is set, Claude Code prompts you once to approve the key instead of opening a browser. See [Authentication](/docs/en/authentication) for all account types and team setup options.
 
 
 [​](#update-claude-code)
@@ -247,7 +247,7 @@ Configure this via `/config` → **Auto-update channel**, or add it to your [set
 }
 ```
 
-For enterprise deployments, you can enforce a consistent release channel across your organization using [managed settings](/docs/en/permissions#managed-settings). Homebrew installations choose a channel by cask name instead of this setting: `claude-code` tracks stable and `claude-code@latest` tracks latest.
+For enterprise deployments, you can enforce a consistent release channel across your organization using [managed settings](/docs/en/managed-settings). Homebrew installations choose a channel by cask name instead of this setting: `claude-code` tracks stable and `claude-code@latest` tracks latest.
 
 
 [​](#pin-a-minimum-version)
@@ -263,14 +263,14 @@ The `minimumVersion` setting establishes a floor. Background auto-updates and `c
 }
 ```
 
-In [managed settings](/docs/en/permissions#managed-settings), this enforces an organization-wide minimum that user and project settings cannot override. The `minimumVersion` pin only constrains updates. To make Claude Code refuse to start outside a version range, use the managed settings `requiredMinimumVersion` and `requiredMaximumVersion` instead. Updates also respect the `requiredMaximumVersion` ceiling. See [available settings](/docs/en/settings#available-settings).
+In [managed settings](/docs/en/managed-settings), this enforces an organization-wide minimum that user and project settings cannot override. The `minimumVersion` pin only constrains updates. To make Claude Code refuse to start outside a version range, use the managed settings `requiredMinimumVersion` and `requiredMaximumVersion` instead. Updates also respect the `requiredMaximumVersion` ceiling. See [`requiredMinimumVersion`](/docs/en/settings-reference#requiredminimumversion) and [`requiredMaximumVersion`](/docs/en/settings-reference#requiredmaximumversion).
 
 
 [​](#disable-auto-updates)
 
 Disable auto-updates
 
-Set `DISABLE_AUTOUPDATER` to `"1"` in the `env` key of your [`settings.json`](/docs/en/settings#available-settings) file:
+Set `DISABLE_AUTOUPDATER` to `"1"` in the `env` key of your [`settings.json`](/docs/en/settings-reference#all-settings) file:
 
 ```python
 {
@@ -280,7 +280,7 @@ Set `DISABLE_AUTOUPDATER` to `"1"` in the `env` key of your [`settings.json`](/d
 }
 ```
 
-`DISABLE_AUTOUPDATER` only stops the background check; `claude update` and `claude install` still work. To block all update paths, including manual updates, set [`DISABLE_UPDATES`](/docs/en/env-vars) instead. Use this when you distribute Claude Code through your own channels and need users to stay on the version you provide.
+On a native or npm installation, confirm the change took effect by running `claude doctor` and checking that the `Auto-updates` line shows `disabled (set by env: DISABLE_AUTOUPDATER)` instead of `enabled`. `DISABLE_AUTOUPDATER` only stops the background check; `claude update` and `claude install` still work. To block all update paths, including manual updates, set [`DISABLE_UPDATES`](/docs/en/env-vars) instead. Use this when you distribute Claude Code through your own channels and need users to stay on the version you provide.
 
 
 [​](#update-manually)

@@ -2,7 +2,7 @@
 title: "List Tunnels - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/admin/mcp_tunnels/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-08-02T05:37:49Z"
+fetched_at: "2026-09-10T06:41:34Z"
 tags: ["api"]
 ---
 
@@ -12,29 +12,25 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fadmin%2Fmcp_tunnels%2Flist)
 
 
 
-Search
+
 
+SearchCtrlK
 
-Include beta APIs
+Include beta APIsThe API you’re viewing is only available in beta
 
 Using the API
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,96 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,22 +160,28 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
+Create Enrollment URL
 
 
 Webhooks
+
+
+Unwrap
+
+
+Parse Unverified
 
 
 Admin
@@ -182,9 +192,9 @@ Invites
 
 Users
 
-RBAC Groups
+RBAC Groups
 
-RBAC Roles
+RBAC Roles
 
 Workspaces
 
@@ -211,19 +221,19 @@ Federation Rules
 MCP Tunnels
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 
-Archive Tunnel
+Archive Tunnel
 
 Tunnel Certificates
 
@@ -244,33 +254,31 @@ Code
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
-
-List
-
+Copy page
 
 
+
+1.  [API reference](/docs/en/api/http)
+2.  [Admin](/docs/en/api/http/admin)
+3.  [MCP Tunnels](/docs/en/api/http/admin/mcp_tunnels)
 
 # List Tunnels
 
 Deprecated
 
-GET/v1/organizations/tunnels
+GET/v1/organizations/tunnels
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](/docs/en/api/beta/tunnels) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
@@ -278,7 +286,9 @@ List the organization's tunnels.
 
 Results span the caller's organization, ordered by creation time (newest first). Use `workspace_id` to filter to a single workspace; archived tunnels are excluded unless `include_archived` is set.
 
-##### Query ParametersExpand Collapse 
+##### Query parameters
+
+
 
 include_archived: optional boolean
 
@@ -286,7 +296,9 @@ include_archived: optional boolean
 
 Include archived tunnels in the results. Archived tunnels are excluded by default.
 
-[](#list.include_archived)
+defaultfalse
+
+
 
 limit: optional number
 
@@ -294,7 +306,11 @@ limit: optional number
 
 Maximum number of tunnels to return in a single page.
 
-[](#list.limit)
+default20
+
+maximum1000
+
+minimum1
 
 page: optional string
 
@@ -302,17 +318,13 @@ page: optional string
 
 Opaque pagination cursor from a previous response's `next_page`. Omit to fetch the first page.
 
-[](#list.page)
-
 workspace_id: optional string
 
 
 
 Return only tunnels in this Workspace. Accepts a `wrkspc_`-prefixed Workspace ID; omit to list tunnels across all Workspaces.
 
-[](#list.workspace_id)
-
-##### Header ParametersExpand Collapse 
+##### Headers
 
 "anthropic-beta": array of "mcp-tunnels-2026-05-19"
 
@@ -320,13 +332,11 @@ Return only tunnels in this Workspace. Accepts a `wrkspc_`-prefixed Workspace ID
 
 Required for all Tunnel endpoints.
 
-[](#list.anthropic-beta)
-
-##### ReturnsExpand Collapse 
+##### Returns
 
 
 
-data: array of object { id, archived_at, created_at, 4 more }
+data: array of object{ id, archived_at, created_at, 4 more }
 
 
 
@@ -336,15 +346,17 @@ id: string
 
 ID of the Tunnel.
 
-[](#mcp_tunnel_list_response.id)
+
 
-archived_at: string
+archived_at: string or null
 
 
 
 RFC 3339 datetime string indicating when the Tunnel was archived, or `null` if it is not archived.
 
-[](#mcp_tunnel_list_response.archived_at)
+formatdate-time
+
+
 
 created_at: string
 
@@ -352,15 +364,13 @@ created_at: string
 
 RFC 3339 datetime string indicating when the Tunnel was created.
 
-[](#mcp_tunnel_list_response.created_at)
+formatdate-time
 
-display_name: string
+display_name: string or null
 
 
 
 Human-readable name for the Tunnel (1–255 characters), or `null` if unset.
-
-[](#mcp_tunnel_list_response.display_name)
 
 domain: string
 
@@ -368,7 +378,7 @@ domain: string
 
 Anthropic-assigned hostname for the Tunnel. MCP server URLs whose host is a subdomain of this value are routed through the Tunnel. Globally unique and never reused, even after the Tunnel is archived.
 
-[](#mcp_tunnel_list_response.domain)
+
 
 type: "tunnel"
 
@@ -376,34 +386,30 @@ type: "tunnel"
 
 Object type. Always `tunnel` for Tunnels.
 
-[](#mcp_tunnel_list_response.type)
+defaulttunnel
 
-workspace_id: string
+workspace_id: string or null
 
 
 
 ID of the Workspace this Tunnel belongs to, or `null` for the default Workspace. Immutable after creation.
 
-[](#mcp_tunnel_list_response.workspace_id)
-
-[](#list)
-
-next_page: string
+next_page: string or null
 
 
 
 Opaque cursor for the next page, or `null` if there are no more results.
 
-[](#list)
+List Tunnels
 
-List Tunnels
+cURL
 
 
 
 ```python
 curl https://api.anthropic.com/v1/organizations/tunnels \
     -H 'anthropic-version: 2023-06-01' \
-    -H "Authorization: Bearer $ANTHROPIC_OAUTH_TOKEN"
+    -H "Authorization: Bearer $ANTHROPIC_AUTH_TOKEN"
 ```
 
 Response 200

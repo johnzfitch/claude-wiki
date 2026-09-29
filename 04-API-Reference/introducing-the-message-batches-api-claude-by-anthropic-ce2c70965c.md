@@ -2,7 +2,7 @@
 title: "Introducing the Message Batches API | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/message-batches-api"
 category: "04-API-Reference"
-fetched_at: "2026-08-02T07:11:06Z"
+fetched_at: "2026-09-29T06:32:47Z"
 tags: ["api"]
 ---
 
@@ -19,7 +19,7 @@ Claude now offers a Message Batches API that processes up to large volumes of qu
 - 
 
 
-  Claude Platform
+  [Claude Platform](https://claude.com/platform/api)
 
 - 
 

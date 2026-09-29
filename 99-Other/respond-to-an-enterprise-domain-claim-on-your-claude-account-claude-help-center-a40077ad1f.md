@@ -2,12 +2,15 @@
 title: "Respond to an Enterprise domain claim on your Claude account | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14625626"
 category: "99-Other"
-fetched_at: "2026-08-02T05:41:12Z"
+fetched_at: "2026-09-29T06:31:27Z"
 tags: ["enterprise"]
 ---
 
 # Respond to an Enterprise domain claim on your Claude account
 
+August 17, 2026
+
+Copy for LLM
 
 If your organization has set up Claude Enterprise, they may claim your existing personal Claude account (Free, Pro, or Max) and move it into their workspace. This article explains what to expect and what your options are.
 
@@ -20,6 +23,8 @@ Your organization’s admin has initiated a process called domain claiming. This
 You’ll receive an email and an in-product notification letting you know that your account has been claimed, along with a deadline to choose what happens to your data. This deadline is at least 30 days from the date your admin initiates the claim.
 
 ## Your two options
+
+**Note:** If your organization has turned on HIPAA readiness or customer-managed encryption keys (CMEK), the merge and join option isn't available. Your only option is to join fresh. Export your data before the deadline if you want a copy. Your subscription is still canceled and refunded as described below. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
 ### Merge and join
 
@@ -41,7 +46,7 @@ Sign in before the deadline to make your choice.
 
 ## What happens to your paid subscription
 
-If you have a Pro or Max subscription, it will be automatically canceled when you migrate or when the deadline passes. You’ll receive a prorated refund for any unused time and usage credits.
+If you have a Pro or Max subscription, it will be automatically canceled when you migrate or when the deadline passes. You’ll receive a prorated refund for any unused time.
 
 **Apple App Store subscriptions:** If you purchased your Pro or Max plan through the Apple App Store, we can’t cancel or refund it directly. You’ll need to cancel it yourself through your Apple ID settings:
 

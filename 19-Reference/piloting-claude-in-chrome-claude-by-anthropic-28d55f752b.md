@@ -2,7 +2,7 @@
 title: "Piloting Claude in Chrome | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/claude-for-chrome"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:41:30Z"
+fetched_at: "2026-09-29T06:31:53Z"
 ---
 
 # Piloting Claude in Chrome

@@ -2,7 +2,7 @@
 title: "Claude can now use tools | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/tool-use-ga"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T07:10:52Z"
+fetched_at: "2026-09-29T06:31:25Z"
 tags: ["mcp"]
 ---
 
@@ -19,7 +19,7 @@ Claude now connects with external tools and APIs to perform tasks, manipulate da
 - 
 
 
-  Claude Platform
+  [Claude Platform](https://claude.com/platform/api)
 
 - 
 

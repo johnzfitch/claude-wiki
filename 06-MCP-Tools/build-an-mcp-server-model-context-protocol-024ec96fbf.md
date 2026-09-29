@@ -2,7 +2,7 @@
 title: "Build an MCP server - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/2025-03-26/develop/build-server"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:36:43Z"
+fetched_at: "2026-09-29T06:30:27Z"
 tags: ["agents", "cli", "mcp", "skills"]
 ---
 
@@ -1161,7 +1161,7 @@ and set the `spring.ai.mcp.client.stdio.servers-configuration` property to point
 spring.ai.mcp.client.stdio.servers-configuration=file:PATH/TO/claude_desktop_config.json
 ```
 
-When you start your client application, the auto-configuration will automatically create MCP clients from the claude_desktop_config.json.For more information, see the [MCP Client Boot Starters](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-client-docs.html) reference documentation.
+When you start your client application, the auto-configuration will automatically create MCP clients from the claude_desktop_config.json.For more information, see the [MCP Client Boot Starters](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-client-boot-starter-docs.html) reference documentation.
 
 
 [​](#more-java-mcp-server-examples)

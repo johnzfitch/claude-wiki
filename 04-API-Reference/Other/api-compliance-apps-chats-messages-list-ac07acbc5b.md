@@ -2,7 +2,7 @@
 title: "Get chat messages - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/chats/messages/list"
 category: "04-API-Reference/Other"
-fetched_at: "2026-08-02T05:39:44Z"
+fetched_at: "2026-09-26T06:39:10Z"
 tags: ["api"]
 ---
 
@@ -12,27 +12,23 @@ tags: ["api"]
 
 - Resources
   - [Best practices](/docs/en/about-claude/use-case-guides/overview)
-  - [Models & pricing](/docs/en/about-claude/models/overview)
+  - [Models & pricing](/docs/en/models/overview)
   - [CLI, SDKs, and libraries](/docs/en/cli-sdks-libraries/overview)
   - [Claude API skill](/docs/en/agents-and-tools/agent-skills/claude-api-skill)
   - [Release notes](/docs/en/release-notes/overview)
 
-API reference
+[API reference](/docs/en/api/overview)
 
 
 
 
-Console
-
-
-
-
-
+[Console](/)[Log in](/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fchats%2Fmessages%2Flist)
 
 
 
-Search
+
 
+SearchCtrlK
 
 Include beta APIs
 
@@ -44,10 +40,10 @@ Using the API
 Messages
 
 
-Create a Message
+Create a Message
 
 
-Count tokens in a Message
+Count tokens in a Message
 
 Batches
 
@@ -67,88 +63,110 @@ Vaults
 
 Memory Stores
 
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
 
 Models
 
 
-List Models
+List Models
 
 
-Get a Model
+Get a Model
 
 
-Dreams
+Skills
 
 
-Create a Dream
+Create Skill
 
 
-List Dreams
+List Skills
 
 
-Get a Dream
+Get Skill
 
 
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
+Delete Skill
 
 Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
 
 
 Tunnels
 
 
-Create Tunnel
+Create Tunnel
 
 
-Get Tunnel
+Get Tunnel
 
 
-List Tunnels
+List Tunnels
 
 
-Archive Tunnel
+Archive Tunnel
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token
 
 Certificates
 
@@ -156,59 +174,19 @@ Certificates
 User Profiles
 
 
-Create User Profile
+Create User Profile
 
 
-List User Profiles
+List User Profiles
 
 
-Get User Profile
+Get User Profile
 
 
-Update User Profile
+Update User Profile
 
 
-Create Enrollment URL
-
-
-Webhooks
-
-
-Admin
-
-Organizations
-
-Invites
-
-Users
-
-RBAC Groups
-
-RBAC Roles
-
-Workspaces
-
-API Keys
-
-External Keys
-
-Usage Report
-
-Cost Report
-
-Analytics
-
-Spend Limits
-
-Rate Limits
-
-Service Accounts
-
-Federation Issuers
-
-Federation Rules
-
-MCP Tunnels
+Create Enrollment URL
 
 
 Compliance API
@@ -224,15 +202,15 @@ Apps
 Chats
 
 
-List chats
+List chats
 
 
-Delete chat
+Delete chat
 
 Messages
 
 
-Get chat messages
+Get chat messages
 
 Files
 
@@ -242,45 +220,47 @@ Projects
 
 Artifacts
 
+Sessions
+
 Code
 
 
 Completions
 
 
-Create a Text Completion
-
-Claude Code
-
-[Trigger a routine](/docs/en/api/claude-code/routines-fire)
+Create a Text Completion
 
 Support & configuration
 
 [Rate limits](/docs/en/api/rate-limits)[Service tiers](/docs/en/api/service-tiers)[IAM actions (Claude Platform on AWS)](/docs/en/api/claude-platform-on-aws-iam-actions)[Versions](/docs/en/api/versioning)[IP addresses](/docs/en/api/ip-addresses)[Supported regions](/docs/en/api/supported-regions)
 
-[](/login)
+Claude Code
 
+[Trigger a routine](/docs/en/api/claude-code/routines-fire)
 
-
+[Console](/)
 
-API reference
+To enable the Compliance API, see the setup guide.
 
-List
+[Set up the Compliance API](/docs/en/manage-claude/compliance-api-access)
 
+Copy page
 
 
 
-
-
-To enable the Compliance API, see [Set up the Compliance API](/docs/en/manage-claude/compliance-api-access).
+1.  [API reference](/docs/en/api/http)
+2.  [Compliance API](/docs/en/api/http/compliance)
+3.  [Apps](/docs/en/api/http/compliance/apps)
+4.  [Chats](/docs/en/api/http/compliance/apps/chats)
+5.  [Messages](/docs/en/api/http/compliance/apps/chats/messages)
 
 # Get chat messages
 
-GET/v1/compliance/apps/chats/{claude_chat_id}/messages
+GET/v1/compliance/apps/chats/{claude_chat_id}/messages
 
 Retrieves message history and file metadata for a specific chat.
 
-##### Path ParametersExpand Collapse 
+##### Path parameters
 
 claude_chat_id: string
 
@@ -288,9 +268,7 @@ claude_chat_id: string
 
 The chat ID (tagged ID, e.g., claude_chat_abc123)
 
-[](#list.claude_chat_id)
-
-##### Query ParametersExpand Collapse 
+##### Query parameters
 
 after_id: optional string
 
@@ -298,21 +276,19 @@ after_id: optional string
 
 Pagination cursor for retrieving the next page of results. To paginate, pass the `last_id` value from the most recent response. Clients should treat this value as an opaque string and not attempt to parse or interpret its contents, as the format may change without notice.
 
-[](#list.after_id)
-
 before_id: optional string
 
 
 
 Pagination cursor for retrieving the previous page of results. To paginate, pass the `first_id` value from the most recent response. Clients should treat this value as an opaque string and not attempt to parse or interpret its contents, as the format may change without notice.
 
-[](#list.before_id)
-
 
 
-created_at: optional object { gt, gte, lt, lte }
+created_at: optional object{ gt, gte, lt, lte }
 
 
+
+
 
 gt: optional string
 
@@ -320,7 +296,9 @@ gt: optional string
 
 Filter messages created after this time (RFC 3339 format)
 
-[](#list.created_at.gt)
+formatdate-time
+
+
 
 gte: optional string
 
@@ -328,7 +306,9 @@ gte: optional string
 
 Filter messages created at or after this time (RFC 3339 format)
 
-[](#list.created_at.gte)
+formatdate-time
+
+
 
 lt: optional string
 
@@ -336,7 +316,9 @@ lt: optional string
 
 Filter messages created before this time (RFC 3339 format)
 
-[](#list.created_at.lt)
+formatdate-time
+
+
 
 lte: optional string
 
@@ -344,9 +326,9 @@ lte: optional string
 
 Filter messages created at or before this time (RFC 3339 format)
 
-[](#list.created_at.lte)
+formatdate-time
 
-[](#list.created_at)
+
 
 limit: optional number
 
@@ -354,7 +336,9 @@ limit: optional number
 
 Maximum results (max: 1000). When omitted, the full result set is returned in one response.
 
-[](#list.limit)
+minimum1
+
+maximum1000
 
 
 
@@ -364,21 +348,19 @@ order: optional "asc" or "desc"
 
 Sort direction for messages within the response. `asc` (the default) returns oldest-first; `desc` returns newest-first.
 
+defaultasc
+
 One of the following:
 
 "asc"
 
 
 
-[](#list.order%5B0%5D)
-
 "desc"
 
 
 
-[](#list.order%5B1%5D)
-
-[](#list.order)
+
 
 tool_result_max_chars: optional number
 
@@ -386,7 +368,11 @@ tool_result_max_chars: optional number
 
 Maximum characters returned per tool-result text item. Items longer than this are shortened and the block's `truncated` field is set. Pass -1 to disable the limit.
 
-[](#list.tool_result_max_chars)
+default10000
+
+minimum-1
+
+
 
 tool_use_input_max_chars: optional number
 
@@ -394,13 +380,17 @@ tool_use_input_max_chars: optional number
 
 Maximum characters of JSON-encoded tool input returned per tool_use block. Inputs longer than this are shortened and the block's `truncated` field is set. Pass -1 to disable the limit.
 
-[](#list.tool_use_input_max_chars)
+default10000
+
+minimum-1
 
 
 
-updated_at: optional object { gt, gte, lt, lte }
+updated_at: optional object{ gt, gte, lt, lte }
 
 
+
+
 
 gt: optional string
 
@@ -408,7 +398,9 @@ gt: optional string
 
 Filter messages updated after this time (RFC 3339 format)
 
-[](#list.updated_at.gt)
+formatdate-time
+
+
 
 gte: optional string
 
@@ -416,7 +408,9 @@ gte: optional string
 
 Filter messages updated at or after this time (RFC 3339 format)
 
-[](#list.updated_at.gte)
+formatdate-time
+
+
 
 lt: optional string
 
@@ -424,7 +418,9 @@ lt: optional string
 
 Filter messages updated before this time (RFC 3339 format)
 
-[](#list.updated_at.lt)
+formatdate-time
+
+
 
 lte: optional string
 
@@ -432,19 +428,15 @@ lte: optional string
 
 Filter messages updated at or before this time (RFC 3339 format)
 
-[](#list.updated_at.lte)
+formatdate-time
 
-[](#list.updated_at)
-
-##### Header ParametersExpand Collapse 
+##### Headers
 
 "x-api-key": optional string
 
 
 
-[](#list.x-api-key)
-
-##### ReturnsExpand Collapse 
+##### Returns
 
 id: string
 
@@ -452,11 +444,9 @@ id: string
 
 Chat ID
 
-[](#list)
-
 
 
-chat_messages: array of object { id, artifacts, content, 4 more }
+chat_messages: array of object{ id, artifacts, content, 4 more }
 
 
 
@@ -468,11 +458,9 @@ id: string
 
 Unique identifier for the message e.g. 'claude_chat_msg_abcd1234'
 
-[](#message_list_response.id)
-
 
 
-artifacts: array of object { id, artifact_type, title, version_id }
+artifacts: array of object{ id, artifact_type, title, version_id } or null
 
 
 
@@ -484,23 +472,17 @@ id: string
 
 Artifact ID e.g. 'claude_artifact_abc123'
 
-[](#message_list_response.artifacts.items.id)
-
-artifact_type: string
+artifact_type: string or null
 
 
 
 MIME-like artifact type e.g. 'application/vnd.ant.code'
 
-[](#message_list_response.artifacts.items.artifact_type)
-
-title: string
+title: string or null
 
 
 
 Artifact title
-
-[](#message_list_response.artifacts.items.title)
 
 version_id: string
 
@@ -508,13 +490,9 @@ version_id: string
 
 Artifact version ID e.g. 'claude_artifact_version_abc123'
 
-[](#message_list_response.artifacts.items.version_id)
-
-[](#message_list_response.artifacts)
-
 
 
-content: array of object { text, truncated, type } or object { id, input, integration_name, 4 more } or object { content, integration_name, is_error, 5 more }
+content: array of Text or ToolUse or ToolResult
 
 
 
@@ -524,11 +502,19 @@ One of the following:
 
 
 
-Text object { text, truncated, type }
+Text object{ type: "text", text, thinking_redacted, truncated }
 
 
 
 Text content block.
+
+
+
+type: "text"
+
+
+
+defaulttext
 
 text: string
 
@@ -536,7 +522,17 @@ text: string
 
 Text content from human or assistant
 
-[](#message_list_response.content.items%5B0%5D.text)
+
+
+thinking_redacted: boolean
+
+
+
+True when content enclosed in the assistant's internal-reasoning tags (or the tag markup itself) was removed from `text` during export. Removal never occurs with this field false. Always false on human messages, whose text is exported verbatim.
+
+defaultfalse
+
+
 
 truncated: boolean
 
@@ -544,31 +540,29 @@ truncated: boolean
 
 True when `text` was shortened by the server's fixed per-string bound (1 MiB). Always false on chat text blocks.
 
-[](#message_list_response.content.items%5B0%5D.truncated)
-
-type: "text"
-
-
-
-[](#message_list_response.content.items%5B0%5D.type)
-
-[](#message_list_response.content.items%5B0%5D)
+defaultfalse
 
 
 
-ToolUse object { id, input, integration_name, 4 more }
+ToolUse object{ type: "tool_use", id, input, 4 more }
 
 
 
 Tool invocation requested by the assistant.
 
-id: string
+
+
+type: "tool_use"
+
+
+
+defaulttool_use
+
+id: string or null
 
 
 
 Tool-use ID, e.g. 'toolu_01AbC...'
-
-[](#message_list_response.content.items%5B1%5D.id)
 
 input: string
 
@@ -576,23 +570,17 @@ input: string
 
 Arguments passed to the tool, as a JSON-encoded string. May be shortened — see the `truncated` field
 
-[](#message_list_response.content.items%5B1%5D.input)
-
-integration_name: string
+integration_name: string or null
 
 
 
 Name of the integration that provides this tool, when applicable
 
-[](#message_list_response.content.items%5B1%5D.integration_name)
-
-mcp_server_url: string
+mcp_server_url: string or null
 
 
 
 Base URL (scheme, host, and path only) of the MCP server that provides this tool, when applicable
-
-[](#message_list_response.content.items%5B1%5D.mcp_server_url)
 
 name: string
 
@@ -600,7 +588,7 @@ name: string
 
 Name of the tool invoked
 
-[](#message_list_response.content.items%5B1%5D.name)
+
 
 truncated: boolean
 
@@ -608,19 +596,11 @@ truncated: boolean
 
 True when `input` was shortened. Pass the endpoint's tool-use input max parameter as -1 to request full content, subject to any server-side maximum the endpoint enforces.
 
-[](#message_list_response.content.items%5B1%5D.truncated)
-
-type: "tool_use"
-
-
-
-[](#message_list_response.content.items%5B1%5D.type)
-
-[](#message_list_response.content.items%5B1%5D)
+defaultfalse
 
 
 
-ToolResult object { content, integration_name, is_error, 5 more }
+ToolResult object{ type: "tool_result", content, integration_name, 5 more }
 
 
 
@@ -628,11 +608,27 @@ Result returned by a tool invocation.
 
 
 
-content: array of object { text, type }
+type: "tool_result"
+
+
+
+defaulttool_result
+
+
+
+content: array of object{ type: "text", text }
 
 
 
 Text content returned by the tool. Generated files are surfaced via the message's `generated_files` list; other non-text item types (including images and links) are omitted.
+
+
+
+type: "text"
+
+
+
+defaulttext
 
 text: string
 
@@ -640,23 +636,11 @@ text: string
 
 Text returned by the tool
 
-[](#message_list_response.content.items%5B2%5D.content.items.text)
-
-type: "text"
-
-
-
-[](#message_list_response.content.items%5B2%5D.content.items.type)
-
-[](#message_list_response.content.items%5B2%5D.content)
-
-integration_name: string
+integration_name: string or null
 
 
 
 Name of the integration that provides this tool, when applicable
-
-[](#message_list_response.content.items%5B2%5D.integration_name)
 
 is_error: boolean
 
@@ -664,15 +648,11 @@ is_error: boolean
 
 True when the tool reported an error
 
-[](#message_list_response.content.items%5B2%5D.is_error)
-
-mcp_server_url: string
+mcp_server_url: string or null
 
 
 
 Base URL (scheme, host, and path only) of the MCP server that provides this tool, when applicable
-
-[](#message_list_response.content.items%5B2%5D.mcp_server_url)
 
 name: string
 
@@ -680,15 +660,13 @@ name: string
 
 Name of the tool that produced this result
 
-[](#message_list_response.content.items%5B2%5D.name)
-
-tool_use_id: string
+tool_use_id: string or null
 
 
 
 ID of the tool_use block this result responds to
 
-[](#message_list_response.content.items%5B2%5D.tool_use_id)
+
 
 truncated: boolean
 
@@ -696,17 +674,9 @@ truncated: boolean
 
 True when one or more text items in `content` were shortened. Pass the endpoint's tool-result max parameter as -1 to request full content, subject to any server-side maximum the endpoint enforces.
 
-[](#message_list_response.content.items%5B2%5D.truncated)
+defaultfalse
 
-type: "tool_result"
-
-
-
-[](#message_list_response.content.items%5B2%5D.type)
-
-[](#message_list_response.content.items%5B2%5D)
-
-[](#message_list_response.content)
+
 
 created_at: string
 
@@ -714,11 +684,11 @@ created_at: string
 
 Message creation timestamp - For human: when they sent the message, For assistant: when it completed the last content block
 
-[](#message_list_response.created_at)
+formatdate-time
 
 
 
-files: array of object { id, created_at, filename, 3 more }
+files: array of object{ id, created_at, filename, 3 more } or null
 
 
 
@@ -730,7 +700,7 @@ id: string
 
 File ID
 
-[](#message_list_response.files.items.id)
+
 
 created_at: string
 
@@ -738,7 +708,7 @@ created_at: string
 
 File creation timestamp
 
-[](#message_list_response.files.items.created_at)
+formatdate-time
 
 filename: string
 
@@ -746,49 +716,37 @@ filename: string
 
 Display name of the file
 
-[](#message_list_response.files.items.filename)
-
-md5: string
+md5: string or null
 
 
 
 Lowercase hex MD5 of the file's preferred downloadable variant, as recorded at upload time. Null when no stored hash is available.
 
-[](#message_list_response.files.items.md5)
-
-mime_type: string
+mime_type: string or null
 
 
 
 MIME type of the file's preferred downloadable variant (e.g. 'application/pdf')
 
-[](#message_list_response.files.items.mime_type)
-
-size_bytes: number
+size_bytes: number or null
 
 
 
 Size in bytes of the file's preferred downloadable variant, if known. Null for older files uploaded before size was recorded.
 
-[](#message_list_response.files.items.size_bytes)
-
-[](#message_list_response.files)
-
 
 
-generated_files: array of object { id, filename, md5, 2 more }
+generated_files: array of object{ id, filename, md5, 2 more } or null
 
 
 
-Downloadable files the assistant created via tool use (e.g. PDF, spreadsheet, slide deck). Distinct from `files`, which are uploads attached to the message. Download via `GET /v1/compliance/apps/chats/generated-files/{claude_gen_file_id}/content`.
+Downloadable files the assistant created via tool use (e.g. PDF, spreadsheet, slide deck). Distinct from `files`, which are uploads attached to the message. Download an entry whose id starts with `claude_gen_file_` via `GET /v1/compliance/apps/chats/generated-files/{claude_gen_file_id}/content`, and one whose id starts with `claude_file_` via `GET /v1/compliance/apps/chats/files/{claude_file_id}/content`.
 
 id: string
 
 
 
-Opaque generated-file id, e.g. 'claude_gen_file_abc123'. Treat as an opaque string; the encoding may change without notice.
-
-[](#message_list_response.generated_files.items.id)
+Id of the file: either a generated-file id, e.g. 'claude_gen_file_abc123', or a file id, e.g. 'claude_file_abc123'; the prefix tells them apart. Download the first from the generated-files content endpoint and the second from the files content endpoint. Treat everything after the prefix as an opaque string; the encoding may change without notice.
 
 filename: string
 
@@ -796,33 +754,23 @@ filename: string
 
 Display name of the generated file
 
-[](#message_list_response.generated_files.items.filename)
-
-md5: string
+md5: string or null
 
 
 
 Lowercase hex MD5 of the generated file, when available. Null when no stored hash is available.
 
-[](#message_list_response.generated_files.items.md5)
-
-mime_type: string
+mime_type: string or null
 
 
 
-MIME type reported by the tool that produced the file
+MIME type of the file, when known
 
-[](#message_list_response.generated_files.items.mime_type)
-
-size_bytes: number
+size_bytes: number or null
 
 
 
 Size in bytes of the generated file, when available. Null when the file has expired or size is not recorded.
-
-[](#message_list_response.generated_files.items.size_bytes)
-
-[](#message_list_response.generated_files)
 
 
 
@@ -838,17 +786,11 @@ One of the following:
 
 
 
-[](#message_list_response.role%5B0%5D)
-
 "user"
 
 
 
-[](#message_list_response.role%5B1%5D)
-
-[](#message_list_response.role)
-
-[](#list)
+
 
 created_at: string
 
@@ -856,23 +798,25 @@ created_at: string
 
 Creation timestamp
 
-[](#list)
+formatdate-time
 
-deleted_at: string
+
+
+deleted_at: string or null
 
 
 
 Deletion timestamp if deleted
 
-[](#list)
+formatdate-time
 
-first_id: string
+first_id: string or null
 
 
 
 Opaque pagination cursor for the first message in the current result set. Pass as `before_id` on the next request to page backwards. Clients should treat this value as an opaque string and not attempt to parse or interpret its contents, as the format may change without notice.
 
-[](#list)
+
 
 has_more: boolean
 
@@ -880,7 +824,7 @@ has_more: boolean
 
 Whether more chat messages exist beyond the current result set. Use `last_id` as `after_id` in a follow-up request to page forward.
 
-[](#list)
+defaultfalse
 
 href: string
 
@@ -888,23 +832,17 @@ href: string
 
 URL to view this chat in claude.ai
 
-[](#list)
-
-last_id: string
+last_id: string or null
 
 
 
 Opaque pagination cursor for the last message in the current result set. Pass as `after_id` on the next request to page forwards. Clients should treat this value as an opaque string and not attempt to parse or interpret its contents, as the format may change without notice.
 
-[](#list)
-
-model: string
+model: string or null
 
 
 
-Model selected for this chat (e.g. 'claude-opus-4-7'). May be null for legacy chats that never had a model recorded.
-
-[](#list)
+Model selected for this chat (e.g. 'claude-opus-5'). May be null for legacy chats that never had a model recorded.
 
 name: string
 
@@ -912,39 +850,35 @@ name: string
 
 Chat name
 
-[](#list)
-
 organization_uuid: string
 
 
 
 Organization UUID this chat belongs to
 
-[](#list)
-
-project_id: string
+project_id: string or null
 
 
 
 Project ID this chat belongs to
 
-[](#list)
+
 
 updated_at: string
 
 
 
-Last update timestamp
+Last update timestamp. Updated when the chat receives a new message, is moved into or out of a project, or is deleted in claude.ai. Other edits, such as renaming the chat, are not guaranteed to change it.
 
-[](#list)
+formatdate-time
 
 
 
-user: object { id, email_address }
+user: object{ id, email_address } or null
 
 
 
-User information for compliance responses.
+The user who created the chat. Null when the API key is restricted to one organization and the creator is no longer a member of it.
 
 id: string
 
@@ -952,17 +886,11 @@ id: string
 
 User identifier
 
-[](#list)
-
 email_address: string
 
 
 
 User's email address
-
-[](#list)
-
-[](#list)
 
 organization_id: string⁠Deprecated
 
@@ -970,14 +898,15 @@ organization_id: string⁠Deprecated
 
 Organization ID this chat belongs to
 
-[](#list)
+Get chat messages
 
-Get chat messages
+cURL
 
 
 
 ```python
 curl https://api.anthropic.com/v1/compliance/apps/chats/$CLAUDE_CHAT_ID/messages \
+    -H 'anthropic-version: 2023-06-01' \
     -H "Authorization: Bearer $ANTHROPIC_COMPLIANCE_API_KEY"
 ```
 
@@ -992,9 +921,9 @@ Response 200
   "created_at": "2025-06-07T08:09:10Z",
   "updated_at": "2025-06-07T08:09:11Z",
   "organization_id": "org_abc123",
-  "organization_uuid": "abcdef0123-4567-89ab-cdef-0123456789ab",
+  "organization_uuid": "abcdef01-2345-6789-abcd-ef0123456789",
   "project_id": "claude_proj_xyz789",
-  "model": "claude-opus-4-7",
+  "model": "claude-opus-5",
   "user": {
     "id": "user_xyz456",
     "email_address": "user@example.com"
@@ -1061,9 +990,9 @@ Response 200
   "created_at": "2025-06-07T08:09:10Z",
   "updated_at": "2025-06-07T08:09:11Z",
   "organization_id": "org_abc123",
-  "organization_uuid": "abcdef0123-4567-89ab-cdef-0123456789ab",
+  "organization_uuid": "abcdef01-2345-6789-abcd-ef0123456789",
   "project_id": "claude_proj_xyz789",
-  "model": "claude-opus-4-7",
+  "model": "claude-opus-5",
   "user": {
     "id": "user_xyz456",
     "email_address": "user@example.com"

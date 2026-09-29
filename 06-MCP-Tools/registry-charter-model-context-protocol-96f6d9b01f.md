@@ -2,7 +2,7 @@
 title: "Registry Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-groups/registry"
 category: "06-MCP-Tools"
-fetched_at: "2026-08-02T05:36:37Z"
+fetched_at: "2026-08-03T07:17:08Z"
 tags: ["mcp"]
 ---
 
@@ -90,10 +90,9 @@ Related Groups
 
 Leadership
 
-| Role | Name               | Organization | GitHub                                     | Term    |
-|------|--------------------|--------------|--------------------------------------------|---------|
-| Lead | Tadas Antanavicius | PulseMCP     | [@tadasant](https://github.com/tadasant)   | Initial |
-| Lead | Radoslav Dimitrov  | Stacklok     | [@rdimitrov](https://github.com/rdimitrov) | Initial |
+| Role | Name              | Organization | GitHub                                     | Term    |
+|------|-------------------|--------------|--------------------------------------------|---------|
+| Lead | Radoslav Dimitrov | Stacklok     | [@rdimitrov](https://github.com/rdimitrov) | Initial |
 
 
 [​](#authority-&-decision-rights)
@@ -118,8 +117,8 @@ Membership
 
 | Name               | Organization | GitHub                                           | Discord    | Level     | Maintainer? |
 |--------------------|--------------|--------------------------------------------------|------------|-----------|-------------|
-| Tadas Antanavicius | PulseMCP     | [@tadasant](https://github.com/tadasant)         | tadasant\_ | Lead      | Yes         |
 | Radoslav Dimitrov  | Stacklok     | [@rdimitrov](https://github.com/rdimitrov)       | dimitrovr  | Lead      | Yes         |
+| Tadas Antanavicius | PulseMCP     | [@tadasant](https://github.com/tadasant)         | tadasant\_ | WG Member | Yes         |
 | Bob Dickinson      | TeamSpark    | [@BobDickinson](https://github.com/BobDickinson) | rddthree   | WG Member | Yes         |
 | Preeti Dewani      | Ravenmail    | [@pree-dew](https://github.com/pree-dew)         | pree_dew   | WG Member | No          |
 
@@ -188,6 +187,7 @@ Success Criteria
 
 Changelog
 
-| Date       | Change          |
-|------------|-----------------|
-| 2026-04-08 | Initial charter |
+| Date       | Change                                                                                      |
+|------------|---------------------------------------------------------------------------------------------|
+| 2026-07-30 | @tadasant stepped down as Lead; @rdimitrov is now sole Lead (@tadasant remains a WG Member) |
+| 2026-04-08 | Initial charter                                                                             |
