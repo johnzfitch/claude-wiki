@@ -14,7 +14,7 @@ Path: 11-RAG-Search/claude-cookbooks-capabilities-contextual-embeddings-guide.md
 > Note: For more background information on Contextual Retrieval,
 > including additional performance evaluations on various datasets, we
 > recommend reading our accompanying [blog
-> post](https://www.anthropic.com/news/contextual-retrieval).
+> post](../19-Reference/contextual-retrieval.md).
 
 Retrieval Augmented Generation (RAG) enables Claude to leverage your
 internal knowledge bases, codebases, or any other corpus of documents
@@ -2393,7 +2393,7 @@ be cited. This is useful for:
 
 - Providing metadata about the document (e.g., publication date, author)
 - [Contextual
-  retrieval](https://www.anthropic.com/news/contextual-retrieval)
+  retrieval](../19-Reference/contextual-retrieval.md)
 - Including usage instructions or context that shouldn\'t be directly
   cited
 

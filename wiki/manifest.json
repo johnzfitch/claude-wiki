@@ -2147,28 +2147,28 @@
    "path": "11-RAG-Search/claude-cookbooks-capabilities-contextual-embeddings-guide.md",
    "title": "Enhancing RAG with Contextual Retrieval",
    "category": "11-RAG-Search",
-   "hash": "e3beda58f8d53ac7",
+   "hash": "aa59f3cb08738f0a",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/claude_agent_sdk/00_The_one_liner_research_agent.ipynb": {
    "path": "09-Agents-Patterns/claude-cookbooks-claude-agent-sdk-00-the-one-liner-research-agent.md",
    "title": "Building a One-Liner Research Agent",
    "category": "09-Agents-Patterns",
-   "hash": "5c1e0de300130c14",
+   "hash": "a7734c0ddb98c52d",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/claude_agent_sdk/01_The_chief_of_staff_agent.ipynb": {
    "path": "09-Agents-Patterns/claude-cookbooks-claude-agent-sdk-01-the-chief-of-staff-agent.md",
    "title": "Define the model to use throughout this notebook",
    "category": "09-Agents-Patterns",
-   "hash": "00beb84332e8c188",
+   "hash": "26b5e6a4869c6a45",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/claude_agent_sdk/02_The_observability_agent.ipynb": {
    "path": "09-Agents-Patterns/claude-cookbooks-claude-agent-sdk-02-the-observability-agent.md",
    "title": "02 - The Observability Agent",
    "category": "09-Agents-Patterns",
-   "hash": "51d57f723c1e9d1b",
+   "hash": "e7e04cfe5fbe324b",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/claude_agent_sdk/chief_of_staff_agent/flow_diagram.md": {
@@ -2203,7 +2203,7 @@
    "path": "10-Prompting-Guides/claude-cookbooks-extended-thinking-extended-thinking.md",
    "title": "Extended Thinking",
    "category": "10-Prompting-Guides",
-   "hash": "6f59467f394363ed",
+   "hash": "ec34748c26059029",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/extended_thinking/extended_thinking_with_tool_use.ipynb": {
@@ -2217,7 +2217,7 @@
    "path": "20-Models/claude-cookbooks-finetuning-finetuning-on-bedrock.md",
    "title": "Finetuning Claude 3 Haiku on Bedrock",
    "category": "20-Models",
-   "hash": "0c85c28f6c8209e3",
+   "hash": "cce0ed53c6945fd4",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/misc/batch_processing.ipynb": {
@@ -2266,7 +2266,7 @@
    "path": "04-API-Reference/Other/claude-cookbooks-misc-pdf-upload-summarization.md",
    "title": "Uploading\" PDFs to Claude Via the API",
    "category": "04-API-Reference/Other",
-   "hash": "c582854a4ac66436",
+   "hash": "3a1df279e2e7f6f2",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/misc/prompt_caching.ipynb": {
@@ -2287,7 +2287,7 @@
    "path": "02-Claude-Code-CLI/claude-cookbooks-misc-session-memory-compaction.md",
    "title": "Session Memory Compaction",
    "category": "02-Claude-Code-CLI",
-   "hash": "44b416b87fed0fdb",
+   "hash": "d7120917bf502592",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/misc/speculative_prompt_caching.ipynb": {
@@ -2301,7 +2301,7 @@
    "path": "11-RAG-Search/claude-cookbooks-misc-using-citations.md",
    "title": "Citations",
    "category": "11-RAG-Search",
-   "hash": "b77da25d450d98df",
+   "hash": "735b708f568934fb",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/multimodal/best_practices_for_vision.ipynb": {
@@ -2315,7 +2315,7 @@
    "path": "06-MCP-Tools/General/claude-cookbooks-multimodal-crop-tool.md",
    "title": "Giving Claude a Crop Tool for Better Image Analysis",
    "category": "06-MCP-Tools/General",
-   "hash": "9138ccfff726d511",
+   "hash": "eff319c1758bfb1e",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/multimodal/getting_started_with_vision.ipynb": {
@@ -2350,7 +2350,7 @@
    "path": "04-API-Reference/Other/claude-cookbooks-observability-usage-cost-api.md",
    "title": "Usage & Cost Admin API Cookbook",
    "category": "04-API-Reference/Other",
-   "hash": "3fa07159acbee8f8",
+   "hash": "fe4ae06c9bb6f80f",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/patterns/agents/basic_workflows.ipynb": {
@@ -2413,14 +2413,14 @@
    "path": "08-Plugins-Skills/claude-cookbooks-skills-notebooks-02-skills-financial-applications.md",
    "title": "Claude Skills for Financial Applications",
    "category": "08-Plugins-Skills",
-   "hash": "fc294cd95e4a7a47",
+   "hash": "0cc9dfbd7859cf33",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/skills/notebooks/03_skills_custom_development.ipynb": {
    "path": "08-Plugins-Skills/claude-cookbooks-skills-notebooks-03-skills-custom-development.md",
    "title": "Building Custom Skills for Claude",
    "category": "08-Plugins-Skills",
-   "hash": "ef8c11c4fdcba039",
+   "hash": "e1602fa816f86211",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/third_party/Deepgram/prerecorded_audio.ipynb": {
@@ -2476,21 +2476,21 @@
    "path": "11-RAG-Search/claude-cookbooks-third-party-mongodb-rag-using-mongodb.md",
    "title": "How to Build A RAG System Using Claude 3 And MongoDB",
    "category": "11-RAG-Search",
-   "hash": "0d5c60fc4ffb2eae",
+   "hash": "73f7190441f5f324",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/third_party/Pinecone/claude_3_rag_agent.ipynb": {
    "path": "09-Agents-Patterns/claude-cookbooks-third-party-pinecone-claude-3-rag-agent.md",
    "title": "Claude 3 RAG Agents with LangChain v1",
    "category": "09-Agents-Patterns",
-   "hash": "02ffee593abe50b9",
+   "hash": "c603d6836bbb0331",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/third_party/Pinecone/rag_using_pinecone.ipynb": {
    "path": "11-RAG-Search/claude-cookbooks-third-party-pinecone-rag-using-pinecone.md",
    "title": "Retrieval-Augmented Generation using Pinecone",
    "category": "11-RAG-Search",
-   "hash": "192957ae65d8addc",
+   "hash": "b28505aa0f30896e",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/third_party/VoyageAI/how_to_create_embeddings.md": {
@@ -2504,7 +2504,7 @@
    "path": "11-RAG-Search/claude-cookbooks-third-party-wikipedia-wikipedia-search-cookbook.md",
    "title": "Iteratively Searching Wikipedia with Claude",
    "category": "11-RAG-Search",
-   "hash": "8d62806d9e79f007",
+   "hash": "fd89258ae130542f",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/third_party/WolframAlpha/using_llm_api.ipynb": {
@@ -2525,7 +2525,7 @@
    "path": "02-Claude-Code-CLI/claude-cookbooks-tool-use-automatic-context-compaction.md",
    "title": "Automatic Context Compaction",
    "category": "02-Claude-Code-CLI",
-   "hash": "20e092aebcb22082",
+   "hash": "16abbbeba848ecc1",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/tool_use/calculator_tool.ipynb": {
@@ -2546,14 +2546,14 @@
    "path": "11-RAG-Search/claude-cookbooks-tool-use-extracting-structured-json.md",
    "title": "Extracting Structured JSON using Claude and Tool Use",
    "category": "11-RAG-Search",
-   "hash": "96316c99af99b5b3",
+   "hash": "807e28f3fb07958d",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/tool_use/memory_cookbook.ipynb": {
    "path": "09-Agents-Patterns/claude-cookbooks-tool-use-memory-cookbook.md",
    "title": "Context Editing & Memory for Long-Running Agents",
    "category": "09-Agents-Patterns",
-   "hash": "2b09a0e2a8d527fe",
+   "hash": "96b0c620ced69351",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/tool_use/parallel_tools.ipynb": {
@@ -2567,21 +2567,21 @@
    "path": "04-API-Reference/Other/claude-cookbooks-tool-use-programmatic-tool-calling-ptc.md",
    "title": "Programatic Tool Calling (PTC) with the Claude API",
    "category": "04-API-Reference/Other",
-   "hash": "aa3c289e9a3a6c85",
+   "hash": "fae5ffe048f7c354",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/tool_use/tool_search_alternate_approaches.ipynb": {
    "path": "11-RAG-Search/claude-cookbooks-tool-use-tool-search-alternate-approaches.md",
    "title": "Tool Search: Alternate Approaches",
    "category": "11-RAG-Search",
-   "hash": "1f404f8851bc4ce8",
+   "hash": "d3d0fa4cc0c69845",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/tool_use/tool_search_with_embeddings.ipynb": {
    "path": "11-RAG-Search/claude-cookbooks-tool-use-tool-search-with-embeddings.md",
    "title": "Tool Search with Embeddings: Scaling Claude to Thousands of Tools",
    "category": "11-RAG-Search",
-   "hash": "9431e12079c2e9d6",
+   "hash": "9b355d3a0410fe1b",
    "fetched_at": ""
   },
   "https://github.com/anthropics/claude-cookbooks/blob/main/tool_use/tool_use_with_pydantic.ipynb": {
@@ -28378,7 +28378,7 @@
    "path": "19-Reference/mapping-mind-language-model.md",
    "title": "Mapping the mind of a large language model \\ Anthropic",
    "category": "19-Reference",
-   "hash": "40d8f084707dfdd5",
+   "hash": "5afce9f046e2f1ef",
    "fetched_at": "2026-09-12T06:31:18Z"
   },
   "https://www.anthropic.com/research/measuring-agent-autonomy": {
@@ -31215,7 +31215,7 @@
    "path": "18-Industry-UseCases/code-modernization.md",
    "title": "Code modernization | Claude by Anthropic",
    "category": "18-Industry-UseCases",
-   "hash": "9c4d1aca1fc07ed1",
+   "hash": "4c691b1bc222ddad",
    "fetched_at": "2026-09-11T06:28:45Z"
   },
   "https://www.claude.com/solutions/coding": {

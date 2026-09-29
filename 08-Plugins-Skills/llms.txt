@@ -9617,7 +9617,7 @@ skills.
 
 > **💡 Real-world Impact:** These are the same Skills that power
 > **[Claude Creates
-> Files](../19-Reference/claude-can-now-create-and-edit-files-claude.md)**, enabling Claude
+> Files](../19-Reference/create-files.md)**, enabling Claude
 > to create professional financial documents directly in the interface.
 
 **What you\'ll learn:**
@@ -10499,7 +10499,7 @@ In this notebook, you\'ve learned how to:
 ### Continue Your Learning
 
 📚 **Next: [Notebook 3 - Custom Skills
-Development](03_skills_custom_development.ipynb)**
+Development](https://github.com/anthropics/claude-cookbooks/blob/main/skills/notebooks/03_skills_custom_development.ipynb)**
 
 - Build your own specialized financial skills
 - Create company-specific templates
@@ -10588,7 +10588,7 @@ PDF), custom skills allow you to:
 Before starting, ensure you have:
 
 - Completed [Notebook 1: Introduction to
-  Skills](01_skills_introduction.ipynb)
+  Skills](https://github.com/anthropics/claude-cookbooks/blob/main/skills/notebooks/01_skills_introduction.ipynb)
 - An Anthropic API key with Skills beta access
 - Python environment with the local SDK installed
 :::

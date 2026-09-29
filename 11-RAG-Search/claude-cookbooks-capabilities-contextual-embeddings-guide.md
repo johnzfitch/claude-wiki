@@ -10,7 +10,7 @@ tags: ["rag", "search"]
 > Note: For more background information on Contextual Retrieval,
 > including additional performance evaluations on various datasets, we
 > recommend reading our accompanying [blog
-> post](https://www.anthropic.com/news/contextual-retrieval).
+> post](../19-Reference/contextual-retrieval.md).
 
 Retrieval Augmented Generation (RAG) enables Claude to leverage your
 internal knowledge bases, codebases, or any other corpus of documents

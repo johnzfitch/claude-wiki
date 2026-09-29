@@ -587,7 +587,7 @@ be cited. This is useful for:
 
 - Providing metadata about the document (e.g., publication date, author)
 - [Contextual
-  retrieval](https://www.anthropic.com/news/contextual-retrieval)
+  retrieval](../19-Reference/contextual-retrieval.md)
 - Including usage instructions or context that shouldn\'t be directly
   cited
 

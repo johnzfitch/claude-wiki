@@ -19,7 +19,7 @@ memory in the background so compaction is instant when needed.
 
 **Related:** For automatic SDK-based compaction in agentic workflows,
 see [Automatic Context
-Compaction](../tool_use/automatic-context-compaction.ipynb). This
+Compaction](https://github.com/anthropics/claude-cookbooks/blob/main/tool_use/automatic-context-compaction.ipynb). This
 cookbook focuses on manual control patterns for conversational
 applications.
 
@@ -1333,7 +1333,7 @@ approach based on your application needs
 ### Next Steps
 
 - **For agentic workflows**: See [Automatic Context
-  Compaction](../tool_use/automatic-context-compaction.ipynb) for
+  Compaction](https://github.com/anthropics/claude-cookbooks/blob/main/tool_use/automatic-context-compaction.ipynb) for
   SDK-based automatic compaction with tool use
 - **For production**: Consider persisting session memory to disk rather
   than keeping it in memory

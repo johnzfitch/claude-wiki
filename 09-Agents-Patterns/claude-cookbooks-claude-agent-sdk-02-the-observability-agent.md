@@ -44,7 +44,7 @@ agent was limited to interacting with its own filesystem.
 This is a serious constraint: real-world agents often need to interact
 with other systems like databases, APIs, file systems, and other
 specialized services. [MCP (Model Context
-Protocol)](../06-MCP-Tools/Tutorials/what-is-the-model-context-protocol-mcp-model-context-protocol.md)
+Protocol)](../06-MCP-Tools/General/getting-started-intro.md)
 is an open-source standard for AI-tool integrations that allows for an
 easy connection between our agents and these external systems. In this
 notebook, we will explore how to connect MCP servers to our agent.

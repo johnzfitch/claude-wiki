@@ -63,7 +63,7 @@ PDF), custom skills allow you to:
 Before starting, ensure you have:
 
 - Completed [Notebook 1: Introduction to
-  Skills](01_skills_introduction.ipynb)
+  Skills](https://github.com/anthropics/claude-cookbooks/blob/main/skills/notebooks/01_skills_introduction.ipynb)
 - An Anthropic API key with Skills beta access
 - Python environment with the local SDK installed
 :::
