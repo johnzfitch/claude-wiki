@@ -2,7 +2,7 @@
 title: "Claude Code usage analytics | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12157520-claude-code-usage-analytics"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:30:25Z"
+fetched_at: "2026-09-30T06:31:35Z"
 tags: ["claude-code", "safety"]
 ---
 

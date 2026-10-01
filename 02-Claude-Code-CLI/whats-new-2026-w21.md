@@ -2,7 +2,7 @@
 title: "Week 21 · May 18–22, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w21"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-04T06:29:45Z"
+fetched_at: "2026-09-30T06:30:45Z"
 tags: ["claude-code"]
 ---
 
@@ -38,11 +38,11 @@ Other wins
 
 ”Extra usage” is renamed to “usage credits” across the CLI, and `/extra-usage` is now `/usage-credits`. The old name still works. The command requires signing in with your claude.ai subscription through `/login` and isn’t available with API key authentication.
 
-New [`/code-review`](code-review.md) command reports correctness bugs at a chosen effort level such as `/code-review high`, and `—comment` posts findings as inline GitHub PR comments. `/simplify` remains as a separate cleanup-only review.
+New [`/code-review`](code-review.md) command reports correctness bugs at a chosen effort level such as `/code-review high`, and `--comment` posts findings as inline GitHub PR comments. `/simplify` remains as a separate cleanup-only review.
 
 Background sessions now appear in `/resume` alongside interactive ones, marked with `bg`, and sessions pinned with `Ctrl+T` in `claude agents` stay alive when idle
 
-`claude agents —json` lists live sessions as JSON for scripting, such as status bars and session pickers
+`claude agents --json` lists live sessions as JSON for scripting, such as status bars and session pickers
 
 The PowerShell tool is now enabled by default on Windows for Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry users; opt out with `CLAUDE_CODE_USE_POWERSHELL_TOOL=0`
 

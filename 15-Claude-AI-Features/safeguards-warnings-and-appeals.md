@@ -2,7 +2,7 @@
 title: "Safeguards warnings and appeals | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8241253-safeguards-warnings-and-appeals"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:07Z"
+fetched_at: "2026-09-30T06:33:09Z"
 tags: ["claude-ai"]
 ---
 
@@ -19,7 +19,7 @@ As part of our safety process, we may ban an account for a variety of reasons:
 
 - Repeated violations of our **[Usage Policy](https://www.anthropic.com/legal/aup)**
 
-- Account creation from an **[unsupported location](../21-Account-Support/where-can-i-access-claude-ai.md)**
+- Account creation from an **[unsupported location](where-can-i-access-claude.md)**
 
 - **[Terms of Service](https://www.anthropic.com/legal/consumer-terms)** violations
 
@@ -35,7 +35,7 @@ If your Free, Pro, or Max account has been banned for violating our Usage Policy
 
 All banned users can delete their own account. Self-serve data exports are available to all banned users, but the data you’re able to access and export may be restricted depending upon the Usage Policy violation associated with your account.
 
-For more information on exporting and deleting your Claude data, see **[Export your Claude data](../21-Account-Support/how-can-i-export-my-claude-ai-data.md)** and **[How can I delete my Claude account?](../21-Account-Support/how-can-i-delete-my-claude-account.md)**
+For more information on exporting and deleting your Claude data, see **[Export your Claude data](../22-Safety-Policy/export-your-claude-data-claude-help-center.md)** and **[How can I delete my Claude account?](../21-Account-Support/how-can-i-delete-my-claude-account.md)**
 
 ## If your organization is on hold
 
@@ -47,4 +47,4 @@ Click "Request a review" on the affected organization to ask our Safeguards team
 
 As part of our safety process, we warn users if we believe their prompts are violating our **[Usage Policy](https://www.anthropic.com/legal/aup)**. For API customers, these warnings are linked to ongoing thresholds of violative behavior across their entire API account.
 
-If you believe we’ve made a mistake in issuing you a warning, please email **[\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#80f5f3e5f2f3e1e6e5f4f9c0e1eef4e8f2eff0e9e3aee3efed)** with the details of your situation and your account information.
+If you believe we’ve made a mistake in issuing you a warning, please email **[\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#bdc8ced8cfcedcdbd8c9c4fddcd3c9d5cfd2cdd4de93ded2d0)** with the details of your situation and your account information.

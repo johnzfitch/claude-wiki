@@ -181,7 +181,7 @@ Agent not found.
 
 ## Use the CLI from Claude Code
 
-[Claude Code](../../02-Claude-Code-CLI/code-home.md) can use the `ant` CLI out of the box. With the CLI installed and authenticated, you can ask Claude Code to operate on your API resources directly. For example:
+[Claude Code](https://platform.claude.com/docs/en/01-Getting-Started/overview.md) can use the `ant` CLI out of the box. With the CLI installed and authenticated, you can ask Claude Code to operate on your API resources directly. For example:
 
 - "List my recent agent sessions and summarize which ones errored."
 - "Upload every PDF in `./reports` to the Files API and print the resulting IDs."

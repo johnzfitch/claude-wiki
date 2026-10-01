@@ -2,7 +2,7 @@
 title: "Scribd Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/scribd"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:14Z"
+fetched_at: "2026-09-30T06:32:58Z"
 tags: ["api", "case-studies", "enterprise", "rag", "security"]
 ---
 

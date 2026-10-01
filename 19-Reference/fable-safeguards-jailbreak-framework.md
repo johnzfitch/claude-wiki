@@ -120,7 +120,7 @@ The following are topics that have overlap with cybersecurity, but that are out 
 - Captcha solving, web scraping, anti-bot evasion, and purchase automation;
 - General financial or crypto crimes and wallet stealing.
 
-Finally, we note that there are other types of “jailbreaks” that are entirely out of scope. For example, techniques that cause Claude to reveal its system prompt are not cybersecurity risks and we do not intend to prevent these types of interactions ([we even publish them ourselves](../20-Models/release-notes-system-prompts.md)).
+Finally, we note that there are other types of “jailbreaks” that are entirely out of scope. For example, techniques that cause Claude to reveal its system prompt are not cybersecurity risks and we do not intend to prevent these types of interactions ([we even publish them ourselves](https://www.anthropic.com/04-API-Reference/Other/release-notes-system-prompts-92664eecb0.md)).
 
 ## A proposed cyber jailbreak severity framework
 
@@ -307,9 +307,9 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

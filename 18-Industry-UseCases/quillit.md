@@ -2,7 +2,7 @@
 title: "Quillit Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/quillit"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:43Z"
+fetched_at: "2026-09-30T06:32:29Z"
 tags: ["api", "case-studies", "enterprise", "search", "security"]
 ---
 

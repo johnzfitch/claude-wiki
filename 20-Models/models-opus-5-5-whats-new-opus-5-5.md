@@ -2,7 +2,7 @@
 title: "What's new in Claude Opus 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/opus-5-5/whats-new-opus-5-5"
 category: "20-Models"
-fetched_at: "2026-09-23T06:27:23Z"
+fetched_at: "2026-09-30T06:31:07Z"
 tags: ["models"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["models"]
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](release-notes-overview.md)
 
@@ -40,9 +40,7 @@ Models
 
 [Overview](models-opus-5-5-overview.md)[What's new](models-opus-5-5-whats-new-opus-5-5.md)[Migration guide](models-opus-5-5-migration-guide.md)
 
-[Claude Opus 5](models-opus-5-overview.md)
-
-[Claude Sonnet 5](models-sonnet-5-overview.md)
+[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
 [Claude Haiku 4.5](models-haiku-4-5-overview.md)
 
@@ -168,7 +166,7 @@ If your Claude Opus 5 integration ran with thinking disabled, see [Prompts writt
 
 ## Refusals and fallback
 
-Claude Opus 5.5 ships with safety classifiers, and everything in [Refusals and fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md) applies. A declined request returns HTTP 200 with `stop_reason: "refusal"` and a [`stop_details`](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#refusal-response) object naming the policy area, so handle refusals and configure fallback: retry on another model with [server-side fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback) (`fallbacks: "default"`, in beta, retries on the model Anthropic recommends for that category), the [SDK middleware](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#client-side-fallback), or your own retry.
+Claude Opus 5.5 ships with safety classifiers, and everything in [Refusals and fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md) applies. A declined request returns HTTP 200 with `stop_reason: "refusal"` and a [`stop_details`](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#refusal-response) object naming the policy area, so handle refusals and configure fallback: retry on another model with [server-side fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback) (`fallbacks: "default"`, in beta, retries on the model Anthropic recommends for that category), the [SDK middleware](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#client-side-fallback), or your own retry. Whether a refusal that arrives before any output is billed depends on its refusal category, and it counts against your rate limits either way; see [How refusals are billed](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#how-refusals-are-billed).
 
 ## Pricing
 

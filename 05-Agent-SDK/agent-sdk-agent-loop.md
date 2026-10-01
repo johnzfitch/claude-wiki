@@ -249,7 +249,7 @@ When either limit is hit, the SDK returns a `ResultMessage` with a corresponding
 
 Effort level
 
-The `effort` option controls how much reasoning Claude applies. Lower effort levels use fewer tokens per turn and reduce cost. Not all models support the effort parameter. See [Effort](../04-API-Reference/Guides/build-with-claude-effort.md) for which models support it.
+The `effort` option controls how much reasoning Claude applies. Lower effort levels use fewer tokens per turn and reduce cost. Not all models support the effort parameter. See [Effort](https://code.claude.com/docs/en/04-API-Reference/effort.md) for which models support it.
 
 | Level      | Behavior                          | Good for                                                                                            |
 |:-----------|:----------------------------------|:----------------------------------------------------------------------------------------------------|

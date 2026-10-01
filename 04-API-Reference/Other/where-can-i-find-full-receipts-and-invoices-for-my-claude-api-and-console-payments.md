@@ -29,4 +29,4 @@ Follow these steps to view your Console invoices:
 
 Additionally, after each purchase, we automatically send them to your registered billing email address.
 
-Expired credit grants will appear in the **Invoice history** section. For help accessing older receipts and invoices not available in the Claude Console, please **[contact our Support team](../../21-Account-Support/how-can-i-contact-support.md)**.
+Expired credit grants will appear in the **Invoice history** section. For help accessing older receipts and invoices not available in the Claude Console, please **[contact our Support team](https://support.claude.com/en/21-Account-Support/how-to-get-support-57c428239c.md)**.

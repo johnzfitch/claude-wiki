@@ -2,7 +2,7 @@
 title: "Orchestrate subagents at scale with dynamic workflows - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/workflows"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:30:47Z"
+fetched_at: "2026-09-30T06:30:46Z"
 tags: ["agents", "claude-code", "subagents"]
 ---
 
@@ -134,7 +134,7 @@ Claude Code includes `/deep-research` as a built-in workflow:
 
 Watch the run
 
-Workflows run in the background, so the session stays responsive while agents work. Run `/workflows` at any time to list running and completed workflows, then select one to open its progress view. The progress view shows each phase with its agent counts, token totals, and elapsed time. The footer lists the key for each action:
+Workflows run in the background, so the session stays responsive while agents work. Run `/workflows` at any time to list running and completed workflows, then select one to open its progress view. To stop a running workflow without opening it, select it in the list and press `x`. The progress view shows each phase with its agent counts, token totals, and elapsed time. The footer lists the key for each action:
 
 | Key            | Action                                                                                                                      |
 |:---------------|:----------------------------------------------------------------------------------------------------------------------------|

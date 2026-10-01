@@ -22,7 +22,7 @@ To do this, we’re rolling out [several improvements](../18-Industry-UseCases/l
 
 First, we’ve improved Claude’s underlying performance. Our most capable model, Claude Sonnet 4.5, is significantly better than previous models at a range of life sciences tasks. For example, on Protocol QA, a benchmark that tests the model’s understanding and facility with laboratory protocols, Sonnet 4.5 scores 0.83, against a human baseline of 0.79, and Sonnet 4’s performance of 0.74.¹ Sonnet 4.5 shows a similar improvement on its predecessor on BixBench, an evaluation that measures its performance on bioinformatics tasks.
 
-To make Claude more useful for scientific work, we’re now adding several [new connectors](../04-API-Reference/Other/partners-mcp.md) to scientific platforms, the ability to use Agent Skills, and life sciences-specific support in the form of a prompt library and dedicated support.
+To make Claude more useful for scientific work, we’re now adding several [new connectors](https://www.anthropic.com/04-API-Reference/Other/connectors-claude.md) to scientific platforms, the ability to use Agent Skills, and life sciences-specific support in the form of a prompt library and dedicated support.
 
 ## Connecting Claude to scientific tools
 
@@ -43,7 +43,7 @@ Last week, we released [Agent Skills:](skills.md) folders including instructions
 
 We’re developing a number of scientific skills for Claude, beginning with **`single-cell-rna-qc`** This skill performs quality control and filtering on single-cell RNA sequencing data, using [scverse](https://scverse.org/) best practices:
 
-In addition to the skills we’re creating, scientists can build their own. For more information and guidance, including setting up custom skills, see [here](../02-Claude-Code-CLI/using-skills-in-claude.md).
+In addition to the skills we’re creating, scientists can build their own. For more information and guidance, including setting up custom skills, see [here](https://www.anthropic.com/99-Other/using-skills-in-claude-a1bdb5a95a.md).
 
 ## Using Claude for Life Sciences
 
@@ -55,7 +55,7 @@ Claude can be used for life sciences tasks like the following:
 - **Bioinformatics and data analysis**: Process and analyze genomic data with Claude Code. Claude can present its results in [slides, docs](create-files.md), or code notebook format.
 - **Clinical and regulatory compliance**: Claude can draft and review regulatory submissions, and compile compliance data.
 
-In addition, to help scientists get started quickly, we’re creating a [library of prompts](../01-Getting-Started/getting-started-with-claude-for-life-sciences.md) that should elicit best results on tasks like the above.
+In addition, to help scientists get started quickly, we’re creating a [library of prompts](https://www.anthropic.com/01-Getting-Started/getting-started-with-claude-for-life-sciences.md) that should elicit best results on tasks like the above.
 
 ## Partnerships and customers
 
@@ -204,9 +204,9 @@ We’re launching a \$5 million grant program to fund independent research into 
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

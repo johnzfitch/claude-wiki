@@ -28,7 +28,7 @@ Second, when using Claude 3.7 Sonnet through the API, users can also control the
 
 Third, in developing our reasoning models, we’ve optimized somewhat less for math and computer science competition problems, and instead shifted focus towards real-world tasks that better reflect how businesses actually use LLMs.
 
-[Early testing](../15-Claude-AI-Features/claude-sonnet.md#customer-stories) demonstrated Claude’s leadership in coding capabilities across the board: Cursor noted Claude is once again best-in-class for real-world coding tasks, with significant improvements in areas ranging from handling complex codebases to advanced tool use. Cognition found it far better than any other model at planning code changes and handling full-stack updates. Vercel highlighted Claude’s exceptional precision for complex agent workflows, while Replit has successfully deployed Claude to build sophisticated web apps and dashboards from scratch, where other models stall. In Canva’s evaluations, Claude consistently produced production-ready code with superior design taste and drastically reduced errors.
+[Early testing](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md#customer-stories) demonstrated Claude’s leadership in coding capabilities across the board: Cursor noted Claude is once again best-in-class for real-world coding tasks, with significant improvements in areas ranging from handling complex codebases to advanced tool use. Cognition found it far better than any other model at planning code changes and handling full-stack updates. Vercel highlighted Claude’s exceptional precision for complex agent workflows, while Replit has successfully deployed Claude to build sophisticated web apps and dashboards from scratch, where other models stall. In Canva’s evaluations, Claude consistently produced production-ready code with superior design taste and drastically reduced errors.
 
 ## Claude Code
 
@@ -148,9 +148,9 @@ This results in a score of 70.3% on the subset of n=489 verified tasks which wor
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

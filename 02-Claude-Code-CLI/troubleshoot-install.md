@@ -2,7 +2,7 @@
 title: "Troubleshoot installation and login - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/troubleshoot-install"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-26T06:38:16Z"
+fetched_at: "2026-09-30T06:30:43Z"
 tags: ["claude-code"]
 ---
 
@@ -463,7 +463,14 @@ If Homebrew installs an older Claude Code version than you expect, the same stal
 
 TLS or SSL connection errors
 
-Errors like `curl: (35) TLS connect error`, `schannel: next InitializeSecurityContext failed`, or PowerShell’s `Could not establish trust relationship for the SSL/TLS secure channel` indicate TLS handshake failures. **Solutions:**
+Errors such as these mean the TLS handshake failed:
+
+- `curl: (35) TLS connect error`
+- `schannel: next InitializeSecurityContext failed`
+- PowerShell’s `Could not create SSL/TLS secure channel`
+- PowerShell’s `Could not establish trust relationship for the SSL/TLS secure channel`
+
+**Solutions:**
 
 1.  **Update your system CA certificates**: On Ubuntu/Debian:
 
@@ -1109,4 +1116,4 @@ If none of the above resolves your issue:
 1.  Check the [GitHub repository](https://github.com/anthropics/claude-code/issues) for known issues, or open a new one with your operating system, the install command you ran, and the full error output
 2.  If `claude --version` works but something else is wrong, run `claude doctor` for an automated diagnostic report
 3.  If you can start a session, use `/feedback` inside Claude Code to report the problem
-4.  If the problem is with your account rather than the install, such as a login loop, a subscription that isn’t recognized, or a disabled organization, contact Anthropic support: sign in at [claude.ai](https://claude.ai) (Console users: [platform.claude.com](../04-API-Reference/Other/usage-limits.md)), click your initials in the lower left, and select **Get help**. See [How to get support](../21-Account-Support/how-can-i-contact-support.md) for the full flow.
+4.  If the problem is with your account rather than the install, such as a login loop, a subscription that isn’t recognized, or a disabled organization, contact Anthropic support: sign in at [claude.ai](https://claude.ai) (Console users: [platform.claude.com](../04-API-Reference/Other/usage-limits.md)), click your initials in the lower left, and select **Get help**. See [How to get support](https://support.claude.com/en/articles/9015913-how-to-get-support) for the full flow.

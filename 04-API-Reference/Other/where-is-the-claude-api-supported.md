@@ -2,7 +2,7 @@
 title: "Where is the Claude API supported? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8116515-where-is-the-claude-api-supported"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-29T06:31:06Z"
+fetched_at: "2026-09-30T06:33:08Z"
 tags: ["api"]
 ---
 

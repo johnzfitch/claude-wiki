@@ -2,7 +2,7 @@
 title: "Code Review | Claude by Anthropic"
 source_url: "https://www.claude.com/plugins/code-review"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-29T06:30:01Z"
+fetched_at: "2026-09-30T06:31:37Z"
 tags: ["enterprise", "plugins", "security"]
 ---
 

@@ -1,20 +1,19 @@
 ---
 title: "Let Claude use your computer in Cowork | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork"
+source_url: "https://support.claude.com/en/articles/14128542"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:11Z"
+fetched_at: "2026-09-30T06:31:58Z"
 tags: ["claude-ai"]
 ---
 
 # Let Claude use your computer in Cowork
 
 
-
-**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](claude-cowork-and-chat-are-one-claude.md)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
 
 Claude can now use your computer to complete tasks in Claude Cowork and Claude Code (refer to our **[Claude Code Docs](../16-Mobile-Desktop/desktop.md#let-claude-use-your-computer)** for more information about this). When computer use is enabled and Claude doesn't have a connector or tool for what you need, it may navigate to your screen directly—clicking, typing, and opening apps just like you would. It can work in your browser, open files, and run your dev tools automatically, with no setup required other than enablement.
 
-Computer use is in beta for Pro and Max plans. It’s available in Cowork and Claude Code in the Claude Desktop application for both macOS and Windows. This capability comes with risks—review **[Use Claude Cowork safely](use-claude-cowork-safely.md)** before using it.
+Computer use is in beta for Pro and Max plans. It’s available in Cowork and Claude Code in the Claude Desktop application for both macOS and Windows. This capability comes with risks—review **[Use Claude Cowork safely](https://support.claude.com/en/articles/13364135-use-cowork-safely)** before using it.
 
 ------------------------------------------------------------------------
 
@@ -24,7 +23,7 @@ In Cowork, Claude uses the most precise tool first. When you assign a task, Clau
 
 1.  **Connectors.** If a connector is available—like Gmail, Google Drive, Microsoft 365, or Slack—Claude uses it. This is the fastest and most reliable path.
 
-2.  **Browser.** When there isn't a connector for the tool you need, Claude may work on your task in the browser built into the Claude Desktop app, or in your own Chrome browser through Claude in Chrome if that's your preferred browser. Learn more in **[Use the built-in browser in Claude Cowork](use-the-built-in-browser-in-claude-cowork.md)**.
+2.  **Browser.** When there isn't a connector for the tool you need, Claude may work on your task in the browser built into the Claude Desktop app, or in your own Chrome browser through Claude in Chrome if that's your preferred browser. Learn more in **[Use the built-in browser in Claude Cowork](https://support.claude.com/en/articles/16607400)**.
 
 3.  **Screen interaction.** Claude uses computer use to interact directly with your screen: clicking, typing, and navigating your desktop apps.
 
@@ -96,7 +95,7 @@ We strongly advise against using computer use to manage or take actions on sensi
 
 ### Memory
 
-Cowork in the cloud shares the memory you use in chat, so Claude can start from what it already knows about how you work. By default, Claude doesn't save topics some people consider sensitive, such as health information, unless you turn on **Include sensitive topics in memory** in **[Settings \> Memory](https://claude.ai/settings/memory)**. Some information is never saved, including government ID numbers, criminal history, financial account numbers, and immigration status. You can view, edit, and delete what Claude remembers at any time. Learn more about **[Claude's memory](using-claude-s-chat-search-and-memory-to-build-on-previous-context.md#h_82126ebcc9)**.
+Cowork in the cloud shares the memory you use in chat, so Claude can start from what it already knows about how you work. By default, Claude doesn't save topics some people consider sensitive, such as health information, unless you turn on **Include sensitive topics in memory** in **[Settings \> Memory](https://claude.ai/settings/memory)**. Some information is never saved, including government ID numbers, criminal history, financial account numbers, and immigration status. You can view, edit, and delete what Claude remembers at any time. Learn more about **[Claude's memory](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_82126ebcc9)**.
 
 ------------------------------------------------------------------------
 
@@ -112,7 +111,7 @@ Computer use has no sandbox between Claude and your applications. Claude interac
 
 That said, computer use is a new capability, and the threats it guards against are constantly evolving. Claude makes mistakes, and no safeguards are perfect. Start with apps you trust and monitor Claude’s work—especially early on. Note that actions taken in one app can impact other apps. For example, clicking a link in your email app might open it in Chrome, even if you haven’t explicitly granted Claude permission to use Chrome (we can prevent Claude from seeing the Chrome window but can’t stop the link from opening). We don't recommend for use on apps with sensitive data relating to your healthcare, finances, or other personal records.
 
-For detailed safety guidance, see **[Use Cowork safely](use-claude-cowork-safely.md)**.
+For detailed safety guidance, see **[Use Cowork safely](https://support.claude.com/en/articles/13364135-use-cowork-safely)**.
 
 ------------------------------------------------------------------------
 
@@ -144,4 +143,4 @@ To start using computer use:
 
 5.  Ask Claude to do something that involves an app on your computer. Claude will ask for permission to access the app before proceeding.
 
-We’re sharing this early because it’s the kind of capability that gets better with real usage. If something doesn’t work as expected, use the in-app feedback button or reach out to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#97e2e4f2e5e4f6f1f2e3eed7f6f9e3ffe5f8e7fef4b9f4f8fa).
+We’re sharing this early because it’s the kind of capability that gets better with real usage. If something doesn’t work as expected, use the in-app feedback button or reach out to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#cebbbdabbcbdafa8abbab78eafa0baa6bca1bea7ade0ada1a3).

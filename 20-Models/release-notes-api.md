@@ -193,7 +193,7 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 
 ### July 17, 2026
 
-- The legacy **Workbench** ([platform.claude.com/workbench](https://platform.claude.com/workbench)) in the Claude Console is being sunset with access ending on August 17, 2026. Saved prompts, variables, and evals are not supported in the updated [Workbench](../04-API-Reference/Other/usage-limits.md). You can export any data you want to keep from the banner and under your **Organizational Settings**. For more, see [How do I use the Workbench?](../15-Claude-AI-Features/how-do-i-use-the-playground.md) in the Claude Help Center.
+- The legacy **Workbench** ([platform.claude.com/workbench](https://platform.claude.com/workbench)) in the Claude Console is being sunset with access ending on August 17, 2026. Saved prompts, variables, and evals are not supported in the updated [Workbench](../04-API-Reference/Other/usage-limits.md). You can export any data you want to keep from the banner and under your **Organizational Settings**. For more, see [How do I use the Workbench?](https://platform.claude.com/docs/99-Other/how-do-i-use-the-workbench-414024ecf8.md) in the Claude Help Center.
 - The experimental prompt tools APIs for generating, improving, and templatizing prompts (`/v1/experimental/generate_prompt`, `/v1/experimental/improve_prompt`, and `/v1/experimental/templatize_prompt`) are being retired along with the Workbench on August 17, 2026. After removal, requests to these endpoints will return an error.
 
 ### July 15, 2026
@@ -308,9 +308,9 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 - [Computer use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md) now supports Claude Opus 4.8.
 - [Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) for Claude Opus 4.8 is available as a research preview on the Claude API only.
 - Setting the sampling parameters `temperature`, `top_p`, or `top_k` to a non-default value returns a 400 error on Claude Opus 4.8, same as on Claude Opus 4.7. See the [migration guide](about-claude-models-migration-guide.md) for details.
-- In Claude Code, we've expanded Auto mode to more users for long-running tasks. See the [Claude Code documentation](../02-Claude-Code-CLI/code-home.md).
-- In Claude Code, Max plan users now default to [fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) on Claude Opus 4.8. See the [Claude Code documentation](../02-Claude-Code-CLI/code-home.md).
-- In Claude Code, Workflows are available as a research preview, letting you define and run multistep agentic plans. See the [Claude Code documentation](../02-Claude-Code-CLI/code-home.md).
+- In Claude Code, we've expanded Auto mode to more users for long-running tasks. See the [Claude Code documentation](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md).
+- In Claude Code, Max plan users now default to [fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) on Claude Opus 4.8. See the [Claude Code documentation](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md).
+- In Claude Code, Workflows are available as a research preview, letting you define and run multistep agentic plans. See the [Claude Code documentation](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md).
 - We've deprecated [fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) for Claude Opus 4.6, with removal approximately 30 days after launch. Migrate to fast mode for Claude Opus 4.8 or Claude Opus 4.7. Read more in [Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md#supported-models).
 - For updates to claude.ai, Cowork, Claude for Microsoft 365, and other Claude apps in this release, see the [release notes for Claude Apps](../19-Reference/release-notes.md).
 
@@ -739,7 +739,7 @@ We also released new official SDKs:
 
 ### November 4th, 2024
 
-- [Claude Haiku 3.5](../15-Claude-AI-Features/claude-haiku.md) is now available on the Claude API as a text-only model.
+- [Claude Haiku 3.5](https://platform.claude.com/docs/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md) is now available on the Claude API as a text-only model.
 
 ### November 1st, 2024
 
@@ -749,7 +749,7 @@ We also released new official SDKs:
 ### October 22nd, 2024
 
 - We've added Anthropic-defined computer use tools to our API for use with the new Claude Sonnet 3.5. Read more in [Computer use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md).
-- Claude Sonnet 3.5, our most intelligent model yet, just got an upgrade and is now available on the Claude API. Read more in the [Claude Sonnet documentation](../15-Claude-AI-Features/claude-sonnet.md).
+- Claude Sonnet 3.5, our most intelligent model yet, just got an upgrade and is now available on the Claude API. Read more in the [Claude Sonnet documentation](https://platform.claude.com/docs/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md).
 
 ### October 8th, 2024
 

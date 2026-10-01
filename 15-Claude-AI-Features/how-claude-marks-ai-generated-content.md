@@ -2,13 +2,11 @@
 title: "How Claude marks AI-generated content | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:58Z"
+fetched_at: "2026-09-30T06:32:02Z"
 tags: ["claude-ai"]
 ---
 
 # How Claude marks AI-generated content
-
-Updated today
 
 
 Anthropic has signed the EU AI Act's Article 50(2) Code of Practice on Transparency of AI-Generated Content, as a provider of both generative AI models and generative AI systems. This article describes how we’re putting those commitments into practice, how marking works, and its limitations. We’ll update this article and publish more detailed technical guidance as it becomes available.

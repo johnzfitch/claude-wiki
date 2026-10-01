@@ -2,7 +2,7 @@
 title: "How do I use the playground? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8606378-how-do-i-use-the-playground"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:34Z"
+fetched_at: "2026-09-30T06:32:20Z"
 tags: ["claude-ai"]
 ---
 

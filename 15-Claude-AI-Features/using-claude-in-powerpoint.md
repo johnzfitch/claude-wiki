@@ -2,7 +2,7 @@
 title: "Use Claude for PowerPoint - Claude.ai Documentation"
 source_url: "https://support.claude.com/en/articles/13521390-using-claude-in-powerpoint"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:30:39Z"
+fetched_at: "2026-09-30T06:31:51Z"
 tags: ["claude-ai"]
 ---
 
@@ -275,7 +275,7 @@ Your use of Claude for PowerPoint is associated with your existing Claude accoun
 
 Models available
 
-Claude for M365 offers a curated subset of the Claude models: the ones that work best for Office tasks, so the list you see in the add-in can be shorter than what you see in Claude.ai. Your organization’s model access settings also apply, and a model appears here only if your role permits it. See [Manage model access for your organization](../22-Safety-Policy/manage-model-access-for-your-organization.md) for how those settings interact with each product. If you connect through Amazon Bedrock, Google Cloud Vertex AI, Azure AI Foundry, or an LLM gateway, the available models come from that platform and your admin’s configuration instead of your Claude.ai model access settings. See [Use Claude for M365 with third-party platforms](https://support.claude.com/docs/office-agents/third-party-platforms) for details.
+Claude for M365 offers a curated subset of the Claude models: the ones that work best for Office tasks, so the list you see in the add-in can be shorter than what you see in Claude.ai. Your organization’s model access settings also apply, and a model appears here only if your role permits it. See [Manage model access for your organization](https://support.claude.com/en/articles/15694740-manage-model-access-for-your-organization) for how those settings interact with each product. If you connect through Amazon Bedrock, Google Cloud Vertex AI, Azure AI Foundry, or an LLM gateway, the available models come from that platform and your admin’s configuration instead of your Claude.ai model access settings. See [Use Claude for M365 with third-party platforms](https://support.claude.com/docs/office-agents/third-party-platforms) for details.
 
 
 [​](#data-handling)

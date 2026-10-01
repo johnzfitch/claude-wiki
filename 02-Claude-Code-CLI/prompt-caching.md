@@ -2,7 +2,7 @@
 title: "How Claude Code uses prompt caching - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/prompt-caching"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:30:45Z"
+fetched_at: "2026-09-30T06:30:39Z"
 tags: ["claude-code", "prompting"]
 ---
 
@@ -333,7 +333,7 @@ Unless you choose a TTL yourself, Claude Code requests the one-hour TTL only on 
 | Main conversation | One hour                                                                       | Five minutes                              |
 | Everything else   | Five minutes, except the server-controlled helper requests, which get one hour | Five minutes                              |
 
-Once you go over your plan’s usage limit and Claude Code draws on [usage credits](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md), you are billed for that usage, so Claude Code drops the main conversation to the cheaper five-minute TTL. To keep the one-hour TTL there, [choose the TTL yourself](#choose-the-ttl-yourself).
+Once you go over your plan’s usage limit and Claude Code draws on [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans), you are billed for that usage, so Claude Code drops the main conversation to the cheaper five-minute TTL. To keep the one-hour TTL there, [choose the TTL yourself](#choose-the-ttl-yourself).
 
 
 [​](#choose-the-ttl-yourself)
@@ -396,15 +396,15 @@ Disable prompt caching
 
 Disabling caching is occasionally useful when debugging caching behavior with a specific model or provider. To turn it off, set one of these environment variables to `1`:
 
-| Variable                        | Effect                              |
-|---------------------------------|-------------------------------------|
-| `DISABLE_PROMPT_CACHING`        | Disable for all models              |
-| `DISABLE_PROMPT_CACHING_HAIKU`  | Disable for the default Haiku model |
-| `DISABLE_PROMPT_CACHING_SONNET` | Disable for Sonnet only             |
-| `DISABLE_PROMPT_CACHING_OPUS`   | Disable for Opus only               |
-| `DISABLE_PROMPT_CACHING_FABLE`  | Disable for Fable only              |
+| Variable                        | Effect                               |
+|---------------------------------|--------------------------------------|
+| `DISABLE_PROMPT_CACHING`        | Disable for all models               |
+| `DISABLE_PROMPT_CACHING_HAIKU`  | Disable for the default Haiku model  |
+| `DISABLE_PROMPT_CACHING_SONNET` | Disable for the default Sonnet model |
+| `DISABLE_PROMPT_CACHING_OPUS`   | Disable for the default Opus model   |
+| `DISABLE_PROMPT_CACHING_FABLE`  | Disable for Fable only               |
 
-`DISABLE_PROMPT_CACHING_HAIKU` applies to the default Haiku model, the model the `haiku` alias resolves to. It disables caching wherever that model runs, including the main conversation when it is your main model. Covering the main conversation requires Claude Code v2.1.283 or later. The variable also covers a background model you set with the deprecated `ANTHROPIC_SMALL_FAST_MODEL` variable, when that model differs from your main model. A different Haiku version that you pin as your main model keeps caching; set `DISABLE_PROMPT_CACHING` to disable caching for it. To set caching policy across an organization, put any of these or the [TTL variables](#cache-lifetime) in the `env` block of [managed settings](../13-Enterprise-Admin/managed-settings.md). For normal use, leave caching enabled.
+`DISABLE_PROMPT_CACHING_HAIKU` applies to the default Haiku model, the model the `haiku` alias resolves to. It disables caching wherever that model runs, including the main conversation when it is your main model. Covering the main conversation requires Claude Code v2.1.283 or later. The variable also covers a background model you set with the deprecated `ANTHROPIC_SMALL_FAST_MODEL` variable, when that model differs from your main model. A different Haiku version that you pin as your main model keeps caching; set `DISABLE_PROMPT_CACHING` to disable caching for it. `DISABLE_PROMPT_CACHING_SONNET` and `DISABLE_PROMPT_CACHING_OPUS` each apply to the model the `sonnet` or `opus` alias resolves to. If you set any other Sonnet or Opus model ID as your main model, that model keeps caching. For example, a session on `claude-sonnet-5` keeps caching while `sonnet` resolves to `claude-sonnet-5-5`. To disable caching for that model, set `DISABLE_PROMPT_CACHING`. To set caching policy across an organization, put any of these or the [TTL variables](#cache-lifetime) in the `env` block of [managed settings](../13-Enterprise-Admin/managed-settings.md). For normal use, leave caching enabled.
 
 
 [​](#related-resources)

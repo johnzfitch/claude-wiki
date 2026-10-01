@@ -2,7 +2,7 @@
 title: "Brex Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/brex"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:26Z"
+fetched_at: "2026-09-30T06:32:12Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 

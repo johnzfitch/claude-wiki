@@ -2,19 +2,20 @@
 title: "Get started with smart reports | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16893491-get-started-with-smart-reports"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:00Z"
+fetched_at: "2026-09-30T06:32:05Z"
 tags: ["claude-ai"]
 ---
 
 # Get started with smart reports
 
+Updated today
 
 
 Smart reports analyze how a team uses Claude and report on the work getting done, what it costs, where sessions run into friction, and which repeated patterns are worth packaging as shared skills. This guide explains how smart reports work, what appears in a smart report, and how to create, share, and delete them.
 
 During beta, each organization can run up to 10 reports per month for free, and the limit resets on the first day of every calendar month. If you need more reports during beta, please reach out to your account team or submit a request in the smart report page once you've hit the 10 report limit.
 
-Smart reports are available in beta on Claude Enterprise plans and aren’t available for organizations using customer-managed encryption keys (CMEK), HIPAA configurations, or **[Access Transparency](../04-API-Reference/Other/manage-claude-access-transparency.md)**. Smart reports are also unavailable for Claude Code for Claude Enterprise organizations that use zero data retention.
+Smart reports are available in beta on Claude Enterprise plans and aren’t available for organizations using customer-managed encryption keys (CMEK) or HIPAA configurations. Smart reports are also unavailable for Claude Code for Claude Enterprise organizations that use zero data retention.
 
 **Important:** Smart reports help you understand adoption and plan your investment in Claude. They aren't designed and should not be used for evaluating individual performance or making employment decisions.
 
@@ -105,7 +106,7 @@ An Owner or Primary Owner can take the following steps to enable smart reports f
 
 After you've successfully completed these steps, smart reports are enabled for your Enterprise organization.
 
-You can manage access to let team leads or department heads run smart reports without making them admins. Learn how to **[let team members run smart reports for specific groups](../13-Enterprise-Admin/let-team-members-run-smart-reports-for-specific-groups.md)**.
+You can manage access to let team leads or department heads run smart reports without making them admins. Learn how to **[let team members run smart reports for specific groups](https://support.claude.com/en/articles/16948886)**.
 
 ## Scope smart reports to specific teams
 
@@ -119,7 +120,7 @@ You can scope by:
 
 ## Create a smart report
 
-Once smart reports have been turned on for your organization, Primary Owners, Owners, Admins, and custom roles with analytics view access can create and view reports. Delegates with scoped access can also create and view reports, limited to the groups, departments, or cost centers assigned to them. See **[Let team members run smart reports for specific groups](../13-Enterprise-Admin/let-team-members-run-smart-reports-for-specific-groups.md)**.
+Once smart reports have been turned on for your organization, Primary Owners, Owners, Admins, and custom roles with analytics view access can create and view reports. Delegates with scoped access can also create and view reports, limited to the groups, departments, or cost centers assigned to them. See **[Let team members run smart reports for specific groups](https://support.claude.com/en/articles/16948886)**.
 
 To create a smart report:
 

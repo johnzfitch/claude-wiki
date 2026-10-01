@@ -2,7 +2,7 @@
 title: "Rakuten Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/rakuten"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:33:09Z"
+fetched_at: "2026-09-30T06:33:45Z"
 tags: ["case-studies", "claude-code", "enterprise", "security"]
 ---
 

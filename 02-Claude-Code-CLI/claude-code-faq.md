@@ -2,7 +2,7 @@
 title: "Claude Code FAQ | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12386420-claude-code-faq"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:31:51Z"
+fetched_at: "2026-09-30T06:31:12Z"
 tags: ["agents", "api", "bedrock", "claude-code", "enterprise", "git", "github", "mcp"]
 ---
 
@@ -45,7 +45,7 @@ While there isn't a turnkey PR reviewer solution yet, you can use the **[Claude 
 
 ## I’m getting an error message that “Claude Max or Pro is required to connect to Claude Code” but I should have access through my organization’s Team or Enterprise plan. How can I troubleshoot?
 
-This indicates that you selected the wrong login method from the Claude Code setup screen. Try running /login again and selecting the account associated with your primary work email address. If you’re still unable to connect, see **[Having trouble using your Team or Enterprise account to access Claude Code?](../17-Billing-Plans/using-claude-code-with-your-team-or-enterprise-plan.md#h_540f9e65d8)**
+This indicates that you selected the wrong login method from the Claude Code setup screen. Try running /login again and selecting the account associated with your primary work email address. If you’re still unable to connect, see **[Having trouble using your Team or Enterprise account to access Claude Code?](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan#h_540f9e65d8)**
 
 ## What data is sent to Anthropic when using Claude Code with Bedrock/Vertex API keys?
 
@@ -73,7 +73,7 @@ Yes, when creating a subagent, you can specify which tools it has access to usin
 
 ## How can we manage Claude Code costs, especially for automated workflows?
 
-For automated workflows like security reviews, switch from Opus to Sonnet using the **[claude --model \<alias\|name\> configuration option](https://docs.claude.com/en/docs/claude-code/model-config)** for cost savings. You can also monitor usage through your console dashboard and set appropriate rate limits. Note that you can use Workspaces to set more granular spend limits for different user groups. Read more about Workspaces here: **[Creating and managing Workspaces in the Claude Console](../21-Account-Support/creating-and-managing-workspaces-in-the-claude-console.md)**. We also allow you to view spend per API key in the Console. Refer to this article for more information: **[Cost and Usage Reporting in the Claude Console](../22-Safety-Policy/cost-and-usage-reporting-in-the-claude-console.md)**.
+For automated workflows like security reviews, switch from Opus to Sonnet using the **[claude --model \<alias\|name\> configuration option](https://docs.claude.com/en/docs/claude-code/model-config)** for cost savings. You can also monitor usage through your console dashboard and set appropriate rate limits. Note that you can use Workspaces to set more granular spend limits for different user groups. Read more about Workspaces here: **[Creating and managing Workspaces in the Claude Console](../13-Enterprise-Admin/creating-and-managing-workspaces-in-the-claude-console.md)**. We also allow you to view spend per API key in the Console. Refer to this article for more information: **[Cost and Usage Reporting in the Claude Console](../22-Safety-Policy/cost-and-usage-reporting-in-the-claude-console.md)**.
 
 ## Can Claude Code work through corporate proxies like LiteLLM?
 

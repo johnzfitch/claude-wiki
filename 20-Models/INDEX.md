@@ -1,6 +1,6 @@
 # Models
 
-85 pages. The full text of every page is in [llms.txt](llms.txt).
+81 pages. The full text of every page is in [llms.txt](llms.txt).
 
 - [Adapt to new model personas after deprecations | Claude Help Center](adapting-to-new-model-personas-after-deprecations.md) — Model deprecations and retirements are routine parts of the model lifecycle. While we would like to keep past models publicly available as we continue to…
 - [Applying Claude Opus 4.5's strengths to your everyday work | Claude by Anthropic](applying-claude-opus-4-5-s-strengths-to-your-everyday-work.md) — Learn how Claude Opus 4.5 excels at complex multi-step work including long conversations, polished document creation, and sophisticated coding.
@@ -48,7 +48,6 @@
 - [Claude Sonnet 5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-5.md) — See updates to the core system prompt for Claude Sonnet 5 on claude.ai and the Claude iOS app and Claude Android app.
 - [Claude Sonnet 5.5 - Claude Platform Docs](models-sonnet-5-5-overview.md) — The best combination of speed and intelligence
 - [Claude Sonnet 5.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-5-5.md) — See updates to the core system prompt for Claude Sonnet 5.5 on claude.ai and the Claude iOS app and Claude Android app.
-- [Covered Models | Claude Help Center](covered-models.md) — Anthropic may designate certain models as “Covered Models” when they cross capability thresholds that warrant additional safeguards or other treatment. This…
 - [Create professional results across tools with Claude Sonnet 4.5 | Claude by Anthropic](create-professional-results-across-tools-with-claude-sonnet-4-5.md) — Use Claude Sonnet 4.5's code execution and file creation to build professional presentations, spreadsheets, and documents efficiently.
 - [Data retention practices for Covered Models | Claude Help Center](data-retention-practices-for-mythos-class-models.md) — To ensure we’re responsibly deploying covered models, we are requiring limited data retention and review as part of our safety work. Prompts submitted to, and…
 - [Finetuning Claude 3 Haiku on Bedrock](claude-cookbooks-finetuning-finetuning-on-bedrock.md) — In this notebook, we\'ll walk you through the process of finetuning
@@ -59,7 +58,7 @@
 - [Migrating to Claude Haiku 4.5 - Claude Platform Docs](models-haiku-4-5-migration-guide.md) — Migrate to Claude Haiku 4.5 from earlier Haiku models: model IDs, breaking changes, and a migration checklist.
 - [Migrating to Claude Mythos 5 and Claude Fable 5 - Claude Platform Docs](models-fable-5-migration-guide.md) — Migrate to Claude Mythos 5 and Claude Fable 5 from Claude Mythos Preview, Claude Opus 5, or Claude Opus 4.8: model IDs, API changes, and migration checklists.
 - [Migrating to Claude Opus 5 - Claude Platform Docs](models-opus-5-migration-guide.md) — Migrate to Claude Opus 5 from earlier Claude models: model IDs, breaking changes, recommended changes, and migration checklists.
-- [Migrating to Claude Opus 5.5 - Claude Platform Docs](models-opus-5-5-migration-guide.md) — Migrate to Claude Opus 5.5 from earlier Claude models: model IDs, breaking changes, recommended changes, and migration checklists.
+- [Migrating to Claude Opus 5.5 - Claude Platform Docs](models-opus-5-5-migration-guide.md) — Migrate to Claude Opus 5.5 from earlier Opus models or Claude Sonnet 5: request settings that return errors, thinking blocks in every response, and a checklist…
 - [Migrating to Claude Sonnet 5 - Claude Platform Docs](models-sonnet-5-migration-guide.md) — Migrate to Claude Sonnet 5 from earlier Claude models: model IDs, breaking changes, and migration checklists.
 - [Migrating to Claude Sonnet 5.5 - Claude Platform Docs](models-sonnet-5-5-migration-guide.md) — Move code to Claude Sonnet 5.5 from Claude Sonnet 5, Claude Sonnet 4.6, Claude Sonnet 4.5, Claude Sonnet 4, Claude 3.7 Sonnet, or Claude Haiku 4.5: settings…
 - [Migration guides - Claude Platform Docs](about-claude-models-migration-guide.md) — Guides for migrating to the latest Claude models from previous Claude versions
@@ -70,7 +69,6 @@
 - [Optimizing for cost and intelligence - Claude Platform Docs](about-claude-models-optimizing-for-cost-and-intelligence.md) — Balance cost and intelligence on the Claude Platform, with measured results for prompt caching, effort, model choice, budgets, and multi-model strategies.
 - [Parallel tool calls on Claude 3.7 Sonnet](claude-cookbooks-tool-use-parallel-tools.md) — Claude 3.7 Sonnet may be less likely to make make parallel tool calls in
 - [Real-time cyber safeguards on Claude Opus and Sonnet | Claude Help Center](real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) — Note: This article applies only to Opus and Sonnet class models, but doesn’t apply to Claude Opus 5.5 or Sonnet 5.5. We'll soon be expanding the Cyber…
-- [Set a default model for your organization | Claude Help Center](set-a-default-model-for-your-organization.md) — This guide explains how to choose the Claude model that new conversations start on across your organization. You can set one default for your whole…
 - [Summarizing Web Page Content with Claude 3 Haiku](claude-cookbooks-misc-read-web-pages-with-haiku.md) — In this recipe, we\'ll learn how to fetch the content of a web page
 - [System prompts - Claude Platform Docs](release-notes-system-prompts-overview.md) — See updates to the core system prompts on claude.ai and the Claude iOS app and Claude Android app.
 - [System Prompts - Claude Platform Docs](release-notes-system-prompts.md) — See updates to the core system prompts on claude.ai and the Claude iOS app and Claude Android app.
@@ -84,6 +82,4 @@
 - [What's new in Claude Sonnet 5 - Claude Platform Docs](about-claude-models-whats-new-sonnet-5.md) — Overview of new features and behavior changes in Claude Sonnet 5.
 - [What's new in Claude Sonnet 5 - Claude Platform Docs](models-sonnet-5-whats-new-sonnet-5.md) — Overview of new features and behavior changes in Claude Sonnet 5.
 - [What's new in Claude Sonnet 5.5 - Claude Platform Docs](models-sonnet-5-5-whats-new-sonnet-5-5.md) — What changes when you move from Claude Sonnet 5 to Claude Sonnet 5.5: breaking changes, feature support, behavior differences, pricing, and availability.
-- [Why Claude switched models in your conversation with Fable 5 or Fable 5.1 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1.md) — This article explains why a request might be blocked on Claude Fable 5 or Fable 5.1, what happens when your conversation switches to a different Claude model…
-- [Why Claude switched models in your conversation with Opus 5 or Opus 5.5 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5.md) — This article explains why a request might fall back on Claude Opus 5 or Opus 5.5, what happens when your conversation switches to another model, and how to…
 - [Why Claude switched models in your conversation with Sonnet 5.5 | Claude Help Center](why-claude-switched-models-in-your-conversation-with-sonnet-5-5.md) — This article explains why a request might fall back to another model or be blocked on Claude Sonnet 5.5, what happens when your chat switches models, and how…

@@ -2,7 +2,7 @@
 title: "Run parallel sessions with worktrees - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/worktrees"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-26T06:38:09Z"
+fetched_at: "2026-09-30T06:30:56Z"
 tags: ["claude-code", "git"]
 ---
 
@@ -88,7 +88,7 @@ You can also ask Claude to “work in a worktree” during a session, and it cre
 
 Clean up worktrees
 
-When you exit an interactive worktree session, Claude checks the worktree for work that removal would delete: changed or untracked files, uncommitted work inside checked-out submodules, and new commits.
+When you exit an interactive worktree session, Claude checks the worktree for work that removal would delete: changed or untracked files, uncommitted work inside checked-out submodules, and new commits. These rules apply to worktrees Claude created with git. For a worktree your [WorktreeCreate hook](../07-Hooks/hooks.md#worktreecreate) created, see [WorktreeRemove](../07-Hooks/hooks.md#worktreeremove) instead.
 
 - **The worktree is clean**: for an unnamed session, Claude removes the worktree and its branch automatically. A [named](sessions.md#name-your-sessions) session prompts you first so you can keep the worktree for later
 - **The worktree has work in it**: Claude prompts you to keep or remove the worktree. Keeping preserves the directory and branch. To return later, run the `claude --worktree <name> --resume` command that Claude Code prints on exit. Removing deletes the worktree directory and its branch, along with all the work in them

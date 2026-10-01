@@ -2,7 +2,7 @@
 title: "How is my Team plan bill calculated? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:32:11Z"
+fetched_at: "2026-09-30T06:33:14Z"
 tags: ["billing"]
 ---
 
@@ -15,7 +15,7 @@ Prices shown are for US customers and exclude applicable taxes. Pricing, currenc
 
 For current pricing by seat type and billing interval, see **[What is the Team plan?](what-is-the-team-plan.md)**
 
-For information on seat types and what's included, see **[Purchasing and managing seats on Team plans](purchasing-and-managing-seats-on-team-plans.md)**.
+For information on seat types and what's included, see **[Purchasing and managing seats on Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)**.
 
 ------------------------------------------------------------------------
 
@@ -25,13 +25,13 @@ For information on seat types and what's included, see **[Purchasing and managin
 
 **Removing members:** You will not receive an immediate credit or refund. The seat becomes available to assign to another member.
 
-For instructions to add and remove members, see **[Manage members on Team and Enterprise plans](managing-members-on-team-and-enterprise-plans.md)**.
+For instructions to add and remove members, see **[Manage members on Team and Enterprise plans](https://support.claude.com/en/articles/13133750)**.
 
 ------------------------------------------------------------------------
 
 ## Usage credits
 
-If usage credits are enabled, your bill may include charges for usage beyond seat limits. For details on how usage credits work and how they're billed on your plan, see **[Manage usage credits for Team and seat-based Enterprise plans](manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**.
+If usage credits are enabled, your bill may include charges for usage beyond seat limits. For details on how usage credits work and how they're billed on your plan, see **[Manage usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970)**.
 
 ------------------------------------------------------------------------
 

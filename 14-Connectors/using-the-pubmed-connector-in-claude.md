@@ -2,7 +2,7 @@
 title: "Using the PubMed Connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614801-using-the-pubmed-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-09-29T06:31:06Z"
+fetched_at: "2026-09-30T06:31:34Z"
 tags: ["api", "connectors", "mcp"]
 ---
 
@@ -16,7 +16,7 @@ Set up and use Claude's PubMed integration for access to millions of biomedical 
 
 The PubMed integration provides access to millions of biomedical research articles and clinical studies, allowing Claude to access abstracts and full papers to clarify experimental approaches, identify key findings, determine novelty and applicability, and surface specific papers for deeper exploration. This article explains how to set up and use the PubMed integration with Claude to accelerate your research workflows.
 
-The PubMed integration relies upon Claude's ability to [use remote connectors(opens in new tab)](use-connectors-to-extend-claude-s-capabilities.md).
+The PubMed integration relies upon Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities).
 
 ## What this integration provides[](#what-this-integration-provides)
 
@@ -275,7 +275,7 @@ All data comes from official NCBI sources, but may not reflect the most current/
 
 ## Need More Help?[](#need-more-help)
 
-If you're experiencing issues with the PubMed integration or have questions not covered here, please [contact Claude support(opens in new tab)](../21-Account-Support/how-can-i-contact-support.md) or visit our help center for additional troubleshooting guides.
+If you're experiencing issues with the PubMed integration or have questions not covered here, please [contact Claude support(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support) or visit our help center for additional troubleshooting guides.
 
 - [What this integration provides](#what-this-integration-provides)
 - [Setting up the PubMed integration](#setting-up-the-pubmed-integration)

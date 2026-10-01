@@ -2,24 +2,9 @@
 title: "Compaction on demand - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-22T06:29:53Z"
+fetched_at: "2026-09-30T06:31:07Z"
 tags: ["api", "prompting"]
 ---
-
-### Cookie settings
-
-We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services to you. You can read our Cookie Policy [here](https://www.anthropic.com/legal/cookies).
-
-CustomizeCustomize Cookie Settings
-
-RejectReject All Cookies
-
-AcceptAccept All Cookies
-
-
-Claude Platform Docs
-
-- [Messages](../../01-Getting-Started/intro.md)
 
 - [Managed Agents](../Other/managed-agents-overview.md)
 
@@ -28,7 +13,7 @@ Claude Platform Docs
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -69,7 +54,7 @@ Tool infrastructure
 
 Context management
 
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics (beta)](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
+[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
 
 [Compaction](build-with-claude-compaction.md)
 
@@ -171,7 +156,7 @@ history: list[BetaMessageParam] = [
 ]
 
 response = client.beta.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     # max_tokens caps the whole call, including any thinking, so allow several thousand tokens.
     max_tokens=4096,
     betas=["compact-2026-09-04"],
@@ -190,7 +175,7 @@ Response
   "id": "msg_013Zva2CMHLNnXjNJJKqJ2EF",
   "type": "message",
   "role": "assistant",
-  "model": "claude-opus-5",
+  "model": "claude-opus-5-5",
   "content": [
     {
       "type": "compaction",
@@ -219,7 +204,7 @@ In your history, replace the messages you sent with the returned assistant messa
 
 ```python
 {
-  "model": "claude-opus-5",
+  "model": "claude-opus-5-5",
   "max_tokens": 2048,
   "messages": [
     {
@@ -309,7 +294,7 @@ history: list[BetaMessageParam] = []
 for turn, question in enumerate(QUESTIONS, start=1):
     history.append({"role": "user", "content": question})
     response = client.beta.messages.create(
-        model="claude-opus-5",
+        model="claude-opus-5-5",
         max_tokens=8192,
         system=SYSTEM,
         betas=["compact-2026-09-04"],
@@ -321,7 +306,7 @@ for turn, question in enumerate(QUESTIONS, start=1):
     conversation_tokens = response.usage.input_tokens + response.usage.output_tokens
     if conversation_tokens > COMPACT_AT_TOKENS and turn < len(QUESTIONS):
         summary = client.beta.messages.create(
-            model="claude-opus-5",
+            model="claude-opus-5-5",
             max_tokens=4096,
             system=SYSTEM,
             betas=["compact-2026-09-04"],
@@ -335,7 +320,9 @@ for turn, question in enumerate(QUESTIONS, start=1):
 
 The check on `stop_reason` comes before the code looks for the block; [Handle a missing summary or an error](#when-no-summary-comes-back) says why. The history is replaced, not appended to: the returned message replaces every message the request carried, under the rules in [Continue from the summary](#continue-from-the-summary). When no summary comes back, the loop keeps its history and asks again after the next turn.
 
-The SDK [tool runner](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md) in Python, TypeScript, C#, Go, and Java can send the compaction request for you. When you decide to compact, call `compact_before_next_turn()` on the runner (`compactBeforeNextTurn()` in TypeScript and Java, `CompactBeforeNextTurn()` in C# and Go). Once the current turn and its tool calls finish, the runner sends the compaction request and replaces its history with the returned message. Create the runner with the `compact-2026-09-04` beta, because the runner doesn't add it. The runner builds the request from its own parameters and leaves `context_management` out. If those parameters include `stop_sequences`, a `tool_choice` of type `any` or `tool`, or a structured-output `output_config.format`, the API rejects the request with a 400 error. [Request a summary](#request-a-summary) explains why. The runner refuses to compact while its `context_management` has a compaction edit, so use one kind of compaction on a runner.
+The SDK [tool runner](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md) in Python, TypeScript, C#, Go, Java, PHP, and Ruby can send the compaction request for you. When you decide to compact, call `compact_before_next_turn()` on the runner. Once the current turn and its tool calls finish, the runner sends the compaction request and replaces its history with the returned message. Create the runner with the `compact-2026-09-04` beta, because the runner doesn't add it.
+
+The runner builds the compaction request from its own parameters and leaves `context_management` out. It also leaves out `stop_sequences`, a `tool_choice` of type `any` or `tool`, and a structured-output `output_config.format`, which the API rejects on a compaction request. [Request a summary](#request-a-summary) explains why. The runner sends them again on its later requests. SDK versions before Python 1.8.0, TypeScript 0.128.0, C# 12.50.0, Go 1.75.0, and Java 2.65.0 send them on the compaction request too. On those versions, a runner that sets any of these parameters gets a 400 error. The runner sends a [task budget](build-with-claude-task-budgets.md) unchanged. If `output_config.task_budget` sets `remaining`, the compaction request returns a 400 error, so leave `remaining` unset, as [Limits and interactions with other features](#how-it-fits-with-the-rest-of-the-api) says. The runner refuses to compact while its `context_management` has a compaction edit, so use one kind of compaction on a runner.
 
 ### When to compact
 
@@ -409,4 +396,14 @@ You have a working loop that compacts a conversation and handles a missing summa
 
 ## Compatibility
 
-[TABLE]
+Supported models  
+- Fable 5 and 5.1
+- Mythos 5, 5.1, and Preview
+- Opus 4.6, 4.7, 4.8, 5, and 5.5
+- Sonnet 4.6, 5, and 5.5
+
+Supported platforms  
+- Claude APIBeta
+- Claude Platform on AWSBeta
+- Google CloudBeta
+- Microsoft FoundryBeta

@@ -2,7 +2,7 @@
 title: "Extend Claude with skills - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/skills"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-29T06:30:46Z"
+fetched_at: "2026-09-30T06:30:42Z"
 tags: ["claude-code", "plugins", "skills"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["claude-code", "plugins", "skills"]
 
 - [Bundled skills](#bundled-skills)
   - [Run and verify your app](#run-and-verify-your-app)
+  - [Work on Claude API projects](#work-on-claude-api-projects)
 - [Getting started](#getting-started)
   - [Create your first skill](#create-your-first-skill)
 - [Choose where skills load](#where-skills-live)
@@ -98,6 +99,24 @@ Three bundled skills work together to launch your app and confirm changes agains
 | `/run-skill-generator` | Teach `/run` and `/verify` how to build and launch your project                                                   |
 
 `/run` and `/verify` work without setup. They infer the launch from your project type (CLI, server, TUI, browser-driven) and from what’s in your README, `package.json`, or `Makefile`. That inference gets unreliable for projects that need anything beyond a standard launch: a database, an env file, a graphical session, a multi-step build. `/run-skill-generator` records the recipe instead. It gets your app running from a clean environment, captures what worked (the install commands, the env vars, the launch script), and commits it as a per-project skill at `.claude/skills/run-<name>/`. After that, `/run`, `/verify`, and any other agent in the repo follow the recorded recipe instead of rediscovering it. Run `/run-skill-generator` once per project, and again if the build or launch process changes. `/verify` can also record its own recipe. When it has to build and drive your app without a recorded recipe, it writes what worked to `.claude/skills/verify/SKILL.md` at the repo root, or in the touched package directory in a monorepo, so later runs and other agents follow the same steps. At the repo root, the recorded skill replaces the bundled `/verify`. This requires Claude Code v2.1.200 or later. Claude edits the recorded file only when it steered a run wrong, such as a command that failed or a missing step, so you can commit the file without per-session diffs. Before v2.1.205, the bundled skill told Claude to fold in anything a run learned, which caused frequent merge conflicts.
+
+
+[​](#work-on-claude-api-projects)
+
+Work on Claude API projects
+
+The bundled `/claude-api` skill loads [Claude API](../04-API-Reference/Endpoints/overview.md) and [Managed Agents](../04-API-Reference/Other/managed-agents-overview.md) reference material for your project’s language. Claude also activates it automatically when your code imports `anthropic` or `@anthropic-ai/sdk`. To start one of the skill’s workflows, type a subcommand after the skill name at the Claude Code prompt, for example `/claude-api migrate`. The table lists what each subcommand does and the earliest Claude Code version that includes it. `migrate` and `managed-agents-onboard` predate v2.1.221, the oldest version the table tracks.
+
+| Subcommand                     | What it does                                                                                                                                                                                                                                                                                                                  | Minimum version       |
+|:-------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------|
+| `migrate`                      | Update your existing Claude API code to a newer model                                                                                                                                                                                                                                                                         | Earlier than v2.1.221 |
+| `upgrade`                      | Move your project’s Anthropic SDK dependency across a major version, currently the Python `anthropic` package from 0.x to 1.x                                                                                                                                                                                                 | v2.1.236 or later     |
+| `managed-agents-onboard`       | Walk through creating a new Managed Agent                                                                                                                                                                                                                                                                                     | Earlier than v2.1.221 |
+| `prompt-audit`                 | Flag instructions written for older models in your prompts, skills, and tool descriptions and propose fixes as a diff                                                                                                                                                                                                         | v2.1.221 or later     |
+| `cost-optimize`                | Profile where your project’s Claude API spend goes and propose savings from options such as prompt caching, trimming unneeded input and output tokens, batch processing, effort, and model choice, one change at a time                                                                                                       | v2.1.247 or later     |
+| `build-eval`                   | Build an eval set for your Claude-powered app                                                                                                                                                                                                                                                                                 | v2.1.259 or later     |
+| `hillclimb`                    | Iteratively improve your app against an existing eval                                                                                                                                                                                                                                                                         | v2.1.259 or later     |
+| `preserved-thinking-migration` | Find the edits your integration makes to earlier turns, its system prompt, or its tool list that invalidate [preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) blocks, measure how much reasoning each one drops, and propose fixes one at a time, re-measuring after each change | v2.1.282 or later     |
 
 
 [​](#getting-started)

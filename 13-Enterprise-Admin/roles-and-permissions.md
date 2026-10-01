@@ -2,14 +2,13 @@
 title: "Roles and permissions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9267276-roles-and-permissions"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:31:46Z"
+fetched_at: "2026-09-30T06:31:58Z"
 tags: ["billing", "enterprise", "security"]
 ---
 
 # Roles and permissions
 
 Roles and permissions that can be set for members of your plan
-
 
 
 What an individual can see and do in their Team or Enterprise plan account is dictated by their role. Roles are provisioned with the following permissions.
@@ -28,9 +27,9 @@ What an individual can see and do in their Team or Enterprise plan account is di
 
 To learn more, refer to the following articles:
 
-- **[Manage custom roles on Enterprise plans](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**
+- **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**
 
-- **[Manage groups and group spend limits on Enterprise plans](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**
+- **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**
 
 ## Billing
 

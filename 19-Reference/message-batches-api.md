@@ -2,7 +2,8 @@
 title: "Introducing the Message Batches API | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/message-batches-api"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:32:47Z"
+fetched_at: "2026-09-30T06:32:06Z"
+last_modified: "Wed, 30 Sep 2026 04:21:10 GMT"
 tags: ["api", "news-research"]
 ---
 

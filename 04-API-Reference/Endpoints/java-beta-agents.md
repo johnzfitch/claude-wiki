@@ -70,7 +70,7 @@ Create Agent
 
   - `Model model`
 
-    Model identifier. Accepts the [model string](../../20-Models/about-claude-models-overview.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control
+    Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/api/20-Models/about-claude-models-overview-2bbf09ff82.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control
 
     - `enum BetaManagedAgentsModel:`
 
@@ -1618,7 +1618,7 @@ Update Agent
 
   - `Optional<Model> model`
 
-    Model identifier. Accepts the [model string](../../20-Models/about-claude-models-overview.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
+    Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/api/20-Models/about-claude-models-overview-2bbf09ff82.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
 
     - `enum BetaManagedAgentsModel:`
 

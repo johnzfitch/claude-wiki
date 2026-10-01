@@ -2,7 +2,7 @@
 title: "MCP: Individual connectors | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503703-mcp-individual-connectors"
 category: "14-Connectors"
-fetched_at: "2026-09-29T06:31:48Z"
+fetched_at: "2026-09-30T06:31:52Z"
 tags: ["connectors", "mcp"]
 ---
 
@@ -13,9 +13,9 @@ April 9, 2026
 
 Your organization can register its own MCP servers in Claude for Government, letting Claude connect to internal systems, custom tools, or third-party services you've approved for your environment.
 
-**Custom connectors work the same way in Claude for Government as in Claude Enterprise.** The prerequisites, the registration flow, and the behavior once enabled are identical. For full setup instructions, see **[Use connectors to extend Claude's capabilities](use-connectors-to-extend-claude-s-capabilities.md)**. This page covers only what's different.
+**Custom connectors work the same way in Claude for Government as in Claude Enterprise.** The prerequisites, the registration flow, and the behavior once enabled are identical. For full setup instructions, see **[Use connectors to extend Claude's capabilities](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)**. This page covers only what's different.
 
-For general guidance on building and deploying MCP servers, see **[modelcontextprotocol.io](https://modelcontextprotocol.io/)** and the **[commercial connector guide](use-connectors-to-extend-claude-s-capabilities.md)**.
+For general guidance on building and deploying MCP servers, see **[modelcontextprotocol.io](https://modelcontextprotocol.io/)** and the **[commercial connector guide](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)**.
 
 ## How custom connectors differ for Claude for Government
 
@@ -27,7 +27,7 @@ MCP was authorized as a **feature** in Claude for Government's FedRAMP High pack
 
 ## Register custom connectors
 
-Navigate to **claude.fedstart.com/admin-settings/connectors** as an **Owner** or **Primary Owner**. The rest of the flow matches the **[commercial guide](use-connectors-to-extend-claude-s-capabilities.md)**.
+Navigate to **claude.fedstart.com/admin-settings/connectors** as an **Owner** or **Primary Owner**. The rest of the flow matches the **[commercial guide](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)**.
 
 Once added, the connector appears in your users' settings exactly as Anthropic-provided connectors do.
 

@@ -1,14 +1,12 @@
 ---
 title: "Get started with the Team plan | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/9267247-how-do-i-get-started-with-the-team-plan"
+source_url: "https://support.claude.com/en/articles/9267247-get-started-with-the-team-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:32:38Z"
+fetched_at: "2026-09-30T06:33:14Z"
 tags: ["billing"]
 ---
 
 # Get started with the Team plan
-
-Updated today
 
 
 ## Requirements to sign up for a Team plan
@@ -43,13 +41,13 @@ What else happens during an in-place upgrade:
 
 - Any prepaid usage credits on your individual account are refunded.
 
-- Public projects in your account become private once the upgrade is complete. Project owners can give others in their organization access to the project from its **Share** menu. For details, see **[Manage project visibility and sharing](../22-Safety-Policy/manage-project-visibility-and-sharing.md)**.
+- Public projects in your account become private once the upgrade is complete. Project owners can give others in their organization access to the project from its **Share** menu. For details, see **[Manage project visibility and sharing](https://support.claude.com/en/articles/9519189-manage-project-visibility-and-sharing)**.
 
 **Note:** If you'd rather keep your personal Claude account active alongside your new Team plan, check this box in the team-creation flow before completing your upgrade: **Keep your personal account separate**. We’ll set up a new workspace for this team and your existing chats and projects stay in your personal account. If you check this, your individual subscription stays active and your personal data stays in your individual account instead of moving into the Team org.
 
 ### Apple App Store subscribers
 
-Because Apple doesn't allow third-party cancellation of App Store subscriptions, in-place upgrades work differently if you signed up for Pro or Max through the Apple App Store. By default, you will upgrade to a new, separate Team organization. If you'd prefer to upgrade in place, you’ll need to **[cancel your iOS subscription](how-do-i-cancel-my-paid-claude-subscription.md#h_54384c9962)** first and wait for the billing period to end.
+Because Apple doesn't allow third-party cancellation of App Store subscriptions, in-place upgrades work differently if you signed up for Pro or Max through the Apple App Store. By default, you will upgrade to a new, separate Team organization. If you'd prefer to upgrade in place, you’ll need to **[cancel your iOS subscription](https://support.claude.com/en/articles/8325617-cancel-your-pro-or-max-subscription#h_54384c9962)** first and wait for the billing period to end.
 
 ### Google Play Store subscribers
 
@@ -59,4 +57,4 @@ Subscriptions purchased through the Google Play Store are eligible for in-place 
 
 If you choose to keep your personal account, your Team plan creates a separate Claude organization. You can switch between your personal account and the Team org by clicking your initials or name in the lower left corner and selecting the account you want to access. Data isn't shared between separate accounts.
 
-To use only your Team plan after upgrading separately, you'll need to **[cancel your paid subscription](how-do-i-cancel-my-paid-claude-subscription.md)** and **[delete your individual Claude account](../21-Account-Support/how-can-i-delete-my-claude-account.md)**.
+To use only your Team plan after upgrading separately, you'll need to **[cancel your paid subscription](how-do-i-cancel-my-paid-claude-subscription.md)** and **[delete your individual Claude account](https://support.claude.com/en/articles/9028421-how-can-i-delete-my-claude-account)**.

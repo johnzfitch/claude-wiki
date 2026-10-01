@@ -2,15 +2,14 @@
 title: "Use Claude Cowork safely | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13364135-use-claude-cowork-safely"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:02Z"
+fetched_at: "2026-09-30T06:32:42Z"
 tags: ["claude-ai"]
 ---
 
 # Use Claude Cowork safely
 
 
-
-**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](claude-cowork-and-chat-are-one-claude.md)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
 
 Cowork sessions run in the cloud on Anthropic's servers (in beta), and Claude reaches your files, browser, and apps through the Claude Desktop app. These capabilities come with risks worth understanding. This article covers what we've built to keep you safe, what you should watch for, and how to protect yourself when using Cowork.
 
@@ -58,9 +57,9 @@ For prompt injection attacks to be successful, two things must be true at the sa
 
 - Ensure you’re using trusted MCPs (as always).
 
-- Be especially cautious with computer use—Claude clicks, types, and navigates your screen directly, without the permission checks that gate other Cowork tools. For details on how computer use works and how to manage permissions, see **[Let Claude use your computer in Cowork](let-claude-use-your-computer-in-cowork.md)**.
+- Be especially cautious with computer use—Claude clicks, types, and navigates your screen directly, without the permission checks that gate other Cowork tools. For details on how computer use works and how to manage permissions, see **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542-computer-use-safety)**.
 
-**Important:** Cowork can work in the browser built into the Claude Desktop app and in Claude in Chrome. Both run the same safeguards, and the same guidance applies to both: we strongly advise against using either to manage or take actions involving sensitive information. See **[Use Claude in Chrome safely](using-claude-for-chrome-safely.md#h_044f6a88a7)** and **[Use the built-in browser in Claude Cowork](use-the-built-in-browser-in-claude-cowork.md)** for more information about the potential risks.
+**Important:** Cowork can work in the browser built into the Claude Desktop app and in Claude in Chrome. Both run the same safeguards, and the same guidance applies to both: we strongly advise against using either to manage or take actions involving sensitive information. See **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely#h_044f6a88a7)** and **[Use the built-in browser in Claude Cowork](https://support.claude.com/en/articles/16607400)** for more information about the potential risks.
 
 Cowork via mobile and web is captured in Compliance API. Learn more about **[retrieving remote sessions in the Compliance API](../04-API-Reference/Other/manage-claude-compliance-content-data.md)**.
 
@@ -82,7 +81,7 @@ We've implemented multiple layers of protection:
 
 - **Deletion protection:** Cowork requires your explicit permission before permanently deleting any files. You'll see a permission prompt and must select "Allow" before Claude can perform deletion tasks.
 
-- **Computer use safeguards:** When Claude uses your computer, it asks for your permission before accessing each application. For full details, see **[Let Claude use your computer in Cowork](let-claude-use-your-computer-in-cowork.md)**.
+- **Computer use safeguards:** When Claude uses your computer, it asks for your permission before accessing each application. For full details, see **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542-computer-use-safety)**.
 
 **Important:** While we've enacted these safety measures to reduce risks, the chances of an attack are still non-zero. Always exercise caution when using Cowork.
 
@@ -110,7 +109,7 @@ Scheduled tasks run in the cloud, which means Claude can work when you're away f
 
 - **Pause tasks you're not actively using.** If you no longer need a scheduled task, pause or delete it rather than leaving it running in the background.
 
-Scheduled tasks run on their own even when your computer is off. Review past runs from the “Scheduled” page in the left sidebar on any surface. For more on setting up and managing scheduled tasks, see **[Schedule recurring tasks in Cowork](schedule-recurring-tasks-in-claude-cowork.md)**.
+Scheduled tasks run on their own even when your computer is off. Review past runs from the “Scheduled” page in the left sidebar on any surface. For more on setting up and managing scheduled tasks, see **[Schedule recurring tasks in Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork)**.
 
 **4. Match your oversight to the stakes**
 
@@ -138,7 +137,7 @@ When Claude uses your computer, it interacts directly with your apps, browser, a
 
 - Monitor Claude's actions. Although it can only use apps that you’ve given it permission to use, if it clicks a link in one app that link will open, even if you haven’t given Claude permission to access that app.
 
-For more information, see **[Let Claude use your computer in Cowork](let-claude-use-your-computer-in-cowork.md)**.
+For more information, see **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542-computer-use-safety)**.
 
 **6. Limit browser and web access to trusted sources**
 
@@ -146,7 +145,7 @@ Only give Claude internet access to sites you trust. Web content is a primary ve
 
 When you run a Cowork session in the Chrome side panel, Claude can see the page you're on, including pages behind a login. Be deliberate about which tabs are open when you use it, and remember that the session is saved to your history.
 
-**Important:** Network egress permissions don't apply to the web fetch or **[web search](enabling-and-using-web-search.md)** tools or MCPs, including Claude in Chrome. Web fetch runs server-side and is limited to search results and URLs you've shared. Team or Enterprise plan owners can turn off web search for Cowork and Chat in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**, or Claude in Chrome via **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)**.
+**Important:** Network egress permissions don't apply to the web fetch or **[web search](https://support.claude.com/en/articles/10684626-enabling-and-using-web-search)** tools or MCPs, including Claude in Chrome. Web fetch runs server-side and is limited to search results and URLs you've shared. Team or Enterprise plan owners can turn off web search for Cowork and Chat in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**, or Claude in Chrome via **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)**.
 
 **7. Be especially cautious with unfamiliar MCPs and plugins**
 
@@ -154,9 +153,9 @@ Desktop extensions (MCPs) and plugins expand what Claude can do, but each one in
 
 Local MCP servers bundled with plugins and desktop extensions run on your computer with the same permissions as any other program you run. Stick to verified extensions from the Claude Desktop directory, and carefully evaluate the permissions any extension or plugin requests before installing.
 
-On the Enterprise plan, your organization can turn on skill scanning to check skills and plugins for malicious content when they're installed. Learn more about **[skill and plugin scanning](../02-Claude-Code-CLI/get-started-with-skill-and-plugin-scanning.md)**.
+On the Enterprise plan, your organization can turn on skill scanning to check skills and plugins for malicious content when they're installed. Learn more about **[skill and plugin scanning](get-started-with-skill-and-plugin-scanning-claude-help-center.md)**.
 
-For more on plugins, see **[Use plugins in Claude](use-plugins-in-claude-cowork.md)**.
+For more on plugins, see **[Use plugins in Claude](https://support.claude.com/en/articles/13837440)**.
 
 **8. Be mindful of cross-app data sharing**
 
@@ -170,7 +169,7 @@ If your organization manages your computer, note that connecting local folders m
 
 **10. Report suspicious behavior immediately**
 
-If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#1f6a6c7a6d6c7e797a6b665f7e716b776d706f767c317c7072) or use the in-app feedback button. Your reports help us improve our defenses.
+If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#235650465150424546575a63424d574b514c534a400d404c4e) or use the in-app feedback button. Your reports help us improve our defenses.
 
 ------------------------------------------------------------------------
 

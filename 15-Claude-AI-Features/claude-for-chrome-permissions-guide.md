@@ -2,7 +2,7 @@
 title: "Claude in Chrome permissions guide | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12902446-claude-for-chrome-permissions-guide"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:30Z"
+fetched_at: "2026-09-30T06:32:36Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
@@ -15,7 +15,7 @@ This guide explains how to control what Claude can access and do when using Clau
 
 Claude in Chrome is available for all paid plans (Pro, Max, Team, and Enterprise). It's available in Claude Cowork and Claude Code, and in beta in the Chrome browser. On Max and Team plans, the side panel runs as a Claude Cowork session, and this is rolling out to Pro plans in the coming weeks. On Enterprise plans, the side panel runs as a Cowork session once your admin has enabled Cowork in the cloud; until then, it uses the classic experience.
 
-**Important:** Before using Claude in Chrome, review **[Use Claude in Chrome Safely](using-claude-for-chrome-safely.md)** to understand the risks of browser-based AI.
+**Important:** Before using Claude in Chrome, review **[Use Claude in Chrome Safely](https://support.claude.com/en/articles/12902428)** to understand the risks of browser-based AI.
 
 ## Permission modes
 
@@ -42,13 +42,13 @@ Claude creates a plan from your prompt, which you can approve before Claude star
 
 Note that Claude will only use the websites listed in the plan, so you’ll need to manually approve any additional access requests.
 
-Claude clarifies which sites it’s planning to access and the actions it will take upfront, allowing you to review the proposed plan and ensure it’s correct before starting. You can also click "Make changes" to reject the current proposal, then prompt Claude again to make any necessary changes. Once you click "Approve plan," Claude will be able to act independently within the outlined parameters, but will still check with you before other sensitive actions, like downloading a file or entering sensitive information into a page. Claude will not deviate from the stated plan without requesting your permission first. There are certain actions that Claude cannot take for your security, such as making purchases, creating accounts, bypassing bot authorizations, executing trades, permanently deleting files, or taking certain actions that may indicate a prompt injection risk (see **[Prohibited actions](claude-for-chrome-permissions-guide.md#h_e199f8f523)**).
+Claude clarifies which sites it’s planning to access and the actions it will take upfront, allowing you to review the proposed plan and ensure it’s correct before starting. You can also click "Make changes" to reject the current proposal, then prompt Claude again to make any necessary changes. Once you click "Approve plan," Claude will be able to act independently within the outlined parameters, but will still check with you before other sensitive actions, like downloading a file or entering sensitive information into a page. Claude will not deviate from the stated plan without requesting your permission first. There are certain actions that Claude cannot take for your security, such as making purchases, creating accounts, bypassing bot authorizations, executing trades, permanently deleting files, or taking certain actions that may indicate a prompt injection risk (see **[Prohibited actions](https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide#h_e199f8f523)**).
 
 ### In the Cowork side panel
 
 Claude doesn't create a plan for you to approve before starting. Claude may ask you a question or two to clarify what you want, then begins work and asks for your approval before each action. You review each request and choose Allow all for this website, Allow this time only, or Deny.
 
-Claude still checks with you before sensitive actions like downloading a file or entering sensitive information into a page, and some actions are blocked regardless of mode. See **[Actions requiring explicit permission](claude-for-chrome-permissions-guide.md#h_b209fa12fc)** and **[Prohibited actions](claude-for-chrome-permissions-guide.md#h_e199f8f523)** below.
+Claude still checks with you before sensitive actions like downloading a file or entering sensitive information into a page, and some actions are blocked regardless of mode. See **[Actions requiring explicit permission](https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide#h_b209fa12fc)** and **[Prohibited actions](https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide#h_e199f8f523)** below.
 
 ------------------------------------------------------------------------
 
@@ -111,7 +111,7 @@ Team and Enterprise admins can configure additional controls that affect permiss
 
 - **Blocklists** prevent Claude from accessing specific sites, regardless of user permissions
 
-If you're unable to access a site with Claude, your organization may have restricted access. Contact your admin for more information, or see **[Claude in Chrome admin controls](../13-Enterprise-Admin/claude-for-chrome-admin-controls.md)**.
+If you're unable to access a site with Claude, your organization may have restricted access. Contact your admin for more information, or see **[Claude in Chrome admin controls](https://support.claude.com/en/articles/13065128-claude-for-chrome-admin-controls)**.
 
 ------------------------------------------------------------------------
 

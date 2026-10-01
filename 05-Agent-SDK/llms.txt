@@ -252,7 +252,7 @@ When either limit is hit, the SDK returns a `ResultMessage` with a corresponding
 
 Effort level
 
-The `effort` option controls how much reasoning Claude applies. Lower effort levels use fewer tokens per turn and reduce cost. Not all models support the effort parameter. See [Effort](../04-API-Reference/Guides/build-with-claude-effort.md) for which models support it.
+The `effort` option controls how much reasoning Claude applies. Lower effort levels use fewer tokens per turn and reduce cost. Not all models support the effort parameter. See [Effort](https://code.claude.com/docs/en/04-API-Reference/effort.md) for which models support it.
 
 | Level      | Behavior                          | Good for                                                                                            |
 |:-----------|:----------------------------------|:----------------------------------------------------------------------------------------------------|
@@ -1009,7 +1009,7 @@ options = ClaudeAgentOptions(
 )
 ```
 
-The [Messages API](../04-API-Reference/Endpoints/messages.md) request parameters `temperature`, `top_p`, and `max_tokens` have no fields on the options object in either language. Set the [effort level](agent-sdk-agent-loop.md#effort-level) or a [spend cap](#limit-turns-and-spend) instead, or call the Messages API when you need those parameters directly.
+The [Messages API](https://code.claude.com/docs/en/04-API-Reference/Other/api-messages-2dd213ca95.md) request parameters `temperature`, `top_p`, and `max_tokens` have no fields on the options object in either language. Set the [effort level](agent-sdk-agent-loop.md#effort-level) or a [spend cap](#limit-turns-and-spend) instead, or call the Messages API when you need those parameters directly.
 
 
 [​](#set-environment-variables)
@@ -1284,7 +1284,7 @@ The following diagram shows the message stream from a single `query()` call, wit
 
 Each step produces assistant messages
 
-When Claude responds, it sends one or more assistant messages. In TypeScript, each assistant message contains a nested `BetaMessage` (accessed via `message.message`) with an `id` and a [`usage`](../04-API-Reference/Endpoints/messages.md) object with token counts (`input_tokens`, `output_tokens`). In Python, the `AssistantMessage` dataclass exposes the same data directly via `message.usage` and `message.message_id`. When Claude uses multiple tools in one turn, all messages in that turn share the same ID, so deduplicate by ID to avoid double-counting.
+When Claude responds, it sends one or more assistant messages. In TypeScript, each assistant message contains a nested `BetaMessage` (accessed via `message.message`) with an `id` and a [`usage`](https://code.claude.com/docs/en/04-API-Reference/Other/api-messages-2dd213ca95.md) object with token counts (`input_tokens`, `output_tokens`). In Python, the `AssistantMessage` dataclass exposes the same data directly via `message.usage` and `message.message_id`. When Claude uses multiple tools in one turn, all messages in that turn share the same ID, so deduplicate by ID to avoid double-counting.
 
 2
 
@@ -1636,7 +1636,7 @@ for await (const message of query({ prompt: "Summarize this project", options })
 }
 ```
 
-Cache writes with a 1-hour TTL are billed at a higher rate than 5-minute writes, so enabling this trades higher write cost for more cache reads. See [prompt caching pricing](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) for details. On a Claude subscription within your plan’s included usage, you get the 1-hour TTL on your own turns, and on some of the helper requests Claude Code makes beside them, without setting this variable, and Claude Code drops those turns to the 5-minute TTL once you’re drawing on [usage credits](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md). `ENABLE_PROMPT_CACHING_1H` asks for the 1-hour TTL on every request in both buckets. To choose a TTL for each bucket separately, use these controls instead. Each takes `5m` or `1h` and takes precedence over `ENABLE_PROMPT_CACHING_1H`:
+Cache writes with a 1-hour TTL are billed at a higher rate than 5-minute writes, so enabling this trades higher write cost for more cache reads. See [prompt caching pricing](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) for details. On a Claude subscription within your plan’s included usage, you get the 1-hour TTL on your own turns, and on some of the helper requests Claude Code makes beside them, without setting this variable, and Claude Code drops those turns to the 5-minute TTL once you’re drawing on [usage credits](https://code.claude.com/docs/en/17-Billing-Plans/extra-usage-for-paid-claude-plans-32418755be.md). `ENABLE_PROMPT_CACHING_1H` asks for the 1-hour TTL on every request in both buckets. To choose a TTL for each bucket separately, use these controls instead. Each takes `5m` or `1h` and takes precedence over `ENABLE_PROMPT_CACHING_1H`:
 
 - Main conversation: the `CLAUDE_CODE_PROMPT_CACHE_TTL` [environment variable](../02-Claude-Code-CLI/env-vars.md), or the [`promptCacheTtl`](../02-Claude-Code-CLI/settings-reference.md#promptcachettl) setting
 - Everything else: the `CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL` environment variable, or the [`subagentPromptCacheTtl`](../02-Claude-Code-CLI/settings-reference.md#subagentpromptcachettl) setting
@@ -2656,11 +2656,7 @@ Track file changes during agent sessions and restore files to any previous state
 
 Copy pageCopy page
 
-File checkpointing tracks file modifications made through the Write, Edit, and NotebookEdit tools during an agent session, allowing you to rewind files to any previous state. Want to try it out? Jump to the [interactive example](#try-it-out). With checkpointing, you can:
-
-- **Undo unwanted changes** by restoring files to a known good state
-- **Explore alternatives** by restoring to a checkpoint and trying a different approach
-- **Recover from errors** when the agent makes incorrect modifications
+File checkpointing tracks file modifications made through the [Write](../02-Claude-Code-CLI/tools-reference.md#write-tool-behavior), [Edit](../02-Claude-Code-CLI/tools-reference.md#edit-tool-behavior), and [NotebookEdit](../02-Claude-Code-CLI/tools-reference.md#notebookedit-tool-behavior) tools during an agent session, allowing you to rewind files to any previous state. To watch a rewind restore a file, jump to the [interactive example](#try-it-out).
 
 Only changes made through the Write, Edit, and NotebookEdit tools are tracked. Changes made through Bash commands (like `echo > file.txt` or `sed -i`) are not captured by the checkpoint system, and neither are edits a [subagent](agent-sdk-subagents.md) applies, except a [skill with `context: fork`](../08-Plugins-Skills/skills.md#run-skills-in-a-subagent) that runs in the foreground.
 
@@ -2680,7 +2676,7 @@ When you rewind to a checkpoint, Claude Code deletes the files it created and re
 
 Implement checkpointing
 
-To use file checkpointing, enable it in your options, capture checkpoint UUIDs from the response stream, then call `rewindFiles()` (TypeScript) or `rewind_files()` (Python) when you need to restore. The following example shows the complete flow: enable checkpointing, capture the checkpoint UUID and session ID from the response stream, then resume the session later to rewind files. Each step is explained in detail below. The examples in this section use the prompt “Refactor the authentication module”. Run them in a project that contains an authentication module, or change the prompt to name files that exist in your project, so you can watch files change and see the rewind restore them.
+To use file checkpointing, enable it in your options, capture checkpoint UUIDs from the response stream, then call `rewindFiles()` (TypeScript) or `rewind_files()` (Python) when you need to restore. The examples in this section use the prompt “Refactor the authentication module”. Run them in a project that contains an authentication module, or change the prompt to name files that exist in your project, so you can watch files change and see the rewind restore them. This example enables checkpointing, captures the checkpoint UUID and session ID from the response stream, then resumes the session later to rewind files. The example’s numbered comments match the steps that follow.
 
 Python
 
@@ -2801,31 +2797,7 @@ Configure your SDK options to enable checkpointing and receive checkpoint UUIDs:
 | Enable checkpointing     | `enable_file_checkpointing=True`            | `enableFileCheckpointing: true`               | Tracks file changes for rewinding                |
 | Receive checkpoint UUIDs | `extra_args={"replay-user-messages": None}` | `extraArgs: { 'replay-user-messages': null }` | Required to get user message UUIDs in the stream |
 
-Python
-
-TypeScript
-
-```python
-options = ClaudeAgentOptions(
-    enable_file_checkpointing=True,
-    permission_mode="acceptEdits",
-    extra_args={"replay-user-messages": None},
-)
-
-async with ClaudeSDKClient(options) as client:
-    await client.query("Refactor the authentication module")
-```
-
-```python
-const response = query({
-  prompt: "Refactor the authentication module",
-  options: {
-    enableFileCheckpointing: true,
-    permissionMode: "acceptEdits" as const,
-    extraArgs: { "replay-user-messages": null }
-  }
-});
-```
+The lead example under [Implement checkpointing](#implement-checkpointing) also sets the permission mode to `acceptEdits`, which approves the agent’s file edits without a prompt. For more information, see [Permission modes](agent-sdk-permissions.md#permission-modes).
 
 2
 
@@ -2833,75 +2805,11 @@ Capture checkpoint UUID and session ID
 
 With the `replay-user-messages` option set, each user message in the response stream has a UUID that serves as a checkpoint.For most use cases, capture the first user message UUID (`message.uuid`); rewinding to it restores the tracked files to their original state. To store multiple checkpoints and rewind to intermediate states, see [Multiple restore points](#multiple-restore-points).Capturing the session ID (`message.session_id`) is optional; you only need it if you want to rewind later, after the stream completes. If you’re calling `rewindFiles()` immediately while still processing messages (as the example in [Checkpoint before risky operations](#checkpoint-before-risky-operations) does), you can skip capturing the session ID.
 
-Python
-
-TypeScript
-
-```python
-checkpoint_id = None
-session_id = None
-
-async for message in client.receive_response():
-    # Capture the first user message UUID as the checkpoint
-    if isinstance(message, UserMessage) and message.uuid and checkpoint_id is None:
-        checkpoint_id = message.uuid
-    # Capture session ID from the result message
-    if isinstance(message, ResultMessage):
-        session_id = message.session_id
-```
-
-```python
-let checkpointId: string | undefined;
-let sessionId: string | undefined;
-
-for await (const message of response) {
-  // Capture the first user message UUID as the checkpoint
-  if (message.type === "user" && message.uuid && !checkpointId) {
-    checkpointId = message.uuid;
-  }
-  // Capture session ID from any message that has it
-  if ("session_id" in message) {
-    sessionId = message.session_id;
-  }
-}
-```
-
 3
 
 Rewind files
 
-To rewind after the stream completes, resume the session with an empty prompt and call `rewind_files()` (Python) or `rewindFiles()` (TypeScript) with your checkpoint UUID. You can also rewind during the stream; see [Checkpoint before risky operations](#checkpoint-before-risky-operations) for that pattern.
-
-Python
-
-TypeScript
-
-```python
-async with ClaudeSDKClient(
-    ClaudeAgentOptions(enable_file_checkpointing=True, resume=session_id)
-) as client:
-    await client.query("")  # Empty prompt to open the connection
-    async for message in client.receive_response():
-        if checkpoint_id:
-            await client.rewind_files(checkpoint_id)
-        break
-```
-
-```python
-const rewindQuery = query({
-  prompt: "", // Empty prompt to open the connection
-  options: { ...opts, resume: sessionId }
-});
-
-for await (const msg of rewindQuery) {
-  if (checkpointId) {
-    await rewindQuery.rewindFiles(checkpointId);
-  }
-  break;
-}
-```
-
-If you capture the session ID and checkpoint ID, you can also rewind from the CLI. This command requires the `claude` executable, which comes from [installing Claude Code](../01-Getting-Started/setup.md). The SDK enables checkpointing for you, but when you run `claude -p` directly you must set the `CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING` environment variable:
+To rewind after the stream completes, resume the session with an empty prompt and call `rewind_files()` (Python) or `rewindFiles()` (TypeScript) with your checkpoint UUID. Enable checkpointing on the resumed session’s options too, and call rewind from inside the response loop. You can also rewind during the stream. See [Checkpoint before risky operations](#checkpoint-before-risky-operations) for that pattern.If you capture the session ID and checkpoint ID, you can also rewind from the CLI. This command requires the `claude` executable, which comes from [installing Claude Code](../01-Getting-Started/setup.md). The SDK enables checkpointing for you, but when you run `claude -p` directly you must set the `CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING` environment variable:
 
 ```python
 CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING=true claude -p --resume <session-id> --rewind-files <checkpoint-uuid>
@@ -3434,44 +3342,7 @@ For the SDK, set `enable_file_checkpointing=True` (Python) or `enableFileCheckpo
 
 ”ProcessTransport is not ready for writing” error
 
-This error occurs when you call `rewindFiles()` or `rewind_files()` after you’ve finished iterating through the response. The connection to the CLI process closes when the loop completes. **Solution**: Resume the session with an empty prompt, then call rewind on the new query:
-
-Python
-
-TypeScript
-
-```python
-# Resume session with empty prompt, then rewind
-async with ClaudeSDKClient(
-    ClaudeAgentOptions(enable_file_checkpointing=True, resume=session_id)
-) as client:
-    await client.query("")
-    async for message in client.receive_response():
-        if checkpoint_id:
-            await client.rewind_files(checkpoint_id)
-        break
-```
-
-```python
-// Resume session with empty prompt, then rewind
-const rewindQuery = query({
-  prompt: "",
-  options: { ...opts, resume: sessionId }
-});
-
-try {
-  for await (const msg of rewindQuery) {
-    if (checkpointId) {
-      await rewindQuery.rewindFiles(checkpointId);
-    }
-    break;
-  }
-} catch (error) {
-  // An error here means the rewind didn't complete, for example the checkpoint
-  // wasn't found or the session couldn't be resumed.
-  console.error(`Rewind session ended with an error: ${error}`);
-}
-```
+This error occurs when you call `rewindFiles()` or `rewind_files()` after you’ve finished iterating through the response. The connection to the CLI process closes when the loop completes. **Solution**: Resume the session with an empty prompt, then call rewind on the new query. The lead example under [Implement checkpointing](#implement-checkpointing) shows the resume-and-rewind call in both languages, at the comment marked Step 3.
 
 
 [​](#next-steps)
@@ -4527,7 +4398,7 @@ Deploy the Agent SDK in production: subprocess architecture, session persistence
 
 Copy pageCopy page
 
-The Agent SDK spawns and supervises a `claude` CLI subprocess that owns a shell, a working directory, and session files on disk. Hosting it is not like hosting a stateless API wrapper. Every running agent is a long-lived process tied to local state, which shapes how you allocate resources, persist sessions, and scale across tenants. This page covers self-hosting on your own infrastructure. For deployable Dockerfiles and Kubernetes manifests, see the [hosting cookbook](https://github.com/anthropics/claude-cookbooks/tree/main/claude_agent_sdk/hosting). If you don’t need to run the agent loop itself on your own infrastructure, consider [Managed Agents](../04-API-Reference/Other/managed-agents-overview.md) instead. Anthropic hosts the agent loop, and your application sends events and receives streamed results through the client SDKs or the REST API. Tool execution runs in an Anthropic-managed cloud sandbox or a [self-hosted sandbox](../04-API-Reference/Other/managed-agents-self-hosted-sandboxes.md) on your own infrastructure.
+The Agent SDK spawns and supervises a `claude` CLI subprocess that owns a shell, a working directory, and session files on disk. Hosting it is not like hosting a stateless API wrapper. Every running agent is a long-lived process tied to local state, which shapes how you allocate resources, persist sessions, and scale across tenants. This page covers self-hosting on your own infrastructure. For deployable Dockerfiles and Kubernetes manifests, see the [hosting cookbook](https://github.com/anthropics/claude-cookbooks/tree/main/claude_agent_sdk/hosting). If you don’t need to run the agent loop itself on your own infrastructure, consider [Managed Agents](https://code.claude.com/docs/en/04-API-Reference/Other/managed-agents-overview-b12cd03916.md) instead. Anthropic hosts the agent loop, and your application sends events and receives streamed results through the client SDKs or the REST API. Tool execution runs in an Anthropic-managed cloud sandbox or a [self-hosted sandbox](../04-API-Reference/Other/managed-agents-self-hosted-sandboxes.md) on your own infrastructure.
 
 
 [​](#the-subprocess-model)
@@ -4980,7 +4851,7 @@ This page covers MCP configuration for the Agent SDK. To add MCP servers to the 
 
 Quickstart
 
-This example connects to the [Claude Code documentation](../02-Claude-Code-CLI/code-home.md) MCP server using [HTTP transport](#http%2Fsse-servers) and uses [`allowedTools`](#allow-mcp-tools) with a wildcard to permit all tools from the server.
+This example connects to the [Claude Code documentation](https://code.claude.com/docs/en/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md) MCP server using [HTTP transport](#http%2Fsse-servers) and uses [`allowedTools`](#allow-mcp-tools) with a wildcard to permit all tools from the server.
 
 TypeScript
 
@@ -7144,8 +7015,8 @@ The Agent SDK, the CLI, the Client SDK, and Managed Agents differ in who runs th
 |--------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Embed Claude Code’s agent in your own Python or TypeScript application, in a process you operate | **Agent SDK**                                                                     | A library that runs the Claude Code binary, with Claude Code’s [capabilities](#capabilities), such as built-in tools, permissions, sessions, and hooks.                                                                                                                                                                                                                                       |
 | Do interactive development or run one-off tasks from a terminal                                  | [**Claude Code CLI**](../02-Claude-Code-CLI/code-home.md)                                          | The terminal interface, built for daily interactive use.                                                                                                                                                                                                                                                                                                                                      |
-| Call the Claude API directly from your own code                                                  | [**Client SDK**](../04-API-Reference/Other/cli-sdks-libraries-overview.md) | Direct access to the Claude API from any of the client SDK languages. You write the tool loop yourself, or let the client SDK’s beta [tool runner](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-runner.md) drive it.                                                                                                                                                       |
-| Have Anthropic host the agent, configured through the Claude API                                 | [**Managed Agents**](../04-API-Reference/Other/managed-agents-overview.md) | A hosted agent harness that runs the agent loop, with sessions in an Anthropic-managed cloud sandbox or a [self-hosted sandbox](../04-API-Reference/Other/managed-agents-self-hosted-sandboxes.md) on your own infrastructure. Use it from the [SDK for your language](../04-API-Reference/Other/managed-agents-quickstart.md#install-the-sdk), the `ant` CLI, or the REST API. |
+| Call the Claude API directly from your own code                                                  | [**Client SDK**](../04-API-Reference/Other/cli-sdks-libraries-overview.md) | Direct access to the Claude API from any of the client SDK languages. You write the tool loop yourself, or let the client SDK’s beta [tool runner](https://code.claude.com/docs/en/04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-runner-8ab76faf78.md) drive it.                                                                                                                                                       |
+| Have Anthropic host the agent, configured through the Claude API                                 | [**Managed Agents**](https://code.claude.com/docs/en/04-API-Reference/Other/managed-agents-overview-b12cd03916.md) | A hosted agent harness that runs the agent loop, with sessions in an Anthropic-managed cloud sandbox or a [self-hosted sandbox](../04-API-Reference/Other/managed-agents-self-hosted-sandboxes.md) on your own infrastructure. Use it from the [SDK for your language](https://code.claude.com/docs/en/04-API-Reference/Other/managed-agents-quickstart-841ac0c596.md#install-the-sdk), the `ant` CLI, or the REST API. |
 
 To drive the same agent loop from a language other than Python or TypeScript, [run the CLI as a subprocess](../02-Claude-Code-CLI/headless.md) with the `-p` flag and `--output-format json`.
 
@@ -13672,7 +13543,7 @@ Control which skills Claude can invoke in Claude Agent SDK sessions, dispatch co
 
 Copy pageCopy page
 
-Agent Skills extend Claude with specialized capabilities that Claude invokes when relevant. Skills are packaged as `SKILL.md` files containing instructions, descriptions, and optional supporting resources. This page also covers [commands in Agent SDK sessions](#commands-in-agent-sdk-sessions). For comprehensive information about skills, including benefits, architecture, and authoring guidelines, see the [Agent Skills overview](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md).
+Agent Skills extend Claude with specialized capabilities that Claude invokes when relevant. Skills are packaged as `SKILL.md` files containing instructions, descriptions, and optional supporting resources. This page also covers [commands in Agent SDK sessions](#commands-in-agent-sdk-sessions). For comprehensive information about skills, including benefits, architecture, and authoring guidelines, see the [Agent Skills overview](https://code.claude.com/docs/en/04-API-Reference/Other/agent-skills.md).
 
 
 [​](#how-skills-work-with-the-agent-sdk)
@@ -14160,7 +14031,7 @@ ls ~/.claude/skills/*/SKILL.md
 
 Skill not being used
 
-**Check the `skills` option**: if you passed a `skills` list, confirm the skill’s name is included. When Claude tries to invoke an unlisted skill, the Skill tool returns `Skill <name> is not in this session's skills allowlist`. Add the name to your list, or dispatch the skill directly by sending `/<name>` in a prompt, which works without listing. **Check the description**: ensure it’s specific and includes relevant keywords. See [Agent Skills best practices](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices.md#writing-effective-descriptions) for guidance on writing effective descriptions.
+**Check the `skills` option**: if you passed a `skills` list, confirm the skill’s name is included. When Claude tries to invoke an unlisted skill, the Skill tool returns `Skill <name> is not in this session's skills allowlist`. Add the name to your list, or dispatch the skill directly by sending `/<name>` in a prompt, which works without listing. **Check the description**: ensure it’s specific and includes relevant keywords. See [Agent Skills best practices](https://code.claude.com/docs/en/04-API-Reference/Other/skill-authoring-best-practices.md#writing-effective-descriptions) for guidance on writing effective descriptions.
 
 
 [​](#invalid-skill-name-error)
@@ -14221,8 +14092,8 @@ The [Claude Code skills guide](../08-Plugins-Skills/skills.md) covers authoring 
 Related resources
 
 - [Commands in Claude Code](../02-Claude-Code-CLI/commands.md): the full command surface, including every built-in
-- [Agent Skills overview](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md): conceptual overview, benefits, and architecture
-- [Agent Skills best practices](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices.md): authoring guidelines for effective skills
+- [Agent Skills overview](https://code.claude.com/docs/en/04-API-Reference/Other/agent-skills.md): conceptual overview, benefits, and architecture
+- [Agent Skills best practices](https://code.claude.com/docs/en/04-API-Reference/Other/skill-authoring-best-practices.md): authoring guidelines for effective skills
 - [Agent Skills cookbook](https://platform.claude.com/cookbook/skills-notebooks-01-skills-introduction): example skills and templates
 - [Subagents in the SDK](agent-sdk-subagents.md): similar filesystem-based agents with programmatic options
 - [SDK overview](agent-sdk-overview.md): general SDK concepts
@@ -17269,7 +17140,7 @@ How tool search works
 
 Tool search is on by default, with the exceptions listed in [Configure tool search](#configure-tool-search). When it is active, tool definitions are withheld from the context window. The agent receives a summary of available tools and searches for relevant ones when the task requires a capability not already loaded. Up to five of the most relevant tools are loaded into context by default, where they stay available for subsequent turns until the SDK compacts the messages where the agent discovered them. After that compaction, the agent searches for those tools again when it next needs them. Tool search adds one extra round-trip each time Claude searches for tools, but for large tool sets this is offset by smaller context on every turn. With fewer than ~10 tools whose definitions fit comfortably in the context window, loading everything upfront is typically faster. For details on the underlying API mechanism, see [Tool search in the API](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md).
 
-Tool search isn’t supported on Microsoft Foundry [deployments hosted on Azure](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md#hosting-options), which reject it server-side: the SDK detects the rejection and loads tool definitions upfront for that deployment instead. [`ENABLE_TOOL_SEARCH`](#configure-tool-search) can’t override this, since the rejection comes from the deployment itself.
+Tool search isn’t supported on Microsoft Foundry [deployments hosted on Azure](https://code.claude.com/docs/en/20-Models/build-with-claude-claude-in-microsoft-foundry-cac680095c.md#hosting-options), which reject it server-side: the SDK detects the rejection and loads tool definitions upfront for that deployment instead. [`ENABLE_TOOL_SEARCH`](#configure-tool-search) can’t override this, since the rejection comes from the deployment itself.
 
 
 [​](#configure-tool-search)
@@ -19765,7 +19636,7 @@ type SDKAssistantMessage = {
 };
 ```
 
-The `message` field is a [`BetaMessage`](../04-API-Reference/Endpoints/messages-create.md) from the Anthropic SDK. It includes fields like `id`, `content`, `model`, `stop_reason`, and `usage`. `SDKAssistantMessageError` is one of: `'authentication_failed'`, `'oauth_org_not_allowed'`, `'account_on_hold'`, `'billing_error'`, `'rate_limit'`, `'overloaded'`, `'invalid_request'`, `'model_not_found'`, `'server_error'`, `'max_output_tokens'`, `'cloud_credential_error'`, or `'unknown'`. Four of these values mean more than their names say:
+The `message` field is a [`BetaMessage`](https://code.claude.com/docs/en/04-API-Reference/Other/api-messages-create-07971e1cdf.md) from the Anthropic SDK. It includes fields like `id`, `content`, `model`, `stop_reason`, and `usage`. `SDKAssistantMessageError` is one of: `'authentication_failed'`, `'oauth_org_not_allowed'`, `'account_on_hold'`, `'billing_error'`, `'rate_limit'`, `'overloaded'`, `'invalid_request'`, `'model_not_found'`, `'server_error'`, `'max_output_tokens'`, `'cloud_credential_error'`, or `'unknown'`. Four of these values mean more than their names say:
 
 - `'model_not_found'`: the selected model doesn’t exist or isn’t available to your account or deployment
 - `'overloaded'`: the API returned a 529 because the server is at capacity, as opposed to `'rate_limit'`, which is a 429 against your quota

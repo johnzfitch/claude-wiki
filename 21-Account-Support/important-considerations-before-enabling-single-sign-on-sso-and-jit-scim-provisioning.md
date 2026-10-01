@@ -2,7 +2,7 @@
 title: "Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:31:35Z"
+fetched_at: "2026-09-30T06:31:14Z"
 tags: ["account", "authentication"]
 ---
 
@@ -27,7 +27,7 @@ Our single sign-on feature uses the concept of a "parent organization." This is 
 
 - **Each parent organization can only be linked to one Identity Provider.** This means that every organization linked to a single parent organization must be managed through the same IdP.
 
-- **Enabling group mappings** allows you to control which users are provisioned to which organizations under your parent, and with which roles. See **[Configure groups and assign users in your IdP](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md#h_0178209cfa)** for details.
+- **Enabling group mappings** allows you to control which users are provisioned to which organizations under your parent, and with which roles. See **[Configure groups and assign users in your IdP](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning#h_0178209cfa)** for details.
 
 - **Parent organizations manage identity and access only**—specifically, domain verification, SSO configuration, and user provisioning. Billing, invoicing, and usage tracking are handled at the individual organization level and aren't affected by parent organization relationships.
 
@@ -35,7 +35,7 @@ Our single sign-on feature uses the concept of a "parent organization." This is 
 
 You'll need to check the parent organization dynamic depending on your plan:
 
-- **If you have a Team or Enterprise plan:** You can proceed directly to the **[Setting up single sign-on (SSO)](setting-up-single-sign-on-sso-for-claude-and-claude-console.md)** guide. Your parent organization is already in place (or will be created when you enable SSO for Team plans).
+- **If you have a Team or Enterprise plan:** You can proceed directly to the **[Setting up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)** guide. Your parent organization is already in place (or will be created when you enable SSO for Team plans).
 
 - **If you have a Claude Console organization and an existing Team or Enterprise plan:** Your Console organization may already be linked to your Team or Enterprise parent organization. Check if you can access **[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**. If so, this indicates that the org is linked to the parent organization and SSO is already configured. If not, an Owner on your Team or Enterprise plan can initiate a merge to link your Console organization (see **[Merge organizations](#h_3bad8701c8)** below) to their parent organization and the existing SSO configuration.
 
@@ -59,7 +59,7 @@ Team or Enterprise organizations can invite other organizations to join an exist
 
 - The organization being invited can't already belong to another parent organization.
 
-**Note:** If an organization you want to invite doesn't appear in the invite list, it may already belong to its own parent organization with separate verified domains and SSO. **[Contact support](how-can-i-contact-support.md)** to have it detached from its current parent. Detaching clears that organization's existing domain verification and SSO/SCIM configuration, so confirm its admins are aware before you request it.
+**Note:** If an organization you want to invite doesn't appear in the invite list, it may already belong to its own parent organization with separate verified domains and SSO. **[Contact support](https://support.claude.com/en/articles/9015913-how-to-get-support)** to have it detached from its current parent. Detaching clears that organization's existing domain verification and SSO/SCIM configuration, so confirm its admins are aware before you request it.
 
 ### To initiate a merge proposal
 
@@ -147,7 +147,7 @@ To view or download information about your verified domains and their usage acro
 
 - Provide a clear timeline for when the change will occur.
 
-- Advise employees who won't be added to the SSO application to save or **[export their conversation history](how-can-i-export-my-claude-ai-data.md)** if SSO will be enforced.
+- Advise employees who won't be added to the SSO application to save or **[export their conversation history](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)** if SSO will be enforced.
 
 ### Plan for a smooth transition
 

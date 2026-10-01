@@ -2,7 +2,7 @@
 title: "Configure permissions - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/permissions"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-28T06:32:59Z"
+fetched_at: "2026-09-30T06:31:52Z"
 tags: ["claude-code"]
 ---
 
@@ -300,12 +300,13 @@ Your other rules and the permission mode decide the commands in the last column.
 
 Read-only commands
 
-Claude Code recognizes a built-in set of Bash commands as read-only and runs them without a permission prompt in every mode, except for a path that [`permissions.blockReadsOutsideWorkingDirectories`](settings-reference.md#permissions-blockreadsoutsideworkingdirectories) fences. The set includes `ls`, `cat`, `echo`, `pwd`, `head`, `tail`, `grep`, `find`, `wc`, `which`, `diff`, `stat`, `du`, `cd`, and read-only forms of `git`. The set is not configurable; to require a prompt for one of these commands, add an `ask` or `deny` rule for it. In auto mode, these commands can also wait for the classifier’s review; see [how the classifier evaluates actions](permission-modes.md#how-the-classifier-evaluates-actions). A redirect such as `ls > out.txt` adds a check on the target. See [Redirections](#redirections). Unquoted glob patterns are permitted for commands whose every flag is read-only, so `ls *.ts` and `wc -l src/*.py` run without a prompt. In Manual mode, commands from this set still prompt in these cases:
+Claude Code recognizes a built-in set of Bash commands as read-only and runs them without a permission prompt in every mode, except as [`permissions.blockReadsOutsideWorkingDirectories`](settings-reference.md#permissions-blockreadsoutsideworkingdirectories) changes for paths outside your working directories. The set includes `ls`, `cat`, `echo`, `pwd`, `head`, `tail`, `grep`, `find`, `wc`, `which`, `diff`, `stat`, `du`, `cd`, and read-only forms of `git`. The set is not configurable; to require a prompt for one of these commands, add an `ask` or `deny` rule for it. In auto mode, these commands can also wait for the classifier’s review; see [how the classifier evaluates actions](permission-modes.md#how-the-classifier-evaluates-actions). A redirect such as `ls > out.txt` adds a check on the target. See [Redirections](#redirections). Unquoted glob patterns are permitted for commands whose every flag is read-only, so `ls *.ts` and `wc -l src/*.py` run without a prompt. In Manual mode, commands from this set still prompt in these cases:
 
 - **Unquoted globs for commands with write-capable flags**: commands with write-capable or exec-capable flags, such as `find`, `sort`, `sed`, and `git`, prompt when an unquoted glob is present, because the glob could expand to a flag like `-delete`.
 - **`docker` pointed at another daemon**: read-only forms of `docker` prompt when the command carries a flag that selects a different daemon, such as `-H`, `--context`, or Podman’s `--url` and `--connection`.
 - **`file` with path-opening flags**: `file` prompts when it passes `-m`/`--magic-file` or `-f`/`--files-from`, because those flags make `file` open the paths named in the flag’s value.
 - **Network paths on Windows**: a command whose arguments include a network (UNC) path, such as `\\server\share\file`, prompts because accessing a network path can send your Windows credentials to the host it names. The same check applies to [PowerShell tool](tools-reference.md#powershell-tool) commands.
+- **Writes to special shell variables**: a command that sets, unsets, or loops over certain special shell variables, such as `PATH` or `IFS`, prompts even when the rest of the command is read-only.
 - **Commands the analysis can’t parse**: when Claude Code can’t fully parse a command, it asks for approval instead of treating the command as read-only. Commands longer than 10,000 characters always prompt because they exceed what the analysis parses.
 
 A `cd` into a path inside your working directory or an [additional directory](#working-directories) is also read-only, and a compound command like `cd packages/api && ls` runs without a prompt when each part qualifies on its own. These combinations prompt even when each part is read-only:

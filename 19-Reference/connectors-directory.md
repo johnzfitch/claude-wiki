@@ -2,7 +2,8 @@
 title: "Discover tools that work with Claude | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/connectors-directory"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:31:53Z"
+fetched_at: "2026-09-30T06:32:25Z"
+last_modified: "Wed, 30 Sep 2026 04:21:07 GMT"
 tags: ["news-research"]
 ---
 

@@ -2,12 +2,11 @@
 title: "Set up Code Review for Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14233555-set-up-code-review-for-claude-code"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:32:12Z"
+fetched_at: "2026-09-30T06:31:58Z"
 tags: ["claude-code"]
 ---
 
 # Set up Code Review for Claude Code
-
 
 
 Code Review analyzes your GitHub pull requests and posts findings as inline comments on the lines of code where it found issues. A fleet of specialized agents examine the code changes in the context of your full codebase, looking for logic errors, security vulnerabilities, broken edge cases, and regressions.
@@ -162,7 +161,7 @@ If you’ve installed the Claude GitHub App but your repositories don’t appear
 
 3.  Try disconnecting and reconnecting your GitHub account in Claude. Go to **[Customize \> Connectors](https://claude.ai/customize/connectors)**, disconnect GitHub, and connect it again. Which repositories the App can access is managed on GitHub's side, covered in step 1.
 
-4.  If the issue persists, **[contact our Support team](../21-Account-Support/how-can-i-contact-support.md)** with your organization name and GitHub organization name so we can investigate.
+4.  If the issue persists, **[contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** with your organization name and GitHub organization name so we can investigate.
 
 ### Code Review doesn’t start on a new PR
 
@@ -196,7 +195,7 @@ Common GHES setup issues:
 
 ### Is Code Review available as a capability when creating a custom role?
 
-No, Code Review is not available to add to a **[custom role](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)** at this time.
+No, Code Review is not available to add to a **[custom role](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)** at this time.
 
 ------------------------------------------------------------------------
 

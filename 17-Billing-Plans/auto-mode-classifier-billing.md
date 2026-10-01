@@ -2,7 +2,7 @@
 title: "Auto mode classifier request charges - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/auto-mode-classifier-billing"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:30:05Z"
+fetched_at: "2026-09-30T06:31:39Z"
 tags: ["billing", "claude-code"]
 ---
 

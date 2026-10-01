@@ -2,7 +2,7 @@
 title: "Medgate Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/medgate"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:38Z"
+fetched_at: "2026-09-30T06:32:23Z"
 tags: ["case-studies", "claude-code", "enterprise", "security"]
 ---
 

@@ -2,25 +2,24 @@
 title: "Okta SSO setup | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917894-okta-sso-setup"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:32:09Z"
+fetched_at: "2026-09-30T06:31:55Z"
 tags: ["enterprise"]
 ---
 
 # Okta SSO setup
 
 
-
 This guide covers configuring SSO and SCIM provisioning for Claude with Okta as your identity provider. It applies to Team plans, Enterprise plans, and Console organizations.
 
 ## Prerequisites
 
-- A Claude Team plan, Enterprise plan, or Console organization with a parent organization (see **[Important considerations before enabling SSO](../21-Account-Support/important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning.md)** for Console parent org requirements)
+- A Claude Team plan, Enterprise plan, or Console organization with a parent organization (see **[Important considerations before enabling SSO](https://support.claude.com/en/articles/10276682)** for Console parent org requirements)
 
 - Owner or Primary Owner role (Team and Enterprise) or Admin role (Console)
 
 - Okta administrator access
 
-- Your domain verified in Claude's Identity and access settings—see **[Set up single sign-on](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md)** for the full setup path including domain verification
+- Your domain verified in Claude's Identity and access settings—see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full setup path including domain verification
 
 ## Where to find your configuration values
 
@@ -54,7 +53,7 @@ Start the SSO setup flow there and keep it open alongside the Okta Admin console
 
 ## Step 3 — Enable SCIM provisioning
 
-**Note:** SCIM provisioning is available on Enterprise plans and eligible Console organizations only. If you're on a Team plan, skip this step—you can use JIT provisioning instead. See **[Set up JIT or SCIM provisioning](setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)**.
+**Note:** SCIM provisioning is available on Enterprise plans and eligible Console organizations only. If you're on a Team plan, skip this step—you can use JIT provisioning instead. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195)**.
 
 1.  In the app, go to the **Provisioning** tab and click “Configure API Integration.”
 
@@ -84,4 +83,4 @@ Start the SSO setup flow there and keep it open alongside the Okta Admin console
 
 ## Need help?
 
-For the full end-to-end flow including domain verification and choosing a provisioning approach, see **[Set up single sign-on](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md)**. If you run into issues, contact **[our Support team](../21-Account-Support/how-can-i-contact-support.md)** with your organization's domain and a screenshot of your Okta SAML configuration.
+For the full end-to-end flow including domain verification and choosing a provisioning approach, see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)**. If you run into issues, contact **[our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** with your organization's domain and a screenshot of your Okta SAML configuration.

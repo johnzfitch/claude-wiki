@@ -2,12 +2,11 @@
 title: "Get started with Claude for Government | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503590-get-started-with-claude-for-government"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:24Z"
+fetched_at: "2026-09-30T06:31:34Z"
 tags: ["claude-ai"]
 ---
 
 # Get started with Claude for Government
-
 
 
 **Important:** All organizations will move to the updated Claude for Government (Desktop) offering by October 4, 2026. If your agency has already moved, see the **[Claude for Government administrator guide](https://claude.com/docs/government)** for current documentation for getting started.

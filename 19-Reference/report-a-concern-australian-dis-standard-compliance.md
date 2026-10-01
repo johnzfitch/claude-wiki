@@ -2,7 +2,7 @@
 title: "Report a concern: Australian DIS Standard compliance | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12335811-report-a-concern-australian-dis-standard-compliance"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:31:03Z"
+fetched_at: "2026-09-30T06:31:30Z"
 tags: ["news-research"]
 ---
 
@@ -31,7 +31,7 @@ For further information, please visit the **[eSafety Commissioner’s website](h
 
 ## How to report content to us
 
-We are committed to our users’ safety across our products. We provide users with a reporting tool that is accessible within Claude by clicking on the ‘thumbs down’ button on Claude’s response. This will begin the reporting process. We also provide additional reporting options here: **[Report, block, and remove content from Claude](reporting-blocking-and-removing-content-from-claude.md)**. You can also make a complaint to us about harmful material or other aspects of the online safety standards using **[this form](https://docs.google.com/forms/d/e/1FAIpQLScZbBlN2JjMFE6IygxBOEhISAEtXbbe3P5e1wJY766UiEVj5Q/viewform)**.
+We are committed to our users’ safety across our products. We provide users with a reporting tool that is accessible within Claude by clicking on the ‘thumbs down’ button on Claude’s response. This will begin the reporting process. We also provide additional reporting options here: **[Report, block, and remove content from Claude](https://support.claude.com/en/articles/7996906)**. You can also make a complaint to us about harmful material or other aspects of the online safety standards using **[this form](https://docs.google.com/forms/d/e/1FAIpQLScZbBlN2JjMFE6IygxBOEhISAEtXbbe3P5e1wJY766UiEVj5Q/viewform)**.
 
 ## How to refer a matter to the eSafety Commissioner
 

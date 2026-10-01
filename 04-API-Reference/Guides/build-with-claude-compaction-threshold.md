@@ -2,7 +2,7 @@
 title: "Compaction at a token threshold - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/compaction-threshold"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-22T06:30:28Z"
+fetched_at: "2026-09-30T06:30:58Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -54,7 +54,7 @@ Tool infrastructure
 
 Context management
 
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics (beta)](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
+[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
 
 [Compaction](build-with-claude-compaction.md)
 
@@ -165,7 +165,7 @@ messages = [{"role": "user", "content": "Help me build a website"}]
 
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={"edits": [{"type": "compact_20260112"}]},
@@ -213,7 +213,7 @@ client = anthropic.Anthropic()
 messages = [{"role": "user", "content": "Hello, Claude"}]
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={
@@ -264,7 +264,7 @@ client = anthropic.Anthropic()
 messages = [{"role": "user", "content": "Hello, Claude"}]
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={
@@ -311,7 +311,7 @@ client = anthropic.Anthropic()
 messages = [{"role": "user", "content": "Hello, Claude"}]
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={
@@ -327,7 +327,7 @@ if response.stop_reason == "compaction":
     # Continue the request
     response = client.beta.messages.create(
         betas=["compact-2026-01-12"],
-        model="claude-opus-5",
+        model="claude-opus-5-5",
         max_tokens=4096,
         messages=messages,
         context_management={"edits": [{"type": "compact_20260112"}]},
@@ -365,7 +365,7 @@ n_compactions = 0
 
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={
@@ -447,7 +447,7 @@ client = anthropic.Anthropic()
 messages = [{"role": "user", "content": "Hello, Claude"}]
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={"edits": [{"type": "compact_20260112"}]},
@@ -460,7 +460,7 @@ messages.append({"role": "user", "content": "Now add error handling"})
 
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={"edits": [{"type": "compact_20260112"}]},
@@ -474,7 +474,7 @@ When the API receives a `compaction` block, all content blocks before it are ign
 - Keep the original messages in your list and let the API handle removing the compacted content
 - Manually drop the compacted messages and only include the compaction block onwards
 
-On Claude Fable 5.1 and Claude Mythos 5.1, thinking blocks from before a `compaction` block aren't carried forward, so the summary is all the model has of that earlier work. If you write your own `instructions`, tell the model what the summary must retain; see [Tell the model what to preserve in compaction summaries](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md#tell-the-model-what-to-preserve-in-compaction-summaries).
+On Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, and Claude Sonnet 5.5, thinking blocks from before a `compaction` block aren't carried forward, so the summary is all the model has of that earlier work. If you write your own `instructions`, tell the model what the summary must retain; see [Tell the model what to preserve in compaction summaries](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md#tell-the-model-what-to-preserve-in-compaction-summaries).
 
 ### Streaming
 
@@ -506,7 +506,7 @@ messages = [{"role": "user", "content": "Hello, Claude"}]
 
 with client.beta.messages.stream(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={"edits": [{"type": "compact_20260112"}]},
@@ -591,7 +591,7 @@ client = anthropic.Anthropic()
 messages = [{"role": "user", "content": "Hello, Claude"}]
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     system=[
         {
@@ -681,7 +681,7 @@ client = anthropic.Anthropic()
 messages = [{"role": "user", "content": "Hello, Claude"}]
 count_response = client.beta.messages.count_tokens(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     messages=messages,
     context_management={"edits": [{"type": "compact_20260112"}]},
 )
@@ -725,7 +725,7 @@ def chat(user_message: str) -> str:
 
     response = client.beta.messages.create(
         betas=["compact-2026-01-12"],
-        model="claude-opus-5",
+        model="claude-opus-5-5",
         max_tokens=4096,
         messages=messages,
         context_management={
@@ -752,7 +752,7 @@ print(chat("Now add rate limiting and error handling"))
 # Continue calling chat() for as long as the conversation needs
 ```
 
-On Claude Fable 5.1, remove the `thinking` and `redacted_thinking` blocks from any assistant turn you re-insert after the compaction block, or send `thinking.block_binding.prefix_mismatch_behavior: "drop_block"` with the `thinking-binding-controls-2026-08-01` [beta header](../Endpoints/beta-headers.md). Those blocks were produced when the full history was present, so they no longer pass the [conversation check](build-with-claude-thinking.md#preserved-in-conversation). Where the check is enforced, the continuation request is rejected with a 400 error. The preserved text and tool blocks can stay as they are. Letting the API summarize everything, without re-inserting earlier turns, avoids this.
+On Claude Fable 5.1, Claude Opus 5.5, and Claude Sonnet 5.5, remove the `thinking` and `redacted_thinking` blocks from any assistant turn you re-insert after the compaction block, or send `thinking.block_binding.prefix_mismatch_behavior: "drop_block"` with the `thinking-binding-controls-2026-08-01` [beta header](../Endpoints/beta-headers.md). Those blocks were produced when the full history was present, so they no longer pass the [conversation check](build-with-claude-thinking.md#preserved-in-conversation). Where the check is enforced, the continuation request is rejected with a 400 error. The preserved text and tool blocks can stay as they are. Letting the API summarize everything, without re-inserting earlier turns, avoids this. On Claude Sonnet 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`. With `between_tools`, remove the blocks instead.
 
 Here's an example that uses `pause_after_compaction` to preserve the prior exchange and the current user message (three messages total) verbatim instead of summarizing them:
 
@@ -789,7 +789,7 @@ def chat(user_message: str) -> str:
 
     response = client.beta.messages.create(
         betas=["compact-2026-01-12"],
-        model="claude-opus-5",
+        model="claude-opus-5-5",
         max_tokens=4096,
         messages=messages,
         context_management={
@@ -821,7 +821,7 @@ def chat(user_message: str) -> str:
         # Continue the request with the compacted context + preserved messages
         response = client.beta.messages.create(
             betas=["compact-2026-01-12"],
-            model="claude-opus-5",
+            model="claude-opus-5-5",
             max_tokens=4096,
             messages=messages_after_compaction,
             context_management={"edits": [{"type": "compact_20260112"}]},
@@ -877,4 +877,15 @@ Explore a practical implementation that manages long-running conversations with 
 
 ## Compatibility
 
-[TABLE]
+Supported models  
+- Fable 5 and 5.1
+- Mythos 5, 5.1, and Preview
+- Opus 4.6, 4.7, 4.8, 5, and 5.5
+- Sonnet 4.6, 5, and 5.5
+
+Supported platforms  
+- Claude APIBeta
+- Claude Platform on AWSBeta
+- Amazon BedrockBeta
+- Google CloudBeta
+- Microsoft FoundryBeta

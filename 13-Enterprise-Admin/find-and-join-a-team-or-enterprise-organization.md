@@ -1,8 +1,8 @@
 ---
 title: "Find and join a Team or Enterprise organization | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13566435-find-and-join-a-team-or-enterprise-organization"
+source_url: "https://support.claude.com/en/articles/13566435-organization-discovery"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:32:04Z"
+fetched_at: "2026-09-30T06:31:44Z"
 tags: ["enterprise"]
 ---
 
@@ -13,7 +13,7 @@ July 21, 2026
 
 Organization discovery allows you to find and join your company's existing Team or Enterprise plan organization when you start the sign-up flow with a work email address. Instead of creating a separate personal account, you can request to join—or be added automatically—depending on your organization's configuration.
 
-Organization discovery must be enabled by an admin before the capability is available. It’s unavailable for organizations that have **[single sign-on (SSO) enabled](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md)**. If your organization uses SSO, your existing provisioning settings remain in effect.
+Organization discovery must be enabled by an admin before the capability is available. It’s unavailable for organizations that have **[single sign-on (SSO) enabled](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)**. If your organization uses SSO, your existing provisioning settings remain in effect.
 
 ------------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ Admins select how join requests are handled:
 
 **Require admin approval:** The admin reviews and approves each join request individually. Users aren't added to the organization until the admin approves. Billing begins when the request is approved—if no seats are available at that point, a new seat is purchased.
 
-This approval mode also applies to invitations sent by existing members of your organization. For additional details, see **[Manage members on Team and Enterprise plans](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**.
+This approval mode also applies to invitations sent by existing members of your organization. For additional details, see **[Manage members on Team and Enterprise plans](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)**.
 
 ------------------------------------------------------------------------
 
@@ -95,7 +95,7 @@ In addition to organization discovery, there are a few other ways to join a Team
 
 - **Email invitation:** An admin or existing member of the organization may send you an email invitation to join.
 
-- **Admin invitation:** An admin can add you directly from admin settings. See **[Manage members on Team and Enterprise plans](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**.
+- **Admin invitation:** An admin can add you directly from admin settings. See **[Manage members on Team and Enterprise plans](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)**.
 
 ------------------------------------------------------------------------
 

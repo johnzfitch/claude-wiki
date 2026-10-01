@@ -2,7 +2,7 @@
 title: "Desktop application - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/desktop"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-29T06:30:39Z"
+fetched_at: "2026-09-30T06:30:34Z"
 tags: ["claude-code", "desktop"]
 ---
 
@@ -210,7 +210,7 @@ The Browser pane is a tabbed browser, so you can open documentation, issue track
 
 Approve Claude’s actions on a site
 
-The first time Claude acts on an external site, a permission card appears and Claude waits for your choice: **Allow once**, **Always allow**, or **Deny**. **Allow once** approves the action without saving anything. **Always allow** saves the approval for that site on your device, and you can revoke it in Settings. Each site needs its own approval, including subdomains. Your local dev servers and project files don’t need approval, so [auto-verify](#auto-verify-changes) keeps working without prompts. Even on an approved site, Claude won’t purchase items, create accounts, or bypass CAPTCHAs without your input. Browsing in the Browser pane uses the same safety model as the [Claude in Chrome extension](../03-IDE-Integrations/chrome.md). See [Using Claude in Chrome safely](../15-Claude-AI-Features/using-claude-for-chrome-safely.md) for how Claude handles sensitive sites and risky actions.
+The first time Claude acts on an external site, a permission card appears and Claude waits for your choice: **Allow once**, **Always allow**, or **Deny**. **Allow once** approves the action without saving anything. **Always allow** saves the approval for that site on your device, and you can revoke it in Settings. Each site needs its own approval, including subdomains. Your local dev servers and project files don’t need approval, so [auto-verify](#auto-verify-changes) keeps working without prompts. Even on an approved site, Claude won’t purchase items, create accounts, or bypass CAPTCHAs without your input. Browsing in the Browser pane uses the same safety model as the [Claude in Chrome extension](../03-IDE-Integrations/chrome.md). See [Using Claude in Chrome safely](https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely) for how Claude handles sensitive sites and risky actions.
 
 
 [​](#choose-between-the-browser-and-the-chrome-extension)
@@ -489,7 +489,7 @@ The **Continue in** menu, accessible from the VS Code icon in the bottom right o
 
 Sessions from Dispatch
 
-[Dispatch](../21-Account-Support/assign-tasks-to-claude-from-anywhere-in-cowork.md) is a persistent conversation with Claude that lives in the [Cowork](../15-Claude-AI-Features/product-cowork.md) tab. You message Dispatch a task, and it decides how to handle it. A task can end up as a Code session in two ways: you ask for one directly, such as “open a Claude Code session and fix the login bug”, or Dispatch decides the task is development work and spawns one on its own. Tasks that typically route to Code include fixing bugs, updating dependencies, running tests, or opening pull requests. Research, document editing, and spreadsheet work stay in Cowork. Either way, the Code session appears in the Code tab’s sidebar with a **Dispatch** badge. You get a push notification on your phone when it finishes or needs your approval. If you have [computer use](#let-claude-use-your-computer) enabled, Dispatch-spawned Code sessions can use it too. App approvals in those sessions expire after 30 minutes and re-prompt, rather than lasting the full session like regular Code sessions. For setup, pairing, and Dispatch settings, see the [Dispatch help article](../21-Account-Support/assign-tasks-to-claude-from-anywhere-in-cowork.md). Dispatch requires a Pro or Max plan and is not available on Team or Enterprise plans. Dispatch is one of several ways to work with Claude when you’re away from your terminal. For a comparison with the other options, see [Platforms and integrations](../02-Claude-Code-CLI/platforms.md#work-when-you-are-away-from-your-terminal).
+[Dispatch](https://support.claude.com/en/articles/13947068) is a persistent conversation with Claude that lives in the [Cowork](../15-Claude-AI-Features/product-cowork.md) tab. You message Dispatch a task, and it decides how to handle it. A task can end up as a Code session in two ways: you ask for one directly, such as “open a Claude Code session and fix the login bug”, or Dispatch decides the task is development work and spawns one on its own. Tasks that typically route to Code include fixing bugs, updating dependencies, running tests, or opening pull requests. Research, document editing, and spreadsheet work stay in Cowork. Either way, the Code session appears in the Code tab’s sidebar with a **Dispatch** badge. You get a push notification on your phone when it finishes or needs your approval. If you have [computer use](#let-claude-use-your-computer) enabled, Dispatch-spawned Code sessions can use it too. App approvals in those sessions expire after 30 minutes and re-prompt, rather than lasting the full session like regular Code sessions. For setup, pairing, and Dispatch settings, see the [Dispatch help article](https://support.claude.com/en/articles/13947068). Dispatch requires a Pro or Max plan and is not available on Team or Enterprise plans. Dispatch is one of several ways to work with Claude when you’re away from your terminal. For a comparison with the other options, see [Platforms and integrations](../02-Claude-Code-CLI/platforms.md#work-when-you-are-away-from-your-terminal).
 
 
 [​](#extend-claude-code)
@@ -819,6 +819,8 @@ These settings are configured through the [admin settings console](https://claud
 - **Remote Control**: enable or disable [Remote Control](../02-Claude-Code-CLI/remote-control.md) for your organization
 - **Disable Bypass permissions mode**: prevent users in your organization from enabling bypass permissions mode
 
+The OpenTelemetry form for Cowork under **Monitoring** in the admin console’s [Data and privacy settings](https://claude.ai/admin-settings/data-privacy-controls) applies to Cowork sessions only. In a Cowork session on this machine, the desktop app passes that collector to Claude Code as `OTEL_*` environment variables, so the form takes effect even though Claude Code in that session [never fetches admin-console settings](#managed-settings).To export telemetry from Code tab sessions, set `CLAUDE_CODE_ENABLE_TELEMETRY` and the `OTEL_*` variables in the `env` block of your Claude Code managed settings, as shown in [administrator configuration for monitoring](../13-Enterprise-Admin/monitoring-usage.md#administrator-configuration). Local, cloud, and SSH sessions each read [managed settings from different sources](#managed-settings). For the hosts a cloud session can reach, see [network access](../02-Claude-Code-CLI/cloud-environments.md#network-access). For the `service.name` that Code tab sessions report, see [service information](../13-Enterprise-Admin/monitoring-usage.md#service-information).
+
 
 [​](#managed-settings)
 
@@ -907,7 +909,7 @@ If your organization has [IP allowlisting](../13-Enterprise-Admin/restrict-acces
 
 Authentication and SSO
 
-Enterprise organizations can require SSO for all users. See [authentication](../13-Enterprise-Admin/iam.md) for plan-level details and [Setting up SSO](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md) for SAML configuration; OIDC setup is covered in the [Claude Enterprise Administrator Guide](https://claude.com/resources/tutorials/claude-enterprise-administrator-guide).
+Team and Enterprise organizations can require SSO for all users. See [authentication](../13-Enterprise-Admin/iam.md) for plan-level details and [Setting up SSO](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso) for SAML configuration; OIDC setup is covered in the [Claude Enterprise Administrator Guide](https://claude.com/resources/tutorials/claude-enterprise-administrator-guide).
 
 
 [​](#data-handling)
@@ -926,14 +928,20 @@ Desktop can be distributed through enterprise deployment tools:
 - **macOS**: distribute via MDM such as Jamf or Kandji using the `.dmg` installer
 - **Windows**: deploy via the MSIX package. See [Deploy Claude Desktop for Windows](deploy-claude-desktop-for-windows.md) for enterprise deployment options including silent installation
 
-For the domains to allowlist in your firewall, see [network access requirements](#network-access-requirements) above. For proxy settings, custom certificate authorities, and LLM gateways, see [network configuration](../13-Enterprise-Admin/network-config.md). For the full enterprise configuration reference, see the [enterprise configuration guide](../13-Enterprise-Admin/enterprise-configuration-for-claude-desktop.md).
+For the domains to allowlist in your firewall, see [network access requirements](#network-access-requirements) above. For proxy settings, custom certificate authorities, and LLM gateways, see [network configuration](../13-Enterprise-Admin/network-config.md). For the full enterprise configuration reference, see the [enterprise configuration guide](https://support.claude.com/en/articles/12622667-enterprise-configuration).
 
 
 [​](#coming-from-the-cli)
 
 Coming from the CLI?
 
-If you already use the Claude Code CLI, Desktop runs the same underlying engine with a graphical interface. You can run both simultaneously on the same machine, even on the same project. Each keeps its own session list, and you can bring a CLI session into Desktop. They share configuration and project memory via CLAUDE.md files. To move a CLI session into Desktop, run `/desktop` in the terminal. Claude saves your session and opens it in the desktop app, then exits the CLI. This command is available on macOS and x64 Windows when you are signed in with a Claude subscription. It is not available with API key authentication or on Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry. To pick up a CLI session from inside Desktop instead, type `/resume` in the prompt box. Desktop lists the sessions you started from the CLI, and you can search them by title, folder, or branch and preview where each one left off. Select a session and it continues in the app with its full conversation and context.
+If you already use the Claude Code CLI, Desktop runs the same underlying engine with a graphical interface. You can run both simultaneously on the same machine, even on the same project. Each keeps its own session list, and you can bring a CLI session into Desktop. They share configuration and project memory via CLAUDE.md files. To move a CLI session into Desktop, run `/desktop` in the terminal. Claude saves your session and opens it in the desktop app, then exits the CLI. This command is available on macOS and x64 Windows when you are signed in with a Claude subscription. It is not available with API key authentication or on Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry. You can also pick up a CLI session from inside Desktop with `/resume`. The command is available in local sessions, not in SSH, WSL, or cloud sessions. To continue a terminal session in Desktop:
+
+1.  Close the session in the terminal.
+2.  In the Desktop prompt box, type `/resume`. Desktop lists the sessions you started from the CLI on this computer. Search by title, folder, or branch, and preview where each one left off.
+3.  Select the session. It continues in the app with its full conversation and context.
+
+Desktop continues the same session rather than a copy, so `claude --resume` in the terminal still finds it afterwards.
 
 When to use Desktop vs CLI: use Desktop when you want to manage parallel sessions in one window, arrange panes side by side, or review changes visually. Use the CLI when you need scripting, automation, or prefer a terminal workflow.
 

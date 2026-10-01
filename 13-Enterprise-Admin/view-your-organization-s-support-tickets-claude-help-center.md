@@ -81,4 +81,4 @@ It's likely associated with a different organization (try switching organization
 
 ### Can I open a new ticket from the portal?
 
-Not directly. Use the chat messenger in Claude or the Console, and tickets opened there appear in the portal automatically. Learn more about **[how to get support](../21-Account-Support/how-can-i-contact-support.md)**.
+Not directly. Use the chat messenger in Claude or the Console, and tickets opened there appear in the portal automatically. Learn more about **[how to get support](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)**.

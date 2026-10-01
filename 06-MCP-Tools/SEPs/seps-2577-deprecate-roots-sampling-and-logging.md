@@ -87,7 +87,7 @@ Roots
 
 Roots provides “informational guidance” about which directories or files a server should operate on. In practice:
 
-- **Low adoption**: Few clients implement roots support, and few servers rely on it. The [feature support matrix](../General/clients.md#feature-support-matrix) shows limited client coverage.
+- **Low adoption**: Few clients implement roots support, and few servers rely on it. The [feature support matrix](https://modelcontextprotocol.io/seps/General/mcp-clients.md#feature-support-matrix) shows limited client coverage.
 - **Vague semantics**: The specification describes roots as informational — servers are not required to respect them, which reduces their utility.
 - **Overlapping alternatives**: Working directory context can be provided through tool parameters, resource URIs, server configuration, or environment variables — all of which are more explicit.
 
@@ -99,7 +99,7 @@ Sampling
 Sampling allows servers to request LLM completions from the client. While conceptually powerful, it has struggled with adoption:
 
 - **Complex to implement**: Correct sampling implementation requires human-in-the-loop approval, model selection logic, security considerations, and (since SEP-1577) tool loop support. This complexity has contributed to low client adoption.
-- **Low adoption**: The [feature support matrix](../General/clients.md#feature-support-matrix) shows that few clients support sampling, despite the feature being available since the November 2024 specification.
+- **Low adoption**: The [feature support matrix](https://modelcontextprotocol.io/seps/General/mcp-clients.md#feature-support-matrix) shows that few clients support sampling, despite the feature being available since the November 2024 specification.
 - **Direct alternatives**: Servers that need LLM capabilities can integrate directly with LLM provider APIs, giving them full control over model selection, parameters, and streaming.
 
 

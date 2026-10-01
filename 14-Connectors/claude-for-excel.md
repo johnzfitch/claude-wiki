@@ -1,8 +1,9 @@
 ---
 title: "Claude for Microsoft 365 | Claude by Anthropic"
-source_url: "https://www.claude.com/claude-for-excel"
+source_url: "https://www.claude.com/claude-for-powerpoint"
 category: "14-Connectors"
-fetched_at: "2026-09-29T06:30:26Z"
+fetched_at: "2026-09-30T06:30:38Z"
+last_modified: "Tue, 29 Sep 2026 22:09:32 GMT"
 tags: ["connectors"]
 ---
 

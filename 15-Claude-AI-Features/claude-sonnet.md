@@ -53,9 +53,9 @@ Anyone can chat with Claude using Sonnet 5 on Claude.ai, available on web, iOS, 
 
 For developers interested in building agents, Sonnet 5 is available on the Claude Platform natively, and on Amazon Web Services, Google Cloud, and Microsoft Foundry.
 
-Sonnet 5 is available today at an introductory price of \$2 per million input tokens and \$10 per million output tokens through August 31, 2026, then moves to standard pricing at \$3 per million input tokens and \$15 per million output tokens, with up to 90% cost savings with [prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) and 50% cost savings with [batch processing](../04-API-Reference/Guides/build-with-claude-batch-processing.md#pricing). To learn more, check out our [pricing page](../17-Billing-Plans/pricing.md#api). To get started, simply use claude-sonnet-5 via the [Claude API](../20-Models/about-claude-models-overview.md).
+Sonnet 5 is available today at an introductory price of \$2 per million input tokens and \$10 per million output tokens through August 31, 2026, then moves to standard pricing at \$3 per million input tokens and \$15 per million output tokens, with up to 90% cost savings with [prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) and 50% cost savings with [batch processing](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-batch-processing-58f98b4064.md#pricing). To learn more, check out our [pricing page](../17-Billing-Plans/pricing.md#api). To get started, simply use claude-sonnet-5 via the [Claude API](../20-Models/about-claude-models-overview.md).
 
-For workloads that need to run in the US, US-only inference is available at 1.1x pricing for input and output tokens. [Learn more](../04-API-Reference/Guides/build-with-claude-data-residency.md).
+For workloads that need to run in the US, US-only inference is available at 1.1x pricing for input and output tokens. [Learn more](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-data-residency-6c8e324ea6.md).
 
 ## Use cases
 
@@ -209,9 +209,9 @@ Pricing depends on how you want to use Sonnet 5. To learn more, check out our [p
 
 - [Mythos](claude-mythos.md)
 - [Fable](claude-fable.md)
-- [Opus](claude-opus.md)
-- [Sonnet](claude-sonnet.md)
-- [Haiku](claude-haiku.md)
+- [Opus](https://www.anthropic.com/claude/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/claude/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/claude/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

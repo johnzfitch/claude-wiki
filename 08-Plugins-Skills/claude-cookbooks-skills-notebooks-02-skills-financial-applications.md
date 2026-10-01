@@ -13,7 +13,7 @@ skills.
 
 > **💡 Real-world Impact:** These are the same Skills that power
 > **[Claude Creates
-> Files](../19-Reference/create-files.md)**, enabling Claude
+> Files](https://github.com/anthropics/claude-cookbooks/blob/main/skills/19-Reference/claude-can-now-create-and-edit-files-claude.md)**, enabling Claude
 > to create professional financial documents directly in the interface.
 
 **What you\'ll learn:**

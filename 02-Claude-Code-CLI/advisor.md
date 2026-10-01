@@ -37,7 +37,7 @@ Copy pageCopy page
 
 The advisor tool is experimental and requires the Anthropic API. It is not available on Amazon Bedrock, Claude Platform on AWS, Google Cloud’s Agent Platform, or Microsoft Foundry. Behavior, pricing, and availability may change.
 
-The advisor tool lets Claude consult a second, typically stronger model at key moments during a task, such as before committing to an approach, when stuck on a recurring error, or before declaring a task complete. The advisor receives the full conversation, including every tool call and result, and returns guidance that Claude applies before continuing. The advisor runs server-side on Anthropic’s infrastructure as a [server tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md), available to both subscription and API-billed accounts. You choose which model acts as the advisor, and Claude decides when to call it. This page covers how to enable the advisor, which model pairings are accepted, what Claude shows during a consultation, and how advisor usage is billed.
+The advisor tool lets Claude consult a second, typically stronger model at key moments during a task, such as before committing to an approach, when stuck on a recurring error, or before declaring a task complete. The advisor receives the full conversation, including every tool call and result, and returns guidance that Claude applies before continuing. The advisor runs server-side on Anthropic’s infrastructure as a [server tool](https://code.claude.com/docs/04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool-0a75684a7b.md), available to both subscription and API-billed accounts. You choose which model acts as the advisor, and Claude decides when to call it. This page covers how to enable the advisor, which model pairings are accepted, what Claude shows during a consultation, and how advisor usage is billed.
 
 
 [​](#when-to-use-the-advisor)
@@ -188,7 +188,7 @@ When Claude calls the advisor, the advisor model reads the conversation, so each
 - **API billing**: you pay the advisor model’s input and output rates for advisor tokens
 - **Subscription plans**: advisor usage counts toward your plan’s usage limits, except that a Fable advisor bills to [usage credits](model-config.md#fable-and-usage-credits) on plans where Fable usage does
 
-If your account requires the usage-credits consent, a Fable advisor bills nothing before you give it, because Claude Code [doesn’t apply the selection](#fable-advisor-and-usage-credits) until then. Claude calls the advisor at decision points rather than on every turn, so pairing a faster main model with a stronger advisor typically costs less than running the stronger model throughout. Advisor usage counts toward the session totals shown by [`/usage`](../17-Billing-Plans/costs.md#track-your-costs). For how advisor tokens are reported in API responses, see [Usage and billing](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md#usage-and-billing) in the Claude API documentation.
+If your account requires the usage-credits consent, a Fable advisor bills nothing before you give it, because Claude Code [doesn’t apply the selection](#fable-advisor-and-usage-credits) until then. Claude calls the advisor at decision points rather than on every turn, so pairing a faster main model with a stronger advisor typically costs less than running the stronger model throughout. Advisor usage counts toward the session totals shown by [`/usage`](../17-Billing-Plans/costs.md#track-your-costs). For how advisor tokens are reported in API responses, see [Usage and billing](https://code.claude.com/docs/04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool-0a75684a7b.md#usage-and-billing) in the Claude API documentation.
 
 
 [​](#impact-on-prompt-caching)
@@ -242,5 +242,5 @@ See also
 
 - [Model configuration](model-config.md): switch models, set effort levels, and use `opusplan`
 - [Manage costs effectively](../17-Billing-Plans/costs.md): track token usage across models
-- [Advisor tool in the Claude API](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md): understand the underlying server tool, or use it directly from the Messages API
+- [Advisor tool in the Claude API](https://code.claude.com/docs/04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool-0a75684a7b.md): understand the underlying server tool, or use it directly from the Messages API
 - [The advisor strategy](https://claude.com/blog/the-advisor-strategy): why pairing a fast main model with a stronger advisor works

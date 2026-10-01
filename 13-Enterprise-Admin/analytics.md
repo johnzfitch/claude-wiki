@@ -275,7 +275,7 @@ On the Enterprise plan, the [Claude Enterprise Analytics API](../04-API-Referenc
 
 Access analytics for API customers
 
-API customers using the Claude Console can access analytics at [platform.claude.com/claude-code](../04-API-Reference/Other/usage-limits.md). You need the UsageView permission to access the dashboard, which is granted to Developer, Billing, Admin, Owner, and Primary Owner roles. To pull the same daily per-user metrics programmatically, use the [Claude Code Analytics API](../04-API-Reference/Other/manage-claude-claude-code-analytics-api.md) with an Admin API key.
+API customers using the Claude Console can access analytics at [platform.claude.com/claude-code](../04-API-Reference/Other/usage-limits.md). You need the UsageView permission to access the dashboard, which is granted to Developer, Billing, Admin, Owner, and Primary Owner roles. To pull the same daily per-user metrics programmatically, use the [Claude Code Analytics API](../04-API-Reference/Guides/build-with-claude-claude-code-analytics-api.md) with an Admin API key.
 
 Contribution metrics with GitHub integration are not currently available for API customers. The Console dashboard shows usage and spend metrics only.
 

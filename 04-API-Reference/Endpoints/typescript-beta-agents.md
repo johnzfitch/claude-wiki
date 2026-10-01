@@ -22,7 +22,7 @@ Create Agent
 
   - `model: BetaManagedAgentsModel | BetaManagedAgentsModelConfigParams`
 
-    Body param: Model identifier. Accepts the [model string](../../20-Models/about-claude-models-overview.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control
+    Body param: Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/api/20-Models/about-claude-models-overview-2bbf09ff82.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control
 
     - `BetaManagedAgentsModel = "claude-opus-4-7" | "claude-opus-4-6" | "claude-sonnet-4-6" | 6 more | (string & {})`
 
@@ -1580,7 +1580,7 @@ Update Agent
 
   - `model?: BetaManagedAgentsModel | BetaManagedAgentsModelConfigParams`
 
-    Body param: Model identifier. Accepts the [model string](../../20-Models/about-claude-models-overview.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
+    Body param: Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/api/20-Models/about-claude-models-overview-2bbf09ff82.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
 
     - `BetaManagedAgentsModel = "claude-opus-4-7" | "claude-opus-4-6" | "claude-sonnet-4-6" | 6 more | (string & {})`
 

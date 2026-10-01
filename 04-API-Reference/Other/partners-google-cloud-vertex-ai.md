@@ -2,7 +2,8 @@
 title: "Google Cloud | Claude by Anthropic"
 source_url: "https://www.claude.com/partners/google-cloud-vertex-ai"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-29T06:31:55Z"
+fetched_at: "2026-09-30T06:32:37Z"
+last_modified: "Tue, 29 Sep 2026 22:09:33 GMT"
 tags: ["api"]
 ---
 

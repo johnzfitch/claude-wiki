@@ -1,8 +1,8 @@
 ---
 title: "Use Claude for M365 with third-party platforms - Claude.ai Documentation"
-source_url: "https://support.claude.com/en/articles/13945233-use-claude-for-microsoft-365-with-third-party-platforms"
+source_url: "https://support.claude.com/en/articles/13945233-use-claude-in-excel-and-powerpoint-with-an-llm-gateway"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:21Z"
+fetched_at: "2026-09-30T06:31:31Z"
 tags: ["claude-ai"]
 ---
 

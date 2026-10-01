@@ -41,7 +41,7 @@ In our framework, we outlined the core tension with agents: to be useful, they n
 
 This approach is intuitive for simple tasks. But when a task requires dozens of actions, repeated prompts can become a source of friction, and users sometimes tune them out. In Claude Code, we introduced a new feature, Plan Mode, to address this gap. Rather than asking for approval for each action one-by-one, Claude shows the user its intended plan of action up-front. The user can review, edit, and approve the whole thing before anything happens—and can still intervene at any point during its execution. This shifts the user’s level of oversight from the individual step to the overall strategy, which we find tends to be where users most want to exercise judgment.
 
-We need to think about more complex patterns of use, too. Increasingly, agents in products like Claude Code hand off some of their work to *subagents*—other "Claudes" working in parallel on different parts of a task. Subagents raise new questions about how users can understand and steer workflows that are no longer neatly visible as a single thread of actions. We are [exploring](https://www.anthropic.com/engineering/multi-agent-research-system) different [coordination patterns](../09-Agents-Patterns/agent-teams.md) to address this, and what we learn will feed into the ways we design oversight for this next generation of agents, and those that follow.
+We need to think about more complex patterns of use, too. Increasingly, agents in products like Claude Code hand off some of their work to *subagents*—other "Claudes" working in parallel on different parts of a task. Subagents raise new questions about how users can understand and steer workflows that are no longer neatly visible as a single thread of actions. We are [exploring](https://www.anthropic.com/engineering/multi-agent-research-system) different [coordination patterns](https://www.anthropic.com/09-Agents-Patterns/agent-teams-e29da6ed1b.md) to address this, and what we learn will feed into the ways we design oversight for this next generation of agents, and those that follow.
 
 ### Helping agents understand their goals
 
@@ -117,9 +117,9 @@ We had Claude autonomously train models to improve their performance on several 
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

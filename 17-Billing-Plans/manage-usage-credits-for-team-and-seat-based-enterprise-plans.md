@@ -1,13 +1,12 @@
 ---
 title: "Manage usage credits for Team and seat-based Enterprise plans | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12005970-manage-usage-credits-for-team-and-seat-based-enterprise-plans"
+source_url: "https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:48Z"
+fetched_at: "2026-09-30T06:32:28Z"
 tags: ["billing", "enterprise"]
 ---
 
 # Manage usage credits for Team and seat-based Enterprise plans
-
 
 
 This article explains how Team and seat-based Enterprise plan Owners and Primary Owners can purchase usage credits, allowing members to continue using Claude, Claude Cowork, and Claude Code after reaching usage limits for their assigned seat.
@@ -72,7 +71,7 @@ Once an organization owner has enabled usage credits:
 
 Owners and Primary Owners of Team and seat-based Enterprise plans can set organization-wide spend limits to ensure predictable costs while providing flexibility for critical work.
 
-**Note:** If you're on an Enterprise plan, you can also set spend limits at the group level. See **[Manage groups and group spend limits on Enterprise plans](manage-groups-and-group-spend-limits-on-enterprise-plans.md)**.
+**Note:** If you're on an Enterprise plan, you can also set spend limits at the group level. See **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**.
 
 ### Spend limits
 

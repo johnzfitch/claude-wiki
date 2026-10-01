@@ -2,7 +2,8 @@
 title: "Claude Code for Enterprise | Claude by Anthropic"
 source_url: "https://www.claude.com/product/claude-code/enterprise"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-16T06:25:38Z"
+fetched_at: "2026-09-30T06:32:38Z"
+last_modified: "Tue, 29 Sep 2026 22:09:31 GMT"
 tags: ["claude-ai", "claude-code", "enterprise", "security"]
 ---
 
@@ -300,9 +301,9 @@ Learn more
 
 Learn more
 
-[Usage limits](../22-Safety-Policy/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits](../22-Safety-Policy/usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
 
 Trusted by engineering teams at leading global organizations
 

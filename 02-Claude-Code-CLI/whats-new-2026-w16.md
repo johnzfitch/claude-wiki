@@ -2,7 +2,7 @@
 title: "Week 16 · April 13–17, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w16"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-04T06:30:00Z"
+fetched_at: "2026-09-30T06:31:00Z"
 tags: ["claude-code"]
 ---
 
@@ -90,7 +90,7 @@ Other wins
 
 New [`/ultrareview`](ultrareview.md): comprehensive code review in the cloud using parallel multi-agent analysis and an adversarial critique pass. Run it bare to review your current branch, or `/ultrareview <PR#>` for a specific PR
 
-[Auto mode](permission-modes.md#eliminate-prompts-with-auto-mode) is now available for Max subscribers on Opus 4.7, and the `—enable-auto-mode` flag is no longer required
+[Auto mode](permission-modes.md#eliminate-prompts-with-auto-mode) is now available for Max subscribers on Opus 4.7, and the `--enable-auto-mode` flag is no longer required
 
 [Session recap](interactive-mode.md#session-recap) shows a one-line summary of what happened while you were away; run `/recap` on demand or turn it off from `/config`
 

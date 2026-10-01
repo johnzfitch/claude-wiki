@@ -106,7 +106,7 @@ Move an existing agent built on the Messages API or the Claude Agent SDK to Clau
 
 managed-agents-2026-04-01
 
-Claude Managed Agents replaces your hand-written agent loop with managed infrastructure. This page covers what changes when you migrate from a custom loop built on the [Messages API](../Guides/build-with-claude-working-with-messages.md) or from the [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md).
+Claude Managed Agents replaces your hand-written agent loop with managed infrastructure. This page covers what changes when you migrate from a custom loop built on the [Messages API](../Guides/build-with-claude-working-with-messages.md) or from the [Claude Agent SDK](https://platform.claude.com/docs/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md).
 
 ## From a Messages API agent loop
 
@@ -223,7 +223,7 @@ with client.beta.sessions.events.stream(session.id) as stream:
 
 ## From the Claude Agent SDK
 
-If you built with the [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md), you're already working with agents, tools, and sessions as concepts. The difference is where they run: the SDK runs in a process you operate, while Managed Agents runs in Anthropic's infrastructure. Most of the migration is mapping SDK configuration objects to their API-side equivalents.
+If you built with the [Claude Agent SDK](https://platform.claude.com/docs/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md), you're already working with agents, tools, and sessions as concepts. The difference is where they run: the SDK runs in a process you operate, while Managed Agents runs in Anthropic's infrastructure. Most of the migration is mapping SDK configuration objects to their API-side equivalents.
 
 ### What changes
 

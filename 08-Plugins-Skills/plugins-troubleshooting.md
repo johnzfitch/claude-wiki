@@ -2,7 +2,7 @@
 title: "Troubleshoot plugins - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/troubleshooting"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-28T06:33:12Z"
+fetched_at: "2026-09-30T06:30:55Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -48,6 +48,9 @@ tags: ["claude-code", "plugins"]
   - [Plugin doesn’t appear or its skills don’t show up](#plugin-doesnt-appear-or-its-skills-dont-show-up)
   - [Run /reload-plugins to activate.](#run-reload-plugins-to-activate)
   - [Plugin "\<name\>" not cached at \<path\>](#plugin-not-cached-at)
+  - [installed_plugins.json holds a record under "\<id\>" that this version of Claude Code cannot read](#installed-plugins-json-holds-a-record-this-version-cannot-read)
+  - [installed_plugins.json could not be read and was rebuilt](#installed-plugins-json-could-not-be-read-and-was-rebuilt)
+  - [install records under names that no version of Claude Code can use were removed from installed_plugins.json](#install-records-under-names-that-no-version-can-use)
   - [Disabled in ~/.claude/settings.json but still loads](#a-plugin-you-disabled-still-loads)
   - [Plugin "\<name\>" is enabled in project settings but isn't installed here](#plugin-is-enabled-in-project-settings-but-isnt-installed-here)
   - [Failed to load hooks from \<path\> and hooks that don’t fire](#failed-to-load-hooks-from-and-hooks-that-dont-fire)
@@ -216,7 +219,12 @@ Claude Code prints `Successfully added marketplace: claude-plugins-official`, an
 
 `Marketplace "<name>" not found`
 
-You ran `/plugin install <plugin>@<name>` in a session, often from an install line someone sent you, and Claude Code reported that it has no marketplace by that name. If the name starts with `claudeai-`, the marketplace is hosted on claude.ai, and you add it by name from your shell with `claude plugin marketplace add --claudeai <name>`. See [Add a marketplace from claude.ai](discover-plugins.md#add-from-claude-ai). For any other name, an install line names a marketplace but doesn’t say where the marketplace is hosted, and Claude Code has no index to look a marketplace name up in. Ask whoever sent the line for the marketplace’s source, which is a GitHub `owner/repo`, a git URL, or a path. Then [add the marketplace](discover-plugins.md#add-a-marketplace) and run the install line again. A marketplace someone sends you is third-party, so [review the plugin before you install it](plugins-security.md#review-a-plugin-before-you-install). If you already added the marketplace, check the spelling against `/plugin marketplace list`.
+You ran `/plugin install` in a session and Claude Code reported that it has no marketplace by that name. Two forms of the command reach this message:
+
+- **`/plugin install <plugin>@<name>`**: the install line, often one someone sent you, names a marketplace you haven’t added. The rest of this entry covers finding and adding it.
+- **`/plugin install <source>` with a path, URL, or `owner/repo`**: this form reports the message instead of installing, even for a source you’ve already added. To install from a source in one command, see [Add a marketplace and install in one command](discover-plugins.md#add-a-marketplace-and-install-in-one-command).
+
+If the name starts with `claudeai-`, the marketplace is hosted on claude.ai, and you add it by name from your shell with `claude plugin marketplace add --claudeai <name>`. See [Add a marketplace from claude.ai](discover-plugins.md#add-from-claude-ai). For any other name, an install line names a marketplace but doesn’t say where the marketplace is hosted, and Claude Code has no index to look a marketplace name up in. Ask whoever sent the line for the marketplace’s source, which is a GitHub `owner/repo`, a git URL, or a path. Then [add the marketplace](discover-plugins.md#add-a-marketplace) and run the install line again. A marketplace someone sends you is third-party, so [review the plugin before you install it](plugins-security.md#review-a-plugin-before-you-install). If you already added the marketplace, check the spelling against `/plugin marketplace list`.
 
 
 [​](#invalid-marketplace-source-format)
@@ -657,6 +665,39 @@ claude plugin install <name>@<marketplace>
 Then run `/reload-plugins` in your session. The **Errors** tab entry disappears and the plugin is back under **Installed**.
 
 
+[​](#installed-plugins-json-holds-a-record-this-version-cannot-read)
+
+`installed_plugins.json holds a record under "<id>" that this version of Claude Code cannot read`
+
+The message surfaces in these forms:
+
+- **`claude plugin list`**: prints it as a `Note:`
+- **`claude plugin install`, `uninstall`, and `update`**: refuse with `Plugin "<name>" was not installed:`, `Plugin "<name>" was not uninstalled:`, or `Plugin "<name>" was not updated:`, followed by the same text
+- **`--json` on any of those three commands**: the result line carries the same `message` and `failureCode: "install_records_unreadable"`
+- **Several such records**: the message reads `holds records under`
+- **The whole file declares a format this version doesn’t know**: the message reads `installed_plugins.json is in a format (version <N>) that this version of Claude Code does not know` instead
+
+The named record in `installed_plugins.json` is valid JSON under a valid plugin id, but its fields don’t parse for this version. Most likely another version of Claude Code wrote it, perhaps a newer one. While the record is there, this version doesn’t rewrite the file, so the record isn’t lost. Take the message’s options in order:
+
+1.  Update Claude Code with `claude update`.
+2.  If you can’t update, uninstall the named plugin with the version of Claude Code that wrote the record.
+3.  If neither helps, delete the record from `installed_plugins.json` by hand, then restart Claude Code or run `/reload-plugins`.
+
+
+[​](#installed-plugins-json-could-not-be-read-and-was-rebuilt)
+
+`installed_plugins.json could not be read and was rebuilt`
+
+`claude plugin list` prints this note, with the path of a kept file named `installed_plugins.unreadable.<date>.<hash>.kept`, for as long as that file sits beside `installed_plugins.json`. An `installed_plugins.json` that isn’t valid JSON, or isn’t a list of plugins, can’t say what you installed. Open the `.kept` file to see what the old file recorded, and reinstall the plugins you’re missing. Claude Code never reads the file back, and the file ages out on the [`cleanupPeriodDays`](../02-Claude-Code-CLI/settings-reference.md#cleanupperioddays) schedule.
+
+
+[​](#install-records-under-names-that-no-version-can-use)
+
+`install records under names that no version of Claude Code can use were removed from installed_plugins.json`
+
+`claude plugin list` prints this note, with the path of a copy named `installed_plugins.set-aside.<date>.<hash>.json`, for as long as that copy sits beside `installed_plugins.json`. The note ends `Nothing needs doing about these copies.` A record in `installed_plugins.json` sat under a key that isn’t a valid plugin id, so no version of Claude Code can use it. The rest of the file loads normally. Claude Code copies the unusable records into the `.set-aside` file and drops them from the list. Claude Code never reads the copies back, and the copies age out on the [`cleanupPeriodDays`](../02-Claude-Code-CLI/settings-reference.md#cleanupperioddays) schedule.
+
+
 [​](#a-plugin-you-disabled-still-loads)
 
 `Disabled in ~/.claude/settings.json but still loads`
@@ -951,18 +992,20 @@ Marketplace validation errors
 
 You ran `claude plugin validate .` from your marketplace directory and it reported errors or warnings on the marketplace file itself. `claude plugin validate` also validates each entry whose `source` is a local path and warns when the entry’s `version` disagrees with the plugin’s own manifest. The table lists the marketplace-level messages. Entry-level messages are the plugin messages under [`claude plugin validate` reports errors](#claude-plugin-validate-reports-errors), prefixed with `plugins[N] plugin.json →`.
 
-| Message                                                                                                                   | Kind    | Fix                                                                                                                                 |
-|:--------------------------------------------------------------------------------------------------------------------------|:--------|:------------------------------------------------------------------------------------------------------------------------------------|
-| `Duplicate plugin name "<name>" found in marketplace`                                                                     | Error   | Give each plugin a unique `name`.                                                                                                   |
-| `Path contains "..": <path>` under `plugins[N].source`                                                                    | Error   | Use paths relative to the marketplace root without `..` segments.                                                                   |
-| `Marketplace name cannot contain control or bidirectional-formatting characters`                                          | Error   | Remove the character from the name, such as an escape or a newline.                                                                 |
-| `Plugin name cannot contain control or bidirectional-formatting characters`                                               | Error   | Remove the character from the plugin `name`.                                                                                        |
-| `Marketplace has no plugins defined`                                                                                      | Warning | Add at least one entry to `plugins`.                                                                                                |
-| `No marketplace description provided`                                                                                     | Warning | Add a top-level `description`.                                                                                                      |
-| `Plugin name "<name>" is not kebab-case` under `plugins[N] plugin.json → name`                                            | Warning | Rename to lowercase letters, digits, and hyphens. Claude Code accepts other forms, but the claude.ai marketplace sync rejects them. |
-| `Entry declares version "<a>" but <path>/plugin.json says "<b>"`                                                          | Warning | Update the entry to match `plugin.json`, which is authoritative at install time.                                                    |
-| `Marketplace name "<name>" is reserved in Claude Desktop`                                                                 | Warning | Rename the marketplace. Claude Desktop’s managed marketplace sync rejects `org`, `org-provisioned`, and `unknown` in any casing.    |
-| `Marketplace name "<name>" is not accepted by Claude Desktop` or `Plugin name "<name>" is not accepted by Claude Desktop` | Warning | Rename to at most 128 characters of letters, digits, `.`, `_`, and `-`, starting with a letter or digit.                            |
+| Message                                                                                                                                                                                                                                               | Kind    | Fix                                                                                                                              |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------|:---------------------------------------------------------------------------------------------------------------------------------|
+| `Duplicate plugin name "<name>" found in marketplace`                                                                                                                                                                                                 | Error   | Give each plugin a unique `name`.                                                                                                |
+| `Path contains "..": <path>` under `plugins[N].source`                                                                                                                                                                                                | Error   | Use paths relative to the marketplace root without `..` segments.                                                                |
+| `Marketplace name cannot contain control or bidirectional-formatting characters`                                                                                                                                                                      | Error   | Remove the character from the name, such as an escape or a newline.                                                              |
+| `Plugin name cannot contain control or bidirectional-formatting characters`                                                                                                                                                                           | Error   | Remove the character from the plugin `name`.                                                                                     |
+| `Claude Code cannot install plugins from marketplace "<name>". Each part of a plugin id (plugin@marketplace) may use only the letters a-z and A-Z, digits, ".", "_" and "-", and must start with a letter or digit. Change the marketplace's "name".` | Error   | Rename the marketplace to fit the rule the message states.                                                                       |
+| `Claude Code cannot install plugin "<name>". Each part of a plugin id (plugin@marketplace) may use only the letters a-z and A-Z, digits, ".", "_" and "-", and must start with a letter or digit. Change this entry's "name".`                        | Error   | Rename the entry to fit the rule the message states.                                                                             |
+| `Marketplace has no plugins defined`                                                                                                                                                                                                                  | Warning | Add at least one entry to `plugins`.                                                                                             |
+| `No marketplace description provided`                                                                                                                                                                                                                 | Warning | Add a top-level `description`.                                                                                                   |
+| `Plugin name "<name>" is not kebab-case` under `plugins[N] plugin.json → name`                                                                                                                                                                        | Warning | Rename to lowercase letters, digits, and hyphens; the claude.ai marketplace sync requires that form.                             |
+| `Entry declares version "<a>" but <path>/plugin.json says "<b>"`                                                                                                                                                                                      | Warning | Update the entry to match `plugin.json`, which is authoritative at install time.                                                 |
+| `Marketplace name "<name>" is reserved in Claude Desktop`                                                                                                                                                                                             | Warning | Rename the marketplace. Claude Desktop’s managed marketplace sync rejects `org`, `org-provisioned`, and `unknown` in any casing. |
+| `Marketplace name "<name>" is not accepted by Claude Desktop` or `Plugin name "<name>" is not accepted by Claude Desktop`                                                                                                                             | Warning | Rename to at most 128 characters of letters, digits, `.`, `_`, and `-`, starting with a letter or digit.                         |
 
 Before v2.1.247, a marketplace name containing control or bidirectional-formatting characters was reported only as `Marketplace name impersonates an official Anthropic/Claude marketplace`.
 

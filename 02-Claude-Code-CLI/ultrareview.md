@@ -131,9 +131,9 @@ Ultrareview is a premium feature that bills against usage credits rather than yo
 
 | Plan                | Included free runs | After free runs                                                                                              |
 |---------------------|--------------------|--------------------------------------------------------------------------------------------------------------|
-| Pro                 | 3 free runs        | billed as [usage credits](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md) |
-| Max                 | 3 free runs        | billed as [usage credits](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md) |
-| Team and Enterprise | none               | billed as [usage credits](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md) |
+| Pro                 | 3 free runs        | billed as [usage credits](https://code.claude.com/docs/17-Billing-Plans/extra-usage-for-paid-claude-plans-32418755be.md) |
+| Max                 | 3 free runs        | billed as [usage credits](https://code.claude.com/docs/17-Billing-Plans/extra-usage-for-paid-claude-plans-32418755be.md) |
+| Team and Enterprise | none               | billed as [usage credits](https://code.claude.com/docs/17-Billing-Plans/extra-usage-for-paid-claude-plans-32418755be.md) |
 
 - **Free runs**: the three Pro and Max runs are a one-time allotment per account and don’t refresh.
 - **Cost per review**: after you use the free runs, typically \$5 to \$25 in usage credits depending on the size of the change, matching the estimate the launch dialog shows before each run.

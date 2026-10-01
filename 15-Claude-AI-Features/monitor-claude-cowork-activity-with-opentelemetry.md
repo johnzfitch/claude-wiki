@@ -1,13 +1,12 @@
 ---
 title: "Monitor Claude Cowork activity with OpenTelemetry | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/14477985-monitor-claude-cowork-activity-with-opentelemetry"
+source_url: "https://support.claude.com/en/articles/14477985-monitor-cowork-activity-with-opentelemetry"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:46Z"
+fetched_at: "2026-09-30T06:32:51Z"
 tags: ["api", "claude-ai", "security"]
 ---
 
 # Monitor Claude Cowork activity with OpenTelemetry
-
 
 
 **Note:** Claude Cowork and chat are now one Claude, rolling out gradually to Pro and Max plans. Ask for what you need, and Claude decides whether that's a quick answer or a task. Team and Enterprise organizations keep chat and Claude Cowork as they are today, so everything in this article still applies. Learn more in our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.

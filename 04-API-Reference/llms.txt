@@ -17,6 +17,6 @@
 - [API Reference / Endpoints / ruby](Endpoints/llms-ruby.txt) — 109 pages
 - [API Reference / Endpoints / terraform](Endpoints/llms-terraform.txt) — 109 pages
 - [API Reference / Endpoints / typescript](Endpoints/llms-typescript.txt) — 109 pages
-- [API Reference / Guides](Guides/llms.txt) — 49 pages
-- [API Reference / Other](Other/llms.txt) — 140 pages
-- [API Reference / Test Evaluate](Test-Evaluate/llms.txt) — 10 pages
+- [API Reference / Guides](Guides/llms.txt) — 50 pages
+- [API Reference / Other](Other/llms.txt) — 139 pages
+- [API Reference / Test Evaluate](Test-Evaluate/llms.txt) — 11 pages

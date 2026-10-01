@@ -2,7 +2,7 @@
 title: "Compaction and preserved thinking - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/compaction-thinking-blocks"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-22T06:31:44Z"
+fetched_at: "2026-09-30T06:30:48Z"
 tags: ["api", "prompting"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "prompting"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -54,7 +54,7 @@ Tool infrastructure
 
 Context management
 
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics (beta)](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
+[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
 
 [Compaction](build-with-claude-compaction.md)
 
@@ -134,7 +134,7 @@ To change `system` or `tools` without invalidating any kept thinking, compact th
 
 To add an instruction or change the available tools without touching `system` or `tools`, append the change to `messages`, as described in [Make changes without editing the prefix](build-with-claude-preserved-thinking.md#replace-prefix-edits).
 
-Mid-conversation system messages inside the summarized turns are summarized too, so their instructions and tool changes stop applying after the swap. To keep one in force, state it again in a `role: "system"` message directly after the first new `user` turn that follows the kept turns. A system message placed between the block and the kept turns breaks their thinking.
+Mid-conversation system messages inside the summarized turns are summarized too, so their text instructions stop applying after the swap. To keep one in force, state it again in a `role: "system"` message directly after the first new `user` turn that follows the kept turns. Tool changes inside those turns carry over on their own when the compaction request also carries `inline-tools-2026-09-15`: the returned block records their net effect in its `tool_changes` field, so send the block back unmodified. If the block has no `tool_changes` field, restate those tool changes the same way. A system message placed between the block and the kept turns breaks their thinking.
 
 ## Check that the kept thinking held
 
@@ -256,4 +256,14 @@ In production, `"drop_block"` keeps requests succeeding when a condition doesn't
 
 ## Compatibility
 
-[TABLE]
+Supported models  
+- Fable 5 and 5.1
+- Mythos 5, 5.1, and Preview
+- Opus 4.6, 4.7, 4.8, 5, and 5.5
+- Sonnet 4.6, 5, and 5.5
+
+Supported platforms  
+- Claude APIBeta
+- Claude Platform on AWSBeta
+- Google CloudBeta
+- Microsoft FoundryBeta

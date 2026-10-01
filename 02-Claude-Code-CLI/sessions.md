@@ -2,7 +2,7 @@
 title: "Manage sessions - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/sessions"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-28T06:33:13Z"
+fetched_at: "2026-09-30T06:30:57Z"
 tags: ["claude-code"]
 ---
 
@@ -34,7 +34,7 @@ Name, resume, branch, and switch between Claude Code conversations. Covers `--co
 
 Copy pageCopy page
 
-A session is a saved conversation tied to a project directory. Claude Code stores it locally as you work, so you can resume where you left off, branch to try a different approach, or switch between tasks. The [desktop app](../16-Mobile-Desktop/desktop.md#work-in-parallel-with-sessions), [claude.ai/code](claude-code-on-the-web.md), and the [VS Code extension](../03-IDE-Integrations/vs-code.md#resume-past-conversations) each maintain their own session history. This page covers the CLI.
+A session is a saved conversation tied to a project directory. Claude Code stores it locally as you work, so you can resume where you left off, branch to try a different approach, or switch between tasks. The [desktop app](../16-Mobile-Desktop/desktop.md#work-in-parallel-with-sessions), [claude.ai/code](claude-code-on-the-web.md), and the [VS Code extension](../03-IDE-Integrations/vs-code.md#resume-past-conversations) each keep their own session list, and the desktop app can also [resume a CLI session](../16-Mobile-Desktop/desktop.md#coming-from-the-cli). This page covers the CLI.
 
 
 [​](#resume-a-session)
@@ -149,7 +149,7 @@ Give sessions descriptive names so they’re findable in the session picker and 
 | From claude.ai or the Claude app | Rename a [Remote Control session](remote-control.md#connect-from-another-device); Claude Code applies the same name in the CLI. Requires Claude Code v2.1.221 or later           |
 | From the desktop app             | Rename a session in the [desktop app](../16-Mobile-Desktop/desktop.md#work-in-parallel-with-sessions)                                                                                                 |
 
-Once you name a session through a CLI route or from claude.ai, return to it with `claude --resume <name>` or `/resume <name>`; a desktop-app session resumes in the app, which keeps its own session history. See [Resume a session](#resume-a-session) for how name resolution behaves across worktrees. When you start or resume an interactive session with a name that another live session on this machine already uses, or rename a session into such a name, Claude Code leaves the name with the session that already has it, renames yours to a variant with a two-word suffix, such as `auth-refactor-graceful-unicorn`, and tells you. Run `/rename` with a new name if you’d rather pick one yourself. Before v2.1.232, both sessions kept the name. In three cases Claude Code doesn’t rename the duplicate, so you can still see two sessions with the same name in listings:
+Once you name a session through a CLI route or from claude.ai, return to it with `claude --resume <name>` or `/resume <name>`; a desktop-app session resumes in the [desktop app](../16-Mobile-Desktop/desktop.md#work-in-parallel-with-sessions). See [Resume a session](#resume-a-session) for how name resolution behaves across worktrees. When you start or resume an interactive session with a name that another live session on this machine already uses, or rename a session into such a name, Claude Code leaves the name with the session that already has it, renames yours to a variant with a two-word suffix, such as `auth-refactor-graceful-unicorn`, and tells you. Run `/rename` with a new name if you’d rather pick one yourself. Before v2.1.232, both sessions kept the name. In three cases Claude Code doesn’t rename the duplicate, so you can still see two sessions with the same name in listings:
 
 - It doesn’t check AI-generated titles or default display names.
 - It doesn’t check the `--name` of a [background](../09-Agents-Patterns/agent-view.md#from-your-shell) or `-p` session at startup.

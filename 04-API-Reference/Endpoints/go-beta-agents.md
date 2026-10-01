@@ -22,7 +22,7 @@ Create Agent
 
   - `Model param.Field[BetaManagedAgentsModelConfigParamsResp]`
 
-    Body param: Model identifier. Accepts the [model string](../../20-Models/about-claude-models-overview.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control
+    Body param: Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/api/20-Models/about-claude-models-overview-2bbf09ff82.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control
 
     - `type BetaManagedAgentsModelConfigParamsResp struct{…}`
 
@@ -1592,7 +1592,7 @@ Update Agent
 
   - `Model param.Field[BetaManagedAgentsModelConfigParamsResp]`
 
-    Body param: Model identifier. Accepts the [model string](../../20-Models/about-claude-models-overview.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
+    Body param: Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/api/20-Models/about-claude-models-overview-2bbf09ff82.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
 
     - `type BetaManagedAgentsModelConfigParamsResp struct{…}`
 

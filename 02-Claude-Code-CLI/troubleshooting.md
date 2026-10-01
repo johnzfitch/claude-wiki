@@ -2,7 +2,7 @@
 title: "Troubleshooting - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/troubleshooting"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-26T06:38:09Z"
+fetched_at: "2026-09-30T06:30:54Z"
 tags: ["claude-code"]
 ---
 
@@ -73,7 +73,7 @@ If a session’s heap memory passes 2.5GB, a critical memory usage warning appea
 
 The `.heapsnapshot` file contains every string in the process, including your full conversation and credentials. Don’t attach it to a public issue or share it.
 
-The command also prints a summary in the conversation, showing resident set size, JS heap, array buffers, and unaccounted native memory, plus any leak indicators it detected, such as a high memory growth rate or an unusually high number of open handles. The summary says whether most memory is in the JS heap, which the snapshot captures, or in native memory, which it doesn’t. Report the output or investigate it yourself:
+The command also prints a summary in the conversation, showing the process’s total memory, how much of it is in the JS heap, and how much sits outside the heap. The summary also lists any leak indicators, such as a high memory growth rate or an unusually high number of open handles. The summary says whether most memory is in the JS heap, which the snapshot captures, or in native memory, which it doesn’t. Report the output or investigate it yourself:
 
 - **Report it**: open a [GitHub issue](https://github.com/anthropics/claude-code/issues) and attach only the `-diagnostics.json` file, which carries the statistics behind the printed summary and no conversation content or credentials
 - **Investigate it yourself**: if the summary says most memory is JS heap, open the `.heapsnapshot` file in Chrome DevTools under Memory → Load and sort by retained size to see what’s holding the memory
@@ -220,4 +220,4 @@ If you’re experiencing issues not covered here:
 3.  Check the [GitHub repository](https://github.com/anthropics/claude-code) for known issues
 4.  Ask Claude directly about its capabilities and features. Claude has built-in access to its documentation.
 
-For account, billing, or subscription problems, contact Anthropic support instead: sign in at [claude.ai](https://claude.ai) (Console users: [platform.claude.com](../04-API-Reference/Other/usage-limits.md)), click your initials in the lower left, and select **Get help**. See [How to get support](../21-Account-Support/how-can-i-contact-support.md) for the full flow, including who can reach a human agent on each plan.
+For account, billing, or subscription problems, contact Anthropic support instead: sign in at [claude.ai](https://claude.ai) (Console users: [platform.claude.com](../04-API-Reference/Other/usage-limits.md)), click your initials in the lower left, and select **Get help**. See [How to get support](https://support.claude.com/en/articles/9015913-how-to-get-support) for the full flow, including who can reach a human agent on each plan.

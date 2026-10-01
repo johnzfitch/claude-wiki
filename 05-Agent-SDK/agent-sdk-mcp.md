@@ -56,7 +56,7 @@ This page covers MCP configuration for the Agent SDK. To add MCP servers to the 
 
 Quickstart
 
-This example connects to the [Claude Code documentation](../02-Claude-Code-CLI/code-home.md) MCP server using [HTTP transport](#http%2Fsse-servers) and uses [`allowedTools`](#allow-mcp-tools) with a wildcard to permit all tools from the server.
+This example connects to the [Claude Code documentation](https://code.claude.com/docs/en/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md) MCP server using [HTTP transport](#http%2Fsse-servers) and uses [`allowedTools`](#allow-mcp-tools) with a wildcard to permit all tools from the server.
 
 TypeScript
 

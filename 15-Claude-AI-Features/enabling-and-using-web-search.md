@@ -1,14 +1,12 @@
 ---
 title: "Enable and use web search | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/10684626-enabling-and-using-web-search"
+source_url: "https://support.claude.com/en/articles/10684626"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:38Z"
+fetched_at: "2026-09-30T06:31:24Z"
 tags: ["claude-ai", "search"]
 ---
 
 # Enable and use web search
-
-Updated today
 
 
 You can have Claude search the internet to provide you with up-to-date information and insights when using the following models:
@@ -99,7 +97,7 @@ Claude selects images from web search results, powered by Bing, and displays the
 
 Image search is powered by Bing (**[Microsoft Privacy Statement](https://www.microsoft.com/en-us/privacy/privacystatement)**).
 
-Claude can also display interactive content in search results. For more detailed information, see here: **[Visual and interactive content](visual-responses-and-interactive-widgets.md)**.
+Claude can also display interactive content in search results. For more detailed information, see here: **[Visual and interactive content](https://support.claude.com/en/articles/13641943-visual-responses-and-interactive-widgets)**.
 
 ## Manage usage on free Claude accounts
 
@@ -155,4 +153,4 @@ You can re-enable it anytime you need current information.
 
 - For web search questions or support, please visit our **[Online Safety Contacts](../22-Safety-Policy/online-safety-contacts.md)** page.
 
-- For content removal requests, please visit our **[Report, block, and remove content from Claude](../19-Reference/reporting-blocking-and-removing-content-from-claude.md)** page.
+- For content removal requests, please visit our **[Report, block, and remove content from Claude](../22-Safety-Policy/reporting-blocking-and-removing-content-from-claude.md)** page.

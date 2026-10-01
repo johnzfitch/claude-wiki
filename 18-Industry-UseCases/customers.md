@@ -1,8 +1,8 @@
 ---
 title: "Customer Stories | Claude by Anthropic"
-source_url: "https://www.claude.com/customers"
+source_url: "https://www.anthropic.com/customers"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:51Z"
+fetched_at: "2026-09-30T06:32:32Z"
 tags: ["case-studies"]
 ---
 
@@ -10,31 +10,31 @@ tags: ["case-studies"]
 
 Businesses build with Claude for the problems that matter most. Our customers include enterprises and startups across financial services, healthcare, legal, and more.
 
-[Contact sales](https://www.claude.com/contact-sales)
+[Contact sales](https://www.anthropic.com/contact-sales)
 
 Customer story
 
 Notion is building a workspace for teams and agents
 
-[Read story](notion-qa.md)
+[Read story](https://www.anthropic.com/customers/notion-qa)
 
 Customer story
 
 How Slack uses Claude for AI search and summaries
 
-[Read story](slack.md)
+[Read story](https://www.anthropic.com/customers/slack)
 
 Customer story
 
 Figma transforms ideas into interactive software
 
-[Read story](figma.md)
+[Read story](https://www.anthropic.com/customers/figma)
 
 Customer story
 
 HubSpot reclaims time for creativity with Claude
 
-[Read story](hubspot.md)
+[Read story](https://www.anthropic.com/customers/hubspot)
 
 Filter and sort
 

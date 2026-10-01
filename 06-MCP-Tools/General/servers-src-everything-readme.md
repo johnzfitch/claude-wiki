@@ -3,7 +3,7 @@ title: "MCP Everything Server (Test)"
 source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/README.md"
 category: "06-MCP-Tools/General"
 fetched_at: "2026-05-19T21:39:56Z"
-tags: ["desktop", "mcp", "prompting"]
+tags: ["desktop", "git", "github", "mcp", "prompting"]
 ---
 
 # Everything MCP Server
@@ -21,7 +21,7 @@ This MCP server attempts to exercise all the features of the MCP protocol. It is
 
 A complete list of the registered MCP primitives and other protocol features demonstrated can be found in the [Server Features](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/docs/features.md) document.
 
-## Usage with Claude Desktop (uses [stdio Transport](../Spec-Archive/2025-03-26-basic-transports.md#stdio))
+## Usage with Claude Desktop (uses [stdio Transport](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md#stdio))
 
 Add to your `claude_desktop_config.json`:
 
@@ -101,7 +101,7 @@ On Windows, use:
 }
 ```
 
-## Running from source with [HTTP+SSE Transport](../Spec-Archive/2024-11-05-basic-transports.md#http-with-sse) (deprecated as of [2025-03-26](../Spec-Archive/2025-03-26-basic-transports.md))
+## Running from source with [HTTP+SSE Transport](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/Spec-Archive/spec-2024-11-05-transports-model-context-protocol.md#http-with-sse) (deprecated as of [2025-03-26](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md))
 
 ```shell
 cd src/everything
@@ -109,7 +109,7 @@ npm install
 npm run start:sse
 ```
 
-## Run from source with [Streamable HTTP Transport](../Spec-Archive/2025-03-26-basic-transports.md#streamable-http)
+## Run from source with [Streamable HTTP Transport](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md#streamable-http)
 
 ```shell
 cd src/everything

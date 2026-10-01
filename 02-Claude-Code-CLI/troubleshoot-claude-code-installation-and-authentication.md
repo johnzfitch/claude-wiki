@@ -2,7 +2,7 @@
 title: "Troubleshoot Claude Code installation and authentication | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14552646-troubleshoot-claude-code-installation-and-authentication"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:32:14Z"
+fetched_at: "2026-09-30T06:32:01Z"
 tags: ["api", "authentication", "bedrock", "claude-code", "vertex"]
 ---
 

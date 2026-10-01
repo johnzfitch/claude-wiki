@@ -2,7 +2,7 @@
 title: "Anthropic Software Directory Policy | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:31:12Z"
+fetched_at: "2026-09-30T06:31:41Z"
 tags: ["safety"]
 ---
 

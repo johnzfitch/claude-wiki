@@ -2,7 +2,7 @@
 title: "Week 33 · August 10–14, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w33"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:29:14Z"
+fetched_at: "2026-09-30T06:31:00Z"
 tags: ["claude-code"]
 ---
 
@@ -42,7 +42,7 @@ The fork appears in the panel below your prompt and its result arrives in your c
 
 GitLab merge requests and marketplacesv2.1.232
 
-Plugin marketplaces clone bare `gitlab.com` URLs, including nested subgroups. On v2.1.233 or later, pass a GitLab merge request URL to `—worktree` to branch from it, and the `claude agents` view labels sessions linked to a merge request as `!N`. Claude Code also redacts GitLab token families such as `glpat-` and `glrt-`, and protects the `glab` CLI’s config store the same way it protects `gh`.
+Plugin marketplaces clone bare `gitlab.com` URLs, including nested subgroups. On v2.1.233 or later, pass a GitLab merge request URL to `--worktree` to branch from it, and the `claude agents` view labels sessions linked to a merge request as `!N`. Claude Code also redacts GitLab token families such as `glpat-` and `glrt-`, and protects the `glab` CLI’s config store the same way it protects `gh`.
 
 Start a session in a worktree branched from a merge request:
 

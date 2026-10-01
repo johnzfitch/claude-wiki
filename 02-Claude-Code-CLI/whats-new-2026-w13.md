@@ -2,7 +2,7 @@
 title: "Week 13 · March 23–27, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w13"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-04T06:29:44Z"
+fetched_at: "2026-09-30T06:30:44Z"
 tags: ["claude-code"]
 ---
 
@@ -18,7 +18,7 @@ Releases [v2.1.83 → v2.1.85](changelog.md#2-1-83)6 features · March 23–27
 
 Auto moderesearch preview
 
-Auto mode hands your permission prompts to a classifier. Safe edits and commands run without interrupting you; anything destructive or suspicious gets blocked and surfaced. It’s the middle ground between approving every file write and running with `—dangerously-skip-permissions`.
+Auto mode hands your permission prompts to a classifier. Safe edits and commands run without interrupting you; anything destructive or suspicious gets blocked and surfaced. It’s the middle ground between approving every file write and running with `--dangerously-skip-permissions`.
 
 Cycle to auto with Shift+Tab, or set it as your default:
 

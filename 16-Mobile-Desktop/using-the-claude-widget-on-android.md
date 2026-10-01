@@ -2,7 +2,7 @@
 title: "Use the Claude widget on Android | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10534883-using-the-claude-widget-on-android"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-29T06:31:12Z"
+fetched_at: "2026-09-30T06:32:18Z"
 tags: ["desktop"]
 ---
 

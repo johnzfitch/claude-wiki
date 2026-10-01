@@ -2,12 +2,11 @@
 title: "Models, usage, and limits in Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:31:25Z"
+fetched_at: "2026-09-30T06:31:35Z"
 tags: ["claude-code", "safety"]
 ---
 
 # Models, usage, and limits in Claude Code
-
 
 
 This guide explains which model you are using, how usage is metered, and how to keep long sessions within their context and usage limits.

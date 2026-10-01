@@ -2,24 +2,9 @@
 title: "Develop an Inference hooks integration - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/inference-hooks-endpoint"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-22T06:29:53Z"
+fetched_at: "2026-09-30T06:30:49Z"
 tags: ["api", "hooks", "prompting"]
 ---
-
-### Cookie settings
-
-We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services to you. You can read our Cookie Policy [here](https://www.anthropic.com/legal/cookies).
-
-CustomizeCustomize Cookie Settings
-
-RejectReject All Cookies
-
-AcceptAccept All Cookies
-
-
-Claude Platform Docs
-
-- [Messages](../../01-Getting-Started/intro.md)
 
 - [Managed Agents](managed-agents-overview.md)
 
@@ -28,7 +13,7 @@ Claude Platform Docs
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -61,7 +46,9 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
+
+[Access Transparency](manage-claude-access-transparency.md)
 
 [Encryption keys](manage-claude-cmek.md)
 

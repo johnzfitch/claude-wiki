@@ -2,7 +2,7 @@
 title: "Ping Identity SSO setup | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917902-ping-identity-sso-setup"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:31:43Z"
+fetched_at: "2026-09-30T06:31:48Z"
 tags: ["enterprise"]
 ---
 
@@ -15,13 +15,13 @@ This guide covers configuring Claude with PingOne or PingFederate as your identi
 
 ## Prerequisites
 
-- A Claude Team plan, Enterprise plan, or Console organization with a parent organization (see **[Important considerations before enabling SSO](../21-Account-Support/important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning.md)** for Console parent org requirements)
+- A Claude Team plan, Enterprise plan, or Console organization with a parent organization (see **[Important considerations before enabling SSO](https://support.claude.com/en/articles/10276682)** for Console parent org requirements)
 
 - Owner or Primary Owner role (Team and Enterprise) or Admin role (Console)
 
 - PingOne Environment Admin or PingFederate Admin access
 
-- Your domain verified in Claude's Identity and access settings—see **[Set up single sign-on](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md)** for the full setup path including domain verification
+- Your domain verified in Claude's Identity and access settings—see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full setup path including domain verification
 
 ## Where to find your configuration values
 
@@ -55,7 +55,7 @@ Start the SSO setup flow there and keep it open alongside your Ping admin consol
 
 ### Step 3 — Enable SCIM provisioning
 
-**Note:** SCIM provisioning is available on Enterprise plans and eligible Console organizations only. If you're on a Team plan, skip this step—you can use JIT provisioning instead. See **[Set up JIT or SCIM provisioning](setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)**.
+**Note:** SCIM provisioning is available on Enterprise plans and eligible Console organizations only. If you're on a Team plan, skip this step—you can use JIT provisioning instead. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195)**.
 
 1.  In the application settings, go to the **Provisioning** tab.
 
@@ -85,10 +85,10 @@ PingFederate configurations vary significantly by version and deployment. The ge
 
 4.  For SCIM (Enterprise plans and eligible Console organizations only), configure an outbound provisioning channel targeting the SCIM endpoint from the WorkOS setup flow.
 
-Contact **[our Support team](../21-Account-Support/how-can-i-contact-support.md)** for PingFederate-specific guidance.
+Contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** for PingFederate-specific guidance.
 
 ------------------------------------------------------------------------
 
 ## Need help?
 
-See **[Set up single sign-on](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md)** for the full end-to-end flow including domain verification and choosing a provisioning approach. If you run into issues, contact **[our Support team](../21-Account-Support/how-can-i-contact-support.md)** with your Ping environment details.
+See **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full end-to-end flow including domain verification and choosing a provisioning approach. If you run into issues, contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** with your Ping environment details.

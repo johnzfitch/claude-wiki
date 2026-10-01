@@ -2,7 +2,7 @@
 title: "Use interactive connectors in Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-09-29T06:31:38Z"
+fetched_at: "2026-09-30T06:32:43Z"
 tags: ["connectors", "enterprise", "mcp", "security"]
 ---
 
@@ -21,7 +21,7 @@ For example, you might ask Claude about your project status, and instead of just
 
 Claude can also generate its own custom visuals—diagrams, charts, and simple interactive elements built from scratch for your question. When a connected service offers an interactive interface that handles your request, like an MCP app, Claude will use it. Custom visuals fill the gaps when no connector interface fits what you’re asking for.
 
-For more on Claude-generated visuals, see **[Custom visuals in chat](../15-Claude-AI-Features/custom-visuals-in-chat-and-cowork.md)**.
+For more on Claude-generated visuals, see **[Custom visuals in chat](https://support.claude.com/en/articles/13979539-custom-visuals-in-chat)**.
 
 ------------------------------------------------------------------------
 

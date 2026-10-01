@@ -2,7 +2,7 @@
 title: "Carta Healthcare Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/carta-healthcare"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:53Z"
+fetched_at: "2026-09-30T06:33:29Z"
 tags: ["api", "case-studies", "cli", "enterprise", "security"]
 ---
 

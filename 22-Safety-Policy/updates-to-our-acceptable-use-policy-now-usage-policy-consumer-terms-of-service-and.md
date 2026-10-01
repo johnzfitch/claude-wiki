@@ -2,7 +2,7 @@
 title: "Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9301722-updates-to-our-acceptable-use-policy-now-usage-policy-consumer-terms-of-service-and-privacy-policy"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:31:13Z"
+fetched_at: "2026-09-30T06:33:15Z"
 tags: ["safety"]
 ---
 
@@ -41,7 +41,7 @@ Privacy Policy
 
 - **Data controller:** We’ve updated our **[Privacy Policy](https://www.anthropic.com/legal/privacy)** to reflect that the data controller for our users in the European Economic Area (EEA), UK, and Switzerland is Anthropic Ireland, Limited.
 
-- **Data retention:** We’ve changed our [default data retention period](../17-Billing-Plans/how-long-do-you-store-personal-data.md) to 30 days.
+- **Data retention:** We’ve changed our [default data retention period](../13-Enterprise-Admin/how-long-do-you-store-personal-data.md) to 30 days.
 
 You can review our full **[Usage Policy](https://www.anthropic.com/legal/aup)**, **[Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms)**, and **[Privacy Policy](https://www.anthropic.com/legal/privacy)** on our website. If you have any questions, please contact us [here](https://support.anthropic.com).
 

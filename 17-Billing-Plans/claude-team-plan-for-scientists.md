@@ -1,13 +1,12 @@
 ---
 title: "Claude Team plan for scientists | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/16634237-claude-team-plan-for-scientists"
+source_url: "https://support.claude.com/en/articles/16634237"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:32:25Z"
+fetched_at: "2026-09-30T06:33:02Z"
 tags: ["billing"]
 ---
 
 # Claude Team plan for scientists
-
 
 
 ## What is the Claude Team plan for scientists?

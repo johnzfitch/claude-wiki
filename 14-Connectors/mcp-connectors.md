@@ -2,7 +2,7 @@
 title: "MCP connectors | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503689-mcp-connectors"
 category: "14-Connectors"
-fetched_at: "2026-09-29T06:31:24Z"
+fetched_at: "2026-09-30T06:31:34Z"
 tags: ["connectors", "mcp", "security"]
 ---
 
@@ -13,7 +13,7 @@ April 10, 2026
 
 MCP connectors let Claude connect to your organization’s tools, data sources, and services. Claude can search your documents, read your email, or call external APIs on your behalf, all without leaving the chat.
 
-For general questions about connectors in Claude, see **[Use connectors to extend Claude's capabilities](use-connectors-to-extend-claude-s-capabilities.md)**.
+For general questions about connectors in Claude, see **[Use connectors to extend Claude's capabilities](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)**.
 
 ## How MCP connectors differ in Claude for Government
 
@@ -27,7 +27,7 @@ For general questions about connectors in Claude, see **[Use connectors to exten
 
 [TABLE]
 
-Organizations can also register their own MCP servers for internal systems, custom tools, or approved third-party services. See **[Custom Connectors](getting-started-with-custom-integrations-using-remote-mcp.md)**.
+Organizations can also register their own MCP servers for internal systems, custom tools, or approved third-party services. See **[Custom Connectors](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)**.
 
 ## Enable a connector for your organization
 

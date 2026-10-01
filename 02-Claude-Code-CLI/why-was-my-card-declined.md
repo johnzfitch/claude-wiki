@@ -2,7 +2,7 @@
 title: "Why was my card declined? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9402418-why-was-my-card-declined"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:32:13Z"
+fetched_at: "2026-09-30T06:32:17Z"
 tags: ["billing", "claude-code", "cli"]
 ---
 
@@ -43,4 +43,4 @@ If you have access to another payment method, consider using it to complete your
 
 Reach out to your issuing bank directly to inquire about the reason for the decline. They may be able to provide additional information or insights that can help you resolve the issue.
 
-If you've tried the troubleshooting steps above and are still encountering difficulties, contact **[our support team](../21-Account-Support/how-can-i-contact-support.md)** for further assistance.
+If you've tried the troubleshooting steps above and are still encountering difficulties, contact **[our support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** for further assistance.

@@ -2,7 +2,7 @@
 title: "I would like to input sensitive data into my chats with Claude. Who can view my conversations? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8325621-i-would-like-to-input-sensitive-data-into-my-chats-with-claude-who-can-view-my-conversations"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:07Z"
+fetched_at: "2026-09-30T06:32:11Z"
 tags: ["claude-ai"]
 ---
 
@@ -29,7 +29,7 @@ When you allow us to use your chats or coding sessions to help improve Claude, w
 
 - You maintain full control and can adjust your **[privacy settings](https://claude.ai/settings/data-privacy-controls)** at any time.
 
-- Your incognito chats are not used to improve Claude, even if you have enabled Model Improvement in your privacy settings. **[Learn more](using-incognito-chats.md)** about incognito chats.
+- Your incognito chats are not used to improve Claude, even if you have enabled Model Improvement in your privacy settings. **[Learn more](https://support.claude.com/en/articles/12260368-)** about incognito chats.
 
 **Note:** If our safety classifiers flag your conversations, they may still be used to improve our internal trust and safety models, detect harmful content, enforce our policies, or advance our safety research.
 

@@ -1,13 +1,12 @@
 ---
 title: "Control project sharing for your organization | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/9927533-disable-public-projects-for-your-organization"
+source_url: "https://support.claude.com/en/articles/9927533-how-can-i-disable-public-projects"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:43Z"
+fetched_at: "2026-09-30T06:32:22Z"
 tags: ["claude-ai"]
 ---
 
 # Control project sharing for your organization
-
 
 
 This feature is available to Primary Owners and Owners on Team and Enterprise plans. On Enterprise plans, custom roles with the **Privacy** permission set to "Can manage" can also change these settings. Setting project sharing by role is available on Enterprise plans only.
@@ -68,7 +67,7 @@ On Enterprise plans, you can turn project sharing on or off for specific roles.
 
 4.  Click "Save role."
 
-**Share projects** must be on at the organization level before roles can control it. Role changes can take up to 15 minutes to apply. See **[Manage custom roles on Enterprise plans](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**.
+**Share projects** must be on at the organization level before roles can control it. Role changes can take up to 15 minutes to apply. See **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**.
 
 ## Turn project sharing back on
 
@@ -80,4 +79,4 @@ On Enterprise plans, you can turn project sharing on or off for specific roles.
 
 - Existing sharing settings and permissions don't change.
 
-To learn how users share projects, see **[Manage project visibility and sharing](../22-Safety-Policy/manage-project-visibility-and-sharing.md)**.
+To learn how users share projects, see **[Manage project visibility and sharing](https://support.claude.com/en/articles/9519189-manage-project-visibility-and-sharing)**.

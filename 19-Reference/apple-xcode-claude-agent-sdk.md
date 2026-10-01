@@ -14,7 +14,7 @@ Apple's Xcode is where developers build, test, and distribute apps for Apple pla
 
 In September, [we announced](claude-in-xcode.md) that developers would have access to Claude Sonnet 4 in Xcode 26. Claude could be used to write code, debug, and generate documentation—but it was limited to helping with individual, turn-by-turn requests.
 
-Now, Xcode 26.3 introduces a native integration with the [Claude Agent SDK](../05-Agent-SDK/agent-sdk-overview.md), the same underlying harness that powers Claude Code. Developers get the full power of Claude Code directly in Xcode—including subagents, background tasks, and plugins—all without leaving the IDE.
+Now, Xcode 26.3 introduces a native integration with the [Claude Agent SDK](https://www.anthropic.com/05-Agent-SDK/agent-sdk-overview.md), the same underlying harness that powers Claude Code. Developers get the full power of Claude Code directly in Xcode—including subagents, background tasks, and plugins—all without leaving the IDE.
 
 ## **Using Claude for long-running, autonomous work in Xcode**
 
@@ -71,9 +71,9 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

@@ -2,7 +2,7 @@
 title: "Satispay Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/satispay"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:33:11Z"
+fetched_at: "2026-09-30T06:33:46Z"
 tags: ["agents", "case-studies", "claude-code", "enterprise", "security"]
 ---
 

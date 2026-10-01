@@ -2,13 +2,11 @@
 title: "Real-time cyber safeguards on Claude Opus and Sonnet | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet"
 category: "20-Models"
-fetched_at: "2026-09-29T06:31:50Z"
+fetched_at: "2026-09-30T06:32:54Z"
 tags: ["models"]
 ---
 
 # Real-time cyber safeguards on Claude Opus and Sonnet
-
-Updated today
 
 
 **Note**: This article applies only to Opus and Sonnet class models, but doesn’t apply to Claude Opus 5.5 or Sonnet 5.5. We'll soon be expanding the Cyber Verification Program to include Opus 5.5, Sonnet 5.5, and Mythos class models.

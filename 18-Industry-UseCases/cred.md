@@ -2,7 +2,7 @@
 title: "CRED Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/cred"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:31:33Z"
+fetched_at: "2026-09-30T06:32:32Z"
 tags: ["agents", "api", "case-studies", "enterprise", "security"]
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: "Enable US-only inference for your organization | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/15422948-enable-us-only-inference-for-your-organization"
+source_url: "https://support.claude.com/en/articles/15422948"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:32:20Z"
+fetched_at: "2026-09-30T06:32:57Z"
 tags: ["billing", "enterprise"]
 ---
 

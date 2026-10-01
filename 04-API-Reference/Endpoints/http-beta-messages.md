@@ -4149,7 +4149,7 @@ The request could assist the development of competing AI models, which is restri
 
 
 
-The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](../Guides/build-with-claude-thinking-steering-and-cost.md).
+The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](https://platform.claude.com/docs/en/api/http/Guides/build-with-claude-adaptive-thinking-2b96627d8d.md).
 
 "general_harms"
 

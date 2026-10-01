@@ -2,7 +2,7 @@
 title: "How does Claude handle mathematical equations and calculations? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10366421-how-does-claude-handle-mathematical-equations-and-calculations"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:30:11Z"
+fetched_at: "2026-09-30T06:31:22Z"
 tags: ["claude-ai"]
 ---
 

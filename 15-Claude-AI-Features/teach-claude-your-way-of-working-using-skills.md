@@ -95,7 +95,7 @@ Even occasional work might require gathering multiple files or tools, explaining
 
 Skills are available on Pro, Max, Team, and Enterprise plans. They also need **Code execution and file creation** turned on, since Skills run in Claude’s secure sandboxed computing environment. To get started, navigate to `Settings` \> `Capabilities` \> `Skills`, check that code execution is enabled, and toggle on some of the pre-built example skills. From there, when you describe a task to Claude that references a skill’s name or description, Claude recognizes it and loads the skill automatically.
 
-Learn how to write your own [custom skills(opens in new tab)](../02-Claude-Code-CLI/how-to-create-custom-skills.md), incorporating guidance from our [skills best practices(opens in new tab)](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices.md) to understand the principles that make skills most effective.
+Learn how to write your own [custom skills(opens in new tab)](https://support.claude.com/en/02-Claude-Code-CLI/creating-custom-skills-eb687e04e2.md), incorporating guidance from our [skills best practices(opens in new tab)](https://support.claude.com/en/04-API-Reference/Other/skill-authoring-best-practices.md) to understand the principles that make skills most effective.
 
 You also don’t have to be technical to start creating skills. Try [creating skills using Claude(opens in new tab)](how-to-create-a-skill-with-claude-through-conversation.md). Start by identifying a well-suited task and describing it for Claude to turn into a skill. Claude will build and structure it into a properly formatted skill file.
 
@@ -133,8 +133,8 @@ The habit worth keeping goes beyond skills themselves: whenever you hand Claude 
 
 ### Going deeper[](#going-deeper)
 
-- [Skill authoring best practices(opens in new tab)](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices.md) - Learn the principles behind effective Skills
-- [Agent skills overview(opens in new tab)](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md) - Understand how Skills work under the hood
+- [Skill authoring best practices(opens in new tab)](https://support.claude.com/en/04-API-Reference/Other/skill-authoring-best-practices.md) - Learn the principles behind effective Skills
+- [Agent skills overview(opens in new tab)](https://support.claude.com/en/04-API-Reference/Other/agent-skills.md) - Understand how Skills work under the hood
 - [Skill cookbooks(opens in new tab)](https://platform.claude.com/cookbook) - Working examples you can adapt
 
 - [What are skills?](#what-are-skills)

@@ -582,17 +582,17 @@ Models
 
 - Opus
 
-  [Opus](claude-opus.md)
+  [Opus](https://www.claude.com/product/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](claude-sonnet.md)
+  [Sonnet](https://www.claude.com/product/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](claude-haiku.md)
+  [Haiku](https://www.claude.com/product/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Enterprise
@@ -709,7 +709,7 @@ Developers
 
 - Developer docs
 
-  [Developer docs](../02-Claude-Code-CLI/code-home.md)
+  [Developer docs](https://www.claude.com/01-Getting-Started/overview.md)
   Developer docs
 
 - Community

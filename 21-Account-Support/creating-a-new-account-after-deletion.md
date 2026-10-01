@@ -2,7 +2,7 @@
 title: "Creating a new account after deletion | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12109679-creating-a-new-account-after-deletion"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:31:48Z"
+fetched_at: "2026-09-30T06:31:10Z"
 tags: ["account"]
 ---
 

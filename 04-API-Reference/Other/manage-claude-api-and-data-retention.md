@@ -93,7 +93,7 @@ Under a ZDR arrangement, Anthropic does not store customer prompts or responses 
 ### What ZDR covers
 
 - **Claude Messages and Token Counting APIs:** ZDR applies to these endpoints for eligible features listed in the [feature eligibility table](#feature-eligibility). Features that ride on `/v1/messages` but are marked "No" in the table (such as code execution) are not covered.
-- **Claude Code:** ZDR applies when Claude Code is used with API keys from a Commercial organization (an organization under Anthropic's Commercial Terms of Service, as distinct from a consumer Claude account) or through Claude Enterprise with ZDR enabled. If metrics logging is enabled in Claude Code, productivity data such as usage statistics is exempted from ZDR and may be retained. See the [Claude Code ZDR documentation](../../02-Claude-Code-CLI/zero-data-retention.md) for full details.
+- **Claude Code:** ZDR applies when Claude Code is used with API keys from a Commercial organization (an organization under Anthropic's Commercial Terms of Service, as distinct from a consumer Claude account) or through Claude Enterprise with ZDR enabled. If metrics logging is enabled in Claude Code, productivity data such as usage statistics is exempted from ZDR and may be retained. See the [Claude Code ZDR documentation](https://platform.claude.com/docs/22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md) for full details.
 - **Claude Platform on AWS:** [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md) follows the same data retention policy as the first-party Claude API. ZDR is available on request; contact your Anthropic account representative to enable it.
 
 ### What ZDR does not cover
@@ -197,7 +197,7 @@ HIPAA readiness is enforced at the organization level. If you need both HIPAA-re
 
 ## Model-specific data retention requirements
 
-Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, and Claude Mythos 5 are designated Covered Models (see the [Covered Models support article](../../20-Models/covered-models.md)) and require 30-day data retention; ZDR is therefore not available for any of them unless expressly authorized by Anthropic. On the Claude API, requests to Claude Fable 5 from an organization whose data retention configuration does not meet this requirement return a `400 invalid_request_error`:
+Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, and Claude Mythos 5 are designated Covered Models (see the [Covered Models support article](../../15-Claude-AI-Features/covered-models-claude-help-center.md)) and require 30-day data retention; ZDR is therefore not available for any of them unless expressly authorized by Anthropic. On the Claude API, requests to Claude Fable 5 from an organization whose data retention configuration does not meet this requirement return a `400 invalid_request_error`:
 
 ```python
 {
@@ -344,7 +344,7 @@ ZDR is enabled on a per-organization basis. Each new organization requires ZDR t
 
 Additionally, if you have metrics logging enabled in Claude Code, productivity data (such as usage statistics) is exempted from ZDR and may be retained.
 
-For full details on ZDR for Claude Code on Claude Enterprise, including disabled features and how to request enablement, see the [Claude Code ZDR documentation](../../02-Claude-Code-CLI/zero-data-retention.md).
+For full details on ZDR for Claude Code on Claude Enterprise, including disabled features and how to request enablement, see the [Claude Code ZDR documentation](https://platform.claude.com/docs/22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md).
 
 ### Does Claude for Excel support ZDR?
 

@@ -2,7 +2,7 @@
 title: "Financial analysis workflows with Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude"
 category: "01-Getting-Started"
-fetched_at: "2026-09-29T06:31:24Z"
+fetched_at: "2026-09-30T06:32:30Z"
 tags: ["getting-started"]
 ---
 
@@ -181,7 +181,7 @@ Create an interactive artifact showing: portfolio summary with weighted returns 
 
 Open in Claude
 
-[Artifacts can be shared(opens in new tab)](../15-Claude-AI-Features/discovering-publishing-customizing-and-sharing-artifacts.md#h_264285dcf3) with other members of your organization. The interactive nature allows stakeholders to explore the data without requiring multiple static reports.
+[Artifacts can be shared(opens in new tab)](https://support.claude.com/en/articles/9547008-discovering-publishing-customizing-and-sharing-artifacts#h_264285dcf3) with other members of your organization. The interactive nature allows stakeholders to explore the data without requiring multiple static reports.
 
 ## Next Steps[](#next-steps)
 

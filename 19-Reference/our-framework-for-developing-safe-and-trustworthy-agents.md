@@ -14,7 +14,7 @@ The most popular AI tools today are assistants that respond to specific question
 
 Agents direct their own processes and tool usage, maintaining control over how they accomplish tasks with minimum human input. If you ask an agent to "help plan my wedding" it might autonomously research venues and vendors, compare pricing and availability, and create detailed timelines and budgets. Or if you ask it to "prepare my company’s board presentation", it might search through your connected Google Drive for relevant sales reports and financial documents, extract key metrics from multiple spreadsheets, and produce a report.
 
-Last year, we introduced [Claude Code](../15-Claude-AI-Features/claude-code.md), an agent that can autonomously write, debug, and edit code, and is used widely by software engineers. Many companies are also building their own agents using our models. [Trellix,](https://www.anthropic.com/customers/trellix) a cybersecurity firm, uses Claude to triage and investigate security issues. And [Block](https://www.anthropic.com/customers/block), a financial services company, has built an agent that allows non-technical staff to access its data systems using natural language, saving its engineers time.
+Last year, we introduced [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md), an agent that can autonomously write, debug, and edit code, and is used widely by software engineers. Many companies are also building their own agents using our models. [Trellix,](https://www.anthropic.com/customers/trellix) a cybersecurity firm, uses Claude to triage and investigate security issues. And [Block](https://www.anthropic.com/customers/block), a financial services company, has built an agent that allows non-technical staff to access its data systems using natural language, saving its engineers time.
 
 ## Principles for trustworthy agents
 
@@ -50,13 +50,13 @@ Agents can retain information across different tasks and interactions. This crea
 
 Tools and processes that agents utilize should also be designed with the appropriate privacy protections and controls. The open-source [Model Context Protocol](https://www.anthropic.com/partners/mcp) (MCP) we created, which allows Claude to connect to other services, includes controls to enable users to allow or prevent Claude from accessing specific tools and processes, or what we call “connectors” in a given task. In implementing MCP, we included additional controls, such as the option to grant one-time or permanent access to information. Enterprise administrators can also set which connectors users in their organizations can connect to. We continue to explore ways to improve our privacy protection tooling.
 
-We’ve also outlined steps our customers should take to [safeguard their data](../14-Connectors/getting-started-with-custom-integrations-using-remote-mcp.md) through measures like access permissions, authentication, and data segregation.
+We’ve also outlined steps our customers should take to [safeguard their data](https://support.anthropic.com/en/articles/11175166-getting-started-with-custom-integrations-using-remote-mcp) through measures like access permissions, authentication, and data segregation.
 
 ## Securing agents’ interactions
 
 Agent systems should be designed to safeguard sensitive data and prevent misuse when interacting with other systems or agents. Since agents are tasked with achieving specific goals, attackers could trick an agent into ignoring its original instructions, revealing unauthorized information, or performing unintended actions by making it seem necessary to do so for the agent’s objectives (also referred to as "prompt injection"). Or attackers could exploit vulnerabilities in the tools or sub-agents that agents use.
 
-Claude already uses a system of [classifiers](research-constitutional-classifiers.md) to detect and guard against misuses such as prompt injections, in addition to several [other layers of security](https://docs.anthropic.com/en/docs/claude-code/security). Our Threat Intelligence team conducts ongoing monitoring to assess and mitigate new or emerging forms of malicious behaviour. In addition, we [provide guidance](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md) on how organizations using Claude can further decrease these risks. Tools added to our [Anthropic-reviewed MCP directory](connectors-directory.md) must adhere to our security, safety, and compatibility [standards](../22-Safety-Policy/anthropic-mcp-directory-policy.md).
+Claude already uses a system of [classifiers](research-constitutional-classifiers.md) to detect and guard against misuses such as prompt injections, in addition to several [other layers of security](https://docs.anthropic.com/en/docs/claude-code/security). Our Threat Intelligence team conducts ongoing monitoring to assess and mitigate new or emerging forms of malicious behaviour. In addition, we [provide guidance](../04-API-Reference/Test-Evaluate/platform-claude-com-test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md) on how organizations using Claude can further decrease these risks. Tools added to our [Anthropic-reviewed MCP directory](connectors-directory.md) must adhere to our security, safety, and compatibility [standards](../22-Safety-Policy/anthropic-mcp-directory-policy.md).
 
 When we discover new malicious behaviors or vulnerabilities through our monitoring and research, we strive to address them quickly and continuously improve our security measures to stay ahead of evolving threats.
 
@@ -104,9 +104,9 @@ These principles will guide our current and future work on agent development, an
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

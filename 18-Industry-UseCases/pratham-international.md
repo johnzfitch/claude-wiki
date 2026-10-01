@@ -2,7 +2,7 @@
 title: "Pratham International Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/pratham-international"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:31:46Z"
+fetched_at: "2026-09-30T06:32:45Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 

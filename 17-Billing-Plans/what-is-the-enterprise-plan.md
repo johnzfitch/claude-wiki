@@ -2,12 +2,11 @@
 title: "What is the Enterprise plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:17Z"
+fetched_at: "2026-09-30T06:33:18Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
 # What is the Enterprise plan?
-
 
 
 The **[Enterprise plan](../18-Industry-UseCases/enterprise.md)** is designed for organizations that need advanced security, compliance controls, and scalable AI across their teams. It includes everything in the **[Team plan](what-is-the-team-plan.md)**, plus additional security and compliance features. Enterprise plan pricing works differently than Team plans: the seat fee covers access only, and all usage is billed separately at API rates.
@@ -56,7 +55,7 @@ Enterprise includes everything in the Team plan, plus the following:
 
 - **HIPAA-readiness**
 
-  - Eligible organizations can enable a HIPAA-ready configuration and accept a BAA from organization settings. Learn more about **[HIPAA-ready Enterprise plans](hipaa-ready-enterprise-plans.md).**
+  - Eligible organizations can enable a HIPAA-ready configuration and accept a BAA from organization settings. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans).**
 
 ------------------------------------------------------------------------
 
@@ -138,7 +137,7 @@ Some existing usage-based Enterprise organizations currently have two seat types
 
 Your current seat types and pricing will remain in place until your next contract renewal. At renewal, your plan will automatically transition to the single Enterprise seat model described above—all users will move to the all-inclusive **Enterprise seat** **priced** **per user per month**, which includes Claude Code access.
 
-For details on how seat management works on your current plan, see **[Purchase and manage seats on Enterprise plans](purchasing-and-managing-seats-on-enterprise-plans.md#h_2673e097fb)**.
+For details on how seat management works on your current plan, see **[Purchase and manage seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans#h_2673e097fb)**.
 
 ------------------------------------------------------------------------
 
@@ -148,6 +147,6 @@ For details on how seat management works on your current plan, see **[Purchase a
 
 Some Enterprise organizations are on older seat-based plans that use **Standard** and **Premium** seats with per-seat usage limits, rather than the usage-based model described above. If you see "Standard" and "Premium" seats when you navigate to **[Organization settings \> Members](https://claude.ai/admin-settings/members)**, this section applies to you.
 
-Seat-based Enterprise plans haven't changed; your seat types, usage limits, and usage credit options will remain as they are until you migrate to the current usage-based billing model. For details on how usage credits work on your plan, see **[Manage usage credits for Team and seat-based Enterprise plans](manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**.
+Seat-based Enterprise plans haven't changed; your seat types, usage limits, and usage credit options will remain as they are until you migrate to the current usage-based billing model. For details on how usage credits work on your plan, see **[Manage usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-)**.
 
 If you're interested in migrating to the current usage-based model, reach out to your Anthropic Contact or **[our Sales team](https://claude.com/contact-sales)**.

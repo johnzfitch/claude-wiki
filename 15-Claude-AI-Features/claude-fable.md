@@ -87,7 +87,7 @@ Claude Fable 5.1 understands diagrams, charts, and tables nested in files and PD
 
 ## Safeguards
 
-Claude Fable 5.1 includes robust safeguards for cybersecurity and biology. Many queries in these domains are automatically routed to less capable models if flagged by these safeguards. You won’t be charged Fable prices for rerouted requests. [Learn more](../20-Models/why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1.md) about how the fallback experience works.
+Claude Fable 5.1 includes robust safeguards for cybersecurity and biology. Many queries in these domains are automatically routed to less capable models if flagged by these safeguards. You won’t be charged Fable prices for rerouted requests. [Learn more](https://www.anthropic.com/20-Models/why-claude-switched-models-in-your-conversation-with-fable-5-2d51d90ee2.md) about how the fallback experience works.
 
 We extensively test and evaluate our models to ensure they meet Anthropic’s standards for safety, security, and reliability. The accompanying [system card](claude-fable-5-1-mythos-5-1-system-card.md) covers safety results in depth.
 
@@ -95,7 +95,7 @@ We extensively test and evaluate our models to ensure they meet Anthropic’s st
 
 Using Fable requires 30-day data retention for safety monitoring by default. Enterprise customers eligible for Enterprise Frontier Safeguards can store data on their own cloud infrastructure and any human review is by default done by the customer themselves, rather than Anthropic. Until EFS is available, eligible customers can use Fable 5.1 with zero data retention.
 
-[Learn more](../20-Models/data-retention-practices-for-mythos-class-models.md) about data retention. [Learn more](../19-Reference/enterprise-frontier-safeguards.md) about Enterprise Frontier Safeguards.
+[Learn more](https://www.anthropic.com/99-Other/data-retention-practices-for-covered-models-claude-help-center-5e59bf2012.md) about data retention. [Learn more](../19-Reference/enterprise-frontier-safeguards.md) about Enterprise Frontier Safeguards.
 
 ## Benchmarks
 
@@ -161,7 +161,7 @@ Claude Mythos 5.1 is available to vetted organizations through our trusted acces
 
 ### How does the fallback work?
 
-For most Claude applications, queries flagged by our cybersecurity safeguards automatically route to Opus 4.8 and biology safeguards route to Opus 5. API customers must configure their settings with our new Fallback API. [Learn more](../20-Models/why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1.md)
+For most Claude applications, queries flagged by our cybersecurity safeguards automatically route to Opus 4.8 and biology safeguards route to Opus 5. API customers must configure their settings with our new Fallback API. [Learn more](why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1-claude-help.md)
 
 ### How much does it cost to use Claude Fable 5.1?
 
@@ -190,9 +190,9 @@ Pricing depends on how you want to use Claude Fable 5.1. To learn more, check ou
 
 - [Mythos](claude-mythos.md)
 - [Fable](claude-fable.md)
-- [Opus](claude-opus.md)
-- [Sonnet](claude-sonnet.md)
-- [Haiku](claude-haiku.md)
+- [Opus](https://www.anthropic.com/claude/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/claude/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/claude/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

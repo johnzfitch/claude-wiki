@@ -232,7 +232,7 @@ cURL
 
 \[Legacy\] Create a Text Completion.
 
-The Text Completions API is a legacy API. We recommend using the [Messages API](messages.md) going forward.
+The Text Completions API is a legacy API. We recommend using the [Messages API](https://platform.claude.com/docs/en/api/http/completions/api-messages-2dd213ca95.md) going forward.
 
 Future models and features will not be compatible with Text Completions. See our [migration guide](../Guides/build-with-claude-working-with-messages.md) for guidance in migrating from Text Completions to Messages.
 
@@ -510,7 +510,7 @@ Assistant:\` conversational turns. For example:
 
     Assistant:"
 
-See [prompt validation](../Guides/build-with-claude-working-with-messages.md) and our guide to [prompt design](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md) for more details.
+See [prompt validation](../Guides/build-with-claude-working-with-messages.md) and our guide to [prompt design](https://platform.claude.com/docs/en/api/10-Prompting-Guides/build-with-claude-prompt-engineering-overview-1ab62e934b.md) for more details.
 
 minLength1
 

@@ -290,7 +290,7 @@ List Events
 
     - `tool_use_id: str`
 
-      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `type: Literal["user.tool_confirmation"]`
 
@@ -314,7 +314,7 @@ List Events
 
     - `custom_tool_use_id: str`
 
-      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `type: Literal["user.custom_tool_result"]`
 
@@ -1666,7 +1666,7 @@ Send Events
 
     - `tool_use_id: str`
 
-      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `type: Literal["user.tool_confirmation"]`
 
@@ -1682,7 +1682,7 @@ Send Events
 
     - `custom_tool_use_id: str`
 
-      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `type: Literal["user.custom_tool_result"]`
 
@@ -2096,7 +2096,7 @@ Send Events
 
       - `tool_use_id: str`
 
-        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `type: Literal["user.tool_confirmation"]`
 
@@ -2120,7 +2120,7 @@ Send Events
 
       - `custom_tool_use_id: str`
 
-        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `type: Literal["user.custom_tool_result"]`
 
@@ -2568,7 +2568,7 @@ Stream Events
 
     - `tool_use_id: str`
 
-      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `type: Literal["user.tool_confirmation"]`
 
@@ -2592,7 +2592,7 @@ Stream Events
 
     - `custom_tool_use_id: str`
 
-      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `type: Literal["user.custom_tool_result"]`
 
@@ -4605,7 +4605,7 @@ for event in client.beta.sessions.events.stream(
 
     - `tool_use_id: str`
 
-      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `type: Literal["user.tool_confirmation"]`
 
@@ -4621,7 +4621,7 @@ for event in client.beta.sessions.events.stream(
 
     - `custom_tool_use_id: str`
 
-      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `type: Literal["user.custom_tool_result"]`
 
@@ -5333,7 +5333,7 @@ for event in client.beta.sessions.events.stream(
 
       - `tool_use_id: str`
 
-        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `type: Literal["user.tool_confirmation"]`
 
@@ -5357,7 +5357,7 @@ for event in client.beta.sessions.events.stream(
 
       - `custom_tool_use_id: str`
 
-        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `type: Literal["user.custom_tool_result"]`
 
@@ -6057,7 +6057,7 @@ for event in client.beta.sessions.events.stream(
 
     - `tool_use_id: str`
 
-      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `type: Literal["user.tool_confirmation"]`
 
@@ -6081,7 +6081,7 @@ for event in client.beta.sessions.events.stream(
 
     - `custom_tool_use_id: str`
 
-      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `type: Literal["user.custom_tool_result"]`
 
@@ -7657,7 +7657,7 @@ for event in client.beta.sessions.events.stream(
 
     - `tool_use_id: str`
 
-      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `type: Literal["user.tool_confirmation"]`
 
@@ -7681,7 +7681,7 @@ for event in client.beta.sessions.events.stream(
 
     - `custom_tool_use_id: str`
 
-      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `type: Literal["user.custom_tool_result"]`
 
@@ -8921,7 +8921,7 @@ for event in client.beta.sessions.events.stream(
 
   - `custom_tool_use_id: str`
 
-    The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+    The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
   - `type: Literal["user.custom_tool_result"]`
 
@@ -9089,7 +9089,7 @@ for event in client.beta.sessions.events.stream(
 
   - `custom_tool_use_id: str`
 
-    The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+    The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
   - `type: Literal["user.custom_tool_result"]`
 
@@ -9613,7 +9613,7 @@ for event in client.beta.sessions.events.stream(
 
   - `tool_use_id: str`
 
-    The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+    The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
   - `type: Literal["user.tool_confirmation"]`
 
@@ -9643,7 +9643,7 @@ for event in client.beta.sessions.events.stream(
 
   - `tool_use_id: str`
 
-    The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+    The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/python/beta/sessions/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
   - `type: Literal["user.tool_confirmation"]`
 

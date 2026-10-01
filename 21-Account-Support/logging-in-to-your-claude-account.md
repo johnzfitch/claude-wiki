@@ -1,8 +1,8 @@
 ---
 title: "Log in to your Claude account | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account"
+source_url: "https://support.claude.com/en/articles/13189465-log-in-to-your-claude-account"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:31:35Z"
+fetched_at: "2026-09-30T06:32:40Z"
 tags: ["account"]
 ---
 

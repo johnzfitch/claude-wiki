@@ -2,7 +2,7 @@
 title: "Advantage Solutions Claude case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/advantage-solutions"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:48Z"
+fetched_at: "2026-09-30T06:33:25Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 

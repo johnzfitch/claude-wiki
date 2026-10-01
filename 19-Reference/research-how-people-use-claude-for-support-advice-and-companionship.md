@@ -2,7 +2,7 @@
 title: "How people use Claude for support, advice, and companionship \\ Anthropic"
 source_url: "https://www.anthropic.com/research/how-people-use-claude-for-support-advice-and-companionship"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:31:26Z"
+fetched_at: "2026-09-30T06:32:07Z"
 tags: ["news-research"]
 ---
 

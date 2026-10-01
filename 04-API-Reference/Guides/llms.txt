@@ -43,12 +43,12 @@ This is useful for:
 
 ## Organization roles and permissions
 
-There are five organization-level roles. See more details in the [API Console roles and permissions](../Other/claude-console-roles-and-permissions.md) article.
+There are five organization-level roles. See more details in the [API Console roles and permissions](https://platform.claude.com/docs/en/api-console-roles-and-permissions-4c21777af6.md) article.
 
 | Role | Permissions |
 |------|-------------|
 | user | Can use Workbench |
-| claude_code_user | Can use Workbench and [Claude Code](../../02-Claude-Code-CLI/code-home.md) |
+| claude_code_user | Can use Workbench and [Claude Code](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-overview-claude-code-docs-c23f3e7cbb.md) |
 | developer | Can use Workbench and manage API keys |
 | billing | Can use Workbench and manage billing details |
 | admin | Can do all of the above, plus manage users |
@@ -204,7 +204,7 @@ Track your organization's usage and costs with the [Usage and Cost API](build-wi
 
 ## Claude Code analytics
 
-Monitor developer productivity and Claude Code adoption with the [Claude Code Analytics API](../Other/manage-claude-claude-code-analytics-api.md).
+Monitor developer productivity and Claude Code adoption with the [Claude Code Analytics API](build-with-claude-claude-code-analytics-api.md).
 
 ## Rate limits
 
@@ -979,7 +979,7 @@ The Message Batches API is designed with strong privacy and data separation meas
 
 1.  Batches and their results are isolated within the Workspace in which they were created. This means they can only be accessed by API requests in that same Workspace.
 2.  Each request within a batch is processed independently, with no data leakage between requests.
-3.  Results are only available for a limited time (29 days), and follow Anthropic's [data retention policy](../../17-Billing-Plans/how-long-do-you-store-personal-data.md).
+3.  Results are only available for a limited time (29 days), and follow Anthropic's [data retention policy](../../13-Enterprise-Admin/how-long-do-you-store-personal-data.md).
 4.  Downloading batch results in the Console can be disabled on the organization-level or on a per-workspace basis.
 
 ### Can I use prompt caching in the Message Batches API?
@@ -2041,6 +2041,371 @@ Supported platforms
 - Amazon Bedrock
 - Google Cloud
 - Microsoft Foundry
+
+---
+
+## Claude Code Analytics API - Claude Platform Docs
+
+Source: https://platform.claude.com/docs/en/build-with-claude/claude-code-analytics-api
+Path: 04-API-Reference/Guides/build-with-claude-claude-code-analytics-api.md
+
+- [Managed Agents](../Other/managed-agents-overview.md)
+
+- [Admin](../Other/manage-claude-admin-api.md)
+
+- Resources
+  - [Best practices](../About/about-claude-use-case-guides-overview.md)
+  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
+  - [Release notes](../../20-Models/release-notes-overview.md)
+
+[API reference](../Endpoints/overview.md)
+
+
+
+
+[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fclaude-code-analytics-api)
+
+
+
+
+
+SearchCtrlK
+
+Organization
+
+[Admin API](../Other/manage-claude-admin-api.md)[User management](../Other/manage-claude-user-management.md)[Workspaces](../Other/manage-claude-workspaces.md)
+
+Authentication
+
+[Overview](../Other/manage-claude-authentication.md)[Create an Admin API key](../Other/manage-claude-admin-api-keys.md)[App Attest](../Other/manage-claude-app-attest.md)[Workload Identity Federation](../Other/manage-claude-workload-identity-federation.md)[Manage WIF via API](../Other/manage-claude-wif-admin-api.md)[WIF reference](../Other/manage-claude-wif-reference.md)
+
+Identity providers
+
+Monitoring
+
+[Usage and Cost API](../Other/manage-claude-usage-cost-api.md)[Rate Limits API](../Other/manage-claude-rate-limits-api.md)[Analytics APIs](../Other/manage-claude-analytics-api.md)[Claude Code Analytics API](../Other/manage-claude-claude-code-analytics-api.md)[Spend Limits API](../Other/manage-claude-spend-limits-api.md)
+
+Data & compliance
+
+[Data residency](build-with-claude-data-residency.md)[API and data retention](../Other/manage-claude-api-and-data-retention.md)
+
+[Access Transparency](../Other/manage-claude-access-transparency.md)
+
+[Encryption keys](../Other/manage-claude-cmek.md)
+
+[Inference hooks](../Other/manage-claude-inference-hooks.md)
+
+Compliance API
+
+[Overview](../Other/manage-claude-compliance-api.md)[Set up the Compliance API](../Other/manage-claude-compliance-api-access.md)[Activity Feed](../Other/manage-claude-compliance-activity-feed.md)[Chats, files, and projects](../Other/manage-claude-compliance-content-data.md)[Session transcripts](../Other/manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](../Other/manage-claude-compliance-org-data.md)[Design your integration](../Other/manage-claude-compliance-integration-patterns.md)[Errors](../Other/manage-claude-compliance-errors.md)[FAQ](../Other/manage-claude-compliance-faq.md)
+
+[Console](../Other/usage-limits.md)
+
+[Admin](../Other/manage-claude-admin-api.md)Monitoring
+
+# Claude Code Analytics API
+
+Copy page
+
+
+
+Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
+
+Copy page
+
+
+
+
+
+**The Admin API is unavailable for individual accounts.** To collaborate with teammates and add members, set up your organization in **Console → Settings → Organization**.
+
+The Claude Code Analytics Admin API provides programmatic access to daily aggregated usage metrics for Claude Code users, enabling organizations to analyze developer productivity and build custom dashboards. This API provides more detail than the basic [Analytics dashboard](../Other/usage-limits.md) without the complexity of the OpenTelemetry integration.
+
+This API enables you to better monitor, analyze, and optimize your Claude Code adoption:
+
+- **Developer productivity analysis:** Track sessions, lines of code added/removed, commits, and pull requests created using Claude Code
+- **Tool usage metrics:** Monitor acceptance and rejection rates for different Claude Code tools (Edit, MultiEdit, Write, NotebookEdit)
+- **Cost analysis:** View estimated costs and token usage broken down by Claude model
+- **Custom reporting:** Export data to build executive dashboards and reports for management teams
+- **Usage justification:** Provide metrics to justify and expand Claude Code adoption internally
+
+
+
+**Admin API credentials required.** These endpoints are part of the Admin API. You can access them using an [Admin API key](../Other/manage-claude-admin-api-keys.md), an OAuth token with the `org:admin` scope, or a personal or service account key that isn't scoped to a workspace; workspace API keys don't work. See [Authentication](../Other/manage-claude-admin-api.md#authentication) for details.
+
+
+
+**Claude Platform on AWS:** The Claude Code Analytics API is not currently available. View Claude Code usage on the **Usage** page in the Claude Console instead.
+
+
+
+**Claude Enterprise organizations:** Claude Code activity for claude.ai users is reported by the Claude Enterprise Analytics API, which uses an Analytics API key instead of an Admin API key. See [Analytics APIs](../Other/manage-claude-analytics-api.md) to find which API and key type your organization needs.
+
+## Quick start
+
+Get your organization's Claude Code analytics for a specific day:
+
+cURL
+
+
+
+```python
+curl "https://api.anthropic.com/v1/organizations/usage_report/claude_code?\
+starting_at=2025-09-08&\
+limit=20" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "x-api-key: $ANTHROPIC_ADMIN_KEY"
+```
+
+
+
+**Set a User-Agent header for integrations**
+
+If you're building an integration, set your User-Agent header to help Anthropic understand usage patterns:
+
+``` block
+User-Agent: YourApp/1.0.0 (https://yourapp.com)
+```
+
+
+
+## Claude Code Analytics API
+
+Track Claude Code usage, productivity metrics, and developer activity across your organization with the `/v1/organizations/usage_report/claude_code` endpoint.
+
+### Key concepts
+
+- **Daily aggregation:** Returns metrics for a single day specified by the `starting_at` parameter
+- **User-level data:** Each record represents one user's activity for the specified day
+- **Productivity metrics:** Track sessions, lines of code, commits, pull requests, and tool usage
+- **Token and cost data:** Monitor usage and estimated costs broken down by Claude model
+- **Cursor-based pagination:** Handle large datasets with stable pagination using opaque cursors
+- **Data freshness:** Metrics are available with up to 1-hour delay for consistency
+
+For complete parameter details and response schemas, see the [Claude Code Analytics API reference](../Admin/beta-organization-usage-report-retrieve-claude-code.md).
+
+### Basic examples
+
+#### Get analytics for a specific day
+
+cURL
+
+
+
+```python
+curl "https://api.anthropic.com/v1/organizations/usage_report/claude_code?\
+starting_at=2025-09-08" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "x-api-key: $ANTHROPIC_ADMIN_KEY"
+```
+
+#### Get analytics with pagination
+
+cURL
+
+
+
+```python
+# First request
+curl "https://api.anthropic.com/v1/organizations/usage_report/claude_code?\
+starting_at=2025-09-08&\
+limit=20" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "x-api-key: $ANTHROPIC_ADMIN_KEY"
+
+# Subsequent request using cursor from response
+curl "https://api.anthropic.com/v1/organizations/usage_report/claude_code?\
+starting_at=2025-09-08&\
+page=page_MjAyNS0wNS0xNFQwMDowMDowMFo=" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "x-api-key: $ANTHROPIC_ADMIN_KEY"
+```
+
+### Request parameters
+
+| Parameter     | Type    | Required | Description                                                             |
+|---------------|---------|----------|-------------------------------------------------------------------------|
+| `starting_at` | string  | Yes      | UTC date in YYYY-MM-DD format; returns metrics for this single day only |
+| `limit`       | integer | No       | Number of records per page (default: 20, max: 1000)                     |
+| `page`        | string  | No       | Opaque cursor token from previous response's `next_page` field          |
+
+### Available metrics
+
+Each response record contains the following metrics for a single user on a single day:
+
+#### Dimensions
+
+- **date:** Date in RFC 3339 format (UTC timestamp)
+- **actor:** The user or API key that performed the Claude Code actions (either `user_actor` with `email_address` or `api_actor` with `api_key_name`)
+- **organization_id:** Organization UUID
+- **customer_type:** Type of customer account (`api` for API customers, `subscription` for Pro/Team customers)
+- **terminal_type:** Type of terminal or environment where Claude Code was used (for example, `vscode`, `iTerm.app`, `tmux`)
+
+#### Core metrics
+
+- **num_sessions:** Number of distinct Claude Code sessions initiated by this actor
+- **lines_of_code.added:** Total number of lines of code added across all files by Claude Code
+- **lines_of_code.removed:** Total number of lines of code removed across all files by Claude Code
+- **commits_by_claude_code:** Number of git commits created through Claude Code's commit functionality
+- **pull_requests_by_claude_code:** Number of pull requests created through Claude Code's PR functionality
+
+#### Tool action metrics
+
+Breakdown of tool action acceptance and rejection rates by tool type:
+
+- **edit_tool.accepted/rejected:** Number of Edit tool proposals that the user accepted/rejected
+- **multi_edit_tool.accepted/rejected:** Number of MultiEdit tool proposals that the user accepted/rejected
+- **write_tool.accepted/rejected:** Number of Write tool proposals that the user accepted/rejected
+- **notebook_edit_tool.accepted/rejected:** Number of NotebookEdit tool proposals that the user accepted/rejected
+
+#### Model breakdown
+
+For each Claude model used:
+
+- **model:** Claude model identifier (for example, `claude-opus-5`)
+- **tokens.input/output:** Input and output token counts for this model
+- **tokens.cache_read/cache_creation:** Cache-related token usage for this model
+- **estimated_cost.amount:** Estimated cost in cents USD for this model
+- **estimated_cost.currency:** Currency code for the cost amount (currently always `USD`)
+
+### Response structure
+
+The API returns data in the following format:
+
+```python
+{
+  "data": [
+    {
+      "date": "2025-09-08T00:00:00Z",
+      "actor": {
+        "type": "user_actor",
+        "email_address": "developer@company.com"
+      },
+      "organization_id": "dc9f6c26-b22c-4831-8d01-0446bada88f1",
+      "customer_type": "api",
+      "terminal_type": "vscode",
+      "core_metrics": {
+        "num_sessions": 5,
+        "lines_of_code": {
+          "added": 1543,
+          "removed": 892
+        },
+        "commits_by_claude_code": 12,
+        "pull_requests_by_claude_code": 2
+      },
+      "tool_actions": {
+        "edit_tool": {
+          "accepted": 45,
+          "rejected": 5
+        },
+        "multi_edit_tool": {
+          "accepted": 12,
+          "rejected": 2
+        },
+        "write_tool": {
+          "accepted": 8,
+          "rejected": 1
+        },
+        "notebook_edit_tool": {
+          "accepted": 3,
+          "rejected": 0
+        }
+      },
+      "model_breakdown": [
+        {
+          "model": "claude-opus-5-5",
+          "tokens": {
+            "input": 100000,
+            "output": 35000,
+            "cache_read": 10000,
+            "cache_creation": 5000
+          },
+          "estimated_cost": {
+            "currency": "USD",
+            "amount": 113
+          }
+        }
+      ]
+    }
+  ],
+  "has_more": false,
+  "next_page": null
+}
+```
+
+
+
+## Pagination
+
+The API supports cursor-based pagination for organizations with large numbers of users:
+
+1.  Make your initial request with optional `limit` parameter.
+2.  If `has_more` is `true` in the response, use the `next_page` value in your next request.
+3.  Continue until `has_more` is `false`.
+
+The cursor encodes the position of the last record and ensures stable pagination even as new data arrives. Each pagination session maintains a consistent data boundary to ensure you don't miss or duplicate records.
+
+## Common use cases
+
+- **Executive dashboards:** Create high-level reports showing Claude Code impact on development velocity
+- **AI tool comparison:** Export metrics to compare Claude Code with other AI coding tools such as Copilot and Cursor
+- **Developer productivity analysis:** Track individual and team productivity metrics over time
+- **Cost tracking and allocation:** Monitor spending patterns and allocate costs by team or project
+- **Adoption monitoring:** Identify which teams and users are getting the most value from Claude Code
+- **ROI justification:** Provide concrete metrics to justify and expand Claude Code adoption internally
+
+## Frequently asked questions
+
+### How fresh is the analytics data?
+
+Claude Code analytics data typically appears within 1 hour of user activity completion. To ensure consistent pagination results, only data older than 1 hour is included in responses.
+
+### Can I get real-time metrics?
+
+No, this API provides daily aggregated metrics only. For real-time monitoring, consider using the [OpenTelemetry integration](../../13-Enterprise-Admin/monitoring-usage.md).
+
+### How are users identified in the data?
+
+Users are identified through the `actor` field in two ways:
+
+- **`user_actor`:** Contains `email_address` for users who authenticate through OAuth (most common)
+- **`api_actor`:** Contains `api_key_name` for users who authenticate with an API key
+
+The `customer_type` field indicates whether the usage is from `api` customers (pay-as-you-go API) or `subscription` customers (Pro/Team plans).
+
+### What's the data retention period?
+
+Historical Claude Code analytics data is retained and accessible through the API. There is no specified deletion period for this data.
+
+### Which Claude Code deployments are supported?
+
+This API only tracks Claude Code usage on the Claude API. Usage through [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md), [Claude in Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md), [Claude on Google Cloud](build-with-claude-claude-on-vertex-ai.md), or [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md) is not included.
+
+### What does it cost to use this API?
+
+The Claude Code Analytics API is free to use for all organizations with access to the Admin API.
+
+### How do I calculate tool acceptance rates?
+
+Tool acceptance rate = `accepted / (accepted + rejected)` for each tool type. For example, if the edit tool shows 45 accepted and 5 rejected, the acceptance rate is 90%.
+
+### What time zone is used for the date parameter?
+
+All dates are in UTC. The `starting_at` parameter should be in YYYY-MM-DD format and represents UTC midnight for that day.
+
+## See also
+
+The Claude Code Analytics API helps you understand and optimize your team's development workflow. Learn more about related features:
+
+- [Admin API](../Other/manage-claude-admin-api.md)
+- [Admin API reference](../Admin/http-beta-organization.md)
+- [Claude Code Analytics dashboard](../Other/usage-limits.md)
+- [Usage and Cost API](../Other/manage-claude-usage-cost-api.md) - Track API usage across all Anthropic services
+- [Compliance API](../Other/manage-claude-compliance-api.md) - Retrieve audit and activity data
+- [Identity and access management](../../13-Enterprise-Admin/iam.md)
+- [Monitoring usage with OpenTelemetry](../../13-Enterprise-Admin/monitoring-usage.md) for custom metrics and alerting
 
 ---
 
@@ -4968,7 +5333,7 @@ Path: 04-API-Reference/Guides/build-with-claude-compaction-background.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -5009,7 +5374,7 @@ Tool infrastructure
 
 Context management
 
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics (beta)](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
+[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
 
 [Compaction](build-with-claude-compaction.md)
 
@@ -5137,7 +5502,7 @@ for turn, question in enumerate(QUESTIONS, start=1):
 
     history.append({"role": "user", "content": question})
     response = client.beta.messages.create(
-        model="claude-opus-5",
+        model="claude-opus-5-5",
         max_tokens=8192,
         system=SYSTEM,
         betas=["compact-2026-09-04"],
@@ -5155,7 +5520,7 @@ for turn, question in enumerate(QUESTIONS, start=1):
         sent = len(history)
         pending = executor.submit(
             client.beta.messages.create,
-            model="claude-opus-5",
+            model="claude-opus-5-5",
             max_tokens=4096,
             system=SYSTEM,
             betas=["compact-2026-09-04"],
@@ -5184,7 +5549,17 @@ Turns that arrive while the summary is being written are kept turns. If you send
 
 ## Compatibility
 
-[TABLE]
+Supported models  
+- Fable 5 and 5.1
+- Mythos 5, 5.1, and Preview
+- Opus 4.6, 4.7, 4.8, 5, and 5.5
+- Sonnet 4.6, 5, and 5.5
+
+Supported platforms  
+- Claude APIBeta
+- Claude Platform on AWSBeta
+- Google CloudBeta
+- Microsoft FoundryBeta
 
 ---
 
@@ -5200,7 +5575,7 @@ Path: 04-API-Reference/Guides/build-with-claude-compaction-keep-recent-turns.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -5241,7 +5616,7 @@ Tool infrastructure
 
 Context management
 
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics (beta)](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
+[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
 
 [Compaction](build-with-claude-compaction.md)
 
@@ -5311,7 +5686,7 @@ In the following example, the history holds two turns, and the cut keeps the sec
 
 ```python
 {
-  "model": "claude-opus-5",
+  "model": "claude-opus-5-5",
   "max_tokens": 4096,
   "messages": [
     {
@@ -5374,7 +5749,7 @@ history: list[BetaMessageParam] = []
 for turn, question in enumerate(QUESTIONS, start=1):
     history.append({"role": "user", "content": question})
     response = client.beta.messages.create(
-        model="claude-opus-5",
+        model="claude-opus-5-5",
         max_tokens=8192,
         system=SYSTEM,
         betas=["compact-2026-09-04"],
@@ -5390,7 +5765,7 @@ for turn, question in enumerate(QUESTIONS, start=1):
         split = -2 * KEEP_TURNS
         older, recent = history[:split], history[split:]
         summary = client.beta.messages.create(
-            model="claude-opus-5",
+            model="claude-opus-5-5",
             max_tokens=4096,
             system=SYSTEM,
             betas=["compact-2026-09-04"],
@@ -5417,7 +5792,17 @@ The program's cut, between a reply and the next `user` message, meets that condi
 
 ## Compatibility
 
-[TABLE]
+Supported models  
+- Fable 5 and 5.1
+- Mythos 5, 5.1, and Preview
+- Opus 4.6, 4.7, 4.8, 5, and 5.5
+- Sonnet 4.6, 5, and 5.5
+
+Supported platforms  
+- Claude APIBeta
+- Claude Platform on AWSBeta
+- Google CloudBeta
+- Microsoft FoundryBeta
 
 ---
 
@@ -5426,21 +5811,6 @@ The program's cut, between a reply and the next `user` message, meets that condi
 Source: https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand
 Path: 04-API-Reference/Guides/build-with-claude-compaction-on-demand.md
 
-### Cookie settings
-
-We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services to you. You can read our Cookie Policy [here](https://www.anthropic.com/legal/cookies).
-
-CustomizeCustomize Cookie Settings
-
-RejectReject All Cookies
-
-AcceptAccept All Cookies
-
-
-Claude Platform Docs
-
-- [Messages](../../01-Getting-Started/intro.md)
-
 - [Managed Agents](../Other/managed-agents-overview.md)
 
 - [Admin](../Other/manage-claude-admin-api.md)
@@ -5448,7 +5818,7 @@ Claude Platform Docs
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -5489,7 +5859,7 @@ Tool infrastructure
 
 Context management
 
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics (beta)](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
+[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
 
 [Compaction](build-with-claude-compaction.md)
 
@@ -5591,7 +5961,7 @@ history: list[BetaMessageParam] = [
 ]
 
 response = client.beta.messages.create(
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     # max_tokens caps the whole call, including any thinking, so allow several thousand tokens.
     max_tokens=4096,
     betas=["compact-2026-09-04"],
@@ -5610,7 +5980,7 @@ Response
   "id": "msg_013Zva2CMHLNnXjNJJKqJ2EF",
   "type": "message",
   "role": "assistant",
-  "model": "claude-opus-5",
+  "model": "claude-opus-5-5",
   "content": [
     {
       "type": "compaction",
@@ -5639,7 +6009,7 @@ In your history, replace the messages you sent with the returned assistant messa
 
 ```python
 {
-  "model": "claude-opus-5",
+  "model": "claude-opus-5-5",
   "max_tokens": 2048,
   "messages": [
     {
@@ -5729,7 +6099,7 @@ history: list[BetaMessageParam] = []
 for turn, question in enumerate(QUESTIONS, start=1):
     history.append({"role": "user", "content": question})
     response = client.beta.messages.create(
-        model="claude-opus-5",
+        model="claude-opus-5-5",
         max_tokens=8192,
         system=SYSTEM,
         betas=["compact-2026-09-04"],
@@ -5741,7 +6111,7 @@ for turn, question in enumerate(QUESTIONS, start=1):
     conversation_tokens = response.usage.input_tokens + response.usage.output_tokens
     if conversation_tokens > COMPACT_AT_TOKENS and turn < len(QUESTIONS):
         summary = client.beta.messages.create(
-            model="claude-opus-5",
+            model="claude-opus-5-5",
             max_tokens=4096,
             system=SYSTEM,
             betas=["compact-2026-09-04"],
@@ -5755,7 +6125,9 @@ for turn, question in enumerate(QUESTIONS, start=1):
 
 The check on `stop_reason` comes before the code looks for the block; [Handle a missing summary or an error](#when-no-summary-comes-back) says why. The history is replaced, not appended to: the returned message replaces every message the request carried, under the rules in [Continue from the summary](#continue-from-the-summary). When no summary comes back, the loop keeps its history and asks again after the next turn.
 
-The SDK [tool runner](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md) in Python, TypeScript, C#, Go, and Java can send the compaction request for you. When you decide to compact, call `compact_before_next_turn()` on the runner (`compactBeforeNextTurn()` in TypeScript and Java, `CompactBeforeNextTurn()` in C# and Go). Once the current turn and its tool calls finish, the runner sends the compaction request and replaces its history with the returned message. Create the runner with the `compact-2026-09-04` beta, because the runner doesn't add it. The runner builds the request from its own parameters and leaves `context_management` out. If those parameters include `stop_sequences`, a `tool_choice` of type `any` or `tool`, or a structured-output `output_config.format`, the API rejects the request with a 400 error. [Request a summary](#request-a-summary) explains why. The runner refuses to compact while its `context_management` has a compaction edit, so use one kind of compaction on a runner.
+The SDK [tool runner](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md) in Python, TypeScript, C#, Go, Java, PHP, and Ruby can send the compaction request for you. When you decide to compact, call `compact_before_next_turn()` on the runner. Once the current turn and its tool calls finish, the runner sends the compaction request and replaces its history with the returned message. Create the runner with the `compact-2026-09-04` beta, because the runner doesn't add it.
+
+The runner builds the compaction request from its own parameters and leaves `context_management` out. It also leaves out `stop_sequences`, a `tool_choice` of type `any` or `tool`, and a structured-output `output_config.format`, which the API rejects on a compaction request. [Request a summary](#request-a-summary) explains why. The runner sends them again on its later requests. SDK versions before Python 1.8.0, TypeScript 0.128.0, C# 12.50.0, Go 1.75.0, and Java 2.65.0 send them on the compaction request too. On those versions, a runner that sets any of these parameters gets a 400 error. The runner sends a [task budget](build-with-claude-task-budgets.md) unchanged. If `output_config.task_budget` sets `remaining`, the compaction request returns a 400 error, so leave `remaining` unset, as [Limits and interactions with other features](#how-it-fits-with-the-rest-of-the-api) says. The runner refuses to compact while its `context_management` has a compaction edit, so use one kind of compaction on a runner.
 
 ### When to compact
 
@@ -5829,7 +6201,17 @@ You have a working loop that compacts a conversation and handles a missing summa
 
 ## Compatibility
 
-[TABLE]
+Supported models  
+- Fable 5 and 5.1
+- Mythos 5, 5.1, and Preview
+- Opus 4.6, 4.7, 4.8, 5, and 5.5
+- Sonnet 4.6, 5, and 5.5
+
+Supported platforms  
+- Claude APIBeta
+- Claude Platform on AWSBeta
+- Google CloudBeta
+- Microsoft FoundryBeta
 
 ---
 
@@ -5845,7 +6227,7 @@ Path: 04-API-Reference/Guides/build-with-claude-compaction-thinking-blocks.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -5886,7 +6268,7 @@ Tool infrastructure
 
 Context management
 
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics (beta)](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
+[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
 
 [Compaction](build-with-claude-compaction.md)
 
@@ -5966,7 +6348,7 @@ To change `system` or `tools` without invalidating any kept thinking, compact th
 
 To add an instruction or change the available tools without touching `system` or `tools`, append the change to `messages`, as described in [Make changes without editing the prefix](build-with-claude-preserved-thinking.md#replace-prefix-edits).
 
-Mid-conversation system messages inside the summarized turns are summarized too, so their instructions and tool changes stop applying after the swap. To keep one in force, state it again in a `role: "system"` message directly after the first new `user` turn that follows the kept turns. A system message placed between the block and the kept turns breaks their thinking.
+Mid-conversation system messages inside the summarized turns are summarized too, so their text instructions stop applying after the swap. To keep one in force, state it again in a `role: "system"` message directly after the first new `user` turn that follows the kept turns. Tool changes inside those turns carry over on their own when the compaction request also carries `inline-tools-2026-09-15`: the returned block records their net effect in its `tool_changes` field, so send the block back unmodified. If the block has no `tool_changes` field, restate those tool changes the same way. A system message placed between the block and the kept turns breaks their thinking.
 
 ## Check that the kept thinking held
 
@@ -6088,7 +6470,17 @@ In production, `"drop_block"` keeps requests succeeding when a condition doesn't
 
 ## Compatibility
 
-[TABLE]
+Supported models  
+- Fable 5 and 5.1
+- Mythos 5, 5.1, and Preview
+- Opus 4.6, 4.7, 4.8, 5, and 5.5
+- Sonnet 4.6, 5, and 5.5
+
+Supported platforms  
+- Claude APIBeta
+- Claude Platform on AWSBeta
+- Google CloudBeta
+- Microsoft FoundryBeta
 
 ---
 
@@ -6104,7 +6496,7 @@ Path: 04-API-Reference/Guides/build-with-claude-compaction-threshold.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -6145,7 +6537,7 @@ Tool infrastructure
 
 Context management
 
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics (beta)](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
+[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
 
 [Compaction](build-with-claude-compaction.md)
 
@@ -6256,7 +6648,7 @@ messages = [{"role": "user", "content": "Help me build a website"}]
 
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={"edits": [{"type": "compact_20260112"}]},
@@ -6304,7 +6696,7 @@ client = anthropic.Anthropic()
 messages = [{"role": "user", "content": "Hello, Claude"}]
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={
@@ -6355,7 +6747,7 @@ client = anthropic.Anthropic()
 messages = [{"role": "user", "content": "Hello, Claude"}]
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={
@@ -6402,7 +6794,7 @@ client = anthropic.Anthropic()
 messages = [{"role": "user", "content": "Hello, Claude"}]
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={
@@ -6418,7 +6810,7 @@ if response.stop_reason == "compaction":
     # Continue the request
     response = client.beta.messages.create(
         betas=["compact-2026-01-12"],
-        model="claude-opus-5",
+        model="claude-opus-5-5",
         max_tokens=4096,
         messages=messages,
         context_management={"edits": [{"type": "compact_20260112"}]},
@@ -6456,7 +6848,7 @@ n_compactions = 0
 
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={
@@ -6538,7 +6930,7 @@ client = anthropic.Anthropic()
 messages = [{"role": "user", "content": "Hello, Claude"}]
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={"edits": [{"type": "compact_20260112"}]},
@@ -6551,7 +6943,7 @@ messages.append({"role": "user", "content": "Now add error handling"})
 
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={"edits": [{"type": "compact_20260112"}]},
@@ -6565,7 +6957,7 @@ When the API receives a `compaction` block, all content blocks before it are ign
 - Keep the original messages in your list and let the API handle removing the compacted content
 - Manually drop the compacted messages and only include the compaction block onwards
 
-On Claude Fable 5.1 and Claude Mythos 5.1, thinking blocks from before a `compaction` block aren't carried forward, so the summary is all the model has of that earlier work. If you write your own `instructions`, tell the model what the summary must retain; see [Tell the model what to preserve in compaction summaries](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md#tell-the-model-what-to-preserve-in-compaction-summaries).
+On Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, and Claude Sonnet 5.5, thinking blocks from before a `compaction` block aren't carried forward, so the summary is all the model has of that earlier work. If you write your own `instructions`, tell the model what the summary must retain; see [Tell the model what to preserve in compaction summaries](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md#tell-the-model-what-to-preserve-in-compaction-summaries).
 
 ### Streaming
 
@@ -6597,7 +6989,7 @@ messages = [{"role": "user", "content": "Hello, Claude"}]
 
 with client.beta.messages.stream(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=messages,
     context_management={"edits": [{"type": "compact_20260112"}]},
@@ -6682,7 +7074,7 @@ client = anthropic.Anthropic()
 messages = [{"role": "user", "content": "Hello, Claude"}]
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     max_tokens=4096,
     system=[
         {
@@ -6772,7 +7164,7 @@ client = anthropic.Anthropic()
 messages = [{"role": "user", "content": "Hello, Claude"}]
 count_response = client.beta.messages.count_tokens(
     betas=["compact-2026-01-12"],
-    model="claude-opus-5",
+    model="claude-opus-5-5",
     messages=messages,
     context_management={"edits": [{"type": "compact_20260112"}]},
 )
@@ -6816,7 +7208,7 @@ def chat(user_message: str) -> str:
 
     response = client.beta.messages.create(
         betas=["compact-2026-01-12"],
-        model="claude-opus-5",
+        model="claude-opus-5-5",
         max_tokens=4096,
         messages=messages,
         context_management={
@@ -6843,7 +7235,7 @@ print(chat("Now add rate limiting and error handling"))
 # Continue calling chat() for as long as the conversation needs
 ```
 
-On Claude Fable 5.1, remove the `thinking` and `redacted_thinking` blocks from any assistant turn you re-insert after the compaction block, or send `thinking.block_binding.prefix_mismatch_behavior: "drop_block"` with the `thinking-binding-controls-2026-08-01` [beta header](../Endpoints/beta-headers.md). Those blocks were produced when the full history was present, so they no longer pass the [conversation check](build-with-claude-thinking.md#preserved-in-conversation). Where the check is enforced, the continuation request is rejected with a 400 error. The preserved text and tool blocks can stay as they are. Letting the API summarize everything, without re-inserting earlier turns, avoids this.
+On Claude Fable 5.1, Claude Opus 5.5, and Claude Sonnet 5.5, remove the `thinking` and `redacted_thinking` blocks from any assistant turn you re-insert after the compaction block, or send `thinking.block_binding.prefix_mismatch_behavior: "drop_block"` with the `thinking-binding-controls-2026-08-01` [beta header](../Endpoints/beta-headers.md). Those blocks were produced when the full history was present, so they no longer pass the [conversation check](build-with-claude-thinking.md#preserved-in-conversation). Where the check is enforced, the continuation request is rejected with a 400 error. The preserved text and tool blocks can stay as they are. Letting the API summarize everything, without re-inserting earlier turns, avoids this. On Claude Sonnet 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`. With `between_tools`, remove the blocks instead.
 
 Here's an example that uses `pause_after_compaction` to preserve the prior exchange and the current user message (three messages total) verbatim instead of summarizing them:
 
@@ -6880,7 +7272,7 @@ def chat(user_message: str) -> str:
 
     response = client.beta.messages.create(
         betas=["compact-2026-01-12"],
-        model="claude-opus-5",
+        model="claude-opus-5-5",
         max_tokens=4096,
         messages=messages,
         context_management={
@@ -6912,7 +7304,7 @@ def chat(user_message: str) -> str:
         # Continue the request with the compacted context + preserved messages
         response = client.beta.messages.create(
             betas=["compact-2026-01-12"],
-            model="claude-opus-5",
+            model="claude-opus-5-5",
             max_tokens=4096,
             messages=messages_after_compaction,
             context_management={"edits": [{"type": "compact_20260112"}]},
@@ -6968,7 +7360,18 @@ Explore a practical implementation that manages long-running conversations with 
 
 ## Compatibility
 
-[TABLE]
+Supported models  
+- Fable 5 and 5.1
+- Mythos 5, 5.1, and Preview
+- Opus 4.6, 4.7, 4.8, 5, and 5.5
+- Sonnet 4.6, 5, and 5.5
+
+Supported platforms  
+- Claude APIBeta
+- Claude Platform on AWSBeta
+- Amazon BedrockBeta
+- Google CloudBeta
+- Microsoft FoundryBeta
 
 ---
 
@@ -21272,7 +21675,7 @@ If you're hitting complexity limits, try these strategies in order:
 
 4.  **Split into multiple requests.** If you have many strict tools, consider splitting them across separate requests or sub-agents.
 
-For persistent issues with valid schemas, [contact support](../../21-Account-Support/how-can-i-contact-support.md) with your schema definition.
+For persistent issues with valid schemas, [contact support](https://platform.claude.com/docs/21-Account-Support/how-to-get-support-57c428239c.md) with your schema definition.
 
 ## Data retention
 
@@ -21775,7 +22178,7 @@ The minimum accepted `task_budget.total` is **20,000 tokens** on every model tha
 | Claude Sonnet 4.6 | Not supported                               |
 | Claude Haiku 4.5  | Not supported                               |
 
-Task budgets are not supported on [Claude Code](../../02-Claude-Code-CLI/code-home.md) or Cowork surfaces. Use task budgets directly through the Messages API on a [supported model](#feature-support).
+Task budgets are not supported on [Claude Code](https://platform.claude.com/docs/01-Getting-Started/overview.md) or Cowork surfaces. Use task budgets directly through the Messages API on a [supported model](#feature-support).
 
 ## Next steps
 

@@ -2,12 +2,11 @@
 title: "Set up your design system in Claude Design | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:31:49Z"
+fetched_at: "2026-09-30T06:31:54Z"
 tags: ["account"]
 ---
 
 # Set up your design system in Claude Design
-
 
 
 A design system captures your colors, typography, components, and layout patterns, so Claude applies them to every new design and deck. Claude extracts them from the assets you provide, like codebases, slide decks, or other design references.

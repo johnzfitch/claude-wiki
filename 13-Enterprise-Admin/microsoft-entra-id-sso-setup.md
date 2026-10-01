@@ -2,7 +2,7 @@
 title: "Microsoft Entra ID SSO setup | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917889-microsoft-entra-id-sso-setup"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:30:43Z"
+fetched_at: "2026-09-30T06:32:47Z"
 tags: ["enterprise"]
 ---
 
@@ -15,7 +15,7 @@ This guide walks you through configuring single sign-on (SSO) for Claude using M
 
 ## Prerequisites
 
-- A Claude Team plan, Enterprise plan, or Console organization with a parent organization (see **[Important considerations before enabling SSO](../21-Account-Support/important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning.md)** for Console parent org requirements)
+- A Claude Team plan, Enterprise plan, or Console organization with a parent organization (see **[Important considerations before enabling SSO](https://support.claude.com/en/articles/10276682)** for Console parent org requirements)
 
 - Owner or Primary Owner role (Team and Enterprise) or Admin role (Console)
 
@@ -23,7 +23,7 @@ This guide walks you through configuring single sign-on (SSO) for Claude using M
 
 - Global Administrator or Application Administrator role in Entra
 
-- Your domain verified in Claude's Identity and access settings — see **[Set up single sign-on](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md)** for the full setup path including domain verification
+- Your domain verified in Claude's Identity and access settings — see **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full setup path including domain verification
 
 ## Where to find your configuration values
 
@@ -59,7 +59,7 @@ Start the SSO setup flow there and keep it open alongside the Entra Admin Center
 
 ## Step 3 — Configure SCIM provisioning
 
-**Note:** SCIM provisioning is available on Enterprise plans and eligible Console organizations only. If you're on a Team plan, skip this step — you can use JIT provisioning instead. See **[Set up JIT or SCIM provisioning](setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)**.
+**Note:** SCIM provisioning is available on Enterprise plans and eligible Console organizations only. If you're on a Team plan, skip this step — you can use JIT provisioning instead. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195)**.
 
 1.  In the application, go to **Provisioning → Get Started**.
 
@@ -73,7 +73,7 @@ Start the SSO setup flow there and keep it open alongside the Entra Admin Center
 
 6.  Set **Provisioning Status** to **On** and save.
 
-**Critical:** The attribute used for SCIM email and SSO email must be identical. Mismatches are the most common cause of login failures. For troubleshooting, see **[Microsoft Entra ID SSO/SCIM email mismatch](microsoft-entra-id-sso-scim-email-mismatch.md)**.
+**Critical:** The attribute used for SCIM email and SSO email must be identical. Mismatches are the most common cause of login failures. For troubleshooting, see **[Microsoft Entra ID SSO/SCIM email mismatch](https://support.claude.com/en/articles/13917829)**.
 
 ## Step 4 — Assign people and groups
 
@@ -91,4 +91,4 @@ Start the SSO setup flow there and keep it open alongside the Entra Admin Center
 
 ## Need help?
 
-See **[Set up single sign-on](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md)** for the full end-to-end flow including domain verification and choosing a provisioning approach. If you run into issues, contact **[our Support team](../21-Account-Support/how-can-i-contact-support.md)** with your Entra tenant ID and a screenshot of your SAML configuration.
+See **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full end-to-end flow including domain verification and choosing a provisioning approach. If you run into issues, contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** with your Entra tenant ID and a screenshot of your SAML configuration.

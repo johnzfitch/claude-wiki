@@ -2,7 +2,7 @@
 title: "Claude Fable 5 one-time free credits promotion | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15862783"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:30:57Z"
+fetched_at: "2026-09-30T06:33:00Z"
 tags: ["billing"]
 ---
 
@@ -13,11 +13,11 @@ tags: ["billing"]
 
 ***This promotion applies to Pro plans and standard seats on Team plans.*** When the Claude Fable 5 weekly usage promotion ends on July 19, 2026 at 11:59:59 PM PT, Fable 5 will still be available to you but moves from your plan's weekly usage limits to pay-as-you-go usage credits.
 
-To make the change easier, we're giving eligible subscribers free one-time promotional credits. The free credits are standard usage credits, so they're not limited to Fable 5. You can use them on any model, and they can be used if you have reached your plan limit. Learn more about **[usage credits](manage-usage-credits-for-paid-claude-plans.md)**.
+To make the change easier, we're giving eligible subscribers free one-time promotional credits. The free credits are standard usage credits, so they're not limited to Fable 5. You can use them on any model, and they can be used if you have reached your plan limit. Learn more about **[usage credits](https://support.claude.com/en/articles/12429409)**.
 
 This article explains what the credits are, who's eligible, how to claim them, and when they expire.
 
-**Note:** Claude Fable 5 is now a standard part of Max plans, premium seats on Team plans, and premium seats on seat-based Enterprise plans. You can continue to spend up to 50% of your weekly limits on Fable 5, with no additional charge beyond the rate of your subscription, so those plans aren’t eligible to receive these particular promotional credits. For more details, see **[Claude Fable 5 on your plan](claude-fable-5-promotional-access.md)**.
+**Note:** Claude Fable 5 is now a standard part of Max plans, premium seats on Team plans, and premium seats on seat-based Enterprise plans. You can continue to spend up to 50% of your weekly limits on Fable 5, with no additional charge beyond the rate of your subscription, so those plans aren’t eligible to receive these particular promotional credits. For more details, see **[Claude Fable 5 on your plan](https://support.claude.com/en/articles/15424964)**.
 
 The free promotional credits are available to eligible Pro plans and standard seats on Team plans. Max and Enterprise plans are not eligible for these particular promotional credits. For eligibility details, see **[Who's eligible](#h_b1b3133207)** below. Additional **[offer terms apply](https://www.anthropic.com/legal/promotion-credit-terms)**.
 

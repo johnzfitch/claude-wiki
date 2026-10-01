@@ -2,7 +2,7 @@
 title: "How can I check connectivity to the Claude API? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13403291-how-can-i-check-connectivity-to-the-claude-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-29T06:31:37Z"
+fetched_at: "2026-09-30T06:32:42Z"
 tags: ["api"]
 ---
 

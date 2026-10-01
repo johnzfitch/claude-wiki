@@ -2,7 +2,7 @@
 title: "Identity verification on Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14328960-identity-verification-on-claude"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:30:47Z"
+fetched_at: "2026-09-30T06:32:50Z"
 tags: ["account"]
 ---
 

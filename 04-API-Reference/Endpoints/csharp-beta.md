@@ -3618,7 +3618,7 @@ Learn more about the Messages API in our [user guide](https://docs.claude.com/en
 
   - `BetaJsonOutputFormat? outputFormat`
 
-    Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+    Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/api/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 
@@ -8932,7 +8932,7 @@ Learn more about token counting in our [user guide](https://docs.claude.com/en/d
 
   - `BetaJsonOutputFormat? outputFormat`
 
-    Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+    Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/api/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 
@@ -20300,7 +20300,7 @@ Console.WriteLine(betaMessageTokensCount);
 
   - `BetaJsonOutputFormat? Format`
 
-    A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+    A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/api/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     - `required IReadOnlyDictionary<string, JsonElement> Schema`
 
@@ -34411,7 +34411,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
         - `BetaJsonOutputFormat? Format`
 
-          A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+          A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/api/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
           - `required IReadOnlyDictionary<string, JsonElement> Schema`
 
@@ -34421,7 +34421,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
       - `BetaJsonOutputFormat? OutputFormat`
 
-        Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+        Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/api/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
         A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 
@@ -42656,7 +42656,7 @@ Create Agent
 
   - `required Model model`
 
-    Body param: Model identifier. Accepts the [model string](../../20-Models/about-claude-models-overview.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control
+    Body param: Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/20-Models/about-claude-models-overview-2bbf09ff82.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control
 
     - `enum BetaManagedAgentsModel:`
 
@@ -44187,7 +44187,7 @@ Update Agent
 
   - `Model model`
 
-    Body param: Model identifier. Accepts the [model string](../../20-Models/about-claude-models-overview.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
+    Body param: Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/20-Models/about-claude-models-overview-2bbf09ff82.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
 
     - `enum BetaManagedAgentsModel:`
 
@@ -52569,7 +52569,7 @@ List Events
 
       - `required string ToolUseID`
 
-        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `required Type Type`
 
@@ -52593,7 +52593,7 @@ List Events
 
       - `required string CustomToolUseID`
 
-        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `required Type Type`
 
@@ -53952,7 +53952,7 @@ Send Events
 
       - `required string ToolUseID`
 
-        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `required Type Type`
 
@@ -53968,7 +53968,7 @@ Send Events
 
       - `required string CustomToolUseID`
 
-        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `required Type Type`
 
@@ -54378,7 +54378,7 @@ Send Events
 
       - `required string ToolUseID`
 
-        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `required Type Type`
 
@@ -54402,7 +54402,7 @@ Send Events
 
       - `required string CustomToolUseID`
 
-        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `required Type Type`
 
@@ -54856,7 +54856,7 @@ Stream Events
 
     - `required string ToolUseID`
 
-      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `required Type Type`
 
@@ -54880,7 +54880,7 @@ Stream Events
 
     - `required string CustomToolUseID`
 
-      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `required Type Type`
 
@@ -56892,7 +56892,7 @@ await foreach (var betaManagedAgentsStreamSessionEvents in client.Beta.Sessions.
 
     - `required string ToolUseID`
 
-      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `required Type Type`
 
@@ -56908,7 +56908,7 @@ await foreach (var betaManagedAgentsStreamSessionEvents in client.Beta.Sessions.
 
     - `required string CustomToolUseID`
 
-      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `required Type Type`
 
@@ -57620,7 +57620,7 @@ await foreach (var betaManagedAgentsStreamSessionEvents in client.Beta.Sessions.
 
       - `required string ToolUseID`
 
-        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `required Type Type`
 
@@ -57644,7 +57644,7 @@ await foreach (var betaManagedAgentsStreamSessionEvents in client.Beta.Sessions.
 
       - `required string CustomToolUseID`
 
-        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `required Type Type`
 
@@ -58344,7 +58344,7 @@ await foreach (var betaManagedAgentsStreamSessionEvents in client.Beta.Sessions.
 
     - `required string ToolUseID`
 
-      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `required Type Type`
 
@@ -58368,7 +58368,7 @@ await foreach (var betaManagedAgentsStreamSessionEvents in client.Beta.Sessions.
 
     - `required string CustomToolUseID`
 
-      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `required Type Type`
 
@@ -59944,7 +59944,7 @@ await foreach (var betaManagedAgentsStreamSessionEvents in client.Beta.Sessions.
 
     - `required string ToolUseID`
 
-      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `required Type Type`
 
@@ -59968,7 +59968,7 @@ await foreach (var betaManagedAgentsStreamSessionEvents in client.Beta.Sessions.
 
     - `required string CustomToolUseID`
 
-      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `required Type Type`
 
@@ -61208,7 +61208,7 @@ await foreach (var betaManagedAgentsStreamSessionEvents in client.Beta.Sessions.
 
   - `required string CustomToolUseID`
 
-    The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+    The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
   - `required Type Type`
 
@@ -61376,7 +61376,7 @@ await foreach (var betaManagedAgentsStreamSessionEvents in client.Beta.Sessions.
 
   - `required string CustomToolUseID`
 
-    The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+    The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
   - `required Type Type`
 
@@ -61900,7 +61900,7 @@ await foreach (var betaManagedAgentsStreamSessionEvents in client.Beta.Sessions.
 
   - `required string ToolUseID`
 
-    The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+    The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
   - `required Type Type`
 
@@ -61930,7 +61930,7 @@ await foreach (var betaManagedAgentsStreamSessionEvents in client.Beta.Sessions.
 
   - `required string ToolUseID`
 
-    The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+    The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/csharp/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
   - `required Type Type`
 

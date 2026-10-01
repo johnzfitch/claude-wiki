@@ -2,7 +2,7 @@
 title: "Who owns and manages the data of my Claude for Education account? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11732894-who-owns-and-manages-the-data-of-my-claude-for-education-account"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:31:18Z"
+fetched_at: "2026-09-30T06:32:24Z"
 tags: ["account"]
 ---
 
@@ -27,7 +27,7 @@ On Claude for Education, by default, the following capabilities are disabled by 
 
 - Thumbs Feedback
 
-These settings reflect Anthropic’s default approach to Claude for Education, but we understand that universities may have legitimate needs to access data. In these situations, the Primary Owner will need to reach out to [Anthropic support](how-can-i-contact-support.md) to request and enable access.
+These settings reflect Anthropic’s default approach to Claude for Education, but we understand that universities may have legitimate needs to access data. In these situations, the Primary Owner will need to reach out to [Anthropic support](https://support.anthropic.com/en/articles/9015913-how-to-get-support) to request and enable access.
 
 This includes the ability to request access to your user data through data exports, which may contain your conversations with Claude, uploaded files, and usage patterns. Primary Owners can also remove your access to the Claude for Education account if necessary.
 

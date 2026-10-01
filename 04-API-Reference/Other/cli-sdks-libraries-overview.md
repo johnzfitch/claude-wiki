@@ -124,11 +124,11 @@ Use Claude through the OpenAI SDK surface
 
 The CLI, client SDKs, and libraries are for calling the Claude API yourself: you send each request and handle each response. Claude Code, the Claude Agent SDK, and Claude Managed Agents work at a higher level, providing the agent loop, tool execution, and runtime.
 
-[Claude Code](../../02-Claude-Code-CLI/code-home.md)
+[Claude Code](https://platform.claude.com/docs/01-Getting-Started/overview.md)
 
 Agentic coding tool for delegating coding tasks to Claude
 
-[Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md)
+[Claude Agent SDK](https://platform.claude.com/docs/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md)
 
 Build agents that run in a process you operate
 

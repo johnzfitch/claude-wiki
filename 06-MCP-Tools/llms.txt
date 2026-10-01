@@ -8683,7 +8683,7 @@ Concepts of MCP
 
 Participants
 
-MCP follows a client-server architecture where an MCP host — an AI application like [Claude Code](../../15-Claude-AI-Features/claude-code.md) or [Claude Desktop](https://www.claude.ai/download) — establishes connections to one or more MCP servers. The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server. Local MCP servers that use the STDIO transport typically serve a single MCP client, whereas remote MCP servers that use the HTTP with SSE transport will typically serve many MCP clients. The key participants in the MCP architecture are:
+MCP follows a client-server architecture where an MCP host — an AI application like [Claude Code](../../15-Claude-AI-Features/claude-com-product-claude-code.md) or [Claude Desktop](https://www.claude.ai/download) — establishes connections to one or more MCP servers. The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server. Local MCP servers that use the STDIO transport typically serve a single MCP client, whereas remote MCP servers that use the HTTP with SSE transport will typically serve many MCP clients. The key participants in the MCP architecture are:
 
 - **MCP Host**: The AI application that coordinates and manages one or multiple MCP clients
 - **MCP Client**: A component that maintains a connection to an MCP server and obtains context from an MCP server for the MCP host to use
@@ -10573,7 +10573,7 @@ Concepts of MCP
 
 Participants
 
-MCP follows a client-server architecture where an MCP host — an AI application like [Claude Code](../../15-Claude-AI-Features/claude-code.md) or [Claude Desktop](https://www.claude.ai/download) — establishes connections to one or more MCP servers. The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server. Local MCP servers that use the STDIO transport typically serve a single MCP client, whereas remote MCP servers that use the Streamable HTTP transport will typically serve many MCP clients. The key participants in the MCP architecture are:
+MCP follows a client-server architecture where an MCP host — an AI application like [Claude Code](../../15-Claude-AI-Features/claude-com-product-claude-code.md) or [Claude Desktop](https://www.claude.ai/download) — establishes connections to one or more MCP servers. The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server. Local MCP servers that use the STDIO transport typically serve a single MCP client, whereas remote MCP servers that use the Streamable HTTP transport will typically serve many MCP clients. The key participants in the MCP architecture are:
 
 - **MCP Host**: The AI application that coordinates and manages one or multiple MCP clients
 - **MCP Client**: A component that maintains a connection to an MCP server and obtains context from an MCP server for the MCP host to use
@@ -14423,7 +14423,7 @@ Concepts of MCP
 
 Participants
 
-MCP follows a client-server architecture where an MCP host — an AI application like [Claude Code](../../15-Claude-AI-Features/claude-code.md) or [Claude Desktop](https://www.claude.ai/download) — establishes connections to one or more MCP servers. The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server. Local MCP servers that use the STDIO transport typically serve a single MCP client, whereas remote MCP servers that use the Streamable HTTP transport will typically serve many MCP clients. The key participants in the MCP architecture are:
+MCP follows a client-server architecture where an MCP host — an AI application like [Claude Code](../../15-Claude-AI-Features/claude-com-product-claude-code.md) or [Claude Desktop](https://www.claude.ai/download) — establishes connections to one or more MCP servers. The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server. Local MCP servers that use the STDIO transport typically serve a single MCP client, whereas remote MCP servers that use the Streamable HTTP transport will typically serve many MCP clients. The key participants in the MCP architecture are:
 
 - **MCP Host**: The AI application that coordinates and manages one or multiple MCP clients
 - **MCP Client**: A component that maintains a connection to an MCP server and obtains context from an MCP server for the MCP host to use
@@ -21644,7 +21644,7 @@ Concepts of MCP
 
 Participants
 
-MCP follows a client-server architecture where an MCP host — an AI application like [Claude Code](../../15-Claude-AI-Features/claude-code.md) or [Claude Desktop](https://www.claude.ai/download) — establishes connections to one or more MCP servers. The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server. Local MCP servers that use the STDIO transport typically serve a single MCP client, whereas remote MCP servers that use the Streamable HTTP transport will typically serve many MCP clients. The key participants in the MCP architecture are:
+MCP follows a client-server architecture where an MCP host — an AI application like [Claude Code](../../15-Claude-AI-Features/claude-com-product-claude-code.md) or [Claude Desktop](https://www.claude.ai/download) — establishes connections to one or more MCP servers. The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server. Local MCP servers that use the STDIO transport typically serve a single MCP client, whereas remote MCP servers that use the Streamable HTTP transport will typically serve many MCP clients. The key participants in the MCP architecture are:
 
 - **MCP Host**: The AI application that coordinates and manages one or multiple MCP clients
 - **MCP Client**: A component that maintains a connection to an MCP server and obtains context from an MCP server for the MCP host to use
@@ -31181,7 +31181,7 @@ Concepts of MCP
 
 Participants
 
-MCP follows a client-server architecture where an MCP host — an AI application like [Claude Code](../../15-Claude-AI-Features/claude-code.md) or [Claude Desktop](https://www.claude.ai/download) — establishes connections to one or more MCP servers. The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server. Local MCP servers that use the STDIO transport typically serve a single MCP client, whereas remote MCP servers that use the Streamable HTTP transport will typically serve many MCP clients. The key participants in the MCP architecture are:
+MCP follows a client-server architecture where an MCP host — an AI application like [Claude Code](../../15-Claude-AI-Features/claude-com-product-claude-code.md) or [Claude Desktop](https://www.claude.ai/download) — establishes connections to one or more MCP servers. The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server. Local MCP servers that use the STDIO transport typically serve a single MCP client, whereas remote MCP servers that use the Streamable HTTP transport will typically serve many MCP clients. The key participants in the MCP architecture are:
 
 - **MCP Host**: The AI application that coordinates and manages one or multiple MCP clients
 - **MCP Client**: A component that maintains a connection to an MCP server and obtains context from an MCP server for the MCP host to use
@@ -35365,552 +35365,6 @@ Choose the MCP server type based on your use case:
 - **WebSocket** for real-time bidirectional communication
 
 Test thoroughly and handle errors gracefully for robust MCP integration.
-
----
-
-## Using MCP Tools in Commands and Agents
-
-Source: https://github.com/anthropics/claude-code/blob/main/plugins/plugin-dev/skills/mcp-integration/references/tool-usage.md
-Path: 06-MCP-Tools/General/claude-code-plugins-plugin-dev-skills-mcp-integration-references-tool-usage.md
-
-# Using MCP Tools in Commands and Agents
-
-Complete guide to using MCP tools effectively in Claude Code plugin commands and agents.
-
-## Overview
-
-Once an MCP server is configured, its tools become available with the prefix `mcp__plugin_<plugin-name>_<server-name>__<tool-name>`. Use these tools in commands and agents just like built-in Claude Code tools.
-
-## Tool Naming Convention
-
-### Format
-
-```
-mcp__plugin_<plugin-name>_<server-name>__<tool-name>
-```
-
-### Examples
-
-**Asana plugin with asana server:**
-- `mcp__plugin_asana_asana__asana_create_task`
-- `mcp__plugin_asana_asana__asana_search_tasks`
-- `mcp__plugin_asana_asana__asana_get_project`
-
-**Custom plugin with database server:**
-- `mcp__plugin_myplug_database__query`
-- `mcp__plugin_myplug_database__execute`
-- `mcp__plugin_myplug_database__list_tables`
-
-### Discovering Tool Names
-
-**Use `/mcp` command:**
-```bash
-/mcp
-```
-
-This shows:
-- All available MCP servers
-- Tools provided by each server
-- Tool schemas and descriptions
-- Full tool names for use in configuration
-
-## Using Tools in Commands
-
-### Pre-Allowing Tools
-
-Specify MCP tools in command frontmatter:
-
-```markdown
----
-description: Create a new Asana task
-allowed-tools: [
-  "mcp__plugin_asana_asana__asana_create_task"
-]
----
-
-# Create Task Command
-
-To create a task:
-1. Gather task details from user
-2. Use mcp__plugin_asana_asana__asana_create_task with the details
-3. Confirm creation to user
-```
-
-### Multiple Tools
-
-```markdown
----
-allowed-tools: [
-  "mcp__plugin_asana_asana__asana_create_task",
-  "mcp__plugin_asana_asana__asana_search_tasks",
-  "mcp__plugin_asana_asana__asana_get_project"
-]
----
-```
-
-### Wildcard (Use Sparingly)
-
-```markdown
----
-allowed-tools: ["mcp__plugin_asana_asana__*"]
----
-```
-
-**Caution:** Only use wildcards if the command truly needs access to all tools from a server.
-
-### Tool Usage in Command Instructions
-
-**Example command:**
-```markdown
----
-description: Search and create Asana tasks
-allowed-tools: [
-  "mcp__plugin_asana_asana__asana_search_tasks",
-  "mcp__plugin_asana_asana__asana_create_task"
-]
----
-
-# Asana Task Management
-
-## Searching Tasks
-
-To search for tasks:
-1. Use mcp__plugin_asana_asana__asana_search_tasks
-2. Provide search filters (assignee, project, etc.)
-3. Display results to user
-
-## Creating Tasks
-
-To create a task:
-1. Gather task details:
-   - Title (required)
-   - Description
-   - Project
-   - Assignee
-   - Due date
-2. Use mcp__plugin_asana_asana__asana_create_task
-3. Show confirmation with task link
-```
-
-## Using Tools in Agents
-
-### Agent Configuration
-
-Agents can use MCP tools autonomously without pre-allowing them:
-
-```markdown
----
-name: asana-status-updater
-description: This agent should be used when the user asks to "update Asana status", "generate project report", or "sync Asana tasks"
-model: inherit
-color: blue
----
-
-## Role
-
-Autonomous agent for generating Asana project status reports.
-
-## Process
-
-1. **Query tasks**: Use mcp__plugin_asana_asana__asana_search_tasks to get all tasks
-2. **Analyze progress**: Calculate completion rates and identify blockers
-3. **Generate report**: Create formatted status update
-4. **Update Asana**: Use mcp__plugin_asana_asana__asana_create_comment to post report
-
-## Available Tools
-
-The agent has access to all Asana MCP tools without pre-approval.
-```
-
-### Agent Tool Access
-
-Agents have broader tool access than commands:
-- Can use any tool Claude determines is necessary
-- Don't need pre-allowed lists
-- Should document which tools they typically use
-
-## Tool Call Patterns
-
-### Pattern 1: Simple Tool Call
-
-Single tool call with validation:
-
-```markdown
-Steps:
-1. Validate user provided required fields
-2. Call mcp__plugin_api_server__create_item with validated data
-3. Check for errors
-4. Display confirmation
-```
-
-### Pattern 2: Sequential Tools
-
-Chain multiple tool calls:
-
-```markdown
-Steps:
-1. Search for existing items: mcp__plugin_api_server__search
-2. If not found, create new: mcp__plugin_api_server__create
-3. Add metadata: mcp__plugin_api_server__update_metadata
-4. Return final item ID
-```
-
-### Pattern 3: Batch Operations
-
-Multiple calls with same tool:
-
-```markdown
-Steps:
-1. Get list of items to process
-2. For each item:
-   - Call mcp__plugin_api_server__update_item
-   - Track success/failure
-3. Report results summary
-```
-
-### Pattern 4: Error Handling
-
-Graceful error handling:
-
-```markdown
-Steps:
-1. Try to call mcp__plugin_api_server__get_data
-2. If error (rate limit, network, etc.):
-   - Wait and retry (max 3 attempts)
-   - If still failing, inform user
-   - Suggest checking configuration
-3. On success, process data
-```
-
-## Tool Parameters
-
-### Understanding Tool Schemas
-
-Each MCP tool has a schema defining its parameters. View with `/mcp`.
-
-**Example schema:**
-```json
-{
-  "name": "asana_create_task",
-  "description": "Create a new Asana task",
-  "inputSchema": {
-    "type": "object",
-    "properties": {
-      "name": {
-        "type": "string",
-        "description": "Task title"
-      },
-      "notes": {
-        "type": "string",
-        "description": "Task description"
-      },
-      "workspace": {
-        "type": "string",
-        "description": "Workspace GID"
-      }
-    },
-    "required": ["name", "workspace"]
-  }
-}
-```
-
-### Calling Tools with Parameters
-
-Claude automatically structures tool calls based on schema:
-
-```typescript
-// Claude generates this internally
-{
-  toolName: "mcp__plugin_asana_asana__asana_create_task",
-  input: {
-    name: "Review PR #123",
-    notes: "Code review for new feature",
-    workspace: "12345",
-    assignee: "67890",
-    due_on: "2025-01-15"
-  }
-}
-```
-
-### Parameter Validation
-
-**In commands, validate before calling:**
-
-```markdown
-Steps:
-1. Check required parameters:
-   - Title is not empty
-   - Workspace ID is provided
-   - Due date is valid format (YYYY-MM-DD)
-2. If validation fails, ask user to provide missing data
-3. If validation passes, call MCP tool
-4. Handle tool errors gracefully
-```
-
-## Response Handling
-
-### Success Responses
-
-```markdown
-Steps:
-1. Call MCP tool
-2. On success:
-   - Extract relevant data from response
-   - Format for user display
-   - Provide confirmation message
-   - Include relevant links or IDs
-```
-
-### Error Responses
-
-```markdown
-Steps:
-1. Call MCP tool
-2. On error:
-   - Check error type (auth, rate limit, validation, etc.)
-   - Provide helpful error message
-   - Suggest remediation steps
-   - Don't expose internal error details to user
-```
-
-### Partial Success
-
-```markdown
-Steps:
-1. Batch operation with multiple MCP calls
-2. Track successes and failures separately
-3. Report summary:
-   - "Successfully processed 8 of 10 items"
-   - "Failed items: [item1, item2] due to [reason]"
-   - Suggest retry or manual intervention
-```
-
-## Performance Optimization
-
-### Batching Requests
-
-**Good: Single query with filters**
-```markdown
-Steps:
-1. Call mcp__plugin_api_server__search with filters:
-   - project_id: "123"
-   - status: "active"
-   - limit: 100
-2. Process all results
-```
-
-**Avoid: Many individual queries**
-```markdown
-Steps:
-1. For each item ID:
-   - Call mcp__plugin_api_server__get_item
-   - Process item
-```
-
-### Caching Results
-
-```markdown
-Steps:
-1. Call expensive MCP operation: mcp__plugin_api_server__analyze
-2. Store results in variable for reuse
-3. Use cached results for subsequent operations
-4. Only re-fetch if data changes
-```
-
-### Parallel Tool Calls
-
-When tools don't depend on each other, call in parallel:
-
-```markdown
-Steps:
-1. Make parallel calls (Claude handles this automatically):
-   - mcp__plugin_api_server__get_project
-   - mcp__plugin_api_server__get_users
-   - mcp__plugin_api_server__get_tags
-2. Wait for all to complete
-3. Combine results
-```
-
-## Integration Best Practices
-
-### User Experience
-
-**Provide feedback:**
-```markdown
-Steps:
-1. Inform user: "Searching Asana tasks..."
-2. Call mcp__plugin_asana_asana__asana_search_tasks
-3. Show progress: "Found 15 tasks, analyzing..."
-4. Present results
-```
-
-**Handle long operations:**
-```markdown
-Steps:
-1. Warn user: "This may take a minute..."
-2. Break into smaller steps with updates
-3. Show incremental progress
-4. Final summary when complete
-```
-
-### Error Messages
-
-**Good error messages:**
-```
-❌ "Could not create task. Please check:
-   1. You're logged into Asana
-   2. You have access to workspace 'Engineering'
-   3. The project 'Q1 Goals' exists"
-```
-
-**Poor error messages:**
-```
-❌ "Error: MCP tool returned 403"
-```
-
-### Documentation
-
-**Document MCP tool usage in command:**
-```markdown
-## MCP Tools Used
-
-This command uses the following Asana MCP tools:
-- **asana_search_tasks**: Search for tasks matching criteria
-- **asana_create_task**: Create new task with details
-- **asana_update_task**: Update existing task properties
-
-Ensure you're authenticated to Asana before running this command.
-```
-
-## Testing Tool Usage
-
-### Local Testing
-
-1. **Configure MCP server** in `.mcp.json`
-2. **Install plugin locally** in `.claude-plugin/`
-3. **Verify tools available** with `/mcp`
-4. **Test command** that uses tools
-5. **Check debug output**: `claude --debug`
-
-### Test Scenarios
-
-**Test successful calls:**
-```markdown
-Steps:
-1. Create test data in external service
-2. Run command that queries this data
-3. Verify correct results returned
-```
-
-**Test error cases:**
-```markdown
-Steps:
-1. Test with missing authentication
-2. Test with invalid parameters
-3. Test with non-existent resources
-4. Verify graceful error handling
-```
-
-**Test edge cases:**
-```markdown
-Steps:
-1. Test with empty results
-2. Test with maximum results
-3. Test with special characters
-4. Test with concurrent access
-```
-
-## Common Patterns
-
-### Pattern: CRUD Operations
-
-```markdown
----
-allowed-tools: [
-  "mcp__plugin_api_server__create_item",
-  "mcp__plugin_api_server__read_item",
-  "mcp__plugin_api_server__update_item",
-  "mcp__plugin_api_server__delete_item"
-]
----
-
-# Item Management
-
-## Create
-Use create_item with required fields...
-
-## Read
-Use read_item with item ID...
-
-## Update
-Use update_item with item ID and changes...
-
-## Delete
-Use delete_item with item ID (ask for confirmation first)...
-```
-
-### Pattern: Search and Process
-
-```markdown
-Steps:
-1. **Search**: mcp__plugin_api_server__search with filters
-2. **Filter**: Apply additional local filtering if needed
-3. **Transform**: Process each result
-4. **Present**: Format and display to user
-```
-
-### Pattern: Multi-Step Workflow
-
-```markdown
-Steps:
-1. **Setup**: Gather all required information
-2. **Validate**: Check data completeness
-3. **Execute**: Chain of MCP tool calls:
-   - Create parent resource
-   - Create child resources
-   - Link resources together
-   - Add metadata
-4. **Verify**: Confirm all steps succeeded
-5. **Report**: Provide summary to user
-```
-
-## Troubleshooting
-
-### Tools Not Available
-
-**Check:**
-- MCP server configured correctly
-- Server connected (check `/mcp`)
-- Tool names match exactly (case-sensitive)
-- Restart Claude Code after config changes
-
-### Tool Calls Failing
-
-**Check:**
-- Authentication is valid
-- Parameters match tool schema
-- Required parameters provided
-- Check `claude --debug` logs
-
-### Performance Issues
-
-**Check:**
-- Batching queries instead of individual calls
-- Caching results when appropriate
-- Not making unnecessary tool calls
-- Parallel calls when possible
-
-## Conclusion
-
-Effective MCP tool usage requires:
-1. **Understanding tool schemas** via `/mcp`
-2. **Pre-allowing tools** in commands appropriately
-3. **Handling errors gracefully**
-4. **Optimizing performance** with batching and caching
-5. **Providing good UX** with feedback and clear errors
-6. **Testing thoroughly** before deployment
-
-Follow these patterns for robust MCP tool integration in your plugin commands and agents.
 
 ---
 
@@ -49314,6 +48768,7 @@ Path: 06-MCP-Tools/General/managed-mcp.md
   - [Validate the configuration](#validate-the-configuration)
   - [Disable MCP entirely](#disable-mcp-entirely)
   - [Allow claude.ai connectors alongside the managed set](#allow-claude-ai-connectors-alongside-the-managed-set)
+  - [Allow Claude in Chrome alongside the managed set](#allow-claude-in-chrome-alongside-the-managed-set)
 - [Provide servers through managed settings](#provide-servers-through-managed-settings)
   - [What an entry can contain](#what-an-entry-can-contain)
   - [How provided servers load](#how-provided-servers-load)
@@ -49359,16 +48814,16 @@ Choose a pattern
 
 Claude Code supports a range of restriction levels. Each pattern uses one or more of the mechanisms covered below: `managed-mcp.json` for deploying a fixed set, the `managedMcpServers` managed setting for providing servers alongside the ones users add, and `allowedMcpServers`/`deniedMcpServers` for filtering what users configure.
 
-| Pattern                 | What it does                                                                                                                                                                                                                       | Configure                                                                                                           |
-|:------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------|
-| **Disable MCP**         | No servers load, apart from [in-process servers the app that started the session registers](#exclusive-control-with-managed-mcp-json) and any you [provide through `managedMcpServers`](#provide-servers-through-managed-settings) | `managed-mcp.json` with an empty server map                                                                         |
-| **Fixed deployment**    | Every user gets the same servers and can’t add others                                                                                                                                                                              | `managed-mcp.json` with the servers you want                                                                        |
-| **Provided servers**    | Every user gets the remote servers you list and keeps their own                                                                                                                                                                    | `managedMcpServers` in managed settings                                                                             |
-| **Approved catalog**    | Publish a list of approved servers; users add the ones they want, anything else is blocked                                                                                                                                         | `allowedMcpServers` + `allowManagedMcpServersOnly: true`                                                            |
-| **Plugin servers only** | Users can’t add servers through `~/.claude.json` or `.mcp.json`; plugin servers still load                                                                                                                                         | [`strictPluginOnlyCustomization`](../../02-Claude-Code-CLI/settings-reference.md#strictpluginonlycustomization) with `mcp` in the list |
-| **Soft allowlist**      | Enforce an allowlist that users can broaden in their own settings                                                                                                                                                                  | `allowedMcpServers` without `allowManagedMcpServersOnly`                                                            |
-| **Denylist only**       | Block known-bad servers, allow everything else                                                                                                                                                                                     | `deniedMcpServers`                                                                                                  |
-| **No restrictions**     | Users add anything                                                                                                                                                                                                                 | Don’t deploy any managed MCP configuration                                                                          |
+| Pattern                 | What it does                                                                                                 | Configure                                                                                                           |
+|:------------------------|:-------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------|
+| **Disable MCP**         | No servers load except the few that [load under exclusive control](#exclusive-control-with-managed-mcp-json) | `managed-mcp.json` with an empty server map                                                                         |
+| **Fixed deployment**    | Every user gets the same servers and can’t add others                                                        | `managed-mcp.json` with the servers you want                                                                        |
+| **Provided servers**    | Every user gets the remote servers you list and keeps their own                                              | `managedMcpServers` in managed settings                                                                             |
+| **Approved catalog**    | Publish a list of approved servers; users add the ones they want, anything else is blocked                   | `allowedMcpServers` + `allowManagedMcpServersOnly: true`                                                            |
+| **Plugin servers only** | Users can’t add servers through `~/.claude.json` or `.mcp.json`; plugin servers still load                   | [`strictPluginOnlyCustomization`](../../02-Claude-Code-CLI/settings-reference.md#strictpluginonlycustomization) with `mcp` in the list |
+| **Soft allowlist**      | Enforce an allowlist that users can broaden in their own settings                                            | `allowedMcpServers` without `allowManagedMcpServersOnly`                                                            |
+| **Denylist only**       | Block known-bad servers, allow everything else                                                               | `deniedMcpServers`                                                                                                  |
+| **No restrictions**     | Users add anything                                                                                           | Don’t deploy any managed MCP configuration                                                                          |
 
 Claude Code doesn’t have a built-in MCP server registry that users can browse and install from. For the approved-catalog pattern, share the approved list and its `claude mcp add` commands somewhere your users will find them, such as an internal wiki, or distribute the servers as plugins through a [managed plugin marketplace](../../08-Plugins-Skills/plugins-org.md#restrict-what-users-can-install) so users can browse and install them from `/plugin`.
 
@@ -49382,6 +48837,7 @@ When you deploy a `managed-mcp.json` file, Claude Code loads only these MCP serv
 - The servers the file defines
 - Servers you [provide through `managedMcpServers`](#provide-servers-through-managed-settings)
 - In-process servers that the app that started the session registers, such as the VS Code extension’s own server or the [connectors the desktop app delivers](mcp.md#how-connectors-reach-claude-code)
+- The built-in [Claude in Chrome](../../03-IDE-Integrations/chrome.md) server, if you [allow it alongside the managed set](#allow-claude-in-chrome-alongside-the-managed-set)
 
 Users can’t add, modify, or use any other MCP servers, including plugin-provided servers and servers passed with the [`--mcp-config` CLI flag](../../02-Claude-Code-CLI/cli-reference.md#cli-flags). The file also suppresses the claude.ai connectors Claude Code fetches itself unless you [allow them alongside the managed set](#allow-claude-ai-connectors-alongside-the-managed-set).
 
@@ -49475,7 +48931,7 @@ To confirm the file is in effect, run two checks on a managed machine:
 
 Disable MCP entirely
 
-Deploy a `managed-mcp.json` containing an empty server map to block every MCP server apart from [in-process servers the app that started the session registers](#exclusive-control-with-managed-mcp-json):
+Deploy a `managed-mcp.json` containing an empty server map to block every MCP server except the ones that [load under exclusive control](#exclusive-control-with-managed-mcp-json):
 
 ```python
 {
@@ -49483,7 +48939,7 @@ Deploy a `managed-mcp.json` containing an empty server map to block every MCP se
 }
 ```
 
-`claude mcp add` fails with the enterprise-policy error above. Servers users had previously configured stop loading the next time they start a session, with no warning that policy is the reason. Servers you provide through `managedMcpServers` still load under an empty map, so leave that key unset as well to disable MCP completely.
+`claude mcp add` fails with the enterprise-policy error above. Servers users had previously configured stop loading the next time they start a session, with no warning that policy is the reason. Servers you provide through `managedMcpServers`, and anything else you allow alongside the managed set, still load under an empty map, so leave those keys unset to turn MCP off completely.
 
 
 [​](#allow-claude-ai-connectors-alongside-the-managed-set)
@@ -49491,6 +48947,13 @@ Deploy a `managed-mcp.json` containing an empty server map to block every MCP se
 Allow claude.ai connectors alongside the managed set
 
 By default, deploying `managed-mcp.json` suppresses the [claude.ai connectors](mcp.md#use-mcp-servers-from-claude-ai) Claude Code fetches itself, including connectors an administrator configured for the organization in the claude.ai admin console. To load those connectors alongside the servers in `managed-mcp.json`, set `"allowAllClaudeAiMcps": true` in a [managed settings source](../../13-Enterprise-Admin/admin-setup.md#decide-how-settings-reach-devices). With the setting enabled, Claude Code loads the same claude.ai connectors it would load if `managed-mcp.json` weren’t deployed. [Allowlists and denylists](#policy-based-control-with-allowlists-and-denylists) still apply to those connectors, so you can block specific ones with `deniedMcpServers`. The setting affects only the claude.ai connectors Claude Code fetches itself; plugin-provided servers stay suppressed. Cloud sessions and the desktop app’s local and SSH sessions receive connectors another way, described in [How connectors reach Claude Code](mcp.md#how-connectors-reach-claude-code). A `managed-mcp.json` on the host that runs a cloud session, such as a [self-hosted runner host](../../13-Enterprise-Admin/self-hosted-environments-configuration.md#mcp-servers), suppresses that session’s connectors whether or not you set `allowAllClaudeAiMcps`. No `managed-mcp.json` reaches the connectors the desktop app delivers to its local and SSH sessions. Claude Code reads `allowAllClaudeAiMcps` only from admin-controlled policy tiers: server-managed settings, an MDM-deployed plist or HKLM registry key, or a system `managed-settings.json` file. Placing it in user or project settings has no effect, so users cannot re-enable connectors that exclusive control suppressed.
+
+
+[​](#allow-claude-in-chrome-alongside-the-managed-set)
+
+Allow Claude in Chrome alongside the managed set
+
+By default, when you deploy `managed-mcp.json`, Claude Code blocks the built-in [Claude in Chrome](../../03-IDE-Integrations/chrome.md) server in terminal sessions. Users don’t get the [extension install prompt](../../03-IDE-Integrations/chrome.md#install-the-extension-when-claude-asks), and a session where the user [enabled Chrome by default](../../03-IDE-Integrations/chrome.md#enable-chrome-by-default) starts without Chrome and prints no warning. When a user who could otherwise run Claude in Chrome starts it with `claude --chrome` or `CLAUDE_CODE_ENABLE_CFC=1`, Claude Code exits at startup with an error that names the `allowClaudeInChromeWithManagedMcp` setting. To let users run Claude in Chrome alongside the servers in `managed-mcp.json`, set `"allowClaudeInChromeWithManagedMcp": true` in the device’s own managed settings. Put it in an MDM-deployed plist or HKLM registry key, or a system `managed-settings.json` file, whichever of those Claude Code [selects](../../13-Enterprise-Admin/managed-settings.md#precedence-within-the-managed-tier) on that device. Requires Claude Code v2.1.282 or later. Before v2.1.282, Claude Code ignores the setting, and the startup error reads `You cannot dynamically configure MCP servers when an enterprise MCP config is present` instead. Claude Code reads the setting from those device sources even when [server-managed settings](../../13-Enterprise-Admin/server-managed-settings.md) deliver the rest of your policy. It ignores the setting in server-managed settings themselves, in the user-writable HKCU registry, and in user or project settings. A [`deniedMcpServers`](#policy-based-control-with-allowlists-and-denylists) entry for `claude-in-chrome` still blocks the server with the setting on.
 
 
 [​](#provide-servers-through-managed-settings)
@@ -49594,7 +49057,7 @@ With [gateway sign-in](../../13-Enterprise-Admin/claude-apps-gateway-config.md#p
 
 Policy-based control with allowlists and denylists
 
-Allowlists and denylists filter which configured servers are allowed to load. They aren’t a registry: a server still has to be added by a user, a plugin, or your organization before either list applies to it. Servers your organization delivers through `managedMcpServers` load without an allowlist entry, and [How a server is evaluated](#how-a-server-is-evaluated) covers `managed-mcp.json` servers. The denylist applies to every server regardless of where it came from, other than in-process `type: "sdk"` entries. To deploy servers to users, use [`managed-mcp.json`](#exclusive-control-with-managed-mcp-json) or [`managedMcpServers`](#provide-servers-through-managed-settings). Both lists also filter servers passed with the [`--mcp-config` CLI flag](../../02-Claude-Code-CLI/cli-reference.md#cli-flags), other than in-process `type: "sdk"` entries; `--strict-mcp-config` limits which configuration files load and doesn’t bypass either list. To make the allowlist authoritative, set `allowedMcpServers` and `allowManagedMcpServersOnly: true` together in a [managed settings source](../../13-Enterprise-Admin/admin-setup.md#decide-how-settings-reach-devices), such as server-managed settings or a deployed `managed-settings.json` file. The lock applies from every admin-controlled managed source, so a lockdown in a deployed file still applies when server-managed settings that don’t mention MCP are also in use. While the lock is on, the managed allowlist comes from the highest-ranked admin source that sets one. Reading the lock and the allowlist across sources requires Claude Code v2.1.273 or later. [Restrict the allowlist to managed settings only](#restrict-the-allowlist-to-managed-settings-only) shows the configuration. Without `allowManagedMcpServersOnly`, allowlists from every settings scope merge, including a user’s own `~/.claude/settings.json`, so a user can broaden what your allowlist permits. Denylists merge from every scope regardless.
+Allowlists and denylists filter which configured servers are allowed to load. They aren’t a registry: a server still has to be added by a user, a plugin, or your organization before either list applies to it. Servers your organization delivers through `managedMcpServers` load without an allowlist entry, and [How a server is evaluated](#how-a-server-is-evaluated) covers `managed-mcp.json` servers. The denylist applies to every server regardless of where it came from, other than in-process `type: "sdk"` entries. To deploy servers to users, use [`managed-mcp.json`](#exclusive-control-with-managed-mcp-json) or [`managedMcpServers`](#provide-servers-through-managed-settings). Both lists also filter servers a user passes with the [`--mcp-config` CLI flag](../../02-Claude-Code-CLI/cli-reference.md#cli-flags), other than in-process `type: "sdk"` entries; `--strict-mcp-config` limits which configuration files load and doesn’t bypass either list. To make the allowlist authoritative, set `allowedMcpServers` and `allowManagedMcpServersOnly: true` together in a [managed settings source](../../13-Enterprise-Admin/admin-setup.md#decide-how-settings-reach-devices), such as server-managed settings or a deployed `managed-settings.json` file. The lock applies from every admin-controlled managed source, so a lockdown in a deployed file still applies when server-managed settings that don’t mention MCP are also in use. While the lock is on, the managed allowlist comes from the highest-ranked admin source that sets one. Reading the lock and the allowlist across sources requires Claude Code v2.1.273 or later. [Restrict the allowlist to managed settings only](#restrict-the-allowlist-to-managed-settings-only) shows the configuration. Without `allowManagedMcpServersOnly`, allowlists from every settings scope merge, including a user’s own `~/.claude/settings.json`, so a user can broaden what your allowlist permits. Denylists merge from every scope regardless.
 
 `allowManagedMcpServersOnly` is separate from `allowManagedPermissionRulesOnly`, which locks down [permission rules](../../02-Claude-Code-CLI/permissions.md#managed-settings) only. Setting that flag does not enforce the MCP allowlist.
 
@@ -49613,10 +49076,10 @@ Match servers by URL, command, or name
 
 Leaving `allowedMcpServers` unset is different from setting it to an empty array:
 
-| Setting             | Unset (default)     | Empty array `[]`                                                                    | Populated                                                                                      |
-|:--------------------|:--------------------|:------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------|
-| `allowedMcpServers` | All servers allowed | No servers allowed, apart from [the organization’s own](#how-a-server-is-evaluated) | Only matching servers allowed, apart from [the organization’s own](#how-a-server-is-evaluated) |
-| `deniedMcpServers`  | No servers blocked  | No servers blocked                                                                  | Matching servers blocked                                                                       |
+| Setting             | Unset (default)     | Empty array `[]`                                                                                 | Populated                                                                                                   |
+|:--------------------|:--------------------|:-------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------|
+| `allowedMcpServers` | All servers allowed | No servers allowed, apart from [those that skip the allowlist check](#how-a-server-is-evaluated) | Only matching servers allowed, apart from [those that skip the allowlist check](#how-a-server-is-evaluated) |
+| `deniedMcpServers`  | No servers blocked  | No servers blocked                                                                               | Matching servers blocked                                                                                    |
 
 See [Invalid entries in managed settings](../../13-Enterprise-Admin/managed-settings.md#invalid-entries-in-managed-settings) for what happens when an entry fails schema validation.
 
@@ -49638,7 +49101,12 @@ Before loading a server, including one from `managed-mcp.json`, Claude Code runs
 
 1.  **Merge the lists.** Allowlist and denylist entries from every settings scope combine into one allowlist and one denylist. When `allowManagedMcpServersOnly` is `true`, only the managed allowlist is kept; the denylist always merges from every scope. When more than one managed source is present, [Keys read from every admin source](../../13-Enterprise-Admin/managed-settings.md#keys-read-from-every-admin-source) says which of them supply the managed scope’s lists.
 2.  **Check the denylist.** A server that matches any denylist entry, by URL, command, or name, is blocked. Nothing overrides a denylist match.
-3.  **Check the allowlist.** If `allowedMcpServers` isn’t set anywhere, every server that passed the denylist loads. If it is set, what the server must match depends on its type, shown in the table below. The organization’s own servers skip this check: every `managedMcpServers` entry, and any `managed-mcp.json` entry whose values use no `${VAR}` expansion. Built-in servers skip it too, such as Claude in Chrome, the `ide` server Claude Code connects to in a running VS Code or JetBrains IDE, and servers the CLI itself configures. A `managed-mcp.json` server that uses `${VAR}` expansion in its command, arguments, `env`, URL, or headers is still checked, as is every server a user, a plugin, `--mcp-config`, or claude.ai adds.
+3.  **Check the allowlist.** If `allowedMcpServers` isn’t set anywhere, every server that passed the denylist loads. If it is set, what the server must match depends on its type, shown in the table below. Three groups of servers skip this check:
+    - The organization’s own servers: every `managedMcpServers` entry, and any `managed-mcp.json` entry whose values use no `${VAR}` expansion.
+    - Built-in servers, such as Claude in Chrome, the `ide` server Claude Code connects to in a running VS Code or JetBrains IDE, and servers the CLI itself configures.
+    - A [Claude Tag](../../02-Claude-Code-CLI/claude-tag.md) session’s Slack tools: the servers it uses to read the thread and post its replies load without an allowlist entry.
+
+    A `managed-mcp.json` server that uses `${VAR}` expansion in its command, arguments, `env`, URL, or headers is still checked. So is every server a user, a plugin, or claude.ai adds, and every server a user passes with `--mcp-config`.
 
 | Server type          | Allowed when it matches                                                                                          |
 |:---------------------|:-----------------------------------------------------------------------------------------------------------------|
@@ -49820,14 +49288,15 @@ How restrictions appear to users
 
 For what users see at startup when `managed-mcp.json` is deployed and the session also has `--mcp-config` servers, see [Exclusive control with managed-mcp.json](#exclusive-control-with-managed-mcp-json). Use this table to recognize the other reports and to tell users what to expect before you roll out a change:
 
-| Restriction                                                                                                           | What the user sees                                                                                                                |
-|:----------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------|
-| `managed-mcp.json` is present and the user runs `claude mcp add`                                                      | `Cannot add MCP server: enterprise MCP configuration is active and has exclusive control over MCP servers`                        |
-| The server is on a denylist and the user runs `claude mcp add`                                                        | `Cannot add MCP server "<name>": server is explicitly blocked by enterprise policy`                                               |
-| The server isn’t on the allowlist and the user runs `claude mcp add`                                                  | `Cannot add MCP server "<name>": not allowed by enterprise policy`                                                                |
-| The user runs `claude mcp remove` on a server from `managedMcpServers`                                                | `MCP server "<name>" is provided by your organization (managed settings) and cannot be removed locally.`                          |
-| A previously configured server is now blocked by policy                                                               | The server disappears from `/mcp` and `claude mcp list`                                                                           |
-| A server becomes blocked while a session is running, and the user selects **Reconnect** or turns it back on in `/mcp` | [`MCP server <name> is blocked by enterprise managed policy`](../../02-Claude-Code-CLI/errors.md#mcp-server-is-blocked-by-enterprise-managed-policy) |
+| Restriction                                                                                                           | What the user sees                                                                                                                                                                                                          |
+|:----------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `managed-mcp.json` is present and the user runs `claude mcp add`                                                      | `Cannot add MCP server: enterprise MCP configuration is active and has exclusive control over MCP servers`                                                                                                                  |
+| `managed-mcp.json` is present and a user who could otherwise run Claude in Chrome runs `claude --chrome`              | Claude Code exits at startup with `Claude in Chrome is blocked by your organization's managed MCP configuration (managed-mcp.json). An administrator can allow it with allowClaudeInChromeWithManagedMcp in device policy.` |
+| The server is on a denylist and the user runs `claude mcp add`                                                        | `Cannot add MCP server "<name>": server is explicitly blocked by enterprise policy`                                                                                                                                         |
+| The server isn’t on the allowlist and the user runs `claude mcp add`                                                  | `Cannot add MCP server "<name>": not allowed by enterprise policy`                                                                                                                                                          |
+| The user runs `claude mcp remove` on a server from `managedMcpServers`                                                | `MCP server "<name>" is provided by your organization (managed settings) and cannot be removed locally.`                                                                                                                    |
+| A previously configured server is now blocked by policy                                                               | The server disappears from `/mcp` and `claude mcp list`                                                                                                                                                                     |
+| A server becomes blocked while a session is running, and the user selects **Reconnect** or turns it back on in `/mcp` | [`MCP server <name> is blocked by enterprise managed policy`](../../02-Claude-Code-CLI/errors.md#mcp-server-is-blocked-by-enterprise-managed-policy)                                                                                           |
 
 When a server silently disappears, the user gets no signal that policy is the reason, so tell affected users which servers are blocked when you roll out a new restriction.
 
@@ -49845,14 +49314,15 @@ Configuration summary
 
 Every file and setting this page covers, what it controls, and how to deliver it:
 
-| Surface                      | What it controls                                                                                                                                                                                                                                       | Where it lives                                                                                                                                                                                                       | How to deliver                                                                                                                                                                         |
-|:-----------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `managed-mcp.json`           | Fixed server set, exclusive control                                                                                                                                                                                                                    | System path: `/Library/Application Support/ClaudeCode/`, `/etc/claude-code/`, or `C:\Program Files\ClaudeCode\`                                                                                                      | MDM, GPO, fleet management, or any process with administrator privileges. Cannot be set through server-managed settings                                                                |
-| `managedMcpServers`          | Remote servers provided to every user alongside their own                                                                                                                                                                                              | Managed settings sources only; the setting has no effect elsewhere                                                                                                                                                   | A [managed settings source](../../13-Enterprise-Admin/admin-setup.md#decide-how-settings-reach-devices): server-managed settings, a gateway policy, `managed-settings.json`, MDM profile, or HKLM registry |
-| `allowedMcpServers`          | Allowlist of permitted servers                                                                                                                                                                                                                         | Any [settings scope](../../02-Claude-Code-CLI/settings.md#where-settings-live); [How a server is evaluated](#how-a-server-is-evaluated) says how lists from several scopes and managed sources combine                                  | For enforcement, a [managed settings source](../../13-Enterprise-Admin/admin-setup.md#decide-how-settings-reach-devices): server-managed settings, `managed-settings.json`, MDM profile, or registry       |
-| `deniedMcpServers`           | Denylist of blocked servers                                                                                                                                                                                                                            | Any settings scope; [How a server is evaluated](#how-a-server-is-evaluated) says how lists from several scopes and managed sources combine                                                                           | Same as `allowedMcpServers`                                                                                                                                                            |
-| `allowManagedMcpServersOnly` | Locks the allowlist to managed sources only                                                                                                                                                                                                            | Managed settings sources only; [Keys read from every admin source](../../13-Enterprise-Admin/managed-settings.md#keys-read-from-every-admin-source) says which managed sources can turn it on. The setting has no effect in other scopes | Same as `allowedMcpServers`                                                                                                                                                            |
-| `allowAllClaudeAiMcps`       | Loads the claude.ai connectors Claude Code fetches itself alongside `managed-mcp.json`. [A `managed-mcp.json` on the host that runs a cloud session still suppresses that session’s connectors](#allow-claude-ai-connectors-alongside-the-managed-set) | Managed settings sources only; the setting has no effect elsewhere                                                                                                                                                   | Same as `allowedMcpServers`                                                                                                                                                            |
+| Surface                             | What it controls                                                                                                                                                                                                                                       | Where it lives                                                                                                                                                                                                       | How to deliver                                                                                                                                                                         |
+|:------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `managed-mcp.json`                  | Fixed server set, exclusive control                                                                                                                                                                                                                    | System path: `/Library/Application Support/ClaudeCode/`, `/etc/claude-code/`, or `C:\Program Files\ClaudeCode\`                                                                                                      | MDM, GPO, fleet management, or any process with administrator privileges. Cannot be set through server-managed settings                                                                |
+| `managedMcpServers`                 | Remote servers provided to every user alongside their own                                                                                                                                                                                              | Managed settings sources only; the setting has no effect elsewhere                                                                                                                                                   | A [managed settings source](../../13-Enterprise-Admin/admin-setup.md#decide-how-settings-reach-devices): server-managed settings, a gateway policy, `managed-settings.json`, MDM profile, or HKLM registry |
+| `allowedMcpServers`                 | Allowlist of permitted servers                                                                                                                                                                                                                         | Any [settings scope](../../02-Claude-Code-CLI/settings.md#where-settings-live); [How a server is evaluated](#how-a-server-is-evaluated) says how lists from several scopes and managed sources combine                                  | For enforcement, a [managed settings source](../../13-Enterprise-Admin/admin-setup.md#decide-how-settings-reach-devices): server-managed settings, `managed-settings.json`, MDM profile, or registry       |
+| `deniedMcpServers`                  | Denylist of blocked servers                                                                                                                                                                                                                            | Any settings scope; [How a server is evaluated](#how-a-server-is-evaluated) says how lists from several scopes and managed sources combine                                                                           | Same as `allowedMcpServers`                                                                                                                                                            |
+| `allowManagedMcpServersOnly`        | Locks the allowlist to managed sources only                                                                                                                                                                                                            | Managed settings sources only; [Keys read from every admin source](../../13-Enterprise-Admin/managed-settings.md#keys-read-from-every-admin-source) says which managed sources can turn it on. The setting has no effect in other scopes | Same as `allowedMcpServers`                                                                                                                                                            |
+| `allowClaudeInChromeWithManagedMcp` | Lets the built-in Claude in Chrome server run alongside `managed-mcp.json`                                                                                                                                                                             | Managed settings on the device only: an MDM profile, the HKLM registry, or `managed-settings.json`. Server-managed settings and user-writable sources have no effect                                                 | MDM, GPO, fleet management, or any process with administrator privileges                                                                                                               |
+| `allowAllClaudeAiMcps`              | Loads the claude.ai connectors Claude Code fetches itself alongside `managed-mcp.json`. [A `managed-mcp.json` on the host that runs a cloud session still suppresses that session’s connectors](#allow-claude-ai-connectors-alongside-the-managed-set) | Managed settings sources only; the setting has no effect elsewhere                                                                                                                                                   | Same as `allowedMcpServers`                                                                                                                                                            |
 
 
 [​](#related-resources)
@@ -50876,7 +50346,7 @@ Or inline in `plugin.json`:
   - In [cloud sessions](../../02-Claude-Code-CLI/claude-code-on-the-web.md), an MCP call to a plugin server that isn’t connected yet, such as right after an idle session wakes, starts the server on demand and waits for it to connect
 - **Path placeholders**: `${CLAUDE_PLUGIN_ROOT}` resolves to the plugin’s installation directory, `${CLAUDE_PLUGIN_DATA}` to its [persistent state](../../08-Plugins-Skills/plugins-components.md#path-variables-and-persistent-data) directory, and `${CLAUDE_PROJECT_DIR}` to the stable project root. Substitution applies to:
   - `stdio` servers: `command`, `args`, `env`
-  - `http`, `sse`, and `ws` servers: `url`, `headers`, and `headersHelper`. Before v2.1.195, `headersHelper` passed the placeholder through as a literal string
+  - `http`, `sse`, and `ws` servers: `url`, `headers`, and `headersHelper`
 - **User environment access**: access to the same environment variables as manually configured servers
 - **Multiple transport types**: support for stdio, SSE, HTTP, and WebSocket transports, though transport support may vary by server
 
@@ -51383,7 +50853,7 @@ Claude Code picks the `headersHelper` command’s working directory from the con
 
 | Where you configured the server                                                                                                                                                                                   | Working directory                                                                                 |
 |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------|
-| A [plugin](../../08-Plugins-Skills/plugins-components.md#mcp-servers)                                                                                                                                                               | The plugin’s root directory. Requires Claude Code v2.1.195 or later                               |
+| A [plugin](../../08-Plugins-Skills/plugins-components.md#mcp-servers)                                                                                                                                                               | The plugin’s root directory                                                                       |
 | A project `.mcp.json` or a [local-scope](#local-scope) server                                                                                                                                                     | The project directory the server is declared in                                                   |
 | An agent file in your project, a server from the SDK’s `mcpServers` option or `setMcpServers()` method, or [`--mcp-config`](../../02-Claude-Code-CLI/cli-reference.md)                                                               | The session’s [primary working directory](../../02-Claude-Code-CLI/permissions.md#working-directories)               |
 | [User scope](#user-scope), [managed MCP](managed-mcp.md), a [claude.ai connector](#use-mcp-servers-from-claude-ai), or an agent file from outside your project, including one from an `--add-dir` directory | Your configuration directory, `~/.claude` unless you set [`CLAUDE_CONFIG_DIR`](../../02-Claude-Code-CLI/env-vars.md) |
@@ -51532,7 +51002,7 @@ Anthropic also provides some connectors itself, without you or an admin adding t
 - `ANTHROPIC_PROFILE`, the federation variables, or an active [Anthropic profile](../../13-Enterprise-Admin/iam.md#anthropic-profiles-and-federation-credentials) supplies the credential
 - `CLAUDE_CODE_OAUTH_TOKEN` holds a token from [`claude setup-token`](../../13-Enterprise-Admin/iam.md#generate-a-long-lived-token), which can only make model requests
 
-If `/mcp` doesn’t list a connector you added, run `/status` to confirm which authentication method is active. Unset that environment variable, remove the `apiKeyHelper` setting, or [switch off the profile](../../13-Enterprise-Admin/iam.md#anthropic-profiles-and-federation-credentials), then run `/login` to select your claude.ai account. If a temporary network problem keeps the connector list from loading when your session starts, Claude Code retries the fetch up to three times in the background, and the connectors appear once a retry succeeds. If they still haven’t appeared, restart Claude Code to fetch the list again. If `/mcp` shows a connector as `connected · session token rejected`, or its detail view shows [`claude.ai rejected the session token`](../../02-Claude-Code-CLI/errors.md#claude-ai-rejected-the-session-token), claude.ai rejected the token from your Claude Code login, usually because the login expired and couldn’t be refreshed. Authorizing the connector again doesn’t clear this state, because the connector’s own authorization in claude.ai isn’t what was rejected. To clear it:
+If `/mcp` doesn’t list a connector you added, run `/status` to confirm which authentication method is active. Unset that environment variable, remove the `apiKeyHelper` setting, or [switch off the profile](../../13-Enterprise-Admin/iam.md#anthropic-profiles-and-federation-credentials), then run `/login` to select your claude.ai account. If a temporary network problem keeps the connector list from loading when your session starts, Claude Code retries the fetch up to three times in the background, and the connectors appear once a retry succeeds. If they still haven’t appeared, restart Claude Code to fetch the list again. If `/mcp` shows a connector as `session token rejected`, or its detail view shows [`claude.ai rejected the session token`](../../02-Claude-Code-CLI/errors.md#claude-ai-rejected-the-session-token), claude.ai rejected the token from your Claude Code login. Authorizing the connector again doesn’t clear this state, because the connector’s own authorization in claude.ai isn’t what was rejected. To clear it:
 
 1.  Run `/login` to sign in again.
 2.  Reconnect the connector from `/mcp`.
@@ -51701,7 +51171,7 @@ Some MCP servers declare a tool’s input schema as a JSON Schema union, with `a
 - `allOf`: properties from every branch are merged, and each branch’s `required` list still applies
 - `anyOf` and `oneOf`: properties from every branch are merged, and each branch’s `required` list is described in the tool description instead of enforced by the schema
 
-Your server receives whichever arguments Claude chose, so keep validating the combination server-side. When Claude Code can’t produce a schema the API accepts, or on a deployment that doesn’t receive the remote configuration that enables the rewrite, it skips that one tool, records the reason in the server’s log, and leaves the server’s other tools available. Versions earlier than v2.1.195 skip every tool whose input schema has a root-level `anyOf`, `oneOf`, or `allOf`.
+Your server receives whichever arguments Claude chose, so keep validating the combination server-side. When Claude Code can’t produce a schema the API accepts, or on a deployment that doesn’t receive the remote configuration that enables the rewrite, it skips that one tool, records the reason in the server’s log, and leaves the server’s other tools available.
 
 
 [​](#tools-with-invalid-input-schemas)
@@ -52352,7 +51822,7 @@ This MCP server attempts to exercise all the features of the MCP protocol. It is
 
 A complete list of the registered MCP primitives and other protocol features demonstrated can be found in the [Server Features](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/docs/features.md) document.
 
-## Usage with Claude Desktop (uses [stdio Transport](../Spec-Archive/2025-03-26-basic-transports.md#stdio))
+## Usage with Claude Desktop (uses [stdio Transport](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md#stdio))
 
 Add to your `claude_desktop_config.json`:
 
@@ -52432,7 +51902,7 @@ On Windows, use:
 }
 ```
 
-## Running from source with [HTTP+SSE Transport](../Spec-Archive/2024-11-05-basic-transports.md#http-with-sse) (deprecated as of [2025-03-26](../Spec-Archive/2025-03-26-basic-transports.md))
+## Running from source with [HTTP+SSE Transport](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/Spec-Archive/spec-2024-11-05-transports-model-context-protocol.md#http-with-sse) (deprecated as of [2025-03-26](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md))
 
 ```shell
 cd src/everything
@@ -52440,7 +51910,7 @@ npm install
 npm run start:sse
 ```
 
-## Run from source with [Streamable HTTP Transport](../Spec-Archive/2025-03-26-basic-transports.md#streamable-http)
+## Run from source with [Streamable HTTP Transport](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md#streamable-http)
 
 ```shell
 cd src/everything
@@ -52912,7 +52382,7 @@ The server's directory access control follows this flow:
 
 ### Tool annotations (MCP hints)
 
-This server sets [MCP ToolAnnotations](../Spec-Archive/2025-03-26-server-tools.md#toolannotations)
+This server sets [MCP ToolAnnotations](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/filesystem/Spec-Archive/spec-2025-03-26-tools-model-context-protocol.md#toolannotations)
 on each tool so clients can:
 
 - Distinguish **read‑only** tools from write‑capable tools.
@@ -56538,7 +56008,7 @@ The current MCP specification (2025-06-18) provides an elicitation mechanism for
 
 Without a standardized mechanism for these interactions, MCP servers must resort to non-standard workarounds or insecure practices like requesting API keys through in-band, form-style elicitation. This SEP addresses these gaps by introducing a URL elicitation mode that leverages established web security patterns to handle sensitive interactions securely.
 
-URL elicitation is fundamentally different from [MCP authorization](../Spec-Archive/2025-06-18-basic-authorization.md). URL elicitation is not for authorizing the MCP client's access to the MCP server (that's handled directly by MCP authorization). Instead, it's used when the MCP server needs to obtain sensitive information or third-party authorization on behalf of the user. The MCP client's bearer token remains unchanged, and the client's only responsibility is to provide the user with context about the elicitation URL the server wants them to open.
+URL elicitation is fundamentally different from [MCP authorization](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-authorization-model-context-protocol.md). URL elicitation is not for authorizing the MCP client's access to the MCP server (that's handled directly by MCP authorization). Instead, it's used when the MCP server needs to obtain sensitive information or third-party authorization on behalf of the user. The MCP client's bearer token remains unchanged, and the client's only responsibility is to provide the user with context about the elicitation URL the server wants them to open.
 
 ## Specification
 
@@ -57471,7 +56941,7 @@ Even when a model provides a syntactically correct date that passes JSON schema 
 
 ### Current Behavior
 
-The [tool errors specification](../Spec-Archive/2025-06-18-server-tools.md#error-handling) currently provides ambiguous guidance:
+The [tool errors specification](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-tools-model-context-protocol.md#error-handling) currently provides ambiguous guidance:
 
 * "Invalid arguments" should be treated as Protocol Error
 * "Invalid input data" should be treated as Tool Execution Error
@@ -57589,7 +57059,7 @@ Servers implementing the clarified behavior will provide better model self-recov
 
 ## References
 
-* [MCP Tools Error Handling Specification](../Spec-Archive/2025-06-18-server-tools.md#error-handling)
+* [MCP Tools Error Handling Specification](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-tools-model-context-protocol.md#error-handling)
 * [Better MCP tools/call Error Responses: Help Your AI Recover Gracefully](https://dev.to/alpic/better-mcp-toolscall-error-responses-help-your-ai-recover-gracefully-15c7)
 * Related Issue: [https://github.com/modelcontextprotocol/typescript-sdk/pull/824](https://github.com/modelcontextprotocol/typescript-sdk/pull/824)
 
@@ -58441,9 +57911,9 @@ This SEP introduces `tools` & `toolChoice` params to `sampling/createMessage` an
 
 ## Motivation
 
-* [Sampling](../Spec-Archive/2025-06-18-client-sampling.md) doesn't support tool calling, although it's a cornerstone of modern agentic behaviour. Without explicit support for it, MCP servers that use Sampling can either try and emulate tool calling w/ complex prompting / custom parsing of the outputs, or are limited to simpler, non-agentic requests. Adding support for tool calling could unlock many novel use cases in the MCP ecosystem.
+* [Sampling](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-sampling-model-context-protocol.md) doesn't support tool calling, although it's a cornerstone of modern agentic behaviour. Without explicit support for it, MCP servers that use Sampling can either try and emulate tool calling w/ complex prompting / custom parsing of the outputs, or are limited to simpler, non-agentic requests. Adding support for tool calling could unlock many novel use cases in the MCP ecosystem.
 
-* Context inclusion is ambiguously defined (see [this doc](https://docs.google.com/document/d/1KUsloHpsjR4fdXdJuofb9jUuK0XWi88clbRm9sWE510/edit?tab=t.0#heading=h.edw7oyac2e87)): it makes it particularly tricky to fully implement sampling, which along with other precautions needed for sampling (unaffected by this SEP) may have contributed to [low adoption of the feature in clients](../General/clients.md#feature-support-matrix) (feature was introduced in the MCP Nov 2024 spec).
+* Context inclusion is ambiguously defined (see [this doc](https://docs.google.com/document/d/1KUsloHpsjR4fdXdJuofb9jUuK0XWi88clbRm9sWE510/edit?tab=t.0#heading=h.edw7oyac2e87)): it makes it particularly tricky to fully implement sampling, which along with other precautions needed for sampling (unaffected by this SEP) may have contributed to [low adoption of the feature in clients](https://modelcontextprotocol.io/community/06-MCP-Tools/Tutorials/example-clients-model-context-protocol.md#feature-support-matrix) (feature was introduced in the MCP Nov 2024 spec).
 
 Please note some related work:
 
@@ -58460,16 +57930,16 @@ In the "Possible Follow ups" Section below, we give examples of features that we
 
 ### Overview
 
-* Add traditional tool call support in [CreateMessageRequest](../Spec-Archive/2025-06-18-schema.md#createmessagerequest) w/ `tools` (w/ JSON schemas) & `toolChoice` params, requiring a server-side tool loop
+* Add traditional tool call support in [CreateMessageRequest](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-schema-reference-model-context-protocol.md#createmessagerequest) w/ `tools` (w/ JSON schemas) & `toolChoice` params, requiring a server-side tool loop
   * Sampling may now yield ToolCallBlock responses
   * Server needs to call tools by itself
   * Server calls sampling again with ToolResultParamBlock to inject tool results
   * `toolChoice.mode` can be `“auto" | "required" | "none"` to allow common structured outputs use case (see below for possible follow up improvements)
   * Fenced by new capability (`sampling { tools {} }`)
-* Fix/update underspecified strings in [CreateMessageResult](../Spec-Archive/2025-06-18-schema.md#createmessageresult):
+* Fix/update underspecified strings in [CreateMessageResult](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-schema-reference-model-context-protocol.md#createmessageresult):
   * `stopReason: “endTurn" | "stopSequence" | “toolUse" | “maxToken" | string` (explicit enums + open string for compat)
   * `role: “assistant”`
-* Soft-deprecate [CreateMessageRequest.params.includeContext](../Spec-Archive/2025-06-18-schema.md#createmessagerequest) != ‘none’ (now fenced by capability)
+* Soft-deprecate [CreateMessageRequest.params.includeContext](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-schema-reference-model-context-protocol.md#createmessagerequest) != ‘none’ (now fenced by capability)
   * Incentivize context-free sampling implementation
 
 ### Protocol changes
@@ -58477,14 +57947,14 @@ In the "Possible Follow ups" Section below, we give examples of features that we
 * `sampling/createMessage`
   * ~~MUST throw an error when `includeContext is “thisServer” | “allServers”` but `clientCapabilities.sampling.context` is missing~~
   * MUST throw an error when `tool` or `toolChoice` are defined but `clientCapabilities.sampling.tools` is missing
-  * Servers SHOULD avoid `[includeContext](../Spec-Archive/2025-06-18-schema.md#createmessagerequest)` != ‘none’`as values`“thisServer”`and`“allServers”\` may be removed in future spec releases.
+  * Servers SHOULD avoid `[includeContext](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-schema-reference-model-context-protocol.md#createmessagerequest)` != ‘none’`as values`“thisServer”`and`“allServers”\` may be removed in future spec releases.
   * `CreateMessageRequest.messages` MUST balance any “assistant” message w/ a `ToolUseContent` (and `id: $id1`) w/ a “user” message w/ a ToolResultContent (and `tool_result_id: $id1`)
     * Note: this is a requirement for Claude API implementation (parallel tool call must all be responded to in one go)
   * SamplingMessage with tool result content blocks MUST NOT contain other content types.
 
 ### Schema changes
 
-* [ClientCapabilities](../Spec-Archive/2025-06-18-schema.md#clientcapabilities)
+* [ClientCapabilities](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-schema-reference-model-context-protocol.md#clientcapabilities)
 
   ```typescript  theme={null}
   interface ClientCapabilities {
@@ -58496,7 +57966,7 @@ In the "Possible Follow ups" Section below, we give examples of features that we
   }
   ```
 
-* [CreateMessageRequest](../Spec-Archive/2025-06-18-schema.md#createmessagerequest) (use existing [Tool](../Spec-Archive/2025-06-18-schema.md#tool))
+* [CreateMessageRequest](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-schema-reference-model-context-protocol.md#createmessagerequest) (use existing [Tool](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-schema-reference-model-context-protocol.md#tool))
 
   ```typescript  theme={null}
   interface CreateMessageRequest {
@@ -58530,7 +58000,7 @@ In the "Possible Follow ups" Section below, we give examples of features that we
       * Gemini API has no way to disable parallel tool calls atm (unlike OAI / Anthropic APIs). Removing this flag for now, to be reintroduced when Gemini has any way of supporting it. Otherwise clients would get unexpected multiple tool calls (or alternatively if implemented that way, unexpected failures / costly retry until a single tool call is emitted)
       * Gemini API's [Function calling modes](https://ai.google.dev/gemini-api/docs/function-calling?example=meeting#function_calling_modes) have an `ANY` value that should match the proposed `required`
 
-* [SamplingMessage](../Spec-Archive/2025-06-18-schema.md#samplingmessage):
+* [SamplingMessage](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-schema-reference-model-context-protocol.md#samplingmessage):
 
   ```typescript  theme={null}
   /*
@@ -58654,7 +58124,7 @@ In the "Possible Follow ups" Section below, we give examples of features that we
       * `function` role (similar to OAI's `tool` role)
       * No tool call id concept ([function calling](https://ai.google.dev/gemini-api/docs/function-calling?example=meeting#parallel_function_calling): Gemini requires tool results to be provided in the exact same order as the tool use parts. An implementation could generate the tool call ids and use them to reorder the tool results if needed.
 
-* [CreateMessageResult](../Spec-Archive/2025-06-18-schema.md#createmessageresult)
+* [CreateMessageResult](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-schema-reference-model-context-protocol.md#createmessageresult)
 
   ```typescript  theme={null}
   /*
@@ -58756,7 +58226,7 @@ The end user would allowlist tools from any other MCP server for use in a sampli
 Pros:
 
 * Technically no spec change needed (if anything, mention this as a freedom clients have)
-* Possibly similar to what [CreateMessageRequest.params.includeContext](../Spec-Archive/2025-06-18-schema.md#createmessagerequest) = thisServer / allServers intended semantics may have meant
+* Possibly similar to what [CreateMessageRequest.params.includeContext](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-schema-reference-model-context-protocol.md#createmessagerequest) = thisServer / allServers intended semantics may have meant
   * `CreateMessageRequest.params.allowImplicitToolCalls = “none” | “thisServer” | “allServers”`
     (assuming we wanted to give the server any control over this)
 
@@ -61707,7 +61177,7 @@ To graduate an experimental extension to official status, the standard SEP proce
 
 Extensions MAY optionally begin as experimental extensions (see *Experimental Extensions* section) to facilitate prototyping and collaboration before formal submission. This incubation period is encouraged but not required.
 
-To become an official extension, extensions are created via a SEP in the [main MCP repository](https://github.com/modelcontextprotocol/modelcontextprotocol/) using the [standard SEP guidelines](../Community/community-sep-guidelines.md) but with a new type: **Extensions Track**. This type follows the same review and acceptance process as Standards Track SEPs, but clearly indicates that the proposal is for an extension rather than a core protocol addition. The SEP must identify the Working Group and Extension Maintainers that will be responsible for the extension. See [SEP-2148](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2148) for how maintainers are appointed.
+To become an official extension, extensions are created via a SEP in the [main MCP repository](https://github.com/modelcontextprotocol/modelcontextprotocol/) using the [standard SEP guidelines](https://modelcontextprotocol.io/community/06-MCP-Tools/Community/sep-guidelines-model-context-protocol.md) but with a new type: **Extensions Track**. This type follows the same review and acceptance process as Standards Track SEPs, but clearly indicates that the proposal is for an extension rather than a core protocol addition. The SEP must identify the Working Group and Extension Maintainers that will be responsible for the extension. See [SEP-2148](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2148) for how maintainers are appointed.
 
 Extension SEPs:
 
@@ -61730,7 +61200,7 @@ Eventually, some extensions MAY transition to being core protocol features. This
 
 Extensions will be referenced from a new page on the MCP website at [modelcontextprotocol.io/extensions](../Extensions/extensions.md) (to be created) with links to their specification.
 
-Links to relevant extensions MAY also be added to the core specification as appropriate (e.g. [https://modelcontextprotocol.io/specification/draft/basic/authorization](../Spec/2026-07-28-basic-authorization.md) may link to ext-auth extensions), but they MUST be clearly advertised as optional extensions and SHOULD be links only (not copies of specification text).
+Links to relevant extensions MAY also be added to the core specification as appropriate (e.g. [https://modelcontextprotocol.io/specification/draft/basic/authorization](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec/spec-draft-authorization-model-context-protocol.md) may link to ext-auth extensions), but they MUST be clearly advertised as optional extensions and SHOULD be links only (not copies of specification text).
 
 ### SDK Implementation
 
@@ -61750,7 +61220,7 @@ Extensions SHOULD be versioned, but exact versioning approach is not specified h
 
 ### Negotiation
 
-Clients and servers advertise their support for extensions in the [ClientCapabilities](../Spec-Archive/2025-06-18-schema.md#clientcapabilities) and [ServerCapabilities](../Spec-Archive/2025-06-18-schema.md#servercapabilities) fields respectively, and in the [Server Card](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1649) (currently in progress).
+Clients and servers advertise their support for extensions in the [ClientCapabilities](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-schema-reference-model-context-protocol.md#clientcapabilities) and [ServerCapabilities](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-schema-reference-model-context-protocol.md#servercapabilities) fields respectively, and in the [Server Card](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1649) (currently in progress).
 
 A new "extensions" field will be introduced to each that is a map of *extension identifiers* to per-extension settings objects. Each extension specifies the schema of its settings object; an empty object indicates no settings.
 
@@ -63489,7 +62959,7 @@ This SEP establishes new processes and does not affect existing protocol functio
 
 ## Reference Implementation
 
-The communication guidelines are published at: [https://modelcontextprotocol.io/community/communication](../Community/community-communication.md)
+The communication guidelines are published at: [https://modelcontextprotocol.io/community/communication](https://modelcontextprotocol.io/community/06-MCP-Tools/Community/contributor-communication-model-context-protocol.md)
 
 ---
 
@@ -65680,7 +65150,7 @@ This SEP introduces `tools` & `toolChoice` params to `sampling/createMessage` an
 Motivation
 
 - [Sampling](../Spec-Archive/2025-06-18-client-sampling.md) doesn’t support tool calling, although it’s a cornerstone of modern agentic behaviour. Without explicit support for it, MCP servers that use Sampling can either try and emulate tool calling w/ complex prompting / custom parsing of the outputs, or are limited to simpler, non-agentic requests. Adding support for tool calling could unlock many novel use cases in the MCP ecosystem.
-- Context inclusion is ambiguously defined (see [this doc](https://docs.google.com/document/d/1KUsloHpsjR4fdXdJuofb9jUuK0XWi88clbRm9sWE510/edit?tab=t.0#heading=h.edw7oyac2e87)): it makes it particularly tricky to fully implement sampling, which along with other precautions needed for sampling (unaffected by this SEP) may have contributed to [low adoption of the feature in clients](../General/clients.md#feature-support-matrix) (feature was introduced in the MCP Nov 2024 spec).
+- Context inclusion is ambiguously defined (see [this doc](https://docs.google.com/document/d/1KUsloHpsjR4fdXdJuofb9jUuK0XWi88clbRm9sWE510/edit?tab=t.0#heading=h.edw7oyac2e87)): it makes it particularly tricky to fully implement sampling, which along with other precautions needed for sampling (unaffected by this SEP) may have contributed to [low adoption of the feature in clients](https://modelcontextprotocol.io/seps/General/mcp-clients.md#feature-support-matrix) (feature was introduced in the MCP Nov 2024 spec).
 
 Please note some related work:
 
@@ -74658,7 +74128,7 @@ Roots
 
 Roots provides “informational guidance” about which directories or files a server should operate on. In practice:
 
-- **Low adoption**: Few clients implement roots support, and few servers rely on it. The [feature support matrix](../General/clients.md#feature-support-matrix) shows limited client coverage.
+- **Low adoption**: Few clients implement roots support, and few servers rely on it. The [feature support matrix](https://modelcontextprotocol.io/seps/General/mcp-clients.md#feature-support-matrix) shows limited client coverage.
 - **Vague semantics**: The specification describes roots as informational — servers are not required to respect them, which reduces their utility.
 - **Overlapping alternatives**: Working directory context can be provided through tool parameters, resource URIs, server configuration, or environment variables — all of which are more explicit.
 
@@ -74670,7 +74140,7 @@ Sampling
 Sampling allows servers to request LLM completions from the client. While conceptually powerful, it has struggled with adoption:
 
 - **Complex to implement**: Correct sampling implementation requires human-in-the-loop approval, model selection logic, security considerations, and (since SEP-1577) tool loop support. This complexity has contributed to low client adoption.
-- **Low adoption**: The [feature support matrix](../General/clients.md#feature-support-matrix) shows that few clients support sampling, despite the feature being available since the November 2024 specification.
+- **Low adoption**: The [feature support matrix](https://modelcontextprotocol.io/seps/General/mcp-clients.md#feature-support-matrix) shows that few clients support sampling, despite the feature being available since the November 2024 specification.
 - **Direct alternatives**: Servers that need LLM capabilities can integrate directly with LLM provider APIs, giving them full control over model selection, parameters, and streaming.
 
 
@@ -121413,7 +120883,7 @@ Concepts of MCP
 
 Participants
 
-MCP follows a client-server architecture where an MCP host — an AI application like [Claude Code](../../15-Claude-AI-Features/claude-code.md) or [Claude Desktop](https://www.claude.ai/download) — establishes connections to one or more MCP servers. The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server. Local MCP servers that use the STDIO transport typically serve a single MCP client, whereas remote MCP servers that use the Streamable HTTP transport will typically serve many MCP clients. The key participants in the MCP architecture are:
+MCP follows a client-server architecture where an MCP host — an AI application like [Claude Code](../../15-Claude-AI-Features/claude-com-product-claude-code.md) or [Claude Desktop](https://www.claude.ai/download) — establishes connections to one or more MCP servers. The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server. Local MCP servers that use the STDIO transport typically serve a single MCP client, whereas remote MCP servers that use the Streamable HTTP transport will typically serve many MCP clients. The key participants in the MCP architecture are:
 
 - **MCP Host**: The AI application that coordinates and manages one or multiple MCP clients
 - **MCP Client**: A component that maintains a connection to an MCP server and obtains context from an MCP server for the MCP host to use

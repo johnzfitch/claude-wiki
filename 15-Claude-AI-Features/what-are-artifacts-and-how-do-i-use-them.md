@@ -2,12 +2,11 @@
 title: "What are artifacts and how do I use them? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:13Z"
+fetched_at: "2026-09-30T06:33:16Z"
 tags: ["claude-ai", "claude-code"]
 ---
 
 # What are artifacts and how do I use them?
-
 
 
 An **[artifact](https://claude.com/features/artifacts)** is anything Claude makes for you that you'd put in front of someone: a design, a deck, a document, a dashboard, or a small interactive tool. It opens beside your conversation, and you can edit it, come back to it, and share it with others. Ask for one in any conversation with Claude, including in Claude Code, or start from a template in the “Artifacts” tab.
@@ -52,11 +51,11 @@ Templates are starting points for work you'll share with others. Ask for one in 
 
 - **Slides:** Presentations built from your notes, reports, or the work already in your chat. Edit any slide directly, present without leaving Claude, and export to PowerPoint or PDF.
 
-- **Design:** Visuals, mockups, prototypes, one-pagers, and landing pages, built with your design system. Learn more in **[Get started with Claude Design](../21-Account-Support/get-started-with-claude-design.md)**.
+- **Design:** Visuals, mockups, prototypes, one-pagers, and landing pages, built with your design system. Learn more in **[Get started with Claude Design](get-started-with-claude-design-claude-help-center.md)**.
 
 Whichever template you start from, the artifact works the same way: edit it by talking to Claude or directly in the artifact, and it updates live as you work. When it's ready, share it or export it.
 
-Designs and decks can use a design system, so new work picks up your colors, fonts, and components. Learn more about **[setting up your design system](../21-Account-Support/set-up-your-design-system-in-claude-design.md)**.
+Designs and decks can use a design system, so new work picks up your colors, fonts, and components. Learn more about **[setting up your design system](https://support.claude.com/en/articles/14604397)**.
 
 ## Find your artifacts
 
@@ -120,7 +119,7 @@ For legacy artifacts, you can turn this off with the **AI-powered artifacts** se
 
 Available on Pro, Max, Team, and Enterprise plans, on Claude on web and desktop.
 
-Artifacts can connect to the apps you've connected to Claude, so they can read from and write to tools like Asana, Google Calendar, and Slack. They can also connect to any **[custom connectors](../14-Connectors/getting-started-with-custom-integrations-using-remote-mcp.md)** you've set up.
+Artifacts can connect to the apps you've connected to Claude, so they can read from and write to tools like Asana, Google Calendar, and Slack. They can also connect to any **[custom connectors](https://support.claude.com/en/articles/11175166)** you've set up.
 
 The first time an artifact needs a connected app, Claude shows which apps and tools it will use and asks you to approve them. You can turn individual tools off, and your choice carries over to later uses of that artifact. Connector tools that need approval for each action aren't available to artifacts.
 

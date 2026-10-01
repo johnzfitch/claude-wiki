@@ -2,7 +2,7 @@
 title: "How Claude suggests connected apps | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14730684-how-claude-suggests-connected-apps"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:17Z"
+fetched_at: "2026-09-30T06:32:04Z"
 tags: ["claude-ai"]
 ---
 
@@ -51,4 +51,4 @@ You control which of your connected apps Claude can bring into a conversation.
 
 **Disconnect an app entirely**: Go to **[Customize \> Connectors](https://claude.ai/customize/connectors)**, find the app, and disconnect it. Claude stops accessing it immediately.
 
-For more on managing connected apps, see **[Use connectors to extend Claude’s capabilities](../14-Connectors/use-connectors-to-extend-claude-s-capabilities.md)**.
+For more on managing connected apps, see **[Use connectors to extend Claude’s capabilities](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)**.

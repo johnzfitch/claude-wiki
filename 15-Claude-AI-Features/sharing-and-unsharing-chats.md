@@ -2,7 +2,7 @@
 title: "Share and unshare chats | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10593882-sharing-and-unsharing-chats"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:38Z"
+fetched_at: "2026-09-30T06:32:18Z"
 tags: ["claude-ai"]
 ---
 
@@ -23,7 +23,7 @@ To share a chat:
 
 Once a chat has been shared, anyone with the link can view the chat snapshot. The chat snapshot includes all messages that were sent prior to sharing the chat, including any artifacts. All messages sent after sharing a chat will remain private by default. However, if you unshare the chat and share it again, the snapshot will be updated to include any new messages.
 
-**Note:** Users on Team and Enterprise plans can only share chats with other members of the same organization, not publicly. Read more here: **[Project visibility and sharing](../22-Safety-Policy/manage-project-visibility-and-sharing.md)**.
+**Note:** Users on Team and Enterprise plans can only share chats with other members of the same organization, not publicly. Read more here: **[Project visibility and sharing](project-visibility-and-sharing.md)**.
 
 ### Share chats with files or MCP integrations
 

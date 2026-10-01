@@ -2,7 +2,7 @@
 title: "Adapt to new model personas after deprecations | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12738598-adapting-to-new-model-personas-after-deprecations"
 category: "20-Models"
-fetched_at: "2026-09-29T06:31:54Z"
+fetched_at: "2026-09-30T06:31:36Z"
 tags: ["models"]
 ---
 
@@ -19,7 +19,7 @@ Below are a set of strategies and recommendations for adapting to model transiti
 
 - When a model deprecation is announced, we suggest experimenting with newer models as soon as possible. You can test different models and run side-by-side comparisons with the kinds of prompts and conversations that matter the most to you, to identify the best alternative model prior to retirement.
 
-- **[Enabling memory and allowing Claude to search past chats](../15-Claude-AI-Features/using-claude-s-chat-search-and-memory-to-build-on-previous-context.md)** can help new models to learn and immediately adapt to your preferences and communication style.
+- **[Enabling memory and allowing Claude to search past chats](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)** can help new models to learn and immediately adapt to your preferences and communication style.
 
 - **[Projects](../22-Safety-Policy/how-can-i-create-and-manage-projects.md)** offer another means of personalization, and can include custom instructions for Claude as well as custom context, which again can help new models understand and adapt to your needs and preferences.
 

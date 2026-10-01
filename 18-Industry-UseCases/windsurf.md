@@ -2,7 +2,7 @@
 title: "Windsurf Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/windsurf"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:31:53Z"
+fetched_at: "2026-09-30T06:32:52Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 

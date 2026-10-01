@@ -18,7 +18,7 @@ The model also has substantially better vision: it can see images in greater res
 
 Last week we announced [Project Glasswing](../22-Safety-Policy/glasswing.md), highlighting the risks—and benefits—of AI models for cybersecurity. We stated that we would keep Claude Mythos Preview’s release limited and test new cyber safeguards on less capable models first. Opus 4.7 is the first such model: its cyber capabilities are not as advanced as those of Mythos Preview (indeed, during its training we experimented with efforts to differentially reduce these capabilities). We are releasing Opus 4.7 with safeguards that automatically detect and block requests that indicate prohibited or high-risk cybersecurity uses. What we learn from the real-world deployment of these safeguards will help us work towards our eventual goal of a broad release of Mythos-class models.
 
-Security professionals who wish to use Opus 4.7 for legitimate cybersecurity purposes (such as vulnerability research, penetration testing, and red-teaming) are invited to join our new [Cyber Verification Program](../20-Models/real-time-cyber-safeguards-on-claude-opus-and-sonnet.md).
+Security professionals who wish to use Opus 4.7 for legitimate cybersecurity purposes (such as vulnerability research, penetration testing, and red-teaming) are invited to join our new [Cyber Verification Program](https://www.anthropic.com/99-Other/real-time-cyber-safeguards-on-claude-7906f65cc7.md).
 
 Opus 4.7 is available today across all Claude products and our API, Amazon Bedrock, Google Cloud’s Vertex AI, and Microsoft Foundry. Pricing remains the same as Opus 4.6: \$5 per million input tokens and \$25 per million output tokens. Developers can use `claude-opus-4-7` via the [Claude API](../20-Models/about-claude-models-overview.md).
 
@@ -199,9 +199,9 @@ Overall, Opus 4.7 shows a similar safety profile to Opus 4.6: our evaluations sh
 
 In addition to Claude Opus 4.7 itself, we’re launching the following updates:
 
-- *More effort control*: Opus 4.7 introduces a new `xhigh` (“extra high”) [effort level](../04-API-Reference/Guides/build-with-claude-effort.md) between `high` and `max`, giving users finer control over the tradeoff between reasoning and latency on hard problems. In Claude Code, we’ve raised the default effort level to `xhigh` for all plans. When testing Opus 4.7 for coding and agentic use cases, we recommend starting with `high` or `xhigh` effort.
+- *More effort control*: Opus 4.7 introduces a new `xhigh` (“extra high”) [effort level](https://www.anthropic.com/04-API-Reference/effort.md) between `high` and `max`, giving users finer control over the tradeoff between reasoning and latency on hard problems. In Claude Code, we’ve raised the default effort level to `xhigh` for all plans. When testing Opus 4.7 for coding and agentic use cases, we recommend starting with `high` or `xhigh` effort.
 - *On the Claude Platform (API)*: as well as support for higher-resolution images, we’re also launching task budgets in public beta, giving developers a way to guide Claude’s token spend so it can prioritize work across longer runs.
-- *In Claude Code*: The new `/ultrareview` [slash command](../02-Claude-Code-CLI/commands.md) produces a dedicated review session that reads through changes and flags bugs and design issues that a careful reviewer would catch. We’re giving Pro and Max Claude Code users three free ultrareviews to try it out. In addition, we’ve extended [auto mode](https://claude.com/blog/auto-mode) to Max users. Auto mode is a new permissions option where Claude makes decisions on your behalf, meaning that you can run longer tasks with fewer interruptions—and with less risk than if you had chosen to skip all permissions.
+- *In Claude Code*: The new `/ultrareview` [slash command](https://www.anthropic.com/02-Claude-Code-CLI/built-in-commands-claude-code-docs.md) produces a dedicated review session that reads through changes and flags bugs and design issues that a careful reviewer would catch. We’re giving Pro and Max Claude Code users three free ultrareviews to try it out. In addition, we’ve extended [auto mode](https://claude.com/blog/auto-mode) to Max users. Auto mode is a new permissions option where Claude makes decisions on your behalf, meaning that you can run longer tasks with fewer interruptions—and with less risk than if you had chosen to skip all permissions.
 
 ## Migrating from Opus 4.6 to Opus 4.7
 
@@ -211,7 +211,7 @@ Users can control token usage in various ways: by using the effort parameter, ad
 
 #### Footnotes
 
-¹ This is a [model-level change](../04-API-Reference/Guides/build-with-claude-vision.md) rather than an API parameter, so images users send to Claude will simply be processed at higher fidelity. Because higher-resolution images consume more tokens, users who don’t require the extra detail can downsample images before sending them to the model.
+¹ This is a [model-level change](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-vision-789a5b8cc6.md) rather than an API parameter, so images users send to Claude will simply be processed at higher fidelity. Because higher-resolution images consume more tokens, users who don’t require the extra detail can downsample images before sending them to the model.
 
 - For GPT-5.4 and Gemini 3.1 Pro, we compared against the best reported model version available via API in the charts and table.
 - MCP-Atlas: The Opus 4.6 score has been updated to reflect revised grading methodology from Scale AI.
@@ -260,9 +260,9 @@ May 4, 2026: Updated *Document reasoning* graph to reflect updated OfficeQA Pro 
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

@@ -1,13 +1,12 @@
 ---
 title: "Get started with Claude Docs | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/16923645-get-started-with-claude-docs"
+source_url: "https://support.claude.com/en/articles/16923645"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:27Z"
+fetched_at: "2026-09-30T06:33:04Z"
 tags: ["claude-ai"]
 ---
 
 # Get started with Claude Docs
-
 
 
 Claude Docs lets you write living documents with Claude and the people you work with. Ask for a doc in any conversation, and Claude drafts it in front of you, asks clarifying questions up front, and leaves comments explaining its choices. You can edit the doc yourself, ask Claude for the next pass, and share it by link, without moving your work into another tool.
@@ -140,7 +139,7 @@ You can also ask Claude to turn a doc into a presentation with Claude Slides.
 
 ## Usage
 
-Claude Docs counts toward your plan's usage limits, like the rest of your work with Claude. Larger requests, like drafting a long doc from several sources, use more of your limit than a typical message. Learn more about **[how usage and length limits work](../22-Safety-Policy/understanding-usage-and-length-limits.md)**.
+Claude Docs counts toward your plan's usage limits, like the rest of your work with Claude. Larger requests, like drafting a long doc from several sources, use more of your limit than a typical message. Learn more about **[how usage and length limits work](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work)**.
 
 ------------------------------------------------------------------------
 

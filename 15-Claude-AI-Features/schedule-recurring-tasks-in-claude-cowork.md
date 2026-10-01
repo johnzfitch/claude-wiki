@@ -1,22 +1,27 @@
 ---
 title: "Schedule recurring tasks in Claude Cowork | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork"
+source_url: "https://support.claude.com/en/articles/13854387"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:07Z"
+fetched_at: "2026-09-30T06:31:53Z"
 tags: ["claude-ai"]
 ---
 
 # Schedule recurring tasks in Claude Cowork
 
+Updated today
 
 
-**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](claude-cowork-and-chat-are-one-claude.md)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
 
 Scheduled tasks allow you to delegate work to Claude Cowork by creating tasks that run automatically on a recurring basis, or on demand. Instead of starting each task from scratch, you describe it once and Claude handles it on your schedule—delivering finished outputs like reports, briefings, and summaries every time.
 
 Scheduled tasks are available on all paid plans (Pro, Max, Team, Enterprise), in Claude Cowork and in the new Claude experience that's rolling out gradually to Pro and Max plans.
 
 Claude Cowork is available for paid plans (Pro, Max, Team, Enterprise) on desktop, and in beta on web and mobile for Pro, Max, and Team plans, and Enterprise plans when enabled by an owner.
+
+**Heads-up for Pro and Max plans:** On October 6, 2026, new Cowork tasks run in the cloud and the **Only on your computer** option in **[Settings \> General](https://claude.ai/settings/general)** will be removed. Tasks you already started on your computer stay there. Learn more in **[What's changing for Pro and Max plans on October 6](https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile#h_f951c27c48)**.
+
+------------------------------------------------------------------------
 
 ## What scheduled tasks can do
 
@@ -42,7 +47,7 @@ Scheduled tasks run remotely, so they run on their cadence even when your comput
 
 **Note:** Scheduled tasks use the built-in schedule options and work with your connectors and the files saved to your Claude account. They can't be tied to a folder on your computer.
 
-For Team and Enterprise organizations, admins control Cowork access through the admin toggle. For more details, see **[Use Claude Cowork on Team and Enterprise plans](../17-Billing-Plans/use-claude-cowork-on-team-and-enterprise-plans.md)**.
+For Team and Enterprise organizations, admins control Cowork access through the admin toggle. For more details, see **[Use Claude Cowork on Team and Enterprise plans](https://support.claude.com/en/articles/13455879)**.
 
 ------------------------------------------------------------------------
 

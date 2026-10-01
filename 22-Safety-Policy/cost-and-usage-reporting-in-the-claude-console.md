@@ -2,7 +2,7 @@
 title: "Cost and Usage Reporting in the Claude Console | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9534590-cost-and-usage-reporting-in-the-claude-console"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:32:14Z"
+fetched_at: "2026-09-30T06:32:19Z"
 tags: ["safety"]
 ---
 
@@ -11,7 +11,7 @@ tags: ["safety"]
 March 16, 2026
 
 
-**Note:** Usage and Cost reporting is visible to the following user roles: **Developer, Billing, and Admin**. See [Claude Console Roles and Permissions](../04-API-Reference/Other/claude-console-roles-and-permissions.md) for more information.
+**Note:** Usage and Cost reporting is visible to the following user roles: **Developer, Billing, and Admin**. See [Claude Console Roles and Permissions](../13-Enterprise-Admin/claude-console-roles-and-permissions.md) for more information.
 
 The Claude Console provides detailed cost and usage reporting to help you effectively manage your API usage and associated costs. This guide walks you through these features and how to use them.
 

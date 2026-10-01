@@ -1,13 +1,12 @@
 ---
 title: "Manage groups and group spend limits on Enterprise plans | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans"
+source_url: "https://support.claude.com/en/articles/13799932"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:40Z"
+fetched_at: "2026-09-30T06:32:44Z"
 tags: ["billing", "enterprise"]
 ---
 
 # Manage groups and group spend limits on Enterprise plans
-
 
 
 Groups and group spend limits are available for Enterprise plan organizations. Owners, Primary Owners, and custom roles with the **Identity & Access** permission set to "Can manage" can go to **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)** to manage groups. Owners, Primary Owners, and custom roles with the **Billing** permission set to "Can manage" can go to **[Organization settings \> Usage](https://claude.ai/admin-settings/usage)** to manage group spend limits.
@@ -18,9 +17,9 @@ Groups let you organize members into logical collections—by team, department, 
 
 - **Set spend limits for groups**, so all members of a group share a per-user spend limit, and optionally give the group one shared monthly budget (beta).
 
-- **Control member access through group memberships and custom roles**, so their capabilities and permissions are determined entirely by the groups they belong to. For additional details, see **[Manage custom roles on Enterprise plans](manage-custom-roles-on-enterprise-plans.md)**.
+- **Control member access through group memberships and custom roles**, so their capabilities and permissions are determined entirely by the groups they belong to. For additional details, see **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**.
 
-- **Let members share resources with a group**, so a project, skill, or plugin shared with the group is available to everyone in it, and access follows membership as it changes. For details, see **[Manage project visibility and sharing](../22-Safety-Policy/manage-project-visibility-and-sharing.md)** and **[Provision and manage skills for your organization](../22-Safety-Policy/provisioning-and-managing-skills-for-your-organization.md)**.
+- **Let members share resources with a group**, so a project, skill, or plugin shared with the group is available to everyone in it, and access follows membership as it changes. For details, see **[Manage project visibility and sharing](https://support.claude.com/en/articles/9519189-manage-project-visibility-and-sharing)** and **[Provision and manage skills for your organization](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization)**.
 
 Groups can be created manually or synced automatically from your identity provider via SCIM. Each organization can have up to 1000 groups. There's no limit on how many groups a member can belong to, though belonging to more than 250 can slow performance.
 

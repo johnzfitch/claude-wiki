@@ -2,7 +2,7 @@
 title: "Create custom subagents - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/sub-agents"
 category: "09-Agents-Patterns"
-fetched_at: "2026-09-28T06:33:14Z"
+fetched_at: "2026-09-30T06:30:59Z"
 tags: ["agents", "claude-code", "subagents"]
 ---
 
@@ -87,7 +87,7 @@ Claude uses each subagent’s description to decide when to delegate tasks. When
 
 Built-in subagents
 
-Claude Code includes built-in subagents that Claude automatically uses when appropriate. Each inherits the parent conversation’s permissions; most run with a restricted tool set. Explore and Plan skip your CLAUDE.md files and the git status snapshot to keep research fast and inexpensive. Every other built-in and [custom subagent](#configure-subagents) loads both, unless its definition sets the [`omitClaudeMd`](#supported-frontmatter-fields) field to skip the user, project, and local CLAUDE.md files. For the full breakdown of what reaches a subagent, see [what loads at startup](#what-loads-at-startup).
+Claude Code includes built-in subagents that Claude automatically uses when appropriate. Each inherits the parent conversation’s permission rules; most run with a restricted tool set. Explore and Plan skip your CLAUDE.md files and the git status snapshot to keep research fast and inexpensive. Every other built-in and [custom subagent](#configure-subagents) loads both, unless its definition sets the [`omitClaudeMd`](#supported-frontmatter-fields) field to skip the user, project, and local CLAUDE.md files. For the full breakdown of what reaches a subagent, see [what loads at startup](#what-loads-at-startup).
 
 - Explore
 
@@ -750,7 +750,7 @@ hooks:
     - matcher: "Bash"
       hooks:
         - type: command
-          command: "./scripts/validate-command.sh $TOOL_INPUT"
+          command: "./scripts/validate-command.sh"
   PostToolUse:
     - matcher: "Edit|Write"
       hooks:
@@ -797,7 +797,7 @@ Both events support matchers to target specific agent types by name. The matcher
 }
 ```
 
-A hyphenated matcher like `db-agent` matches exactly on Claude Code v2.1.195 or later. On earlier versions it is evaluated as an unanchored regular expression and also fires for any agent type that contains it, such as `prod-db-agent`; anchor it as `^db-agent$` on those versions. See [Hooks](../07-Hooks/hooks.md) for the complete hook configuration format.
+See [Hooks](../07-Hooks/hooks.md) for the complete hook configuration format.
 
 
 [​](#work-with-subagents)
@@ -820,7 +820,7 @@ When automatic delegation isn’t enough, you can request a subagent yourself. T
 
 - **Natural language**: name the subagent in your prompt; Claude decides whether to delegate
 - **@-mention**: guarantees the subagent runs for one task
-- **Session-wide**: the whole session uses that subagent’s system prompt, tool restrictions, and model via the `--agent` flag or the `agent` setting
+- **Session-wide**: the whole session runs as that subagent via the `--agent` flag or the `agent` setting
 
 For natural language, there’s no special syntax. Name the subagent and Claude typically delegates:
 
@@ -835,13 +835,13 @@ Have the code-reviewer subagent look at my recent changes
 @"code-reviewer (agent)" look at the auth changes
 ```
 
-Your full message still goes to Claude, which writes the subagent’s task prompt based on what you asked. The @-mention controls which subagent Claude invokes, not what prompt it receives. Subagents provided by an enabled [plugin](../08-Plugins-Skills/plugins.md) appear in the typeahead under their scoped name, such as `my-plugin:code-reviewer` or `my-plugin:review:security` when the plugin [organizes agents into subfolders](#choose-the-subagent-scope). Named background subagents currently running in the session also appear in the typeahead, showing their status next to the name. You can also type the mention manually without using the picker: `@agent-<name>` for local subagents, or `@agent-` followed by the scoped name for plugin subagents, for example `@agent-my-plugin:code-reviewer`. While you type this form the typeahead shows file matches rather than agents. The agent mention still resolves when you submit. **Run the whole session as a subagent.** Pass [`--agent <name>`](../02-Claude-Code-CLI/cli-reference.md) to start a session where the main thread itself takes on that subagent’s system prompt, tool restrictions, and model:
+Your full message still goes to Claude, which writes the subagent’s task prompt based on what you asked. The @-mention controls which subagent Claude invokes, not what prompt it receives. Subagents provided by an enabled [plugin](../08-Plugins-Skills/plugins.md) appear in the typeahead under their scoped name, such as `my-plugin:code-reviewer` or `my-plugin:review:security` when the plugin [organizes agents into subfolders](#choose-the-subagent-scope). Named background subagents currently running in the session also appear in the typeahead, showing their status next to the name. You can also type the mention manually without using the picker: `@agent-<name>` for local subagents, or `@agent-` followed by the scoped name for plugin subagents, for example `@agent-my-plugin:code-reviewer`. While you type this form the typeahead shows file matches rather than agents. The agent mention still resolves when you submit. **Run the whole session as a subagent.** Pass [`--agent <name>`](../02-Claude-Code-CLI/cli-reference.md) to start a session where the main thread itself takes on that subagent’s tool restrictions and model:
 
 ```python
 claude --agent code-reviewer
 ```
 
-Unless the agent’s [prompt is empty](#choose-the-subagent-scope), the subagent’s system prompt replaces the default Claude Code system prompt entirely, the same way [`--system-prompt`](../02-Claude-Code-CLI/cli-reference.md) does. `CLAUDE.md` files and project memory still load through the normal message flow, even when the agent’s definition sets [`omitClaudeMd`](#supported-frontmatter-fields). The agent name appears as `@<name>` in the startup header so you can confirm it’s active. This works with built-in and custom subagents, and the choice persists when you resume the session: Claude Code restores the agent’s tool restrictions and model along with the conversation. If the agent no longer exists when you resume, the session continues with the default tools and shows a [warning naming the agent](../02-Claude-Code-CLI/errors.md#session-agent-no-longer-available). For the system prompt in either case, see [System prompt flags in resumed conversations](../02-Claude-Code-CLI/cli-reference.md#system-prompt-flags-in-resumed-conversations). For a plugin-provided subagent, you can pass only the agent name and Claude Code finds it:
+Unless the agent’s [prompt is empty](#choose-the-subagent-scope), a custom subagent’s system prompt replaces the default Claude Code system prompt entirely, the same way [`--system-prompt`](../02-Claude-Code-CLI/cli-reference.md) does. `CLAUDE.md` files and project memory still load through the normal message flow, even when the agent’s definition sets [`omitClaudeMd`](#supported-frontmatter-fields). The agent name appears as `@<name>` in the startup header so you can confirm it’s active. This works with built-in and custom subagents, and the choice persists when you resume the session: Claude Code restores the agent’s tool restrictions and model along with the conversation. If the agent no longer exists when you resume, the session continues with the default tools and shows a [warning naming the agent](../02-Claude-Code-CLI/errors.md#session-agent-no-longer-available). For the system prompt in either case, see [System prompt flags in resumed conversations](../02-Claude-Code-CLI/cli-reference.md#system-prompt-flags-in-resumed-conversations). For a plugin-provided subagent, you can pass only the agent name and Claude Code finds it:
 
 ```python
 claude --agent security-reviewer

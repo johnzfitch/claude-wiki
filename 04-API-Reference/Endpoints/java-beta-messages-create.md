@@ -2806,7 +2806,7 @@ Learn more about the Messages API in our [user guide](https://docs.claude.com/en
 
   - `Optional<BetaJsonOutputFormat> outputFormat`
 
-    Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+    Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/api/java/beta/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 

@@ -2,7 +2,7 @@
 title: "Deploy Claude Desktop for macOS | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12611117-deploy-claude-desktop-for-macos"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-29T06:31:06Z"
+fetched_at: "2026-09-30T06:31:33Z"
 tags: ["desktop"]
 ---
 
@@ -35,7 +35,7 @@ Upload the PKG to your MDM solution (Jamf, Kandji, Microsoft Intune) and deploy 
 
 ## Configuration
 
-To configure Claude Desktop settings such as auto-updates, extensions, and MCP servers, see the **[Enterprise Configuration](../13-Enterprise-Admin/enterprise-configuration-for-claude-desktop.md)** article.
+To configure Claude Desktop settings such as auto-updates, extensions, and MCP servers, see the **[Enterprise Configuration](https://support.claude.com/en/articles/12622667-enterprise-configuration)** article.
 
 ## Troubleshooting
 

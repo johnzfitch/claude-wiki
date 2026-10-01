@@ -9242,7 +9242,7 @@ ant messages count-tokens \
 
   - `format: optional object { schema, type }`
 
-    A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+    A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/api/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     - `schema: map[unknown]`
 

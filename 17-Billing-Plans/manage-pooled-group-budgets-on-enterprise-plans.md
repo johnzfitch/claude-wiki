@@ -2,12 +2,11 @@
 title: "Manage pooled group budgets on Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17005973-manage-pooled-group-budgets-on-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:32:01Z"
+fetched_at: "2026-09-30T06:32:06Z"
 tags: ["billing", "enterprise"]
 ---
 
 # Manage pooled group budgets on Enterprise plans
-
 
 
 A pooled group budget gives a group one shared monthly amount that all its members draw from, on top of each user's own monthly spend limit. This article explains how pooled budgets work and how to set, prioritize, and monitor them.

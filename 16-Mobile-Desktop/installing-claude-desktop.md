@@ -1,13 +1,12 @@
 ---
 title: "Install Claude Desktop | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/10065433-installing-claude-desktop"
+source_url: "https://support.claude.com/en/articles/10065433-install-claude-desktop"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-29T06:31:07Z"
+fetched_at: "2026-09-30T06:32:14Z"
 tags: ["desktop"]
 ---
 
 # Install Claude Desktop
-
 
 
 The Claude desktop apps bring Claude's capabilities directly to your computer, allowing for seamless integration with your workflow.
@@ -132,7 +131,7 @@ With Cowork, Claude can:
 
 Cowork runs code in an isolated virtual machine on your computer. File reads and writes are limited to folders you connect, and network access follows your egress settings.
 
-To learn more, see **[Get started with Cowork](../15-Claude-AI-Features/getting-started-with-local-agent-mode.md)**.
+To learn more, see **[Get started with Cowork](https://support.claude.com/en/articles/13345190-get-started-with-cowork)**.
 
 **Setup requirements for Claude Cowork on Linux**
 

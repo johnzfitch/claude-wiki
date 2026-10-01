@@ -189,9 +189,9 @@ But different tasks call for different tradeoffs. Sometimes developers want a mo
 
 Set to a medium effort level, Opus 4.5 matches Sonnet 4.5’s best score on SWE-bench Verified, but uses 76% fewer output tokens. At its highest effort level, Opus 4.5 exceeds Sonnet 4.5 performance by 4.3 percentage points—while using 48% fewer tokens.
 
-With [effort control](../04-API-Reference/Guides/build-with-claude-effort.md), [context compaction](../04-API-Reference/Guides/build-with-claude-context-editing.md#client-side-compaction-sdk), and [advanced tool use](https://www.anthropic.com/engineering/advanced-tool-use), Claude Opus 4.5 runs longer, does more, and requires less intervention.
+With [effort control](https://www.anthropic.com/04-API-Reference/effort.md), [context compaction](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-context-editing-16aa20ebd8.md#client-side-compaction-sdk), and [advanced tool use](https://www.anthropic.com/engineering/advanced-tool-use), Claude Opus 4.5 runs longer, does more, and requires less intervention.
 
-Our [context management](../04-API-Reference/Guides/build-with-claude-context-editing.md) and [memory capabilities](../04-API-Reference/Guides/build-with-claude-context-editing.md#using-with-the-memory-tool) can dramatically boost performance on agentic tasks. Opus 4.5 is also very effective at managing a team of subagents, enabling the construction of complex, well-coordinated multi-agent systems. In our testing, the combination of all these techniques boosted Opus 4.5’s performance on a deep research evaluation by almost 15 percentage points⁴.
+Our [context management](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-context-editing-16aa20ebd8.md) and [memory capabilities](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-context-editing-16aa20ebd8.md#using-with-the-memory-tool) can dramatically boost performance on agentic tasks. Opus 4.5 is also very effective at managing a team of subagents, enabling the construction of complex, well-coordinated multi-agent systems. In our testing, the combination of all these techniques boosted Opus 4.5’s performance on a deep research evaluation by almost 15 percentage points⁴.
 
 We’re making our Developer Platform more composable over time. We want to give you the building blocks to construct exactly what you need, with full control over efficiency, tool use, and context management.  
 
@@ -261,9 +261,9 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

@@ -2,7 +2,7 @@
 title: "Claude 4 Invite Sweepstakes Official Rules | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11140763-claude-4-invite-sweepstakes-official-rules"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:15Z"
+fetched_at: "2026-09-30T06:32:21Z"
 tags: ["claude-ai"]
 ---
 

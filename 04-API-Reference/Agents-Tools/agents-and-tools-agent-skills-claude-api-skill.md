@@ -57,7 +57,7 @@ The `claude-api` skill is an open-source [Agent Skill](agents-and-tools-agent-sk
 
 It covers eight programming languages for both the Messages API and Managed Agents: Python, TypeScript, C#, Go, Java, PHP, Ruby, and cURL.
 
-The skill comes bundled with [Claude Code](../../02-Claude-Code-CLI/code-home.md) and is also available in the open-source [Anthropic skills repository](https://github.com/anthropics/skills), where you can install it in any environment that supports Agent Skills.
+The skill comes bundled with [Claude Code](https://platform.claude.com/docs/en/agents-and-tools/01-Getting-Started/overview.md) and is also available in the open-source [Anthropic skills repository](https://github.com/anthropics/skills), where you can install it in any environment that supports Agent Skills.
 
 The skill uses [progressive disclosure](agents-and-tools-agent-skills-overview.md#how-skills-work) to keep context efficient: Claude loads only the documentation relevant to your project's language, surface (Messages API or Managed Agents), and the specific task at hand (tool use, streaming, batches, and so on), rather than loading everything at once.
 
@@ -118,7 +118,7 @@ If your project uses multiple languages, Claude asks which one applies. For unsu
 
 ### In Claude Code (bundled)
 
-The skill ships with [Claude Code](../../02-Claude-Code-CLI/code-home.md) and requires no installation. When you ask Claude to help build something with the Claude API, or when your project already imports an Anthropic SDK, the skill activates automatically.
+The skill ships with [Claude Code](https://platform.claude.com/docs/en/agents-and-tools/01-Getting-Started/overview.md) and requires no installation. When you ask Claude to help build something with the Claude API, or when your project already imports an Anthropic SDK, the skill activates automatically.
 
 You can also invoke it directly:
 

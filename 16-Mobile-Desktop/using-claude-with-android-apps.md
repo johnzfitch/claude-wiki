@@ -1,8 +1,8 @@
 ---
 title: "Use Claude with Android apps | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/11869629-using-claude-with-android-apps"
+source_url: "https://support.claude.com/en/articles/11869629-use-claude-with-android-apps"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-29T06:31:20Z"
+fetched_at: "2026-09-30T06:32:26Z"
 tags: ["desktop"]
 ---
 
@@ -159,7 +159,7 @@ With your permission, Claude can read the following types of data from Health Co
 
 - **Nutrition:** Calories consumed, macronutrients, hydration, and micronutrients (if tracked)
 
-**Note:** By default, Claude doesn't save health information to memory. If you turn on **Include sensitive topics in memory**, Claude may remember health-related context from your conversations. Learn more about **[sensitive topics in memory](../15-Claude-AI-Features/using-claude-s-chat-search-and-memory-to-build-on-previous-context.md#h_6fe1d0e66f)**.
+**Note:** By default, Claude doesn't save health information to memory. If you turn on **Include sensitive topics in memory**, Claude may remember health-related context from your conversations. Learn more about **[sensitive topics in memory](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_6fe1d0e66f)**.
 
 ### How to use health features
 

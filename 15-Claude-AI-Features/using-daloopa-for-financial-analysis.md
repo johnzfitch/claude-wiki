@@ -16,7 +16,7 @@ Set up and use the Daloopa integration with Claude for accessing financial data 
 
 The Daloopa integration provides Claude with access to a financial data extraction service that covers public company filings and metrics. This article explains how to set up and use Daloopa to retrieve financial data for your analysis.
 
-The Daloopa integration relies upon Claude's ability to [use remote connectors(opens in new tab)](../14-Connectors/use-connectors-to-extend-claude-s-capabilities.md).
+The Daloopa integration relies upon Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/14-Connectors/use-connectors-to-extend-claude-s-capabilities-d041e8447b.md).
 
 ## What This Integration Provides[](#what-this-integration-provides)
 

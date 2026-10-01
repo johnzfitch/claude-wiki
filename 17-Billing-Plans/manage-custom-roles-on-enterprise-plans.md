@@ -1,13 +1,12 @@
 ---
 title: "Manage custom roles on Enterprise plans | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans"
+source_url: "https://support.claude.com/en/articles/13930452"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:32:09Z"
+fetched_at: "2026-09-30T06:32:48Z"
 tags: ["billing", "enterprise"]
 ---
 
 # Manage custom roles on Enterprise plans
-
 
 
 Custom roles are available for Enterprise plan organizations. Owners, Primary Owners, and custom roles with the **Identity & Access** permission set to "Can manage" can go to **[Organization settings \> Roles](https://claude.ai/admin-settings/roles)** to manage custom roles.
@@ -20,7 +19,7 @@ Custom roles work alongside groups. The typical workflow is: create custom roles
 
 **Note:** Custom roles only affect members whose role is set to “Custom.” Members with the User, Admin, or Owner roles get their permissions from those roles directly, not from custom roles.
 
-**Note:** With SCIM directory sync and group mappings enabled, each member’s role is owned by the sync. A member whose role was set to “Custom” before group mappings were enabled reverts to their mapped role on the next full sync unless they’re in an IdP group mapped to “Custom.” See **[Manage groups and group spend limits on Enterprise plans](manage-groups-and-group-spend-limits-on-enterprise-plans.md#h_05cb172230)**.
+**Note:** With SCIM directory sync and group mappings enabled, each member’s role is owned by the sync. A member whose role was set to “Custom” before group mappings were enabled reverts to their mapped role on the next full sync unless they’re in an IdP group mapped to “Custom.” See **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans#h_05cb172230)**.
 
 ------------------------------------------------------------------------
 
@@ -120,7 +119,7 @@ Custom roles are assigned to groups, not directly to individual members. To assi
 
 4.  Click "Save role."
 
-You can also assign custom roles when creating or editing a group in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. See **[Manage groups and group spend limits on Enterprise plans](manage-groups-and-group-spend-limits-on-enterprise-plans.md)**.
+You can also assign custom roles when creating or editing a group in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. See **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**.
 
 ------------------------------------------------------------------------
 
@@ -222,7 +221,7 @@ On the **Connectors** tab, you set all connectors, each connector, or each tool 
 
 - **Blocked:** The connector or tool is hidden. Claude can’t see it or call it.
 
-A connector can also be set to **Custom**, which lets you set each of its tools individually. For the full setup, see **[Set up role-based permissions on Enterprise plans](set-up-role-based-entitlements-on-enterprise-plans.md)**.
+A connector can also be set to **Custom**, which lets you set each of its tools individually. For the full setup, see **[Set up role-based permissions on Enterprise plans](https://support.claude.com/en/articles/13930458-)**.
 
 ### How connector access is determined
 
@@ -232,7 +231,7 @@ A connector or tool passes through several layers before a member can use it, ev
 
 2.  **Across the member’s roles.** If a member’s groups give them more than one role, the most permissive grant for each tool applies. Connector permissions are additive across roles, the same as capabilities.
 
-3.  **Organization-wide tool policy.** The per-tool policy you set under **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)** per connector is the ceiling. For each tool, Claude compares the member’s role grant to this policy and applies the stricter of the two. Role grants narrow access within the policy; they can’t widen past it. Learn more about setting tool access in **[Use connectors to extend Claude’s capabilities](../14-Connectors/use-connectors-to-extend-claude-s-capabilities.md)**.
+3.  **Organization-wide tool policy.** The per-tool policy you set under **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)** per connector is the ceiling. For each tool, Claude compares the member’s role grant to this policy and applies the stricter of the two. Role grants narrow access within the policy; they can’t widen past it. Learn more about setting tool access in **[Use connectors to extend Claude’s capabilities](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)**.
 
 4.  **The member’s own setting.** The result of the steps above is the member’s effective ceiling. It limits the options in their personal per-tool approval menu (“Always allow,” “Ask,” or “Never”). A ceiling of “Needs approval” removes “Always allow.” A ceiling of “Blocked” grays the tool out.
 
@@ -246,7 +245,7 @@ This table shows how the organization-wide tool policy and a member’s role gra
 
 ### Cowork approval setting for write tools
 
-Claude Cowork has a separate organization setting, **Allow "Always allow" for connector tools**, that gates write-capable connector tools. It's off by default, and custom role grants can't override it: even when the organization-wide tool policy and every role grant are set to "Always allow," members approve these tools per task in Cowork until the setting is turned on. Learn more about **[connector tool approvals in Cowork](use-claude-cowork-on-team-and-enterprise-plans.md#h_1bd1fa754d)**.
+Claude Cowork has a separate organization setting, **Allow "Always allow" for connector tools**, that gates write-capable connector tools. It's off by default, and custom role grants can't override it: even when the organization-wide tool policy and every role grant are set to "Always allow," members approve these tools per task in Cowork until the setting is turned on. Learn more about **[connector tool approvals in Cowork](https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans#h_1bd1fa754d)**.
 
 ### Where connector permissions apply
 
@@ -270,7 +269,7 @@ Custom roles also control which Claude models a role can use and the maximum eff
 
 The organization-level model setting is the ceiling. A role can't grant a model that's disabled at the organization level. Across a member's roles, model access is additive and effort limits take the highest cap any role allows. Haiku models are always available and can't be disabled.
 
-For setup steps and what members see, see **[Manage model access for your organization](../22-Safety-Policy/manage-model-access-for-your-organization.md)**. For default model behavior, see **[Set a default model for your organization](../20-Models/set-a-default-model-for-your-organization.md)**.
+For setup steps and what members see, see **[Manage model access for your organization](../13-Enterprise-Admin/manage-model-access-for-your-organization-claude-help-center.md)**. For default model behavior, see **[Set a default model for your organization](../13-Enterprise-Admin/set-a-default-model-for-your-organization-claude-help-center.md)**.
 
 ------------------------------------------------------------------------
 

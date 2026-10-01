@@ -2,12 +2,11 @@
 title: "Share a chat with specific people | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16762496-share-a-chat-with-specific-people"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:35Z"
+fetched_at: "2026-09-30T06:31:46Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
 # Share a chat with specific people
-
 
 
 You can share a chat with specific people by inviting them by email. This is the default way to share a chat and keeps it private to the people you choose. Invited people can view a snapshot of the chat but can't reply, copy it into their own account, or continue the conversation.

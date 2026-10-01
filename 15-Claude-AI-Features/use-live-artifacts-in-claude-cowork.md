@@ -1,20 +1,19 @@
 ---
 title: "Use live artifacts in Claude Cowork | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/14729249-use-live-artifacts-in-claude-cowork"
+source_url: "https://support.claude.com/en/articles/14729249"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:17Z"
+fetched_at: "2026-09-30T06:32:03Z"
 tags: ["claude-ai"]
 ---
 
 # Use live artifacts in Claude Cowork
 
 
-
-**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](claude-cowork-and-chat-are-one-claude.md)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
 
 Live artifacts are artifacts made in Claude Cowork before August 19, 2026. They stay in your **Artifacts** view and keep working, and you can still open and share them, but you can't edit them in place. This article explains what you can do with a live artifact and how to republish one so you can keep editing it.
 
-Artifacts made in Cowork on or after August 19, 2026 work like any other artifact. Learn more about **[creating and working with artifacts](what-are-artifacts-and-how-do-i-use-them.md)** and **[sharing artifacts](discovering-publishing-customizing-and-sharing-artifacts.md)**.
+Artifacts made in Cowork on or after August 19, 2026 work like any other artifact. Learn more about **[creating and working with artifacts](https://support.claude.com/en/articles/9487310)** and **[sharing artifacts](discovering-publishing-customizing-and-sharing-artifacts.md)**.
 
 If your organization uses customer-managed encryption keys (CMEK), zero data retention (ZDR), or a HIPAA-ready configuration, you'll keep using live artifacts.
 

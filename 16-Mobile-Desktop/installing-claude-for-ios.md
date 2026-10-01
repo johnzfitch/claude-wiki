@@ -1,13 +1,12 @@
 ---
 title: "Install Claude for iOS | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/9266462-installing-claude-for-ios"
+source_url: "https://support.claude.com/en/articles/9266462-install-claude-for-ios"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-29T06:32:37Z"
+fetched_at: "2026-09-30T06:33:13Z"
 tags: ["desktop"]
 ---
 
 # Install Claude for iOS
-
 
 
 ## How do I install the Claude for iOS app?
@@ -16,7 +15,7 @@ You can install the Claude app onto your iOS device by navigating to the App Sto
 
 ## Why can’t I find Claude for iOS in the App Store?
 
-If you’re unable to locate Claude for iOS in your App Store, you may be located in an [unsupported region](../21-Account-Support/where-can-i-access-claude-ai.md), using an unsupported device, or using an unsupported version of iOS.
+If you’re unable to locate Claude for iOS in your App Store, you may be located in an [unsupported region](../15-Claude-AI-Features/where-can-i-access-claude.md), using an unsupported device, or using an unsupported version of iOS.
 
 ## What versions of iOS are supported?
 

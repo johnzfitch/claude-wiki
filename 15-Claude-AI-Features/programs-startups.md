@@ -127,7 +127,7 @@ Create your own production agents with MCP, code execution, and tool use. Go fro
 
 Learn more
 
-[Learn more](../04-API-Reference/Other/managed-agents-overview.md)
+[Learn more](https://www.claude.com/04-API-Reference/Other/managed-agents-overview-b12cd03916.md)
 
 Learn more
 
@@ -441,17 +441,17 @@ Models
 
 - Opus
 
-  [Opus](claude-opus.md)
+  [Opus](https://www.claude.com/programs/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](claude-sonnet.md)
+  [Sonnet](https://www.claude.com/programs/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](claude-haiku.md)
+  [Haiku](https://www.claude.com/programs/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Enterprise
@@ -568,7 +568,7 @@ Developers
 
 - Developer docs
 
-  [Developer docs](../02-Claude-Code-CLI/code-home.md)
+  [Developer docs](https://www.claude.com/01-Getting-Started/overview.md)
   Developer docs
 
 - Developer blog

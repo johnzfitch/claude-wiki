@@ -1,8 +1,8 @@
 ---
 title: "Get started with custom connectors using remote MCP | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/11175166-getting-started-with-custom-integrations-using-remote-mcp"
+source_url: "https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp"
 category: "14-Connectors"
-fetched_at: "2026-09-29T06:31:42Z"
+fetched_at: "2026-09-30T06:32:22Z"
 tags: ["connectors", "mcp", "security"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Workato Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/workato"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:31:54Z"
+fetched_at: "2026-09-30T06:32:52Z"
 tags: ["agents", "api", "case-studies", "enterprise", "security"]
 ---
 

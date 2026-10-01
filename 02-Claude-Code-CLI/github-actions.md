@@ -2,7 +2,7 @@
 title: "Claude Code GitHub Actions - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/github-actions"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:29:01Z"
+fetched_at: "2026-09-30T06:30:50Z"
 tags: ["claude-code", "git", "github"]
 ---
 
@@ -74,7 +74,7 @@ Quick setup
 - If Claude Code already has an API key, it reuses that key, and offers to keep the repository’s existing `ANTHROPIC_API_KEY` secret if one is already set
 - Otherwise, choose between creating a long-lived token with your Claude subscription and pasting in an API key
 
-Claude Code saves the credential as a repository secret, named `ANTHROPIC_API_KEY` for an API key or `CLAUDE_CODE_OAUTH_TOKEN` for a subscription token. Claude Code then pushes a branch with the workflow files you select, already set to use that secret, and opens GitHub in your browser with a pull request ready to create. Create and merge that pull request, and `@claude` works in the repository. If you select the review workflow, Claude posts each review on the pull request itself, as an inline comment on each issue it finds or as one summary comment when it finds none. Claude skips some pull requests, such as drafts. The [review workflow example](#run-a-skill) uses the same skill and lists them. Before v2.1.229, Claude wrote its review only to the workflow run log. To update a review workflow that an earlier version generated, do one of the following:
+Claude Code saves the credential as a repository secret, named `ANTHROPIC_API_KEY` for an API key or `CLAUDE_CODE_OAUTH_TOKEN` for a subscription token. Claude Code then pushes a branch with the workflow files you select, already set to use that secret, and opens GitHub in your browser with a pull request ready to create. Create and merge that pull request, and `@claude` works in the repository. To stop setup partway through, press Esc. A step already in progress finishes, and no later step starts. The closing message lists what already happened in the repository, such as a pushed branch or a saved secret. If you select the review workflow, Claude posts each review on the pull request itself, as an inline comment on each issue it finds or as one summary comment when it finds none. Claude skips some pull requests, such as drafts. The [review workflow example](#run-a-skill) uses the same skill and lists them. Before v2.1.229, Claude wrote its review only to the workflow run log. To update a review workflow that an earlier version generated, do one of the following:
 
 - Run `/install-github-app` again. When the repository already has a `claude.yml`, select **Update workflow file with latest version**. Claude Code pushes fresh copies of the workflow files to a new branch and opens the pull request, the same as a first install.
 - Add the `--comment` argument and the `claude_args` line from the [review workflow example](#run-a-skill) to the checked-in file yourself, which keeps any other edits you made to it.

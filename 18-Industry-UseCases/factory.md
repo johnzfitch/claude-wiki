@@ -2,7 +2,7 @@
 title: "Factory Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/factory"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:57Z"
+fetched_at: "2026-09-30T06:33:34Z"
 tags: ["agents", "api", "case-studies", "enterprise", "security"]
 ---
 

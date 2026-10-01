@@ -620,7 +620,7 @@ Claude Fable 5 and Claude Mythos 5 both become available on June 9, 2026:
 - **Claude Fable 5** is available on the Claude API, [Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md), [Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md), [Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md), and [Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md).
 - **Claude Mythos 5** is offered only to approved customers in [Project Glasswing](../22-Safety-Policy/glasswing.md). For access, contact your Anthropic, AWS, or Google Cloud account team. Customers without access to Claude Mythos 5 can use Claude Fable 5, which does not require access approval and offers the same capabilities.
 
-Claude Fable 5 and Claude Mythos 5 carry 30-day data retention and are not available under zero data retention: both are designated [Covered Models](covered-models.md). See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
+Claude Fable 5 and Claude Mythos 5 carry 30-day data retention and are not available under zero data retention: both are designated [Covered Models](../15-Claude-AI-Features/covered-models-claude-help-center.md). See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
 
 
 
@@ -3455,7 +3455,7 @@ The largest gains over Claude Sonnet 4.6 are in coding and agentic tasks. For be
 
 Cybersecurity safeguards
 
-Claude Sonnet 5 is the first Sonnet-tier model with real-time cybersecurity safeguards. Requests that involve prohibited or high-risk cybersecurity topics may be refused. Refusals return as a successful HTTP 200 response with `stop_reason: "refusal"`, not an error. See [Safeguards, warnings, and appeals](../15-Claude-AI-Features/safeguards-warnings-and-appeals.md) for background.
+Claude Sonnet 5 is the first Sonnet-tier model with real-time cybersecurity safeguards. Requests that involve prohibited or high-risk cybersecurity topics may be refused. Refusals return as a successful HTTP 200 response with `stop_reason: "refusal"`, not an error. See [Safeguards, warnings, and appeals](https://platform.claude.com/docs/en/about-claude/22-Safety-Policy/safeguards-warnings-and-appeals.md) for background.
 
 
 
@@ -3571,7 +3571,7 @@ Below are a set of strategies and recommendations for adapting to model transiti
 
 - When a model deprecation is announced, we suggest experimenting with newer models as soon as possible. You can test different models and run side-by-side comparisons with the kinds of prompts and conversations that matter the most to you, to identify the best alternative model prior to retirement.
 
-- **[Enabling memory and allowing Claude to search past chats](../15-Claude-AI-Features/using-claude-s-chat-search-and-memory-to-build-on-previous-context.md)** can help new models to learn and immediately adapt to your preferences and communication style.
+- **[Enabling memory and allowing Claude to search past chats](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)** can help new models to learn and immediately adapt to your preferences and communication style.
 
 - **[Projects](../22-Safety-Policy/how-can-i-create-and-manage-projects.md)** offer another means of personalization, and can include custom instructions for Claude as well as custom context, which again can help new models understand and adapt to your needs and preferences.
 
@@ -3969,17 +3969,17 @@ Models
 
 - Opus
 
-  [Opus](../15-Claude-AI-Features/claude-opus.md)
+  [Opus](https://support.claude.com/en/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+  [Sonnet](https://support.claude.com/en/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+  [Haiku](https://support.claude.com/en/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Solutions
@@ -4274,8 +4274,6 @@ Source: https://support.claude.com/en/articles/11940350-claude-code-model-config
 Path: 20-Models/claude-code-model-configuration.md
 
 # Claude Code model configuration
-
-Updated today
 
 
 This guide shows you three ways to change which Claude model you're using with Claude Code: the quick `/model` command for instant changes, the `--model` flag for one-time session changes, and environment variables to set your preferred model as the permanent default.
@@ -5031,75 +5029,6 @@ response = make_query_and_print_result(MESSAGES)
 
 ---
 
-## Covered Models | Claude Help Center
-
-Source: https://support.claude.com/en/articles/15425695-covered-models
-Path: 20-Models/covered-models.md
-
-# Covered Models
-
-
-
-Anthropic may designate certain models as “Covered Models” when they cross capability thresholds that warrant additional safeguards or other treatment. This page lists the models currently designated as Covered Models and describes the data handling, privacy, and access policies that apply to them.
-
-**Note:** These policies apply only to the models listed on this page. All other Claude models continue to operate under your existing agreement and configured retention settings.
-
-## What is a Covered Model?
-
-A Covered Model is a Claude model whose capabilities—for example in software engineering, agentic workflows, scientific reasoning, or cybersecurity — represent a substantial step up from prior generations and create elevated risk if misused. Because some forms of misuse only become detectable across many requests, these models require safeguards that operate over a retained window of usage data rather than on a single request at a time.
-
-Anthropic may designate certain models as "Covered Models" when their capabilities warrant additional safeguards or other treatment. When a model is designated as a Covered Model, it will be added to the list below and the policies on this page take effect for that model on every surface where it is offered.
-
-## Current Covered Models
-
-[TABLE]
-
-*We will update this list as new models are designated or as existing designations change.*
-
-## Policies that apply to Covered Models
-
-The following policies apply to every Covered Model listed above, on every platform where it is available (Claude apps, Claude Platform, Amazon Bedrock, Google Cloud Agent Platform, and Microsoft Foundry).
-
-### Data retention
-
-- **30-day minimum retention by default.** Prompts and model completions are retained for at least 30 days and then automatically deleted, unless they are subject to a safety investigation or we are legally required to maintain them. Accordingly, zero data retention is not available in workspaces, Claude Enterprise organizations, or third-party platforms (e.g., Azure Subscriptions) where Covered Models can be accessed. Customers who are eligible for zero data retention can continue to use prior Claude models under their existing settings and agreements. Learn more about data retention practices for Covered Models here: **[Data retention practices for Mythos-class models](data-retention-practices-for-mythos-class-models.md).**
-
-### Use and review of retained data
-
-- **How retained data is used.** Information about how Anthropic uses inputs, outputs, and other information from commercial and consumer plans can be found in our Privacy Center:
-
-  - **[Commercial Customers](https://privacy.claude.com/en/collections/10663361-commercial-customers)**
-
-  - **[Consumers](https://privacy.claude.com/en/collections/10663362-consumers)**
-
-- **Automated review by default.** Retained data is assessed by automated safety systems designed to flag harmful content.
-
-### Security and privacy controls
-
-- **Information security program.** Retained data is protected by Anthropic’s documented information security program, with breach notification in accordance with organizations’ agreements with Anthropic and our Data Processing Addendum.
-
-### Availability and access
-
-- **All surfaces.** These policies follow the model. They apply wherever Covered Models are offered, including third-party cloud platforms.
-
-- **Eligibility.** Some Covered Models (such as Claude Mythos 5) are available only to approved partners under limited access programs. See the table above for current availability.
-
-- **Enablement.** Contact your Anthropic account team to inquire about limited-availability models or grants or our security and privacy controls.
-
-- **BAA customers.** If your organization uses Anthropic’s HIPAA-ready services under a Business Associate Agreement (BAA), see **[Covered Models under Anthropic’s BAA](../13-Enterprise-Admin/covered-models-under-a-business-associate-agreement-baa.md)** for which configurations can access Covered Models as Eligible Services.
-
-## Zero data retention and Enterprise Frontier Safeguards
-
-All commercial customers can use Claude Fable 5 and Fable 5.1 today under the standard policies described above. For organizations whose privacy or regulatory obligations make Anthropic-held data retention difficult, we are introducing **[Enterprise Frontier Safeguards](../19-Reference/enterprise-frontier-safeguards.md)** (EFS), which combines automated safety monitoring with the option to keep retained monitoring data in cloud infrastructure the customer controls. EFS will roll out in phases beginning in fall 2026.
-
-To make the transition smooth, eligible customers will receive the option to use ZDR with Fable 5 and Fable 5.1 for their own internal business applications. This arrangement is available for a limited time, and intended to be a transition to EFS. Anthropic or your cloud provider will contact eligible organizations directly; you can also request consideration using **[this form](https://claude.com/form/enterprise-frontier-safeguards)**.
-
-Certain products built on Claude may extend the option to use ZDR with these models to their own eligible business customers under terms agreed with Anthropic, and we are working to broaden product support over time.
-
-This arrangement affects only the retention and review of stored data. The Usage Policy, real-time safety classifiers, and Anthropic's enforcement systems continue to apply to all traffic, and Anthropic may modify or withdraw the arrangement, including in response to misuse.
-
----
-
 ## Create professional results across tools with Claude Sonnet 4.5 | Claude by Anthropic
 
 Source: https://support.claude.com/en/articles/12439380-create-professional-results-across-tools-with-claude-sonnet-4-5
@@ -5475,17 +5404,17 @@ Models
 
 - Opus
 
-  [Opus](../15-Claude-AI-Features/claude-opus.md)
+  [Opus](https://support.claude.com/en/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+  [Sonnet](https://support.claude.com/en/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+  [Haiku](https://support.claude.com/en/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Solutions
@@ -5728,10 +5657,9 @@ Path: 20-Models/data-retention-practices-for-mythos-class-models.md
 # Data retention practices for Covered Models
 
 
-
 To ensure we’re responsibly deploying covered models, **we are requiring limited data retention and review as part of our safety work. Prompts submitted to, and outputs generated by, covered models are retained for 30 days** **to support our safety work, on every platform where these models are offered.**
 
-This applies to Mythos-class models and future models with similar capabilities that we designate as **[covered models](covered-models.md)**. For all other models, everything you use is unaffected and stays under the current terms.
+This applies to Mythos-class models and future models with similar capabilities that we designate as **[covered models](../15-Claude-AI-Features/covered-models-claude-help-center.md)**. For all other models, everything you use is unaffected and stays under the current terms.
 
 This policy, described below, goes into effect on June 9, 2026.
 
@@ -5739,7 +5667,7 @@ This policy, described below, goes into effect on June 9, 2026.
 
 Consumer plans (Claude Free, Pro, and Max) across our web, desktop, and mobile apps—including Claude.ai and Claude Code—are unaffected by this update, since we already retain inputs and outputs on these surfaces. Learn more about **[how we retain data](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)** for consumer plans.
 
-This change only applies to organizations that have set up workspaces with **[zero data retention](https://privacy.claude.com/en/articles/8956058-i-have-a-zero-data-retention-agreement-with-anthropic-what-products-does-it-apply-to)** (ZDR) in Claude Console, use Claude Code with ZDR in Claude Enterprise, or access Claude through AWS Bedrock, Google Cloud Agent Platform, or Microsoft Foundry with ZDR. Some of these organizations will receive notice that they are eligible to use Fable with ZDR, as described here: **[Zero data retention and Enterprise Frontier Safeguards](covered-models.md#h_077fc48764)**. The rest of this article applies only to the organizations with zero data retention and did not receive this notice.
+This change only applies to organizations that have set up workspaces with **[zero data retention](https://privacy.claude.com/en/articles/8956058-i-have-a-zero-data-retention-agreement-with-anthropic-what-products-does-it-apply-to)** (ZDR) in Claude Console, use Claude Code with ZDR in Claude Enterprise, or access Claude through AWS Bedrock, Google Cloud Agent Platform, or Microsoft Foundry with ZDR. Some of these organizations will receive notice that they are eligible to use Fable with ZDR, as described here: **[Zero data retention and Enterprise Frontier Safeguards](https://support.claude.com/en/articles/15425695-covered-models#h_077fc48764)**. The rest of this article applies only to the organizations with zero data retention and did not receive this notice.
 
 ## Why we’re doing this
 
@@ -6126,17 +6054,17 @@ Models
 
 - Opus
 
-  [Opus](../15-Claude-AI-Features/claude-opus.md)
+  [Opus](https://support.claude.com/en/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+  [Sonnet](https://support.claude.com/en/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+  [Haiku](https://support.claude.com/en/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Solutions
@@ -6699,7 +6627,7 @@ model = "claude-mythos-5-1"  # After
 
     A conversation that ran on Claude Fable 5.1 can land on an older model through a router switch, a client-side retry, or a [classifier refusal fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md), including a [server-side fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback). The API removes the blocks that model can't read before it sees them, the request succeeds, and you aren't billed for the dropped input tokens. The target model re-plans without that reasoning, which can raise cost and latency on the first turn after the switch. To see what was dropped, send the `thinking-binding-controls-2026-08-01` [beta header](../04-API-Reference/Endpoints/beta-headers.md): responses then carry an `input_transformations` array naming each dropped block with `reason: "model_binding_mismatch"`. See [Switching models mid-conversation](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#switching-models).
 
-3.  **Editing earlier turns invalidates thinking blocks:** Each `thinking` block from Claude Fable 5.1 is valid only against the `system` prompt, `tools`, and conversation history that preceded it. If Claude Code, claude.ai, [Claude Managed Agents](../04-API-Reference/Other/managed-agents-overview.md), or the [Claude Agent SDK](../05-Agent-SDK/agent-sdk-overview.md) manages your conversation history, it already keeps that prefix intact. If your code builds the `messages` array itself, this item applies to you, and [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) is the full integration guide. Where the check is enforced, a request that sends the block back after any of those changed is rejected with a 400 error:
+3.  **Editing earlier turns invalidates thinking blocks:** Each `thinking` block from Claude Fable 5.1 is valid only against the `system` prompt, `tools`, and conversation history that preceded it. If Claude Code, claude.ai, [Claude Managed Agents](../04-API-Reference/Other/managed-agents-overview.md), or the [Claude Agent SDK](https://platform.claude.com/docs/en/models/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md) manages your conversation history, it already keeps that prefix intact. If your code builds the `messages` array itself, this item applies to you, and [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) is the full integration guide. Where the check is enforced, a request that sends the block back after any of those changed is rejected with a 400 error:
 
     ``` shiki
     messages.5.content.0: Invalid `signature` in `thinking` block. The block is bound to a different conversation. Remove the block, or set `thinking.block_binding.prefix_mismatch_behavior` to "drop_block". That setting requires the `thinking-binding-controls-2026-08-01` value in the `anthropic-beta` header.
@@ -7331,7 +7259,7 @@ When a request carries a block the target model can't read (a router or fallback
 
 ### Editing earlier turns invalidates thinking blocks
 
-Modifying anything before a Claude Fable 5.1 thinking block (the `system` prompt, the `tools`, or an earlier message) results in an error on the next request, or in the block being dropped if you opt into that. Claude Mythos 5.1 doesn't run this check. Claude Code, claude.ai, [Claude Managed Agents](../04-API-Reference/Other/managed-agents-overview.md), and the [Claude Agent SDK](../05-Agent-SDK/agent-sdk-overview.md) keep that prefix intact for you. If your code builds the `messages` array itself, check it before you migrate: [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) walks through the check and each fix. The check is enforced for new accounts created on or after August 31, 2026. For accounts created earlier, the API records the mismatch but acts on it only when the request sets `thinking.block_binding.prefix_mismatch_behavior`.
+Modifying anything before a Claude Fable 5.1 thinking block (the `system` prompt, the `tools`, or an earlier message) results in an error on the next request, or in the block being dropped if you opt into that. Claude Mythos 5.1 doesn't run this check. Claude Code, claude.ai, [Claude Managed Agents](../04-API-Reference/Other/managed-agents-overview.md), and the [Claude Agent SDK](https://platform.claude.com/docs/en/models/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md) keep that prefix intact for you. If your code builds the `messages` array itself, check it before you migrate: [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) walks through the check and each fix. The check is enforced for new accounts created on or after August 31, 2026. For accounts created earlier, the API records the mismatch but acts on it only when the request sets `thinking.block_binding.prefix_mismatch_behavior`.
 
 These patterns invalidate every later thinking block:
 
@@ -7496,7 +7424,7 @@ Claude Fable 5.1 is available on:
 
 Claude Mythos 5.1 is offered only to approved customers in [Project Glasswing](../22-Safety-Policy/glasswing.md). For access, contact your Anthropic, AWS, or Google Cloud account team.
 
-Claude Fable 5.1 and Claude Mythos 5.1 carry 30-day data retention and aren't available under zero data retention unless expressly authorized by Anthropic. Both are [Covered Models](covered-models.md), like Claude Fable 5 and Claude Mythos 5. See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
+Claude Fable 5.1 and Claude Mythos 5.1 carry 30-day data retention and aren't available under zero data retention unless expressly authorized by Anthropic. Both are [Covered Models](../15-Claude-AI-Features/covered-models-claude-help-center.md), like Claude Fable 5 and Claude Mythos 5. See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
 
 ## Migrate from Claude Fable 5
 
@@ -7651,7 +7579,7 @@ A refusal that arrives before any output is billed when it is in a category with
 - **Claude Fable 5** is available on the Claude API, [Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md), [Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md), [Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md), and [Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md).
 - **Claude Mythos 5** is offered only to approved customers in [Project Glasswing](../22-Safety-Policy/glasswing.md). For access, contact your Anthropic, AWS, or Google Cloud account team. Customers without access to Claude Mythos 5 can use Claude Fable 5, which does not require access approval and offers the same capabilities.
 
-Claude Fable 5 and Claude Mythos 5 carry 30-day data retention and are not available under zero data retention unless expressly authorized by Anthropic. Both are designated [Covered Models](covered-models.md). See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
+Claude Fable 5 and Claude Mythos 5 carry 30-day data retention and are not available under zero data retention unless expressly authorized by Anthropic. Both are designated [Covered Models](../15-Claude-AI-Features/covered-models-claude-help-center.md). See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
 
 ## Prompting
 
@@ -10038,7 +9966,7 @@ Path: 20-Models/models-opus-5-5-migration-guide.md
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](release-notes-overview.md)
 
@@ -10065,9 +9993,7 @@ Models
 
 [Overview](models-opus-5-5-overview.md)[What's new](models-opus-5-5-whats-new-opus-5-5.md)[Migration guide](models-opus-5-5-migration-guide.md)
 
-[Claude Opus 5](models-opus-5-overview.md)
-
-[Claude Sonnet 5](models-sonnet-5-overview.md)
+[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
 [Claude Haiku 4.5](models-haiku-4-5-overview.md)
 
@@ -10095,7 +10021,7 @@ Lifecycle and reference
 
 
 
-Migrate to Claude Opus 5.5 from earlier Claude models: model IDs, breaking changes, recommended changes, and migration checklists.
+Migrate to Claude Opus 5.5 from earlier Opus models or Claude Sonnet 5: request settings that return errors, thinking blocks in every response, and a checklist for each starting model.
 
 Copy page
 
@@ -10117,11 +10043,174 @@ This guide covers migrating [Messages API](../04-API-Reference/Guides/build-with
 
 The skill applies the model ID swap and, as needed, breaking parameter changes, prefill replacement, and effort calibration for your target model across your code base, then produces a checklist of items to verify manually. It asks you to confirm the migration scope (entire working directory, a subdirectory, or a specific file list) before editing any files. The skill also detects Amazon Bedrock and Claude Platform on AWS clients and adjusts model ID formats and feature changes for those platforms.
 
-For behavioral differences and model-specific prompting patterns, see [Prompting Claude Opus 5.5](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md).
+This page lists the code changes for moving to Claude Opus 5.5 from [Claude Opus 5](#migrating-from-claude-opus-5), [Claude Opus 4.8](#migrating-from-claude-opus-4-8), [Claude Opus 4.7](#migrating-from-claude-opus-47), [Claude Opus 4.6 and earlier Opus models](#migrating-from-claude-opus-46), or [Claude Sonnet 5](#migrating-from-claude-sonnet-5). Every reader needs [What every request to Claude Opus 5.5 must satisfy](#request-requirements) and [Handle thinking in every response](#thinking-in-every-response). Then go to the section for your current model: its first sentence names the other sections that apply to you. The [migration checklist](#migration-checklist) lists every change by starting model.
 
-Claude Opus 5.5 costs less than Claude Opus 5 (\$4 / \$20 USD per million input / output tokens, compared with \$5 / \$25; see [Claude pricing](../17-Billing-Plans/about-claude-pricing.md)), and keeps Claude Opus 5's [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md) and 128k max output tokens. There are four breaking changes for code already running on Claude Opus 5, covered under [Breaking changes](#breaking-changes). For feature support, see [What's new in Claude Opus 5.5](models-opus-5-5-whats-new-opus-5-5.md#feature-support).
+Claude Opus 5.5 costs less than Claude Opus 5 (\$4 / \$20 USD per million input / output tokens, compared with \$5 / \$25; see [Claude pricing](../17-Billing-Plans/about-claude-pricing.md)). For feature support, see [What's new in Claude Opus 5.5](models-opus-5-5-whats-new-opus-5-5.md#feature-support). For behavioral differences and model-specific prompting patterns, see [Prompting Claude Opus 5.5](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md).
+
+## What every request to Claude Opus 5.5 must satisfy
+
+Whichever model you are coming from, a request to `claude-opus-5-5` must meet the following. Where an item says a setting is rejected, the API returns a 400 error.
+
+- **Model ID:** Use `claude-opus-5-5`, a fixed model ID with no date suffix. On Amazon Bedrock, Claude Platform on AWS, Google Cloud, and Microsoft Foundry, use that platform's model ID; see [Availability](models-opus-5-5-whats-new-opus-5-5.md#availability).
+- **Thinking:** Send no `thinking` field, or send `thinking: {"type": "adaptive"}`, which is equivalent: [adaptive thinking](../04-API-Reference/Guides/build-with-claude-thinking.md) is always on. `thinking: {"type": "disabled"}` and manual thinking budgets (`thinking: {"type": "enabled", "budget_tokens": N}`) are rejected. See the [before and after for thinking](#thinking-cant-be-disabled).
+- **Effort:** Control thinking depth with the [effort parameter](../04-API-Reference/Guides/build-with-claude-effort.md), the only request parameter that controls it. All five levels (`low`, `medium`, `high`, `xhigh`, `max`) are supported, and the default is `medium`. See [Recommended effort levels for Claude Opus 5.5](../04-API-Reference/Guides/build-with-claude-effort.md#recommended-effort-levels-for-claude-opus-5-5).
+- **Tool choice:** Use `tool_choice` `{"type": "auto"}` (the default) or `{"type": "none"}`. Forcing a tool call with `{"type": "any"}` or `{"type": "tool", "name": "..."}` is rejected. See the [before and after for tool choice](#forced-tool-use).
+- **Sampling parameters:** Omit `temperature`, `top_p`, and `top_k`, or leave them at their defaults: any other value is rejected. Use prompting to guide the model's behavior.
+- **Prefill:** Don't end `messages` with a prefilled assistant turn: it is rejected. Use [structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md) or system prompt instructions instead.
+- **Computer use:** On the Claude API and Google Cloud, declare computer use as the `computer_toolset_20260801` toolset; the earlier `computer_20251124` tool is rejected there. See the [computer use breaking change](#computer-use-toolset).
+- **Context window:** No context-window beta header is needed. The [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md) is the default, and a header sent for older models has no effect.
+
+The following request satisfies every item in the list: effort is set, and there is no `thinking` field. The SDK tabs that print text select it by block type, because `thinking` blocks come first.
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
+
+```python
+client = anthropic.Anthropic()
+
+response = client.messages.create(
+    model="claude-opus-5-5",
+    max_tokens=4096,
+    messages=[
+        {
+            "role": "user",
+            "content": "Analyze the trade-offs between microservices and monolithic architectures",
+        }
+    ],
+    output_config={"effort": "medium"},
+)
+
+for block in response.content:
+    if block.type == "text":
+        print(block.text)
+```
+
+## Handle thinking in every response
+
+Thinking runs on every Claude Opus 5.5 request, so every response can begin with `thinking` blocks, and `max_tokens` covers thinking plus text. If your code already runs with thinking on, items 1 to 3 are likely in place: check items 4 and 5. If it ran without thinking, on any earlier model, each item is a change.
+
+1.  **`max_tokens` covers thinking plus text:** On Claude Opus 4.8 and earlier Opus models, requests without a `thinking` field run without thinking. Claude Opus 5 and Claude Sonnet 5 accept `thinking: {"type": "disabled"}`. On Claude Opus 5.5, every request runs with [adaptive thinking](../04-API-Reference/Guides/build-with-claude-thinking.md). `max_tokens` remains a hard limit on total output, thinking plus response text, so revisit it for workloads that ran without thinking. Thinking tokens are billed as output tokens even when the thinking text is not returned to you, so such a workload can produce more output tokens per request. See [Cost control](../04-API-Reference/Guides/build-with-claude-thinking-steering-and-cost.md#cost-control). To spend fewer tokens on thinking, lower the [effort](../04-API-Reference/Guides/build-with-claude-effort.md) level. If you run at `xhigh` or `max` effort, set a large `max_tokens` so the model has room to think and act; start at 64k tokens and tune from there. If your prompts were tuned for running without thinking, see [Prompts written for thinking disabled](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md#prompts-written-for-thinking-disabled).
+
+2.  **Responses begin with thinking blocks:** A response can begin with one or more `thinking` blocks before the first `text` block. Code that reads the reply by position, such as `content[0].text` or a stream handler that treats the first `content_block_start` event as text, breaks on these responses. Select content blocks by their `type` field instead: read `text` from the blocks whose `type` is `"text"`, and branch on the block type when handling stream events.
+
+3.  **Return thinking blocks unmodified in tool-use loops:** If you run a tool-use loop, pass the `thinking` blocks from each assistant response back to the API complete and unmodified when you return tool results, including blocks whose `thinking` field is empty. Echo the assistant message as received rather than filtering its content blocks by type or rebuilding it: the API rejects edited, reordered, or partially dropped thinking blocks with a 400 error. See [Preserving thinking blocks](../04-API-Reference/Guides/build-with-claude-thinking.md#preserving-thinking-blocks).
+
+4.  **Thinking text is omitted by default:** `thinking.display` defaults to `"omitted"`, so `thinking` blocks arrive with an empty `thinking` field alongside their `signature`. Treat the `thinking` field as display text only. To receive readable summaries instead, set `thinking.display` to `"summarized"`:
+
+    Python
+    TypeScript
+    C#
+    Go
+    Java
+    PHP
+    Ruby
+
+    
+
+    ``` shiki
+    thinking = {
+        "type": "adaptive",
+        "display": "summarized",
+    }
+    ```
+
+    If your product streams reasoning to users, the default appears as a long pause before output begins; set `display: "summarized"` to restore visible progress during thinking. See [Controlling thinking display](../04-API-Reference/Guides/build-with-claude-thinking.md#controlling-thinking-display).
+
+5.  **Text between tool calls arrives in thinking blocks:** The short notes the model writes between tool calls come back as `thinking` blocks, which are empty at the default display. See [Text between tool calls is returned in thinking blocks](#text-between-tool-calls).
+
+## Migration checklist by starting model
+
+Work down the groups and stop after the one that names your current model: every item up to that point applies to you. If you are on Claude Opus 5, the first group is the whole list. If you are on Claude Sonnet 5, apply the first group and the last.
+
+### Every starting model
+
+- Update the model ID to `claude-opus-5-5`.
+- Remove `thinking: {"type": "disabled"}` and `thinking: {"type": "enabled", ...}`; choose an effort level instead.
+- Set `effort` explicitly: the default is `medium`, where Claude Opus 5's is `high`.
+- Replace `tool_choice` types `any` and `tool` with `auto` plus strict tool use or structured outputs.
+- If you use computer use on the Claude API or Google Cloud, declare `computer_toolset_20260801` (no beta header) instead of `computer_20251124` and update your agent loop for the toolset. On Amazon Bedrock, keep `computer_20251124`; check the computer use tool's [Compatibility](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md#compatibility) section for other platforms.
+- If a router or fallback can move a conversation from Claude Opus 5.5 to another model, expect that model to run without Claude Opus 5.5's thinking blocks (Claude Fable 5.1 and Claude Mythos 5.1 on the Claude API are the exception and keep them). Claude Opus 5.5 itself reads thinking from Claude Opus 5 and earlier Opus, Sonnet, and Haiku models, but not from Claude Fable or Claude Mythos models.
+- Read content blocks by `type`, and pass `thinking` blocks back unmodified in tool-use loops.
+- If your interface renders text between tool calls, set `display: "updates"` (beta) or `"summarized"` and render the non-empty `thinking` blocks.
+- If your code edits earlier turns, the `system` prompt, or `tools` mid-conversation, follow [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md).
+- Handle `stop_reason: "refusal"` and configure fallback.
+- Re-baseline cost and latency at your chosen effort level.
+- If your code disabled thinking, revisit `max_tokens`, which covers thinking plus response text; at `xhigh` or `max` effort, start at 64k. See [Handle thinking in every response](#thinking-in-every-response).
+
+### Claude Opus 4.8 or earlier
+
+- Review workloads that ran without a `thinking` field: on Claude Opus 5.5 they run with thinking, and thinking can't be disabled. Revisit `max_tokens`, which remains a hard limit on total output (thinking plus response text), and lower `effort` where you want less thinking. Thinking tokens are billed as output tokens, so these workloads can produce more output tokens per request.
+- Verify any code that parses the `thinking` field treats it as display text only. Set `display: "summarized"` to receive readable summaries.
+- Review prompts near the caching minimum: prompts of 512 tokens or more can create cache entries.
+- If your organization has a [Priority Tier](../04-API-Reference/Endpoints/service-tiers.md#supported-models) commitment, plan capacity separately: Priority Tier is not supported on Claude Opus 5.5.
+- If you run at `xhigh` or `max` effort, raise `max_tokens` to at least 64k as a starting point.
+- For agentic workloads, consider [task budgets](../04-API-Reference/Guides/build-with-claude-task-budgets.md) (beta) and mid-conversation tool changes (beta).
+
+### Claude Opus 4.7 or earlier
+
+- Run a fresh [effort](../04-API-Reference/Guides/build-with-claude-effort.md) sweep on your own evals rather than carrying over a setting tuned for an earlier model.
+- Remove any context-window beta header.
+- If you rebuild conversation history to update instructions, consider switching to a mid-conversation system message to preserve prompt cache hits.
+- Verify your stop-reason handling reads `stop_details` on refusals.
+- If you want fast mode, which Claude Opus 4.7 rejects, set `speed: "fast"` with the `fast-mode-2026-02-01` beta header on the Claude API.
+
+### Claude Opus 4.6 or earlier
+
+- Remove `temperature`, `top_p`, and `top_k` from request payloads.
+- Replace `thinking: {"type": "enabled", "budget_tokens": N}` with `thinking: {"type": "adaptive"}` plus the [effort parameter](../04-API-Reference/Guides/build-with-claude-effort.md), or remove the `thinking` field entirely; adaptive thinking is always on.
+- If your UI displays thinking content, explicitly opt in to thinking summarization.
+- Re-benchmark end-to-end cost and latency under the updated tokenization.
+- Re-tune `max_tokens` to account for the updated tokenization, including compaction triggers.
+- Re-test any client-side token-count estimations.
+- If your application sends images, re-budget for [high-resolution image support](../04-API-Reference/Guides/build-with-claude-vision.md#high-resolution-image-support-on-claude-opus-4-7) (up to approximately 3x more image tokens per full-resolution image). Downsample before sending if you do not need the additional fidelity.
+- If you consume pointing or bounding-box coordinates from the model, remove any scale-factor conversion; coordinates are 1:1 with actual image pixels on Claude Opus 4.7 and later models.
+- Review the [behavior changes](#behavior-changes) that began in Claude Opus 4.7.
+- If your product does legitimate security work, apply to the [Cyber Verification Program](real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) for access to lower restrictions on cyber content.
+
+### Claude Opus 4.5 or earlier
+
+- Remove any assistant-message prefills; Claude Opus 4.6 already rejects them.
+- Verify tool call JSON parsing uses a standard JSON parser.
+- Move from `client.beta.messages.create` to `client.messages.create`: adaptive thinking and effort need no beta namespace.
+- Remove the `effort-2025-11-24` beta header (the effort parameter does not require it).
+- Remove the `fine-grained-tool-streaming-2025-05-14` beta header.
+- Remove the `interleaved-thinking-2025-05-14` beta header (adaptive thinking enables interleaved thinking automatically).
+- Migrate `output_format` to `output_config.format` (if applicable).
+
+### Claude 4.1 or earlier
+
+- Update tool versions (`text_editor_20250728`, `code_execution_20260521`).
+- Handle the `refusal` stop reason.
+- Handle the `model_context_window_exceeded` stop reason.
+- Verify tool string parameter handling for trailing newlines.
+- Remove legacy beta headers (`token-efficient-tools-2025-02-19`, `output-128k-2025-02-19`).
+- Review and update prompts following [prompting best practices](../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md).
+
+### Claude Sonnet 5 only
+
+- If you rebuild conversation history to update instructions, consider switching to a mid-conversation system message to preserve prompt cache hits.
+- Review prompts near the caching minimum: prompts of 512 tokens or more can create cache entries.
 
 ## Migrating to Claude Opus 5.5 from Claude Opus 5
+
+First work through [What every request to Claude Opus 5.5 must satisfy](#request-requirements) and [Handle thinking in every response](#thinking-in-every-response). Every starting model needs the changes in this section. They are the request settings that Claude Opus 5.5 rejects and the response changes that come with it. The checklist for this section is the first group of the [migration checklist](#migration-checklist).
 
 ### Update your model name
 
@@ -10142,7 +10231,27 @@ Each change is explained in [What's new in Claude Opus 5.5](models-opus-5-5-what
 
 `thinking: {"type": "disabled"}` and `thinking: {"type": "enabled", "budget_tokens": N}` both return a 400 error (`"thinking.type.disabled" is not supported for this model.` or `"thinking.type.enabled" is not supported for this model.`). Remove the `thinking` field and pick an [effort](../04-API-Reference/Guides/build-with-claude-effort.md) level; where you disabled thinking to save tokens, use a lower one. Responses then begin with `thinking` blocks, so select content blocks by `type` and pass `thinking` blocks back unmodified with tool results. See [Thinking can't be disabled](models-opus-5-5-whats-new-opus-5-5.md#thinking-cant-be-disabled).
 
-Before (accepted on Claude Opus 5, rejected on Claude Opus 5.5):
+Before. Claude Opus 5 accepts this request, and Claude Opus 5.5 rejects it with a 400 error:
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
 
 ```python
 client.messages.create(
@@ -10153,9 +10262,27 @@ client.messages.create(
 )
 ```
 
-
-
 After:
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
 
 ```python
 client.messages.create(
@@ -10166,13 +10293,31 @@ client.messages.create(
 )
 ```
 
-
-
 #### Forced tool use is not supported
 
-`tool_choice` types `any` and `tool` return a 400 error (`tool_choice: type "tool" and "any" are not supported for this model.`), including on the token counting endpoint. Use `auto` with [strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md) or [structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md), and say in the prompt when the tool applies. See [Forced tool use is not supported](models-opus-5-5-whats-new-opus-5-5.md#forced-tool-use-is-not-supported).
+`tool_choice` types `any` and `tool` return a 400 error (`tool_choice: type "tool" and "any" are not supported for this model.`), including on the token counting endpoint. Use `auto` with [strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md) or [structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md), and say in the prompt when the tool applies. Strict tool use accepts a subset of JSON Schema, so check each tool's `input_schema` before you add `strict: true`. Every object in the schema must set `additionalProperties: false`; see [JSON Schema limitations](../04-API-Reference/Guides/build-with-claude-structured-outputs.md#json-schema-limitations). See [Forced tool use is not supported](models-opus-5-5-whats-new-opus-5-5.md#forced-tool-use-is-not-supported).
 
-Before:
+Before. Claude Opus 5 accepts this request, and Claude Opus 5.5 rejects it with a 400 error:
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
 
 ```python
 client.messages.create(
@@ -10184,9 +10329,27 @@ client.messages.create(
 )
 ```
 
-
-
 After:
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
 
 ```python
 client.messages.create(
@@ -10204,8 +10367,6 @@ client.messages.create(
 )
 ```
 
-
-
 #### Thinking blocks are tied to the model and the conversation
 
 On the Claude API, Claude Fable 5.1 and Claude Mythos 5.1 read Claude Opus 5.5 thinking blocks; no other model does. A router or fallback that moves a conversation from Claude Opus 5.5 to any other model runs those turns without them. In the other direction, Claude Opus 5.5 reads thinking blocks from Claude Opus 5 and earlier Opus, Sonnet, and Haiku models, but not from Claude Fable or Claude Mythos models. Keep the conversation append-only (no edits to the `system` prompt, `tools`, or earlier messages mid-conversation) so the blocks stay valid; Claude Code, claude.ai, Claude Managed Agents, and the Claude Agent SDK already do. Enforcement matches Claude Fable 5.1 on every platform: for accounts created on or after August 31, 2026, 00:00 UTC, replaying a thinking block after such an edit returns a 400 error by default. There is no code change for append-only integrations. See [Thinking blocks are tied to the model and the conversation](models-opus-5-5-whats-new-opus-5-5.md#thinking-blocks-are-tied-to-the-model-that-produced-them) and [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md).
@@ -10214,7 +10375,27 @@ On the Claude API, Claude Fable 5.1 and Claude Mythos 5.1 read Claude Opus 5.5 t
 
 On the Claude API and Google Cloud, a `tools` entry of type `computer_20251124` returns a 400 error (`'claude-opus-5-5' does not support tool types: computer_20251124.`, followed by the tool types the model accepts). Declare the `computer_toolset_20260801` toolset instead: drop the beta header and send the entry with no `name` or display dimensions. In your agent loop, handle member `tool_use` blocks (the action is the block's `name`, not `input.action`), several of them per turn, and echo `toolset_name` on every result. The request change is shown below; the agent-loop changes are listed in [Migrate from `computer_20251124`](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md#migrate-from-computer-20251124). On Amazon Bedrock, the earlier `computer_20251124` tool continues to work on Claude Opus 5.5 as it does on Claude Opus 5, so no change is needed there; for other platforms, see the computer use tool's [Compatibility](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md#compatibility) section. See [The `computer_20251124` computer use tool is not supported on the Claude API and Google Cloud](models-opus-5-5-whats-new-opus-5-5.md#computer-20251124-is-not-supported).
 
-Before:
+Before. Claude Opus 5 accepts this request, and on the Claude API and Google Cloud, Claude Opus 5.5 rejects it with a 400 error:
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
 
 ```python
 client.beta.messages.create(
@@ -10233,9 +10414,27 @@ client.beta.messages.create(
 )
 ```
 
-
-
 After:
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+
 
 ```python
 client.messages.create(
@@ -10246,8 +10445,6 @@ client.messages.create(
     messages=[{"role": "user", "content": "Open the display settings."}],
 )
 ```
-
-
 
 ### Text between tool calls is returned in thinking blocks
 
@@ -10263,36 +10460,278 @@ Claude Opus 5.5 can return `stop_reason: "refusal"` with a `stop_details` catego
 2.  **Re-evaluate model-specific prompt instructions.** Instructions tuned for Claude Opus 5's behavior may no longer be needed; see [Prompting Claude Opus 5.5](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md). If you ran with thinking disabled, also see [Prompts written for thinking disabled](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md#prompts-written-for-thinking-disabled).
 3.  **Test in a development environment** before switching production traffic.
 
-### Migration checklist
-
-- Update the model ID to `claude-opus-5-5`.
-- Remove `thinking: {"type": "disabled"}` and `thinking: {"type": "enabled", ...}`; choose an effort level instead.
-- Set `effort` explicitly: the default is `medium`, where Claude Opus 5's is `high`.
-- Replace `tool_choice` types `any` and `tool` with `auto` plus strict tool use or structured outputs.
-- If you use computer use on the Claude API or Google Cloud, declare `computer_toolset_20260801` (no beta header) instead of `computer_20251124` and update your agent loop for the toolset. On Amazon Bedrock, keep `computer_20251124`; check the computer use tool's [Compatibility](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md#compatibility) section for other platforms.
-- If a router or fallback can move a conversation from Claude Opus 5.5 to another model, expect that model to run without Claude Opus 5.5's thinking blocks (Claude Fable 5.1 and Claude Mythos 5.1 on the Claude API are the exception and keep them). Claude Opus 5.5 itself reads thinking from Claude Opus 5 and earlier Opus, Sonnet, and Haiku models, but not from Claude Fable or Claude Mythos models.
-- Read content blocks by `type`, and pass `thinking` blocks back unmodified in tool-use loops.
-- If your interface renders text between tool calls, set `display: "updates"` (beta) or `"summarized"` and render the non-empty `thinking` blocks.
-- If your code edits earlier turns, the `system` prompt, or `tools` mid-conversation, follow [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md).
-- Handle `stop_reason: "refusal"` and configure fallback.
-- Re-baseline cost and latency at your chosen effort level.
-
 ## Migrating to Claude Opus 5.5 from Claude Opus 4.8
 
-Work through [Migrating to Claude Opus 5 from Claude Opus 4.8](models-opus-5-migration-guide.md#migrating-from-claude-opus-4-8-to-claude-opus-5) first: it covers thinking on by default and the response-shape changes that come with it. Then apply [Migrating from Claude Opus 5](#migrating-from-claude-opus-5). The second Claude Opus 5 breaking change there (thinking can be disabled only at `high` effort or below) doesn't carry over: on Claude Opus 5.5 thinking can't be disabled at all.
+First work through [What every request to Claude Opus 5.5 must satisfy](#request-requirements), [Handle thinking in every response](#thinking-in-every-response), and [Migrating to Claude Opus 5.5 from Claude Opus 5](#migrating-from-claude-opus-5). Use `claude-opus-4-8` as the model ID you replace. That last section applies to code on Claude Opus 4.8 as written, because Claude Opus 4.8, like Claude Opus 5:
 
-### Migration checklist
+- Accepts `thinking: {"type": "disabled"}`, forced tool choice, and the `computer_20251124` tool.
+- Returns the text between tool calls as `text` blocks.
+- Defaults to `high` effort.
 
-- Everything in the [Claude Opus 4.8 → Claude Opus 5 checklist](models-opus-5-migration-guide.md#migrating-from-claude-opus-4-8-to-claude-opus-5), except that `thinking: {"type": "disabled"}` is not an option.
-- Everything in the [Claude Opus 5 → Claude Opus 5.5 checklist](#migration-checklist-from-claude-opus-5).
+This section adds what changed between Claude Opus 4.8 and Claude Opus 5. For a checklist, see the first two groups of the [migration checklist](#migration-checklist).
 
-## Migrating to Claude Opus 5.5 from Claude Opus 4.7 and earlier Opus models
+### What changed
 
-The [Claude Opus 5 migration guide](models-opus-5-migration-guide.md#migrating-from-claude-opus-47) covers the breaking changes between your current model and Claude Opus 5: sampling parameters rejected, manual extended thinking rejected, prefill removed, and the newer tokenizer. Work through the section for your model there, targeting `claude-opus-5-5` instead of `claude-opus-5`, then apply [Migrating from Claude Opus 5](#migrating-from-claude-opus-5). Where that guide tells you thinking can be disabled at `high` effort or below, it can't on Claude Opus 5.5; and where it says existing `computer_20251124` integrations keep working, on the Claude API and Google Cloud they don't on Claude Opus 5.5, which there accepts computer use only as the `computer_toolset_20260801` toolset (see [the breaking change](#computer-use-toolset)); on Amazon Bedrock they keep working.
+1.  **Thinking runs on requests that omitted it:** On Claude Opus 4.8, thinking is off unless you ask for it. On Claude Opus 5.5, a request with no `thinking` field runs with thinking, so every item in [Handle thinking in every response](#thinking-in-every-response) is a change for that code. If your code never sent a `thinking` field, there is nothing to remove under the [before and after for thinking](#thinking-cant-be-disabled).
+
+2.  **Lower prompt caching minimum:** The minimum cacheable prompt length on Claude Opus 5.5 is 512 tokens, down from 1,024 tokens on Claude Opus 4.8. Prompts that were too short to cache on Claude Opus 4.8 can create cache entries, with no code changes required. See [Prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md#cache-limitations) for per-model minimums.
+
+3.  **Priority Tier is not supported:** [Priority Tier](../04-API-Reference/Endpoints/service-tiers.md#supported-models) is not supported on Claude Opus 5.5, while Claude Opus 4.8 keeps it. If your organization has a Priority Tier commitment, plan capacity separately.
+
+### Recommended changes
+
+These are not required but will improve your experience:
+
+1.  **Consider task budgets (beta):** For agentic workloads, [task budgets](../04-API-Reference/Guides/build-with-claude-task-budgets.md) tell the model how many tokens it has for a full agentic loop. They require the `task-budgets-2026-03-13` beta header.
+
+2.  **Consider mid-conversation tool changes (beta):** Mid-conversation tool changes let you add or remove tools between turns of a conversation without invalidating [prompt cache](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) hits on earlier turns. Changing the `tools` array itself invalidates the cached prefix. On the Claude API, send the `inline-tools-2026-09-15` beta header. The older `mid-conversation-tool-changes-2026-07-01` header still works for changes that name a tool by reference, on the Claude API, Amazon Bedrock, and Google Cloud.
+
+## Migrating to Claude Opus 5.5 from Claude Opus 4.7
+
+First work through [What every request to Claude Opus 5.5 must satisfy](#request-requirements), [Handle thinking in every response](#thinking-in-every-response), [Migrating to Claude Opus 5.5 from Claude Opus 5](#migrating-from-claude-opus-5), and [Migrating to Claude Opus 5.5 from Claude Opus 4.8](#migrating-from-claude-opus-4-8). Use `claude-opus-4-7` as the model ID you replace. Those sections apply to code on Claude Opus 4.7 as written. Like Claude Opus 4.8, it accepts `thinking: {"type": "disabled"}`, forced tool choice, and the `computer_20251124` tool. It defaults to `high` effort and runs without thinking unless you ask for it.
+
+This section adds what changed after Claude Opus 4.7. If your code is on Claude Opus 4.6 or earlier, continue with [Migrating to Claude Opus 5.5 from Claude Opus 4.6 and earlier Opus models](#migrating-from-claude-opus-46) after this section. It adds the breaking changes that took effect in Claude Opus 4.7. For a checklist, see the first three groups of the [migration checklist](#migration-checklist).
+
+### What changed
+
+None of these items adds a breaking change to those in the earlier sections; they are worth checking after you swap the model ID.
+
+1.  **Effort levels recalibrated:** The token allocation behind each effort level changes on Claude Opus 5.5 compared to Claude Opus 4.7. The default is `medium`, where Claude Opus 4.7's is `high`. Run a fresh effort sweep on your own evals rather than carrying over a setting tuned for Claude Opus 4.7. See [Effort](../04-API-Reference/Guides/build-with-claude-effort.md).
+
+2.  **1M context window is the default:** Claude Opus 5.5 serves the full 1M token [context window](../04-API-Reference/Guides/build-with-claude-context-windows.md) by default with no beta header. If your client passes a context-window beta header for compatibility with older models, remove it.
+
+3.  **Mid-conversation system messages:** On the Claude API, Amazon Bedrock, and Google Cloud, Claude Opus 5.5 accepts `role: "system"` messages immediately after a user turn in the `messages` array (subject to [placement rules](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md#limitations)). Use the top-level `system` field for instructions that apply from the start. Claude Opus 4.7 rejects `role: "system"` in `messages` with a 400 error. If you maintain code paths that rebuild the full message history to update instructions, you can simplify them and preserve [prompt cache](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) hits on earlier turns.
+
+4.  **Refusal stop details:** When the model declines a request, Claude Opus 5.5 returns a `stop_details` object that names the category of refusal, alongside the `refusal` stop reason. Claude Opus 4.7 returns the same object, so this matters only if your stop-reason handling does not read it yet. No beta header is required, and there is no opt-out. If your stop-reason handling doesn't read it yet, see [Handling stop reasons](../04-API-Reference/Guides/build-with-claude-handling-stop-reasons.md). Claude Opus 5.5 declines in more categories; see [Safety classifiers and fallback](#safety-classifiers-and-fallback).
+
+5.  **Fast mode:** Claude Opus 5.5 supports [fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) (research preview) on the Claude API. Fast mode is not available on Claude Opus 4.7, where requests with `speed: "fast"` return an error. Set `speed: "fast"` with the `fast-mode-2026-02-01` beta header.
+
+6.  **Computer use toolset and browser use tool:** On the Claude API and Google Cloud, Claude Opus 5.5 supports [computer use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md) as the `computer_toolset_20260801` toolset and the [browser use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md) for tasks inside webpages. Claude Opus 4.7 supports neither. On those platforms Claude Opus 5.5 doesn't accept the earlier `computer_20251124` tool; see the [computer use breaking change](#computer-use-toolset).
+
+## Migrating to Claude Opus 5.5 from Claude Opus 4.6 and earlier Opus models
+
+First work through every earlier section, in page order. They are [What every request to Claude Opus 5.5 must satisfy](#request-requirements), [Handle thinking in every response](#thinking-in-every-response), and the sections for [Claude Opus 5](#migrating-from-claude-opus-5), [Claude Opus 4.8](#migrating-from-claude-opus-4-8), and [Claude Opus 4.7](#migrating-from-claude-opus-47). Those sections apply to code on Claude Opus 4.6 as written. Like Claude Opus 4.7, it accepts `thinking: {"type": "disabled"}`, forced tool choice, and the `computer_20251124` tool. It defaults to `high` effort and runs without thinking unless you ask for it. Claude Opus 4.5 and earlier Opus models also accept `thinking: {"type": "disabled"}` and forced tool choice, and run without thinking unless you ask for it, so those sections apply to them too.
+
+This section adds what changed in Claude Opus 4.7, with `claude-opus-4-6` as the model ID you replace. Its two subsections add what changed before that, for readers on [Claude Opus 4.5 or earlier](#migrating-from-claude-opus-45) and [Claude 4.1 or earlier](#migrating-from-claude-4-1-or-earlier). For a checklist, see the [migration checklist](#migration-checklist) up to the group that names your model.
+
+### Breaking changes
+
+1.  **Extended thinking removed:** `thinking: {"type": "enabled", "budget_tokens": N}` is no longer supported on Claude Opus 4.7 and later models and returns a 400 error. Switch to [adaptive thinking](../04-API-Reference/Guides/build-with-claude-thinking.md) (`thinking: {"type": "adaptive"}`) and use the [effort parameter](../04-API-Reference/Guides/build-with-claude-effort.md) to control thinking depth. On Claude Opus 5.5, adaptive thinking is always on: `thinking: {"type": "adaptive"}` is valid and equivalent to omitting the `thinking` field entirely.
+
+    Before (Claude Opus 4.6):
+
+    cURL
+    CLI
+    Python
+    TypeScript
+    C#
+    Go
+    Java
+    PHP
+    Ruby
+
+    
+
+    ``` shiki
+    client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=16000,
+        thinking={"type": "enabled", "budget_tokens": 10000},
+        messages=[{"role": "user", "content": "..."}],
+    )
+    ```
+
+    After (Claude Opus 5.5), where the model ID, `thinking`, and `output_config` lines differ:
+
+    cURL
+    CLI
+    Python
+    TypeScript
+    C#
+    Go
+    Java
+    PHP
+    Ruby
+
+    
+
+    ``` shiki
+    client.messages.create(
+        model="claude-opus-5-5",
+        max_tokens=16000,
+        thinking={"type": "adaptive"},
+        output_config={"effort": "high"},  # or "max", "xhigh", "medium", "low"
+        messages=[{"role": "user", "content": "..."}],
+    )
+    ```
+
+    Adaptive thinking is steerable through prompting and the [effort parameter](../04-API-Reference/Guides/build-with-claude-effort.md), which replaces the thinking budget as the way to control how much the model reasons. Run an effort sweep on your own evals rather than translating a `budget_tokens` value. The [effort levels table](../04-API-Reference/Guides/build-with-claude-effort.md#effort-levels) describes when to use each level, and [Recommended effort levels for Claude Opus 5.5](../04-API-Reference/Guides/build-with-claude-effort.md#recommended-effort-levels-for-claude-opus-5-5) covers this model.
+
+2.  **Sampling parameters removed:** Setting `temperature`, `top_p`, or `top_k` to any non-default value on Claude Opus 4.7 and later models, including Claude Opus 5.5, returns a 400 error. The Python SDK (v1.0 and later) does not define them, and passing them raises a `TypeError`. The safest migration path is to omit these parameters entirely from request payloads. Prompting is the recommended way to guide model behavior on Claude Opus 5.5. If you were using `temperature = 0` for determinism, note that it never guaranteed identical outputs on prior models.
+
+3.  **Thinking content omitted by default:** Thinking blocks still appear in the response stream on Claude Opus 4.7 and later models, but their `thinking` field is empty unless you explicitly opt in. This is a silent change from Claude Opus 4.6, where the default was to return summarized thinking text. To restore it, see item 4 of [Handle thinking in every response](#thinking-in-every-response).
+
+4.  **Updated token counting:** Claude Opus 4.7 introduced a new tokenizer, which later Opus models, including Claude Opus 5.5, also use. It contributes to improved performance on a wide range of tasks, and it may use roughly 1x to 1.35x as many tokens when processing text compared to models before Claude Opus 4.7 (up to ~35% more, varying by content).
+
+    [`/v1/messages/count_tokens`](../04-API-Reference/Guides/build-with-claude-token-counting.md) returns a different number of tokens for Claude Opus 5.5 than it did for Claude Opus 4.6. Token efficiency can vary by workload shape.
+
+    Update your `max_tokens` parameters to give additional headroom, including compaction triggers, and re-test any code path that estimates tokens client-side or assumes a fixed token-to-character ratio. Use the [Token counting endpoint](../04-API-Reference/Guides/build-with-claude-token-counting.md) to verify. Prompting interventions, [`task_budget`](../04-API-Reference/Guides/build-with-claude-task-budgets.md), and [`effort`](../04-API-Reference/Guides/build-with-claude-effort.md) can help control costs; these controls may trade off model intelligence.
+
+5.  **Prefill removal (already in effect on Claude Opus 4.6):** Prefilling assistant messages returns a 400 error on Claude Opus 4.6 and later Opus models, including Claude Opus 5.5, so this is a change only if you come from Claude Opus 4.5 or earlier. Use [structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md), system prompt instructions, or `output_config.format` instead.
+
+### Behavior changes
+
+Claude Opus 4.7 introduced behavioral differences from Claude Opus 4.6 that are not API breaking changes. These three affect code or scaffolding:
+
+1.  **Built-in progress updates in agentic traces:** Claude Opus 4.7 provides more regular, higher-quality updates to the user throughout long agentic traces. If you've added scaffolding to force interim status messages ("After every 3 tool calls, summarize progress"), try removing it. On Claude Opus 5.5 these updates arrive in `thinking` blocks, which are empty at the default `thinking.display`. To receive them, see [Text between tool calls is returned in thinking blocks](#text-between-tool-calls). To shape their length and contents, see [User-facing progress updates](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md#user-facing-progress-updates).
+
+2.  **Real-time cybersecurity safeguards:** Newly added in Claude Opus 4.7, requests that involve prohibited or high-risk topics may lead to refusals. For legitimate security work such as penetration testing, vulnerability research, or red-teaming, apply to the [Cyber Verification Program](real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) to request reduced restrictions. The application route depends on how you access Claude.
+
+3.  **High-resolution image support:** Claude Opus 4.7 is the first Claude model with high-resolution image support. Maximum image resolution is 2,576 pixels on the long edge, up from 1,568 pixels on prior models. This unlocks gains on vision-heavy workloads and is particularly valuable for computer use, screenshot understanding, and document analysis.
+
+    High-resolution support is automatic and requires no beta header or client-side opt-in. Two things to plan for:
+
+    - Full-resolution images can use up to approximately 3x more image tokens than on prior models (up to 4,784 tokens per image, compared to the previous cap of roughly 1,600 tokens per image). Re-budget `max_tokens` and cost expectations for image-heavy workloads, or downsample before sending if you do not need the additional fidelity.
+    - Pointing and bounding-box coordinates returned by the model are 1:1 with actual image pixels on Claude Opus 4.7, so no scale-factor conversion is required.
+
+    See [High-resolution image support on Claude Opus 4.7](../04-API-Reference/Guides/build-with-claude-vision.md#high-resolution-image-support-on-claude-opus-4-7) for details.
+
+For prompt-side differences, see [Prompting Claude Opus 5.5](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md) and [Prompting best practices](../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md).
+
+### Migrating from Claude Opus 4.5 or earlier
+
+If you are migrating from Claude Opus 4.5, Claude Opus 4.1, or an earlier model directly to Claude Opus 5.5, read this page from the top: first work through every earlier section, in page order. Then work through the [breaking changes for migrating from Claude Opus 4.6](#opus-46-breaking-changes) earlier in this section. Then apply the following cumulative changes, which took effect between Claude Opus 4.5 and Claude Opus 4.7. If you are on Claude Opus 4.1 or earlier, continue with [Migrating from Claude 4.1 or earlier](#migrating-from-claude-4-1-or-earlier) after this subsection.
+
+#### Breaking changes
+
+1.  **Prefill removal** is covered in the [breaking changes for migrating from Claude Opus 4.6](#opus-46-breaking-changes).
+
+2.  **Tool parameter quoting:** Claude Opus 4.6 and later models may produce slightly different JSON string escaping in tool call arguments (for example, different handling of Unicode escapes or forward slash escaping). If you parse tool call `input` as a raw string rather than using a JSON parser, verify your parsing logic. Standard JSON parsers (such as `json.loads()` or `JSON.parse()`) handle these differences automatically.
+
+#### Recommended changes
+
+The first item is required on Claude Opus 5.5; the rest are recommended.
+
+1.  **Migrate to adaptive thinking (required):** `thinking: {"type": "enabled", "budget_tokens": N}` returns a 400 error on Claude Opus 4.7 and later models. The before and after is item 1 of the [breaking changes for migrating from Claude Opus 4.6](#opus-46-breaking-changes). The migration also moves from `client.beta.messages.create` to `client.messages.create`: adaptive thinking and effort do not require the beta SDK namespace or any beta headers.
+
+2.  **Remove effort beta header:** The effort parameter does not require a beta header. Remove `betas=["effort-2025-11-24"]` from your requests.
+
+3.  **Remove fine-grained tool streaming beta header:** Fine-grained tool streaming does not require a beta header. Remove `betas=["fine-grained-tool-streaming-2025-05-14"]` from your requests.
+
+4.  **Remove interleaved thinking beta header:** With adaptive thinking, interleaved thinking is automatic on every model that supports adaptive thinking. Remove `betas=["interleaved-thinking-2025-05-14"]` from your requests.
+
+5.  **Migrate to output_config.format:** If using structured outputs, update `output_format={...}` to `output_config={"format": {...}}`. The `output_format` parameter is deprecated and will be removed in the future. To use it anyway, add the `structured-outputs-2025-11-13` beta header. Without it, the API returns a 400 error. The Python SDK (v1.0 and later) does not accept `output_format={...}` on `client.beta.messages.create()` or `count_tokens()`. The `output_format=Model` argument of the `parse()` and `stream()` helpers is unchanged.
+
+### Migrating from Claude 4.1 or earlier
+
+If you're migrating from Claude Opus 4.1 or earlier models directly to Claude Opus 5.5, first apply everything in [Migrating from Claude Opus 4.5 or earlier](#migrating-from-claude-opus-45). That subsection starts with every earlier section, so in effect you read this page from the top. Then apply the additional changes in this subsection.
+
+#### Additional breaking changes
+
+1.  **Remove sampling parameters:** Covered in [Sampling parameters removed](#opus-46-breaking-changes).
+
+2.  **Update tool versions**
+
+    
+
+    This is a breaking change when migrating from Claude 3.x models.
+
+    Update to the current tool versions. Remove any code using the `undo_edit` command.
+
+    Python
+    TypeScript
+    C#
+    Go
+    Java
+    PHP
+    Ruby
+
+    
+
+    ``` shiki
+    # Before
+    tools = [{"type": "text_editor_20250124", "name": "str_replace_editor"}]
+
+    # After
+    tools = [{"type": "text_editor_20250728", "name": "str_replace_based_edit_tool"}]
+    ```
+
+    - **Text editor:** Use `text_editor_20250728` and `str_replace_based_edit_tool`. See [Text editor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md) documentation for details.
+    - **Code execution:** Upgrade to `code_execution_20260521`. See [Code execution tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md#upgrade-to-latest-tool-version) documentation for migration instructions.
+    - **Computer use:** On the Claude API and Google Cloud, Claude Opus 5.5 accepts computer use only as the `computer_toolset_20260801` toolset: the earlier `computer_20250124` and `computer_20251124` tools are rejected there. See the [computer use breaking change](#computer-use-toolset).
+
+3.  **Handle the `refusal` stop reason**
+
+    Update your application to [handle `refusal` stop reasons](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md):
+
+    Python
+    TypeScript
+    C#
+    Go
+    Java
+    PHP
+    Ruby
+
+    
+
+    ``` shiki
+    response = client.messages.create(...)
+
+    if response.stop_reason == "refusal":
+        # Handle refusal appropriately
+        pass
+    ```
+
+4.  **Handle the `model_context_window_exceeded` stop reason**
+
+    Claude 4.5 and later models return a `model_context_window_exceeded` stop reason when generation stops because of hitting the context window limit, rather than the requested `max_tokens` limit. Update your application to handle this new stop reason:
+
+    Python
+    TypeScript
+    C#
+    Go
+    Java
+    PHP
+    Ruby
+
+    
+
+    ``` shiki
+    response = client.messages.create(...)
+
+    if response.stop_reason == "model_context_window_exceeded":
+        # Handle context window limit appropriately
+        pass
+    ```
+
+5.  **Verify tool parameter handling (trailing newlines)**
+
+    Claude 4.5 and later models preserve trailing newlines in tool call string parameters that were previously stripped. If your tools rely on exact string matching against tool call parameters, verify your logic handles trailing newlines correctly.
+
+6.  **Update your prompts for behavioral changes**
+
+    Claude 4 and later models have a more concise, direct communication style and require explicit direction. Review [prompting best practices](../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md) for optimization guidance.
+
+#### Additional recommended changes
+
+- **Remove legacy beta headers:** Remove `token-efficient-tools-2025-02-19` and `output-128k-2025-02-19`. All Claude 4 and later models have built-in token-efficient tool use and these headers have no effect.
 
 ## Migrating to Claude Opus 5.5 from Claude Sonnet 5
 
-See [Migrating to Claude Opus 5 from Claude Sonnet 5](models-opus-5-migration-guide.md#migrating-to-claude-opus-5-from-claude-sonnet-5) for what changes when moving up a model class, then apply [Migrating from Claude Opus 5](#migrating-from-claude-opus-5).
+Work through [What every request to Claude Opus 5.5 must satisfy](#request-requirements), [Handle thinking in every response](#thinking-in-every-response), and [Migrating to Claude Opus 5.5 from Claude Opus 5](#migrating-from-claude-opus-5). Use `claude-sonnet-5` as the model ID you replace. That last section applies to code on Claude Sonnet 5 as written, because Claude Sonnet 5, like Claude Opus 5:
+
+- Runs with thinking on by default and accepts `thinking: {"type": "disabled"}`, in its case at any effort level.
+- Accepts forced tool choice and the `computer_20251124` tool.
+- Returns the text between tool calls as `text` blocks.
+- Defaults to `high` effort.
+
+Manual extended thinking, non-default sampling parameters, and assistant prefill return a 400 error on both models, so nothing changes there. None of the required changes in the sections for Claude Opus 4.8, Claude Opus 4.7, and Claude Opus 4.6 apply to you.
+
+### What changed
+
+1.  **Mid-conversation system messages:** On the Claude API, Amazon Bedrock, and Google Cloud, Claude Opus 5.5 accepts `role: "system"` messages immediately after a user turn in the `messages` array (subject to [placement rules](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md#limitations)). This feature is not available on Claude Sonnet 5. If you maintain code paths that rebuild the full message history to update instructions, you can simplify them and preserve [prompt cache](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) hits on earlier turns.
+
+2.  **Lower prompt caching minimum:** The minimum cacheable prompt length on Claude Opus 5.5 is 512 tokens, down from 1,024 tokens on Claude Sonnet 5. Prompts that were too short to cache on Claude Sonnet 5 can create cache entries, with no code changes required. See [Prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md#cache-limitations) for per-model minimums.
 
 ---
 
@@ -10308,7 +10747,7 @@ Path: 20-Models/models-opus-5-5-overview.md
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](release-notes-overview.md)
 
@@ -10335,9 +10774,7 @@ Models
 
 [Overview](models-opus-5-5-overview.md)[What's new](models-opus-5-5-whats-new-opus-5-5.md)[Migration guide](models-opus-5-5-migration-guide.md)
 
-[Claude Opus 5](models-opus-5-overview.md)
-
-[Claude Sonnet 5](models-sonnet-5-overview.md)
+[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
 [Claude Haiku 4.5](models-haiku-4-5-overview.md)
 
@@ -10375,7 +10812,7 @@ claude-opus-5-5
 
 
 
-[Announcement](https://www.anthropic.com/news/claude-opus-5-5)·[What’s new](models-opus-5-5-whats-new-opus-5-5.md)·[Migration guide](models-opus-5-5-migration-guide.md)
+[Announcement(opens in new tab)](../15-Claude-AI-Features/claude-opus-5-5.md)[What’s new](models-opus-5-5-whats-new-opus-5-5.md)[Migration guide](models-opus-5-5-migration-guide.md)
 
 Context window  
 1Mtokens
@@ -10438,8 +10875,7 @@ Output
 [Batch API](../04-API-Reference/Guides/build-with-claude-batch-processing.md)  
 50% discount on input and output
 
-Full price list  
-[Pricing](../17-Billing-Plans/about-claude-pricing.md)
+[Full price list](../17-Billing-Plans/about-claude-pricing.md)
 
 ### Capabilities
 
@@ -10559,7 +10995,7 @@ Path: 20-Models/models-opus-5-5-whats-new-opus-5-5.md
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](release-notes-overview.md)
 
@@ -10586,9 +11022,7 @@ Models
 
 [Overview](models-opus-5-5-overview.md)[What's new](models-opus-5-5-whats-new-opus-5-5.md)[Migration guide](models-opus-5-5-migration-guide.md)
 
-[Claude Opus 5](models-opus-5-overview.md)
-
-[Claude Sonnet 5](models-sonnet-5-overview.md)
+[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
 [Claude Haiku 4.5](models-haiku-4-5-overview.md)
 
@@ -10714,7 +11148,7 @@ If your Claude Opus 5 integration ran with thinking disabled, see [Prompts writt
 
 ## Refusals and fallback
 
-Claude Opus 5.5 ships with safety classifiers, and everything in [Refusals and fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md) applies. A declined request returns HTTP 200 with `stop_reason: "refusal"` and a [`stop_details`](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#refusal-response) object naming the policy area, so handle refusals and configure fallback: retry on another model with [server-side fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback) (`fallbacks: "default"`, in beta, retries on the model Anthropic recommends for that category), the [SDK middleware](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#client-side-fallback), or your own retry.
+Claude Opus 5.5 ships with safety classifiers, and everything in [Refusals and fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md) applies. A declined request returns HTTP 200 with `stop_reason: "refusal"` and a [`stop_details`](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#refusal-response) object naming the policy area, so handle refusals and configure fallback: retry on another model with [server-side fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback) (`fallbacks: "default"`, in beta, retries on the model Anthropic recommends for that category), the [SDK middleware](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#client-side-fallback), or your own retry. Whether a refusal that arrives before any output is billed depends on its refusal category, and it counts against your rate limits either way; see [How refusals are billed](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#how-refusals-are-billed).
 
 ## Pricing
 
@@ -14444,8 +14878,6 @@ Path: 20-Models/real-time-cyber-safeguards-on-claude-opus-and-sonnet.md
 
 # Real-time cyber safeguards on Claude Opus and Sonnet
 
-Updated today
-
 
 **Note**: This article applies only to Opus and Sonnet class models, but doesn’t apply to Claude Opus 5.5 or Sonnet 5.5. We'll soon be expanding the Cyber Verification Program to include Opus 5.5, Sonnet 5.5, and Mythos class models.
 
@@ -14695,7 +15127,7 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 
 ### July 17, 2026
 
-- The legacy **Workbench** ([platform.claude.com/workbench](https://platform.claude.com/workbench)) in the Claude Console is being sunset with access ending on August 17, 2026. Saved prompts, variables, and evals are not supported in the updated [Workbench](../04-API-Reference/Other/usage-limits.md). You can export any data you want to keep from the banner and under your **Organizational Settings**. For more, see [How do I use the Workbench?](../15-Claude-AI-Features/how-do-i-use-the-playground.md) in the Claude Help Center.
+- The legacy **Workbench** ([platform.claude.com/workbench](https://platform.claude.com/workbench)) in the Claude Console is being sunset with access ending on August 17, 2026. Saved prompts, variables, and evals are not supported in the updated [Workbench](../04-API-Reference/Other/usage-limits.md). You can export any data you want to keep from the banner and under your **Organizational Settings**. For more, see [How do I use the Workbench?](https://platform.claude.com/docs/99-Other/how-do-i-use-the-workbench-414024ecf8.md) in the Claude Help Center.
 - The experimental prompt tools APIs for generating, improving, and templatizing prompts (`/v1/experimental/generate_prompt`, `/v1/experimental/improve_prompt`, and `/v1/experimental/templatize_prompt`) are being retired along with the Workbench on August 17, 2026. After removal, requests to these endpoints will return an error.
 
 ### July 15, 2026
@@ -14810,9 +15242,9 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 - [Computer use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md) now supports Claude Opus 4.8.
 - [Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) for Claude Opus 4.8 is available as a research preview on the Claude API only.
 - Setting the sampling parameters `temperature`, `top_p`, or `top_k` to a non-default value returns a 400 error on Claude Opus 4.8, same as on Claude Opus 4.7. See the [migration guide](about-claude-models-migration-guide.md) for details.
-- In Claude Code, we've expanded Auto mode to more users for long-running tasks. See the [Claude Code documentation](../02-Claude-Code-CLI/code-home.md).
-- In Claude Code, Max plan users now default to [fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) on Claude Opus 4.8. See the [Claude Code documentation](../02-Claude-Code-CLI/code-home.md).
-- In Claude Code, Workflows are available as a research preview, letting you define and run multistep agentic plans. See the [Claude Code documentation](../02-Claude-Code-CLI/code-home.md).
+- In Claude Code, we've expanded Auto mode to more users for long-running tasks. See the [Claude Code documentation](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md).
+- In Claude Code, Max plan users now default to [fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) on Claude Opus 4.8. See the [Claude Code documentation](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md).
+- In Claude Code, Workflows are available as a research preview, letting you define and run multistep agentic plans. See the [Claude Code documentation](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md).
 - We've deprecated [fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) for Claude Opus 4.6, with removal approximately 30 days after launch. Migrate to fast mode for Claude Opus 4.8 or Claude Opus 4.7. Read more in [Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md#supported-models).
 - For updates to claude.ai, Cowork, Claude for Microsoft 365, and other Claude apps in this release, see the [release notes for Claude Apps](../19-Reference/release-notes.md).
 
@@ -15241,7 +15673,7 @@ We also released new official SDKs:
 
 ### November 4th, 2024
 
-- [Claude Haiku 3.5](../15-Claude-AI-Features/claude-haiku.md) is now available on the Claude API as a text-only model.
+- [Claude Haiku 3.5](https://platform.claude.com/docs/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md) is now available on the Claude API as a text-only model.
 
 ### November 1st, 2024
 
@@ -15251,7 +15683,7 @@ We also released new official SDKs:
 ### October 22nd, 2024
 
 - We've added Anthropic-defined computer use tools to our API for use with the new Claude Sonnet 3.5. Read more in [Computer use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md).
-- Claude Sonnet 3.5, our most intelligent model yet, just got an upgrade and is now available on the Claude API. Read more in the [Claude Sonnet documentation](../15-Claude-AI-Features/claude-sonnet.md).
+- Claude Sonnet 3.5, our most intelligent model yet, just got an upgrade and is now available on the Claude API. Read more in the [Claude Sonnet documentation](https://platform.claude.com/docs/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md).
 
 ### October 8th, 2024
 
@@ -15514,7 +15946,7 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 
 ### July 17, 2026
 
-- The legacy **Workbench** ([platform.claude.com/workbench](https://platform.claude.com/workbench)) in the Claude Console is being sunset with access ending on August 17, 2026. Saved prompts, variables, and evals are not supported in the updated [Workbench](../04-API-Reference/Other/usage-limits.md). You can export any data you want to keep from the banner and under your **Organizational Settings**. For more, see [How do I use the Workbench?](../15-Claude-AI-Features/how-do-i-use-the-playground.md) in the Claude Help Center.
+- The legacy **Workbench** ([platform.claude.com/workbench](https://platform.claude.com/workbench)) in the Claude Console is being sunset with access ending on August 17, 2026. Saved prompts, variables, and evals are not supported in the updated [Workbench](../04-API-Reference/Other/usage-limits.md). You can export any data you want to keep from the banner and under your **Organizational Settings**. For more, see [How do I use the Workbench?](https://platform.claude.com/docs/99-Other/how-do-i-use-the-workbench-414024ecf8.md) in the Claude Help Center.
 - The experimental prompt tools APIs for generating, improving, and templatizing prompts (`/v1/experimental/generate_prompt`, `/v1/experimental/improve_prompt`, and `/v1/experimental/templatize_prompt`) are being retired along with the Workbench on August 17, 2026. After removal, requests to these endpoints will return an error.
 
 ### July 15, 2026
@@ -15629,9 +16061,9 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 - [Computer use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md) now supports Claude Opus 4.8.
 - [Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) for Claude Opus 4.8 is available as a research preview on the Claude API only.
 - Setting the sampling parameters `temperature`, `top_p`, or `top_k` to a non-default value returns a 400 error on Claude Opus 4.8, same as on Claude Opus 4.7. See the [migration guide](about-claude-models-migration-guide.md) for details.
-- In Claude Code, we've expanded Auto mode to more users for long-running tasks. See the [Claude Code documentation](../02-Claude-Code-CLI/code-home.md).
-- In Claude Code, Max plan users now default to [fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) on Claude Opus 4.8. See the [Claude Code documentation](../02-Claude-Code-CLI/code-home.md).
-- In Claude Code, Workflows are available as a research preview, letting you define and run multistep agentic plans. See the [Claude Code documentation](../02-Claude-Code-CLI/code-home.md).
+- In Claude Code, we've expanded Auto mode to more users for long-running tasks. See the [Claude Code documentation](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md).
+- In Claude Code, Max plan users now default to [fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) on Claude Opus 4.8. See the [Claude Code documentation](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md).
+- In Claude Code, Workflows are available as a research preview, letting you define and run multistep agentic plans. See the [Claude Code documentation](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md).
 - We've deprecated [fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) for Claude Opus 4.6, with removal approximately 30 days after launch. Migrate to fast mode for Claude Opus 4.8 or Claude Opus 4.7. Read more in [Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md#supported-models).
 - For updates to claude.ai, Cowork, Claude for Microsoft 365, and other Claude apps in this release, see the [release notes for Claude Apps](../19-Reference/release-notes.md).
 
@@ -16060,7 +16492,7 @@ We also released new official SDKs:
 
 ### November 4th, 2024
 
-- [Claude Haiku 3.5](../15-Claude-AI-Features/claude-haiku.md) is now available on the Claude API as a text-only model.
+- [Claude Haiku 3.5](https://platform.claude.com/docs/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md) is now available on the Claude API as a text-only model.
 
 ### November 1st, 2024
 
@@ -16070,7 +16502,7 @@ We also released new official SDKs:
 ### October 22nd, 2024
 
 - We've added Anthropic-defined computer use tools to our API for use with the new Claude Sonnet 3.5. Read more in [Computer use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md).
-- Claude Sonnet 3.5, our most intelligent model yet, just got an upgrade and is now available on the Claude API. Read more in the [Claude Sonnet documentation](../15-Claude-AI-Features/claude-sonnet.md).
+- Claude Sonnet 3.5, our most intelligent model yet, just got an upgrade and is now available on the Claude API. Read more in the [Claude Sonnet documentation](https://platform.claude.com/docs/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md).
 
 ### October 8th, 2024
 
@@ -21860,178 +22292,6 @@ Claude Haiku 3
 
 ---
 
-## Set a default model for your organization | Claude Help Center
-
-Source: https://support.claude.com/en/articles/15330088-set-a-default-model-for-your-organization
-Path: 20-Models/set-a-default-model-for-your-organization.md
-
-# Set a default model for your organization
-
-
-
-This guide explains how to choose the Claude model that new conversations start on across your organization. You can set one default for your whole organization, or set different defaults for specific custom roles. You can also make every new conversation start on your default model and effort level, even after users pick a different model.
-
-Default model settings are available for Enterprise plan organizations. Primary Owners, Owners, and members whose custom role grants the Identity & Access permission can manage them in **[Organization settings \> Models](https://claude.ai/admin-settings/models)**.
-
-You can also set the default effort level that new conversations start on, or leave it on Anthropic's recommended default effort. To control which models members can use and cap the effort level they can select, see **[Manage model access for your organization](../22-Safety-Policy/manage-model-access-for-your-organization.md)**.
-
-------------------------------------------------------------------------
-
-## How default models work
-
-When you set or change a default model, it replaces the model currently selected in each member’s model picker. New conversations in chat, Cowork, Claude Code, Claude for Office, Claude Design, and Claude Science then start on the model you’ve chosen.
-
-**Note:** Not all models are available in every product. If the selected model is not available in the product, Anthropic’s recommendation is used as default.
-
-Users can still select a different model for any conversation. By default, Claude remembers each user's last selection, so their next conversation starts on whichever model they last used. When you update the default again, the new default replaces their selection. To have every new conversation start on the default instead, see **Always start new conversations on the default model** below.
-
-For example: you set the organization default to Claude Sonnet 4.6, and every member’s new conversations start on Sonnet 4.6. A member switches a conversation to Claude Opus 4.7, so their next conversations start on Opus 4.7. When you later change the organization default, the new default replaces their selection again. If you turn on **Always start with the default model and effort level**, their next chat starts on Sonnet 4.6 no matter which model they used last.
-
-You can set a default at two levels:
-
-- Organization default: applies to every member of your organization.
-
-- Custom role default: applies to members assigned to that role and takes precedence over the organization default.
-
-Alongside the default model, you can set a default effort level. New conversations on the default model start at that effort level. Members can still change the effort level for any conversation, within the organization's effort cap for that model and any cap set by their custom role. If the default effort is higher than a cap that applies to a member, their conversations start at the highest level they're allowed.
-
-**Note:** Members on Claude Code CLI versions earlier than 2.1.199 won't pick up the organization default. Versions 2.1.196 through 2.1.198 also had a bug where setting a specific organization default caused other enabled models to disappear from the model picker in the CLI and VS Code extension; updating to 2.1.199 or later resolves both.
-
-For member-facing CLI instructions, see **[Claude Code model configuration](claude-code-model-configuration.md)**.
-
-For member-facing instructions on switching models, see **[Change the model, effort, and thinking settings](../15-Claude-AI-Features/how-can-i-change-the-model-version-that-i-m-chatting-with.md)**.
-
-------------------------------------------------------------------------
-
-## Set the organization default model
-
-The organization default applies to every member. To set it:
-
-1.  Navigate to **[Organization settings \> Models](https://claude.ai/admin-settings/models)**.
-
-2.  Under **Default model**, select an option under the model dropdown list:
-
-    1.  “Use Anthropic’s recommended default”: Anthropic’s recommended model that updates automatically when new models are released.
-
-    2.  “Choose a specific model”: a specific model that won’t change when new models are released.
-
-3.  If you select “Choose a specific model,” choose a model from the list. Only models enabled under **Model access** on the same page can be selected.
-
-4.  Click “Save changes.”
-
-
-------------------------------------------------------------------------
-
-## Set the default effort level
-
-The default effort level applies to new conversations on the organization default model. To set it:
-
-1.  Navigate to **[Organization settings \> Models](https://claude.ai/admin-settings/models)**.
-
-2.  Under **Default model**, select an option under the effort level dropdown list:
-
-    1.  "Use Anthropic's recommended default effort": Anthropic's recommended effort level for the default model, which updates automatically when recommendations change.
-
-    2.  Choose a level from the list. Available effort levels differ depending on the model, and some models don't support effort level settings at all.
-
-3.  Click "Save changes."
-
-The default effort level can't be higher than the organization's effort cap for the default model. If you lower that cap below the current default effort, the default effort is lowered to match.
-
-------------------------------------------------------------------------
-
-## Always start new chats on the default model (beta)
-
-By default, each user's next conversation starts on the model they last used. Turn on this setting to have every new conversation start on your organization's default model and default effort level instead.
-
-1.  Navigate to **[Organization settings \> Models](https://claude.ai/admin-settings/models)**.
-
-2.  Turn on **Always start with the default model and effort level**.
-
-3.  Click "Save."
-
-With this setting on:
-
-- Every new conversation starts on the default model at the default effort level.
-
-- Users can still change the model and effort level within a conversation. Their next conversation starts on the default again.
-
-- When the default model changes, new conversations move to the new default. For example, if you use Anthropic's recommended default and the recommendation moves to a newer model, every user's next conversation starts on the newer model.
-
-This setting applies in chat, Cowork, Claude Code, Claude for Office, Claude Design, and Claude Science.
-
-### For a custom role
-
-Custom roles that set their own default model have the same switch in the role editor.
-
-1.  Navigate to **[Organization settings \> Roles](https://claude.ai/admin-settings/roles)**.
-
-2.  Click the role you want to edit.
-
-3.  Select the “Models” tab and choose a default model for the role.
-
-4.  Turn on **Always start with the default model and effort level**.
-
-5.  Click "Save role."
-
-------------------------------------------------------------------------
-
-## Set a default model for a custom role
-
-Custom role defaults let you set different starting models for different teams. For example, you can keep most of your organization on the recommended default while a specific group starts on a different model.
-
-1.  Navigate to **[Organization settings \> Roles](https://claude.ai/admin-settings/roles)**.
-
-2.  Click the role you want to edit, or create a new role.
-
-3.  Select the **Models** tab, then under **Default model**, select a model. Roles are set to "Organization default" unless you choose a specific model. Only models the role has access to can be selected.
-
-4.  Click “Save role” to save your changes.
-
-A role’s default model takes precedence over the organization default for members assigned to that role.
-
-If a member belongs to multiple groups whose custom roles set different default models, the most capable model will be the default. Capability is determined first by model family (Haiku, Sonnet, Opus), then release date, so more capable model families take precedence, and newer models within the same family take precedence.
-
-The role's effort cap for the default model, if any, still applies. A role can't set an effort cap higher than the organization's cap for that model. For details, see **[Limit the maximum effort level for a custom role](../22-Safety-Policy/manage-model-access-for-your-organization.md#h_e693614582)**.
-
-**Note:** Custom roles only affect members whose role is set to “Custom.” Members with the User, Admin, or Owner roles get the default model from the organization setting, not from custom roles.
-
-For details on creating roles and assigning them to groups, see **[Manage custom roles on Enterprise plans](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**.
-
-------------------------------------------------------------------------
-
-## Set the default effort level for a custom role
-
-The default effort level applies to new conversations on the role's default model. To set it:
-
-1.  Navigate to **[Organization settings \> Roles](https://claude.ai/admin-settings/roles)**.
-
-2.  Click the role you want to edit, or create a new role.
-
-3.  Select the **Models** tab, then under **Default model**, select a model. Roles are set to "Organization default" unless you choose a specific model. Only models the role has access to can be selected.
-
-4.  Under **Default model**, select an option under the effort level dropdown list:
-
-    1.  **Use Anthropic's recommended default effort:** Anthropic's recommended effort level for the default model, which updates automatically when recommendations change.
-
-    2.  **Choose a level from the list.** Available effort levels differ depending on the model, and some models don't support effort level settings at all.
-
-5.  Click "Save changes."
-
-The default effort level can't be higher than the organization's effort cap for the default model. If you lower that cap below the current default effort, the default effort is lowered to match.
-
-------------------------------------------------------------------------
-
-## Default model and Claude Code managed settings
-
-If your organization also configures Claude Code through `managed-settings.json`, the model setting there takes precedence. When model is set in managed settings, Claude Code CLI and IDE start on that model and ignore the default you set in **[Organization settings \> Models](https://claude.ai/admin-settings/models)**.
-
-If `managed-settings.json` specifies `availableModels` that doesn't contain the default model, Claude CLI bypasses `availableModels` and starts on the selected default model unless `enforceAvailableModels` is set.
-
-Managed settings for models apply only to Claude Code CLI and IDE, not to Claude Code on web or desktop. For consistent behavior across all Claude Code surfaces, we recommend setting the default here alone. For more on managed settings, see **[Claude Code settings](../02-Claude-Code-CLI/settings.md#settings-files)**.
-
----
-
 ## Claude Help Center
 
 Source: https://support.claude.com/en/articles/12068923-using-claude-for-financial-services-for-analysis-and-modeling
@@ -22062,261 +22322,12 @@ Visit the Amazon Bedrock [user guide](https://docs.aws.amazon.com/bedrock/latest
 
 ---
 
-## Why Claude switched models in your conversation with Fable 5 or Fable 5.1 | Claude Help Center
-
-Source: https://support.claude.com/en/articles/15363606-why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1
-Path: 20-Models/why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1.md
-
-# Why Claude switched models in your conversation with Fable 5 or Fable 5.1
-
-
-
-This article explains why a request might be blocked on Claude Fable 5 or Fable 5.1, what happens when your conversation switches to a different Claude model, and how to manage automatic switching.
-
-## Why some requests get blocked
-
-Claude Fable 5 and Fable 5.1's capabilities far exceed those of every model we've previously made generally available. They are state-of-the-art on nearly all tested benchmarks of AI capability, showing exceptional performance in software engineering, knowledge work, vision, and many other areas.
-
-Releasing a model this capable comes with risks. Without strong safeguards, Claude Fable 5 and Fable 5.1's advanced capabilities in areas like cybersecurity and biology could be misused by users to create large-scale cyberattacks or bioweapons that could result in catastrophic damage. These capabilities are the reason we’ve previously only released Mythos-class models (like Mythos Preview) to a small number of selected and vetted partners.
-
-Recognizing these risks, to allow general users to access the vast majority of Fable 5 and Fable 5.1's capabilities, we've launched these models with safeguards that redirect or block their responses in some specific areas in line with our **[Terms of Service](https://www.anthropic.com/legal/commercial-terms)** and **[Usage Policy](https://www.anthropic.com/legal/aup)**. We’ve also **[been iterating](../19-Reference/redeploying-fable-5.md)** on safeguards since our first launch of Claude Fable 5.
-
-We're working on making these safeguards more precise to help block only genuinely risky requests, with fewer false positives than there are today. Most user queries blocked by these safeguards on Fable 5 or Fable 5.1 may instead receive a response from our next-most-capable model (i.e., "fallback"), which can respond to these types of queries.
-
-## What requests may fall back
-
-**Claude Fable 5 and Fable 5.1 run automated safety checks, or classifiers, on every user request. These checks are intended to visibly fall back from Fable 5 and Fable 5.1 to Opus models when users submit requests in:**
-
-- Offensive cybersecurity techniques, such as building exploits, malware, or attack tooling. Claude Fable 5 and Fable 5.1 can assist with routine cybersecurity tasks, but users should expect high fallback rates. The safeguards are designed to block access to Mythos-level capabilities.
-
-- A large fraction of queries we consider dual-use in biology, such as virology, toxicology, drug design, and molecular design—so Fable 5 and Fable 5.1 are not recommended for professional biology research and drug development at this time. (**[Classifier updated](../19-Reference/improving-fable-5-s-biology-safeguards.md)**: August 6, 2026 on Claude, Claude apps, and Claude Platform, with Amazon Bedrock, Claude Platform on AWS, Google Cloud Vertex AI, and Microsoft Foundry to follow.)
-
-- Distillation attacks on Fable 5 and Fable 5.1, including attempts to extract the model’s **[summarized thinking](../04-API-Reference/Guides/build-with-claude-extended-thinking.md#summarized-thinking).**
-
-- A narrow set of frontier LLM development tasks, such as distributed training infrastructure, ML accelerator design, and kernel development for certain non-standard chips.
-
-These blocking safeguards are intentionally broad, and we work to continuously improve the safeguards to reduce their user-experience impact. When requests are blocked, they may fall back to a non-Mythos model, currently Opus 5 for biology, chemistry, and life sciences requests, and Opus 4.8 for offensive cybersecurity technique requests.
-
-The checks also review everything the model reads, not just your latest message—including memory, content from connectors, web search results, and files, so a block can be triggered by content you didn't type.
-
-## What happens after a fallback
-
-Automatic model switching is active by default. When your request falls back, Claude re-runs your blocked Claude Fable 5 or Fable 5.1 request on an Opus model in the same conversation. You’ll see a notice explaining that the model switched, and the response will be labeled with the model that answered. Opus is a highly capable model with strong safeguards of its own, and for most otherwise legitimate requests blocked on Fable 5 or Fable 5.1, Opus should give you a helpful answer.
-
-After the switch, the model picker stays on Opus for the rest of the conversation. You can switch back to Claude Fable 5 or Fable 5.1 anytime from the model picker.
-
-**Note:** If you switch back to Claude Fable 5 or Fable 5.1 after an automatic model switch, the same Fable 5 or Fable 5.1 safeguards may cause Claude to fallback again if your original request is still part of the conversation. Editing your previous message before retrying often helps.
-
-## If the fallback request is also blocked
-
-Opus has its own safety systems. To learn about fallbacks in Claude Opus 5, see **[Why Claude switched models in your conversation with Opus 5](why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5.md)**.
-
-If your request is also blocked on the less capable model, you can edit your message and retry. For cybersecurity specifically, if your use case has a legitimate defensive purpose and is being affected by these safeguards, you can apply for the Cyber Verification Program (CVP) for Opus. Learn more about **[real-time cyber safeguards on Claude Opus and Sonnet](real-time-cyber-safeguards-on-claude-opus-and-sonnet.md)**.
-
-## Manage automatic model switching
-
-Automatic switching is enabled by default the first time you select Claude Fable 5 or Fable 5.1. It stays on by default, and you can turn it off anytime:
-
-1.  Go to **[Settings \> Capabilities](https://claude.ai/settings/capabilities)** (or **Config \> MODEL & OUTPUT** in Claude Code).
-
-2.  Toggle **Switch models when a message is flagged** off.
-
-With automatic model switching off, a blocked request pauses the conversation instead of switching models. You can then:
-
-- Edit your message and retry on Claude Fable 5 or Fable 5.1
-
-- Send the same message to a less capable model manually  
-  ​
-
-## Usage and billing
-
-Blocked requests are billed differently depending on when the block happens:
-
-- **Blocked before Claude responds:** To disrupt coordinated attacks on our safeguards, refusals that arrive before any output are billed when they stop or fall back due to biology, distillation, or frontier LLM development safety classifiers. These are the categories where our false positive rates are lowest as of September 2026. Requests blocked before any output in other categories are not charged.
-
-- **Blocked after Claude starts responding:** If a request is blocked midstream, the input tokens and those streamed before the block are charged at the rates of the model that produced them.
-
-- **Fallback requests:** If you are opted into automatic model switching, and the conversation switches to Opus after a block, the Opus response is charged separately, at the respective model’s rates. We provide a credit to compensate for the cache miss of the fallback request at the time of the request.
-
-Learn more about **[refusals and fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#how-refusals-are-billed)**.
-
-## Give feedback
-
-If your blocked request seems unrelated to one of the classifiers listed above, or if your legitimate work in these areas keeps getting blocked, let us know. Use "Send feedback" to report it. Reports of incorrectly blocked requests help us narrow and improve these safeguards.
-
-## Stay tuned for updates
-
-Moving forward, we plan to consider ways to open up allocations for dual-use cyberdefense and biology research. As our safety systems mature, we aim to support legitimate biology and defensive cybersecurity work while keeping strong protections against misuse in place.
-
-We'll share more details about the program, including eligibility and how to apply, as they become available. Watch this Help Center for updates, or **[sign up for notifications here](https://claude.com/form/mythos-access-interest)**.
-
-## Where automatic model switching applies
-
-Automatic model switching works the same way everywhere you can use Claude Fable 5 and Fable 5.1:
-
-- Claude on the web
-
-- Claude Mobile
-
-- Claude Desktop
-
-- Claude Cowork
-
-- Claude Code
-
-- Claude Design
-
-- Claude for Microsoft 365
-
-- Claude Tag
-
-**Important:** If you're using the Claude API, model switching works differently. Automatic switching isn't active by default, and API customers must opt into and configure fallbacks. Until fallbacks are configured, the model will return a 200 response with a stop reason on the API. See the **[developer documentation](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md)** for details.
-
-Read our blog to learn more about **[Claude Fable 5 and Claude Mythos 5](../19-Reference/claude-fable-5-mythos-5.md)**.
-
-Our safeguards are built to match the capabilities of a model. For how safeguards work on Claude Opus 5, see **[Why Claude switched models in your conversation with Opus 5](why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5.md)**.
-
----
-
-## Why Claude switched models in your conversation with Opus 5 or Opus 5.5 | Claude Help Center
-
-Source: https://support.claude.com/en/articles/16049681-why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5
-Path: 20-Models/why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5.md
-
-# Why Claude switched models in your conversation with Opus 5 or Opus 5.5
-
-
-
-This article explains why a request might fall back on Claude Opus 5 or Opus 5.5, what happens when your conversation switches to another model, and how to manage automatic switching.
-
-## Why some requests get blocked
-
-Claude Opus 5 and Opus 5.5 improve on Claude Opus 4.8 across the board. We've set its safeguards in line with those capability gains.
-
-Most requests sent to Opus 5 or Opus 5.5 won’t encounter fallback safety interventions. A narrow set of higher-risk requests either fall back to a less capable model or are blocked directly, so we can keep supporting everyday work while limiting the risk of misuse. We continue working to refine these safeguards so they block fewer legitimate requests. That includes fine-tuning our classifiers to reduce false positives and factoring in a range of account trust signals. Your feedback helps guide this work.
-
-## What requests may fall back or get blocked
-
-Claude Opus 5 and Opus 5.5 run automated safety checks, or classifiers, on every user request. The checks also review everything the model reads, not just your latest message. This includes memory, content from connectors, web search results, and files, so a fallback can be triggered by content you didn't type.
-
-Fallbacks and blocks work differently depending on the type of classifier triggered: cybersecurity, biology, frontier LLM development, or distillation.
-
-### Cybersecurity
-
-Opus 5 or Opus 5.5 may fall back to Opus 4.8 when our cyber classifiers flag potentially higher-risk offensive cybersecurity requests, such as:
-
-- Exploit generation
-
-- Binary-based vulnerability scanning
-
-- Penetration testing
-
-You can still use Opus 5 and Opus 5.5 for secure coding, including scanning source code for vulnerabilities, triaging security issues, and building secure code.
-
-### Biology
-
-While Claude Opus 5 improves on Opus 4.8 in biology, it’s not as capable as Fable 5 at real world long-horizon tasks for novel research discoveries that could lead to significant risk. As a result, Opus 5 doesn't fall back on biology, chemistry, or life-sciences questions. It uses similar safeguards for these topics as Opus 4.8.
-
-Opus 5.5 has similar safety classifiers to Claude Fable 5 for biology due to increases in capabilities over Opus 5. These classifiers cause Claude to fall back from Opus 5.5 to Opus 5 when you submit dual-use requests in areas like virology, toxicology, and molecular design. You can still use Opus 5.5 for everyday health and educational questions, including interpreting lab results, understanding symptoms, and learning about biology.
-
-### Frontier LLM development (Opus 5.5 only)
-
-Opus 5.5 has classifiers similar to Fable models for a small set of capabilities related to the development of frontier LLMs, such as kernel development for certain ML accelerators. They shouldn't impact the vast majority of traditional AI or ML development, research, or general coding. These classifiers cause Claude to fall back from Opus 5.5 to Opus 5.
-
-**Note:** These frontier LLM development classifiers apply only to Opus 5.5. Opus 5 doesn’t fall back on frontier LLM development questions.
-
-### Distillation
-
-Opus 5 and Opus 5.5 have classifiers that detect and directly block attempts to extract the model's internal reasoning. Distillation blocks don't fall back to another model, and the request is blocked outright.
-
-Examples of blocked requests include prompts that ask Claude to repeat its reasoning verbatim or write its full chain of thought to an external output. You can still ask Claude to explain its reasoning, teach you a concept, or walk through a code review. Conversational requests like "why did you do that?" aren't affected.
-
-## What happens after a fallback
-
-Automatic model switching is active by default. When your request falls back, Claude re-runs your blocked request on a less capable model in the same conversation. All fallbacks are transparent, meaning you'll see a notice explaining that the model switched, and the response will be labeled with the model that answered.
-
-After the switch, the model picker stays on the less capable model for the rest of the conversation. You can switch back to Opus 5 or Opus 5.5 anytime from the model picker.
-
-**Note:** If you switch back to Opus 5 or Opus 5.5 after an automatic model switch, the same safeguards may cause Claude to fall back again if your original request is still part of the conversation. Editing your previous message before retrying often helps.
-
-## If the fallback request is also blocked
-
-Opus 4.8 has its own safety systems. If your request is also blocked on Opus 4.8, you can edit your message and retry.
-
-For cybersecurity specifically, if your use case has a legitimate defensive purpose and is affected by these safeguards, you can apply for the Cyber Verification Program (CVP). Learn more about **[real-time cyber safeguards on Claude Opus and Sonnet](real-time-cyber-safeguards-on-claude-opus-and-sonnet.md)**.
-
-For biology, if your organization does legitimate life sciences research and is affected by these safeguards, you can apply for the Life Sciences Verification Program (LSVP). The LSVP gives verified life sciences organizations access to Claude's most capable models for internal research and development. Learn more in our blog: **[Introducing the Life Sciences Verification Program](../19-Reference/life-sciences-verification-program.md)**.
-
-**Note:** Opus 5.5 isn't currently available in the Cyber Verification Program. If your organization already uses Opus 4.8 through the Cyber Verification Program, access to Opus 5 with fewer cyber restrictions is available now. Opus 5 is also compatible with Zero Data Retention.
-
-## Manage automatic model switching
-
-Automatic switching is enabled by default the first time you select Claude Opus 5 or Opus 5.5. It stays on by default, and you can turn it off anytime:
-
-1.  Go to **[Settings \> Capabilities](https://claude.ai/settings/capabilities)** (or **Config \> MODEL & OUTPUT** in Claude Code).
-
-2.  Toggle **Switch models when a message is flagged** off.
-
-With automatic model switching off, a request that falls back pauses the conversation instead of switching models. You can then:
-
-- Edit your message and retry on Opus 5 or Opus 5.5
-
-- Send the same message to a less capable model manually
-
-## Usage and billing
-
-How a request that falls back is billed depends on when the block happens and which classifier triggered it:
-
-- **Blocked before Claude responds:** To disrupt coordinated attacks on our safeguards, refusals that arrive before any output are billed when they stop or fall back due to biology, distillation, or frontier LLM development safety classifiers. These are the categories where our false positive rates are lowest, as of September 2026. Requests blocked before any output in other categories are not charged.
-
-- **Blocked after Claude starts responding:** If a request is blocked midstream, the input tokens and those streamed before the block are charged at the rates of the model that produced them.
-
-- **Fallback requests:** If you are opted into automatic model switching, and the conversation switches to another model after a block, the fallback response is charged separately, at the responding model’s rates. We provide a credit to compensate for the cache miss of the fallback request.
-
-Learn more about **[refusals and fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#how-refusals-are-billed)**.
-
-## Give feedback
-
-If your request is blocked but seems unrelated to one of the classifiers listed above, or if your legitimate security work keeps falling back, let us know. Use "Send feedback" to report it. Reports of incorrectly blocked requests help us narrow and improve these safeguards.
-
-## Where automatic model switching applies
-
-Automatic model switching works the same way everywhere you can use Claude Opus 5 or Opus 5.5:
-
-- Claude on the web
-
-- Claude Mobile
-
-- Claude Desktop
-
-- Claude Cowork
-
-- Claude Code
-
-- Claude Design
-
-- Claude for Microsoft 365
-
-- Claude Tag
-
-- Claude Science
-
-**Important:** If you're using the Claude API, model switching works differently. Automatic switching isn't active by default, and API customers must opt into and configure the fallbacks. Until fallbacks are configured, the model will return a 200 response with a stop reason on the API. See the **[developer documentation](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md)** for details.
-
-Read our blog to learn more about **[Claude Opus 5](../19-Reference/claude-opus-5.md)** and **[Claude Opus 5.5](../15-Claude-AI-Features/claude-opus-5-5.md)**.
-
-Our safeguards are built to match the capabilities of a model. For how safeguards work on Claude Fable 5, see **[Why Claude switched models in your conversation with Fable 5](why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1.md).**
-
----
-
 ## Why Claude switched models in your conversation with Sonnet 5.5 | Claude Help Center
 
 Source: https://support.claude.com/en/articles/17161993-why-claude-switched-models-in-your-conversation-with-sonnet-5-5
 Path: 20-Models/why-claude-switched-models-in-your-conversation-with-sonnet-5-5.md
 
 # Why Claude switched models in your conversation with Sonnet 5.5
-
-Updated today
 
 
 This article explains why a request might fall back to another model or be blocked on Claude Sonnet 5.5, what happens when your chat switches models, and how to manage automatic switching.
@@ -22437,4 +22448,4 @@ Read our blog to learn more about **[Claude Sonnet 5.5](../15-Claude-AI-Features
 
 Our safeguards are built to match the capabilities of a model.
 
-For how safeguards work on Claude Opus 5.5, see **[Why Claude switched models in your conversation with Opus 5 or Opus 5.5](why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5.md)**. For Claude Fable 5.1, see **[Why Claude switched models in your conversation with Fable 5 or Fable 5.1](why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1.md)**.
+For how safeguards work on Claude Opus 5.5, see **[Why Claude switched models in your conversation with Opus 5 or Opus 5.5](../15-Claude-AI-Features/why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5-claude-help-center.md)**. For Claude Fable 5.1, see **[Why Claude switched models in your conversation with Fable 5 or Fable 5.1](../15-Claude-AI-Features/why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1-claude-help.md)**.

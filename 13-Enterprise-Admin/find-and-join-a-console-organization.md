@@ -2,7 +2,7 @@
 title: "Find and join a Console organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14793921-find-and-join-a-console-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:31:51Z"
+fetched_at: "2026-09-30T06:31:56Z"
 tags: ["enterprise"]
 ---
 

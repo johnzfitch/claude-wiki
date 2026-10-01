@@ -161,7 +161,7 @@ The largest gains over Claude Sonnet 4.6 are in coding and agentic tasks. For be
 
 Cybersecurity safeguards
 
-Claude Sonnet 5 is the first Sonnet-tier model with real-time cybersecurity safeguards. Requests that involve prohibited or high-risk cybersecurity topics may be refused. Refusals return as a successful HTTP 200 response with `stop_reason: "refusal"`, not an error. See [Safeguards, warnings, and appeals](../15-Claude-AI-Features/safeguards-warnings-and-appeals.md) for background.
+Claude Sonnet 5 is the first Sonnet-tier model with real-time cybersecurity safeguards. Requests that involve prohibited or high-risk cybersecurity topics may be refused. Refusals return as a successful HTTP 200 response with `stop_reason: "refusal"`, not an error. See [Safeguards, warnings, and appeals](https://platform.claude.com/docs/en/about-claude/22-Safety-Policy/safeguards-warnings-and-appeals.md) for background.
 
 
 

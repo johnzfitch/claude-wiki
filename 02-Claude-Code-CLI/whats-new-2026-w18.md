@@ -2,7 +2,7 @@
 title: "Week 18 · April 27 – May 1, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w18"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-04T06:29:54Z"
+fetched_at: "2026-09-30T06:30:56Z"
 tags: ["claude-code"]
 ---
 
@@ -84,15 +84,15 @@ Other wins
 
 MCP servers can opt out of tool-search deferral with `alwaysLoad: true` in their config so all of that server’s tools are always available
 
-New `claude plugin prune` removes orphaned auto-installed plugin dependencies, and `plugin uninstall —prune` cascades
+New `claude plugin prune` removes orphaned auto-installed plugin dependencies, and `plugin uninstall --prune` cascades
 
 `/skills` now has a type-to-filter search box so you can find a skill in a long list without scrolling
 
 `PostToolUse` hooks can replace tool output for any tool via `hookSpecificOutput.updatedToolOutput`, not only MCP tools
 
-New [`claude ultrareview`](ultrareview.md) subcommand runs `/ultrareview` non-interactively from CI or scripts: prints findings to stdout (`—json` for raw output) and exits 0 on completion or 1 on failure
+New [`claude ultrareview`](ultrareview.md) subcommand runs `/ultrareview` non-interactively from CI or scripts: prints findings to stdout (`--json` for raw output) and exits 0 on completion or 1 on failure
 
-`—dangerously-skip-permissions` now bypasses prompts for writes to `.claude/`, `.git/`, `.vscode/`, shell config files, and other previously protected paths, while catastrophic removal commands still prompt as a safety net
+`--dangerously-skip-permissions` now bypasses prompts for writes to `.claude/`, `.git/`, `.vscode/`, shell config files, and other previously protected paths, while catastrophic removal commands still prompt as a safety net
 
 The `/model` picker can list models from your gateway’s `/v1/models` endpoint when `ANTHROPIC_BASE_URL` points at an Anthropic-compatible gateway; opt in with `CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1` since v2.1.129
 

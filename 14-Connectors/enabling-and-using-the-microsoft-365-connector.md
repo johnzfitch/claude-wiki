@@ -1,13 +1,12 @@
 ---
 title: "Set up the Microsoft 365 connector | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector"
+source_url: "https://support.claude.com/en/articles/12542951"
 category: "14-Connectors"
-fetched_at: "2026-09-29T06:31:53Z"
+fetched_at: "2026-09-30T06:32:33Z"
 tags: ["connectors", "security"]
 ---
 
 # Set up the Microsoft 365 connector
-
 
 
 This article walks admins through enabling the Microsoft 365 connector for their organization in Claude—including granting Microsoft Entra consent, restricting access, and managing permissions. Once setup is complete, people in your tenant can connect Microsoft 365 to their own Claude accounts to search across SharePoint, OneDrive, Outlook, and Teams from Claude. You can also enable write tools, which let Claude send email, manage calendar events, create and update files, and send Teams messages on a member's behalf.
@@ -154,7 +153,7 @@ The connector's permission set now includes additional Microsoft Graph scopes to
 
 **2. Enable write tools for your organization**
 
-If your organization was using the connector before write tools launched, they will be blocked by default. Enable them for everyone by going to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**, finding “Microsoft 365,” and setting the appropriate permissions. Enterprise plans can enable them for a subset of users through **[custom roles](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md#h_979e558d00)**. For Microsoft Teams specifically, set each Teams write tool individually: the send, post, and reply tools can be set to Ask or Blocked (members confirm each send), and starting a new chat can also be set to Allow. The connector-wide "all tools" permission on its own doesn't turn these on.
+If your organization was using the connector before write tools launched, they will be blocked by default. Enable them for everyone by going to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**, finding “Microsoft 365,” and setting the appropriate permissions. Enterprise plans can enable them for a subset of users through **[custom roles](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans#h_979e558d00)**. For Microsoft Teams specifically, set each Teams write tool individually: the send, post, and reply tools can be set to Ask or Blocked (members confirm each send), and starting a new chat can also be set to Allow. The connector-wide "all tools" permission on its own doesn't turn these on.
 
 **3. Verify**
 
@@ -278,7 +277,7 @@ The Microsoft 365 connector searches SharePoint across the entire tenant using t
 
 - **Revocable access:** Members can disconnect their own integration through **[Customize \> Connectors](https://claude.ai/customize/connectors)**. Team and Enterprise plan Owners can also remove the connector for the entire organization in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
 
-For more detail, see the **[Microsoft 365 connector security guide](microsoft-365-connector-security-guide.md)**.
+For more detail, see the **[Microsoft 365 connector security guide](https://support.claude.com/en/articles/12684923-)**.
 
 ------------------------------------------------------------------------
 
@@ -370,7 +369,7 @@ Yes. When enterprise search is enabled, it can query Microsoft 365 alongside oth
 
 ### What file types can the connector read?
 
-Claude reads Word, Excel, PowerPoint (including older .doc, .xls, and .ppt files), PDF, and plain-text formats such as .txt, .md, and .csv from SharePoint and OneDrive. Other formats, including OneNote, can't be read. For the full list, see **[Connect to Microsoft 365](connect-to-microsoft-365.md#h_ddeb82923f)**.
+Claude reads Word, Excel, PowerPoint (including older .doc, .xls, and .ppt files), PDF, and plain-text formats such as .txt, .md, and .csv from SharePoint and OneDrive. Other formats, including OneNote, can't be read. For the full list, see **[Connect to Microsoft 365](https://support.claude.com/en/articles/15183774-connect-to-microsoft-365#h_ddeb82923f)**.
 
 ### Can the integration modify Microsoft 365 data?
 

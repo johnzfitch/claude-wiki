@@ -2,7 +2,7 @@
 title: "Configure the sandboxed Bash tool - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/sandboxing"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-26T06:38:05Z"
+fetched_at: "2026-09-30T06:30:56Z"
 tags: ["claude-code"]
 ---
 
@@ -496,6 +496,7 @@ The sandboxed Bash tool restricts file system access to specific directories:
 
 - **Default write behavior**: read and write access to the current working directory and its subdirectories, any directories you’ve added with `--add-dir`, `/add-dir`, or [`permissions.additionalDirectories`](settings-reference.md#permissions-additionaldirectories), plus the per-user temp directory that `$TMPDIR` points to
 - **Default read behavior**: read access to the entire computer, except certain denied directories. Note that this default still allows reading credential files such as `~/.aws/credentials` and `~/.ssh/`. Use [`sandbox.credentials`](#protect-credentials) to block reads of these files and unset secret environment variables, or add the paths to `denyRead`.
+- **Read block**: with [`permissions.blockReadsOutsideWorkingDirectories`](settings-reference.md#permissions-blockreadsoutsideworkingdirectories) on, sandboxed commands also lose read access to your home directory and the other directories that hold user files, apart from the paths that [Sandboxed commands under the block](settings-reference.md#sandboxed-commands-under-the-block) lists. That section also says when this part of the block doesn’t apply.
 - **Blocked access**: cannot modify files outside the working directory, added directories, and the per-user temp directory without explicit permission, including shell configuration files such as `~/.bashrc` and system binaries in `/bin/`
 - **Git worktrees**: when the working directory is a [linked git worktree](worktrees.md), the sandbox also allows writes to the main repository’s shared `.git` directory so commands such as `git commit` can update refs and the index. Writes to `hooks/` and `config` inside that directory remain denied.
 - **Configurable**: define custom allowed and denied paths through settings
@@ -511,7 +512,7 @@ Inside the directories that sandboxed commands can write to, the sandbox still d
 
 - **In your working directory and the directories above it**: the `.claude` settings files, the `.claude/skills`, `.claude/agents`, `.claude/commands`, and `.claude/hooks` directories, `.mcp.json`, and the files Claude Code runs on its own, such as `.claude/workflows` and `.claude/scheduled_tasks.json`
 - **In your working directory only**: shell startup files such as `.bashrc` and `.zshrc`, `.gitconfig`, the `.vscode` and `.idea` directories, and `hooks` and `config` inside `.git`
-- **Files that would turn your working directory into a bare git repository**: `HEAD`, `objects`, and `refs` at the top level, plus `config` and `hooks` there when a `HEAD` sits beside them. A file named `config` is denied even with no `HEAD`. On Linux and WSL2, the sandbox deletes a top-level `HEAD` file or `objects` or `refs` directory that appears while a sandboxed command is running
+- **Files that would turn your working directory into a bare git repository**: `HEAD`, `objects`, and `refs` at the top level, plus existing `config` and `hooks` entries there when a `HEAD` sits beside them. A file named `config` is denied even with no `HEAD`. On Linux and WSL2, the sandbox deletes a top-level `HEAD` file or `objects` or `refs` directory that appears while a sandboxed command is running
 - **In `~/.claude`, or the directory `CLAUDE_CONFIG_DIR` points to**: most of its contents, plus `~/.claude.json` and the `.credentials.json` credential store
 
 If a symlink appears at a protected settings file’s path during the session, the sandbox also denies writes to the file it points to, starting with the next command. There is no way to exempt one of these paths: an `allowWrite` entry or an `Edit` allow rule that covers the path doesn’t lift the protection. The only way to turn the protection off is [`filesystem.disabled`](#disable-filesystem-isolation), which turns off filesystem isolation for every path. To see most of these paths resolved for your machine, run `/sandbox` and open the **Config** tab, which lists them under **Denied within allowed**, mixed in with your own `denyWrite` entries. If `git merge` or `git checkout` fails with `unable to unlink old` on one of these paths, see [Troubleshooting](#troubleshooting).

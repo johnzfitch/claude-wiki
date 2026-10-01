@@ -232,7 +232,7 @@ Grade 4 ELA Standards Analysis
 
 Give Claude context about your classroom — like de-identified reading levels — to produce differentiated materials for students working below, at, and above grade level.
 
-Whether and how educational data may be used in Claude for Teachers is determined by your district and state policies. You can read more about our K-12 data privacy standards for Claude for Teachers [here](../22-Safety-Policy/claude-for-teachers-your-data-and-our-terms.md).
+Whether and how educational data may be used in Claude for Teachers is determined by your district and state policies. You can read more about our K-12 data privacy standards for Claude for Teachers [here](https://www.claude.com/99-Other/claude-for-teachers-your-data-and-our-terms-claude-help-center-1b4ebaa9e2.md).
 
 Prompt
 
@@ -544,7 +544,7 @@ Protecting student data matters. Claude for Teachers is built to meet that bar.
 
 Learn more
 
-[Learn more](../22-Safety-Policy/claude-for-teachers-your-data-and-our-terms.md)
+[Learn more](https://www.claude.com/99-Other/claude-for-teachers-your-data-and-our-terms-claude-help-center-1b4ebaa9e2.md)
 
 Learn more
 
@@ -702,7 +702,7 @@ Get started
 Sign up by June 30, 2027 for your full year of free access.  
 \*Extra usage limits apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic’s discretion.
 
-[Usage limits](../22-Safety-Policy/usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
 
 ## Education resources
 
@@ -864,17 +864,17 @@ Models
 
 - Opus
 
-  [Opus](../15-Claude-AI-Features/claude-opus.md)
+  [Opus](https://www.claude.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+  [Sonnet](https://www.claude.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+  [Haiku](https://www.claude.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Solutions

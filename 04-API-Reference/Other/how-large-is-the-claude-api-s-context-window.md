@@ -2,7 +2,7 @@
 title: "Models overview - Claude Platform Docs"
 source_url: "https://support.claude.com/en/articles/8606395-how-large-is-the-claude-api-s-context-window"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-29T06:31:09Z"
+fetched_at: "2026-09-30T06:33:11Z"
 tags: ["api", "prompting"]
 ---
 

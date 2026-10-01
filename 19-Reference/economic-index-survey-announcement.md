@@ -36,7 +36,7 @@ We will use Anthropic Interviewer to ask you about your work, what changes youâ€
 
 We will analyze the insights from this study as part of our economic research, publish our findings, and use this to improve our models and services in ways that reflect what weâ€™ve learned. The data we collect through this study will be processed according to our [Supplemental Privacy Policy](https://privacy.claude.com/en/articles/14139821-supplemental-anthropic-interviewer-privacy-policy). We may also include de-identified responses in published findings, from users who opt in. [Learn more.](https://privacy.claude.com/en/articles/12996960-how-does-anthropic-interviewer-collect-and-use-my-data)
 
-*If you have further questions, reach out via the message icon in the lower right corner of our [Help Center](../21-Account-Support/how-can-i-contact-support.md).*
+*If you have further questions, reach out via the message icon in the lower right corner of our [Help Center](https://www.anthropic.com/21-Account-Support/how-to-get-support-57c428239c.md).*
 
 
 ## Related content
@@ -82,9 +82,9 @@ We had Claude autonomously train models to improve their performance on several 
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

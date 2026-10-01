@@ -2,7 +2,8 @@
 title: "Plans & Pricing | Claude by Anthropic"
 source_url: "https://www.claude.com/pricing"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:33:20Z"
+fetched_at: "2026-09-30T06:32:55Z"
+last_modified: "Wed, 30 Sep 2026 06:27:52 GMT"
 tags: ["billing", "enterprise", "security"]
 ---
 
@@ -71,9 +72,9 @@ Everything in Pro, plus:
 - Early access to advanced Claude features
 - Priority access at high traffic times
 
-[Usage limits](../22-Safety-Policy/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits](../22-Safety-Policy/usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
 
 ## Compare features across plans
 
@@ -168,9 +169,9 @@ All Team plan features, plus:
 - HIPAA-ready offering available
 - Claude Security (beta)
 
-[Usage limits](../22-Safety-Policy/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits](../22-Safety-Policy/usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
 
 ### Education plan
 
@@ -592,7 +593,7 @@ The [Max plan](what-is-the-max-plan.md) is built for people who work with Claude
 
 #### What are the usage limits on each plan, and what happens when I hit them?
 
-Every plan has [usage limits](../22-Safety-Policy/usage-limit-best-practices.md) that reset on a rolling five-hour session window, and paid plans add weekly limits on top. Your activity across Claude on web, desktop, mobile, and Claude Code all draws from the same pool. How much you can do depends on the length and complexity of your conversations, the model you choose, and the features you use, so there's no fixed message count. Free covers everyday questions. Pro gives you at least 5x more usage per 5-hour session than Free. Max gives you 5x or 20x more usage per 5-hour session than Pro. On Team plans, Standard seats give more than Pro and Premium seats give 5x more than Standard. To manage capacity and make sure all users have fair access, we may limit your usage in other ways, such as weekly and monthly caps or model and feature usage, at our discretion. When you reach a limit, you can wait for it to reset, move to a higher plan, or, on paid plans, turn on [usage credits](manage-usage-credits-for-paid-claude-plans.md) to keep working at standard API rates. You can see where you stand anytime in [Settings \> Usage](https://claude.ai/settings/usage).
+Every plan has [usage limits](https://support.claude.com/en/articles/9797557-usage-limit-best-practices) that reset on a rolling five-hour session window, and paid plans add weekly limits on top. Your activity across Claude on web, desktop, mobile, and Claude Code all draws from the same pool. How much you can do depends on the length and complexity of your conversations, the model you choose, and the features you use, so there's no fixed message count. Free covers everyday questions. Pro gives you at least 5x more usage per 5-hour session than Free. Max gives you 5x or 20x more usage per 5-hour session than Pro. On Team plans, Standard seats give more than Pro and Premium seats give 5x more than Standard. To manage capacity and make sure all users have fair access, we may limit your usage in other ways, such as weekly and monthly caps or model and feature usage, at our discretion. When you reach a limit, you can wait for it to reset, move to a higher plan, or, on paid plans, turn on [usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans) to keep working at standard API rates. You can see where you stand anytime in [Settings \> Usage](https://claude.ai/settings/usage).
 
 #### Is Claude Code included in my plan?
 
@@ -614,11 +615,11 @@ When you choose to pay annually, you're billed once up front for the year. If yo
 
 Payments are generally non-refundable, except where our [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms) say otherwise or where local law requires it.
 
-Customers outside of Europe can follow this process to [request a refund](requesting-a-refund-for-a-paid-claude-plan.md):
+Customers outside of Europe can follow this process to [request a refund](https://support.claude.com/en/articles/12386328-requesting-a-refund-for-a-paid-claude-plan):
 
 - Log in, open Get help from the menu, start a message, and choose Claude Refund Request to check your eligibility.
 - If you subscribed through the App Store, [Apple](https://support.apple.com/billing) handles the refund, so you'll request it from Apple.
-- If you subscribed through Google Play, [contact our Support team](../21-Account-Support/how-can-i-contact-support.md) to check eligibility for an active subscription.
+- If you subscribed through Google Play, [contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support) to check eligibility for an active subscription.
 
 If you're in the European Economic Area and the United Kingdom, and within your 14-day withdrawal period, you can request a refund directly in the app.
 
@@ -629,7 +630,7 @@ If you're in the European Economic Area and the United Kingdom, and within your 
 You can change your plan any time in Settings.
 
 - For individual plans, go to [Settings \> Billing](https://claude.ai/settings/billing) and choose Manage subscription.
-- On Team plans, an Owner or Primary Owner manages this under Organization settings \> Billing. [See more details here](purchasing-and-managing-seats-on-team-plans.md).
+- On Team plans, an Owner or Primary Owner manages this under Organization settings \> Billing. [See more details here](https://support.claude.com/en/articles/12004354-purchase-and-manage-seats-on-team-plans).
 
 Upgrades take effect right away, and any unused time on your current plan is credited toward the new one, so you won't pay twice for the same days.
 
@@ -648,7 +649,7 @@ You can cancel anytime, and your plan stays active until the end of your current
 - Team and self-serve Enterprise: an Owner or Primary Owner cancels under [Organization settings \> Billing](https://claude.ai/admin-settings/billing).
 - Sales-assisted Enterprise: Reach out to your Anthropic Contact or our Sales team to discuss cancellation.
 
-Canceling doesn't delete your data. Your chats, projects, and files stay with your account, though some features aren't available on the Free plan. For Pro and Max, your account moves to the Free plan once the period ends. For step-by-step help, see [how to cancel a Pro or Max plan](how-do-i-cancel-my-paid-claude-subscription.md) or [cancel a Team plan](how-do-i-cancel-my-organization-s-team-plan-subscription.md).
+Canceling doesn't delete your data. Your chats, projects, and files stay with your account, though some features aren't available on the Free plan. For Pro and Max, your account moves to the Free plan once the period ends. For step-by-step help, see [how to cancel a Pro or Max plan](how-do-i-cancel-my-paid-claude-subscription.md) or [cancel a Team plan](https://support.claude.com/en/articles/9267323-cancel-your-organization-s-team-plan-subscription).
 
 [](https://www.claude.com/)
 

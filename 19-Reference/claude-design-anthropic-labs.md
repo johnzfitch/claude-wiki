@@ -66,7 +66,7 @@ Over the coming weeks, we'll make it easier to build integrations with Claude De
 
 ## Get started
 
-Claude Design is available for Claude Pro, Max, Team, and Enterprise subscribers. Access is included with your plan and uses your subscription limits, with the option to continue beyond those limits by enabling [extra usage](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md).
+Claude Design is available for Claude Pro, Max, Team, and Enterprise subscribers. Access is included with your plan and uses your subscription limits, with the option to continue beyond those limits by enabling [extra usage](https://www.anthropic.com/17-Billing-Plans/manage-extra-usage-for-paid-claude-plans-f6c37e2de4.md).
 
 For Enterprise organizations, Claude Design is off by default. Admins can enable it in [Organization settings](../21-Account-Support/claude-design-admin-guide-for-team-and-enterprise-plans.md).
 
@@ -114,9 +114,9 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

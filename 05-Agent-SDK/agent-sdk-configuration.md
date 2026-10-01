@@ -126,7 +126,7 @@ options = ClaudeAgentOptions(
 )
 ```
 
-The [Messages API](../04-API-Reference/Endpoints/messages.md) request parameters `temperature`, `top_p`, and `max_tokens` have no fields on the options object in either language. Set the [effort level](agent-sdk-agent-loop.md#effort-level) or a [spend cap](#limit-turns-and-spend) instead, or call the Messages API when you need those parameters directly.
+The [Messages API](https://code.claude.com/docs/en/04-API-Reference/Other/api-messages-2dd213ca95.md) request parameters `temperature`, `top_p`, and `max_tokens` have no fields on the options object in either language. Set the [effort level](agent-sdk-agent-loop.md#effort-level) or a [spend cap](#limit-turns-and-spend) instead, or call the Messages API when you need those parameters directly.
 
 
 [​](#set-environment-variables)

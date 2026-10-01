@@ -16,7 +16,7 @@ Set up and use the Scholar Gateway integration by Wiley with Claude for access t
 
 The Scholar Gateway by Wiley integration provides authenticated access to the most relevant snippets of scientific research papers to utilize within Claude. This article explains how to set up and use the Scholar Gateway integration with Claude to accelerate your research workflows.
 
-The Scholar Gateway integration relies upon Claude's ability to [use remote connectors(opens in new tab)](use-connectors-to-extend-claude-s-capabilities.md).
+The Scholar Gateway integration relies upon Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/use-connectors-to-extend-claude-s-capabilities-d041e8447b.md).
 
 ## What this integration provides[](#what-this-integration-provides)
 

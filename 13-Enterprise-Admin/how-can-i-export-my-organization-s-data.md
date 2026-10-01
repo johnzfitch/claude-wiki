@@ -1,8 +1,8 @@
 ---
 title: "Export your organization's data | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13346720-how-can-i-export-my-organization-s-data"
+source_url: "https://support.claude.com/en/articles/13346720"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:32:02Z"
+fetched_at: "2026-09-30T06:32:41Z"
 tags: ["enterprise"]
 ---
 
@@ -13,7 +13,7 @@ June 12, 2026
 
 Organization data exports are only available to Team and Enterprise plan Primary Owners. Data exports include conversation data and the user data for your account. Individual members of Team and Enterprise organizations do not have a self-serve export option.
 
-If you're an individual Claude user on a Free, Pro, or Max plan looking to export your data, see **[Export your Claude data](../21-Account-Support/how-can-i-export-my-claude-ai-data.md)**.
+If you're an individual Claude user on a Free, Pro, or Max plan looking to export your data, see **[Export your Claude data](../22-Safety-Policy/export-your-claude-data-claude-help-center.md)**.
 
 Primary Owners of Team and Enterprise plans can export organization data from **[Organization settings \> Data and privacy](https://claude.ai/admin-settings/data-privacy-controls)** on the web app or Claude Desktop.
 
@@ -43,4 +43,4 @@ Please note:
 
 - If your link expires, you can always request a new one by repeating the export process.
 
-If you're an Enterprise Primary Owner looking to export audit logs, see **[How to access audit logs](how-to-access-audit-logs.md)**.
+If you're an Enterprise Primary Owner looking to export audit logs, see **[How to access audit logs](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs)**.

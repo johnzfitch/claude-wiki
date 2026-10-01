@@ -2,13 +2,14 @@
 title: "Scan your codebase for vulnerabilities - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/claude-security"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:28:55Z"
+fetched_at: "2026-09-30T06:30:41Z"
 tags: ["claude-code"]
 ---
 
 ## On this page
 
 - [Prerequisites](#prerequisites)
+- [Models and providers](#models-and-providers)
 - [Install the plugin](#install-the-plugin)
   - [Uninstall the plugin](#uninstall-the-plugin)
 - [Scan and fix your codebase](#scan-and-fix-your-codebase)
@@ -31,7 +32,7 @@ Install the Claude Security plugin to scan your codebase for vulnerabilities in 
 
 Copy pageCopy page
 
-The Claude Security plugin runs a multi-agent vulnerability scan of your codebase inside a Claude Code session. A team of Claude agents maps your architecture, builds a threat model, hunts for vulnerabilities, and independently reviews every finding before writing the report. Use the plugin to scan a whole repository or [only a set of changes](#scan-only-your-changes), such as a branch’s diff, a pull request’s diff, or a single commit, then turn the findings you choose into patches that you review and apply yourself. The plugin runs locally in your session, uses whichever models you have access to in Claude Code, and each scan counts against your plan’s usage limits. If you want a managed service that monitors your repositories, or want to run scans on [Claude Mythos 5](../20-Models/about-claude-models-introducing-claude-fable-5-and-claude-mythos-5.md), see the [Claude Security](../15-Claude-AI-Features/product-claude-security.md) product, available on the Enterprise plan. The plugin reaches code the managed product can’t reach, such as repositories hosted on GitLab or Bitbucket, or on networks that don’t allow inbound connections. The plugin is also distinct from the review tools already in Claude Code: the [security guidance plugin](security-guidance.md) reviews code as Claude writes it, [`/security-review`](commands.md#all-commands) runs a single pass over your branch, and [Code Review](code-review.md) reviews pull requests. For how the layers stack, see [How the plugin fits with other security tools](#how-the-plugin-fits-with-other-security-tools).
+The Claude Security plugin runs a multi-agent vulnerability scan of your codebase inside a Claude Code session. A team of Claude agents maps your architecture, builds a threat model, hunts for vulnerabilities, and independently reviews every finding before writing the report. Use the plugin to scan a whole repository or [only a set of changes](#scan-only-your-changes), such as a branch’s diff, a pull request’s diff, or a single commit, then turn the findings you choose into patches that you review and apply yourself. The plugin runs locally in your session, uses [whichever models you have access to in Claude Code](#models-and-providers), and each scan counts toward your [usage](../17-Billing-Plans/costs.md). If you want a managed service that monitors your repositories, or want to run scans on [Claude Mythos](../20-Models/about-claude-models-introducing-claude-fable-5-and-claude-mythos-5.md), see the [Claude Security](../15-Claude-AI-Features/product-claude-security.md) product, available on the Enterprise plan. The plugin reaches code the managed product can’t reach, such as repositories hosted on GitLab or Bitbucket, or on networks that don’t allow inbound connections. The plugin is also distinct from the review tools already in Claude Code: the [security guidance plugin](security-guidance.md) reviews code as Claude writes it, [`/security-review`](commands.md#all-commands) runs a single pass over your branch, and [Code Review](code-review.md) reviews pull requests. For how the layers stack, see [How the plugin fits with other security tools](#how-the-plugin-fits-with-other-security-tools).
 
 
 [​](#prerequisites)
@@ -40,10 +41,22 @@ Prerequisites
 
 To run the plugin, you need:
 
-- A paid plan, for the [dynamic workflows](workflows.md) the scan uses to orchestrate its agents. On Pro, turn them on from the Dynamic workflows row in `/config`.
+- A paid plan, Anthropic API access, or a [third-party provider](#models-and-providers), for the [dynamic workflows](workflows.md) the scan uses to orchestrate its agents. On Pro, turn them on from the Dynamic workflows row in `/config`.
 - Python 3.9 or later available on your `PATH` as `python3`. Check with `python3 --version`. The plugin’s tooling uses only the Python standard library, so nothing is installed.
 - Linux, macOS, or Windows.
 - Git, for change scans and for turning findings into patches; those jobs don’t support other version control systems. A full scan works in any directory, with or without version control.
+
+
+[​](#models-and-providers)
+
+Models and providers
+
+A scan runs inside your Claude Code session. The plugin makes no model calls of its own, so there’s no separate API key or provider setting to configure.
+
+- **Model**: the agents that hunt for vulnerabilities, verify findings, and write and review patches run on [your session’s model](../09-Agents-Patterns/sub-agents.md#choose-a-model). To change it, run [`/model`](model-config.md#setting-your-model) in your session before you start a scan. A few supporting steps, such as mapping the repository, use the [`sonnet` alias](model-config.md#model-aliases) instead.
+- **Provider**: scans run on a paid plan, with Anthropic API access, or on a [third-party provider](third-party-integrations.md) such as [Amazon Bedrock](amazon-bedrock.md), [Google Cloud’s Agent Platform](google-vertex-ai.md), or [Microsoft Foundry](microsoft-foundry.md).
+
+On a third-party provider, the `sonnet` alias can resolve to a different version than it does on the Anthropic API. If your account can’t use that version, [pin your model versions](model-config.md#pin-models-for-third-party-deployments), including `ANTHROPIC_DEFAULT_SONNET_MODEL`. [Automatic model fallback](model-config.md#automatic-model-fallback) re-runs a request that a model’s safeguards flag. On Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry, the request can end with a refusal message instead, depending on [how your deployment is set up](model-config.md#enable-fallback-on-bedrock-agent-platform-and-foundry).
 
 
 [​](#install-the-plugin)
@@ -186,7 +199,7 @@ The plugin doesn’t replace your existing source-code security tools. Run it al
 
 Troubleshooting
 
-**The `/claude-security` menu opens with a Python warning.** The plugin needs `python3` 3.9 or later on your `PATH`. When it can’t find `python3` at all, the menu warns that Claude Security won’t work until one is installed; when the first `python3` on your `PATH` is older, the warning names the version it found. Install Python 3, or put a newer `python3` first on your `PATH`, then start a new session. **You may see a “safeguards flagged this message” notice when scanning on a Fable model.** The message names the model, for example “Fable 5.1’s safeguards flagged this message”. Fable’s cybersecurity safety classifiers flag certain requests, and Claude Code re-runs a flagged request on an Opus model through [automatic model fallback](model-config.md#automatic-model-fallback). This is expected, and the scan should still complete successfully.
+**The `/claude-security` menu opens with a Python warning.** The plugin needs `python3` 3.9 or later on your `PATH`. When it can’t find `python3` at all, the menu warns that Claude Security won’t work until one is installed; when the first `python3` on your `PATH` is older, the warning names the version it found. Install Python 3, or put a newer `python3` first on your `PATH`, then start a new session. **You may see a “safeguards flagged this message” notice when scanning on a Fable model.** The message names the model you’re running. Fable’s cybersecurity safety classifiers flag certain requests, and Claude Code re-runs a flagged request on an Opus model through [automatic model fallback](model-config.md#automatic-model-fallback). This is expected. When the request re-runs, the scan should still complete successfully.
 
 
 [​](#related-resources)

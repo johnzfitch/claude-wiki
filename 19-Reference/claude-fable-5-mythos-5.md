@@ -184,7 +184,7 @@ Our priority was to safely release Fable as soon as we could, even at the cost o
 
 ### A new data retention policy
 
-Finally, we’re making a change to the way we handle business customer data for Fable 5, Mythos 5, and future models with similar or higher capability levels. We will require 30-day retention for all traffic on Mythos-class models, on both first- and third-party surfaces. We won’t use this data to train new Claude models, or for any non-safety-related purpose, and we’ve instituted new privacy protections including logging all human access to the data and ensuring its deletion after 30 days in almost all cases (see [this post](../20-Models/data-retention-practices-for-mythos-class-models.md) for further details). The data will help us defend against complex and novel attacks (including new jailbreaks and attacks that operate across many requests) as well as help us identify and reduce false positives.
+Finally, we’re making a change to the way we handle business customer data for Fable 5, Mythos 5, and future models with similar or higher capability levels. We will require 30-day retention for all traffic on Mythos-class models, on both first- and third-party surfaces. We won’t use this data to train new Claude models, or for any non-safety-related purpose, and we’ve instituted new privacy protections including logging all human access to the data and ensuring its deletion after 30 days in almost all cases (see [this post](https://www.anthropic.com/99-Other/data-retention-practices-for-covered-models-claude-help-center-5e59bf2012.md) for further details). The data will help us defend against complex and novel attacks (including new jailbreaks and attacks that operate across many requests) as well as help us identify and reduce false positives.
 
 ## Claude Mythos 5 and the trusted access program
 
@@ -203,7 +203,7 @@ Pricing for both models is \$10 per million input tokens and \$50 per million ou
 We expect demand for Fable 5 to be very high, and difficult to predict. On the Claude API and consumption-based Enterprise plans, Fable 5 is fully available from today. For subscription plans, we’d rather give access sooner than later, so we’re rolling out more conservatively, in stages:
 
 - From today through June 22, Fable 5 is included on Pro, Max, Team, and seat-based Enterprise plans at no extra cost.
-- On June 23, we’ll remove Fable 5 from those plans. Using it after that will require [usage credits](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md). If capacity allows, we’ll extend the included window.
+- On June 23, we’ll remove Fable 5 from those plans. Using it after that will require [usage credits](https://www.anthropic.com/17-Billing-Plans/manage-usage-credits-for-paid-claude-plans-3682360a70.md). If capacity allows, we’ll extend the included window.
 - After this point—when sufficient capacity allows us to do so—we aim to restore Fable 5 as a standard part of subscription plans. We intend to do this as quickly as we can.
 
 Throughout this period, we’ll communicate any changes ahead of time so users know where things stand.
@@ -255,9 +255,9 @@ Throughout this period, we’ll communicate any changes ahead of time so users k
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

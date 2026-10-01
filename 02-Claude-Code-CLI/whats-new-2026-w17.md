@@ -2,7 +2,7 @@
 title: "Week 17 · April 20–24, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w17"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:29:08Z"
+fetched_at: "2026-09-30T06:30:45Z"
 tags: ["claude-code"]
 ---
 
@@ -88,7 +88,7 @@ Default [effort level](model-config.md#adjust-effort-level) for Pro and Max subs
 
 Native macOS and Linux builds replace the `Glob` and `Grep` tools with embedded `bfs` and `ugrep` available through Bash, for faster searches without a separate tool round-trip
 
-`—from-pr` now accepts GitLab merge request, Bitbucket pull request, and GitHub Enterprise PR URLs in addition to github.com
+`--from-pr` now accepts GitLab merge request, Bitbucket pull request, and GitHub Enterprise PR URLs in addition to github.com
 
 Auto mode: include `“$defaults”` in [`autoMode.allow`, `soft_deny`, or `environment`](auto-mode-config.md) to add custom rules alongside the built-in list instead of replacing it
 

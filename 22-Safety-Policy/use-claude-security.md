@@ -2,7 +2,7 @@
 title: "Use Claude Security | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14661296-use-claude-security"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:30:52Z"
+fetched_at: "2026-09-30T06:32:55Z"
 tags: ["safety", "security"]
 ---
 
@@ -111,7 +111,7 @@ The claude.ai/security page runs a per-user check against your own connected Git
 
 - **The connected GitHub account isn’t a member of the GitHub organization** where the app is installed. Connect the account that belongs to that organization.
 
-- **SSO isn't authorized for that organization.** If your GitHub organization requires SSO, you must authorize the Claude app for it separately. Follow the steps in **[Use the GitHub integration](../14-Connectors/using-the-github-integration.md#h_e169a34a57)**.
+- **SSO isn't authorized for that organization.** If your GitHub organization requires SSO, you must authorize the Claude app for it separately. Follow the steps in **[Use the GitHub integration](https://support.claude.com/en/articles/10167454-use-the-github-integration#h_e169a34a57)**.
 
 - **Your GitHub organization's IP allow list is blocking the check.** GitHub's "Enable IP allow list configuration for installed GitHub Apps" setting covers traffic from the App itself, such as Code Review, but it doesn't cover this per-user check. To allow it, manually add 160.79.104.0/21 as an organization-level allow list entry. For the full list of ranges, see **[IP addresses](../04-API-Reference/Endpoints/ip-addresses.md)**.
 

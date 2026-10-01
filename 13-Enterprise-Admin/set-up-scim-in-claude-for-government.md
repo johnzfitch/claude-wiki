@@ -2,7 +2,7 @@
 title: "Set up SCIM in Claude for Government | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503643-set-up-scim-in-claude-for-government"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:30:48Z"
+fetched_at: "2026-09-30T06:32:52Z"
 tags: ["enterprise"]
 ---
 
@@ -108,4 +108,4 @@ In a multi-org setup:
 
 - Any Owner or Primary Owner in a child organization can manage IdP settings. Restrict these roles to centralized IT staff.
 
-**Note:** Anthropic support will work with you during provisioning to configure parent/child organization relationships. Contact your account representative or **[our Support team](../21-Account-Support/how-to-get-support-for-claude-for-government.md)** if you need to set up a multi-org structure.
+**Note:** Anthropic support will work with you during provisioning to configure parent/child organization relationships. Contact your account representative or **[our Support team](../15-Claude-AI-Features/how-to-get-support-for-claude-for-government-claude-help-center.md)** if you need to set up a multi-org structure.

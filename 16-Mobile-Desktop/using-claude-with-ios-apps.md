@@ -2,7 +2,7 @@
 title: "Use Claude with iOS apps | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11869619-using-claude-with-ios-apps"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-29T06:31:46Z"
+fetched_at: "2026-09-30T06:31:25Z"
 tags: ["desktop"]
 ---
 
@@ -159,7 +159,7 @@ With your permission, Claude can read the following types of data from Apple Hea
 
 - **Nutrition:** Calories consumed, macronutrients, water intake, and micronutrients (if tracked).
 
-**Note:** By default, Claude doesn't save health information to memory. If you turn on **Include sensitive topics in memory**, Claude may remember health-related context from your conversations. Learn more about **[sensitive topics in memory](../15-Claude-AI-Features/using-claude-s-chat-search-and-memory-to-build-on-previous-context.md#h_6fe1d0e66f)**.
+**Note:** By default, Claude doesn't save health information to memory. If you turn on **Include sensitive topics in memory**, Claude may remember health-related context from your conversations. Learn more about **[sensitive topics in memory](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_6fe1d0e66f)**.
 
 ### How to use health features
 

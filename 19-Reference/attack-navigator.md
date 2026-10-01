@@ -143,7 +143,7 @@ The findings in this report have shaped how we detect, investigate, and disrupt 
 
 First, our risk scores show that the highest-risk actors are not always the loudest or the most prolific—they often appear ordinary in terms of the type and volume of techniques they employ, and instead are distinguished by how they orchestrate their AI to carry out an entire cyber operation. We are updating our detection systems accordingly, expanding our [classifiers and probes](next-generation-constitutional-classifiers.md) to catch techniques that correlate with high ARiES scores. We’re also developing detection signals for agentic misuse patterns that don’t map cleanly to MITRE, such as multistep autonomous execution, AI-directed pivot decisions, and tool-augmented operations through MCP servers and similar interfaces.
 
-Second, we have rolled out [real-time cyber safeguards](../20-Models/real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) on our most capable models that automatically detect and block prohibited activity (such as ransomware development or mass data exfiltration) at the request level. We are also now routing higher-risk dual-use activities—those that both cyberattackers and defenders may undertake—through our [Cyber Verification Program (CVP)](https://claude.com/form/cyber-use-case), which allows defensive practitioners to continue using our models in their work.
+Second, we have rolled out [real-time cyber safeguards](https://www.anthropic.com/99-Other/real-time-cyber-safeguards-on-claude-7906f65cc7.md) on our most capable models that automatically detect and block prohibited activity (such as ransomware development or mass data exfiltration) at the request level. We are also now routing higher-risk dual-use activities—those that both cyberattackers and defenders may undertake—through our [Cyber Verification Program (CVP)](https://claude.com/form/cyber-use-case), which allows defensive practitioners to continue using our models in their work.
 
 Third, through [Project Glasswing](../22-Safety-Policy/glasswing.md), we are studying the offensive cyber capabilities of our most capable model before making it available to the wider public, so that we understand where AI cyber capabilities are heading before threat actors can make use of them, and can design safeguards before such misuse happens.
 
@@ -213,9 +213,9 @@ Get updates on our latest red-teaming research and findings.
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

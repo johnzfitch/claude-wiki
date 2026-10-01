@@ -73,13 +73,13 @@ Because Mythos 5 is highly capable for cybersecurity and biology research, it co
 
 In order to release Mythos-level capabilities for knowledge work, coding, and more broadly we’ve added additional safeguards.
 
-[Claude Fable 5](claude-fable.md) is the same underlying model as Mythos 5 with robust safeguards for cybersecurity and biology. Many queries in these domains are automatically routed to Opus models. [Learn more](../20-Models/why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1.md) about how the fallback experience works.
+[Claude Fable 5](claude-fable.md) is the same underlying model as Mythos 5 with robust safeguards for cybersecurity and biology. Many queries in these domains are automatically routed to Opus models. [Learn more](https://www.anthropic.com/20-Models/why-claude-switched-models-in-your-conversation-with-fable-5-2d51d90ee2.md) about how the fallback experience works.
 
 We extensively test and evaluate our models to ensure they meet Anthropic’s standards for safety, security, and reliability. The accompanying [system card](claude-fable-5-mythos-5-system-card.md) covers safety results in depth.
 
 ## Data retention
 
-Using Mythos 5 requires accepting a 30-day data retention policy for safety monitoring. [Learn more](../20-Models/data-retention-practices-for-mythos-class-models.md).
+Using Mythos 5 requires accepting a 30-day data retention policy for safety monitoring. [Learn more](https://www.anthropic.com/99-Other/data-retention-practices-for-covered-models-claude-help-center-5e59bf2012.md).
 
 ## Benchmarks
 
@@ -118,9 +118,9 @@ Our goal is to safely open up access to vetted partners for Mythos 5 dual-use ca
 
 - [Mythos](claude-mythos.md)
 - [Fable](claude-fable.md)
-- [Opus](claude-opus.md)
-- [Sonnet](claude-sonnet.md)
-- [Haiku](claude-haiku.md)
+- [Opus](https://www.anthropic.com/claude/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/claude/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/claude/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

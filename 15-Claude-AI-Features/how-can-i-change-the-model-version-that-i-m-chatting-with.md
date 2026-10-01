@@ -1,14 +1,12 @@
 ---
 title: "Change the model, effort, and thinking settings | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/8664678-how-can-i-change-the-model-version-that-i-m-chatting-with"
+source_url: "https://support.claude.com/en/articles/8664678"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:34Z"
+fetched_at: "2026-09-30T06:32:21Z"
 tags: ["claude-ai"]
 ---
 
 # Change the model, effort, and thinking settings
-
-Updated today
 
 
 The model menu next to the send button controls three settings: which Claude model you're chatting with, how much effort it puts into each response, and whether it uses thinking. This article explains how to change each one and when to use them.
@@ -55,7 +53,7 @@ Each model has a recommended effort level, marked as "Default" in the menu:
 
 - **Max** is the most thorough option, best for tasks requiring the deepest possible reasoning and most thorough analysis.
 
-Learn more about **[how usage and length limits work](../22-Safety-Policy/understanding-usage-and-length-limits.md)**.
+Learn more about **[how usage and length limits work](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work)**.
 
 ------------------------------------------------------------------------
 

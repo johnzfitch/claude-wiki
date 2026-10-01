@@ -16,7 +16,7 @@ Set up and use the Synapse.org integration with Claude to discover biomedical da
 
 The Synapse.org integration by Sage Bionetworks allows researchers to discover biomedical data across all of Synapse, see the structure of projects, and retrieve information on their data assets for authorized users. This article explains how to set up and use the Synapse.org integration with Claude to advance your research and analysis workflows.
 
-The Synapse.org integration relies upon Claude's ability to [use remote connectors(opens in new tab)](use-connectors-to-extend-claude-s-capabilities.md).
+The Synapse.org integration relies upon Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/use-connectors-to-extend-claude-s-capabilities-d041e8447b.md).
 
 ## What this integration provides[](#what-this-integration-provides)
 

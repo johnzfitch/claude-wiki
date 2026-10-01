@@ -2,7 +2,7 @@
 title: "Speed up responses with fast mode - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/fast-mode"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-23T06:26:45Z"
+fetched_at: "2026-09-30T06:31:48Z"
 tags: ["claude-code"]
 ---
 
@@ -78,7 +78,7 @@ Whenever a model switch turns fast mode on or off, Claude Code shows a `Fast mod
 
 Use fast mode in cloud sessions
 
-Fast mode works in [cloud sessions](claude-code-on-the-web.md) when it’s available on your account, whether the session runs on Anthropic-managed infrastructure or a [self-hosted runner](../13-Enterprise-Admin/self-hosted-environments.md). Requires Claude Code v2.1.271 or later in the session’s environment. Type `/fast on` in the session to turn fast mode on. It stays on for that session only and isn’t saved as your default. The [requirements](#requirements) apply in cloud sessions too.
+Fast mode works in [cloud sessions](claude-code-on-the-web.md) when it’s available on your account, whether the session runs on Anthropic-managed infrastructure or a [self-hosted runner](../13-Enterprise-Admin/self-hosted-environments.md). Requires Claude Code v2.1.271 or later in the session’s environment. Type `/fast on` in the session to turn fast mode on. It stays on for that session only and isn’t saved as your default. The [requirements](#requirements) apply in cloud sessions too. In the browser at [claude.ai/code](https://claude.ai/code), you can also turn fast mode on and off from the model menu on the message box. The menu shows the switch when your plan includes fast mode and the selected model supports it.
 
 
 [​](#understand-the-cost-tradeoff)

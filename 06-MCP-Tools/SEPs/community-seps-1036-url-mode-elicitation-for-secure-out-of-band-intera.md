@@ -130,7 +130,7 @@ The current MCP specification (2025-06-18) provides an elicitation mechanism for
 
 Without a standardized mechanism for these interactions, MCP servers must resort to non-standard workarounds or insecure practices like requesting API keys through in-band, form-style elicitation. This SEP addresses these gaps by introducing a URL elicitation mode that leverages established web security patterns to handle sensitive interactions securely.
 
-URL elicitation is fundamentally different from [MCP authorization](../Spec-Archive/2025-06-18-basic-authorization.md). URL elicitation is not for authorizing the MCP client's access to the MCP server (that's handled directly by MCP authorization). Instead, it's used when the MCP server needs to obtain sensitive information or third-party authorization on behalf of the user. The MCP client's bearer token remains unchanged, and the client's only responsibility is to provide the user with context about the elicitation URL the server wants them to open.
+URL elicitation is fundamentally different from [MCP authorization](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-authorization-model-context-protocol.md). URL elicitation is not for authorizing the MCP client's access to the MCP server (that's handled directly by MCP authorization). Instead, it's used when the MCP server needs to obtain sensitive information or third-party authorization on behalf of the user. The MCP client's bearer token remains unchanged, and the client's only responsibility is to provide the user with context about the elicitation URL the server wants them to open.
 
 ## Specification
 

@@ -1,13 +1,12 @@
 ---
 title: "Use plugins in Claude | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13837440-use-plugins-in-claude-cowork"
+source_url: "https://support.claude.com/en/articles/13837440-use-plugins-in-cowork"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:06Z"
+fetched_at: "2026-09-30T06:32:45Z"
 tags: ["claude-ai", "plugins", "skills"]
 ---
 
 # Use plugins in Claude
-
 
 
 Plugins are available to all paid plans (Pro, Max, Team, Enterprise).
@@ -22,7 +21,7 @@ You can add and use plugins in chat on the web, the Chat tab in Claude Desktop, 
 
 Plugins can also bundle connectors, so the right services are set up for a workflow without you connecting each one. Claude connects to services like Google Drive, Gmail, Slack, DocuSign, and many more.
 
-**Note:** In Cowork, connectors reach external services through Anthropic's cloud, not through your local network. A custom connector must point to a server that's reachable over the public internet from Anthropic's IP ranges. If your organization's servers are behind a firewall or on a private network, see **[Network requirements for custom connectors](../14-Connectors/getting-started-with-custom-integrations-using-remote-mcp.md#h_b66e88c454)**.
+**Note:** In Cowork, connectors reach external services through Anthropic's cloud, not through your local network. A custom connector must point to a server that's reachable over the public internet from Anthropic's IP ranges. If your organization's servers are behind a firewall or on a private network, see **[Network requirements for custom connectors](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp#h_b66e88c454)**.
 
 ### Use plugins in Claude Code
 
@@ -69,7 +68,7 @@ In Cowork, open the "Cowork" tab first, then open **Customize**.
 You can also upload a custom plugin file if you built one yourself. On Team and Enterprise plans, a colleague can share a plugin with you directly instead of sending you the file. See **[Use a plugin shared with you](#h_ef985546b4)** below. Plugins you add in Claude on the web or in Claude Desktop are saved to your account, not to your computer, so they follow you to chat, Cowork, and Claude Code.
 
 
-If you're on the Enterprise plan and your organization has skill scanning turned on, plugins are checked for malicious content when they're installed or updated. A plugin with malicious content is blocked, and one that may carry risk shows a caution banner. Learn more about **[skill and plugin scanning](../02-Claude-Code-CLI/get-started-with-skill-and-plugin-scanning.md)**.
+If you're on the Enterprise plan and your organization has skill scanning turned on, plugins are checked for malicious content when they're installed or updated. A plugin with malicious content is blocked, and one that may carry risk shows a caution banner. Learn more about **[skill and plugin scanning](get-started-with-skill-and-plugin-scanning-claude-help-center.md)**.
 
 ------------------------------------------------------------------------
 
@@ -110,7 +109,7 @@ To enable plugin sharing:
 
 3.  To enable sharing with groups, toggle on **Share with groups**. If you have custom roles, you also need to enable the **Share skills with groups** capability in the custom role.
 
-To let users publish plugins to the organization library, use the **Publishing** setting on the same "Policy" tab. Learn more about **[letting users publish skills and plugins to your organization](../22-Safety-Policy/provisioning-and-managing-skills-for-your-organization.md#h_1abc45a27c)**.
+To let users publish plugins to the organization library, use the **Publishing** setting on the same "Policy" tab. Learn more about **[letting users publish skills and plugins to your organization](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization#h_1abc45a27c)**.
 
 ------------------------------------------------------------------------
 
@@ -174,7 +173,7 @@ When a colleague shares a plugin with you, it appears in the **Shared with you**
 
 You can't edit a plugin that's been shared with you. If you want to change how it works, ask the person who built it, or build your own version. If they stop sharing the plugin or delete it, it's removed from your list automatically.
 
-**Note:** Review a plugin shared with you before turning it on, the same as you would for any plugin from outside Anthropic. Learn more about **[skill and plugin scanning](../02-Claude-Code-CLI/get-started-with-skill-and-plugin-scanning.md)**.
+**Note:** Review a plugin shared with you before turning it on, the same as you would for any plugin from outside Anthropic. Learn more about **[skill and plugin scanning](https://support.claude.com/en/articles/15927065-get-started-with-skill-and-plugin-scanning)**.
 
 ------------------------------------------------------------------------
 
@@ -214,4 +213,4 @@ If you're on a Team or Enterprise plan, an owner can distribute plugins across y
 
 On Enterprise plans, your admin may customize which plugins are available to your group. This means the plugins you see in the catalog may differ from what colleagues in other groups see. Plugins assigned to your group appear in chat, Cowork, and Claude Code sessions signed in with the same Claude account.
 
-For guidance on setting up and managing plugins organization-wide, see **[Manage plugins for your organization](../22-Safety-Policy/manage-claude-cowork-plugins-for-your-organization.md)**.
+For guidance on setting up and managing plugins organization-wide, see **[Manage plugins for your organization](https://support.claude.com/en/articles/13837433-)**.

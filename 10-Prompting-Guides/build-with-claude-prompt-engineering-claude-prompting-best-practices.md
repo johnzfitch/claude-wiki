@@ -932,7 +932,7 @@ Claude Opus 4.5 and Claude Opus 4.6 build complex, real-world web applications w
 
 For a detailed guide on improving frontend design, see the blog post on [improving frontend design through skills](https://www.claude.com/blog/improving-frontend-design-through-skills).
 
-For frontend design work outside the API, [Claude Design](../21-Account-Support/get-started-with-claude-design.md) provides a canvas and design tools where Claude generates and iterates on designs interactively.
+For frontend design work outside the API, [Claude Design](https://platform.claude.com/docs/en/build-with-claude/21-Account-Support/get-started-with-claude-design-c1ae6368f5.md) provides a canvas and design tools where Claude generates and iterates on designs interactively.
 
 Here's a system prompt snippet you can use to encourage better frontend design:
 

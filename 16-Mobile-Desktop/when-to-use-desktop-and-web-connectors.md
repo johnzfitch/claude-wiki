@@ -2,12 +2,11 @@
 title: "When to use desktop and web connectors | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11725091-when-to-use-desktop-and-web-connectors"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-29T06:31:44Z"
+fetched_at: "2026-09-30T06:31:06Z"
 tags: ["connectors", "desktop", "plugins"]
 ---
 
 # When to use desktop and web connectors
-
 
 
 Claude can connect to your tools in two ways: through the web (remote connectors) or through the Claude Desktop app (desktop extensions). Most connectors are remote—they're the default choice and work everywhere you use Claude.

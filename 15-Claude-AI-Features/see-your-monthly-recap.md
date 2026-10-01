@@ -1,8 +1,8 @@
 ---
 title: "See your monthly recap | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/15672559-see-your-monthly-recap"
+source_url: "https://support.claude.com/en/articles/15672559"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:22Z"
+fetched_at: "2026-09-30T06:32:08Z"
 tags: ["claude-ai"]
 ---
 
@@ -39,7 +39,7 @@ A short headline and paragraph describing your month with Claude. It names the a
 
 Three headline stats: your **most active day**, your **peak hour**, and your **total conversations**. Below them, a daily activity chart shows how your conversations were spread across the period.
 
-Below the chart, click “Set quiet hours and breaks” to open your **Time and focus** settings. See **[Set break reminders and quiet hours](set-break-reminders-and-quiet-hours.md)** for details.
+Below the chart, click “Set quiet hours and breaks” to open your **Time and focus** settings. See **[Set break reminders and quiet hours](https://support.claude.com/en/articles/15672868)** for details.
 
 ### What you spent time on
 
@@ -81,7 +81,7 @@ Some conversations are left out of your recap completely:
 
 - Activity in Claude Cowork and Claude Code
 
-Learn more about **[memory](using-claude-s-chat-search-and-memory-to-build-on-previous-context.md)**, **[incognito chats](using-incognito-chats.md)**, and health features on **[iOS](../16-Mobile-Desktop/using-claude-with-ios-apps.md#h_21f4b10d6d)** and **[Android](../16-Mobile-Desktop/using-claude-with-android-apps.md#h_62b72ef926)**.
+Learn more about **[memory](https://support.claude.com/en/articles/11817273)**, **[incognito chats](https://support.claude.com/en/articles/12260368)**, and health features on **[iOS](https://support.claude.com/en/articles/11869619-use-claude-with-ios-apps#h_21f4b10d6d)** and **[Android](../16-Mobile-Desktop/using-claude-with-android-apps.md#h_62b72ef926)**.
 
 ------------------------------------------------------------------------
 

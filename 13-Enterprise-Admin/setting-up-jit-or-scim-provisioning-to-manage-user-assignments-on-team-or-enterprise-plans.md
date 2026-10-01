@@ -1,20 +1,19 @@
 ---
 title: "Set up JIT or SCIM provisioning | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans"
+source_url: "https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:31:59Z"
+fetched_at: "2026-09-30T06:32:39Z"
 tags: ["enterprise"]
 ---
 
 # Set up JIT or SCIM provisioning
 
 
-
 This guide covers how to configure user provisioning and role assignment for your Claude or Claude Console organization.
 
 JIT provisioning is available for Team plans, Enterprise plans, and Console organizations. SCIM provisioning is available for Enterprise and Console organizations only.
 
-**Before you begin:** This guide assumes you have already completed the steps in **[Set up single sign-on (SSO)](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md)**, including domain verification and SSO configuration with your Identity Provider (IdP), and you have an Admin (Console) or Owner (Claude) role.
+**Before you begin:** This guide assumes you have already completed the steps in **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)**, including domain verification and SSO configuration with your Identity Provider (IdP), and you have an Admin (Console) or Owner (Claude) role.
 
 ------------------------------------------------------------------------
 
@@ -51,7 +50,7 @@ Both JIT and SCIM can be combined with **Enable group mappings** to control role
 
 [TABLE]
 
-For information on purchasing seats or adjusting your plan's seat allocation, see our guides for **[Team plans](../17-Billing-Plans/purchasing-and-managing-seats-on-team-plans.md)** and **[Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**.
+For information on purchasing seats or adjusting your plan's seat allocation, see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)**.
 
 ------------------------------------------------------------------------
 
@@ -160,7 +159,7 @@ Once your IdP is connected, continue to Step 3.
 
 Verify you have enough seats purchased and available to add members to your org.
 
-1.  Check the number of available seats shown in **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)** and purchase additional seats if needed (see our guides for **[Team plans](../17-Billing-Plans/purchasing-and-managing-seats-on-team-plans.md)** and **[Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**).
+1.  Check the number of available seats shown in **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)** and purchase additional seats if needed (see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)**).
 
 2.  Once you have available seats, go back to the Organization and access page and click “Sync now,” next to **Directory sync (SCIM)**. This will trigger a sync to provision accounts for those users not yet added as members.
 
@@ -183,7 +182,7 @@ To fix this, do one of the following:
 
 1.  Add the affected users to the appropriate groups manually in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. Learn more about **[managing groups on Enterprise plans](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**.
 
-2.  Switch your provisioning mode to SCIM directory sync, which syncs groups and their memberships from your IdP. Learn more about **[how SCIM sync works](how-scim-sync-works-for-enterprise-organizations.md)**.
+2.  Switch your provisioning mode to SCIM directory sync, which syncs groups and their memberships from your IdP. Learn more about **[how SCIM sync works](https://support.claude.com/en/articles/14499648)**.
 
 ### I lost Admin/Owner access after enabling group mappings
 

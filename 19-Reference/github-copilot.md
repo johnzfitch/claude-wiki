@@ -10,7 +10,7 @@ tags: ["git", "github", "news-research"]
 
 Oct 29, 2024
 
-Starting today, the new [Claude 3.5 Sonnet](../15-Claude-AI-Features/claude-sonnet.md) begins rolling out on GitHub Copilot, enabling developers to choose Claude 3.5 Sonnet for coding—directly in Visual Studio Code and GitHub.com. This integration brings Claude’s coding capabilities to GitHub’s community of over 100 million developers.
+Starting today, the new [Claude 3.5 Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md) begins rolling out on GitHub Copilot, enabling developers to choose Claude 3.5 Sonnet for coding—directly in Visual Studio Code and GitHub.com. This integration brings Claude’s coding capabilities to GitHub’s community of over 100 million developers.
 
 The upgraded Claude 3.5 Sonnet outperforms all publicly available models on [SWE-bench Verified](https://www.swebench.com/), a benchmark that measures how models solve real-world GitHub issues. It also achieves the top score in its class (93.7%) on HumanEval, a benchmark testing the ability to write correct Python functions from natural language descriptions.
 
@@ -68,9 +68,9 @@ All developers and organizations should have access to Claude 3.5 Sonnet over th
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

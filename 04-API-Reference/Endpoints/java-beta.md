@@ -4142,7 +4142,7 @@ Learn more about the Messages API in our [user guide](https://docs.claude.com/en
 
   - `Optional<BetaJsonOutputFormat> outputFormat`
 
-    Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+    Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/api/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 
@@ -10119,7 +10119,7 @@ Learn more about token counting in our [user guide](https://docs.claude.com/en/d
 
   - `Optional<BetaJsonOutputFormat> outputFormat`
 
-    Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+    Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/api/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 
@@ -23008,7 +23008,7 @@ public final class Main {
 
   - `Optional<BetaJsonOutputFormat> format`
 
-    A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+    A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/api/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     - `Schema schema`
 
@@ -39045,7 +39045,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
         - `Optional<BetaJsonOutputFormat> format`
 
-          A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+          A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/api/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
           - `Schema schema`
 
@@ -39057,7 +39057,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
       - `Optional<BetaJsonOutputFormat> outputFormat`
 
-        Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+        Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/api/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
         A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 
@@ -48069,7 +48069,7 @@ Create Agent
 
   - `Model model`
 
-    Model identifier. Accepts the [model string](../../20-Models/about-claude-models-overview.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control
+    Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/20-Models/about-claude-models-overview-2bbf09ff82.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control
 
     - `enum BetaManagedAgentsModel:`
 
@@ -49617,7 +49617,7 @@ Update Agent
 
   - `Optional<Model> model`
 
-    Model identifier. Accepts the [model string](../../20-Models/about-claude-models-overview.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
+    Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/20-Models/about-claude-models-overview-2bbf09ff82.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
 
     - `enum BetaManagedAgentsModel:`
 
@@ -58150,7 +58150,7 @@ List Events
 
     - `String toolUseId`
 
-      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `Type type`
 
@@ -58174,7 +58174,7 @@ List Events
 
     - `String customToolUseId`
 
-      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `Type type`
 
@@ -59581,7 +59581,7 @@ Send Events
 
       - `String toolUseId`
 
-        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `Type type`
 
@@ -59597,7 +59597,7 @@ Send Events
 
       - `String customToolUseId`
 
-        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `Type type`
 
@@ -59959,7 +59959,7 @@ Send Events
 
       - `String toolUseId`
 
-        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `Type type`
 
@@ -59983,7 +59983,7 @@ Send Events
 
       - `String customToolUseId`
 
-        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `Type type`
 
@@ -60438,7 +60438,7 @@ Stream Events
 
     - `String toolUseId`
 
-      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `Type type`
 
@@ -60462,7 +60462,7 @@ Stream Events
 
     - `String customToolUseId`
 
-      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `Type type`
 
@@ -62482,7 +62482,7 @@ public final class Main {
 
     - `String toolUseId`
 
-      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `Type type`
 
@@ -62498,7 +62498,7 @@ public final class Main {
 
     - `String customToolUseId`
 
-      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `Type type`
 
@@ -63210,7 +63210,7 @@ public final class Main {
 
       - `String toolUseId`
 
-        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `Type type`
 
@@ -63234,7 +63234,7 @@ public final class Main {
 
       - `String customToolUseId`
 
-        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
       - `Type type`
 
@@ -63934,7 +63934,7 @@ public final class Main {
 
     - `String toolUseId`
 
-      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `Type type`
 
@@ -63958,7 +63958,7 @@ public final class Main {
 
     - `String customToolUseId`
 
-      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `Type type`
 
@@ -65534,7 +65534,7 @@ public final class Main {
 
     - `String toolUseId`
 
-      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `Type type`
 
@@ -65558,7 +65558,7 @@ public final class Main {
 
     - `String customToolUseId`
 
-      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+      The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
     - `Type type`
 
@@ -66798,7 +66798,7 @@ public final class Main {
 
   - `String customToolUseId`
 
-    The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+    The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
   - `Type type`
 
@@ -66966,7 +66966,7 @@ public final class Main {
 
   - `String customToolUseId`
 
-    The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+    The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
   - `Type type`
 
@@ -67490,7 +67490,7 @@ public final class Main {
 
   - `String toolUseId`
 
-    The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+    The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
   - `Type type`
 
@@ -67520,7 +67520,7 @@ public final class Main {
 
   - `String toolUseId`
 
-    The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](beta-sessions-events-list.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+    The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/java/api-beta-sessions-events-list-90a51551ca.md#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
 
   - `Type type`
 

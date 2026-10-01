@@ -2,7 +2,7 @@
 title: "Using the BioRender Connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614795-using-the-biorender-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-09-25T06:29:36Z"
+fetched_at: "2026-09-30T06:31:40Z"
 tags: ["connectors"]
 ---
 
@@ -16,7 +16,7 @@ Set up and use the BioRender integration with Claude to search scientific figure
 
 The BioRender integration searches BioRender’s extensive scientific figure template and icon collection for relevant content to create figures faster. This article explains how to set up and use the BioRender integration with Claude to accelerate scientific content creation.
 
-The BioRender integration relies upon Claude's ability to [use remote connectors(opens in new tab)](use-connectors-to-extend-claude-s-capabilities.md).
+The BioRender integration relies upon Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities).
 
 ## What this integration provides[](#what-this-integration-provides)
 

@@ -2,7 +2,7 @@
 title: "Plugins overview - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-29T06:30:16Z"
+fetched_at: "2026-09-30T06:31:53Z"
 tags: ["claude-code", "plugins"]
 ---
 

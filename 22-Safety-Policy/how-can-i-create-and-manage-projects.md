@@ -2,12 +2,11 @@
 title: "How can I create and manage projects? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:32:13Z"
+fetched_at: "2026-09-30T06:33:16Z"
 tags: ["safety"]
 ---
 
 # How can I create and manage projects?
-
 
 
 Projects are available to all users, including those with free Claude accounts. Free users can create a maximum of five projects.
@@ -56,7 +55,7 @@ You'll find the project knowledge base on the right side of your project's main 
 
 ## Share projects
 
-If you're on a Team or Enterprise plan, you can share projects with other users in your organization, unless your admin has turned off project sharing. See **[If you can't share projects](manage-project-visibility-and-sharing.md#h_d5a68ef397)** for what to expect.
+If you're on a Team or Enterprise plan, you can share projects with other users in your organization, unless your admin has turned off project sharing. See **[If you can't share projects](https://support.claude.com/en/articles/9519189-manage-project-visibility-and-sharing#h_d5a68ef397)** for what to expect.
 
 ### To share a project
 
@@ -129,7 +128,7 @@ Memory is on by default for Free, Pro, and Max plans on the web, Claude Desktop,
 
 For Team and Enterprise plans using Claude’s memory, the ability to move chats into and out of projects allows you to manage what’s included in Claude’s memory. Each project has its own memory, kept separate from your non-project chats. For example, if you accidentally start an unrelated chat in a project and need to remove it from the project-specific memory summary, you can click “Remove from project” so it will be included in Claude’s non-project memory instead.
 
-Refer to our article on chat search and memory for more information: **[What is Claude’s memory?](../15-Claude-AI-Features/using-claude-s-chat-search-and-memory-to-build-on-previous-context.md#h_82126ebcc9)**
+Refer to our article on chat search and memory for more information: **[What is Claude’s memory?](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_82126ebcc9)**
 
 ------------------------------------------------------------------------
 

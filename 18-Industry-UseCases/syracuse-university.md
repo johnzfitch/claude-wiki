@@ -2,7 +2,7 @@
 title: "Syracuse University Claude Enterprise case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/syracuse-university"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:33:14Z"
+fetched_at: "2026-09-30T06:33:48Z"
 tags: ["case-studies", "enterprise", "search", "security"]
 ---
 

@@ -2,7 +2,7 @@
 title: "I have a paid Claude subscription (Pro, Max, Team, or Enterprise plans). Why do I have to pay separately to use the Claude API and Console? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9876003-i-have-a-paid-claude-subscription-pro-max-team-or-enterprise-plans-why-do-i-have-to-pay-separately-to-use-the-claude-api-and-console"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:32:17Z"
+fetched_at: "2026-09-30T06:32:21Z"
 tags: ["api", "billing", "enterprise"]
 ---
 
@@ -21,4 +21,4 @@ A paid Claude subscription enhances your chat experience but doesn't include acc
 
 If you're interested in both enhanced chat features and API access, you'll need to sign up for a paid Claude plan and separately [set up Console access](../04-API-Reference/Other/how-can-i-access-the-anthropic-api.md) for API usage. This allows you to benefit from both offerings based on your specific needs.
 
-Refer to this article to learn more about Claude Console billing: [How do I pay for my API usage?](../22-Safety-Policy/how-do-i-pay-for-my-claude-api-usage.md)
+Refer to this article to learn more about Claude Console billing: [How do I pay for my API usage?](https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-api-usage)

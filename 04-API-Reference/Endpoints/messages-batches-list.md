@@ -255,7 +255,7 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 List all Message Batches within a Workspace. Most recently created batches are returned first.
 
-Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
+Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
 
 ##### Query parameters
 

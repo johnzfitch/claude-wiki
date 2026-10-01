@@ -2464,7 +2464,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
       - `format_: JSONOutputFormat`
 
-        A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+        A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/api/ruby/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
         - `schema: Hash[Symbol, untyped]`
 

@@ -570,9 +570,9 @@ Chat with buying specialist
 
 Chat with buying specialist
 
-[Usage limits](../22-Safety-Policy/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits](../22-Safety-Policy/usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
 
 ## Build on the Claude Platform
 
@@ -1045,17 +1045,17 @@ Models
 
 - Opus
 
-  [Opus](claude-opus.md)
+  [Opus](https://www.anthropic.com/product/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](claude-sonnet.md)
+  [Sonnet](https://www.anthropic.com/product/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](claude-haiku.md)
+  [Haiku](https://www.anthropic.com/product/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Solutions

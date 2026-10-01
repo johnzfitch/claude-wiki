@@ -2,7 +2,7 @@
 title: "Connectors and plugins | Claude Marketplace | Claude by Anthropic"
 source_url: "https://www.claude.com/partners/mcp"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-29T06:33:19Z"
+fetched_at: "2026-09-30T06:32:55Z"
 tags: ["api", "connectors", "enterprise", "plugins", "security"]
 ---
 
@@ -61,7 +61,7 @@ SortRecommendedMost popularTrendingNewestA–Z
 
 ## Top connectors
 
-Show all 862
+Show all 872
 
 ### [Google Drive](https://www.claude.com/marketplace/connectors/google-drive)
 
@@ -218,15 +218,6 @@ Client, portfolio, and performance data for advisors
 
 Add Black Diamond in Claude (opens in new tab)
 
-### [Paxton Legal Research](https://www.claude.com/marketplace/connectors/paxton-legal-research)
-
-Anthropic verifiedTrending
-
-Research U.S. law in Claude—with citations you can open and verify.
-
-
-Add Paxton Legal Research in Claude (opens in new tab)
-
 ### [Amazon Selling Partner](https://www.claude.com/marketplace/connectors/amazon-selling-partner)
 
 Anthropic verifiedTrending
@@ -235,6 +226,15 @@ Amazon Selling Partner MCP
 
 
 Add Amazon Selling Partner in Claude (opens in new tab)
+
+### [Paxton Legal Research](https://www.claude.com/marketplace/connectors/paxton-legal-research)
+
+Anthropic verifiedTrending
+
+Research U.S. law in Claude—with citations you can open and verify.
+
+
+Add Paxton Legal Research in Claude (opens in new tab)
 
 ### [Carrefour](https://www.claude.com/marketplace/connectors/carrefour)
 
@@ -254,14 +254,14 @@ Access Vanguard models data and content from Claude
 
 Add Vanguard Advisor Tools in Claude (opens in new tab)
 
-### [BlackRock Advisor Center](https://www.claude.com/marketplace/connectors/blackrock-advisor-center)
+### [GoVola](https://www.claude.com/marketplace/connectors/govola)
 
 Anthropic verifiedTrending
 
-Build, analyze, and compare portfolios for advisors
+Search flight offers
 
 
-Add BlackRock Advisor Center in Claude (opens in new tab)
+Add GoVola in Claude (opens in new tab)
 
 ## New connectors
 
@@ -314,7 +314,7 @@ Add Sonos in Claude (opens in new tab)
 
 ## All connectors
 
-862 connectors
+872 connectors
 
 ### [Google Drive](https://www.claude.com/marketplace/connectors/google-drive)
 
@@ -424,6 +424,15 @@ Connect to Asana to coordinate tasks, projects, and goals
 
 Add Asana in Claude (opens in new tab)
 
+### [Carrefour](https://www.claude.com/marketplace/connectors/carrefour)
+
+Anthropic verifiedTrending
+
+Faites vos courses rapidement
+
+
+Add Carrefour in Claude (opens in new tab)
+
 ### [Linear](https://www.claude.com/marketplace/connectors/linear)
 
 Anthropic verified
@@ -432,15 +441,6 @@ Manage issues, projects & team workflows in Linear
 
 
 Add Linear in Claude (opens in new tab)
-
-### [Adobe](https://www.claude.com/marketplace/connectors/adobe-creativity)
-
-Anthropic verified
-
-Design, combine, and edit with Adobe pro tools
-
-
-Add Adobe in Claude (opens in new tab)
 
 ### [Supabase](https://www.claude.com/marketplace/connectors/supabase)
 
@@ -451,14 +451,14 @@ Manage databases, authentication, and storage
 
 Add Supabase in Claude (opens in new tab)
 
-### [Carrefour](https://www.claude.com/marketplace/connectors/carrefour)
+### [Adobe](https://www.claude.com/marketplace/connectors/adobe-creativity)
 
-Anthropic verifiedTrending
+Anthropic verified
 
-Faites vos courses rapidement
+Design, combine, and edit with Adobe pro tools
 
 
-Add Carrefour in Claude (opens in new tab)
+Add Adobe in Claude (opens in new tab)
 
 ### [monday.com](https://www.claude.com/marketplace/connectors/monday)
 
@@ -514,14 +514,14 @@ Access to Intercom data for better customer insights
 
 Add Intercom in Claude (opens in new tab)
 
-### [Miro](https://www.claude.com/marketplace/connectors/miro)
+### [Shopify](https://www.claude.com/marketplace/connectors/shopify)
 
 Anthropic verified
 
-Access and create new content on Miro boards
+Build, manage, and analyze your Shopify store
 
 
-Add Miro in Claude (opens in new tab)
+Add Shopify in Claude (opens in new tab)
 
 ### [Vercel](https://www.claude.com/marketplace/connectors/vercel)
 

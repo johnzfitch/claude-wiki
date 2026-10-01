@@ -1,13 +1,12 @@
 ---
 title: "What are projects? | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/9517075-what-are-projects"
+source_url: "https://support.claude.com/en/articles/9517075"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:40Z"
+fetched_at: "2026-09-30T06:32:27Z"
 tags: ["claude-ai", "enterprise", "rag"]
 ---
 
 # What are projects?
-
 
 
 **Note:** A new version of projects is now available in beta, rolling out in stages starting with Claude Code. Existing projects keep working as they do today. See **[The new version of projects (beta)](#h_e9fb2a161e)** below.
@@ -91,4 +90,4 @@ Multiple members can contribute documents, create chats, and work together withi
 
 For more information on getting started with projects, see **[How can I create and manage projects?](../22-Safety-Policy/how-can-i-create-and-manage-projects.md)**
 
-For more information on private projects and visibility settings on Team and Enterprise plans, see **[Project visibility and sharing](../22-Safety-Policy/manage-project-visibility-and-sharing.md)**.
+For more information on private projects and visibility settings on Team and Enterprise plans, see **[Project visibility and sharing](project-visibility-and-sharing.md)**.

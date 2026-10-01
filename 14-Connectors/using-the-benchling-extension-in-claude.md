@@ -1,6 +1,6 @@
 ---
 title: "Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12614810-using-the-benchling-extension-in-claude"
+source_url: "https://support.claude.com/en/articles/12614810-using-the-benchling-connector-in-claude"
 category: "14-Connectors"
 fetched_at: "2026-03-22T09:01:41Z"
 tags: ["connectors"]

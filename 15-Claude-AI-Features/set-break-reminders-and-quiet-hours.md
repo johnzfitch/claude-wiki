@@ -2,7 +2,7 @@
 title: "Set break reminders and quiet hours | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15672868-set-break-reminders-and-quiet-hours"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:56Z"
+fetched_at: "2026-09-30T06:33:00Z"
 tags: ["claude-ai"]
 ---
 
@@ -41,4 +41,4 @@ Return to **[Settings \> Time and focus](https://claude.ai/settings/time-limits)
 
 These controls also appear as a "Set quiet hours and breaks" link on your monthly recap (**[Settings \> Reflect](https://claude.ai/settings/reflect)**), but they work independently. You can set them without ever opening your recap, and turning the recap off doesn't clear them. Learn more about **[the monthly recap](see-your-monthly-recap.md)**.
 
-**Note:** Break reminders and quiet hours are boundaries you choose for yourself. They’re separate from your plan’s usage limits. For information on plan usage, see **[How do usage and length limits work?](../22-Safety-Policy/understanding-usage-and-length-limits.md)**
+**Note:** Break reminders and quiet hours are boundaries you choose for yourself. They’re separate from your plan’s usage limits. For information on plan usage, see **[How do usage and length limits work?](https://support.claude.com/en/articles/11647753)**

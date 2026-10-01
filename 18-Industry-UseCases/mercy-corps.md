@@ -2,7 +2,7 @@
 title: "Mercy Corps Claude for Nonprofits case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/mercy-corps"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:31:42Z"
+fetched_at: "2026-09-30T06:32:41Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 

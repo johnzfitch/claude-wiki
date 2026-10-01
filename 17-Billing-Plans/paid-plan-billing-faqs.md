@@ -1,8 +1,8 @@
 ---
 title: "Paid plan billing FAQs | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/8325618-paid-plan-billing-faqs"
+source_url: "https://support.claude.com/en/articles/8325618"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:32:33Z"
+fetched_at: "2026-09-30T06:32:19Z"
 tags: ["billing"]
 ---
 
@@ -11,7 +11,7 @@ tags: ["billing"]
 July 13, 2026
 
 
-This article covers Pro and Max subscriptions purchased on the web. If you subscribed through Claude for iOS or Claude for Android, your payment is handled by the Apple App Store or Google Play, and you'll manage your payment method and receipts through your app store account. To cancel or manage an app store subscription, see **[Cancel your Pro or Max subscription](how-do-i-cancel-my-paid-claude-subscription.md)**.
+This article covers Pro and Max subscriptions purchased on the web. If you subscribed through Claude for iOS or Claude for Android, your payment is handled by the Apple App Store or Google Play, and you'll manage your payment method and receipts through your app store account. To cancel or manage an app store subscription, see **[Cancel your Pro or Max subscription](https://support.claude.com/en/articles/8325617)**.
 
 ## Where can I find the invoice or receipt for my Pro or Max plan payment?
 
@@ -55,7 +55,7 @@ To change the card on your Pro or Max subscription:
 
 The new card becomes your default payment method, and all future subscription renewals are charged to it. Your previous card is no longer billed.
 
-There's no separate option to remove a card, and updating to a new card replaces the old one for billing purposes. The billing page only shows your current default card. Previously used cards are no longer charged, but they may remain stored with our payment processor. If you need a previous card fully removed from your account, please contact **[our support team](../21-Account-Support/how-can-i-contact-support.md)**.
+There's no separate option to remove a card, and updating to a new card replaces the old one for billing purposes. The billing page only shows your current default card. Previously used cards are no longer charged, but they may remain stored with our payment processor. If you need a previous card fully removed from your account, please contact **[our support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
 
 ## How can I use a different name on my invoices?
 

@@ -2,7 +2,7 @@
 title: "Get started with 1Password for Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15936181-get-started-with-1password-for-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:57Z"
+fetched_at: "2026-09-30T06:32:02Z"
 tags: ["agents", "claude-ai"]
 ---
 
@@ -29,7 +29,7 @@ To use 1Password for Claude, you'll need:
 
 - A Mac
 
-- **[Claude Desktop](../16-Mobile-Desktop/installing-claude-desktop.md)**
+- **[Claude Desktop](https://support.claude.com/en/articles/10065433)**
 
 - **[Claude in Chrome](getting-started-with-claude-for-chrome.md)**
 
@@ -102,4 +102,4 @@ Credentials are injected through a secure channel handled by 1Password, outside 
 
 ## Stay safe
 
-1Password for Claude reduces credential exposure, but browser-based AI still carries risk. Check each approval prompt so you know which credential Claude is requesting before it's used, and review **[Use Claude in Chrome safely](using-claude-for-chrome-safely.md)** before working with sensitive accounts.
+1Password for Claude reduces credential exposure, but browser-based AI still carries risk. Check each approval prompt so you know which credential Claude is requesting before it's used, and review **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428)** before working with sensitive accounts.

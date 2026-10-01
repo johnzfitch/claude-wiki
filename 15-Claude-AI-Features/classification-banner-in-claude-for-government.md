@@ -2,7 +2,7 @@
 title: "Classification banner in Claude for Government | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503804-classification-banner-in-claude-for-government"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:25Z"
+fetched_at: "2026-09-30T06:31:35Z"
 tags: ["claude-ai"]
 ---
 

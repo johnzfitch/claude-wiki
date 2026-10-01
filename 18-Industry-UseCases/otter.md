@@ -2,7 +2,7 @@
 title: "Otter Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/otter"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:10Z"
+fetched_at: "2026-09-30T06:32:54Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Week 20 · May 11–15, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w20"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-16T06:24:15Z"
+fetched_at: "2026-09-30T06:31:00Z"
 tags: ["claude-code"]
 ---
 
@@ -60,7 +60,7 @@ Claude Code
 
 Other wins
 
-`claude agents` gained dispatch flags (`—add-dir`, `—settings`, `—mcp-config`, `—plugin-dir`, `—permission-mode`, `—model`, `—effort`, `—dangerously-skip-permissions`) to configure background sessions, and `claude agents —cwd <path>` scopes the session list to a directory
+`claude agents` gained dispatch flags (`--add-dir`, `--settings`, `--mcp-config`, `--plugin-dir`, `--permission-mode`, `--model`, `--effort`, `--dangerously-skip-permissions`) to configure background sessions, and `claude agents --cwd <path>` scopes the session list to a directory
 
 New hook `args: string[]` exec form spawns the command directly without a shell, so path placeholders never need quoting
 

@@ -2,7 +2,7 @@
 title: "Using Agents According to Our Usage Policy | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12005017-using-agents-according-to-our-usage-policy"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:30:22Z"
+fetched_at: "2026-09-30T06:31:33Z"
 tags: ["agents", "safety"]
 ---
 

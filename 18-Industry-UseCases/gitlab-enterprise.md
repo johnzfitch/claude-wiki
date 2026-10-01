@@ -2,7 +2,7 @@
 title: "GitLab Claude Enterprise case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/gitlab-enterprise"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:31:37Z"
+fetched_at: "2026-09-30T06:32:36Z"
 tags: ["case-studies", "enterprise", "git", "security"]
 ---
 

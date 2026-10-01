@@ -2,7 +2,8 @@
 title: "Prompt caching with Claude | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/prompt-caching"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:32:21Z"
+fetched_at: "2026-09-30T06:33:24Z"
+last_modified: "Wed, 30 Sep 2026 05:26:57 GMT"
 tags: ["news-research", "prompting"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Give Claude context: CLAUDE.md and better prompts | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14553240-give-claude-context-claude-md-and-better-prompts"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:49Z"
+fetched_at: "2026-09-30T06:31:53Z"
 tags: ["claude-ai", "claude-code", "prompting"]
 ---
 

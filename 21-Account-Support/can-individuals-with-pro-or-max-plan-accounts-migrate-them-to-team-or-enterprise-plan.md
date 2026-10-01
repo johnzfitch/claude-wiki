@@ -1,19 +1,17 @@
 ---
 title: "Move your personal Claude account to a Team or Enterprise organization | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/9267400-can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan-organizations"
+source_url: "https://support.claude.com/en/articles/9267400-move-your-personal-claude-account-to-a-team-or-enterprise-organization"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:32:12Z"
+fetched_at: "2026-09-30T06:32:17Z"
 tags: ["account", "enterprise"]
 ---
 
 # Move your personal Claude account to a Team or Enterprise organization
 
-Updated today
-
 
 If you're using Claude with a personal account (Free, Pro, or Max) tied to your work email, you may be able to move that account into your organization's Team or Enterprise workspace. There are two paths: you can start a migration yourself (Team and Enterprise) or your admin can claim accounts on your domain (Enterprise only).
 
-**Note:** Enterprise organizations that have turned on HIPAA readiness or customer-managed encryption keys (CMEK) can't receive data from a personal account. If your organization uses either, you won't be offered the option to bring your data with you, and a domain claim won't offer to merge your account. You can export your data first if you want a copy. Learn more about **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)** and **[customer-managed encryption keys](../22-Safety-Policy/what-are-customer-managed-encryption-keys-cmek.md)**.
+**Note:** Enterprise organizations that have turned on HIPAA readiness or customer-managed encryption keys (CMEK) can't receive data from a personal account. If your organization uses either, you won't be offered the option to bring your data with you, and a domain claim won't offer to merge your account. You can export your data first if you want a copy. Learn more about **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
 ------------------------------------------------------------------------
 
@@ -101,7 +99,7 @@ What happens to your Pro or Max plan after migrating depends on where you bought
 
 - **Apple App Store:** Your Pro or Max subscription isn't canceled. Apple doesn't allow third-party cancellation, so you'll need to cancel it yourself through your Apple ID settings. If you don't, Apple keeps charging you after your personal account closes.
 
-For cancellation instructions, see **[Cancel your Pro or Max subscription](../17-Billing-Plans/how-do-i-cancel-my-paid-claude-subscription.md)**.
+For cancellation instructions, see **[Cancel your Pro or Max subscription](https://support.claude.com/en/articles/8325617)**.
 
 ### How to start a migration
 
@@ -119,7 +117,7 @@ Owning the Team organization doesn't change where you start the migration. If yo
 
 ### Apple App Store subscribers
 
-If you subscribed to the Pro or Max plan through the Apple App Store, **Keep both accounts** is your only option. Apple doesn't allow third-party cancellation of App Store subscriptions, so we can't auto-cancel your iOS plan as part of the migration. If you'd rather move your work into the Team, **[cancel your iOS subscription](../17-Billing-Plans/how-do-i-cancel-my-paid-claude-subscription.md#h_54384c9962)** through your Apple ID settings first, then start the migration from the reminder banner or **[Settings \> Account](https://claude.ai/settings/account)**.
+If you subscribed to the Pro or Max plan through the Apple App Store, **Keep both accounts** is your only option. Apple doesn't allow third-party cancellation of App Store subscriptions, so we can't auto-cancel your iOS plan as part of the migration. If you'd rather move your work into the Team, **[cancel your iOS subscription](https://support.claude.com/en/articles/8325617-cancel-your-pro-or-max-subscription#h_54384c9962)** through your Apple ID settings first, then start the migration from the reminder banner or **[Settings \> Account](https://claude.ai/settings/account)**.
 
 ------------------------------------------------------------------------
 
@@ -148,6 +146,6 @@ If you want to close your personal account without moving any of your work into 
 
 1.  **[Cancel your individual paid plan](../17-Billing-Plans/how-do-i-cancel-my-paid-claude-subscription.md)** if applicable.
 
-2.  **[Export your data](how-can-i-export-my-claude-ai-data.md)** while you still have access.
+2.  **[Export your data](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)** while you still have access.
 
-3.  Navigate to **[Settings \> Account](https://claude.ai/settings/account)** and click "Delete" to **[delete your account](how-can-i-delete-my-claude-account.md)**.
+3.  Navigate to **[Settings \> Account](https://claude.ai/settings/account)** and click "Delete" to **[delete your account](https://support.claude.com/en/articles/9028421-how-can-i-delete-my-claude-account)**.

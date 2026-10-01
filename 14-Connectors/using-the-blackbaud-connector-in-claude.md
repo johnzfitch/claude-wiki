@@ -16,7 +16,7 @@ Connect Claude to Raiser's Edge NXT to access donor records, gift history, event
 
 The Blackbaud connector gives Claude secure access to your Raiser's Edge NXT fundraising data. Look up donor profiles, review gift history, search events, and draft personalized communications through natural language.
 
-The Blackbaud integration relies on Claude's ability to [use remote connectors(opens in new tab)](use-connectors-to-extend-claude-s-capabilities.md).
+The Blackbaud integration relies on Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/use-connectors-to-extend-claude-s-capabilities-d041e8447b.md).
 
 ## What this connector provides[](#what-this-connector-provides)
 

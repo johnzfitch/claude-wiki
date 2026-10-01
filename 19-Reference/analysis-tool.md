@@ -2,7 +2,8 @@
 title: "Introducing the analysis tool in Claude.ai | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/analysis-tool"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:32:20Z"
+fetched_at: "2026-09-30T06:33:23Z"
+last_modified: "Wed, 30 Sep 2026 04:21:09 GMT"
 tags: ["news-research"]
 ---
 

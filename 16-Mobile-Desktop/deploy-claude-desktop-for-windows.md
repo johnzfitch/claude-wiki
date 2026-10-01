@@ -2,7 +2,7 @@
 title: "Deploy Claude Desktop for Windows | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-29T06:31:28Z"
+fetched_at: "2026-09-30T06:32:34Z"
 tags: ["desktop"]
 ---
 
@@ -78,7 +78,7 @@ By default, Claude Desktop checks for updates approximately every four hours and
 
 ## Configuration
 
-To configure Claude Desktop settings such as auto-updates, extensions, and MCP servers, see **[Enterprise configuration](../13-Enterprise-Admin/enterprise-configuration-for-claude-desktop.md)**.
+To configure Claude Desktop settings such as auto-updates, extensions, and MCP servers, see **[Enterprise configuration](https://support.claude.com/en/articles/12622667-enterprise-configuration)**.
 
 ------------------------------------------------------------------------
 

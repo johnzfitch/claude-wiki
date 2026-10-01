@@ -2,7 +2,7 @@
 title: "Pendo Claude Managed Agents case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/pendo-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:11Z"
+fetched_at: "2026-09-30T06:32:55Z"
 tags: ["agents", "case-studies", "enterprise", "security"]
 ---
 

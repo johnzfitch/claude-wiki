@@ -2,7 +2,7 @@
 title: "Authorize MCP connectors for your entire organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15537633-authorize-mcp-connectors-for-your-entire-organization"
 category: "14-Connectors"
-fetched_at: "2026-09-29T06:31:55Z"
+fetched_at: "2026-09-30T06:32:59Z"
 tags: ["connectors", "enterprise", "mcp"]
 ---
 
@@ -27,7 +27,7 @@ You decide which connectors are enabled, which groups or roles get them, and at 
 
 - Auth connectors once for your organization, and access is given to your team automatically.
 
-- Use **[role-based permissions](../17-Billing-Plans/set-up-role-based-entitlements-on-enterprise-plans.md)** to choose exactly which roles get each connector, so different teams get the access that fits their work. See **Choose which roles get managed auth** below.
+- Use **[role-based permissions](https://support.claude.com/en/articles/13930458-set-up-role-based-permissions-on-enterprise-plans)** to choose exactly which roles get each connector, so different teams get the access that fits their work. See **Choose which roles get managed auth** below.
 
 - Choose which permissions Claude can request when members connect through your identity provider, and narrow that further for individual roles.
 

@@ -12,6 +12,7 @@
 - [Checkpointing - Claude Code Docs](checkpointing.md) — Track, rewind, and summarize Claude’s edits and conversation to manage session state.
 - [Choose a permission mode - Claude Code Docs](permission-modes.md) — Permissions and sandboxing
 - [Choose a sandbox environment - Claude Code Docs](sandbox-environments.md) — Permissions and sandboxing
+- [Claude Code by Anthropic | AI Coding Agent, Terminal, IDE](code-claude-com-code-home.md) — Hand Claude a bug fix, test, or multi-day migration. Steer and review from your terminal, IDE, Slack, or web.
 - [Claude Code champion kit | Claude Help Center](claude-code-champion-kit.md) — A guide for internal champions driving adoption
 - [Claude Code changelog - Claude Code Docs](changelog.md) — Release notes for Claude Code, including new features, improvements, and bug fixes by version.
 - [Claude Code cheatsheet | Claude Help Center](claude-code-cheatsheet.md) — This page collects the vocabulary, commands, and keyboard shortcuts that are worth committing to muscle memory. Keep it open in a browser tab (or printed…
@@ -35,6 +36,7 @@
 - [Common workflows - Claude Code Docs](common-workflows.md) — Step-by-step guides for exploring codebases, fixing bugs, refactoring, testing, and other everyday tasks with Claude Code.
 - [Configure auto mode - Claude Code Docs](auto-mode-config.md) — Tell the auto mode classifier which repos, buckets, and domains your organization trusts. Set environment context, override the default block and allow rules…
 - [Configure cloud environments - Claude Code Docs](cloud-environments.md) — Configure cloud environments for Claude Code cloud sessions: network access levels, environment variables, setup scripts, and environment caching.
+- [Configure Hookify Rules](claude-code-plugins-hookify-commands-configure.md) — Load hookify:writing-rules skill first to understand rule format.
 - [Configure permissions - Claude Code Docs](permissions.md) — Permissions and sandboxing
 - [Configure the sandboxed Bash tool - Claude Code Docs](sandboxing.md) — Permissions and sandboxing
 - [Configure your terminal for Claude Code - Claude Code Docs](terminal-config.md) — Fix Shift+Enter for newlines, get a terminal bell when Claude finishes, configure tmux, match the color theme, and enable Vim mode in the Claude Code CLI.
@@ -56,13 +58,11 @@
 - [Find bugs with ultrareview - Claude Code Docs](ultrareview.md) — Run a deep, multi-agent code review in the cloud with /code-review ultra to find and verify bugs before you merge.
 - [Fullscreen rendering - Claude Code Docs](fullscreen.md) — Enable a smoother, flicker-free rendering mode with mouse support and stable memory usage in long conversations.
 - [Get started with Claude Code in the cloud - Claude Code Docs](web-quickstart.md) — Run Claude Code in the cloud from your browser or phone. Connect a GitHub repository, submit a task, and review the PR without local setup.
-- [Get started with skill and plugin scanning | Claude Help Center](get-started-with-skill-and-plugin-scanning.md) — Skill and plugin scanning automatically checks third-party skills and plugins for malicious content when someone uploads or edits them, before they can run in…
 - [Glossary - Claude Code Docs](glossary.md) — Definitions for Claude Code terminology. Learn what agentic loop, compaction, CLAUDE.md, hooks, subagents, MCP, and other core concepts mean.
 - [How Claude Code uses prompt caching - Claude Code Docs](prompt-caching.md) — Claude Code manages prompt caching automatically. See why a model switch triggers a slow uncached turn, what /compact costs, why CLAUDE.md edits don’t apply…
 - [How Claude Code works - Claude Code Docs](how-claude-code-works.md) — Understand the agentic loop, built-in tools, and how Claude Code interacts with your project.
 - [How Claude remembers your project - Claude Code Docs](memory.md) — Give Claude persistent instructions with CLAUDE.md or AGENTS.md files, and let Claude accumulate learnings automatically with auto memory.
 - [How to create custom skills | Claude Help Center](how-to-create-custom-skills.md) — Skills are available for users on Free, Pro, Max, Team, and Enterprise plans. This feature requires code execution to be enabled. Skills are also available in…
-- [How to use the single-cell-rna-qc skill with Claude · Claude Academy](how-to-use-the-single-cell-rna-qc-skill-with-claude.md) — Learn how to use the single-cell-rna-qc skill to perform quality control analysis on single-cell RNA-seq data with MAD-based filtering and visualization…
 - [Interactive mode - Claude Code Docs](interactive-mode.md) — Complete reference for keyboard shortcuts, input modes, and interactive features in Claude Code sessions.
 - [Keep Claude working toward a goal - Claude Code Docs](goal.md) — Set a completion condition with /goal and Claude keeps working until it’s met, a model judges it impossible, or an error you have to fix clears the goal.
 - [Launch sessions from links - Claude Code Docs](deep-links.md) — Open a Claude Code terminal session from a URL. Embed claude-cli:// links in runbooks, alerts, and dashboards so a click opens Claude Code in the right repo…
@@ -88,7 +88,6 @@
 - [Set up Code Review for Claude Code | Claude Help Center](set-up-code-review-for-claude-code.md) — Code Review analyzes your GitHub pull requests and posts findings as inline comments on the lines of code where it found issues. A fleet of specialized agents…
 - [Settings files and precedence - Claude Code Docs](settings.md) — Change Claude Code settings, pick the scope a key belongs in, verify the change, and learn which value Claude Code uses when a key is set in several places.
 - [Share session output as artifacts - Claude Code Docs](artifacts.md) — Artifacts turn Claude Code’s work into live, interactive pages on claude.ai that you can keep private, share with your organization, or publish to a public…
-- [Six skills for financial service professionals · Claude Academy](claude-for-financial-services-skills.md) — Introduction to six specialized AI skills for financial professionals including valuation modeling, competitive analysis, research reports, and due diligence.
 - [Speed up responses with fast mode - Claude Code Docs](fast-mode.md) — Get faster Opus responses in Claude Code by toggling fast mode.
 - [Terminal guide for new users - Claude Code Docs](terminal-guide.md) — A step-by-step guide to installing Claude Code for first-time terminal users on macOS, Linux, and Windows.
 - [Tools reference - Claude Code Docs](tools-reference.md) — Complete reference for the tools Claude Code can use, including permission requirements and per-tool behavior.
@@ -97,10 +96,11 @@
 - [Troubleshooting - Claude Code Docs](troubleshooting.md) — Fix high CPU or memory usage, hangs, auto-compact thrashing, and search problems in Claude Code, and find the right page for other issues.
 - [Use Claude Code CLI with a screen reader | Claude Help Center](use-claude-code-cli-with-a-screen-reader.md) — The screen reader mode brings Claude Code back to the basic terminal experience: plain, sequential text with added labels and cues and no visual…
 - [Use Claude Code GitHub Actions with cloud providers - Claude Code Docs](github-actions-cloud-providers.md) — Run Claude Code GitHub Actions through Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry instead of the Claude API
-- [Use Claude Code in the cloud - Claude Code Docs](claude-code-on-the-web.md) — Run Claude Code sessions in the cloud from your browser, phone, desktop app, or terminal, move them with —cloud and —teleport, and auto-fix pull requests.
+- [Use Claude Code in the cloud - Claude Code Docs](claude-code-on-the-web.md) — Run Claude Code sessions in the cloud from your browser, phone, Desktop app, or terminal, move them with --cloud and --teleport, and auto-fix pull requests.
 - [Use Claude Code with a screen reader - Claude Code Docs](accessibility.md) — Set up Claude Code for screen readers such as VoiceOver and NVDA, plus settings for screen magnifiers, reduced motion, and colorblind-friendly themes.
 - [Use skills in Claude | Claude Help Center](using-skills-in-claude.md) — Skills extend Claude's capabilities by giving it access to specialized knowledge and workflows. This guide shows you how to enable, discover, and use skills in…
 - [Using Claude Code Remote Control · Claude Academy](resources-tutorials-using-claude-code-remote-control.md) — Learn more about using Claude Code remote control to access Claude Code sessions on the go.
+- [Using MCP Tools in Commands and Agents](claude-code-plugins-plugin-dev-skills-mcp-integration-references-tool-usage.md) — Complete guide to using MCP tools effectively in Claude Code plugin commands and agents.
 - [Voice dictation - Claude Code Docs](voice-dictation.md) — Speak your prompts in the Claude Code CLI with hold-to-record or tap-to-record voice dictation.
 - [Week 13 · March 23–27, 2026 - Claude Code Docs](whats-new-2026-w13.md) — Auto mode for hands-off permissions, computer use built in, PR auto-fix in the cloud, transcript search, and a PowerShell tool for Windows.
 - [Week 14 · March 30 – April 3, 2026 - Claude Code Docs](whats-new-2026-w14.md) — Computer use in the CLI, interactive in-product lessons, flicker-free rendering, per-tool MCP result-size overrides, and plugin executables on PATH.

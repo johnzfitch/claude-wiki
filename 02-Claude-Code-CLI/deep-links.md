@@ -2,7 +2,7 @@
 title: "Launch sessions from links - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/deep-links"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-16T06:24:25Z"
+fetched_at: "2026-09-30T06:30:48Z"
 tags: ["claude-code"]
 ---
 
@@ -70,7 +70,7 @@ A deep link never executes anything on its own. The link only chooses a director
 
 Build a link
 
-Every deep link starts with `claude-cli://open`, which is the only path the handler accepts, followed by optional query parameters. The minimal form opens Claude Code in your home directory with an empty prompt:
+A deep link starts with `claude-cli://open`, followed by optional query parameters. The minimal form opens Claude Code in your home directory with an empty prompt:
 
 ```python
 claude-cli://open

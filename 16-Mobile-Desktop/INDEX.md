@@ -1,6 +1,6 @@
 # Mobile & Desktop
 
-33 pages. The full text of every page is in [llms.txt](llms.txt).
+32 pages. The full text of every page is in [llms.txt](llms.txt).
 
 - [Access Claude for iOS on your Lock Screen, Control Center, and Action button | Claude Help Center](access-claude-for-ios-on-your-lock-screen-control-center-and-action-button.md) — The features described in this guide are available on iOS 18 and above.
 - [Building Desktop Extensions with MCPB | Claude Help Center](building-desktop-extensions-with-mcpb.md) — The MCPB and Desktop Extensions build guide has moved to the Claude developer docs.
@@ -31,7 +31,6 @@
 - [Use dictation on Claude Mobile | Claude Help Center](using-dictation-on-claude-mobile.md) — Dictation is available to all Claude users (Free, Pro, Max, Team, and Enterprise plans). Support for languages other than English is in beta.
 - [Use quick entry with Claude Desktop on Mac | Claude Help Center](use-quick-entry-with-claude-desktop-on-mac.md) — Quick entry is a redesigned experience for Claude Desktop on Mac that lets you access Claude instantly from anywhere on your computer. With quick entry, you…
 - [Use the Claude widget on Android | Claude Help Center](using-the-claude-widget-on-android.md) — The Claude Android widget is available on Android 8.0 Oreo and above.
-- [Use voice mode | Claude Help Center](using-voice-mode-on-claude-mobile-apps.md) — Voice mode allows you to have complete spoken conversations with Claude. Instead of typing a prompt and reading a written response, you can speak to Claude and…
 - [What versions of Android are supported? | Claude Help Center](what-versions-of-android-are-supported.md) — 4.  What versions of Android are supported?
 - [When to use desktop and web connectors | Claude Help Center](when-to-use-desktop-and-web-connectors.md) — Claude can connect to your tools in two ways: through the web (remote connectors) or through the Claude Desktop app (desktop extensions). Most connectors are…
 - [Why can’t I find Claude for Android in the Play Store? | Claude Help Center](why-can-t-i-find-claude-for-android-in-the-play-store.md) — 4.  Why can’t I find Claude for Android in the Play Store?

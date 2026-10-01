@@ -2,7 +2,7 @@
 title: "Understanding your Team plan invoices | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16607668-understanding-your-team-plan-invoices"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:34Z"
+fetched_at: "2026-09-30T06:31:45Z"
 tags: ["billing"]
 ---
 
@@ -21,11 +21,11 @@ This article covers Team plans purchased directly on the web.
 
 **Seat change invoices.** When an owner adds members or upgrades seats in the middle of a billing cycle, your organization is invoiced right away for the prorated cost of those seats for the rest of the cycle. Upgrading a seat from Standard to Premium works the same way and charges the prorated price difference. Removing members doesn't generate an invoice or a credit; the seat stays available to assign to someone else.
 
-Learn more about **[how your Team plan bill is calculated](how-is-my-team-plan-bill-calculated.md)**.
+Learn more about **[how your Team plan bill is calculated](https://support.claude.com/en/articles/9267289)**.
 
 **Usage credit receipts.** If your organization has enabled usage credits, each purchase of funds is charged separately from your subscription and has its own receipt. This includes purchases made automatically by auto-reload and any usage bundles an owner buys.
 
-Learn more about **[managing usage credits for Team and seat-based Enterprise plans](manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**.
+Learn more about **[managing usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970)**.
 
 **Credit notes.** If we refund part of an invoice after it's been issued, for example the tax on an invoice after your organization is marked tax-exempt, you'll receive a credit note that references the original invoice.
 
@@ -49,7 +49,7 @@ To change the billing email address or add more recipients, contact our Support 
 
 **Seat charges.** A renewal invoice charges the full seat price for each seat on your plan at the start of the cycle. On a monthly plan, that's the monthly seat price times the number of seats. On an annual plan, it's the monthly seat price times 12, times the number of seats.
 
-**Prorated charges.** A seat change invoice charges only for the part of the billing cycle that's left when the seats were added or upgraded, so the amount is less than the full seat price. For a worked example, see **[How is my Team plan bill calculated?](how-is-my-team-plan-bill-calculated.md)**
+**Prorated charges.** A seat change invoice charges only for the part of the billing cycle that's left when the seats were added or upgraded, so the amount is less than the full seat price. For a worked example, see **[How is my Team plan bill calculated?](https://support.claude.com/en/articles/9267289)**
 
 **Applied balance.** An "Applied balance" line means a credit already on your organization's account was used to pay part or all of the invoice. It's not a new charge and not a discount on that invoice. Credits come from a credit note or an overpayment on an earlier invoice, and they're applied to your next invoices automatically.
 
@@ -75,7 +75,7 @@ An owner added members or upgraded seats. Those changes are invoiced immediately
 
 Removing a member frees up the seat but doesn't reduce your bill or generate a credit. You're charged for the seats on your plan at the start of each billing cycle, so to lower your next invoice, an owner needs to reduce your plan's total seat allocation before it renews.
 
-Learn more about **[purchasing and managing seats on Team plans](purchasing-and-managing-seats-on-team-plans.md)**.
+Learn more about **[purchasing and managing seats on Team plans](https://support.claude.com/en/articles/12004354)**.
 
 ### Why did we get two receipts in the same month?
 

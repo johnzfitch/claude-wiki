@@ -2,7 +2,8 @@
 title: "Financial services | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/finance"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:30:31Z"
+fetched_at: "2026-09-30T06:30:27Z"
+last_modified: "Tue, 29 Sep 2026 22:09:32 GMT"
 tags: ["case-studies"]
 ---
 
@@ -621,7 +622,7 @@ Review actuarial workbooks and regulatory filings directly in Excel. Claude vali
 
 ### Agent templates with flexible deployment
 
-With agent templates for pitch books, credit memos, KYC screening, and fund accounting, teams can partner with Claude on real financial work. Available as [plugins](../15-Claude-AI-Features/use-plugins-in-claude-cowork.md) in Claude Cowork and Claude Code and as a cookbook for [Claude Managed Agents](../04-API-Reference/Other/managed-agents-overview.md).
+With agent templates for pitch books, credit memos, KYC screening, and fund accounting, teams can partner with Claude on real financial work. Available as [plugins](https://support.claude.com/en/articles/13837440-use-plugins-in-claude-cowork) in Claude Cowork and Claude Code and as a cookbook for [Claude Managed Agents](../04-API-Reference/Other/managed-agents-overview.md).
 
 Learn more
 

@@ -1,8 +1,8 @@
 ---
 title: "Use Claude Code with your Pro or Max plan | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan"
+source_url: "https://support.claude.com/en/articles/11145838"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:41Z"
+fetched_at: "2026-09-30T06:31:27Z"
 tags: ["billing", "claude-code"]
 ---
 
@@ -11,7 +11,7 @@ tags: ["billing", "claude-code"]
 August 19, 2026
 
 
-This article applies to individual consumers using Pro or Max plan subscriptions to access Claude Code. If you’re a member of a Team or Enterprise plan organization, see **[Use Claude Code with your Team or Enterprise plan](using-claude-code-with-your-team-or-enterprise-plan.md)**.
+This article applies to individual consumers using Pro or Max plan subscriptions to access Claude Code. If you’re a member of a Team or Enterprise plan organization, see **[Use Claude Code with your Team or Enterprise plan](https://support.claude.com/en/articles/11845131)**.
 
 ## What is Claude Code?
 
@@ -95,7 +95,7 @@ When you reach your usage limits, you can select from a few options based on you
 
 - Wait until your usage limits reset.
 
-For more details on efficient usage, refer to our **[Usage limit best practices](../22-Safety-Policy/usage-limit-best-practices.md)**.
+For more details on efficient usage, refer to our **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
 
 ------------------------------------------------------------------------
 

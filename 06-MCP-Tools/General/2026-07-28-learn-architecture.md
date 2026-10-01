@@ -70,7 +70,7 @@ Concepts of MCP
 
 Participants
 
-MCP follows a client-server architecture where an MCP host — an AI application like [Claude Code](../../15-Claude-AI-Features/claude-code.md) or [Claude Desktop](https://www.claude.ai/download) — establishes connections to one or more MCP servers. The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server. Local MCP servers that use the STDIO transport typically serve a single MCP client, whereas remote MCP servers that use the Streamable HTTP transport will typically serve many MCP clients. The key participants in the MCP architecture are:
+MCP follows a client-server architecture where an MCP host — an AI application like [Claude Code](../../15-Claude-AI-Features/claude-com-product-claude-code.md) or [Claude Desktop](https://www.claude.ai/download) — establishes connections to one or more MCP servers. The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server. Local MCP servers that use the STDIO transport typically serve a single MCP client, whereas remote MCP servers that use the Streamable HTTP transport will typically serve many MCP clients. The key participants in the MCP architecture are:
 
 - **MCP Host**: The AI application that coordinates and manages one or multiple MCP clients
 - **MCP Client**: A component that maintains a connection to an MCP server and obtains context from an MCP server for the MCP host to use

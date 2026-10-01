@@ -10,7 +10,7 @@ tags: ["agents", "news-research"]
 
 May 5, 2026
 
-We’re releasing ten ready-to-run agent templates for the most time-consuming work in financial services: building pitchbooks, screening KYC files, and closing the books at month-end. Each one ships as a [plugin](../15-Claude-AI-Features/use-plugins-in-claude-cowork.md) in Claude Cowork and Claude Code, and as a cookbook for [Claude Managed Agents](../04-API-Reference/Other/managed-agents-overview.md), so a team can put Claude on real financial work in days rather than months.
+We’re releasing ten ready-to-run agent templates for the most time-consuming work in financial services: building pitchbooks, screening KYC files, and closing the books at month-end. Each one ships as a [plugin](https://www.anthropic.com/15-Claude-AI-Features/use-plugins-in-claude-cowork-2f6512df28.md) in Claude Cowork and Claude Code, and as a cookbook for [Claude Managed Agents](https://www.anthropic.com/04-API-Reference/Other/managed-agents-overview-b12cd03916.md), so a team can put Claude on real financial work in days rather than months.
 
 Claude also now works across Microsoft Excel, PowerPoint, Word, and Outlook (coming soon) through the Claude add-ins for Microsoft 365. Once the add-ins are installed, context carries automatically between applications, so work that starts in a model can end in a deck without re-explaining anything in between.
 
@@ -46,7 +46,7 @@ There are two ways to put these to work.
 
 As a plugin in Claude Cowork or Claude Code, the template runs alongside the analyst, using the software already on their desktop. Hand the Pitch agent a target list, and you can get back a comps model in Excel, a pitchbook drafted in PowerPoint, and a cover note ready in Outlook.
 
-As a [Claude Managed Agent](../04-API-Reference/Other/managed-agents-overview.md), the same template runs autonomously on the Claude Platform, for work that spans a whole book of deals or a nightly schedule. The cookbooks stand it up with the building blocks a firm would otherwise engineer themselves: long-running sessions that can work throughout a multi-hour deal close, per-tool permissions, managed credential vaults, and a full audit log in the Claude Console where compliance and engineering teams can inspect every tool call and decision.
+As a [Claude Managed Agent](https://www.anthropic.com/04-API-Reference/Other/managed-agents-overview-b12cd03916.md), the same template runs autonomously on the Claude Platform, for work that spans a whole book of deals or a nightly schedule. The cookbooks stand it up with the building blocks a firm would otherwise engineer themselves: long-running sessions that can work throughout a multi-hour deal close, per-tool permissions, managed credential vaults, and a full audit log in the Claude Console where compliance and engineering teams can inspect every tool call and decision.
 
 In both scenarios, users stay firmly in the loop—reviewing, iterating on, and approving Claude’s work before it goes to a client, gets filed, or is acted on.
 
@@ -188,9 +188,9 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

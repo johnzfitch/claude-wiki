@@ -2,7 +2,7 @@
 title: "A conversation with IRC on frontline health data | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/irc-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:31:39Z"
+fetched_at: "2026-09-30T06:32:38Z"
 tags: ["case-studies", "enterprise", "security", "testing"]
 ---
 

@@ -9,7 +9,7 @@ tags: ["getting-started", "skills"]
 
 Learn how to use Claude's Skills feature to create professional documents, analyze data, and automate business workflows with Excel, PowerPoint, and PDF generation.
 
-> **See it in action:** The Skills you'll learn about power Claude's file creation capabilities! Check out **[Claude Creates Files](../19-Reference/create-files.md)** to see how these Skills enable Claude to create and edit documents directly in Claude.ai.
+> **See it in action:** The Skills you'll learn about power Claude's file creation capabilities! Check out **[Claude Creates Files](https://support.claude.com/en/19-Reference/claude-can-now-create-and-edit-files-claude.md)** to see how these Skills enable Claude to create and edit documents directly in Claude.ai.
 
 ## Table of Contents
 
@@ -766,7 +766,7 @@ If you encounter rate limits:
 
 Check out the official announcement to see how these Skills power Claude's file creation capabilities:
 
-- **[Claude Creates Files](../19-Reference/create-files.md)** - See how Skills enable Claude to create and edit Excel, PowerPoint, and PDF files directly
+- **[Claude Creates Files](https://support.claude.com/en/19-Reference/claude-can-now-create-and-edit-files-claude.md)** - See how Skills enable Claude to create and edit Excel, PowerPoint, and PDF files directly
 
 ### Continue Learning
 

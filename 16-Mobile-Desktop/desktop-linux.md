@@ -2,7 +2,7 @@
 title: "Claude Desktop on Linux (beta) - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/desktop-linux"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-22T06:30:23Z"
+fetched_at: "2026-09-30T06:31:47Z"
 tags: ["claude-code", "desktop"]
 ---
 
@@ -17,7 +17,7 @@ tags: ["claude-code", "desktop"]
 - [Troubleshoot](#troubleshoot)
   - [Unable to locate package claude-desktop](#unable-to-locate-package-claude-desktop)
   - [Unmet dependencies](#unmet-dependencies)
-  - [Running as root without —no-sandbox is not supported](#running-as-root-without-%E2%80%94no-sandbox-is-not-supported)
+  - [Running as root without --no-sandbox is not supported](#running-as-root-without-no-sandbox-is-not-supported)
   - [Cowork isn’t available](#cowork-isn%E2%80%99t-available)
 - [What’s not in the Linux beta yet](#what%E2%80%99s-not-in-the-linux-beta-yet)
 
@@ -184,9 +184,9 @@ If `apt` stops with `The following packages have unmet dependencies` or `Unsatis
 - All missing dependencies show `not installable` with an `:amd64` or `:arm64` suffix: you downloaded the `.deb` for a different architecture than your machine’s. Run `dpkg --print-architecture` and download the matching `.deb`, or [install from the apt repository](#install), which selects the package for your architecture.
 
 
-[​](#running-as-root-without-—no-sandbox-is-not-supported)
+[​](#running-as-root-without-no-sandbox-is-not-supported)
 
-Running as root without —no-sandbox is not supported
+Running as root without `--no-sandbox` is not supported
 
 If `claude-desktop` exits with this message, you launched it as root. Log in as a regular user and launch it from there.
 

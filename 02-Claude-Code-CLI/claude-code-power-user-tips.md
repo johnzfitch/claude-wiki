@@ -2,12 +2,11 @@
 title: "Claude Code power user tips | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:31:26Z"
+fetched_at: "2026-09-30T06:31:36Z"
 tags: ["agents", "claude-code", "hooks", "mcp", "mobile", "prompting", "sdk", "skills"]
 ---
 
 # Claude Code power user tips
-
 
 
 This article collects workflow tips from the Claude Code team at Anthropic. These practices cover parallel execution, planning, automation, verification, and customization—the patterns the team uses every day to ship code faster. Everyone’s setup is different, so experiment to see what works for you.

@@ -2,7 +2,7 @@
 title: "Claude Opus 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/opus-5-5/overview"
 category: "20-Models"
-fetched_at: "2026-09-23T06:27:34Z"
+fetched_at: "2026-09-30T06:32:06Z"
 tags: ["models"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["models"]
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](release-notes-overview.md)
 
@@ -40,9 +40,7 @@ Models
 
 [Overview](models-opus-5-5-overview.md)[What's new](models-opus-5-5-whats-new-opus-5-5.md)[Migration guide](models-opus-5-5-migration-guide.md)
 
-[Claude Opus 5](models-opus-5-overview.md)
-
-[Claude Sonnet 5](models-sonnet-5-overview.md)
+[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
 [Claude Haiku 4.5](models-haiku-4-5-overview.md)
 
@@ -80,7 +78,7 @@ claude-opus-5-5
 
 
 
-[Announcement](https://www.anthropic.com/news/claude-opus-5-5)·[What’s new](models-opus-5-5-whats-new-opus-5-5.md)·[Migration guide](models-opus-5-5-migration-guide.md)
+[Announcement(opens in new tab)](../15-Claude-AI-Features/claude-opus-5-5.md)[What’s new](models-opus-5-5-whats-new-opus-5-5.md)[Migration guide](models-opus-5-5-migration-guide.md)
 
 Context window  
 1Mtokens
@@ -143,8 +141,7 @@ Output
 [Batch API](../04-API-Reference/Guides/build-with-claude-batch-processing.md)  
 50% discount on input and output
 
-Full price list  
-[Pricing](../17-Billing-Plans/about-claude-pricing.md)
+[Full price list](../17-Billing-Plans/about-claude-pricing.md)
 
 ### Capabilities
 

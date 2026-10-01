@@ -2,7 +2,7 @@
 title: "Inviting members to the Claude Console | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13443764-inviting-members-to-the-claude-console"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-29T06:32:03Z"
+fetched_at: "2026-09-30T06:31:24Z"
 tags: ["api"]
 ---
 
@@ -11,9 +11,9 @@ tags: ["api"]
 March 16, 2026
 
 
-The instructions in this article apply to your overall Console organization. If you are working within a specific Console Workspace, see this article: [Creating and managing Workspaces in the Claude Console](../../21-Account-Support/creating-and-managing-workspaces-in-the-claude-console.md).
+The instructions in this article apply to your overall Console organization. If you are working within a specific Console Workspace, see this article: [Creating and managing Workspaces in the Claude Console](../../13-Enterprise-Admin/creating-and-managing-workspaces-in-the-claude-console.md).
 
-**Note:** Only organization Admins can manage Console members and invitations. See [Claude Console Roles and Permissions](claude-console-roles-and-permissions.md).
+**Note:** Only organization Admins can manage Console members and invitations. See [Claude Console Roles and Permissions](../../13-Enterprise-Admin/claude-console-roles-and-permissions.md).
 
 ## Inviting members to your Console organization
 

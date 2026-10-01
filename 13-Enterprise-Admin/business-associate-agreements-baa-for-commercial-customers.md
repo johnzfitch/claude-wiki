@@ -2,12 +2,11 @@
 title: "Business Associate Agreements (BAA) for Commercial Customers | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:31:39Z"
+fetched_at: "2026-09-30T06:31:51Z"
 tags: ["enterprise", "rag"]
 ---
 
 # Business Associate Agreements (BAA) for Commercial Customers
-
 
 
 *This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see **[here](https://privacy.claude.com/en/collections/10663362-consumers)**.*
@@ -22,7 +21,7 @@ For clarity, the BAA only covers the single organization that accepted it, and e
 
 Not all API features are covered; see the **[Implementation Guide](https://trust.anthropic.com/resources?s=2zblcrsgb00l3x9l2tpjf&name=%5Banthropic%5D-2025-type-1-hipaa-report-(-1-p-api).pdf)** for the full list of eligible and non-eligible features.
 
-**Important: [Covered Models](../20-Models/covered-models.md)** require 30-day data retention and aren't available with zero data retention (ZDR) enabled. Some services, like Claude Code, are only covered under the BAA when ZDR is enabled, which means those services can't use Covered Models under the BAA. See **[Covered Models under Anthropic’s BAA](covered-models-under-a-business-associate-agreement-baa.md)** for details.
+**Important: [Covered Models](https://support.claude.com/en/articles/15425695-covered-models)** require 30-day data retention and aren't available with zero data retention (ZDR) enabled. Some services, like Claude Code, are only covered under the BAA when ZDR is enabled, which means those services can't use Covered Models under the BAA. See **[Covered Models under Anthropic’s BAA](../15-Claude-AI-Features/covered-models-under-a-business-associate-agreement-baa-claude-help-center.md)** for details.
 
 Below is a breakdown of what’s covered under the BAA, by feature and product surface.
 

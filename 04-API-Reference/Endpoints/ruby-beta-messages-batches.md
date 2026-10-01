@@ -3003,7 +3003,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
       - `format_: BetaJSONOutputFormat`
 
-        A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+        A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/api/ruby/beta/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
         - `schema: Hash[Symbol, untyped]`
 
@@ -3015,7 +3015,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
     - `output_format: BetaJSONOutputFormat`
 
-      Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+      Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/api/ruby/beta/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
       A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 

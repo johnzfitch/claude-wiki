@@ -2,7 +2,7 @@
 title: "Get started with Claude Science | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16563838-get-started-with-claude-science"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:34Z"
+fetched_at: "2026-09-30T06:31:45Z"
 tags: ["claude-ai"]
 ---
 

@@ -2,19 +2,18 @@
 title: "Claim and migrate accounts on your domain | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14625619-claim-and-migrate-accounts-on-your-domain"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:32:16Z"
+fetched_at: "2026-09-30T06:32:03Z"
 tags: ["account"]
 ---
 
 # Claim and migrate accounts on your domain
 
 
-
 Domain claiming lets Enterprise admins discover, claim, and migrate existing personal Claude accounts (Free, Pro, and Max) on a verified company domain into their Enterprise workspace. This gives your organization a clean path to consolidate accounts on day one of an Enterprise deployment, and allows people using Claude on personal accounts to keep their work. Domain claiming is available for Enterprise plans, whether purchased directly through Anthropic or through the AWS Marketplace, and works the same in both cases.
 
 Domain claiming is supported on Claude Enterprise plans only.
 
-Team plans can verify a domain and block new personal accounts from being created, but admins can't claim or migrate existing accounts. People on a Team plan can still migrate their own personal accounts voluntarily—see **[Move your personal Claude account to a Team or Enterprise organization](can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md)**.
+Team plans can verify a domain and block new personal accounts from being created, but admins can't claim or migrate existing accounts. People on a Team plan can still migrate their own personal accounts voluntarily—see **[Move your personal Claude account to a Team or Enterprise organization](https://support.claude.com/en/articles/9267400)**.
 
 ------------------------------------------------------------------------
 
@@ -98,13 +97,13 @@ To migrate accounts on a domain you verified later:
 
 ## What’s not supported
 
-- Migrating data into organizations with HIPAA readiness or customer-managed encryption keys (CMEK) turned on. You can still claim your domain, and people on it are notified as usual, but they can only join fresh. Nothing from their personal accounts moves over. Learn more about **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)** and **[customer-managed encryption keys](../22-Safety-Policy/what-are-customer-managed-encryption-keys-cmek.md)**.
+- Migrating data into organizations with HIPAA readiness or customer-managed encryption keys (CMEK) turned on. You can still claim your domain, and people on it are notified as usual, but they can only join fresh. Nothing from their personal accounts moves over. Learn more about **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
 - Claiming Team plan accounts. Only individual accounts (Free, Pro, Max) can be claimed.
 
 - Setting a custom migration deadline. The window is always 30 days.
 
-- Canceling App Store subscriptions. People who purchased Pro or Max through the Apple App Store need to cancel their subscription themselves through their Apple ID settings. For details, see **[Respond to an Enterprise domain claim on your Claude account](respond-to-an-enterprise-domain-claim-on-your-claude-account.md)**.
+- Canceling App Store subscriptions. People who purchased Pro or Max through the Apple App Store need to cancel their subscription themselves through their Apple ID settings. For details, see **[Respond to an Enterprise domain claim on your Claude account](https://support.claude.com/en/articles/14625626)**.
 
 ## SSO and provisioning sequencing
 
@@ -122,6 +121,6 @@ Domain claiming integrates with your existing SSO and provisioning setup:
 
 ### What happens if my organization doesn’t have enough seats available for migrated users?
 
-If you purchased your Enterprise plan directly through Anthropic, you'll see an error message in organization settings prompting you to **[buy more seats](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**.
+If you purchased your Enterprise plan directly through Anthropic, you'll see an error message in organization settings prompting you to **[buy more seats](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)**.
 
 If you purchased your Enterprise plan through the AWS Marketplace, migrated users will see a message asking them to contact their admin when they try to log in after the migration.

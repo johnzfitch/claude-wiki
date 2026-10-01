@@ -78,7 +78,7 @@ Claude Haiku 4.5 is available now on Claude Code and our apps. Its efficiency me
 
 Developers can use Claude Haiku 4.5 on our API, Amazon Bedrock, and Google Cloud’s Vertex AI, where it serves as a drop-in replacement for both Haiku 3.5 and Sonnet 4 at our most economical price point.
 
-For complete technical details and evaluation results, see our [system card](../15-Claude-AI-Features/claude-haiku-4-5-system-card.md), [model page](../15-Claude-AI-Features/claude-haiku.md), and [documentation](https://docs.claude.com/en/docs/about-claude/models/overview).
+For complete technical details and evaluation results, see our [system card](../15-Claude-AI-Features/claude-haiku-4-5-system-card.md), [model page](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md), and [documentation](https://docs.claude.com/en/docs/about-claude/models/overview).
 
 #### Methodology
 
@@ -131,9 +131,9 @@ All OpenAI scores reported from their [GPT-5 post](https://openai.com/index/intr
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

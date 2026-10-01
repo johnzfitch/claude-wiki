@@ -2,7 +2,8 @@
 title: "Piloting Claude in Chrome | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/claude-for-chrome"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:31:53Z"
+fetched_at: "2026-09-30T06:32:24Z"
+last_modified: "Wed, 30 Sep 2026 04:21:07 GMT"
 tags: ["news-research"]
 ---
 
@@ -102,7 +103,7 @@ For the pilot, we’re looking for trusted testers who are comfortable with Clau
 
 **If you’d like to take part, you can join the Claude in Chrome research preview waitlist at** [**claude.ai/chrome**](http://claude.ai/chrome)**.** Once you have access, you can install the extension from the Chrome Web Store and authenticate with your Claude credentials.
 
-We recommend starting with trusted sites—always be mindful of the data that’s visible to Claude—and avoiding use of Claude in Chrome for sites that involve financial, legal, medical, or other types of sensitive information. You can find a detailed safety guide [in our Help Center](../15-Claude-AI-Features/getting-started-with-claude-for-chrome.md).
+We recommend starting with trusted sites—always be mindful of the data that’s visible to Claude—and avoiding use of Claude in Chrome for sites that involve financial, legal, medical, or other types of sensitive information. You can find a detailed safety guide [in our Help Center](https://support.anthropic.com/en/articles/12012173-getting-started-with-claude-for-chrome).
 
 We hope that you’ll share your feedback to help us continue to improve both the capabilities and safeguards for Claude in Chrome—and help us take an important step towards a fundamentally new way to integrate AI into our lives.
 

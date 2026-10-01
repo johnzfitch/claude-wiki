@@ -2,7 +2,8 @@
 title: "Claude on AWS | Claude by Anthropic"
 source_url: "https://www.claude.com/partners/amazon-bedrock"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-29T06:33:18Z"
+fetched_at: "2026-09-30T06:32:54Z"
+last_modified: "Tue, 29 Sep 2026 22:09:32 GMT"
 tags: ["api", "bedrock", "enterprise"]
 ---
 

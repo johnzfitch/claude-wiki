@@ -163,7 +163,7 @@ timing.json
 }
 ```
 
-In Claude Code, when a subagent task finishes, the [task completion notification](../05-Agent-SDK/agent-sdk-typescript.md#sdk-task-notification-message) includes `total_tokens` and `duration_ms`. Save these values immediately — they aren’t persisted anywhere else.
+In Claude Code, when a subagent task finishes, the [task completion notification](https://agentskills.io/05-Agent-SDK/agent-sdk-typescript.md#sdk-task-notification-message) includes `total_tokens` and `duration_ms`. Save these values immediately — they aren’t persisted anywhere else.
 
 
 [​](#writing-assertions)

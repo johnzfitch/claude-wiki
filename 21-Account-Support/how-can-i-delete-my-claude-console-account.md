@@ -2,7 +2,7 @@
 title: "How can I delete my Claude Console account? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10366376-how-can-i-delete-my-claude-console-account"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:31:36Z"
+fetched_at: "2026-09-30T06:30:58Z"
 tags: ["account"]
 ---
 
@@ -11,7 +11,7 @@ tags: ["account"]
 March 16, 2026
 
 
-Only Console Admins can request deletion. See [Claude Console Roles and Permissions](../04-API-Reference/Other/claude-console-roles-and-permissions.md) for a full overview of your role's capabilities.
+Only Console Admins can request deletion. See [Claude Console Roles and Permissions](../13-Enterprise-Admin/claude-console-roles-and-permissions.md) for a full overview of your role's capabilities.
 
 This article explains how a Claude Console Admin can delete their organization via Console settings. Note that deletion impacts all members of a Console organization.
 
@@ -41,7 +41,7 @@ This article explains how a Claude Console Admin can delete their organization v
 
 ### I accidentally deleted my Console organization – what should I do?
 
-If you followed the steps above to delete your Console organization but want to revert this action, our Support team can restore your account data within seven days of deletion. Please [contact Support](how-can-i-contact-support.md) for further assistance.
+If you followed the steps above to delete your Console organization but want to revert this action, our Support team can restore your account data within seven days of deletion. Please [contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support) for further assistance.
 
 ### I have an outstanding balance; how can I delete my Console organization?
 

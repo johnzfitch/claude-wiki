@@ -2,7 +2,7 @@
 title: "How do I log out of all active sessions? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10310342-how-do-i-log-out-of-all-active-sessions"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:30:11Z"
+fetched_at: "2026-09-30T06:31:22Z"
 tags: ["claude-ai", "claude-code"]
 ---
 
@@ -52,4 +52,4 @@ If you used your Claude account to authenticate into Claude Code, you can manage
 
 ## Unable to access your account?
 
-If you're unable to sign into your account to log out of all sessions, contact our Support team by clicking on the message icon in the bottom right of any Help Center page. For additional information, refer to **[How to get support](../21-Account-Support/how-can-i-contact-support.md)**.
+If you're unable to sign into your account to log out of all sessions, contact our Support team by clicking on the message icon in the bottom right of any Help Center page. For additional information, refer to **[How to get support](how-to-get-support-claude-help-center.md)**.

@@ -2,7 +2,7 @@
 title: "Public Sector FAQs | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13756069-public-sector-faqs"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:30:40Z"
+fetched_at: "2026-09-30T06:31:52Z"
 tags: ["account"]
 ---
 

@@ -220,7 +220,7 @@ Outside of [CSAM screening](../../22-Safety-Policy/csam-detection-and-reporting.
 - **Latency:** Operations that wrap or unwrap data keys make a round-trip to your key management service, which can add a small amount of latency to actions that read or write data at rest.
 - **Revocation delay:** Key revocation can take up to 1 hour (the cache TTL). Requests already in flight during that window may continue to succeed.
 - **KMS costs:** CMEK requires a key in a third-party key management service (AWS KMS, Google Cloud KMS, or Azure Key Vault), which might incur separate charges billed by your KMS provider.
-- **Claude Code telemetry behind a gateway:** When Claude Code connects through an LLM gateway or proxy (a custom `ANTHROPIC_BASE_URL`), CMEK does not apply to Claude Code's operational telemetry. To turn this telemetry off, set the `DISABLE_TELEMETRY` environment variable to `1`, as described under [Telemetry services](../../13-Enterprise-Admin/data-usage.md#telemetry-services) in the Claude Code documentation.
+- **Claude Code telemetry behind a gateway:** When Claude Code connects through an LLM gateway or proxy (a custom `ANTHROPIC_BASE_URL`), CMEK does not apply to Claude Code's operational telemetry. To turn this telemetry off, set the `DISABLE_TELEMETRY` environment variable to `1`, as described under [Telemetry services](https://platform.claude.com/docs/22-Safety-Policy/data-usage-claude-code-docs-06b2864aaa.md#telemetry-services) in the Claude Code documentation.
 
 ## Configure your provider
 

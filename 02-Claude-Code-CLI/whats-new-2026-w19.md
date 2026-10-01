@@ -2,7 +2,7 @@
 title: "Week 19 · May 4–8, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w19"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:29:48Z"
+fetched_at: "2026-09-30T06:32:01Z"
 tags: ["claude-code"]
 ---
 
@@ -38,7 +38,7 @@ History search across all your projectsv2.1.129
 
 Other wins
 
-New `worktree.baseRef` setting (`fresh` \| `head`) controls whether `—worktree`, the `EnterWorktree` tool, and agent-isolation worktrees branch from the remote default branch or local `HEAD`; the default `fresh` keeps unpushed commits out of new worktrees
+New `worktree.baseRef` setting (`fresh` \| `head`) controls whether `--worktree`, the `EnterWorktree` tool, and agent-isolation worktrees branch from the remote default branch or local `HEAD`; the default `fresh` keeps unpushed commits out of new worktrees
 
 New `settings.autoMode.hard_deny` rules block matching actions unconditionally in auto mode, regardless of allow exceptions, for actions that should never run automatically even when broader allow rules apply
 
@@ -52,7 +52,7 @@ Hooks now receive the active effort level via the `effort.level` JSON input fiel
 
 `/mcp` now shows the tool count for connected servers and flags servers that connected with 0 tools
 
-`—channels` now works with console (API key) authentication
+`--channels` now works with console (API key) authentication
 
 Subprocesses such as Bash, hooks, MCP, and LSP no longer inherit `OTEL_*` environment variables, so OTEL-instrumented apps run via the Bash tool no longer pick up the CLI’s own OTLP endpoint
 

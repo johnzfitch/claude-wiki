@@ -2,12 +2,11 @@
 title: "Get started with Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114491-getting-started-with-claude"
 category: "01-Getting-Started"
-fetched_at: "2026-09-29T06:32:04Z"
+fetched_at: "2026-09-30T06:33:07Z"
 tags: ["getting-started"]
 ---
 
 # Get started with Claude
-
 
 
 ## What is Claude?
@@ -26,7 +25,7 @@ You can access Claude through several platforms:
 
 ## Supported locations
 
-You must be in one of our **[supported locations](../21-Account-Support/where-can-i-access-claude-ai.md)** to access Claude.
+You must be in one of our **[supported locations](../15-Claude-AI-Features/where-can-i-access-claude.md)** to access Claude.
 
 ## Is there an age requirement to use Claude?
 
@@ -61,13 +60,13 @@ You can also choose how much effort Claude puts into each response and whether i
 
 Claude has extensive training in English and performs well in many other common languages. It also has some ability to communicate in less common languages and has extensive knowledge of programming languages.
 
-For instructions to select a language in your settings, see **[How to use Claude in your preferred language](../22-Safety-Policy/how-to-use-claude-in-your-preferred-language.md).**
+For instructions to select a language in your settings, see **[How to use Claude in your preferred language](https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language).**
 
 ### Are there any usage limits or limits on chat length?
 
 While using the free Claude plan, there is a session-based usage limit that will reset every five hours. Also, the number of messages you can send will vary based on demand, and we may impose other types of usage limits to ensure fair access to all users. Claude will notify you when you’ve reached your limit, or if your prompt exceeds the available context window.
 
-For more information about usage and length limits, refer to **[How do usage and length limits work?](../22-Safety-Policy/understanding-usage-and-length-limits.md)**
+For more information about usage and length limits, refer to **[How do usage and length limits work?](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work)**
 
 ### How do I increase my usage limits?
 

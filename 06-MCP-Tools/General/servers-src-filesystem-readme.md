@@ -184,7 +184,7 @@ The server's directory access control follows this flow:
 
 ### Tool annotations (MCP hints)
 
-This server sets [MCP ToolAnnotations](../Spec-Archive/2025-03-26-server-tools.md#toolannotations)
+This server sets [MCP ToolAnnotations](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/filesystem/Spec-Archive/spec-2025-03-26-tools-model-context-protocol.md#toolannotations)
 on each tool so clients can:
 
 - Distinguish **read‑only** tools from write‑capable tools.

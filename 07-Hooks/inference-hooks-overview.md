@@ -2,7 +2,7 @@
 title: "Inference hooks overview | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16059458-inference-hooks-overview"
 category: "07-Hooks"
-fetched_at: "2026-09-29T06:31:33Z"
+fetched_at: "2026-09-30T06:31:44Z"
 tags: ["hooks"]
 ---
 

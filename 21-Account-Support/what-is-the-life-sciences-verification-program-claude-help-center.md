@@ -2,13 +2,11 @@
 title: "What is the Life Sciences Verification Program? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16975617"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:31:02Z"
+fetched_at: "2026-09-30T06:33:04Z"
 tags: ["account"]
 ---
 
 # What is the Life Sciences Verification Program?
-
-Updated today
 
 
 This article explains what the Life Sciences Verification Program (LSVP) is, supported use cases, and how to apply.

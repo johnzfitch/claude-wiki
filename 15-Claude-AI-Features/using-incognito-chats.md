@@ -2,19 +2,18 @@
 title: "Use incognito chats | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12260368-using-incognito-chats"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:49Z"
+fetched_at: "2026-09-30T06:32:30Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
 # Use incognito chats
 
 
-
 **Note:** If you have the new Claude experience, incognito chats open in the previous chat experience, so Claude can't create files or run code in them.
 
 ## What are incognito chats?
 
-Incognito chats are temporary conversations that aren't saved to your chat history or to **[Claude’s memory](using-claude-s-chat-search-and-memory-to-build-on-previous-context.md)**.
+Incognito chats are temporary conversations that aren't saved to your chat history or to **[Claude’s memory](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)**.
 
 Incognito chats are available to all Claude users (Free, Pro, Max, Team, and Enterprise plans).
 
@@ -63,7 +62,7 @@ If you're using incognito chats on a Team or Enterprise plan:
 
 - While incognito chats aren’t saved to your chat history, they are retained for 30 days for safety, or longer in accordance with your organization's data retention policy.
 
-- Incognito chats are included in the **[Compliance API](../04-API-Reference/Other/how-can-i-access-the-compliance-api.md)** (available for Enterprise plans).
+- Incognito chats are included in the **[Compliance API](https://support.claude.com/en/articles/13015708-access-the-compliance-api)** (available for Enterprise plans).
 
 ------------------------------------------------------------------------
 

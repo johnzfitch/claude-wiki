@@ -2,7 +2,7 @@
 title: "Amira Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/amira"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:31:27Z"
+fetched_at: "2026-09-30T06:32:27Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 

@@ -2,15 +2,14 @@
 title: "Use the GitHub integration | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10167454-using-the-github-integration"
 category: "14-Connectors"
-fetched_at: "2026-09-29T06:31:08Z"
+fetched_at: "2026-09-30T06:32:15Z"
 tags: ["connectors", "git", "github"]
 ---
 
 # Use the GitHub integration
 
 
-
-For more information on enabling GitHub within your account, see **[Use connectors to extend Claude's capabilities](use-connectors-to-extend-claude-s-capabilities.md)**.
+For more information on enabling GitHub within your account, see **[Use connectors to extend Claude's capabilities](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)**.
 
 Connect your GitHub repositories directly to Claude to provide comprehensive context for your software development tasks. You can easily add repositories by selecting them from a list, helping Claude better understand and assist with your codebase.
 

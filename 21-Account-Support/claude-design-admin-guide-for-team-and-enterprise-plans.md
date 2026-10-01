@@ -2,12 +2,11 @@
 title: "Claude Design admin guide for Team and Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14604406-claude-design-admin-guide-for-team-and-enterprise-plans"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:30:51Z"
+fetched_at: "2026-09-30T06:32:54Z"
 tags: ["account", "enterprise"]
 ---
 
 # Claude Design admin guide for Team and Enterprise plans
-
 
 
 Claude Design lets your team create on-brand designs, prototypes, and interactive microsites through conversation with Claude. Presentations now have their own tool, Claude Slides.
@@ -68,7 +67,7 @@ Any member with Claude Design access can create and edit design systems. On the 
 
 ## Recommended rollout phases
 
-A phased rollout lets you validate your design system and build internal expertise before broad adoption. On Enterprise plans, you can phase access to standalone Claude Design using **[custom roles](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**. You can phase access to Claude Design in conversations and the Artifacts tab the same way, with the Design capability (under **Artifacts**).
+A phased rollout lets you validate your design system and build internal expertise before broad adoption. On Enterprise plans, you can phase access to standalone Claude Design using **[custom roles](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**. You can phase access to Claude Design in conversations and the Artifacts tab the same way, with the Design capability (under **Artifacts**).
 
 ### Phase 1: Design system setup
 
@@ -158,4 +157,4 @@ There are no strict limits, but we recommend the phased approach outlined above 
 
 ### Can we export or archive generated designs?
 
-Claude Design currently supports export to HTML bundles, PPTX, and PDF, hand-off to Claude Code, and sending designs to the partner tools listed in **[Get started with Claude Design](get-started-with-claude-design.md)**.
+Claude Design currently supports export to HTML bundles, PPTX, and PDF, hand-off to Claude Code, and sending designs to the partner tools listed in **[Get started with Claude Design](../15-Claude-AI-Features/get-started-with-claude-design-claude-help-center.md)**.

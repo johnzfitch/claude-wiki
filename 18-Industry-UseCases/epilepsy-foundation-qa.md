@@ -2,7 +2,7 @@
 title: "Epilepsy Foundation Q&A | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/epilepsy-foundation-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:57Z"
+fetched_at: "2026-09-30T06:33:33Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Claude Code on the web | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12618689-claude-code-on-the-web"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:31:06Z"
+fetched_at: "2026-09-30T06:31:34Z"
 tags: ["claude-code"]
 ---
 

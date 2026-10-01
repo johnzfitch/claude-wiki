@@ -2,7 +2,7 @@
 title: "Claude for Teachers: your data and our terms | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15926041-claude-for-teachers-your-data-and-our-terms"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:31:57Z"
+fetched_at: "2026-09-30T06:32:01Z"
 tags: ["safety"]
 ---
 
@@ -69,7 +69,7 @@ AES-256 encryption at rest. TLS 1.2 or better in transit. Multi-factor authentic
 
 ### Delete your data
 
-You control your conversations and can delete your chats anytime from your dashboard. More information on data deletion can be found here: **[Can you delete data that I sent via Team and Enterprise plans?](../17-Billing-Plans/can-you-delete-data-that-i-sent-via-team-and-enterprise-plans.md)**
+You control your conversations and can delete your chats anytime from your dashboard. More information on data deletion can be found here: **[Can you delete data that I sent via Team and Enterprise plans?](https://support.claude.com/en/articles/9796617-can-you-delete-data-that-i-sent-via-team-and-enterprise-plans)**
 
 Your district's admins can also delete any member's data through the Compliance API when district policy requires it. If your district leaves Claude, Anthropic returns your district's data on request and deletes its copies within 30 days, except where the law requires retention.
 
@@ -79,7 +79,7 @@ Your district's admins can also delete any member's data through the Compliance 
 
 When you verify, your account moves onto a Claude for Teachers plan—a free Claude for Teams plan for verified educators. It comes with educator-specific terms and a data processing agreement, your chats and files aren't used to train our models, and student-data protections are built in. Your usage limits are higher than a standard free account—enough for everyday classroom work like lesson planning, quizzes, and parent communication.
 
-Some Team plan features are turned off for Claude for Teachers. You won't see billing and seat purchasing, **[member invitations and management](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**, roles and permissions, SSO and domain capture, spend controls, usage credits, or premium seats. For questions, **[reach out to our Support team](../21-Account-Support/how-can-i-contact-support.md)**.
+Some Team plan features are turned off for Claude for Teachers. You won't see billing and seat purchasing, **[member invitations and management](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**, roles and permissions, SSO and domain capture, spend controls, usage credits, or premium seats. For questions, **[reach out to our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
 
 ### School and district organizations
 

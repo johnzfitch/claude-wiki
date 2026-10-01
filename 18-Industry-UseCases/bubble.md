@@ -2,7 +2,7 @@
 title: "Bubble Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/bubble"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:52Z"
+fetched_at: "2026-09-30T06:33:29Z"
 tags: ["api", "case-studies", "enterprise", "prompting", "security"]
 ---
 

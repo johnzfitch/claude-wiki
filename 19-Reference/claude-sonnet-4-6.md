@@ -30,7 +30,7 @@ Across sixteen months, our Sonnet models have made steady gains on OSWorld. The 
 
 The model certainly still lags behind the most skilled humans at using computers. But the rate of progress is remarkable nonetheless. It means that computer use is much more useful for a range of work tasks—and that substantially more capable models are within reach.
 
-At the same time, computer use poses risks: malicious actors can attempt to hijack the model by hiding instructions on websites in what’s known as a prompt injection attack. We’ve been working to improve our models’ resistance to prompt injections—our [safety evaluations](../15-Claude-AI-Features/claude-sonnet-4-6-system-card.md) show that Sonnet 4.6 is a major improvement compared to its predecessor, Sonnet 4.5, and performs similarly to Opus 4.6. You can find out more about how to mitigate prompt injections and other safety concerns in [our API docs](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md).
+At the same time, computer use poses risks: malicious actors can attempt to hijack the model by hiding instructions on websites in what’s known as a prompt injection attack. We’ve been working to improve our models’ resistance to prompt injections—our [safety evaluations](../15-Claude-AI-Features/claude-sonnet-4-6-system-card.md) show that Sonnet 4.6 is a major improvement compared to its predecessor, Sonnet 4.5, and performs similarly to Opus 4.6. You can find out more about how to mitigate prompt injections and other safety concerns in [our API docs](https://www.anthropic.com/04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks-19976860e0.md).
 
 ## Evaluating Claude Sonnet 4.6
 
@@ -125,9 +125,9 @@ Early customers also reported broad improvements, with frontend code and financi
 
 ## Product updates
 
-On the Claude Platform, Sonnet 4.6 supports both [adaptive thinking](../04-API-Reference/Guides/build-with-claude-thinking-steering-and-cost.md) and extended thinking, as well as [context compaction](../04-API-Reference/Guides/build-with-claude-compaction.md) in beta, which automatically summarizes older context as conversations approach limits, increasing effective context length.
+On the Claude Platform, Sonnet 4.6 supports both [adaptive thinking](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-adaptive-thinking-2b96627d8d.md) and extended thinking, as well as [context compaction](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-compaction-47672e5bbf.md) in beta, which automatically summarizes older context as conversations approach limits, increasing effective context length.
 
-On our API, Claude’s [web search](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-search-tool.md) and [fetch](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md) tools now automatically write and execute code to [filter and process search results](https://www.claude.com/blog/improved-web-search-with-dynamic-filtering), keeping only relevant content in context—improving both response quality and token efficiency. Additionally, [code execution](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md), [memory](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-memory-tool.md), [programmatic tool calling](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md), [tool search](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md), and [tool use examples](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md#providing-tool-use-examples) are now generally available.
+On our API, Claude’s [web search](https://www.anthropic.com/04-API-Reference/api-web-search.md) and [fetch](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md) tools now automatically write and execute code to [filter and process search results](https://www.claude.com/blog/improved-web-search-with-dynamic-filtering), keeping only relevant content in context—improving both response quality and token efficiency. Additionally, [code execution](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md), [memory](https://www.anthropic.com/04-API-Reference/Agents-Tools/agents-and-tools-tool-use-memory-tool-6d9391f81f.md), [programmatic tool calling](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md), [tool search](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md), and [tool use examples](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md#providing-tool-use-examples) are now generally available.
 
 Sonnet 4.6 offers strong performance at any thinking effort, even with extended thinking off. As part of your migration from Sonnet 4.5, we recommend exploring across the spectrum to find the ideal balance of speed and reliable performance, depending on what you’re building.
 
@@ -190,9 +190,9 @@ If you’re a developer, you can get started quickly by using `claude-sonnet-4-6
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

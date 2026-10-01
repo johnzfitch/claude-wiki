@@ -22,7 +22,7 @@ First, we’re **doubling Claude Code’s five-hour rate limits** for Pro, Max, 
 
 Second, we’re **removing the peak hours limit reduction on Claude Code** for Pro and Max accounts.
 
-Third, we’re **raising our [API rate limits](../04-API-Reference/Endpoints/rate-limits.md) considerably for Claude Opus models**, as shown in the table below:
+Third, we’re **raising our [API rate limits](https://www.anthropic.com/04-API-Reference/Other/api-rate-limits-28d3302987.md) considerably for Claude Opus models**, as shown in the table below:
 
 ## New compute partnership with SpaceX
 
@@ -89,9 +89,9 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

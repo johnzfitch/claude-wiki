@@ -2,7 +2,7 @@
 title: "Cancel your Pro or Max subscription | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8325617-how-do-i-cancel-my-paid-claude-subscription"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:32:06Z"
+fetched_at: "2026-09-30T06:33:10Z"
 tags: ["billing", "desktop"]
 ---
 

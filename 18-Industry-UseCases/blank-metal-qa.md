@@ -2,7 +2,7 @@
 title: "Blank Metal Claude Cowork case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/blank-metal-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:31:57Z"
+fetched_at: "2026-09-30T06:32:39Z"
 tags: ["case-studies", "claude-code", "enterprise", "security"]
 ---
 

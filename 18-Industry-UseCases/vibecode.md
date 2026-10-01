@@ -2,7 +2,7 @@
 title: "Vibecode Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/vibecode"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:33:15Z"
+fetched_at: "2026-09-30T06:33:50Z"
 tags: ["api", "case-studies", "enterprise", "mobile", "security"]
 ---
 

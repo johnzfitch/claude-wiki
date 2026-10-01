@@ -2,13 +2,11 @@
 title: "How up-to-date is Claude's training data? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:32:30Z"
+fetched_at: "2026-09-30T06:32:16Z"
 tags: ["safety"]
 ---
 
 # How up-to-date is Claude's training data?
-
-Updated today
 
 
 While we're constantly updating Claude's data, each model has a knowledge cutoff:

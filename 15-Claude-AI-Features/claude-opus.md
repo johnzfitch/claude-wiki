@@ -61,9 +61,9 @@ For business users and consumers who want to collaborate with a powerful model o
 
 For developers interested in building AI solutions that demand strong intelligence, Opus 5 is available on the Claude Platform natively, and in Amazon Web Services, Google Cloud, and Microsoft Foundry.
 
-Pricing for Opus 5 starts at \$5 per million input tokens and \$25 per million output tokens, with up to 90% cost savings with [prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) and 50% savings with [batch processing](../04-API-Reference/Guides/build-with-claude-batch-processing.md#pricing). To learn more, check out our [pricing page](../17-Billing-Plans/pricing.md#api). To get started, use `claude-opus-5` via the [Claude API](../20-Models/about-claude-models-overview.md).
+Pricing for Opus 5 starts at \$5 per million input tokens and \$25 per million output tokens, with up to 90% cost savings with [prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) and 50% savings with [batch processing](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-batch-processing-58f98b4064.md#pricing). To learn more, check out our [pricing page](../17-Billing-Plans/pricing.md#api). To get started, use `claude-opus-5` via the [Claude API](../20-Models/about-claude-models-overview.md).
 
-For workloads that need to run in the US, US-only inference is available at 1.1x pricing for input and output tokens. [Learn more](../04-API-Reference/Guides/build-with-claude-data-residency.md).  
+For workloads that need to run in the US, US-only inference is available at 1.1x pricing for input and output tokens. [Learn more](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-data-residency-6c8e324ea6.md).  
 
 ## Use cases
 
@@ -248,9 +248,9 @@ Pricing depends on how you want to use Opus 5. To learn more, check out our [pri
 
 - [Mythos](claude-mythos.md)
 - [Fable](claude-fable.md)
-- [Opus](claude-opus.md)
-- [Sonnet](claude-sonnet.md)
-- [Haiku](claude-haiku.md)
+- [Opus](https://www.anthropic.com/claude/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/claude/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/claude/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

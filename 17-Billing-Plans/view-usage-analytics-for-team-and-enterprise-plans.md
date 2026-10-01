@@ -2,12 +2,11 @@
 title: "View usage analytics for Team and Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12883420-view-usage-analytics-for-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:55Z"
+fetched_at: "2026-09-30T06:32:35Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
 # View usage analytics for Team and Enterprise plans
-
 
 
 This article explains how to view and export usage analytics for your organization.
@@ -74,7 +73,7 @@ Use the dropdown on the **Active members and assigned seats** chart to filter by
 
 ### How much is Claude costing?
 
-**Note:** If you're on a **[seat-based Enterprise plan](purchasing-and-managing-seats-on-enterprise-plans.md#h_6a78e30e26)**, spend reports only appear if your organization has **[enabled usage credits](manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**. The spend data covers overage spend only—usage within seat-based allotments isn't included.
+**Note:** If you're on a **[seat-based Enterprise plan](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans#h_6a78e30e26)**, spend reports only appear if your organization has **[enabled usage credits](https://support.claude.com/en/articles/12005970-)**. The spend data covers overage spend only—usage within seat-based allotments isn't included.
 
 This section includes the following analytics:
 
@@ -285,7 +284,7 @@ Navigate to **[Analytics \> Cowork](https://claude.ai/analytics/cowork)** to vie
 
 ## Surveys
 
-Navigate to **[Analytics \> Surveys](https://claude.ai/analytics/surveys)** to ask users short, in-product questions about what they're getting out of Claude and review the aggregated answers. Surveys appear to users as a small card in Cowork or chat, and results include response rates, a breakdown by surface and group, and a CSV export per survey. Learn more about **[creating surveys for your organization](../13-Enterprise-Admin/create-surveys-for-your-organization.md)**.
+Navigate to **[Analytics \> Surveys](https://claude.ai/analytics/surveys)** to ask users short, in-product questions about what they're getting out of Claude and review the aggregated answers. Surveys appear to users as a small card in Cowork or chat, and results include response rates, a breakdown by surface and group, and a CSV export per survey. Learn more about **[creating surveys for your organization](https://support.claude.com/en/articles/16764057)**.
 
 ------------------------------------------------------------------------
 

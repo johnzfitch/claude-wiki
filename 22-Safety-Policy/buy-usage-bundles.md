@@ -2,7 +2,7 @@
 title: "Buy usage bundles | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14246112-buy-usage-bundles"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:31:23Z"
+fetched_at: "2026-09-30T06:31:32Z"
 tags: ["safety"]
 ---
 
@@ -40,9 +40,9 @@ Price and plans are subject to change at Anthropic's discretion.
 
 You'll need usage credits enabled before you can purchase bundles. If you haven't set up usage credits yet, see the relevant guide for your plan:
 
-- **[Manage usage credits for paid Claude plans](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md)** (Pro and Max)
+- **[Manage usage credits for paid Claude plans](https://support.claude.com/en/articles/12429409-manage-extra-usage-for-paid-claude-plans)** (Pro and Max)
 
-- **[Manage usage credits for Team and seat-based Enterprise plans](../17-Billing-Plans/manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)** (Team)
+- **[Manage usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-manage-extra-usage-for-team-and-seat-based-enterprise-plans)** (Team)
 
 Once usage credits are enabled:
 

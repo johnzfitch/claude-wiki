@@ -4,137 +4,6 @@
 
 ---
 
-## Configure Hookify Rules
-
-Source: https://github.com/anthropics/claude-code/blob/main/plugins/hookify/commands/configure.md
-Path: 07-Hooks/claude-code-plugins-hookify-commands-configure.md
-
-# Configure Hookify Rules
-
-**Load hookify:writing-rules skill first** to understand rule format.
-
-Enable or disable existing hookify rules using an interactive interface.
-
-## Steps
-
-### 1. Find Existing Rules
-
-Use Glob tool to find all hookify rule files:
-```
-pattern: ".claude/hookify.*.local.md"
-```
-
-If no rules found, inform user:
-```
-No hookify rules configured yet. Use `/hookify` to create your first rule.
-```
-
-### 2. Read Current State
-
-For each rule file:
-- Read the file
-- Extract `name` and `enabled` fields from frontmatter
-- Build list of rules with current state
-
-### 3. Ask User Which Rules to Toggle
-
-Use AskUserQuestion to let user select rules:
-
-```json
-{
-  "questions": [
-    {
-      "question": "Which rules would you like to enable or disable?",
-      "header": "Configure",
-      "multiSelect": true,
-      "options": [
-        {
-          "label": "warn-dangerous-rm (currently enabled)",
-          "description": "Warns about rm -rf commands"
-        },
-        {
-          "label": "warn-console-log (currently disabled)",
-          "description": "Warns about console.log in code"
-        },
-        {
-          "label": "require-tests (currently enabled)",
-          "description": "Requires tests before stopping"
-        }
-      ]
-    }
-  ]
-}
-```
-
-**Option format:**
-- Label: `{rule-name} (currently {enabled|disabled})`
-- Description: Brief description from rule's message or pattern
-
-### 4. Parse User Selection
-
-For each selected rule:
-- Determine current state from label (enabled/disabled)
-- Toggle state: enabled → disabled, disabled → enabled
-
-### 5. Update Rule Files
-
-For each rule to toggle:
-- Use Read tool to read current content
-- Use Edit tool to change `enabled: true` to `enabled: false` (or vice versa)
-- Handle both with and without quotes
-
-**Edit pattern for enabling:**
-```
-old_string: "enabled: false"
-new_string: "enabled: true"
-```
-
-**Edit pattern for disabling:**
-```
-old_string: "enabled: true"
-new_string: "enabled: false"
-```
-
-### 6. Confirm Changes
-
-Show user what was changed:
-
-```
-## Hookify Rules Updated
-
-**Enabled:**
-- warn-console-log
-
-**Disabled:**
-- warn-dangerous-rm
-
-**Unchanged:**
-- require-tests
-
-Changes apply immediately - no restart needed
-```
-
-## Important Notes
-
-- Changes take effect immediately on next tool use
-- You can also manually edit .claude/hookify.*.local.md files
-- To permanently remove a rule, delete its .local.md file
-- Use `/hookify:list` to see all configured rules
-
-## Edge Cases
-
-**No rules to configure:**
-- Show message about using `/hookify` to create rules first
-
-**User selects no rules:**
-- Inform that no changes were made
-
-**File read/write errors:**
-- Inform user of specific error
-- Suggest manual editing as fallback
-
----
-
 ## Hookify Plugin Help
 
 Source: https://github.com/anthropics/claude-code/blob/main/plugins/hookify/commands/help.md
@@ -2427,7 +2296,7 @@ The empty `matcher` fires on all notification types. To fire only on specific ev
 | `elicitation_url_dialog`     | An MCP server asks you to open a browser URL and you haven’t typed for about six seconds                                                                                                                                                                                                                                                                                                                                                                                   |
 | `elicitation_complete`       | An MCP server reports that a [URL-mode elicitation](hooks.md#elicitation-input) is complete                                                                                                                                                                                                                                                                                                                                                                          |
 | `elicitation_response`       | An MCP elicitation response is sent back to the server                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `agent_needs_input`          | A background session starts waiting on your input while [agent view](../09-Agents-Patterns/agent-view.md) is open, or the current session asks you an [agent team teammate’s terminal setup question](../09-Agents-Patterns/agent-teams.md#choose-a-display-mode) and you haven’t typed for about six seconds                                                                                                                                                                                              |
+| `agent_needs_input`          | A background session starts waiting on your input while [agent view](../09-Agents-Patterns/agent-view.md) is open. Also fires when a terminal session shows you an [agent team teammate’s terminal setup question](../09-Agents-Patterns/agent-teams.md#choose-a-display-mode) or auto mode’s notice about [classifier request charges](../17-Billing-Plans/auto-mode-classifier-billing.md) and you haven’t typed for about six seconds                                                                                 |
 | `agent_completed`            | A background session finishes or fails. Fires only while [agent view](../09-Agents-Patterns/agent-view.md) is open                                                                                                                                                                                                                                                                                                                                                                         |
 | `quota_auto_resume_fired`    | Claude Code continues your task after a claude.ai usage limit paused it: at the reset, or sooner when something you do in Claude Code during the wait, such as adding usage credits, upgrading your plan, or switching models, makes usage available again, with the [model-setting exception](../02-Claude-Code-CLI/interactive-mode.md#wait-for-a-usage-limit-to-reset)                                                                                                                  |
 | `quota_auto_resume_stale`    | A claude.ai usage limit reset while your computer slept for more than about 30 minutes. Claude Code waits for you to press `Enter` instead of continuing. After a shorter sleep it continues and fires `quota_auto_resume_fired` instead                                                                                                                                                                                                                                   |
@@ -3343,6 +3212,7 @@ Path: 07-Hooks/hooks.md
   - [UserPromptSubmit](#userpromptsubmit)
   - [UserPromptSubmit input](#userpromptsubmit-input)
   - [UserPromptSubmit decision control](#userpromptsubmit-decision-control)
+  - [What a blocked prompt leaves behind](#what-a-blocked-prompt-leaves-behind)
   - [UserPromptExpansion](#userpromptexpansion)
   - [UserPromptExpansion input](#userpromptexpansion-input)
   - [UserPromptExpansion decision control](#userpromptexpansion-decision-control)
@@ -3704,7 +3574,7 @@ Where you define a hook determines its scope:
 | [Skill](../08-Plugins-Skills/skills.md) frontmatter                   | The rest of the session once the skill is invoked. See [Hooks in skills and agents](#hooks-in-skills-and-agents) | Yes, defined in the skill file                        |
 | [Subagent](../09-Agents-Patterns/sub-agents.md) frontmatter            | While that subagent is running                                                                                   | Yes, defined in the subagent file                     |
 
-[Cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md) don’t read your local `~/.claude/settings.json`. In a [self-hosted environment](../13-Enterprise-Admin/self-hosted-environments-configuration.md#permissions-and-tool-approval), Claude Code also runs the hooks the operator seeded from the runner host’s `~/.claude/`, and it runs the hooks in the runner image’s managed settings file when that file is among the [managed sources Claude Code applies](../13-Enterprise-Admin/managed-settings.md#how-claude-code-combines-managed-sources), which by default means only when neither server-managed settings nor an MDM-delivered Claude Code policy supplies the managed tier. See [what carries over from your setup](../02-Claude-Code-CLI/cloud-environments.md#what-carries-over-from-your-setup) for which settings files and plugins, and so which hooks, reach a cloud session. For details on settings file resolution, see [settings](../02-Claude-Code-CLI/settings.md). Hooks from settings files, managed policy settings, and plugins also run inside [subagents](../09-Agents-Patterns/sub-agents.md). When a subagent calls a tool, tool events such as `PreToolUse` and `PostToolUse` fire the same configured hooks as in the main conversation, and the input carries the `agent_id` and `agent_type` [common input fields](#common-input-fields) that identify the subagent. Enterprise administrators can use `allowManagedHooksOnly` to restrict which hooks run:
+[Cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md) don’t read your local `~/.claude/settings.json`. In a [self-hosted environment](../13-Enterprise-Admin/self-hosted-environments-configuration.md#permissions-and-tool-approval), Claude Code also runs the hooks the operator seeded from the runner host’s `~/.claude/`, and it runs the hooks in the runner image’s managed settings file when that file is among the [managed sources Claude Code applies](../13-Enterprise-Admin/managed-settings.md#how-claude-code-combines-managed-sources), which by default means only when neither server-managed settings nor an MDM-delivered Claude Code policy supplies the managed tier. See [what carries over from your setup](../02-Claude-Code-CLI/cloud-environments.md#what-carries-over-from-your-setup) for which settings files and plugins, and so which hooks, reach a cloud session. For details on settings file resolution, see [settings](../02-Claude-Code-CLI/settings.md). Hooks from settings files, managed policy settings, and plugins also run inside [subagents](../09-Agents-Patterns/sub-agents.md). When a subagent calls a tool, tool events such as `PreToolUse` and `PostToolUse` fire the same configured hooks as in the main conversation, and the input carries the `agent_id` and `agent_type` [common input fields](#common-input-fields) that identify the subagent. Administrators can use [`allowManagedHooksOnly`](../02-Claude-Code-CLI/settings-reference.md#allowmanagedhooksonly) in [managed settings](../13-Enterprise-Admin/managed-settings.md) to restrict which hooks run:
 
 - Your user, project, local, and plugin hooks are blocked. Hooks from plugins force-enabled in managed settings `enabledPlugins` are exempt
 - Claude Code also narrows your [`statusLine`](../02-Claude-Code-CLI/statusline.md), [`fileSuggestion`](../02-Claude-Code-CLI/settings-reference.md#filesuggestion), and [`subagentStatusLine`](../02-Claude-Code-CLI/statusline.md#subagent-status-lines) settings to managed settings
@@ -3729,7 +3599,7 @@ The `matcher` field filters when hooks fire. How a matcher is evaluated depends 
 | Only letters, digits, `_`, `-`, spaces, `,`, and `|` | Exact string, or list of exact strings separated by `|` or `,` with optional surrounding whitespace | `Bash` matches only the Bash tool; `Edit|Write` and `Edit, Write` each match either tool exactly; `code-reviewer` matches only that agent type |
 | Contains any other character                         | JavaScript regular expression, unanchored                                                           | `^Notebook` matches any tool whose name starts with `Notebook`; `mcp__memory__.*` matches every tool from the `memory` server                  |
 
-A matcher on the regular-expression path is tested with JavaScript’s `RegExp.prototype.test`, which succeeds on a match anywhere in the value. `Edit.*` matches both `Edit` and `NotebookEdit`; wrap the pattern in `^` and `$`, as in `^Edit$`, when you need a whole-string match. Hyphens in the exact-match set require Claude Code v2.1.195 or later. On earlier versions a hyphenated name like `code-reviewer` is evaluated as an unanchored regular expression, so it also fires for `senior-code-reviewer`; anchor it as `^code-reviewer$` on those versions to match only that name. `FileChanged` and `StopFailure` use a narrower exact-match set of letters, digits, `_`, and `|` only. A hyphen, space, or comma in a matcher for those two events keeps it on the regular-expression path, and only `|` separates alternatives. Every other event with matcher support in the table that follows accepts `|` or `,`. The `FileChanged` event doesn’t follow these rules when building its watch list. See [FileChanged](#filechanged). Each event type matches on a different field:
+A matcher on the regular-expression path is tested with JavaScript’s `RegExp.prototype.test`, which succeeds on a match anywhere in the value. `Edit.*` matches both `Edit` and `NotebookEdit`; wrap the pattern in `^` and `$`, as in `^Edit$`, when you need a whole-string match. `FileChanged` and `StopFailure` use a narrower exact-match set of letters, digits, `_`, and `|` only. A hyphen, space, or comma in a matcher for those two events keeps it on the regular-expression path, and only `|` separates alternatives. Every other event with matcher support in the table that follows accepts `|` or `,`. The `FileChanged` event doesn’t follow these rules when building its watch list. See [FileChanged](#filechanged). Each event type matches on a different field:
 
 | Event                                                                                                                                             | What the matcher filters                                                                                  | Example matcher values                                                                                                                                                                                                                                                         |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -3792,7 +3662,7 @@ To match every tool from a server, append `.*` to the server prefix. The `.*` is
 - `mcp__brave-search__.*` matches all tools from a server whose name contains a hyphen
 - `mcp__.*__write.*` matches any tool whose name starts with `write` from any server
 
-Hyphens in the exact-match set require Claude Code v2.1.195 or later. On earlier versions a bare hyphenated prefix like `mcp__brave-search` is evaluated as an unanchored regular expression and matches every tool from that server. The `mcp__brave-search__.*` form works on every version. Tools from a [plugin-bundled MCP server](../06-MCP-Tools/General/mcp.md#plugin-provided-mcp-servers) use a scoped server segment that includes the plugin name: `mcp__plugin_<plugin-name>_<server-name>__<tool>`. A matcher written against the bare server key never fires for these tools. For a plugin named `my-plugin` that bundles a server under the key `db`, a `query` tool appears as `mcp__plugin_my-plugin_db__query`, so the matcher for every tool from that server is `mcp__plugin_my-plugin_db__.*`. Use the same scoped tool name in a handler’s [`if` field](#common-fields). See [Plugin-provided MCP servers](../06-MCP-Tools/General/mcp.md#plugin-provided-mcp-servers) for how the scoped name is built. This example logs all memory server operations and validates write operations from any MCP server:
+Tools from a [plugin-bundled MCP server](../06-MCP-Tools/General/mcp.md#plugin-provided-mcp-servers) use a scoped server segment that includes the plugin name: `mcp__plugin_<plugin-name>_<server-name>__<tool>`. A matcher written against the bare server key never fires for these tools. For a plugin named `my-plugin` that bundles a server under the key `db`, a `query` tool appears as `mcp__plugin_my-plugin_db__query`, so the matcher for every tool from that server is `mcp__plugin_my-plugin_db__.*`. Use the same scoped tool name in a handler’s [`if` field](#common-fields). See [Plugin-provided MCP servers](../06-MCP-Tools/General/mcp.md#plugin-provided-mcp-servers) for how the scoped name is built. This example logs all memory server operations and validates write operations from any MCP server:
 
 ```python
 {
@@ -4259,7 +4129,7 @@ Exit code 2 is the way a hook signals “stop, don’t do this.” The effect de
 |:----------------------|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `PreToolUse`          | Yes        | Blocks the tool call                                                                                                                                                                                                                           |
 | `PermissionRequest`   | No         | Exit code 2 isn’t honored for this event and the permission flow proceeds unchanged. Deny through the [`decision` object](#permissionrequest-decision-control) instead                                                                         |
-| `UserPromptSubmit`    | Yes        | Blocks prompt processing and erases the prompt                                                                                                                                                                                                 |
+| `UserPromptSubmit`    | Yes        | Blocks the prompt, so it never reaches Claude. See [What a blocked prompt leaves behind](#what-a-blocked-prompt-leaves-behind)                                                                                                                 |
 | `UserPromptExpansion` | Yes        | Blocks the expansion                                                                                                                                                                                                                           |
 | `Stop`                | Yes        | Prevents Claude from stopping, continues the conversation                                                                                                                                                                                      |
 | `SubagentStop`        | Yes        | Prevents the subagent from stopping                                                                                                                                                                                                            |
@@ -4502,13 +4372,13 @@ SessionStart
 
 Runs when Claude Code starts a new session or resumes an existing session. Useful for loading development context like existing issues or recent changes to your codebase, or setting up environment variables. For static context that doesn’t require a script, use [CLAUDE.md](../02-Claude-Code-CLI/memory.md) instead. SessionStart runs on every session, so keep these hooks fast. Only `type: "command"` and `type: "mcp_tool"` hooks are supported. See [MCP tool hook fields](#mcp-tool-hook-fields) for when `mcp_tool` hooks run. The matcher value corresponds to how the session was initiated:
 
-| Matcher   | When it fires                                                                                                                          |
-|:----------|:---------------------------------------------------------------------------------------------------------------------------------------|
-| `startup` | New session                                                                                                                            |
-| `resume`  | `--resume`, `--continue`, or `/resume`                                                                                                 |
-| `clear`   | `/clear`                                                                                                                               |
-| `compact` | Auto or manual compaction                                                                                                              |
-| `fork`    | A new session forked from an existing one: `--fork-session` with `--resume` or `--continue`, the `/fork` background copy, or `/branch` |
+| Matcher   | When it fires                                                                                                                                                                                                                  |
+|:----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `startup` | New session                                                                                                                                                                                                                    |
+| `resume`  | `--resume`, `--continue`, or `/resume`                                                                                                                                                                                         |
+| `clear`   | `/clear`                                                                                                                                                                                                                       |
+| `compact` | Auto or manual compaction                                                                                                                                                                                                      |
+| `fork`    | A new session forked from an existing one: `--fork-session` with `--resume` or `--continue`, the `/fork` background copy, `/branch`, or a conversation you [move to the background](../09-Agents-Patterns/agent-view.md#from-inside-a-session) |
 
 Before v2.1.214, forked sessions reported source `"resume"`. When you start an interactive session, resume a conversation at launch with `--continue` or `--resume`, or run `/clear`, SessionStart hooks run in the background. You can type right away, and a conversation you resumed appears without waiting for the hooks. Claude’s first response still waits for the hooks to finish, so their context reaches Claude. When you switch conversations with `/resume` inside a session, the switch waits for the hooks to finish instead. If you run `/clear` or switch to another conversation while background hooks are still running, nothing they return applies to the session. The same wait applies at launch, including a resumed session: a prompt you send while SessionStart hooks are still running doesn’t reach Claude until they finish. During either wait, press `Esc` to take the prompt back into the input without sending it. The hooks keep running.
 
@@ -4747,13 +4617,13 @@ UserPromptSubmit decision control
 
 Neither channel produces a visible transcript entry. Plain stdout and the `additionalContext` value are each injected as a system reminder that starts with the hook’s name; Claude reads both. To confirm delivery, check the [debug log](#debug-hooks). To block a prompt, return a JSON object with `decision` set to `"block"`:
 
-| Field                    | Description                                                                                                            |
-|:-------------------------|:-----------------------------------------------------------------------------------------------------------------------|
-| `decision`               | `"block"` prevents the prompt from being processed and erases it from context. Omit to allow the prompt to proceed     |
-| `reason`                 | Shown to the user when `decision` is `"block"`. Not added to context                                                   |
-| `additionalContext`      | String added to Claude’s context alongside the submitted prompt. See [Add context for Claude](#add-context-for-claude) |
-| `sessionTitle`           | Sets the session title. Use to name sessions automatically based on the prompt content                                 |
-| `suppressOriginalPrompt` | If `true` when `decision` is `"block"`, omits the original prompt text from the block message shown to the user        |
+| Field                    | Description                                                                                                                                                                 |
+|:-------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `decision`               | `"block"` stops the prompt before it reaches Claude. Omit to allow the prompt to proceed                                                                                    |
+| `reason`                 | Shown to the user when `decision` is `"block"`. Not added to context                                                                                                        |
+| `additionalContext`      | String added to Claude’s context alongside the submitted prompt. See [Add context for Claude](#add-context-for-claude)                                                      |
+| `sessionTitle`           | Sets the session title. Use to name sessions automatically based on the prompt content                                                                                      |
+| `suppressOriginalPrompt` | If `true` when the hook blocks the prompt, leaves the prompt text out of the block message. See [What a blocked prompt leaves behind](#what-a-blocked-prompt-leaves-behind) |
 
 A hook that blocks by exiting 2 routes the same way as `reason`: the block message shows the stderr text to the user, and it isn’t added to context.
 
@@ -4764,10 +4634,18 @@ A hook that blocks by exiting 2 routes the same way as `reason`: the block messa
   "hookSpecificOutput": {
     "hookEventName": "UserPromptSubmit",
     "additionalContext": "My additional context here",
-    "sessionTitle": "My session title"
+    "sessionTitle": "My session title",
+    "suppressOriginalPrompt": true
   }
 }
 ```
+
+
+[​](#what-a-blocked-prompt-leaves-behind)
+
+What a blocked prompt leaves behind
+
+A blocked prompt never reaches Claude, but its text isn’t removed everywhere. By default the block message shown to the user ends with `Original prompt:` followed by the submitted text, and Claude Code writes that message to the session’s transcript file on disk. To leave the text out of the message, print JSON with `"suppressOriginalPrompt": true` inside `hookSpecificOutput`. This works whether the hook blocks with `decision: "block"` or by exiting 2. An exit-2 hook that prints no JSON always gets the prompt text in its block message. `suppressOriginalPrompt` changes only the block message. The submitted text can still appear in local files such as the session transcript and your prompt history, so a blocking hook isn’t a way to keep a secret off disk. To limit or remove those files, see [Plaintext storage](../02-Claude-Code-CLI/claude-directory.md#plaintext-storage) and [Clear local data](../02-Claude-Code-CLI/claude-directory.md#clear-local-data).
 
 
 [​](#userpromptexpansion)
@@ -5623,7 +5501,7 @@ Runs when Claude Code sends notifications. Matches on notification type. Omit th
 | `elicitation_url_dialog`     | An MCP server asks you to open a browser URL and you haven’t typed for about six seconds                                                                                                                                                                                                                                                                                                                                                                                   |
 | `elicitation_complete`       | An MCP server reports that a [URL-mode elicitation](#elicitation-input) is complete                                                                                                                                                                                                                                                                                                                                                                                        |
 | `elicitation_response`       | An MCP elicitation response is sent back to the server                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `agent_needs_input`          | A background session starts waiting on your input while [agent view](../09-Agents-Patterns/agent-view.md) is open in a terminal, or the current session asks you an [agent team teammate’s terminal setup question](../09-Agents-Patterns/agent-teams.md#choose-a-display-mode) and you haven’t typed for about six seconds                                                                                                                                                                                |
+| `agent_needs_input`          | A background session starts waiting on your input while [agent view](../09-Agents-Patterns/agent-view.md) is open in a terminal. Also fires when a terminal session shows you an [agent team teammate’s terminal setup question](../09-Agents-Patterns/agent-teams.md#choose-a-display-mode) or auto mode’s notice about [classifier request charges](../17-Billing-Plans/auto-mode-classifier-billing.md) and you haven’t typed for about six seconds                                                                   |
 | `agent_completed`            | A background session finishes or fails. Fires only while [agent view](../09-Agents-Patterns/agent-view.md) is open in a terminal                                                                                                                                                                                                                                                                                                                                                           |
 | `quota_auto_resume_fired`    | Claude Code continues your task after a claude.ai usage limit paused it: at the reset, or sooner when something you do in Claude Code during the wait, such as adding usage credits, upgrading your plan, or switching models, makes usage available again, with the [model-setting exception](../02-Claude-Code-CLI/interactive-mode.md#wait-for-a-usage-limit-to-reset)                                                                                                                  |
 | `quota_auto_resume_stale`    | A claude.ai usage limit reset while your computer slept for more than about 30 minutes. Claude Code waits for you to press `Enter` instead of continuing. After a shorter sleep it continues and fires `quota_auto_resume_fired` instead                                                                                                                                                                                                                                   |
@@ -6385,7 +6263,13 @@ Runs when a worktree is being removed. This is the cleanup counterpart to [Workt
 - a subagent with `isolation: "worktree"` finishes
 - you delete a [background session](../09-Agents-Patterns/agent-view.md#what-deleting-a-session-removes) whose worktree the hook created
 
-For git-based worktrees, Claude Code handles cleanup automatically with `git worktree remove`. If you configured a WorktreeCreate hook for a non-git version control system, pair it with a WorktreeRemove hook to handle cleanup. Without one, the worktree directory is left on disk. Claude Code discards a WorktreeRemove hook’s [JSON output fields](#json-output), such as `systemMessage` and `continue`. For a background-session delete, Claude Code verifies the stored worktree path before running the hook and refuses a path that is a symlink or passes through one below the repository root. The hook runs for a worktree that still contains files only when you confirm the delete in [agent view](../09-Agents-Patterns/agent-view.md#what-deleting-a-session-removes); for such a worktree, [`claude rm`](../09-Agents-Patterns/agent-view.md#manage-sessions-from-the-shell) keeps the session and worktree instead. Before v2.1.216, the hook ran on the stored path without these checks. Claude Code passes the path returned by WorktreeCreate as `worktree_path` in the hook input. This example reads that path and removes the directory:
+For git-based worktrees, Claude Code handles cleanup automatically with `git worktree remove`. If you configured a WorktreeCreate hook, pair it with a WorktreeRemove hook to control cleanup of the worktrees it creates:
+
+- **No WorktreeRemove hook**: when you exit a `--worktree` session and choose removal, Claude Code falls back to `git worktree remove --force` on the path your WorktreeCreate hook returned, so a worktree git recognizes is removed. A worktree git doesn’t recognize, for example one your hook created with a non-git version control system, stays on disk. For what deleting a [background session](../09-Agents-Patterns/agent-view.md#what-deleting-a-session-removes) does with a hook-created worktree, see agent view’s delete rules.
+- **Hook exits 0**: the worktree counts as removed. Claude Code reads nothing else from the hook, so make sure your hook deleted the directory.
+- **Hook exits non-zero**: the removal fails if the directory at `worktree_path` still exists afterward, and the worktree stays on disk with no git fallback. A hook that deleted the directory before exiting non-zero counts as removed. For how the failure is reported, see [WorktreeRemove input](#worktreeremove-input).
+
+Claude Code never deletes a branch belonging to a hook-created worktree, because it only knows the path your WorktreeCreate hook returned. If your WorktreeCreate hook creates a branch, delete it in your WorktreeRemove hook. Claude Code discards a WorktreeRemove hook’s [JSON output fields](#json-output), such as `systemMessage` and `continue`. For a background-session delete, Claude Code verifies the stored worktree path before running the hook and refuses a path that is a symlink or passes through one below the repository root. The hook runs for a worktree that still contains files only when you confirm the delete in [agent view](../09-Agents-Patterns/agent-view.md#what-deleting-a-session-removes); for such a worktree, [`claude rm`](../09-Agents-Patterns/agent-view.md#manage-sessions-from-the-shell) keeps the session and worktree instead. Before v2.1.216, the hook ran on the stored path without these checks. Claude Code passes the path returned by WorktreeCreate as `worktree_path` in the hook input. This example reads that path and removes the directory:
 
 ```python
 {

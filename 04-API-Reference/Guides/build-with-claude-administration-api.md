@@ -40,12 +40,12 @@ This is useful for:
 
 ## Organization roles and permissions
 
-There are five organization-level roles. See more details in the [API Console roles and permissions](../Other/claude-console-roles-and-permissions.md) article.
+There are five organization-level roles. See more details in the [API Console roles and permissions](https://platform.claude.com/docs/en/api-console-roles-and-permissions-4c21777af6.md) article.
 
 | Role | Permissions |
 |------|-------------|
 | user | Can use Workbench |
-| claude_code_user | Can use Workbench and [Claude Code](../../02-Claude-Code-CLI/code-home.md) |
+| claude_code_user | Can use Workbench and [Claude Code](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-overview-claude-code-docs-c23f3e7cbb.md) |
 | developer | Can use Workbench and manage API keys |
 | billing | Can use Workbench and manage billing details |
 | admin | Can do all of the above, plus manage users |
@@ -201,7 +201,7 @@ Track your organization's usage and costs with the [Usage and Cost API](build-wi
 
 ## Claude Code analytics
 
-Monitor developer productivity and Claude Code adoption with the [Claude Code Analytics API](../Other/manage-claude-claude-code-analytics-api.md).
+Monitor developer productivity and Claude Code adoption with the [Claude Code Analytics API](build-with-claude-claude-code-analytics-api.md).
 
 ## Rate limits
 

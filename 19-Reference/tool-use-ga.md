@@ -2,7 +2,8 @@
 title: "Claude can now use tools | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/tool-use-ga"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:31:25Z"
+fetched_at: "2026-09-30T06:32:36Z"
+last_modified: "Wed, 30 Sep 2026 04:21:08 GMT"
 tags: ["news-research"]
 ---
 

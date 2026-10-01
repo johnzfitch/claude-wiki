@@ -2,7 +2,7 @@
 title: "Model availability in Claude for Government | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503794-model-availability-in-claude-for-government"
 category: "20-Models"
-fetched_at: "2026-09-29T06:32:14Z"
+fetched_at: "2026-09-30T06:32:01Z"
 tags: ["models"]
 ---
 

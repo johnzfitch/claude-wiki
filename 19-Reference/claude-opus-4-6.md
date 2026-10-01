@@ -28,7 +28,7 @@ Coding
 
 Reasoning
 
-In [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md), you can now assemble [*agent teams*](../09-Agents-Patterns/agent-teams.md) to work on tasks together. On the API, Claude can use [*compaction*](../04-API-Reference/Guides/build-with-claude-compaction.md) to summarize its own context and perform longer-running tasks without bumping up against limits. We’re also introducing [*adaptive thinking*](../04-API-Reference/Guides/build-with-claude-thinking-steering-and-cost.md), where the model can pick up on contextual clues about how much to use its extended thinking, and new [*effort*](../04-API-Reference/Guides/build-with-claude-effort.md) controls to give developers more control over intelligence, speed, and cost.
+In [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md), you can now assemble [*agent teams*](https://www.anthropic.com/09-Agents-Patterns/agent-teams-e29da6ed1b.md) to work on tasks together. On the API, Claude can use [*compaction*](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-compaction-47672e5bbf.md) to summarize its own context and perform longer-running tasks without bumping up against limits. We’re also introducing [*adaptive thinking*](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-adaptive-thinking-2b96627d8d.md), where the model can pick up on contextual clues about how much to use its extended thinking, and new [*effort*](https://www.anthropic.com/04-API-Reference/effort.md) controls to give developers more control over intelligence, speed, and cost.
 
 We’ve made substantial upgrades to [Claude in Excel](https://claude.com/claude-in-excel), and we’re releasing [Claude in PowerPoint](https://claude.com/claude-in-powerpoint) in a research preview. This makes Claude much more capable for everyday work.
 
@@ -40,7 +40,7 @@ We cover the model, our new product updates, our evaluations, and our extensive 
 
 We build Claude with Claude. Our engineers write code with Claude Code every day, and every new model first gets tested on our own work. With Opus 4.6, we’ve found that the model brings more focus to the most challenging parts of a task without being told to, moves quickly through the more straightforward parts, handles ambiguous problems with better judgment, and stays productive over longer sessions.
 
-Opus 4.6 often thinks more deeply and more carefully revisits its reasoning before settling on an answer. This produces better results on harder problems, but can add cost and latency on simpler ones. If you’re finding that the model is overthinking on a given task, we recommend dialing effort down from its default setting (high) to medium. You can control this easily with the `/effort` [parameter](../04-API-Reference/Guides/build-with-claude-effort.md).
+Opus 4.6 often thinks more deeply and more carefully revisits its reasoning before settling on an answer. This produces better results on harder problems, but can add cost and latency on simpler ones. If you’re finding that the model is overthinking on a given task, we recommend dialing effort down from its default setting (high) to medium. You can control this easily with the `/effort` [parameter](https://www.anthropic.com/04-API-Reference/effort.md).
 
 Here are some of the things our Early Access partners told us about Claude Opus 4.6, including its propensity to work autonomously without hand-holding, its success where previous models failed, and its effect on how teams work:  
 
@@ -192,18 +192,18 @@ We’ve made substantial updates across Claude, Claude Code, and the Claude Plat
 
 On the API, we’re giving developers better control over model effort and more flexibility for long-running agents. To do so, we’re introducing the following features:
 
-- **Adaptive thinking.** Previously, developers only had a binary choice between enabling or disabling extended thinking. Now, with [adaptive thinking](../04-API-Reference/Guides/build-with-claude-thinking-steering-and-cost.md), Claude can decide when deeper reasoning would be helpful. At the default effort level (high), the model uses extended thinking when useful, but developers can adjust the effort level to make it more or less selective.
-- **Effort.** There are now four [effort](../04-API-Reference/Guides/build-with-claude-effort.md) levels to choose from: low, medium, high (default), and max. We encourage developers to experiment with different options to find what works best.
-- **Context compaction (beta).** Long-running conversations and agentic tasks often hit the context window. [Context compaction](../04-API-Reference/Guides/build-with-claude-compaction.md) automatically summarizes and replaces older context when the conversation approaches a configurable threshold, letting Claude perform longer tasks without hitting limits.
+- **Adaptive thinking.** Previously, developers only had a binary choice between enabling or disabling extended thinking. Now, with [adaptive thinking](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-adaptive-thinking-2b96627d8d.md), Claude can decide when deeper reasoning would be helpful. At the default effort level (high), the model uses extended thinking when useful, but developers can adjust the effort level to make it more or less selective.
+- **Effort.** There are now four [effort](https://www.anthropic.com/04-API-Reference/effort.md) levels to choose from: low, medium, high (default), and max. We encourage developers to experiment with different options to find what works best.
+- **Context compaction (beta).** Long-running conversations and agentic tasks often hit the context window. [Context compaction](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-compaction-47672e5bbf.md) automatically summarizes and replaces older context when the conversation approaches a configurable threshold, letting Claude perform longer tasks without hitting limits.
 - **1M token context (beta).** Opus 4.6 is our first Opus-class model with 1M token context. Premium pricing applies for prompts exceeding 200k tokens (\$10/\$37.50 per million input/output tokens), available only on the Claude Platform.
 - **128k output tokens.** Opus 4.6 supports outputs of up to 128k tokens, which lets Claude complete larger-output tasks without breaking them into multiple requests.
-- **US-only inference.** For workloads that need to run in the United States, [US-only inference](../04-API-Reference/Guides/build-with-claude-data-residency.md) is available at 1.1× token pricing.
+- **US-only inference.** For workloads that need to run in the United States, [US-only inference](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-data-residency-6c8e324ea6.md) is available at 1.1× token pricing.
 
 **Product updates**
 
 Across Claude and Claude Code, we’ve added features that allow knowledge workers and developers to tackle harder tasks with more of the tools they use every day.
 
-We’ve introduced [agent teams](../09-Agents-Patterns/agent-teams.md) in Claude Code as a research preview. You can now spin up multiple agents that work in parallel as a team and coordinate autonomously—best for tasks that split into independent, read-heavy work like codebase reviews. You can take over any subagent directly using Shift+Up/Down or [tmux](https://github.com/tmux/tmux/wiki).
+We’ve introduced [agent teams](https://www.anthropic.com/09-Agents-Patterns/agent-teams-e29da6ed1b.md) in Claude Code as a research preview. You can now spin up multiple agents that work in parallel as a team and coordinate autonomously—best for tasks that split into independent, read-heavy work like codebase reviews. You can take over any subagent directly using Shift+Up/Down or [tmux](https://github.com/tmux/tmux/wiki).
 
 Claude now also works better with the office tools you already use. Claude in Excel handles long-running and harder tasks with improved performance, and can plan before acting, ingest unstructured data and infer the right structure without guidance, and handle multi-step changes in one pass. Pair that with Claude in PowerPoint, and you can first process and structure your data in Excel, then bring it to life visually in PowerPoint. Claude reads your layouts, fonts, and slide masters to stay on brand, whether you’re building from a template or generating a full deck from a description. Claude in PowerPoint is now available in research preview for Max, Team, and Enterprise plans.
 
@@ -269,9 +269,9 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

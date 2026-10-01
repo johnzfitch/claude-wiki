@@ -70,7 +70,7 @@ We also monitor harmful Claude traffic, going beyond single prompts and individu
 
 ## **Looking forward**
 
-Safeguarding AI use is too important for any one organization to tackle alone. We actively seek [feedback](reporting-blocking-and-removing-content-from-claude.md) and partnership from users, researchers, policymakers, and civil society organizations. We also build on feedback from the public, including via an ongoing [bug bounty program](testing-our-safety-defenses-with-a-new-bug-bounty-program.md) for testing our defenses.
+Safeguarding AI use is too important for any one organization to tackle alone. We actively seek [feedback](../22-Safety-Policy/reporting-blocking-and-removing-content-from-claude.md) and partnership from users, researchers, policymakers, and civil society organizations. We also build on feedback from the public, including via an ongoing [bug bounty program](testing-our-safety-defenses-with-a-new-bug-bounty-program.md) for testing our defenses.
 
 To support our work, we’re actively looking to hire people who can help us tackle these problems. If you’re interested in working on our Safeguards team, we encourage you to check out our [Careers page](https://www.anthropic.com/jobs?team=4002065008).
 
@@ -112,9 +112,9 @@ To support our work, we’re actively looking to hire people who can help us tac
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

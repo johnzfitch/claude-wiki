@@ -2,13 +2,11 @@
 title: "Why Claude switched models in your conversation with Sonnet 5.5 | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17161993-why-claude-switched-models-in-your-conversation-with-sonnet-5-5"
 category: "20-Models"
-fetched_at: "2026-09-29T06:31:03Z"
+fetched_at: "2026-09-30T06:33:05Z"
 tags: ["billing", "models", "security"]
 ---
 
 # Why Claude switched models in your conversation with Sonnet 5.5
-
-Updated today
 
 
 This article explains why a request might fall back to another model or be blocked on Claude Sonnet 5.5, what happens when your chat switches models, and how to manage automatic switching.
@@ -129,4 +127,4 @@ Read our blog to learn more about **[Claude Sonnet 5.5](../15-Claude-AI-Features
 
 Our safeguards are built to match the capabilities of a model.
 
-For how safeguards work on Claude Opus 5.5, see **[Why Claude switched models in your conversation with Opus 5 or Opus 5.5](why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5.md)**. For Claude Fable 5.1, see **[Why Claude switched models in your conversation with Fable 5 or Fable 5.1](why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1.md)**.
+For how safeguards work on Claude Opus 5.5, see **[Why Claude switched models in your conversation with Opus 5 or Opus 5.5](../15-Claude-AI-Features/why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5-claude-help-center.md)**. For Claude Fable 5.1, see **[Why Claude switched models in your conversation with Fable 5 or Fable 5.1](../15-Claude-AI-Features/why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1-claude-help.md)**.

@@ -1,13 +1,12 @@
 ---
 title: "Manage usage credits for paid Claude plans | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans"
+source_url: "https://support.claude.com/en/articles/12429409-"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:51Z"
+fetched_at: "2026-09-30T06:32:31Z"
 tags: ["billing"]
 ---
 
 # Manage usage credits for paid Claude plans
-
 
 
 This article explains how usage credits work on your paid Claude plan (Pro, Max 5x, or Max 20x), allowing you to continue working with Claude after reaching your plan's usage limits by switching to pay-as-you-go pricing.

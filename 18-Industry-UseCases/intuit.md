@@ -2,7 +2,7 @@
 title: "Intuit Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/intuit"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:05Z"
+fetched_at: "2026-09-30T06:32:49Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 

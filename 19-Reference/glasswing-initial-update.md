@@ -80,7 +80,7 @@ Many generally-available models can already find large numbers of software vulne
 
 To begin, we’ve released [Claude Security](../15-Claude-AI-Features/product-claude-security.md) in public beta for Claude Enterprise customers. It’s a tool that helps teams scan their codebases for vulnerabilities, and which can generate proposed fixes for them. In the three weeks since launch, Claude Opus 4.7 has been used to patch over 2,100 vulnerabilities. (This is faster than the open-source patching described above in large part because enterprises are fixing their own code, whereas open-source fixes usually require volunteer maintainers who work through coordinated disclosure.)
 
-We’ve also begun our [Cyber Verification Program](../20-Models/real-time-cyber-safeguards-on-claude-opus-and-sonnet.md), which allows security professionals using our models for legitimate cybersecurity purposes (such as vulnerability research, penetration testing, and red-teaming) to do so without certain safeguards designed to prevent cyber misuse.
+We’ve also begun our [Cyber Verification Program](https://www.anthropic.com/99-Other/real-time-cyber-safeguards-on-claude-7906f65cc7.md), which allows security professionals using our models for legitimate cybersecurity purposes (such as vulnerability research, penetration testing, and red-teaming) to do so without certain safeguards designed to prevent cyber misuse.
 
 Now, we’re making the tools that we and our partners have used with Mythos Preview available to qualifying customers’ security teams on request. Our aim is to make it much easier to get the best performance out of highly capable public models without extensive setup. This release includes:
 
@@ -148,9 +148,9 @@ Working with Andon Labs, we’ve developed a new series of evaluations that asse
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

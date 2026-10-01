@@ -2,19 +2,18 @@
 title: "Purchase and manage seats on Team plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats-on-team-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:47Z"
+fetched_at: "2026-09-30T06:32:27Z"
 tags: ["billing"]
 ---
 
 # Purchase and manage seats on Team plans
 
 
-
 Seat management allows Team plan owners to control their organization's seat allocation, assign users to different seat types, and manage billing. For pricing and billing details, see **[How is my Team plan bill calculated?](how-is-my-team-plan-bill-calculated.md)**
 
 **Permissions note:** Only Owners and Primary Owners can purchase seats and access **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)**. Admins and above can reassign seat types for members in **[Organization settings \> Members](https://claude.ai/admin-settings/members)**.
 
-For information on adding and removing members from your organization, see **[Manage members on Team and Enterprise plans](managing-members-on-team-and-enterprise-plans.md)**.
+For information on adding and removing members from your organization, see **[Manage members on Team and Enterprise plans](https://support.claude.com/en/articles/13133750)**.
 
 ------------------------------------------------------------------------
 
@@ -146,7 +145,7 @@ Selecting **No seat assigned** lets you temporarily remove a user from a seat wi
 
 ## Seat assignment with JIT or SCIM provisioning
 
-**[Users provisioned via JIT or SCIM](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)** are automatically assigned to the highest-available seat type when they're added. Admins and above can manually reassign seat types afterward in **[Organization settings \> Members](https://claude.ai/admin-settings/members)**.
+**[Users provisioned via JIT or SCIM](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans)** are automatically assigned to the highest-available seat type when they're added. Admins and above can manually reassign seat types afterward in **[Organization settings \> Members](https://claude.ai/admin-settings/members)**.
 
 You can also enable group mappings with JIT or SCIM to provision users directly to a specific seat type.
 

@@ -2,7 +2,7 @@
 title: "Designate support contacts for human support | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15263885-designate-support-contacts-for-human-support"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:31:52Z"
+fetched_at: "2026-09-30T06:31:57Z"
 tags: ["account"]
 ---
 
@@ -31,7 +31,7 @@ To grant human support access to additional users (such as a central IT team), d
 
 ## Configure support contacts
 
-Before configuring support contacts, make sure the groups you want to designate already exist in organization settings. Groups can be synced from your identity provider through SCIM or created manually. For more information, see **[Manage groups and group spend limits on Enterprise plans](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**.
+Before configuring support contacts, make sure the groups you want to designate already exist in organization settings. Groups can be synced from your identity provider through SCIM or created manually. For more information, see **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**.
 
 To configure support contacts:
 

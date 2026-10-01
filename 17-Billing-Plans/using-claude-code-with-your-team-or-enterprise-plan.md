@@ -1,16 +1,15 @@
 ---
 title: "Use Claude Code with your Team or Enterprise plan | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan"
+source_url: "https://support.claude.com/en/articles/11845131-use-claude-code-with-your-team-or-enterprise-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:20Z"
+fetched_at: "2026-09-30T06:32:26Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
 # Use Claude Code with your Team or Enterprise plan
 
 
-
-This article applies to members of Team or Enterprise plan organizations using their subscription plans to access Claude Code. If you’re an individual consumer using a Pro or Max plan subscription, see **[Use Claude Code with your Pro or Max plan](using-claude-code-with-your-pro-or-max-plan.md)**.
+This article applies to members of Team or Enterprise plan organizations using their subscription plans to access Claude Code. If you’re an individual consumer using a Pro or Max plan subscription, see **[Use Claude Code with your Pro or Max plan](https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan)**.
 
 ## What is Claude Code?
 
@@ -36,9 +35,9 @@ Combine two powerful AI products in one unified subscription:
 
 If your organization is on a new or self-serve Enterprise plan, Claude Code is already included with every Enterprise seat—no additional purchase is needed. Proceed to Step 2.
 
-**Note:** If your organization has a HIPAA-ready Enterprise plan, Claude Code is included in your seat but is not covered under the HIPAA-ready offering. See **[HIPAA-ready Enterprise plans](hipaa-ready-enterprise-plans.md)** for details.
+**Note:** If your organization has a HIPAA-ready Enterprise plan, Claude Code is included in your seat but is not covered under the HIPAA-ready offering. See **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans)** for details.
 
-If your organization is on an older Enterprise plan with Chat and Chat + Claude Code seats, or Standard and Premium seats, you'll need to ensure you have a seat type that includes Claude Code. Owners can purchase or reassign **Chat + Claude Code / Premium seats** in **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**. See **[Purchase and manage seats on Enterprise plans](purchasing-and-managing-seats-on-enterprise-plans.md)** for details.
+If your organization is on an older Enterprise plan with Chat and Chat + Claude Code seats, or Standard and Premium seats, you'll need to ensure you have a seat type that includes Claude Code. Owners can purchase or reassign **Chat + Claude Code / Premium seats** in **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**. See **[Purchase and manage seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)** for details.
 
 ### Step 2: Download and install Claude Code
 
@@ -86,4 +85,4 @@ To install and set up the extension for your IDE, see **[Platforms and integrati
 
 If your organization is on a **usage-based Enterprise plan** (including self-serve Enterprise), there are no per-seat usage limits—usage is based on consumption and billed at API rates. See **[How am I billed for my Enterprise plan?](how-am-i-billed-for-my-enterprise-plan.md)** for details on how usage billing works.
 
-If your organization is on a Team plan or a seat-based Enterprise plan, you can enable usage credits to allow team members to continue working with Claude, Cowork, and Claude Code after reaching their included usage limits. For more information, see **[Manage usage credits for Team and seat-based Enterprise plans](manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**.
+If your organization is on a Team plan or a seat-based Enterprise plan, you can enable usage credits to allow team members to continue working with Claude, Cowork, and Claude Code after reaching their included usage limits. For more information, see **[Manage usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-)**.

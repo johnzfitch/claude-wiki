@@ -2,13 +2,11 @@
 title: "How large is the context window on paid Claude plans? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:32:07Z"
+fetched_at: "2026-09-30T06:32:12Z"
 tags: ["billing", "claude-code"]
 ---
 
 # How large is the context window on paid Claude plans?
-
-Updated today
 
 
 This article explains how large the context window is on paid Claude plans (Pro, Max, Team, Enterprise) when you chat with Claude, or use Claude Code or Claude Cowork.

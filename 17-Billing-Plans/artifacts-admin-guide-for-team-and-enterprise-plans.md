@@ -1,13 +1,12 @@
 ---
 title: "Artifacts admin guide for Team and Enterprise plans | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans"
+source_url: "https://support.claude.com/en/articles/16994751"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:32:27Z"
+fetched_at: "2026-09-30T06:32:14Z"
 tags: ["billing", "enterprise"]
 ---
 
 # Artifacts admin guide for Team and Enterprise plans
-
 
 
 This guide is for Owners and Primary Owners of Team and Enterprise plans, and explains how to turn on artifacts for your organization, choose which templates users can start from, control who has access, and manage whether or not artifacts can be shared outside your organization.
@@ -48,7 +47,7 @@ Standalone Claude Design is a separate product from the **Design** template, and
 
 ## Manage sharing outside your organization
 
-Two separate settings control what users can share outside your organization. Turning on one doesn't turn on the other. For what users see and which artifacts can't leave your organization, see **[Share artifacts](../15-Claude-AI-Features/discovering-publishing-customizing-and-sharing-artifacts.md)**.
+Two separate settings control what users can share outside your organization. Turning on one doesn't turn on the other. For what users see and which artifacts can't leave your organization, see **[Share artifacts](https://support.claude.com/en/articles/9547008-publish-and-share-artifacts)**.
 
 ### External sharing
 
@@ -140,7 +139,7 @@ The capabilities that cover artifacts are:
 
 Users outside those groups can still open, comment on, and use artifacts shared with them.
 
-Learn more about **[managing custom roles on Enterprise plans](manage-custom-roles-on-enterprise-plans.md)** and **[setting up role-based permissions on Enterprise plans](set-up-role-based-entitlements-on-enterprise-plans.md)**.
+Learn more about **[managing custom roles on Enterprise plans](manage-custom-roles-on-enterprise-plans.md)** and **[setting up role-based permissions on Enterprise plans](https://support.claude.com/en/articles/13930458)**.
 
 ------------------------------------------------------------------------
 
@@ -174,7 +173,7 @@ Everyone else can still create, edit, and use any published design system. If a 
 
 4.  Set each user's role to “Custom.”
 
-Learn more about **[setting up your design system](../21-Account-Support/set-up-your-design-system-in-claude-design.md)**.
+Learn more about **[setting up your design system](https://support.claude.com/en/articles/14604397)**.
 
 ------------------------------------------------------------------------
 
@@ -182,7 +181,7 @@ Learn more about **[setting up your design system](../21-Account-Support/set-up-
 
 Artifacts, including designs, decks, and docs, count toward each user's existing usage limits, shared with the rest of Claude, including Claude Code. There's no separate allowance to provision.
 
-- **Team and seat-based Enterprise plans:** Usage draws from each user's seat usage limits, including session and weekly limits. Admins can purchase **[usage credits](manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)** for users who need more.
+- **Team and seat-based Enterprise plans:** Usage draws from each user's seat usage limits, including session and weekly limits. Admins can purchase **[usage credits](https://support.claude.com/en/articles/12005970)** for users who need more.
 
 - **Usage-based Enterprise plans:** Usage bills from your organization's consumption at standard API rates. Organization, group, and per-user spend limits apply.
 
@@ -194,7 +193,7 @@ Artifacts, including designs, decks, and docs, count toward each user's existing
 
 - **Audit logs:** Standalone Claude Design doesn't support audit logs.
 
-Learn more about **[viewing usage analytics for Team and Enterprise plans](view-usage-analytics-for-team-and-enterprise-plans.md)**.
+Learn more about **[viewing usage analytics for Team and Enterprise plans](https://support.claude.com/en/articles/12883420)**.
 
 ------------------------------------------------------------------------
 
@@ -244,4 +243,4 @@ If you haven't assigned the **Claude Design Admin** permission to anyone, any us
 
 ### Can users export what they make?
 
-Yes. For more information, refer to **[View and export](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them.md#h_71205f2c4b)** in **[What are artifacts and how do I use them?](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them.md)**
+Yes. For more information, refer to **[View and export](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them.md#h_71205f2c4b)** in **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/9487310)**

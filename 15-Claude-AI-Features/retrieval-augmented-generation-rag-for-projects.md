@@ -2,12 +2,11 @@
 title: "Retrieval augmented generation (RAG) for projects | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:30:18Z"
+fetched_at: "2026-09-30T06:31:29Z"
 tags: ["claude-ai", "rag"]
 ---
 
 # Retrieval augmented generation (RAG) for projects
-
 
 
 RAG for projects is available on paid plans (Pro, Max, Team, and Enterprise).

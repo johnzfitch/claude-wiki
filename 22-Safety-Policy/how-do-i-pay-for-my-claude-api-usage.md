@@ -2,7 +2,7 @@
 title: "How do I pay for my Claude API usage? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-claude-api-usage"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:32:08Z"
+fetched_at: "2026-09-30T06:33:12Z"
 tags: ["api", "safety"]
 ---
 

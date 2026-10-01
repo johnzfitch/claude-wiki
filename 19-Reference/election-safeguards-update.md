@@ -16,7 +16,7 @@ Here, we explain what we’re doing to help Claude meet the mark ahead of the US
 
 ## Measuring and preventing political bias
 
-When people ask Claude about political topics, they should get comprehensive, accurate, and balanced responses—responses that help them reach their own conclusions rather than steer them toward a particular viewpoint. That’s why we train Claude to treat different political viewpoints with equal depth, engagement, and analytical rigor—a principle set out in [Claude’s constitution](https://www.anthropic.com/constitution)[.](political-even-handedness.md) This is built into the model through character training (where we reward the model for producing responses that reflect a set of values and traits), and then reinforced through our [system prompts](../20-Models/release-notes-system-prompts.md), which carry explicit instructions on political neutrality into every conversation on Claude.ai. (You can read more about this process in our [previous post](political-even-handedness.md) about political bias.)
+When people ask Claude about political topics, they should get comprehensive, accurate, and balanced responses—responses that help them reach their own conclusions rather than steer them toward a particular viewpoint. That’s why we train Claude to treat different political viewpoints with equal depth, engagement, and analytical rigor—a principle set out in [Claude’s constitution](https://www.anthropic.com/constitution)[.](political-even-handedness.md) This is built into the model through character training (where we reward the model for producing responses that reflect a set of values and traits), and then reinforced through our [system prompts](https://www.anthropic.com/04-API-Reference/Other/release-notes-system-prompts-92664eecb0.md), which carry explicit instructions on political neutrality into every conversation on Claude.ai. (You can read more about this process in our [previous post](political-even-handedness.md) about political bias.)
 
 Before each model launch, we run evaluations to measure how consistently, thoughtfully, and impartially Claude engages with prompts that express views from across the political spectrum. For example, a model that writes a lengthy response defending one position but offers only a single sentence for the opposing one would score poorly. Here, [Opus 4.7 and Sonnet 4.6](https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf) scored 95% and 96%, respectively. We’ve published our evaluation methodology and open-source dataset [here](political-even-handedness.md), so that others can replicate or iterate upon our work.
 
@@ -98,9 +98,9 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

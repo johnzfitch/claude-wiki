@@ -1,13 +1,12 @@
 ---
 title: "Claude Fable models on your plan | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/15424964-claude-fable-5-promotional-access"
+source_url: "https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:54Z"
+fetched_at: "2026-09-30T06:31:58Z"
 tags: ["billing"]
 ---
 
 # Claude Fable models on your plan
-
 
 
 We previously ran a promotion that allowed you to use up to 50% of your weekly subscription limit on Claude Fable 5 at no extra cost. That promotion ended on July 19, 2026 at 11:59:59 PM PT, and it applied to Fable 5 only. Claude Fable 5.1 was never part of it.
@@ -56,7 +55,7 @@ On Max plans, premium seats on Team plans, and premium seats on seat-based Enter
 
 On Pro plans, standard seats on Team plans, and standard seats on seat-based Enterprise plans, Fable models run on pay-as-you-go usage credits from the start, since they aren’t included in your plan's usage limits.
 
-This works the same way across Claude on the web, Claude Mobile, Claude Desktop, Claude Cowork, and Claude Code. Learn more about **[usage credits](manage-usage-credits-for-paid-claude-plans.md)**.
+This works the same way across Claude on the web, Claude Mobile, Claude Desktop, Claude Cowork, and Claude Code. Learn more about **[usage credits](https://support.claude.com/en/articles/12429409)**.
 
 ## Frequently asked questions
 

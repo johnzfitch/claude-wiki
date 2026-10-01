@@ -2,7 +2,7 @@
 title: "Plugin manifest reference - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins-reference"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-29T06:29:38Z"
+fetched_at: "2026-09-30T06:30:54Z"
 tags: ["claude-code", "plugins"]
 ---
 

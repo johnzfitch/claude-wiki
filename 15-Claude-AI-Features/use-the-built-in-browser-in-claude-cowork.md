@@ -2,15 +2,14 @@
 title: "Use the built-in browser in Claude Cowork | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16607400-use-the-built-in-browser-in-claude-cowork"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:58Z"
+fetched_at: "2026-09-30T06:33:02Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
 # Use the built-in browser in Claude Cowork
 
 
-
-**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](claude-cowork-and-chat-are-one-claude.md)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
 
 Claude Cowork has a browser built into the Claude Desktop app. This article explains how the built-in browser works, how it differs from Claude in Chrome, and how to choose which one Claude uses.
 
@@ -76,7 +75,7 @@ The built-in browser runs the same safeguards as Claude in Chrome:
 
 Any AI agent that acts in a browser can be targeted by prompt injection, where instructions hidden in a webpage try to redirect Claude. These safeguards reduce that risk but can't remove it. Start with sites you trust, stay close to tasks with real consequences, and stop the task if something looks off.
 
-Learn more in **[Use Claude in Chrome safely](using-claude-for-chrome-safely.md)** and **[Use Claude Cowork safely](use-claude-cowork-safely.md)**.
+Learn more in **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428)** and **[Use Claude Cowork safely](https://support.claude.com/en/articles/13364135)**.
 
 **Important:** We strongly advise against using the built-in browser or Claude in Chrome to manage or take actions involving sensitive information, such as financial accounts, medical information, or other people's personal data.
 
@@ -84,4 +83,4 @@ Learn more in **[Use Claude in Chrome safely](using-claude-for-chrome-safely.md)
 
 ## On Team and Enterprise plans
 
-Your organization's owner controls whether the built-in browser and Claude in Chrome are available. If you don't see the built-in browser, or the **Preferred browser** setting is missing an option, contact your admin. For admin documentation, see **[Set up browser use in Claude Cowork for Team and Enterprise plans](../17-Billing-Plans/set-up-browser-use-in-claude-cowork-for-team-and-enterprise-plans.md)**.
+Your organization's owner controls whether the built-in browser and Claude in Chrome are available. If you don't see the built-in browser, or the **Preferred browser** setting is missing an option, contact your admin. For admin documentation, see **[Set up browser use in Claude Cowork for Team and Enterprise plans](https://support.claude.com/en/articles/16635803)**.

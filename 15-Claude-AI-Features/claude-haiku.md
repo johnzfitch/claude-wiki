@@ -39,7 +39,7 @@ For developers, Haiku 4.5 is available on the Claude Platform natively, and in A
 
 Claude Haiku 4.5 is also available in Claude Code.
 
-Pricing for Haiku 4.5 on the Claude Platform starts at \$1 per million input tokens and \$5 per million output tokens, with up to 90% cost savings with [prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) and 50% cost savings with [batch processing](../04-API-Reference/Guides/build-with-claude-batch-processing.md#pricing). To get started, simply use claude-haiku-4-5 via the [Claude API](../20-Models/about-claude-models-overview.md).
+Pricing for Haiku 4.5 on the Claude Platform starts at \$1 per million input tokens and \$5 per million output tokens, with up to 90% cost savings with [prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) and 50% cost savings with [batch processing](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-batch-processing-58f98b4064.md#pricing). To get started, simply use claude-haiku-4-5 via the [Claude API](../20-Models/about-claude-models-overview.md).
 
 ## Use cases
 
@@ -150,9 +150,9 @@ Pricing depends on how you want to use Haiku 4.5. To learn more, check out our [
 
 - [Mythos](claude-mythos.md)
 - [Fable](claude-fable.md)
-- [Opus](claude-opus.md)
-- [Sonnet](claude-sonnet.md)
-- [Haiku](claude-haiku.md)
+- [Opus](https://www.anthropic.com/claude/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/claude/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/claude/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

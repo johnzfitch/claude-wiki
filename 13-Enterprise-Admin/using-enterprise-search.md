@@ -1,8 +1,8 @@
 ---
 title: "Use enterprise search | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12489464-using-enterprise-search"
+source_url: "https://support.claude.com/en/articles/12489464-use-enterprise-search"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:31:27Z"
+fetched_at: "2026-09-30T06:32:32Z"
 tags: ["enterprise", "search"]
 ---
 
@@ -17,7 +17,7 @@ Enterprise search adds a dedicated project for searching across your organizatio
 
 ## What is enterprise search?
 
-We’ve added a pre-configured “Ask Your Org” **[project](../15-Claude-AI-Features/what-are-projects.md)** that appears in your sidebar. This project is designed specifically for unified knowledge access across your company's tools and data sources. This dedicated workspace provides:
+We’ve added a pre-configured “Ask Your Org” **[project](https://support.claude.com/en/articles/9517075-what-are-projects)** that appears in your sidebar. This project is designed specifically for unified knowledge access across your company's tools and data sources. This dedicated workspace provides:
 
 - **Guided setup:** Easy onboarding flow for connecting your work apps.
 
@@ -268,7 +268,7 @@ If a connector fails:
 
 Yes. You can add connectors available through **[Settings \> Connectors](https://claude.ai/settings/connectors)**, and you can also add custom connectors if permitted by your organization. The guided onboarding recommends a few connectors, but you're not limited to those.
 
-For more information, refer to **[Get started with custom connectors using remote MCP](../14-Connectors/getting-started-with-custom-integrations-using-remote-mcp.md)**.
+For more information, refer to **[Get started with custom connectors using remote MCP](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)**.
 
 ### Can I use enterprise search on mobile or desktop apps?
 
@@ -318,7 +318,7 @@ No. Search results are permission-aware. You only see data that you have permiss
 
 ### Is my search history visible to others?
 
-No. Conversations within your search project are private to you unless you choose to manually share them, just like other conversations with Claude. However, on Enterprise plans, conversations follow your **[organization's data retention policies](../17-Billing-Plans/configure-custom-data-retention-controls-for-enterprise-plans.md)**.
+No. Conversations within your search project are private to you unless you choose to manually share them, just like other conversations with Claude. However, on Enterprise plans, conversations follow your **[organization's data retention policies](https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-enterprise-plans)**.
 
 ### How long are search results retained?
 

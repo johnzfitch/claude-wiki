@@ -2,7 +2,7 @@
 title: "Claude Enterprise Admin API reference guide | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15330651-claude-enterprise-admin-api-reference-guide"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:31:53Z"
+fetched_at: "2026-09-30T06:31:57Z"
 tags: ["api", "authentication", "enterprise"]
 ---
 

@@ -363,7 +363,7 @@ Each MCP server in the `mcp_servers` array defines the connection details:
 | `type` | string | Yes | Currently only "url" is supported |
 | `url` | string | Yes | The URL of the MCP server. Must start with https:// |
 | `name` | string | Yes | A unique identifier for this MCP server. Must be referenced by exactly one MCPToolset in the `tools` array. |
-| `authorization_token` | string | No | OAuth authorization token if required by the MCP server. See [MCP specification](../../06-MCP-Tools/Spec-Archive/2025-11-25-basic-authorization.md). |
+| `authorization_token` | string | No | OAuth authorization token if required by the MCP server. See [MCP specification](https://platform.claude.com/docs/en/06-MCP-Tools/Spec/spec-2025-11-25-authorization-model-context-protocol.md). |
 
 ## MCP toolset configuration
 
@@ -646,7 +646,7 @@ Once you've obtained an access token using either OAuth flow above, you can use 
 }
 ```
 
-For detailed explanations of the OAuth flow, refer to the [Authorization section](../../06-MCP-Tools/Spec-Archive/2025-11-25-basic-authorization.md) in the MCP specification.
+For detailed explanations of the OAuth flow, refer to the [Authorization section](https://platform.claude.com/docs/en/06-MCP-Tools/Spec/spec-2025-11-25-authorization-model-context-protocol.md) in the MCP specification.
 
 ## Client-side MCP helpers (TypeScript)
 
@@ -897,7 +897,7 @@ For more information about using remote MCP servers with the Claude API, see the
 
 ## Remote MCP server examples
 
-*(See the [MCP connector documentation page](../Agents-Tools/agents-and-tools-mcp-connector.md) for the current list of available remote MCP servers.)*
+*(See the [MCP connector documentation page](https://platform.claude.com/docs/en/04-API-Reference/Agents-Tools/agents-and-tools-mcp-connector-2b3ff19436.md) for the current list of available remote MCP servers.)*
 
 > **Note:** **Looking for more?** [Find hundreds more MCP servers on GitHub](https://github.com/modelcontextprotocol/servers).
 
@@ -1038,7 +1038,6 @@ Source: https://support.claude.com/en/articles/9199617-api-safeguards-tools
 Path: 04-API-Reference/Other/api-safeguards-tools.md
 
 # API Safeguards Tools
-
 
 
 Whether you are just starting the process of setting up safeguards for your API deployment of Claude, or your deployment is already running, here are some strategies to consider when building your own AI safety program. These suggestions are designed to help you comply with our **[Terms of Service](https://www.anthropic.com/legal/commercial-terms)** and **[Usage Policy](https://www.anthropic.com/legal/aup)**, which prohibit certain uses of Claude. Failure to comply with the **[Terms](https://www.anthropic.com/legal/commercial-terms)** and **[Usage Policy](https://www.anthropic.com/legal/aup)** may result in suspension or termination of your access to the services.
@@ -2201,105 +2200,6 @@ data: {"type": "message_stop"}
 ```
 
 
-
----
-
-## Claude Console roles and permissions | Claude Help Center
-
-Source: https://support.claude.com/en/articles/10186004-claude-console-roles-and-permissions
-Path: 04-API-Reference/Other/claude-console-roles-and-permissions.md
-
-# Claude Console roles and permissions
-
-August 18, 2026
-
-
-The Claude Console uses a role-based access system with six distinct roles: User, Claude Code User, Limited Developer, Developer, Billing, and Admin. Each role has specific permissions and capabilities designed to help teams manage their API access securely.
-
-## Role types and permissions
-
-### User
-
-- Can only use the playground
-
-- Can view MCP tunnels
-
-- Cannot view API keys, usage logs, or billing details
-
-### Claude Code User
-
-- Can use the playground and **[Claude Code](../../02-Claude-Code-CLI/code-home.md)**
-
-- Can access Claude Code workspace in your org
-
-- Can view MCP tunnels
-
-### Limited Developer
-
-- Can use the playground and Claude Code
-
-- Can manage API keys and webhook endpoints
-
-- Can view usage and cost data
-
-- Can manage vaults and credentials
-
-- Can view MCP tunnels  
-  ​
-
-### Developer
-
-- Can use the playground and Claude Code
-
-- Can manage API keys and webhook endpoints
-
-- Can view usage and cost data
-
-- Can manage vaults and credentials
-
-- Can view sessions traces
-
-- Can download files
-
-- Can view MCP tunnels
-
-### Billing
-
-- Can use the playground
-
-- Can manage billing details
-
-- Can view usage and cost data
-
-- Can view MCP tunnels
-
-- Cannot access Claude Code workspace in your org
-
-### Admin
-
-- Can perform all actions available to User, Developer, and Billing roles
-
-- Can manage users and their role assignments
-
-- Can send events to active (non-archived) sessions
-
-- Can create MCP tunnels
-
-## Workspace-Level Permissions
-
-- Organization Admins automatically receive Workspace Admin permissions in all Workspaces.
-
-- Organization Billing role holders can view cost, usage, and limit values across all Workspaces.
-
-- Organization-level roles serve as a baseline, while Workspace roles can grant additional permissions.
-
-  - For example, a User at the organization level can be granted Admin permissions within specific Workspaces
-
-## Important Notes
-
-- Removing an Admin or Billing role does not automatically update the billing email in our payment processor.
-
-- To modify the primary billing email address or add additional billing contact emails, please **[contact our Support Team](../../21-Account-Support/how-can-i-contact-support.md)**.
 
 ---
 
@@ -6720,7 +6620,7 @@ Agent not found.
 
 ## Use the CLI from Claude Code
 
-[Claude Code](../../02-Claude-Code-CLI/code-home.md) can use the `ant` CLI out of the box. With the CLI installed and authenticated, you can ask Claude Code to operate on your API resources directly. For example:
+[Claude Code](https://platform.claude.com/docs/en/01-Getting-Started/overview.md) can use the `ant` CLI out of the box. With the CLI installed and authenticated, you can ask Claude Code to operate on your API resources directly. For example:
 
 - "List my recent agent sessions and summarize which ones errored."
 - "Upload every PDF in `./reports` to the Files API and print the resulting IDs."
@@ -8092,11 +7992,11 @@ Use Claude through the OpenAI SDK surface
 
 The CLI, client SDKs, and libraries are for calling the Claude API yourself: you send each request and handle each response. Claude Code, the Claude Agent SDK, and Claude Managed Agents work at a higher level, providing the agent loop, tool execution, and runtime.
 
-[Claude Code](../../02-Claude-Code-CLI/code-home.md)
+[Claude Code](https://platform.claude.com/docs/01-Getting-Started/overview.md)
 
 Agentic coding tool for delegating coding tasks to Claude
 
-[Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md)
+[Claude Agent SDK](https://platform.claude.com/docs/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md)
 
 Build agents that run in a process you operate
 
@@ -14039,7 +13939,7 @@ Latest features and updates.
 
 
 
-[Claude Code](../../02-Claude-Code-CLI/code-home.md)
+[Claude Code](https://platform.claude.com/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md)
 
 An agentic coding assistant in your terminal.
 
@@ -14060,39 +13960,6 @@ Organizations interested in building with the Claude API can create a [Claude Co
 Read more about [building with the Claude API here](https://claude.com/platform/api).
 
 If you are an alignment researcher and are interested in accessing the API for AI alignment research purposes, read more about accessing the Claude API here: [What is the External Researcher Access Program?](../../15-Claude-AI-Features/what-is-the-external-researcher-access-program.md)
-
----
-
-## Access the Compliance API | Claude Help Center
-
-Source: https://support.claude.com/en/articles/13015708-how-can-i-access-the-compliance-api
-Path: 04-API-Reference/Other/how-can-i-access-the-compliance-api.md
-
-# Access the Compliance API
-
-
-
-The Compliance API lets your organization programmatically pull activity feed events, chat data, and file content across all your Claude deployments. Use it to monitor, audit, and meet compliance requirements with your own tools.
-
-The Compliance API is available to Enterprise plan organizations, excluding Public Sector organizations, and to Claude Platform customers in Claude chats.
-
-Coverage also includes Cowork (via Claude, Claude Desktop, and Claude Mobile) and Claude Code (via CLI and Claude Desktop). Coverage for the Claude for Microsoft 365 add-ins (Excel, Word, PowerPoint, and Outlook) and Claude Science is available in beta. All of these use your organization's existing Compliance Access Key and settings, so no additional integration is required.
-
-Coverage doesn't include cloud sessions in Claude Code, Claude Code accessed through the Claude Platform, other Microsoft 365 apps, or sessions run on Amazon Bedrock or Google Vertex AI.
-
-**Important:** For Claude Enterprise organizations, only your organization's Primary Owner can enable the Compliance API, from **[Organization settings \> API](https://claude.ai/admin-settings/api-access)**. You can create a key on the same page by clicking "+Create key" under **Keys**: the Primary Owner can create a key covering every linked organization, and Owners can create keys limited to their own organization. Owners see this page but not the **Compliance API** toggle—only the Primary Owner can turn the API on or off. Admins don't see the page at all. If your organization is linked to a parent organization, the parent organization's Primary Owner enables it and the setting applies to every linked organization.
-
-## Compliance API technical documentation
-
-For setup instructions, endpoints, and reference material, including how to enable the API and create access keys to start pulling data, see the **[Compliance API documentation](manage-claude-compliance-api.md)** on Claude Platform Docs.
-
-## Compliance API security integrations
-
-Security and compliance platforms have built integrations on top of the Claude Compliance API, so your team can monitor Claude activity within the tools you already use. Learn more about **[Compliance API integrations](../../14-Connectors/get-started-with-claude-compliance-api-integrations.md)**.
-
-## Audit log events in the Compliance API
-
-The Compliance API now includes audit log events, giving you a full view across all your Claude deployments. To see which events are recorded via audit logs, see **[How to access audit logs](../../13-Enterprise-Admin/how-to-access-audit-logs.md#h_41cdad187a)**.
 
 ---
 
@@ -14313,7 +14180,7 @@ August 18, 2026
 
 To use the Claude API and the playground, add usage credits to your organization's balance. You’ll need to fill out some additional information about your organization and use case. Then, you’ll enter your payment details and fund your account.
 
-Once you’ve purchased usage credits for your account, you’re ready to use the API in your commercial application. You can [find more information on prepaid billing and credits here](../../22-Safety-Policy/how-do-i-pay-for-my-claude-api-usage.md).
+Once you’ve purchased usage credits for your account, you’re ready to use the API in your commercial application. You can [find more information on prepaid billing and credits here](https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-api-usage).
 
 If you need custom rate limits, monthly invoicing, or hands-on support, [contact us](https://claude.com/contact-sales) for further information.
 
@@ -14337,7 +14204,7 @@ This error usually indicates an issue on your end, potentially related to your f
 
 - Ensure you're not using a VPN when running the request.
 
-If you need to [contact our Support team](../../21-Account-Support/how-can-i-contact-support.md) for further assistance, you can do so by clicking on the message icon in the bottom right of our Help Center, or by clicking your initials in the lower left corner of your Claude Console account, then "Get help."
+If you need to [contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support) for further assistance, you can do so by clicking on the message icon in the bottom right of our Help Center, or by clicking your initials in the lower left corner of your Claude Console account, then "Get help."
 
 ---
 
@@ -14373,9 +14240,9 @@ Path: 04-API-Reference/Other/inviting-members-to-the-claude-console.md
 March 16, 2026
 
 
-The instructions in this article apply to your overall Console organization. If you are working within a specific Console Workspace, see this article: [Creating and managing Workspaces in the Claude Console](../../21-Account-Support/creating-and-managing-workspaces-in-the-claude-console.md).
+The instructions in this article apply to your overall Console organization. If you are working within a specific Console Workspace, see this article: [Creating and managing Workspaces in the Claude Console](../../13-Enterprise-Admin/creating-and-managing-workspaces-in-the-claude-console.md).
 
-**Note:** Only organization Admins can manage Console members and invitations. See [Claude Console Roles and Permissions](claude-console-roles-and-permissions.md).
+**Note:** Only organization Admins can manage Console members and invitations. See [Claude Console Roles and Permissions](../../13-Enterprise-Admin/claude-console-roles-and-permissions.md).
 
 ## Inviting members to your Console organization
 
@@ -15074,7 +14941,7 @@ Anthropic personnel access customer content only under defined conditions. Acces
 
 ## What Access Transparency covers
 
-- **Covered content:** Access Transparency covers prompt and response content sent through the Claude Messages API or Claude Code sessions. Anthropic's [general ZDR documentation](manage-claude-api-and-data-retention.md) and [ZDR for Claude Code documentation](../../02-Claude-Code-CLI/zero-data-retention.md) explain which APIs and features are covered by ZDR. The same APIs and features are covered by Access Transparency.
+- **Covered content:** Access Transparency covers prompt and response content sent through the Claude Messages API or Claude Code sessions. Anthropic's [general ZDR documentation](manage-claude-api-and-data-retention.md) and [ZDR for Claude Code documentation](https://platform.claude.com/docs/22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md) explain which APIs and features are covered by ZDR. The same APIs and features are covered by Access Transparency.
 - **Manual views by Anthropic personnel:** Manual views of your covered content by Anthropic reviewers generate events.
 
 ## What Access Transparency does not cover
@@ -15084,7 +14951,7 @@ Anthropic personnel access customer content only under defined conditions. Acces
 - **Claude for Enterprise and Claude Apps:** claude.ai Enterprise seats, Claude for Work, Cowork, and Claude in Chrome are not covered.
 - **Claude consumer products:** Claude Free, Pro, or Max plans.
 - **Partner-operated platforms:** Amazon Bedrock and Google Cloud; refer to those platforms' transparency controls.
-- **Anything ZDR does not cover:** Products that are not covered by ZDR (for example, the Files API, Anthropic-hosted stateful applications, and the Batch API) are not covered by Access Transparency. See [ZDR documentation](../../02-Claude-Code-CLI/zero-data-retention.md#what-zdr-does-not-cover) for additional details.
+- **Anything ZDR does not cover:** Products that are not covered by ZDR (for example, the Files API, Anthropic-hosted stateful applications, and the Batch API) are not covered by Access Transparency. See [ZDR documentation](https://platform.claude.com/docs/22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md#what-zdr-does-not-cover) for additional details.
 
 ## Getting started
 
@@ -15299,7 +15166,7 @@ Contact your Anthropic account representative.
 - [Activity Feed](manage-claude-compliance-activity-feed.md)
 - [API and data retention](manage-claude-api-and-data-retention.md)
 - [Customer-Managed Encryption Keys (CMEK)](manage-claude-cmek.md)
-- [Claude Code data usage](../../13-Enterprise-Admin/data-usage.md)
+- [Claude Code data usage](https://platform.claude.com/docs/22-Safety-Policy/data-usage-claude-code-docs-06b2864aaa.md)
 - [Trust Center](https://trust.anthropic.com/resources)
 
 ---
@@ -15687,12 +15554,12 @@ Common uses include automating onboarding and offboarding, managing workspace ac
 
 ## Organization roles and permissions
 
-There are five organization-level roles. For details, see [API Console roles and permissions](claude-console-roles-and-permissions.md).
+There are five organization-level roles. For details, see [API Console roles and permissions](https://platform.claude.com/docs/en/api-console-roles-and-permissions-4c21777af6.md).
 
 | Role             | Permissions                                                                    |
 |------------------|--------------------------------------------------------------------------------|
 | user             | Can use playground                                                             |
-| claude_code_user | Can use playground and [Claude Code](../../02-Claude-Code-CLI/code-home.md) |
+| claude_code_user | Can use playground and [Claude Code](https://platform.claude.com/docs/01-Getting-Started/overview.md) |
 | developer        | Can use playground and manage API keys                                         |
 | billing          | Can use playground and manage billing details                                  |
 | admin            | Can do all of the preceding, plus manage users                                 |
@@ -16530,7 +16397,7 @@ Under a ZDR arrangement, Anthropic does not store customer prompts or responses 
 ### What ZDR covers
 
 - **Claude Messages and Token Counting APIs:** ZDR applies to these endpoints for eligible features listed in the [feature eligibility table](#feature-eligibility). Features that ride on `/v1/messages` but are marked "No" in the table (such as code execution) are not covered.
-- **Claude Code:** ZDR applies when Claude Code is used with API keys from a Commercial organization (an organization under Anthropic's Commercial Terms of Service, as distinct from a consumer Claude account) or through Claude Enterprise with ZDR enabled. If metrics logging is enabled in Claude Code, productivity data such as usage statistics is exempted from ZDR and may be retained. See the [Claude Code ZDR documentation](../../02-Claude-Code-CLI/zero-data-retention.md) for full details.
+- **Claude Code:** ZDR applies when Claude Code is used with API keys from a Commercial organization (an organization under Anthropic's Commercial Terms of Service, as distinct from a consumer Claude account) or through Claude Enterprise with ZDR enabled. If metrics logging is enabled in Claude Code, productivity data such as usage statistics is exempted from ZDR and may be retained. See the [Claude Code ZDR documentation](https://platform.claude.com/docs/22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md) for full details.
 - **Claude Platform on AWS:** [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md) follows the same data retention policy as the first-party Claude API. ZDR is available on request; contact your Anthropic account representative to enable it.
 
 ### What ZDR does not cover
@@ -16634,7 +16501,7 @@ HIPAA readiness is enforced at the organization level. If you need both HIPAA-re
 
 ## Model-specific data retention requirements
 
-Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, and Claude Mythos 5 are designated Covered Models (see the [Covered Models support article](../../20-Models/covered-models.md)) and require 30-day data retention; ZDR is therefore not available for any of them unless expressly authorized by Anthropic. On the Claude API, requests to Claude Fable 5 from an organization whose data retention configuration does not meet this requirement return a `400 invalid_request_error`:
+Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, and Claude Mythos 5 are designated Covered Models (see the [Covered Models support article](../../15-Claude-AI-Features/covered-models-claude-help-center.md)) and require 30-day data retention; ZDR is therefore not available for any of them unless expressly authorized by Anthropic. On the Claude API, requests to Claude Fable 5 from an organization whose data retention configuration does not meet this requirement return a `400 invalid_request_error`:
 
 ```python
 {
@@ -16781,7 +16648,7 @@ ZDR is enabled on a per-organization basis. Each new organization requires ZDR t
 
 Additionally, if you have metrics logging enabled in Claude Code, productivity data (such as usage statistics) is exempted from ZDR and may be retained.
 
-For full details on ZDR for Claude Code on Claude Enterprise, including disabled features and how to request enablement, see the [Claude Code ZDR documentation](../../02-Claude-Code-CLI/zero-data-retention.md).
+For full details on ZDR for Claude Code on Claude Enterprise, including disabled features and how to request enablement, see the [Claude Code ZDR documentation](https://platform.claude.com/docs/22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md).
 
 ### Does Claude for Excel support ZDR?
 
@@ -18738,7 +18605,7 @@ Outside of [CSAM screening](../../22-Safety-Policy/csam-detection-and-reporting.
 - **Latency:** Operations that wrap or unwrap data keys make a round-trip to your key management service, which can add a small amount of latency to actions that read or write data at rest.
 - **Revocation delay:** Key revocation can take up to 1 hour (the cache TTL). Requests already in flight during that window may continue to succeed.
 - **KMS costs:** CMEK requires a key in a third-party key management service (AWS KMS, Google Cloud KMS, or Azure Key Vault), which might incur separate charges billed by your KMS provider.
-- **Claude Code telemetry behind a gateway:** When Claude Code connects through an LLM gateway or proxy (a custom `ANTHROPIC_BASE_URL`), CMEK does not apply to Claude Code's operational telemetry. To turn this telemetry off, set the `DISABLE_TELEMETRY` environment variable to `1`, as described under [Telemetry services](../../13-Enterprise-Admin/data-usage.md#telemetry-services) in the Claude Code documentation.
+- **Claude Code telemetry behind a gateway:** When Claude Code connects through an LLM gateway or proxy (a custom `ANTHROPIC_BASE_URL`), CMEK does not apply to Claude Code's operational telemetry. To turn this telemetry off, set the `DISABLE_TELEMETRY` environment variable to `1`, as described under [Telemetry services](https://platform.claude.com/docs/22-Safety-Policy/data-usage-claude-code-docs-06b2864aaa.md#telemetry-services) in the Claude Code documentation.
 
 ## Configure your provider
 
@@ -19442,7 +19309,7 @@ Anthropic provides two analytics APIs: the Claude Enterprise Analytics API and t
 
 ### OpenTelemetry logging
 
-[Cowork's OpenTelemetry logging](../../15-Claude-AI-Features/monitor-claude-cowork-activity-with-opentelemetry.md) and [Claude Code monitoring](../../13-Enterprise-Admin/monitoring-usage.md) stream per-event telemetry, including token, cost, and host metadata, to a collector you run as activity happens, whereas the Compliance API returns retained per-session transcripts from Anthropic on request and works with your existing Compliance Access Key. OpenTelemetry logging can also capture prompts and responses, but Anthropic recommends the Compliance API for retrieving the content of Cowork and Claude Code sessions. For a table comparing local sessions, remote sessions, and OpenTelemetry logging, see the introduction to [Retrieve session transcripts](manage-claude-compliance-sessions.md).
+[Cowork's OpenTelemetry logging](https://platform.claude.com/docs/15-Claude-AI-Features/monitor-claude-cowork-activity-with-opentelemetry-1ea54e4367.md) and [Claude Code monitoring](../../13-Enterprise-Admin/monitoring-usage.md) stream per-event telemetry, including token, cost, and host metadata, to a collector you run as activity happens, whereas the Compliance API returns retained per-session transcripts from Anthropic on request and works with your existing Compliance Access Key. OpenTelemetry logging can also capture prompts and responses, but Anthropic recommends the Compliance API for retrieving the content of Cowork and Claude Code sessions. For a table comparing local sessions, remote sessions, and OpenTelemetry logging, see the introduction to [Retrieve session transcripts](manage-claude-compliance-sessions.md).
 
 ### Inference hooks
 
@@ -20691,7 +20558,7 @@ To retrieve message bodies and file contents, use the chat, message, and file en
 
 Yes. Cowork sessions in Claude Desktop that run on users' machines, Claude Code sessions (in the terminal, in Claude Desktop, or in an IDE extension), sessions in the Claude Science desktop app, Claude for Microsoft 365 sessions (in Excel, PowerPoint, Word, and Outlook), and chats in the Claude in Chrome browser extension are captured while users are signed in with their Claude Enterprise account and are available through the [local session endpoints](manage-claude-compliance-sessions.md#retrieve-local-sessions). Cowork sessions started on claude.ai web or mobile, which run in the cloud in Anthropic-managed environments, are available through the [remote session endpoints](manage-claude-compliance-sessions.md#retrieve-remote-sessions). Each family has a list endpoint that returns session metadata and a messages endpoint that returns the session transcript (user prompts, assistant responses, and tool calls and results). The local family adds a third endpoint that retrieves one session's metadata. All of these endpoints use your existing Compliance Access Key with `read:compliance_user_data`; no new key or scope is needed.
 
-Local sessions are captured as their requests reach the Claude API, so nothing is installed on the device, and on-device activity that never reaches the API is not captured. Claude Code sessions authenticated with a Claude Console API key, Claude Code sessions run through a third-party cloud platform (Amazon Bedrock, Google Cloud, or Microsoft Foundry), and [Claude Code cloud sessions](../../02-Claude-Code-CLI/claude-code-on-the-web.md), which run on cloud infrastructure instead of the user's machine, are not captured. These cloud sessions are not remote sessions, even though both run in the cloud; the remote session endpoints return Cowork sessions only. Organizations with [HIPAA readiness](manage-claude-api-and-data-retention.md#hipaa-readiness) enabled get no local session data, and sessions for which [zero data retention (ZDR)](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect are excluded.
+Local sessions are captured as their requests reach the Claude API, so nothing is installed on the device, and on-device activity that never reaches the API is not captured. Claude Code sessions authenticated with a Claude Console API key, Claude Code sessions run through a third-party cloud platform (Amazon Bedrock, Google Cloud, or Microsoft Foundry), and [Claude Code cloud sessions](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md), which run on cloud infrastructure instead of the user's machine, are not captured. These cloud sessions are not remote sessions, even though both run in the cloud; the remote session endpoints return Cowork sessions only. Organizations with [HIPAA readiness](manage-claude-api-and-data-retention.md#hipaa-readiness) enabled get no local session data, and sessions for which [zero data retention (ZDR)](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect are excluded.
 
 The local and remote session endpoints are stable for Cowork, Claude Code, and Claude for Microsoft 365 sessions; coverage of Claude Science and Claude in Chrome sessions is in beta.
 
@@ -20716,7 +20583,7 @@ See [Sessions on users' machines](manage-claude-compliance-sessions.md#retrieve-
 
 ### How does session coverage compare with OpenTelemetry logging (OTEL) for Cowork and Claude Code?
 
-[Cowork's OpenTelemetry logging](../../15-Claude-AI-Features/monitor-claude-cowork-activity-with-opentelemetry.md) and [Claude Code monitoring](../../13-Enterprise-Admin/monitoring-usage.md) overlap with the session endpoints but answer different needs: OTEL streams per-event telemetry to infrastructure you run as activity happens, whereas the Compliance API lets you retrieve retained per-session transcripts from Anthropic after the fact. OTEL can also capture prompts and responses, but Anthropic recommends the Compliance API for retrieving the content of Cowork and Claude Code sessions. For a table comparing local sessions, remote sessions, and OTEL, see the introduction to [Retrieve session transcripts](manage-claude-compliance-sessions.md).
+[Cowork's OpenTelemetry logging](https://platform.claude.com/docs/15-Claude-AI-Features/monitor-claude-cowork-activity-with-opentelemetry-1ea54e4367.md) and [Claude Code monitoring](../../13-Enterprise-Admin/monitoring-usage.md) overlap with the session endpoints but answer different needs: OTEL streams per-event telemetry to infrastructure you run as activity happens, whereas the Compliance API lets you retrieve retained per-session transcripts from Anthropic after the fact. OTEL can also capture prompts and responses, but Anthropic recommends the Compliance API for retrieving the content of Cowork and Claude Code sessions. For a table comparing local sessions, remote sessions, and OTEL, see the introduction to [Retrieve session transcripts](manage-claude-compliance-sessions.md).
 
 OTEL events and Compliance API records share organization and user identifiers, so you can join them.
 
@@ -20728,7 +20595,7 @@ No. Deletes performed through the Compliance API are immediate, permanent, and n
 
 The Compliance API has known coverage boundaries: the Activity Feed records resource events but not prompt or response text, Claude Console and Claude API workloads authenticated with an API key expose no message content at all, and content removed by your retention policy, deleted by a user in claude.ai, or hard-deleted through the Compliance API is not recoverable. For the full coverage boundaries and delivery contract, see [Delivery guarantees and completeness](manage-claude-compliance-integration-patterns.md#delivery-guarantees-and-completeness).
 
-Session transcripts have boundaries of their own. Local sessions are captured only as their requests reach the Claude API, so on-device activity that never reaches the API is not captured. Claude Code sessions authenticated with a Claude Console API key, Claude Code sessions run through a third-party cloud platform (Amazon Bedrock, Google Cloud, or Microsoft Foundry), and [Claude Code cloud sessions](../../02-Claude-Code-CLI/claude-code-on-the-web.md), which run on cloud infrastructure instead of the user's machine, are not captured either; organizations with HIPAA readiness enabled get no local session data; and sessions for which zero data retention is in effect are excluded. No session transcript, local or remote, includes thinking blocks or tool definitions. Organizations that use [customer-managed encryption keys](manage-claude-cmek.md) receive local session transcripts as usual. While the key cannot be used, the messages endpoint returns [503 Service Unavailable](manage-claude-compliance-errors.md#local-sessions-temporarily-unavailable) instead of transcript content, and session metadata is still listed.
+Session transcripts have boundaries of their own. Local sessions are captured only as their requests reach the Claude API, so on-device activity that never reaches the API is not captured. Claude Code sessions authenticated with a Claude Console API key, Claude Code sessions run through a third-party cloud platform (Amazon Bedrock, Google Cloud, or Microsoft Foundry), and [Claude Code cloud sessions](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md), which run on cloud infrastructure instead of the user's machine, are not captured either; organizations with HIPAA readiness enabled get no local session data; and sessions for which zero data retention is in effect are excluded. No session transcript, local or remote, includes thinking blocks or tool definitions. Organizations that use [customer-managed encryption keys](manage-claude-cmek.md) receive local session transcripts as usual. While the key cannot be used, the messages endpoint returns [503 Service Unavailable](manage-claude-compliance-errors.md#local-sessions-temporarily-unavailable) instead of transcript content, and session metadata is still listed.
 
 ## Integration and pagination
 
@@ -20982,7 +20849,7 @@ The content endpoints (chats, files, projects, project attachments, and local an
 
 - Prompt text or model responses from Claude Console, or from Claude API workloads authenticated with an API key.
 - On-device activity in local sessions that is never sent to Anthropic, such as local files that Claude did not read.
-- Claude Code usage authenticated with a Claude Console API key, run through a third-party cloud platform (Amazon Bedrock, Google Cloud, or Microsoft Foundry), or run in a [Claude Code cloud session](../../02-Claude-Code-CLI/claude-code-on-the-web.md), which runs on cloud infrastructure instead of the user's machine.
+- Claude Code usage authenticated with a Claude Console API key, run through a third-party cloud platform (Amazon Bedrock, Google Cloud, or Microsoft Foundry), or run in a [Claude Code cloud session](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md), which runs on cloud infrastructure instead of the user's machine.
 - Local sessions from organizations with [HIPAA readiness](manage-claude-api-and-data-retention.md#hipaa-readiness) enabled, and local sessions for which [zero data retention](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect.
 - Thinking blocks, and images or other binary content, inside session transcripts (transcripts carry user prompts, assistant responses, and tool activity only; local session transcripts show a placeholder `text` block where binary content was omitted).
 - The original file for a chat attachment that claude.ai stored as extracted text, such as some Word, PowerPoint, and PDF uploads (the file content endpoint returns the extracted text; see [Retrieve files and artifacts](manage-claude-compliance-content-data.md#retrieve-files-and-artifacts)).
@@ -21513,11 +21380,11 @@ The following table maps each product, and where it runs, to the endpoint family
 Capture of local sessions is tied to the Compliance API being enabled for your organization and applies while users are signed in with their Claude Enterprise account. The session endpoints do not return the following:
 
 - Claude Code sessions authenticated with a Claude Console API key, or run through a third-party cloud platform such as Amazon Bedrock, Google Cloud, or Microsoft Foundry.
-- [Claude Code cloud sessions](../../02-Claude-Code-CLI/claude-code-on-the-web.md) (including Claude Code routines that run in the cloud), which run on cloud infrastructure instead of the user's machine. These cloud sessions are not remote sessions, even though both run in the cloud; the remote session endpoints return Cowork sessions only.
+- [Claude Code cloud sessions](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md) (including Claude Code routines that run in the cloud), which run on cloud infrastructure instead of the user's machine. These cloud sessions are not remote sessions, even though both run in the cloud; the remote session endpoints return Cowork sessions only.
 - Local sessions in organizations with [HIPAA readiness](manage-claude-api-and-data-retention.md#hipaa-readiness) enabled. No local session data is captured, so the local session endpoints return no sessions for those organizations.
 - Local sessions for which [zero data retention (ZDR)](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect. These sessions are excluded from list results, and the retrieve and messages endpoints return 404 for them.
 
-Anthropic recommends the Compliance API for retrieving session content. The following table compares [local sessions](#retrieve-local-sessions) and [remote sessions](#retrieve-remote-sessions) with the OpenTelemetry-based alternatives available for Cowork and Claude Code, [Cowork's OpenTelemetry logging](../../15-Claude-AI-Features/monitor-claude-cowork-activity-with-opentelemetry.md) and [Claude Code monitoring](../../13-Enterprise-Admin/monitoring-usage.md).
+Anthropic recommends the Compliance API for retrieving session content. The following table compares [local sessions](#retrieve-local-sessions) and [remote sessions](#retrieve-remote-sessions) with the OpenTelemetry-based alternatives available for Cowork and Claude Code, [Cowork's OpenTelemetry logging](https://platform.claude.com/docs/15-Claude-AI-Features/monitor-claude-cowork-activity-with-opentelemetry-1ea54e4367.md) and [Claude Code monitoring](../../13-Enterprise-Admin/monitoring-usage.md).
 
 |                                                           | Local sessions (on users' machines)                                                                                                                 | Remote sessions (in the cloud)                                                                                                                      | OpenTelemetry logging                                                                                         |
 |-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
@@ -22210,21 +22077,6 @@ What Inference hooks are, how the verdict round trip works, and what gets sent t
 Source: https://platform.claude.com/docs/en/manage-claude/inference-hooks-endpoint
 Path: 04-API-Reference/Other/manage-claude-inference-hooks-endpoint.md
 
-### Cookie settings
-
-We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services to you. You can read our Cookie Policy [here](https://www.anthropic.com/legal/cookies).
-
-CustomizeCustomize Cookie Settings
-
-RejectReject All Cookies
-
-AcceptAccept All Cookies
-
-
-Claude Platform Docs
-
-- [Messages](../../01-Getting-Started/intro.md)
-
 - [Managed Agents](managed-agents-overview.md)
 
 - [Admin](manage-claude-admin-api.md)
@@ -22232,7 +22084,7 @@ Claude Platform Docs
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -22265,7 +22117,9 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
+
+[Access Transparency](manage-claude-access-transparency.md)
 
 [Encryption keys](manage-claude-cmek.md)
 
@@ -22650,7 +22504,7 @@ Path: 04-API-Reference/Other/manage-claude-inference-hooks.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -22683,7 +22537,9 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
+
+[Access Transparency](manage-claude-access-transparency.md)
 
 [Encryption keys](manage-claude-cmek.md)
 
@@ -22746,6 +22602,19 @@ For the full request and response schemas, signature verification, and operation
 
 ------------------------------------------------------------------------
 
+## Continue a conversation after a denied request
+
+Each request includes the whole conversation, so a denied message is sent again with every later message. If your AI security server evaluates the whole transcript, it denies those requests too. To continue, the user removes the denied content from what the app sends next, including any file Claude would read again.
+
+The steps depend on the app:
+
+- **claude.ai, including Claude Desktop and the mobile apps.** The user edits the denied message, or an earlier one, rather than sending a corrected copy as a new message. On the web and in Claude Desktop, the edit resends the message's attachments unless the user removes them. A new chat also works.
+- **Claude Code.** The user runs `/rewind` and selects the prompt that first brought the content in. If asked, they select **Restore conversation**, then edit or clear the prompt that returns to the input field. `/clear` starts over. See [Checkpointing](../../02-Claude-Code-CLI/checkpointing.md).
+- **Cowork.** The user edits the denied message if it is their latest one. The edit resends attached files, and **Restart from here** resends the whole message unchanged. If the content is in a file or an earlier message, the user selects **New task**.
+- **Claude Tag.** In Slack, the user first edits the denied message, or deletes it if it is a reply. They then send `@Claude !restart` on its own where Claude was answering: in that thread, or at the channel's top level. The new session rereads the messages still in Slack, so the edit or deletion comes first. See the [`!restart` command](https://claude.com/docs/claude-tag/users/commands#restart-a-stuck-or-wrong-context-session).
+
+------------------------------------------------------------------------
+
 ## Use cases
 
 - **Data loss prevention (DLP).** Forward the transcript to your DLP scanner and deny prompts that carry regulated or classified material. This is the most common deployment.
@@ -22767,7 +22636,7 @@ For the full request and response schemas, signature verification, and operation
 
 Inference hooks are available to Claude Enterprise organizations. Configuring them requires the `organization:manage` permission, which only the Owner and Primary owner roles hold.
 
-One hook governs conversations across claude.ai, Cowork, and Claude Code sessions in your Claude Enterprise organization, whether they run on the web, in the desktop or mobile apps, or in the CLI. Inference hooks are not available on Amazon Bedrock or Google Cloud.
+One hook governs conversations across claude.ai, Cowork, Claude Code, and Claude Tag sessions in your Claude Enterprise organization, whether they run on the web, in the desktop or mobile apps, in the CLI, or in Slack. Inference hooks are not available on Amazon Bedrock or Google Cloud.
 
 Governed requests are the inference requests behind the user's conversation. Ancillary requests, such as conversation title generation, aren't sent to your endpoint, and system prompts and tool definitions are never included in what is sent. Voice mode is not covered.
 
@@ -28830,7 +28699,7 @@ Key characteristics:
 
 ### Claude Code workspace
 
-When a member of your organization first signs in to [Claude Code](../../02-Claude-Code-CLI/code-home.md) with their Claude Console account, Anthropic automatically creates a **Claude Code** workspace in the organization and adds that member to it. Every subsequent member who signs in to Claude Code is added the same way.
+When a member of your organization first signs in to [Claude Code](https://platform.claude.com/docs/01-Getting-Started/overview.md) with their Claude Console account, Anthropic automatically creates a **Claude Code** workspace in the organization and adds that member to it. Every subsequent member who signs in to Claude Code is added the same way.
 
 The Claude Code workspace keeps Claude Code traffic separate from your other API workloads:
 
@@ -29858,7 +29727,7 @@ Path: 04-API-Reference/Other/managed-agents-budgets.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -34560,7 +34429,7 @@ Move an existing agent built on the Messages API or the Claude Agent SDK to Clau
 
 managed-agents-2026-04-01
 
-Claude Managed Agents replaces your hand-written agent loop with managed infrastructure. This page covers what changes when you migrate from a custom loop built on the [Messages API](../Guides/build-with-claude-working-with-messages.md) or from the [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md).
+Claude Managed Agents replaces your hand-written agent loop with managed infrastructure. This page covers what changes when you migrate from a custom loop built on the [Messages API](../Guides/build-with-claude-working-with-messages.md) or from the [Claude Agent SDK](https://platform.claude.com/docs/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md).
 
 ## From a Messages API agent loop
 
@@ -34677,7 +34546,7 @@ with client.beta.sessions.events.stream(session.id) as stream:
 
 ## From the Claude Agent SDK
 
-If you built with the [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md), you're already working with agents, tools, and sessions as concepts. The difference is where they run: the SDK runs in a process you operate, while Managed Agents runs in Anthropic's infrastructure. Most of the migration is mapping SDK configuration objects to their API-side equivalents.
+If you built with the [Claude Agent SDK](https://platform.claude.com/docs/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md), you're already working with agents, tools, and sessions as concepts. The difference is where they run: the SDK runs in a process you operate, while Managed Agents runs in Anthropic's infrastructure. Most of the migration is mapping SDK configuration objects to their API-side equivalents.
 
 ### What changes
 
@@ -43117,17 +42986,17 @@ Models
 
 - Opus
 
-  [Opus](../../15-Claude-AI-Features/claude-opus.md)
+  [Opus](https://www.claude.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](../../15-Claude-AI-Features/claude-sonnet.md)
+  [Sonnet](https://www.claude.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](../../15-Claude-AI-Features/claude-haiku.md)
+  [Haiku](https://www.claude.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Solutions
@@ -44210,17 +44079,17 @@ Models
 
 - Opus
 
-  [Opus](../../15-Claude-AI-Features/claude-opus.md)
+  [Opus](https://www.claude.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](../../15-Claude-AI-Features/claude-sonnet.md)
+  [Sonnet](https://www.claude.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](../../15-Claude-AI-Features/claude-haiku.md)
+  [Haiku](https://www.claude.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Solutions
@@ -44549,7 +44418,7 @@ SortRecommendedMost popularTrendingNewestA–Z
 
 ## Top connectors
 
-Show all 862
+Show all 872
 
 ### [Google Drive](https://www.claude.com/marketplace/connectors/google-drive)
 
@@ -44706,15 +44575,6 @@ Client, portfolio, and performance data for advisors
 
 Add Black Diamond in Claude (opens in new tab)
 
-### [Paxton Legal Research](https://www.claude.com/marketplace/connectors/paxton-legal-research)
-
-Anthropic verifiedTrending
-
-Research U.S. law in Claude—with citations you can open and verify.
-
-
-Add Paxton Legal Research in Claude (opens in new tab)
-
 ### [Amazon Selling Partner](https://www.claude.com/marketplace/connectors/amazon-selling-partner)
 
 Anthropic verifiedTrending
@@ -44723,6 +44583,15 @@ Amazon Selling Partner MCP
 
 
 Add Amazon Selling Partner in Claude (opens in new tab)
+
+### [Paxton Legal Research](https://www.claude.com/marketplace/connectors/paxton-legal-research)
+
+Anthropic verifiedTrending
+
+Research U.S. law in Claude—with citations you can open and verify.
+
+
+Add Paxton Legal Research in Claude (opens in new tab)
 
 ### [Carrefour](https://www.claude.com/marketplace/connectors/carrefour)
 
@@ -44742,14 +44611,14 @@ Access Vanguard models data and content from Claude
 
 Add Vanguard Advisor Tools in Claude (opens in new tab)
 
-### [BlackRock Advisor Center](https://www.claude.com/marketplace/connectors/blackrock-advisor-center)
+### [GoVola](https://www.claude.com/marketplace/connectors/govola)
 
 Anthropic verifiedTrending
 
-Build, analyze, and compare portfolios for advisors
+Search flight offers
 
 
-Add BlackRock Advisor Center in Claude (opens in new tab)
+Add GoVola in Claude (opens in new tab)
 
 ## New connectors
 
@@ -44802,7 +44671,7 @@ Add Sonos in Claude (opens in new tab)
 
 ## All connectors
 
-862 connectors
+872 connectors
 
 ### [Google Drive](https://www.claude.com/marketplace/connectors/google-drive)
 
@@ -44912,6 +44781,15 @@ Connect to Asana to coordinate tasks, projects, and goals
 
 Add Asana in Claude (opens in new tab)
 
+### [Carrefour](https://www.claude.com/marketplace/connectors/carrefour)
+
+Anthropic verifiedTrending
+
+Faites vos courses rapidement
+
+
+Add Carrefour in Claude (opens in new tab)
+
 ### [Linear](https://www.claude.com/marketplace/connectors/linear)
 
 Anthropic verified
@@ -44920,15 +44798,6 @@ Manage issues, projects & team workflows in Linear
 
 
 Add Linear in Claude (opens in new tab)
-
-### [Adobe](https://www.claude.com/marketplace/connectors/adobe-creativity)
-
-Anthropic verified
-
-Design, combine, and edit with Adobe pro tools
-
-
-Add Adobe in Claude (opens in new tab)
 
 ### [Supabase](https://www.claude.com/marketplace/connectors/supabase)
 
@@ -44939,14 +44808,14 @@ Manage databases, authentication, and storage
 
 Add Supabase in Claude (opens in new tab)
 
-### [Carrefour](https://www.claude.com/marketplace/connectors/carrefour)
+### [Adobe](https://www.claude.com/marketplace/connectors/adobe-creativity)
 
-Anthropic verifiedTrending
+Anthropic verified
 
-Faites vos courses rapidement
+Design, combine, and edit with Adobe pro tools
 
 
-Add Carrefour in Claude (opens in new tab)
+Add Adobe in Claude (opens in new tab)
 
 ### [monday.com](https://www.claude.com/marketplace/connectors/monday)
 
@@ -45002,14 +44871,14 @@ Access to Intercom data for better customer insights
 
 Add Intercom in Claude (opens in new tab)
 
-### [Miro](https://www.claude.com/marketplace/connectors/miro)
+### [Shopify](https://www.claude.com/marketplace/connectors/shopify)
 
 Anthropic verified
 
-Access and create new content on Miro boards
+Build, manage, and analyze your Shopify store
 
 
-Add Miro in Claude (opens in new tab)
+Add Shopify in Claude (opens in new tab)
 
 ### [Vercel](https://www.claude.com/marketplace/connectors/vercel)
 
@@ -45259,7 +45128,7 @@ Get started
 
 Read API docs
 
-[Read API docs](../../02-Claude-Code-CLI/microsoft-foundry.md)
+[Read API docs](https://www.claude.com/20-Models/claude-code-on-microsoft-foundry-claude-code-docs-ee35d755a6.md)
 
 Read API docs
 
@@ -45333,7 +45202,7 @@ Get started
 
 Read API docs
 
-[Read API docs](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+[Read API docs](https://www.claude.com/20-Models/build-with-claude-claude-in-microsoft-foundry-cac680095c.md)
 
 Read API docs
 
@@ -45530,17 +45399,17 @@ Models
 
 - Opus
 
-  [Opus](../../15-Claude-AI-Features/claude-opus.md)
+  [Opus](https://www.claude.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](../../15-Claude-AI-Features/claude-sonnet.md)
+  [Sonnet](https://www.claude.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](../../15-Claude-AI-Features/claude-haiku.md)
+  [Haiku](https://www.claude.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Enterprise
@@ -45657,7 +45526,7 @@ Developers
 
 - Developer docs
 
-  [Developer docs](../../02-Claude-Code-CLI/code-home.md)
+  [Developer docs](https://www.claude.com/01-Getting-Started/overview.md)
   Developer docs
 
 - Community
@@ -46480,17 +46349,17 @@ Models
 
 - Opus
 
-  [Opus](../../15-Claude-AI-Features/claude-opus.md)
+  [Opus](https://www.claude.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](../../15-Claude-AI-Features/claude-sonnet.md)
+  [Sonnet](https://www.claude.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](../../15-Claude-AI-Features/claude-haiku.md)
+  [Haiku](https://www.claude.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Solutions
@@ -47149,17 +47018,17 @@ Models
 
 - Opus
 
-  [Opus](../../15-Claude-AI-Features/claude-opus.md)
+  [Opus](https://www.claude.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](../../15-Claude-AI-Features/claude-sonnet.md)
+  [Sonnet](https://www.claude.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](../../15-Claude-AI-Features/claude-haiku.md)
+  [Haiku](https://www.claude.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Solutions
@@ -47433,6 +47302,84 @@ Programs
 
 ---
 
+## Preserved thinking: changing how the Messages API handles thinking blocks to protect against distillation | Claude Help Center
+
+Source: https://support.claude.com/en/articles/16761192
+Path: 04-API-Reference/Other/preserved-thinking-changing-how-the-messages-api-handles-thinking-blocks-to-protect.md
+
+# Preserved thinking: changing how the Messages API handles thinking blocks to protect against distillation
+
+
+We're changing how the Messages API handles thinking blocks to protect against distillation. A thinking block is a record of the reasoning Claude may produce while working on a response. On Claude Fable 5.1, Claude Opus 5.5, and Claude Sonnet 5.5, new API accounts can no longer edit the context around a thinking block, such as the messages, tools, or system prompt, during a multi-turn conversation. We’ll expand the rollout to all users with upcoming model launches.
+
+Modifying this prior context has legitimate applications, which we continue to support using the adjustments outlined below. However, such modifications are also a common and **[publicly documented technique](https://arxiv.org/abs/2608.09867)** for industrial-scale illicit distillation, which is prohibited by our **[Usage Policy](https://www.anthropic.com/legal/aup)** and Terms of Service.
+
+Now, the API will now verify that a thinking block is sent back with the same system prompt, tools, and messages that produced it, and will return an error if they don't match. In order for modified requests to succeed, developers may opt-in to instead have the thinking blocks *removed* from such requests; the model will respond without seeing the thinking block.
+
+In this article, we share details on why we're doing this and the adjustments you can make to minimize disruption.
+
+## What are thinking blocks?
+
+Claude produces reasoning steps before providing its final answer. On the API, these are returned to the user as "thinking blocks." In a multi-turn conversation, API users send these blocks back with each exchange (along with the system prompt, tools, and earlier messages), so that Claude has full conversational context.
+
+## What’s changing?
+
+For affected accounts using the models listed below, the API will return an error if the system prompt, tools, or messages preceding a prior thinking block have been modified.
+
+To avoid an error message, you may opt into "non-strict" mode. In this mode, the request will go through, but the affected thinking blocks will be dropped from what the model sees. This allows you to continue your conversation or task uninterrupted despite the prior turns’ thinking not being shown to the model. When this happens, the API response will tell you which blocks were dropped.
+
+## Why are we making this change?
+
+Altering the earlier turns of a conversation is a **[common technique](https://arxiv.org/abs/2608.09867)** used in illicit distillation campaigns, which aim to extract the capabilities of advanced models—especially thinking—to train another model, without authorization. Distillation is often employed on an industrial scale, using thousands of fake accounts. We encrypt Claude's thinking blocks to prevent this, but by editing the conversation before a thinking block, a user could get Claude to decrypt and print its reasoning. Systems trained this way can inherit capabilities they wouldn’t otherwise have, *without* inheriting the safeguards that we've built to prevent a broad range of misuse like cyberattacks and weapons development.
+
+This change aims to make distillation campaigns more difficult to execute. It builds on existing anti-distillation measures like **[enhanced distillation classifiers](../../19-Reference/next-generation-constitutional-classifiers.md)** and restrictions on transferring sessions or reasoning from more advanced models to less capable models with weaker safeguards.
+
+## What does this mean for API integrations?
+
+Certain integrations—particularly those that involve rewriting earlier turns mid-conversation, like context compaction, injected system reminders, or changing tools mid-session—may need adjustment.
+
+Here are the resources to help guide you through this update:
+
+- The **[preserved thinking documentation](../Guides/build-with-claude-preserved-thinking.md)** covers where the change applies, how to check whether your integration is affected, and **[how to make common edits](../Guides/build-with-claude-preserved-thinking.md#replace-prefix-edits)** without breaking preserved thinking.
+
+- **[Compaction](../Guides/build-with-claude-compaction.md)** (beta) can summarize older turns while keeping the most recent turns word for word, and can build the summary in the background while your agent keeps working. It replaces client-side compaction, which is likely the most common reason integrations need to change.
+
+- **[Mid-conversation tool changes](../Guides/build-with-claude-mid-conversation-system-messages.md#mid-conversation-tool-changes)** (beta) let you add or remove tools during a conversation without editing earlier turns.
+
+- Our **[migration guides](../../20-Models/about-claude-models-migration-guide.md)** have a full checklist for moving to each model.
+
+Check each page for availability on Amazon Bedrock, Google Cloud Vertex AI, and Microsoft Foundry.
+
+If the guidance above doesn't cover your use case, please **[reach out to our support team](../../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)**. If you work with an account team, you can also reach out to them for support with updating more complex integrations.
+
+There are additional benefits to keeping thinking blocks consistent: it means that the API can reuse cached prompts more often, which reduces costs and response time.
+
+## Who will this impact?
+
+Preserved thinking applies to these models and accounts:
+
+[TABLE]
+
+This covers Claude Platform organizations, Amazon Bedrock accounts, Google Cloud Vertex AI projects, and Microsoft Foundry projects.
+
+We're taking a phased approach to enforcement, starting with new accounts, where we see the highest concentration of distillation-related abuse. This gives developers with existing accounts time to make their harnesses and integrations compatible.
+
+If you use Claude Code, Claude Cowork, or Claude.ai, there's nothing you need to change; those products handle thinking blocks for you.
+
+## Thinking can only be read by the account that created it
+
+Starting with Claude Sonnet 5.5, a thinking block can only be read by the account that created it, or by an account linked to it.
+
+Thinking blocks can contain private information. Because they are encrypted, that information isn't visible when you inspect a transcript. This check helps keep a shared or leaked transcript from exposing the reasoning inside it. It also makes it harder for distillers to move harvested transcripts to new accounts after we ban the account that produced them.
+
+If a request includes thinking from an account that isn't linked, the API drops that thinking and the request continues. It doesn't return an error. The next response may be slower and use more tokens, similar to a compaction.
+
+Accounts in the same Claude Platform parent organization or the same Google Cloud organization are linked automatically. If you continue conversations across other accounts, for example to fail over between the Claude Platform and Amazon Bedrock, contact your account team to link them.
+
+In Claude Code, switching accounts in the middle of a session has the same effect: the next response is slower and uses more tokens.
+
+---
+
 ## Model cards - Claude Platform Docs
 
 Source: https://platform.claude.com/docs/en/resources/overview
@@ -47638,7 +47585,7 @@ This article explains the invoices and receipts you'll receive for Claude API an
 
 **Credit purchase receipts.** If your organization uses prepaid billing, you'll receive a receipt for each usage credit purchase, including purchases made automatically by auto-reload.
 
-For details on how billing works, see **[How do I pay for my Claude API usage?](../../22-Safety-Policy/how-do-i-pay-for-my-claude-api-usage.md)**
+For details on how billing works, see **[How do I pay for my Claude API usage?](https://support.claude.com/en/articles/8977456)**
 
 ## Find your invoices
 
@@ -47654,7 +47601,7 @@ Invoices are also available in the Console to users with the Admin or Billing ro
 
 4.  Click "Download" to save the invoice directly, or click "View" to open it in a new Stripe tab and download it from there.
 
-Expired credit grants also appear in **Invoice history**, even though they aren't charges. For help accessing older receipts and invoices that aren't available in the Console, **[contact our Support team](../../21-Account-Support/how-can-i-contact-support.md)**.
+Expired credit grants also appear in **Invoice history**, even though they aren't charges. For help accessing older receipts and invoices that aren't available in the Console, **[contact our Support team](../../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)**.
 
 ## Read your invoice
 
@@ -47686,9 +47633,9 @@ No. Issued invoices can't be changed. Update your billing details in **[Console 
 
 ---
 
-## Rate limits | Claude Platform
+## Admin keys | Claude Platform
 
-Source: https://platform.claude.com/usage/limits
+Source: https://platform.claude.com/settings/admin-keys
 Path: 04-API-Reference/Other/usage-limits.md
 
 # Build on the Claude Platform
@@ -47721,7 +47668,7 @@ Path: 04-API-Reference/Other/welcome.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -47762,7 +47709,7 @@ Tool infrastructure
 
 Context management
 
-[Context windows](../Guides/build-with-claude-context-windows.md)[Context editing](../Guides/build-with-claude-context-editing.md)[Prompt caching](../Guides/build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](../Guides/build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](../Guides/build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics (beta)](../Guides/build-with-claude-cache-diagnostics.md)[Token counting](../Guides/build-with-claude-token-counting.md)
+[Context windows](../Guides/build-with-claude-context-windows.md)[Context editing](../Guides/build-with-claude-context-editing.md)[Prompt caching](../Guides/build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](../Guides/build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](../Guides/build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](../Guides/build-with-claude-cache-diagnostics.md)[Token counting](../Guides/build-with-claude-token-counting.md)
 
 [Compaction](../Guides/build-with-claude-compaction.md)
 
@@ -47835,7 +47782,9 @@ Complex projectsAgentsCoding
 
 For long-running agentic coding and knowledge work
 
-### [Sonnet 5](../../20-Models/models-sonnet-5-overview.md)
+### [Sonnet 5.5](../../20-Models/models-sonnet-5-5-overview.md)
+
+New
 
 Everyday tasksWritingCost-efficient
 
@@ -47995,7 +47944,7 @@ March 16, 2026
 
 If you suspect that your API key may be compromised, we recommend revoking the key immediately. You can do so by logging into your Claude Console account, going to the [API keys page](usage-limits.md) from your profile, clicking the meatball menu (i.e. the three horizontal dots) next to the key in question, and selecting ‘Delete API Key.’
 
-You can generate a new API key by clicking on the ‘Create Key’ button on the same page; make sure to save this key somewhere secure, such as a secrets management system and avoid keeping the key in version control. If you continue to see any suspicious API activity or have other concerns, please [contact our Support team](../../21-Account-Support/how-can-i-contact-support.md).
+You can generate a new API key by clicking on the ‘Create Key’ button on the same page; make sure to save this key somewhere secure, such as a secrets management system and avoid keeping the key in version control. If you continue to see any suspicious API activity or have other concerns, please [contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support).
 
 ---
 
@@ -48027,7 +47976,7 @@ Follow these steps to view your Console invoices:
 
 Additionally, after each purchase, we automatically send them to your registered billing email address.
 
-Expired credit grants will appear in the **Invoice history** section. For help accessing older receipts and invoices not available in the Claude Console, please **[contact our Support team](../../21-Account-Support/how-can-i-contact-support.md)**.
+Expired credit grants will appear in the **Invoice history** section. For help accessing older receipts and invoices not available in the Claude Console, please **[contact our Support team](https://support.claude.com/en/21-Account-Support/how-to-get-support-57c428239c.md)**.
 
 ---
 
@@ -48063,7 +48012,7 @@ For our API users, we currently maintain three main resources:
 
 - Our community [Discord](https://anthropic.com/discord) where developers can share ideas and exchange tips.
 
-If you need to [contact our Support team](../../21-Account-Support/how-can-i-contact-support.md), you can do so by clicking on the message icon in the bottom right of our Help Center, or by clicking your initials in the lower left corner of your Claude Console account, then "Get help."
+If you need to [contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support), you can do so by clicking on the message icon in the bottom right of our Help Center, or by clicking your initials in the lower left corner of your Claude Console account, then "Get help."
 
 ---
 

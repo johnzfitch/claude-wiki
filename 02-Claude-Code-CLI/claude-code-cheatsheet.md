@@ -2,7 +2,7 @@
 title: "Claude Code cheatsheet | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14553413-claude-code-cheatsheet"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:30:50Z"
+fetched_at: "2026-09-30T06:32:53Z"
 tags: ["claude-code"]
 ---
 

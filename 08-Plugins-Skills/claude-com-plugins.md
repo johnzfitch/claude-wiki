@@ -2,7 +2,7 @@
 title: "Plugins | Claude Marketplace | Claude by Anthropic"
 source_url: "https://www.claude.com/plugins"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-29T06:30:06Z"
+fetched_at: "2026-09-30T06:30:38Z"
 tags: ["enterprise", "plugins", "security"]
 ---
 

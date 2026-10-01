@@ -2,7 +2,7 @@
 title: "Self-hosted environments - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/self-hosted-environments"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-16T06:24:11Z"
+fetched_at: "2026-09-30T06:30:56Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -59,7 +59,7 @@ Check these before planning a rollout:
 - **Zero Data Retention**: unavailable for organizations with [Zero Data Retention](../02-Claude-Code-CLI/zero-data-retention.md) enabled.
 - **Model inference**: sessions use the Anthropic API, and inference can’t be routed through [Amazon Bedrock, Google Cloud’s Agent Platform, Microsoft Foundry](../02-Claude-Code-CLI/third-party-integrations.md), or an [LLM gateway](llm-gateway.md).
 - **Surfaces**: sessions started from [claude.ai/code](https://claude.ai/code), the mobile and desktop apps, [scheduled routines](../02-Claude-Code-CLI/web-scheduled-tasks.md), and the terminal, with [`claude --cloud`](../02-Claude-Code-CLI/claude-code-on-the-web.md#from-terminal-to-cloud) or an [`--environment` dispatch](self-hosted-environments-testing.md#run-the-test-loop), can run in self-hosted environments. [Claude Tag](https://claude.com/docs/claude-tag/overview) sessions can run in them too, but Claude can’t use [Access bundles](https://claude.com/docs/claude-tag/concepts/glossary#access-bundle) in those sessions yet. [Claude Security](../02-Claude-Code-CLI/claude-security.md) and [Code Review](../02-Claude-Code-CLI/code-review.md) sessions don’t route to them yet. Support for those two surfaces follows separately.
-- **Repositories**: sessions check out repositories from GitHub; see [GitHub authentication options](../02-Claude-Code-CLI/claude-code-on-the-web.md#github-authentication-options).
+- **Repositories**: sessions check out repositories from GitHub; see [GitHub authentication options](../02-Claude-Code-CLI/claude-code-on-the-web.md#github-authentication-options). For a GitHub Enterprise Server host, see its [network requirements](../02-Claude-Code-CLI/github-enterprise-server.md#network-requirements).
 - **Billing**: sessions in a self-hosted environment consume your organization’s Claude Code usage the same way sessions in Anthropic-hosted environments do.
 
 

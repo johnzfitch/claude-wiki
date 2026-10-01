@@ -2,7 +2,7 @@
 title: "How to create custom skills | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12512198-how-to-create-custom-skills"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:31:53Z"
+fetched_at: "2026-09-30T06:31:32Z"
 tags: ["claude-code", "security", "skills"]
 ---
 
@@ -229,7 +229,7 @@ my-skill.zip
 
 When you're iterating on a skill with Claude in chat, you can edit the skill files directly where they open beside the conversation. Highlight the text you want changed, click "Edit with Claude," and type your request. For skills with multiple files, leave edit requests across the files and send them together, and Claude applies them in one pass. Learn more about **[editing artifacts](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them.md#h_9cbf05e668)**.
 
-**Note for Team and Enterprise plans:** To make a skill available to all users in your organization, see **[Provision and manage skills for your organization](../22-Safety-Policy/provisioning-and-managing-skills-for-your-organization.md)**.
+**Note for Team and Enterprise plans:** To make a skill available to all users in your organization, see **[Provision and manage skills for your organization](../15-Claude-AI-Features/provisioning-and-managing-skills-for-your-organization.md)**.
 
 ------------------------------------------------------------------------
 

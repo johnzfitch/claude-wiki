@@ -2,7 +2,7 @@
 title: "Connect Claude Code to tools via MCP - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/mcp"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-09-29T06:30:15Z"
+fetched_at: "2026-09-30T06:31:51Z"
 tags: ["claude-code", "mcp"]
 ---
 
@@ -575,7 +575,7 @@ Or inline in `plugin.json`:
   - In [cloud sessions](../../02-Claude-Code-CLI/claude-code-on-the-web.md), an MCP call to a plugin server that isn’t connected yet, such as right after an idle session wakes, starts the server on demand and waits for it to connect
 - **Path placeholders**: `${CLAUDE_PLUGIN_ROOT}` resolves to the plugin’s installation directory, `${CLAUDE_PLUGIN_DATA}` to its [persistent state](../../08-Plugins-Skills/plugins-components.md#path-variables-and-persistent-data) directory, and `${CLAUDE_PROJECT_DIR}` to the stable project root. Substitution applies to:
   - `stdio` servers: `command`, `args`, `env`
-  - `http`, `sse`, and `ws` servers: `url`, `headers`, and `headersHelper`. Before v2.1.195, `headersHelper` passed the placeholder through as a literal string
+  - `http`, `sse`, and `ws` servers: `url`, `headers`, and `headersHelper`
 - **User environment access**: access to the same environment variables as manually configured servers
 - **Multiple transport types**: support for stdio, SSE, HTTP, and WebSocket transports, though transport support may vary by server
 
@@ -1082,7 +1082,7 @@ Claude Code picks the `headersHelper` command’s working directory from the con
 
 | Where you configured the server                                                                                                                                                                                   | Working directory                                                                                 |
 |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------|
-| A [plugin](../../08-Plugins-Skills/plugins-components.md#mcp-servers)                                                                                                                                                               | The plugin’s root directory. Requires Claude Code v2.1.195 or later                               |
+| A [plugin](../../08-Plugins-Skills/plugins-components.md#mcp-servers)                                                                                                                                                               | The plugin’s root directory                                                                       |
 | A project `.mcp.json` or a [local-scope](#local-scope) server                                                                                                                                                     | The project directory the server is declared in                                                   |
 | An agent file in your project, a server from the SDK’s `mcpServers` option or `setMcpServers()` method, or [`--mcp-config`](../../02-Claude-Code-CLI/cli-reference.md)                                                               | The session’s [primary working directory](../../02-Claude-Code-CLI/permissions.md#working-directories)               |
 | [User scope](#user-scope), [managed MCP](managed-mcp.md), a [claude.ai connector](#use-mcp-servers-from-claude-ai), or an agent file from outside your project, including one from an `--add-dir` directory | Your configuration directory, `~/.claude` unless you set [`CLAUDE_CONFIG_DIR`](../../02-Claude-Code-CLI/env-vars.md) |
@@ -1231,7 +1231,7 @@ Anthropic also provides some connectors itself, without you or an admin adding t
 - `ANTHROPIC_PROFILE`, the federation variables, or an active [Anthropic profile](../../13-Enterprise-Admin/iam.md#anthropic-profiles-and-federation-credentials) supplies the credential
 - `CLAUDE_CODE_OAUTH_TOKEN` holds a token from [`claude setup-token`](../../13-Enterprise-Admin/iam.md#generate-a-long-lived-token), which can only make model requests
 
-If `/mcp` doesn’t list a connector you added, run `/status` to confirm which authentication method is active. Unset that environment variable, remove the `apiKeyHelper` setting, or [switch off the profile](../../13-Enterprise-Admin/iam.md#anthropic-profiles-and-federation-credentials), then run `/login` to select your claude.ai account. If a temporary network problem keeps the connector list from loading when your session starts, Claude Code retries the fetch up to three times in the background, and the connectors appear once a retry succeeds. If they still haven’t appeared, restart Claude Code to fetch the list again. If `/mcp` shows a connector as `connected · session token rejected`, or its detail view shows [`claude.ai rejected the session token`](../../02-Claude-Code-CLI/errors.md#claude-ai-rejected-the-session-token), claude.ai rejected the token from your Claude Code login, usually because the login expired and couldn’t be refreshed. Authorizing the connector again doesn’t clear this state, because the connector’s own authorization in claude.ai isn’t what was rejected. To clear it:
+If `/mcp` doesn’t list a connector you added, run `/status` to confirm which authentication method is active. Unset that environment variable, remove the `apiKeyHelper` setting, or [switch off the profile](../../13-Enterprise-Admin/iam.md#anthropic-profiles-and-federation-credentials), then run `/login` to select your claude.ai account. If a temporary network problem keeps the connector list from loading when your session starts, Claude Code retries the fetch up to three times in the background, and the connectors appear once a retry succeeds. If they still haven’t appeared, restart Claude Code to fetch the list again. If `/mcp` shows a connector as `session token rejected`, or its detail view shows [`claude.ai rejected the session token`](../../02-Claude-Code-CLI/errors.md#claude-ai-rejected-the-session-token), claude.ai rejected the token from your Claude Code login. Authorizing the connector again doesn’t clear this state, because the connector’s own authorization in claude.ai isn’t what was rejected. To clear it:
 
 1.  Run `/login` to sign in again.
 2.  Reconnect the connector from `/mcp`.
@@ -1400,7 +1400,7 @@ Some MCP servers declare a tool’s input schema as a JSON Schema union, with `a
 - `allOf`: properties from every branch are merged, and each branch’s `required` list still applies
 - `anyOf` and `oneOf`: properties from every branch are merged, and each branch’s `required` list is described in the tool description instead of enforced by the schema
 
-Your server receives whichever arguments Claude chose, so keep validating the combination server-side. When Claude Code can’t produce a schema the API accepts, or on a deployment that doesn’t receive the remote configuration that enables the rewrite, it skips that one tool, records the reason in the server’s log, and leaves the server’s other tools available. Versions earlier than v2.1.195 skip every tool whose input schema has a root-level `anyOf`, `oneOf`, or `allOf`.
+Your server receives whichever arguments Claude chose, so keep validating the combination server-side. When Claude Code can’t produce a schema the API accepts, or on a deployment that doesn’t receive the remote configuration that enables the rewrite, it skips that one tool, records the reason in the server’s log, and leaves the server’s other tools available.
 
 
 [​](#tools-with-invalid-input-schemas)

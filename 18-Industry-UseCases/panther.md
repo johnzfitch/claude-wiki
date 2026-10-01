@@ -2,7 +2,7 @@
 title: "Panther Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/panther"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:41Z"
+fetched_at: "2026-09-30T06:32:27Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 

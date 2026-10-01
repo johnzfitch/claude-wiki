@@ -2,7 +2,7 @@
 title: "Courses · Claude Academy"
 source_url: "https://www.claude.com/resources/courses"
 category: "01-Getting-Started"
-fetched_at: "2026-09-29T06:30:29Z"
+fetched_at: "2026-09-30T06:30:26Z"
 tags: ["api", "getting-started"]
 ---
 
@@ -93,7 +93,7 @@ Structured learning paths with video lessons and assessments to help you master 
 
 ### AI Fluency, for your world
 
-[For builders9 lessons · 1 quiz](https://www.claude.com/courses/ai-fluency-for-builders)[For creative work8 lessons · 1 quiz](https://www.claude.com/courses/ai-fluency-for-creative-work)[For educators4 lessons · 1 quiz](https://www.claude.com/courses/ai-fluency-for-educators)[For pK–12 educators10 lessons · 1 quiz](https://www.claude.com/courses/ai-fluency-for-k-12-educators)[For pK–12 Train the Trainer4 lessons](https://www.claude.com/courses/ai-fluency-for-pk-12-train-the-trainer)[For facilitators7 lessons · 1 quiz](https://www.claude.com/courses/teaching-ai-fluency)[For nonprofits9 lessons · 1 quiz](https://www.claude.com/courses/ai-fluency-for-nonprofits)[For small businesses9 lessons · 1 quiz](https://www.claude.com/courses/ai-fluency-for-small-businesses)[For students5 lessons · 1 quiz](https://www.claude.com/courses/ai-fluency-for-students)
+[For builders9 lessons · 1 quiz](https://www.claude.com/courses/ai-fluency-for-builders)[For creative work8 lessons · 1 quiz](https://www.claude.com/courses/ai-fluency-for-creative-work)[For educators4 lessons · 1 quiz](https://www.claude.com/courses/ai-fluency-for-educators)[For pK–12 educators10 lessons · 1 quiz](https://www.claude.com/courses/ai-fluency-for-k-12-educators)[For pK–12 Train the Trainer4 lessons](https://www.claude.com/courses/ai-fluency-for-pk-12-train-the-trainer)[For facilitators7 lessons · 1 quiz](https://www.claude.com/courses/teaching-ai-fluency)[For nonprofits9 lessons · 1 quiz](https://www.claude.com/courses/ai-fluency-for-nonprofits)[For small businesses8 lessons · 1 quiz](https://www.claude.com/courses/ai-fluency-for-small-businesses)[For students5 lessons · 1 quiz](https://www.claude.com/courses/ai-fluency-for-students)
 
 ## Build with the API
 

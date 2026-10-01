@@ -2,7 +2,7 @@
 title: "Navigating the Claude desktop app · Claude Academy"
 source_url: "https://www.claude.com/resources/tutorials/navigating-the-claude-desktop-app"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-25T06:28:49Z"
+fetched_at: "2026-09-30T06:30:26Z"
 tags: ["desktop"]
 ---
 
@@ -77,7 +77,7 @@ Once Claude can see a folder, you can ask Claude to:
 - *Sort a cluttered Downloads folder into clearly named subfolders.*
 - *Each month, add the new invoices to that same spreadsheet, building a running record.*
 
-A task like that can later [run on a schedule(opens in new tab)](../15-Claude-AI-Features/schedule-recurring-tasks-in-claude-cowork.md).
+A task like that can later [run on a schedule(opens in new tab)](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork).
 
 ### Apps[](#apps)
 
@@ -109,7 +109,7 @@ A task in Claude, on the web or the desktop app, can also work in your own Chrom
 
 
 
-Some pages carry hidden text meant to mislead an AI, and safety checks reduce that risk without removing it. Start with sites you trust, and handle anything sensitive yourself, like bank accounts or health records. See [Use Claude in Chrome safely(opens in new tab)](../15-Claude-AI-Features/using-claude-for-chrome-safely.md) and [Use the built-in browser(opens in new tab)](../15-Claude-AI-Features/use-the-built-in-browser-in-claude-cowork.md).
+Some pages carry hidden text meant to mislead an AI, and safety checks reduce that risk without removing it. Start with sites you trust, and handle anything sensitive yourself, like bank accounts or health records. See [Use Claude in Chrome safely(opens in new tab)](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely) and [Use the built-in browser(opens in new tab)](https://support.claude.com/en/articles/16607400).
 
 ### Your screen, through computer use (beta)[](#your-screen-through-computer-use-beta)
 
@@ -127,7 +127,7 @@ Things to ask:
 
 
 
-By default, Claude asks before using an app, and you can stop Claude at any time. Claude can see what's on your screen while it works, so close anything sensitive first. See [Let Claude use your computer(opens in new tab)](../15-Claude-AI-Features/let-claude-use-your-computer-in-cowork.md).
+By default, Claude asks before using an app, and you can stop Claude at any time. Claude can see what's on your screen while it works, so close anything sensitive first. See [Let Claude use your computer(opens in new tab)](https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork).
 
 ### Record a skill[](#record-a-skill)
 

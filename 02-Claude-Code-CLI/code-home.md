@@ -2,7 +2,7 @@
 title: "Overview - Claude Code Docs"
 source_url: "https://code.claude.com/docs"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:29:26Z"
+fetched_at: "2026-09-30T06:30:45Z"
 tags: ["claude-code"]
 ---
 
@@ -226,4 +226,4 @@ Once you’ve installed Claude Code, these guides help you go deeper.
 - [A harness for every task](https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code): how the Claude Code team uses [dynamic workflows](workflows.md) to orchestrate many subagents at once
 - [Settings](settings.md): customize Claude Code for your workflow
 - [Troubleshooting](troubleshooting.md): solutions for common issues
-- [code.claude.com](../15-Claude-AI-Features/claude-com-product-claude-code.md): demos, pricing, and product details
+- [code.claude.com](code-claude-com-code-home.md): demos, pricing, and product details

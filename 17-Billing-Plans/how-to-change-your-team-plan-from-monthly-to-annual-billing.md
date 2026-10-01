@@ -1,8 +1,8 @@
 ---
 title: "Change your Team plan from monthly to annual billing | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12083917-how-to-change-your-team-plan-from-monthly-to-annual-billing"
+source_url: "https://support.claude.com/en/articles/12083917-change-your-team-plan-from-monthly-to-annual-billing"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:23Z"
+fetched_at: "2026-09-30T06:32:29Z"
 tags: ["billing"]
 ---
 

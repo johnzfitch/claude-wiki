@@ -2,7 +2,7 @@
 title: "Adalat AI Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/adalat-ai"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:31:26Z"
+fetched_at: "2026-09-30T06:32:26Z"
 tags: ["api", "case-studies", "claude-code", "enterprise", "security"]
 ---
 

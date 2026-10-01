@@ -2,7 +2,7 @@
 title: "Join an organization via invite link | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13776697-join-an-organization-via-invite-link"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:32:05Z"
+fetched_at: "2026-09-30T06:31:26Z"
 tags: ["enterprise"]
 ---
 

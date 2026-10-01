@@ -287,17 +287,17 @@ Models
 
 - Opus
 
-  [Opus](claude-opus.md)
+  [Opus](https://www.claude.com/product/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](claude-sonnet.md)
+  [Sonnet](https://www.claude.com/product/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](claude-haiku.md)
+  [Haiku](https://www.claude.com/product/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Solutions

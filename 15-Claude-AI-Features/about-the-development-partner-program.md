@@ -2,7 +2,7 @@
 title: "About the Development Partner Program | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11174108-about-the-development-partner-program"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:15Z"
+fetched_at: "2026-09-30T06:32:21Z"
 tags: ["claude-ai"]
 ---
 

@@ -325,7 +325,7 @@ Products
 
 - Max plan
 
-  [Max plan](../17-Billing-Plans/pricing.md)
+  [Max plan](../17-Billing-Plans/pricing-max.md)
   Max plan
 
 - Team plan
@@ -383,17 +383,17 @@ Models
 
 - Opus
 
-  [Opus](../15-Claude-AI-Features/claude-opus.md)
+  [Opus](https://www.claude.com/customers/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+  [Sonnet](https://www.claude.com/customers/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+  [Haiku](https://www.claude.com/customers/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Solutions
@@ -497,7 +497,7 @@ Claude Platform
 
 - Console login
 
-  [Console login](../04-API-Reference/Other/usage-limits.md)
+  [Console login](https://www.claude.com/04-API-Reference/Other/platform-claude-com.md)
   Console login
 
 Resources

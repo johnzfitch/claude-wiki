@@ -724,7 +724,7 @@ The Message Batches API is designed with strong privacy and data separation meas
 
 1.  Batches and their results are isolated within the Workspace in which they were created. This means they can only be accessed by API requests in that same Workspace.
 2.  Each request within a batch is processed independently, with no data leakage between requests.
-3.  Results are only available for a limited time (29 days), and follow Anthropic's [data retention policy](../../17-Billing-Plans/how-long-do-you-store-personal-data.md).
+3.  Results are only available for a limited time (29 days), and follow Anthropic's [data retention policy](../../13-Enterprise-Admin/how-long-do-you-store-personal-data.md).
 4.  Downloading batch results in the Console can be disabled on the organization-level or on a per-workspace basis.
 
 ### Can I use prompt caching in the Message Batches API?

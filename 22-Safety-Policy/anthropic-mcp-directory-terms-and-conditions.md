@@ -2,7 +2,7 @@
 title: "Anthropic MCP Directory Terms and Conditions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11697081-anthropic-mcp-directory-terms-and-conditions"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:30:56Z"
+fetched_at: "2026-09-30T06:31:22Z"
 tags: ["mcp", "safety"]
 ---
 

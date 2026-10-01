@@ -252,7 +252,7 @@ cURL
 
 This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.
 
-Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
+Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/beta/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
 
 ##### Path parameters
 

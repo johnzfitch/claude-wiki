@@ -1,8 +1,8 @@
 ---
-title: "Rate limits | Claude Platform"
-source_url: "https://platform.claude.com/usage/limits"
+title: "Admin keys | Claude Platform"
+source_url: "https://platform.claude.com/settings/admin-keys"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-29T06:31:32Z"
+fetched_at: "2026-09-30T06:32:13Z"
 tags: ["api"]
 ---
 

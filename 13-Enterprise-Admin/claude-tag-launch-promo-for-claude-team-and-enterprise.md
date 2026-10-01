@@ -1,8 +1,8 @@
 ---
 title: "Claude Tag launch promo for Claude Team and Enterprise | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/15575654-claude-tag-launch-promo-for-claude-team-and-enterprise"
+source_url: "https://support.claude.com/en/articles/15575654"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:32:21Z"
+fetched_at: "2026-09-30T06:32:08Z"
 tags: ["enterprise"]
 ---
 
@@ -37,7 +37,7 @@ Eligible organizations receive the credit automatically. From September 2, 2026,
 
 - What's covered: Claude Tag usage in public and private Slack channels (billed to your organization).
 
-- What's not covered: Direct messages with Claude in Slack (billed to the individual seat), and any non-Claude Tag usage such as Claude Code, Claude Cowork, Claude chat, or the API. For more details about how Claude Tag usage is billed and the difference between channel and DM usage, see **[What is Claude Tag?](../15-Claude-AI-Features/what-is-claude-tag.md)**
+- What's not covered: Direct messages with Claude in Slack (billed to the individual seat), and any non-Claude Tag usage such as Claude Code, Claude Cowork, Claude chat, or the API. For more details about how Claude Tag usage is billed and the difference between channel and DM usage, see **[What is Claude Tag?](https://support.claude.com/en/articles/15594475)**
 
 - Claude Tag usage draws down the credit first. Once the credit is used up, usage is billed to your organization as normal.
 
@@ -87,4 +87,4 @@ Yes. All billing types are in scope, including legacy contracts, AWS Marketplace
 
 ### Where can I get help?
 
-Contact your account team, or **[reach out to Support](../21-Account-Support/how-can-i-contact-support.md)**.
+Contact your account team, or **[reach out to Support](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)**.

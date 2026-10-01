@@ -1,8 +1,8 @@
 ---
 title: "Use Claude in Xcode | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12293051-using-claude-in-xcode"
+source_url: "https://support.claude.com/en/articles/12293051-use-claude-in-xcode"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:50Z"
+fetched_at: "2026-09-30T06:31:36Z"
 tags: ["claude-ai"]
 ---
 

@@ -2,12 +2,11 @@
 title: "Set organization instructions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14546867-set-organization-instructions"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:31:48Z"
+fetched_at: "2026-09-30T06:31:53Z"
 tags: ["enterprise"]
 ---
 
 # Set organization instructions
-
 
 
 Organization instructions let owners of Team and Enterprise plans set custom instructions that Claude follows in every conversation across your organization. Use them to apply communication standards, formatting requirements, compliance guidance, or domain-specific context that should show up everywhere your team works with Claude.
@@ -72,6 +71,6 @@ To remove instructions entirely, clear the text area and click “Save changes.�
 
 **Domain context.** “Our team works in healthcare claims processing. When users mention ‘claims,’ they’re referring to insurance claims, not legal claims.”
 
-**Referral guidance.** “When users ask about HR policies, direct them to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#aac2d8eacbc9c7cf84c9c5c7) rather than giving specific policy advice.”
+**Referral guidance.** “When users ask about HR policies, direct them to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#18706a58797b757d367b7775) rather than giving specific policy advice.”
 
 **Data handling reminders.** “Don’t include customer names, account numbers, or other personally identifiable information in responses or generated artifacts.”

@@ -2,7 +2,7 @@
 title: "Get started with Claude Code in the cloud - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/web-quickstart"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-24T06:28:04Z"
+fetched_at: "2026-09-30T06:30:55Z"
 tags: ["claude-code"]
 ---
 
@@ -19,7 +19,7 @@ tags: ["claude-code"]
 - [Troubleshoot setup](#troubleshoot-setup)
   - [No repositories appear after connecting GitHub](#no-repositories-appear-after-connecting-github)
   - [The page only shows a GitHub login button](#the-page-only-shows-a-github-login-button)
-  - [”Not available for the selected organization”](#%E2%80%9Dnot-available-for-the-selected-organization%E2%80%9D)
+  - [”Claude Code isn’t available on your account”](#%E2%80%9Dclaude-code-isn%E2%80%99t-available-on-your-account%E2%80%9D)
   - [/web-setup says “Not signed in to Claude”](#%2Fweb-setup-says-%E2%80%9Cnot-signed-in-to-claude%E2%80%9D)
   - [/web-setup warns that your token doesn’t have the workflow scope](#%2Fweb-setup-warns-that-your-token-doesn%E2%80%99t-have-the-workflow-scope)
   - [/web-setup shows “No commands match” or “Unknown command”](#web-setup-shows-no-commands-match-or-unknown-command)
@@ -268,11 +268,11 @@ The page only shows a GitHub login button
 Cloud sessions require a connected GitHub account. Connect via the browser flow above, or run `/web-setup` from your terminal if you use the GitHub CLI. If you’d rather not connect GitHub at all, see [Remote Control](remote-control.md) to run Claude Code on your own machine and monitor it from your browser or phone.
 
 
-[​](#”not-available-for-the-selected-organization”)
+[​](#”claude-code-isn’t-available-on-your-account”)
 
-”Not available for the selected organization”
+”Claude Code isn’t available on your account”
 
-Enterprise organizations may need an Owner to enable cloud sessions. Contact your Anthropic account team.
+Your seat in the selected organization doesn’t include Claude Code. If you belong to another organization, click **Switch organization** on that page. Otherwise, ask an Owner of the organization to assign you a [seat that includes Claude Code](../17-Billing-Plans/using-claude-code-with-your-team-or-enterprise-plan.md).
 
 
 [​](#/web-setup-says-“not-signed-in-to-claude”)

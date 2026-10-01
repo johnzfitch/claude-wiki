@@ -179,7 +179,7 @@ The same agent loop and tools that power Claude Code, in Python or TypeScript, f
 
 Read documentation
 
-[Read documentation](../05-Agent-SDK/agent-sdk-overview.md)
+[Read documentation](https://www.claude.com/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md)
 
 Read documentation
 
@@ -189,7 +189,7 @@ Build production agents with a composable suite of APIs, without managing infras
 
 Read documentation
 
-[Read documentation](../04-API-Reference/Other/managed-agents-overview.md)
+[Read documentation](https://www.claude.com/04-API-Reference/Other/managed-agents-overview-b12cd03916.md)
 
 Read documentation
 
@@ -463,17 +463,17 @@ Models
 
 - Opus
 
-  [Opus](../15-Claude-AI-Features/claude-opus.md)
+  [Opus](https://www.claude.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+  [Sonnet](https://www.claude.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+  [Haiku](https://www.claude.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Enterprise
@@ -590,7 +590,7 @@ Developers
 
 - Developer docs
 
-  [Developer docs](../02-Claude-Code-CLI/code-home.md)
+  [Developer docs](https://www.claude.com/01-Getting-Started/overview.md)
   Developer docs
 
 - Developer blog

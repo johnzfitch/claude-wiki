@@ -2,12 +2,11 @@
 title: "What is the Max plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11049741-what-is-the-max-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:13Z"
+fetched_at: "2026-09-30T06:32:19Z"
 tags: ["billing"]
 ---
 
 # What is the Max plan?
-
 
 
 This article is about paid Max plans for individual consumers. If you're part of an organization looking to use Claude with your team, refer to **[Team and Enterprise plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)**.
@@ -26,7 +25,7 @@ The Max plan is designed for users who collaborate with Claude frequently and ne
 
 - **Access to Claude Code: [Use Claude Code](using-claude-code-with-your-pro-or-max-plan.md)** for your terminal-based coding workflows with one unified subscription.
 
-- **Longer, multi-step tasks:** Hand Claude work like reports, spreadsheets, and presentations, and it keeps going in the background. Learn more in **[Claude Cowork and chat are one Claude](../15-Claude-AI-Features/claude-cowork-and-chat-are-one-claude.md)**.
+- **Longer, multi-step tasks:** Hand Claude work like reports, spreadsheets, and presentations, and it keeps going in the background. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**.
 
 ------------------------------------------------------------------------
 
@@ -78,6 +77,6 @@ Your session-based usage limit will reset every five hours. Max plans also have 
 
 In addition, to manage capacity and ensure fair access to all users, we may limit your usage in other ways, such as weekly and monthly caps or model and feature usage, at our discretion.
 
-For more information about usage and length limits, refer to **[Understanding usage and length limits](../22-Safety-Policy/understanding-usage-and-length-limits.md)**. For guidance on using your Max capacity efficiently, we also have **[Usage limit best practices](../22-Safety-Policy/usage-limit-best-practices.md)**.
+For more information about usage and length limits, refer to **[Understanding usage and length limits](../22-Safety-Policy/understanding-usage-and-length-limits.md)**. For guidance on using your Max capacity efficiently, we also have **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
 
 **Note:** If you have a limit reset, you can use it to reset your five-hour session limit or weekly usage limits back to full. Learn more **[about limit resets](../15-Claude-AI-Features/what-is-a-limit-reset.md)**.

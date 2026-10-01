@@ -2987,7 +2987,7 @@ Learn more about the Messages API in our [user guide](https://docs.claude.com/en
 
       - `format?: BetaJSONOutputFormat | null`
 
-        A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+        A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/api/typescript/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
         - `schema: Record<string, unknown>`
 
@@ -2999,7 +2999,7 @@ Learn more about the Messages API in our [user guide](https://docs.claude.com/en
 
     - `output_format?: BetaJSONOutputFormat | null`
 
-      Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+      Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/api/typescript/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
       A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 
@@ -9334,7 +9334,7 @@ Learn more about token counting in our [user guide](https://docs.claude.com/en/d
 
     - `format?: BetaJSONOutputFormat | null`
 
-      A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+      A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/api/typescript/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
       - `schema: Record<string, unknown>`
 
@@ -9346,7 +9346,7 @@ Learn more about token counting in our [user guide](https://docs.claude.com/en/d
 
   - `output_format?: BetaJSONOutputFormat | null`
 
-    Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+    Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/api/typescript/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 
@@ -22610,7 +22610,7 @@ console.log(betaMessageTokensCount.context_management);
 
   - `format?: BetaJSONOutputFormat | null`
 
-    A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+    A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/api/typescript/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     - `schema: Record<string, unknown>`
 
@@ -38635,7 +38635,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
         - `format?: BetaJSONOutputFormat | null`
 
-          A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+          A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/api/typescript/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
           - `schema: Record<string, unknown>`
 
@@ -38647,7 +38647,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
       - `output_format?: BetaJSONOutputFormat | null`
 
-        Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+        Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/api/typescript/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
         A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 

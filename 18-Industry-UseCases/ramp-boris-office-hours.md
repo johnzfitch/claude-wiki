@@ -2,7 +2,7 @@
 title: "Ramp | Office Hours with Boris Cherny | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/ramp-boris-office-hours"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:31:47Z"
+fetched_at: "2026-09-30T06:32:46Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 

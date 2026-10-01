@@ -2,7 +2,7 @@
 title: "How Claude remembers your project - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/memory"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-28T06:33:07Z"
+fetched_at: "2026-09-30T06:30:50Z"
 tags: ["claude-code"]
 ---
 
@@ -147,7 +147,13 @@ CLAUDE.md files are loaded into the context window at the start of every session
 
 Import additional files
 
-CLAUDE.md files can import additional files using `@path/to/import` syntax. Imported files are expanded and loaded into context at launch alongside the CLAUDE.md that references them. Both relative and absolute paths are allowed. Relative paths resolve relative to the file containing the import, not the working directory. Imported files can recursively import other files, with a maximum depth of four hops. Import parsing skips Markdown code spans and fenced code blocks. To mention a path in your CLAUDE.md without importing it, wrap it in backticks: writing `` `@README` `` keeps the text literal, while `@README` outside backticks imports the file. To pull in a README, package.json, and a workflow guide, reference them with `@` syntax anywhere in your CLAUDE.md:
+CLAUDE.md files can import additional files using `@path/to/import` syntax. Imported files are expanded and loaded into context at launch alongside the CLAUDE.md that references them. Both relative and absolute paths are allowed. Relative paths resolve relative to the file containing the import, not the working directory. Imported files can recursively import other files, with a maximum depth of four hops. To import a file whose path contains spaces, put a backslash before each space. Without the backslashes, the path ends at the first space, even when the import is on a line of its own. A path wrapped in quotes isn’t imported at all, with or without the backslashes. This import loads a file from a folder named `Design Docs`:
+
+```python
+- API conventions @Design\ Docs/api-conventions.md
+```
+
+Import parsing skips Markdown code spans and fenced code blocks. To mention a path in your CLAUDE.md without importing it, wrap it in backticks: writing `` `@README` `` keeps the text literal, while `@README` outside backticks imports the file. To pull in a README, package.json, and a workflow guide, reference them with `@` syntax anywhere in your CLAUDE.md:
 
 ```python
 See @README for project overview and @package.json for available npm commands for this project.

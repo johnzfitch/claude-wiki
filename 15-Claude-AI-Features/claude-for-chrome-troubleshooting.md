@@ -1,8 +1,8 @@
 ---
 title: "Claude in Chrome troubleshooting | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12902405-claude-for-chrome-troubleshooting"
+source_url: "https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:55Z"
+fetched_at: "2026-09-30T06:31:17Z"
 tags: ["claude-ai", "claude-code", "desktop"]
 ---
 
@@ -23,7 +23,7 @@ If you'd rather use the previous side panel, click the three dots in the upper r
 
 ## I don't see the Cowork side panel
 
-- If you're on an Enterprise plan, the Cowork side panel requires your admin to enable Cowork in the cloud and Claude in Chrome for your organization. Contact your admin, or see **[Claude in Chrome admin controls](../13-Enterprise-Admin/claude-for-chrome-admin-controls.md)**.
+- If you're on an Enterprise plan, the Cowork side panel requires your admin to enable Cowork in the cloud and Claude in Chrome for your organization. Contact your admin, or see **[Claude in Chrome admin controls](https://support.claude.com/en/articles/13065128)**.
 
 - If you're on a Pro plan, the Cowork side panel may not have reached your account yet. The rollout is in progress.
 
@@ -93,9 +93,9 @@ Your feedback directly shapes how we improve Claude's browser capabilities and s
 
 - **Report suspected prompt injection** if Claude behaves unexpectedly.
 
-  - **Email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#275254425554464142535e674649534f5548574e440944484a)** to report any safety issues or unexpected behaviors.
+  - **Email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#99eceafcebeaf8fffcede0d9f8f7edf1ebf6e9f0fab7faf6f4)** to report any safety issues or unexpected behaviors.
 
-- **[Contact Support](../21-Account-Support/how-can-i-contact-support.md)** for technical issues or account problems.
+- **[Contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)** for technical issues or account problems.
 
 ### What we're learning
 

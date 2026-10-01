@@ -2,7 +2,7 @@
 title: "How can I access the Claude API? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114521-how-can-i-access-the-anthropic-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-29T06:32:30Z"
+fetched_at: "2026-09-30T06:33:07Z"
 tags: ["api"]
 ---
 

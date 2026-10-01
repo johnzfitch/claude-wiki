@@ -1,13 +1,12 @@
 ---
 title: "What is a limit reset? | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/17007452-what-is-a-limit-reset"
+source_url: "https://support.claude.com/en/articles/17007452"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:28Z"
+fetched_at: "2026-09-30T06:33:05Z"
 tags: ["claude-ai"]
 ---
 
 # What is a limit reset?
-
 
 
 Limit resets are given occasionally to eligible plans, and set your usage limits back to full when you choose to use one.

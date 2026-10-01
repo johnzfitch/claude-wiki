@@ -1,6 +1,744 @@
 {
  "entries": [
   {
+   "date": "2026-10-01",
+   "added": [
+    {
+     "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+     "title": "GLM-5.3 and the spread of advanced cyber capabilities \\ Anthropic",
+     "path": "19-Reference/glm-5-3-and-the-spread-of-advanced-cyber-capabilities.md"
+    },
+    {
+     "url": "https://www.anthropic.com/research/your-thoughts-on-ai",
+     "title": "What Do You Want from AI? \\ Anthropic",
+     "path": "19-Reference/your-thoughts-on-ai.md"
+    },
+    {
+     "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/dd0ec579bee2cd144069c478ede3e35ea080ad02.pdf",
+     "title": "​Effective​​May 26, 2026​​April 29, 2026​",
+     "path": "19-Reference/effectivemay-26-2026april-29-2026.md"
+    }
+   ],
+   "changed": [
+    {
+     "url": "https://code.claude.com/docs/en/settings-reference",
+     "title": "All settings - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/settings-reference.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/iam",
+     "title": "Authentication - Claude Code Docs",
+     "path": "13-Enterprise-Admin/iam.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/iam",
+     "title": "Authentication - Claude Code Docs",
+     "path": "13-Enterprise-Admin/iam.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/hooks-guide",
+     "title": "Automate actions with hooks - Claude Code Docs",
+     "path": "07-Hooks/hooks-guide.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/web-scheduled-tasks",
+     "title": "Automate work with routines - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/web-scheduled-tasks.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/web-scheduled-tasks",
+     "title": "Automate work with routines - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/web-scheduled-tasks.md"
+    },
+    {
+     "url": "https://www.anthropic.com/news/evaluating-ai-systems",
+     "title": "Challenges in evaluating AI systems \\ Anthropic",
+     "path": "19-Reference/evaluating-ai-systems.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/8664678",
+     "title": "Change the model, effort, and thinking settings | Claude Help Center",
+     "path": "15-Claude-AI-Features/how-can-i-change-the-model-version-that-i-m-chatting-with.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/8664678",
+     "title": "Change the model, effort, and thinking settings | Claude Help Center",
+     "path": "15-Claude-AI-Features/how-can-i-change-the-model-version-that-i-m-chatting-with.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/channels-reference",
+     "title": "Channels reference - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/channels-reference.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/permission-modes",
+     "title": "Choose a permission mode - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/permission-modes.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/claude-apps-gateway-config",
+     "title": "Claude apps gateway configuration - Claude Code Docs",
+     "path": "13-Enterprise-Admin/claude-apps-gateway-config.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/claude-apps-gateway-deploy",
+     "title": "Claude apps gateway deployment and operations - Claude Code Docs",
+     "path": "13-Enterprise-Admin/claude-apps-gateway-deploy.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/claude-apps-gateway",
+     "title": "Claude apps gateway for Amazon Bedrock, Claude Platform on AWS, Google Cloud, and Microsoft Foundry - Claude Code Docs",
+     "path": "13-Enterprise-Admin/claude-apps-gateway.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/build-with-claude/claude-code-analytics-api",
+     "title": "Claude Code Analytics API - Claude Platform Docs",
+     "path": "04-API-Reference/Guides/build-with-claude-claude-code-analytics-api.md"
+    },
+    {
+     "url": "https://code.claude.com/",
+     "title": "Claude Code by Anthropic | AI Coding Agent, Terminal, IDE",
+     "path": "02-Claude-Code-CLI/code-claude-com-code-home.md"
+    },
+    {
+     "url": "https://www.claude.com/product/claude-code",
+     "title": "Claude Code by Anthropic | AI Coding Agent, Terminal, IDE",
+     "path": "15-Claude-AI-Features/claude-com-product-claude-code.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/changelog",
+     "title": "Claude Code changelog - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/changelog.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/llm-gateway-protocol",
+     "title": "Claude Code gateway compatibility guide - Claude Code Docs",
+     "path": "13-Enterprise-Admin/llm-gateway-protocol.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/github-actions",
+     "title": "Claude Code GitHub Actions - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/github-actions.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/11940350-claude-code-model-configuration",
+     "title": "Claude Code model configuration | Claude Help Center",
+     "path": "20-Models/claude-code-model-configuration.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/amazon-bedrock",
+     "title": "Claude Code on Amazon Bedrock - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/amazon-bedrock.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/google-vertex-ai",
+     "title": "Claude Code on Google Cloud's Agent Platform - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/google-vertex-ai.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/github-enterprise-server",
+     "title": "Claude Code with GitHub Enterprise Server - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/github-enterprise-server.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/desktop-linux",
+     "title": "Claude Desktop on Linux (beta) - Claude Code Docs",
+     "path": "16-Mobile-Desktop/desktop-linux.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls",
+     "title": "Claude in Chrome admin controls | Claude Help Center",
+     "path": "13-Enterprise-Admin/claude-for-chrome-admin-controls.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+     "title": "Claude Opus 5.5 - Claude Platform Docs",
+     "path": "20-Models/models-opus-5-5-overview.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/cli-reference",
+     "title": "CLI reference - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/cli-reference.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/code-review",
+     "title": "Code Review - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/code-review.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/commands",
+     "title": "Commands - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/commands.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/communications-kit",
+     "title": "Communications kit - Claude Code Docs",
+     "path": "13-Enterprise-Admin/communications-kit.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/build-with-claude/compaction-thinking-blocks",
+     "title": "Compaction and preserved thinking - Claude Platform Docs",
+     "path": "04-API-Reference/Guides/build-with-claude-compaction-thinking-blocks.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/build-with-claude/compaction-threshold",
+     "title": "Compaction at a token threshold - Claude Platform Docs",
+     "path": "04-API-Reference/Guides/build-with-claude-compaction-threshold.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/build-with-claude/compaction-background",
+     "title": "Compaction in the background - Claude Platform Docs",
+     "path": "04-API-Reference/Guides/build-with-claude-compaction-background.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand",
+     "title": "Compaction on demand - Claude Platform Docs",
+     "path": "04-API-Reference/Guides/build-with-claude-compaction-on-demand.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/build-with-claude/compaction-keep-recent-turns",
+     "title": "Compaction that keeps recent turns - Claude Platform Docs",
+     "path": "04-API-Reference/Guides/build-with-claude-compaction-keep-recent-turns.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/cloud-environments",
+     "title": "Configure cloud environments - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/cloud-environments.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/permissions",
+     "title": "Configure permissions - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/permissions.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/server-managed-settings",
+     "title": "Configure server-managed settings - Claude Code Docs",
+     "path": "13-Enterprise-Admin/server-managed-settings.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/sandboxing",
+     "title": "Configure the sandboxed Bash tool - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/sandboxing.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/mcp",
+     "title": "Connect Claude Code to tools via MCP - Claude Code Docs",
+     "path": "06-MCP-Tools/General/mcp.md"
+    },
+    {
+     "url": "https://www.claude.com/partners/mcp",
+     "title": "Connectors and plugins | Claude Marketplace | Claude by Anthropic",
+     "path": "04-API-Reference/Other/partners-mcp.md"
+    },
+    {
+     "url": "https://www.claude.com/partners/mcp",
+     "title": "Connectors and plugins | Claude Marketplace | Claude by Anthropic",
+     "path": "04-API-Reference/Other/partners-mcp.md"
+    },
+    {
+     "url": "https://www.anthropic.com/news/constitutional-classifiers",
+     "title": "Constitutional Classifiers: Defending against universal jailbreaks \\ Anthropic",
+     "path": "19-Reference/constitutional-classifiers.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/remote-control",
+     "title": "Continue local sessions from any device with Remote Control - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/remote-control.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/managed-mcp",
+     "title": "Control MCP server access for your organization - Claude Code Docs",
+     "path": "06-MCP-Tools/General/managed-mcp.md"
+    },
+    {
+     "url": "https://www.claude.com/resources/courses",
+     "title": "Courses · Claude Academy",
+     "path": "01-Getting-Started/resources-courses.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/plugins/create-marketplace",
+     "title": "Create a marketplace - Claude Code Docs",
+     "path": "08-Plugins-Skills/plugin-marketplaces.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/plugins/create-marketplace",
+     "title": "Create a marketplace - Claude Code Docs",
+     "path": "08-Plugins-Skills/plugin-marketplaces.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/api/beta/messages/create",
+     "title": "Create a Message - Claude API Reference",
+     "path": "04-API-Reference/Endpoints/beta-messages-create.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/sub-agents",
+     "title": "Create custom subagents - Claude Code Docs",
+     "path": "09-Agents-Patterns/sub-agents.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/keybindings",
+     "title": "Customize keyboard shortcuts - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/keybindings.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/self-hosted-environments-configuration",
+     "title": "Customize sessions in self-hosted environments - Claude Code Docs",
+     "path": "13-Enterprise-Admin/self-hosted-environments-configuration.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/statusline",
+     "title": "Customize your status line - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/statusline.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/claude-apps-gateway-on-aws",
+     "title": "Deploy Claude apps gateway on AWS - Claude Code Docs",
+     "path": "13-Enterprise-Admin/claude-apps-gateway-on-aws.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/managed-settings",
+     "title": "Deploy managed settings - Claude Code Docs",
+     "path": "13-Enterprise-Admin/managed-settings.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/self-hosted-environments-deploy",
+     "title": "Deploy self-hosted environments to production - Claude Code Docs",
+     "path": "13-Enterprise-Admin/self-hosted-environments-deploy.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/desktop",
+     "title": "Desktop application - Claude Code Docs",
+     "path": "16-Mobile-Desktop/desktop.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/manage-claude/inference-hooks-endpoint",
+     "title": "Develop an Inference hooks integration - Claude Platform Docs",
+     "path": "04-API-Reference/Other/manage-claude-inference-hooks-endpoint.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/llms.txt",
+     "title": "Docs Llms Txt Cc59D2A156",
+     "path": "02-Claude-Code-CLI/llms.md"
+    },
+    {
+     "url": "https://www.anthropic.com/news/economic-index-primitives",
+     "title": "Economic Index: New building blocks for AI use \\ Anthropic",
+     "path": "19-Reference/economic-index-primitives.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/10684626",
+     "title": "Enable and use web search | Claude Help Center",
+     "path": "15-Claude-AI-Features/enabling-and-using-web-search.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/network-config",
+     "title": "Enterprise network configuration - Claude Code Docs",
+     "path": "13-Enterprise-Admin/network-config.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/env-vars",
+     "title": "Environment variables - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/env-vars.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/errors",
+     "title": "Error reference - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/errors.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/claude-directory",
+     "title": "Explore the .claude directory - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/claude-directory.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/skills",
+     "title": "Extend Claude with skills - Claude Code Docs",
+     "path": "08-Plugins-Skills/skills.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/feature-availability",
+     "title": "Feature availability - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/feature-availability.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/fullscreen",
+     "title": "Fullscreen rendering - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/fullscreen.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/web-quickstart",
+     "title": "Get started with Claude Code in the cloud - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/web-quickstart.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/15167101-get-started-with-claude-compliance-api-integrations",
+     "title": "Get started with Claude Compliance API integrations | Claude Help Center",
+     "path": "14-Connectors/get-started-with-claude-compliance-api-integrations.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork",
+     "title": "Get started with Claude Cowork | Claude Help Center",
+     "path": "15-Claude-AI-Features/getting-started-with-local-agent-mode.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/16893491-get-started-with-smart-reports",
+     "title": "Get started with smart reports | Claude Help Center",
+     "path": "15-Claude-AI-Features/get-started-with-smart-reports.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/9267247-get-started-with-the-team-plan",
+     "title": "Get started with the Team plan | Claude Help Center",
+     "path": "17-Billing-Plans/how-do-i-get-started-with-the-team-plan.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/glossary",
+     "title": "Glossary - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/glossary.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/hooks",
+     "title": "Hooks reference - Claude Code Docs",
+     "path": "07-Hooks/hooks.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/plugins/host-marketplace",
+     "title": "Host and maintain a marketplace - Claude Code Docs",
+     "path": "08-Plugins-Skills/plugins-host-marketplace.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/prompt-caching",
+     "title": "How Claude Code uses prompt caching - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/prompt-caching.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content",
+     "title": "How Claude marks AI-generated content | Claude Help Center",
+     "path": "15-Claude-AI-Features/how-claude-marks-ai-generated-content.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/memory",
+     "title": "How Claude remembers your project - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/memory.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans",
+     "title": "How large is the context window on paid Claude plans? | Claude Help Center",
+     "path": "17-Billing-Plans/how-large-is-the-context-window-on-paid-claude-plans.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data",
+     "title": "How up-to-date is Claude's training data? | Claude Help Center",
+     "path": "22-Safety-Policy/how-up-to-date-is-claude-s-training-data.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/manage-claude/inference-hooks",
+     "title": "Inference hooks - Claude Platform Docs",
+     "path": "04-API-Reference/Other/manage-claude-inference-hooks.md"
+    },
+    {
+     "url": "https://platform.claude.com/en/docs/welcome",
+     "title": "Intro to Claude - Claude Platform Docs",
+     "path": "04-API-Reference/Other/welcome.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/deep-links",
+     "title": "Launch sessions from links - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/deep-links.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/16948886-let-team-members-run-smart-reports-for-specific-groups",
+     "title": "Let team members run smart reports for specific groups | Claude Help Center",
+     "path": "13-Enterprise-Admin/let-team-members-run-smart-reports-for-specific-groups.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/api/compliance/apps/sessions/local",
+     "title": "Local - Claude API Reference",
+     "path": "04-API-Reference/Admin/compliance-apps-sessions-local.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/costs",
+     "title": "Manage costs effectively - Claude Code Docs",
+     "path": "17-Billing-Plans/costs.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/agent-view",
+     "title": "Manage multiple agents with agent view - Claude Code Docs",
+     "path": "09-Agents-Patterns/agent-view.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/sessions",
+     "title": "Manage sessions - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/sessions.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/plugins/marketplace-reference",
+     "title": "Marketplace reference - Claude Code Docs",
+     "path": "08-Plugins-Skills/plugins-marketplace-reference.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/cross-session-messaging",
+     "title": "Message your other Claude Code sessions - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/cross-session-messaging.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/models/opus-5-5/migration-guide",
+     "title": "Migrating to Claude Opus 5.5 - Claude Platform Docs",
+     "path": "20-Models/models-opus-5-5-migration-guide.md"
+    },
+    {
+     "url": "https://platform.claude.com/en/docs/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks",
+     "title": "Mitigate jailbreaks and prompt injections - Claude Platform Docs",
+     "path": "04-API-Reference/Test-Evaluate/platform-claude-com-test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/model-config",
+     "title": "Model configuration - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/model-config.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/monitoring-usage",
+     "title": "Monitoring - Claude Code Docs",
+     "path": "13-Enterprise-Admin/monitoring-usage.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/9267400-move-your-personal-claude-account-to-a-team-or-enterprise-organization",
+     "title": "Move your personal Claude account to a Team or Enterprise organization | Claude Help Center",
+     "path": "21-Account-Support/can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/workflows",
+     "title": "Orchestrate subagents at scale with dynamic workflows - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/workflows.md"
+    },
+    {
+     "url": "https://www.claude.com/pricing/max",
+     "title": "Plans & Pricing | Claude by Anthropic",
+     "path": "17-Billing-Plans/pricing-max.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/plugins/cli-reference",
+     "title": "Plugin commands reference - Claude Code Docs",
+     "path": "08-Plugins-Skills/plugins-cli-reference.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/plugins/loading",
+     "title": "Plugin loading reference - Claude Code Docs",
+     "path": "08-Plugins-Skills/plugins-loading.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/16761192",
+     "title": "Preserved thinking: changing how the Messages API handles thinking blocks to protect against distillation | Claude Help Center",
+     "path": "04-API-Reference/Other/preserved-thinking-changing-how-the-messages-api-handles-thinking-blocks-to-protect.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5",
+     "title": "Prompting Claude Opus 5.5 - Claude Platform Docs",
+     "path": "10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet",
+     "title": "Real-time cyber safeguards on Claude Opus and Sonnet | Claude Help Center",
+     "path": "20-Models/real-time-cyber-safeguards-on-claude-opus-and-sonnet.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/12138966-release-notes",
+     "title": "Release notes | Claude Help Center",
+     "path": "19-Reference/release-notes.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/12386328-request-a-refund-for-a-paid-claude-plan",
+     "title": "Request a refund for a paid Claude plan | Claude Help Center",
+     "path": "17-Billing-Plans/requesting-a-refund-for-a-paid-claude-plan.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/api/compliance/apps/sessions/local/retrieve",
+     "title": "Retrieve a local session - Claude API Reference",
+     "path": "04-API-Reference/Admin/compliance-apps-sessions-local-retrieve.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/api/compliance/apps/sessions/remote/messages/list",
+     "title": "Retrieve remote session messages - Claude API Reference",
+     "path": "04-API-Reference/Admin/compliance-apps-sessions-remote-messages-list.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/agent-sdk/file-checkpointing",
+     "title": "Rewind file changes with checkpointing - Claude Code Docs",
+     "path": "05-Agent-SDK/agent-sdk-file-checkpointing.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/worktrees",
+     "title": "Run parallel sessions with worktrees - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/worktrees.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/claude-security",
+     "title": "Scan your codebase for vulnerabilities - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/claude-security.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/13854387",
+     "title": "Schedule recurring tasks in Claude Cowork | Claude Help Center",
+     "path": "15-Claude-AI-Features/schedule-recurring-tasks-in-claude-cowork.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/self-hosted-environments",
+     "title": "Self-hosted environments - Claude Code Docs",
+     "path": "13-Enterprise-Admin/self-hosted-environments.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/self-hosted-environments-quickstart",
+     "title": "Self-hosted environments quickstart - Claude Code Docs",
+     "path": "13-Enterprise-Admin/self-hosted-environments-quickstart.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/self-hosted-environments-reference",
+     "title": "Self-hosted environments reference - Claude Code Docs",
+     "path": "13-Enterprise-Admin/self-hosted-environments-reference.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/managed-agents/budgets",
+     "title": "Session budgets - Claude Platform Docs",
+     "path": "04-API-Reference/Other/managed-agents-budgets.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/settings",
+     "title": "Settings files and precedence - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/settings.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/artifacts",
+     "title": "Share session output as artifacts - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/artifacts.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/fast-mode",
+     "title": "Speed up responses with fast mode - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/fast-mode.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/12997503",
+     "title": "Team plan billing FAQs | Claude Help Center",
+     "path": "17-Billing-Plans/team-plan-billing-faqs.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/desktop-ios-simulator",
+     "title": "Test iOS apps in the simulator - Claude Code Docs",
+     "path": "16-Mobile-Desktop/desktop-ios-simulator.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/plugin-evals",
+     "title": "Test plugins with evals - Claude Code Docs",
+     "path": "08-Plugins-Skills/plugin-evals.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/tools-reference",
+     "title": "Tools reference - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/tools-reference.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/troubleshoot-install",
+     "title": "Troubleshoot installation and login - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/troubleshoot-install.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/plugins/troubleshooting",
+     "title": "Troubleshoot plugins - Claude Code Docs",
+     "path": "08-Plugins-Skills/plugins-troubleshooting.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/troubleshooting",
+     "title": "Troubleshooting - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/troubleshooting.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/claude-code-on-the-web",
+     "title": "Use Claude Code in the cloud - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/claude-code-on-the-web.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/vs-code",
+     "title": "Use Claude Code in VS Code - Claude Code Docs",
+     "path": "03-IDE-Integrations/vs-code.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/chrome",
+     "title": "Use Claude Code with Chrome - Claude Code Docs",
+     "path": "03-IDE-Integrations/chrome.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/15520349",
+     "title": "Use Claude Cowork on web, desktop, and mobile | Claude Help Center",
+     "path": "16-Mobile-Desktop/use-claude-cowork-on-web-desktop-and-mobile.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/whats-new/2026-w13",
+     "title": "Week 13 · March 23–27, 2026 - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/whats-new-2026-w13.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/whats-new/2026-w14",
+     "title": "Week 14 · March 30 – April 3, 2026 - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/whats-new-2026-w14.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/whats-new/2026-w16",
+     "title": "Week 16 · April 13–17, 2026 - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/whats-new-2026-w16.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/whats-new/2026-w17",
+     "title": "Week 17 · April 20–24, 2026 - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/whats-new-2026-w17.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/whats-new/2026-w18",
+     "title": "Week 18 · April 27 – May 1, 2026 - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/whats-new-2026-w18.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/whats-new/2026-w19",
+     "title": "Week 19 · May 4–8, 2026 - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/whats-new-2026-w19.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/whats-new/2026-w20",
+     "title": "Week 20 · May 11–15, 2026 - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/whats-new-2026-w20.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/whats-new/2026-w21",
+     "title": "Week 21 · May 18–22, 2026 - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/whats-new-2026-w21.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/whats-new/2026-w22",
+     "title": "Week 22 · May 25–29, 2026 - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/whats-new-2026-w22.md"
+    },
+    {
+     "url": "https://code.claude.com/docs/en/whats-new/2026-w33",
+     "title": "Week 33 · August 10–14, 2026 - Claude Code Docs",
+     "path": "02-Claude-Code-CLI/whats-new-2026-w33.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/16975617",
+     "title": "What is the Life Sciences Verification Program? | Claude Help Center",
+     "path": "21-Account-Support/what-is-the-life-sciences-verification-program-claude-help-center.md"
+    },
+    {
+     "url": "https://platform.claude.com/docs/en/models/opus-5-5/whats-new-opus-5-5",
+     "title": "What's new in Claude Opus 5.5 - Claude Platform Docs",
+     "path": "20-Models/models-opus-5-5-whats-new-opus-5-5.md"
+    },
+    {
+     "url": "https://support.claude.com/en/articles/17161993-why-claude-switched-models-in-your-conversation-with-sonnet-5-5",
+     "title": "Why Claude switched models in your conversation with Sonnet 5.5 | Claude Help Center",
+     "path": "20-Models/why-claude-switched-models-in-your-conversation-with-sonnet-5-5.md"
+    }
+   ],
+   "removed": []
+  },
+  {
    "date": "2026-09-29",
    "added": [
     {

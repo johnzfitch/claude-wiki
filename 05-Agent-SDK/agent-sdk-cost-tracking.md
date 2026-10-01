@@ -65,7 +65,7 @@ The following diagram shows the message stream from a single `query()` call, wit
 
 Each step produces assistant messages
 
-When Claude responds, it sends one or more assistant messages. In TypeScript, each assistant message contains a nested `BetaMessage` (accessed via `message.message`) with an `id` and a [`usage`](../04-API-Reference/Endpoints/messages.md) object with token counts (`input_tokens`, `output_tokens`). In Python, the `AssistantMessage` dataclass exposes the same data directly via `message.usage` and `message.message_id`. When Claude uses multiple tools in one turn, all messages in that turn share the same ID, so deduplicate by ID to avoid double-counting.
+When Claude responds, it sends one or more assistant messages. In TypeScript, each assistant message contains a nested `BetaMessage` (accessed via `message.message`) with an `id` and a [`usage`](https://code.claude.com/docs/en/04-API-Reference/Other/api-messages-2dd213ca95.md) object with token counts (`input_tokens`, `output_tokens`). In Python, the `AssistantMessage` dataclass exposes the same data directly via `message.usage` and `message.message_id`. When Claude uses multiple tools in one turn, all messages in that turn share the same ID, so deduplicate by ID to avoid double-counting.
 
 2
 
@@ -417,7 +417,7 @@ for await (const message of query({ prompt: "Summarize this project", options })
 }
 ```
 
-Cache writes with a 1-hour TTL are billed at a higher rate than 5-minute writes, so enabling this trades higher write cost for more cache reads. See [prompt caching pricing](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) for details. On a Claude subscription within your plan’s included usage, you get the 1-hour TTL on your own turns, and on some of the helper requests Claude Code makes beside them, without setting this variable, and Claude Code drops those turns to the 5-minute TTL once you’re drawing on [usage credits](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md). `ENABLE_PROMPT_CACHING_1H` asks for the 1-hour TTL on every request in both buckets. To choose a TTL for each bucket separately, use these controls instead. Each takes `5m` or `1h` and takes precedence over `ENABLE_PROMPT_CACHING_1H`:
+Cache writes with a 1-hour TTL are billed at a higher rate than 5-minute writes, so enabling this trades higher write cost for more cache reads. See [prompt caching pricing](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) for details. On a Claude subscription within your plan’s included usage, you get the 1-hour TTL on your own turns, and on some of the helper requests Claude Code makes beside them, without setting this variable, and Claude Code drops those turns to the 5-minute TTL once you’re drawing on [usage credits](https://code.claude.com/docs/en/17-Billing-Plans/extra-usage-for-paid-claude-plans-32418755be.md). `ENABLE_PROMPT_CACHING_1H` asks for the 1-hour TTL on every request in both buckets. To choose a TTL for each bucket separately, use these controls instead. Each takes `5m` or `1h` and takes precedence over `ENABLE_PROMPT_CACHING_1H`:
 
 - Main conversation: the `CLAUDE_CODE_PROMPT_CACHE_TTL` [environment variable](../02-Claude-Code-CLI/env-vars.md), or the [`promptCacheTtl`](../02-Claude-Code-CLI/settings-reference.md#promptcachettl) setting
 - Everything else: the `CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL` environment variable, or the [`subagentPromptCacheTtl`](../02-Claude-Code-CLI/settings-reference.md#subagentpromptcachettl) setting

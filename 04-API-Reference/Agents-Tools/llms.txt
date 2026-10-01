@@ -1387,7 +1387,7 @@ The `claude-api` skill is an open-source [Agent Skill](agents-and-tools-agent-sk
 
 It covers eight programming languages for both the Messages API and Managed Agents: Python, TypeScript, C#, Go, Java, PHP, Ruby, and cURL.
 
-The skill comes bundled with [Claude Code](../../02-Claude-Code-CLI/code-home.md) and is also available in the open-source [Anthropic skills repository](https://github.com/anthropics/skills), where you can install it in any environment that supports Agent Skills.
+The skill comes bundled with [Claude Code](https://platform.claude.com/docs/en/agents-and-tools/01-Getting-Started/overview.md) and is also available in the open-source [Anthropic skills repository](https://github.com/anthropics/skills), where you can install it in any environment that supports Agent Skills.
 
 The skill uses [progressive disclosure](agents-and-tools-agent-skills-overview.md#how-skills-work) to keep context efficient: Claude loads only the documentation relevant to your project's language, surface (Messages API or Managed Agents), and the specific task at hand (tool use, streaming, batches, and so on), rather than loading everything at once.
 
@@ -1448,7 +1448,7 @@ If your project uses multiple languages, Claude asks which one applies. For unsu
 
 ### In Claude Code (bundled)
 
-The skill ships with [Claude Code](../../02-Claude-Code-CLI/code-home.md) and requires no installation. When you ask Claude to help build something with the Claude API, or when your project already imports an Anthropic SDK, the skill activates automatically.
+The skill ships with [Claude Code](https://platform.claude.com/docs/en/agents-and-tools/01-Getting-Started/overview.md) and requires no installation. When you ask Claude to help build something with the Claude API, or when your project already imports an Anthropic SDK, the skill activates automatically.
 
 You can also invoke it directly:
 
@@ -1717,7 +1717,7 @@ Never deploy Skills from untrusted sources without a full audit. A malicious Ski
 
 Claude Enterprise organizations can turn on automated security scanning for custom Skills in claude.ai and Claude Cowork. After you turn on **Skill and plugin security scanning** at [claude.ai \> Organization settings \> Skills](https://claude.ai/admin-settings/skills), Skills that members then upload or edit in claude.ai or Cowork are scanned for signs of malicious behavior, such as hidden code execution, sending your data to an outside service, or instructions that tamper with Claude's safeguards. A Skill that fails the scan, or whose scan hasn't finished, is blocked from use. A Skill that passes with a warning stays usable behind a caution notice. If scanning is available to your organization, turn it on. It complements, but doesn't replace, the [review checklist](#review-checklist).
 
-Scanning doesn't cover the Claude API. Skills you upload through the Skills API (`/v1/skills`), including from the Claude Console, aren't scanned, so for API deployments, rely on the review checklist and [version pinning](#versioning-strategy). Scanning also doesn't apply to Skills that were already in your organization when you turned it on, or to organizations with certain data handling configurations, such as customer-managed encryption keys (CMEK), zero data retention (ZDR), or HIPAA readiness. For setup steps, exclusions, and result types, see [Get started with skill and plugin scanning](../../02-Claude-Code-CLI/get-started-with-skill-and-plugin-scanning.md) in the Claude Help Center.
+Scanning doesn't cover the Claude API. Skills you upload through the Skills API (`/v1/skills`), including from the Claude Console, aren't scanned, so for API deployments, rely on the review checklist and [version pinning](#versioning-strategy). Scanning also doesn't apply to Skills that were already in your organization when you turned it on, or to organizations with certain data handling configurations, such as customer-managed encryption keys (CMEK), zero data retention (ZDR), or HIPAA readiness. For setup steps, exclusions, and result types, see [Get started with skill and plugin scanning](https://platform.claude.com/docs/en/02-Claude-Code-CLI/get-started-with-skill-and-plugin-scanning-030c4de89b.md) in the Claude Help Center.
 
 ## Evaluating Skills before deployment
 
@@ -2125,7 +2125,7 @@ To learn more, see [Using Agent Skills with the API](../Guides/build-with-claude
 
 ### Claude Code
 
-[Claude Code](../../02-Claude-Code-CLI/code-home.md) supports custom Skills. The pre-built document Skills (PowerPoint, Excel, Word, PDF) are not available in Claude Code, though the open-source [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md) comes bundled with it. See the full list of [built-in commands and Skills](../../02-Claude-Code-CLI/commands.md) that ship with Claude Code.
+[Claude Code](https://platform.claude.com/docs/en/01-Getting-Started/overview.md) supports custom Skills. The pre-built document Skills (PowerPoint, Excel, Word, PDF) are not available in Claude Code, though the open-source [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md) comes bundled with it. See the full list of [built-in commands and Skills](https://platform.claude.com/docs/en/02-Claude-Code-CLI/built-in-commands-claude-code-docs.md) that ship with Claude Code.
 
 **Custom Skills:** Create Skills as directories with SKILL.md files. Claude discovers and uses them automatically.
 
@@ -2144,8 +2144,8 @@ To learn more, see [Use Skills in Claude Code](../../08-Plugins-Skills/skills.md
 To learn more about using Skills in claude.ai, see the following resources in the Claude Help Center:
 
 - [What are Skills?](../../02-Claude-Code-CLI/what-are-skills.md)
-- [Using Skills in Claude](../../02-Claude-Code-CLI/using-skills-in-claude.md)
-- [How to create custom Skills](../../02-Claude-Code-CLI/how-to-create-custom-skills.md)
+- [Using Skills in Claude](https://platform.claude.com/docs/en/99-Other/using-skills-in-claude-a1bdb5a95a.md)
+- [How to create custom Skills](https://platform.claude.com/docs/en/02-Claude-Code-CLI/creating-custom-skills-eb687e04e2.md)
 - [Teach Claude your way of working using Skills](../../15-Claude-AI-Features/teach-claude-your-way-of-working-using-skills.md)
 
 ## Skill structure
@@ -7488,7 +7488,7 @@ URL
 https://mcp.cloud.cdata.com/mcp
 ```
 
-[Microsoft 365(opens in new tab)](../../14-Connectors/enabling-and-using-the-microsoft-365-connector.md)
+[Microsoft 365(opens in new tab)](https://platform.claude.com/docs/14-Connectors/enabling-and-using-the-microsoft-365-connector-f39b429330.md)
 
 Access your company's SharePoint, OneDrive, Outlook, and Teams directly in Claude
 

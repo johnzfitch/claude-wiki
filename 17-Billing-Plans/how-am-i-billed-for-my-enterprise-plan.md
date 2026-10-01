@@ -2,12 +2,11 @@
 title: "How am I billed for my Enterprise plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:43Z"
+fetched_at: "2026-09-30T06:31:30Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
 # How am I billed for my Enterprise plan?
-
 
 
 Enterprise plan billing has two parts: a fixed seat fee and separate usage charges. The seat fee covers platform access. Usage is billed on top of that, based on what your team actually consumes.
@@ -34,7 +33,7 @@ You're charged for the number of seats on your plan at the start of your annual 
 
 **Example:** Your annual plan starts January 1 with 50 seats. You are charged upfront for the seats. On April 1, you add 10 seats. You'll be charged immediately for the remaining months.
 
-**Note:** Seats cannot be removed mid-term on self-serve Enterprise plans. For step-by-step instructions on purchasing, adding, and managing seats, see **[Purchase and manage seats on Enterprise plans](purchasing-and-managing-seats-on-enterprise-plans.md)**.
+**Note:** Seats cannot be removed mid-term on self-serve Enterprise plans. For step-by-step instructions on purchasing, adding, and managing seats, see **[Purchase and manage seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)**.
 
 ------------------------------------------------------------------------
 
@@ -182,7 +181,7 @@ Some Enterprise organizations are on older seat-based plans with **Standard** an
 
 If you see "Standard" and "Premium" seats in **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**, this section applies to you.
 
-On seat-based plans, usage credits are available to allow team members to continue working after reaching their seat's included limits. For details on how usage credits work and how they're billed on your plan, see **[Manage usage credits for Team and seat-based Enterprise plans](manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**.
+On seat-based plans, usage credits are available to allow team members to continue working after reaching their seat's included limits. For details on how usage credits work and how they're billed on your plan, see **[Manage usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-)**.
 
 ### Transitioning to usage-based Enterprise
 

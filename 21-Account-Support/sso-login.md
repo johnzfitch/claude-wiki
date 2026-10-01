@@ -2,7 +2,7 @@
 title: "SSO login | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503613-sso-login"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:31:47Z"
+fetched_at: "2026-09-30T06:31:52Z"
 tags: ["account"]
 ---
 

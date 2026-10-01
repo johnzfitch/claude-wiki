@@ -165,7 +165,7 @@ Even when a model provides a syntactically correct date that passes JSON schema 
 
 ### Current Behavior
 
-The [tool errors specification](../Spec-Archive/2025-06-18-server-tools.md#error-handling) currently provides ambiguous guidance:
+The [tool errors specification](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-tools-model-context-protocol.md#error-handling) currently provides ambiguous guidance:
 
 * "Invalid arguments" should be treated as Protocol Error
 * "Invalid input data" should be treated as Tool Execution Error
@@ -283,6 +283,6 @@ Servers implementing the clarified behavior will provide better model self-recov
 
 ## References
 
-* [MCP Tools Error Handling Specification](../Spec-Archive/2025-06-18-server-tools.md#error-handling)
+* [MCP Tools Error Handling Specification](https://modelcontextprotocol.io/community/06-MCP-Tools/Spec-Archive/spec-2025-06-18-tools-model-context-protocol.md#error-handling)
 * [Better MCP tools/call Error Responses: Help Your AI Recover Gracefully](https://dev.to/alpic/better-mcp-toolscall-error-responses-help-your-ai-recover-gracefully-15c7)
 * Related Issue: [https://github.com/modelcontextprotocol/typescript-sdk/pull/824](https://github.com/modelcontextprotocol/typescript-sdk/pull/824)

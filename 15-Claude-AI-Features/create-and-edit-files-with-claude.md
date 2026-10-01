@@ -2,7 +2,7 @@
 title: "Create and edit files with Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:00Z"
+fetched_at: "2026-09-30T06:31:27Z"
 tags: ["claude-ai", "enterprise", "security"]
 ---
 

@@ -87,7 +87,7 @@ Note that this link is specific to the version of the artifact you shared, and t
 
 While artifacts are excellent for prototyping and sharing AI-powered apps, they're best for testing and demonstration. At some point, you'll likely want to implement proper API key management and build more robust infrastructure. Eventually, you’ll also run up against a few technical limitations in [claude.ai(opens in new tab)](http://claude.ai/) (like the lack of interleaved scripts).
 
-Whatever the reason, when you’re ready to take your artifact to the next level, you’ll be able to copy Claude’s code and paste it into your editor of choice. From there, [Claude Code(opens in new tab)](claude-code.md) is ready to step in.
+Whatever the reason, when you’re ready to take your artifact to the next level, you’ll be able to copy Claude’s code and paste it into your editor of choice. From there, [Claude Code(opens in new tab)](claude-com-product-claude-code.md) is ready to step in.
 
 
 

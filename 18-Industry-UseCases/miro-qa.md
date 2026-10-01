@@ -2,7 +2,7 @@
 title: "Miro Claude Cowork case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/miro-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:31:43Z"
+fetched_at: "2026-09-30T06:32:42Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 

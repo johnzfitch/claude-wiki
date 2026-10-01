@@ -800,7 +800,7 @@ If you're hitting complexity limits, try these strategies in order:
 
 4.  **Split into multiple requests.** If you have many strict tools, consider splitting them across separate requests or sub-agents.
 
-For persistent issues with valid schemas, [contact support](../../21-Account-Support/how-can-i-contact-support.md) with your schema definition.
+For persistent issues with valid schemas, [contact support](https://platform.claude.com/docs/21-Account-Support/how-to-get-support-57c428239c.md) with your schema definition.
 
 ## Data retention
 

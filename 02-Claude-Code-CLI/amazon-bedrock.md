@@ -2,7 +2,7 @@
 title: "Claude Code on Amazon Bedrock - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/amazon-bedrock"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:29:22Z"
+fetched_at: "2026-09-30T06:31:38Z"
 tags: ["bedrock", "claude-code"]
 ---
 
@@ -406,7 +406,7 @@ Create a dedicated AWS account for Claude Code to simplify cost tracking and acc
 
 1M token context window
 
-Claude Sonnet 5, Opus 4.6 and later, and Sonnet 4.6 support the [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md#context-window-sizes-by-model) on Amazon Bedrock. Sonnet 5 always runs with the 1M window on both the Invoke API and the [Mantle endpoint](#use-the-mantle-endpoint), with no `[1m]` variant to select. For the other models on the Invoke API, Claude Code automatically enables the extended context window when you select a 1M model variant. The [setup wizard](#sign-in-with-bedrock) offers a 1M context option when it pins models. To enable it for a manually pinned model instead, append `[1m]` to the model ID. See [Pin models for third-party deployments](model-config.md#pin-models-for-third-party-deployments) for details.
+Claude Sonnet 5, Opus 4.6 and later, and Sonnet 4.6 support the [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md#context-window-sizes-by-model) on Amazon Bedrock. Sonnet 5 always runs with the 1M window on both the Invoke API and the [Mantle endpoint](#use-the-mantle-endpoint), with no `[1m]` variant to select. For the other models on the Invoke API, Claude Code automatically enables the extended context window when you select a 1M model variant. The [setup wizard](#sign-in-with-bedrock) offers a 1M context option when it pins models. To enable it for a manually pinned model instead, append `[1m]` to the model ID. See [Pin models for third-party deployments](model-config.md#pin-models-for-third-party-deployments) for details, including how to use the 1M window without changing the pin.
 
 
 [​](#service-tiers)

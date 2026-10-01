@@ -18,7 +18,7 @@ Build a shopping agent and a merchant agent on Claude using Claude for commerce,
 
 
 
-This guide shows how to build commerce agents on Claude: a shopping agent that customers use inside your app, and a merchant agent for the people running the store, whether that is the business's own operations staff or the sellers on its platform. It does that through Claude for commerce, an open-source blueprint with a working implementation of each agent on the [Messages API](../Guides/build-with-claude-working-with-messages.md), the [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md), and [Claude Managed Agents](../Other/managed-agents-overview.md), runnable examples for retail, travel, telecom, and entertainment, and a Claude Code plugin that scaffolds the same design against your own systems.
+This guide shows how to build commerce agents on Claude: a shopping agent that customers use inside your app, and a merchant agent for the people running the store, whether that is the business's own operations staff or the sellers on its platform. It does that through Claude for commerce, an open-source blueprint with a working implementation of each agent on the [Messages API](../Guides/build-with-claude-working-with-messages.md), the [Claude Agent SDK](https://platform.claude.com/docs/en/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md), and [Claude Managed Agents](../Other/managed-agents-overview.md), runnable examples for retail, travel, telecom, and entertainment, and a Claude Code plugin that scaffolds the same design against your own systems.
 
 The code, setup instructions, and safety documentation are in the [Claude for commerce repository on GitHub](https://github.com/anthropics/commerce-agents). For how the agents are built and why, including the single-agent-with-skills design, UI components as tools, harness-enforced safety, prompt caching, memory, and evals, read the engineering post [A guide to the anatomy of effective commerce agents](https://claude.com/blog/the-anatomy-of-effective-commerce-agents).
 
@@ -72,7 +72,7 @@ The Messages API and Agent SDK runtimes run against the Claude API, [Amazon Bedr
 
 ## Build your own with the Claude Code plugin
 
-The blueprint ships with a [Claude Code](../../02-Claude-Code-CLI/code-home.md) plugin that reads the cloned repository as its reference and builds an agent against your own systems. Its four commands cover the path from nothing to a tested agent:
+The blueprint ships with a [Claude Code](https://platform.claude.com/docs/en/01-Getting-Started/overview.md) plugin that reads the cloned repository as its reference and builds an agent against your own systems. Its four commands cover the path from nothing to a tested agent:
 
 | Command                    | What it does                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|

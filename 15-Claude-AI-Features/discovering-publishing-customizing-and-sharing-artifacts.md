@@ -1,13 +1,12 @@
 ---
 title: "Share artifacts | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/9547008-discovering-publishing-customizing-and-sharing-artifacts"
+source_url: "https://support.claude.com/en/articles/9547008"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:41Z"
+fetched_at: "2026-09-30T06:33:17Z"
 tags: ["claude-ai"]
 ---
 
 # Share artifacts
-
 
 
 This article explains how to share an artifact, who can open it, and what people see when they do. It covers every plan and every place you make artifacts: in a chat, from a template, and in Claude Code.
@@ -16,7 +15,7 @@ Artifacts start private to you. Nothing is shared until you share it.
 
 [TABLE]
 
-On Team and Enterprise plans, artifacts stay inside your organization by default. An owner decides whether users can share outside it. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans.md#h_fd0c095985)**.
+On Team and Enterprise plans, artifacts stay inside your organization by default. An owner decides whether users can share outside it. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans#h_fd0c095985)**.
 
 **Note:** Live artifacts, which are Cowork artifacts made before August 19, 2026, have their own sharing rules. Learn more about **[using live artifacts in Claude Cowork](use-live-artifacts-in-claude-cowork.md)**.
 
@@ -148,13 +147,13 @@ If someone didn't get an invitation email because they didn't have a Claude acco
 
 To stop sharing an artifact, open it, click "Share," and under **Who has access**, choose "Only you" (Pro and Max) or "Only people invited" (Team and Enterprise). To remove someone you added, open their access level and select "Remove."
 
-On Team and Enterprise plans, owners can also remove outside access to individual artifacts. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans.md#h_929aa51571)**.
+On Team and Enterprise plans, owners can also remove outside access to individual artifacts. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans#h_929aa51571)**.
 
 ------------------------------------------------------------------------
 
 ## Open an artifact you were invited to
 
-1.  Open the email from Claude ([\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#2f4140025d4a5f4356024c434e5a4b4a6f424e4643014e415b475d405f464c014c4042)). It shows the email address of the person who invited you and what access you'll have.
+1.  Open the email from Claude ([\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#c3adaceeb1a6b3afbaeea0afa2b6a7a683aea2aaafeda2adb7abb1acb3aaa0eda0acae)). It shows the email address of the person who invited you and what access you'll have.
 
 2.  Click "View invitation" and sign in to Claude in a web browser with the address the invitation was sent to.
 
@@ -226,4 +225,4 @@ Click "Unpublish" to revoke access to a published artifact.
 
 ## Learn more
 
-Learn more about **[creating and working with artifacts](what-are-artifacts-and-how-do-i-use-them.md)**. For organization settings that control sharing, see the **[Artifacts admin guide for Team and Enterprise plans](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans.md)**. For Claude Code, see the **[artifacts documentation on Claude Code Docs](../02-Claude-Code-CLI/artifacts.md)**.
+Learn more about **[creating and working with artifacts](https://support.claude.com/en/articles/9487310)**. For organization settings that control sharing, see the **[Artifacts admin guide for Team and Enterprise plans](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans.md)**. For Claude Code, see the **[artifacts documentation on Claude Code Docs](../02-Claude-Code-CLI/artifacts.md)**.

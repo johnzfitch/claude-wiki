@@ -94,7 +94,7 @@ Anthropic personnel access customer content only under defined conditions. Acces
 
 ## What Access Transparency covers
 
-- **Covered content:** Access Transparency covers prompt and response content sent through the Claude Messages API or Claude Code sessions. Anthropic's [general ZDR documentation](manage-claude-api-and-data-retention.md) and [ZDR for Claude Code documentation](../../02-Claude-Code-CLI/zero-data-retention.md) explain which APIs and features are covered by ZDR. The same APIs and features are covered by Access Transparency.
+- **Covered content:** Access Transparency covers prompt and response content sent through the Claude Messages API or Claude Code sessions. Anthropic's [general ZDR documentation](manage-claude-api-and-data-retention.md) and [ZDR for Claude Code documentation](https://platform.claude.com/docs/22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md) explain which APIs and features are covered by ZDR. The same APIs and features are covered by Access Transparency.
 - **Manual views by Anthropic personnel:** Manual views of your covered content by Anthropic reviewers generate events.
 
 ## What Access Transparency does not cover
@@ -104,7 +104,7 @@ Anthropic personnel access customer content only under defined conditions. Acces
 - **Claude for Enterprise and Claude Apps:** claude.ai Enterprise seats, Claude for Work, Cowork, and Claude in Chrome are not covered.
 - **Claude consumer products:** Claude Free, Pro, or Max plans.
 - **Partner-operated platforms:** Amazon Bedrock and Google Cloud; refer to those platforms' transparency controls.
-- **Anything ZDR does not cover:** Products that are not covered by ZDR (for example, the Files API, Anthropic-hosted stateful applications, and the Batch API) are not covered by Access Transparency. See [ZDR documentation](../../02-Claude-Code-CLI/zero-data-retention.md#what-zdr-does-not-cover) for additional details.
+- **Anything ZDR does not cover:** Products that are not covered by ZDR (for example, the Files API, Anthropic-hosted stateful applications, and the Batch API) are not covered by Access Transparency. See [ZDR documentation](https://platform.claude.com/docs/22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md#what-zdr-does-not-cover) for additional details.
 
 ## Getting started
 
@@ -319,5 +319,5 @@ Contact your Anthropic account representative.
 - [Activity Feed](manage-claude-compliance-activity-feed.md)
 - [API and data retention](manage-claude-api-and-data-retention.md)
 - [Customer-Managed Encryption Keys (CMEK)](manage-claude-cmek.md)
-- [Claude Code data usage](../../13-Enterprise-Admin/data-usage.md)
+- [Claude Code data usage](https://platform.claude.com/docs/22-Safety-Policy/data-usage-claude-code-docs-06b2864aaa.md)
 - [Trust Center](https://trust.anthropic.com/resources)

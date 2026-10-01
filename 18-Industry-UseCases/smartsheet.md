@@ -2,7 +2,7 @@
 title: "Smartsheet Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/smartsheet"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:31:49Z"
+fetched_at: "2026-09-30T06:32:48Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 

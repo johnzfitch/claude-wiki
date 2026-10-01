@@ -2,7 +2,7 @@
 title: "Week 22 · May 25–29, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w22"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-04T06:29:54Z"
+fetched_at: "2026-09-30T06:30:56Z"
 tags: ["claude-code"]
 ---
 
@@ -82,7 +82,7 @@ Claude Code
 
 Other wins
 
-In `claude agents`, prefix a shell command with `!` to run it as a background job you can attach to and detach from; also available as `claude —bg —exec ‘pytest -x’`
+In `claude agents`, prefix a shell command with `!` to run it as a background job you can attach to and detach from; also available as `claude --bg --exec 'pytest -x'`
 
 Plugins in `.claude/skills` directories are now loaded automatically, no marketplace required, and `claude plugin init <name>` scaffolds a new plugin
 
@@ -92,7 +92,7 @@ Skills and commands can set `disallowed-tools` in frontmatter to remove tools fr
 
 New `MessageDisplay` hook event lets hooks transform or hide assistant message text as it is displayed
 
-Claude Code now switches to your configured `—fallback-model` for the rest of the session when the primary model is not found, instead of failing every request
+Claude Code now switches to your configured `--fallback-model` for the rest of the session when the primary model is not found, instead of failing every request
 
 Plugins can declare `defaultEnabled: false` in `plugin.json` or a marketplace entry, so they install without turning on until you enable them
 

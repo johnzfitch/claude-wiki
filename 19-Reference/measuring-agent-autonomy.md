@@ -39,7 +39,7 @@ In light of these challenges, how can we study agents empirically?
 
 To start, for this study we adopted a definition of agents that is conceptually grounded and operationalizable: *an agent is an AI system equipped with tools that allow it to take actions*, like running code, calling external APIs, and sending messages to other agents.¹ Studying the tools that agents use tells us a great deal about what they are doing in the world.
 
-Next, we developed a collection of metrics that draw on data from both agentic uses of our [public API](../04-API-Reference/Endpoints/overview.md) and [Claude Code](../02-Claude-Code-CLI/code-home.md), our own coding agent. These offer a tradeoff between breadth and depth:
+Next, we developed a collection of metrics that draw on data from both agentic uses of our [public API](../04-API-Reference/Endpoints/overview.md) and [Claude Code](https://www.anthropic.com/01-Getting-Started/overview.md), our own coding agent. These offer a tradeoff between breadth and depth:
 
 - Our **public API** gives us broad visibility into agentic deployments across thousands of different customers. Rather than attempting to infer our customers’ agent architectures, we instead perform our analysis at the level of *individual tool calls*.² This simplifying assumption allows us to make grounded, consistent observations about real-world agents, even as the contexts in which those agents are deployed vary significantly. The limitation of this approach is that we must analyze actions in isolation, and cannot reconstruct how individual actions compose into longer sequences of behavior over time.
 
@@ -90,7 +90,7 @@ Taken together, these findings suggest that experienced users aren’t necessari
 Humans, of course, aren’t the only actors shaping how autonomy unfolds in practice. Claude is an active participant too, stopping to ask for clarification when it’s unsure how to proceed. We found that as task complexity increases, Claude Code asks for clarification more often—and more frequently than humans choose to interrupt it (Figure 4).
 
   
-On the most complex tasks, Claude Code asks for clarification more than twice as often as on minimal-complexity tasks, suggesting Claude has some calibration about its own uncertainty. However, it’s important not to overstate this finding: Claude may not be stopping at the right moments, it may ask unnecessary questions, and its behavior might be affected by product features such as [Plan Mode](../02-Claude-Code-CLI/common-workflows.md#use-plan-mode-for-safe-code-analysis). Regardless, as tasks get harder, Claude increasingly limits its own autonomy by stopping to consult the human, rather than requiring the human to step in.¹¹
+On the most complex tasks, Claude Code asks for clarification more than twice as often as on minimal-complexity tasks, suggesting Claude has some calibration about its own uncertainty. However, it’s important not to overstate this finding: Claude may not be stopping at the right moments, it may ask unnecessary questions, and its behavior might be affected by product features such as [Plan Mode](https://www.anthropic.com/02-Claude-Code-CLI/common-workflows-c909406123.md#use-plan-mode-for-safe-code-analysis). Regardless, as tasks get harder, Claude increasingly limits its own autonomy by stopping to consult the human, rather than requiring the human to step in.¹¹
 
 Table 1 shows common reasons for why Claude Code stops work and why humans interrupt Claude.
 
@@ -159,7 +159,7 @@ This research is just a start. We provide only a partial view into agentic activ
 
 ## Looking ahead
 
-We are in the early days of agent adoption, but autonomy is increasing and higher-stakes deployments are emerging, especially as products like [Cowork](../15-Claude-AI-Features/getting-started-with-local-agent-mode.md) make agents more accessible. Below, we offer recommendations for model developers, product developers, and policymakers. Given that we have only just begun measuring agent behavior in the wild, we avoid making strong prescriptions and instead highlight areas for future work.
+We are in the early days of agent adoption, but autonomy is increasing and higher-stakes deployments are emerging, especially as products like [Cowork](https://www.anthropic.com/15-Claude-AI-Features/getting-started-with-cowork-c31b8b2b19.md) make agents more accessible. Below, we offer recommendations for model developers, product developers, and policymakers. Given that we have only just begun measuring agent behavior in the wild, we avoid making strong prescriptions and instead highlight areas for future work.
 
 **Model and product developers should invest in post-deployment monitoring.** Post-deployment monitoring is essential for understanding how agents are actually used. Pre-deployment evaluations test what agents are capable of in controlled settings, but many of our findings cannot be observed through pre-deployment testing alone. Beyond understanding a model’s capabilities, we must also understand how people interact with agents in practice. The data we report here exists because we *chose* to build the infrastructure to collect it. But there’s more to do. We have no reliable way to link independent requests to our public API into coherent agent sessions, which limits what we can learn about agent behavior beyond first-party products like Claude Code. Developing these methods in a privacy-preserving way is an important area for cross-industry research and collaboration.
 
@@ -209,7 +209,7 @@ On the empirical side, [Kapoor et al. (2024)](https://arxiv.org/abs/2407.01502) 
   
 4. Throughout this post, we use "autonomy" somewhat informally to refer to the degree to which an agent operates independently of human direction and oversight. An agent with minimal autonomy executes exactly what a human explicitly requests; an agent with high autonomy makes its own decisions about what to do and how to do it, with little or no human involvement. Autonomy is not a fixed property of a model or system but an emergent characteristic of a deployment, shaped by the model's behavior, the user's oversight strategy, and the product's design. We do not attempt a precise formal definition; for details on how we operationalize and measure autonomy in practice, see the [Appendix](https://cdn.sanity.io/files/4zrzovbb/website/55e4d2de6eb39b3a9259c3f74843f86b1a12e265.pdf).
 
-5\. Moreover, the same model deployed differently can generate output at different speeds. For example, we recently released [Fast Mode](../02-Claude-Code-CLI/fast-mode.md) for Opus 4.6, which generates output 2.5x faster than regular Opus.  
+5\. Moreover, the same model deployed differently can generate output at different speeds. For example, we recently released [Fast Mode](https://www.anthropic.com/02-Claude-Code-CLI/fast-mode-847ef2d690.md) for Opus 4.6, which generates output 2.5x faster than regular Opus.  
   
 6. For turn duration across other percentiles, see the [Appendix](https://cdn.sanity.io/files/4zrzovbb/website/55e4d2de6eb39b3a9259c3f74843f86b1a12e265.pdf).  
   
@@ -277,9 +277,9 @@ We had Claude autonomously train models to improve their performance on several 
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

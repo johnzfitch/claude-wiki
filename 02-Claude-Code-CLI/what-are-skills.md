@@ -2,12 +2,11 @@
 title: "What are skills? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12512176-what-are-skills"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:31:52Z"
+fetched_at: "2026-09-30T06:31:14Z"
 tags: ["agents", "claude-code", "skills"]
 ---
 
 # What are skills?
-
 
 
 Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. Skills teach Claude how to complete specific tasks in a repeatable way, whether that's creating documents with your company's brand guidelines, analyzing data using your organization's specific workflows, or automating personal tasks.
@@ -56,7 +55,7 @@ For Team and Enterprise plans, organization Owners can provision skills for all 
 
 - Deploy new capabilities without requiring individual uploads
 
-Learn more about provisioning skills in **[Provision and manage skills for your organization](../22-Safety-Policy/provisioning-and-managing-skills-for-your-organization.md)**.
+Learn more about provisioning skills in **[Provision and manage skills for your organization](https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin)**.
 
 ### Partner skills
 
@@ -86,7 +85,7 @@ The Agent Skills specification is published as an open standard at **[agentskill
 
 ### Skills vs. projects
 
-**[Projects](../15-Claude-AI-Features/what-are-projects.md)** provide static background knowledge that's always loaded when you start chats within them. Skills provide specialized procedures that activate dynamically when needed and work everywhere across Claude.
+**[Projects](https://support.claude.com/en/articles/9517075-what-are-projects)** provide static background knowledge that's always loaded when you start chats within them. Skills provide specialized procedures that activate dynamically when needed and work everywhere across Claude.
 
 ### Skills vs. MCP (Model Context Protocol)
 
@@ -102,6 +101,6 @@ MCP connects Claude to external services and data sources. Skills provide proced
 
 To discover available skills, check out the directory by clicking "Customize" in your account and navigating to "Skills." You can click "+" then "Browse skills" to open the directory. For more information, see **[Browse skills, connectors, and plugins in one directory](../14-Connectors/browse-skills-connectors-and-plugins-in-one-directory.md)**.
 
-On the Enterprise plan, organizations can turn on skill scanning to check uploaded skills and plugins for malicious content. Learn more about **[skill and plugin scanning](get-started-with-skill-and-plugin-scanning.md)**.
+On the Enterprise plan, organizations can turn on skill scanning to check uploaded skills and plugins for malicious content. Learn more about **[skill and plugin scanning](../15-Claude-AI-Features/get-started-with-skill-and-plugin-scanning-claude-help-center.md)**.
 
 For more details about how skills work, see **[Agent Skills](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md)** in our Claude Docs.

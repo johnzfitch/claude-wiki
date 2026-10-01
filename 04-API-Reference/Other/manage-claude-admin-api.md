@@ -201,12 +201,12 @@ Common uses include automating onboarding and offboarding, managing workspace ac
 
 ## Organization roles and permissions
 
-There are five organization-level roles. For details, see [API Console roles and permissions](claude-console-roles-and-permissions.md).
+There are five organization-level roles. For details, see [API Console roles and permissions](https://platform.claude.com/docs/en/api-console-roles-and-permissions-4c21777af6.md).
 
 | Role             | Permissions                                                                    |
 |------------------|--------------------------------------------------------------------------------|
 | user             | Can use playground                                                             |
-| claude_code_user | Can use playground and [Claude Code](../../02-Claude-Code-CLI/code-home.md) |
+| claude_code_user | Can use playground and [Claude Code](https://platform.claude.com/docs/01-Getting-Started/overview.md) |
 | developer        | Can use playground and manage API keys                                         |
 | billing          | Can use playground and manage billing details                                  |
 | admin            | Can do all of the preceding, plus manage users                                 |

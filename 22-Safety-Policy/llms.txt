@@ -312,9 +312,9 @@ Price and plans are subject to change at Anthropic's discretion.
 
 You'll need usage credits enabled before you can purchase bundles. If you haven't set up usage credits yet, see the relevant guide for your plan:
 
-- **[Manage usage credits for paid Claude plans](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md)** (Pro and Max)
+- **[Manage usage credits for paid Claude plans](https://support.claude.com/en/articles/12429409-manage-extra-usage-for-paid-claude-plans)** (Pro and Max)
 
-- **[Manage usage credits for Team and seat-based Enterprise plans](../17-Billing-Plans/manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)** (Team)
+- **[Manage usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-manage-extra-usage-for-team-and-seat-based-enterprise-plans)** (Team)
 
 Once usage credits are enabled:
 
@@ -358,9 +358,9 @@ March 16, 2026
 
 Claude doesn’t generate photos or illustrations the way image-generation tools do.
 
-Claude can, however, build diagrams, charts, and interactive visuals directly in your conversation to assist with your understanding. These are generated using HTML and SVG—so you can interact with them, ask follow-up questions, and have Claude adjust them as you go. This feature is in beta on Claude web and desktop. For additional details, see **[Custom visuals in chat](../15-Claude-AI-Features/custom-visuals-in-chat-and-cowork.md)**.
+Claude can, however, build diagrams, charts, and interactive visuals directly in your conversation to assist with your understanding. These are generated using HTML and SVG—so you can interact with them, ask follow-up questions, and have Claude adjust them as you go. This feature is in beta on Claude web and desktop. For additional details, see **[Custom visuals in chat](https://support.claude.com/en/articles/13979539-custom-visuals-in-chat)**.
 
-Claude can also view and analyze images you upload. For more, see **[Uploading files to Claude](../15-Claude-AI-Features/what-kinds-of-documents-can-i-upload-to-claude.md)**.
+Claude can also view and analyze images you upload. For more, see **[Uploading files to Claude](https://support.claude.com/en/articles/8241126-uploading-files-to-claude)**.
 
 ---
 
@@ -398,7 +398,7 @@ There is no single correct architecture for a child safety program. The viable a
 
 **Detection & blocking services.** If your deployment allows users to upload or generate images or videos, or interact with other users, you can implement detection on your own infrastructure. Organizations may choose to build custom classifiers tailored to their threat model, though for many, a vendor or partner solution may be the more practical path. There are several providers that offer hash-matching, image, video, or text classifier solutions. For example, one widely deployed option is **[Thorn's Safer](https://safer.io/solutions/)**, which provides hash-matching against known CSAM and classifiers for novel material and grooming signals. The **[Internet Watch Foundation](https://www.iwf.org.uk/our-technology/our-services/)** (IWF) offers its member companies a **[suite of services](https://www.iwf.org.uk/our-technology/our-services/)** for detecting, blocking, and responding to CSAM on their platforms, including hash lists and a URL blocklist. The Tech Coalition's Pathways program (described below) can help companies evaluate and access detection options suited to their platform.
 
-**Program development and operational guidance.** The **[Tech Coalition](https://technologycoalition.org/)** is an industry alliance focused on preventing online child sexual exploitation and abuse. Its free **[Pathways](https://technologycoalition.org/programs/pathways/)** program is designed for startups and small to mid-sized platforms and provides templates for building a child safety program, guidance on CSAM detection and NCMEC reporting, insight into global regulatory requirements, and support on emerging risks such as financial sextortion and AI-generated harms. Anthropic is a Tech Coalition member. You can contact the **[Tech Coalition team](https://support.claude.com/cdn-cgi/l/email-protection#ddb0b99da9b8beb5b3b2b1b2baa4beb2bcb1b4a9b4b2b3f3b2afba)** for an initial consultation.
+**Program development and operational guidance.** The **[Tech Coalition](https://technologycoalition.org/)** is an industry alliance focused on preventing online child sexual exploitation and abuse. Its free **[Pathways](https://technologycoalition.org/programs/pathways/)** program is designed for startups and small to mid-sized platforms and provides templates for building a child safety program, guidance on CSAM detection and NCMEC reporting, insight into global regulatory requirements, and support on emerging risks such as financial sextortion and AI-generated harms. Anthropic is a Tech Coalition member. You can contact the **[Tech Coalition team](https://support.claude.com/cdn-cgi/l/email-protection#d3beb793a7b6b0bbbdbcbfbcb4aab0bcb2bfbaa7babcbdfdbca1b4)** for an initial consultation.
 
 **Reporting.** US-based platforms with actual knowledge of apparent CSAM are legally required to report to **[NCMEC's CyberTipline](https://report.cybertip.org/)**. Platforms can **[register with NCMEC](https://esp.ncmec.org/registration)** to gain access to the CyberTipline reporting system, and NCMEC publishes additional **[legal resources](https://www.missingkids.org/gethelpnow/support/legalresources)** on reporting obligations. Platforms operating in other jurisdictions should consult local reporting requirements; INHOPE maintains a **[directory of national hotlines](https://www.inhope.org/EN#hotlineReferral)**. As you build your program, consider incorporating logging for the purposes of transparency reporting.
 
@@ -627,7 +627,7 @@ AES-256 encryption at rest. TLS 1.2 or better in transit. Multi-factor authentic
 
 ### Delete your data
 
-You control your conversations and can delete your chats anytime from your dashboard. More information on data deletion can be found here: **[Can you delete data that I sent via Team and Enterprise plans?](../17-Billing-Plans/can-you-delete-data-that-i-sent-via-team-and-enterprise-plans.md)**
+You control your conversations and can delete your chats anytime from your dashboard. More information on data deletion can be found here: **[Can you delete data that I sent via Team and Enterprise plans?](https://support.claude.com/en/articles/9796617-can-you-delete-data-that-i-sent-via-team-and-enterprise-plans)**
 
 Your district's admins can also delete any member's data through the Compliance API when district policy requires it. If your district leaves Claude, Anthropic returns your district's data on request and deletes its copies within 30 days, except where the law requires retention.
 
@@ -637,7 +637,7 @@ Your district's admins can also delete any member's data through the Compliance 
 
 When you verify, your account moves onto a Claude for Teachers plan—a free Claude for Teams plan for verified educators. It comes with educator-specific terms and a data processing agreement, your chats and files aren't used to train our models, and student-data protections are built in. Your usage limits are higher than a standard free account—enough for everyday classroom work like lesson planning, quizzes, and parent communication.
 
-Some Team plan features are turned off for Claude for Teachers. You won't see billing and seat purchasing, **[member invitations and management](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**, roles and permissions, SSO and domain capture, spend controls, usage credits, or premium seats. For questions, **[reach out to our Support team](../21-Account-Support/how-can-i-contact-support.md)**.
+Some Team plan features are turned off for Claude for Teachers. You won't see billing and seat purchasing, **[member invitations and management](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**, roles and permissions, SSO and domain capture, spend controls, usage credits, or premium seats. For questions, **[reach out to our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
 
 ### School and district organizations
 
@@ -1035,7 +1035,7 @@ Path: 22-Safety-Policy/cost-and-usage-reporting-in-the-claude-console.md
 March 16, 2026
 
 
-**Note:** Usage and Cost reporting is visible to the following user roles: **Developer, Billing, and Admin**. See [Claude Console Roles and Permissions](../04-API-Reference/Other/claude-console-roles-and-permissions.md) for more information.
+**Note:** Usage and Cost reporting is visible to the following user roles: **Developer, Billing, and Admin**. See [Claude Console Roles and Permissions](../13-Enterprise-Admin/claude-console-roles-and-permissions.md) for more information.
 
 The Claude Console provides detailed cost and usage reporting to help you effectively manage your API usage and associated costs. This guide walks you through these features and how to use them.
 
@@ -1274,7 +1274,7 @@ Anthropic strictly prohibits Child Sexual Abuse Material (CSAM) on our services.
 
 As just one example of how we are combatting CSAM distribution: on our first-party services, we use a hash-matching tool to detect and report known CSAM that is included in a user or organization’s inputs. This tool provides access to NCMEC’s database of known CSAM hash values. When an image is sent in an input to our services, we will calculate a perceptual hash of the image. This hash will be automatically compared against the database. In the case of a match, we will notify and provide NCMEC information about the input and the related Account.
 
-As part of Anthropic’s safety process, we will also send a notice to the user or organization any time we report CSAM to NCMEC. If you receive a notification from us about CSAM detection and believe we’ve made an error, please email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#95e0e6f0e7e6f4f3f0e1ecd5f4fbe1fde7fae5fcf6bbf6faf8).
+As part of Anthropic’s safety process, we will also send a notice to the user or organization any time we report CSAM to NCMEC. If you receive a notification from us about CSAM detection and believe we’ve made an error, please email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#aedbddcbdcddcfc8cbdad7eecfc0dac6dcc1dec7cd80cdc1c3).
 
 ---
 
@@ -1307,6 +1307,54 @@ Our evaluation of whether to tailor use restrictions to the mission and legal au
 - The safeguards in place to prevent misuse and mitigate risks of mistakes.
 
 - The degree of independent and democratic oversight of the organizations and their uses of AI technologies, including legislative or regulatory constraints and other relevant public commitments.
+
+---
+
+## Export your Claude data | Claude Help Center
+
+Source: https://support.claude.com/en/articles/9450526
+Path: 22-Safety-Policy/export-your-claude-data-claude-help-center.md
+
+# Export your Claude data
+
+July 8, 2026
+
+
+Data exports are available to individual Claude users on Free, Pro, and Max plans. Data exports include conversation data and the user data for your account.
+
+If you're a member of a Team or Enterprise plan, only your organization's Primary Owner can access data exports. For more information, see **[Export your organization's data](../13-Enterprise-Admin/how-can-i-export-my-organization-s-data.md)**.
+
+Individual Claude users can export user information and chat history from **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)** on the web app or Claude Desktop (it's not possible to run an export from Claude for iOS or Android).
+
+Follow these steps to export your data:
+
+1.  Click on your initials in the lower left corner of your account.
+
+2.  Select "Settings" from the menu.
+
+3.  Navigate to the "Privacy" section.
+
+4.  Click the "Export data" button.
+
+Once the export has been processed, you will receive a download link via email.
+
+Please note:
+
+- There may be a small delay while the export is generated.
+
+- The email will be sent to the address associated with your account.
+
+- You must be signed in to your account to download your data using this link.
+
+- The download link will expire 24 hours after delivery.
+
+- If your link expires, you can always request a new one by repeating the export process.
+
+## Can I import or migrate this data to another Claude account?
+
+Exported data can't be imported into another personal Claude account, and we don't support migrating data between personal accounts.
+
+If you're joining a Team or Enterprise organization, you don't need an export to bring your work with you—you can migrate your personal account directly into the organization's workspace. For details, see **[Move your personal Claude account to a Team or Enterprise organization](../21-Account-Support/can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md)**.
 
 ---
 
@@ -1388,7 +1436,7 @@ As Newton Cheng, Frontier Red Team Cyber Lead at Anthropic, explained: Anthropic
 
 - [red.anthropic.com](red-home.md) — Anthropic's cybersecurity research site
 - [Claude Mythos Preview](../19-Reference/2026-mythos-preview.md) — Technical details
-- [Building AI for cyber defenders](../19-Reference/building-ai-cyber-defenders.md)
+- [Building AI for cyber defenders](https://www.anthropic.com/19-Reference/building-ai-for-cyber-defenders-anthropic.md)
 
 ---
 
@@ -1448,7 +1496,6 @@ Path: 22-Safety-Policy/how-can-i-create-and-manage-projects.md
 # How can I create and manage projects?
 
 
-
 Projects are available to all users, including those with free Claude accounts. Free users can create a maximum of five projects.
 
 ## How to create a project
@@ -1495,7 +1542,7 @@ You'll find the project knowledge base on the right side of your project's main 
 
 ## Share projects
 
-If you're on a Team or Enterprise plan, you can share projects with other users in your organization, unless your admin has turned off project sharing. See **[If you can't share projects](manage-project-visibility-and-sharing.md#h_d5a68ef397)** for what to expect.
+If you're on a Team or Enterprise plan, you can share projects with other users in your organization, unless your admin has turned off project sharing. See **[If you can't share projects](https://support.claude.com/en/articles/9519189-manage-project-visibility-and-sharing#h_d5a68ef397)** for what to expect.
 
 ### To share a project
 
@@ -1568,7 +1615,7 @@ Memory is on by default for Free, Pro, and Max plans on the web, Claude Desktop,
 
 For Team and Enterprise plans using Claude’s memory, the ability to move chats into and out of projects allows you to manage what’s included in Claude’s memory. Each project has its own memory, kept separate from your non-project chats. For example, if you accidentally start an unrelated chat in a project and need to remove it from the project-specific memory summary, you can click “Remove from project” so it will be included in Claude’s non-project memory instead.
 
-Refer to our article on chat search and memory for more information: **[What is Claude’s memory?](../15-Claude-AI-Features/using-claude-s-chat-search-and-memory-to-build-on-previous-context.md#h_82126ebcc9)**
+Refer to our article on chat search and memory for more information: **[What is Claude’s memory?](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_82126ebcc9)**
 
 ------------------------------------------------------------------------
 
@@ -1718,70 +1765,12 @@ If you need custom rate limits, monthly invoicing, or hands-on support, **[conta
 
 ---
 
-## How to use Claude in your preferred language | Claude Help Center
-
-Source: https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language
-Path: 22-Safety-Policy/how-to-use-claude-in-your-preferred-language.md
-
-# How to use Claude in your preferred language
-
-August 6, 2026
-
-
-Claude is available in multiple languages on web and desktop applications.
-
-## Supported Languages
-
-- English
-
-- French
-
-- German
-
-- Hindi
-
-- Indonesian
-
-- Italian
-
-- Japanese
-
-- Korean
-
-- Portuguese (Brazilian)
-
-- Spanish (Latin America)
-
-- Spanish (Spain)
-
-## Changing your language setting
-
-### On Web and Desktop
-
-1.  Click your profile icon in the lower left corner.
-
-2.  Go to the "Language" section.
-
-3.  Choose your preferred language.
-
-4.  The interface will update automatically.
-
-**Note:** Even if you've changed your language settings, you can still chat with Claude in any language. Claude will converse with you in the language you use.
-
-## Voice mode languages
-
-Voice mode has its own language setting, separate from your display language. To change the language Claude speaks and listens to in voice mode, go to **[Settings \> General](https://claude.ai/settings/general)**, then find **Voice \> Language** and choose a language. Learn more in **[Use voice mode](../16-Mobile-Desktop/using-voice-mode-on-claude-mobile-apps.md)**.
-
----
-
 ## How up-to-date is Claude's training data? | Claude Help Center
 
 Source: https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data
 Path: 22-Safety-Policy/how-up-to-date-is-claude-s-training-data.md
 
 # How up-to-date is Claude's training data?
-
-Updated today
 
 
 While we're constantly updating Claude's data, each model has a knowledge cutoff:
@@ -1852,7 +1841,7 @@ Written claims concerning copyright infringement must contain the following info
 
 - A statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner’s behalf.
 
-For questions, please email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#6c08010f0d2c0d0218041e031c050f420f0301) or call (415) 326-6303.
+For questions, please email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#b6d2dbd5d7f6d7d8c2dec4d9c6dfd598d5d9db) or call (415) 326-6303.
 
 ---
 
@@ -1880,7 +1869,7 @@ Path: 22-Safety-Policy/law-enforcement-requests.md
 March 16, 2026
 
 
-Anthropic PBC discloses account records solely in accordance with our Terms of Service and applicable law. For more information about Anthropic’s policies for handling governmental requests for user information, see [here](what-is-anthropic-s-policy-for-handling-governmental-requests-for-user-information.md). If you are a law enforcement agent who is authorized to gather evidence in connection with an official investigation, you may request records from Anthropic by emailing [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#c5a9a4b2e8a0aba3aab7a6a0a8a0abb1e8b7a0b4b0a0b6b1b685a4abb1adb7aab5aca6eba6aaa8).
+Anthropic PBC discloses account records solely in accordance with our Terms of Service and applicable law. For more information about Anthropic’s policies for handling governmental requests for user information, see [here](what-is-anthropic-s-policy-for-handling-governmental-requests-for-user-information.md). If you are a law enforcement agent who is authorized to gather evidence in connection with an official investigation, you may request records from Anthropic by emailing [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#b4d8d5c399d1dad2dbc6d7d1d9d1dac099c6d1c5c1d1c7c0c7f4d5dac0dcc6dbc4ddd79ad7dbd9).
 
 Please include the following information with your request:
 
@@ -1914,11 +1903,10 @@ Please include the following information with your request:
 
 ## Manage plugins for your organization | Claude Help Center
 
-Source: https://support.claude.com/en/articles/13837433-manage-claude-cowork-plugins-for-your-organization
+Source: https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization
 Path: 22-Safety-Policy/manage-claude-cowork-plugins-for-your-organization.md
 
 # Manage plugins for your organization
-
 
 
 Plugin marketplaces let Team and Enterprise plan owners distribute curated plugins to everyone in their organization. You create a marketplace, add plugins to it, and control exactly which plugins your team members can see and use. Plugins you distribute appear in chat (on the web and the Chat tab in Claude Desktop), in Claude Cowork, and in Claude Code sessions where members sign in with the same Claude account.
@@ -1931,7 +1919,7 @@ For a reference version of these controls, see **[Manage plugins for your organi
 
 **Note:** Turning off Skills for your organization also stops skills and plugins from syncing to Claude Code, and removes the ones that already synced there. Turning off Cowork doesn't affect the sync to Claude Code. To keep skills and plugins in Claude but stop only the sync, set `syncClaudeAiSkills` and `syncClaudeAiPlugins` to `false` in Claude Code managed settings. Learn more about **[Claude Code admin setup](../01-Getting-Started/setup.md#advanced-setup)**.
 
-**Note:** Marketplaces are how owners distribute plugins to their organization. Users can also share a plugin they built with specific colleagues or groups, or submit it to be published to your organization's library. Sharing and publishing are controlled by the settings in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** in the “Policy” tab, and plugin submissions are reviewed there on the "Requests" tab. Learn more about **[using plugins in Claude](../15-Claude-AI-Features/use-plugins-in-claude-cowork.md)** and **[letting users publish skills and plugins to your organization](provisioning-and-managing-skills-for-your-organization.md#h_1abc45a27c)**[.](provisioning-and-managing-skills-for-your-organization.md#h_1abc45a27c)
+**Note:** Marketplaces are how owners distribute plugins to their organization. Users can also share a plugin they built with specific colleagues or groups, or submit it to be published to your organization's library. Sharing and publishing are controlled by the settings in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** in the “Policy” tab, and plugin submissions are reviewed there on the "Requests" tab. Learn more about **[using plugins in Claude](https://support.claude.com/en/articles/13837440-use-plugins-in-claude)** and **[letting users publish skills and plugins to your organization](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization#h_1abc45a27c)**[.](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization#h_1abc45a27c)
 
 ------------------------------------------------------------------------
 
@@ -2047,7 +2035,7 @@ Additional resources:
 
     1.  **[Enable Cowork](../17-Billing-Plans/use-claude-cowork-on-team-and-enterprise-plans.md#h_71cdc52dfc)**
 
-    2.  **[Enable Skills](provisioning-and-managing-skills-for-your-organization.md#h_7673241237)**
+    2.  **[Enable Skills](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization#h_7673241237)**
 
 2.  Go to **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** and click the “Marketplaces” tab.
 
@@ -2419,313 +2407,9 @@ In “On demand” mode, Claude searches for the right tool before using it. Thi
 
 ---
 
-## Manage model access for your organization | Claude Help Center
-
-Source: https://support.claude.com/en/articles/15694740-manage-model-access-for-your-organization
-Path: 22-Safety-Policy/manage-model-access-for-your-organization.md
-
-# Manage model access for your organization
-
-
-
-This guide explains how to control which Claude models members of your organization can use, and how to cap the effort level members can select on each model. Model access and effort limits can be set for your whole organization or for specific custom roles.
-
-Model access settings are available for Enterprise plan organizations. Primary Owners, Owners, and members whose custom role grants the Identity & Access permission can manage them in **[Organization settings \> Models](https://claude.ai/admin-settings/models)**.
-
-To set the model new conversations start on, see **[Set a default model for your organization](../20-Models/set-a-default-model-for-your-organization.md)**.
-
-------------------------------------------------------------------------
-
-## How model access works
-
-Model access and effort limits are determined at two levels:
-
-- **Organization level:** each model is enabled or disabled for everyone in your organization. Disabling a model here removes it for every member, including Owners and Admins. You can also set a maximum effort level for each enabled model, which applies to every member.
-
-- **Custom role level:** for members on custom roles, each role grants access to a subset of the models enabled at the organization level. A role can also cap the maximum effort level members can select on each model, at or below the organization's cap for that model.
-
-The organization setting is the ceiling. A role can't grant access to a model that's disabled for the organization, and a role can't allow an effort level higher than the organization's cap. When the feature first becomes available, every model is enabled and set to its highest effort level at both levels, so nothing changes for your members until you adjust these settings.
-
-**Note:** Haiku models are always available to every member and can’t be disabled. This guarantees members always have at least one model to fall back to.
-
-## Who each level affects
-
-- Disabling a model or capping its effort level at the organization level affects every member, including Primary Owners, Owners, Admins, and Users.
-
-- Role-level model access and effort limits affect only members whose role is set to "Custom." Members with the User, Admin, or Owner roles can use every model enabled at the organization level, up to the organization's effort cap for that model.
-
-------------------------------------------------------------------------
-
-## Enable or disable a model for your organization
-
-1.  Navigate to **[Organization settings \> Models](https://claude.ai/admin-settings/models)**.
-
-2.  Under **Model access**, find the model you want to change.
-
-3.  To enable a model, switch the toggle next to it on, then click the role dropdown to select the roles that can access it.
-
-4.  To disable a model, click the role dropdown and deselect the roles before switching the toggle off.
-
-5.  Click "Save."
-
-If any custom role uses the model you’re disabling as its default, you’ll be prompted to change that role’s default before the change can be saved.
-
-
-------------------------------------------------------------------------
-
-## Limit the maximum effort level for your organization
-
-Effort limits determine how much computation members can apply per response on each model. Higher effort levels produce more thorough responses but consume more usage. An organization-level effort cap applies to every member and is the highest level any custom role can allow.
-
-1.  Navigate to **[Organization settings \> Model](https://claude.ai/admin-settings/models)**[s](https://claude.ai/admin-settings/models).
-
-2.  Under **Model access**, find the model you want to change.
-
-3.  Click the effort level dropdown to select the maximum level.
-
-4.  Click "Save."
-
-If any custom role has an effort cap higher than the new organization cap for that model, the role's cap is lowered to match. Members see only effort levels at or below the organization cap in their model menu. Available effort levels differ depending on the model, and some models don't support effort level settings at all. For an explanation of each level, see **[Change the model, effort, and thinking settings](../15-Claude-AI-Features/how-can-i-change-the-model-version-that-i-m-chatting-with.md)**.
-
-------------------------------------------------------------------------
-
-## Set model access for a custom role
-
-1.  Navigate to **[Organization settings \> Roles](https://claude.ai/admin-settings/roles)**.
-
-2.  Click the role you want to edit, or click “Add role” to create one.
-
-3.  Select the "Models" tab.
-
-4.  Under **Model access**, switch each model on or off. Models disabled at the organization level appear but can’t be enabled until you turn them on for the organization.
-
-5.  Click “Save.”
-
-Only models the role grants access to can be selected as that role’s default model.
-
-
-------------------------------------------------------------------------
-
-## Limit the maximum effort level for a custom role
-
-Effort limits determine how much computation members on a role can apply per response on each model. Higher effort levels produce more thorough responses but consume more usage. A role's effort cap can't be higher than the organization's cap for that model.
-
-1.  Navigate to **[Organization settings \> Roles](https://claude.ai/admin-settings/roles)**.
-
-2.  Click the role you want to edit.
-
-3.  Select the "Models" tab.
-
-4.  Next to a model, click the gear icon and choose a level.
-
-5.  Click "Save" to save your changes.
-
-
-Members on the role see only effort levels at or below the cap in their model menu. Note that available effort levels differ depending on the model, and some models don’t support effort level settings at all. For an explanation of each level, see **[Change the model, effort, and thinking settings](../15-Claude-AI-Features/how-can-i-change-the-model-version-that-i-m-chatting-with.md)**.
-
-------------------------------------------------------------------------
-
-## How access combines across multiple roles
-
-If a member belongs to multiple groups with different custom roles, model settings combine like other role permissions:
-
-- **Model access is additive.** The member can use every model granted by any of their roles, as long as it’s enabled at the organization level.
-
-- **Effort limits take the highest cap.** For each model, the member gets the highest maximum effort level any of their roles allows, never exceeding the organization's cap for that model.
-
-For how default models are chosen across multiple roles, see **[Set a default model for your organization](../20-Models/set-a-default-model-for-your-organization.md)**.
-
-For details on creating roles and assigning them to groups, see **[Manage custom roles on Enterprise plans](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**.
-
-------------------------------------------------------------------------
-
-## What users see
-
-In every covered product, the model picker shows only the models the member has access to. Effort levels above the organization's cap, or above a role's cap, don't appear in the effort menu.
-
-Model availability also depends on the product. Each product supports a different set of models, so an enabled model appears only in the products that support it.
-
-If you disable a model a member is using in an open conversation or session, that conversation falls back to the member's default model the next time they open it. If the member sends a message while you're making the change, they'll see an error that the model isn't available and be prompted to switch. If you lower a model's effort cap while a member has a higher level selected, their next message on that model uses the new maximum.
-
-------------------------------------------------------------------------
-
-## Where model access settings apply
-
-Model access settings are enforced across these products:
-
-[TABLE]
-
-**Note:** Members on Claude Code CLI versions earlier than 2.1.199 still see disabled models and effort levels in the picker, but requests using them are rejected.
-
-## Model access and Claude Code managed settings
-
-If your organization also configures Claude Code through `managed-settings.json`, the `availableModels` setting and model access work together. In Claude Code CLI and IDE, members see only models that appear in `availableModels` *and* are enabled by their model access settings—a model removed by either one is unavailable.
-
-Managed settings for models apply only to Claude Code CLI and IDE, not to Claude Code on web or desktop. For consistent behavior across all Claude Code surfaces, we recommend using model access settings alone. For more on managed settings, see **[Claude Code settings](../02-Claude-Code-CLI/settings.md#settings-files)**.
-
----
-
-## Manage project visibility and sharing | Claude Help Center
-
-Source: https://support.claude.com/en/articles/9519189-manage-project-visibility-and-sharing
-Path: 22-Safety-Policy/manage-project-visibility-and-sharing.md
-
-# Manage project visibility and sharing
-
-
-
-Project visibility and sharing features are available to users on Team or Enterprise plans. This article assumes that public projects and project sharing are enabled for your organization. Admins can turn either off. For more information, see **[Control project sharing for your organization](../15-Claude-AI-Features/disable-public-projects-for-your-organization.md)**.
-
-Sharing a project with a group requires an Enterprise plan and is currently in beta.
-
-## Understand the two project visibility options
-
-When creating a project on a Team or Enterprise plan, you can choose between two initial visibility options:
-
-- **Public:** Everyone in your organization can view and use the project.
-
-- **Private:** Only invited members can view and use the project.
-
-## What are public projects?
-
-If you choose to share a project with the rest of your organization upon creation, this means that any other member of your team can find it by browsing or searching the **[Organization tab in the Projects section](https://claude.ai/projects?category=team)**, and use it to start a chat. Even if a project is public, your chats within that project will be private and inaccessible to other members of your organization unless you manually share them.
-
-### Can I change a project from public to private?
-
-Yes, you can switch the visibility of a project you created as public to private at any time by opening the project and clicking the “Share” button to the right of the project name.
-
-Click “Everyone at \[your organization\]” under **General access** and select “Only people invited” to change the project from public to private.
-
-## What are private projects?
-
-Choosing “Only people invited” keeps your project private so that you are the only user with access by default. All content within the project (chats, project knowledge, and artifacts) remains inaccessible to other members unless they are explicitly invited.
-
-### Can I change a project from private to public?
-
-Yes, you can switch the visibility of a project you created as private to public at any time by opening the project and clicking the “Share” button to the right of the project name.
-
-Click “Only people invited” under General access and select “Everyone at \[your organization\]” to change the project from private to public.
-
-## Add and remove access to private projects
-
-### To add members to a private project
-
-1.  Click the "Share" button to the right of the project name.
-
-2.  In the window that appears, add people from your organization by name or email address. On Enterprise plans, you can also add a group if its visibility settings allow project sharing. Groups appear in the results with a group icon and the label **Group**.
-
-3.  Select the appropriate permission level:
-
-    - **Can view:** Members can see project contents, knowledge, and instructions, and chat within the project, but cannot edit it.
-
-    - **Can edit:** Members can modify project instructions and knowledge, update member settings, and actively contribute to the project.
-
-This will share the project and knowledge base with the member, but your chats will remain private unless you choose to share them.
-
-### To remove members from a private project
-
-1.  A project member with "Can edit" permissions can open the project's "Share" menu.
-
-2.  Click on the role to the right of the member's name.
-
-3.  Select "Remove access."
-
-4.  After being removed, they will no longer be able to access this project or its content.
-
-### Add members in bulk
-
-You can add multiple users at once by copying and pasting a list of email addresses into the **Add people or groups** field after clicking “Share."
-
-### Share a project with a group
-
-Sharing a project with a group is currently in beta for Enterprise plans.
-
-On Enterprise plans, you can share a project with a group instead of adding each member individually. Access follows group membership, so members who join the group later get access automatically, and members who leave lose it.
-
-Before you can share with a group, an admin needs to turn on **Share resources with this group** in the group's visibility settings. See **[Manage groups and group spend limits on Enterprise plans](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**.
-
-1.  Click the "Share" button to the right of the project name.
-
-2.  Type the group name in the **Add people or groups** field.
-
-3.  Select the group from the results.
-
-4.  Select "Can view" or "Can edit."
-
-5.  Click "Share."
-
-A few things to know:
-
-- A newly visible group can take a few minutes to appear in the picker.
-
-- Access changes can take up to five minutes to apply.
-
-- Group members only get access if they're also members of the organization the project belongs to. A group can span child organizations, but a shared project stays scoped to its own organization.
-
-- Once a project is shared with a group, every member of that group can open it, even if the group isn't visible to their organization. Visibility controls who can find a group in the picker, not who can reach a project that's already shared.
-
-- If a member leaves a group, they lose access to projects shared through it unless they have access another way.
-
-- Deleting a group removes its access to any projects shared with it.
-
-### Email notifications
-
-When someone shares a project with you, you'll receive an email notification letting you know about the new shared project and your permission level.  
-​
-
-### “Shared with you” tab
-
-Projects that have been shared with you will appear in a "Shared with you" tab on your **[Projects section](https://claude.ai/projects?category=shared_with_me)**, making it easy to find and access collaborative work.
-
-### What happens when archiving a shared project?
-
-Archiving a project doesn't reset its sharing permissions or remove members. All members, permission levels, and project knowledge are preserved, and everything is restored exactly as it was when you unarchive the project. To revoke someone's access, remove them in the project's sharing settings before or after archiving.
-
-## If you can't share projects
-
-Owners can turn off project sharing for your organization. On Enterprise plans, they can also turn it off for specific roles. When sharing is off for you:
-
-- You can still open a project's “Share” menu, but you'll see "Project sharing is turned off by your administrator." You can't add new users or groups.
-
-- You can still change or remove existing access.
-
-- Projects that are already shared stay shared, and users who already have access keep it.
-
-- Public projects become private, so people who only had access because a project was public lose it. They stay private if your admin turns sharing back on.
-
-Contact your admin if you need to share a project.
-
-## Share and unshare chats
-
-Chats within a project are not shared by default.
-
-### To share a chat
-
-1.  Click the "Share" button in the upper right corner of your chat.
-
-2.  Click the "Share" button in the pop-up to create a shareable link.
-
-The chat snapshot includes all messages that were sent prior to sharing the chat, including any artifacts. All messages sent after sharing a chat will remain private by default. However, you can choose to update the shared snapshot to include new messages.
-
-### To update a shared chat
-
-1.  Open the "Share" menu.
-
-2.  Click “Update" next to “New messages since last shared” to include any new messages in the shared snapshot.
-
-### To unshare a chat
-
-1.  Navigate to the "Share" menu.
-
-2.  Click the visibility dropdown.
-
-3.  Change the chat from "Shared" to "Private" to disable the direct link.
-
----
-
 ## Manage user feedback settings on Claude Console | Claude Help Center
 
-Source: https://support.claude.com/en/articles/10504853-managing-user-feedback-settings-on-claude-console
+Source: https://support.claude.com/en/articles/10504853-manage-user-feedback-settings-on-claude-console
 Path: 22-Safety-Policy/managing-user-feedback-settings-on-claude-console.md
 
 # Manage user feedback settings on Claude Console
@@ -2752,7 +2436,6 @@ Source: https://support.claude.com/en/articles/12119250-model-safety-bug-bounty-
 Path: 22-Safety-Policy/model-safety-bug-bounty-program.md
 
 # Model Safety Bug Bounty Program
-
 
 
 ## Purpose
@@ -2823,7 +2506,6 @@ Source: https://support.claude.com/en/articles/14552983-models-usage-and-limits-
 Path: 22-Safety-Policy/models-usage-and-limits-in-claude-code.md
 
 # Models, usage, and limits in Claude Code
-
 
 
 This guide explains which model you are using, how usage is metered, and how to keep long sessions within their context and usage limits.
@@ -2952,13 +2634,13 @@ March 16, 2026
 
 # **Designated Point of Contact for Authorities**
 
-Government authorities can contact Anthropic directly by emailing [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#b7c5d2d0c2dbd6c3d8c59aded9c6c2dec5ded2c4f7d6d9c3dfc5d8c7ded499d4d8da). This is reserved for government officials seeking a point of contact and for governmental submissions to remove content. 
+Government authorities can contact Anthropic directly by emailing [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#295b4c4e5c45485d465b044047585c405b404c5a6948475d415b4659404a074a4644). This is reserved for government officials seeking a point of contact and for governmental submissions to remove content. 
 
  For other types of inquiries, please use the mechanisms described below. ￼
 
 # **Illegal Content Reporting**
 
- For user requests for content removal, please use the mechanisms described [here](../19-Reference/reporting-blocking-and-removing-content-from-claude.md). ￼
+ For user requests for content removal, please use the mechanisms described [here](https://support.anthropic.com/en/articles/10684638-blocking-and-removing-content-from-claude). ￼
 
 ---
 
@@ -2980,344 +2662,7 @@ User safety is core to Anthropic’s mission of creating reliable, interpretable
 
 - Enhanced safety filters, which allow us to increase the sensitivity of our detection models. We may temporarily apply enhanced safety filters to users who repeatedly violate our policies, and remove these controls after a period of no or few violations.
 
-These features are not failsafe, and we may make mistakes through false positives or false negatives. Your feedback on these measures and how we explain them to users will play a key role in helping us improve these safety systems, and we encourage you to reach out to us at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#d8adabbdaaabb9bebdaca198b9b6acb0aab7a8b1bbf6bbb7b5) with any feedback you may have. To learn more, [read about our core views on AI safety](https://www.anthropic.com/index/core-views-on-ai-safety).
-
----
-
-## Preserved thinking: changing how the Messages API handles thinking blocks to protect against distillation | Claude Help Center
-
-Source: https://support.claude.com/en/articles/16761192-preserved-thinking-changing-how-the-messages-api-handles-thinking-blocks-to-protect-against-distillation
-Path: 22-Safety-Policy/preserved-thinking-changing-how-the-messages-api-handles-thinking-blocks-to-protect.md
-
-# Preserved thinking: changing how the Messages API handles thinking blocks to protect against distillation
-
-Updated today
-
-
-We're changing how the Messages API handles thinking blocks to protect against distillation. A thinking block is a record of the reasoning Claude may produce while working on a response. On Claude Fable 5.1, Claude Opus 5.5, and Claude Sonnet 5.5, new API accounts can no longer edit the context around a thinking block, such as the messages, tools, or system prompt, during a multi-turn conversation. We’ll expand the rollout to all users with upcoming model launches.
-
-Modifying this prior context has legitimate applications, which we continue to support using the adjustments outlined below. However, such modifications are also a common and **[publicly documented technique](https://arxiv.org/abs/2608.09867)** for industrial-scale illicit distillation, which is prohibited by our **[Usage Policy](https://www.anthropic.com/legal/aup)** and Terms of Service.
-
-Now, the API will now verify that a thinking block is sent back with the same system prompt, tools, and messages that produced it, and will return an error if they don't match. In order for modified requests to succeed, developers may opt-in to instead have the thinking blocks *removed* from such requests; the model will respond without seeing the thinking block.
-
-In this article, we share details on why we're doing this and the adjustments you can make to minimize disruption.
-
-## What are thinking blocks?
-
-Claude produces reasoning steps before providing its final answer. On the API, these are returned to the user as "thinking blocks." In a multi-turn conversation, API users send these blocks back with each exchange (along with the system prompt, tools, and earlier messages), so that Claude has full conversational context.
-
-## What’s changing?
-
-For affected accounts using the models listed below, the API will return an error if the system prompt, tools, or messages preceding a prior thinking block have been modified.
-
-To avoid an error message, you may opt into "non-strict" mode. In this mode, the request will go through, but the affected thinking blocks will be dropped from what the model sees. This allows you to continue your conversation or task uninterrupted despite the prior turns’ thinking not being shown to the model. When this happens, the API response will tell you which blocks were dropped.
-
-## Why are we making this change?
-
-Altering the earlier turns of a conversation is a **[common technique](https://arxiv.org/abs/2608.09867)** used in illicit distillation campaigns, which aim to extract the capabilities of advanced models—especially thinking—to train another model, without authorization. Distillation is often employed on an industrial scale, using thousands of fake accounts. We encrypt Claude's thinking blocks to prevent this, but by editing the conversation before a thinking block, a user could get Claude to decrypt and print its reasoning. Systems trained this way can inherit capabilities they wouldn’t otherwise have, *without* inheriting the safeguards that we've built to prevent a broad range of misuse like cyberattacks and weapons development.
-
-This change aims to make distillation campaigns more difficult to execute. It builds on existing anti-distillation measures like **[enhanced distillation classifiers](../19-Reference/next-generation-constitutional-classifiers.md)** and restrictions on transferring sessions or reasoning from more advanced models to less capable models with weaker safeguards.
-
-## What does this mean for API integrations?
-
-Certain integrations—particularly those that involve rewriting earlier turns mid-conversation, like context compaction, injected system reminders, or changing tools mid-session—may need adjustment.
-
-Here are the resources to help guide you through this update:
-
-- The **[preserved thinking documentation](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md)** covers where the change applies, how to check whether your integration is affected, and **[how to make common edits](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#replace-prefix-edits)** without breaking preserved thinking.
-
-- **[Compaction](../04-API-Reference/Guides/build-with-claude-compaction.md)** (beta) can summarize older turns while keeping the most recent turns word for word, and can build the summary in the background while your agent keeps working. It replaces client-side compaction, which is likely the most common reason integrations need to change.
-
-- **[Mid-conversation tool changes](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md#mid-conversation-tool-changes)** (beta) let you add or remove tools during a conversation without editing earlier turns.
-
-- Our **[migration guides](../20-Models/about-claude-models-migration-guide.md)** have a full checklist for moving to each model.
-
-Check each page for availability on Amazon Bedrock, Google Cloud Vertex AI, and Microsoft Foundry.
-
-If the guidance above doesn't cover your use case, please **[reach out to our support team](../21-Account-Support/how-can-i-contact-support.md)**. If you work with an account team, you can also reach out to them for support with updating more complex integrations.
-
-There are additional benefits to keeping thinking blocks consistent: it means that the API can reuse cached prompts more often, which reduces costs and response time.
-
-## Who will this impact?
-
-Preserved thinking applies to these models and accounts:
-
-[TABLE]
-
-This covers Claude Platform organizations, Amazon Bedrock accounts, Google Cloud Vertex AI projects, and Microsoft Foundry projects.
-
-We're taking a phased approach to enforcement, starting with new accounts, where we see the highest concentration of distillation-related abuse. This gives developers with existing accounts time to make their harnesses and integrations compatible.
-
-If you use Claude Code, Claude Cowork, or Claude.ai, there's nothing you need to change; those products handle thinking blocks for you.
-
-## Thinking can only be read by the account that created it
-
-Starting with Claude Sonnet 5.5, a thinking block can only be read by the account that created it, or by an account linked to it.
-
-Thinking blocks can contain private information. Because they are encrypted, that information isn't visible when you inspect a transcript. This check helps keep a shared or leaked transcript from exposing the reasoning inside it. It also makes it harder for distillers to move harvested transcripts to new accounts after we ban the account that produced them.
-
-If a request includes thinking from an account that isn't linked, the API drops that thinking and the request continues. It doesn't return an error. The next response may be slower and use more tokens, similar to a compaction.
-
-Accounts in the same Claude Platform parent organization or the same Google Cloud organization are linked automatically. If you continue conversations across other accounts, for example to fail over between the Claude Platform and Amazon Bedrock, contact your account team to link them.
-
-In Claude Code, switching accounts in the middle of a session has the same effect: the next response is slower and uses more tokens.
-
----
-
-## Provision and manage skills for your organization | Claude Help Center
-
-Source: https://support.claude.com/en/articles/13119606-provisioning-and-managing-skills-for-your-organization
-Path: 22-Safety-Policy/provisioning-and-managing-skills-for-your-organization.md
-
-# Provision and manage skills for your organization
-
-
-
-This article explains how organization owners can provision skills for everyone in their organization, and how to scope skills to specific groups using plugins. Provisioning skills lets you distribute approved workflows and capabilities across your organization from one place.
-
-Organization-wide skill management is available to Team and Enterprise plans.
-
-## Prerequisites
-
-Before you can provision skills for your organization, navigate to **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)**, select the “Policy” tab, and check that both **Cloud code execution and file creation** and **Skills** are toggled on. Skills require code execution to function, so if code execution is disabled, skills will not be available.
-
-------------------------------------------------------------------------
-
-## Provision skills for everyone
-
-When you upload a skill through organization settings, it becomes available to everyone in your organization in **[Customize \> Skills](https://claude.ai/customize/skills)**. Individual users no longer need to upload the same skill themselves. Provisioned skills also load in Claude Code for users who sign in with their Claude account. To stop skills from syncing to Claude Code, set `syncClaudeAiSkills` to `false` in Claude Code managed settings.
-
-**To provision a skill:**
-
-1.  Navigate to **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)**.
-
-2.  Click "Add” in the upper right corner.
-
-3.  Choose “Upload a skill” or “Create a skill.”
-
-4.  If uploading, select a .zip file containing your skill (must include a SKILL.md file).
-
-5.  If creating, input the skill name and description in the modal, then click “Create.”
-
-6.  The skill is immediately provisioned to all users in your organization.
-
-Owner-provisioned skills are enabled by default for everyone, but users can toggle individual skills off if they choose. This gives your organization consistent, approved workflows while letting users customize their own experience.
-
-------------------------------------------------------------------------
-
-## Provision skills to specific groups
-
-Provisioning a skill through **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** gives it to everyone. Enterprise plans can give skills to only some users by bundling them into a plugin and assigning that plugin to a group. The group's members see those skills, and members outside the group don't.
-
-For example, if you have 10 skills for your marketing team, add them to a plugin and assign it to the marketing group. Only that group gets those skills.
-
-Skills provisioned this way appear in chat (on the web and the "Chat" tab in Claude Desktop), in Claude Cowork, and in Claude Code in the terminal for users who sign in with their Claude account. Group targeting you've already set up for Cowork carries over to chat with no extra steps.
-
-To set this up, see **[Manage plugins for your organization](manage-claude-cowork-plugins-for-your-organization.md)**.
-
-------------------------------------------------------------------------
-
-## Control whether users can create skills
-
-By default, users can create their own skills in Claude and upload skill files to their personal skills list. If you'd rather users only use skills you've provisioned, you can turn this off for your organization.
-
-To turn off skill creation for users:
-
-1.  Navigate to **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** and click the “Policy” tab.
-
-2.  Turn off **User-created skills**.
-
-When **User-created skills** is off:
-
-- Users can't create skills in Claude or upload skill files.
-
-- Skills you've provisioned and Anthropic's built-in skills stay available, and users can still enable and use them.
-
-**Note:** If your organization uses custom roles, a user also needs the **Create skills** capability on their role. The organization setting is the main switch: when it's off, users can't create or upload their own skills, regardless of role, but Owners can still provision skills for the organization. When it's on, Enterprise plan users on custom roles still need the role capability. Learn more about **[managing custom roles on Enterprise plans](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**.
-
-------------------------------------------------------------------------
-
-## Let users publish skills and plugins to your organization
-
-Users can submit a skill or plugin they've built to your organization's library so everyone can use it. When your organization requires review, an owner approves each submission before it's published, and every later version goes through the same review.
-
-### Set the publishing policy
-
-1.  Navigate to **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** and select the “Policy” tab.
-
-2.  Under **Publishing**, choose an option:
-
-    - **Requires review:** Users can submit skills and plugins, and an owner must approve each one before it's published.When submitting, the user proposes how the item is offered. You can accept or change that when you approve.
-
-    - **Open:** Skills and plugins that users submit are published to the organization library without review, and are available to everyone in your organization to install. Users can't choose a different offering. On Enterprise plans with **[Skill and plugin security scanning](../02-Claude-Code-CLI/get-started-with-skill-and-plugin-scanning.md)** on, a new item isn't listed for others until it passes the scan, which usually takes a few minutes.
-
-    - **Off:** Users don't see the "Publish to org" button. Owners can still add skills and plugins to the organization directly.
-
-Your starting setting depends on your plan:
-
-- **Team plans:** Publishing is set to “Open,” unless you already had **Share with organization** turned off, in which case “Off” is the default.
-
-- **Enterprise plans:** Publishing starts off.
-
-  - If your organization already had **Share with organization** turned on, it starts as “Open” instead.
-
-  - If you haven't chosen a setting, it switches to “Requires review” on October 2, 2026. To keep publishing off, or to choose a different setting, select it yourself before then.
-
-Turning **Publishing** off doesn't remove anything that's already published. Published items stay in the library until an owner removes them.
-
-### Review a submission
-
-Owners, and anyone whose role has Libraries set to “Can manage,” can review requests. You can't approve your own.
-
-**To review a submission:**
-
-1.  Navigate to **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** and select the “Requests” tab.
-
-    - Plugin and skillsubmissions appear here, and each request shows who submitted it, whether it's a skill or plugin, its security scan result, and its status. If a submission looks like a skill or plugin your organization already has, a **Possible duplicate** tag appears next to it.
-
-2.  Open a request. You'll see:
-
-    - How the item will be offered
-
-    - The scan result
-
-    - Every file
-
-    - For an update, what changed since the currently published version
-
-    - Up to three possible duplicates, if any, each with a reason and a link
-
-3.  Choose how the item is offered and who gets it: everyone or specific groups. The submitter's proposed offering is preselected, and you can change it. Then click "Approve" to publish it, or click "Request changes" and add a note for the person who submitted it.
-
-Keep these points in mind when reviewing:
-
-- **You review a fixed version.** You see exactly the version that was submitted. The author can keep editing their own copy, but those edits don't reach the organization until they submit a new version and it's approved.
-
-- **Possible duplicate hints are a note, not a block.** Only reviewers see them. They don't stop you from approving a submission, and the person who submitted it doesn't see them. No setup is needed. Duplicate checks don't run for organizations with HIPAA, zero data retention, FERPA, or customer-managed keys.
-
-- **For Enterprise plans, submitted versions are scanned.** For Enterprise plans with **Skill and plugin security scanning** enabled, each version is checked for malicious content automatically. A submission that fails the scan can't be approved until the author fixes it and submits again. Learn more about **[skill and plugin scanning](../02-Claude-Code-CLI/get-started-with-skill-and-plugin-scanning.md)**.
-
-### Manage published skills and plugins
-
-Every approved item is listed on the “Inventory” tab in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)**. To see only your organization's items, set the **Source** filter to “Your organization."
-
-Click the menu button at the end of a row to:
-
-- View details and files
-
-- View version history
-
-- Choose how the item is offered under Default access (Available to install, Installed by default, Not available, or Required)
-
-- Set access for specific groups under “Group access…”
-
-- Copy a link to share with users
-
-The “Inventory” tab also lists skills and plugins that users created or shared.
-
-When you approve a new version, everyone who uses the item gets the update automatically. Until then, users stay on the currently approved version.
-
-Published items are managed by your organization. If the author leaves, the published item stays in the library.
-
-------------------------------------------------------------------------
-
-## Control skill sharing between users
-
-In addition to provisioning skills top-down, you can let users share skills or plugins they've built with each other. Two independent toggles control this:
-
-- **Skill sharing:** Users can share a skill or plugin with specific colleagues. Recipients see the skill in the **Shared with you** section of their skills list.
-
-- **Share with groups:** Users can share a skill or plugin with an entire group. Recipients see it in the **Shared with you** section of their skills list, the same as items shared with individuals.
-
-To let users add skills and plugins to the organization library, use the **Publishing** setting. Learn more about **[letting users publish skills and plugins to your organization](#h_1abc45a27c)**.
-
-The **Skill sharing** toggle is on by default for Team plans and for Enterprise plans that haven't set a skills preference. For organizations with HIPAA readiness or other regulated configurations, skills and skill sharing are off by default and an admin can enable them in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** in the “Policy” tab. The **Share with groups** toggle is also off by default and can be enabled by an admin.
-
-**Note:** Shared skills and plugins are view-only, and stay off until the recipient chooses to enable them. Recipients can enable and use a shared skill or plugin but can't edit its contents. When the owner saves a new version, everyone it's shared with gets the update automatically at next use. The owner can revoke someone's access at any time, and access is removed automatically if the recipient leaves the organization.
-
-### Share skills with a group
-
-Before you can share with a group, an admin needs to turn on **Share resources with this group** in the group's visibility settings. See **[Manage groups and group spend limits on Enterprise plans](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**.
-
-If you use custom roles, also make sure the **Share skills with groups** capability is enabled for their role. See **[Manage custom roles on Enterprise plans](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**.
-
-Once these settings are on, users can begin sharing skills with groups.
-
-### How shared skills differ from provisioned skills
-
-[TABLE]
-
-**Important:** When Publishing is set to “Open,” anything a user publishes goes straight to the organization library without review and is available to everyone in your organization Choose “Requires review” if you want an owner to check each skill and plugin first.
-
-### Monitor sharing activity
-
-Skill sharing events are captured in the audit log and Compliance API as `role_assignment` events. You can see who shared a skill or plugin, with whom, and whether it was peer-to-peer, a group, or (skills only) organization-wide.
-
-The audit log doesn't capture the contents of shared skills or plugins—only the share event itself. The “Inventory” tab shows metadata, sharing status, and scan status for skills and plugins that users created or shared, but not their contents.
-
-------------------------------------------------------------------------
-
-## How users see provisioned and shared skills
-
-Skills appear for each user in **[Customize \> Skills](https://claude.ai/customize/skills)**, organized into three sections:
-
-- **Personal skills:** Skills the user has created or uploaded.
-
-- **Shared with you:** Skills colleagues have shared directly with a user. These appear grayed out until enabled.
-
-- **Organization skills:** Skills an owner has provisioned and skills published to the organization. Users install these from the directory.
-
-Owner-provisioned skills are marked with a visual indicator so users can distinguish them from other skill types. Users can click on any skill to preview its contents and description.
-
-For more on how users browse and install from the directory, see **[Browse skills, connectors, and plugins in one directory](../14-Connectors/browse-skills-connectors-and-plugins-in-one-directory.md)**.
-
-------------------------------------------------------------------------
-
-## Manage and remove provisioned skills
-
-The “Inventory” tab in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** lists all skills provisioned for your organization. Set **Source** to “Your organization” and **Type** to “Skills,” or search by name. To remove a skill, click the menu button at the end of its row and select “Remove from library.” Once removed, the skill will no longer appear in users' skills lists in **[Customize \> Skills](https://claude.ai/customize/skills).**
-
-**Note:** Only owners can add or remove organization-wide skills. Individual users cannot delete provisioned skills, though they can toggle them off for their own use.
-
-------------------------------------------------------------------------
-
-## Scan skills and plugins for malicious content
-
-On the Enterprise plan, you can turn on skill scanning for your organization. When it's on, Claude checks each third-party skill and plugin your users upload or edit for malicious content before it can run. Scanning is off by default until October 2, 2026. From that date it's on by default, where available, for Enterprise organizations that haven't set it. Organizations that already turned it on or off keep their choice.
-
-To turn on skill scanning for your organization:
-
-1.  Go to **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** and select the “Policy” tab.
-
-2.  Turn on **Skill and plugin security scanning**.
-
-If you use custom roles, you can further define who scanning applies to by turning on the **Skill and plugin security scanning** capability for roles that should have access to skill scanning.
-
-Here's what your users see:
-
-- A skill or plugin that passes the scan installs normally.
-
-- A skill or plugin that may carry risk stays usable behind a caution banner the user acknowledges.
-
-- A skill or plugin with malicious content is blocked and can't be used.
-
-A blocked skill can't be overridden by the user who uploaded it, and can't be approved for the organization at this time. Scanning isn't available for organizations using customer-managed encryption keys (CMEK), zero data retention (ZDR), or HIPAA configurations. Learn more about **[skill and plugin scanning](../02-Claude-Code-CLI/get-started-with-skill-and-plugin-scanning.md)**.
-
-------------------------------------------------------------------------
-
-## Best practices
-
-- **Test skills before provisioning:** Upload and test skills on your own account first to verify they work as expected before distributing them organization-wide.
-
-- **Scope specialized skills to groups:** When a skill is only relevant to one team, bundle it into a plugin and assign it to that group instead of provisioning it to everyone.
-
-- **Use descriptive names:** Give skills clear names that help users understand their purpose at a glance.
-
-- **Write clear descriptions:** The skill's description helps Claude determine when to use it automatically. Ensure descriptions accurately reflect what the skill does.
-
-- **Consider default status carefully:** Enable skills by default when they're broadly useful to most users. Keep specialized skills disabled by default for the users who don't need them.
-
-- **Decide on publishing deliberately:** Set Publishing to “Requires review” if you want an owner to check skills and plugins before they reach everyone.
+These features are not failsafe, and we may make mistakes through false positives or false negatives. Your feedback on these measures and how we explain them to users will play a key role in helping us improve these safety systems, and we encourage you to reach out to us at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#334640564140525556474a73525d475b415c435a501d505c5e) with any feedback you may have. To learn more, [read about our core views on AI safety](https://www.anthropic.com/index/core-views-on-ai-safety).
 
 ---
 
@@ -3376,6 +2721,38 @@ red.anthropic.com is Anthropic's dedicated cybersecurity research site, publishi
 
 ---
 
+## Report, block, and remove content from Claude | Claude Help Center
+
+Source: https://support.claude.com/en/articles/7996906-reporting-blocking-and-removing-content-from-claude
+Path: 22-Safety-Policy/reporting-blocking-and-removing-content-from-claude.md
+
+# Report, block, and remove content from Claude
+
+
+Anthropic supports a variety of ways to allow people to control their content and personal information. As a site owner, you can control what shows up in Claude outputs that use web search. As a user or member of the public, you can report problematic content that another user shares publicly or that you receive in a Claude output. For each type of concern, follow the reporting instructions below.
+
+Please note, we reserve the right to suspend users who frequently provide manifestly illegal content and suspend the processing of notices for users who frequently submit notices which are manifestly unfounded. We will provide a warning before suspension.
+
+## How to report safety issues
+
+We welcome reports concerning safety issues so that we can enhance the safety and harmlessness of our models. We would also like to hear from you if you identify our safety mechanisms causing any user experience issues. Please report such issues to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#d8adabbdaaabb9bebdaca198b9b6acb0aab7a8b1bbf6bbb7b5) with enough detail for us to replicate the issue.
+
+## How to block or remove content
+
+### Block or remove websites from Claude web search
+
+[TABLE]
+
+### Block or remove content from shared Claude content
+
+[TABLE]
+
+### Block or remove content from Claude outputs or shared Claude content
+
+[TABLE]
+
+---
+
 ## Terms of Service Updates | Claude Help Center
 
 Source: https://support.claude.com/en/articles/9190861-terms-of-service-updates
@@ -3400,13 +2777,82 @@ We encourage you to read our updated [Terms of Service](https://anthropic.com/te
 
 ---
 
+## Troubleshoot Claude error messages | Claude Help Center
+
+Source: https://support.claude.com/en/articles/12466728-troubleshoot-claude-error-messages
+Path: 22-Safety-Policy/troubleshoot-claude-error-messages.md
+
+# Troubleshoot Claude error messages
+
+May 18, 2026
+
+
+This article explains common error messages and warnings you may encounter when using Claude and provides guidance on how to address them.
+
+## Usage limit warnings and errors
+
+Usage limit warnings appear when you're approaching your plan’s limit within a five-hour session: *“Approaching 5-hour limit.”*
+
+If you hit your plan’s limit after the warning appears, you’ll see a blocking error message letting you know when you can use Claude again: *“5-hour limit reached - resets \[time\].”*
+
+Looking for ways to maximize your Claude usage? Refer to **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
+
+### Usage credits
+
+Paid Claude users with usage credits enabled in Usage settings will see a slightly different usage limit error: *"5-hour limit resets \[time\] - continuing with usage credits."* Note that this will only appear for members with access to usage credits.
+
+Refer to these articles for more information about this feature depending on your plan:
+
+- **[Manage usage credits for paid Claude plans](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md)**
+
+- **[Manage usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-)**
+
+## Length limit errors
+
+You may encounter a length limit error when your message to Claude exceeds the maximum input length allowed: "Your message will exceed the length limit for this chat. Try attaching fewer or smaller files or starting a new conversation." This error indicates that your message is too long and needs to be shortened before sending it to Claude.
+
+For users on paid plans with code execution enabled, Claude automatically manages long conversations by summarizing earlier messages when context limits are approached. This means most users will rarely encounter length limit errors during normal use. Your full chat history is preserved so Claude can reference it even after summarization. In rare cases where you still encounter this error (such as when sending a very large first message), you can:
+
+- Break your content into smaller chunks and process them separately
+
+- Summarize or extract key sections before sending to Claude
+
+- Use Claude to first identify the most relevant portions of your content
+
+- Start a new conversation
+
+## Login errors
+
+If you see a generic error message when attempting to log in to your Claude account (e.g, "There was an error logging you in"), try the following troubleshooting steps:
+
+- Ensure you’re not using a VPN when accessing Claude.
+
+- Disable any browser extensions that you currently have active.
+
+- Clear your browser’s cache and cookies.
+
+If you're still seeing an error, check **[our status page](http://status.claude.com)** for active incidents.
+
+## Capacity constraints
+
+Capacity issues occur when Claude’s infrastructure experiences high demand system-wide. When capacity is constrained, you may see this message when chatting with Claude: *"Due to unexpected capacity constraints, Claude is unable to respond to your message. Please try again soon."*
+
+**Important:** Capacity constraints are not outages. The system is functioning normally but managing high demand across all users. These issues are temporary and typically resolve as demand patterns shift throughout the day. If you encounter this message, try again in a few minutes.
+
+Capacity issues will not appear on our status page because they represent normal load management rather than technical problems.
+
+## Service incidents and outages
+
+Service incidents are disruptions where Claude is unavailable or significantly degraded for all or most users. These represent actual technical problems with our systems. To check for confirmed incidents, visit status.claude.com, where you'll find real-time updates on scope, impact, and resolution progress for any active incidents.
+
+---
+
 ## How do usage and length limits work? | Claude Help Center
 
 Source: https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits
 Path: 22-Safety-Policy/understanding-usage-and-length-limits.md
 
 # How do usage and length limits work?
-
 
 
 When working with Claude, you may encounter two different types of limits that work in distinct ways: **usage limits** and **length limits**. Understanding the difference between these can help you use Claude more effectively.
@@ -3429,11 +2875,11 @@ There are a couple of different ways to increase your usage depending on your pl
 
   - **[Manage usage credits for paid Claude plans](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md)**
 
-  - **[Manage usage credits for Team and seat-based Enterprise plans](../17-Billing-Plans/manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**
+  - **[Manage usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-)**
 
 - If your organization has a usage-based Enterprise plan, your usage is based on consumption. See this article for additional information: **[How am I billed for my Enterprise plan?](../17-Billing-Plans/how-am-i-billed-for-my-enterprise-plan.md)**
 
-For strategies to maximize your message allotment, see **[Usage limit best practices](usage-limit-best-practices.md)**.
+For strategies to maximize your message allotment, see **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
 
 ## What are length limits?
 
@@ -3473,7 +2919,7 @@ While you can't increase the fixed context window size for your plan, you can us
 
 The main distinction is that usage limits control *how much* you can use Claude across all your conversations, while length limits control *how long* any single conversation can become. Usage limits are about quantity over time, while length limits are about the depth and complexity of individual conversations.
 
-If you hit your usage limit, you'll need to wait for it to reset, upgrade your plan, or purchase usage credits. If you hit a length limit, you can start a new conversation or use **[features like projects](../15-Claude-AI-Features/what-are-projects.md)** to work with larger amounts of information more efficiently.
+If you hit your usage limit, you'll need to wait for it to reset, upgrade your plan, or purchase usage credits. If you hit a length limit, you can start a new conversation or use **[features like projects](https://support.claude.com/en/articles/9517075-what-are-projects)** to work with larger amounts of information more efficiently.
 
 ---
 
@@ -3517,172 +2963,11 @@ Privacy Policy
 
 - **Data controller:** We’ve updated our **[Privacy Policy](https://www.anthropic.com/legal/privacy)** to reflect that the data controller for our users in the European Economic Area (EEA), UK, and Switzerland is Anthropic Ireland, Limited.
 
-- **Data retention:** We’ve changed our [default data retention period](../17-Billing-Plans/how-long-do-you-store-personal-data.md) to 30 days.
+- **Data retention:** We’ve changed our [default data retention period](../13-Enterprise-Admin/how-long-do-you-store-personal-data.md) to 30 days.
 
 You can review our full **[Usage Policy](https://www.anthropic.com/legal/aup)**, **[Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms)**, and **[Privacy Policy](https://www.anthropic.com/legal/privacy)** on our website. If you have any questions, please contact us [here](https://support.anthropic.com).
 
 Thanks for using Claude! We appreciate you taking the time to stay informed on these updates as we work to responsibly deploy our products more broadly.
-
----
-
-## Usage limit best practices | Claude Help Center
-
-Source: https://support.claude.com/en/articles/9797557-usage-limit-best-practices
-Path: 22-Safety-Policy/usage-limit-best-practices.md
-
-# Usage limit best practices
-
-
-
-The number of messages you can send will vary based on your Claude plan. For more information on your plan’s usage, refer to the following resources.
-
-- **[Free Claude](../01-Getting-Started/getting-started-with-claude.md#h_57262af5ae)**
-
-- **[Pro plan](../17-Billing-Plans/what-is-the-pro-plan.md#h_62ccc00135)**
-
-- **[Max plan](../17-Billing-Plans/what-is-the-max-plan.md#h_cfd2904008)**
-
-- **[Team plan](../17-Billing-Plans/what-is-the-team-plan.md#h_b59203dff2)**
-
-- **[Enterprise plan](../17-Billing-Plans/what-is-the-enterprise-plan.md#h_8294bce903)**
-
-Additional factors that affect your usage limits include:
-
-- Message length
-
-- File attachment size
-
-- Current conversation length
-
-- Tool usage (e.g., Research, web search)
-
-- Model choice
-
-- Effort level
-
-- Artifact creation and usage
-
-- Multi-step tasks, like running code, creating files, or browsing websites
-
-Our system also includes caching that helps you optimize your limits:
-
-- Content in projects is cached and counts less against your limits when reused.
-
-- Claude remembers context from earlier in the conversation.
-
-------------------------------------------------------------------------
-
-## 1. Start by planning your conversations
-
-Before starting a conversation with Claude, consider the following:
-
-- What specific information or assistance do you need?
-
-- Can you combine multiple related questions into a single message?
-
-- Is there any background information you can provide upfront?
-
-Planning helps reduce the number of back-and-forth messages needed.
-
-## 2. Be specific and concise
-
-- Provide clear, detailed instructions or questions in each message.
-
-- Avoid vague queries that may require clarification.
-
-- Include relevant context to help Claude understand your needs better.
-
-## 3. Use Claude's chat search and memory capabilities
-
-- All users can follow these guidelines to take advantage of Claude's memory within a single chat:
-
-  - Refer back to previous information instead of repeating it.
-
-  - Use phrases like "As mentioned earlier" to build on earlier parts of the conversation.
-
-- Users with paid plans (Pro, Max, Team, and Enterprise) can prompt Claude to search through previous conversations and reference relevant information in new chats. Giving Claude access to additional context prevents you from needing to provide the same information repeatedly.
-
-  - Learn more here: **[Searching past chats with Claude](../15-Claude-AI-Features/using-claude-s-chat-search-and-memory-to-build-on-previous-context.md#h_89b670b004)**
-
-- Users with paid plans (Pro, Max, Team, and Enterprise) can use Claude's memory and project summaries to build context across conversations.
-
-  - Learn more here: **[What is Claude's memory?](../15-Claude-AI-Features/using-claude-s-chat-search-and-memory-to-build-on-previous-context.md#h_c1c0b33879)**
-
-## 4. Batch similar requests in one message
-
-If you have multiple related tasks or questions, group them in a single message. For example, instead of sending separate messages for each math problem, send them all in one message.
-
-## 5. Review and edit your prompt before sending
-
-Take a moment to review your message for clarity and completeness to reduce the need for follow-up messages.
-
-## 6. Use project knowledge bases effectively
-
-Projects offer significant caching benefits:
-
-- When you upload documents to a project, they're cached for future use.
-
-- When you reference that content again while it’s still cached, cached portions count less against your limits than new content.
-
-- This means you can work with the same documents repeatedly without using up your messages as quickly.
-
-- Example: If you're working on a research paper and add all your reference materials to a project, you can ask multiple questions about those materials while using fewer messages than if you uploaded them each time.
-
-- Caches expire after a period of inactivity. If you come back to a project after a long break, your first message counts that content in full again.
-
-- Projects offer a Retrieval Augmented Generation (RAG) mode allowing for expanded project knowledge capacity.
-
-  - Learn more here: **[Retrieval Augmented Generation (RAG) for projects](../15-Claude-AI-Features/retrieval-augmented-generation-rag-for-projects.md)**
-
-## 7. Monitor your consumption in Usage settings
-
-- If you're using a Pro, Max, Team, or seat-based Enterprise plan, you can navigate to **[Settings \> Usage](https://claude.ai/settings/usage)** to view progress bars showing how much of your five-hour session and weekly usage limits you’ve consumed.
-
-- The **Plan usage limits** section at the top shows your progress towards both your session limit and weekly limits.
-
-  - **Current session:** How much of your plan’s five-hour session limit you’ve used thus far, plus the amount of time remaining in the session.
-
-  - **Weekly limits:** Check when your plan’s weekly usage limit resets, for all models, and for Fable (if included in your plan).
-
-- **Usage credits:** If you are using a Pro, Max, Team, or seat-based Enterprise plan, your usage settings page will also show how much of your plan's limit you've used. Refer to these articles for more information about enabling usage credits depending on your plan:
-
-  - **[Manage usage credits for paid Claude plans](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md)**
-
-  - **[Manage usage credits for Team and seat-based Enterprise plans](../17-Billing-Plans/manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**
-
-- If your organization is on a usage-based Enterprise plan, you won’t have specific usage limits, but will be charged based on consumption. You can also track this in **[Settings \> Usage](https://claude.ai/settings/usage)**.
-
-## 8. Quick caching tips
-
-- Use projects for anything you'll reference multiple times.
-
-- Upload your core working documents to the project knowledge section when starting a project.
-
-- The more you use the same content, the more benefit you get from caching.
-
-------------------------------------------------------------------------
-
-## Best practices for specific use cases
-
-### For coding tasks
-
-- Provide complete context about your coding environment in your initial message.
-
-- Include entire relevant code snippets in one message for reviews or debugging.
-
-### For writing assistance
-
-- Outline requirements, target audience, and key points comprehensively.
-
-- Send entire texts for editing in one message rather than breaking them up.
-
-### For research and analysis
-
-- Clearly define your research question and focus areas initially.
-
-- Provide all relevant data in a single, well-structured message.
-
-By following these best practices, you can make the most efficient use of your Claude plan's message allocation.
 
 ---
 
@@ -3836,7 +3121,7 @@ Queries can take up to two minutes for large organizations. If one repeatedly fa
 
 ### Data looks out of date
 
-Check the date shown on the result. The underlying data typically lags by one to two days. If it’s more than two days behind, **[contact Support](../21-Account-Support/how-can-i-contact-support.md)**.
+Check the date shown on the result. The underlying data typically lags by one to two days. If it’s more than two days behind, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
 
 ### The Analytics Chat tab is missing
 
@@ -3954,7 +3239,7 @@ The claude.ai/security page runs a per-user check against your own connected Git
 
 - **The connected GitHub account isn’t a member of the GitHub organization** where the app is installed. Connect the account that belongs to that organization.
 
-- **SSO isn't authorized for that organization.** If your GitHub organization requires SSO, you must authorize the Claude app for it separately. Follow the steps in **[Use the GitHub integration](../14-Connectors/using-the-github-integration.md#h_e169a34a57)**.
+- **SSO isn't authorized for that organization.** If your GitHub organization requires SSO, you must authorize the Claude app for it separately. Follow the steps in **[Use the GitHub integration](https://support.claude.com/en/articles/10167454-use-the-github-integration#h_e169a34a57)**.
 
 - **Your GitHub organization's IP allow list is blocking the check.** GitHub's "Enable IP allow list configuration for installed GitHub Apps" setting covers traffic from the App itself, such as Code Review, but it doesn't cover this per-user check. To allow it, manually add 160.79.104.0/21 as an organization-level allow list entry. For the full list of ranges, see **[IP addresses](../04-API-Reference/Endpoints/ip-addresses.md)**.
 
@@ -4489,6 +3774,365 @@ Claude would provide a comprehensive summary of all project deliverables with ke
 - [Setting up the Egnyte Connector](#setting-up-the-egnyte-connector)
 - [Common Use Cases](#common-use-cases)
 - [Tips for Using Egnyte](#tips-for-using-egnyte)
+
+---
+
+## Using LSEG for financial market data analysis · Claude Academy
+
+Source: https://support.claude.com/en/articles/12662116-using-lseg-for-financial-market-data-analysis
+Path: 22-Safety-Policy/using-lseg-for-financial-market-data-analysis.md
+
+# Using LSEG for financial market data analysis
+
+Set up and use LSEG's financial market data integration with Claude for real-time pricing, analytics, and valuation tools across asset classes.
+
+15 minClaude.ai
+
+[Open Claude](https://claude.ai/new)
+
+The LSEG integration provides Claude with access to LSEG’s comprehensive financial market data ecosystem, spanning across asset classes and domains. This article explains how to set up and use LSEG to retrieve real-time market data, analytics, and perform complex financial calculations. The LSEG integration relies upon Claude’s ability to use remote connectors.
+
+## What This Integration Provides[](#what-this-integration-provides)
+
+### Capabilities[](#capabilities)
+
+The LSEG integration enables Claude to access institutional-grade market data, analytics, and valuation tools directly into conversational AI workflows.
+
+- **FX Spot Price Calculation:** Get the latest FX spot rates for currency pairs, enabling real-time foreign exchange analysis and multi-currency calculations.
+
+- **FX Forward Price Calculation:** Compute tenor FX forward rates for currency pairs and display FX forward points between currency pairs for different tenors, supporting hedging strategies and forward contract analysis.
+
+- **Interest Rate Curve Analysis:** Calculate interest rate curves for specific curve references and access comprehensive lists of all interest rate curves maintained by LSEG for yield curve construction and rate projections.
+
+- **FX Forward Curve Points:** Calculate FX forward curve points using LSEG-defined forward curves with specific valuation dates, providing detailed term structure analysis for currency derivatives.
+
+- **Bond Pricing:** Price bonds using ISIN codes to retrieve current market valuations, yield calculations, and spread measures for fixed income analysis.
+
+- **Comprehensive Asset Class Coverage:** Access data and analytics across equities, fixed income, FX, commodities, and other asset classes through LSEG’s extensive database.
+
+## How Claude Uses LSEG Data[](#how-claude-uses-lseg-data)
+
+Claude applies LSEG’s market data to support your financial analysis.
+
+- Real-Time FX Analysis: Retrieves current spot rates and forward prices for currency pairs to analyze exchange rate movements, calculate cross-rates, and evaluate currency exposures.
+
+- Yield Curve Construction: Pulls interest rate curve data to build term structures, calculate forward rates, and analyze the shape of yield curves for interest rate forecasting.
+
+- Fixed Income Valuation: Uses bond pricing tools to value securities, compare yields across issuers, and assess credit spreads for portfolio management and trading decisions.
+
+- Cross-Asset Analysis: Combines data from multiple asset classes to identify relationships, correlations, and trading opportunities across markets.
+
+- Hedging Strategy Development: Leverages forward curve data to structure currency hedges, evaluate hedge effectiveness, and optimize hedging costs.
+
+- Market Data Validation: Provides authoritative pricing and reference data to verify quotes, reconcile positions, and ensure data accuracy.
+
+## Setting Up LSEG Integration[](#setting-up-lseg-integration)
+
+Technical details of the LSEG Integration can be found in LSEG’s MCP Server Documentation (available soon on LSEG portal). You will need to contact LSEG to get access to the MCP server.
+
+### For Organization Owners[](#for-organization-owners)
+
+1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors).
+
+2.  Scroll down and click “Add custom connector” at the bottom of the list.
+
+3.  Enter integration URL: [https://api.analytics.lseg.com/lfa/mcp(opens in new tab)](https://api.analytics.lseg.com/lfa/mcp)
+
+4.  Name the integration (e.g., “LSEG MCP”)
+
+5.  Click “Add”
+
+### For Individual Users[](#for-individual-users)
+
+Learn about [finding and connecting tools(opens in new tab)](../14-Connectors/browse-skills-connectors-and-plugins-in-one-directory.md).
+
+## Common Use Cases[](#common-use-cases)
+
+### Currency Exchange Rate Analysis[](#currency-exchange-rate-analysis)
+
+Example input prompt:
+
+What’s the current USD/EUR spot rate, and what are the 3-month and 6-month forward rates? Calculate the implied forward points for each tenor.
+
+
+
+Open in Claude
+
+**When to use:** Evaluating currency positions, pricing FX forwards, or analyzing currency basis.
+
+**Tip:** Compare spot vs. forward rates to understand market expectations for currency movements.
+
+### Interest Rate Curve Comparison[](#interest-rate-curve-comparison)
+
+Example input prompt:
+
+Show me the USD SOFR swap curve. Plot the curve and identify any unusual shapes or inflection points.
+
+
+
+Open in Claude
+
+**When to use:** Assessing interest rate risk, pricing swaps, or understanding monetary policy expectations.
+
+**Typical analysis:** Compare curves across different currencies or time periods to identify relative value opportunities.
+
+### Multi-Currency Bond Analysis[](#multi-currency-bond-analysis)
+
+Example input prompt:
+
+Price the following bonds using their ISIN codes: FR0014012I5 (French government bond) and US91282CNT44 (US Treasury). Compare their yields and calculate the spread.
+
+
+
+Open in Claude
+
+**When to use:** Portfolio construction, relative value analysis, or credit assessment across sovereign issuers.
+
+**Note:** Ensure proper currency conversion when comparing international bonds.
+
+### FX Forward Curve Construction[](#fx-forward-curve-construction)
+
+Example input prompt:
+
+For AUD/USD, show me the complete forward curve using AONIA and SOFR conventions. Display the forward points and implied forward rates for standard tenors.
+
+
+
+Open in Claude
+
+**When to use:** Structuring FX derivatives, pricing swaps, or analyzing currency carry strategies.
+
+**Works well with:** Custom valuation dates to assess forward pricing at specific points in time.
+
+### Cross-Asset Correlation Analysis[](#cross-asset-correlation-analysis)
+
+Example input prompt:
+
+Get the USD SOFR curve and EUR ESTR curve, then analyze how they’ve moved relative to each other. Are there any divergences that suggest trading opportunities?
+
+
+
+Open in Claude
+
+**When to use:** Identifying cross-currency basis trades or understanding global rate relationships.
+
+**Key benefit:** LSEG provides consistent data across asset classes for reliable correlation analysis.
+
+### Real-Time Market Data for Trading[](#real-time-market-data-for-trading)
+
+Example input prompt:
+
+I’m looking at pricing a currency swap. Get me the current EUR/USD spot rate and the EUR ESTR and USD SOFR curves for accurate valuation.
+
+
+
+Open in Claude
+
+**When to use:** Pre-trade analysis, pricing verification, or mark-to-market calculations.
+
+**Why it matters:** Real-time access ensures your analysis reflects current market conditions.
+
+## Tips for Using LSEG[](#tips-for-using-lseg)
+
+- Use specific currency pair conventions (USD/EUR, GBP/USD)
+
+- Specify tenors clearly for forward rates (3M, 6M, 1Y)
+
+- Reference bonds by ISIN codes for accurate pricing
+
+- Define valuation dates when working with forward curves
+
+- Understand curve conventions (SOFR, ESTR, AONIA) for different currencies
+
+- Cross-reference data across tools to validate analysis
+
+- [What This Integration Provides](#what-this-integration-provides)
+- [How Claude Uses LSEG Data](#how-claude-uses-lseg-data)
+- [Setting Up LSEG Integration](#setting-up-lseg-integration)
+- [Common Use Cases](#common-use-cases)
+- [Tips for Using LSEG](#tips-for-using-lseg)
+
+---
+
+## Using S&P global data for financial analysis · Claude Academy
+
+Source: https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis
+Path: 22-Safety-Policy/using-s-p-global-data-for-financial-analysis.md
+
+# Using S&P global data for financial analysis
+
+Use Claude's Kensho integration to access S&P Global's financial data for comprehensive market and fundamental analysis of public companies.
+
+15 minClaude.ai
+
+[Open Claude](https://claude.ai/new)
+
+The Kensho LLM-ready API integration provides Claude with access to S&P Global’s financial data, delivering comprehensive market and fundamental data for public companies. This article explains how to set up the Kensho integration and use S&P data for financial analysis, including price history, financial statements, segment data, and business relationships.
+
+## What This Integration Provides[](#what-this-integration-provides)
+
+### Capabilities[](#capabilities)
+
+The integration with Kensho’s LLM-ready API enables Claude to access multiple dimensions of S&P Global’s financial and market data:
+
+- **Company Identification and Information:** Retrieve company profiles using tickers, ISINs, or CUSIPs, including industry classifications, employee counts, headquarters locations, and operating status.
+
+- **Historical Price and Market Data:** Access OHLC prices, volumes, market cap, and enterprise value at daily, weekly, monthly, or yearly frequencies, with adjusted prices for accurate return calculations.
+
+- **Financial Statement Access:** Pull complete balance sheets, income statements, and cash flow statements for annual, quarterly, LTM, or YTD periods with customizable date ranges.
+
+- **Granular Financial Metrics:** Extract specific line items from 200+ available metrics including revenue, EBITDA, R&D expense, and calculated ratios like debt-to-equity.
+
+- **Segment Performance Data:** Access business unit and geographic breakdowns showing how revenue and operating income distribute across divisions (availability varies by company).
+
+- **Business Relationship Mapping:** Identify supplier relationships, customer dependencies, and strategic partnerships from SEC filings to assess operational risks.
+
+- **Competitor Intelligence:** Retrieve competitor lists from multiple sources including SEC filings, self-identification, and third-party analysis.
+
+- **Time Period Management:** Determine latest reporting periods and calculate historical quarters for consistent comparisons across companies with different fiscal years.
+
+### How Claude Uses S&P Global Data[](#how-claude-uses-sp-global-data)
+
+Claude applies Kensho's capabilities to support comprehensive financial analysis leveraging S&P Global data:
+
+- **Cross-Identifier Lookups:** Automatically handles tickers, ISINs, or CUSIPs, useful for international portfolios or fixed income securities.
+
+- **Multi-Period Analysis:** Constructs time series by pulling data across periods, calculating growth rates and identifying trend changes.
+
+- **Statement Reconciliation:** Combines data from different statements to calculate derived metrics and verify consistency.
+
+- **Peer Group Construction:** Retrieves identical metrics across companies for true apples-to-apples comparisons.
+
+- **Relationship Network Analysis:** Maps business ecosystems to reveal concentration risks and strategic positioning not apparent from financials alone.
+
+## Setting Up the Kensho Integration[](#setting-up-the-kensho-integration)
+
+Technical details of the Kensho Integration can be found in the [Kensho Integration MCP Server Documentation(opens in new tab)](https://docs.kensho.com/llmreadyapi/mcp). You will need to contact S&P Global to get access to the MCP server.
+
+### For Organization Owners[](#for-organization-owners)
+
+1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors).
+
+2.  Scroll down and click “Add custom connector" at the bottom of the list.
+
+3.  Enter the Kensho integration URL: [https://kfinance.kensho.com/integrations/mcp(opens in new tab)](https://kfinance.kensho.com/integrations/mcp)
+
+4.  Name the integration (e.g., "Kensho S&P")
+
+5.  Click "Add"
+
+### For Individual Users[](#for-individual-users)
+
+Learn about [finding and connecting tools(opens in new tab)](../14-Connectors/browse-skills-connectors-and-plugins-in-one-directory.md).
+
+## Common Use Cases[](#common-use-cases)
+
+### Comprehensive Company Profile[](#comprehensive-company-profile)
+
+Using the Kensho integration, create a complete profile for Microsoft (MSFT) including current market data, latest financial metrics, business segments, and key competitor data from S&P Global. Include market cap, enterprise value, trailing twelve-month revenue and margins, plus geographic revenue breakdown.
+
+
+
+Open in Claude
+
+This type of comprehensive profile combines multiple data types into a single analytical view. Claude retrieves current market metrics, pulls recent financial performance, and identifies segment breakdowns to show how the business operates across different units and geographies. The competitor identification adds context about the competitive environment.
+
+**When to use:** Initial company research or updating investment memos with current information.
+
+**Tip:** Request both market data and fundamentals together for a complete overview that includes valuation context alongside operational performance.
+
+### Historical Price Performance Analysis[](#historical-price-performance-analysis)
+
+Pull five years of weekly price data for Tesla (TSLA) and calculate the volatility, maximum drawdown, and performance versus the S&P 500. Include adjusted prices to account for any stock splits and show periods of highest volatility.
+
+
+
+Open in Claude
+
+Historical price analysis using S&P Global data goes beyond simple price charts. Claude can calculate risk metrics like volatility and maximum drawdown while comparing performance to benchmarks. Using adjusted prices ensures that return calculations properly account for corporate actions, providing accurate performance measurement over multi-year periods.
+
+**When to use:** Evaluating historical risk-return profiles or backtesting investment strategies.
+
+**Note:** Adjusted prices ensure accurate return calculations across corporate actions like splits and special dividends, which is essential for long-term performance analysis.
+
+### Financial Statement Deep Dive[](#financial-statement-deep-dive)
+
+Retrieve Apple's last 12 quarters of income statements and calculate the trend in gross margins, operating margins, and R&D as percentage of revenue. Show both the quarterly values and the rolling four-quarter averages to smooth seasonality.
+
+
+
+Open in Claude
+
+Financial statement analysis through Kensho allows examination of margin trends and cost structure evolution over time. Claude can pull specific line items from S&P Global datasets across multiple quarters, calculate relevant ratios, and apply smoothing techniques to identify underlying trends beyond seasonal fluctuations. This granular approach reveals operational changes that might be obscured in annual reports.
+
+**When to use:** Analyzing margin trends, cost structure changes, or earnings quality.
+
+**Tip:** LTM calculations help normalize for seasonal businesses, providing clearer trend analysis for companies with significant quarterly variations.
+
+### Competitor Benchmarking[](#competitor-benchmarking)
+
+Identify Netflix's competitors from their SEC filings and compare key metrics including subscriber growth, content costs, average revenue per user, and free cash flow margins. Focus on direct streaming competitors they specifically mention as competitive threats.
+
+
+
+Open in Claude
+
+Competitor analysis combines Kensho's relationship mapping with financial metric comparisons. Claude first identifies competitors from various sources, then retrieves comparable metrics for each company. This approach provides both the competitive landscape view and quantitative performance comparisons, helping assess relative positioning and competitive advantages.
+
+**When to use:** Industry analysis or relative valuation work.
+
+**Note:** Different source filters provide varying perspectives on competition—SEC filings show who companies view as threats, while third-party sources may identify less obvious competitive dynamics.
+
+### Segment Performance Tracking[](#segment-performance-tracking)
+
+Show Amazon's segment breakdown for the last eight quarters, including revenue and operating income by segment. Calculate the growth rates for AWS, North America retail, and International retail, and identify which segments are driving overall margin expansion.
+
+
+
+Open in Claude
+
+Segment analysis reveals the underlying drivers of consolidated performance. Claude retrieves segment-level financial data to show how different business units contribute to overall results. By tracking segment metrics over time, you can identify which divisions are accelerating or decelerating, understand margin mix shifts, and assess the quality of revenue growth.
+
+**When to use:** Understanding business mix changes and identifying growth drivers.
+
+**Tip:** Segment data reveals trends not visible in consolidated statements, particularly for conglomerates or companies undergoing business model transitions.
+
+### Supply Chain Analysis[](#supply-chain-analysis)
+
+Map NVIDIA's key business relationships including their primary chip manufacturers, major customers, and strategic technology partners. Focus on relationships mentioned in their latest 10-K filing to understand supply chain dependencies and customer concentration risks.
+
+
+
+Open in Claude
+
+Business relationship mapping through Kensho provides insights into operational dependencies and strategic positioning. Claude identifies suppliers, customers, and partners from regulatory filings in S&P Global datasets, revealing concentration risks and potential vulnerabilities. This network view complements financial analysis by highlighting operational factors that could impact future performance.
+
+**When to use:** Assessing operational risks or understanding industry value chains.
+
+**Key benefit:** Reveals dependencies not apparent from financial statements alone, such as single-source supplier risks or customer concentration that could impact revenue stability.
+
+## Tips for Using S&P Global Data[](#tips-for-using-sp-global-data)
+
+- Use any identifier format (ticker, ISIN, CUSIP) - Claude handles conversion automatically
+
+- Request specific date ranges to manage data volume and focus analysis
+
+- Combine market data with fundamentals for comprehensive analysis
+
+- Check data availability periods using the latest reporting period function
+
+- Note that segment data availability varies by company reporting practices
+
+- Be specific about which financial statement items you need from the 200+ available metrics
+
+- Consider using LTM periods for companies with significant seasonality
+
+- Remember that business relationship data comes from disclosed sources and may not capture all partnerships
+
+- [What This Integration Provides](#what-this-integration-provides)
+- [Setting Up the Kensho Integration](#setting-up-the-kensho-integration)
+- [Common Use Cases](#common-use-cases)
+- [Tips for Using S&P Global Data](#tips-for-using-sp-global-data)
 
 ---
 

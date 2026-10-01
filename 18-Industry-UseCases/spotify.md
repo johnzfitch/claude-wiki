@@ -2,7 +2,7 @@
 title: "Spotify Claude Agent SDK case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/spotify"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:15Z"
+fetched_at: "2026-09-30T06:33:00Z"
 tags: ["agents", "case-studies", "enterprise", "sdk", "security"]
 ---
 

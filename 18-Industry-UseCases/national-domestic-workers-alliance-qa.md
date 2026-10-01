@@ -2,7 +2,7 @@
 title: "National Domestic Workers Alliance Q&A | Claude | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/national-domestic-workers-alliance-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:09Z"
+fetched_at: "2026-09-30T06:32:53Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 

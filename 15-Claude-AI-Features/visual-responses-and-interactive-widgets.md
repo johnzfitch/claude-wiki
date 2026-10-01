@@ -1,8 +1,8 @@
 ---
 title: "Visual and interactive content | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13641943-visual-responses-and-interactive-widgets"
+source_url: "https://support.claude.com/en/articles/13641943-visual-and-interactive-content"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:39Z"
+fetched_at: "2026-09-30T06:32:44Z"
 tags: ["claude-ai"]
 ---
 
@@ -13,7 +13,7 @@ March 16, 2026
 
 Claude can respond with visual content when it’s clearer than plain text. Some visuals display real-world data—like weather and recipes. Others are custom-built by Claude for your specific question, like a diagram or an interactive chart. Claude can also ask you structured questions using interactive inputs instead of asking you to type.
 
-Visual responses and interactive content are available to all Claude users. Data display widgets (weather and recipes) require web search to be enabled. For setup instructions, see **[Enabling and using web search](enabling-and-using-web-search.md)**.
+Visual responses and interactive content are available to all Claude users. Data display widgets (weather and recipes) require web search to be enabled. For setup instructions, see **[Enabling and using web search](https://support.claude.com/en/articles/10684626-enabling-and-using-web-search)**.
 
 ------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ When a diagram, chart, or interactive element would explain something better tha
 
 Unlike weather and recipes, custom visuals don’t pull from a fixed data source. Claude generates the layout, logic, and interactivity specific to your question.
 
-For details and tips, see **[Custom visuals in chat](custom-visuals-in-chat-and-cowork.md)**.
+For details and tips, see **[Custom visuals in chat](https://support.claude.com/en/articles/13979539-custom-visuals-in-chat)**.
 
 ------------------------------------------------------------------------
 

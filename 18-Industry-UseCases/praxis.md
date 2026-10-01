@@ -2,7 +2,7 @@
 title: "Praxis Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/praxis"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:33:08Z"
+fetched_at: "2026-09-30T06:33:44Z"
 tags: ["api", "bedrock", "case-studies", "enterprise", "rag", "security"]
 ---
 

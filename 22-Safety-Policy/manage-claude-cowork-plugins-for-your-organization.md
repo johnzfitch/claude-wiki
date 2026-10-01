@@ -1,13 +1,12 @@
 ---
 title: "Manage plugins for your organization | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13837433-manage-claude-cowork-plugins-for-your-organization"
+source_url: "https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:32:06Z"
+fetched_at: "2026-09-30T06:32:45Z"
 tags: ["plugins", "safety"]
 ---
 
 # Manage plugins for your organization
-
 
 
 Plugin marketplaces let Team and Enterprise plan owners distribute curated plugins to everyone in their organization. You create a marketplace, add plugins to it, and control exactly which plugins your team members can see and use. Plugins you distribute appear in chat (on the web and the Chat tab in Claude Desktop), in Claude Cowork, and in Claude Code sessions where members sign in with the same Claude account.
@@ -20,7 +19,7 @@ For a reference version of these controls, see **[Manage plugins for your organi
 
 **Note:** Turning off Skills for your organization also stops skills and plugins from syncing to Claude Code, and removes the ones that already synced there. Turning off Cowork doesn't affect the sync to Claude Code. To keep skills and plugins in Claude but stop only the sync, set `syncClaudeAiSkills` and `syncClaudeAiPlugins` to `false` in Claude Code managed settings. Learn more about **[Claude Code admin setup](../01-Getting-Started/setup.md#advanced-setup)**.
 
-**Note:** Marketplaces are how owners distribute plugins to their organization. Users can also share a plugin they built with specific colleagues or groups, or submit it to be published to your organization's library. Sharing and publishing are controlled by the settings in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** in the “Policy” tab, and plugin submissions are reviewed there on the "Requests" tab. Learn more about **[using plugins in Claude](../15-Claude-AI-Features/use-plugins-in-claude-cowork.md)** and **[letting users publish skills and plugins to your organization](provisioning-and-managing-skills-for-your-organization.md#h_1abc45a27c)**[.](provisioning-and-managing-skills-for-your-organization.md#h_1abc45a27c)
+**Note:** Marketplaces are how owners distribute plugins to their organization. Users can also share a plugin they built with specific colleagues or groups, or submit it to be published to your organization's library. Sharing and publishing are controlled by the settings in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** in the “Policy” tab, and plugin submissions are reviewed there on the "Requests" tab. Learn more about **[using plugins in Claude](https://support.claude.com/en/articles/13837440-use-plugins-in-claude)** and **[letting users publish skills and plugins to your organization](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization#h_1abc45a27c)**[.](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization#h_1abc45a27c)
 
 ------------------------------------------------------------------------
 
@@ -136,7 +135,7 @@ Additional resources:
 
     1.  **[Enable Cowork](../17-Billing-Plans/use-claude-cowork-on-team-and-enterprise-plans.md#h_71cdc52dfc)**
 
-    2.  **[Enable Skills](provisioning-and-managing-skills-for-your-organization.md#h_7673241237)**
+    2.  **[Enable Skills](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization#h_7673241237)**
 
 2.  Go to **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** and click the “Marketplaces” tab.
 

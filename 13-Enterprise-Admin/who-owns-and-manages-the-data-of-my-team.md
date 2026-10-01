@@ -2,7 +2,7 @@
 title: "Who owns and manages the data of my team? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:32:10Z"
+fetched_at: "2026-09-30T06:32:15Z"
 tags: ["enterprise"]
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: "Delete your Claude account | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/9028421-how-can-i-delete-my-claude-account"
+source_url: "https://support.claude.com/en/articles/9028421"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:32:36Z"
+fetched_at: "2026-09-30T06:33:12Z"
 tags: ["account"]
 ---
 
@@ -13,7 +13,7 @@ August 19, 2026
 
 This article shows you how to permanently delete your account on the web and in the Claude mobile apps, and explains what happens to your data when you do.
 
-**Important:** Deleting your account is permanent. You'll lose access to your conversations, projects, and other saved data, and you can't recover the account afterward. If you want to keep your data, export it on web or desktop before you delete. Learn more about **[exporting your Claude data](how-can-i-export-my-claude-ai-data.md)**.
+**Important:** Deleting your account is permanent. You'll lose access to your conversations, projects, and other saved data, and you can't recover the account afterward. If you want to keep your data, export it on web or desktop before you delete. Learn more about **[exporting your Claude data](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)**.
 
 ## Before you delete a paid account
 
@@ -25,7 +25,7 @@ If you're on a Pro or Max plan:
 
 3.  Once the subscription lapses, delete your account using the steps below.
 
-For detailed cancellation instructions, including for Claude for iOS and Android, see **[Cancel your Pro or Max subscription](../17-Billing-Plans/how-do-i-cancel-my-paid-claude-subscription.md)**.
+For detailed cancellation instructions, including for Claude for iOS and Android, see **[Cancel your Pro or Max subscription](https://support.claude.com/en/articles/8325617)**.
 
 ## Delete your account on the web
 
@@ -67,6 +67,6 @@ When you delete your account, you’ll no longer have access to your conversatio
 
 ## When you need to contact support
 
-In some scenarios you'll need to contact our team to delete your account. If this applies to you, it'll be noted in your account settings. Learn more about **[how to get support](how-can-i-contact-support.md)**.
+In some scenarios you'll need to contact our team to delete your account. If this applies to you, it'll be noted in your account settings. Learn more about **[how to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
 
 If you have multiple accounts associated with the same email address, you'll need to specify which accounts you want to delete when you contact us.

@@ -248,7 +248,7 @@ To learn more, see [Using Agent Skills with the API](../Guides/build-with-claude
 
 ### Claude Code
 
-[Claude Code](../../02-Claude-Code-CLI/code-home.md) supports custom Skills. The pre-built document Skills (PowerPoint, Excel, Word, PDF) are not available in Claude Code, though the open-source [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md) comes bundled with it. See the full list of [built-in commands and Skills](../../02-Claude-Code-CLI/commands.md) that ship with Claude Code.
+[Claude Code](https://platform.claude.com/docs/en/01-Getting-Started/overview.md) supports custom Skills. The pre-built document Skills (PowerPoint, Excel, Word, PDF) are not available in Claude Code, though the open-source [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md) comes bundled with it. See the full list of [built-in commands and Skills](https://platform.claude.com/docs/en/02-Claude-Code-CLI/built-in-commands-claude-code-docs.md) that ship with Claude Code.
 
 **Custom Skills:** Create Skills as directories with SKILL.md files. Claude discovers and uses them automatically.
 
@@ -267,8 +267,8 @@ To learn more, see [Use Skills in Claude Code](../../08-Plugins-Skills/skills.md
 To learn more about using Skills in claude.ai, see the following resources in the Claude Help Center:
 
 - [What are Skills?](../../02-Claude-Code-CLI/what-are-skills.md)
-- [Using Skills in Claude](../../02-Claude-Code-CLI/using-skills-in-claude.md)
-- [How to create custom Skills](../../02-Claude-Code-CLI/how-to-create-custom-skills.md)
+- [Using Skills in Claude](https://platform.claude.com/docs/en/99-Other/using-skills-in-claude-a1bdb5a95a.md)
+- [How to create custom Skills](https://platform.claude.com/docs/en/02-Claude-Code-CLI/creating-custom-skills-eb687e04e2.md)
 - [Teach Claude your way of working using Skills](../../15-Claude-AI-Features/teach-claude-your-way-of-working-using-skills.md)
 
 ## Skill structure

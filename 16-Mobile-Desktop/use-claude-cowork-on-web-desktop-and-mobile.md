@@ -1,16 +1,19 @@
 ---
 title: "Use Claude Cowork on web, desktop, and mobile | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile"
+source_url: "https://support.claude.com/en/articles/15520349"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-29T06:32:21Z"
+fetched_at: "2026-09-30T06:32:08Z"
 tags: ["desktop", "mobile"]
 ---
 
 # Use Claude Cowork on web, desktop, and mobile
 
+Updated today
 
 
-**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](../15-Claude-AI-Features/claude-cowork-and-chat-are-one-claude.md)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+
+**Heads-up for Pro and Max plans:** On October 6, 2026, new Cowork tasks run in the cloud and the **Only on your computer** option in **[Settings \> General](https://claude.ai/settings/general)** will be removed. Tasks you already started on your computer stay there. See **[What's changing for Pro and Max plans on October 6](#h_f951c27c48)** below.
 
 Claude Cowork is available on desktop, web, mobile, and in the Claude in Chrome side panel. Your sessions and files live with your Claude account and go where you go, on any device. This article explains how to start a Cowork session and what's available on each surface.
 
@@ -48,7 +51,25 @@ When using Cowork in the cloud, Claude's work runs on Anthropic's servers instea
 
 - Sessions run in the cloud on every surface.
 
-For details on how cloud and local sessions are isolated and what each can access, see **[Claude Cowork architecture overview](../15-Claude-AI-Features/claude-cowork-architecture-overview.md)**. For safety guidance, see **[Use Claude Cowork safely](../15-Claude-AI-Features/use-claude-cowork-safely.md)**.
+For details on how cloud and local sessions are isolated and what each can access, see **[Claude Cowork architecture overview](../15-Claude-AI-Features/claude-cowork-architecture-overview.md)**. For safety guidance, see **[Use Claude Cowork safely](https://support.claude.com/en/articles/13364135)**.
+
+------------------------------------------------------------------------
+
+## What's changing for Pro and Max plans on October 6
+
+On October 6, 2026, new Cowork tasks on Pro and Max plans run in the cloud. The **Only on your computer** option in **[Settings \> General](https://claude.ai/settings/general)** will be removed, and there's nothing you need to set up.
+
+Tasks you already started on your computer stay there, and you can keep working on them until they're done. Each one shows a note at the top with a button to download its transcript, in case you want to continue that work in Claude Code.
+
+Your folders stay on your computer. Claude reaches only the folders you've connected, through the desktop app, and only while it's open. When a task needs a file in the cloud, Claude fetches a copy of just that file. When you delete a session, the copies Claude fetched are deleted too, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**. Whether your conversations are used to improve Claude follows the **Help improve our AI models** setting in **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**.
+
+Your scheduled tasks move to the cloud too, including ones that use files on your computer. Tasks that use files on your computer need the desktop app open. See **[Schedule recurring tasks in Claude Cowork](../15-Claude-AI-Features/schedule-recurring-tasks-in-claude-cowork.md)**.
+
+### If you want tasks to run on your computer
+
+Some work has to stay on one machine. Claude Code in the desktop app runs on your computer and keeps your folders and history there. **[Get Claude Code desktop](https://claude.com/download)**. To bring past work with you, download a task's transcript from the note at the top of the task, or download your full Cowork history from the notice in the app, and open it in Claude Code. Your projects and scheduled tasks don't carry over to Claude Code.
+
+If you use Claude at work and at home and want them separate, use a separate account for each. Shared logins aren't supported.
 
 ------------------------------------------------------------------------
 
@@ -62,7 +83,7 @@ A few notes on the table:
 
 - \*Local file access, local connectors, browser use, and computer use from web and mobile work through the Claude Desktop app. A cloud session can read and write files in folders you've connected on your computer only while the desktop app is open on that computer and the session was started on desktop. If the app is closed, the session keeps running but can't reach your local files.
 
-- Projects are available on every surface. From a project you can start a chat or a Cowork session, and Claude uses the project's knowledge as context. Projects tied to a local folder support Cowork sessions on desktop only, and Cowork won't change a project's contents, so add anything you want to keep to the project yourself. For more information, see **[Organize your tasks with projects in Claude Cowork](../15-Claude-AI-Features/organize-your-tasks-with-projects-in-claude-cowork.md)** and **[Use live artifacts in Claude Cowork](../15-Claude-AI-Features/use-live-artifacts-in-claude-cowork.md)**.
+- Projects are available on every surface. From a project you can start a chat or a Cowork session, and Claude uses the project's knowledge as context. Projects tied to a local folder support Cowork sessions on desktop only, and Cowork won't change a project's contents, so add anything you want to keep to the project yourself. For more information, see **[Organize your tasks with projects in Claude Cowork](https://support.claude.com/en/articles/14116274)** and **[Use live artifacts in Claude Cowork](../15-Claude-AI-Features/use-live-artifacts-in-claude-cowork.md)**.
 
 - Artifacts created on or after August 19, 2026 are available on the desktop app and web. Live artifacts created before that date are available on the desktop app only. For more information, see **[Use artifacts in Claude Cowork](../15-Claude-AI-Features/use-live-artifacts-in-claude-cowork.md)**.
 
@@ -80,7 +101,7 @@ Some capabilities reach things on your computer, so they need the Claude Desktop
 
 - **Local connectors.** This includes plugins using those connectors.
 
-- **Browser use.** On desktop, Claude uses a browser built into the Claude Desktop app by default (rolling out gradually this week), or your own Chrome browser through Claude in Chrome if that's your preferred browser. When the desktop app is online, the built-in browser is also available in Cowork on web or mobile. A session started on desktop can be steered from web or mobile while the desktop app stays open. In the Chrome side panel, Claude can read the tab you're on without the desktop app. Claude driving a browser as part of a task still needs the desktop app open. Learn more in **[Use the built-in browser in Claude Cowork](../15-Claude-AI-Features/use-the-built-in-browser-in-claude-cowork.md)**.
+- **Browser use.** On desktop, Claude uses a browser built into the Claude Desktop app by default (rolling out gradually this week), or your own Chrome browser through Claude in Chrome if that's your preferred browser. When the desktop app is online, the built-in browser is also available in Cowork on web or mobile. A session started on desktop can be steered from web or mobile while the desktop app stays open. In the Chrome side panel, Claude can read the tab you're on without the desktop app. Claude driving a browser as part of a task still needs the desktop app open. Learn more in **[Use the built-in browser in Claude Cowork](https://support.claude.com/en/articles/16607400)**.
 
 - **Computer use.** Claude clicks, types, and navigates your screen directly.
 
@@ -96,4 +117,4 @@ When using Cowork in the cloud, sessions follow your account, so you can switch 
 
 For example, start a task in the Chrome side panel while you're looking at a dashboard, then pick it up on desktop to work with the downloaded files.
 
-When Claude finishes a task or needs your input, you'll get a notification on your phone. To get started, see **[Get started with Claude Cowork](../15-Claude-AI-Features/getting-started-with-local-agent-mode.md)**.
+When Claude finishes a task or needs your input, you'll get a notification on your phone. To get started, see **[Get started with Claude Cowork](https://support.claude.com/en/articles/13345190)**.

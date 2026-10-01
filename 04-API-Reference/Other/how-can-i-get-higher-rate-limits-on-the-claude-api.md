@@ -2,7 +2,7 @@
 title: "How can I get higher rate limits on the Claude API? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10366389-how-can-i-get-higher-rate-limits-on-the-claude-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-29T06:31:10Z"
+fetched_at: "2026-09-30T06:32:17Z"
 tags: ["api"]
 ---
 

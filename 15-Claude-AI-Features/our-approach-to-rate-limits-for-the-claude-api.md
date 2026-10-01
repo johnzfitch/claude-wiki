@@ -2,7 +2,7 @@
 title: "Our approach to rate limits for the Claude API | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8243635-our-approach-to-rate-limits-for-the-claude-api"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:32Z"
+fetched_at: "2026-09-30T06:32:19Z"
 tags: ["api", "claude-ai"]
 ---
 

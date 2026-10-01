@@ -2,7 +2,7 @@
 title: "What are some things I can use Claude for? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/7996845-what-are-some-things-i-can-use-claude-for"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:28Z"
+fetched_at: "2026-09-30T06:32:15Z"
 tags: ["claude-ai"]
 ---
 

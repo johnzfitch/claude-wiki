@@ -2,12 +2,11 @@
 title: "Assign a program to workspaces in Claude Console | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16764810-assign-a-program-to-workspaces-in-claude-console"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:32:26Z"
+fetched_at: "2026-09-30T06:32:13Z"
 tags: ["account"]
 ---
 
 # Assign a program to workspaces in Claude Console
-
 
 
 Anthropic offers several verification programs, such as the Cyber Verification Program, or access to models that might not be generally available. In order to gain access to these programs, go to our **[Verification Portal](https://portal.anthropic.com/)** to see what programs are available to you, and apply.

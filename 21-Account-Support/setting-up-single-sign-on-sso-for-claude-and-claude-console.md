@@ -1,13 +1,12 @@
 ---
 title: "Set up single sign-on (SSO) | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso-for-claude-and-claude-console"
+source_url: "https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:31:59Z"
+fetched_at: "2026-09-30T06:32:38Z"
 tags: ["account"]
 ---
 
 # Set up single sign-on (SSO)
-
 
 
 Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
@@ -101,7 +100,7 @@ If the record is correct and propagated but the status still shows Pending, cont
 
 5.  Once complete, navigate back to the **Organization and access** settings page for further configuration options.
 
-**Important:** SSO enforcement might result in users being unable to log in if they are not correctly assigned to the Anthropic app in the IdP. If you have more than one Claude/Console org connected to your “parent org,” you will want to consider creating a unique IdP Group for each. For more information, see **[enable group mappings](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md#h_adee31eeba)**.
+**Important:** SSO enforcement might result in users being unable to log in if they are not correctly assigned to the Anthropic app in the IdP. If you have more than one Claude/Console org connected to your “parent org,” you will want to consider creating a unique IdP Group for each. For more information, see **[enable group mappings](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning#h_adee31eeba)**.
 
 For IdP-specific setup instructions, see:
 
@@ -134,13 +133,13 @@ Before you decide, review **[What happens to existing users when SSO is enabled]
 
 Once SSO is enabled, you need to decide how users will be added to your organization by choosing an option within the **User provisioning** section of your **Organization and access** settings.
 
-**Invite only** is the default. Users are added and removed directly in your Claude or Console settings. Please see **[Manage members on Team and Enterprise plans](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**.
+**Invite only** is the default. Users are added and removed directly in your Claude or Console settings. Please see **[Manage members on Team and Enterprise plans](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)**.
 
 **Just-in-Time (JIT) provisioning** can be enabled to automatically provision users when they first log in. By default, users assigned to your Anthropic IdP app first login, they will receive the User role. This is the simplest automated option and requires no additional configuration beyond selecting "Just-in-Time (JIT)" as your provisioning mode.
 
 ### Enable group mappings - when to configure additional provisioning features
 
-For more control over provisioning, see **[Set up JIT or SCIM provisioning](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)**. You'll want to review this guide if you need to:
+For more control over provisioning, see **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning)**. You'll want to review this guide if you need to:
 
 - Automatically assign roles or seat tiers based on IdP group membership.
 
@@ -170,7 +169,7 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 
 5.  Click "Test sign-in" on the same page to confirm everything is working.
 
-**Important:** If **Require SSO** is turned on and your certificate has already expired, no one in your organization can sign in to update it, because every sign-in option routes through SSO. **[Contact Support](how-can-i-contact-support.md)** from an Owner’s or Primary Owner’s email address and we’ll help you regain access so an Owner can update the certificate. To avoid this, note your certificate’s expiry date in your Identity Provider and rotate it ahead of time.
+**Important:** If **Require SSO** is turned on and your certificate has already expired, no one in your organization can sign in to update it, because every sign-in option routes through SSO. **[Contact Support](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** from an Owner’s or Primary Owner’s email address and we’ll help you regain access so an Owner can update the certificate. To avoid this, note your certificate’s expiry date in your Identity Provider and rotate it ahead of time.
 
 ------------------------------------------------------------------------
 

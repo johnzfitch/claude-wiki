@@ -2,7 +2,7 @@
 title: "Using PitchBook for investment research · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12621857-using-pitchbook-for-investment-research"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-25T06:29:36Z"
+fetched_at: "2026-09-30T06:31:40Z"
 tags: ["claude-ai", "search"]
 ---
 

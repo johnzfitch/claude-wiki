@@ -2,17 +2,16 @@
 title: "What is the Pro plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:07Z"
+fetched_at: "2026-09-30T06:33:09Z"
 tags: ["billing"]
 ---
 
 # What is the Pro plan?
 
 
-
 This article is about paid Pro plans for individual consumers. If you're part of an organization looking to use Claude with your team, refer to **[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)**.
 
-The Pro plan is a paid plan for our Claude chat experience. It is currently available in certain **[supported locations](../21-Account-Support/where-can-i-access-claude-ai.md)**.
+The Pro plan is a paid plan for our Claude chat experience. It is currently available in certain **[supported locations](../15-Claude-AI-Features/where-can-i-access-claude.md)**.
 
 ## Key benefits
 
@@ -24,13 +23,13 @@ The benefits of the Pro plan are:
 
 - Early access to new features that help you get the most out of Claude.
 
-- **[Claude Code access](using-claude-code-with-your-pro-or-max-plan.md)**
+- **[Claude Code access](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)**
 
-- **[Longer, multi-step tasks](../15-Claude-AI-Features/claude-cowork-and-chat-are-one-claude.md)**
+- **[Longer, multi-step tasks](https://support.claude.com/en/articles/16761823)**
 
 Learn how to **[sign up for the Pro plan](../21-Account-Support/how-do-i-sign-up-for-the-pro-plan.md)**.
 
-**Note:** The Pro plan does not include API usage through the Claude Console. If you're interested in both enhanced Claude features and the Claude API, you'll need to **[set up Console access](../04-API-Reference/Other/how-can-i-access-the-anthropic-api.md)** to pay for API usage separately.
+**Note:** The Pro plan does not include API usage through the Claude Console. If you're interested in both enhanced Claude features and the Claude API, you'll need to **[set up Console access](https://support.claude.com/en/articles/8114521-how-can-i-access-the-claude-api)** to pay for API usage separately.
 
 ------------------------------------------------------------------------
 
@@ -60,7 +59,7 @@ Pro plans also have a weekly usage limit that applies across all models. Weekly 
 
 In addition, to manage capacity and ensure fair access to all users, we may limit your usage in other ways, such as weekly and monthly caps or model and feature usage, at our discretion.
 
-For more information about usage and length limits, refer to **[Understanding usage and length limits](../22-Safety-Policy/understanding-usage-and-length-limits.md)**. For guidance on using your Pro capacity efficiently, we also have **[Usage limit best practices](../22-Safety-Policy/usage-limit-best-practices.md)**.
+For more information about usage and length limits, refer to **[Understanding usage and length limits](../22-Safety-Policy/understanding-usage-and-length-limits.md)**. For guidance on using your Pro capacity efficiently, we also have **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
 
 **Note:** If you have a limit reset, you can use it to reset your five-hour session limit or weekly usage limits back to full. Learn more **[about limit resets](../15-Claude-AI-Features/what-is-a-limit-reset.md)**.
 

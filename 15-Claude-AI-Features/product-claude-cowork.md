@@ -267,7 +267,7 @@ Claude Cowork takes real actions on your files and in connected tools. Enterpris
 
 Read our safety guide
 
-[Read our safety guide](use-claude-cowork-safely.md)
+[Read our safety guide](https://www.anthropic.com/product/using-cowork-safely-5242646d14.md)
 
 Read our safety guide
 
@@ -277,7 +277,7 @@ You choose the folders and tools. Claude can't reach anything else. Deleting any
 
 Learn more
 
-[Learn more](use-claude-cowork-safely.md)
+[Learn more](https://www.anthropic.com/product/use-cowork-safely-1b4f97aed9.md)
 
 Learn more
 
@@ -397,9 +397,9 @@ Get Enterprise plan
 
 Get Enterprise plan
 
-[Usage limits](../22-Safety-Policy/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits](../22-Safety-Policy/usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
 
 ## FAQ
 
@@ -461,7 +461,7 @@ This article explains how to use Claude Cowork to bring Claude Code's agentic ca
 
 Read more
 
-[Read more](getting-started-with-local-agent-mode.md)
+[Read more](https://www.anthropic.com/product/getting-started-with-cowork-c31b8b2b19.md)
 
 Read more
 
@@ -718,17 +718,17 @@ Models
 
 - Opus
 
-  [Opus](claude-opus.md)
+  [Opus](https://www.anthropic.com/product/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](claude-sonnet.md)
+  [Sonnet](https://www.anthropic.com/product/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](claude-haiku.md)
+  [Haiku](https://www.anthropic.com/product/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Solutions

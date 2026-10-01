@@ -238,11 +238,11 @@ Start a Claude Code routine session on demand by sending an authenticated POST r
 
 This is an experimental API. Request and response shapes, rate limits, and token semantics might change.
 
-[Claude Code](../../02-Claude-Code-CLI/code-home.md) is Anthropic's agentic coding tool. [Claude Code on the web](../../02-Claude-Code-CLI/claude-code-on-the-web.md) runs Claude Code sessions on Anthropic-managed cloud infrastructure at claude.ai/code, and a [routine](../../02-Claude-Code-CLI/web-scheduled-tasks.md) is a saved configuration there: a prompt, one or more repositories, and connectors, packaged so it can run unattended on a schedule, in response to GitHub events, or when called over HTTP.
+[Claude Code](https://platform.claude.com/docs/en/api/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md) is Anthropic's agentic coding tool. [Claude Code on the web](https://platform.claude.com/docs/en/api/02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md) runs Claude Code sessions on Anthropic-managed cloud infrastructure at claude.ai/code, and a [routine](../../02-Claude-Code-CLI/web-scheduled-tasks.md) is a saved configuration there: a prompt, one or more repositories, and connectors, packaged so it can run unattended on a schedule, in response to GitHub events, or when called over HTTP.
 
 This endpoint is the HTTP entry point. POSTing to it starts a new run of an existing routine and returns the resulting session ID and URL. Typical callers are alerting systems, CI pipelines, and internal tools that need to start a Claude Code session programmatically.
 
-Calling this endpoint requires a claude.ai account on a Pro, Max, Team, or Enterprise plan with [Claude Code on the web](../../02-Claude-Code-CLI/claude-code-on-the-web.md) enabled. Authenticate with a per-routine bearer token created in the Claude Code web UI rather than a Claude API key.
+Calling this endpoint requires a claude.ai account on a Pro, Max, Team, or Enterprise plan with [Claude Code on the web](https://platform.claude.com/docs/en/api/02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md) enabled. Authenticate with a per-routine bearer token created in the Claude Code web UI rather than a Claude API key.
 
 ## Differences from the Claude Platform
 
@@ -4793,7 +4793,7 @@ Batches may be canceled any time before processing ends. Once cancellation is in
 
 The number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.
 
-Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
+Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
 
 ##### Path parameters
 
@@ -5143,7 +5143,7 @@ Send a batch of Message creation requests.
 
 The Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.
 
-Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
+Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
 
 ##### Headers
 
@@ -5201,7 +5201,7 @@ params: object{ max_tokens, messages, model, 16 more }
 
 Messages API creation parameters for the individual request.
 
-See the [Messages API reference](messages.md) for full documentation on available parameters.
+See the [Messages API reference](https://platform.claude.com/docs/en/api/messages/batches/api-messages-2dd213ca95.md) for full documentation on available parameters.
 
 
 
@@ -5280,7 +5280,7 @@ Each input message `content` may be either a single `string` or an array of cont
 
 See [input examples](../Guides/build-with-claude-working-with-messages.md).
 
-Note that if you want to include a [system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
+Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/api/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
 
 There is a limit of 100,000 messages in a single request.
 
@@ -5793,7 +5793,7 @@ service_tier: optional "auto" or "standard_only"
 
 Determines whether to use priority capacity (if available) or standard capacity for this request.
 
-Anthropic offers different levels of service for your API requests. See [service-tiers](service-tiers.md) for details.
+Anthropic offers different levels of service for your API requests. See [service-tiers](https://platform.claude.com/docs/en/api/messages/batches/api-service-tiers-165fc24251.md) for details.
 
 One of the following:
 
@@ -5835,7 +5835,7 @@ system: optional string or array of [TextBlockParam](https://platform.claude.com
 
 System prompt.
 
-A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role).
+A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/api/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role).
 
 One of the following:
 
@@ -6182,7 +6182,7 @@ Definitions of tools that the model may use.
 
 If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.
 
-There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)).
+There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://platform.claude.com/docs/en/api/messages/api-web-search.md)).
 
 Each tool definition includes:
 
@@ -6244,7 +6244,7 @@ You might then run your `get_stock_price` tool with `{"ticker": "^GSPC"}` as an 
 
 Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.
 
-See our [guide](../Agents-Tools/agents-and-tools-tool-use-overview.md) for more details.
+See our [guide](https://platform.claude.com/docs/en/api/messages/tool-use-overview.md) for more details.
 
 One of the following:
 
@@ -6781,7 +6781,7 @@ Delete a Message Batch.
 
 Message Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.
 
-Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
+Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
 
 ##### Path parameters
 
@@ -7120,7 +7120,7 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 List all Message Batches within a Workspace. Most recently created batches are returned first.
 
-Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
+Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
 
 ##### Query parameters
 
@@ -7692,7 +7692,7 @@ Streams the results of a Message Batch as a `.jsonl` file.
 
 Each line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
 
-Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
+Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
 
 ##### Path parameters
 
@@ -8013,7 +8013,7 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.
 
-Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
+Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
 
 ##### Path parameters
 
@@ -8935,7 +8935,7 @@ Each input message `content` may be either a single `string` or an array of cont
 
 See [input examples](../Guides/build-with-claude-working-with-messages.md).
 
-Note that if you want to include a [system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
+Note that if you want to include a [system prompt](https://platform.claude.com/docs/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
 
 There is a limit of 100,000 messages in a single request.
 
@@ -9322,7 +9322,7 @@ system: optional string or array of [TextBlockParam](https://platform.claude.com
 
 System prompt.
 
-A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role).
+A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role).
 
 One of the following:
 
@@ -9669,7 +9669,7 @@ Definitions of tools that the model may use.
 
 If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.
 
-There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)).
+There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://platform.claude.com/docs/en/api-web-search.md)).
 
 Each tool definition includes:
 
@@ -9731,7 +9731,7 @@ You might then run your `get_stock_price` tool with `{"ticker": "^GSPC"}` as an 
 
 Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.
 
-See our [guide](../Agents-Tools/agents-and-tools-tool-use-overview.md) for more details.
+See our [guide](https://platform.claude.com/docs/en/tool-use-overview.md) for more details.
 
 One of the following:
 
@@ -10246,7 +10246,7 @@ Each input message `content` may be either a single `string` or an array of cont
 
 See [input examples](../Guides/build-with-claude-working-with-messages.md).
 
-Note that if you want to include a [system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
+Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
 
 There is a limit of 100,000 messages in a single request.
 
@@ -10759,7 +10759,7 @@ service_tier: optional "auto" or "standard_only"
 
 Determines whether to use priority capacity (if available) or standard capacity for this request.
 
-Anthropic offers different levels of service for your API requests. See [service-tiers](service-tiers.md) for details.
+Anthropic offers different levels of service for your API requests. See [service-tiers](https://platform.claude.com/docs/en/api/messages/api-service-tiers-165fc24251.md) for details.
 
 One of the following:
 
@@ -10801,7 +10801,7 @@ system: optional string or array of [TextBlockParam](https://platform.claude.com
 
 System prompt.
 
-A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role).
+A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role).
 
 One of the following:
 
@@ -11148,7 +11148,7 @@ Definitions of tools that the model may use.
 
 If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.
 
-There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)).
+There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://platform.claude.com/docs/en/api/api-web-search.md)).
 
 Each tool definition includes:
 
@@ -11210,7 +11210,7 @@ You might then run your `get_stock_price` tool with `{"ticker": "^GSPC"}` as an 
 
 Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.
 
-See our [guide](../Agents-Tools/agents-and-tools-tool-use-overview.md) for more details.
+See our [guide](https://platform.claude.com/docs/en/api/tool-use-overview.md) for more details.
 
 One of the following:
 
@@ -11799,7 +11799,7 @@ The request could assist the development of competing AI models, which is restri
 
 
 
-The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](../Guides/build-with-claude-thinking-steering-and-cost.md).
+The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](https://platform.claude.com/docs/en/api/Guides/build-with-claude-adaptive-thinking-2b96627d8d.md).
 
 "general_harms"
 
@@ -15942,7 +15942,7 @@ The request could assist the development of competing AI models, which is restri
 
 
 
-The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](../Guides/build-with-claude-thinking-steering-and-cost.md).
+The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](https://platform.claude.com/docs/en/Guides/build-with-claude-adaptive-thinking-2b96627d8d.md).
 
 "general_harms"
 
@@ -20819,7 +20819,7 @@ Each input message `content` may be either a single `string` or an array of cont
 
 See [input examples](../Guides/build-with-claude-working-with-messages.md).
 
-Note that if you want to include a [system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
+Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
 
 There is a limit of 100,000 messages in a single request.
 
@@ -21208,7 +21208,7 @@ system: optional string or array of [TextBlockParam](https://platform.claude.com
 
 System prompt.
 
-A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role).
+A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role).
 
 One of the following:
 
@@ -21555,7 +21555,7 @@ Definitions of tools that the model may use.
 
 If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.
 
-There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)).
+There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://platform.claude.com/docs/en/api/api-web-search.md)).
 
 Each tool definition includes:
 
@@ -21617,7 +21617,7 @@ You might then run your `get_stock_price` tool with `{"ticker": "^GSPC"}` as an 
 
 Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.
 
-See our [guide](../Agents-Tools/agents-and-tools-tool-use-overview.md) for more details.
+See our [guide](https://platform.claude.com/docs/en/api/tool-use-overview.md) for more details.
 
 One of the following:
 

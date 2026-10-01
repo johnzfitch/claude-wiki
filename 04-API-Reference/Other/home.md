@@ -240,6 +240,6 @@ Latest features and updates.
 
 
 
-[Claude Code](../../02-Claude-Code-CLI/code-home.md)
+[Claude Code](https://platform.claude.com/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md)
 
 An agentic coding assistant in your terminal.

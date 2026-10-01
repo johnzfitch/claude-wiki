@@ -1,8 +1,8 @@
 ---
 title: "Use connectors to extend Claude's capabilities | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
+source_url: "https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp"
 category: "14-Connectors"
-fetched_at: "2026-09-29T06:31:42Z"
+fetched_at: "2026-09-30T06:32:22Z"
 tags: ["connectors", "enterprise", "security"]
 ---
 
@@ -77,7 +77,7 @@ To connect a service from the directory:
 
 Before members of Team and Enterprise plans can use connectors, an Owner or Primary Owner needs to enable them for the organization. Enabling a connector makes it available to your team, but it doesn't automatically grant anyone access. Each person still needs to authenticate individually before they can use it.
 
-**Note:** With Enterprise-managed auth, you authorize a connector once for your entire organization, and your team inherits access automatically on first login. Enterprise-managed auth is available in beta for Team and Enterprise plans on Claude. Learn about **[authorizing MCP connectors for your entire organization](authorize-mcp-connectors-for-your-entire-organization.md)**.
+**Note:** With Enterprise-managed auth, you authorize a connector once for your entire organization, and your team inherits access automatically on first login. Enterprise-managed auth is available in beta for Team and Enterprise plans on Claude. Learn about **[authorizing MCP connectors for your entire organization](https://support.claude.com/en/articles/15537633)**.
 
 1.  Navigate to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
 
@@ -175,7 +175,7 @@ In addition to directory connectors, you can add custom connectors:
 
 6.  Click “Add,” then follow the same connection process as directory connectors.
 
-Custom connectors connect to your MCP server from Anthropic's cloud, not from your local device. Your server must be reachable over the public internet. If it's behind a firewall or on a private network, see **[Get started with custom connectors using remote MCP](getting-started-with-custom-integrations-using-remote-mcp.md)** for network requirements and private network options.
+Custom connectors connect to your MCP server from Anthropic's cloud, not from your local device. Your server must be reachable over the public internet. If it's behind a firewall or on a private network, see **[Get started with custom connectors using remote MCP](https://support.claude.com/en/articles/11175166)** for network requirements and private network options.
 
 **Important:** Custom connectors allow you to connect Claude to services that haven't been verified by Anthropic. Only connect to servers from trusted organizations and review authentication permissions carefully.
 
@@ -223,4 +223,4 @@ Admins can learn more about **[restricting verified-domain connectors to your En
 
 Custom connectors (remote MCP servers) are reached from Anthropic's cloud infrastructure, not from your local machine. This is true even if you're using Cowork or Claude Desktop, which run locally on your computer. If your MCP server is behind a corporate firewall, on a private network, or not reachable over the public internet, the connection will fail.
 
-To resolve this, you can either allowlist Anthropic's IP ranges in your firewall to create a secure outbound-only connection from your network. For detailed guidance, see the network requirements section in **[Get started with custom connectors using remote MCP](getting-started-with-custom-integrations-using-remote-mcp.md)**.
+To resolve this, you can either allowlist Anthropic's IP ranges in your firewall to create a secure outbound-only connection from your network. For detailed guidance, see the network requirements section in **[Get started with custom connectors using remote MCP](https://support.claude.com/en/articles/11175166)**.

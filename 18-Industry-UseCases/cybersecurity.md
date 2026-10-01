@@ -356,7 +356,7 @@ Review code for security at every stage of development. Claude checks its own ed
 
 Code Review in Claude Code
 
-[Code Review in Claude Code](../02-Claude-Code-CLI/code-review.md)
+[Code Review in Claude Code](https://www.claude.com/02-Claude-Code-CLI/code-review-09694cae75.md)
 
 Code Review in Claude Code
 
@@ -396,7 +396,7 @@ Claude reads code carefully, understands real risks, and sustains the long workf
 
 Learn more
 
-[Learn more](../20-Models/real-time-cyber-safeguards-on-claude-opus-and-sonnet.md)
+[Learn more](https://www.claude.com/99-Other/real-time-cyber-safeguards-on-claude-7906f65cc7.md)
 
 Learn more
 
@@ -777,17 +777,17 @@ Models
 
 - Opus
 
-  [Opus](../15-Claude-AI-Features/claude-opus.md)
+  [Opus](https://www.claude.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+  [Sonnet](https://www.claude.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+  [Haiku](https://www.claude.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Enterprise
@@ -904,7 +904,7 @@ Developers
 
 - Developer docs
 
-  [Developer docs](../02-Claude-Code-CLI/code-home.md)
+  [Developer docs](https://www.claude.com/01-Getting-Started/overview.md)
   Developer docs
 
 - Developer blog

@@ -2,7 +2,7 @@
 title: "Automate work with routines - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/web-scheduled-tasks"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:30:22Z"
+fetched_at: "2026-09-30T06:32:01Z"
 tags: ["claude-code"]
 ---
 
@@ -74,7 +74,7 @@ Create a routine from the web at [claude.ai/code/routines](https://claude.ai/cod
 - The publish carries only the page, with no supporting files or anything else added, and doesn’t force over a newer version
 - The page holds no grant that reaches beyond the page, such as [connector calls](artifacts.md#pull-live-data-with-mcp-connectors)
 
-In every other case, including publishing a new artifact, Claude asks first. When a routine’s job is to keep a page current, give it an artifact you already published. Routines belong to your individual claude.ai account. They are not shared with teammates, and they count against your account’s daily run allowance. Anything a routine does through your connected GitHub identity or connectors appears as you: commits and pull requests carry your GitHub user, and Slack messages, Linear tickets, or other connector actions use your linked accounts for those services.
+In every other case, including publishing a new artifact, Claude asks first. When a routine’s job is to keep a page current, give it an artifact you already published. Routines belong to your individual claude.ai account. They are not shared with teammates, and their runs count against your account’s [usage and limits](#usage-and-limits). Anything a routine does through your connected GitHub identity or connectors appears as you: commits and pull requests carry your GitHub user, and Slack messages, Linear tickets, or other connector actions use your linked accounts for those services.
 
 
 [​](#create-from-the-web)
@@ -177,7 +177,7 @@ A one-off schedule fires the routine a single time at a specific timestamp. Use 
 /schedule in 2 weeks, open a cleanup PR that removes the feature flag
 ```
 
-The same local-to-UTC conversion as recurring schedules applies to one-off timestamps. One-off runs do not count against the daily routine run cap. See [Usage and limits](#usage-and-limits) for details.
+The same local-to-UTC conversion as recurring schedules applies to one-off timestamps. One-off runs count against the same hourly limit as other scheduled runs. See [Usage and limits](#usage-and-limits) for details.
 
 
 [​](#add-an-api-trigger)
@@ -256,7 +256,6 @@ Add a GitHub trigger
 
 A GitHub trigger starts a new session automatically when a matching event occurs on a connected repository. Claude Code doesn’t reuse sessions across events, so two PR updates produce two independent sessions.
 
-During the research preview, GitHub webhook events are subject to per-routine and per-account hourly caps. Events beyond the limit are dropped until the window resets. See your current limits at [claude.ai/code/routines](https://claude.ai/code/routines).
 
 The Claude GitHub App must be installed on the repository you want to subscribe to, whichever surface you configure the trigger from.
 
@@ -415,7 +414,17 @@ See [Network access](cloud-environments.md#network-access) for details on access
 
 Usage and limits
 
-Routines draw down subscription usage the same way interactive sessions do. In addition to the standard subscription limits, routines have a daily cap on how many runs can start per account. See your current consumption and remaining daily routine runs at [claude.ai/code/routines](https://claude.ai/code/routines) or [claude.ai/settings/usage](https://claude.ai/settings/usage). When a routine hits the daily cap or your subscription usage limit, organizations with usage credits turned on can keep running routines on metered overage. Without usage credits, additional runs are rejected until the window resets. Turn on usage credits at [claude.ai/settings/usage](https://claude.ai/settings/usage). On Team and Enterprise plans, an admin turns them on for the organization at [claude.ai/admin-settings/usage](https://claude.ai/admin-settings/usage). One-off runs do not count against the daily routine cap. They draw down your regular subscription usage like any other session. While your subscription is paused, your routines are put on hold and don’t run. Once your subscription is active again, turn them back on.
+Routines draw down subscription usage the same way interactive sessions do. See your current consumption at [claude.ai/settings/usage](https://claude.ai/settings/usage). Separately from subscription usage, each way of starting a run has an hourly limit:
+
+| Action                                                             | Limit                                             | Counted for                                       | Over the limit                          |
+|:-------------------------------------------------------------------|:--------------------------------------------------|:--------------------------------------------------|:----------------------------------------|
+| Scheduled runs, including one-off runs                             | 100 per hour                                      | Your account                                      | The run waits until the limit resets    |
+| **Run now**, API fires, and setting a one-off routine to run again | 30 per hour                                       | Each routine, one count shared by all three       | The action fails until the limit resets |
+| **Run now** and setting a one-off routine to run again             | 100 per hour                                      | Your account                                      | Same                                    |
+| API fires                                                          | 100 per hour                                      | Your account, counted separately from **Run now** | Same                                    |
+| GitHub events                                                      | See [Add a GitHub trigger](#add-a-github-trigger) |                                                   |                                         |
+
+None of these hourly limits has overage. When a routine hits your subscription usage limit, organizations with usage credits turned on can keep running routines on metered overage. Without usage credits, additional runs are rejected until your usage window resets. Turn on usage credits at [claude.ai/settings/usage](https://claude.ai/settings/usage). On Team and Enterprise plans, an admin turns them on for the organization at [claude.ai/admin-settings/usage](https://claude.ai/admin-settings/usage). While your subscription is paused, your routines are put on hold and don’t run. Once your subscription is active again, turn them back on.
 
 
 [​](#troubleshooting)

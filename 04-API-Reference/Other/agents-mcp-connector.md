@@ -360,7 +360,7 @@ Each MCP server in the `mcp_servers` array defines the connection details:
 | `type` | string | Yes | Currently only "url" is supported |
 | `url` | string | Yes | The URL of the MCP server. Must start with https:// |
 | `name` | string | Yes | A unique identifier for this MCP server. Must be referenced by exactly one MCPToolset in the `tools` array. |
-| `authorization_token` | string | No | OAuth authorization token if required by the MCP server. See [MCP specification](../../06-MCP-Tools/Spec-Archive/2025-11-25-basic-authorization.md). |
+| `authorization_token` | string | No | OAuth authorization token if required by the MCP server. See [MCP specification](https://platform.claude.com/docs/en/06-MCP-Tools/Spec/spec-2025-11-25-authorization-model-context-protocol.md). |
 
 ## MCP toolset configuration
 
@@ -643,7 +643,7 @@ Once you've obtained an access token using either OAuth flow above, you can use 
 }
 ```
 
-For detailed explanations of the OAuth flow, refer to the [Authorization section](../../06-MCP-Tools/Spec-Archive/2025-11-25-basic-authorization.md) in the MCP specification.
+For detailed explanations of the OAuth flow, refer to the [Authorization section](https://platform.claude.com/docs/en/06-MCP-Tools/Spec/spec-2025-11-25-authorization-model-context-protocol.md) in the MCP specification.
 
 ## Client-side MCP helpers (TypeScript)
 

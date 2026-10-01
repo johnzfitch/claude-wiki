@@ -2,7 +2,7 @@
 title: "Anthropic Education Report: How University Students Use Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-education-report-how-university-students-use-claude"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:32:48Z"
+fetched_at: "2026-09-30T06:32:07Z"
 tags: ["news-research"]
 ---
 

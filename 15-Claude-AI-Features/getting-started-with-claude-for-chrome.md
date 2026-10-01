@@ -1,8 +1,8 @@
 ---
 title: "Get started with Claude in Chrome | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12012173-getting-started-with-claude-for-chrome"
+source_url: "https://support.claude.com/en/articles/12012173"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:48Z"
+fetched_at: "2026-09-30T06:32:28Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
@@ -15,7 +15,7 @@ Claude in Chrome is a browser extension that allows Claude to read, click, and n
 
 Claude in Chrome is available for all paid plans (Pro, Max, Team, and Enterprise). It's available in Claude Cowork and Claude Code, and in beta in the Chrome side panel. On Max and Team plans, the side panel runs as a Claude Cowork session, and this is rolling out to Pro plans. On Enterprise plans, the side panel runs as a Cowork session once your admin has enabled Cowork in the cloud; until then, it uses the classic experience.
 
-**Important:** Claude in Chrome allows Claude to interact directly with websites on your behalf. Claude in Chrome is enhanced with our safety classifiers but is still risky. Please review **[Use Claude in Chrome safely](using-claude-for-chrome-safely.md)** before use.
+**Important:** Claude in Chrome allows Claude to interact directly with websites on your behalf. Claude in Chrome is enhanced with our safety classifiers but is still risky. Please review **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely)** before use.
 
 ------------------------------------------------------------------------
 
@@ -37,7 +37,7 @@ This integration is especially useful for design verification (comparing Figma m
 
 When you start a chat, task, or session in Claude Cowork that touches a website, Claude can open the browser directly in Chrome and do the work, clicking, typing, and filling out forms the way a person would. You can let Claude handle work in the browser without switching windows.
 
-**Note:** Claude Cowork also has a browser built into the Claude Desktop app, with nothing to install. It's rolling out gradually this week. If you already use Claude in Chrome, it stays your preferred browser for Cowork; otherwise Cowork uses the built-in browser by default. Choose either one in **Settings \> Cowork \> Preferred browser**. Learn more in **[Use the built-in browser in Claude Cowork](use-the-built-in-browser-in-claude-cowork.md)**.
+**Note:** Claude Cowork also has a browser built into the Claude Desktop app, with nothing to install. It's rolling out gradually this week. If you already use Claude in Chrome, it stays your preferred browser for Cowork; otherwise Cowork uses the built-in browser by default. Choose either one in **Settings \> Cowork \> Preferred browser**. Learn more in **[Use the built-in browser in Claude Cowork](https://support.claude.com/en/articles/16607400)**.
 
 Follow these steps to connect Claude in Chrome in your desktop app:
 
@@ -72,11 +72,11 @@ The side panel is a good fit for in-the-moment browsing tasks:
 
 - Walk through a task on a site step by step while you watch.
 
-The side panel starts in "Automatically approve" mode: Claude works continuously, reviews each action for safety, and pauses to ask you when something needs your approval. If you switch to a different mode, **the side panel keeps your choice for future sessions**. Learn more in the [**Claude in Chrome permissions guide**](claude-for-chrome-permissions-guide.md).
+The side panel starts in "Automatically approve" mode: Claude works continuously, reviews each action for safety, and pauses to ask you when something needs your approval. If you switch to a different mode, **the side panel keeps your choice for future sessions**. Learn more in the [**Claude in Chrome permissions guide**](https://support.claude.com/en/articles/12902446).
 
 **Note:** On Enterprise plans, the Cowork side panel requires your admin to enable Cowork in the cloud and Claude in Chrome for your organization. If you see the classic side panel, contact your admin. Learn more in **[Claude in Chrome admin controls](../13-Enterprise-Admin/claude-for-chrome-admin-controls.md#h_bdb63199e1)**.
 
-To open the side panel, click the Claude icon in your Chrome toolbar. It stays visible while you browse. If you haven't installed the extension yet, see **[Install Claude in Chrome](getting-started-with-claude-for-chrome.md#h_e0aabae2db)** below.
+To open the side panel, click the Claude icon in your Chrome toolbar. It stays visible while you browse. If you haven't installed the extension yet, see **[Install Claude in Chrome](https://support.claude.com/en/articles/12012173-get-started-with-claude-in-chrome#h_e0aabae2db)** below.
 
 **Note:** The side panel reads the tab you're on with no extra setup. Tasks that need your local files, your computer, or Claude driving Chrome from another surface still need the Claude Desktop app open and connected, even though your session runs in the cloud.
 
@@ -158,7 +158,7 @@ Claude has built-in knowledge of how to navigate popular platforms including Sla
 
 ### Sign in with 1Password
 
-When a task requires signing in, Claude can request the login from 1Password instead of stopping at the login page. You approve each request with biometrics, and 1Password fills the credential directly so Claude never sees your password or one-time code. 1Password for Claude is in beta on macOS. Learn more in **[Get started with 1Password for Claude](get-started-with-1password-for-claude.md)**.
+When a task requires signing in, Claude can request the login from 1Password instead of stopping at the login page. You approve each request with biometrics, and 1Password fills the credential directly so Claude never sees your password or one-time code. 1Password for Claude is in beta on macOS. Learn more in **[Get started with 1Password for Claude](https://support.claude.com/en/articles/15936181)**.
 
 ### Background workflows
 
@@ -200,4 +200,4 @@ If you're using Claude in Chrome on a Team or Enterprise plan, your admin may ha
 
 - **Site access:** Your admin can restrict which websites Claude is allowed to access using allowlists and blocklists.
 
-If you're unable to install or use the extension, contact your organization's admin. For admin documentation, see **[Claude in Chrome admin controls](../13-Enterprise-Admin/claude-for-chrome-admin-controls.md)**.
+If you're unable to install or use the extension, contact your organization's admin. For admin documentation, see **[Claude in Chrome admin controls](https://support.claude.com/en/articles/13065128-claude-for-chrome-admin-controls)**.

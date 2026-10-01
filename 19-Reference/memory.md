@@ -2,7 +2,8 @@
 title: "Bringing memory to teams | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/memory"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:31:24Z"
+fetched_at: "2026-09-30T06:32:35Z"
+last_modified: "Wed, 30 Sep 2026 04:21:07 GMT"
 tags: ["news-research"]
 ---
 
@@ -70,7 +71,7 @@ Memory introduces new safety considerations and we've designed the feature to be
 
 ### Getting started
 
-To see memory in action, enable the feature in Settings, and let Claude generate memory with your past chats at initial set-up. Ask Claude questions like “what were we working on last week?” to see what Claude remembers across your existing chats and connected tools. If you would like to bring your memory details over from a different AI tool or export your memory from Claude for backup or migration, you can [follow these instructions](../15-Claude-AI-Features/importing-and-exporting-your-memory-from-claude.md).
+To see memory in action, enable the feature in Settings, and let Claude generate memory with your past chats at initial set-up. Ask Claude questions like “what were we working on last week?” to see what Claude remembers across your existing chats and connected tools. If you would like to bring your memory details over from a different AI tool or export your memory from Claude for backup or migration, you can [follow these instructions](https://support.anthropic.com/en/articles/12123587-importing-and-exporting-your-memory-from-claude).
 
 Great work builds over time. With memory, each conversation with Claude improves the next.
 

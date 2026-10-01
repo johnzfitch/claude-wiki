@@ -2,7 +2,7 @@
 title: "Create a Message - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/messages/create"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-23T06:27:23Z"
+fetched_at: "2026-09-30T06:30:47Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -255,7 +255,7 @@ string
 
 
 
-"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 43 more
+"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
 
 
 
@@ -442,6 +442,14 @@ One of the following:
 
 
 "compact-2026-09-04"
+
+
+
+"inline-tools-2026-09-15"
+
+
+
+"mcp-client-2026-09-15"
 
 
 
@@ -814,7 +822,7 @@ One of the following:
 
 
 
-BetaCompactionBlockParam object{ type: "compaction", cache_control, content, 2 more }
+BetaCompactionBlockParam object{ type: "compaction", cache_control, content, 3 more }
 
 
 
@@ -830,9 +838,9 @@ BetaRequestToolAdditionBlock object{ type: "tool_addition", tool, cache_control�
 
 
 
-Mid-conversation directive to surface a declared tool.
+Mid-conversation directive to make a tool available.
 
-`tool` references a tool (or MCP toolset) by name from the request's `tools`; it is offered to the model from this point in the conversation onward.
+`tool` is a reference to a tool (or MCP toolset) declared in the request's `tools`. Under the `inline-tools-2026-09-15` beta it may instead be a reference to a tool defined earlier in `messages`, or a `tool_definition` object that carries an inline tool definition in `definition` (the same object a `tools` entry holds). An `mcp_toolset` definition also requires the `mcp-client-2026-09-15` beta. The tool is offered to the model from this point in the conversation onward.
 
 
 
@@ -842,7 +850,61 @@ BetaRequestToolRemovalBlock object{ type: "tool_removal", tool, cache_control }
 
 Mid-conversation directive to withdraw a tool.
 
-`tool` references a tool (or MCP toolset) by name from the request's `tools`; it is no longer offered to the model from this point in the conversation onward.
+`tool` references a tool (or MCP toolset) by name: one declared in the request's `tools` or defined earlier in `messages`. It is no longer offered to the model from this point in the conversation onward.
+
+
+
+BetaMCPToolListingBlockParam object{ type: "mcp_tool_listing", mcp_server_name, tools }
+
+
+
+The tool listing an MCP server returned while an earlier response was produced, as that response carried it. Send the assistant message back unchanged, this block included, and the server uses this listing for the matching `mcp_toolset` instead of asking the MCP server again.
+
+type: "mcp_tool_listing"
+
+
+
+
+
+mcp_server_name: string
+
+
+
+The name of the MCP server this listing came from, as `mcp_servers` declares it.
+
+minLength1
+
+maxLength255
+
+
+
+tools: array of [BetaMCPToolParam](http-beta-messages.md#beta_mcp_tool_param) { input_schema, name, description }
+
+
+
+The server's tools, exactly as the response listed them.
+
+input_schema: map\[unknown\]
+
+
+
+The tool's input schema as the MCP server lists it, verbatim.
+
+
+
+name: string
+
+
+
+The tool's name as the MCP server lists it (not prefixed with the server name).
+
+minLength1
+
+description: optional string or null
+
+
+
+The tool's description as the MCP server lists it.
 
 
 
@@ -960,7 +1022,9 @@ effort: optional "low" or "medium" or "high" or 2 more or null
 
 
 
-All possible effort levels.
+How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer.
+
+Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.
 
 One of the following:
 
@@ -1039,9 +1103,9 @@ compaction: optional [BetaCompactionConfig](http-beta-messages.md#beta_compactio
 
 
 
-Compact the whole conversation and return a signed `compaction` block, alone, that a later request sends back first in `messages`, in place of the messages it summarizes. There is no trigger and no pause flag: sending the parameter compacts, and nothing is sampled after the block.
+Compaction configuration.
 
-The summarization prompt is the server's own unless `instructions` are given, which then replace it for this request; a value that is empty or only whitespace counts as absent.
+When set on `POST /v1/messages`, the request is a compaction request: the conversation in `messages` is summarized and the response holds only the resulting `compaction` block (`stop_reason` `"compaction"`), which later requests send first in `messages` in place of the messages it summarizes. `POST /v1/messages/count_tokens` accepts this parameter and ignores it: the count it returns is for the conversation in `messages` as sent. Cannot be combined with `context_management`.
 
 type: "summarize"
 
@@ -1117,9 +1181,9 @@ skill_id: string
 
 Skill ID
 
-maxLength64
-
 minLength1
+
+maxLength64
 
 
 
@@ -1129,9 +1193,9 @@ version: optional string
 
 Skill version or 'latest' for most recent version
 
-maxLength64
-
 minLength1
+
+maxLength64
 
 string
 
@@ -1153,7 +1217,7 @@ diagnostics: optional [BetaDiagnosticsParam](http-beta-messages.md#beta_diagnost
 
 
 
-Request-level diagnostics. Currently carries the previous response id for prompt-cache divergence reporting.
+Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request.
 
 
 
@@ -1201,9 +1265,9 @@ token: string
 
 The opaque `fallback_credit_token` from a prior refusal's `stop_details` — the same string the bare-string form carries.
 
-maxLength2048
-
 minLength1
+
+maxLength2048
 
 
 
@@ -1333,7 +1397,7 @@ speed: optional "standard" or "fast" or null
 
 
 
-Inference speed mode. `fast` provides significantly faster output token generation at premium pricing. Not all models support `fast`; invalid combinations are rejected at create time.
+The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.
 
 One of the following:
 
@@ -1363,9 +1427,9 @@ stream: optional boolean
 
 
 
-Whether to incrementally stream the response using server-sent events.
+Whether to incrementally stream the response using server-sent events. When `true`, SDKs return a raw event stream.
 
-See [streaming](../Guides/build-with-claude-streaming.md) for details.
+In the TypeScript, Python and Ruby SDKs, the recommended way to stream is `messages.stream()`. It sets `stream` for you and accumulates the events into the final message. See [Streaming with SDKs](../Guides/build-with-claude-streaming.md#streaming-with-sdks) for an example in each language.
 
 
 
@@ -1474,9 +1538,9 @@ document_title: string or null
 
 
 
-maxLength500
-
 minLength1
+
+maxLength500
 
 end_char_index: number
 
@@ -1518,9 +1582,9 @@ document_title: string or null
 
 
 
-maxLength500
-
 minLength1
+
+maxLength500
 
 end_page_number: number
 
@@ -1568,9 +1632,9 @@ document_title: string or null
 
 
 
-maxLength500
-
 minLength1
+
+maxLength500
 
 
 
@@ -1616,9 +1680,9 @@ title: string or null
 
 
 
-maxLength512
-
 minLength1
+
+maxLength512
 
 
 
@@ -1962,7 +2026,7 @@ BetaToolSearchToolRegex20251119 object{ type, name, allowed_callers, 3 more }
 
 
 
-BetaMCPToolset object{ type: "mcp_toolset", mcp_server_name, cache_control, 2 more }
+BetaMCPToolset object{ type: "mcp_toolset", mcp_server_name, cache_control, 3 more }
 
 
 
@@ -2004,9 +2068,9 @@ Defaults to `1.0`. Ranges from `0.0` to `1.0`. Use `temperature` closer to `0.0`
 
 Note that even with `temperature` of `0.0`, the results will not be fully deterministic.
 
-maximum1
-
 minimum0
+
+maximum1
 
 
 
@@ -2038,15 +2102,670 @@ In nucleus sampling, we compute the cumulative distribution over all the options
 
 Recommended for advanced use cases only.
 
-maximum1
-
 minimum0
+
+maximum1
 
 ##### Returns
 
 
 
 BetaMessage object{ type: "message", id, container, 10 more }
+
+
+
+
+
+type: "message"
+
+
+
+Object type.
+
+For Messages, this is always `"message"`.
+
+defaultmessage
+
+
+
+id: string
+
+
+
+Unique object identifier.
+
+The format and length of IDs may change over time.
+
+
+
+container: [BetaContainer](http-beta-messages.md#beta_container) { id, expires_at, skills } or null
+
+
+
+Information about the container used in this request.
+
+This will be non-null if a container tool (e.g. code execution) was used.
+
+id: string
+
+
+
+Identifier for the container used in this request
+
+
+
+expires_at: string
+
+
+
+The time at which the container will expire.
+
+formatdate-time
+
+
+
+skills: array of [BetaContainerSkill](http-beta-messages.md#beta_container_skill) { type, skill_id, version } or null
+
+
+
+Skills loaded in the container
+
+
+
+type: "anthropic" or "custom"
+
+
+
+Type of skill - either 'anthropic' (built-in) or 'custom' (user-defined)
+
+One of the following:
+
+"anthropic"
+
+
+
+"custom"
+
+
+
+
+
+skill_id: string
+
+
+
+Skill ID
+
+minLength1
+
+maxLength64
+
+
+
+version: string
+
+
+
+The resolved version: a skill version ID for custom skills.
+
+minLength1
+
+maxLength64
+
+
+
+content: array of [BetaContentBlock](http-beta-messages.md#beta_content_block)
+
+
+
+Content generated by the model.
+
+This is an array of content blocks, each of which has a `type` that determines its shape.
+
+Example:
+
+```python
+[{"type": "text", "text": "Hi, I'm Claude."}]
+```
+
+
+
+If the request input `messages` ended with an `assistant` turn, then the response `content` will continue directly from that last turn. You can use this to constrain the model's output.
+
+For example, if the input `messages` were:
+
+```python
+[
+  {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},
+  {"role": "assistant", "content": "The best answer is ("}
+]
+```
+
+
+
+Then the response `content` might be:
+
+```python
+[{"type": "text", "text": "B)"}]
+```
+
+
+
+One of the following:
+
+
+
+BetaTextBlock object{ type: "text", citations, text }
+
+
+
+
+
+BetaThinkingBlock object{ type: "thinking", signature, thinking }
+
+
+
+
+
+type: "thinking"
+
+
+
+defaultthinking
+
+
+
+signature: string
+
+
+
+A value used to verify that this thinking block was generated by Claude when it is passed back to the API.
+
+This is an opaque field and should not be interpreted or parsed. When passing thinking blocks back to the API (required when using tools with extended thinking), pass them back exactly as received, with this field intact.
+
+See [extended thinking](../Guides/build-with-claude-extended-thinking.md) for details.
+
+thinking: string
+
+
+
+The text of Claude's thinking process for this block.
+
+
+
+BetaRedactedThinkingBlock object{ type: "redacted_thinking", data }
+
+
+
+
+
+type: "redacted_thinking"
+
+
+
+defaultredacted_thinking
+
+
+
+data: string
+
+
+
+The contents of this redacted thinking block, returned when portions of the model's thinking were safety-redacted. This field is opaque and encrypted, with no readable content.
+
+Pass `redacted_thinking` blocks back to the API unchanged when continuing a multi-turn conversation.
+
+See [extended thinking](../Guides/build-with-claude-extended-thinking.md#redacted-thinking-blocks) for details.
+
+
+
+BetaToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
+BetaServerToolUseBlock object{ type: "server_tool_use", id, input, 2 more }
+
+
+
+
+
+BetaWebSearchToolResultBlock object{ type: "web_search_tool_result", content, tool_use_id, caller }
+
+
+
+
+
+BetaWebFetchToolResultBlock object{ type: "web_fetch_tool_result", content, tool_use_id, caller }
+
+
+
+
+
+BetaAdvisorToolResultBlock object{ type: "advisor_tool_result", content, tool_use_id }
+
+
+
+
+
+BetaCodeExecutionToolResultBlock object{ type: "code_execution_tool_result", content, tool_use_id }
+
+
+
+
+
+type: "code_execution_tool_result"
+
+
+
+defaultcode_execution_tool_result
+
+
+
+content: [BetaCodeExecutionToolResultBlockContent](http-beta-messages.md#beta_code_execution_tool_result_block_content)
+
+
+
+One of the following:
+
+
+
+tool_use_id: string
+
+
+
+pattern^srvtoolu\_\[a-zA-Z0-9\_\]+\$
+
+
+
+BetaBashCodeExecutionToolResultBlock object{ type: "bash_code_execution_tool_result", content, tool_use_id }
+
+
+
+
+
+BetaTextEditorCodeExecutionToolResultBlock object{ type: "text_editor_code_execution_tool_result", content, tool_use_id }
+
+
+
+
+
+BetaToolSearchToolResultBlock object{ type: "tool_search_tool_result", content, tool_use_id }
+
+
+
+
+
+BetaMCPToolUseBlock object{ type: "mcp_tool_use", id, input, 2 more }
+
+
+
+
+
+type: "mcp_tool_use"
+
+
+
+defaultmcp_tool_use
+
+
+
+id: string
+
+
+
+pattern^\[a-zA-Z0-9\_-\]+\$
+
+input: map\[unknown\]
+
+
+
+name: string
+
+
+
+The name of the MCP tool
+
+server_name: string
+
+
+
+The name of the MCP server
+
+
+
+BetaMCPToolResultBlock object{ type: "mcp_tool_result", content, is_error, tool_use_id }
+
+
+
+
+
+BetaContainerUploadBlock object{ type: "container_upload", file_id }
+
+
+
+Response model for a file uploaded to the container.
+
+
+
+type: "container_upload"
+
+
+
+defaultcontainer_upload
+
+file_id: string
+
+
+
+
+
+BetaCompactionBlock object{ type: "compaction", content, encrypted_content, 2 more }
+
+
+
+A compaction block returned when autocompact is triggered.
+
+When content is None, it indicates the compaction failed to produce a valid summary (e.g., malformed output from the model). Clients may round-trip compaction blocks with null content; the server treats them as no-ops.
+
+
+
+BetaFallbackBlock object{ type: "fallback", from, to, trigger }
+
+
+
+Marks the point in `content` where one model's output gives way to the next.
+
+One block appears per hop where a preceding model actually ran this turn and declined. A turn where no preceding model ran and declined has no such boundary and carries no block — the signal for whether a fallback model served the response is the presence of a `fallback_message` entry in `usage.iterations`, not this block.
+
+The block is treated like a server-tool content block for streaming: it arrives via the standard `content_block_start` / `content_block_stop` pair and carries no deltas.
+
+
+
+BetaMCPToolListingBlock object{ type: "mcp_tool_listing", mcp_server_name, tools }
+
+
+
+The tool listing the server fetched from an MCP server while producing this response. Send the assistant message back unchanged, this block included, so later requests use this listing instead of asking the MCP server again.
+
+
+
+type: "mcp_tool_listing"
+
+
+
+defaultmcp_tool_listing
+
+mcp_server_name: string
+
+
+
+
+
+tools: array of [BetaMCPTool](http-beta-messages.md#beta_mcp_tool) { input_schema, name, description }
+
+
+
+input_schema: map\[unknown\]
+
+
+
+name: string
+
+
+
+description: optional string
+
+
+
+
+
+context_management: [BetaContextManagementResponse](http-beta-messages.md#beta_context_management_response) { applied_edits } or null
+
+
+
+Context management response.
+
+Information about context management strategies applied during the request.
+
+
+
+diagnostics: [BetaDiagnostics](http-beta-messages.md#beta_diagnostics) { cache_miss_reason } or null
+
+
+
+Request-level diagnostics. `null` when the request did not supply `diagnostics`, or when it did and no prompt-cache divergence was detected.
+
+
+
+cache_miss_reason: [BetaCacheMissReason](http-beta-messages.md#beta_cache_miss_reason) or null
+
+
+
+Explains why the prompt cache could not fully reuse the prefix from the request identified by `diagnostics.previous_message_id`. `null` means diagnosis is still pending — the response was serialized before the background comparison completed.
+
+One of the following:
+
+
+
+model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
+
+
+
+The model that will complete your prompt.
+
+See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+One of the following:
+
+
+
+role: "assistant"
+
+
+
+Conversational role of the generated message.
+
+This will always be `"assistant"`.
+
+defaultassistant
+
+
+
+stop_details: [BetaRefusalStopDetails](http-beta-messages.md#beta_refusal_stop_details) { type: "refusal", category, explanation, 3 more } or null
+
+
+
+Structured information about why model output stopped.
+
+This is `null` when the `stop_reason` has no additional detail to report.
+
+
+
+stop_reason: [BetaStopReason](http-beta-messages.md#beta_stop_reason) or null
+
+
+
+The reason that we stopped.
+
+This may be one the following values:
+
+- `"end_turn"`: the model reached a natural stopping point
+- `"max_tokens"`: we exceeded the requested `max_tokens` or the model's maximum
+- `"stop_sequence"`: one of your provided custom `stop_sequences` was generated
+- `"tool_use"`: the model invoked one or more tools
+- `"pause_turn"`: we paused a long-running turn. You may provide the response back as-is in a subsequent request to let the model continue.
+- `"refusal"`: when streaming classifiers intervene to handle potential policy violations
+- `"model_context_window_exceeded"`: we exceeded the model's context window
+
+In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
+
+One of the following:
+
+"end_turn"
+
+
+
+"max_tokens"
+
+
+
+"stop_sequence"
+
+
+
+"tool_use"
+
+
+
+"pause_turn"
+
+
+
+"compaction"
+
+
+
+"refusal"
+
+
+
+"model_context_window_exceeded"
+
+
+
+
+
+stop_sequence: string or null
+
+
+
+Which custom stop sequence was generated, if any.
+
+This value will be a non-null string if one of your custom stop sequences was generated.
+
+
+
+usage: [BetaUsage](http-beta-messages.md#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 9 more }
+
+
+
+Billing and rate-limit usage.
+
+Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.
+
+Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.
+
+For example, `output_tokens` will be non-zero, even for an empty string response from Claude.
+
+Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
+
+
+
+input_transformations: optional array of [BetaInputTransformation](http-beta-messages.md#beta_input_transformation) or null
+
+
+
+Changes the API made to the request's input before showing it to the model, and blocks that failed a binding check but were left unchanged: one entry per block, in request order. Two entry types today. `thinking_dropped` — a `thinking`, `redacted_thinking` or `connector_text` block from the request's `messages` that was removed from the prompt instead of being shown to the model because it failed a binding check. `thinking_mismatch_allowed` — a `thinking` or `redacted_thinking` block that failed the conversation check (the conversation before it differs from the one it was created in, or it carries no record of one on a model that requires it) and was shown to the model all the same, because that check is not enforced for this request. More entry types may be added over time; ignore types you do not recognize.
+
+Requires `anthropic-beta: thinking-binding-controls-2026-08-01`. Present on every such response from a model that supports extended thinking, as `[]` when there is no entry to report; without the beta, blocks are removed or left in place all the same but nothing is reported. Removed blocks contribute nothing to `usage.input_tokens`; blocks left in place count as sent. When streaming, the array is final in `message_start`; the final `message_delta` event carries it only when a server-side model fallback happened mid-stream, in which case it holds the serving model's entries and replaces the one in `message_start`.
+
+One of the following:
+
+
+
+BetaThinkingDroppedInputTransformation object{ type: "thinking_dropped", path, reason }
+
+
+
+
+
+type: "thinking_dropped"
+
+
+
+Always `thinking_dropped` for this entry type.
+
+defaultthinking_dropped
+
+path: string
+
+
+
+Where the removed block was in your request, as `messages.{i}.content.{j}`: `i` indexes the `messages` array you sent and `j` that message's `content` array — the same form error messages use.
+
+
+
+reason: "model_binding_mismatch" or "prefix_binding_mismatch" or "organization_binding_mismatch" or "end_user_binding_mismatch"
+
+
+
+Which binding check removed the block: `model_binding_mismatch` — it was created by a model whose reasoning the requested model may not read; `prefix_binding_mismatch` — the conversation before it differs from the conversation it was created in (the rest of that turn's consecutive thinking blocks are removed with it, each with this reason); `organization_binding_mismatch` — it was created under a different organization (an Anthropic organization, AWS account or Google Cloud project) and this organization is not one of its additional organizations; `end_user_binding_mismatch` — it was created for a different end user, or was removed by the consumer-organization binding. A block that would fail several checks reports one reason, in this order of precedence: `organization_binding_mismatch`, `end_user_binding_mismatch`, `model_binding_mismatch`, `prefix_binding_mismatch`.
+
+One of the following:
+
+"model_binding_mismatch"
+
+
+
+"prefix_binding_mismatch"
+
+
+
+"organization_binding_mismatch"
+
+
+
+"end_user_binding_mismatch"
+
+
+
+
+
+BetaThinkingMismatchAllowedInputTransformation object{ type: "thinking_mismatch_allowed", path, reason }
+
+
+
+
+
+type: "thinking_mismatch_allowed"
+
+
+
+Always `thinking_mismatch_allowed` for this entry type.
+
+defaultthinking_mismatch_allowed
+
+path: string
+
+
+
+Where the block is in your request, as `messages.{i}.content.{j}`: `i` indexes the `messages` array you sent and `j` that message's `content` array — the same form error messages use.
+
+
+
+reason: "model_binding_mismatch" or "prefix_binding_mismatch" or "organization_binding_mismatch" or "end_user_binding_mismatch"
+
+
+
+Which binding check the block failed; the block was shown to the model all the same. Always `prefix_binding_mismatch` today — the conversation before the block differs from the conversation it was created in, or the block carries no record of one on a model that requires it. Were the check enforced for this request, the block would have been removed or the request rejected (`thinking.block_binding.prefix_mismatch_behavior`). A removal also takes the rest of that turn's consecutive thinking blocks, whereas here each block is checked on its own, so `thinking_mismatch_allowed` entries are a lower bound on what enforcement would remove.
+
+One of the following:
+
+"model_binding_mismatch"
+
+
+
+"prefix_binding_mismatch"
+
+
+
+"organization_binding_mismatch"
+
+
+
+"end_user_binding_mismatch"
 
 
 
@@ -2196,7 +2915,7 @@ Response 200
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
         "input_tokens": 0,
-        "model": "claude-fable-5-1",
+        "model": "claude-sonnet-5-5",
         "output_tokens": 0,
         "type": "message"
       }
@@ -2310,7 +3029,7 @@ Response 200
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
         "input_tokens": 0,
-        "model": "claude-fable-5-1",
+        "model": "claude-sonnet-5-5",
         "output_tokens": 0,
         "type": "message"
       }

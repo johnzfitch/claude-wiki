@@ -278,9 +278,9 @@ Hosts can [submit questions](https://form.typeform.com/to/GieGX8Yc) that are spe
 
 - [Mythos](claude-mythos.md)
 - [Fable](claude-fable.md)
-- [Opus](claude-opus.md)
-- [Sonnet](claude-sonnet.md)
-- [Haiku](claude-haiku.md)
+- [Opus](https://www.anthropic.com/claude-corps/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/claude-corps/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/claude-corps/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

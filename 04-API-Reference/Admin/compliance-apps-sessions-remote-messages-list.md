@@ -2,7 +2,7 @@
 title: "Retrieve remote session messages - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/sessions/remote/messages/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-22T06:30:26Z"
+fetched_at: "2026-09-30T06:32:03Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -284,9 +284,9 @@ Maximum results (default: 100, max: 1000)
 
 default100
 
-maximum1000
-
 minimum1
+
+maximum1000
 
 
 
@@ -324,9 +324,9 @@ Truncate each text item inside a tool result to at most this many bytes (cut on 
 
 default10000
 
-maximum2147483647
-
 minimum-1
+
+maximum2147483647
 
 
 
@@ -338,9 +338,9 @@ Truncate each tool-use input to at most this many bytes (cut on a code-point bou
 
 default10000
 
-maximum2147483647
-
 minimum-1
+
+maximum2147483647
 
 ##### Headers
 
@@ -620,7 +620,7 @@ started_by_user: object{ id, email_address } or null
 
 
 
-A user associated with a remote session.
+The user who initiated an agent-owned session (for example, by mentioning Claude in Slack or via a scheduled trigger). Null for user-owned sessions — where the session's `user` started it — and for agent sessions with no human initiator. For initiators no longer a member of an organization the key may read, the object is populated with `email_address` null.
 
 id: string
 
@@ -656,7 +656,7 @@ user: object{ id, email_address } or null
 
 
 
-A user associated with a remote session.
+The user who owns the session. Null for sessions owned by an automated agent rather than a user. At most one of `user` and `agent_id` is set. For users no longer a member of an organization the key may read, the object is populated with `email_address` null.
 
 id: string
 

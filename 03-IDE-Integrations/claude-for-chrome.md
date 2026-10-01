@@ -2,7 +2,8 @@
 title: "Claude in Chrome | Claude by Anthropic"
 source_url: "https://www.claude.com/claude-for-chrome"
 category: "03-IDE-Integrations"
-fetched_at: "2026-09-29T06:29:23Z"
+fetched_at: "2026-09-30T06:30:42Z"
+last_modified: "Tue, 29 Sep 2026 22:08:29 GMT"
 tags: ["claude-code", "ide"]
 ---
 
@@ -229,7 +230,7 @@ Using Claude in Chrome Safely
 
 Read more
 
-[Read more](../15-Claude-AI-Features/using-claude-for-chrome-safely.md)
+[Read more](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely)
 
 Read more
 
@@ -260,11 +261,11 @@ Yes. [Learn how to set up in Enterprise plans](../13-Enterprise-Admin/claude-for
 
 ### What browser activity is not recommended?
 
-Avoid financial transactions, password management, or anything involving sensitive personal data. Start with trusted sites and familiar workflows where you're comfortable having Claude take actions. Make sure your use complies with our [acceptable use policy](../22-Safety-Policy/using-agents-according-to-our-usage-policy.md). [Learn more.](../15-Claude-AI-Features/using-claude-for-chrome-safely.md)
+Avoid financial transactions, password management, or anything involving sensitive personal data. Start with trusted sites and familiar workflows where you're comfortable having Claude take actions. Make sure your use complies with our [acceptable use policy](../22-Safety-Policy/using-agents-according-to-our-usage-policy.md). [Learn more.](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely)
 
 ### What are the security risks?
 
-Browser AI faces unique security risks, like prompt injection attacks, where malicious actors might try to trick Claude into unintended actions, such as sharing your bank information or deleting important files. While we’ve implemented protections, they aren’t foolproof. Attack vectors are constantly evolving and Claude may hallucinate, leading to actions that you did not intend. We’ve shared our testing results, including possible attack scenarios, so you can make informed decisions, and strongly encourage you to [read about the risks](../15-Claude-AI-Features/using-claude-for-chrome-safely.md) before using this product. [Read blog post.](../19-Reference/prompt-injection-defenses.md)
+Browser AI faces unique security risks, like prompt injection attacks, where malicious actors might try to trick Claude into unintended actions, such as sharing your bank information or deleting important files. While we’ve implemented protections, they aren’t foolproof. Attack vectors are constantly evolving and Claude may hallucinate, leading to actions that you did not intend. We’ve shared our testing results, including possible attack scenarios, so you can make informed decisions, and strongly encourage you to [read about the risks](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely) before using this product. [Read blog post.](../19-Reference/prompt-injection-defenses.md)
 
 ### What’s the difference between using Claude in Chrome alone vs. with Claude Cowork?
 
@@ -276,7 +277,7 @@ This article helps you resolve common issues with Claude for Chrome and explains
 
 Read more
 
-[Read more](../15-Claude-AI-Features/claude-for-chrome-troubleshooting.md)
+[Read more](https://support.claude.com/en/articles/12902405-claude-for-chrome-troubleshooting)
 
 Read more
 

@@ -1,6 +1,6 @@
 # API Reference
 
-1773 pages. The full text of every page is in [llms.txt](llms.txt).
+1774 pages. The full text of every page is in [llms.txt](llms.txt).
 
 ## About
 
@@ -1595,6 +1595,7 @@
 - [Build an orchestration mode - Claude Platform Docs](Guides/build-with-claude-mid-conversation-effort-example.md) — Claude on cloud platforms
 - [Cache diagnostics - Claude Platform Docs](Guides/build-with-claude-cache-diagnostics.md) — Claude on cloud platforms
 - [Citations - Claude Platform Docs](Guides/build-with-claude-citations.md) — Claude on cloud platforms
+- [Claude Code Analytics API - Claude Platform Docs](Guides/build-with-claude-claude-code-analytics-api.md) — Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
 - [Claude in Amazon Bedrock (Opus 4.7 and later) - Claude Platform Docs](Guides/build-with-claude-claude-in-amazon-bedrock.md) — Claude on cloud platforms
 - [Claude in Microsoft Foundry - Claude Platform Docs](Guides/build-with-claude-claude-in-microsoft-foundry.md) — Claude on cloud platforms
 - [Claude on Amazon Bedrock (Opus 4.6 and earlier) - Claude Platform Docs](Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md) — Claude on cloud platforms
@@ -1604,7 +1605,7 @@
 - [Compaction and preserved thinking - Claude Platform Docs](Guides/build-with-claude-compaction-thinking-blocks.md) — Claude on cloud platforms
 - [Compaction at a token threshold - Claude Platform Docs](Guides/build-with-claude-compaction-threshold.md) — Claude on cloud platforms
 - [Compaction in the background - Claude Platform Docs](Guides/build-with-claude-compaction-background.md) — Claude on cloud platforms
-- [Compaction on demand - Claude Platform Docs](Guides/build-with-claude-compaction-on-demand.md) — We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services…
+- [Compaction on demand - Claude Platform Docs](Guides/build-with-claude-compaction-on-demand.md) — Claude on cloud platforms
 - [Compaction overview - Claude Platform Docs](Guides/build-with-claude-compaction.md) — Claude on cloud platforms
 - [Compaction that keeps recent turns - Claude Platform Docs](Guides/build-with-claude-compaction-keep-recent-turns.md) — Claude on cloud platforms
 - [Context editing - Claude Platform Docs](Guides/build-with-claude-context-editing.md) — Claude on cloud platforms
@@ -1642,11 +1643,11 @@
 
 ## Other
 
-- [Access the Compliance API | Claude Help Center](Other/how-can-i-access-the-compliance-api.md) — The Compliance API lets your organization programmatically pull activity feed events, chat data, and file content across all your Claude deployments. Use it to…
 - [Access Transparency - Claude Platform Docs](Other/manage-claude-access-transparency.md) — Receive an audit record of human access to your organization's data by Anthropic personnel through the Compliance API.
 - [Accessing GitHub - Claude Platform Docs](Other/managed-agents-github.md) — Configure agent environment
 - [Adding files - Claude Platform Docs](Other/managed-agents-files.md) — Configure agent environment
 - [Admin API - Claude Platform Docs](Other/manage-claude-admin-api.md) — Manage organization members, workspaces, invites, and API keys programmatically with the Admin API, using an Admin API key, an org:admin OAuth token, or a…
+- [Admin keys | Claude Platform](Other/usage-limits.md) — Create agents and applications with frontier Claude models and managed agent infrastructure.
 - [Analytics APIs - Claude Platform Docs](Other/manage-claude-analytics-api.md) — Understand which analytics API and API key your organization needs, then provision access to Claude Code productivity metrics or Claude Enterprise engagement…
 - [API and data retention - Claude Platform Docs](Other/manage-claude-api-and-data-retention.md) — Learn about how Anthropic's APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access.
 - [API Key Best Practices: Keeping Your Keys Safe and Secure | Claude Help Center](Other/api-key-best-practices-keeping-your-keys-safe-and-secure.md) — API keys enable access to the Claude API, but they can pose significant security risks if not handled properly. Your API key is a digital key to your account…
@@ -1661,7 +1662,6 @@
 - [C# SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-csharp.md) — Libraries and integrations
 - [Can I use the Claude API for individual use? | Claude Help Center](Other/can-i-use-the-claude-api-for-individual-use.md) — Yes, individuals and hobbyists are welcome to use the Claude API. However, please note that use of the API is subject to our Commercial Terms of Service…
 - [Claude Code Analytics API - Claude Platform Docs](Other/manage-claude-claude-code-analytics-api.md) — Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
-- [Claude Console roles and permissions | Claude Help Center](Other/claude-console-roles-and-permissions.md) — The Claude Console uses a role-based access system with six distinct roles: User, Claude Code User, Limited Developer, Developer, Billing, and Admin. Each role…
 - [Claude in Microsoft Foundry | Claude by Anthropic](Other/partners-microsoft-foundry.md) — Deploy frontier AI solutions safely and simply, using your existing Azure ecosystem.
 - [Claude Managed Agents overview - Claude Platform Docs](Other/managed-agents-overview.md) — Configure agent environment
 - [Claude on AWS | Claude by Anthropic](Other/partners-amazon-bedrock.md) — Give your team a thinking partner, build agents, and ship AI products to customers in your AWS environment.
@@ -1688,7 +1688,7 @@
 - [Define outcomes - Claude Platform Docs](Other/managed-agents-define-outcomes.md) — Configure agent environment
 - [Define your agent - Claude Platform Docs](Other/managed-agents-agent-setup.md) — Configure agent environment
 - [Design your compliance integration - Claude Platform Docs](Other/manage-claude-compliance-integration-patterns.md) — Choose between polling and cursor-driven Activity Feed consumption, correlate Compliance API events with your SIEM, and plan retention.
-- [Develop an Inference hooks integration - Claude Platform Docs](Other/manage-claude-inference-hooks-endpoint.md) — We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services…
+- [Develop an Inference hooks integration - Claude Platform Docs](Other/manage-claude-inference-hooks-endpoint.md) — Build the AI security server that receives signed Inference hooks requests, verifies them, and returns allow or deny verdicts.
 - [Documentation - Claude Platform Docs](Other/home.md) — Everything you need to integrate Claude into your applications. From first API call to production.
 - [Dreams - Claude Platform Docs](Other/managed-agents-dreams.md) — Configure agent environment
 - [Get started with Claude Managed Agents - Claude Platform Docs](Other/managed-agents-quickstart.md) — Configure agent environment
@@ -1728,12 +1728,12 @@
 - [Permission policies - Claude Platform Docs](Other/managed-agents-permission-policies.md) — Configure agent environment
 - [PHP SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-php.md) — Libraries and integrations
 - [Powered by Claude | Claude by Anthropic](Other/partners-powered-by-claude.md) — A curated list of businesses that use Claude to build better, faster, and safer.
+- [Preserved thinking: changing how the Messages API handles thinking blocks to protect against distillation | Claude Help Center](Other/preserved-thinking-changing-how-the-messages-api-handles-thinking-blocks-to-protect.md) — We're changing how the Messages API handles thinking blocks to protect against distillation. A thinking block is a record of the reasoning Claude may produce…
 - [Programatic Tool Calling (PTC) with the Claude API](Other/claude-cookbooks-tool-use-programmatic-tool-calling-ptc.md) — Programmatic Tool Calling (PTC) allows Claude to write code that calls
 - [Prompt caching through the Claude API](Other/claude-cookbooks-misc-prompt-caching.md) — Prompt caching allows you to store and reuse context within your prompt.
 - [Python SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-python.md) — Libraries and integrations
 - [Query the Activity Feed - Claude Platform Docs](Other/manage-claude-compliance-activity-feed.md) — Retrieve, filter, and paginate your organization's Compliance API Activity Feed.
 - [Rate Limits API - Claude Platform Docs](Other/manage-claude-rate-limits-api.md) — Programmatically query your organization's API rate limits with the Rate Limits API.
-- [Rate limits | Claude Platform](Other/usage-limits.md) — Create agents and applications with frontier Claude models and managed agent infrastructure.
 - [Reference - Claude Platform Docs](Other/managed-agents-reference.md) — Configure agent environment
 - [Remote MCP servers](Other/agents-remote-mcp-servers.md) — Several companies have deployed remote MCP servers that developers can connect to via the Anthropic MCP connector API. These servers expand the capabilities…
 - [Retrieve and delete chats, files, and projects - Claude Platform Docs](Other/manage-claude-compliance-content-data.md) — Access chat content, file attachments, and projects for claude.ai organizations through the Compliance API.
@@ -1790,6 +1790,7 @@
 - [Handle streaming refusals - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md) — Claude on cloud platforms
 - [Increase output consistency - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md) — Make Claude's outputs more consistent by specifying exact formats, prefilling responses, constraining with examples, and grounding answers in retrieval.
 - [Keep Claude in character with role prompting and prefilling - Claude API Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-keep-claude-in-character.md) — This guide provides actionable tips to keep Claude in character, even during long, complex interactions.
+- [Mitigate jailbreaks and prompt injections - Claude Platform Docs](Test-Evaluate/platform-claude-com-test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md) — Defend your application against jailbreaks and prompt injection with input screening, hardened system prompts, and safe handling of untrusted tool content.
 - [Mitigate jailbreaks and prompt injections - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md) — Defend your application against jailbreaks and prompt injection with input screening, hardened system prompts, and safe handling of untrusted tool content.
 - [Reduce hallucinations - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md) — Minimize hallucinations in Claude's outputs by allowing uncertainty, grounding responses in direct quotes, and verifying claims with citations.
 - [Reduce prompt leak - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md) — Reduce the risk of prompt leaks by separating context from user queries, filtering Claude's outputs, and auditing prompts, without degrading task performance.

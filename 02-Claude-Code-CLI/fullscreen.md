@@ -2,7 +2,7 @@
 title: "Fullscreen rendering - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/fullscreen"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-26T06:37:59Z"
+fetched_at: "2026-09-30T06:30:47Z"
 tags: ["claude-code"]
 ---
 
@@ -266,7 +266,7 @@ Hold that key while you click and drag. Your terminal handles the selection itse
 CLAUDE_CODE_NO_FLICKER=1 CLAUDE_CODE_DISABLE_MOUSE=1 claude
 ```
 
-With mouse capture disabled, keyboard scrolling with `PgUp`, `PgDn`, `Ctrl+Home`, and `Ctrl+End` still works, and your terminal handles selection natively. You lose click-to-position-cursor, click-to-expand, URL clicking, and wheel scrolling inside Claude Code. To keep wheel scrolling but turn off click, drag, and hover handling, set `CLAUDE_CODE_DISABLE_MOUSE_CLICKS=1` instead. Requires Claude Code v2.1.195 or later. `CLAUDE_CODE_DISABLE_MOUSE` takes precedence when both variables are set. With clicks disabled, Claude Code still captures the mouse, so the wheel and touchpad scroll the conversation but left clicks do nothing inside Claude Code. You still need to hold your terminal’s key for native click-and-drag selection. Right-click and middle-click paste continue to work on terminals that support them.
+With mouse capture disabled, keyboard scrolling with `PgUp`, `PgDn`, `Ctrl+Home`, and `Ctrl+End` still works, and your terminal handles selection natively. You lose click-to-position-cursor, click-to-expand, URL clicking, and wheel scrolling inside Claude Code. To keep wheel scrolling but turn off click, drag, and hover handling, set `CLAUDE_CODE_DISABLE_MOUSE_CLICKS=1` instead. `CLAUDE_CODE_DISABLE_MOUSE` takes precedence when both variables are set. With clicks disabled, Claude Code still captures the mouse, so the wheel and touchpad scroll the conversation but left clicks do nothing inside Claude Code. You still need to hold your terminal’s key for native click-and-drag selection. Right-click and middle-click paste continue to work on terminals that support them.
 
 
 [​](#troubleshooting)

@@ -34,7 +34,7 @@ Our products can be used to provide information and perform analysis to help org
 
 ### Expanding who can use our products
 
-Our [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms) prohibit the use of our services by individuals under the age of 18. At the same time, there are certain use cases where AI tools can offer significant benefits to younger users, such as test preparation or tutoring support. With this in mind, our updated policy allows organizations to incorporate our API into their products for minors if they agree to implement certain safety features and disclose to their users that their product is leveraging an AI system. See our [Help Center article](../13-Enterprise-Admin/responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minors.md) to learn more.
+Our [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms) prohibit the use of our services by individuals under the age of 18. At the same time, there are certain use cases where AI tools can offer significant benefits to younger users, such as test preparation or tutoring support. With this in mind, our updated policy allows organizations to incorporate our API into their products for minors if they agree to implement certain safety features and disclose to their users that their product is leveraging an AI system. See our [Help Center article](https://support.anthropic.com/en/articles/9307344-responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minors) to learn more.
 
 We have also expanded the number of countries whose law enforcement authorities may use our products for a carefully tailored set of use cases, such as call center support and document summarization.
 
@@ -84,9 +84,9 @@ You can view our updated policy in full [here](https://www.anthropic.com/legal/a
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

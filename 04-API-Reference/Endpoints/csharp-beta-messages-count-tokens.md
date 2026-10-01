@@ -2348,7 +2348,7 @@ Learn more about token counting in our [user guide](https://docs.claude.com/en/d
 
   - `BetaJsonOutputFormat? outputFormat`
 
-    Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+    Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/api/csharp/beta/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 

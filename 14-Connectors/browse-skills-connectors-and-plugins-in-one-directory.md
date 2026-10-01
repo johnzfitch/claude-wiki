@@ -2,12 +2,11 @@
 title: "Browse skills, connectors, and plugins in one directory | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory"
 category: "14-Connectors"
-fetched_at: "2026-09-29T06:31:46Z"
+fetched_at: "2026-09-30T06:31:51Z"
 tags: ["connectors", "plugins", "skills"]
 ---
 
 # Browse skills, connectors, and plugins in one directory
-
 
 
 Our unified directory brings skills, connectors, and plugins together in one place so you can find and install everything that customizes Claude without switching between separate menus. On Team and Enterprise plans, the directory is also where skills and plugins published to your organization appear.
@@ -32,11 +31,11 @@ Skills you install from the directory are view-only. You can use them, but you c
 
 On Team and Enterprise plans, the "Your organization" tab lists skills available to your entire organization. This includes skills that owners have provisioned centrally and skills that colleagues have published to the organization. You can't fully delete these skills from your list. Only an organization owner can remove them from the directory.
 
-**Note:** Skills and plugins shared with you directly by a colleague don’t appear in the directory, they go straight to your skills list. See **[Use skills in Claude](../02-Claude-Code-CLI/using-skills-in-claude.md)** and **[Use plugins in Claude](../15-Claude-AI-Features/use-plugins-in-claude-cowork.md)** for details on how shared skills and plugins work.
+**Note:** Skills and plugins shared with you directly by a colleague don’t appear in the directory, they go straight to your skills list. See **[Use skills in Claude](../02-Claude-Code-CLI/using-skills-in-claude.md)** and **[Use plugins in Claude](https://support.claude.com/en/articles/13837440-use-plugins-in-claude)** for details on how shared skills and plugins work.
 
 ### Connectors
 
-The connectors tab shows the same catalog of services you can connect Claude to, now in the unified view. Click "Connect" on any service to start the authentication flow. For more on connecting and managing services, see **[Use connectors to extend Claude’s capabilities](use-connectors-to-extend-claude-s-capabilities.md)**.
+The connectors tab shows the same catalog of services you can connect Claude to, now in the unified view. Click "Connect" on any service to start the authentication flow. For more on connecting and managing services, see **[Use connectors to extend Claude’s capabilities](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)**.
 
 ### Plugins
 
@@ -48,4 +47,4 @@ Select a plugin, then click "Add." The plugin is saved to your account. Its skil
 
 Whether people can publish to the directory depends on your Publishing setting. To let people in your organization publish skills to the directory, set **Publishing** to **Open** or **Requires review** in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** in the “Policy” tab. The separate **Skill sharing** lets people share skills and plugins with specific colleagues without publishing to the directory.
 
-For full details on configuring sharing and provisioning skills centrally, see **[Provision and manage skills for your organization](../22-Safety-Policy/provisioning-and-managing-skills-for-your-organization.md)**.
+For full details on configuring sharing and provisioning skills centrally, see **[Provision and manage skills for your organization](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization)**.

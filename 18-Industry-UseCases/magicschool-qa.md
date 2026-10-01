@@ -2,7 +2,7 @@
 title: "MagicSchool Q&A | Claude Platform (API) | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/magicschool-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:33:04Z"
+fetched_at: "2026-09-30T06:33:40Z"
 tags: ["api", "case-studies", "claude-code", "enterprise", "security"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Introducing Claude Opus 5.5 \\ Anthropic"
 source_url: "https://www.anthropic.com/claude-opus-5-5"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:20Z"
+fetched_at: "2026-09-30T06:32:31Z"
 tags: ["agents", "claude-ai"]
 ---
 
@@ -376,7 +376,7 @@ For this reason, Opus 5.5 uses the same biology safeguards as Fable 5.1. To use 
 
 Distillation attacks, in which attackers use thousands of fake accounts to extract a model’s capabilities at industrial scale, create safety and national security risks. Distillation allows bad actors to create highly capable models without the safeguards we build into Claude. Our [September 2026 threat intelligence report](https://www.anthropic.com/threat-intelligence-report-september-2026) details the illicit distillation activity we’ve detected and disrupted so far.
 
-Opus 5.5 is launching with preserved thinking, the anti-distillation safeguard we introduced with Fable 5.1. It stops API users from editing Claude’s prior context in an attempt to extract Claude’s reasoning. It applies to Fable 5.1 and Opus 5.5 for API accounts created on or after August 31, 2026. Our [Help Center article](../22-Safety-Policy/preserved-thinking-changing-how-the-messages-api-handles-thinking-blocks-to-protect.md) explains the change, and our [preserved thinking docs](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) show how to test and update your integrations.
+Opus 5.5 is launching with preserved thinking, the anti-distillation safeguard we introduced with Fable 5.1. It stops API users from editing Claude’s prior context in an attempt to extract Claude’s reasoning. It applies to Fable 5.1 and Opus 5.5 for API accounts created on or after August 31, 2026. Our [Help Center article](../04-API-Reference/Other/preserved-thinking-changing-how-the-messages-api-handles-thinking-blocks-to-protect.md) explains the change, and our [preserved thinking docs](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) show how to test and update your integrations.
 
 ### Data retention and compliance
 

@@ -2,7 +2,8 @@
 title: "How Anthropic teams use Claude Code | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/how-anthropic-teams-use-claude-code"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:31:24Z"
+fetched_at: "2026-09-30T06:32:34Z"
+last_modified: "Wed, 30 Sep 2026 04:21:10 GMT"
 tags: ["claude-code", "enterprise", "news-research"]
 ---
 

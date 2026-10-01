@@ -2,7 +2,7 @@
 title: "Code Review - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/code-review"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-26T06:38:06Z"
+fetched_at: "2026-09-30T06:30:32Z"
 tags: ["claude-code"]
 ---
 
@@ -78,7 +78,7 @@ Each finding is tagged with a severity level:
 | 🟡     | Nit          | A minor issue, worth fixing but not blocking                        |
 | 🟣     | Pre-existing | A bug that exists in the codebase but was not introduced by this PR |
 
-Findings include a collapsible extended reasoning section you can expand to understand why Claude flagged the issue and how it verified the problem.
+Findings include a collapsed **Why this was flagged** section that you can expand to read why Claude flagged the issue and how it verified the problem.
 
 
 [​](#rate-and-reply-to-findings)
@@ -293,7 +293,7 @@ Dashboard cost figures are estimates for monitoring activity. For invoice-accura
 
 Pricing
 
-Code Review is billed based on token usage. Each review averages \$15-25 in cost, scaling with PR size, codebase complexity, and how many issues require verification. Code Review usage is billed separately through [usage credits](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md) and does not count against your plan’s included usage. The review trigger you choose affects total cost:
+Code Review is billed based on token usage. Each review averages \$15-25 in cost, scaling with PR size, codebase complexity, and how many issues require verification. Code Review usage is billed separately through [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans) and does not count against your plan’s included usage. The review trigger you choose affects total cost:
 
 - **Once after PR creation**: runs once per PR
 - **After every push**: runs on each push, multiplying cost by the number of pushes
@@ -431,7 +431,7 @@ Escalate to ultrareview
 
 Ultrareview requires authentication with a claude.ai account and is not available on Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry, or to organizations with Zero Data Retention enabled. When ultrareview is not available, `/code-review ultra` runs a local review in your session instead.
 
-To start a cloud review from a script or CI, run `claude -p '/code-review ultra'`. Claude Code launches the review and prints a link for tracking it. Requires Claude Code v2.1.218 or later. When the review would bill [usage credits](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md), Claude Code stops before launching, because the billing confirmation needs an interactive session. Run the [`claude ultrareview` subcommand](ultrareview.md#run-ultrareview-non-interactively) instead; by running it, you consent to the charge. The command was named `/simplify` before v2.1.147, when it applied fixes by default. `/simplify` runs a separate cleanup-only review that applies fixes without hunting for bugs. If you scripted `/simplify` for bug-finding, switch to `/code-review --fix`.
+To start a cloud review from a script or CI, run `claude -p '/code-review ultra'`. Claude Code launches the review and prints a link for tracking it. Requires Claude Code v2.1.218 or later. When the review would bill [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans), Claude Code stops before launching, because the billing confirmation needs an interactive session. Run the [`claude ultrareview` subcommand](ultrareview.md#run-ultrareview-non-interactively) instead; by running it, you consent to the charge. The command was named `/simplify` before v2.1.147, when it applied fixes by default. `/simplify` runs a separate cleanup-only review that applies fixes without hunting for bugs. If you scripted `/simplify` for bug-finding, switch to `/code-review --fix`.
 
 
 [​](#related-resources)

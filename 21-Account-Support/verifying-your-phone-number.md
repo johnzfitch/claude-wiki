@@ -2,7 +2,7 @@
 title: "Verify your phone number | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8287232-verifying-your-phone-number"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:32:06Z"
+fetched_at: "2026-09-30T06:32:11Z"
 tags: ["account"]
 ---
 
@@ -11,7 +11,7 @@ tags: ["account"]
 August 17, 2026
 
 
-When you first create a Claude account, you’ll be asked to enter your phone number from a **[supported location](where-can-i-access-claude-ai.md)** to receive a verification code via text message. Once you receive the text message with the code, type it into the box and click "Verify code." This will complete the verification and account creation process and allow you to start chatting with Claude.
+When you first create a Claude account, you’ll be asked to enter your phone number from a **[supported location](../15-Claude-AI-Features/where-can-i-access-claude.md)** to receive a verification code via text message. Once you receive the text message with the code, type it into the box and click "Verify code." This will complete the verification and account creation process and allow you to start chatting with Claude.
 
 ## Why do I need to verify my phone number?
 

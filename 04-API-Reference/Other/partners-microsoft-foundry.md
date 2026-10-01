@@ -19,7 +19,7 @@ Get started
 
 Read API docs
 
-[Read API docs](../../02-Claude-Code-CLI/microsoft-foundry.md)
+[Read API docs](https://www.claude.com/20-Models/claude-code-on-microsoft-foundry-claude-code-docs-ee35d755a6.md)
 
 Read API docs
 
@@ -93,7 +93,7 @@ Get started
 
 Read API docs
 
-[Read API docs](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+[Read API docs](https://www.claude.com/20-Models/build-with-claude-claude-in-microsoft-foundry-cac680095c.md)
 
 Read API docs
 
@@ -290,17 +290,17 @@ Models
 
 - Opus
 
-  [Opus](../../15-Claude-AI-Features/claude-opus.md)
+  [Opus](https://www.claude.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
   Opus
 
 - Sonnet
 
-  [Sonnet](../../15-Claude-AI-Features/claude-sonnet.md)
+  [Sonnet](https://www.claude.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
   Sonnet
 
 - Haiku
 
-  [Haiku](../../15-Claude-AI-Features/claude-haiku.md)
+  [Haiku](https://www.claude.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
   Haiku
 
 Enterprise
@@ -417,7 +417,7 @@ Developers
 
 - Developer docs
 
-  [Developer docs](../../02-Claude-Code-CLI/code-home.md)
+  [Developer docs](https://www.claude.com/01-Getting-Started/overview.md)
   Developer docs
 
 - Community

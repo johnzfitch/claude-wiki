@@ -2,7 +2,7 @@
 title: "IG Group Claude Enterprise case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/ig-group"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:05Z"
+fetched_at: "2026-09-30T06:32:49Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 

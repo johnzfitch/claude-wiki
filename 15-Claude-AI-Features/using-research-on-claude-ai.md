@@ -1,8 +1,8 @@
 ---
 title: "Use research on Claude | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/11088861-using-research-on-claude-ai"
+source_url: "https://support.claude.com/en/articles/11088861-using-research-on-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:40Z"
+fetched_at: "2026-09-30T06:32:20Z"
 tags: ["claude-ai", "search"]
 ---
 
@@ -25,7 +25,7 @@ Click the “+” button on the bottom left of your chat interface, then "Resear
 
 ## Use research
 
-Once research is turned on, you can ask Claude a question. Claude will kick off the research process across your internal context (such as **[Gmail, Google Calendar, and Google Docs when connected](../14-Connectors/using-the-google-drive-integration.md)**) and the web.
+Once research is turned on, you can ask Claude a question. Claude will kick off the research process across your internal context (such as **[Gmail, Google Calendar, and Google Docs when connected](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors)**) and the web.
 
 To see an example of using Claude's Research feature to plan a team offsite, watch the video here: **[Using Research](https://claude.com/resources/tutorials/using-research)**.
 

@@ -2,7 +2,7 @@
 title: "All settings - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/settings-reference"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:30:20Z"
+fetched_at: "2026-09-30T06:31:59Z"
 tags: ["claude-code"]
 ---
 
@@ -29,6 +29,7 @@ Every key below links to its entry. Scope lists the [files](settings.md#settings
 | [`agent`](#agent)                                                                                     | Start every session as a named [subagent](../09-Agents-Patterns/sub-agents.md) with its prompt, tools, and model                                                                                                                                      | Agents, sessions, and worktrees    | Any file                |
 | [`agentPushNotifEnabled`](#agentpushnotifenabled)                                                     | Let Claude send a [push notification to your phone](remote-control.md#mobile-push-notifications) when it decides to                                                                                                             | Remote, desktop, and notifications | Any file                |
 | [`allowAllClaudeAiMcps`](#allowallclaudeaimcps)                                                       | Load the [claude.ai connectors](../06-MCP-Tools/General/mcp.md) Claude Code fetches itself alongside a deployed [`managed-mcp.json`](../06-MCP-Tools/General/managed-mcp.md#exclusive-control-with-managed-mcp-json)                                                      | MCP                                | Managed                 |
+| [`allowClaudeInChromeWithManagedMcp`](#allowclaudeinchromewithmanagedmcp)                             | Let the built-in [Claude in Chrome](../03-IDE-Integrations/chrome.md) server run alongside a deployed [`managed-mcp.json`](../06-MCP-Tools/General/managed-mcp.md#exclusive-control-with-managed-mcp-json)                                                               | MCP                                | Managed                 |
 | [`allowedChannelPlugins`](#allowedchannelplugins)                                                     | Replace the default allowlist of [channel plugins](channels.md#restrict-which-channel-plugins-can-run) that can push messages                                                                                                   | Plugins and skills                 | Managed                 |
 | [`allowedHttpHookUrls`](#allowedhttphookurls)                                                         | Limit which URLs [HTTP hooks](../07-Hooks/hooks.md) can target                                                                                                                                                                              | Hooks and automation               | Any file                |
 | [`allowedMcpServers`](#allowedmcpservers)                                                             | Allowlist which [MCP servers](../06-MCP-Tools/General/mcp.md) users can add                                                                                                                                                                             | MCP                                | Any file                |
@@ -1158,13 +1159,18 @@ Like `allow` rules, entries in a project’s `.claude/settings.json` take effect
 
 `permissions.blockReadsOutsideWorkingDirectories`
 
-Stop Claude from reading paths outside the session’s [working directories](permissions.md#working-directories) with the Read, Grep, Glob, and LSP tools, in every permission mode including `bypassPermissions`. A Bash command that reads a matching path through a file command Claude Code recognizes, such as `cat`, prompts you even in auto mode and `bypassPermissions` mode. Requires Claude Code v2.1.257 or later. A Bash command the shell parser can’t trace, such as one that changes directory more than once or runs a subshell, prompts you even in auto mode and `bypassPermissions` mode. The prompt appears even when the command names no path outside the working directories. This prompt doesn’t apply when the command runs in the [sandbox](sandboxing.md) and the sandbox enforces the block. Claude Code also writes `true` here when you choose to block such reads on [auto mode’s prompt before the first read outside the working directories](permission-modes.md#first-read-outside-the-working-directories).
+Make Claude’s file tools refuse reads outside your [working directories](permissions.md#working-directories) in every permission mode, including `bypassPermissions`. Claude Code denies `Read`, `Grep`, `Glob`, and `LSP` calls on those paths and tells Claude to ask you to add the directory with `/add-dir`. Files Claude Code itself needs stay readable, such as your skills, plugins, rules, agents, commands, and the `CLAUDE.md` memory file under `~/.claude/`. Requires Claude Code v2.1.257 or later. Claude Code doesn’t refuse shell commands the same way:
 
-- **Scope**: [`Any file`](#scopes). If any settings source sets `true`, the block applies, so a repository’s checked-in file can turn the block on for a project but can’t lift a block you set.
+- [Actions no mode auto-approves](permission-modes.md#actions-no-mode-auto-approves) covers when a shell command that reads such a path prompts you
+- [Sandboxed commands under the block](#sandboxed-commands-under-the-block) covers what a sandboxed command can read
+
+A Bash command the shell parser can’t trace, such as one that changes directory more than once or runs a subshell, prompts you even in auto mode and `bypassPermissions` mode. The prompt appears even when the command names no path outside the working directories. This prompt doesn’t apply when the command runs in the [sandbox](sandboxing.md) and the sandbox enforces the block. Claude Code also writes `true` here when you choose to block such reads on [auto mode’s prompt before the first read outside the working directories](permission-modes.md#first-read-outside-the-working-directories).
+
+- **Scope**: [`Any file`](#scopes). A `true` in any file applies, so a repository can turn the block on for itself but can’t lift yours.
 - **Type**: Boolean
-  - `true`: file reads outside the working directories are blocked
-  - `false`: the same as unset; a `true` in any other settings file still blocks
-- **Default**: unset, so reads outside the working directories follow your permission mode and rules
+  - `true`: Claude’s file tools refuse reads outside the working directories
+  - `false`: the same as unset; the block still applies if another file sets `true`
+- **Default**: unset, so reads outside the working directories follow your [permission mode](permission-modes.md)
 
 settings.json
 
@@ -1176,7 +1182,26 @@ settings.json
 }
 ```
 
-If only a repository’s checked-in settings file adds a directory, the block still applies to reads there. When [`autoMemoryDirectory`](#automemorydirectory) comes from the project’s `.claude/settings.json`, or from a `.claude/settings.local.json` [treated as repository-supplied](permissions.md#when-your-local-settings-file-needs-trust), Claude Code loads no [auto memory](memory.md#storage-location) from that directory and saves none to it. Files Claude Code itself needs stay readable, such as your skills, plugins, rules, agents, commands, and the `CLAUDE.md` memory file under `~/.claude/`. When the [sandbox](sandboxing.md) is on, the block also denies sandboxed commands read access to home directories and mounted-volume roots outside the working directories. A retry that needs approval to [run outside the sandbox](sandboxing.md#the-unsandboxed-retry-escape-hatch) prompts you even in `bypassPermissions` mode. Files a tool reads from your home directory, such as `~/.gitconfig`, are denied with the rest; re-open a specific path with [`sandbox.filesystem.allowRead`](#sandbox-filesystem-allowread) when a tool needs it. When the session’s working directory is a linked [git worktree](worktrees.md), including one Claude Code entered mid-session, the repository’s common `.git` directory stays readable and writable to sandboxed commands, so git keeps working there.
+Directories you add with `--add-dir`, `/add-dir`, or `additionalDirectories` in your user or managed settings count as working directories for the block. Directories added only in repository settings don’t count: those in `.claude/settings.json`, and those in `.claude/settings.local.json` unless git reports that file as untracked. In a directory that isn’t a git repository, or when git tracks the file, Claude Code treats `.claude/settings.local.json` as repository settings, so put directories you want to keep readable in your user settings instead. When [`autoMemoryDirectory`](#automemorydirectory) comes from the project’s `.claude/settings.json`, or from a `.claude/settings.local.json` [treated as repository-supplied](permissions.md#when-your-local-settings-file-needs-trust), Claude Code loads no [auto memory](memory.md#storage-location) from that directory and saves none to it. To lift the block, remove the key from every settings file that sets it, then start a new session.
+
+
+[​](#sandboxed-commands-under-the-block)
+
+Sandboxed commands under the block
+
+When [sandboxing](sandboxing.md) is on, the block also covers sandboxed commands. Claude Code denies them read access to your home directory and to the other roots that hold user files: `/Users`, `/home`, `/root`, `/Volumes`, `/mnt`, `/media`, `/run/media`, and `/srv`. It then re-opens the working directories, [worktrees](worktrees.md) Claude Code creates in the session, the session temp directory, and the parts of `~/.claude` that commands need, such as skills and plugins. While the block is in force, `allowRead` and `allowWrite` entries from repository settings don’t count. When the session’s working directory is a linked [git worktree](worktrees.md), including one Claude Code entered mid-session, the repository’s common `.git` directory stays readable and writable to sandboxed commands, so git keeps working there. In these cases the block doesn’t reach sandboxed commands, while Claude’s file tools keep enforcing it:
+
+- Filesystem isolation is off through [`sandbox.filesystem.disabled`](#sandbox-filesystem-disabled)
+- [`allowManagedReadPathsOnly`](#sandbox-filesystem-allowmanagedreadpathsonly) is set
+- The path of the directory you started Claude Code in contains a glob character such as `*`, `?`, or `[`
+
+Under the block, Claude Code re-opens your global git configuration files to sandboxed commands so `git` keeps your identity and settings:
+
+- `~/.gitconfig`
+- The `config`, `ignore`, and `attributes` files under `$XDG_CONFIG_HOME/git`, which defaults to `~/.config/git`
+- Files your global git configuration names through `[include]`, `[includeIf]`, `core.excludesFile`, or `core.attributesFile`
+
+Claude Code judges each file separately. When a file lies where a sandboxed command can write, directly or through a symlink, Claude Code doesn’t re-open the files it names. On Linux and WSL2, a configuration file that is a symlink can stay unreadable at its own path, and `git` then runs without it. `~/.git-credentials` and `$XDG_CONFIG_HOME/git/credentials` stay blocked. If a re-opened file holds a secret, such as an `http.extraHeader` token, add its path to [`sandbox.filesystem.denyRead`](#sandbox-filesystem-denyread). A `denyRead` entry that covers a file always takes precedence over this re-open.
 
 
 [​](#permissions-defaultmode)
@@ -1190,7 +1215,7 @@ Set the [permission mode](permission-modes.md) new sessions start in. When you l
   - `"default"`: Claude Code runs only reads without asking
   - `"acceptEdits"`: Claude Code also runs file edits and common filesystem commands such as `mkdir` and `mv` without asking
   - `"plan"`: Claude Code reads and plans but blocks edits until you approve a plan
-  - `"auto"`: Claude Code runs everything, with background safety checks
+  - `"auto"`: Claude Code runs without routine prompts; before actions such as shell commands and network requests run, a background classifier checks that they align with your request
   - `"dontAsk"`: Claude Code auto-denies every call that would otherwise prompt; reads, other actions that need no approval, and pre-approved tools still run
   - `"bypassPermissions"`: Claude Code runs everything without asking
   - `"manual"`: an alias for `"default"`, in Claude Code v2.1.200 or later
@@ -1527,7 +1552,7 @@ settings.json
 }
 ```
 
-Claude Code merges entries across every settings scope the session loads: user, project, local, and managed paths combine rather than replace each other, and Claude Code adds the paths from your `Edit(...)` allow permission rules. An `allowWrite` entry can’t lift a [protected path](sandboxing.md#protected-paths).
+Claude Code merges `allowWrite` entries and the paths from your `Edit(...)` allow permission rules across every settings scope the session loads, leaving out the ones from repository settings while [`permissions.blockReadsOutsideWorkingDirectories`](#sandboxed-commands-under-the-block) is on. An `allowWrite` entry can’t lift a [protected path](sandboxing.md#protected-paths).
 
 
 [​](#sandbox-filesystem-denywrite)
@@ -1607,7 +1632,7 @@ settings.json
 }
 ```
 
-Claude Code resolves a `.` entry to the project root in project settings and to `~/.claude` in user settings. Claude Code merges entries across every settings file the session loads unless [`allowManagedReadPathsOnly`](#sandbox-filesystem-allowmanagedreadpathsonly) is set.
+Claude Code resolves a `.` entry to the project root in project settings and to `~/.claude` in user settings. Claude Code merges entries across every settings file the session loads unless [`allowManagedReadPathsOnly`](#sandbox-filesystem-allowmanagedreadpathsonly) is set, and leaves out entries from repository settings while [`permissions.blockReadsOutsideWorkingDirectories`](#sandboxed-commands-under-the-block) is on.
 
 
 [​](#sandbox-filesystem-allowmanagedreadpathsonly)
@@ -2624,6 +2649,7 @@ settings.json
 How `env` values interact with your shell
 
 - A value here overwrites the same variable exported in your shell, and when more than one settings file sets a variable, the [highest-precedence](settings.md#settings-precedence) one applies. [Variables Claude Code ignores in `env`](#variables-claude-code-ignores-in-env) lists the exceptions for project and local settings.
+- When the Claude Desktop app or a [self-hosted environment](../13-Enterprise-Admin/self-hosted-environments.md) runner starts the session, the launch environment it builds takes precedence instead: Claude Code ignores an `env` value from any settings file for a variable the launch environment already sets. The [debug log](debug-your-config.md) names each ignored variable.
 - To cancel a shell export, set the variable to `""`. Claude Code treats an empty value as unset for provider selection, and subprocesses inherit the empty value.
 - `NO_COLOR` and `FORCE_COLOR` set here reach only subprocesses. To change Claude Code’s own interface colors, set them in your shell before launching `claude`.
 - Values here are plain text in the settings file and reach every subprocess Claude Code starts. For an OTLP bearer token that rotates, use [`otelHeadersHelper`](#otelheadershelper); for API credentials, use [`apiKeyHelper`](#apikeyhelper).
@@ -4632,7 +4658,7 @@ The four sub-key entries below list what each surface blocks and what still load
 
 `strictPluginOnlyCustomization.skills`
 
-Lock the `skills` surface. Claude Code stops loading skills from `~/.claude/skills/` and `.claude/skills/`, custom commands from `~/.claude/commands/` and `.claude/commands/`, skills under `--add-dir` directories, and skills synced from your claude.ai account, and keeps loading plugin skills, bundled skills, and skills in the managed policy directory.
+Lock the `skills` surface. Claude Code stops loading skills from `~/.claude/skills/` and `.claude/skills/`, custom commands from `~/.claude/commands/` and `.claude/commands/`, skills and commands under `--add-dir` directories, and skills synced from your claude.ai account. It keeps loading plugin skills, bundled skills, and skills in the managed policy directory.
 
 - **Scope**: [`Managed`](#scopes)
 - **Type**: the string `"skills"` in the [`strictPluginOnlyCustomization`](#strictpluginonlycustomization) array
@@ -4651,7 +4677,7 @@ managed-settings.json
 
 `strictPluginOnlyCustomization.agents`
 
-Lock the `agents` surface. Claude Code stops loading agents from `~/.claude/agents/` and `.claude/agents/`, and keeps loading plugin agents, built-in agents, and agents in the managed policy directory.
+Lock the `agents` surface. Claude Code stops loading agents from `~/.claude/agents/`, `.claude/agents/`, and `--add-dir` directories. It keeps loading plugin agents, built-in agents, and agents in the managed policy directory.
 
 - **Scope**: [`Managed`](#scopes)
 - **Type**: the string `"agents"` in the [`strictPluginOnlyCustomization`](#strictpluginonlycustomization) array
@@ -4896,11 +4922,34 @@ managed-settings.json
 [`allowedMcpServers`](#allowedmcpservers) and [`deniedMcpServers`](#deniedmcpservers) still apply to the connectors this key loads. Connectors delivered to a [cloud session](claude-code-on-the-web.md) whose host carries a `managed-mcp.json`, such as a self-hosted runner, stay suppressed. See [Allow claude.ai connectors alongside the managed set](../06-MCP-Tools/General/managed-mcp.md#allow-claude-ai-connectors-alongside-the-managed-set).
 
 
+[​](#allowclaudeinchromewithmanagedmcp)
+
+`allowClaudeInChromeWithManagedMcp`
+
+Let the built-in [Claude in Chrome](../03-IDE-Integrations/chrome.md) server run alongside a deployed `managed-mcp.json`. Without this key, a deployed `managed-mcp.json` blocks Claude in Chrome in terminal sessions. Requires Claude Code v2.1.282 or later.
+
+- **Scope**: [`Managed`](#scopes), from the device’s own managed settings only: an MDM-deployed plist or HKLM registry key, or a system `managed-settings.json` file. Claude Code ignores it in server-managed settings, in the user-writable HKCU registry, and in user or project settings.
+- **Type**: Boolean
+  - `true`: the built-in Claude in Chrome server can run alongside a deployed `managed-mcp.json`
+  - `false`: a deployed `managed-mcp.json` blocks Claude in Chrome in terminal sessions
+- **Default**: `false`, so a deployed `managed-mcp.json` blocks Claude in Chrome in terminal sessions
+
+managed-settings.json
+
+```python
+{
+  "allowClaudeInChromeWithManagedMcp": true
+}
+```
+
+A [`deniedMcpServers`](#deniedmcpservers) entry for `claude-in-chrome` still blocks the server with this key on. See [Allow Claude in Chrome alongside the managed set](../06-MCP-Tools/General/managed-mcp.md#allow-claude-in-chrome-alongside-the-managed-set).
+
+
 [​](#allowedmcpservers)
 
 `allowedMcpServers`
 
-Allowlist the MCP servers people can add. Claude Code blocks any server that doesn’t match an entry wherever it’s defined, including plugin servers, servers passed with `--mcp-config`, and servers from claude.ai. Built-in servers such as Claude in Chrome, the `ide` server Claude Code connects to in a running [VS Code](../03-IDE-Integrations/vs-code.md#the-built-in-ide-mcp-server) or [JetBrains](../03-IDE-Integrations/jetbrains.md#the-built-in-ide-mcp-server) IDE, and servers the CLI itself configures are exempt from the allowlist, and the denylist still applies to them. In-process `type: "sdk"` servers are exempt from both lists; the [app that started the session](../06-MCP-Tools/General/mcp.md#how-connectors-reach-claude-code) registers them. Servers your organization delivers are also exempt from the allowlist, and the denylist still applies to them. The exemption covers every [`managedMcpServers`](#managedmcpservers) entry, and any [`managed-mcp.json`](../06-MCP-Tools/General/managed-mcp.md#exclusive-control-with-managed-mcp-json) entry whose values use no `${VAR}` expansion. See [How a server is evaluated](../06-MCP-Tools/General/managed-mcp.md#how-a-server-is-evaluated) for the full check order. Before v2.1.259, servers from `managed-mcp.json` had to match too.
+Allowlist the MCP servers people can add. Claude Code blocks any server that doesn’t match an entry wherever it’s defined, including plugin servers, servers a user passes with `--mcp-config`, and servers from claude.ai. Built-in servers such as Claude in Chrome, the `ide` server Claude Code connects to in a running [VS Code](../03-IDE-Integrations/vs-code.md#the-built-in-ide-mcp-server) or [JetBrains](../03-IDE-Integrations/jetbrains.md#the-built-in-ide-mcp-server) IDE, and servers the CLI itself configures are exempt from the allowlist, and the denylist still applies to them. On Claude Code v2.1.268 or later, a [Claude Tag](claude-tag.md) session’s Slack tools are also exempt from the allowlist, and the denylist still applies to them. In-process `type: "sdk"` servers are exempt from both lists; the [app that started the session](../06-MCP-Tools/General/mcp.md#how-connectors-reach-claude-code) registers them. Servers your organization delivers are also exempt from the allowlist, and the denylist still applies to them. The exemption covers every [`managedMcpServers`](#managedmcpservers) entry, and any [`managed-mcp.json`](../06-MCP-Tools/General/managed-mcp.md#exclusive-control-with-managed-mcp-json) entry whose values use no `${VAR}` expansion. See [How a server is evaluated](../06-MCP-Tools/General/managed-mcp.md#how-a-server-is-evaluated) for the full check order. Before v2.1.259, servers from `managed-mcp.json` had to match too.
 
 - **Scope**: [`Any file`](#scopes). Entries from every file merge into one allowlist unless [`allowManagedMcpServersOnly`](#allowmanagedmcpserversonly) is set. Deploy it in managed settings to enforce it.
 - **Type**: array of objects, each with exactly one key: `serverName`, a string limited to letters, numbers, hyphens, and underscores; `serverCommand`, an array of the command and its arguments matched exactly; or `serverUrl`, a URL pattern with `*` wildcards
@@ -6177,11 +6226,11 @@ Keys an organization uses to compute, refresh, and combine managed settings. See
 
 `disableSideloadFlags`
 
-Reject the `--plugin-dir`, `--plugin-url`, `--agents`, and `--mcp-config` CLI flags at startup, which users could otherwise pass to bypass [`strictKnownMarketplaces`](#strictknownmarketplaces) for a single run. Claude Code exits with an error naming the rejected flags, and applies the same check to surfaces that start the CLI with these flags internally, currently [Cowork](../16-Mobile-Desktop/desktop.md) local sessions in the desktop app. In [cloud sessions](claude-code-on-the-web.md), Claude Code drops the MCP servers the server delivered through `--mcp-config`, other than in-process `type: "sdk"` entries, and starts the session. Requires Claude Code v2.1.193 or later.
+Reject the `--plugin-dir`, `--plugin-url`, `--agents`, and `--mcp-config` CLI flags at startup, which users could otherwise pass to bypass [`strictKnownMarketplaces`](#strictknownmarketplaces) for a single run. Claude Code exits with an error naming the rejected flags, and applies the same check to surfaces that start the CLI with these flags internally, currently [Cowork](../16-Mobile-Desktop/desktop.md) local sessions in the desktop app. In [cloud sessions](claude-code-on-the-web.md), Claude Code instead starts the session and drops every server-delivered `--mcp-config` entry except in-process `type: "sdk"` entries and a [Claude Tag](claude-tag.md) session’s Slack tools. Requires Claude Code v2.1.193 or later.
 
 - **Scope**: [`Managed`](#scopes)
 - **Type**: Boolean
-  - `true`: Claude Code rejects `--plugin-dir`, `--plugin-url`, `--agents`, and `--mcp-config` at startup and exits with an error naming them, except that in cloud sessions it drops the MCP servers the server delivered through `--mcp-config`, other than in-process `type: "sdk"` entries, and starts the session
+  - `true`: Claude Code rejects `--plugin-dir`, `--plugin-url`, `--agents`, and `--mcp-config` at startup and exits with an error naming them. In cloud sessions, it instead starts the session and drops every server-delivered `--mcp-config` entry except in-process `type: "sdk"` entries and a Claude Tag session’s Slack tools
   - `false`: Claude Code accepts those flags
 - **Default**: `false`
 
@@ -6193,7 +6242,7 @@ managed-settings.json
 }
 ```
 
-Claude Code still accepts a `--mcp-config` whose servers are all in-process `type: "sdk"` entries, so the Agent SDK and VS Code extension keep working. Users can still add servers with `claude mcp add` or a `.mcp.json` file; for per-server control, set [`allowedMcpServers`](../06-MCP-Tools/General/managed-mcp.md) as well. Requires Claude Code v2.1.193 or later. The same check covers plugin folders named in the [`CLAUDE_CODE_PLUGIN_DIRS`](env-vars.md#variables) environment variable, which requires Claude Code v2.1.280 or later. When the variable names a folder, Claude Code exits with the same error, and the error says to unset the variable. In cloud sessions, Claude Code also ignores server-delivered mid-session MCP updates, the path behind cloud session configuration and SDK `setMcpServers()` calls that reach those sessions. In-process `type: "sdk"` entries stay exempt there too. Before v2.1.239, a server-delivered `--mcp-config` blocked a cloud session from starting.
+Claude Code still accepts a `--mcp-config` whose servers are all in-process `type: "sdk"` entries, so the Agent SDK and VS Code extension keep working. Users can still add servers with `claude mcp add` or a `.mcp.json` file; for per-server control, set [`allowedMcpServers`](../06-MCP-Tools/General/managed-mcp.md) as well. Requires Claude Code v2.1.193 or later. The same check covers plugin folders named in the [`CLAUDE_CODE_PLUGIN_DIRS`](env-vars.md#variables) environment variable, which requires Claude Code v2.1.280 or later. When the variable names a folder, Claude Code exits with the same error, and the error says to unset the variable. In cloud sessions, Claude Code also ignores server-delivered mid-session MCP updates, the path behind cloud session configuration and SDK `setMcpServers()` calls that reach those sessions. In-process `type: "sdk"` entries and a Claude Tag session’s Slack tools stay exempt there too. Before v2.1.268, both this drop and the startup drop also removed a Claude Tag session’s Slack tools. Before v2.1.239, a server-delivered `--mcp-config` blocked a cloud session from starting.
 
 
 [​](#forceremotesettingsrefresh)

@@ -2,12 +2,11 @@
 title: "Getting Started with Local MCP Servers on Claude Desktop | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-29T06:30:52Z"
+fetched_at: "2026-09-30T06:31:18Z"
 tags: ["desktop", "enterprise", "mcp"]
 ---
 
 # Getting Started with Local MCP Servers on Claude Desktop
-
 
 
 The Model Context Protocol (MCP) is an open protocol that enables seamless integration between LLM applications and external data sources and tools. With the introduction of desktop extensions, installing and managing local MCP servers has become significantly easier.
@@ -65,7 +64,7 @@ Click “Install Extension…” and select the .mcpb file. Follow the prompts t
 
 **Note:** Enterprise policy controls at the user-machine level will override any in-app controls (blocklist and allowlist). If you want to use an in-app control, ensure `isDesktopExtensionEnabled` and `isDesktopExtensionDirectoryEnabled` are not set to "false" so the allowlist can populate the available registry.
 
-For controlling desktop extensions through system policies, please refer to our [desktop enterprise configuration documentation](../13-Enterprise-Admin/enterprise-configuration-for-claude-desktop.md).
+For controlling desktop extensions through system policies, please refer to our [desktop enterprise configuration documentation](https://support.claude.com/en/articles/12622667-enterprise-configuration).
 
 ## Troubleshooting desktop extension installation issues
 
@@ -145,4 +144,4 @@ For more in-depth information on building your own MCP clients and servers, we r
 
 - [Guide to debugging MCP integrations](https://modelcontextprotocol.io/docs/tools/debugging) - Troubleshooting tips and solutions for common implementation challenges.
 
-If you need further guidance, visit our guide on [How to Get Support](../21-Account-Support/how-can-i-contact-support.md) for additional support options.
+If you need further guidance, visit our guide on [How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support) for additional support options.

@@ -2,7 +2,7 @@
 title: "Does Anthropic crawl data from the web, and how can site owners block the crawler? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:32:34Z"
+fetched_at: "2026-09-30T06:32:21Z"
 tags: ["news-research"]
 ---
 
@@ -39,7 +39,7 @@ Disallow: /
 
 Opting out of being crawled by Anthropic Bots requires modifying the robots.txt file in the manner above. Alternate methods like blocking IP address(es) from which Anthropic Bots operates may not work correctly or persistently guarantee an opt-out, as doing so impedes our ability to read your robots.txt file. If a crawler has a source IP address on **[this list](https://claude.com/crawling/bots.json)**, it indicates that the crawler is coming from Anthropic.
 
-You can learn more about our data handling practices and commitments at our **[Help Center](https://support.claude.com/en/collections/4078534-privacy-and-legal)**. If you have further questions, or believe that our Bots may be malfunctioning, please reach out to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#c9aaa5a8bcadacaba6bd89a8a7bda1bba6b9a0aae7aaa6a4). Please reach out from an email that includes the domain you are contacting us about, as it is otherwise difficult to verify reports.
+You can learn more about our data handling practices and commitments at our **[Help Center](https://support.claude.com/en/collections/4078534-privacy-and-legal)**. If you have further questions, or believe that our Bots may be malfunctioning, please reach out to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#395a55584c5d5c5b564d7958574d514b5649505a175a5654). Please reach out from an email that includes the domain you are contacting us about, as it is otherwise difficult to verify reports.
 
 You can be notified of substantial changes to this article by clicking here and completing the form:
 

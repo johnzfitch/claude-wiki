@@ -65,21 +65,21 @@ Loading
 
 The + menu has a few more options for when a task needs them:
 
-- **[Connectors(opens in new tab)](../14-Connectors/use-connectors-to-extend-claude-s-capabilities.md):** let Claude read and act in the apps you already use, such as your email, calendar, drive, chat and CRM. Turn one on once and every conversation can search it, quote from it and, where you allow it, write back. [Browse the directory(opens in new tab)](../04-API-Reference/Other/partners-mcp.md).
-- **[Web search(opens in new tab)](enabling-and-using-web-search.md):** on by default for Free, Pro and Max plans. On Team and Enterprise plans it's off by default, and an admin can turn it on. Turn it off when the answer should come only from your documents.
-- **[Research(opens in new tab)](using-research-on-claude-ai.md):** runs many searches and returns one cited brief. It takes minutes, so save it for the big questions.
+- **[Connectors(opens in new tab)](https://support.claude.com/en/14-Connectors/use-connectors-to-extend-claude-s-capabilities-d041e8447b.md):** let Claude read and act in the apps you already use, such as your email, calendar, drive, chat and CRM. Turn one on once and every conversation can search it, quote from it and, where you allow it, write back. [Browse the directory(opens in new tab)](../04-API-Reference/Other/partners-mcp.md).
+- **[Web search(opens in new tab)](https://support.claude.com/en/15-Claude-AI-Features/enable-and-use-web-search-8d6f49bb71.md):** on by default for Free, Pro and Max plans. On Team and Enterprise plans it's off by default, and an admin can turn it on. Turn it off when the answer should come only from your documents.
+- **[Research(opens in new tab)](https://support.claude.com/en/15-Claude-AI-Features/use-research-on-claude-5efd9759fb.md):** runs many searches and returns one cited brief. It takes minutes, so save it for the big questions.
 - **[Skills(opens in new tab)](../02-Claude-Code-CLI/what-are-skills.md):** saved instructions for work you do the same way every time, including a tone or format you want on demand. In the Claude desktop app you can also record yourself doing a task once and keep it as a skill.
 - **Add folder** ([desktop app(opens in new tab)](https://support.claude.com/tutorials/navigating-the-claude-desktop-app)): hand Claude a whole folder on your computer to read from and save into, instead of uploading files one at a time.
 
-[See when to use Web search, Extended thinking, and Research(opens in new tab)](when-should-i-use-web-search-extended-thinking-and-research.md).
+[See when to use Web search, Extended thinking, and Research(opens in new tab)](https://support.claude.com/en/15-Claude-AI-Features/when-should-i-use-web-search-extended-thinking-and-research-256bdfb733.md).
 
 ## What Claude remembers[](#what-claude-remembers)
 
 Once you've explained your project, your team, or how you like to work, you shouldn't have to explain it again. A few features carry the important things forward so each conversation starts where the last one left off:
 
-- **[Projects(opens in new tab)](what-are-projects.md):** a place for one ongoing piece of work. Add the files Claude should always have on hand, write a few lines of instruction (the brand voice, the format, the things to never forget), and every conversation inside starts already knowing them. Make one when you keep re-uploading the same files or re-explaining the same rules.
+- **[Projects(opens in new tab)](https://support.claude.com/en/15-Claude-AI-Features/what-are-projects-91a78d2090.md):** a place for one ongoing piece of work. Add the files Claude should always have on hand, write a few lines of instruction (the brand voice, the format, the things to never forget), and every conversation inside starts already knowing them. Make one when you keep re-uploading the same files or re-explaining the same rules.
 - **[Instructions for Claude(opens in new tab)](understanding-claude-s-personalization-features.md):** a short note in your Settings profile that Claude keeps in mind in every conversation, such as who you are, what to assume and how to talk to you. Set it once and it applies everywhere.
-- **[Memory(opens in new tab)](using-claude-s-chat-search-and-memory-to-build-on-previous-context.md):** what Claude remembers about you across conversations, such as your team, your projects and how you like to work. Turn it on in Settings and it fills in as you go; you can read or edit it any time.
+- **[Memory(opens in new tab)](https://support.claude.com/en/15-Claude-AI-Features/use-claude-s-chat-search-and-memory-to-build-on-previous-context-51665b652e.md):** what Claude remembers about you across conversations, such as your team, your projects and how you like to work. Turn it on in Settings and it fills in as you go; you can read or edit it any time.
 
 ## Beyond the chat window[](#beyond-the-chat-window)
 
@@ -87,9 +87,9 @@ Chat is where most people start. The same Claude shows up in a few other places,
 
 - The [desktop app(opens in new tab)](https://support.claude.com/tutorials/navigating-the-claude-desktop-app) brings the same chat onto your computer and, on Mac, adds quick entry from anywhere, screenshots, and dictation.
 - [Claude Code(opens in new tab)](../02-Claude-Code-CLI/your-first-day-in-claude-code.md) is Claude in the terminal and editor, for engineers and developers.
-- [Claude Design(opens in new tab)](../21-Account-Support/get-started-with-claude-design.md) now starts from any conversation or from the Design tab in the sidebar. It lays out screens, flows and prototypes as artboards you can edit by hand, in your design system.
+- [Claude Design(opens in new tab)](https://support.claude.com/en/21-Account-Support/get-started-with-claude-design-c1ae6368f5.md) now starts from any conversation or from the Design tab in the sidebar. It lays out screens, flows and prototypes as artboards you can edit by hand, in your design system.
 - [Claude Tag(opens in new tab)](what-is-claude-tag.md) brings Claude into your team's Slack workspace. Tag Claude in a channel or thread and it carries out the task there, working from the conversation and the tools your admin has connected.
-- Claude also runs inside the apps where you already work: [Excel(opens in new tab)](https://claude.com/docs/office-agents/excel), [Word(opens in new tab)](https://claude.com/docs/office-agents/word), [PowerPoint(opens in new tab)](https://claude.com/docs/office-agents/powerpoint), [Outlook(opens in new tab)](https://claude.com/docs/office-agents/outlook), [Chrome(opens in new tab)](getting-started-with-claude-for-chrome.md), and on [mobile(opens in new tab)](https://support.claude.com/en/collections/9387080-claude-mobile-apps).
+- Claude also runs inside the apps where you already work: [Excel(opens in new tab)](https://claude.com/docs/office-agents/excel), [Word(opens in new tab)](https://claude.com/docs/office-agents/word), [PowerPoint(opens in new tab)](https://claude.com/docs/office-agents/powerpoint), [Outlook(opens in new tab)](https://claude.com/docs/office-agents/outlook), [Chrome(opens in new tab)](https://support.claude.com/en/15-Claude-AI-Features/get-started-with-claude-in-chrome-eb318c7097.md), and on [mobile(opens in new tab)](https://support.claude.com/en/collections/9387080-claude-mobile-apps).
 
 ## Asking Claude about Claude[](#asking-claude-about-claude)
 

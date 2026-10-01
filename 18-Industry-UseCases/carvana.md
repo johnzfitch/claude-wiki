@@ -2,7 +2,7 @@
 title: "Carvana Claude Tag case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/carvana"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:31:59Z"
+fetched_at: "2026-09-30T06:32:41Z"
 tags: ["agents", "case-studies", "enterprise", "security"]
 ---
 

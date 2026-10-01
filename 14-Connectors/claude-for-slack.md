@@ -2,7 +2,8 @@
 title: "Claude in Slack: Tag @Claude in any thread | Claude by Anthropic"
 source_url: "https://www.claude.com/claude-for-slack"
 category: "14-Connectors"
-fetched_at: "2026-09-29T06:30:01Z"
+fetched_at: "2026-09-30T06:31:36Z"
+last_modified: "Tue, 29 Sep 2026 22:09:24 GMT"
 tags: ["connectors", "prompting", "slack"]
 ---
 
@@ -565,7 +566,7 @@ Learn more about [**@Claude**](https://anthropic.enterprise.slack.com/team/U08SS
 
 Read more
 
-[Read more](../15-Claude-AI-Features/what-is-claude-tag.md)
+[Read more](https://support.claude.com/en/articles/15594475)
 
 Read more
 

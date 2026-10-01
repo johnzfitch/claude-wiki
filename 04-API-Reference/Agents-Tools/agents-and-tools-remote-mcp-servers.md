@@ -1176,7 +1176,7 @@ URL
 https://mcp.cloud.cdata.com/mcp
 ```
 
-[Microsoft 365(opens in new tab)](../../14-Connectors/enabling-and-using-the-microsoft-365-connector.md)
+[Microsoft 365(opens in new tab)](https://platform.claude.com/docs/14-Connectors/enabling-and-using-the-microsoft-365-connector-f39b429330.md)
 
 Access your company's SharePoint, OneDrive, Outlook, and Teams directly in Claude
 

@@ -2,7 +2,8 @@
 title: "Claude Code by Anthropic | AI Coding Agent, Terminal, IDE"
 source_url: "https://www.claude.com/product/claude-code"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:52Z"
+fetched_at: "2026-09-30T06:33:06Z"
+last_modified: "Wed, 30 Sep 2026 06:29:29 GMT"
 tags: ["agents", "claude-ai", "claude-code", "slack"]
 ---
 
@@ -273,9 +274,9 @@ Per month
 
 [Try Claude (opens in new tab)](https://claude.ai/login?plan=max)
 
-[Usage limits apply](../22-Safety-Policy/usage-limit-best-practices.md). Prices shown don't include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits apply](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices). Prices shown don't include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits apply](../22-Safety-Policy/usage-limit-best-practices.md). Price and plans are subject to change at Anthropic's discretion.
+[Usage limits apply](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices). Price and plans are subject to change at Anthropic's discretion.
 
 ## Latest feature announcements
 

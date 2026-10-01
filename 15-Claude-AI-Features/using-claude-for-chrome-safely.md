@@ -1,8 +1,8 @@
 ---
 title: "Use Claude in Chrome safely | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely"
+source_url: "https://support.claude.com/en/articles/12902428-use-claude-in-chrome-safely"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:56Z"
+fetched_at: "2026-09-30T06:32:35Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
@@ -53,7 +53,7 @@ We've implemented multiple layers of protection:
 
 - **Action confirmations** for certain high-risk actions such as downloading a file or entering sensitive information.
 
-- **Automatic action screening:** When Claude works on its own, it checks each action for risk and for hidden malicious instructions before running it. Claude does the actions it assesses as lower-risk and blocks or stops for anything that looks unsafe. This screening runs in "Automatically approve,” the default for the Cowork side panel. Learn more in the **[Claude in Chrome permissions guide](claude-for-chrome-permissions-guide.md)**.
+- **Automatic action screening:** When Claude works on its own, it checks each action for risk and for hidden malicious instructions before running it. Claude does the actions it assesses as lower-risk and blocks or stops for anything that looks unsafe. This screening runs in "Automatically approve,” the default for the Cowork side panel. Learn more in the **[Claude in Chrome permissions guide](https://support.claude.com/en/articles/12902446)**.
 
 - **Ongoing red teaming:** Human security researchers continuously probe for vulnerabilities. We participate in external challenges that benchmark robustness across the industry.
 
@@ -71,7 +71,7 @@ For your safety, Claude cannot access sensitive, high-risk sites such as:
 
 Claude asks for permission before accessing financial sites.
 
-It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#a5d0d6c0d7d6c4c3c0d1dce5c4cbd1cdd7cad5ccc68bc6cac8).
+It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#dbaea8bea9a8babdbeafa29bbab5afb3a9b4abb2b8f5b8b4b6).
 
 ------------------------------------------------------------------------
 
@@ -101,7 +101,7 @@ When you open the Claude side panel, Claude takes screenshots of your active bro
 
 - Gathering or scraping facial images
 
-**Note:** With 1Password for Claude, Claude can complete tasks that require signing in without handling the credential itself. 1Password fills the login directly, and your passwords and one-time codes never enter Claude's context. See **[Get started with 1Password for Claude](get-started-with-1password-for-claude.md)**.
+**Note:** With 1Password for Claude, Claude can complete tasks that require signing in without handling the credential itself. 1Password fills the login directly, and your passwords and one-time codes never enter Claude's context. See **[Get started with 1Password for Claude](https://support.claude.com/en/articles/15936181)**.
 
 ### Recommendations
 
@@ -159,4 +159,4 @@ If you're on a Team or Enterprise plan, your organization's admin can configure 
 
 These controls add an extra layer of protection beyond Claude's default safeguards. If you have questions about which sites are permitted in your organization, contact your admin.
 
-For admin documentation, see **[Claude in Chrome admin controls](../13-Enterprise-Admin/claude-for-chrome-admin-controls.md)**.
+For admin documentation, see **[Claude in Chrome admin controls](https://support.claude.com/en/articles/13065128-claude-for-chrome-admin-controls)**.

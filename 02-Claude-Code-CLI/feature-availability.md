@@ -2,7 +2,7 @@
 title: "Feature availability - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/feature-availability"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:29:33Z"
+fetched_at: "2026-09-30T06:30:49Z"
 tags: ["claude-code"]
 ---
 
@@ -196,7 +196,7 @@ If you authenticate through Amazon Bedrock, Google Cloud’s Agent Platform, Mic
 | [Computer use](computer-use.md)                                       | ✓   | ✓   | ✗             | ✗              |
 | Dispatch ([Desktop](../16-Mobile-Desktop/desktop.md#sessions-from-dispatch))               | ✓   | ✓   | ✗             | ✗              |
 | [Code Review](code-review.md)                                         | ✗   | ✗   | ✓             | ✓              |
-| [Artifacts](artifacts.md)                                             | ✓   | ✓   | ✓             | Admin-enabled  |
+| [Artifacts](artifacts.md)                                             | ✓   | ✓   | ✓             | ✓              |
 | [Analytics dashboard and contribution metrics](../13-Enterprise-Admin/analytics.md)          | ✗   | ✗   | ✓             | ✓              |
 | [Enterprise Analytics API](../13-Enterprise-Admin/analytics.md#access-data-programmatically) | ✗   | ✗   | ✗             | ✓              |
 | [Server-managed settings](../13-Enterprise-Admin/server-managed-settings.md)                 | ✗   | ✗   | ✓             | ✓              |

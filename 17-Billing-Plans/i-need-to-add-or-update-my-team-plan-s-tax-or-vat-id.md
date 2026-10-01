@@ -1,8 +1,8 @@
 ---
 title: "Add or update your Team plan's tax or VAT ID | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/9927624-i-need-to-add-or-update-my-team-plan-s-tax-or-vat-id"
+source_url: "https://support.claude.com/en/articles/9927624-add-or-update-your-team-plan-s-tax-or-vat-id"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:32:44Z"
+fetched_at: "2026-09-30T06:33:20Z"
 tags: ["billing"]
 ---
 
@@ -41,4 +41,4 @@ If you need to add or update your Tax or VAT ID after you've already signed up, 
 
 5.  Save your changes.
 
-**Note:** Your billing address determines your tax jurisdiction. See **[Understanding your billing address and tax calculation](understanding-your-billing-address-and-tax-calculation.md)** for details on how to view or update your billing address.
+**Note:** Your billing address determines your tax jurisdiction. See **[Understanding your billing address and tax calculation](https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation)** for details on how to view or update your billing address.

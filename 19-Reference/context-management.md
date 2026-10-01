@@ -2,7 +2,8 @@
 title: "Managing context on the Claude Developer Platform | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/context-management"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:31:22Z"
+fetched_at: "2026-09-30T06:32:33Z"
+last_modified: "Wed, 30 Sep 2026 04:21:07 GMT"
 tags: ["agents", "news-research"]
 ---
 

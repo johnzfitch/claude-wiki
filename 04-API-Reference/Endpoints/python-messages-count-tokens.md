@@ -2438,7 +2438,7 @@ Learn more about token counting in our [user guide](https://docs.claude.com/en/d
 
   - `format: Optional[JSONOutputFormat]`
 
-    A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs.md)
+    A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/api/python/Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     - `schema: Dict[str, object]`
 

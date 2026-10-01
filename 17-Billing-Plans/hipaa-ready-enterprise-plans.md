@@ -1,8 +1,8 @@
 ---
 title: "HIPAA-ready Enterprise plans | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans"
+source_url: "https://support.claude.com/en/articles/13296973"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:35Z"
+fetched_at: "2026-09-30T06:32:40Z"
 tags: ["api", "billing", "enterprise"]
 ---
 
@@ -93,7 +93,7 @@ Once enabled, you'll see a checkmark in the **HIPAA Compliance** section of orga
 
 The onboarding modal will guide you through next steps for your team.
 
-For help with the BAA, the Implementation Guide, or post-enablement questions, reach out to your Anthropic account team or **[our support team](../21-Account-Support/how-can-i-contact-support.md)**.
+For help with the BAA, the Implementation Guide, or post-enablement questions, reach out to your Anthropic account team or **[our support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
 
 ------------------------------------------------------------------------
 

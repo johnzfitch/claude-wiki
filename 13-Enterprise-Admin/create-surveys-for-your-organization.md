@@ -2,17 +2,16 @@
 title: "Create surveys for your organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16764057-create-surveys-for-your-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:32:00Z"
+fetched_at: "2026-09-30T06:33:03Z"
 tags: ["enterprise"]
 ---
 
 # Create surveys for your organization
 
 
-
 Surveys let admins ask users short, in-product questions about how they're using Claude and review the aggregated answers in the Admin console. This article explains how to create a survey, choose who sees it, and review the results.
 
-Surveys are available in beta for Enterprise plans. Primary Owners, Owners, and Admins can create and view surveys, along with users on **[custom roles that grant Analytics view access](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md#h_536123d968)**. While the feature is in beta, organizations using **[customer-managed encryption keys (CMEK)](../22-Safety-Policy/what-are-customer-managed-encryption-keys-cmek.md)** can't use surveys.
+Surveys are available in beta for Enterprise plans. Primary Owners, Owners, and Admins can create and view surveys, along with users on **[custom roles that grant Analytics view access](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans#h_536123d968)**. While the feature is in beta, organizations using **[customer-managed encryption keys (CMEK)](https://support.claude.com/en/articles/15505325)** can't use surveys.
 
 ## How surveys work
 
@@ -86,4 +85,4 @@ Each survey can be exported as a CSV file from **[Analytics \> Surveys](https://
 
 Surveys run under your organization's name, and responses go to your organization's admins. Your surveys are treated as your data so Anthropic accesses them only as necessary to operate the service. CMEK protections are coming soon, but while this feature is in beta, CMEK customers cannot use it. Regulated customers, including HIPAA customers, should not put regulated data, such as PHI, into survey responses.
 
-Learn more about **[viewing usage analytics for Team and Enterprise plans](../17-Billing-Plans/view-usage-analytics-for-team-and-enterprise-plans.md)**.
+Learn more about **[viewing usage analytics for Team and Enterprise plans](https://support.claude.com/en/articles/12883420)**.

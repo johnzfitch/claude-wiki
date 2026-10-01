@@ -2,7 +2,7 @@
 title: "Understanding your Pro or Max plan invoices | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16607638-understanding-your-pro-or-max-plan-invoices"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:32:24Z"
+fetched_at: "2026-09-30T06:32:11Z"
 tags: ["billing"]
 ---
 
@@ -21,11 +21,11 @@ This article covers Pro and Max plans purchased on the web. If you subscribed th
 
 **Plan change invoices.** If you upgrade your plan in the middle of a billing cycle, you'll reset your billing cycle and receive an immediate invoice for the change rather than waiting for your next renewal. For example, upgrading from Pro to Max charges you one full month of Max, less the unused value in your current billing cycle on your old plan.
 
-Learn more about **[signing up for the Max plan](../21-Account-Support/how-do-i-sign-up-for-the-max-plan.md)**.
+Learn more about **[signing up for the Max plan](how-do-i-sign-up-for-the-max-plan-claude-help-center.md)**.
 
 **Usage credit receipts.** If you've enabled usage credits, each purchase of funds is charged separately from your subscription and has its own receipt. This includes purchases made automatically by auto-reload and any usage bundles you buy.
 
-Learn more about **[managing usage credits for paid Claude plans](manage-usage-credits-for-paid-claude-plans.md)**.
+Learn more about **[managing usage credits for paid Claude plans](https://support.claude.com/en/articles/12429409)**.
 
 ## Find your invoices
 
@@ -56,7 +56,7 @@ You can also open any invoice from your account:
 
 The name and address on an invoice come from your payment method at the time the invoice was issued. To show a different name, such as a company name, check "Use a different name on invoices" when you add or update your payment method in **[Settings \> Billing](https://claude.ai/settings/billing)**.
 
-You can also add a tax or VAT ID. Learn more about **[adding a tax or VAT ID to your paid Claude account](../21-Account-Support/i-need-to-add-or-update-my-paid-claude-account-s-tax-or-vat-id.md)**.
+You can also add a tax or VAT ID. Learn more about **[adding a tax or VAT ID to your paid Claude account](add-or-update-your-paid-claude-accounts-tax-or-vat-id-claude-help-center.md)**.
 
 For help updating your payment method or other billing details, see **[Paid plan billing FAQs](paid-plan-billing-faqs.md)**.
 

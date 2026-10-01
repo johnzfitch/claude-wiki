@@ -1,8 +1,8 @@
 ---
 title: "Set up Claude for Teachers for your school or district | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/16559896-set-up-claude-for-teachers-for-your-school-or-district"
+source_url: "https://support.claude.com/en/articles/16559896"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:32:24Z"
+fetched_at: "2026-09-30T06:33:01Z"
 tags: ["claude-ai"]
 ---
 
@@ -27,7 +27,7 @@ Your organization gets one set of **[K-12 terms and a data processing agreement]
 
 US K-12 schools and districts qualify. The person applying must be authorized to set up technology for the school or district, and must apply with a school or district email address.
 
-**Important:** Only one application can be open per email domain at a time, so coordinate within your district so the right person applies. This should be an administrator who can accept the K-12 terms on behalf of all district staff. If you have any issues with your application, **[contact Support](../21-Account-Support/how-can-i-contact-support.md)**.
+**Important:** Only one application can be open per email domain at a time, so coordinate within your district so the right person applies. This should be an administrator who can accept the K-12 terms on behalf of all district staff. If you have any issues with your application, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
 
 ## Set up your organization
 
@@ -51,4 +51,4 @@ For the full set of admin articles, see the **[Admin management](https://support
 
 ## Get help
 
-For setup questions, **[contact Support](../21-Account-Support/how-can-i-contact-support.md)**. Districts working with an Anthropic account team can also reach out to their contact for procurement paperwork, security reviews, or multi-organization setups.
+For setup questions, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)**. Districts working with an Anthropic account team can also reach out to their contact for procurement paperwork, security reviews, or multi-organization setups.

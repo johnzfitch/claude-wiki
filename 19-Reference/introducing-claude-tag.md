@@ -49,7 +49,7 @@ If you’re a Claude Enterprise or Team customer, you have access to Claude Tag 
 3.  Set a limit on your organization’s monthly spend
 4.  Test Claude in a private channel to confirm it works.
 
-Claude Tag replaces the existing [Claude in Slack](../14-Connectors/using-claude-in-slack.md) app. To migrate, administrators can opt in within 30 days. We’re issuing an introductory [launch credit](../13-Enterprise-Admin/claude-tag-launch-promo-for-claude-team-and-enterprise.md) to eligible Enterprise and Team organizations so that the whole company can try it out.
+Claude Tag replaces the existing [Claude in Slack](https://www.anthropic.com/14-Connectors/get-started-with-claude-in-slack-ad4d7e43e7.md) app. To migrate, administrators can opt in within 30 days. We’re issuing an introductory [launch credit](../13-Enterprise-Admin/claude-tag-launch-promo-for-claude-team-and-enterprise.md) to eligible Enterprise and Team organizations so that the whole company can try it out.
 
 Claude Tag works with Opus 4.8. You can [read our docs](https://www.claude.com/docs/claude-tag/overview) and [product page](../14-Connectors/claude-for-slack.md).
 
@@ -91,9 +91,9 @@ Claude Tag works with Opus 4.8. You can [read our docs](https://www.claude.com/d
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

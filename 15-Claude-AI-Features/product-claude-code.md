@@ -10,7 +10,7 @@ tags: ["agents", "claude-ai", "claude-code", "slack"]
 
 Work with Claude directly in your codebase. Build, debug, and ship from your terminal, IDE, Slack, web, and more.
 
-[Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)[Read documentation](../02-Claude-Code-CLI/code-home.md)
+[Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)[Read documentation](https://www.anthropic.com/01-Getting-Started/overview.md)
 
 (opens in new tab)
 
@@ -213,9 +213,9 @@ Per month
 
 [Try Claude (opens in new tab)](https://claude.ai/login?plan=max)
 
-[Usage limits apply](../22-Safety-Policy/usage-limit-best-practices.md). Prices shown don't include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits apply](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices). Prices shown don't include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits apply](../22-Safety-Policy/usage-limit-best-practices.md). Price and plans are subject to change at Anthropic's discretion.
+[Usage limits apply](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices). Price and plans are subject to change at Anthropic's discretion.
 
 ## Latest feature announcements
 
@@ -239,7 +239,7 @@ BlogApr 14, 2026
 
 BlogMar 23, 2026
 
-[View changelog](../02-Claude-Code-CLI/changelog.md)
+[View changelog](https://www.anthropic.com/19-Reference/changelog-claude-code-docs-3d68ad8e13.md)
 
 (opens in new tab)
 
@@ -255,9 +255,9 @@ Get Claude Code
 
 curl -fsSL https://claude.ai/install.sh \| bash
 
-Or read the [documentation](../02-Claude-Code-CLI/code-home.md)
+Or read the [documentation](https://www.anthropic.com/01-Getting-Started/overview.md)
 
-[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](../02-Claude-Code-CLI/code-home.md)
+[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](https://www.anthropic.com/01-Getting-Started/overview.md)
 
 Onboarding
 
@@ -350,9 +350,9 @@ Super powerful terminal integration. Works with all your CLI tools alongside any
 
 curl -fsSL https://claude.ai/install.sh \| bash
 
-Or read the [documentation](../02-Claude-Code-CLI/code-home.md)
+Or read the [documentation](https://www.anthropic.com/01-Getting-Started/overview.md)
 
-[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](../02-Claude-Code-CLI/code-home.md)
+[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](https://www.anthropic.com/01-Getting-Started/overview.md)
 
 ### Integrate with your editor
 
@@ -434,7 +434,7 @@ Your terminal is where real work happens. Claude Code connects with the tools th
 
 ### How do I get started with Claude?
 
-You can access Claude Code with a Claude Pro or Max plan, a Team or Enterprise plan premium seat, or a Claude Console account. [Download Claude Code](../02-Claude-Code-CLI/code-home.md) and sign in with your respective Claude or Console credentials.
+You can access Claude Code with a Claude Pro or Max plan, a Team or Enterprise plan premium seat, or a Claude Console account. [Download Claude Code](https://www.anthropic.com/01-Getting-Started/overview.md) and sign in with your respective Claude or Console credentials.
 
 ### What kinds of tasks can Claude Code handle?
 
@@ -514,6 +514,6 @@ Get Claude Code
 
 curl -fsSL https://claude.ai/install.sh \| bash
 
-Or read the [documentation](../02-Claude-Code-CLI/code-home.md)
+Or read the [documentation](https://www.anthropic.com/01-Getting-Started/overview.md)
 
-[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](../02-Claude-Code-CLI/code-home.md)
+[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](https://www.anthropic.com/01-Getting-Started/overview.md)

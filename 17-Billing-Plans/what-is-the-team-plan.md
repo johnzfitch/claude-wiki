@@ -2,15 +2,14 @@
 title: "What is the Team plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9266767-what-is-the-team-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:32:11Z"
+fetched_at: "2026-09-30T06:32:16Z"
 tags: ["billing"]
 ---
 
 # What is the Team plan?
 
 
-
-The Team plan is a paid plan for our Claude chat experience built for ambitious teams. It is currently available in certain **[supported locations](../21-Account-Support/where-can-i-access-claude-ai.md)**.
+The Team plan is a paid plan for our Claude chat experience built for ambitious teams. It is currently available in certain **[supported locations](../15-Claude-AI-Features/where-can-i-access-claude.md)**.
 
 ## What’s included in the Team plan?
 
@@ -20,7 +19,7 @@ Users with Standard seats on the Team plan can access the following:
 
 - **Option to purchase usage credits:** Prepay for usage credits, allowing team members to continue working after reaching limits.
 
-  - Read more here: **[Manage usage credits for Team and seat-based Enterprise plans](manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**
+  - Read more here: **[Manage usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-)**
 
 - **Admin tools and billing management:** Manage access and billing in a centralized place.
 
@@ -42,7 +41,7 @@ Users with Standard seats on the Team plan can access the following:
 
   - Search across Slack, Microsoft 365, and custom connectors
 
-  - For more details, see **[Use enterprise search](../13-Enterprise-Admin/using-enterprise-search.md)**
+  - For more details, see **[Use enterprise search](https://support.claude.com/en/articles/12489464)**
 
 - **Connectors for your workplace tools:** Connect Claude to Google Drive, Gmail, Google Calendar, GitHub, Microsoft 365, and Slack to search and retrieve context from your existing documents, emails, calendars, and team communications—without manual uploads.
 
@@ -52,7 +51,7 @@ Users with Standard seats on the Team plan can access the following:
 
   - Access to Claude Code to delegate coding tasks from concept to completion directly from your terminal.
 
-  - Access to **[Cowork](../15-Claude-AI-Features/getting-started-with-local-agent-mode.md)**.
+  - Access to **[Cowork](https://support.claude.com/en/articles/13345190-get-started-with-cowork)**.
 
   - Access to projects, knowledge bases, and collaboration features.
 
@@ -68,7 +67,7 @@ In addition to all features of Standard seats listed above, Premium seats offer 
 
 Organizations can mix and match seat types, assigning Premium seats to power users who need more usage while keeping other team members on Standard seats.
 
-Refer to this article for more information about Premium seats: **[Purchase and manage seats on Team plans](purchasing-and-managing-seats-on-team-plans.md)**.
+Refer to this article for more information about Premium seats: **[Purchase and manage seats on Team plans](https://support.claude.com/en/articles/12004354)**.
 
 ------------------------------------------------------------------------
 
@@ -125,4 +124,4 @@ This means:
 
 ### How do I increase my Team plan usage limits?
 
-Your Team plan organization can enable usage credits to allow team members on all seat types to continue working with Claude, Cowork, and Claude Code after reaching their included usage limits. For more information, see **[Manage usage credits for Team and seat-based Enterprise plans](manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**.
+Your Team plan organization can enable usage credits to allow team members on all seat types to continue working with Claude, Cowork, and Claude Code after reaching their included usage limits. For more information, see **[Manage usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-)**.

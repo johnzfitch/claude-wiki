@@ -42,7 +42,7 @@ Claude can now connect to:
 
 Since HIPAA-compliant organizations can now use Claude for Enterprise, they can also access existing healthcare-related connectors, including **PubMed**, which provides access to more than 35 million pieces of biomedical literature and allows Claude to quickly surface the latest research, and produce up-to-date literature reviews.
 
-Finally, we’ve added two new [Agent Skills](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md): **FHIR development** and a sample **prior authorization review** skill. FHIR is the modern standard for exchanging data between healthcare systems, and this skill helps to improve interoperability by enabling developers to connect them faster and with fewer errors.
+Finally, we’ve added two new [Agent Skills](https://www.anthropic.com/04-API-Reference/Other/agent-skills.md): **FHIR development** and a sample **prior authorization review** skill. FHIR is the modern standard for exchanging data between healthcare systems, and this skill helps to improve interoperability by enabling developers to connect them faster and with fewer errors.
 
 The prior authorization skill provides a template that can be customized to organizations’ policies and work patterns, helping with cross-referencing between coverage requirements, clinical guidelines, patient records, and appeal documents.
 
@@ -250,9 +250,9 @@ We’re launching a \$5 million grant program to fund independent research into 
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

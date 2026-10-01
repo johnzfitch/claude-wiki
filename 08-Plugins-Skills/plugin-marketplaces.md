@@ -1,8 +1,8 @@
 ---
 title: "Create a marketplace - Claude Code Docs"
-source_url: "https://code.claude.com/docs/en/plugin-marketplaces"
+source_url: "https://code.claude.com/docs/en/plugins/create-marketplace"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-29T06:30:15Z"
+fetched_at: "2026-09-30T06:31:54Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -148,7 +148,7 @@ Add plugin entries
 
 Every plugin you distribute is one object in the `plugins` array of `marketplace.json`. To add a second plugin, add a second object. These fields cover most entries:
 
-- `name`: the identifier people type before `@` when they install. It can’t contain spaces.
+- `name`: the identifier people type before `@` when they install. [Plugin entries](plugins-marketplace-reference.md#plugin-entries) gives the characters a name can use.
 - `source`: where Claude Code fetches the plugin from. Write a relative path string for a plugin inside the marketplace directory, as in [the walkthrough](#create-a-marketplace), or a source object for a plugin outside it. See [Choose a plugin source](#choose-a-plugin-source).
 - `description`: the line people see next to the plugin when they browse your marketplace in `/plugin`.
 
@@ -221,7 +221,7 @@ Problems that validation reports
 
 - JSON syntax errors, as `json: Invalid JSON syntax: <reason>`
 - Missing required fields, such as `owner: Invalid input`
-- A marketplace name with spaces, non-ASCII characters, or a form that imitates an official Anthropic marketplace, such as `claude-official`
+- A marketplace or plugin name that breaks the naming rules in the [marketplace reference](plugins-marketplace-reference.md#top-level-fields)
 - A relative `source` that contains `..`
 - Unknown fields at the top level or in a plugin entry, as warnings
 - Problems in the `plugin.json` of each relative-path plugin, as `plugins[N] plugin.json → <field>: <message>`

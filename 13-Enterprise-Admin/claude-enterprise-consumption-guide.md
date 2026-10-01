@@ -2,12 +2,11 @@
 title: "Claude Enterprise consumption guide | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14782391-claude-enterprise-consumption-guide"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:31:28Z"
+fetched_at: "2026-09-30T06:31:38Z"
 tags: ["enterprise"]
 ---
 
 # Claude Enterprise consumption guide
-
 
 
 Claude Enterprise gives your organization access to powerful AI across chat, Claude Code, Claude Cowork, Claude Design, and Claude in the tools your teams already use, including Microsoft 365, Chrome, and Slack. With that access comes the responsibility of managing consumption effectively—ensuring your team gets maximum value while keeping usage predictable and within budget.
@@ -48,7 +47,7 @@ Think about groups in terms of job function and use case, not organizational hie
 
 - Limit group proliferation. More than 8–10 groups becomes hard to manage. Start with 4–6 and split only if usage patterns clearly diverge.
 
-- Use groups to gate access to high-intensity surfaces. For example: only members of the "Engineering" group can access Claude Code; other users see Chat and Cowork only. Access is granted by the custom roles you assign to each group, and it only takes effect for members whose organization role is set to Custom. Members left on the built-in User role keep everything enabled org-wide. Groups can be created manually or synced from your identity provider. See **[Set up role-based permissions on Enterprise plans](../17-Billing-Plans/set-up-role-based-entitlements-on-enterprise-plans.md)**.
+- Use groups to gate access to high-intensity surfaces. For example: only members of the "Engineering" group can access Claude Code; other users see Chat and Cowork only. Access is granted by the custom roles you assign to each group, and it only takes effect for members whose organization role is set to Custom. Members left on the built-in User role keep everything enabled org-wide. Groups can be created manually or synced from your identity provider. See **[Set up role-based permissions on Enterprise plans](https://support.claude.com/en/articles/13930458-set-up-role-based-permissions-on-enterprise-plans)**.
 
 - Assign group-level spend caps as a starting point, then override at the user level for outliers (e.g., a non-technical PM who needs Claude Code for a specific project).
 
@@ -140,11 +139,11 @@ You have two options:
 
 - **Choose your own** — sets a specific model as the org default and holds it there until you change it. Use this when you want to standardize on a known model for consumption predictability (for example, defaulting to Opus and giving Fable to the roles that do the hardest work).
 
-This setting applies to new conversations in chat, Claude Cowork, Claude Code (CLI 2.1.199 or later), and Claude for Microsoft 365. If the selected model isn't available in a product, Anthropic's recommended default is used. If you also pin a model for Claude Code through managed settings, that setting takes precedence for the CLI and IDE. See **[Set a default model for your organization](../20-Models/set-a-default-model-for-your-organization.md)**.
+This setting applies to new conversations in chat, Claude Cowork, Claude Code (CLI 2.1.199 or later), and Claude for Microsoft 365. If the selected model isn't available in a product, Anthropic's recommended default is used. If you also pin a model for Claude Code through managed settings, that setting takes precedence for the CLI and IDE. See **[Set a default model for your organization](https://support.claude.com/en/articles/15330088-set-a-default-model-for-your-organization)**.
 
 **Sticky defaults - always start with the default model and effort level (beta).** By default, the model picker is sticky: new conversations start on whatever model a member last used. To change that, turn on **Always start with the default model and effort level** in **Organization settings \> Models**. Every new conversation then starts on the org's default model and default effort level. Members can still change both within a conversation.
 
-Sticky defaults upgrade automatically. When a launch changes the default model, the sticky model moves to the new default, so no one is left on an older model. Roles that set their own default model have the same switch in the role editor. It works in chat, Claude Cowork, Claude Code, Claude for Microsoft 365, Claude Design, and Claude Science. See **[Set a default model for your organization](../20-Models/set-a-default-model-for-your-organization.md)**.
+Sticky defaults upgrade automatically. When a launch changes the default model, the sticky model moves to the new default, so no one is left on an older model. Roles that set their own default model have the same switch in the role editor. It works in chat, Claude Cowork, Claude Code, Claude for Microsoft 365, Claude Design, and Claude Science. See **[Set a default model for your organization](https://support.claude.com/en/articles/15330088-set-a-default-model-for-your-organization)**.
 
 To follow the recommended configuration above, set defaults by role through Custom Roles. For example, you might make Claude Opus the org default and Claude Fable the default for your research and analysis roles. This builds on the RBAC groups you've already set up (see **Role-based access controls** above).
 
@@ -164,13 +163,13 @@ If a member belongs to multiple groups with different custom roles, access is **
 
 Beyond restricting which models a role can use, you can cap the **maximum effort level** members on that role can select per model — a more granular version of the effort guidance already covered above. You can also set an effort cap for the whole organization, which is the highest level any role can allow. If a member has multiple roles, the highest effort cap across those roles wins.
 
-You can also set a **default effort level** for a role's default model, so new conversations start at the level you choose, either Anthropic's recommended default or a specific level. The default can't be higher than the effort cap for that model. See **[Set a default model for your organization](../20-Models/set-a-default-model-for-your-organization.md#h_d5373c4106)** to learn more.
+You can also set a **default effort level** for a role's default model, so new conversations start at the level you choose, either Anthropic's recommended default or a specific level. The default can't be higher than the effort cap for that model. See **[Set a default model for your organization](https://support.claude.com/en/articles/15330088-set-a-default-model-for-your-organization?utm_source=it&utm_medium=email&utm_campaign=2026_Q3_PMM_MKTG_EntAdmin_Newsletter_Sept16&utm_term=ent_admins&utm_content=inline_link&campaign=19893371#h_d5373c4106)** to learn more.
 
 **Where this applies**
 
-Model access and effort restrictions are enforced across most Claude products, including chat (web, desktop, mobile), Claude Cowork, and Claude Code (CLI 2.1.199 or later—earlier versions still show restricted options but requests using them are rejected). Claude in Chrome and Claude Security don't support this yet. For the current list of supported products, see **[Manage model access for your organization](../22-Safety-Policy/manage-model-access-for-your-organization.md)**.
+Model access and effort restrictions are enforced across most Claude products, including chat (web, desktop, mobile), Claude Cowork, and Claude Code (CLI 2.1.199 or later—earlier versions still show restricted options but requests using them are rejected). Claude in Chrome and Claude Security don't support this yet. For the current list of supported products, see **[Manage model access for your organization](manage-model-access-for-your-organization-claude-help-center.md)**.
 
-**How to configure:** **Organization settings \> Roles \> select a role \> Models tab**. Set model access, an optional effort cap per model, an optional role-level default model, default effort level, and the **Always start with the default model and effort level** switch. To manage configuration across the org, go to **Organization settings \> Models**. More details in **[Manage model access for your organization](../22-Safety-Policy/manage-model-access-for-your-organization.md)**.
+**How to configure:** **Organization settings \> Roles \> select a role \> Models tab**. Set model access, an optional effort cap per model, an optional role-level default model, default effort level, and the **Always start with the default model and effort level** switch. To manage configuration across the org, go to **Organization settings \> Models**. More details in **[Manage model access for your organization](manage-model-access-for-your-organization-claude-help-center.md)**.
 
 ### Admin configuration recommendations
 
@@ -254,7 +253,7 @@ Spend-threshold alerts notify admins at 75% and 90% of an org-level spend limit,
 
 ### In-product surveys
 
-The analytics above tell you how much your team uses Claude; surveys tell you what they're doing with it and what's getting in their way. From **[Analytics \> Surveys](https://claude.ai/analytics/surveys)**, admins can send users a short survey that appears in Cowork or chat at a natural break in their work. Pick the audience by group, set a window, and review aggregated results in the console, including response rate, a breakdown by surface and group, and a feed of written answers, with a CSV export per survey. Learn more about **[creating surveys for your organization](create-surveys-for-your-organization.md)**.
+The analytics above tell you how much your team uses Claude; surveys tell you what they're doing with it and what's getting in their way. From **[Analytics \> Surveys](https://claude.ai/analytics/surveys)**, admins can send users a short survey that appears in Cowork or chat at a natural break in their work. Pick the audience by group, set a window, and review aggregated results in the console, including response rate, a breakdown by surface and group, and a feed of written answers, with a CSV export per survey. Learn more about **[creating surveys for your organization](https://support.claude.com/en/articles/16764057)**.
 
 ### Time at limit (Usage page)
 
@@ -336,4 +335,4 @@ When you onboard users, share the following:
 
 - **[Anthropic Academy](https://www.anthropic.com/learn)**
 
-- **[Change the model, effort, and thinking settings](../15-Claude-AI-Features/how-can-i-change-the-model-version-that-i-m-chatting-with.md)**
+- **[Change the model, effort, and thinking settings](https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings)**

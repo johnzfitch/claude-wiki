@@ -1,14 +1,12 @@
 ---
 title: "Team plan billing FAQs | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12997503-team-plan-billing-faqs"
+source_url: "https://support.claude.com/en/articles/12997503"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:31Z"
+fetched_at: "2026-09-30T06:32:37Z"
 tags: ["billing"]
 ---
 
 # Team plan billing FAQs
-
-Updated today
 
 
 ## What payment methods can I use to pay for the Team plan?
@@ -19,11 +17,11 @@ Accepted payment methods are credit, debit, or prepaid cards. Other forms of pay
 
 An organization Owner can update your Team plan’s payment method by navigating to **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)**.
 
-**Note:** Your billing address determines your tax jurisdiction. See **[Understanding your billing address and tax calculation](understanding-your-billing-address-and-tax-calculation.md)** for details on how to view or update your billing address.
+**Note:** Your billing address determines your tax jurisdiction. See **[Understanding your billing address and tax calculation](https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation)** for details on how to view or update your billing address.
 
 ## How can I change my billing email address?
 
-Your organization's billing address determines where your invoices are sent. You can request to change this email address, or add additional billing email addresses, by **[contacting our Support team](../21-Account-Support/how-can-i-contact-support.md)**. Note that an organization Owner must authorize any changes to your billing address. For additional invoice recipients, the account Owner must be copied on the request. Once approved, all future invoices will be sent to the new email address(es).
+Your organization's billing address determines where your invoices are sent. You can request to change this email address, or add additional billing email addresses, by **[contacting our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**. Note that an organization Owner must authorize any changes to your billing address. For additional invoice recipients, the account Owner must be copied on the request. Once approved, all future invoices will be sent to the new email address(es).
 
 ## How can I use a different name on my invoices?
 

@@ -2,7 +2,8 @@
 title: "Claude Team plan for scientists | Claude by Anthropic"
 source_url: "https://www.claude.com/programs/claude-team-plan-for-research-labs"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:56Z"
+fetched_at: "2026-09-30T06:32:39Z"
+last_modified: "Tue, 29 Sep 2026 22:09:24 GMT"
 tags: ["claude-ai", "search"]
 ---
 
@@ -170,7 +171,7 @@ Learn more
 
 When a project outgrows existing capacity, apply for extra usage credits through the AI for Science program.
 
-\*Extra [usage limits](../22-Safety-Policy/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax and may change at Anthropic’s discretion.
+\*Extra [usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax and may change at Anthropic’s discretion.
 
 Promotional pricing is not guaranteed, given limited availability. Final pricing confirmed after verification at sign up.
 

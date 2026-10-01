@@ -2,7 +2,7 @@
 title: "Settings files and precedence - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/settings"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:29:05Z"
+fetched_at: "2026-09-30T06:30:41Z"
 tags: ["claude-code"]
 ---
 
@@ -383,7 +383,7 @@ A [cloud session](claude-code-on-the-web.md) runs in a [cloud environment](cloud
 
 - **Shared project settings** (`.claude/settings.json`): read in a session with one repository, because the file is part of the clone and the session starts inside it. Commit a setting there to apply it in those sessions. A session with several repositories starts above the clones and reads only the `enabledPlugins` and `extraKnownMarketplaces` keys from each repository’s `.claude/settings.json`, not permission rules, hooks, `env`, or other keys. The marketplaces and plugins those two keys declare still [don’t load in a cloud session](cloud-environments.md#what-carries-over-from-your-setup).
 - **User and project local settings** (`~/.claude/settings.json` and `.claude/settings.local.json`): not read. Both stay on your machine, and the local file isn’t in the clone.
-- **Managed settings**: only [server-managed settings](../13-Enterprise-Admin/server-managed-settings.md) reach a cloud session; a `managed-settings.json` file or MDM profile on your device doesn’t. A [self-hosted environment](../13-Enterprise-Admin/self-hosted-environments.md) also reads the managed settings file in its runner image. [How Claude Code combines managed sources](../13-Enterprise-Admin/managed-settings.md#how-claude-code-combines-managed-sources) says when that file applies.
+- **Managed settings**: a `managed-settings.json` file or MDM profile on your device doesn’t reach a cloud session. Your organization’s [server-managed settings](../13-Enterprise-Admin/server-managed-settings.md) do; [surface coverage](model-config.md#surface-coverage) lists which cloud sessions receive them. A [self-hosted environment](../13-Enterprise-Admin/self-hosted-environments.md) also reads the managed settings file in its runner image. [How Claude Code combines managed sources](../13-Enterprise-Admin/managed-settings.md#how-claude-code-combines-managed-sources) says when that file applies.
 - **`/config`**: in your browser at claude.ai/code, opens the Claude Code section of your claude.ai settings instead of changing a value. To change a setting for a cloud session, set an [environment variable](cloud-environments.md#set-environment-variables) on the environment, or in a session with one repository, commit the key to that repository’s `.claude/settings.json`.
 
 [What carries over from your setup](cloud-environments.md#what-carries-over-from-your-setup) lists the rest: `CLAUDE.md`, skills, MCP servers, plugins, and credentials.

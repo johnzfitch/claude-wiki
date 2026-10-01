@@ -1,13 +1,12 @@
 ---
 title: "Use skills in Claude | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12512180-using-skills-in-claude"
+source_url: "https://support.claude.com/en/articles/12512180-use-skills-in-claude"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:31:27Z"
+fetched_at: "2026-09-30T06:32:33Z"
 tags: ["claude-code", "security", "skills"]
 ---
 
 # Use skills in Claude
-
 
 
 Skills extend Claude's capabilities by giving it access to specialized knowledge and workflows. This guide shows you how to enable, discover, and use skills in Claude.
@@ -36,7 +35,7 @@ Skills are available for users on Free, Pro, Max, Team, and Enterprise plans. Th
 
 ## Provision skills organization-wide
 
-Owners of Team and Enterprise organizations can provision skills for all users. These skills appear in your individual Skills list with a team indicator—you can toggle them on or off based on your preferences. For information on provisioning skills for your organization, see **[Provision and manage skills for your organization](../22-Safety-Policy/provisioning-and-managing-skills-for-your-organization.md#h_4dea113421)**.
+Owners of Team and Enterprise organizations can provision skills for all users. These skills appear in your individual Skills list with a team indicator—you can toggle them on or off based on your preferences. For information on provisioning skills for your organization, see **[Provision and manage skills for your organization](../15-Claude-AI-Features/provisioning-and-managing-skills-for-your-organization.md#h_4dea113421)**.
 
 ## Use Anthropic skills
 
@@ -58,7 +57,7 @@ For example, if you ask Claude to "Create a PowerPoint presentation about Q3 res
 
 You can also create and upload your own skills to teach Claude your specific workflows:
 
-1.  Create a skill following the skill structure (see **[How to create custom skills](how-to-create-custom-skills.md)** for detailed instructions).
+1.  Create a skill following the skill structure (see **[How to create custom skills](https://support.claude.com/en/articles/12512198-creating-custom-skills)** for detailed instructions).
 
 2.  Package your skill folder as a ZIP file.
 
@@ -72,7 +71,7 @@ You can also create and upload your own skills to teach Claude your specific wor
 
 7.  Your skill will appear in your skills list and can be toggled on or off.
 
-**Note:** Custom skills you upload aren't visible to colleagues until you share them. Admins can see their names and sharing status, but not their files On Team and Enterprise plans, you can share skills (see **Share a skill** below), or provision skills for your organization. Learn more about **[provisioning skills for your organization](../22-Safety-Policy/provisioning-and-managing-skills-for-your-organization.md#h_4dea113421)**.
+**Note:** Custom skills you upload aren't visible to colleagues until you share them. Admins can see their names and sharing status, but not their files On Team and Enterprise plans, you can share skills (see **Share a skill** below), or provision skills for your organization. Learn more about **[provisioning skills for your organization](https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin#h_4dea113421)**.
 
 ------------------------------------------------------------------------
 
@@ -225,7 +224,7 @@ For Team and Enterprise plans, organization owners can provision skills for all 
 
 Note that skills may include, or instruct Claude to install, third-party packages and software for Claude to use when completing a task. See **[our guidance on Claude's container environment](../15-Claude-AI-Features/create-and-edit-files-with-claude.md#h_0ee9d698a1)** for details on Claude's container environment and **[the API documentation](https://docs.claude.com/en/docs/agents-and-tools/tool-use/code-execution-tool#containers)** for API's container environment.
 
-**Note:** If you're on the Enterprise plan and your organization has skill scanning turned on, each third-party skill you upload or edit is checked for malicious content before it can run. Most scans finish in about one to two minutes. If a skill is blocked, you can't use it until you fix what was flagged and upload it again. Learn more about **[skill and plugin scanning](get-started-with-skill-and-plugin-scanning.md)**.
+**Note:** If you're on the Enterprise plan and your organization has skill scanning turned on, each third-party skill you upload or edit is checked for malicious content before it can run. Most scans finish in about one to two minutes. If a skill is blocked, you can't use it until you fix what was flagged and upload it again. Learn more about **[skill and plugin scanning](../15-Claude-AI-Features/get-started-with-skill-and-plugin-scanning-claude-help-center.md)**.
 
 ### What are the primary risks of using skills?
 

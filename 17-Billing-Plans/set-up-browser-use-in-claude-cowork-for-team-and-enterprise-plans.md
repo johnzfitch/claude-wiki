@@ -2,12 +2,11 @@
 title: "Set up browser use in Claude Cowork for Team and Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16635803-set-up-browser-use-in-claude-cowork-for-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:31:59Z"
+fetched_at: "2026-09-30T06:32:04Z"
 tags: ["billing", "enterprise"]
 ---
 
 # Set up browser use in Claude Cowork for Team and Enterprise plans
-
 
 
 **Note:** Claude Cowork and chat are now one Claude, rolling out gradually to Pro and Max plans. Ask for what you need, and Claude decides whether that's a quick answer or a task. Team and Enterprise organizations keep chat and Claude Cowork as they are today, so everything in this article still applies. Learn more in our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
@@ -22,7 +21,7 @@ Browser controls for Cowork are available on Team and Enterprise plans. The buil
 
 - **Claude in Chrome.** Claude works in the user's own Chrome browser through the Claude in Chrome extension, on the page they're already on, with the accounts they're already signed in to. Your users' browsers need the extension deployed or installed. Cowork sessions on web and mobile can also use Claude in Chrome when it's the user's preferred browser.
 
-Both run the same safety layers: per-site permission prompts before Claude acts on a new site, a blocklist for high-risk sites, and safety checks on every action. Learn more in **[Use the built-in browser in Claude Cowork](../15-Claude-AI-Features/use-the-built-in-browser-in-claude-cowork.md)** and **[Use Claude in Chrome safely](../15-Claude-AI-Features/using-claude-for-chrome-safely.md)**.
+Both run the same safety layers: per-site permission prompts before Claude acts on a new site, a blocklist for high-risk sites, and safety checks on every action. Learn more in **[Use the built-in browser in Claude Cowork](https://support.claude.com/en/articles/16607400)** and **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428)**.
 
 You can enable one, both, or neither.
 
@@ -46,7 +45,7 @@ When the built-in browser is off, users can't open it and Claude can't use it. T
 
 ## Enable or disable Claude in Chrome
 
-Claude in Chrome is managed separately, in **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)**. It's on by default on Team plans. On Enterprise plans, it's off by default; starting September 10, 2026, it turns on by default unless you've already disabled it. Site allowlists and blocklists you configure there apply to both the extension and the built-in browser. The same list governs both, so there's no separate list to maintain. For setup, deployment, and pilot guidance, see **[Claude in Chrome admin controls](../13-Enterprise-Admin/claude-for-chrome-admin-controls.md)**.
+Claude in Chrome is managed separately, in **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)**. It's on by default on Team plans. On Enterprise plans, it's off by default; starting September 10, 2026, it turns on by default unless you've already disabled it. Site allowlists and blocklists you configure there apply to both the extension and the built-in browser. The same list governs both, so there's no separate list to maintain. For setup, deployment, and pilot guidance, see **[Claude in Chrome admin controls](https://support.claude.com/en/articles/13065128)**.
 
 ## When both are enabled
 

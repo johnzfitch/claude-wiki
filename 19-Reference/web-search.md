@@ -2,7 +2,8 @@
 title: "Claude web search now available globally on all plans | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/web-search"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:32:47Z"
+fetched_at: "2026-09-30T06:32:06Z"
+last_modified: "Wed, 30 Sep 2026 04:21:08 GMT"
 tags: ["news-research", "search"]
 ---
 

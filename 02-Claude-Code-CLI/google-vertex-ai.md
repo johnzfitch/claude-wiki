@@ -2,7 +2,7 @@
 title: "Claude Code on Google Cloud's Agent Platform - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/google-vertex-ai"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-23T06:26:38Z"
+fetched_at: "2026-09-30T06:30:48Z"
 tags: ["agents", "claude-code"]
 ---
 
@@ -248,7 +248,7 @@ Create a dedicated GCP project for Claude Code to simplify cost tracking and acc
 
 1M token context window
 
-Claude Sonnet 5, Opus 4.6 and later, and Sonnet 4.6 support the [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md#context-window-sizes-by-model) on Google Cloud’s Agent Platform. Sonnet 5 always runs with the 1M window, with no `[1m]` variant to select. For the other models, Claude Code automatically enables the extended context window when you select a 1M model variant. The [setup wizard](#sign-in-with-agent-platform) offers a 1M context option when it pins models. To enable it for a manually pinned model instead, append `[1m]` to the model ID. See [Pin models for third-party deployments](model-config.md#pin-models-for-third-party-deployments) for details.
+Claude Sonnet 5, Opus 4.6 and later, and Sonnet 4.6 support the [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md#context-window-sizes-by-model) on Google Cloud’s Agent Platform. Sonnet 5 always runs with the 1M window, with no `[1m]` variant to select. For the other models, Claude Code automatically enables the extended context window when you select a 1M model variant. The [setup wizard](#sign-in-with-agent-platform) offers a 1M context option when it pins models. To enable it for a manually pinned model instead, append `[1m]` to the model ID. See [Pin models for third-party deployments](model-config.md#pin-models-for-third-party-deployments) for details, including how to use the 1M window without changing the pin.
 
 
 [​](#troubleshooting)

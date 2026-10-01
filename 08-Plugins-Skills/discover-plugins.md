@@ -2,7 +2,7 @@
 title: "Install and manage plugins - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/discover-plugins"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-29T06:29:32Z"
+fetched_at: "2026-09-30T06:30:49Z"
 tags: ["claude-code", "plugins"]
 ---
 

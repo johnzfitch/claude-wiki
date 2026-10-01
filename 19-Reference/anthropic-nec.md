@@ -20,7 +20,7 @@ As part of this strategic collaboration, NEC will become Anthropic’s first Jap
 
 NEC and Anthropic will jointly develop secure, domain-specific AI products for Japanese customers in sectors like finance, manufacturing, and cybersecurity. In addition, NEC is already integrating Claude into its Security Operations Center services to help defend customers against increasingly sophisticated cybersecurity threats. Claude will also be integrated into the next-generation cybersecurity service NEC is currently providing.
 
-Claude, including Claude Opus 4.7, and [Claude Code](../15-Claude-AI-Features/claude-code.md) will be incorporated into [NEC BluStellar Scenario](https://www.nec.com/en/global/necblustellar/index.html), a program that provides consulting, AI tools, security, and digital infrastructure to businesses, starting with its offerings for data-driven management and customer experience, and gradually expanding to others.
+Claude, including Claude Opus 4.7, and [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md) will be incorporated into [NEC BluStellar Scenario](https://www.nec.com/en/global/necblustellar/index.html), a program that provides consulting, AI tools, security, and digital infrastructure to businesses, starting with its offerings for data-driven management and customer experience, and gradually expanding to others.
 
 ### **How NEC will use Claude internally**
 
@@ -76,9 +76,9 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

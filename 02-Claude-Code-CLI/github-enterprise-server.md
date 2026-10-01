@@ -2,7 +2,7 @@
 title: "Claude Code with GitHub Enterprise Server - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/github-enterprise-server"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-26T06:37:59Z"
+fetched_at: "2026-09-30T06:30:47Z"
 tags: ["claude-code", "enterprise", "git", "github"]
 ---
 
@@ -125,7 +125,7 @@ If the guided redirect flow is blocked by your network configuration, click **Ad
 
 Network requirements
 
-For Anthropic-hosted sessions, your GHES instance must be reachable from Anthropic infrastructure so Claude can clone repositories and post review comments. If your GHES instance is behind a firewall, allowlist Anthropic’s [outbound IP addresses](../04-API-Reference/Endpoints/ip-addresses.md#outbound-ip-addresses). Sessions in a [self-hosted environment](../13-Enterprise-Admin/self-hosted-environments-deploy.md#configure-git) clone from inside your network instead, unless the runner opts into the [Anthropic git proxy](../13-Enterprise-Admin/self-hosted-environments-deploy.md#use-the-anthropic-git-proxy), which fetches from Anthropic’s side and needs the same reachability; the [SCM connector](../13-Enterprise-Admin/self-hosted-environments-reference.md#scm-connector-flags) covers the hosted pre-session flows, such as the repository picker, for a GHES host that’s only routable internally.
+For Anthropic-hosted sessions, your GHES instance must be reachable from Anthropic infrastructure so Claude can clone repositories and post review comments. If your GHES instance is behind a firewall, allowlist Anthropic’s [outbound IP addresses](../04-API-Reference/Endpoints/ip-addresses.md#outbound-ip-addresses). Sessions in a [self-hosted environment](../13-Enterprise-Admin/self-hosted-environments-deploy.md#configure-git) clone from inside your network instead, unless the runner opts into the [Anthropic git proxy](../13-Enterprise-Admin/self-hosted-environments-deploy.md#use-the-anthropic-git-proxy), which fetches from Anthropic’s side and needs the same reachability. Hosted pre-session flows, such as the repository picker, run on Anthropic’s side before a session starts. They need your GHES instance to be reachable from Anthropic infrastructure even when the session runs in a self-hosted environment. The [SCM connector](../13-Enterprise-Admin/self-hosted-environments-reference.md#scm-connector-flags) isn’t available, so those flows can’t reach a GHES host that’s only routable internally.
 
 
 [​](#developer-workflow)
@@ -276,14 +276,14 @@ If adding a GHES marketplace from your user settings fails with a generic error 
 
 GHES instance not reachable
 
-If reviews or Anthropic-hosted cloud sessions time out, your GHES instance may not be reachable from Anthropic infrastructure. Confirm your firewall allows inbound connections from Anthropic’s [outbound IP addresses](../04-API-Reference/Endpoints/ip-addresses.md#outbound-ip-addresses). Sessions in a [self-hosted environment](../13-Enterprise-Admin/self-hosted-environments.md) reach GHES from inside your network, so for them check the runner’s own network path and the [SCM connector](../13-Enterprise-Admin/self-hosted-environments-reference.md#scm-connector-flags) instead.
+If reviews or Anthropic-hosted cloud sessions time out, your GHES instance may not be reachable from Anthropic infrastructure. Confirm your firewall allows inbound connections from Anthropic’s [outbound IP addresses](../04-API-Reference/Endpoints/ip-addresses.md#outbound-ip-addresses). Sessions in a [self-hosted environment](../13-Enterprise-Admin/self-hosted-environments.md) reach GHES from inside your network, so when one of them can’t clone, check the runner’s own network path instead. For the repository picker and other hosted pre-session flows, see [Network requirements](#network-requirements).
 
 
 [​](#session-start-fails-with-unable-to-get-organization-uuid)
 
 Session start fails with `Unable to get organization UUID`
 
-Sign in with `/login` using your organization account. If you authenticate with an API key instead, cloud sessions fail earlier with a message asking you to run `/login`.
+Claude Code couldn’t read a claude.ai organization from your credentials. Sign in with `/login` using an account in your Team or Enterprise organization, since GitHub Enterprise Server support is limited to those plans. See [Unable to get organization UUID](claude-code-on-the-web.md#unable-to-get-organization-uuid) for the causes and the other messages this state produces.
 
 
 [​](#related-resources)

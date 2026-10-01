@@ -1,16 +1,15 @@
 ---
 title: "Assign tasks from anywhere in Claude Cowork | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13947068-assign-tasks-to-claude-from-anywhere-in-cowork"
+source_url: "https://support.claude.com/en/articles/13947068-assign-tasks-from-anywhere-in-claude-cowork"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:32:10Z"
+fetched_at: "2026-09-30T06:32:49Z"
 tags: ["account"]
 ---
 
 # Assign tasks from anywhere in Claude Cowork
 
 
-
-**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](../15-Claude-AI-Features/claude-cowork-and-chat-are-one-claude.md)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
 
 Claude Cowork gives you one continuous conversation with Claude that you can reach from your phone or your desktop. With Dispatch, you can message Claude from your phone and have it work on your desktop computer, using your local files, connectors, plugins, and apps, then come back to the finished work.
 
@@ -102,13 +101,13 @@ You control what Claude remembers. You can view, edit, and delete your memory at
 
 You can set up tasks that Claude runs automatically on a schedule. Tell Claude once to check your email every morning, pull your metrics every week, or compile a Friday report, and it handles it from there without being asked again.
 
-For more on setting up and managing scheduled tasks, see **[Schedule recurring tasks in Cowork](../15-Claude-AI-Features/schedule-recurring-tasks-in-claude-cowork.md)**.
+For more on setting up and managing scheduled tasks, see **[Schedule recurring tasks in Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork)**.
 
 ### Computer use
 
 Claude can use the apps on your computer to complete tasks you assign through Dispatch. If you ask Claude to update a spreadsheet in Excel, navigate an internal dashboard, or run your dev tools, Claude can work directly with those apps on your desktop.
 
-For details on how computer use works, permissions, and safety guidance, see **[Let Claude use your computer in Cowork](../15-Claude-AI-Features/let-claude-use-your-computer-in-cowork.md)**.
+For details on how computer use works, permissions, and safety guidance, see **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542-computer-use-safety)**.
 
 **Note:** Computer use isn't available in the Linux beta. On a Linux desktop, Dispatch still works with your files, connectors, and plugins, but it can't drive desktop apps through computer use.
 
@@ -130,7 +129,7 @@ Before enabling this, make sure you:
 
 Only connect these agents if you're comfortable with what they *could* do, not just what you intend them to do.
 
-For additional safety guidance, see **[Use Cowork safely](../15-Claude-AI-Features/use-claude-cowork-safely.md)**.
+For additional safety guidance, see **[Use Cowork safely](https://support.claude.com/en/articles/13364135-use-cowork-safely)**.
 
 ------------------------------------------------------------------------
 
@@ -140,7 +139,7 @@ The following limitations apply:
 
 - **Your desktop must be active.** Dispatch works with the local files and apps on your desktop computer, so your computer needs to be awake and the Claude Desktop app open while Claude works. If you want Claude to keep working while your computer is off, start a cloud session instead. See **[Use Claude Cowork on web, desktop, and mobile](../16-Mobile-Desktop/use-claude-cowork-on-web-desktop-and-mobile.md)**.
 
-- **Computer use has different safety properties than other Cowork tools.** Claude clicks, types, and navigates your screen directly rather than going through connectors or permission-gated file access. For details, see **[Let Claude use your computer in Cowork](../15-Claude-AI-Features/let-claude-use-your-computer-in-cowork.md)**.
+- **Computer use has different safety properties than other Cowork tools.** Claude clicks, types, and navigates your screen directly rather than going through connectors or permission-gated file access. For details, see **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542-computer-use-safety)**.
 
 - **One continuous thread.** There's no way to start a new thread or manage multiple threads. All messages live in a single conversation.
 

@@ -2,7 +2,7 @@
 title: "What happens to a user's data when they are removed from a Team or Enterprise organization? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12053672-what-happens-to-a-user-s-data-when-they-are-removed-from-a-team-or-enterprise-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:31:23Z"
+fetched_at: "2026-09-30T06:32:28Z"
 tags: ["enterprise", "skills"]
 ---
 
@@ -19,7 +19,7 @@ If you are a non-Owner member of a Team or Enterprise plan, you will need to con
 
 ## Deleting organization-level accounts
 
-For help with deleting your organization’s Team or Enterprise plan, please **[reach out to our Support team](../21-Account-Support/how-can-i-contact-support.md)**. Note that organization level account deletion requests must be made by your account's Primary Owner.
+For help with deleting your organization’s Team or Enterprise plan, please **[reach out to our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**. Note that organization level account deletion requests must be made by your account's Primary Owner.
 
 ## Will a user’s projects still be accessible after removing them?
 
@@ -37,7 +37,7 @@ If a deleted team member shared their project with the entire organization, it w
 
 When a user is removed from your Team or Enterprise organization, remaining members will no longer be able to access their chats. This applies to chat snapshots that are shared with the organization. After the user who created the chat is removed, remaining members will see this message when they try to access any shared chat URLs: "Conversation not found. The requested conversation either doesn't exist or you don't have permission to access it."
 
-Note that the removed user’s data will still be included in any **[data exports](../21-Account-Support/how-can-i-export-my-claude-ai-data.md)** run by your organization’s Primary Owner. For Enterprise organizations specifically, the removed user’s data will still be subject to any configured **[custom data retention settings](../17-Billing-Plans/configure-custom-data-retention-controls-for-enterprise-plans.md)**.
+Note that the removed user’s data will still be included in any **[data exports](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)** run by your organization’s Primary Owner. For Enterprise organizations specifically, the removed user’s data will still be subject to any configured **[custom data retention settings](https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-enterprise-plans)**.
 
 ## Will a user's skills still be accessible after removing them?
 

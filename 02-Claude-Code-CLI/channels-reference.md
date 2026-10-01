@@ -2,7 +2,7 @@
 title: "Channels reference - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/channels-reference"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-26T06:38:04Z"
+fetched_at: "2026-09-30T06:30:30Z"
 tags: ["claude-code"]
 ---
 
@@ -180,7 +180,9 @@ curl -X POST localhost:8788 -d "build failed on main: https://ci.example.com/run
 The payload arrives in Claude’s context as a `<channel>` tag:
 
 ```python
-<channel source="webhook" path="/" method="POST">build failed on main: https://ci.example.com/run/1234</channel>
+<channel source="webhook" path="/" method="POST">
+build failed on main: https://ci.example.com/run/1234
+</channel>
 ```
 
 Your terminal renders the event as a one-line summary, `← webhook: build failed on main: https://ci.example.com/run/1234`, rather than the raw tag. You’ll then see Claude start responding: reading files, running commands, or whatever the message calls for. This is a one-way channel, so Claude acts in your session but doesn’t send anything back through the webhook. To add replies, see [Expose a reply tool](#expose-a-reply-tool).If the event doesn’t arrive, the diagnosis depends on what `curl` returned:

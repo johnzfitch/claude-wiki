@@ -6,7 +6,7 @@
 
 ## Access Claude for iOS on your Lock Screen, Control Center, and Action button | Claude Help Center
 
-Source: https://support.claude.com/en/articles/10302511-access-claude-for-ios-on-your-lock-screen-control-center-and-action-button
+Source: https://support.claude.com/en/articles/10302511-accessing-claude-app-on-ios-lock-screen-control-center-and-action-button
 Path: 16-Mobile-Desktop/access-claude-for-ios-on-your-lock-screen-control-center-and-action-button.md
 
 # Access Claude for iOS on your Lock Screen, Control Center, and Action button
@@ -114,7 +114,7 @@ Upload the PKG to your MDM solution (Jamf, Kandji, Microsoft Intune) and deploy 
 
 ## Configuration
 
-To configure Claude Desktop settings such as auto-updates, extensions, and MCP servers, see the **[Enterprise Configuration](../13-Enterprise-Admin/enterprise-configuration-for-claude-desktop.md)** article.
+To configure Claude Desktop settings such as auto-updates, extensions, and MCP servers, see the **[Enterprise Configuration](https://support.claude.com/en/articles/12622667-enterprise-configuration)** article.
 
 ## Troubleshooting
 
@@ -207,7 +207,7 @@ By default, Claude Desktop checks for updates approximately every four hours and
 
 ## Configuration
 
-To configure Claude Desktop settings such as auto-updates, extensions, and MCP servers, see **[Enterprise configuration](../13-Enterprise-Admin/enterprise-configuration-for-claude-desktop.md)**.
+To configure Claude Desktop settings such as auto-updates, extensions, and MCP servers, see **[Enterprise configuration](https://support.claude.com/en/articles/12622667-enterprise-configuration)**.
 
 ------------------------------------------------------------------------
 
@@ -261,6 +261,7 @@ Path: 16-Mobile-Desktop/desktop-ios-simulator.md
 ## On this page
 
 - [Requirements](#requirements)
+  - [Choose which Xcode the simulator pane uses](#choose-which-xcode-the-simulator-pane-uses)
 - [Run your app in the simulator](#run-your-app-in-the-simulator)
 - [Control the simulator yourself](#control-the-simulator-yourself)
 - [How sessions manage devices](#how-sessions-manage-devices)
@@ -272,7 +273,6 @@ Path: 16-Mobile-Desktop/desktop-ios-simulator.md
 - [Troubleshooting](#troubleshooting)
   - [The simulator pane doesn’t open when Claude runs the app](#the-simulator-pane-doesn%E2%80%99t-open-when-claude-runs-the-app)
   - [The simulator pane says no simulators were found](#the-simulator-pane-says-no-simulators-were-found)
-  - [The simulator pane fails with Xcode 27](#the-simulator-pane-fails-with-xcode-27)
 - [See also](#see-also)
 
 Claude Code on desktop
@@ -299,11 +299,24 @@ The simulator pane uses Apple’s simulator tooling, which the desktop app doesn
 - Claude Desktop v1.24012.0 or later
 - A Mac, since Apple’s iOS Simulator runs only on macOS
 - [Xcode](https://developer.apple.com/xcode/) with the iOS platform installed, which provides the simulator devices. If Xcode lists no simulators yet, see [The simulator pane says no simulators were found](#the-simulator-pane-says-no-simulators-were-found)
-  - Use Xcode 26.x. The pane doesn’t yet work with Xcode 27, which replaces the Simulator app with Device Hub. If `xcode-select` points at Xcode 27 on your Mac, see [The simulator pane fails with Xcode 27](#the-simulator-pane-fails-with-xcode-27)
+  - Xcode 26.x or Xcode 27 is recommended, and the pane works with either. If you have more than one Xcode installed, see [Choose which Xcode the simulator pane uses](#choose-which-xcode-the-simulator-pane-uses)
 
 On this page, “device” refers to a simulated iPhone or iPad, one of the same simulator devices you manage in Xcode under **Window → Devices and Simulators**, not physical hardware.
 
 The simulator pane is available in local sessions only. In [cloud](desktop.md#run-long-running-tasks-in-the-cloud) and [SSH](desktop.md#ssh-sessions) sessions, Claude runs on a machine that can’t reach the simulators on your Mac.
+
+
+[​](#choose-which-xcode-the-simulator-pane-uses)
+
+Choose which Xcode the simulator pane uses
+
+If you have more than one Xcode installed, such as Xcode 26.x alongside Xcode 27, the pane uses whichever one `xcode-select` points at. To use a different install, select it by its path. For example, if the Xcode you want is installed as `/Applications/Xcode-26.4.app`, run this in Terminal:
+
+```python
+sudo xcode-select -s /Applications/Xcode-26.4.app
+```
+
+Then quit and reopen Claude Desktop so the pane uses the newly selected Xcode. To check which install is selected, run `xcode-select -p`. It prints the selected install’s Developer folder, such as `/Applications/Xcode-26.4.app/Contents/Developer`.
 
 
 [​](#run-your-app-in-the-simulator)
@@ -334,7 +347,7 @@ Watch the app in the simulator pane
 
 When the app launches in a simulator, the iOS Simulator pane opens next to the conversation. The first time Claude uses a device, the desktop app asks you to allow it; see [Grant Claude access to a device](#grant-claude-access-to-a-device). Claude installs the app, taps through it, and reads the screen to verify its own changes while you watch.
 
-The simulator pane opens whenever Claude launches the app in a simulator, at any point in the session. When your request is about seeing the app, for example “does the new screen look right?”, Claude starts a simulator before it begins the work. After Claude fixes a bug or changes a screen, ask it to verify the change: relaunching the app reopens the pane if it isn’t open. The simulator pane shows whichever device the app actually launched in. To test on a specific device, name it in your request, for example “run it on the iPhone SE simulator”, and Claude targets that device when it builds and launches. A device Claude boots also appears in Apple’s Simulator app, and Claude can install the app on a device you already have booted. You can also open the simulator pane yourself. Once the session has a simulator attached or has edited Swift files, the **Views** menu in the session toolbar shows an **iOS Simulator** entry. If the pane isn’t showing a device yet, click **Attach simulator**, or pick a specific device from the device menu next to it; picking a shut-down device boots it. If Xcode or its simulators are missing, the pane shows the setup steps instead and checks them off as you complete them.
+The simulator pane opens whenever Claude launches the app in a simulator, at any point in the session. When your request is about seeing the app, for example “does the new screen look right?”, Claude starts a simulator before it begins the work. After Claude fixes a bug or changes a screen, ask it to verify the change: relaunching the app reopens the pane if it isn’t open. The simulator pane shows whichever device the app actually launched in. To test on a specific device, name it in your request, for example “run it on the iPhone SE simulator”, and Claude targets that device when it builds and launches. A device Claude boots also appears in Apple’s Simulator app, or in Device Hub on Xcode 27. Claude can install the app on a device you already have booted. You can also open the simulator pane yourself. Once the session has a simulator attached or has edited Swift files, the **Views** menu in the session toolbar shows an **iOS Simulator** entry. If the pane isn’t showing a device yet, click **Attach simulator**, or pick a specific device from the device menu next to it; picking a shut-down device boots it. If Xcode or its simulators are missing, the pane shows the setup steps instead and checks them off as you complete them.
 
 
 [​](#control-the-simulator-yourself)
@@ -357,7 +370,7 @@ The row under the device name tunes the video stream from the simulator. Lower *
 
 How sessions manage devices
 
-Each device belongs to the session that launched it, so [parallel sessions](desktop.md#work-in-parallel-with-sessions) don’t share a device: what you see in one session’s pane reflects that session’s work, not another’s. Switching sessions in the sidebar switches the simulator view along with the conversation, and switching back resumes the same device where it left off. If Claude works with more than one device, each opens its own pane, up to 4 per session. Claude Code Desktop shuts down the simulators it booted once they’re no longer in use: when you quit the app, when you archive the session, or 10 minutes after you detach a device from its pane. Devices you boot yourself, whether from the pane or in Apple’s Simulator app, are never shut down automatically. To shut down the attached device right away, use the shutdown button in the pane.
+Each device belongs to the session that launched it, so [parallel sessions](desktop.md#work-in-parallel-with-sessions) don’t share a device: what you see in one session’s pane reflects that session’s work, not another’s. Switching sessions in the sidebar switches the simulator view along with the conversation, and switching back resumes the same device where it left off. If Claude works with more than one device, each opens its own pane, up to 4 per session. Claude Code Desktop shuts down the simulators it booted once they’re no longer in use: when you quit the app, when you archive the session, or 10 minutes after you detach a device from its pane. Devices you boot outside Claude Code Desktop, such as in Apple’s Simulator app or in Device Hub, are never shut down automatically. To shut down the attached device right away, use the shutdown button in the pane.
 
 
 [​](#grant-claude-access-to-a-device)
@@ -415,7 +428,7 @@ The simulator pane doesn’t open when Claude runs the app
 Claude may not have recognized that you wanted to run or test the app, or the simulator tooling may be missing. Check the following:
 
 - State the goal explicitly, for example “run the app in the iOS Simulator and tap through the signup flow”.
-- Confirm Xcode and the iOS simulators are installed and that your Xcode version meets the [requirements](#requirements).
+- Confirm Xcode and the iOS simulators are installed and that you’re using a [recommended Xcode version](#requirements).
 - If your organization manages Claude Code, the [simulator tools may be disabled by policy](#turn-off-simulator-access).
 - If you’re in an Enterprise organization that has a HIPAA configuration enabled, the simulator pane isn’t available to you.
 - The simulator pane requires Claude Desktop v1.24012.0 or later. Open **Claude → Check for Updates**, then restart the app.
@@ -425,20 +438,7 @@ Claude may not have recognized that you wanted to run or test the app, or the si
 
 The simulator pane says no simulators were found
 
-If `xcode-select` points at Xcode 27, the pane can report no simulators even though devices exist; see [The simulator pane fails with Xcode 27](#the-simulator-pane-fails-with-xcode-27). Otherwise, Xcode is installed but has no iOS simulators to list. The simulator pane shows the setup steps to follow and checks them off as each one completes. To install the missing piece manually, download the iOS simulator runtime from Xcode’s settings, or run `xcodebuild -downloadPlatform iOS`.
-
-
-[​](#the-simulator-pane-fails-with-xcode-27)
-
-The simulator pane fails with Xcode 27
-
-The pane doesn’t yet work with Xcode 27, which replaces the Simulator app with Device Hub. With Xcode 27 selected, attaching a device fails, or the pane reports that no simulators were found even though devices exist. The pane uses whichever Xcode `xcode-select` points at. If Xcode 27 is your only install, install Xcode 26.x alongside it first. Then select the 26.x install by its path. For example, if it’s installed as `/Applications/Xcode-26.4.app`:
-
-```python
-sudo xcode-select -s /Applications/Xcode-26.4.app
-```
-
-Run `xcode-select -p` to check which install is selected.
+Xcode is installed but has no iOS simulators to list. The simulator pane shows the setup steps to follow and checks them off as each one completes. To install the missing piece manually, download the iOS simulator runtime from Xcode’s settings, or run `xcodebuild -downloadPlatform iOS`.
 
 
 [​](#see-also)
@@ -468,7 +468,7 @@ Path: 16-Mobile-Desktop/desktop-linux.md
 - [Troubleshoot](#troubleshoot)
   - [Unable to locate package claude-desktop](#unable-to-locate-package-claude-desktop)
   - [Unmet dependencies](#unmet-dependencies)
-  - [Running as root without —no-sandbox is not supported](#running-as-root-without-%E2%80%94no-sandbox-is-not-supported)
+  - [Running as root without --no-sandbox is not supported](#running-as-root-without-no-sandbox-is-not-supported)
   - [Cowork isn’t available](#cowork-isn%E2%80%99t-available)
 - [What’s not in the Linux beta yet](#what%E2%80%99s-not-in-the-linux-beta-yet)
 
@@ -635,9 +635,9 @@ If `apt` stops with `The following packages have unmet dependencies` or `Unsatis
 - All missing dependencies show `not installable` with an `:amd64` or `:arm64` suffix: you downloaded the `.deb` for a different architecture than your machine’s. Run `dpkg --print-architecture` and download the matching `.deb`, or [install from the apt repository](#install), which selects the package for your architecture.
 
 
-[​](#running-as-root-without-—no-sandbox-is-not-supported)
+[​](#running-as-root-without-no-sandbox-is-not-supported)
 
-Running as root without —no-sandbox is not supported
+Running as root without `--no-sandbox` is not supported
 
 If `claude-desktop` exits with this message, you launched it as root. Log in as a regular user and launch it from there.
 
@@ -1232,7 +1232,7 @@ The Browser pane is a tabbed browser, so you can open documentation, issue track
 
 Approve Claude’s actions on a site
 
-The first time Claude acts on an external site, a permission card appears and Claude waits for your choice: **Allow once**, **Always allow**, or **Deny**. **Allow once** approves the action without saving anything. **Always allow** saves the approval for that site on your device, and you can revoke it in Settings. Each site needs its own approval, including subdomains. Your local dev servers and project files don’t need approval, so [auto-verify](#auto-verify-changes) keeps working without prompts. Even on an approved site, Claude won’t purchase items, create accounts, or bypass CAPTCHAs without your input. Browsing in the Browser pane uses the same safety model as the [Claude in Chrome extension](../03-IDE-Integrations/chrome.md). See [Using Claude in Chrome safely](../15-Claude-AI-Features/using-claude-for-chrome-safely.md) for how Claude handles sensitive sites and risky actions.
+The first time Claude acts on an external site, a permission card appears and Claude waits for your choice: **Allow once**, **Always allow**, or **Deny**. **Allow once** approves the action without saving anything. **Always allow** saves the approval for that site on your device, and you can revoke it in Settings. Each site needs its own approval, including subdomains. Your local dev servers and project files don’t need approval, so [auto-verify](#auto-verify-changes) keeps working without prompts. Even on an approved site, Claude won’t purchase items, create accounts, or bypass CAPTCHAs without your input. Browsing in the Browser pane uses the same safety model as the [Claude in Chrome extension](../03-IDE-Integrations/chrome.md). See [Using Claude in Chrome safely](https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely) for how Claude handles sensitive sites and risky actions.
 
 
 [​](#choose-between-the-browser-and-the-chrome-extension)
@@ -1511,7 +1511,7 @@ The **Continue in** menu, accessible from the VS Code icon in the bottom right o
 
 Sessions from Dispatch
 
-[Dispatch](../21-Account-Support/assign-tasks-to-claude-from-anywhere-in-cowork.md) is a persistent conversation with Claude that lives in the [Cowork](../15-Claude-AI-Features/product-cowork.md) tab. You message Dispatch a task, and it decides how to handle it. A task can end up as a Code session in two ways: you ask for one directly, such as “open a Claude Code session and fix the login bug”, or Dispatch decides the task is development work and spawns one on its own. Tasks that typically route to Code include fixing bugs, updating dependencies, running tests, or opening pull requests. Research, document editing, and spreadsheet work stay in Cowork. Either way, the Code session appears in the Code tab’s sidebar with a **Dispatch** badge. You get a push notification on your phone when it finishes or needs your approval. If you have [computer use](#let-claude-use-your-computer) enabled, Dispatch-spawned Code sessions can use it too. App approvals in those sessions expire after 30 minutes and re-prompt, rather than lasting the full session like regular Code sessions. For setup, pairing, and Dispatch settings, see the [Dispatch help article](../21-Account-Support/assign-tasks-to-claude-from-anywhere-in-cowork.md). Dispatch requires a Pro or Max plan and is not available on Team or Enterprise plans. Dispatch is one of several ways to work with Claude when you’re away from your terminal. For a comparison with the other options, see [Platforms and integrations](../02-Claude-Code-CLI/platforms.md#work-when-you-are-away-from-your-terminal).
+[Dispatch](https://support.claude.com/en/articles/13947068) is a persistent conversation with Claude that lives in the [Cowork](../15-Claude-AI-Features/product-cowork.md) tab. You message Dispatch a task, and it decides how to handle it. A task can end up as a Code session in two ways: you ask for one directly, such as “open a Claude Code session and fix the login bug”, or Dispatch decides the task is development work and spawns one on its own. Tasks that typically route to Code include fixing bugs, updating dependencies, running tests, or opening pull requests. Research, document editing, and spreadsheet work stay in Cowork. Either way, the Code session appears in the Code tab’s sidebar with a **Dispatch** badge. You get a push notification on your phone when it finishes or needs your approval. If you have [computer use](#let-claude-use-your-computer) enabled, Dispatch-spawned Code sessions can use it too. App approvals in those sessions expire after 30 minutes and re-prompt, rather than lasting the full session like regular Code sessions. For setup, pairing, and Dispatch settings, see the [Dispatch help article](https://support.claude.com/en/articles/13947068). Dispatch requires a Pro or Max plan and is not available on Team or Enterprise plans. Dispatch is one of several ways to work with Claude when you’re away from your terminal. For a comparison with the other options, see [Platforms and integrations](../02-Claude-Code-CLI/platforms.md#work-when-you-are-away-from-your-terminal).
 
 
 [​](#extend-claude-code)
@@ -1841,6 +1841,8 @@ These settings are configured through the [admin settings console](https://claud
 - **Remote Control**: enable or disable [Remote Control](../02-Claude-Code-CLI/remote-control.md) for your organization
 - **Disable Bypass permissions mode**: prevent users in your organization from enabling bypass permissions mode
 
+The OpenTelemetry form for Cowork under **Monitoring** in the admin console’s [Data and privacy settings](https://claude.ai/admin-settings/data-privacy-controls) applies to Cowork sessions only. In a Cowork session on this machine, the desktop app passes that collector to Claude Code as `OTEL_*` environment variables, so the form takes effect even though Claude Code in that session [never fetches admin-console settings](#managed-settings).To export telemetry from Code tab sessions, set `CLAUDE_CODE_ENABLE_TELEMETRY` and the `OTEL_*` variables in the `env` block of your Claude Code managed settings, as shown in [administrator configuration for monitoring](../13-Enterprise-Admin/monitoring-usage.md#administrator-configuration). Local, cloud, and SSH sessions each read [managed settings from different sources](#managed-settings). For the hosts a cloud session can reach, see [network access](../02-Claude-Code-CLI/cloud-environments.md#network-access). For the `service.name` that Code tab sessions report, see [service information](../13-Enterprise-Admin/monitoring-usage.md#service-information).
+
 
 [​](#managed-settings)
 
@@ -1929,7 +1931,7 @@ If your organization has [IP allowlisting](../13-Enterprise-Admin/restrict-acces
 
 Authentication and SSO
 
-Enterprise organizations can require SSO for all users. See [authentication](../13-Enterprise-Admin/iam.md) for plan-level details and [Setting up SSO](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md) for SAML configuration; OIDC setup is covered in the [Claude Enterprise Administrator Guide](https://claude.com/resources/tutorials/claude-enterprise-administrator-guide).
+Team and Enterprise organizations can require SSO for all users. See [authentication](../13-Enterprise-Admin/iam.md) for plan-level details and [Setting up SSO](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso) for SAML configuration; OIDC setup is covered in the [Claude Enterprise Administrator Guide](https://claude.com/resources/tutorials/claude-enterprise-administrator-guide).
 
 
 [​](#data-handling)
@@ -1948,14 +1950,20 @@ Desktop can be distributed through enterprise deployment tools:
 - **macOS**: distribute via MDM such as Jamf or Kandji using the `.dmg` installer
 - **Windows**: deploy via the MSIX package. See [Deploy Claude Desktop for Windows](deploy-claude-desktop-for-windows.md) for enterprise deployment options including silent installation
 
-For the domains to allowlist in your firewall, see [network access requirements](#network-access-requirements) above. For proxy settings, custom certificate authorities, and LLM gateways, see [network configuration](../13-Enterprise-Admin/network-config.md). For the full enterprise configuration reference, see the [enterprise configuration guide](../13-Enterprise-Admin/enterprise-configuration-for-claude-desktop.md).
+For the domains to allowlist in your firewall, see [network access requirements](#network-access-requirements) above. For proxy settings, custom certificate authorities, and LLM gateways, see [network configuration](../13-Enterprise-Admin/network-config.md). For the full enterprise configuration reference, see the [enterprise configuration guide](https://support.claude.com/en/articles/12622667-enterprise-configuration).
 
 
 [​](#coming-from-the-cli)
 
 Coming from the CLI?
 
-If you already use the Claude Code CLI, Desktop runs the same underlying engine with a graphical interface. You can run both simultaneously on the same machine, even on the same project. Each keeps its own session list, and you can bring a CLI session into Desktop. They share configuration and project memory via CLAUDE.md files. To move a CLI session into Desktop, run `/desktop` in the terminal. Claude saves your session and opens it in the desktop app, then exits the CLI. This command is available on macOS and x64 Windows when you are signed in with a Claude subscription. It is not available with API key authentication or on Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry. To pick up a CLI session from inside Desktop instead, type `/resume` in the prompt box. Desktop lists the sessions you started from the CLI, and you can search them by title, folder, or branch and preview where each one left off. Select a session and it continues in the app with its full conversation and context.
+If you already use the Claude Code CLI, Desktop runs the same underlying engine with a graphical interface. You can run both simultaneously on the same machine, even on the same project. Each keeps its own session list, and you can bring a CLI session into Desktop. They share configuration and project memory via CLAUDE.md files. To move a CLI session into Desktop, run `/desktop` in the terminal. Claude saves your session and opens it in the desktop app, then exits the CLI. This command is available on macOS and x64 Windows when you are signed in with a Claude subscription. It is not available with API key authentication or on Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry. You can also pick up a CLI session from inside Desktop with `/resume`. The command is available in local sessions, not in SSH, WSL, or cloud sessions. To continue a terminal session in Desktop:
+
+1.  Close the session in the terminal.
+2.  In the Desktop prompt box, type `/resume`. Desktop lists the sessions you started from the CLI on this computer. Search by title, folder, or branch, and preview where each one left off.
+3.  Select the session. It continues in the app with its full conversation and context.
+
+Desktop continues the same session rather than a copy, so `claude --resume` in the terminal still finds it afterwards.
 
 When to use Desktop vs CLI: use Desktop when you want to manage parallel sessions in one window, arrange panes side by side, or review changes visually. Use the CLI when you need scripting, automation, or prefer a terminal workflow.
 
@@ -2166,7 +2174,7 @@ This article introduces a desktop extension allowlist that Team and Enterprise p
 
 ## How to enable the allowlist
 
-**Important:** If you’ve previously configured Enterprise policy controls at the user-machine level, these will override the in-app allowlist. Ensure both `isDesktopExtensionDirectoryEnabled` and `isDesktopExtensionEnabled` are not set to "false" so the allowlist can populate the available registry. Refer to our **[desktop enterprise configuration documentation](../13-Enterprise-Admin/enterprise-configuration-for-claude-desktop.md)** for more information.
+**Important:** If you’ve previously configured Enterprise policy controls at the user-machine level, these will override the in-app allowlist. Ensure both `isDesktopExtensionDirectoryEnabled` and `isDesktopExtensionEnabled` are not set to "false" so the allowlist can populate the available registry. Refer to our **[desktop enterprise configuration documentation](https://support.claude.com/en/articles/12622667-enterprise-configuration)** for more information.
 
 The desktop extension allowlist is disabled by default, so an organization Owner will need to switch it on manually. Note that **users will be able to access all desktop extensions in the registry until you enable the allowlist.** To prevent this, ensure you activate the allowlist to block all desktop extensions by default, then add only the extensions your team needs access to.
 
@@ -2250,7 +2258,6 @@ Path: 16-Mobile-Desktop/getting-started-with-local-mcp-servers-on-claude-desktop
 # Getting Started with Local MCP Servers on Claude Desktop
 
 
-
 The Model Context Protocol (MCP) is an open protocol that enables seamless integration between LLM applications and external data sources and tools. With the introduction of desktop extensions, installing and managing local MCP servers has become significantly easier.
 
 ## Desktop Extensions
@@ -2306,7 +2313,7 @@ Click “Install Extension…” and select the .mcpb file. Follow the prompts t
 
 **Note:** Enterprise policy controls at the user-machine level will override any in-app controls (blocklist and allowlist). If you want to use an in-app control, ensure `isDesktopExtensionEnabled` and `isDesktopExtensionDirectoryEnabled` are not set to "false" so the allowlist can populate the available registry.
 
-For controlling desktop extensions through system policies, please refer to our [desktop enterprise configuration documentation](../13-Enterprise-Admin/enterprise-configuration-for-claude-desktop.md).
+For controlling desktop extensions through system policies, please refer to our [desktop enterprise configuration documentation](https://support.claude.com/en/articles/12622667-enterprise-configuration).
 
 ## Troubleshooting desktop extension installation issues
 
@@ -2386,7 +2393,7 @@ For more in-depth information on building your own MCP clients and servers, we r
 
 - [Guide to debugging MCP integrations](https://modelcontextprotocol.io/docs/tools/debugging) - Troubleshooting tips and solutions for common implementation challenges.
 
-If you need further guidance, visit our guide on [How to Get Support](../21-Account-Support/how-can-i-contact-support.md) for additional support options.
+If you need further guidance, visit our guide on [How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support) for additional support options.
 
 ---
 
@@ -2422,7 +2429,7 @@ You can install the Claude app onto your device by navigating to the Play Store 
 
 ## Why can’t I find Claude for Android in the Play Store?
 
-If you’re unable to locate Claude for Android in your Play Store, you may be located in an **[unsupported region](../21-Account-Support/where-can-i-access-claude-ai.md)**, using an unsupported device, or using an unsupported version of Android.
+If you’re unable to locate Claude for Android in your Play Store, you may be located in an **[unsupported region](https://support.claude.com/en/articles/8461763)**, using an unsupported device, or using an unsupported version of Android.
 
 ## What versions of Android are supported?
 
@@ -2432,7 +2439,7 @@ We currently support Android 8.0 Oreo and above.
 
 To uninstall the Claude app from your Android device, hold down on the app from your screen until you see the menu options. Click on "App Info." From the next series of options, select "Uninstall."
 
-Note that if you have an active paid subscription and would like to uninstall the app, your subscription will not be automatically canceled. To cancel your subscription, follow the instructions here: **[Cancel your Pro or Max subscription on Claude for Android](../17-Billing-Plans/how-do-i-cancel-my-paid-claude-subscription.md#h_916bc20742)**.
+Note that if you have an active paid subscription and would like to uninstall the app, your subscription will not be automatically canceled. To cancel your subscription, follow the instructions here: **[Cancel your Pro or Max subscription on Claude for Android](https://support.claude.com/en/articles/8325617-cancel-your-pro-or-max-subscription#h_916bc20742)**.
 
 ---
 
@@ -2462,11 +2469,10 @@ If you aren’t seeing the latest features on Claude for Android, you may need t
 
 ## How to update Claude for iOS | Claude Help Center
 
-Source: https://support.claude.com/en/articles/11825384-how-to-update-claude-for-ios
+Source: https://support.claude.com/en/articles/11825384-
 Path: 16-Mobile-Desktop/how-to-update-claude-for-ios.md
 
 # How to update Claude for iOS
-
 
 
 If you aren’t seeing the latest features on Claude for iOS, you may need to update your mobile app manually by following these **[instructions from Apple](https://support.apple.com/en-us/102629)**:
@@ -2483,11 +2489,10 @@ If you aren’t seeing the latest features on Claude for iOS, you may need to up
 
 ## Install Claude Desktop | Claude Help Center
 
-Source: https://support.claude.com/en/articles/10065433-installing-claude-desktop
+Source: https://support.claude.com/en/articles/10065433-install-claude-desktop
 Path: 16-Mobile-Desktop/installing-claude-desktop.md
 
 # Install Claude Desktop
-
 
 
 The Claude desktop apps bring Claude's capabilities directly to your computer, allowing for seamless integration with your workflow.
@@ -2612,7 +2617,7 @@ With Cowork, Claude can:
 
 Cowork runs code in an isolated virtual machine on your computer. File reads and writes are limited to folders you connect, and network access follows your egress settings.
 
-To learn more, see **[Get started with Cowork](../15-Claude-AI-Features/getting-started-with-local-agent-mode.md)**.
+To learn more, see **[Get started with Cowork](https://support.claude.com/en/articles/13345190-get-started-with-cowork)**.
 
 **Setup requirements for Claude Cowork on Linux**
 
@@ -2634,11 +2639,10 @@ Cowork on Linux has its own setup requirements. Cowork runs your tasks in a virt
 
 ## Install Claude for iOS | Claude Help Center
 
-Source: https://support.claude.com/en/articles/9266462-installing-claude-for-ios
+Source: https://support.claude.com/en/articles/9266462-install-claude-for-ios
 Path: 16-Mobile-Desktop/installing-claude-for-ios.md
 
 # Install Claude for iOS
-
 
 
 ## How do I install the Claude for iOS app?
@@ -2647,7 +2651,7 @@ You can install the Claude app onto your iOS device by navigating to the App Sto
 
 ## Why can’t I find Claude for iOS in the App Store?
 
-If you’re unable to locate Claude for iOS in your App Store, you may be located in an [unsupported region](../21-Account-Support/where-can-i-access-claude-ai.md), using an unsupported device, or using an unsupported version of iOS.
+If you’re unable to locate Claude for iOS in your App Store, you may be located in an [unsupported region](../15-Claude-AI-Features/where-can-i-access-claude.md), using an unsupported device, or using an unsupported version of iOS.
 
 ## What versions of iOS are supported?
 
@@ -2996,7 +3000,7 @@ Once Claude can see a folder, you can ask Claude to:
 - *Sort a cluttered Downloads folder into clearly named subfolders.*
 - *Each month, add the new invoices to that same spreadsheet, building a running record.*
 
-A task like that can later [run on a schedule(opens in new tab)](../15-Claude-AI-Features/schedule-recurring-tasks-in-claude-cowork.md).
+A task like that can later [run on a schedule(opens in new tab)](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork).
 
 ### Apps[](#apps)
 
@@ -3028,7 +3032,7 @@ A task in Claude, on the web or the desktop app, can also work in your own Chrom
 
 
 
-Some pages carry hidden text meant to mislead an AI, and safety checks reduce that risk without removing it. Start with sites you trust, and handle anything sensitive yourself, like bank accounts or health records. See [Use Claude in Chrome safely(opens in new tab)](../15-Claude-AI-Features/using-claude-for-chrome-safely.md) and [Use the built-in browser(opens in new tab)](../15-Claude-AI-Features/use-the-built-in-browser-in-claude-cowork.md).
+Some pages carry hidden text meant to mislead an AI, and safety checks reduce that risk without removing it. Start with sites you trust, and handle anything sensitive yourself, like bank accounts or health records. See [Use Claude in Chrome safely(opens in new tab)](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely) and [Use the built-in browser(opens in new tab)](https://support.claude.com/en/articles/16607400).
 
 ### Your screen, through computer use (beta)[](#your-screen-through-computer-use-beta)
 
@@ -3046,7 +3050,7 @@ Things to ask:
 
 
 
-By default, Claude asks before using an app, and you can stop Claude at any time. Claude can see what's on your screen while it works, so close anything sensitive first. See [Let Claude use your computer(opens in new tab)](../15-Claude-AI-Features/let-claude-use-your-computer-in-cowork.md).
+By default, Claude asks before using an app, and you can stop Claude at any time. Claude can see what's on your screen while it works, so close anything sensitive first. See [Let Claude use your computer(opens in new tab)](https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork).
 
 ### Record a skill[](#record-a-skill)
 
@@ -3115,14 +3119,17 @@ Loading
 
 ## Use Claude Cowork on web, desktop, and mobile | Claude Help Center
 
-Source: https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile
+Source: https://support.claude.com/en/articles/15520349
 Path: 16-Mobile-Desktop/use-claude-cowork-on-web-desktop-and-mobile.md
 
 # Use Claude Cowork on web, desktop, and mobile
 
+Updated today
 
 
-**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](../15-Claude-AI-Features/claude-cowork-and-chat-are-one-claude.md)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+
+**Heads-up for Pro and Max plans:** On October 6, 2026, new Cowork tasks run in the cloud and the **Only on your computer** option in **[Settings \> General](https://claude.ai/settings/general)** will be removed. Tasks you already started on your computer stay there. See **[What's changing for Pro and Max plans on October 6](#h_f951c27c48)** below.
 
 Claude Cowork is available on desktop, web, mobile, and in the Claude in Chrome side panel. Your sessions and files live with your Claude account and go where you go, on any device. This article explains how to start a Cowork session and what's available on each surface.
 
@@ -3160,7 +3167,25 @@ When using Cowork in the cloud, Claude's work runs on Anthropic's servers instea
 
 - Sessions run in the cloud on every surface.
 
-For details on how cloud and local sessions are isolated and what each can access, see **[Claude Cowork architecture overview](../15-Claude-AI-Features/claude-cowork-architecture-overview.md)**. For safety guidance, see **[Use Claude Cowork safely](../15-Claude-AI-Features/use-claude-cowork-safely.md)**.
+For details on how cloud and local sessions are isolated and what each can access, see **[Claude Cowork architecture overview](../15-Claude-AI-Features/claude-cowork-architecture-overview.md)**. For safety guidance, see **[Use Claude Cowork safely](https://support.claude.com/en/articles/13364135)**.
+
+------------------------------------------------------------------------
+
+## What's changing for Pro and Max plans on October 6
+
+On October 6, 2026, new Cowork tasks on Pro and Max plans run in the cloud. The **Only on your computer** option in **[Settings \> General](https://claude.ai/settings/general)** will be removed, and there's nothing you need to set up.
+
+Tasks you already started on your computer stay there, and you can keep working on them until they're done. Each one shows a note at the top with a button to download its transcript, in case you want to continue that work in Claude Code.
+
+Your folders stay on your computer. Claude reaches only the folders you've connected, through the desktop app, and only while it's open. When a task needs a file in the cloud, Claude fetches a copy of just that file. When you delete a session, the copies Claude fetched are deleted too, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**. Whether your conversations are used to improve Claude follows the **Help improve our AI models** setting in **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**.
+
+Your scheduled tasks move to the cloud too, including ones that use files on your computer. Tasks that use files on your computer need the desktop app open. See **[Schedule recurring tasks in Claude Cowork](../15-Claude-AI-Features/schedule-recurring-tasks-in-claude-cowork.md)**.
+
+### If you want tasks to run on your computer
+
+Some work has to stay on one machine. Claude Code in the desktop app runs on your computer and keeps your folders and history there. **[Get Claude Code desktop](https://claude.com/download)**. To bring past work with you, download a task's transcript from the note at the top of the task, or download your full Cowork history from the notice in the app, and open it in Claude Code. Your projects and scheduled tasks don't carry over to Claude Code.
+
+If you use Claude at work and at home and want them separate, use a separate account for each. Shared logins aren't supported.
 
 ------------------------------------------------------------------------
 
@@ -3174,7 +3199,7 @@ A few notes on the table:
 
 - \*Local file access, local connectors, browser use, and computer use from web and mobile work through the Claude Desktop app. A cloud session can read and write files in folders you've connected on your computer only while the desktop app is open on that computer and the session was started on desktop. If the app is closed, the session keeps running but can't reach your local files.
 
-- Projects are available on every surface. From a project you can start a chat or a Cowork session, and Claude uses the project's knowledge as context. Projects tied to a local folder support Cowork sessions on desktop only, and Cowork won't change a project's contents, so add anything you want to keep to the project yourself. For more information, see **[Organize your tasks with projects in Claude Cowork](../15-Claude-AI-Features/organize-your-tasks-with-projects-in-claude-cowork.md)** and **[Use live artifacts in Claude Cowork](../15-Claude-AI-Features/use-live-artifacts-in-claude-cowork.md)**.
+- Projects are available on every surface. From a project you can start a chat or a Cowork session, and Claude uses the project's knowledge as context. Projects tied to a local folder support Cowork sessions on desktop only, and Cowork won't change a project's contents, so add anything you want to keep to the project yourself. For more information, see **[Organize your tasks with projects in Claude Cowork](https://support.claude.com/en/articles/14116274)** and **[Use live artifacts in Claude Cowork](../15-Claude-AI-Features/use-live-artifacts-in-claude-cowork.md)**.
 
 - Artifacts created on or after August 19, 2026 are available on the desktop app and web. Live artifacts created before that date are available on the desktop app only. For more information, see **[Use artifacts in Claude Cowork](../15-Claude-AI-Features/use-live-artifacts-in-claude-cowork.md)**.
 
@@ -3192,7 +3217,7 @@ Some capabilities reach things on your computer, so they need the Claude Desktop
 
 - **Local connectors.** This includes plugins using those connectors.
 
-- **Browser use.** On desktop, Claude uses a browser built into the Claude Desktop app by default (rolling out gradually this week), or your own Chrome browser through Claude in Chrome if that's your preferred browser. When the desktop app is online, the built-in browser is also available in Cowork on web or mobile. A session started on desktop can be steered from web or mobile while the desktop app stays open. In the Chrome side panel, Claude can read the tab you're on without the desktop app. Claude driving a browser as part of a task still needs the desktop app open. Learn more in **[Use the built-in browser in Claude Cowork](../15-Claude-AI-Features/use-the-built-in-browser-in-claude-cowork.md)**.
+- **Browser use.** On desktop, Claude uses a browser built into the Claude Desktop app by default (rolling out gradually this week), or your own Chrome browser through Claude in Chrome if that's your preferred browser. When the desktop app is online, the built-in browser is also available in Cowork on web or mobile. A session started on desktop can be steered from web or mobile while the desktop app stays open. In the Chrome side panel, Claude can read the tab you're on without the desktop app. Claude driving a browser as part of a task still needs the desktop app open. Learn more in **[Use the built-in browser in Claude Cowork](https://support.claude.com/en/articles/16607400)**.
 
 - **Computer use.** Claude clicks, types, and navigates your screen directly.
 
@@ -3208,7 +3233,7 @@ When using Cowork in the cloud, sessions follow your account, so you can switch 
 
 For example, start a task in the Chrome side panel while you're looking at a dashboard, then pick it up on desktop to work with the downloaded files.
 
-When Claude finishes a task or needs your input, you'll get a notification on your phone. To get started, see **[Get started with Claude Cowork](../15-Claude-AI-Features/getting-started-with-local-agent-mode.md)**.
+When Claude finishes a task or needs your input, you'll get a notification on your phone. To get started, see **[Get started with Claude Cowork](https://support.claude.com/en/articles/13345190)**.
 
 ---
 
@@ -3397,7 +3422,7 @@ You can customize the quick access shortcut to use Option + Space or create a cu
 
 ## Use Claude app intents, shortcuts, and widgets on iOS | Claude Help Center
 
-Source: https://support.claude.com/en/articles/10263469-using-claude-app-intents-shortcuts-and-widgets-on-ios
+Source: https://support.claude.com/en/articles/10263469-use-claude-app-intents-shortcuts-and-widgets-on-ios
 Path: 16-Mobile-Desktop/using-claude-app-intents-shortcuts-and-widgets-on-ios.md
 
 # Use Claude app intents, shortcuts, and widgets on iOS
@@ -3549,7 +3574,7 @@ You can now quickly access the "Analyze Photo with Claude" control without needi
 
 ## Use Claude with Android apps | Claude Help Center
 
-Source: https://support.claude.com/en/articles/11869629-using-claude-with-android-apps
+Source: https://support.claude.com/en/articles/11869629-use-claude-with-android-apps
 Path: 16-Mobile-Desktop/using-claude-with-android-apps.md
 
 # Use Claude with Android apps
@@ -3705,7 +3730,7 @@ With your permission, Claude can read the following types of data from Health Co
 
 - **Nutrition:** Calories consumed, macronutrients, hydration, and micronutrients (if tracked)
 
-**Note:** By default, Claude doesn't save health information to memory. If you turn on **Include sensitive topics in memory**, Claude may remember health-related context from your conversations. Learn more about **[sensitive topics in memory](../15-Claude-AI-Features/using-claude-s-chat-search-and-memory-to-build-on-previous-context.md#h_6fe1d0e66f)**.
+**Note:** By default, Claude doesn't save health information to memory. If you turn on **Include sensitive topics in memory**, Claude may remember health-related context from your conversations. Learn more about **[sensitive topics in memory](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_6fe1d0e66f)**.
 
 ### How to use health features
 
@@ -4016,7 +4041,7 @@ With your permission, Claude can read the following types of data from Apple Hea
 
 - **Nutrition:** Calories consumed, macronutrients, water intake, and micronutrients (if tracked).
 
-**Note:** By default, Claude doesn't save health information to memory. If you turn on **Include sensitive topics in memory**, Claude may remember health-related context from your conversations. Learn more about **[sensitive topics in memory](../15-Claude-AI-Features/using-claude-s-chat-search-and-memory-to-build-on-previous-context.md#h_6fe1d0e66f)**.
+**Note:** By default, Claude doesn't save health information to memory. If you turn on **Include sensitive topics in memory**, Claude may remember health-related context from your conversations. Learn more about **[sensitive topics in memory](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_6fe1d0e66f)**.
 
 ### How to use health features
 
@@ -4162,7 +4187,7 @@ Dictation is available to all Claude users (Free, Pro, Max, Team, and Enterprise
 
 Dictation allows you to speak your prompts instead of typing them when using Claude for iOS or Android.
 
-**Note:** Dictation is different from voice mode. Dictation turns your speech into text so you can send a written prompt, and Claude replies in text. Voice mode is a full spoken conversation—you talk to Claude and Claude talks back, and it can use your connected tools. Learn more about **[voice mode](using-voice-mode-on-claude-mobile-apps.md)**.
+**Note:** Dictation is different from voice mode. Dictation turns your speech into text so you can send a written prompt, and Claude replies in text. Voice mode is a full spoken conversation—you talk to Claude and Claude talks back, and it can use your connected tools. Learn more about **[voice mode](../15-Claude-AI-Features/use-voice-mode.md)**.
 
 ## Get started with dictation
 
@@ -4286,205 +4311,6 @@ Tap the microphone button to start a new chat and begin voice dictation. The fir
 
 ---
 
-## Use voice mode | Claude Help Center
-
-Source: https://support.claude.com/en/articles/11101966-using-voice-mode-on-claude-mobile-apps
-Path: 16-Mobile-Desktop/using-voice-mode-on-claude-mobile-apps.md
-
-# Use voice mode
-
-
-
-Voice mode allows you to have complete spoken conversations with Claude. Instead of typing a prompt and reading a written response, you can speak to Claude and listen to its responses, making it easier to use when your hands are busy but your mind isn't.
-
-Voice mode is a beta feature available to all plans (Free, Pro, Max, Team, and Enterprise) on Claude Mobile (iOS and Android), Claude Desktop, and the web, but is built to work best from your phone.
-
-## What is voice mode?
-
-Voice mode transforms how you interact with Claude by:
-
-- Allowing you to speak to Claude and hear Claude's voice responses.
-
-- Seamlessly switch between text and voice within the same conversation.
-
-- Using web search and the tools you've connected, like Gmail, Google Calendar, Google Docs, and Slack, during a voice conversation.
-
-- Talking with Claude in many more languages
-
-## Enable voice mode
-
-### On the web and Claude Desktop
-
-1.  Log in to your Claude account and start a new chat.
-
-2.  Tap the sound wave symbol in the lower right corner of the chat window to activate voice mode:
-
-
-3.  Start talking and see your prompt automatically populate in the chat input.
-
-4.  Once you finish telling Claude your prompt, it will respond to continue the conversation.
-
-5.  Claude will remain in voice mode until you click the “Stop” button in the lower right corner of the chat window:
-
-
-### On mobile (iOS and Android)
-
-1.  Open the Claude app on your device.
-
-2.  Tap the voice mode icon (sound wave symbol next to the microphone icon) in the text input field:
-
-
-3.  Choose a voice to personalize your experience.
-
-4.  Start speaking to begin your conversation.
-
-------------------------------------------------------------------------
-
-## Use voice mode
-
-**Note:** Voice conversations count toward your regular usage limits based on your subscription plan.
-
-Voice mode offers two ways to talk with Claude, depending on your environment.
-
-### Hands-free mode
-
-In hands-free mode, Claude listens continuously and responds to natural pauses in your speech. This is the default mode—just start talking, and Claude will respond when you finish a thought.
-
-Hands-free mode works best in quiet environments. Claude is designed to handle natural pauses without cutting you off, so you can speak at your own pace without rushing.
-
-If Claude does interrupt you, simply start speaking again—Claude will stop and listen.
-
-### Push-to-talk mode
-
-If you're in a noisy environment or Claude is having trouble distinguishing your voice from background sounds, switch to push-to-talk mode. In this mode, you hold a button while speaking and release it when you're done.
-
-Push-to-talk gives you more control over when Claude listens, which makes it more reliable in challenging environments like busy streets, crowded rooms, or when other people are talking nearby.
-
-## Choose a voice
-
-Claude offers several voice options you can choose from when you first start voice mode.
-
-To change the voice later:
-
-- **On the web and desktop:** Go to **[Settings \> General](https://claude.ai/new#settings/general)** and scroll down to **Voice settings**. Select your preferred voice from the options. You’ll hear a preview when you click each option; click it again to stop the preview.
-
-- **On mobile:** Click the settings button in the bottom left corner while chatting with Claude in voice mode, then tap your preferred voice and pace:
-
-
-## Choose a model
-
-Voice mode can use the same Claude models you use in text chat, so it can keep up with harder questions, not just quick ones. The models available to you in voice mode follow your plan. When you turn on voice mode, it starts with the model you last used in text chat (for example, Sonnet, Opus, Haiku) and will automatically switch to the latest generation of that model.
-
-Tap or click on the model selector when you're in voice mode to switch models during a conversation. You’ll choose a model without picking a specific generation.
-
-**Note:** Claude Fable is not currently available in voice mode.
-
-## Switch between text and voice
-
-You can switch between text and voice within the same conversation. Your previous context carries over, so you don't lose anything when you switch. This is useful when you start a conversation by typing but want to continue hands-free, or when you need to type something specific (like a URL or code) mid-conversation.
-
-## Use your connected tools
-
-In voice mode, Claude can use the tools you've connected, like Gmail, Google Calendar, Google Docs, and Slack. You can ask Claude to catch you up on your email, check your calendar before a meeting, or summarize a thread without leaving the conversation. Connected tools work the same way in voice mode as they do in text chat and follow the rules of your plan. On the Free plan you can connect one tool, and paid plans can connect more.
-
-**Note:** Not every result can be shown on screen in voice mode, and using several tools at once can add a short delay.
-
-## Use cases
-
-Voice mode is particularly useful for:
-
-- **Daily planning.** Have Claude brief you on what's coming up while you get ready for the day.
-
-- **Learning.** Explore new topics through conversation while commuting, exercising, or doing chores.
-
-- **Creative thinking.** Think out loud with Claude to develop ideas when typing would slow you down.
-
-- **Preparation.** Practice for interviews or important conversations through natural dialogue.
-
-- **Capturing ideas.** Talk through thoughts the moment they come to you, wherever you are.
-
-## Tips for a good experience
-
-- **Start in a quiet space.** Hands-free mode works best when Claude can detect only one voice, so if you're in a noisy or crowded environment, switch to push-to-talk.
-
-- **Speak naturally.** You don't need to speak slowly or pause artificially. Claude is designed to follow natural speech patterns.
-
-- **Break up complex questions.** For multi-part questions, it can help to ask them one at a time rather than all at once.
-
-- **Interrupt if needed.** If Claude is going in the wrong direction, just start talking. Claude will stop and listen.
-
-## Safety measures in voice mode
-
-Voice mode has been developed with safety as a top priority. Several safeguards have been implemented to mitigate potential risks:
-
-- **Limited voice options:** Choose from a preset, limited selection of voices. This prevents voice cloning or impersonation. The system is designed specifically to avoid mimicking specific individuals or personalizing voice outputs.
-
-- **Generative by design**: Claude is designed to generate original responses rather than reproduce text exactly or mimic specific speech patterns, which prevents impersonation.
-
-- **Full policy compliance:** Our usage policy remains fully enforced in voice mode, with all standard model misuse detection and enforcement systems actively monitoring interactions.
-
-------------------------------------------------------------------------
-
-## Troubleshooting
-
-### Claude isn't recognizing my voice correctly
-
-- Make sure you're in a reasonably quiet environment, or switch to push-to-talk mode.
-
-- Check that your device's microphone permissions are enabled for Claude.
-
-- Speak clearly and at a normal pace.
-
-### Voice responses sound choppy or cut out
-
-- Check your internet connection. Voice mode works best on a stable connection.
-
-- Close other apps that might be using significant system resources.
-
-- Make sure your device has enough battery — voice processing uses more power than text.
-
-### Claude stops responding in voice mode
-
-- Check whether you've reached your usage limits.
-
-- Try leaving voice mode and re-entering.
-
-- Make sure your internet connection is stable.
-
-### Claude keeps interrupting me
-
-- Try pausing less between thoughts, or switch to push-to-talk mode for more control over when Claude listens.
-
-- Move to a quieter environment if possible — background noise can sometimes cause false interruptions.
-
-------------------------------------------------------------------------
-
-## Frequently asked questions
-
-### Will my voice conversations be saved?
-
-Yes. Textual transcripts of your audio conversations are saved in your chat history just like text conversations.
-
-### What's the difference between dictation and voice mode?
-
-Dictation converts your speech to text so you can type prompts by speaking. Voice mode is a full two-way conversation — you speak to Claude, and Claude speaks back.
-
-### Can I use voice mode in languages other than English?
-
-Yes. Voice mode supports many more languages, on all plans and on Claude Mobile, Claude Desktop, and web. Support for languages other than English is in beta.
-
-To set your voice language, go to **[Settings \> General](https://claude.ai/new#settings/general)**, then find **Voice \> Language** and choose a language. Changing your app's display language doesn't change your voice language, so set it here. You can also ask Claude to switch languages during a voice conversation.
-
-### Can I use voice mode with Claude Cowork or Claude Code?
-
-In the new Claude experience, voice mode works in any conversation, including ones where Claude is working on a task. In Claude Cowork and Claude Code, dictation is available but voice mode isn't.
-
-### Can Enterprise Admins disable voice mode for their organizations?
-
-If you are an Enterprise owner and would like to disable voice mode for your organization, please **[reach out to Support](../21-Account-Support/how-can-i-contact-support.md)**.
-
----
-
 ## What versions of Android are supported? | Claude Help Center
 
 Source: https://support.claude.com/en/articles/9612904-what-versions-of-android-are-supported
@@ -4505,7 +4331,6 @@ Source: https://support.claude.com/en/articles/11725091-when-to-use-desktop-and-
 Path: 16-Mobile-Desktop/when-to-use-desktop-and-web-connectors.md
 
 # When to use desktop and web connectors
-
 
 
 Claude can connect to your tools in two ways: through the web (remote connectors) or through the Claude Desktop app (desktop extensions). Most connectors are remote—they're the default choice and work everywhere you use Claude.
@@ -4558,4 +4383,4 @@ Path: 16-Mobile-Desktop/why-can-t-i-find-claude-for-android-in-the-play-store.md
 # Why can’t I find Claude for Android in the Play Store?
 
 
-If you’re unable to locate the Claude app in your Play Store, you may be located in an [unsupported region](../21-Account-Support/where-can-i-access-claude-ai.md), using an unsupported device, or using an unsupported version of Android.
+If you’re unable to locate the Claude app in your Play Store, you may be located in an [unsupported region](https://support.anthropic.com/en/articles/8461763-where-can-i-access-claude-ai), using an unsupported device, or using an unsupported version of Android.

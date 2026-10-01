@@ -2,12 +2,11 @@
 title: "How SCIM sync works for Enterprise organizations | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14499648-how-scim-sync-works-for-enterprise-organizations"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:31:47Z"
+fetched_at: "2026-09-30T06:32:51Z"
 tags: ["enterprise"]
 ---
 
 # How SCIM sync works for Enterprise organizations
-
 
 
 SCIM provisioning keeps your Enterprise organization's membership and groups in sync with your identity provider. This article covers what gets synced, how syncs are triggered, how to preview a sync before it applies, and what to watch for when resyncing.

@@ -2,7 +2,7 @@
 title: "Compaction that keeps recent turns - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/compaction-keep-recent-turns"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-22T06:30:30Z"
+fetched_at: "2026-09-30T06:32:04Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -54,7 +54,7 @@ Tool infrastructure
 
 Context management
 
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics (beta)](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
+[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
 
 [Compaction](build-with-claude-compaction.md)
 
@@ -124,7 +124,7 @@ In the following example, the history holds two turns, and the cut keeps the sec
 
 ```python
 {
-  "model": "claude-opus-5",
+  "model": "claude-opus-5-5",
   "max_tokens": 4096,
   "messages": [
     {
@@ -187,7 +187,7 @@ history: list[BetaMessageParam] = []
 for turn, question in enumerate(QUESTIONS, start=1):
     history.append({"role": "user", "content": question})
     response = client.beta.messages.create(
-        model="claude-opus-5",
+        model="claude-opus-5-5",
         max_tokens=8192,
         system=SYSTEM,
         betas=["compact-2026-09-04"],
@@ -203,7 +203,7 @@ for turn, question in enumerate(QUESTIONS, start=1):
         split = -2 * KEEP_TURNS
         older, recent = history[:split], history[split:]
         summary = client.beta.messages.create(
-            model="claude-opus-5",
+            model="claude-opus-5-5",
             max_tokens=4096,
             system=SYSTEM,
             betas=["compact-2026-09-04"],
@@ -230,4 +230,14 @@ The program's cut, between a reply and the next `user` message, meets that condi
 
 ## Compatibility
 
-[TABLE]
+Supported models  
+- Fable 5 and 5.1
+- Mythos 5, 5.1, and Preview
+- Opus 4.6, 4.7, 4.8, 5, and 5.5
+- Sonnet 4.6, 5, and 5.5
+
+Supported platforms  
+- Claude APIBeta
+- Claude Platform on AWSBeta
+- Google CloudBeta
+- Microsoft FoundryBeta

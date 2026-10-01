@@ -2,7 +2,7 @@
 title: "ChatPlace Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/chatplace"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:28Z"
+fetched_at: "2026-09-30T06:32:13Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 

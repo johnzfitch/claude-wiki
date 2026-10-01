@@ -2,7 +2,7 @@
 title: "Continue local sessions from any device with Remote Control - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/remote-control"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:29:39Z"
+fetched_at: "2026-09-30T06:30:55Z"
 tags: ["claude-code"]
 ---
 
@@ -211,7 +211,7 @@ Remote Control only activates when you explicitly run `claude remote-control`, `
 
 The same toggle appears outside the CLI:
 
-- **Desktop app**: **Settings \> Claude Code \> Enable remote control by default**.
+- **Desktop app**: **Settings \> Claude Code \> Connect new sessions to Remote Control**.
 - **VS Code extension**: **Enable Remote Control for all sessions** in the [command menu’s](../03-IDE-Integrations/vs-code.md#use-the-prompt-box) Settings section.
 
 To turn auto-connect on from a settings file instead, set [`remoteControlAtStartup`](settings-reference.md#remotecontrolatstartup) to `true` in your user `~/.claude/settings.json` or in [managed settings](../13-Enterprise-Admin/managed-settings.md). In project or local settings (`.claude/settings.json`, `.claude/settings.local.json`), Claude Code honors a `false` and turns auto-connect off for that repository, but ignores a `true`, so a checked-in file can’t turn on Remote Control for everyone who opens the repository. Auto-connect signs in with your own claude.ai account, so a session it starts appears only in your own account’s Claude apps and grants no one else access. With this setting on, each interactive Claude Code process registers one remote session. If you run multiple instances, each one gets its own remote session. To run multiple concurrent sessions from a single process, use [server mode](#start-a-remote-control-session) instead.
@@ -304,7 +304,7 @@ Remote Control and [cloud sessions](claude-code-on-the-web.md) both use the clau
 
 |                                                               | Trigger                                                                                           | Claude runs on                                                                                              | Setup                                                                                                                                          | Best for                                                      |
 |:--------------------------------------------------------------|:--------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------|
-| [Dispatch](../16-Mobile-Desktop/desktop.md#sessions-from-dispatch)           | Message a task from the Claude mobile app                                                         | Your machine (Desktop)                                                                                      | [Pair the mobile app with Desktop](../21-Account-Support/assign-tasks-to-claude-from-anywhere-in-cowork.md)                                                            | Delegating work while you’re away, minimal setup              |
+| [Dispatch](../16-Mobile-Desktop/desktop.md#sessions-from-dispatch)           | Message a task from the Claude mobile app                                                         | Your machine (Desktop)                                                                                      | [Pair the mobile app with Desktop](https://support.claude.com/en/articles/13947068)                                                            | Delegating work while you’re away, minimal setup              |
 | [Remote Control](remote-control.md)                     | Drive a running session from [claude.ai/code](https://claude.ai/code) or the Claude mobile app    | Your machine (CLI, Desktop, or VS Code)                                                                     | Run [`claude remote-control` or `/remote-control`](remote-control.md#start-a-remote-control-session)                                     | Steering in-progress work from another device                 |
 | [Channels](channels.md)                                 | Push events from a chat app like Telegram or Discord, or your own server                          | Your machine (CLI)                                                                                          | [Install a channel plugin](channels.md#quickstart) or [build your own](channels-reference.md)                                      | Reacting to external events like CI failures or chat messages |
 | [Slack](../14-Connectors/slack.md)                                       | Mention `@Claude` in a team channel                                                               | Anthropic cloud                                                                                             | [Install the Slack app](../14-Connectors/slack.md#setting-up-claude-code-in-slack) with [Claude Code on the web](claude-code-on-the-web.md) enabled | PRs and reviews from team chat                                |
@@ -437,7 +437,7 @@ An [environment variable](env-vars.md#features-that-need-feature-flag-fetching) 
 
 ”Remote Control is only available when using Claude via api.anthropic.com”
 
-The session isn’t talking to the Anthropic API directly, so there is no claude.ai backend to pair with. This happens on Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry. It also happens when [`ANTHROPIC_BASE_URL`](env-vars.md) points at a host other than `api.anthropic.com`, such as an [LLM gateway](../13-Enterprise-Admin/llm-gateway.md) or proxy, even if you sign in with claude.ai. See the [error reference](errors.md#remote-control-requires-the-anthropic-api) for the full cause list. The message names what routed the session away from the Anthropic API, such as `CLAUDE_CODE_USE_BEDROCK` or a custom `ANTHROPIC_BASE_URL`. If you have an eligible claude.ai login, unset the named variable, remove it from the `env` key in [settings](settings.md) if you set it there, and restart the session.
+The session isn’t talking to the Anthropic API directly, which Remote Control requires. This happens on Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry. It also happens when [`ANTHROPIC_BASE_URL`](env-vars.md) points at a host other than `api.anthropic.com`, such as an [LLM gateway](../13-Enterprise-Admin/llm-gateway.md) or proxy, even if you sign in with claude.ai. See the [error reference](errors.md#remote-control-requires-the-anthropic-api) for the full cause list. The message names what routed the session away from the Anthropic API, such as `CLAUDE_CODE_USE_BEDROCK` or a custom `ANTHROPIC_BASE_URL`. If you have an eligible claude.ai login, unset the named variable, remove it from the `env` key in [settings](settings.md) if you set it there, and restart the session.
 
 
 [​](#”remote-control-is-disabled-by-your-organization’s-policy”)

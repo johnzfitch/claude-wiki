@@ -1,6 +1,6 @@
 # Connectors
 
-33 pages. The full text of every page is in [llms.txt](llms.txt).
+32 pages. The full text of every page is in [llms.txt](llms.txt).
 
 - [Anthropic Connectors Directory FAQ | Claude Help Center](anthropic-connectors-directory-faq.md) — The Connectors Directory FAQ has moved to the Claude developer docs.
 - [Authorize MCP connectors for your entire organization | Claude Help Center](authorize-mcp-connectors-for-your-entire-organization.md) — This article explains how Enterprise-managed auth works and how admins can authorize connectors for their organization through their identity provider. With…
@@ -21,7 +21,6 @@
 - [Set up the Microsoft 365 connector | Claude Help Center](enabling-and-using-the-microsoft-365-connector.md) — This article walks admins through enabling the Microsoft 365 connector for their organization in Claude—including granting Microsoft Entra consent, restricting…
 - [Use Claude for Outlook - Claude.ai Documentation](use-claude-for-outlook.md) — An Outlook add-in that integrates Claude into your inbox and calendar, for Pro, Max, Team, and Enterprise plans.
 - [Use connectors to extend Claude's capabilities | Claude Help Center](use-connectors-to-extend-claude-s-capabilities.md) — This guide explains how to enable and use connectors with Claude to enhance its capabilities.
-- [Use Google Workspace connectors | Claude Help Center](using-the-google-drive-integration.md) — Connect your Gmail, Google Calendar, and Google Drive to Claude so you can search and send emails, manage your calendar, work with documents, and save files…
 - [Use interactive connectors in Claude | Claude Help Center](using-interactive-connectors-in-claude.md) — Interactive connectors are available for all users on Claude, Cowork, Claude Desktop, and Claude for iOS/Android.
 - [Use the GitHub integration | Claude Help Center](using-the-github-integration.md) — For more information on enabling GitHub within your account, see Use connectors to extend Claude's capabilities.
 - [Using Research and Google Workspace | Claude by Anthropic](using-research-and-google-workspace.md) — Learn how to leverage Claude's Research capabilities alongside Google Workspace integrations to access emails, calendar data, documents, and web information…

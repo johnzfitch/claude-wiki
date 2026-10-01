@@ -254,7 +254,7 @@ Batches may be canceled any time before processing ends. Once cancellation is in
 
 The number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.
 
-Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
+Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/beta/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
 
 ##### Path parameters
 

@@ -1,13 +1,12 @@
 ---
 title: "Import and export your memory from Claude | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12123587-importing-and-exporting-your-memory-from-claude"
+source_url: "https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:49Z"
+fetched_at: "2026-09-30T06:31:35Z"
 tags: ["claude-ai"]
 ---
 
 # Import and export your memory from Claude
-
 
 
 Memory imports are available for Free, Pro, Max, and Team plans on the web and Claude Desktop.

@@ -2,7 +2,7 @@
 title: "How do I sign up for the Pro plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8325609-how-do-i-sign-up-for-the-pro-plan"
 category: "21-Account-Support"
-fetched_at: "2026-09-29T06:32:32Z"
+fetched_at: "2026-09-30T06:32:19Z"
 tags: ["account"]
 ---
 
@@ -51,8 +51,8 @@ After subscribing for a Pro plan, your subscription will be set to automatically
 
 ## I am outside of your supported locations; can I subscribe to the Pro plan?
 
-No. Paid plans are only available for users physically located in one of our **[supported locations](where-can-i-access-claude-ai.md)**, and we require a phone number from a supported location to create an account.
+No. Paid plans are only available for users physically located in one of our **[supported locations](../15-Claude-AI-Features/where-can-i-access-claude.md)**, and we require a phone number from a supported location to create an account.
 
 ## Is there still a free version of Claude?
 
-Yes. You can still access the free version of Claude without subscribing for a paid plan. Note that like Pro, the free version of Claude is only available to customers physically located in one of our **[supported regions](where-can-i-access-claude-ai.md)**.
+Yes. You can still access the free version of Claude without subscribing for a paid plan. Note that like Pro, the free version of Claude is only available to customers physically located in one of our **[supported regions](../15-Claude-AI-Features/where-can-i-access-claude.md)**.

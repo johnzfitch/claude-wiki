@@ -1,13 +1,12 @@
 ---
 title: "Use Claude Cowork on Team and Enterprise plans | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans"
+source_url: "https://support.claude.com/en/articles/13455879-use-cowork-on-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:32:04Z"
+fetched_at: "2026-09-30T06:32:43Z"
 tags: ["billing", "enterprise", "plugins", "security"]
 ---
 
 # Use Claude Cowork on Team and Enterprise plans
-
 
 
 **Note:** Claude Cowork and chat are now one Claude, rolling out gradually to Pro and Max plans. Ask for what you need, and Claude decides whether that's a quick answer or a task. Team and Enterprise organizations keep chat and Claude Cowork as they are today, so everything in this article still applies. Learn more in our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
@@ -26,7 +25,7 @@ Claude Cowork is available on paid plans (Pro, Max, Team, Enterprise). Availabil
 
 - **Claude Mobile** **(beta)** — Available on Pro, Max, and Team plans, in the latest version of Claude for iOS and Claude for Android. On Enterprise plans, available where an admin has enabled it.
 
-- **Claude in Chrome side panel** — Available on Max and Team plans, and rolling out to Pro plans. On Enterprise plans, available where an admin has enabled it. For more information, see **[Get started with Claude in Chrome](../15-Claude-AI-Features/getting-started-with-claude-for-chrome.md)**.
+- **Claude in Chrome side panel** — Available on Max and Team plans, and rolling out to Pro plans. On Enterprise plans, available where an admin has enabled it. For more information, see **[Get started with Claude in Chrome](https://support.claude.com/en/articles/12012173-get-started-with-claude-in-chrome)**.
 
 On web and mobile, Claude Cowork sessions run in Anthropic's cloud.
 
@@ -64,7 +63,7 @@ For Team and Enterprise plans, there's a separate organization-wide toggle in **
 
 - **Team plans:** on by default. An owner can turn it off any time from the "Run Cowork in the cloud" toggle.
 
-- **Enterprise plans:** off by default. An owner turns on "Run Cowork in the cloud," then grants the Cowork in the cloud capability to a group with custom roles. See **[Manage custom roles on Enterprise plans](manage-custom-roles-on-enterprise-plans.md)**.
+- **Enterprise plans:** off by default. An owner turns on "Run Cowork in the cloud," then grants the Cowork in the cloud capability to a group with custom roles. See **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**.
 
 ### Enable or disable the built-in browser
 
@@ -72,11 +71,11 @@ Claude can use the web in Cowork in two ways: a browser built into the Claude De
 
 - **Built-in browser:** Controlled from **[Organization settings \> Cowork](https://claude.ai/admin-settings/cowork)**. On Team plans, it's on by default as it rolls out this week. Team owners can turn it off anytime. On Enterprise plans, it's off by default at launch and turns on by default starting September 10, 2026, unless you've turned it off. When it's off, users can't open the built-in browser and Claude can't use it.
 
-- **Claude in Chrome:** Controlled from **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)**, and users' browsers still need the extension deployed or installed. See **[Claude in Chrome admin controls](../13-Enterprise-Admin/claude-for-chrome-admin-controls.md)**.
+- **Claude in Chrome:** Controlled from **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)**, and users' browsers still need the extension deployed or installed. See **[Claude in Chrome admin controls](https://support.claude.com/en/articles/13065128)**.
 
 Both run the same safety layers: a blocklist for high-risk sites and safety checks on every action. The built-in browser needs the Claude Desktop app open and online; Claude in Chrome needs the extension installed in the user's browser. Browser traffic comes from the user's machine, where the desktop app runs. To site operators it looks like traffic from that device, even when the session is steered from web or mobile.
 
-Learn more in **[Use the built-in browser in Claude Cowork](../15-Claude-AI-Features/use-the-built-in-browser-in-claude-cowork.md)**.
+Learn more in **[Use the built-in browser in Claude Cowork](https://support.claude.com/en/articles/16607400)**.
 
 ### Auto mode availability
 
@@ -98,7 +97,7 @@ When the setting is off:
 
 Read-only tools are exempt only when the connector annotates them as read-only. Most custom connectors don't annotate their tools, so every tool on those connectors is gated.
 
-On Enterprise plans, this setting works alongside custom role grants, and the most restrictive layer wins. Role grants can't override it. For the full layering model, see **[Manage custom roles on Enterprise plans](manage-custom-roles-on-enterprise-plans.md#h_979e558d00)**.
+On Enterprise plans, this setting works alongside custom role grants, and the most restrictive layer wins. Role grants can't override it. For the full layering model, see **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans#h_979e558d00)**.
 
 ### Plugins
 
@@ -180,4 +179,4 @@ Cowork respects your organization's current network egress permissions. Before e
 
 Network settings are applied when a new Cowork session is created. If you change the network access mode or add domains to the allowlist during an active conversation, those changes won't take effect in that session. Start a new conversation for the updated settings to apply.
 
-Network egress permissions don't apply to the web fetch or **[web search](../15-Claude-AI-Features/enabling-and-using-web-search.md)** tools, or to MCPs, including Claude in Chrome. Web fetch runs server-side and is limited to search results and URLs you've shared. Team and Enterprise owners can turn off web search for Cowork and Chat in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**, and Claude in Chrome in **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)**.
+Network egress permissions don't apply to the web fetch or **[web search](https://support.claude.com/en/articles/10684626-enabling-and-using-web-search)** tools, or to MCPs, including Claude in Chrome. Web fetch runs server-side and is limited to search results and URLs you've shared. Team and Enterprise owners can turn off web search for Cowork and Chat in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**, and Claude in Chrome in **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)**.

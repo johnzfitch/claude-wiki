@@ -2,12 +2,11 @@
 title: "How do usage and length limits work? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:31:44Z"
+fetched_at: "2026-09-30T06:32:24Z"
 tags: ["safety"]
 ---
 
 # How do usage and length limits work?
-
 
 
 When working with Claude, you may encounter two different types of limits that work in distinct ways: **usage limits** and **length limits**. Understanding the difference between these can help you use Claude more effectively.
@@ -30,11 +29,11 @@ There are a couple of different ways to increase your usage depending on your pl
 
   - **[Manage usage credits for paid Claude plans](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md)**
 
-  - **[Manage usage credits for Team and seat-based Enterprise plans](../17-Billing-Plans/manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**
+  - **[Manage usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-)**
 
 - If your organization has a usage-based Enterprise plan, your usage is based on consumption. See this article for additional information: **[How am I billed for my Enterprise plan?](../17-Billing-Plans/how-am-i-billed-for-my-enterprise-plan.md)**
 
-For strategies to maximize your message allotment, see **[Usage limit best practices](usage-limit-best-practices.md)**.
+For strategies to maximize your message allotment, see **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
 
 ## What are length limits?
 
@@ -74,4 +73,4 @@ While you can't increase the fixed context window size for your plan, you can us
 
 The main distinction is that usage limits control *how much* you can use Claude across all your conversations, while length limits control *how long* any single conversation can become. Usage limits are about quantity over time, while length limits are about the depth and complexity of individual conversations.
 
-If you hit your usage limit, you'll need to wait for it to reset, upgrade your plan, or purchase usage credits. If you hit a length limit, you can start a new conversation or use **[features like projects](../15-Claude-AI-Features/what-are-projects.md)** to work with larger amounts of information more efficiently.
+If you hit your usage limit, you'll need to wait for it to reset, upgrade your plan, or purchase usage credits. If you hit a length limit, you can start a new conversation or use **[features like projects](https://support.claude.com/en/articles/9517075-what-are-projects)** to work with larger amounts of information more efficiently.

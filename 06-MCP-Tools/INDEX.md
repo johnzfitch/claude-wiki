@@ -1,6 +1,6 @@
 # Model Context Protocol (MCP)
 
-316 pages. The full text of every page is in [llms.txt](llms.txt).
+315 pages. The full text of every page is in [llms.txt](llms.txt).
 
 ## Community
 
@@ -125,7 +125,6 @@
 - [Understanding MCP servers - Model Context Protocol](General/2025-11-25-learn-server-concepts.md) — MCP servers are programs that expose specific capabilities to AI applications through standardized protocol interfaces. Common examples include file system…
 - [Understanding MCP servers - Model Context Protocol](General/2026-07-28-learn-server-concepts.md) — MCP servers are programs that expose specific capabilities to AI applications through standardized protocol interfaces. Common examples include file system…
 - [Using a Calculator Tool with Claude](General/claude-cookbooks-tool-use-calculator-tool.md) — In this recipe, we\'ll demonstrate how to provide Claude with a simple
-- [Using MCP Tools in Commands and Agents](General/claude-code-plugins-plugin-dev-skills-mcp-integration-references-tool-usage.md) — Complete guide to using MCP tools effectively in Claude Code plugin commands and agents.
 - [Versioning - Model Context Protocol](General/2025-11-25-learn-versioning.md) — The Model Context Protocol uses string-based version identifiers following the format YYYY-MM-DD, to indicate the last date backwards incompatible changes were…
 - [Versioning - Model Context Protocol](General/draft-learn-versioning.md) — The Model Context Protocol uses string-based version identifiers following the format YYYY-MM-DD, to indicate the last date backwards incompatible changes were…
 - [Web client - Model Context Protocol](General/draft-tools-inspector-web.md) — A tab-by-tab walkthrough of the graphical MCP Inspector

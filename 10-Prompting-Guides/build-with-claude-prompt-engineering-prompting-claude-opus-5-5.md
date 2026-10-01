@@ -2,7 +2,7 @@
 title: "Prompting Claude Opus 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5"
 category: "10-Prompting-Guides"
-fetched_at: "2026-09-23T06:27:34Z"
+fetched_at: "2026-09-30T06:32:05Z"
 tags: ["agents", "prompting"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["agents", "prompting"]
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../20-Models/release-notes-overview.md)
 
@@ -36,7 +36,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](build-with-claude-prompt-engineering-overview.md)[Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](build-with-claude-prompt-engineering-overview.md)[Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
 
 Test and evaluate
 
@@ -60,7 +60,7 @@ Reference
 
 
 
-Behavioral differences from Claude Opus 5 and the prompting and harness patterns that address them: effort calibration, thinking behavior in API integrations and chat, progress updates, unattended and multi-agent tasks, safeguard refusals, frontend design, complex visual inputs, multi-app workflows, and pasted text in user messages.
+Behavioral differences from Claude Opus 5 and the prompting and harness patterns that address them: effort calibration, thinking behavior in API integrations and chat, progress updates, unattended and multiagent tasks, safeguard refusals, frontend design, complex visual inputs, multi-app workflows, and pasted text in user messages.
 
 Copy page
 
@@ -76,7 +76,7 @@ Claude Opus 5.5 generates output tokens more than 30 percent faster than Claude 
 - Requests return `stop_reason: "refusal"`: [Safeguard refusals](#safeguard-refusals)
 - Long agentic turns look silent, or you want updates at predictable points: [User-facing progress updates](#user-facing-progress-updates)
 - An agent that works across several connected apps misses information the task didn't point to: [Explore context in multi-app workflows](#explore-context-in-multi-app-workflows)
-- You run a team of agents and want it to finish sooner: [Time signals for multi-agent harnesses](#time-signals-for-multi-agent-harnesses)
+- You run a team of agents and want it to finish sooner: [Time signals for multiagent harnesses](#time-signals-for-multi-agent-harnesses)
 - Replies in a chat application start slowly because the model thinks at length first: [Thinking instructions in chat system prompts](#thinking-instructions-in-chat-system-prompts)
 - The model follows instructions that arrived inside text a user pasted: [Mark pasted text in user messages](#mark-pasted-text-in-user-messages)
 - Answers about dense charts, diagrams, or screenshots miss detail: [Tools for complex visual inputs](#tools-for-complex-visual-inputs)
@@ -101,7 +101,7 @@ The capabilities that matter most for prompting are:
 
 At a given level, Claude Opus 5.5 tends to think more per turn than Claude Opus 5, especially at `xhigh` and `max`. If you keep the `effort` value you set for Claude Opus 5, expect longer turns and more output tokens. Three adjustments help:
 
-- Set `max_tokens` high enough to leave room for the model's thinking tokens as well as the reply. Thinking counts toward `max_tokens` even when thinking content isn't returned to you, so a limit sized for Claude Opus 5 with thinking off can cut replies off. For the long turns that agentic coding can produce, a `max_tokens` of 128,000, the model's maximum, has worked well in Anthropic's testing.
+- Set `max_tokens` high enough to leave room for the model's thinking tokens and the reply. Thinking counts toward `max_tokens` even when thinking content isn't returned to you, so a limit sized for Claude Opus 5 with thinking off can cut replies off. For the long turns that agentic coding can produce, a `max_tokens` of 128,000, the model's maximum, has worked well in Anthropic's testing.
 - Reserve `xhigh` and `max` for work where you've measured a quality gain.
 - To get less thinking, lower the effort level first. Lowering effort reduces thinking, and with it cost and latency, more reliably than prompt instructions do.
 
@@ -132,7 +132,7 @@ If something the model started is still running, such as a background command or
 
 A system prompt addition can also make these early stops less frequent. Claude Opus 5.5 is responsive to instructions that name the specific kinds of early stop you want it to avoid, such as ending the turn with a summary that announces the next step instead of taking it. It also helps to name the stops you do want, for example when no work can advance without the user's input.
 
-The following paragraph is one example of such an addition, written for agents that run fully unattended, where you want the model to keep working rather than stop to report. Treat it as a starting point: you may need to adapt it for your own application. Add it at the end of your system prompt from the first request of the session: adding it partway through changes the `system` prompt and invalidates the conversation's earlier thinking blocks (see [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#new-instructions)). Because it tells the model to put status notes in the same message as its next tool call, those notes arrive between tool calls as progress updates, whose text comes back empty at the default `thinking.display`; set `display: "updates"` to receive a summary of each (see [User-facing progress updates](#user-facing-progress-updates)). With this addition the model carries on where it would otherwise have stopped to check in, so keep your own confirmation step for risky or irreversible actions, and leave the addition out of human-in-the-loop applications, where someone is there to answer. Expect somewhat more tool calls and output tokens per task.
+The following paragraph is one example of such an addition, written for agents that run fully unattended, where you want the model to keep working rather than stop to report. Treat it as a starting point: you might need to adapt it for your own application. Add it at the end of your system prompt from the first request of the session: adding it partway through changes the `system` prompt and invalidates the conversation's earlier thinking blocks (see [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#new-instructions)). Because it tells the model to put status notes in the same message as its next tool call, those notes arrive between tool calls as progress updates, whose text comes back empty at the default `thinking.display`; set `display: "updates"` to receive a summary of each (see [User-facing progress updates](#user-facing-progress-updates)). With this addition the model carries on where it would otherwise have stopped to check in, so keep your own confirmation step for risky or irreversible actions, and leave the addition out of human-in-the-loop applications, where someone is there to answer. Expect somewhat more tool calls and output tokens per task.
 
 ``` block
 A standing instruction from the user, the person you are working for. It is about how your turns end. A message with no tool call in it ends your turn, and the work stops there until you are asked to continue. The user has seen you end turns in four ways while work they asked for was still owed, and does not want any of them. One: a long summary of what was done that closes by announcing the next step and has no tool call, so the next thing never starts. Two: an offer to carry on with something unless the user would prefer otherwise, which stops to wait for an answer the user was not going to give. Three: a list of decisions for the user when, by your own account, none of them blocks the rest of the work. Four: deciding that this is a good place to report, because the turn has been long or a milestone is done. Status notes are welcome, and so are your recommendations on open decisions, but put them in the same message as your next tool call and carry on with whatever does not depend on the user's answer. If you notice yourself inviting the user to redirect you or offering to wait, delete it and do the next thing. The stops the user does want are the ones where nothing can move without them, or where the thing blocking you is deliberately protected from you. This does not override the need for confirmation on risky or destructive actions.
@@ -180,9 +180,9 @@ Before taking any action, explore broadly with tool calls: list and open the ema
 
 In Anthropic's testing on multi-app automation tasks, Claude Opus 5.5 completed noticeably more of them correctly with this instruction, at both `medium` and `max` effort, at the cost of slightly more tool calls and tokens. Because it tells the model to act on what it finds, keep untrusted content out of the records it searches.
 
-## Time signals for multi-agent harnesses
+## Time signals for multiagent harnesses
 
-Claude Opus 5.5 pays close attention to information about elapsed time, and in a multi-agent setup, for example a lead agent that delegates to subagents, you can use that to speed up the work through better parallelization. If you can estimate how long the task should take, give the model a time budget: have your harness add a short line at the end of each message it sends back to the model giving the elapsed time against that budget, in seconds, for example `elapsed 340s / 1200s`. The model paces its work to finish inside the budget and usually finishes well before it, so set the budget somewhat above the time you actually want spent and tune it on a sample of your own tasks. If you can't predict a sensible budget, show the elapsed time alone and add one sentence to the system prompt:
+Claude Opus 5.5 pays close attention to information about elapsed time, and in a multiagent setup, for example a lead agent that delegates to subagents, you can use that to speed up the work through better parallelization. If you can estimate how long the task should take, give the model a time budget: have your harness add a short line at the end of each message it sends back to the model giving the elapsed time against that budget, in seconds, for example `elapsed 340s / 1200s`. The model paces its work to finish inside the budget and usually finishes well before it, so set the budget somewhat above the time you actually want spent and tune it on a sample of your own tasks. If you can't predict a sensible budget, show the elapsed time alone and add one sentence to the system prompt:
 
 ``` block
 Time matters here: do not spend time that can be avoided, and the earlier a correct result is obtained, the better.
@@ -190,7 +190,7 @@ Time matters here: do not spend time that can be avoided, and the earlier a corr
 
 
 
-In Anthropic's evaluations of small agent teams on research tasks, both signals made teams finish sooner than a single agent working without them. Teams given a budget kept answer quality comparable to the single agent's while finishing considerably sooner. A tighter budget has a different effect from a lower effort setting: lowering effort reduces the work itself, whereas a budget mostly keeps more agents working in parallel. The budget is advisory and nothing stops the model at the limit, so if you need a hard stop, keep your own timeout. Also check answer quality on your own tasks, since under time pressure the model may search and verify a little less.
+In Anthropic's evaluations of small agent teams on research tasks, both signals made teams finish sooner than a single agent working without them. Teams given a budget kept answer quality comparable to the single agent's while finishing considerably sooner. A tighter budget has a different effect from a lower effort setting: lowering effort reduces the work itself, whereas a budget mostly keeps more agents working in parallel. The budget is advisory and nothing stops the model at the limit, so if you need a hard stop, keep your own timeout. Also check answer quality on your own tasks, because under time pressure the model might search and verify a little less.
 
 ## Thinking instructions in chat system prompts
 

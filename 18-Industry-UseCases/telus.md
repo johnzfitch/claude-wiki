@@ -2,7 +2,7 @@
 title: "TELUS Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/telus"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:33:14Z"
+fetched_at: "2026-09-30T06:33:49Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 

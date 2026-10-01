@@ -2,21 +2,20 @@
 title: "Set up role-based permissions on Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13930458-set-up-role-based-entitlements-on-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:32:10Z"
+fetched_at: "2026-09-30T06:32:48Z"
 tags: ["billing", "enterprise"]
 ---
 
 # Set up role-based permissions on Enterprise plans
 
 
-
 This guide walks you through setting up role-based permissions for your Enterprise organization. This lets you control which features and connectors specific teams or groups of members can access, and delegate specific admin access like billing or user management, rather than giving everyone the same permissions.
 
 Before you start, make sure you're familiar with:
 
-- **[Manage groups and group spend limits on Enterprise plans](manage-groups-and-group-spend-limits-on-enterprise-plans.md)** — how to create and manage groups
+- **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)** — how to create and manage groups
 
-- **[Manage custom roles on Enterprise plans](manage-custom-roles-on-enterprise-plans.md)** — how custom roles and capabilities work
+- **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)** — how custom roles and capabilities work
 
 ------------------------------------------------------------------------
 
@@ -38,7 +37,7 @@ You'll need Owner or Primary Owner access to your Enterprise organization, or a 
 
 **Decide how you'll create groups.** You can create groups manually in Claude, or sync them from your identity provider (IdP) via SCIM. You can also use both methods simultaneously. If you plan to use IdP groups from Okta, Entra ID, or another provider, make sure SCIM directory sync is configured. See **[Set up JIT or SCIM provisioning](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)**.
 
-**Add the connectors you plan to govern.** Connector permissions only cover connectors that an Owner or Primary Owner has already added under **Organization settings \> Connectors** and connected with admin credentials. Review your organization-wide tool policy there as well, since role grants narrow within it and can’t widen past it. See **[Use connectors to extend Claude’s capabilities](../14-Connectors/use-connectors-to-extend-claude-s-capabilities.md)**.
+**Add the connectors you plan to govern.** Connector permissions only cover connectors that an Owner or Primary Owner has already added under **Organization settings \> Connectors** and connected with admin credentials. Review your organization-wide tool policy there as well, since role grants narrow within it and can’t widen past it. See **[Use connectors to extend Claude’s capabilities](https://support.claude.com/en/articles/11176164-)**.
 
 ------------------------------------------------------------------------
 
@@ -62,7 +61,7 @@ Create roles that map to departments: "Engineering" with chat, Cowork, Claude Co
 
 ### Admin delegation roles
 
-Create roles that delegate parts of administration without granting the Owner role. A custom role with admin permissions does not need any user capabilities, and vice versa. You could create a "Finance" role that grants Billing access but no chat or Claude Code capability, or an "Engineering Lead" role that grants Claude Code plus Analytics view access. Learn more **[about admin permissions for custom roles](manage-custom-roles-on-enterprise-plans.md#h_536123d968)**.
+Create roles that delegate parts of administration without granting the Owner role. A custom role with admin permissions does not need any user capabilities, and vice versa. You could create a "Finance" role that grants Billing access but no chat or Claude Code capability, or an "Engineering Lead" role that grants Claude Code plus Analytics view access. Learn more **[about admin permissions for custom roles](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans#h_536123d968)**.
 
 ------------------------------------------------------------------------
 
@@ -104,13 +103,13 @@ Create your custom roles before enabling any features or migrating members. This
 
 Role changes may take up to 15 minutes to take effect. Members may need to refresh their browser to see updated access.
 
-See **[Manage custom roles on Enterprise plans](manage-custom-roles-on-enterprise-plans.md)** for details on available capabilities, admin permissions, and connectors.
+See **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)** for details on available capabilities, admin permissions, and connectors.
 
 ------------------------------------------------------------------------
 
 ## Step 3: Configure admin permissions (optional)
 
-Set admin permissions on each role to delegate access to admin settings, like billing, user management, or privacy, without granting the Owner role. This step is optional. If you don't configure it, roles grant no admin access and administration stays with Owners and Primary Owners. For what each permission area covers, see **[Manage custom roles on Enterprise plans](manage-custom-roles-on-enterprise-plans.md)**.
+Set admin permissions on each role to delegate access to admin settings, like billing, user management, or privacy, without granting the Owner role. This step is optional. If you don't configure it, roles grant no admin access and administration stays with Owners and Primary Owners. For what each permission area covers, see **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**.
 
 ### Locate the Permissions tab
 
@@ -142,7 +141,7 @@ Verify admin permissions after you’ve migrated members to "Custom" roles (Step
 
 ## Step 4: Configure connector permissions (optional)
 
-Set connector permissions on each role to control which connectors, and which tools on those connectors, the role can use. This step is optional. If you don’t configure it, your roles fall back to the default behavior described below. For how the permission model works end to end, see **[Manage custom roles on Enterprise plans](manage-custom-roles-on-enterprise-plans.md)**.
+Set connector permissions on each role to control which connectors, and which tools on those connectors, the role can use. This step is optional. If you don’t configure it, your roles fall back to the default behavior described below. For how the permission model works end to end, see **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**.
 
 **Important:** When Anthropic enables connector permissions for your organization, every existing custom role is seeded with the “All connectors” grant at “Always allow.” Because “Always allow” is the most permissive grant, your organization-wide tool policy alone determines each member’s effective ceiling at enablement. Members neither gain nor lose access at enablement. Your first configuration pass narrows from that baseline.
 
@@ -204,7 +203,7 @@ Verify connector permissions after you’ve migrated members to "Custom" roles (
 
 **Important:** If your organization uses Claude Code, enabling connector permissions also applies your organization-wide tool policy to Claude Code. This can only narrow tool access there, never widen it, and it affects all members. Review your organization-wide tool policy before enablement if Claude Code is widely deployed. Connector permissions and Claude Code Managed Settings compose by most-restrictive. See **[Claude Code settings](../02-Claude-Code-CLI/settings.md#settings-files)**.
 
-**Note:** Whether members can set "Always allow" on write-capable connector tools in Cowork is additionally controlled by the organization setting **Allow "Always allow" for connector tools**, which is off by default. Role grants can't override it. Learn more about the **[Cowork approval setting for write tools](use-claude-cowork-on-team-and-enterprise-plans.md#h_1bd1fa754d)**.
+**Note:** Whether members can set "Always allow" on write-capable connector tools in Cowork is additionally controlled by the organization setting **Allow "Always allow" for connector tools**, which is off by default. Role grants can't override it. Learn more about the **[Cowork approval setting for write tools](https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans#h_1bd1fa754d)**.
 
 ------------------------------------------------------------------------
 
@@ -212,7 +211,7 @@ Verify connector permissions after you’ve migrated members to "Custom" roles (
 
 Set model access on each role to control which Claude models the role can use, cap the maximum effort level per model, and choose the model new conversations start on. This step is optional; if you don't configure it, new roles can use every model that's enabled at the organization level, at any effort level, and start on the organization default model.
 
-For how the model access and default model settings work end to end, see **[Manage model access for your organization](../22-Safety-Policy/manage-model-access-for-your-organization.md)** and **[Set a default model for your organization](../20-Models/set-a-default-model-for-your-organization.md)**.
+For how the model access and default model settings work end to end, see **[Manage model access for your organization](../13-Enterprise-Admin/manage-model-access-for-your-organization-claude-help-center.md)** and **[Set a default model for your organization](../13-Enterprise-Admin/set-a-default-model-for-your-organization-claude-help-center.md)**.
 
 ### Locate the Models tab
 
@@ -246,7 +245,7 @@ Verify model access after you've migrated members to "Custom" roles. See **Step 
 
 4.  Add members to the appropriate groups.
 
-If you use SCIM directory sync, you can sync groups from your identity provider instead of creating them manually. For details on SCIM group sync, see **[Manage groups and group spend limits on Enterprise plans](manage-groups-and-group-spend-limits-on-enterprise-plans.md)**.
+If you use SCIM directory sync, you can sync groups from your identity provider instead of creating them manually. For details on SCIM group sync, see **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**.
 
 **Multiple organizations under the same parent organization:** Groups are managed at the parent organization level and propagate to all child organizations. You may see members from other organizations listed in a group—this doesn't mean they have access to your organization. Custom roles assigned to a group only grant capabilities to members who are part of your specific organization.
 
@@ -520,7 +519,7 @@ No. The organization-wide policy is the ceiling. A tool blocked there is blocked
 
 ### A member's role and the organization-wide policy are both set to "Always allow," but "Allow for all tasks" is grayed out in Cowork. Why?
 
-Cowork has a separate organization setting, **Allow "Always allow" for connector tools**, that gates write-capable connector tools. It's off by default. Until it's turned on, "Allow for all tasks" stays grayed out regardless of role grants and tool policies, and previously saved always-allow preferences aren't honored. Read-only tools are exempt only when the connector annotates them as read-only, which most custom connectors don't. For more information, see **[Connector tool approvals](use-claude-cowork-on-team-and-enterprise-plans.md#h_1bd1fa754d).**
+Cowork has a separate organization setting, **Allow "Always allow" for connector tools**, that gates write-capable connector tools. It's off by default. Until it's turned on, "Allow for all tasks" stays grayed out regardless of role grants and tool policies, and previously saved always-allow preferences aren't honored. Read-only tools are exempt only when the connector annotates them as read-only, which most custom connectors don't. For more information, see **[Connector tool approvals](https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans#h_1bd1fa754d).**
 
 ### Can a role grant a tool that the organization-wide policy sets to “Needs approval”?
 

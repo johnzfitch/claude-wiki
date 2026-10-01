@@ -2,7 +2,7 @@
 title: "Creating with artifacts · Claude 101 · Claude Academy"
 source_url: "https://support.claude.com/en/articles/9945615-intro-to-artifacts"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-25T06:30:20Z"
+fetched_at: "2026-09-30T06:32:03Z"
 tags: ["claude-ai"]
 ---
 

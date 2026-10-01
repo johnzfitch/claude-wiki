@@ -2,7 +2,7 @@
 title: "Terminal guide for new users - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/terminal-guide"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:30:16Z"
+fetched_at: "2026-09-30T06:30:54Z"
 tags: ["claude-code"]
 ---
 

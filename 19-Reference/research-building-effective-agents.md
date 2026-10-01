@@ -35,7 +35,7 @@ When more complexity is warranted, workflows offer predictability and consistenc
 
 There are many frameworks that make agentic systems easier to implement, including:
 
-- The [Claude Agent SDK](../05-Agent-SDK/agent-sdk-overview.md);
+- The [Claude Agent SDK](https://www.anthropic.com/05-Agent-SDK/agent-sdk-overview.md);
 - [Strands Agents SDK by AWS](https://strandsagents.com/latest/);
 - [Rivet](https://rivet.ironcladapp.com/), a drag and drop GUI LLM workflow builder; and
 - [Vellum](https://www.vellum.ai/), another GUI tool for building and testing complex workflows.

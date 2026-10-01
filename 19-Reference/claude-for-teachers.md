@@ -50,7 +50,7 @@ Claude for Teachers includes Claude Code and Cowork, which means Claude can carr
 
 ## For educators, built to protect student data
 
-Claude for Teachers is for educators only, consistent with Claude's 18-and-over policy. It comes with its own [teacher terms](../22-Safety-Policy/claude-for-teachers-your-data-and-our-terms.md), built for K-12 privacy:
+Claude for Teachers is for educators only, consistent with Claude's 18-and-over policy. It comes with its own [teacher terms](https://www.anthropic.com/99-Other/claude-for-teachers-your-data-and-our-terms-claude-help-center-1b4ebaa9e2.md), built for K-12 privacy:
 
 - **We never train our models on your Claude for Teacher conversations.** Training is off for verified teacher accounts.
 - **Student information is protected by our K-12 Data Processing Addendum**, including FERPA-aligned data protections.
@@ -59,7 +59,7 @@ We’re also working with the **[American Federation of Teachers](https://www.af
 
 “We've been working with Anthropic on a Gold Standard that sets out industry best practices for safety and privacy in K-12 education,” said Randi Weingarten, President of the American Federation of Teachers. “It’s important that Anthropic is committing to these principles in their new Claude for Teachers — a tool designed by and for educators to assist them instructionally and hopefully give them more time for the human relationships at the heart of learning.”  
   
-Whether and how educational data may be used in Claude for Teachers is determined by your district and state policies. You can read more about our K-12 data privacy standards for Claude for Teachers [here](../22-Safety-Policy/claude-for-teachers-your-data-and-our-terms.md).
+Whether and how educational data may be used in Claude for Teachers is determined by your district and state policies. You can read more about our K-12 data privacy standards for Claude for Teachers [here](https://www.anthropic.com/99-Other/claude-for-teachers-your-data-and-our-terms-claude-help-center-1b4ebaa9e2.md).
 
 ## AI fluency for teachers
 
@@ -125,9 +125,9 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
+- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
 
 ### Solutions
 

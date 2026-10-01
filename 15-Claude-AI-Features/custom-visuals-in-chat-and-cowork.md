@@ -2,7 +2,7 @@
 title: "Custom visuals in chat and Cowork | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13979539-custom-visuals-in-chat-and-cowork"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:45Z"
+fetched_at: "2026-09-30T06:32:49Z"
 tags: ["claude-ai"]
 ---
 

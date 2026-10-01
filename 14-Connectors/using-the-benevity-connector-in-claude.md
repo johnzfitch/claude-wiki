@@ -16,7 +16,7 @@ Connect Claude to Benevity's database of 2.5M+ nonprofits to discover and resear
 
 The Benevity connector gives Claude access to a database of 2.5M+ nonprofit organizations. Search by cause, location, or keyword, and get detailed profiles including mission statements, program descriptions, and geographic focus.
 
-The Benevity integration relies on Claude's ability to [use remote connectors(opens in new tab)](use-connectors-to-extend-claude-s-capabilities.md).
+The Benevity integration relies on Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/use-connectors-to-extend-claude-s-capabilities-d041e8447b.md).
 
 ## What this connector provides[](#what-this-connector-provides)
 

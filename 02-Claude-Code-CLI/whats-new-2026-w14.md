@@ -2,7 +2,7 @@
 title: "Week 14 · March 30 – April 3, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w14"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:29:10Z"
+fetched_at: "2026-09-30T06:30:55Z"
 tags: ["claude-code"]
 ---
 
@@ -95,7 +95,7 @@ Other wins
 
 Auto mode follow-ups: new `PermissionDenied` hook fires on classifier denials (return `retry: true` to let Claude try a different approach), and `/permissions` → Recently denied lets you retry manually with `r`
 
-New `defer` value for `permissionDecision` in `PreToolUse` hooks: `-p` sessions pause at a tool call and exit with a `deferred_tool_use` payload so an SDK app or custom UI can surface it, then resume with `—resume`
+New `defer` value for `permissionDecision` in `PreToolUse` hooks: `-p` sessions pause at a tool call and exit with a `deferred_tool_use` payload so an SDK app or custom UI can surface it, then resume with `--resume`
 
 `/buddy`: hatch a small creature that watches you code. An April Fools’ joke, no longer available
 

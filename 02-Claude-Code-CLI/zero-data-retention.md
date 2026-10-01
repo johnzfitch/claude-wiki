@@ -100,7 +100,7 @@ These features are blocked in the backend regardless of client-side display. If 
 
 Model availability under ZDR
 
-Claude Fable 5.1 and Fable 5 are [Covered Models](../20-Models/covered-models.md) that [require data retention](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements) by default, and whether a ZDR organization or workspace can use them is governed by the Covered Models policies rather than by Claude Code. Where your organization can’t use them, the models are either absent from the `/model` picker or shown as disabled, and the server rejects requests for them regardless of client configuration. Other models remain available under ZDR. Fable models are not the default, and the `best` alias, which resolves to the latest Fable model where it is available, resolves to Opus for organizations where it is not.
+Claude Fable 5.1 and Fable 5 are [Covered Models](https://code.claude.com/docs/20-Models/covered-models-9b5d036943.md) that [require data retention](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements) by default, and whether a ZDR organization or workspace can use them is governed by the Covered Models policies rather than by Claude Code. Where your organization can’t use them, the models are either absent from the `/model` picker or shown as disabled, and the server rejects requests for them regardless of client configuration. Other models remain available under ZDR. Fable models are not the default, and the `best` alias, which resolves to the latest Fable model where it is available, resolves to Opus for organizations where it is not.
 
 
 [​](#data-retention-for-policy-violations)

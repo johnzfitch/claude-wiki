@@ -2,12 +2,11 @@
 title: "Model Safety Bug Bounty Program | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12119250-model-safety-bug-bounty-program"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-29T06:31:24Z"
+fetched_at: "2026-09-30T06:32:29Z"
 tags: ["safety"]
 ---
 
 # Model Safety Bug Bounty Program
-
 
 
 ## Purpose

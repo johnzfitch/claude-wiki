@@ -2,7 +2,7 @@
 title: "Intro to Claude - Claude Platform Docs"
 source_url: "https://platform.claude.com/en/docs/welcome"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-23T06:27:35Z"
+fetched_at: "2026-09-30T06:31:08Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -54,7 +54,7 @@ Tool infrastructure
 
 Context management
 
-[Context windows](../Guides/build-with-claude-context-windows.md)[Context editing](../Guides/build-with-claude-context-editing.md)[Prompt caching](../Guides/build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](../Guides/build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](../Guides/build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics (beta)](../Guides/build-with-claude-cache-diagnostics.md)[Token counting](../Guides/build-with-claude-token-counting.md)
+[Context windows](../Guides/build-with-claude-context-windows.md)[Context editing](../Guides/build-with-claude-context-editing.md)[Prompt caching](../Guides/build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](../Guides/build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](../Guides/build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](../Guides/build-with-claude-cache-diagnostics.md)[Token counting](../Guides/build-with-claude-token-counting.md)
 
 [Compaction](../Guides/build-with-claude-compaction.md)
 
@@ -127,7 +127,9 @@ Complex projectsAgentsCoding
 
 For long-running agentic coding and knowledge work
 
-### [Sonnet 5](../../20-Models/models-sonnet-5-overview.md)
+### [Sonnet 5.5](../../20-Models/models-sonnet-5-5-overview.md)
+
+New
 
 Everyday tasksWritingCost-efficient
 

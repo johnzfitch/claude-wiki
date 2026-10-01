@@ -2,7 +2,7 @@
 title: "Manage API key environment variables in Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12304248-managing-api-key-environment-variables-in-claude-code"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-29T06:31:25Z"
+fetched_at: "2026-09-30T06:32:30Z"
 tags: ["api", "authentication", "claude-code"]
 ---
 
@@ -140,4 +140,4 @@ Windows (permanent): Delete the variable from System Environment Variables setti
 
 - Assuming you're using your subscription when an API key is configured in your environment.
 
-If you have any questions, please **[contact our Support team](../21-Account-Support/how-can-i-contact-support.md)**.
+If you have any questions, please **[contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**.

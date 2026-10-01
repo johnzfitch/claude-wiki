@@ -12,7 +12,7 @@ Claude brings your startup’s boldest ideas to life. We support your journey wi
 
 Get started today
 
-[Get started today](../04-API-Reference/Other/usage-limits.md)
+[Get started today](https://www.claude.com/04-API-Reference/Other/platform-claude-com.md)
 
 Get started today
 

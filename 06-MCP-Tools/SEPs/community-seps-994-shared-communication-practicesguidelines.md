@@ -213,4 +213,4 @@ This SEP establishes new processes and does not affect existing protocol functio
 
 ## Reference Implementation
 
-The communication guidelines are published at: [https://modelcontextprotocol.io/community/communication](../Community/community-communication.md)
+The communication guidelines are published at: [https://modelcontextprotocol.io/community/communication](https://modelcontextprotocol.io/community/06-MCP-Tools/Community/contributor-communication-model-context-protocol.md)

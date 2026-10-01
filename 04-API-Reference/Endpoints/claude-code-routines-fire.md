@@ -235,11 +235,11 @@ Start a Claude Code routine session on demand by sending an authenticated POST r
 
 This is an experimental API. Request and response shapes, rate limits, and token semantics might change.
 
-[Claude Code](../../02-Claude-Code-CLI/code-home.md) is Anthropic's agentic coding tool. [Claude Code on the web](../../02-Claude-Code-CLI/claude-code-on-the-web.md) runs Claude Code sessions on Anthropic-managed cloud infrastructure at claude.ai/code, and a [routine](../../02-Claude-Code-CLI/web-scheduled-tasks.md) is a saved configuration there: a prompt, one or more repositories, and connectors, packaged so it can run unattended on a schedule, in response to GitHub events, or when called over HTTP.
+[Claude Code](https://platform.claude.com/docs/en/api/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md) is Anthropic's agentic coding tool. [Claude Code on the web](https://platform.claude.com/docs/en/api/02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md) runs Claude Code sessions on Anthropic-managed cloud infrastructure at claude.ai/code, and a [routine](../../02-Claude-Code-CLI/web-scheduled-tasks.md) is a saved configuration there: a prompt, one or more repositories, and connectors, packaged so it can run unattended on a schedule, in response to GitHub events, or when called over HTTP.
 
 This endpoint is the HTTP entry point. POSTing to it starts a new run of an existing routine and returns the resulting session ID and URL. Typical callers are alerting systems, CI pipelines, and internal tools that need to start a Claude Code session programmatically.
 
-Calling this endpoint requires a claude.ai account on a Pro, Max, Team, or Enterprise plan with [Claude Code on the web](../../02-Claude-Code-CLI/claude-code-on-the-web.md) enabled. Authenticate with a per-routine bearer token created in the Claude Code web UI rather than a Claude API key.
+Calling this endpoint requires a claude.ai account on a Pro, Max, Team, or Enterprise plan with [Claude Code on the web](https://platform.claude.com/docs/en/api/02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md) enabled. Authenticate with a per-routine bearer token created in the Claude Code web UI rather than a Claude API key.
 
 ## Differences from the Claude Platform
 

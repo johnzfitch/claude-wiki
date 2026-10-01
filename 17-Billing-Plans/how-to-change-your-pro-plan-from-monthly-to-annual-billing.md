@@ -2,7 +2,7 @@
 title: "How to change your Pro plan from monthly to annual billing | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10185996-how-to-change-your-pro-plan-from-monthly-to-annual-billing"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-29T06:30:09Z"
+fetched_at: "2026-09-30T06:31:20Z"
 tags: ["billing"]
 ---
 

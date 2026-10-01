@@ -2,7 +2,7 @@
 title: "Organization instructions in Claude for Government | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503675-organization-instructions-in-claude-for-government"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-29T06:32:13Z"
+fetched_at: "2026-09-30T06:32:00Z"
 tags: ["enterprise"]
 ---
 
@@ -71,4 +71,4 @@ To remove instructions entirely, clear the text area and click "Save."
 
 **Response formatting** — "Prefer concise responses under 300 words. Use bullet points for lists with three or more items."
 
-**Referral guidance** — "When users ask about HR policies, direct them to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#d8b0aa98bda0b9b5a8b4bdf6bbb7b5) rather than providing specific policy advice."
+**Referral guidance** — "When users ask about HR policies, direct them to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#adc5dfedc8d5ccc0ddc1c883cec2c0) rather than providing specific policy advice."

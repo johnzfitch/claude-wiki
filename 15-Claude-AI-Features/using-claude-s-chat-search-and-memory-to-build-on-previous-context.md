@@ -1,13 +1,12 @@
 ---
 title: "Use Claude’s chat search and memory to build on previous context | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context"
+source_url: "https://support.claude.com/en/articles/11817273-how-does-claude-s-memory-work"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-29T06:31:45Z"
+fetched_at: "2026-09-30T06:32:25Z"
 tags: ["claude-ai", "enterprise", "search"]
 ---
 
 # Use Claude’s chat search and memory to build on previous context
-
 
 
 You can prompt Claude to search through your previous conversations to find and reference relevant information in new chats. Claude can also remember context from your chats and carry it into new conversations and Cowork tasks. This article explains how chat search and memory work, what Claude does and doesn't remember, how to review and edit what's saved, and how to turn these features on or off.
@@ -53,7 +52,7 @@ Yes, navigate to **[Settings \> Memory](https://claude.ai/new#settings/customize
 
 ## Can I exclude a specific past chat from searches?
 
-Incognito chats are available to all Claude users (free, Pro, Max, Team, and Enterprise plans). See **[Use incognito chats](using-incognito-chats.md)** for more information.
+Incognito chats are available to all Claude users (free, Pro, Max, Team, and Enterprise plans). See **[Use incognito chats](https://support.claude.com/en/articles/12260368)** for more information.
 
 When starting a new chat with Claude outside of a project, you'll see a ghost icon in the upper right corner of your screen.
 
@@ -180,7 +179,7 @@ You maintain control over Claude’s ability to search past chats and use memory
 
 ### Importing your memory from other AI tools
 
-You can now transfer your memory between Claude and other AI services. This feature lets you import memories from other AI assistants or export your Claude memory for backup or migration. This feature is experimental and still in active development, but for best practices, see this article: **[Importing and exporting your memory from Claude](importing-and-exporting-your-memory-from-claude.md)**.
+You can now transfer your memory between Claude and other AI services. This feature lets you import memories from other AI assistants or export your Claude memory for backup or migration. This feature is experimental and still in active development, but for best practices, see this article: **[Importing and exporting your memory from Claude](https://support.claude.com/en/articles/12123587-importing-and-exporting-your-memory-from-claude)**.
 
 ------------------------------------------------------------------------
 
@@ -251,7 +250,7 @@ Yes, navigate to **[Settings \> Capabilities](https://claude.ai/settings/capabil
 
 ### Can I exclude a specific past chat from searches?
 
-Incognito chats are available to all Claude users (free, Pro, Max, Team, and Enterprise plans). See **[Use incognito chats](using-incognito-chats.md)** for more information.
+Incognito chats are available to all Claude users (free, Pro, Max, Team, and Enterprise plans). See **[Use incognito chats](https://support.claude.com/en/articles/12260368)** for more information.
 
 When starting a new chat with Claude outside of a project, you'll see a ghost icon in the upper right corner of your screen:
 
@@ -351,7 +350,7 @@ You maintain control over Claude’s ability to search past chats and use memory
 
 **Importing your memory from other AI tools**
 
-You can now transfer your memory between Claude and other AI services. This feature lets you import memories from other AI assistants or export your Claude memory for backup or migration. This feature is experimental and still in active development, but for best practices, see this article: **[Importing and exporting your memory from Claude](importing-and-exporting-your-memory-from-claude.md)**.
+You can now transfer your memory between Claude and other AI services. This feature lets you import memories from other AI assistants or export your Claude memory for backup or migration. This feature is experimental and still in active development, but for best practices, see this article: **[Importing and exporting your memory from Claude](https://support.claude.com/en/articles/12123587-importing-and-exporting-your-memory-from-claude)**.
 
 ------------------------------------------------------------------------
 

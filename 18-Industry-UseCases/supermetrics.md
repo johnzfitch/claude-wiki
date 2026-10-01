@@ -2,7 +2,7 @@
 title: "Supermetrics: manage ad campaigns in a Claude conversation | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/supermetrics"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-29T06:32:47Z"
+fetched_at: "2026-09-30T06:32:32Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Host and maintain a marketplace - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/host-marketplace"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-26T06:38:12Z"
+fetched_at: "2026-09-30T06:30:38Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -11,6 +11,7 @@ tags: ["claude-code", "plugins"]
 - [Host your marketplace](#host-your-marketplace)
   - [Register the marketplace for everyone in a repository](#register-the-marketplace-for-everyone-in-a-repository)
   - [Avoid relative-path entries in a URL-hosted marketplace](#avoid-relative-path-entries-in-a-url-hosted-marketplace)
+  - [Stay within the download limits for hosted files](#stay-within-the-download-limits-for-hosted-files)
   - [Edit plugins in place on a shared directory](#edit-plugins-in-place-on-a-shared-directory)
   - [Keep plugin files out of Git LFS](#keep-plugin-files-out-of-git-lfs)
   - [Share files within a marketplace with symlinks](#share-files-within-a-marketplace-with-symlinks)
@@ -87,6 +88,25 @@ To share the marketplace with everyone who works in one repository, run `claude 
 Avoid relative-path entries in a URL-hosted marketplace
 
 When users add your marketplace as a bare `marketplace.json` URL, Claude Code downloads only that file. An entry in your `plugins` array whose `source` is a relative path such as `./plugins/formatter` then fails at install with [`its marketplace entry path does not stay inside the marketplace directory`](plugins-troubleshooting.md#plugins-with-relative-paths-fail-in-url-based-marketplaces). Give every entry a source that can be fetched on its own, such as a `github` repository or an `archive` URL, or host the marketplace in a git repository so Claude Code clones the whole tree.
+
+
+[​](#stay-within-the-download-limits-for-hosted-files)
+
+Stay within the download limits for hosted files
+
+When users add your marketplace as a `marketplace.json` URL, or install an entry with an [`archive`](plugins-marketplace-reference.md#archive-plugin-source) source, Claude Code downloads the file from your server. The download fails past the limits in this table, so size your files and configure your server to stay inside them.
+
+| File                                               | Largest download | Time for your server to respond | Redirects                                                                                                                                                                |
+|:---------------------------------------------------|:-----------------|:--------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `marketplace.json` from a `url` marketplace source | 5 MiB            | 10 seconds                      | A redirect to a different origin must use `https://` and can’t point at a loopback, link-local, or cloud-metadata host, so a redirect from `https://` to `http://` fails |
+| Zip from an `archive` plugin source                | 256 MiB          | 120 seconds                     | At most five. Every redirect target must use `https://` and can’t point at a loopback, link-local, or cloud-metadata host                                                |
+
+A request that a redirect sends to a different origin carries none of the headers you configured on the marketplace source or the plugin entry. After an archive downloads, the install fails when the zip exceeds any of these extraction limits:
+
+- **Entries**: 100,000 files and directories
+- **File size**: 512 MiB for any one file, uncompressed
+- **Total size**: 1 GiB uncompressed
+- **Compression ratio**: uncompressed content 50 times the size of the zip
 
 
 [​](#edit-plugins-in-place-on-a-shared-directory)

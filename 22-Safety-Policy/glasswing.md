@@ -79,4 +79,4 @@ As Newton Cheng, Frontier Red Team Cyber Lead at Anthropic, explained: Anthropic
 
 - [red.anthropic.com](red-home.md) — Anthropic's cybersecurity research site
 - [Claude Mythos Preview](../19-Reference/2026-mythos-preview.md) — Technical details
-- [Building AI for cyber defenders](../19-Reference/building-ai-cyber-defenders.md)
+- [Building AI for cyber defenders](https://www.anthropic.com/19-Reference/building-ai-for-cyber-defenders-anthropic.md)

@@ -2,7 +2,7 @@
 title: "Claude for nonprofits partnership success guide for admins · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923668-claude-for-nonprofits-partnership-success-guide-for-admins"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-25T06:29:38Z"
+fetched_at: "2026-09-30T06:31:43Z"
 tags: ["enterprise"]
 ---
 
@@ -73,7 +73,7 @@ The framework below is flexible and self-paced. Move through the phases at whate
 #### Key resources
 
 - [Use case library(opens in new tab)](https://support.claude.com/all?kind=use-case)
-- [How to access audit logs(opens in new tab)](how-to-access-audit-logs.md)
+- [How to access audit logs(opens in new tab)](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs)
 - [Claude artifact inspiration gallery(opens in new tab)](https://claude.ai/artifacts?category=learn)
 - [MCP connector directory(opens in new tab)](../04-API-Reference/Other/partners-mcp.md)
 

@@ -119,4 +119,4 @@ Skills extend Claude Code with your team's expertise and workflows. Install skil
 
 We're working toward simplified skill creation workflows and enterprise-wide deployment capabilities, making it easier for organizations to distribute skills across teams.
 
-Keep in mind, this feature gives Claude access to execute code. While powerful, it means being mindful about which skills you use—stick to trusted sources to keep your data safe. [Learn more](../02-Claude-Code-CLI/using-skills-in-claude.md#h_2746475e70).
+Keep in mind, this feature gives Claude access to execute code. While powerful, it means being mindful about which skills you use—stick to trusted sources to keep your data safe. [Learn more](https://www.anthropic.com/99-Other/using-skills-in-claude-a1bdb5a95a.md#h_2746475e70).

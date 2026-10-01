@@ -532,7 +532,7 @@ Several Claude Code features let more than one session work at the same time, so
 - **Local sessions and agent view**: a session you start yourself in your terminal, IDE, or the desktop app’s local environment can’t be added to a project. [Agent view](../09-Agents-Patterns/agent-view.md) is a screen for tracking several local sessions side by side, and you still start each one and give it its task yourself.
 - **Worktrees**: a [worktree](worktrees.md) gives each local session its own working copy of a repository so parallel sessions on your machine don’t overwrite each other. Cloud threads don’t need them: each clones its repositories into its own cloud sandbox and works on its own branch.
 - **Agent teams**: an [agent team](../09-Agents-Patterns/agent-teams.md) is one session that starts teammate sessions for a single task, on your machine or inside a cloud session, and ends with that task.
-- **Projects in claude.ai chat and Cowork**: the [earlier Projects experience](../15-Claude-AI-Features/what-are-projects.md), which groups conversations and reference files without threads or a coordinator. Those projects keep working as they do today until the redesigned experience reaches them.
+- **Projects in claude.ai chat and Cowork**: the [earlier Projects experience](https://code.claude.com/docs/15-Claude-AI-Features/what-are-projects-91a78d2090.md), which groups conversations and reference files without threads or a coordinator. Those projects keep working as they do today until the redesigned experience reaches them.
 
 [Run agents in parallel](../09-Agents-Patterns/agents.md) compares these options side by side.
 
